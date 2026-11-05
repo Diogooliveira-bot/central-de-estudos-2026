@@ -9,7 +9,7 @@ Licitações — Gerais e Conceitos
 
 Base constitucional, objetivos, âmbito, princípios, governança, agentes e vocabulário essencial da Lei 14.133/2021 — sem invadir planejamento, procedimento, contratação direta ou contratos.
 
-Base conferida em 18/09/2026: Lei 14.133/2021 consolidada no Planalto; CF arts. 22, XXVII, e 37, XXI; LINDB; Lei 13.303/2016 para distinção das estatais. O PDF legal incluído no pacote foi usado como fonte normativa de trabalho e conferido contra a redação oficial vigente. Materiais da Biblioteca (15.pdf, caderno TJ-CE 2026 e baralho do M14) foram usados apenas para cobertura e padrão FCC.
+Base conferida em 18/09/2026: Lei 14.133/2021 consolidada no Planalto; CF arts. 22, XXVII, e 37, XXI; LINDB; Lei 13.303/2016 para distinção das estatais. O PDF legal incluído no pacote foi usado como fonte normativa de trabalho e conferido contra a redação oficial vigente. Materiais da Biblioteca (15.pdf, caderno TJ-CE 2026 e baralho do M14) foram usados apenas para cobertura e padrão de prova.
 
 Como estudar este módulo
 
@@ -17,7 +17,7 @@ Em cada questão, faça cinco perguntas: quem contrata? qual é o objeto? qual c
 
 sujeito→objeto→conceito→agente→regra
 
-Regra de ouro: na Lei 14.133/2021, primeiro identifique quem está sujeito à lei, depois qual é o objeto, quais princípios e objetivos governam a atuação, quem conduz a contratação e qual conceito legal está sendo usado. A FCC costuma manter quase toda a frase correta e trocar justamente um desses elementos.
+Regra de ouro: na Lei 14.133/2021, primeiro identifique quem está sujeito à lei, depois qual é o objeto, quais princípios e objetivos governam a atuação, quem conduz a contratação e qual conceito legal está sendo usado. A banca examinadora costuma manter quase toda a frase correta e trocar justamente um desses elementos.
 
 SESSÃO 01
 
@@ -59,15 +59,15 @@ Objetivos do art. 11 | Princípios do art. 5º
 São resultados que o processo licitatório deve perseguir. | São vetores jurídicos que orientam aplicação e interpretação da lei.
 Ex.: resultado mais vantajoso; justa competição; evitar sobrepreço. | Ex.: planejamento, transparência, motivação, competitividade, economicidade.
 O rol está no art. 11. | O rol está no art. 5º.
-A FCC pode misturar os dois conjuntos. | Não transforme objetivo em “princípio expresso” sem conferir o art. 5º.
+A banca examinadora pode misturar os dois conjuntos. | Não transforme objetivo em “princípio expresso” sem conferir o art. 5º.
 
-Como cai na FCC
+Como cai na prova
 
 A banca explora a troca entre menor preço e resultado mais vantajoso, entre objetivos e princípios, e entre licitação e contratação. Também gosta da literalidade constitucional: somente qualificações técnica e econômica indispensáveis podem ser exigidas.
 
 Pegadinha
 
-Pegadinha FCC: “A finalidade da licitação é sempre obter o menor preço.” Errado. A Lei fala em proposta apta a gerar o resultado de contratação mais vantajoso, inclusive quanto ao ciclo de vida do objeto.
+Pegadinha de prova: “A finalidade da licitação é sempre obter o menor preço.” Errado. A Lei fala em proposta apta a gerar o resultado de contratação mais vantajoso, inclusive quanto ao ciclo de vida do objeto.
 
 O que decorar
 
@@ -119,13 +119,13 @@ Unidade de atuação integrante da estrutura da Administração Pública. | Unid
 Não tem personalidade jurídica própria por essa definição. | Tem personalidade jurídica.
 Ex.: secretaria, tribunal enquanto órgão, departamento. | Ex.: autarquia, fundação com personalidade própria.
 
-Como cai na FCC
+Como cai na prova
 
 A banca frequentemente diz que a Lei 14.133 se aplica “somente ao Executivo” ou “somente à União”. Também inverte os conceitos de órgão e entidade e troca “Administração” por “Administração Pública”.
 
 Pegadinha
 
-Pegadinha FCC: órgãos do Judiciário não estão fora da Lei apenas por pertencerem a outro Poder. Quando exercem função administrativa, entram no âmbito do art. 1º.
+Pegadinha de prova: órgãos do Judiciário não estão fora da Lei apenas por pertencerem a outro Poder. Quando exercem função administrativa, entram no âmbito do art. 1º.
 
 O que decorar
 
@@ -174,13 +174,13 @@ Exclusão subjetiva | Determinado sujeito não segue o regime geral integral, co
 Exclusão material | Determinado tipo de contrato não se subordina à lei, como operação de crédito e gestão de dívida.
 Regime adaptado/especial | A lei ou seus princípios dialogam com regras específicas, como contratação no exterior ou financiamento internacional.
 
-Como cai na FCC
+Como cai na prova
 
 Questões costumam misturar empresa pública com autarquia, ou dizer que a gestão de reservas internacionais segue normalmente todo o procedimento da Lei 14.133. Também aparece a ideia falsa de que recursos internacionais afastam automaticamente princípios constitucionais.
 
 Pegadinha
 
-Pegadinha FCC: “Toda entidade controlada pelo Poder Público aplica a Lei 14.133 da mesma forma.” Errado. O art. 1º deve ser lido com o §1º e com regimes próprios.
+Pegadinha de prova: “Toda entidade controlada pelo Poder Público aplica a Lei 14.133 da mesma forma.” Errado. O art. 1º deve ser lido com o §1º e com regimes próprios.
 
 O que decorar
 
@@ -190,7 +190,7 @@ O que decorar
 
 O que levar para a prova
 
-Leve para a prova: diferencie “fora da lei” de “aplicação adaptada”. A FCC explora essa gradação.
+Leve para a prova: diferencie “fora da lei” de “aplicação adaptada”. A banca examinadora explora essa gradação.
 
 Check manual: consigo explicar por que autarquia e sociedade de economia mista recebem respostas diferentes.
 
@@ -244,13 +244,13 @@ Igualdade | Competitividade | Julgamento objetivo
 Tratamento isonômico. | Preservação de disputa real. | Aplicação de critérios definidos, sem arbítrio.
 Evita discriminação indevida. | Evita barreiras desnecessárias. | Evita escolha subjetiva fora das regras.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC tende a inserir na lista um valor plausível, porém não expresso no art. 5º, ou retirar princípios menos lembrados, como planejamento, eficácia, segregação de funções e desenvolvimento nacional sustentável.
+A banca examinadora tende a inserir na lista um valor plausível, porém não expresso no art. 5º, ou retirar princípios menos lembrados, como planejamento, eficácia, segregação de funções e desenvolvimento nacional sustentável.
 
 Pegadinha
 
-Pegadinha FCC: “planejamento é apenas etapa da fase preparatória, não princípio”. Errado: planejamento é princípio expresso do art. 5º. A fase de planejamento, estudada no M15, é outra coisa.
+Pegadinha de prova: “planejamento é apenas etapa da fase preparatória, não princípio”. Errado: planejamento é princípio expresso do art. 5º. A fase de planejamento, estudada no M15, é outra coisa.
 
 O que decorar
 
@@ -288,13 +288,13 @@ Foco: reduzir concentração de funções de risco, ocultação de erros e fraud
 Opera no desenho de papéis e controles. | Opera no sistema de decisão, estratégia, riscos e controles.
 Não significa multiplicar atos sem análise de risco. | Não significa transferir toda decisão cotidiana à autoridade máxima.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode dizer que segregação é princípio “implícito”, quando é expresso, ou afirmar que a alta administração responde apenas pela homologação. O art. 11 lhe atribui governança muito mais ampla.
 
 Pegadinha
 
-Pegadinha FCC: segregação de funções não é sinônimo de “cada ato deve ser praticado por uma pessoa diferente”. A lei fala em atuação simultânea em funções mais suscetíveis a riscos.
+Pegadinha de prova: segregação de funções não é sinônimo de “cada ato deve ser praticado por uma pessoa diferente”. A lei fala em atuação simultânea em funções mais suscetíveis a riscos.
 
 O que decorar
 
@@ -338,13 +338,13 @@ Agentes de funções essenciais: preferencialmente servidor efetivo ou empregado
 Exige atribuição/formação/qualificação compatível. | Tem missão legal de condução até homologação.
 Exige prevenção de vínculos e conflitos. | Atua com equipe de apoio e responsabilidade própria.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC gosta da troca “preferencialmente” por “obrigatoriamente” no art. 7º — e do movimento inverso no art. 8º. Também cobra parentesco até o terceiro grau, além de vínculos técnicos, comerciais, econômicos, financeiros, trabalhistas e civis.
+A banca examinadora gosta da troca “preferencialmente” por “obrigatoriamente” no art. 7º — e do movimento inverso no art. 8º. Também cobra parentesco até o terceiro grau, além de vínculos técnicos, comerciais, econômicos, financeiros, trabalhistas e civis.
 
 Pegadinha
 
-Pegadinha FCC: a lei não cria imunidade para quem seguiu parecer jurídico. O art. 10 prevê representação jurídica em condições específicas; isso não equivale a excluir automaticamente responsabilidade.
+Pegadinha de prova: a lei não cria imunidade para quem seguiu parecer jurídico. O art. 10 prevê representação jurídica em condições específicas; isso não equivale a excluir automaticamente responsabilidade.
 
 O que decorar
 
@@ -391,13 +391,13 @@ Equipe de apoio | Auxiliar | Dar suporte ao agente. | Não substitui o papel dec
 Comissão de contratação | Colegiada, mínimo de 3 na hipótese do art. 8º, §2º | Substitui o agente na hipótese legal e/ou exerce funções definidas na lei. | Solidariedade pelos atos da comissão, ressalvada divergência fundamentada registrada.
 Pregoeiro | Agente designado | Conduz o pregão. | É a denominação legal do agente responsável nessa modalidade.
 
-Como cai na FCC
+Como cai na prova
 
 A banca troca “individual” por “solidária” no agente, elimina a exceção da indução a erro pela equipe ou afirma que comissão pode ter dois membros na hipótese do art. 8º, §2º. Outra armadilha: dizer que pregoeiro é órgão distinto do agente de contratação.
 
 Pegadinha
 
-Pegadinha FCC: equipe de apoio auxilia; não transforma a condução em decisão colegiada. Já a comissão é colegiada e tem regime próprio de responsabilidade.
+Pegadinha de prova: equipe de apoio auxilia; não transforma a condução em decisão colegiada. Já a comissão é colegiada e tem regime próprio de responsabilidade.
 
 O que decorar
 
@@ -418,7 +418,7 @@ Definições do art. 6º: objetos
 
 Entenda primeiro
 
-O art. 6º funciona como um dicionário legal. A FCC usa definições quase literais e altera uma palavra-chave. Neste bloco, organize os conceitos pelo tipo de objeto, em vez de decorar uma lista sem conexão.
+O art. 6º funciona como um dicionário legal. A banca examinadora usa definições quase literais e altera uma palavra-chave. Neste bloco, organize os conceitos pelo tipo de objeto, em vez de decorar uma lista sem conexão.
 
 Regra jurídica
 
@@ -454,13 +454,13 @@ Serviço contínuo | Serviço por escopo
 Atende necessidade permanente ou prolongada da Administração. | Prestação específica em período predeterminado.
 A continuidade decorre da necessidade administrativa. | Pode ser prorrogado justificadamente pelo prazo necessário à conclusão do objeto.
 
-Como cai na FCC
+Como cai na prova
 
 Questões literais substituem “30 dias da ordem de fornecimento” por 60/90 dias ou pela assinatura do contrato. Também dizem que obra é qualquer atividade de engenharia, ignorando os requisitos de inovação/alteração substancial.
 
 Pegadinha
 
-Pegadinha FCC: “compra imediata” é definição legal própria. Não trate expressões coloquiais como “pronta entrega” como sinônimos automáticos sem verificar o dispositivo aplicável. Para o art. 6º, X, memorize até 30 dias da ordem de fornecimento.
+Pegadinha de prova: “compra imediata” é definição legal própria. Não trate expressões coloquiais como “pronta entrega” como sinônimos automáticos sem verificar o dispositivo aplicável. Para o art. 6º, X, memorize até 30 dias da ordem de fornecimento.
 
 O que decorar
 
@@ -501,13 +501,13 @@ Usa especificações usuais de mercado. | Exige justificativa prévia do contrat
 Não equivale a “objeto barato/simples”. | Não equivale automaticamente a “objeto caro”.
 Pode incluir serviço comum de engenharia. | Pode incluir serviço especial de engenharia.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma inverter a definição: “especial é o que pode ser objetivamente definido pelo edital”. Isso descreve comum, não especial.
 
 Pegadinha
 
-Pegadinha FCC: complexidade técnica isolada não resolve a questão. Pergunte se desempenho e qualidade são objetivamente padronizáveis por especificações usuais de mercado.
+Pegadinha de prova: complexidade técnica isolada não resolve a questão. Pergunte se desempenho e qualidade são objetivamente padronizáveis por especificações usuais de mercado.
 
 O que decorar
 
@@ -548,13 +548,13 @@ Inova espaço físico ou altera substancialmente imóvel. | Manutenção/adequa�
 Atividade privativa de arquiteto/engenheiro. | Engenharia/arquitetura/técnicos especializados, sem enquadrar como obra. | Idem, mas não padronizável como comum.
 Foco no efeito transformador qualificado. | Foco na preservação das características originais. | Foco na heterogeneidade/complexidade.
 
-Como cai na FCC
+Como cai na prova
 
 A banca retira a expressão “alteração substancial” ou afirma que todo serviço de engenharia é especial. A lei reconhece expressamente serviço comum de engenharia.
 
 Pegadinha
 
-Pegadinha FCC: “serviço de engenharia, por definição, não pode ser comum.” Errado. O art. 6º, XXI, “a”, define expressamente serviço comum de engenharia.
+Pegadinha de prova: “serviço de engenharia, por definição, não pode ser comum.” Errado. O art. 6º, XXI, “a”, define expressamente serviço comum de engenharia.
 
 O que decorar
 
@@ -602,13 +602,13 @@ Contratado elabora projeto básico + executivo. | Contratado elabora projeto exe
 Também executa obras/serviços e operações necessárias à entrega final. | Também executa obras/serviços e operações necessárias à entrega final.
 Maior transferência de desenvolvimento de projetos ao contratado. | Administração chega à contratação com projeto básico como referência.
 
-Como cai na FCC
+Como cai na prova
 
 A troca clássica é dizer que na semi-integrada o contratado elabora projeto básico e executivo. Isso descreve a integrada.
 
 Pegadinha
 
-Pegadinha FCC: “empreitada integral” não é sinônimo de “contratação integrada”. Uma descreve entrega integral do empreendimento; a outra possui definição própria sobre elaboração dos projetos e execução.
+Pegadinha de prova: “empreitada integral” não é sinônimo de “contratação integrada”. Uma descreve entrega integral do empreendimento; a outra possui definição própria sobre elaboração dos projetos e execução.
 
 O que decorar
 
@@ -659,13 +659,13 @@ Matriz de riscos | Mapa genérico de riscos
 Conceito legal: cláusula contratual de alocação de riscos/responsabilidades e equilíbrio inicial. | Expressão gerencial que pode existir no planejamento, mas não substitui automaticamente a matriz legal.
 Tem conteúdo mínimo no art. 6º, XXVII. | Pode ser ferramenta interna de gestão.
 
-Como cai na FCC
+Como cai na prova
 
 As principais trocas são básico × executivo, dizer que matriz de riscos é mero relatório interno, ou tratar o TR como documento exclusivo de obras.
 
 Pegadinha
 
-Pegadinha FCC: projeto executivo é mais detalhado, não “anterior e menos detalhado” que o projeto básico.
+Pegadinha de prova: projeto executivo é mais detalhado, não “anterior e menos detalhado” que o projeto básico.
 
 O que decorar
 
@@ -716,13 +716,13 @@ Pré-qualificação | Seleção prévia de interessados/objetos quanto a condiç
 PMI | Chamada para estudos/investigações/projetos da iniciativa privada. | Direito de preferência ao autor do estudo.
 Registro cadastral | Procedimento auxiliar de cadastramento. | SRP.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma chamar credenciamento de modalidade, confundir ARP com contrato e afirmar que quem produz estudo em PMI ganha preferência na futura licitação. A lei nega essas simplificações.
 
 Pegadinha
 
-Pegadinha FCC: procedimentos auxiliares não são modalidades de licitação. A lista do art. 78 é própria e diferente da lista de modalidades, que será estudada no M16.
+Pegadinha de prova: procedimentos auxiliares não são modalidades de licitação. A lista do art. 78 é própria e diferente da lista de modalidades, que será estudada no M16.
 
 O que decorar
 
@@ -742,7 +742,7 @@ Revisão integrada e quadro-mestre
 
 Entenda primeiro
 
-A última sessão serve para amarrar o módulo. A FCC frequentemente cria alternativas compostas: metade da frase vem do art. 5º, outra metade do art. 6º e a conclusão do art. 8º. O melhor antídoto é comparar conceitos parecidos.
+A última sessão serve para amarrar o módulo. A banca examinadora frequentemente cria alternativas compostas: metade da frase vem do art. 5º, outra metade do art. 6º e a conclusão do art. 8º. O melhor antídoto é comparar conceitos parecidos.
 
 Regra jurídica
 
@@ -779,13 +779,13 @@ SRP × ARP | Sistema/procedimentos × documento resultante de registro.
 PNCP × sítio eletrônico oficial | Portal nacional criado no art. 174 × categoria geral definida no art. 6º, LII.
 Compra imediata × contratação “de pronta entrega” | Definição do art. 6º, X: até 30 dias da ordem × expressão que deve ser lida no contexto do dispositivo específico, sem equiparação automática.
 
-Como cai na FCC
+Como cai na prova
 
 Leia a alternativa em blocos. Identifique qual artigo abastece cada oração e procure a palavra trocada: “preferencialmente”, “no mínimo 3”, “individualmente”, “solidariamente”, “30 dias”, “justificativa prévia”, “projeto básico”, “projeto executivo”.
 
 Pegadinha
 
-Pegadinha FCC: uma alternativa pode trazer três conceitos corretos e errar apenas a consequência jurídica. Não pare de ler quando reconhecer o primeiro trecho da lei.
+Pegadinha de prova: uma alternativa pode trazer três conceitos corretos e errar apenas a consequência jurídica. Não pare de ler quando reconhecer o primeiro trecho da lei.
 
 O que decorar
 
@@ -866,7 +866,7 @@ Leitura complementar curta
 
 O QUE DECORAR
 
-O que decorar — folha de alta incidência FCC
+O que decorar — folha de alta incidência em provas
 
 Tema | Fórmula de memorização
 Base constitucional | 37 XXI = licitar + igualdade + qualificação indispensável.
@@ -889,9 +889,9 @@ SRP × ARP | sistema × documento.
 Auxiliares | Cred — Pré — PMI — SRP — Cadastro.
 PNCP | divulgação centralizada obrigatória; contratação no portal é faculdade.
 
-CAMADA FCC
+CAMADA de prova
 
-Camada FCC — 24 pegadinhas de fechamento
+Camada de prova — 24 pegadinhas de fechamento
 
 • Planejamento é princípio expresso, não apenas atividade da fase preparatória.
 • Eficácia também é princípio expresso; não troque por efetividade na lista do art. 5º.
@@ -954,7 +954,7 @@ Para a definição legal trabalhada no M14, considera-se compra imediata aquela 
 • D) 30 dias da ordem de fornecimento.
 • E) 30 dias da publicação do edital.
 
-Gabarito: D Explicação: O art. 6º, X, considera imediata a compra com entrega em até 30 dias da ordem de fornecimento. A FCC pode trocar o marco inicial.
+Gabarito: D Explicação: O art. 6º, X, considera imediata a compra com entrega em até 30 dias da ordem de fornecimento. A banca examinadora pode trocar o marco inicial.
 
 Questão 4 - FÁCIL
 

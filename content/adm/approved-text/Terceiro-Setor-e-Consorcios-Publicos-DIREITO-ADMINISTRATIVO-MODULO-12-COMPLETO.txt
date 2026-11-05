@@ -1,7 +1,7 @@
 ﻿Terceiro Setor e Consórcios Públicos
 DIREITO ADMINISTRATIVO · MÓDULO 12 · COMPLETO
 
-DIREITO ADMINISTRATIVO · M12 · FCC
+DIREITO ADMINISTRATIVO · M12 · Concursos
 
 Terceiro Setor
 e Consórcios Públicos
@@ -14,7 +14,7 @@ Fontes: Lei 9.637/98; Lei 9.790/99; Lei 8.958/94; Lei 13.019/14 apenas como pont
 
 ADM M12 — Terceiro Setor e Consórcios Públicos
 
-Central de Estudos — TJ-CE / Analista · FCC
+Central de Estudos — TJ-CE / Analista · Concursos
 Modo: OFFLINE · pronto para integração futura · não publicado
 UID futuro da Central: adm-12-12-consorcios-e-terceiro-setor
 Fontes normativas conferidas: 18/09/2026.
@@ -56,9 +56,9 @@ não há, por regra, criação como pessoa administrativa estatal | integra form
 vínculo por qualificação, contrato, termo ou ajuste | vínculo institucional com o ente instituidor
 controle ligado ao regime da entidade e ao recurso/ajuste | controles próprios da Administração Pública
 
-Como a FCC costuma cobrar
+Como a banca examinadora costuma cobrar
 
-A FCC explora frases como “entidade paraestatal integra a Administração indireta” ou “o recebimento de contribuição pública transforma o Sistema S em entidade estatal”. A chave é separar natureza privada de incidência de controles públicos.
+A banca examinadora explora frases como “entidade paraestatal integra a Administração indireta” ou “o recebimento de contribuição pública transforma o Sistema S em entidade estatal”. A chave é separar natureza privada de incidência de controles públicos.
 
 Pegadinha: controle público não equivale a pertencimento à Administração.
 
@@ -114,7 +114,7 @@ não nasce da qualificação como “ente público” | criada/autorizada no reg
 contrato de gestão da Lei 9.637 | atuação por competência legal institucional
 empregados privados | regime de pessoal conforme natureza da entidade pública
 
-Como a FCC costuma cobrar
+Como a banca examinadora costuma cobrar
 
 A banca gosta de trocar OS = contrato de gestão por OSCIP = termo de parceria. Também cobra que a OS é privada e sem fins lucrativos, embora possa receber fomento público.
 
@@ -214,7 +214,7 @@ Exemplo
 
 Uma associação privada sem fins lucrativos, existente há quatro anos, que promove educação gratuita e atende integralmente aos arts. 1º, 3º e 4º, poderá requerer qualificação. Satisfeitos os requisitos e ausentes impedimentos, a qualificação não é decidida por “preferência política”: a lei a estrutura como ato vinculado.
 
-Como a FCC costuma cobrar
+Como a banca examinadora costuma cobrar
 
 A banca costuma contrastar OS = qualificação com juízo de conveniência/oportunidade (sob princípios objetivos) e OSCIP = qualificação vinculada.
 
@@ -321,7 +321,7 @@ apoia IFES/ICTs em projetos | exerce competências públicas institucionais
 fiscalização e credenciamento especiais | regime público próprio conforme sua natureza
 não vira estatal porque apoia universidade | integra a estrutura administrativa
 
-Como a FCC costuma cobrar
+Como a banca examinadora costuma cobrar
 
 Sistema S, OS e OSCIP costumam aparecer juntos como entidades privadas colaboradoras, mas com regimes jurídicos distintos. A resposta correta normalmente preserva duas ideias ao mesmo tempo: autonomia privada e incidência de controles pelo uso de recursos públicos.
 
@@ -364,7 +364,7 @@ Doze comparações que precisam estar automáticas
 • Sistema S × OS/OSCIP: serviço social autônomo de regime próprio × qualificações estatais de entidades privadas.
 • Fundação de apoio × fundação pública: privada de apoio × entidade da Administração indireta.
 
-Camada FCC
+Camada de prova
 
 Uma questão pode chamar todas essas entidades de “paraestatais” em sentido doutrinário amplo. Isso não autoriza concluir que tenham o mesmo instrumento, o mesmo modo de qualificação ou idêntico regime de compras e pessoal.
 
@@ -423,7 +423,7 @@ objetivos de cooperação federativa | autoriza gestão associada de serviços
 Lei 11.107 + Decreto 6.017 | CF 241 e regime legal aplicável
 pode celebrar vários instrumentos | base para gestão associada e contrato de programa quando cabível
 
-Camada FCC
+Camada de prova
 
 A banca pode afirmar que consórcio é formado “por entes da mesma espécie e do mesmo nível”. Errado. Também pode tentar incluir particulares como consorciados. Errado: o conceito legal exige entes da Federação.
 
@@ -477,7 +477,7 @@ integra expressamente a Administração indireta de todos | lei não reproduz es
 normas públicas de licitação, contratos, contas e pessoal | mesmas normas públicas nesses quatro pontos
 pessoal CLT | pessoal CLT
 
-Como a FCC costuma cobrar
+Como a banca examinadora costuma cobrar
 
 Um distrator frequente é dizer que somente o consórcio privado usa CLT. A redação atual do art. 6º, §2º, fala em consórcio de direito público ou privado.
 
@@ -536,7 +536,7 @@ subscrito pelos interessados | resulta da ratificação legal
 deve ser publicado | consolida os participantes e obrigações
 ainda está no caminho de formação | consórcio é estruturado a partir dele
 
-Camada FCC
+Camada de prova
 
 A banca troca a ordem e diz que primeiro se cria a pessoa jurídica e depois se ratifica o protocolo. Errado. A lógica é exatamente a inversa.
 
@@ -713,7 +713,7 @@ Alterar = maioria; extinguir = todos.
 
 SESSÃO 14
 
-Camada FCC: comparações finais e pegadinhas de alto rendimento
+Camada de prova: comparações finais e pegadinhas de alto rendimento
 
 Quadro das 12 comparações obrigatórias
 
@@ -731,7 +731,7 @@ Consórcio público × convênio de cooperação | pessoa jurídica × pacto fed
 Protocolo × contrato de consórcio | preliminar publicado/ratificado × instrumento constitutivo
 Rateio × programa | financiamento das despesas × obrigações de gestão associada de serviço
 
-Vinte afirmações que a FCC poderia inverter
+Vinte afirmações que a banca examinadora poderia inverter
 
 • Terceiro Setor não integra automaticamente a Administração indireta.
 • OS e OSCIP são qualificações, não novos tipos societários.
@@ -754,7 +754,7 @@ Vinte afirmações que a FCC poderia inverter
 • Gestor não responde pessoalmente só porque o consórcio contraiu obrigação.
 • Desde 2023, alteração = maioria dos entes; extinção = todos.
 
-Mini-casos FCC
+Mini-casos de prova
 
 Caso 1. Município afirma que uma associação virou “ente público” depois de qualificada como OS. Erro: a qualificação não altera a natureza privada.
 

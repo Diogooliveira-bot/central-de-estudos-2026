@@ -30,7 +30,7 @@ var PRELUDE=String.raw`
 
  <section class="adm-m2-orientacao">
   <h3>Como estudar este módulo</h3>
-  <p>Organização Administrativa fica fácil quando você responde sempre às mesmas quatro perguntas: <b>quem tem personalidade jurídica?</b> <b>houve criação de uma nova pessoa?</b> <b>existe hierarquia?</b> <b>qual é o regime jurídico predominante?</b> A FCC costuma trocar uma dessas respostas e manter o restante da frase correto.</p>
+  <p>Organização Administrativa fica fácil quando você responde sempre às mesmas quatro perguntas: <b>quem tem personalidade jurídica?</b> <b>houve criação de uma nova pessoa?</b> <b>existe hierarquia?</b> <b>qual é o regime jurídico predominante?</b> A banca examinadora costuma trocar uma dessas respostas e manter o restante da frase correto.</p>
   <div class="adm-m2-flow"><span>pessoa</span><i>→</i><span>estrutura</span><i>→</i><span>vínculo</span><i>→</i><span>regime</span><i>→</i><span>controle</span><i>→</i><span>pegadinha</span></div>
   <div class="adm-m2-callout exam"><b>Regra de ouro:</b> órgão é centro de competências <b>sem personalidade jurídica própria</b>; entidade é pessoa jurídica. Administração Indireta é composta por entidades; ministérios, secretarias, tribunais e delegacias são órgãos das respectivas pessoas políticas.</div>
  </section>

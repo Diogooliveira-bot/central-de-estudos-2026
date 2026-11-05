@@ -8,7 +8,7 @@ sections:[
 {title:'Autonomia privada não é ilimitada',bullets:['Normas cogentes, boa-fé objetiva, função social, ordem pública e leis especiais podem limitar o conteúdo contratual.','Contrato atípico é permitido, mas continua submetido às normas gerais do Código.']}],
 table:{headers:['Ideia','Regra de prova'],rows:[['Liberdade contratual','Existe, mas dentro da função social'],['Intervenção judicial','Mínima nas relações privadas'],['Revisão','Excepcional e limitada'],['Alocação de riscos','Deve ser respeitada, em regra'],['Paridade civil/empresarial','Presumida, salvo elementos concretos ou regime especial']]},
 example:'Duas empresas negociam contrato detalhado e distribuem expressamente o risco de oscilação ordinária de custos. Em regra, essa alocação deve ser respeitada; revisão judicial não é mecanismo automático para reescrever mau negócio.',
-trap:'A FCC pode transformar a presunção de paridade do art. 421-A em presunção absoluta. Está errado: ela pode ser afastada por elementos concretos e coexistem regimes jurídicos especiais.',
+trap:'A banca examinadora pode transformar a presunção de paridade do art. 421-A em presunção absoluta. Está errado: ela pode ser afastada por elementos concretos e coexistem regimes jurídicos especiais.',
 memorize:['421 = função social + intervenção mínima + revisão excepcional.','421-A = presunção de paridade/simetria.','Riscos pactuados devem ser respeitados.','Revisão não é regra; é excepcional e limitada.']
 },
 {
@@ -53,7 +53,7 @@ sections:[
 {title:'Não misturar classificações',bullets:['Contrato bilateral não é sinônimo de oneroso.','Contrato unilateral não é necessariamente gratuito; o mútuo com juros é exemplo doutrinário de contrato unilateral oneroso.','As classificações usam critérios distintos e podem combinar-se.']}],
 table:{headers:['Critério','Gratuito','Oneroso'],rows:[['Vantagem/sacrifício','Vantagem principal para um polo','Ambos suportam sacrifício para obter vantagem'],['Interpretação','Restritiva nos negócios benéficos','Regime comum'],['Garantias legais','Mais limitadas','Evicção e vícios têm incidência típica conforme requisitos']]},
 example:'Mútuo com juros pode ser unilateral quanto às obrigações principais e oneroso quanto à vantagem patrimonial. Não há contradição porque os critérios são diferentes.',
-trap:'A FCC pode afirmar que todo contrato unilateral é gratuito. Falso: unilateralidade analisa quem se obriga; onerosidade analisa vantagem e sacrifício patrimonial.',
+trap:'A banca examinadora pode afirmar que todo contrato unilateral é gratuito. Falso: unilateralidade analisa quem se obriga; onerosidade analisa vantagem e sacrifício patrimonial.',
 memorize:['Gratuito/oneroso = critério econômico.','Bilateral ≠ oneroso.','Unilateral ≠ gratuito.','Vícios/evicção têm forte conexão com contratos onerosos/comutativos.']
 },
 {

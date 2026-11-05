@@ -3,17 +3,17 @@ DIREITO ADMINISTRATIVO · MÓDULO 09 · COMPLETO
 
 DIREITO ADMINISTRATIVOMÓDULO 09
 
-Apostila de estudo · nível Analista · foco FCC
+Apostila de estudo · nível Analista · foco em concursos
 
 Serviços Públicos
 
 Conceito, classificações, prestação direta e indireta, concessão, permissão, autorização, serviço adequado, usuários, tarifas, equilíbrio, intervenção, extinção e bens reversíveis.
 
-Base conferida em 17/09/2026: Lei 8.987/1995 (texto compilado oficial), Constituição art. 175, Lei 9.074/1995, CTN nos pontos de taxa e jurisprudência STF/STJ apenas nos pontos de alto rendimento. Os materiais TEC da Biblioteca foram usados somente para calibrar cobertura e padrão FCC.
+Base conferida em 17/09/2026: Lei 8.987/1995 (texto compilado oficial), Constituição art. 175, Lei 9.074/1995, CTN nos pontos de taxa e jurisprudência STF/STJ apenas nos pontos de alto rendimento. Os materiais TEC da Biblioteca foram usados somente para calibrar cobertura e padrão de prova.
 
 Como estudar este módulo
 
-Em cada questão, separe titularidade, executor, instrumento, tarifa/usuário e fiscalização/extinção. A maior parte das pegadinhas da FCC troca uma característica de um instituto por outra.
+Em cada questão, separe titularidade, executor, instrumento, tarifa/usuário e fiscalização/extinção. A maior parte das pegadinhas de prova troca uma característica de um instituto por outra.
 
 titularidade→prestação→instrumento→usuário/tarifa→fiscalização/extinção
 
@@ -55,7 +55,7 @@ Exemplo
 
 Uma empresa privada que explora uma rodovia por concessão não se torna titular do serviço. Ela recebe a execução, cobra a tarifa nas condições reguladas e fica submetida a metas, fiscalização, continuidade e reversão de bens vinculados quando previstos.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma trocar titularidade por execução. A frase “a concessão transfere ao particular a titularidade do serviço” está errada. A concessão transfere a prestação/execução pelo prazo contratual, preservando a competência e os poderes do concedente.
 
@@ -103,7 +103,7 @@ Exemplo
 
 Município presta transporte coletivo por secretaria própria: prestação centralizada. Se cria entidade pública para executá-lo, há descentralização administrativa conforme a lei. Se licita e celebra concessão com empresa privada, continua titular do serviço, mas delega sua execução.
 
-FCC: “descentralizar” não significa necessariamente “privatizar”. A descentralização pode ocorrer para entidade pública ou para particular delegatário.
+Na prova: “descentralizar” não significa necessariamente “privatizar”. A descentralização pode ocorrer para entidade pública ou para particular delegatário.
 
 O que decorar: particular concessionário/permissionário recebe execução; poder concedente conserva titularidade, regulação e fiscalização.
 
@@ -115,7 +115,7 @@ Classificações I — próprios, impróprios, administrativos, comerciais e soc
 
 Entenda primeiro
 
-As classificações de serviços públicos são doutrinárias e podem variar de nomenclatura entre autores. Em concurso, a resposta deve seguir a concepção empregada pela banca. O material FCC/TEC pesquisado mostra cobrança recorrente das categorias abaixo.
+As classificações de serviços públicos são doutrinárias e podem variar de nomenclatura entre autores. Em concurso, a resposta deve seguir a concepção empregada pela banca. As categorias abaixo ajudam a organizar o estudo para concursos.
 
 Próprios × impróprios
 
@@ -123,7 +123,7 @@ Categoria | Ideia central | Regime/execução | Atenção de prova
 Próprios | Atividades que o Estado assume como suas para atender necessidades coletivas | Prestação estatal direta ou por forma admitida pelo ordenamento, sob regime público | A noção se liga à assunção estatal da atividade
 Impróprios | Atividades úteis à coletividade, mas não assumidas pelo Estado com exclusividade como serviço público em sentido próprio | Podem ser desenvolvidas por particulares sob regime privado, sujeitos a autorização/regulação/polícia quando cabível | Não confundir “impróprio” com “serviço ilegal” ou “serviço mal prestado”
 
-A definição exata de “próprio/impróprio” pode variar na doutrina. Para FCC, o foco prático é reconhecer que o impróprio não representa simples execução indireta de um serviço estatal exclusivo; costuma aproximar-se de atividade privada de interesse coletivo sujeita a disciplina pública.
+A definição exata de “próprio/impróprio” pode variar na doutrina. Para a prova, o foco prático é reconhecer que o impróprio não representa simples execução indireta de um serviço estatal exclusivo; costuma aproximar-se de atividade privada de interesse coletivo sujeita a disciplina pública.
 
 Administrativos, comerciais/industriais e sociais
 
@@ -136,7 +136,7 @@ Pegadinha importante — serviço social não é sinônimo de monopólio estatal
 
 Saúde e educação, por exemplo, possuem forte responsabilidade estatal, mas a Constituição também admite atuação privada nas condições legais. Quando o particular atua por direito próprio, não é necessariamente concessionário de serviço público. Quando integra regime de delegação/contratação pública, o enquadramento depende do instrumento jurídico concreto.
 
-Como cai na FCC
+Como cai na prova
 
 A banca tende a fornecer descrições e pedir a classificação. Não decore só exemplos: identifique quem é atendido, qual a finalidade e se o Estado assumiu juridicamente a atividade.
 
@@ -177,7 +177,7 @@ Exclusivos × não exclusivos: duas perguntas diferentes
 
 Portanto, uma questão pode falar em “serviço de competência da União” e, ao mesmo tempo, a concessão não ser exclusiva para um único prestador.
 
-FCC: uti universi = satisfação geral/indivisível; uti singuli = fruição individualizável. A troca dessas definições é uma pegadinha clássica.
+Na prova: uti universi = satisfação geral/indivisível; uti singuli = fruição individualizável. A troca dessas definições é uma pegadinha clássica.
 
 O que levar: classificação doutrinária não substitui a leitura do regime constitucional do serviço concreto.
 
@@ -224,7 +224,7 @@ Exemplo
 
 Uma empresa de transporte mantém a frota em circulação, mas ignora manutenção e opera com falhas de segurança. Há continuidade física, porém não há serviço adequado, pois segurança e atualidade também compõem o padrão legal.
 
-FCC: a banca costuma perguntar o conteúdo de “atualidade”. Decore o conjunto: modernidade + conservação + melhoria + expansão.
+Na prova: a banca costuma perguntar o conteúdo de “atualidade”. Decore o conjunto: modernidade + conservação + melhoria + expansão.
 
 Pegadinha: modicidade não obriga tarifa zero; o regime busca compatibilizar acesso, qualidade, investimentos e equilíbrio econômico-financeiro.
 
@@ -274,7 +274,7 @@ Exemplo
 
 Usuário deixa de pagar conta atual de serviço concedido. A empresa não pode simplesmente cortar sem observar aviso e regras legais. Também não pode escolher sexta-feira para iniciar a suspensão por inadimplemento. Se o débito é muito antigo e o consumo atual está regular, a cobrança deve seguir os meios próprios, e não ser transformada automaticamente em corte do serviço atual.
 
-FCC: “princípio da continuidade impede toda interrupção” = errado. A Lei 8.987 prevê exceções expressas.
+Na prova: “princípio da continuidade impede toda interrupção” = errado. A Lei 8.987 prevê exceções expressas.
 
 O que decorar: emergência; técnica/segurança com aviso; inadimplemento com aviso + interesse coletivo; inadimplemento não inicia corte em sexta/sábado/domingo/feriado/véspera.
 
@@ -317,7 +317,7 @@ Exemplo
 
 Um Estado licita rodovia. A vencedora é sociedade empresária que assume manutenção, atendimento e obras definidas no contrato por prazo certo. O Estado continua titular do serviço e fiscaliza qualidade, tarifas, segurança e obrigações. A concessionária não se transforma em “dona da rodovia pública” nem recebe liberdade empresarial plena para alterar tarifas unilateralmente.
 
-FCC: concessão = contrato + licitação + PJ/consórcio + prazo determinado + execução por conta e risco. A banca costuma substituir um desses elementos por característica da permissão.
+Na prova: concessão = contrato + licitação + PJ/consórcio + prazo determinado + execução por conta e risco. A banca costuma substituir um desses elementos por característica da permissão.
 
 Pegadinha: “concessão só pode ser precedida de concorrência” ficou incompleto após a Lei 14.133/2021: a definição legal também menciona diálogo competitivo.
 
@@ -353,7 +353,7 @@ Exemplo
 
 Se um Município delega serviço por permissão, a licitação continua necessária. A banca pode oferecer alternativa dizendo que a precariedade dispensa licitação — está errada.
 
-FCC: permissão pode ser concedida a pessoa física ou jurídica; concessão, pela definição legal, a pessoa jurídica ou consórcio.
+Na prova: permissão pode ser concedida a pessoa física ou jurídica; concessão, pela definição legal, a pessoa jurídica ou consórcio.
 
 Pegadinha: precariedade não elimina o contrato de adesão nem a exigência de licitação.
 
@@ -385,7 +385,7 @@ Lei 9.074/1995
 
 A Lei 9.074 complementa concessões/permissões e contém referências a autorizações em setores específicos. Alterações legislativas mais recentes também criaram regimes próprios, como o ferroviário. Para o M9, basta compreender que não existe uma teoria única de autorização capaz de ignorar a lei setorial.
 
-FCC: em questões gerais, a banca costuma contrastar autorização clássica (unilateral) com concessão (contratual). Se a questão trouxer setor regulado, priorize a lei específica.
+Na prova: em questões gerais, a banca costuma contrastar autorização clássica (unilateral) com concessão (contratual). Se a questão trouxer setor regulado, priorize a lei específica.
 
 Pegadinha: não afirme que toda autorização é necessariamente sem prazo, livremente revogável e sem qualquer procedimento. Essa generalização pode ser falsa em regimes setoriais modernos.
 
@@ -430,7 +430,7 @@ Fiscalização não transfere a gestão cotidiana
 
 A concessionária conserva autonomia empresarial para executar o contrato, mas sujeita-se a controle público intenso. A fiscalização não transforma o concedente em gestor operacional diário, nem reduz a responsabilidade da concessionária pelos danos causados.
 
-FCC: fiscalização do poder concedente não exclui nem atenua a responsabilidade da concessionária — regra expressa do art. 25.
+Na prova: fiscalização do poder concedente não exclui nem atenua a responsabilidade da concessionária — regra expressa do art. 25.
 
 ☐ Check manual — separo competência de regulação/fiscalização da obrigação de executar o serviço.
 
@@ -500,7 +500,7 @@ Dano a usuário | Pode incidir responsabilidade objetiva constitucional
 Dano a não usuário ligado ao serviço | STF Tema 130 admite responsabilidade objetiva
 Pretensão de solidariedade automática do Estado | Não presumir; depende de fundamento jurídico específico e do caso
 
-FCC: a expressão “sem que a fiscalização exclua ou atenue essa responsabilidade” é literal e muito aproveitável em alternativa.
+Na prova: a expressão “sem que a fiscalização exclua ou atenue essa responsabilidade” é literal e muito aproveitável em alternativa.
 
 Pegadinha: não confunda responsabilidade objetiva com responsabilidade integral. Nexo causal continua indispensável.
 
@@ -542,7 +542,7 @@ Tarifas diferenciadas
 
 O art. 13 permite diferenciação tarifária em função de características técnicas e custos específicos de atendimento a segmentos distintos. Isso é compatível com generalidade quando existe justificativa legítima; isonomia não significa tratar situações de custo objetivamente diferentes de modo necessariamente idêntico.
 
-FCC: receitas alternativas não são ignoradas no equilíbrio inicial; a lei diz o contrário: devem ser obrigatoriamente consideradas.
+Na prova: receitas alternativas não são ignoradas no equilíbrio inicial; a lei diz o contrário: devem ser obrigatoriamente consideradas.
 
 Pegadinha: modicidade ≠ tarifa única; o art. 13 admite diferenciação por características técnicas e custos específicos.
 
@@ -583,7 +583,7 @@ Exemplo
 
 Se o poder concedente altera unilateralmente obrigações e exige investimento adicional não previsto, afetando a equação inicial, a lei determina restabelecimento concomitante. Se houve mera ineficiência gerencial da concessionária dentro de risco ordinário, não há direito automático de repassar a perda ao usuário.
 
-FCC: alteração unilateral + impacto no equilíbrio inicial = dever de restabelecimento pelo concedente. Tributo/encargo legal posterior à proposta com impacto = revisão para mais ou para menos, salvo imposto de renda.
+Na prova: alteração unilateral + impacto no equilíbrio inicial = dever de restabelecimento pelo concedente. Tributo/encargo legal posterior à proposta com impacto = revisão para mais ou para menos, salvo imposto de renda.
 
 O que decorar: reajuste atualiza; revisão recompõe/reexamina; ambos devem ser lidos conforme edital, contrato, lei e regulação.
 
@@ -626,7 +626,7 @@ Não cria vínculo jurídico com o concedente | Exige autorização expressa do 
 Não substitui concessionária | Subconcessionário assume direitos/obrigações nos limites da subconcessão
 Não exige concorrência pela Lei 8.987 só por ser terceirização | Subconcessão exige concorrência
 
-Pegadinha: terceirizar atividades não é o mesmo que subconceder o serviço. A FCC pode misturar os requisitos.
+Pegadinha: terceirizar atividades não é o mesmo que subconceder o serviço. A banca examinadora pode misturar os requisitos.
 
 ☐ Check manual — sei diferenciar terceiro contratado, subconcessionário e transferência da concessão.
 
@@ -658,7 +658,7 @@ Por que a reversibilidade existe
 
 A razão funcional é a continuidade: seria incompatível com o regime do serviço que, ao terminar o contrato, toda infraestrutura indispensável desaparecesse da disponibilidade pública de um dia para o outro.
 
-FCC: “todos os bens da concessionária revertem ao poder concedente” = errado. A lei fala em bens reversíveis conforme edital e contrato.
+Na prova: “todos os bens da concessionária revertem ao poder concedente” = errado. A lei fala em bens reversíveis conforme edital e contrato.
 
 Pegadinha: reversão não significa confisco gratuito. Investimentos não amortizados em bens reversíveis podem ser indenizáveis conforme a hipótese legal e o contrato.
 
@@ -692,7 +692,7 @@ Exemplo
 
 Falhas graves colocam a continuidade em risco. O concedente decreta intervenção, assume temporariamente a gestão e instaura processo. Se a apuração revela descumprimento apto à caducidade, poderá seguir o procedimento de extinção; se a causa não se confirma, devolve a administração.
 
-FCC: 30 dias para instaurar o procedimento; até 180 dias para concluí-lo. A intervenção não extingue automaticamente a concessão.
+Na prova: 30 dias para instaurar o procedimento; até 180 dias para concluí-lo. A intervenção não extingue automaticamente a concessão.
 
 ☐ Check manual — sei a sequência decreto → 30 dias → processo → 180 dias → retorno ou extinção cabível.
 
@@ -748,7 +748,7 @@ Anulação ≠ encampação
 • anulação: vício de legalidade;
 • encampação: contrato válido, mas o Poder Público retoma por interesse público, com requisitos próprios.
 
-FCC: interesse público + lei específica + indenização prévia = encampação. Inexecução da concessionária + processo + decreto + sem indenização prévia = caducidade.
+Na prova: interesse público + lei específica + indenização prévia = encampação. Inexecução da concessionária + processo + decreto + sem indenização prévia = caducidade.
 
 Pegadinha: “revogação da concessão por conveniência” não é a fórmula da Lei 8.987 para o contrato de concessão; a retomada por interesse público é encampação. Já a permissão tem precariedade e revogabilidade unilateral expressas no art. 40.
 
@@ -756,9 +756,9 @@ Pegadinha: “revogação da concessão por conveniência” não é a fórmula 
 
 SESSÃO 19
 
-Quadro-mestre FCC — como resolver qualquer questão de Serviços Públicos
+Quadro-mestre de prova — como resolver qualquer questão de Serviços Públicos
 
-Par que a FCC mistura | Diferença que resolve
+Par que a banca examinadora mistura | Diferença que resolve
 Serviço público × atividade econômica | responsabilidade/titularidade pública e regime especial × livre iniciativa sob regulação
 Titularidade × execução | poder concedente conserva titularidade × delegatário executa
 Centralização × descentralização | órgão do próprio ente × outra pessoa jurídica
@@ -797,7 +797,7 @@ Travas de segurança para alternativas
 • bens reversíveis não são todos os bens empresariais;
 • encampação e caducidade têm causas opostas.
 
-Regra final: em Serviços Públicos, a FCC costuma vencer o candidato por troca de uma única característica entre institutos próximos. Resolva por elementos: titularidade, instrumento, licitação, sujeito, prazo, causa e efeito.
+Regra final: em Serviços Públicos, a banca examinadora costuma vencer o candidato por troca de uma única característica entre institutos próximos. Resolva por elementos: titularidade, instrumento, licitação, sujeito, prazo, causa e efeito.
 
 ☐ Check manual — consigo resolver uma alternativa identificando instituto, requisito e consequência sem depender só de palavras decoradas.
 

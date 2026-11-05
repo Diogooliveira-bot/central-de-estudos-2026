@@ -3,13 +3,13 @@ DIREITO ADMINISTRATIVO · MÓDULO 16 · COMPLETO
 
 DIREITO ADMINISTRATIVOMÓDULO 16
 
-Apostila de estudo · nível Analista · padrão FCC
+Apostila de estudo · nível Analista · padrão de prova
 
 Licitações — Procedimento e Modalidades
 
 Art. 17, modalidades, critérios, modos de disputa, edital e prazos, julgamento, habilitação, recursos e encerramento.
 
-Base conferida em 18/09/2026: Lei nº 14.133/2021 consolidada no Planalto; PDF normativo do pacote; materiais TEC da Biblioteca para cobertura e padrão FCC; Central v6.7.0 consultada somente em leitura. Este artefato é OFFLINE e não publica nem altera TEC, Anki, Lei em Dia ou progresso.
+Base conferida em 18/09/2026: Lei nº 14.133/2021 consolidada no Planalto; PDF normativo do pacote; materiais TEC da Biblioteca para cobertura e padrão de prova; Central v6.7.0 consultada somente em leitura. Este artefato é OFFLINE e não publica nem altera TEC, Anki, Lei em Dia ou progresso.
 
 Como usar este módulo
 
@@ -23,7 +23,7 @@ Entenda primeiro
 
 A Lei nº 14.133/2021 organiza o procedimento licitatório em uma sequência lógica. A fase preparatória — estudada em profundidade no M15 — define o problema, o objeto, a estratégia de contratação e as regras do futuro certame. O M16 começa no ponto em que esse planejamento passa a ser projetado para o mercado: publica-se o edital, recebem-se as ofertas, julgam-se as propostas, verifica-se a habilitação, concentra-se a discussão recursal e a autoridade superior encerra o procedimento.
 
-O ponto mais cobrado pela FCC é a mudança de lógica em relação ao modelo clássico da Lei nº 8.666/1993: na Lei nº 14.133/2021, a regra é julgar antes de habilitar. A banca frequentemente tenta recolocar a habilitação antes das propostas ou antes do julgamento como se fosse a ordem normal.
+O ponto mais cobrado pela banca examinadora é a mudança de lógica em relação ao modelo clássico da Lei nº 8.666/1993: na Lei nº 14.133/2021, a regra é julgar antes de habilitar. A banca frequentemente tenta recolocar a habilitação antes das propostas ou antes do julgamento como se fosse a ordem normal.
 
 Regra jurídica
 
@@ -58,9 +58,9 @@ Compare
 
 Fase é um momento do procedimento. Modalidade é o modelo jurídico do certame (pregão, concorrência etc.). Critério de julgamento é a régua usada para escolher a melhor proposta. Modo de disputa é a dinâmica pela qual as ofertas são apresentadas. Uma questão pode combinar os quatro conceitos sem que eles se confundam.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC troca a posição de julgamento e habilitação; afirma que a forma presencial é a regra; ou diz que amostra/prova de conceito pertence necessariamente à habilitação. Na Lei nº 14.133/2021, a amostra pode integrar a análise de conformidade na fase de julgamento, desde que o edital preveja.
+A banca examinadora troca a posição de julgamento e habilitação; afirma que a forma presencial é a regra; ou diz que amostra/prova de conceito pertence necessariamente à habilitação. Na Lei nº 14.133/2021, a amostra pode integrar a análise de conformidade na fase de julgamento, desde que o edital preveja.
 
 Pegadinha
 
@@ -123,7 +123,7 @@ Compare
 
 Não confunda inversão de fases com diálogo competitivo. Na inversão, muda-se a posição da habilitação dentro do rito. No diálogo competitivo, a própria modalidade tem uma etapa estruturada de diálogo para desenvolver solução adequada antes das propostas finais.
 
-Como cai na FCC
+Como cai na prova
 
 A banca tende a retirar um dos três requisitos: “ato motivado”, “benefícios explicitados” ou “previsão no edital”. Se faltar qualquer deles, a afirmação sobre a inversão estará incompleta. Outra armadilha é dizer que a inversão torna obrigatória a apresentação prévia da regularidade fiscal por todos os licitantes.
 
@@ -180,9 +180,9 @@ Compare
 
 Valor ainda pode influenciar outras regras da Lei, mas não funciona como chave geral de escolha entre pregão e concorrência. Essa é uma ruptura importante com a memorização das faixas da Lei nº 8.666/1993.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC mistura “tomada de preços”, “convite” ou “hasta pública” entre as modalidades atuais; ou apresenta critério de julgamento como se fosse modalidade. Também explora a proibição de criar ou combinar modalidades.
+A banca examinadora mistura “tomada de preços”, “convite” ou “hasta pública” entre as modalidades atuais; ou apresenta critério de julgamento como se fosse modalidade. Também explora a proibição de criar ou combinar modalidades.
 
 Pegadinha
 
@@ -245,9 +245,9 @@ Compare
 
 Comum não significa simples ou barato. Um objeto pode ter alto valor e continuar comum se seus padrões forem objetivamente definíveis por especificações usuais de mercado. Especial não significa automaticamente “caro”: a especialidade é técnica/mercadológica, não uma faixa de valor.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC costuma usar a definição legal do pregão de forma quase literal; troca “menor preço ou maior desconto” por “técnica e preço”; ou afirma que qualquer serviço de engenharia exclui pregão. A exceção dos serviços comuns de engenharia é ponto clássico.
+A banca examinadora costuma usar a definição legal do pregão de forma quase literal; troca “menor preço ou maior desconto” por “técnica e preço”; ou afirma que qualquer serviço de engenharia exclui pregão. A exceção dos serviços comuns de engenharia é ponto clássico.
 
 Pegadinha
 
@@ -310,9 +310,9 @@ Compare
 
 No concurso, a Administração procura qualidade intelectual/artística. No leilão, busca a melhor oferta econômica de aquisição do bem alienado. O maior lance não se transfere para pregão ou concorrência.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC já explorou exatamente as particularidades do leilão: inexistência de cadastro prévio, ausência de habilitação e homologação após lances, recurso e pagamento. Também costuma confundir concurso licitatório com concurso público de pessoal.
+A banca examinadora já explorou exatamente as particularidades do leilão: inexistência de cadastro prévio, ausência de habilitação e homologação após lances, recurso e pagamento. Também costuma confundir concurso licitatório com concurso público de pessoal.
 
 Pegadinha
 
@@ -381,7 +381,7 @@ Compare
 
 Na negociação do art. 61, a Administração já julgou as propostas e busca melhorar as condições com o primeiro colocado. No diálogo competitivo, o diálogo serve para construir ou identificar a própria solução antes da competição final.
 
-Como cai na FCC
+Como cai na prova
 
 A banca já explorou o diálogo competitivo como inovação da Lei nº 14.133/2021 e tenta classificá-lo como procedimento auxiliar, fase da concorrência ou princípio. Todos estão errados: ele é modalidade autônoma.
 
@@ -461,9 +461,9 @@ Compare
 
 Melhor técnica julga só a dimensão técnica/artística. Técnica e preço pondera qualidade e preço. Quando a Lei exige 70% de valoração técnica em hipótese específica do art. 37, § 2º, essa é regra especial; na regra geral do art. 36, a ponderação técnica não pode superar 70%.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC troca critério por modalidade; afirma que pregão admite técnica e preço; ou associa maior retorno econômico a “maior lance”. A defesa é memorizar a finalidade econômica de cada critério.
+A banca examinadora troca critério por modalidade; afirma que pregão admite técnica e preço; ou associa maior retorno econômico a “maior lance”. A defesa é memorizar a finalidade econômica de cada critério.
 
 Pegadinha
 
@@ -533,7 +533,7 @@ Compare
 
 A escolha do modo deve ser coerente com o critério. O legislador restringe combinações que poderiam comprometer a utilidade da competição: preço/desconto não admitem apenas propostas fechadas; técnica e preço não admite disputa aberta.
 
-Como cai na FCC
+Como cai na prova
 
 A banca frequentemente formula uma frase estruturalmente correta, mas troca o rótulo: “o pregão é um modo de disputa”; “maior desconto é modalidade”; “fechado é critério”. Faça sempre a classificação conceitual antes de analisar o restante.
 
@@ -565,7 +565,7 @@ SESSÃO 09 — Edital, publicidade e prazos mínimos
 
 Entenda primeiro
 
-Depois da fase preparatória e do controle jurídico cabível, o edital projeta para o mercado as regras da disputa. A publicidade não é mero ritual: ela viabiliza competição, controle e igualdade de acesso. Para a FCC, o ponto mais importante é saber onde o edital é divulgado, quais publicações adicionais são obrigatórias e como contar os prazos mínimos para propostas e lances.
+Depois da fase preparatória e do controle jurídico cabível, o edital projeta para o mercado as regras da disputa. A publicidade não é mero ritual: ela viabiliza competição, controle e igualdade de acesso. Para a prova, o ponto mais importante é saber onde o edital é divulgado, quais publicações adicionais são obrigatórias e como contar os prazos mínimos para propostas e lances.
 
 Regra jurídica — publicidade
 
@@ -602,7 +602,7 @@ Compare
 
 A publicidade do edital no PNCP é regra nacional da Lei. Regras operacionais de sistemas eletrônicos federais não devem ser automaticamente tratadas como normas gerais para todos os entes.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode afirmar que o PNCP substitui toda publicação do extrato; isso ignora a exigência legal de diário oficial e jornal de grande circulação. Também troca dias úteis por dias corridos e mistura os 8/10/15/25/35/60 dias.
 
@@ -696,9 +696,9 @@ Compare
 
 Desclassificação recai sobre a proposta; inabilitação, sobre o licitante. Essa diferença de vocabulário é uma pista valiosa em questões objetivas.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC troca 75% e 85%; trata diligência como autorização para refazer proposta; inverte a ordem dos critérios de desempate; ou transforma negociação em dever absoluto da Administração.
+A banca examinadora troca 75% e 85%; trata diligência como autorização para refazer proposta; inverte a ordem dos critérios de desempate; ou transforma negociação em dever absoluto da Administração.
 
 Pegadinha
 
@@ -778,7 +778,7 @@ Compare
 
 Diligência completa prova de fato preexistente; não cria retroativamente requisito inexistente. Atualização de validade documental também não equivale a substituir um requisito que nunca foi atendido.
 
-Como cai na FCC
+Como cai na prova
 
 A banca usa palavras absolutas: “jamais se pode complementar informação” ou “a Administração pode aceitar qualquer documento novo”. Ambos os extremos são incorretos. A Lei admite saneamento delimitado.
 
@@ -807,7 +807,7 @@ Check manual
 
 ---
 
-SESSÃO 12 — Habilitação técnica e econômico-financeira: limites quantitativos que a FCC pode cobrar
+SESSÃO 12 — Habilitação técnica e econômico-financeira: limites quantitativos que a banca examinadora pode cobrar
 
 Entenda primeiro
 
@@ -860,7 +860,7 @@ Compare
 
 A qualificação técnica protege a capacidade de executar o objeto; a econômico-financeira protege a capacidade econômica de suportar as obrigações. Misturar as duas gera exigências indevidas — por exemplo, usar faturamento pretérito mínimo como atalho para provar capacidade financeira, o que a Lei veda.
 
-Como cai na FCC
+Como cai na prova
 
 Percentuais são terreno fértil para troca: 4%, 50%, 3 anos e 10%. Outra armadilha é afirmar que a Administração pode limitar atestados a experiência obtida apenas em determinado Estado ou nos últimos “x” anos: a Lei veda limitações de locais específicos e, para a regra geral dos atestados, limitações de tempo.
 
@@ -870,7 +870,7 @@ O prazo de até 3 anos aparece na hipótese específica de serviços contínuos 
 
 Jurisprudência essencial
 
-Não necessária para os limites expressos examinados. Em prova FCC de Lei nº 14.133/2021, priorize a literalidade do art. 67 e do art. 69.
+Não necessária para os limites expressos examinados. Em prova de concurso de Lei nº 14.133/2021, priorize a literalidade do art. 67 e do art. 69.
 
 O que decorar
 
@@ -961,7 +961,7 @@ Compare
 
 Adjudicar atribui o objeto; homologar encerra e aprova o resultado/procedimento. Nenhum dos dois é sinônimo de assinatura do contrato. A disciplina da contratação subsequente pertence ao M18.
 
-Como cai na FCC
+Como cai na prova
 
 A banca troca anulação por revogação, afirma que revogação dispensa fato superveniente, coloca adjudicação antes da fase recursal ou confunde homologação com julgamento. Outra armadilha é negar efeito suspensivo ao recurso do art. 165.
 
@@ -994,7 +994,7 @@ SESSÃO 14 — Revisão integrada e quadro-mestre
 
 Entenda primeiro
 
-Agora una todas as camadas. Uma questão complexa da FCC costuma trazer um objeto, indicar uma modalidade, inserir um critério, escolher um modo de disputa, inverter ou não habilitação e terminar com recurso ou encerramento. A técnica é resolver em ordem.
+Agora una todas as camadas. Uma questão complexa da banca examinadora costuma trazer um objeto, indicar uma modalidade, inserir um critério, escolher um modo de disputa, inverter ou não habilitação e terminar com recurso ou encerramento. A técnica é resolver em ordem.
 
 Regra jurídica
 
@@ -1012,7 +1012,7 @@ Método de resolução em 7 perguntas
 
 Quadro 19 — Quadro-mestre do M16
 
-Instituto | Pergunta-chave | Regra de ouro | Erro FCC típico
+Instituto | Pergunta-chave | Regra de ouro | Erro de prova típico
 Fases | Em que momento do certame? | P–E–P–J–H–R–H | Colocar habilitação antes de julgamento como regra
 Inversão | Pode habilitar antes? | Motivação + benefício + edital | Tratar como livre escolha
 Pregão | Objeto é comum? | Obrigatório para bens/serviços comuns, respeitadas exceções | Excluir serviço comum de engenharia
@@ -1045,7 +1045,7 @@ Caso 4 — alienação de veículos inservíveis: leilão → maior lance → se
 
 Caso 5 — solução tecnológica complexa não definível com precisão: verificar pressupostos do diálogo competitivo → 25 dias úteis para interesse → diálogo com pré-selecionados → solução definida → pelo menos 60 dias úteis para propostas finais → julgamento pelos critérios objetivos divulgados.
 
-Como cai na FCC — 12 afirmações para testar
+Como cai na prova — 12 afirmações para testar
 
 • “A habilitação antecede o julgamento como regra.” Errado.
 • “A inversão depende apenas de previsão editalícia.” Errado. Também exige motivação e benefícios explicitados.
@@ -1189,7 +1189,7 @@ Ilegalidade = anulação. Mérito superveniente = revogação. Objeto = adjudica
 
 ---
 
-CAMADA FCC — ERROS QUE VOCÊ NÃO PODE COMETER
+CAMADA de prova — ERROS QUE VOCÊ NÃO PODE COMETER
 
 • Não trate convite ou tomada de preços como modalidades vigentes da Lei nº 14.133/2021.
 • Não escolha modalidade por valor.

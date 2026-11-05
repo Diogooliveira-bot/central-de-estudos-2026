@@ -19,7 +19,7 @@ function markSections(el){
  var map=[
   {i:1,id:'cpc-m1-leitura',label:'01',eyebrow:'Leitura da lei'},
   {i:2,id:'cpc-m1-teoria',label:'02',eyebrow:'Teoria essencial'},
-  {i:4,id:'cpc-m1-aprofundamento',label:'03',eyebrow:'Aprofundamento FCC'}
+  {i:4,id:'cpc-m1-aprofundamento',label:'03',eyebrow:'Aprofundamento de prova'}
  ];
  map.forEach(function(item){
   var step=steps[item.i];if(!step)return;
@@ -64,7 +64,7 @@ function insertStudyPanel(el){
  var stages=[
   ['01','Leitura da lei','#cpc-m1-leitura'],
   ['02','Teoria essencial','#cpc-m1-teoria'],
-  ['03','Aprofundamento FCC','#cpc-m1-aprofundamento'],
+  ['03','Aprofundamento de prova','#cpc-m1-aprofundamento'],
   ['04','Ferramentas','#cpc-m1-recursos']
  ];
  var panel=document.createElement('section');
@@ -87,7 +87,7 @@ function insertNav(el){
  if(!body||!steps||body.querySelector(':scope > .cpc-apostila-nav'))return;
  var nav=document.createElement('nav');
  nav.className='cpc-apostila-nav';nav.setAttribute('aria-label','Sumário da apostila');
- nav.innerHTML='<span>SUMÁRIO</span><a href="#cpc-m1-leitura"><b>01</b> Leitura da lei</a><a href="#cpc-m1-teoria"><b>02</b> Teoria essencial</a><a href="#cpc-m1-aprofundamento"><b>03</b> Aprofundamento FCC</a><a href="#cpc-m1-recursos"><b>+</b> Recursos e anotações</a>';
+ nav.innerHTML='<span>SUMÁRIO</span><a href="#cpc-m1-leitura"><b>01</b> Leitura da lei</a><a href="#cpc-m1-teoria"><b>02</b> Teoria essencial</a><a href="#cpc-m1-aprofundamento"><b>03</b> Aprofundamento de prova</a><a href="#cpc-m1-recursos"><b>+</b> Recursos e anotações</a>';
  nav.addEventListener('click',function(event){
   var link=event.target.closest('a');if(!link)return;
   var target=body.querySelector(link.getAttribute('href'));if(!target)return;

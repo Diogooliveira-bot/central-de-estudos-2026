@@ -22,7 +22,7 @@ function hideInternalQuestions(root){
  [
   ['Diagnóstico','Começar 5 FCC'],
   ['Questões intermediárias','Fazer 8 FCC'],
-  ['Bateria final FCC','FCC real'],
+  ['Bateria final de questões','FCC real'],
   ['Revisão de erros']
  ].forEach(function(parts){
   var block=smallestBlock(root,parts);
@@ -61,7 +61,7 @@ function civilizeTheory(root){
  });
  var nuclear=findLeaf(root,'Teoria nuclear');
  if(nuclear)nuclear.classList.add('cpc-m1-theory-heading');
- var advanced=findLeaf(root,'Aprofundamento FCC');
+ var advanced=findLeaf(root,'Aprofundamento de prova');
  if(advanced)advanced.classList.add('cpc-m1-theory-heading');
 }
 function apply(){

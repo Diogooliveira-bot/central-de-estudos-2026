@@ -3,17 +3,17 @@ DIREITO ADMINISTRATIVO · MÓDULO 20 · COMPLETO
 
 DIREITO ADMINISTRATIVO — MÓDULO 20
 
-Apostila de estudo · nível Analista · FCC
+Apostila de estudo · nível Analista · Concursos
 
 Lei Geral de Proteção de Dados Pessoais — LGPD
 
 Lei 13.709/2018 · fundamentos, bases legais, titulares, agentes, Poder Público, LAI, segurança, responsabilidade, sanções, ANPD e transferência internacional.
 
-Base conferida em 18/09/2026: LGPD compilada; Constituição após EC 115/2022; Lei 15.352/2026; LAI; regulamentação oficial da ANPD nos pontos indicados. Materiais TEC da Biblioteca foram utilizados exclusivamente para calibrar cobertura e padrão FCC.
+Base conferida em 18/09/2026: LGPD compilada; Constituição após EC 115/2022; Lei 15.352/2026; LAI; regulamentação oficial da ANPD nos pontos indicados. Materiais TEC da Biblioteca foram utilizados exclusivamente para calibrar cobertura e padrão de prova.
 
 Como estudar este módulo
 
-Em cada caso, percorra a sequência dado → incidência → base legal → princípio → agente → direito → dever → consequência. Isso evita a maior parte das trocas conceituais da FCC.
+Em cada caso, percorra a sequência dado → incidência → base legal → princípio → agente → direito → dever → consequência. Isso evita a maior parte das trocas conceituais da banca examinadora.
 
 dado→base→princípio→agente→direito→efeito
 
@@ -57,9 +57,9 @@ Fundamento (art. 2º) | “Qual valor sustenta a disciplina?” | privacidade; a
 Princípio (art. 6º) | “Como toda operação deve ser conduzida?” | finalidade; necessidade; segurança
 Base legal (arts. 7º e 11) | “Qual hipótese autoriza juridicamente este tratamento?” | obrigação legal; política pública; consentimento
 
-Como cai na FCC
+Como cai na prova
 
-A FCC costuma trocar os três planos: apresenta necessidade como se fosse fundamento; apresenta consentimento como princípio; ou afirma que a livre iniciativa e a livre concorrência seriam incompatíveis com a LGPD. Nos cadernos TEC consultados, há cobrança recente justamente de fundamentos, princípios e papéis dos agentes.
+A banca examinadora costuma trocar os três planos: apresenta necessidade como se fosse fundamento; apresenta consentimento como princípio; ou afirma que a livre iniciativa e a livre concorrência seriam incompatíveis com a LGPD. Nos cadernos TEC consultados, há cobrança recente justamente de fundamentos, princípios e papéis dos agentes.
 
 Pegadinhas
 
@@ -77,7 +77,7 @@ CF: art. 5º, LXXIX = direito fundamental à proteção dos dados pessoais, incl
 
 O que levar para a prova
 
-Antes de marcar uma alternativa, classifique a palavra usada: fundamento? princípio? base legal? direito? definição? A FCC explora muito a troca de gavetas.
+Antes de marcar uma alternativa, classifique a palavra usada: fundamento? princípio? base legal? direito? definição? A banca examinadora explora muito a troca de gavetas.
 
 ☐ Check manual: consigo explicar por que consentimento não é o centro único da LGPD e diferenciar art. 2º, art. 6º e art. 7º.
 
@@ -134,9 +134,9 @@ Exemplo
 
 Uma universidade brasileira realiza estudo acadêmico com dados pessoais. A finalidade acadêmica é uma exclusão do art. 4º, II, “b”, porém a própria lei manda observar as bases legais dos arts. 7º e 11. A alternativa que disser “pesquisa acadêmica nunca observa LGPD” é excessiva.
 
-Como cai na FCC
+Como cai na prova
 
-Nos materiais FCC recentes da Biblioteca, apareceram simultaneamente: exclusão jornalística/artística, peculiaridade da finalidade acadêmica, alcance extraterritorial, tratamento pela Administração Pública e transferência internacional. A banca costuma transformar exceção qualificada em exclusão absoluta.
+Observe as seguintes situações em questões de concursos: exclusão jornalística/artística, peculiaridade da finalidade acadêmica, alcance extraterritorial, tratamento pela Administração Pública e transferência internacional. A banca costuma transformar exceção qualificada em exclusão absoluta.
 
 Pegadinhas
 
@@ -155,11 +155,11 @@ Art. 4º: particular não econômico; jornalístico/artístico; acadêmico com a
 
 ---
 
-SESSÃO 03 — Conceitos do art. 5º: o vocabulário que a FCC troca
+SESSÃO 03 — Conceitos do art. 5º: o vocabulário que a banca examinadora troca
 
 Entenda primeiro
 
-Definições são um dos pontos mais rentáveis da LGPD em prova objetiva. A FCC costuma manter a estrutura da definição e trocar o nome: controlador por operador; bloqueio por eliminação; anonimização por pseudonimização; titular por controlador.
+Definições são um dos pontos mais rentáveis da LGPD em prova objetiva. A banca examinadora costuma manter a estrutura da definição e trocar o nome: controlador por operador; bloqueio por eliminação; anonimização por pseudonimização; titular por controlador.
 
 Conceitos essenciais
 
@@ -213,9 +213,9 @@ Exemplo
 
 Uma empresa terceirizada processa folha de pagamento segundo finalidade, parâmetros e instruções definidos pelo órgão público. Em regra, o órgão ocupa posição de controlador e a empresa atua como operadora. Se a terceirizada passa a determinar finalidade própria incompatível, a qualificação jurídica pode exigir reavaliação: papéis decorrem das funções efetivamente exercidas, não apenas do rótulo contratual.
 
-Como cai na FCC
+Como cai na prova
 
-O material TEC da Biblioteca contém cobrança recente da FCC perguntando diretamente quem decide (controlador), quem realiza tratamento em nome de outro (operador), quem é canal de comunicação (encarregado), além de anonimização, eliminação e dados sensíveis. A estratégia é decorar o verbo nuclear de cada definição.
+O material TEC da Biblioteca contém cobrança recente da banca examinadora perguntando diretamente quem decide (controlador), quem realiza tratamento em nome de outro (operador), quem é canal de comunicação (encarregado), além de anonimização, eliminação e dados sensíveis. A estratégia é decorar o verbo nuclear de cada definição.
 
 Pegadinhas
 
@@ -244,7 +244,7 @@ As bases legais autorizam o tratamento; os princípios controlam como ele deve o
 
 Quadro 8 — Os dez princípios da LGPD
 
-Princípio | Núcleo | Como a FCC costuma distorcer
+Princípio | Núcleo | Como a banca examinadora costuma distorcer
 Finalidade | propósito legítimo, específico, explícito e informado; vedado uso posterior incompatível | troca por “adequação” ou permite finalidade genérica
 Adequação | compatibilidade do tratamento com as finalidades informadas e o contexto | trata como sinônimo de minimização
 Necessidade | mínimo necessário; dados pertinentes, proporcionais e não excessivos | chama de “finalidade”
@@ -278,9 +278,9 @@ Exemplo
 
 Um órgão possui base legal para manter cadastro de beneficiários. Isso não autoriza coletar dados “para usos futuros indefinidos”. O órgão deve vincular coleta a finalidade pública determinada e reduzir o conjunto ao necessário.
 
-Como cai na FCC
+Como cai na prova
 
-Questões FCC recentes localizadas nos cadernos TEC exploram a descrição literal de necessidade (“mínimo indispensável”, “pertinentes, proporcionais e não excessivos”), bem como adequação e finalidade. Em itens de certo/errado ou múltipla escolha, a banca costuma usar uma definição correta com nome errado.
+Questões de concursos recentes localizadas nos cadernos TEC exploram a descrição literal de necessidade (“mínimo indispensável”, “pertinentes, proporcionais e não excessivos”), bem como adequação e finalidade. Em itens de certo/errado ou múltipla escolha, a banca costuma usar uma definição correta com nome errado.
 
 Pegadinhas
 
@@ -322,7 +322,7 @@ Dados tornados públicos pelo titular
 
 A LGPD dispensa exigência de consentimento em determinadas situações relativas a dados manifestamente tornados públicos pelo titular, mas isso não elimina os princípios nem as demais obrigações da lei. Publicidade prévia do dado não transforma seu uso em território sem regras.
 
-O tratamento posterior deve considerar finalidade, boa-fé e interesse público que justificaram a disponibilização, quando aplicável. A FCC gosta de inserir “a dispensa do consentimento desobriga o controlador das demais exigências”; isso é falso.
+O tratamento posterior deve considerar finalidade, boa-fé e interesse público que justificaram a disponibilização, quando aplicável. A banca examinadora gosta de inserir “a dispensa do consentimento desobriga o controlador das demais exigências”; isso é falso.
 
 Administração Pública
 
@@ -347,9 +347,9 @@ tratamento clínico pelo serviço de saúde | tutela da saúde
 operação privada necessária e compatível com expectativas, após balanceamento | legítimo interesse
 análise para proteção do crédito | proteção do crédito
 
-Como cai na FCC
+Como cai na prova
 
-Cadernos FCC 2026 da Biblioteca já exploram a ideia de que o Poder Público pode tratar dados sem consentimento quando houver obrigação legal ou execução de políticas públicas, preservando direitos do titular. Essa é uma pegadinha recorrente contra a “teoria do consentimento universal”.
+Em questões sobre o tema, observe que o Poder Público pode tratar dados sem consentimento quando houver obrigação legal ou execução de políticas públicas, preservando direitos do titular. Essa é uma pegadinha recorrente contra a “teoria do consentimento universal”.
 
 Pegadinhas
 
@@ -435,7 +435,7 @@ Exemplo
 
 Uma empresa quer usar cadastro de clientes antigos para perfilamento detalhado e publicidade de parceiros não relacionada à relação original. Dizer apenas “há interesse comercial” não resolve. É preciso analisar finalidade concreta, expectativas, necessidade, impacto, transparência e eventual prevalência dos direitos do titular.
 
-Como cai na FCC
+Como cai na prova
 
 A banca frequentemente transforma o consentimento em requisito universal. Outro padrão é afirmar que legítimo interesse permite qualquer tratamento benéfico ao controlador. As duas proposições são falsas.
 
@@ -520,7 +520,7 @@ Exemplo
 
 Uma escola trata dados de saúde de criança para atender emergência e obrigação de proteção. É incorreto resolver automaticamente o caso dizendo “só consentimento permite”. Deve-se identificar dado sensível, base do art. 11, regras do art. 14 e melhor interesse.
 
-Como cai na FCC
+Como cai na prova
 
 Há forte potencial de cobrança de lista de dados sensíveis, diferença entre CPF e biometria, bases sem consentimento e regra especial de crianças. A banca também pode misturar “melhor interesse” com “consentimento obrigatório em qualquer cenário”.
 
@@ -624,9 +624,9 @@ Exemplo
 
 Se um titular pede eliminação de dado que o órgão é obrigado por lei a conservar, o direito não autoriza destruir documento contra dever legal. A resposta deve identificar a base de conservação e preservar os demais direitos pertinentes.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC tende a usar absolutos: “todo dado deve ser apagado imediatamente após revogação”; “portabilidade inclui dados anonimizados”; “acesso completo sempre é imediato”. Compare com os limites dos arts. 16, 18 e 19.
+A banca examinadora tende a usar absolutos: “todo dado deve ser apagado imediatamente após revogação”; “portabilidade inclui dados anonimizados”; “acesso completo sempre é imediato”. Compare com os limites dos arts. 16, 18 e 19.
 
 O que decorar
 
@@ -658,7 +658,7 @@ A ANPD pode determinar ao controlador sua elaboração, inclusive quanto a dados
 • metodologia usada para coleta e segurança das informações;
 • análise das medidas, salvaguardas e mecanismos de mitigação de risco.
 
-Pegadinha FCC
+Pegadinha de prova
 
 Uma questão localizada nos materiais TEC explorou justamente a afirmação de que a ANPD poderia exigir RIPD “exceto de dados sensíveis”. Isso está errado: a lei diz inclusive de dados sensíveis.
 
@@ -687,9 +687,9 @@ Exemplo
 
 Um tribunal contrata empresa para hospedar sistema processual segundo requisitos e finalidades definidos pelo tribunal. A mera guarda técnica não transforma automaticamente a empresa em controladora. Se ela usa os dados para finalidade própria não autorizada, surge questão adicional de qualificação e eventual ilicitude.
 
-Como cai na FCC
+Como cai na prova
 
-O caderno FCC recente consultado cobra diretamente “dois agentes de tratamento” e a posição do encarregado. Memorize: agentes = controlador e operador. Encarregado tem papel próprio e não entra nessa dupla legal.
+A questão pode abordar diretamente “dois agentes de tratamento” e a posição do encarregado. Memorize: agentes = controlador e operador. Encarregado tem papel próprio e não entra nessa dupla legal.
 
 O que decorar
 
@@ -744,7 +744,7 @@ A transferência de bases públicas para entidades privadas é, em regra, vedada
 • prevenção de fraudes/irregularidades ou proteção da segurança e integridade do titular, com finalidade exclusiva;
 • demais hipóteses da redação vigente.
 
-Os contratos e convênios utilizados nas hipóteses do art. 26 devem ser comunicados à autoridade nacional nos termos da lei. Já o art. 27 trata especificamente da comunicação ou uso compartilhado de dados de pessoa jurídica de direito público para pessoa de direito privado: a operação deve ser informada à autoridade nacional e, como regra textual, depende de consentimento do titular, salvo as hipóteses de dispensa de consentimento previstas na LGPD, os casos de uso compartilhado com a publicidade exigida pelo art. 23 e as exceções do art. 26, §1º. Assim, a FCC pode errar tanto ao dizer “sempre depende de consentimento” quanto ao dizer “nunca depende”.
+Os contratos e convênios utilizados nas hipóteses do art. 26 devem ser comunicados à autoridade nacional nos termos da lei. Já o art. 27 trata especificamente da comunicação ou uso compartilhado de dados de pessoa jurídica de direito público para pessoa de direito privado: a operação deve ser informada à autoridade nacional e, como regra textual, depende de consentimento do titular, salvo as hipóteses de dispensa de consentimento previstas na LGPD, os casos de uso compartilhado com a publicidade exigida pelo art. 23 e as exceções do art. 26, §1º. Assim, a banca examinadora pode errar tanto ao dizer “sempre depende de consentimento” quanto ao dizer “nunca depende”.
 
 Quadro 19 — Compartilhamento público × compartilhamento privado
 
@@ -782,7 +782,7 @@ Exemplo
 
 Um cidadão pede, via LAI, documento administrativo que contém dados pessoais. A solução não é “entregar tudo porque publicidade é regra” nem “negar tudo porque existe LGPD”. Deve-se verificar interesse público, conteúdo pessoal, possibilidade de acesso parcial/tarja, base legal, finalidade e o regime do art. 31 da LAI.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode afirmar que a LGPD revogou a LAI em matéria de dados pessoais ou que dados pessoais são sempre sigilosos. Ambas as formulações ignoram a convivência normativa expressa no Capítulo IV.
 
@@ -872,9 +872,9 @@ Exemplo
 
 Sistema de tribunal é invadido e dados pessoais com risco relevante são exfiltrados. O dever de comunicar é do controlador. A ANPD não substitui o controlador para fazer a primeira notificação ao titular.
 
-Como cai na FCC
+Como cai na prova
 
-Questão FCC recente localizada na Biblioteca cobrou exatamente quem deve comunicar: a alternativa correta apontava o controlador comunicando ANPD e titular. A banca pode inverter para “agentes comunicam e a ANPD avisa o titular”.
+Observe quem deve comunicar: a alternativa correta apontava o controlador comunicando ANPD e titular. A banca pode inverter para “agentes comunicam e a ANPD avisa o titular”.
 
 Pegadinhas
 
@@ -996,13 +996,13 @@ Proibição XII | Sim | Sim
 
 Regulamento de dosimetria
 
-A Resolução CD/ANPD 4/2023 disciplina dosimetria e aplicação de sanções. Para FCC jurídica, a literalidade do art. 52 é o núcleo; use o regulamento para compreender que sanção depende de processo, classificação e critérios objetivos, não de automatismo.
+A Resolução CD/ANPD 4/2023 disciplina dosimetria e aplicação de sanções. Para a prova jurídica, a literalidade do art. 52 é o núcleo; use o regulamento para compreender que sanção depende de processo, classificação e critérios objetivos, não de automatismo.
 
 Exemplo
 
 Uma autarquia pratica tratamento ilícito. É incorreto afirmar, com base no art. 52, §3º, que a ANPD aplicará a ela multa simples de 2% do faturamento. A própria estrutura da sanção de faturamento é desenhada para pessoa jurídica de direito privado, e o §3º lista as sanções aplicáveis a órgãos/entidades públicos sem incluir multas II e III.
 
-Como cai na FCC
+Como cai na prova
 
 A banca gosta de números: 2%, R$ 50 milhões por infração, 6 meses prorrogáveis por igual período, e de misturar responsabilidade civil com punição administrativa.
 
@@ -1104,7 +1104,7 @@ Exemplo
 
 Órgão público contrata solução em nuvem cuja arquitetura efetivamente transfere dados a outro país. O caso exige identificar a base legal do tratamento público e a hipótese válida de transferência internacional. Dizer “é política pública, logo pode enviar para qualquer país” é incorreto.
 
-Como cai na FCC
+Como cai na prova
 
 Cadernos consultados já cobram transferência para país com grau adequado e as relações com responsabilidade e segurança. A banca tende a transformar uma hipótese do art. 33 em condição única. Lembre: o artigo contém várias portas.
 
@@ -1124,7 +1124,7 @@ Transferência: base legal + mecanismo do art. 33.
 
 ---
 
-SESSÃO 14 — Anonimização, pseudonimização e quadro-mestre FCC
+SESSÃO 14 — Anonimização, pseudonimização e quadro-mestre de prova
 
 Anonimização
 
@@ -1153,9 +1153,9 @@ uso típico | redução forte de risco e saída do regime quando efetiva | técn
 
 Quadro-mestre das distinções
 
-Quadro 30 — O que a FCC pode trocar
+Quadro 30 — O que a banca examinadora pode trocar
 
-A FCC escreve... | Verifique se não quis trocar por...
+A banca examinadora escreve... | Verifique se não quis trocar por...
 “decide o tratamento” = operador | controlador
 “realiza em nome do controlador” = encarregado | operador
 “canal com titular/ANPD” = controlador | encarregado
@@ -1171,7 +1171,7 @@ A FCC escreve... | Verifique se não quis trocar por...
 “sanção administrativa = indenização civil” | regimes diferentes
 “empresa estatal sempre é público para LGPD” | art. 24 distingue atuação concorrencial e política pública
 
-20 alertas FCC de alta incidência
+20 alertas de prova de alta incidência
 
 • Titular é sempre pessoa natural.
 • Pessoa jurídica pode ser controlador ou operador, mas não “titular” da LGPD.
@@ -1210,7 +1210,7 @@ Passo | Pergunta
 
 O que levar para a prova
 
-A LGPD é uma lei de arquitetura. A alternativa correta costuma depender de encaixar cada conceito no seu lugar: incidência → definição → base legal → princípio → agente → direito → dever → consequência. Quando a FCC usa palavra absoluta (“sempre”, “somente”, “em qualquer hipótese”), procure exceções e regimes especiais.
+A LGPD é uma lei de arquitetura. A alternativa correta costuma depender de encaixar cada conceito no seu lugar: incidência → definição → base legal → princípio → agente → direito → dever → consequência. Quando a banca examinadora usa palavra absoluta (“sempre”, “somente”, “em qualquer hipótese”), procure exceções e regimes especiais.
 
 ☐ Check manual: consigo resolver o Quadro 31 de cabeça antes de olhar as alternativas.
 
@@ -1383,7 +1383,7 @@ A análise dos cadernos da Biblioteca foi usada apenas para calibrar cobertura e
 • segurança e dever do controlador de comunicar incidente;
 • responsabilidade, RIPD inclusive de dados sensíveis e excludentes.
 
-Estratégia de resolução FCC
+Estratégia de resolução de questões
 
 Passo 1: procure a palavra absoluta.
 Passo 2: identifique o artigo temático.
@@ -1399,7 +1399,7 @@ Ao terminar este módulo, o candidato deve conseguir explicar de forma integrada
 
 dado → tratamento → incidência → base legal → princípio → agente → direito → segurança → responsabilização → fiscalização.
 
-Esse encadeamento é mais importante do que memorizar frases isoladas. Na FCC, as alternativas erradas muitas vezes são construídas com palavras verdadeiras colocadas no artigo, sujeito ou consequência errados.
+Esse encadeamento é mais importante do que memorizar frases isoladas. Na prova, as alternativas erradas muitas vezes são construídas com palavras verdadeiras colocadas no artigo, sujeito ou consequência errados.
 
 ☐ Check final — consigo resolver uma questão de LGPD classificando primeiro o instituto, sem depender da “sensação” de privacidade ou sigilo.
 

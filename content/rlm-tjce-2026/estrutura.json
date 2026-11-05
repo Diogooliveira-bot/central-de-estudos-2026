@@ -70,13 +70,13 @@
   },
   "revisaoFinal": {
     "id": "RF",
-    "titulo": "Revisão cumulativa e simulado FCC",
+    "titulo": "Revisão cumulativa e simulado de concursos",
     "status": "simulado com 20 questões autorais interativas produzidas; revisão editorial pendente",
     "cobertura": "M02–M15",
     "etapas": [
       "Mapa geral dos conceitos",
       "Questões fáceis, médias e difíceis misturadas",
-      "Simulado temático estilo FCC",
+      "Simulado temático estilo de prova",
       "Correção imediata comentada",
       "Caderno de erros e revisão dirigida"
     ]
@@ -152,10 +152,10 @@
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -217,7 +217,7 @@
         "Leis de De Morgan",
         "Negação da condicional",
         "Contrapositiva, equivalências e bicondicional",
-        "Equivalências com tabelas-verdade e exercícios FCC"
+        "Equivalências com tabelas-verdade e exercícios de concursos"
       ],
       "bizusAProduzir": [
         "Negar 'se P então Q' resulta em P e não Q",
@@ -242,10 +242,10 @@
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -333,10 +333,10 @@
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -424,10 +424,10 @@
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -510,16 +510,16 @@
       "questoesFccLegadas": 0,
       "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
       "pesquisaPendente": [
-        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões de concursos do edital."
       ],
       "etapas": {
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -600,16 +600,16 @@
       "questoesFccLegadas": 0,
       "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
       "pesquisaPendente": [
-        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões de concursos do edital."
       ],
       "etapas": {
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -690,16 +690,16 @@
       "questoesFccLegadas": 0,
       "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
       "pesquisaPendente": [
-        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões de concursos do edital."
       ],
       "etapas": {
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -780,16 +780,16 @@
       "questoesFccLegadas": 0,
       "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
       "pesquisaPendente": [
-        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões de concursos do edital."
       ],
       "etapas": {
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -878,10 +878,10 @@
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -968,10 +968,10 @@
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -1052,16 +1052,16 @@
       "questoesFccLegadas": 0,
       "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
       "pesquisaPendente": [
-        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões de concursos do edital."
       ],
       "etapas": {
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -1140,16 +1140,16 @@
       "questoesFccLegadas": 0,
       "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
       "pesquisaPendente": [
-        "Não há módulo antigo de teoria específico para estatística; procurar PDF e questões FCC."
+        "Não há módulo antigo de teoria específico para estatística; procurar PDF e questões de concursos."
       ],
       "etapas": {
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -1234,10 +1234,10 @@
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -1314,16 +1314,16 @@
       "questoesFccLegadas": 0,
       "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
       "pesquisaPendente": [
-        "Pesquisar fontes completas e FCC; não há filtro TEC específico validado para essas medidas."
+        "Pesquisar fontes completas de questões; não há filtro TEC específico validado para essas medidas."
       ],
       "etapas": {
         "teoriaCompleta": {
           "status": "exposição ampliada com método, exemplo guiado e erro comum em cada capítulo",
           "incluir": [
-            "abordagem do zero até nível FCC",
+            "abordagem do zero até nível de prova",
             "definições e conceitos",
             "exemplos progressivos totalmente resolvidos",
-            "exercícios resolvidos e armadilhas da FCC",
+            "exercícios resolvidos e armadilhas da banca examinadora",
             "figuras/tabelas quando necessárias",
             "síntese do que o edital exige"
           ]
@@ -1395,7 +1395,7 @@
   "revisaoPendente": [
     "Conferir a correspondência exata de cada subitem do Anexo III e prioridades.",
     "Revisão pedagógica dos 140 itens autorais e das 70 lições; confirmar ausência de múltiplas alternativas corretas.",
-    "Auditar comentários individuais de 200 questões FCC antigas antes de marcar como validadas.",
+    "Auditar comentários individuais de 200 questões de concursos antigas antes de marcar como validadas.",
     "Recuperar as figuras das três questões visuais e PDF-fonte citado pela versão antiga.",
     "Criar e verificar filtros do QC por módulo, revalidar cadernos TEC.",
     "Conferência visual final em navegador: indisponível nesta rodada; dados, renderizador e cálculos verificados por testes."

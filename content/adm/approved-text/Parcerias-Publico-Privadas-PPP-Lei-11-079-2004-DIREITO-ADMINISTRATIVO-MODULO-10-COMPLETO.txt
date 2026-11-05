@@ -9,7 +9,7 @@ Parcerias Público-Privadas (PPP)
 
 Lei 11.079/2004: modalidades, limites, riscos, licitação, contrato, contraprestação, garantias, SPE, responsabilidade fiscal, intervenção e extinção.
 
-Base conferida em 17/09/2026: Lei 11.079/2004 em texto compilado oficial do Planalto como fonte normativa principal; Lei 8.987/1995 nos pontos de conexão; Lei 14.133/2021 apenas para a atualização da modalidade de licitação e do procedimento vigente. Materiais TEC/FCC da Biblioteca foram usados exclusivamente para calibrar cobertura e pegadinhas. Central consultada somente em leitura para reproduzir o padrão técnico dos módulos anteriores. Nenhuma publicação foi realizada.
+Base conferida em 17/09/2026: Lei 11.079/2004 em texto compilado oficial do Planalto como fonte normativa principal; Lei 8.987/1995 nos pontos de conexão; Lei 14.133/2021 apenas para a atualização da modalidade de licitação e do procedimento vigente. Materiais TEC da Biblioteca foram usados exclusivamente para calibrar cobertura e pegadinhas. Central consultada somente em leitura para reproduzir o padrão técnico dos módulos anteriores. Nenhuma publicação foi realizada.
 
 Como estudar este módulo
 
@@ -17,7 +17,7 @@ Em PPP, quase toda questão fica mais simples com uma sequência fixa.
 
 modalidade→10–5–35→remuneração→risco→licitação/SPE→controle/extinção
 
-Regra de ouro FCC: desconfie de alternativas que usam redações antigas (“R$ 20 milhões”, “somente concorrência”) ou transformam faculdade em obrigação.
+Regra de ouro para a prova: desconfie de alternativas que usam redações antigas (“R$ 20 milhões”, “somente concorrência”) ou transformam faculdade em obrigação.
 
 SESSÃO 01
 
@@ -49,7 +49,7 @@ Contrato administrativo comum | Aquisição, serviço ou obra sob regime geral a
 
 Como cai na prova
 
-A FCC costuma transformar conceitos próximos em alternativas plausíveis. Ela troca “contrato administrativo de concessão” por “sociedade de economia mista”, “convênio” ou “qualquer contrato de longa duração”. Também testa a ideia de que toda concessão seria PPP. A resposta depende da modalidade e da existência da contraprestação pública nos termos legais.
+A banca examinadora costuma transformar conceitos próximos em alternativas plausíveis. Ela troca “contrato administrativo de concessão” por “sociedade de economia mista”, “convênio” ou “qualquer contrato de longa duração”. Também testa a ideia de que toda concessão seria PPP. A resposta depende da modalidade e da existência da contraprestação pública nos termos legais.
 
 Pegadinha: “PPP é qualquer associação contratual entre o Estado e particular” está errada. “PPP transfere ao parceiro privado funções de polícia ou regulação” também está errada. O contrato pode atribuir tarefas materiais e operacionais, mas não as funções exclusivas do Estado protegidas pelo art. 4º, III.
 
@@ -95,7 +95,7 @@ A banca explora enunciados com rodovia, mobilidade, saneamento ou infraestrutura
 
 Pegadinha: Não confunda contraprestação com qualquer pagamento público existente ao longo de uma concessão. Indenizações, recomposição de equilíbrio, ressarcimentos ou aportes com regime específico não devem ser automaticamente tratados como a contraprestação pecuniária definidora da concessão patrocinada. A classificação deriva da estrutura legal e contratual da remuneração.
 
-Jurisprudência essencial: dispensável. Para FCC, a literalidade do art. 2º, §1º, e a conexão subsidiária com a Lei 8.987/1995 são mais importantes.
+Jurisprudência essencial: dispensável. Para a prova, a literalidade do art. 2º, §1º, e a conexão subsidiária com a Lei 8.987/1995 são mais importantes.
 
 O que decorar: Patrocinada = tarifa + contraprestação pública. Mais de 70% da remuneração paga pela Administração exige autorização legislativa específica, conforme art. 10, §3º.
 
@@ -134,7 +134,7 @@ Contraprestação pecuniária pública | Ausente como elemento classificatório 
 
 Como cai na prova
 
-A FCC apresenta casos concretos de hospital, escola ou iluminação e pergunta qual instrumento é adequado. Procure a continuidade do serviço, a integração com infraestrutura e a posição da Administração como usuária. Se o enunciado disser que a obra é o único objeto, não é PPP.
+A banca examinadora apresenta casos concretos de hospital, escola ou iluminação e pergunta qual instrumento é adequado. Procure a continuidade do serviço, a integração com infraestrutura e a posição da Administração como usuária. Se o enunciado disser que a obra é o único objeto, não é PPP.
 
 Pegadinha: É perigoso decorar “concessão administrativa = nunca há usuário final privado” ou “= mero contrato de serviços”. A lei fala em Administração usuária direta ou indireta, e o regime é de concessão especial com exigências próprias de prazo, valor, riscos, licitação, SPE e responsabilidade fiscal.
 
@@ -178,7 +178,7 @@ Pagamento | Contraprestação e mecanismos próprios; desempenho pode modular re
 
 Como cai na prova
 
-Questões FCC frequentemente apresentam um objeto e misturam requisitos de regimes diferentes. Use um filtro: (1) concessão ou mera compra/obra/serviço? (2) se concessão, comum ou especial? (3) se PPP, patrocinada ou administrativa? (4) os filtros do art. 2º, §4º, foram respeitados?
+Questões de concursos frequentemente apresentam um objeto e misturam requisitos de regimes diferentes. Use um filtro: (1) concessão ou mera compra/obra/serviço? (2) se concessão, comum ou especial? (3) se PPP, patrocinada ou administrativa? (4) os filtros do art. 2º, §4º, foram respeitados?
 
 Pegadinha: Valor superior a R$ 10 milhões não basta. Prazo superior a cinco anos não basta. Existência de obra não basta. É preciso que o contrato tenha natureza de PPP e que não recaia nas vedações.
 
@@ -220,7 +220,7 @@ Objeto único | Não pode ser somente mão de obra; equipamentos; ou obra públi
 
 Como cai na prova
 
-A FCC já explorou exatamente os valores e a duração. Espera-se que o candidato rejeite alternativas com R$ 20 milhões como mínimo atual, 10 anos como prazo mínimo, ou obra isolada como objeto admissível.
+A banca examinadora já explorou exatamente os valores e a duração. Espera-se que o candidato rejeite alternativas com R$ 20 milhões como mínimo atual, 10 anos como prazo mínimo, ou obra isolada como objeto admissível.
 
 Pegadinha: “Valor igual a R$ 10 milhões é proibido” está errado: a lei veda o valor inferior a R$ 10 milhões. “Prazo de exatamente 5 anos é proibido” também está errado: veda-se período inferior a cinco anos.
 
@@ -271,7 +271,7 @@ Risco privado específico | Evento atribuído ao parceiro privado | Materializa�
 
 Como cai na prova
 
-A FCC gosta de inserir caso fortuito, força maior e fato do príncipe para testar se o candidato percebe que a Lei 11.079 manda repartir esses riscos. Outra pegadinha é afirmar que toda álea extraordinária é obrigatoriamente suportada pelo Estado, ignorando o art. 5º, III.
+A banca examinadora gosta de inserir caso fortuito, força maior e fato do príncipe para testar se o candidato percebe que a Lei 11.079 manda repartir esses riscos. Outra pegadinha é afirmar que toda álea extraordinária é obrigatoriamente suportada pelo Estado, ignorando o art. 5º, III.
 
 Pegadinha: Repartição objetiva não significa transferência de todos os riscos ao parceiro privado. Também não significa garantia pública irrestrita de rentabilidade. A matriz deve ser coerente, mensurável e compatível com a eficiência e sustentabilidade do projeto.
 
@@ -334,9 +334,7 @@ Critérios da Lei 8.987 incorporados | Menor tarifa; menor tarifa + melhor técn
 Propostas | Escritas; ou escritas seguidas de lances em viva voz
 Inversão de fases | Edital pode prever julgamento antes da habilitação, nos termos do art. 13
 
-Como cai na prova
-
-FCC cobrou em 2023 e 2026 que a modalidade é “concorrência ou diálogo competitivo”. Também pode cobrar menor contraprestação pública, combinação com melhor técnica, etapa de qualificação técnica e inversão das fases. O texto da lei ainda prevê propostas escritas, com possibilidade de lances em viva voz: os lances seguem ordem inversa à classificação das propostas escritas, o edital não pode limitar a quantidade de lances e pode restringir a etapa oral aos licitantes cuja proposta escrita seja, no máximo, 20% superior à melhor proposta.
+Como cai na prova de concurso cobrou em 2023 e 2026 que a modalidade é “concorrência ou diálogo competitivo”. Também pode cobrar menor contraprestação pública, combinação com melhor técnica, etapa de qualificação técnica e inversão das fases. O texto da lei ainda prevê propostas escritas, com possibilidade de lances em viva voz: os lances seguem ordem inversa à classificação das propostas escritas, o edital não pode limitar a quantidade de lances e pode restringir a etapa oral aos licitantes cuja proposta escrita seja, no máximo, 20% superior à melhor proposta.
 
 Pegadinha: A regra dos 70% é específica: concessão patrocinada em que mais de 70% da remuneração do parceiro privado seja paga pela Administração depende de autorização legislativa específica. Não aplique esse requisito automaticamente a toda PPP.
 
@@ -344,7 +342,7 @@ Jurisprudência essencial: dispensável. A principal atualização cobrada vem d
 
 O que decorar: Licitação: concorrência OU diálogo competitivo. Consulta: 30 dias para sugestões; término pelo menos 7 dias antes do edital. Regra >70%: autorização legislativa específica na patrocinada.
 
-O que levar para a prova: Não memorize apenas a modalidade. A FCC pode criar alternativa correta na modalidade, mas errada ao dizer que consulta, impacto fiscal ou PPA são facultativos.
+O que levar para a prova: Não memorize apenas a modalidade. A banca examinadora pode criar alternativa correta na modalidade, mas errada ao dizer que consulta, impacto fiscal ou PPA são facultativos.
 
 ☐ Check manual — domino a Sessão 07 sem depender do texto.
 
@@ -381,7 +379,7 @@ Financiamento | Ganhos por redução de risco de crédito e mecanismos com finan
 
 Como cai na prova
 
-A FCC pode perguntar qual cláusula é obrigatória. “Critérios objetivos de desempenho” e “repartição de riscos inclusive fortuito/força maior/fato do príncipe/álea extraordinária” são fortes candidatos. Também pode trocar a proporcionalidade das penalidades por sanção automática uniforme.
+A banca examinadora pode perguntar qual cláusula é obrigatória. “Critérios objetivos de desempenho” e “repartição de riscos inclusive fortuito/força maior/fato do príncipe/álea extraordinária” são fortes candidatos. Também pode trocar a proporcionalidade das penalidades por sanção automática uniforme.
 
 Pegadinha: Não confunda garantia prestada pelo parceiro privado para execução do contrato com garantia oferecida pelo parceiro público para suas obrigações pecuniárias. São caixas distintas, tratadas em artigos diferentes.
 
@@ -430,7 +428,7 @@ Extinção | Segue acertos contratuais | Não gera indenização por investiment
 
 Como cai na prova
 
-FCC explora pagamento por parcela fruível, remuneração por desempenho e formas de contraprestação. Alternativas que afirmem “só é possível ordem bancária” ou “é proibido variar pagamento por performance” contrariam a lei.
+A banca examinadora explora pagamento por parcela fruível, remuneração por desempenho e formas de contraprestação. Alternativas que afirmem “só é possível ordem bancária” ou “é proibido variar pagamento por performance” contrariam a lei.
 
 Pegadinha: Outro detalhe: na extinção, o parceiro privado não recebe indenização por parcelas ainda não amortizadas/depreciadas de investimentos em bens reversíveis quando esses investimentos foram realizados com valores do aporte do art. 6º, §2º. A prova pode tentar gerar indenização duplicada.
 
@@ -522,9 +520,7 @@ Finalidade | Implantar e gerir o objeto específico | Executar objeto conforme c
 Governança/contabilidade | Padrões legais específicos | Segue regime societário/contratual aplicável
 Controle societário | Transferência depende de autorização; maioria pública vedada, salvo exceção legal | Não existe a mesma regra geral da Lei 11.079
 
-Como cai na prova
-
-FCC já cobrou que a SPE pode ser companhia aberta e que deve observar padrões de governança e contabilidade padronizada. Alternativas que dizem “SPE só implanta, mas não gere” ou “transferência de controle é livre” estão erradas.
+Como cai na prova de concurso já cobrou que a SPE pode ser companhia aberta e que deve observar padrões de governança e contabilidade padronizada. Alternativas que dizem “SPE só implanta, mas não gere” ou “transferência de controle é livre” estão erradas.
 
 Pegadinha: A exceção do art. 9º, §5º, é estreita: aquisição da maioria por instituição financeira controlada pelo Poder Público em caso de inadimplemento de financiamento. Não use essa exceção para afirmar que o Poder Público pode controlar ordinariamente a SPE desde o início.
 
@@ -625,11 +621,11 @@ Processo em 30 dias; conclusão até 180 dias | Aplicam-se os ritos próprios de
 
 Como cai na prova
 
-A FCC adora trocar encampação e caducidade ou afirmar que a intervenção extingue automaticamente o contrato. Intervenção é medida temporária de gestão/fiscalização; pode cessar com devolução da administração se a concessão não for extinta.
+A banca examinadora adora trocar encampação e caducidade ou afirmar que a intervenção extingue automaticamente o contrato. Intervenção é medida temporária de gestão/fiscalização; pode cessar com devolução da administração se a concessão não for extinta.
 
 Pegadinha: No aporte do art. 6º, §2º, existe regra especial: na extinção, não há indenização das parcelas de investimentos reversíveis ainda não amortizadas quando realizadas com recursos do aporte. Isso evita dupla recuperação do mesmo investimento.
 
-Jurisprudência essencial: dispensável nesta camada. A literalidade dos arts. 32 a 39 da Lei 8.987 é suficiente para o padrão FCC do módulo.
+Jurisprudência essencial: dispensável nesta camada. A literalidade dos arts. 32 a 39 da Lei 8.987 é suficiente para o padrão de prova do módulo.
 
 O que decorar: Intervenção: decreto + processo em 30 dias + conclusão em até 180. Extinção: termo, encampação, caducidade, rescisão, anulação, falência/extinção. Encampação = interesse público + lei + indenização prévia; caducidade = inadimplemento + processo.
 
@@ -639,7 +635,7 @@ O que levar para a prova: Em questões de encerramento, identifique a causa ante
 
 SESSÃO 14
 
-Integração final: quadro-mestre, método FCC e pontos de alta densidade
+Integração final: quadro-mestre, método de prova e pontos de alta densidade
 
 Entenda primeiro
 
@@ -683,7 +679,7 @@ Paga contraprestação conforme disponibilidade/desempenho e contrato | Suporta 
 
 Como cai na prova
 
-Método FCC: procure palavras “somente”, “sempre”, “exclusivamente”, “qualquer”, “independentemente”. Muitas pegadinhas exageram uma regra verdadeira. A lei usa “poderá” para garantias públicas e remuneração variável, mas usa “deverá” para SPE antes do contrato e “será obrigatoriamente precedida” para a contraprestação em relação à disponibilização do serviço.
+Método de prova: procure palavras “somente”, “sempre”, “exclusivamente”, “qualquer”, “independentemente”. Muitas pegadinhas exageram uma regra verdadeira. A lei usa “poderá” para garantias públicas e remuneração variável, mas usa “deverá” para SPE antes do contrato e “será obrigatoriamente precedida” para a contraprestação em relação à disponibilização do serviço.
 
 Pegadinha: Evite decorar versões antigas: R$ 20 milhões; somente concorrência; proibição de instituição financeira pública no art. 8º, IV. O texto vigente é R$ 10 milhões; concorrência ou diálogo competitivo; inciso IV atualizado em 2021.
 

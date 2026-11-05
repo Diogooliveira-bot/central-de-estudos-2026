@@ -23,7 +23,7 @@ Como estudar este módulo
 
 Em cada questão, faça cinco perguntas: (1) quem possui ou custodia a informação? (2) a informação é pública, classificada, pessoal ou submetida a outro sigilo legal? (3) o dever é de divulgação ativa ou depende de pedido? (4) qual é o procedimento e o prazo? (5) a regra cobrada é nacional, da Lei 12.527/2011, ou é apenas uma regra federal do Decreto 7.724/2012?
 
-A FCC costuma trocar palavras pequenas com grande efeito jurídico: “pode” por “deve”, “independentemente de requerimento” por “mediante pedido”, “informação pessoal” por “informação classificada”, “25” por “15”, e regra federal por regra aplicável a todos os entes.
+A banca examinadora costuma trocar palavras pequenas com grande efeito jurídico: “pode” por “deve”, “independentemente de requerimento” por “mediante pedido”, “informação pessoal” por “informação classificada”, “25” por “15”, e regra federal por regra aplicável a todos os entes.
 
 ---
 
@@ -59,7 +59,7 @@ Favorece transparência, accountability e controle social. | Protege bens juríd
 Pode ocorrer de ofício ou mediante pedido. | Não pode ser inventado por conveniência administrativa.
 Acesso deve ser facilitado. | Restrição deve ser interpretada nos limites legais; quando parcial, preserva-se a parte acessível.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma afirmar que “o sigilo é a regra, ressalvadas as informações que a Administração decida tornar públicas”. Está invertido. Também pode associar o direito de acesso apenas a interesse coletivo; a Constituição inclui informação de interesse particular, coletivo ou geral.
 
@@ -69,7 +69,7 @@ Publicidade não significa que todo dado estatal seja imediatamente aberto. A pr
 
 Jurisprudência essencial
 
-Para este núcleo, a literalidade constitucional e legal resolve a cobrança típica. Não é necessário memorizar precedente específico para acertar a maioria das questões FCC sobre princípios da LAI.
+Para este núcleo, a literalidade constitucional e legal resolve a cobrança típica. Não é necessário memorizar precedente específico para acertar a maioria das questões de concursos sobre princípios da LAI.
 
 O que decorar
 
@@ -123,7 +123,7 @@ Exige classificação conforme graus e critérios legais, quando se tratar do si
 Prazos regulares: 25/15/5 anos. | Até 100 anos para as informações pessoais referidas no art. 31, § 1º, I.
 Não se confunde com qualquer segredo legal. | Não é sinônimo de “secreta” ou “reservada”.
 
-Como cai na FCC
+Como cai na prova
 
 A troca conceitual mais perigosa é: “informação sigilosa é aquela relacionada a pessoa natural identificada ou identificável”. Errado. Essa é a definição de informação pessoal. Informação sigilosa, no conceito da LAI, é a submetida temporariamente a restrição por imprescindibilidade à segurança da sociedade e do Estado.
 
@@ -184,7 +184,7 @@ Art. 8º e outros deveres de publicação. | Arts. 9º a 20, principalmente.
 Reduz a necessidade de pedidos repetidos. | Permite acesso a informação não já divulgada.
 Independe de requerimento. | Começa com requerimento válido.
 
-Como cai na FCC
+Como cai na prova
 
 A banca gosta da expressão “independentemente de requerimentos”. Também testa a falsa ideia de que municípios pequenos estão fora da LAI. Não estão.
 
@@ -246,7 +246,7 @@ Aplica-se à União, Estados, DF e Municípios, nos termos do art. 1º. | Regula
 Traz o núcleo nacional do pedido, acesso, restrições e responsabilidades. | Detalha fluxos administrativos federais, SIC, recursos e classificação no Executivo federal.
 É a fonte principal para prova geral de LAI. | Deve ser usado quando a questão indicar regime federal/decreto ou quando o edital o cobrar.
 
-Como cai na FCC
+Como cai na prova
 
 Enunciado clássico: “O pedido prescinde de identificação do requerente.” Errado. A identificação é exigida, mas não pode inviabilizar o pedido. Outro clássico: “A Administração poderá exigir justificativa do motivo.” Errado para pedido de informação de interesse público.
 
@@ -322,7 +322,7 @@ Pedido | Interessado especifica a informação | Identificação sem exigência 
 Resposta | Informação disponível ou não | Imediata se possível; caso contrário, até 20 dias, prorrogáveis por 10.
 Recurso | Indeferimento do acesso ou das razões da negativa | 10 dias da ciência; superior decide em 5 dias.
 
-Como cai na FCC
+Como cai na prova
 
 A banca troca “acesso imediato” por “resposta sempre em 20 dias”. O prazo de 20 dias é subsidiário: só entra quando não for possível conceder o acesso imediatamente.
 
@@ -393,7 +393,7 @@ Exemplo
 
 Se a informação puder ser enviada por arquivo digital já existente, o órgão não pode cobrar “taxa de pesquisa”. Se o requerente pedir 800 páginas impressas, pode haver ressarcimento do custo de reprodução, observado o art. 12 e a isenção legal.
 
-Como cai na FCC
+Como cai na prova
 
 Pegadinha comum: “o serviço de fornecimento é remunerado, salvo informação digital”. Errado. A regra é a gratuidade da busca e do fornecimento; a exceção está no custo de reprodução.
 
@@ -448,7 +448,7 @@ Art. 15: recurso em 10 dias; superior decide em 5. | Arts. 16 e 17: CGU/CMRI e d
 Art. 18: Legislativo, Judiciário e MP têm regulamentação própria de revisão. | Decreto 7.724 detalha instâncias e reclamações do Executivo federal.
 Deve ser aplicado aos destinatários da LAI conforme sua organização. | Não é modelo obrigatório para todos os entes.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode inserir “CGU” numa questão genericamente sobre município ou tribunal estadual. O nome do órgão revela a pegadinha federativa.
 
@@ -503,7 +503,7 @@ Fundamento vem de outra norma ou regime jurídico específico. | Fundamento: imp
 Não precisa receber grau ultrassecreto/secreto/reservado para existir. | Usa os três graus e prazos máximos da LAI.
 Pode ter disciplina própria de duração e acesso. | Prazo conta da produção, salvo termo-evento dentro dos limites legais.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode dizer: “A LAI revogou todas as hipóteses anteriores de sigilo”. Errado. O art. 22 preserva outros sigilos legais, segredo de justiça e segredo industrial nas hipóteses legais.
 
@@ -585,7 +585,7 @@ Maior grau de restrição | Grau intermediário | Menor grau
 Hipóteses e autoridades devem respeitar competência | Idem | Idem
 Prazo regular conta da produção | Prazo regular conta da produção | Prazo regular conta da produção
 
-Como cai na FCC
+Como cai na prova
 
 É frequente a troca 25–15–5. Outra armadilha é dizer que os prazos contam “da decisão de classificação”. A lei diz da data de produção.
 
@@ -649,7 +649,7 @@ Ultrassecreta, secreta ou reservada | Sem grau de classificação
 Classificação formal | Restrição decorre do regime legal da informação pessoal
 Pode ser reavaliada/desclassificada | Acesso a terceiros depende das hipóteses legais pertinentes
 
-Como cai na FCC
+Como cai na prova
 
 A banca explora a falsa equivalência: “informação pessoal é sigilosa no grau reservado”. Errado. Também pode dizer que consentimento é sempre indispensável; o § 3º traz exceções expressas.
 
@@ -722,7 +722,7 @@ Preservar integridade do acervo | Destruir, alterar, ocultar ou inutilizar
 Proteger informação legitimamente restrita | Divulgar ou permitir acesso indevido
 Classificar apenas com fundamento | Impor sigilo para benefício ou ocultação de ilegalidade
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode trocar o elemento subjetivo: a lei fala em retardar deliberadamente e fornecer intencionalmente informação incorreta, incompleta ou imprecisa. Leia o advérbio.
 
@@ -773,7 +773,7 @@ Integra o âmbito institucional da LAI segundo art. 1º. | Sujeição “no que 
 Deveres de transparência abrangem informações sob sua competência, respeitadas restrições legais. | Publicidade do art. 2º refere-se à parcela de recursos públicos recebidos e sua destinação.
 Administração direta e entidades controladas incluídas. | Não é automaticamente equiparada integralmente à Administração.
 
-Como cai na FCC
+Como cai na prova
 
 Enunciado falso típico: “Qualquer entidade privada que receba qualquer recurso público fica integralmente submetida à LAI como se fosse órgão público.” A lei exige entidade sem fins lucrativos, recurso destinado a ação de interesse público e delimita a publicidade da parcela recebida/destinação.
 
@@ -791,7 +791,7 @@ Privada sem fins lucrativos + ação de interesse público + recurso público �
 
 O que levar para a prova
 
-A FCC pode exagerar o alcance subjetivo. Volte à literalidade dos arts. 1º e 2º.
+A banca examinadora pode exagerar o alcance subjetivo. Volte à literalidade dos arts. 1º e 2º.
 
 Check manual: ☐ Sei explicar por que entidade privada beneficiária não é automaticamente “Administração Pública”.
 
@@ -836,7 +836,7 @@ Método de solução de conflito aparente
 • Pergunte se a finalidade de transparência pode ser cumprida com acesso parcial ou ocultação proporcional.
 • Fundamente a decisão; não use “LGPD” como palavra mágica nem “LAI” como autorização irrestrita.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode afirmar: “Após a LGPD, informações contendo dados pessoais jamais podem ser fornecidas pela LAI.” Errado. A análise é de compatibilização; a própria LAI diferencia informação pessoal, traz exceções ao consentimento e preserva interesse público preponderante.
 
@@ -914,7 +914,7 @@ Exemplo integrado
 
 Cidadão pede contrato, notas fiscais e relatório de fiscalização. O contrato já está no portal; o órgão indica o link. As notas têm dados bancários pessoais não necessários à fiscalização social; o órgão fornece cópia com ocultação desses campos. O relatório contém trecho legitimamente classificado relativo a atividade de investigação em andamento; entrega-se a parte acessível e fundamenta-se a ocultação. Se o interessado discordar, pode recorrer. Cada resposta usa um mecanismo diferente da mesma lei.
 
-Como cai na FCC
+Como cai na prova
 
 Questões mais difíceis misturam categorias. O caminho é decompor: publicidade? pedido? prazo? restrição? grau? recurso? ente federativo? Não resolva pelo “sentimento de transparência”; resolva pelo dispositivo.
 
@@ -938,7 +938,7 @@ Check manual: ☐ Consigo explicar o fluxo completo da LAI em dois minutos.
 
 ---
 
-Camada FCC — 20 afirmações para julgar mentalmente
+Camada de prova — 20 afirmações para julgar mentalmente
 
 • “O sigilo constitui a regra da LAI.” Errado.
 • “O requerente deve demonstrar interesse jurídico na informação.” Errado.

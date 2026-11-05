@@ -18,7 +18,7 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <h3>Exemplo desmontado</h3>
 <p><b>“A servidora estudou com disciplina; mesmo assim, foi aprovada.”</b></p>
 <p>Existe um conector ligando as orações, portanto há coesão. O problema está no <b>valor concessivo</b> de “mesmo assim”: estudar com disciplina cria expectativa compatível com aprovação, não com obstáculo inesperado. A ligação formal existe, mas a relação escolhida quebra a lógica.</p>
-<div class="exam"><span class="label">BIZU FCC</span>A FCC pode apresentar uma frase perfeitamente “amarrada” e ainda assim incoerente. Não marque como correta apenas porque há pronome e conector bem empregados.</div>
+<div class="exam"><span class="label">BIZU de prova</span>A banca examinadora pode apresentar uma frase perfeitamente “amarrada” e ainda assim incoerente. Não marque como correta apenas porque há pronome e conector bem empregados.</div>
 <h3>Comparação perigosa</h3>
 <div class="contrast"><div><b>“Estudou muito; portanto, melhorou.”</b><span>Ligação conclusiva compatível com a expectativa.</span></div><div><b>“Estudou muito; contudo, melhorou.”</b><span>A gramática pode estar correta, mas o contraste precisa de contexto que o justifique.</span></div></div>
 <h3>Erro frequente</h3>
@@ -29,7 +29,7 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <div class="takeaway"><span class="label">O que levar para a prova</span><b>Primeiro descubra a ponte; depois teste a lógica.</b> Ligação linguística e unidade de sentido são análises diferentes.</div>`},
 {id:'s2',title:'Coesão referencial — encontre o referente sem chutar',html:`
 <h3>Comece por aqui</h3>
-<p>Questões de coesão da FCC cobram, com frequência, uma tarefa concreta: <b>descobrir a que expressão um pronome, artigo, advérbio ou termo remissivo se refere</b>. O método seguro é voltar ao texto e testar candidatos, não escolher o substantivo mais próximo automaticamente.</p>
+<p>Questões de coesão da banca examinadora cobram, com frequência, uma tarefa concreta: <b>descobrir a que expressão um pronome, artigo, advérbio ou termo remissivo se refere</b>. O método seguro é voltar ao texto e testar candidatos, não escolher o substantivo mais próximo automaticamente.</p>
 <div class="remember"><span class="label">Mapa essencial</span><b>Anáfora</b> retoma informação anterior. <b>Catáfora</b> anuncia informação que virá depois. <b>Exófora ou dêixis</b> aponta para algo recuperável na situação de comunicação, fora do trecho verbal.</div>
 <h3>Entenda a lógica</h3>
 <p>O referente precisa passar por três filtros: <b>sentido</b>, <b>compatibilidade gramatical</b> e <b>continuidade textual</b>. Proximidade ajuda, mas não decide sozinha.</p>
@@ -46,12 +46,12 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <h3>Exemplo desmontado</h3>
 <p><b>“A chefia entregou à equipe o relatório que seria revisado.”</b></p>
 <p>O relativo “que” não deve ser associado a “equipe” só por proximidade de ideia. Substitua: “o relatório seria revisado” funciona; “a equipe seria revisada” mudaria o conteúdo e entra em choque com a forma masculina de “revisado”. O antecedente é <b>relatório</b>.</p>
-<div class="exam"><span class="label">BIZU FCC</span>Faça o <b>teste da pergunta</b>: “quem/o que é X aqui?”. Depois reconstrua a oração sem o pronome. Esse procedimento derruba muitas alternativas de referente falso.</div>
+<div class="exam"><span class="label">BIZU de prova</span>Faça o <b>teste da pergunta</b>: “quem/o que é X aqui?”. Depois reconstrua a oração sem o pronome. Esse procedimento derruba muitas alternativas de referente falso.</div>
 <h3>Comparação perigosa</h3>
 <div class="contrast"><div><b>“Esse argumento...”</b><span>Normalmente retoma algo já apresentado.</span></div><div><b>“Este é o ponto: ...”</b><span>Frequentemente anuncia o que vem a seguir.</span></div></div>
 <p><b>Cuidado:</b> demonstrativos não devem ser tratados por fórmula absoluta. O uso de <i>este/isto</i> pode variar conforme a organização do texto e a tradição gramatical. A confirmação decisiva vem do contexto.</p>
 <h3>Erro frequente</h3>
-<p>Escolher como referente o substantivo imediatamente anterior sem testar o período completo. A FCC explora cadeias em que o referente está mais distante ou é uma <b>ideia inteira</b>, até mesmo implícita e recuperável no discurso.</p>
+<p>Escolher como referente o substantivo imediatamente anterior sem testar o período completo. A banca examinadora explora cadeias em que o referente está mais distante ou é uma <b>ideia inteira</b>, até mesmo implícita e recuperável no discurso.</p>
 <div class="analyst"><span class="label">Nível Analista</span>Um pronome pode condensar uma proposição, não apenas um nome. Em “O prazo foi reaberto. <b>Isso</b> surpreendeu os advogados”, “isso” retoma o fato de o prazo ter sido reaberto.</div>
 <div class="quiz" data-answer="a" data-explanation="A substituição por “as organizações financeiras” preserva sentido e estrutura; esse é o referente de “delas”."><div class="quiz-title">Teste imediato 1</div><p>Em “As organizações financeiras mudaram seus sistemas; muitas delas adotaram dupla verificação”, “delas” retoma:</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">as organizações financeiras</button><button class="quiz-opt" data-choice="b">seus sistemas</button><button class="quiz-opt" data-choice="c">dupla verificação</button></div><div class="quiz-feedback"></div></div>
 <div class="quiz" data-answer="b" data-explanation="“Isto” anuncia o conteúdo que aparece depois dos dois-pontos: a revisão integral do texto."><div class="quiz-title">Teste imediato 2</div><p>Em “O relator pediu isto: a revisão integral do texto”, o uso de “isto” é predominantemente:</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">anafórico</button><button class="quiz-opt" data-choice="b">catafórico</button><button class="quiz-opt" data-choice="c">exofórico</button></div><div class="quiz-feedback"></div></div>

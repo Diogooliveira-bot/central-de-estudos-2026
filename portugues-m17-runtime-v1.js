@@ -31,7 +31,7 @@ function renderTheory(){
      return '<div class="qcard"><b>'+(qi+1)+'. '+esc(q.q)+'</b><div class="qopts">'+opts+'</div>'+fb+'</div>';
    }).join("");
    const shouldOpen=hadOpen?openIds.has(s.id):idx===0;
-   return '<details class="session" data-session="'+esc(s.id)+'" '+(shouldOpen?'open':'')+'><summary><span class="num">'+(idx+1)+'</span><span class="sumtxt"><b>'+esc(s.title)+'</b><span class="goal">'+esc(s.goal||"")+'</span></span><span class="state">'+(done?'CONCLUÍDA':'PENDENTE')+'</span></summary><div class="body">'+s.html+'<div class="quiz"><span class="label">Checagem rápida — estilo FCC, autoral</span>'+quiz+'</div><div class="donebox"><label><input type="checkbox" data-done="'+esc(s.id)+'" '+(done?'checked':'')+'> Concluir sessão</label></div></div></details>';
+   return '<details class="session" data-session="'+esc(s.id)+'" '+(shouldOpen?'open':'')+'><summary><span class="num">'+(idx+1)+'</span><span class="sumtxt"><b>'+esc(s.title)+'</b><span class="goal">'+esc(s.goal||"")+'</span></span><span class="state">'+(done?'CONCLUÍDA':'PENDENTE')+'</span></summary><div class="body">'+s.html+'<div class="quiz"><span class="label">Checagem rápida — estilo de prova, autoral</span>'+quiz+'</div><div class="donebox"><label><input type="checkbox" data-done="'+esc(s.id)+'" '+(done?'checked':'')+'> Concluir sessão</label></div></div></details>';
  }).join("");
  host.querySelectorAll("[data-done]").forEach(el=>el.addEventListener("change",e=>{state.done[e.target.dataset.done]=e.target.checked;save();renderTheory();updateProgress()}));
  host.querySelectorAll("[data-q]").forEach(el=>el.addEventListener("click",e=>{state.quiz[e.currentTarget.dataset.q]=Number(e.currentTarget.dataset.o);save();renderTheory()}));

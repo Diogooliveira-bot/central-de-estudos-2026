@@ -20,7 +20,7 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <h3>Exemplo desmontado</h3>
 <p><b>“O município lançou um programa de leitura. A iniciativa atenderá vinte escolas. O projeto terá avaliação semestral.”</b></p>
 <p>A cadeia é <span class="formula">programa → iniciativa → projeto</span>. As trocas não são enfeite: evitam repetição e preservam o assunto enquanto o texto acrescenta dados novos.</p>
-<div class="exam"><span class="label">BIZU FCC</span>Quando a banca perguntar se uma expressão “retoma”, teste se ela poderia ocupar o lugar do antecedente <b>naquele contexto</b>. Sinonímia de dicionário não basta; equivalência textual é contextual.</div>
+<div class="exam"><span class="label">BIZU de prova</span>Quando a banca perguntar se uma expressão “retoma”, teste se ela poderia ocupar o lugar do antecedente <b>naquele contexto</b>. Sinonímia de dicionário não basta; equivalência textual é contextual.</div>
 <h3>Comparação perigosa</h3>
 <div class="contrast"><div><b>“automóvel” → “veículo”</b><span>Pode funcionar como hiperônimo se o contexto continuar apontando para o mesmo automóvel.</span></div><div><b>“automóvel” → “bem”</b><span>É mais amplo; pode perder precisão e permitir outros referentes no contexto.</span></div></div>
 <h3>Erro frequente</h3>
@@ -52,12 +52,12 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <h3>Exemplo desmontado</h3>
 <p><b>“O servidor conhecia a regra, mas cometeu o erro.”</b></p>
 <p>Ideia A cria expectativa de acerto. Ideia B frustra essa expectativa. A relação é de <b>oposição</b>; “mas” é compatível. Trocar por “por isso” transformaria oposição em conclusão e mudaria o sentido.</p>
-<div class="exam"><span class="label">BIZU FCC</span>Em questão de substituição, compare <b>relações</b>, não listas de sinônimos. Dois conectores da mesma “família” escolar podem funcionar de forma diferente na posição concreta.</div>
+<div class="exam"><span class="label">BIZU de prova</span>Em questão de substituição, compare <b>relações</b>, não listas de sinônimos. Dois conectores da mesma “família” escolar podem funcionar de forma diferente na posição concreta.</div>
 <h3>Comparação perigosa</h3>
 <div class="contrast"><div><b>“Estava cansado; por isso, descansou.”</b><span>Resultado/conclusão.</span></div><div><b>“Embora estivesse cansado, continuou.”</b><span>Concessão: o cansaço não impediu a continuação.</span></div></div>
 <h3>Erro frequente</h3>
 <p>Confundir <b>causa</b> com <b>explicação</b> ou <b>oposição</b> com <b>concessão</b>. Em vez de decorar rótulos, escreva a relação com uma frase: “A provoca B”; “B justifica a afirmação A”; “A é obstáculo que não impede B”.</p>
-<div class="analyst"><span class="label">Nível Analista</span>A relação pode estar <b>implícita</b>, marcada apenas por justaposição ou pontuação. Nesses casos, a FCC pode pedir qual conectivo poderia ser inserido sem alterar o sentido. Sua tarefa é inferir o elo semântico já existente.</div>
+<div class="analyst"><span class="label">Nível Analista</span>A relação pode estar <b>implícita</b>, marcada apenas por justaposição ou pontuação. Nesses casos, a banca examinadora pode pedir qual conectivo poderia ser inserido sem alterar o sentido. Sua tarefa é inferir o elo semântico já existente.</div>
 <div class="quiz" data-answer="a" data-explanation="Conhecer a regra gera expectativa de não errar; “mas” marca a quebra dessa expectativa."><div class="quiz-title">Teste imediato 1</div><p>Em “Conhecia a regra, mas cometeu o erro”, “mas” estabelece principalmente:</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">oposição</button><button class="quiz-opt" data-choice="b">causa</button><button class="quiz-opt" data-choice="c">conclusão</button></div><div class="quiz-feedback"></div></div>
 <div class="quiz" data-answer="c" data-explanation="Trocar “portanto” por “contudo” muda uma relação conclusiva para uma adversativa."><div class="quiz-title">Teste imediato 2</div><p>Em “O prazo acabou; portanto, o protocolo foi encerrado”, qual troca tende a alterar a relação?</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">portanto → logo</button><button class="quiz-opt" data-choice="b">portanto → por conseguinte</button><button class="quiz-opt" data-choice="c">portanto → contudo</button></div><div class="quiz-feedback"></div></div>
 <div class="takeaway"><span class="label">O que levar para a prova</span><b>IDEIA A → relação → IDEIA B.</b> Descubra primeiro o vínculo semântico; a classificação vem depois.</div>`}

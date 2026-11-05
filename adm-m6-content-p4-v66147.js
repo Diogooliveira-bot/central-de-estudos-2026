@@ -12,7 +12,7 @@
 </section>
 
 <section class="adm-m6-session" id="adm-m6-s14">
-<div class="adm-m6-session-head"><small>SESSÃO 14 · QUADRO-MESTRE DE PRAZOS E FECHAMENTO</small><h3>Os números que a FCC troca entre si</h3></div>
+<div class="adm-m6-session-head"><small>SESSÃO 14 · QUADRO-MESTRE DE PRAZOS E FECHAMENTO</small><h3>Os números que a banca examinadora troca entre si</h3></div>
 <div class="adm-m6-table-wrap wide"><table><thead><tr><th>Situação</th><th>Prazo/regra</th><th>Chave de prova</th></tr></thead><tbody>
 <tr><td>Prática de ato sem prazo específico — art. 24</td><td><b>5 dias</b>, salvo força maior; dilatação até o dobro com justificação comprovada.</td><td>Não confundir com reconsideração: também 5, mas fundamento diferente.</td></tr>
 <tr><td>Antecedência de intimação para comparecer — art. 26</td><td><b>3 dias úteis</b>.</td><td>Aqui a lei diz expressamente úteis.</td></tr>
@@ -40,7 +40,7 @@
 </div>
 <h4>Camada de prova — 12 gatilhos</h4>
 <p>1. Federal, não automaticamente nacional. 2. Legislativo/Judiciário da União entram quando administram. 3. Início de ofício ou a pedido. 4. Competência irrenunciável. 5. Delegação pode existir sem hierarquia. 6. Avocação exige hierarquia. 7. Prova ilícita é inadmissível. 8. Motivação pode ser aliunde. 9. Há dever de decidir. 10. Recurso não tem efeito suspensivo automático. 11. Art. 54 protege boa-fé após 5 anos. 12. Revisão não agrava sanção.</p>
-<div class="adm-m6-callout exam"><b>Regra de ouro:</b> quando a questão trouxer um prazo, pergunte primeiro “qual ato?”. A FCC costuma usar um número verdadeiro no instituto errado.</div>
+<div class="adm-m6-callout exam"><b>Regra de ouro:</b> quando a questão trouxer um prazo, pergunte primeiro “qual ato?”. A banca examinadora costuma usar um número verdadeiro no instituto errado.</div>
 <h4>O que levar</h4><p><b>3 úteis · 5 · 10 · 15 · 30(+30) · 5 anos</b>, sempre ligados ao respectivo ato.</p>
 <p class="adm-m6-check">□ <b>Check manual:</b> consigo reconstruir o quadro de prazos sem olhar.</p>
 </section>`;})();

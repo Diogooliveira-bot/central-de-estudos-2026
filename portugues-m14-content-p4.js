@@ -1,5 +1,5 @@
 window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
-{id:'s7',title:'Método FCC completo — referente, relação, sentido e reescritura',html:`
+{id:'s7',title:'Método de prova completo — referente, relação, sentido e reescritura',html:`
 <h3>Comece por aqui</h3>
 <p>No M14, quase tudo converge para um mesmo procedimento. A banca muda o formato da pergunta, mas você normalmente precisa rastrear <b>quem é retomado</b>, <b>qual relação une as ideias</b>, <b>como o texto progride</b> e <b>o que uma reescrita preservou ou alterou</b>.</p>
 <div class="remember"><span class="label">Método-mestre M14</span><b>REFERENTE → RELAÇÃO → PROGRESSÃO → SENTIDO GLOBAL → REESCRITURA → CONFIRMAÇÃO.</b></div>
@@ -24,12 +24,12 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <h3>Exemplo desmontado</h3>
 <p>Original: <b>“Há quem defenda a medida, mas os técnicos a rejeitam.”</b><br>Proposta: <b>“Embora os técnicos rejeitem a medida, há quem a defenda.”</b></p>
 <ol><li><b>Referente:</b> “a” continua retomando “medida”.</li><li><b>Relação:</b> o contraste permanece, agora expresso por concessão.</li><li><b>Progressão:</b> a ordem foi invertida.</li><li><b>Sentido global:</b> continuam coexistindo defesa e rejeição.</li><li><b>Reescritura:</b> houve inversão e mudança estrutural do conector.</li><li><b>Confirmação:</b> se a questão exigir apenas redação correta e coerente, a estrutura pode ser válida; se exigir equivalência rigorosa de nuance, compare o efeito argumentativo no contexto.</li></ol>
-<div class="exam"><span class="label">BIZU FCC • ordem de ataque</span>Em alternativa longa, procure primeiro os pontos de maior risco: <b>pronome ambíguo, conector trocado, negação, tempo/modo verbal, regência, pontuação e mudança de alcance</b>. São locais em que uma frase “bonita” costuma esconder a alteração.</div>
+<div class="exam"><span class="label">BIZU de prova • ordem de ataque</span>Em alternativa longa, procure primeiro os pontos de maior risco: <b>pronome ambíguo, conector trocado, negação, tempo/modo verbal, regência, pontuação e mudança de alcance</b>. São locais em que uma frase “bonita” costuma esconder a alteração.</div>
 <h3>Comparação perigosa</h3>
 <div class="contrast"><div><b>“O termo parece equivalente.”</b><span>Isso é hipótese.</span></div><div><b>“Substituí no trecho e a relação, o referente e o alcance permaneceram.”</b><span>Isso é confirmação.</span></div></div>
 <h3>Erro frequente</h3>
 <p>Resolver coesão apenas com gramática de pronomes ou resolver reescritura apenas com “sinônimos”. O M14 é textual: <b>a forma só vale quando funciona dentro da cadeia de sentido</b>.</p>
-<div class="analyst"><span class="label">Nível Analista</span>Quando duas alternativas parecem corretas, volte ao <b>escopo exato do comando</b>. A FCC costuma separar “correta”, “clara”, “coerente” e “sem prejuízo do sentido”. O desempate deve nascer da exigência expressa, não de preferência estilística.</div>
+<div class="analyst"><span class="label">Nível Analista</span>Quando duas alternativas parecem corretas, volte ao <b>escopo exato do comando</b>. A banca examinadora costuma separar “correta”, “clara”, “coerente” e “sem prejuízo do sentido”. O desempate deve nascer da exigência expressa, não de preferência estilística.</div>
 <h3>Checklist de 30 segundos</h3>
 <ul><li>O pronome tem antecedente inequívoco?</li><li>O conector expressa a relação real?</li><li>A troca lexical funciona <b>neste</b> contexto?</li><li>Negação, tempo, modo e alcance permaneceram?</li><li>A frase continua gramatical?</li><li>O texto continua coerente?</li><li>Se o comando exigiu, o sentido original foi preservado?</li></ul>
 <div class="quiz" data-answer="b" data-explanation="A análise eficiente começa pelo referente, identifica a relação e só então julga a equivalência da reescrita segundo o comando."><div class="quiz-title">Teste imediato 1</div><p>Qual sequência reproduz o método-mestre do M14?</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">Pontuação → ortografia → tamanho da frase → preferência estilística.</button><button class="quiz-opt" data-choice="b">Referente → relação → progressão → sentido global → reescritura → confirmação.</button><button class="quiz-opt" data-choice="c">Sinônimo → classe gramatical → número de períodos → gabarito.</button></div><div class="quiz-feedback"></div></div>

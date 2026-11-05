@@ -837,7 +837,7 @@ setTimeout(syncInstallButton,1800);
 (function(){
 'use strict';
 var VIEW_IDS=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','leiSecaView','vadeMecumView','moduleView'];
-var SUBJECTS_STATIC=[['pt','Português','24 módulos • Português Autodidata'],['cf','Direito Constitucional','curso integrado por módulos'],['adm','Direito Administrativo','tópicos do edital'],['civil','Direito Civil','curso integrado por módulos'],['cpc','Direito Processual Civil','curso integrado por módulos'],['penal','Direito Penal','curso integrado por módulos'],['cpp','Direito Processual Penal','tópicos do edital'],['rlm','Raciocínio Lógico-Matemático','9 módulos • cálculo rápido • questões FCC']];
+var SUBJECTS_STATIC=[['pt','Português','24 módulos • Português Autodidata'],['cf','Direito Constitucional','curso integrado por módulos'],['adm','Direito Administrativo','tópicos do edital'],['civil','Direito Civil','curso integrado por módulos'],['cpc','Direito Processual Civil','curso integrado por módulos'],['penal','Direito Penal','curso integrado por módulos'],['cpp','Direito Processual Penal','tópicos do edital'],['rlm','Raciocínio Lógico-Matemático','9 módulos • cálculo rápido • questões de concursos']];
 function el(id){return document.getElementById(id)}
 function esc(v){return String(v==null?'':v).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
 function setActive(btn){try{document.querySelectorAll('#centralSidebar .nav button').forEach(function(b){b.classList.remove('active')});if(btn)btn.classList.add('active')}catch(e){}}
@@ -960,7 +960,7 @@ setTimeout(function(){
 <button type="button" class="disc-card" data-id="cpc" onclick="return centralHardSubject('cpc')"><b>Direito Processual Civil</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
 <button type="button" class="disc-card" data-id="penal" onclick="return centralHardSubject('penal')"><b>Direito Penal</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
 <button type="button" class="disc-card" data-id="cpp" onclick="return centralHardSubject('cpp')"><b>Direito Processual Penal</b><small>tópicos do edital</small><span class="disc-meta">Abrir disciplina</span></button>
-<button type="button" class="disc-card" data-id="rlm" onclick="return centralHardSubject('rlm')"><b>Raciocínio Lógico-Matemático</b><small>9 módulos • cálculo rápido • questões FCC</small><span class="disc-meta">Abrir disciplina</span></button></div><div class="card" style="padding:0;overflow:hidden;margin-top:14px"><div id="mapaEstudosDisc"></div></div>
+<button type="button" class="disc-card" data-id="rlm" onclick="return centralHardSubject('rlm')"><b>Raciocínio Lógico-Matemático</b><small>9 módulos • cálculo rápido • questões de concursos</small><span class="disc-meta">Abrir disciplina</span></button></div><div class="card" style="padding:0;overflow:hidden;margin-top:14px"><div id="mapaEstudosDisc"></div></div>
   </section>
 
   <section class="view hidden" id="agendaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button>

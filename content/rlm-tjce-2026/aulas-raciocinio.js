@@ -37,7 +37,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       {
         "title": "Deduções necessárias e teste das alternativas",
         "paragraphs": [
-          "Após preencher as restrições, classifique cada resposta: necessária (ocorre em todas as soluções), possível (ocorre em algumas), impossível (não ocorre em nenhuma). A FCC costuma pedir o que 'necessariamente' se conclui; uma hipótese compatível, embora atraente, não resolve a pergunta.",
+          "Após preencher as restrições, classifique cada resposta: necessária (ocorre em todas as soluções), possível (ocorre em algumas), impossível (não ocorre em nenhuma). A banca examinadora costuma pedir o que 'necessariamente' se conclui; uma hipótese compatível, embora atraente, não resolve a pergunta.",
           "Para não listar todas as permutações, teste a afirmação contrária à alternativa candidata. Se houver uma configuração que respeita o enunciado e refuta a conclusão, ela não é necessária. Se não houver, você encontrou uma consequência lógica."
         ],
         "example": "Exemplo resolvido: A pode estar em 1º ou 2º em soluções distintas. Portanto, 'A está em 1º' é possível, mas não é conclusão necessária."
@@ -287,7 +287,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
         "title": "Conceitos com condições combinadas",
         "paragraphs": [
           "Um enunciado pode definir um objeto por vários atributos: 'inteiro positivo que é par, múltiplo de 3 e menor que 20'. Fixe primeiro o universo dos inteiros positivos. Ser par e múltiplo de 3 equivale a ser múltiplo de 6; menores que 20, restam 6, 12 e 18. Sem a restrição de positividade, zero e inteiros negativos também poderiam satisfazer as condições.",
-          "Em exercícios FCC, o principal risco é generalizar indevidamente. A prova permite usar exatamente as regras explícitas ou demonstravelmente inferidas. Se vários objetos satisfazem as condições, informe que a escolha não é única em vez de inventar um dado ausente."
+          "Em exercícios de concursos, o principal risco é generalizar indevidamente. A prova permite usar exatamente as regras explícitas ou demonstravelmente inferidas. Se vários objetos satisfazem as condições, informe que a escolha não é única em vez de inventar um dado ausente."
         ],
         "example": "Exemplo resolvido: inteiros positivos pares e múltiplos de 5 menores que 25 são 10 e 20; um único elemento não pode ser inferido."
       }

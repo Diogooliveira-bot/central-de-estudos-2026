@@ -13,7 +13,7 @@ Base jurídica vigente: Constituição Federal · Decreto-Lei 200/67 · Lei 13.3
 
 Como estudar este módulo
 
-Organização Administrativa fica fácil quando você responde sempre às mesmas quatro perguntas: quem tem personalidade jurídica? houve criação de uma nova pessoa? existe hierarquia? qual é o regime jurídico predominante? A FCC costuma trocar uma dessas respostas e manter o restante da frase correto.
+Organização Administrativa fica fácil quando você responde sempre às mesmas quatro perguntas: quem tem personalidade jurídica? houve criação de uma nova pessoa? existe hierarquia? qual é o regime jurídico predominante? A banca examinadora costuma trocar uma dessas respostas e manter o restante da frase correto.
 
 pessoa→estrutura→vínculo→regime→controle→pegadinha
 
@@ -205,7 +205,7 @@ Fundação pública de direito privado | Direito privado | Lei específica autor
 Empresa pública | Direito privado | Lei específica autoriza. | Após atos constitutivos/registro.
 Sociedade de economia mista | Direito privado | Lei específica autoriza. | Após constituição societária/registro.
 
-FCC adora a troca verbal: autarquia é criada por lei; empresa pública e SEM têm criação autorizada por lei. Para as fundações, identifique primeiro se a questão está tratando de fundação de direito público ou de direito privado.
+A banca examinadora adora a troca verbal: autarquia é criada por lei; empresa pública e SEM têm criação autorizada por lei. Para as fundações, identifique primeiro se a questão está tratando de fundação de direito público ou de direito privado.
 
 3. Subsidiárias, participação e extinção
 
@@ -309,7 +309,7 @@ As fundações integrantes da Administração Indireta estão sujeitas aos princ
 
 O STJ, alinhado à orientação do STF, registra três categorias relevantes: fundações privadas instituídas por particulares, fundações públicas de direito privado e fundações públicas de direito público. As de direito público possuem natureza jurídica de autarquia; as de direito privado dependem de autorização legal para instituição.
 
-Como a FCC pode induzir ao erro: “Toda fundação instituída pelo poder público tem personalidade de direito privado porque o DL 200 assim define.” A frase ignora a construção jurisprudencial das fundações públicas de direito público.
+Como a banca examinadora pode induzir ao erro: “Toda fundação instituída pelo poder público tem personalidade de direito privado porque o DL 200 assim define.” A frase ignora a construção jurisprudencial das fundações públicas de direito público.
 
 5. Autarquia x fundação pública
 
@@ -580,7 +580,7 @@ Leitura enxuta para a véspera e para revisão de lei seca:
 
 Constituição FederalArt. 37, caput, II, XIX e XX; art. 109, I; art. 150, VI, a, §§ 2º e 3º; art. 173 e pontos correlatos. Decreto-Lei 200/67Arts. 4º–5º; 6º; 10–13; 19–27. Estrutura, descentralização e supervisão. Lei 13.303/16Arts. 1º–4º e estrutura inicial de governança. Foque conceitos de EP/SEM. Lei 13.848/19Arts. 2º–3º e estrutura essencial das agências reguladoras. Lei 9.986/00Estrutura e dirigentes das agências reguladoras. Lei 9.649/98Arts. 51–52: qualificação de Agência Executiva; art. 58 deve ser lido com a ADI 1.717. Decreto 2.487/98Critérios federais para qualificação de autarquia/fundação como Agência Executiva. Jurisprudência oficial essencialADI 1.717 (conselhos); ADI 3.026 e Tema 1.054 (OAB); Tema 1.022 (dispensa de empregados concursados); Tema 253 e precedentes correlatos (estatais e precatórios).
 
-Camada FCC: frases para julgar em 1 minuto
+Camada de prova: frases para julgar em 1 minuto
 
 1. “A desconcentração administrativa pressupõe criação de pessoa jurídica.” ERRADO — cria/distribui órgãos na mesma pessoa.
 
