@@ -1,0 +1,24 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {JSDOM} from 'jsdom';
+const source=readFileSync(new URL('../ui/disciplinas-foco-v1.js',import.meta.url),'utf8');
+test('continuar revela o módulo depois do carregamento e conserva o leitor nativo',async()=>{
+ const dom=new JSDOM('<div id="homeView"><div id="subjects"><section class="subject" data-id="cpp"><div class="subject-head"><span class="subject-name">Processo Penal</span></div><div class="subject-body"></div></section></div></div>',{url:'https://example.test',runScripts:'outside-only',pretendToBeVisual:true});
+ const w=dom.window;w.HTMLElement.prototype.scrollIntoView=function(){};
+ let resumed=0,loaded=0;
+ w.openHome=()=>{};w.toggleSubject=()=>{};
+ w.centralResumeLast=()=>{resumed++};
+ w.CentralDisciplineLoader={load:async()=>{loaded++;await Promise.resolve();w.document.querySelector('.subject-body').innerHTML='<article class="topic-item" data-cpp-native-module="2"><span class="topic-title">Inquérito</span><button class="open-topic">Abrir</button></article>';},isReady:()=>true};
+ w.localStorage.setItem('central-v6:last',JSON.stringify({cppModule:2,cppKind:'summary'}));
+ w.eval(source);
+ await w.centralResumeLast();
+ assert.equal(loaded,1);assert.equal(resumed,1);
+ assert.equal(w.BaseCompletaFocusNavigation.state.stage,'reading');
+ assert.equal(w.BaseCompletaFocusNavigation.state.subject,'cpp');
+ await new Promise(r=>w.requestAnimationFrame(r));
+ assert.equal(w.document.querySelector('.bc-focus-current-module')?.dataset.cppNativeModule,'2');
+ w.localStorage.setItem('central-v6:last','{broken');await w.centralResumeLast();
+ assert.equal(w.BaseCompletaFocusNavigation.state.stage,'choose');
+ dom.window.close();
+});

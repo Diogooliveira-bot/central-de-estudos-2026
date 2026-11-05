@@ -24,7 +24,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     const fileVersion = file.includes('study-objectives-catalog') ? '20261105fasea1' : file.includes('study-objectives') ? '20261101sync3'
       : file.includes('student-plan') ? '20261019-qc-catalog1'
         : file.includes('student-shell') ? '20261105nav1' : file.includes('auth-shell') ? '20261020studyobj1'
-          : file.includes('student-dashboard') ? '20261101start1'
+          : file.includes('student-dashboard') ? '20261105resume1'
           : file.includes('external-question-filters') ? '20261028-single-loading-v1-mais1' : file.includes('student-ux-core') ? '20261023-remove-labor-disciplines-v1' : '';
     assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
   }
@@ -120,10 +120,10 @@ test('fluxo progressivo usa módulos reais e não altera o conteúdo ou o acesso
     read('central-v119.html'),read('ui/disciplinas-foco-v1.css'),
     read('ui/disciplinas-foco-v1.js'),read('central-offline-files-v66172.json'),
   ]);
-  assert.match(boot,/disciplinas-foco-v1\.js\?v=20261102-loading-ui1/);
-  assert.match(boot,/disciplinas-foco-v1\.css\?v=20261102-loading-ui1/);
-  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.js?v=20261102-loading-ui1'));
-  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.css?v=20261102-loading-ui1'));
+  assert.match(boot,/disciplinas-foco-v1\.js\?v=20261105resume1/);
+  assert.match(boot,/disciplinas-foco-v1\.css\?v=20261105resume1/);
+  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.js?v=20261105resume1'));
+  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.css?v=20261105resume1'));
   assert.match(script,/BaseCompletaFocusNavigation/);
   assert.match(script,/moduleNodes\(subject\)/);
   assert.match(script,/m\.head\.click\(\)/);
