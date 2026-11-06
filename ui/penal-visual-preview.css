@@ -1,0 +1,42 @@
+.bc-native-reader-overlay:has(.penal-visual-preview) .bc-native-scroll{background:#fff!important}
+.bc-native-reader-overlay .penal-visual-preview{box-sizing:border-box;max-width:940px!important;margin:0 auto!important;padding:36px 48px 90px!important;background:#fff!important;color:#172e45!important;font-family:Arial,Helvetica,sans-serif!important;line-height:1.85!important}
+.penal-visual-preview>h1,.penal-visual-preview>.bc-native-kicker,.penal-visual-preview>.lead,.penal-visual-preview>.bc-native-study-progress,.penal-visual-preview .pen-m1-hero,.penal-visual-preview .pen-cover,.penal-visual-preview [class$="-cover"],.penal-visual-preview .penv-editorial-note{display:none!important}
+.penal-visual-preview :is(main,article,section)[class*="book"]{max-width:none!important;width:auto!important;padding:0!important;margin:0!important;box-shadow:none!important;background:transparent!important;border:0!important}
+.penal-visual-preview :is(p,li,td,th){font-family:inherit!important;color:inherit!important;line-height:1.8!important}
+.penal-visual-preview :is(h1,h2,h3,h4,h5){font-family:inherit!important;color:#172e45!important;line-height:1.4!important}
+.penal-visual-preview h2{font-size:23px!important;margin:42px 0 18px!important;padding-top:20px;border-top:1px solid #dce6ef}
+.penal-visual-preview h3{font-size:19px!important;margin:28px 0 14px!important}
+.penal-visual-preview .penv-hero{border-bottom:1px solid #dce6ef;padding:0 0 32px;margin:0 0 32px}
+.penal-visual-preview .penv-eyebrow{font-size:10px;letter-spacing:.16em;font-weight:750;color:#53677a;margin-bottom:24px}
+.penal-visual-preview .penv-edition{display:inline-block;font-size:10px;letter-spacing:.1em;color:#194c75;border-left:3px solid currentColor;padding-left:10px;margin-bottom:16px}
+.penal-visual-preview .penv-hero h1{font-size:38px!important;line-height:1.18!important;letter-spacing:-.035em;margin:0 0 18px!important}
+.penal-visual-preview .penv-hero>p{max-width:580px;font-size:17px!important;color:#53677a!important}
+.penal-visual-preview .penv-route{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px;font-size:12px}
+.penal-visual-preview .penv-route span{border-top:2px solid #c6d9e9;padding-top:10px}
+.penal-visual-preview .penv-route b{display:block;font-size:11px;color:#235578}
+.penal-visual-preview .penv-scheme{margin:32px 0;padding:26px;border:1px solid #cfdfec;border-radius:14px;background:#f1f7fc}
+.penal-visual-preview .penv-scheme>small{font-size:10px;font-weight:750;letter-spacing:.1em;color:#53677a}
+.penal-visual-preview .penv-scheme>h3{font-size:22px!important;margin:8px 0 20px!important}
+.penal-visual-preview .penv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.penal-visual-preview .penv-tile{padding:18px;background:#fff;border:1px solid #dce6ef;border-radius:10px}
+.penal-visual-preview .penv-tile>span{display:block;font-size:11px;color:#53677a;margin-bottom:14px}
+.penal-visual-preview .penv-tile>b{display:block;font-size:16px}
+.penal-visual-preview .penv-tile>p{font-size:14px!important;line-height:1.65!important;margin:8px 0 0!important}
+.penal-visual-preview .penv-callout{margin:24px 0!important;padding:20px 22px!important;border:1px solid #dce6ef!important;border-left:3px solid #2d638c!important;border-radius:0 10px 10px 0!important;background:#f8fafc!important;box-shadow:none!important}
+.penal-visual-preview table{width:100%!important;border-collapse:collapse;margin:22px 0;font-size:14px!important;line-height:1.65!important}
+.penal-visual-preview th{background:#edf4fa!important;text-align:left!important;padding:14px!important}
+.penal-visual-preview td{padding:14px!important;border-bottom:1px solid #dce6ef!important;vertical-align:top}
+.penal-visual-preview .penv-law-library{margin:30px 0 40px}
+.penal-visual-preview .penv-law-library>h4{font-size:22px!important;margin:0 0 12px!important}
+.penal-visual-preview .penv-law-library>p{font-size:14px!important}
+.penal-visual-preview .penv-law-group{margin:20px 0 30px}
+.penal-visual-preview .penv-law-group>h4{font-size:12px!important;letter-spacing:.06em;text-transform:uppercase;color:#365b7a!important;margin:0 0 8px!important}
+.penal-visual-preview .penv-literal-law{border:1px solid #cbdce9!important;border-left:3px solid #235578!important;background:#f7fbff!important;color:#172e45!important;padding:16px 20px!important;border-radius:8px!important;margin:14px 0!important}
+.penal-visual-preview .penv-literal-law>summary{cursor:pointer;font-weight:700;line-height:1.6}
+.penal-visual-preview .penv-literal-law blockquote{border:0!important;margin:16px 0!important;padding:0!important;background:transparent!important}
+.penal-visual-preview .penv-literal-law blockquote p{font-size:16px!important;line-height:1.8!important;text-align:left!important;margin:12px 0!important}
+.penal-visual-preview .penv-literal-law a{font-size:13px;text-decoration:underline}
+.penal-visual-preview summary:focus-visible{outline:2px solid #235578;outline-offset:5px}
+.penal-visual-preview .penv-law-fold{border:1px solid #cbdce9;border-radius:8px;padding:14px 18px;background:#f7fbff}
+.penal-visual-preview .penv-law-fold>summary{cursor:pointer;color:#235578;font-weight:700;font-size:14px;line-height:1.6}
+@media(max-width:600px){.bc-native-reader-overlay .penal-visual-preview{padding:26px 20px 70px!important}.penal-visual-preview .penv-hero h1{font-size:29px!important}.penal-visual-preview .penv-route{grid-template-columns:repeat(2,1fr)}.penal-visual-preview .penv-scheme{padding:18px}.penal-visual-preview .penv-grid{grid-template-columns:1fr}}
