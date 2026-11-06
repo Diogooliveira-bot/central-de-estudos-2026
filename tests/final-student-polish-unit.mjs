@@ -122,6 +122,8 @@ test('contratos de acabamento permanecem ligados à experiência do aluno', asyn
   assert.match(decorando, /535 exercícios autorais/);
   assert.match(boot, /var APP_VERSION='6\.7\.0'/);
   assert.match(dashboard, /function canonicalProgress\(\)/);
-  assert.match(offline, /student-dashboard-v3\.js\?v=20261105resume1/);
+  const dashboardAsset=JSON.parse(offline).files.find(value=>value.startsWith('/ui/student-dashboard-v3.js?v='));
+  assert.ok(dashboardAsset,'dashboard versionado no manifesto');
+  assert.ok(boot.includes(dashboardAsset.slice(1)),'dashboard do boot e manifesto devem usar a mesma versão');
 });
 
