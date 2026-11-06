@@ -87,7 +87,7 @@
       const number = Number(module.getAttribute('data-cpp-native-module'));
       if (!number) return;
       const code = `M${String(number).padStart(2, '0')}`;
-      const host = module.querySelector('.detail-panel');
+      const host = module.querySelector('[data-cpp-links-slot]') || module.querySelector('.detail-panel');
       mount(host, 'processual-penal', code, host?.querySelector('.cpp-native-tec-panel')?.nextElementSibling || null);
     });
   }

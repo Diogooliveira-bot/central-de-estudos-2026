@@ -156,7 +156,7 @@
     const fullCard = makeCard(complete, 'complete');
     const reviewCard = makeCard(summary, 'summary');
     const preservedExtras = mindmap ? [mindmap] : [];
-    grid.replaceChildren(fullCard, reviewCard, ...preservedExtras);
+    grid.replaceChildren(reviewCard, fullCard, ...preservedExtras);
     materials.querySelector(':scope > .bc-native-metrics')?.remove();
     materials.querySelector(':scope > .bc-native-materials-head')?.remove();
     materials.classList.add('penal-approved-native-materials');
@@ -247,9 +247,10 @@
       body.appendChild(extra);
     }
     if (full) {
+      // Ordem aprovada: leitura orientada, versão de revisão e teoria completa.
       full.after(reading);
-      reading.after(full);
-      full.after(review);
+      reading.after(review);
+      review.after(full);
     } else {
       reading.after(review);
     }
@@ -307,7 +308,7 @@
       });
     }
 
-    const ordered = [note,...uniqueFilterPanels,moduleLaw,extra,tools,resources,review].filter(Boolean);
+    const ordered = [note,...uniqueFilterPanels,moduleLaw,extra,review,tools,resources].filter(Boolean);
     const others = Array.from(footer.children).filter(node => !ordered.includes(node));
     footer.replaceChildren(...ordered,...others);
   }
@@ -416,7 +417,7 @@
       }
       return article;
     };
-    grid.replaceChildren(card(complete,'complete',question('complete')),card(summary,'summary',question('summary')));
+    grid.replaceChildren(card(summary,'summary',question('summary')),card(complete,'complete',question('complete')));
     if (map) grid.append(card(map,'map',null));
     materials.classList.add('cpc-approved-materials'); materials.querySelector('.bc-native-materials-head')?.remove();
     intro?.remove(); body.querySelector(':scope > .cf-module-bar')?.remove();
@@ -550,7 +551,9 @@
     const native = body.querySelector('.notes,.cpp-note,.cf-resource-box:has(textarea),[data-ds-notes]');
     if (native) {
       native.classList.add('ds-notes');
-      if (native.parentElement !== host || host.lastElementChild !== native) host.appendChild(native);
+      // Disciplinas com legislação: anotações abrem o rodapé (anotações, revisão, ferramentas).
+      if (LEGAL_FOOTER.has(meta.subject)) { if (native.parentElement !== host) host.prepend(native); }
+      else if (native.parentElement !== host || host.lastElementChild !== native) host.appendChild(native);
       const heading = native.querySelector('label,h4,.resource-label');
       if (heading && heading.textContent !== 'Anotações do módulo') heading.textContent = 'Anotações do módulo';
       const area = native.querySelector('textarea');
@@ -613,6 +616,15 @@
       if (!native) button.dataset.dsFooterTool = action.tool;
       host.appendChild(button);
     });
+  }
+  const LEGAL_FOOTER = new Set(['cpc','penal']);
+  // Rodapé das disciplinas com legislação: anotações, revisão e ferramentas; o restante vem depois.
+  function orderLegalFooter(body) {
+    const footer = body.querySelector(':scope > .ds-module-footer');
+    if (!footer) return;
+    const first = [':scope > .ds-notes',':scope > .ds-footer-review',':scope > .ds-footer-tools'].map(selector => footer.querySelector(selector)).filter(Boolean);
+    const desired = [...first,...Array.from(footer.children).filter(node => !first.includes(node))];
+    if (desired.some((node,index) => footer.children[index] !== node)) footer.replaceChildren(...desired);
   }
   function moduleFooter(module, body, meta) {
     let footer = body.querySelector(':scope > .ds-module-footer');
@@ -725,6 +737,7 @@
       body.querySelector(':scope > .ds-module-nav')?.remove();
       moduleFooter(module,body,meta);
       notes(module,body,meta);
+      orderLegalFooter(body);
       return;
     }
 

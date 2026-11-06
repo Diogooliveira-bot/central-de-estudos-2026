@@ -72,7 +72,7 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(admUi, /sharingPanel\(uid\)/);
   assert.match(central, /content\/qc-sharing-links\.js\?v=20261023-remove-labor-disciplines-v1/);
   assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261023-remove-labor-disciplines-v1/);
-  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261101premium1/);
+  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261105links1/);
 });
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {

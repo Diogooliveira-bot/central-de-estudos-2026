@@ -16,7 +16,7 @@ function refresh(){
   const subject=document.querySelector('#subjects .subject[data-id="'+d+'"]');if(!subject)continue;
   const selector=d==='penal'?'.cf-module[data-cf]':'[data-cpp-native-module]';
   const modules=subject.querySelectorAll(selector);if(!modules.length)continue;
-  modules.forEach(m=>{const raw=d==='penal'?m.getAttribute('data-cf'):m.getAttribute('data-cpp-native-module'),n=Number(String(raw).replace(/^p/,''));if(!n)return;mount(m.querySelector(d==='penal'?'.cf-module-body':'.detail-panel'),d,'M'+String(n).padStart(2,'0'));});
+  modules.forEach(m=>{const raw=d==='penal'?m.getAttribute('data-cf'):m.getAttribute('data-cpp-native-module'),n=Number(String(raw).replace(/^p/,''));if(!n)return;mount(d==='penal'?m.querySelector('.cf-module-body'):(m.querySelector('[data-cpp-links-slot]')||m.querySelector('.detail-panel')),d,'M'+String(n).padStart(2,'0'));});
   mount(subject.querySelector('.subject-body'),d,'GERAL');
  }
 }

@@ -27,7 +27,7 @@ test('Direito Administrativo renders the approved module structure without dropp
   const doc = result.window.document;
   const zone = doc.querySelector('[data-adm-native]');
   assert.ok(zone);
-  assert.deepEqual([...zone.querySelectorAll('.adm-cf-card > b')].map((x) => x.textContent), ['Teoria completa', 'Versão de revisão', 'Infográfico']);
+  assert.deepEqual([...zone.querySelectorAll('.adm-cf-card > b')].map((x) => x.textContent), ['Versão de revisão', 'Teoria completa', 'Infográfico']);
   assert.equal(zone.querySelectorAll('.adm-native-notes').length, 1);
   assert.ok(zone.querySelector('.adm-cf-scheduled-review'));
   assert.equal(zone.querySelectorAll('[data-kind="complete"] .adm-cf-quiz').length, 1);

@@ -151,7 +151,7 @@
 
   function process(article) {
     article.querySelectorAll('p,li,div:not([class^="bc-iq"])').forEach(el => {
-      if (checked.has(el) || el.dataset.bcIq || el.closest('.bc-iq, .bc-iq-answer') || el.querySelector('p,li,div')) return;
+      if (checked.has(el) || el.dataset.bcIq || el.closest('.bc-iq, .bc-iq-answer, .cpp-native-question') || el.querySelector('p,li,div')) return;
       checked.add(el);
       if (GABARITO.test(el.textContent)) convertGabarito(el);
     });

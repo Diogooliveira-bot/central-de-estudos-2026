@@ -53,17 +53,36 @@
     const home = document.getElementById('homeView');
     const reading = home && home.classList.contains('bc-focus-has-module');
     const box = reading ? document.querySelector('.subject.bc-focus-selected-subject .bc-focus-current-module') : null;
-    document.querySelectorAll('.bc-module-quickbar').forEach(bar => { if (!box || bar.nextElementSibling !== box) bar.remove(); });
+    // A barra fica dentro do módulo, como primeiro item: quando a Central rola até o módulo
+    // aberto, ela entra junto na tela.
+    document.querySelectorAll('.bc-module-quickbar').forEach(bar => { if (!box || bar.parentElement !== box) bar.remove(); });
     if (!box) return;
     const actions = findActions(box);
-    const existing = box.previousElementSibling?.classList.contains('bc-module-quickbar') ? box.previousElementSibling : null;
+    const existing = box.querySelector(':scope > .bc-module-quickbar');
     const signature = actions.map(a => a.key + ':' + label(a.target)).join('|');
     if (existing && existing.dataset.signature === signature) return;
     existing?.remove();
     if (actions.length < 2) return;
     const bar = build(box, actions);
     bar.dataset.signature = signature;
-    box.before(bar);
+    box.prepend(bar);
+    revealOnce(bar);
+  }
+  /* Ao abrir o módulo, a Central rola até ele e o topo fica sob o cabeçalho fixo: a barra
+     recém-criada sobe um pouco para aparecer logo abaixo do cabeçalho (só nessa abertura). */
+  function revealOnce(bar) {
+    const fix = () => {
+      if (!bar.isConnected) return;
+      const head = document.getElementById('bcFocusHeader');
+      const limit = head && !head.hidden ? head.getBoundingClientRect().bottom + 8 : 8;
+      const top = bar.getBoundingClientRect().top;
+      if (top >= limit || top < limit - 600) return;
+      let el = bar.parentElement;
+      while (el && el !== document.body && !(el.scrollHeight > el.clientHeight + 4 && /auto|scroll/.test(getComputedStyle(el).overflowY))) el = el.parentElement;
+      const scroller = el && el !== document.body ? el : (document.scrollingElement || document.documentElement);
+      scroller.scrollTop -= limit - top;
+    };
+    [250, 800].forEach(ms => setTimeout(fix, ms));
   }
   let queued = false;
   function schedule() { if (queued) return; queued = true; setTimeout(() => { queued = false; update(); }, 60); }

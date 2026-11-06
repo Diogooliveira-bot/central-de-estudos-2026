@@ -591,8 +591,10 @@
         if (!replacement?.matches('[data-bcq-module-panel]')) throw new Error('Painel compacto inválido');
         if (panel) panel.replaceWith(replacement);
         else {
+          // Um módulo pode reservar o lugar dos links (ex.: logo após as teorias).
+          const slot = body.querySelector('[data-bcq-module-slot]');
           const notes = body.querySelector('.cms-note-final,.adm-native-notestes,.cv-native-notes');
-          if (notes) notes.after(replacement); else body.append(replacement);
+          if (slot) slot.append(replacement); else if (notes) notes.after(replacement); else body.append(replacement);
         }
         if (!replacement.isConnected) throw new Error('Painel compacto não foi inserido');
         hideOriginalPanels(body);
