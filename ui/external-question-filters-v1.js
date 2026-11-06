@@ -1146,7 +1146,8 @@
     global.addEventListener('central:external-filter-history-changed', scheduleRefresh);
     global.addEventListener('popstate', () => {
       if (global.location.pathname === ROUTE) openPage(document.querySelector('[data-bcq-nav]'), { replace: true, tab: tabFromLocation() });
-      else if (!document.getElementById('questionFiltersView')?.classList.contains('hidden')) global.openHome?.();
+      // Voltar do navegador/celular: fecha a Central de Questões antes de mostrar o Início.
+      else if (!document.getElementById('questionFiltersView')?.classList.contains('hidden')) leavePage();
     });
     new MutationObserver((records) => {
       records.forEach((record) => restoreMissingModuleFallbacks(record.target instanceof Element ? record.target : record.target.parentElement));
