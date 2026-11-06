@@ -12,7 +12,7 @@
 .bc-module-law-copy p{margin:0;font-size:13px;line-height:1.45;color:var(--muted,#4b6276)}
 .bc-module-law-open{min-width:180px;padding:11px 18px;border:0;border-radius:9px;background:#1769b5;color:#fff;font-weight:800;cursor:pointer}
 .bc-module-law-open:hover{filter:brightness(1.08)}
-.bc-law-relocated{display:none!important}
+.bc-law-relocated,.bc-tool-relocated{display:none!important}
 html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bc-module-law-card{background:var(--card,#0c1828);border-color:var(--line,#26364f);color:var(--text,#edf5ff)}
 html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bc-module-law-icon{background:rgba(148,163,184,.14)}
 @media (max-width:640px){
