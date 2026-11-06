@@ -15,7 +15,7 @@ function lawBox(n,index){
  const L=global.BC_CIV_GUIDED_LAW&&global.BC_CIV_GUIDED_LAW[n],items=L&&L[index];
  if(!Array.isArray(items)||!items.length)return '';
  const names=items.map(x=>x[0]),head=names.length===1?names[0]:names[0]+' e mais '+(names.length-1);
- return '<details class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+items.map(x=>'<div class="bc-m01-lei-art">'+(x[1]||[]).map(t=>'<p>'+esc(t)+'</p>').join('')+'</div>').join('')+'</details>';
+ return '<details open class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+items.map(x=>'<div class="bc-m01-lei-art">'+(x[1]||[]).map(t=>'<p>'+esc(t)+'</p>').join('')+'</div>').join('')+'</details>';
 }
 function card(topic,index,n){
   const sections=[
@@ -64,7 +64,7 @@ function open(n){
  const d=get(n);if(!d||n<MIN||n>MAX||!Array.isArray(d.topics))return false;
  close();origin=document.activeElement;originalOverflow=document.body.style.overflow;
  const o=document.createElement('div');
- o.className='bc-m01-overlay bc-guided-overlay';
+ o.className='bc-m01-overlay bc-guided-overlay civil-guided-reading';
  o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');
  o.setAttribute('aria-label','Teoria guiada de Direito Civil, módulo '+n);
  o.innerHTML='<div class="bc-m01-reader" data-view="study">'+
@@ -130,6 +130,7 @@ function open(n){
       '.bc-m01-checklist input{margin-top:2px;width:18px;height:18px;accent-color:#203b61;}',
       '.bc-m01-checklist .bc-m01-local-note{font-size:12px;color:#65788d;}',
       '@media(max-width:600px){.bc-m01-toolbar{gap:5px;padding:8px}.bc-m01-toolbar button{font-size:12px;padding:9px}.bc-m01-modes button{padding:8px 6px}.bc-m01-paper{padding-top:18px;width:calc(100% - 22px)}.bc-m01-card{padding:14px 15px}.bc-m01-card p{font-size:15px;line-height:1.7}.bc-m01-topic{margin-bottom:30px}}',
+      '.civil-guided-reading{background:#fff;}.civil-guided-reading .bc-m01-card{border:0;border-radius:0;box-shadow:none;background:none;padding:0;margin:0 0 22px;}.civil-guided-reading .bc-m01-card h3{color:#385b80;}.civil-guided-reading .bc-m01-card p{color:#27384e;}.civil-guided-reading .bc-m01-topic{border-top:1px solid #dbe5ed;padding-top:25px;margin-bottom:45px;}.civil-guided-reading .bc-m01-lei-seca{border:0;border-left:3px solid #89b3d0;border-radius:0;background:none;padding:4px 0 4px 18px;}.civil-guided-reading .bc-m01-lei-seca summary{color:#3377a4;}.civil-guided-reading .bc-m01-checklist label{border:0;border-bottom:1px solid #dbe5ed;border-radius:0;padding:12px 0;}',
       '@media(prefers-reduced-motion:reduce){.bc-m01-scroll{scroll-behavior:auto}}'
     ].join('\n');
     document.head.appendChild(style);

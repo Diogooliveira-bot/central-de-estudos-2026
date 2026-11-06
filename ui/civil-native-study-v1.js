@@ -28,9 +28,15 @@ async function openReader(n,kind){
  reader.percent(o,progress(n,kind));
  try{
   const d=await load(n);if(activeReader!==session)return;
-  const body=reader.show(o,kind==='summary'?d.summaryHtml:d.completeHtml,readerToc,Number(localStorage.getItem(k(n,kind,'scroll'))||0),onReaderScroll);
+  let html=kind==='summary'?d.summaryHtml:d.completeHtml;
+  if(kind==='complete'){
+   if(!g.CivilVisualApostila)await import('/ui/civil-visual-apostila-v1.js?v=20261106civil1');
+   html=await g.CivilVisualApostila.html(n);
+   if(activeReader!==session)return;
+  }
+  const body=reader.show(o,html,readerToc,Number(localStorage.getItem(k(n,kind,'scroll'))||0),onReaderScroll);
   body.querySelector('.bc-native-article').classList.add('cv-reader-content');
-  if(n===3){
+  if(n===3&&kind!=='complete'){
    // Carregamento de segurança: não depender apenas do carregador de disciplina.
    if(!g.CivilBensApostila?.enhance){
     await import('/ui/civil-bens-apostila-v1.js?v=20261011m03a2');
