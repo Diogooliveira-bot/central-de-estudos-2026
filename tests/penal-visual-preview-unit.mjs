@@ -18,7 +18,7 @@ test('Penal M01–M17: teoria, tabelas, questões e resumos preservados; lei sec
   const r=reader(n);w.PenalVisualPreview=undefined;r.open('complete');let article=w.document.querySelector('.bc-native-article');
   const baseline=article.textContent.replace(/\s+/g,' ').trim(),tables=[...article.querySelectorAll('table')].map(x=>x.textContent),paras=[...article.querySelectorAll('p')].map(x=>x.textContent),quiz=[...article.querySelectorAll('[data-quiz-card]')].map(x=>x.textContent);r.close();
   w.PenalVisualPreview=enhancer;r.open('complete');article=w.document.querySelector('.bc-native-article');assert.ok(article.classList.contains('penal-visual-preview'),'M'+n);
-  assert.equal(article.querySelectorAll('.penv-hero').length,1);assert.ok(article.querySelectorAll('.penv-scheme').length>=1);
+  assert.equal(article.querySelectorAll('.penv-hero').length,1);assert.equal(article.querySelectorAll('.penv-scheme,.penv-tile,.penv-grid').length,0,'M'+n+': leitura sem cards adicionais');
   const text=article.textContent.replace(/\s+/g,' ').trim();assert.ok(baseline.length>1000);for(const p of paras)assert.ok(text.includes(p.replace(/\s+/g,' ').trim()),'M'+n+': teoria preservada');
   assert.deepEqual([...article.querySelectorAll('table')].map(x=>x.textContent),tables);
   assert.deepEqual([...article.querySelectorAll('[data-quiz-card]')].map(x=>x.textContent),quiz);questions+=quiz.length;
