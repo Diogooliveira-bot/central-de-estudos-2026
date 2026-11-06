@@ -7,7 +7,7 @@
  function scheme(label,title,items){const s=el('section','penv-scheme');s.append(el('small','',label),el('h3','',title));const grid=el('div','penv-grid');items.forEach(([name,lines],i)=>{const card=el('div','penv-tile');card.append(el('span','',String(i+1).padStart(2,'0')),el('b','',name));lines.forEach(t=>card.append(el('p','',t)));grid.append(card)});s.append(grid);return s;}
  function laws(article,n,theory){
   const data=g.PENAL_VISUAL_LAW,entries=data?.modules[n];if(!entries?.length)return;
-  const intro=el('section','penv-law-library');intro.append(el('h4','','Lei seca — redação literal'),el('p','','Abra as caixas junto à teoria para ler os artigos e seus desdobramentos. As notas da fonte oficial foram preservadas; doutrina e jurisprudência continuam identificadas no material.'));
+  const intro=el('section','penv-law-library');intro.append(el('h4','','Lei seca — redação literal'),el('p','','A lei seca aparece destacada e aberta logo após a referência correspondente. Os dispositivos complementares ficam disponíveis no recorte legal do módulo. As notas da fonte oficial foram preservadas.'));
   article.querySelector('.penv-hero').after(intro);const groups=new Map();
   entries.forEach(entry=>{
    const law=data.articles[entry.key];if(!law)return;
@@ -15,10 +15,10 @@
    if(target)target=target.closest('table')||target.closest('ul,ol')||target.closest('blockquote,aside,.layer,.bc-native-callout')||target;
    const host=target||intro;let group=groups.get(host);
    if(!group){group=el('section','penv-law-group');group.append(el('h4','',target?'Lei seca desta referência':'Recorte legal do módulo'));if(target)target.after(group);else intro.append(group);groups.set(host,group);}
-   const box=el('details','penv-literal-law');box.dataset.lawKey=entry.key;box.append(el('summary','',law.label+' · Ler texto da lei'));
+   const box=el('details','penv-literal-law');box.open=Boolean(target);box.dataset.lawKey=entry.key;box.append(el('summary','',law.label+' · Lei seca'));
    const quote=el('blockquote');law.paragraphs.forEach(line=>quote.append(el('p','',line)));const link=el('a','','Consultar fonte oficial');link.href=law.officialUrl;link.target='_blank';link.rel='noopener noreferrer';box.append(quote,link);group.append(box);
   });
-  groups.forEach(group=>{const count=group.querySelectorAll('.penv-literal-law').length;if(count<=3)return;const fold=el('details','penv-law-fold'),summary=el('summary','',group.firstElementChild.textContent+' · '+count+' artigos');group.firstElementChild.remove();while(group.firstChild)fold.append(group.firstChild);fold.prepend(summary);group.append(fold)});
+  groups.forEach((group,host)=>{const count=group.querySelectorAll('.penv-literal-law').length;if(host!==intro||count<=3)return;const fold=el('details','penv-law-fold'),summary=el('summary','',group.firstElementChild.textContent+' · '+count+' artigos');group.firstElementChild.remove();while(group.firstChild)fold.append(group.firstChild);fold.prepend(summary);group.append(fold)});
  }
  function enhance(article,n){
   if(!article||article.classList.contains('penal-visual-preview')||!routes[n])return;

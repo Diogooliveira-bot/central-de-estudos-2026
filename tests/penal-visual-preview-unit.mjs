@@ -23,6 +23,12 @@ test('Penal M01–M17: teoria, tabelas, questões e resumos preservados; lei sec
   assert.deepEqual([...article.querySelectorAll('table')].map(x=>x.textContent),tables);
   assert.deepEqual([...article.querySelectorAll('[data-quiz-card]')].map(x=>x.textContent),quiz);questions+=quiz.length;
   const laws=[...article.querySelectorAll('.penv-literal-law')];assert.equal(laws.length,w.PENAL_VISUAL_LAW.modules[n].length);assert.equal(new Set(laws.map(x=>x.dataset.lawKey)).size,laws.length);
+  for(const group of article.querySelectorAll('.penv-law-group')){
+   if(group.closest('.penv-law-library'))continue;
+   assert.ok(group.previousElementSibling,'M'+n+': lei após a referência');
+   assert.equal(group.querySelector('.penv-law-fold'),null,'M'+n+': referência sem grupo recolhido');
+   for(const box of group.querySelectorAll('.penv-literal-law'))assert.ok(box.open,'M'+n+': texto legal visível');
+  }
   laws.forEach(box=>{const source=w.PENAL_VISUAL_LAW.articles[box.dataset.lawKey];assert.deepEqual([...box.querySelectorAll('blockquote p')].map(x=>x.textContent),[...source.paragraphs]);assert.ok(!box.closest('table,li,.bc-native-internal-review'));});
   const count=laws.length;enhancer.enhance(article,n);assert.equal(article.querySelectorAll('.penv-literal-law').length,count);r.close();
   w.PenalVisualPreview=undefined;r.open('summary');const summary=w.document.querySelector('.bc-native-article').innerHTML;r.close();w.PenalVisualPreview=enhancer;r.open('summary');assert.equal(w.document.querySelector('.bc-native-article').innerHTML,summary);r.close();
