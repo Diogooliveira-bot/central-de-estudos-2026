@@ -123,7 +123,8 @@ try{
         assert.equal(row?.modules,n,id+' deve apresentar todos os módulos');
         if(id==='cf')assert.ok(row.cards.cf>=45,'Constitucional requer três cards por módulo');
         if(id==='civil')assert.equal(row.cards.civil,45,'Civil requer os 45 cards');
-        if(id==='cpp')assert.equal(row.cards.cpp,66,'Processo Penal requer os 66 cards');
+        // 22 módulos × 4 cards: teoria completa, revisão, infográfico e Lei em Dia do módulo (PR #239).
+        if(id==='cpp')assert.equal(row.cards.cpp,88,'Processo Penal requer os 88 cards');
         if(id==='penal')assert.ok(row.cards.penal+row.penalApproved>=49,'Penal requer os cards nativos');
         if(id==='cpc')assert.equal(row.cards.cpc,3,'CPC requer três cards no módulo aberto');
       }
