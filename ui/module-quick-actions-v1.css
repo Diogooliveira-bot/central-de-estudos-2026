@@ -1,0 +1,52 @@
+/* Base Completa — barra de ação no topo do módulo e página do módulo mais enxuta (Fase C). */
+.bc-module-quickbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+html body #appRoot .bc-module-quickbar .bc-module-quick {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 12px 14px;
+  border: 1px solid var(--border, #d8cab3);
+  border-radius: 14px;
+  background: var(--card, #fffdf7);
+  color: var(--text, #2d2924);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--theme-shadow, 0 8px 28px rgba(71, 55, 32, .08));
+  transition: border-color .15s, transform .15s;
+}
+.bc-module-quick:hover { border-color: var(--accent, #0f8b8d); transform: translateY(-1px); }
+.bc-module-quick:focus-visible { outline: 3px solid var(--accent, #0f8b8d); outline-offset: 2px; }
+html body #appRoot .bc-module-quickbar .bc-module-quick-primary {
+  background: var(--button-bg, #0d7779) !important;
+  border-color: var(--button-bg, #0d7779) !important;
+  color: var(--button-text, #fff) !important;
+}
+/* O texto segue a cor do botão (regras antigas de botões das disciplinas não podem escurecê-lo). */
+html body #appRoot .bc-module-quickbar .bc-module-quick :is(b, small, span) { color: inherit !important; }
+.bc-module-quick-icon { font-size: 22px; line-height: 1; flex: none; }
+.bc-module-quick-text { display: flex; flex-direction: column; min-width: 0; }
+.bc-module-quick-text b { font: 750 15px/1.25 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.bc-module-quick-text small { font: 500 12px/1.35 system-ui, -apple-system, "Segoe UI", sans-serif; opacity: .78; margin-top: 2px; }
+.bc-module-quick-text small:empty { display: none; }
+@media (max-width: 640px) {
+  .bc-module-quickbar { grid-template-columns: 1fr 1fr; }
+  .bc-module-quick-primary { grid-column: 1 / -1; }
+  .bc-module-quick { min-height: 56px; padding: 10px 12px; }
+}
+
+/* Com um módulo aberto, a caixa "Disciplina · 0/N módulos" e o aviso interno do Novo CPC
+   saem de cima do conteúdo: o cabeçalho fixo já mostra a disciplina e o módulo. */
+html body #appRoot #homeView.bc-focus-has-module .subject.bc-focus-selected-subject :is(.ds-course-intro, .cv-hero, .cpc-study-only-badge) {
+  display: none !important;
+}
+/* Celular: botão que sobrar sozinho na última linha ocupa a largura toda. */
+@media (max-width: 640px) {
+  html body #appRoot .bc-module-quickbar .bc-module-quick:nth-child(even):last-child { grid-column: 1 / -1; }
+}

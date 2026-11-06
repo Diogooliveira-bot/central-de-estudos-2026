@@ -137,7 +137,7 @@
         } else {
           const intro=document.createElement('div');
           intro.className='bc-focus-modules-intro';
-          intro.innerHTML='<h2>Escolha um módulo</h2><p>Conteúdo original da Base Completa, sem alterações.</p>';
+          intro.innerHTML='<h2>Escolha um módulo</h2><p>Escolha o módulo e continue de onde parou.</p>';
           list.appendChild(intro);
           if(phase==='empty'){
             const empty=document.createElement('div');empty.className='bc-focus-empty';
