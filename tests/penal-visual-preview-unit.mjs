@@ -22,7 +22,7 @@ test('Penal M01–M17: teoria, tabelas, questões e resumos preservados; lei sec
   const text=article.textContent.replace(/\s+/g,' ').trim();assert.ok(baseline.length>1000);for(const p of paras)assert.ok(text.includes(p.replace(/\s+/g,' ').trim()),'M'+n+': teoria preservada');
   assert.deepEqual([...article.querySelectorAll('table')].map(x=>x.textContent),tables);
   assert.deepEqual([...article.querySelectorAll('[data-quiz-card]')].map(x=>x.textContent),quiz);questions+=quiz.length;
-  const laws=[...article.querySelectorAll('.penv-literal-law')];assert.equal(laws.length,w.PENAL_VISUAL_LAW.modules[n].length);assert.equal(new Set(laws.map(x=>x.dataset.lawKey)).size,laws.length);
+  const laws=[...article.querySelectorAll('.penv-literal-law')];assert.ok(laws.length>=w.PENAL_VISUAL_LAW.modules[n].length);assert.equal(new Set(laws.map(x=>x.dataset.lawKey)).size,w.PENAL_VISUAL_LAW.modules[n].length);
   for(const group of article.querySelectorAll('.penv-law-group')){
    if(group.closest('.penv-law-library'))continue;
    assert.ok(group.previousElementSibling,'M'+n+': lei após a referência');
@@ -39,7 +39,18 @@ test('Penal: capítulos legais completos e fontes sem lacunas, inclusive leis es
  assert.equal(Object.keys(data.modules).length,17);
  for(const[n,from,to]of [[2,1,12],[3,13,22],[4,23,25],[6,29,31],[7,32,99],[8,100,120],[9,121,154],[10,155,183],[11,289,311],[12,213,234],[13,312,359]])for(let ref=from;ref<=to;ref++)assert.ok(data.modules[n].some(x=>x.key==='cp:'+ref),n+': CP '+ref);
  for(const[n,keys]of Object.entries({1:['cf:5'],9:['cp:121-A','cp:121-B','cp:154-B'],10:['cp:183-A'],11:['cp:311-A'],12:['cp:217-A'],14:['l13869:1','l13869:38'],15:['l9613:1','l9613:18'],16:['cp:337-E','cp:337-P'],17:['cf:225','l9605:3']}))for(const key of keys)assert.ok(data.modules[n].some(x=>x.key===key),n+': '+key);
- const old=JSON.parse(read('audits/cpp-official-source-lines.json')),fresh=JSON.parse(read('audits/penal-official-source-lines.json')),sources={...old,...fresh};sources.cf={...old.cf,lines:{...old.cf.lines,...fresh.cf.lines}};
+ const old=JSON.parse(read('audits/cpp-official-source-lines.json')),fresh=JSON.parse(read('audits/penal-official-source-lines.json')),sources={...old,...fresh,...JSON.parse(read('audits/penal-supplemental-source-lines.json'))};sources.cf={...old.cf,lines:{...old.cf.lines,...fresh.cf.lines}};
  const clean=t=>t.replace(/【\d+†([^†】]+)(?:†[^】]*)?】/g,'$1').replace(/^#+\s*/,'').trim();
  for(const article of Object.values(data.articles)){assert.equal(article.gaps,undefined);const source=sources[article.law],lines=[];for(let n=article.sourceLines[0];n<=article.sourceLines[1];n++){assert.ok(n in source.lines,article.label);lines.push(clean(source.lines[n]));}for(const p of article.paragraphs)assert.ok(lines.includes(p),article.label);assert.equal(article.officialUrl,source.url);}
+});
+
+test('Citações correlatas e repetidas permanecem junto de cada explicação',()=>{
+ const{dom,w,reader}=setup();try{
+  for(const[n,keys]of [[1,['cf:1','l9472:183','cp:155']],[2,['l3914:1','lcp:2','lcp:4','lcp:17','cf:105','cpp:798-A']],[9,['l7716:2-A']],[16,['l8666:89','cp:29','cp:30']],[17,['l8137:1','l9605:21']]]){
+   reader(n).open('complete');const article=w.document.querySelector('.bc-native-article');
+   for(const key of keys)assert.ok(article.querySelector('.penv-law-group .penv-literal-law[data-law-key="'+key+'"]'),'M'+n+': '+key);
+   reader(n).close();
+  }
+  reader(2).open('complete');assert.ok(w.document.querySelectorAll('.penv-literal-law[data-law-key="cp:7"]').length>1,'art. 7º deve reaparecer nos trechos que o citam');
+ }finally{dom.window.close();}
 });
