@@ -39,6 +39,8 @@ test('Vercel static output omits protected source files but retains the public a
     assert.equal(paths.has('/content/civil/civil-native-content-packed.js'), false);
     assert.equal(paths.has('/content/cpc/m08-native-data-part1.js'), false);
     assert.equal(paths.has('/content/penal/m01-teoria-guiada-data.js'), false);
+    assert.equal(paths.has('/content/penal/penal-visual-law.js'), false);
+    assert.deepEqual(protectedAsset('/content/penal/penal-visual-law.js'), {kind:'file', feature:'theory.complete'});
     assert.equal(paths.has('/lei-em-dia-aprovadas-20261012.js'), false);
     assert.equal(paths.has('/package.json'), false);
     assert.equal(paths.has('/package-lock.json'), false);

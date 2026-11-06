@@ -106,8 +106,10 @@ test('estilos acessíveis e cache versionado',()=>{
   assert.match(script,/central:discipline-ready/);
   assert.match(script,/central:discipline-error/);
   assert.match(readFileSync('central-discipline-loader.js','utf8'),/new CustomEvent\('central:discipline-error'/);
-  for(const [file,version] of [['ui/disciplinas-foco-v1.js','20261102-loading-ui1'],['ui/disciplinas-foco-v1.css','20261102-loading-ui1'],['central-discipline-loader.js','20261105-cache1']]){
-    assert.ok(boot.includes(file+'?v='+version),file+' boot');
-    assert.ok(manifest.includes('/'+file+'?v='+version),file+' manifesto');
+  const files=JSON.parse(manifest).files;
+  for(const file of ['ui/disciplinas-foco-v1.js','ui/disciplinas-foco-v1.css','central-discipline-loader.js']){
+    const asset=files.find(value=>value.startsWith('/'+file+'?v='));
+    assert.ok(asset,file+' manifesto versionado');
+    assert.ok(boot.includes(asset.slice(1)),file+' boot e manifesto usam a mesma versão');
   }
 });

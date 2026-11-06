@@ -110,6 +110,7 @@ try{
             penalApproved:body?.querySelectorAll('.penal-approved-card').length||0,
             unifiedCss:!!document.querySelector('link[href*="premium-juridico-unificado-v1.css"]')&&
               [...document.styleSheets].some(x=>x.href?.includes('premium-juridico-unificado-v1.css')),
+            cppLawCards:body?.querySelectorAll('.cpp-native-lei-card[data-cpp-lei-module]').length||0,
             cppColumns:id==='cpp'?getComputedStyle(body.querySelector('.adm-native-material-grid')).gridTemplateColumns:null,
             sample:body?.textContent?.replace(/\\s+/g,' ').slice(0,200)});
         }
@@ -123,7 +124,10 @@ try{
         assert.equal(row?.modules,n,id+' deve apresentar todos os módulos');
         if(id==='cf')assert.ok(row.cards.cf>=45,'Constitucional requer três cards por módulo');
         if(id==='civil')assert.equal(row.cards.civil,45,'Civil requer os 45 cards');
-        if(id==='cpp')assert.equal(row.cards.cpp,66,'Processo Penal requer os 66 cards');
+        if(id==='cpp'){
+          assert.equal(row.cppLawCards,n,'cada módulo CPP mantém seu acesso ao Lei em Dia');
+          assert.equal(row.cards.cpp,4*n,'CPP mantém teoria, revisão, infográfico e Lei em Dia por módulo');
+        }
         if(id==='penal')assert.ok(row.cards.penal+row.penalApproved>=49,'Penal requer os cards nativos');
         if(id==='cpc')assert.equal(row.cards.cpc,3,'CPC requer três cards no módulo aberto');
       }
