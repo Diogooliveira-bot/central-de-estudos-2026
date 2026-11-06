@@ -1,4 +1,12 @@
 /* The approved M04 reading style, scoped to the Civil complete reader. */
+#civil-native-reader{--bc-reading-paper:#fff;--bc-reading-text:#24384b;--bc-reading-muted:#64788b;--bc-reading-line:#dbe5ed;--bc-reading-inset:#edf4f9;--bc-reading-accent:#3377a4}
+#civil-native-reader .bc-native-article{width:min(100%,960px)!important;max-width:960px!important;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif!important}
+#civil-native-reader .cv-apostila{width:100%!important;max-width:none!important;padding:0!important;margin:0!important;font-family:inherit!important;background:var(--bc-reading-paper)!important}
+#civil-native-reader .cv-apostila h2,#civil-native-reader .cv-apostila h3{color:var(--navy)!important}
+#civil-native-reader .cv-apostila .planes p{font-size:.85em!important;line-height:1.6!important;text-align:left!important}
+#civil-native-reader .cv-apostila .law p{text-align:left!important}
+html[data-bc-reading-mode="night"] #civil-native-reader{--bc-reading-paper:#252525;--bc-reading-text:#d8d2c8;--bc-reading-muted:#aaa397;--bc-reading-line:#414141;--bc-reading-inset:#2d2d2d}
+html[data-bc-reading-mode="night"] #civil-native-reader .cv-apostila{--navy:#c0d9ed;--blue:#85b6d5;--muted:#aaa397;--line:#414141}
 #civil-native-reader .cv-apostila{--navy:#173759;--blue:#3377a4;--muted:#64788b;--line:#dbe5ed;color:#24384b;background:#fff;line-height:1.8;overflow-wrap:break-word;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
 #civil-native-reader .cv-apostila h2{font-size:1.45em;line-height:1.3;letter-spacing:-.025em;margin:2.7em 0 1em;color:var(--navy);border-top:1px solid var(--line);padding-top:1.35em}
 #civil-native-reader .cv-apostila h3{font-size:1.17em;line-height:1.4;margin:2em 0 .85em;color:var(--navy);font-weight:700}
