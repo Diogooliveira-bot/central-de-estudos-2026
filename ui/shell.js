@@ -304,15 +304,15 @@
   }
 
   function improveLabels(){
+    // Agenda, Progresso e Configurações têm textos próprios nas telas do aluno
+    // (student-plan-v3, student-dashboard-v3 e correcoes-20260930). Regravar aqui
+    // um texto diferente criava uma disputa contínua entre os scripts.
     var descriptions={
-      disciplinesView:'Escolha uma disciplina para continuar seus estudos.',
-      agendaView:'Organize os blocos de estudo do dia.',
-      performanceView:'Uma leitura simples de como você está evoluindo.'
+      disciplinesView:'Escolha uma disciplina para continuar seus estudos.'
     };
     Object.keys(descriptions).forEach(function(id){
       var p=document.querySelector('#'+id+' .hero p');if(p&&p.textContent!==descriptions[id])p.textContent=descriptions[id];
     });
-    var settingsNote=document.querySelector('.central-settings-head p');if(settingsNote&&settingsNote.textContent!=='Preferências do aplicativo')settingsNote.textContent='Preferências do aplicativo';
     document.querySelectorAll('.central-view-back').forEach(function(btn){
       var txt=(btn.textContent||'').trim();
       if(txt==='‹ Central'||txt==='← Central'||txt==='⌂ Início')btn.textContent='Voltar';

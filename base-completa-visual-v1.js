@@ -7,7 +7,8 @@
     .replace(/\btópicos do edital\b/gi,'módulos do edital')
     .replace(/\btópicos reais recuperados\b/gi,'módulos estruturados');
   const applyBrand=()=>{
-    document.title='Base Completa — Estude, revise e evolua';
+    // Regravar o mesmo título gera uma mutação no <title> e redesenhava outras telas.
+    if(document.title!=='Base Completa — Estude, revise e evolua')document.title='Base Completa — Estude, revise e evolua';
     const icon=document.querySelector('.brand-icon');
     if(icon){if(icon.textContent!=='BC')icon.textContent='BC';icon.setAttribute('aria-label','Base Completa')}
     const brand=document.querySelector('.brand-copy');

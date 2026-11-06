@@ -310,7 +310,9 @@
 
     const ordered = [note,...uniqueFilterPanels,moduleLaw,extra,review,tools,resources].filter(Boolean);
     const others = Array.from(footer.children).filter(node => !ordered.includes(node));
-    footer.replaceChildren(...ordered,...others);
+    const desired = [...ordered,...others];
+    // Remontar o rodapé já ordenado gerava mutações a cada atualização.
+    if (desired.some((node,index) => footer.children[index] !== node)) footer.replaceChildren(...desired);
   }
 
   function cpcApprovedProgress(module, week) {

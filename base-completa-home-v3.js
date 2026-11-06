@@ -84,7 +84,9 @@
       if(todayCard && todayCard.parentElement!==dash) dash.appendChild(todayCard);
       if(progressCard){
         progressCard.classList.add('home-progress-card');
-        if(progressCard.parentElement!==dash) dash.appendChild(progressCard);
+        // tidyHomeV5 coloca o cartão dentro de "Hoje na agenda"; tirá-lo de lá a cada
+        // ciclo fazia os dois trechos se alternarem sem parar.
+        if(progressCard.parentElement!==dash && progressCard.parentElement!==todayCard) dash.appendChild(progressCard);
       }
       if(pendingCard){
         pendingCard.classList.add('home-pending-card');
