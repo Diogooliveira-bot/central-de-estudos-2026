@@ -475,6 +475,7 @@ function open(mode){
       '</article></main>'+
     '</div></section>';
   document.body.appendChild(ov);document.body.style.overflow='hidden';
+  if(mode==='complete')global.PenalVisualPreview?.enhance(ov.querySelector('.bc-native-article'),10);
 
   current={
     mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),
