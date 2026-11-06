@@ -9,7 +9,10 @@ export function references(text,n){
   const before=new RegExp('('+diploma+')\\s*[,;:]?\\s*$','i').exec(pre);
   const after=new RegExp('^\\s*(?:(?!\\barts?\\.|[.;]).){0,100}?\\b(?:do|da)\\s+('+diploma+')\\b','i').exec(post)||new RegExp('^\\s*('+diploma+')\\b','i').exec(post);
 
-  let law=lawId(after?.[1]||before?.[1]||'');
+  const namedBefore=[...pre.matchAll(new RegExp('\\b('+diploma+')\\b','gi'))].filter(m=>!/^lei/i.test(m[1])||!/(?:apos|após|alter|acrescent|inser|introduz|revog|reda[çc]|atualiza)/i.test(pre.slice(Math.max(0,m.index-70),m.index))).at(-1);
+  const tail=namedBefore?pre.slice(namedBefore.index+namedBefore[0].length):'';
+  const contextual=namedBefore&&tail.length<180&&!/alter|acrescent|inser|revog|reda[çc]|atualiza|n[aã]o substitu/i.test(tail)&&!/(?:do|da)\s*$/i.test(pre.slice(Math.max(0,namedBefore.index-4),namedBefore.index))?namedBefore[1]:'';
+  let law=lawId(after?.[1]||before?.[1]||contextual||'');
   const refs=[...m[1].matchAll(new RegExp(atom,'g'))].map(x=>({ref:x[0].replace(/[º°\s.]/g,'').replace('–','-').toUpperCase(),index:x.index}));
   if(!law){law=n===14?'l13869':n===15?'l9613':n===17&&refs.every(x=>[3,21,22,23,24].includes(+x.ref))?'l9605':'cp';if(n===1&&refs.every(x=>x.ref==='5'))law='cf';if(n===17&&refs.every(x=>['5','225'].includes(x.ref)))law='cf';}
 

@@ -40,3 +40,19 @@
 .penal-visual-preview .penv-law-fold{border:1px solid #cbdce9;border-radius:8px;padding:14px 18px;background:#f7fbff}
 .penal-visual-preview .penv-law-fold>summary{cursor:pointer;color:#235578;font-weight:700;font-size:14px;line-height:1.6}
 @media(max-width:600px){.bc-native-reader-overlay .penal-visual-preview{padding:26px 20px 70px!important}.penal-visual-preview .penv-hero h1{font-size:29px!important}.penal-visual-preview .penv-route{grid-template-columns:repeat(2,1fr)}.penal-visual-preview .penv-scheme{padding:18px}.penal-visual-preview .penv-grid{grid-template-columns:1fr}}
+/* One consistent outline: module title, chapters, subsections and teaching labels. */
+.penal-visual-preview .penv-source-title{display:none!important}
+.penal-visual-preview .penv-chapter{display:block!important;clear:both;font-size:24px!important;font-weight:750!important;line-height:1.4!important;margin:44px 0 18px!important;padding:20px 0 0!important;border:0!important;border-top:1px solid #dce6ef!important;background:transparent!important;text-transform:none!important;letter-spacing:normal!important;break-after:avoid;scroll-margin-top:20px}
+.penal-visual-preview .penv-subsection{font-size:19px!important;font-weight:700!important;line-height:1.5!important;margin:28px 0 12px!important;padding:0!important;border:0!important;background:transparent!important;text-transform:none!important;letter-spacing:normal!important;break-after:avoid}
+.penal-visual-preview h4.penv-subsection{font-size:17px!important;margin:22px 0 10px!important}
+.penal-visual-preview .penv-label{display:block!important;font-size:13px!important;font-weight:750!important;line-height:1.6!important;margin:22px 0 10px!important;padding:0!important;border:0!important;background:transparent!important;letter-spacing:.02em!important;text-transform:none!important}
+.penal-visual-preview .penv-law-label{font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;color:#365b7a;margin-bottom:8px}
+.penal-visual-preview .penv-law-title{font-size:20px;font-weight:750;margin:0 0 12px}
+.penal-visual-preview .penv-hero h1{display:block!important}
+@media(max-width:600px){.penal-visual-preview .penv-chapter{font-size:21px!important}.penal-visual-preview .penv-subsection{font-size:18px!important}.penal-visual-preview h4.penv-subsection{font-size:16px!important}}
+/* Keep the hierarchy when the shared paper reader adds its own styles later. */
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview.bc-universal-sheet h2.penv-chapter{display:block!important;font-size:24px!important;line-height:1.4!important;margin:40px 0 18px!important;padding:20px 0 0!important;border:0!important;border-top:1px solid #dce6ef!important;text-transform:none!important;letter-spacing:normal!important}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview.bc-universal-sheet h3.penv-subsection{font-size:19px!important;line-height:1.5!important;margin:26px 0 12px!important;padding:0!important;border:0!important;text-transform:none!important;letter-spacing:normal!important}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview.bc-universal-sheet h4.penv-subsection{font-size:17px!important;line-height:1.5!important;margin:22px 0 10px!important;padding:0!important;border:0!important}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview.bc-universal-sheet p.penv-label{font-size:13px!important;font-weight:750!important;line-height:1.6!important;margin:20px 0 8px!important;padding:0!important;border:0!important;letter-spacing:.02em!important}
+@media(max-width:600px){.bc-native-reader-overlay .bc-native-article.penal-visual-preview.bc-universal-sheet h2.penv-chapter{font-size:21px!important}.bc-native-reader-overlay .bc-native-article.penal-visual-preview.bc-universal-sheet h3.penv-subsection{font-size:18px!important}}

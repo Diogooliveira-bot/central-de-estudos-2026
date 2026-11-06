@@ -2,6 +2,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import vm from 'node:vm';
 import {JSDOM} from 'jsdom';
 import {references} from './penal-law-references.mjs';
+import {chapterLaws,implicitLaws} from './penal-chapter-laws.mjs';
 const root=new URL('../',import.meta.url),read=p=>readFileSync(new URL(p,root),'utf8');
 const old=JSON.parse(read('audits/cpp-official-source-lines.json')),fresh=JSON.parse(read('audits/penal-official-source-lines.json'));
 const supplements=JSON.parse(read('audits/penal-supplemental-source-lines.json'));
@@ -39,6 +40,12 @@ for(let n=1;n<=17;n++){
    if(!explicit.has(r.key))explicit.set(r.key,[]);
    if(!explicit.get(r.key).includes(text))explicit.get(r.key).push(text);
   }
+ }
+ for(const head of doc.querySelectorAll('h1,h2,h3,h4')){
+  const title=head.textContent.replace(/\s+/g,' ').trim(),number=/^(\d+)\.\s/.exec(title);
+  const primary=number&&(head.tagName==='H1'||head.tagName==='H2'||n===2&&head.tagName==='H3');
+  const keys=[...(primary?(chapterLaws[n]?.[+number[1]]||[]):[]),...implicitLaws(title,n)];
+  for(const key of keys){wanted.add(key);if(!explicit.has(key))explicit.set(key,[]);if(!explicit.get(key).includes(title))explicit.get(key).push(title);}
  }
  modules[n]=[];
  for(const key of wanted){const[law,ref]=key.split(':'),article=all[law]?.[ref];if(!article||article.gaps){report.missing.push({module:n,key,gaps:article?.gaps,contexts:explicit.get(key)});continue;}articles[key]=article;modules[n].push({key,anchor:explicit.get(key)?.[0]||'',anchors:explicit.get(key)||[]});}

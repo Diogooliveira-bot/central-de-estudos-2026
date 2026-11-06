@@ -9,3 +9,9 @@ test('Reconhece listas, intervalos, diplomas distintos e artigos com letras',()=
  assert.deepEqual(keys('LEI SECA — art. 26, parágrafo único',5),['cp:26']);
  assert.deepEqual(keys('A Lei 15.358/2026 alterou o art. 91-A',7),['cp:91-A']);
 });
+test('Distingue a Constituição citada em prosa de remissões a outro diploma',()=>{
+ const keys=(text,n)=>references(text,n).map(r=>r.key);
+ assert.deepEqual(keys('O art. 27 do CP estabelece a menoridade. A Constituição repete a regra no art. 228.',5),['cp:27','cf:228']);
+ assert.deepEqual(keys('As frações da LEP não substituem os critérios do art. 33.',7),['cp:33']);
+ assert.deepEqual(keys('Suspensão nos termos do art. 366 do CPP, limitada conforme art. 109.',8),['cpp:366','cp:109']);
+});

@@ -54,3 +54,16 @@ test('Citações correlatas e repetidas permanecem junto de cada explicação',(
   reader(2).open('complete');assert.ok(w.document.querySelectorAll('.penv-literal-law[data-law-key="cp:7"]').length>1,'art. 7º deve reaparecer nos trechos que o citam');
  }finally{dom.window.close();}
 });
+test('Hierarquia de capítulos restaurada; lei não separa título e primeiro parágrafo',()=>{
+ const{dom,w,reader}=setup();try{
+  for(let n=1;n<=17;n++){
+   reader(n).open('complete');const article=w.document.querySelector('.bc-native-article');
+   assert.ok(article.querySelectorAll('h2.penv-chapter').length>5,'M'+n+': capítulos');
+   for(const h of article.querySelectorAll('h1'))assert.ok(h.closest('.penv-hero')||h.classList.contains('penv-source-title'),'M'+n+': H1 reservado ao título');
+   for(const group of article.querySelectorAll('.penv-law-group'))assert.ok(!/^H[1-6]$/.test(group.previousElementSibling?.tagName||''),'M'+n+': lei não imediatamente após título');
+   for(const h of article.querySelectorAll('.penv-chapter'))assert.equal(h.tagName,'H2');
+   if(n===5){for(const number of [31,32,33,34,35])assert.ok([...article.querySelectorAll('h2.penv-chapter')].some(h=>h.textContent.startsWith(number+'. ')),'M5 capítulo '+number);assert.equal(article.querySelector('[data-law-key="cp:228"]'),null);assert.ok(article.querySelector('[data-law-key="cf:228"]'));}
+   reader(n).close();
+  }
+ }finally{dom.window.close();}
+});
