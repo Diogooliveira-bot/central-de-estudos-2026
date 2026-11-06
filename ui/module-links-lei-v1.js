@@ -1,7 +1,8 @@
 /* Base Completa — ordem dos módulos com legislação correspondente.
    Versão de revisão → Teoria completa → Lei em Dia do módulo → links do QConcursos/TEC.
    Apenas reposiciona elementos já renderizados; não altera conteúdo, progresso nem filtros.
-   Processo Penal já nasce nesta ordem (ui/cpp-native-study-v1.js). */
+   Processo Penal já nasce nesta ordem (ui/cpp-native-study-v1.js).
+   O atalho "Cadernos do TEC" das ferramentas some quando o módulo já mostra os filtros. */
 (function (g) {
   'use strict';
   if (g.CentralModuleLinksLei) return;
@@ -23,6 +24,15 @@
       anchor: ':scope > .adm-cf-cards', trigger: '.adm-native-module-tools [onclick*="decorando"]' }
   ];
   const TOOL_BUTTONS = '.ds-footer-tools .chips > *, .cv-tools button, .adm-native-module-tools button';
+  const TEC_TOOL_TEXT = /cadernos\s+(?:do\s+)?tec/i;
+  // Com os filtros do QC/TEC já no bloco de links do módulo, o atalho "Cadernos do TEC"
+  // nas ferramentas repetia o mesmo destino. Ele volta a aparecer se o módulo ficar sem filtros.
+  function syncTecTool(container, hasLinks) {
+    container.querySelectorAll(TOOL_BUTTONS).forEach(button => {
+      if (!TEC_TOOL_TEXT.test(button.textContent)) return;
+      if (button.classList.contains('bc-tool-relocated') !== hasLinks) button.classList.toggle('bc-tool-relocated', hasLinks);
+    });
+  }
 
   function slotFor(body, after) {
     let slot = body.querySelector('[data-bc-module-links]');
@@ -70,11 +80,16 @@
     body.querySelectorAll(TOOL_BUTTONS).forEach(button => {
       if (LAW_TEXT.test(button.textContent) && !button.closest('[data-bc-module-law]')) button.classList.add('bc-law-relocated');
     });
+    syncTecTool(body, !!panel);
   }
   function refresh() {
     CONFIG.forEach(cfg => document.querySelectorAll(cfg.modules).forEach(module => {
       try { apply(cfg, module); } catch (error) { console.warn('[Links e Lei em Dia]', cfg.id, error); }
     }));
+    // Processo Penal já renderiza o bloco de links; aqui só se evita o atalho repetido.
+    document.querySelectorAll('#subjects .subject[data-id="cpp"] [data-cpp-native-module]').forEach(module => {
+      syncTecTool(module, !!module.querySelector('[data-cpp-links-slot] [data-bcq-module-panel]'));
+    });
   }
   let queued = false;
   function schedule() {

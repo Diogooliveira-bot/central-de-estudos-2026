@@ -105,6 +105,7 @@ html,body,#app,button,input,select,textarea{font-family:"Avenir Next","Segoe UI"
 .is-home .vm-search{visibility:hidden}
 .is-home .vm-hide-home,.is-home .vm-hide-in-home{display:none}
 .vm-header-actions .vm-hide-in-home{font-weight:800}
+.vm-header-actions .vm-return{font-weight:800}
 .vm-home{--u:calc(15px*var(--fontScale,1));font-size:var(--u);max-width:1120px;margin:0 auto;padding:24px 20px 80px;color:var(--ink)}
 .vm-home button:focus-visible,.vm-home input:focus-visible{outline:2px solid var(--green2);outline-offset:2px}
 
@@ -490,7 +491,7 @@ function vmArticle(a){
 function vmHeader(){
  return `<header class="vm-header"><button class="vm-brand" onclick="vmGoCentral()" aria-label="Voltar à Central de Estudos"><img class="vm-brand-logo" src="${BC_ICON}" alt=""><span><strong>Base Completa</strong><small>Vade Mecum</small></span></button>
  <div class="vm-search"><span class="icon">⌕</span><input id="vmLawSearchInput" type="search" aria-label="Buscar nesta lei" value="${vmEsc(vm.query)}" oninput="vmSetQuery(this.value)" autocomplete="off" placeholder="Buscar nesta lei: artigo, palavra ou expressão…">${vm.query?`<button class="clear" aria-label="Limpar busca nesta lei" onclick="vmSetQuery('')">×</button>`:''}</div>
- <div class="vm-header-actions"><button class="vm-hide-in-home" onclick="vmGoHome()" title="Voltar ao início do Vade Mecum" aria-label="Voltar ao início do Vade Mecum">⌂ <span class="optional-label">Início</span></button><span class="vm-save">✓ Salvo neste dispositivo</span><span id="vmSyncStatus" class="vm-sync-status ${vmEsc(vmSyncStatusClass)}">${vmEsc(vmSyncStatus)}</span><button class="vm-hide-home" onclick="vmToggleSidebar()" title="Mostrar ou esconder menu lateral" aria-label="Mostrar ou esconder menu lateral">☰ <span class="optional-label">Menu</span></button><button class="vm-hide-home" onclick="vmOpenGlobalSearch()" title="Buscar em todas as leis" aria-label="Buscar em todas as leis">⌕ <span class="optional-label">Buscar</span></button><button class="${vm.theme==='dark'?'active':''}" onclick="vmToggleTheme()" title="Alternar modo claro/escuro" aria-label="Alternar modo claro ou escuro">${vm.theme==='dark'?'☀':'☾'}</button><button onclick="vmSetFont(-.1)" aria-label="Diminuir tamanho da fonte">A−</button><button onclick="vmSetFont(.1)" aria-label="Aumentar tamanho da fonte">A+</button></div></header>`
+ <div class="vm-header-actions"><button class="vm-return" onclick="vmGoCentral()" title="${vmReturnLabel()}" aria-label="${vmReturnLabel()}">← <span class="optional-label">${vmReturnLabel()}</span></button><button class="vm-hide-in-home" onclick="vmGoHome()" title="Voltar ao início do Vade Mecum" aria-label="Voltar ao início do Vade Mecum">⌂ <span class="optional-label">Início</span></button><span class="vm-save">✓ Salvo neste dispositivo</span><span id="vmSyncStatus" class="vm-sync-status ${vmEsc(vmSyncStatusClass)}">${vmEsc(vmSyncStatus)}</span><button class="vm-hide-home" onclick="vmToggleSidebar()" title="Mostrar ou esconder menu lateral" aria-label="Mostrar ou esconder menu lateral">☰ <span class="optional-label">Menu</span></button><button class="vm-hide-home" onclick="vmOpenGlobalSearch()" title="Buscar em todas as leis" aria-label="Buscar em todas as leis">⌕ <span class="optional-label">Buscar</span></button><button class="${vm.theme==='dark'?'active':''}" onclick="vmToggleTheme()" title="Alternar modo claro/escuro" aria-label="Alternar modo claro ou escuro">${vm.theme==='dark'?'☀':'☾'}</button><button onclick="vmSetFont(-.1)" aria-label="Diminuir tamanho da fonte">A−</button><button onclick="vmSetFont(.1)" aria-label="Aumentar tamanho da fonte">A+</button></div></header>`
 }
 function vmLawSelect(){
  return `<div class="vm-mobile-laws"><select aria-label="Selecionar lei" onchange="vmSetLaw(this.value)">${LAW_GROUPS.flatMap(g=>g.laws).map(l=>`<option value="${l.id}" ${l.id===vm.lawId?'selected':''}>${vmEsc(vmLawMenuTitle(l))}</option>`).join('')}</select></div>`
@@ -569,7 +570,10 @@ function vmEnterLaw(id){
  if(vm.view!=='law'){vm.view='law';try{history.pushState({vm:'law'},'')}catch(e){}}
 }
 function vmShowHome(){vm.view='home';vm.globalSearchOpen=false;vm.globalSearchQuery='';vm.globalVisible=80;vm.indexOpen=false;vm.commentsOpen=null;vmRender();window.scrollTo(0,0)}
-function vmGoCentral(){location.href='/?view=home'}
+// Retorno igual ao da Lei em Dia: volta ao módulo de origem quando o Vade Mecum foi aberto dentro dele.
+function vmReturnContext(){try{const c=JSON.parse(sessionStorage.getItem('central-v6:tool-return')||'null');return c&&typeof c==='object'?c:null}catch(_){return null}}
+function vmReturnLabel(){return vmReturnContext()?.module?'Voltar ao módulo':'Voltar à Central'}
+function vmGoCentral(){const c=vmReturnContext(),q=new URLSearchParams();if(c)['subject','module','view'].forEach(k=>{if(typeof c[k]==='string')q.set(k,c[k])});location.href=q.size?'/central-v119.html?'+q.toString():'/?view=home'}
 function vmGoHome(){
  if(vm.view==='home')return;
  if(history.state&&history.state.vm==='law'){try{history.back();return}catch(e){}}
