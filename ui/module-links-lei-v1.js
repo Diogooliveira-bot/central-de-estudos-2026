@@ -21,7 +21,10 @@
     { id: 'civil', modules: '#subjects .subject[data-id="civil"] [data-civil-native-module]', body: ':scope > .cv-module-body > .cv-zone',
       anchor: ':scope > .cv-cards', trigger: '.cv-tools [onclick*="decorando"]' },
     { id: 'adm', modules: '#subjects .subject[data-id="adm"] [data-adm-native]', body: null,
-      anchor: ':scope > .adm-cf-cards', trigger: '.adm-native-module-tools [onclick*="decorando"]' }
+      anchor: ':scope > .adm-cf-cards', trigger: '.adm-native-module-tools [onclick*="decorando"]' },
+    // Português não tem Lei em Dia por módulo: só o bloco de links logo após a teoria.
+    { id: 'pt', modules: '#subjects .subject[data-id="pt"] .cf-module[data-pt-current]', body: ':scope > .cf-module-body',
+      anchor: '.pt-cf-module-inside > .pt-cf-cards', linksOnly: true }
   ];
   const TOOL_BUTTONS = '.ds-footer-tools .chips > *, .cv-tools button, .adm-native-module-tools button';
   const TEC_TOOL_TEXT = /cadernos\s+(?:do\s+)?tec/i;
@@ -64,6 +67,7 @@
     if (!body) return;
     const anchor = body.querySelector(cfg.anchor);
     if (!anchor) return;
+    if (cfg.linksOnly) return placeLinks(body, anchor);
     let law = cfg.law ? body.querySelector(cfg.law) : null;
     if (cfg.law && law && !LAW_TEXT.test(law.textContent)) law = null;
     if (!law && (cfg.trigger || cfg.open)) {
@@ -72,15 +76,19 @@
     }
     if (!law) return;
     if (anchor.nextElementSibling !== law) anchor.after(law);
-    const slot = slotFor(body, law);
-    const panel = body.querySelector('[data-bcq-module-panel]');
-    if (panel && panel.parentElement !== slot) slot.append(panel);
-    if (slot.hidden !== !panel) slot.hidden = !panel;
+    const panel = placeLinks(body, law);
     if (cfg.hideLaw) body.querySelectorAll(cfg.hideLaw).forEach(node => node.classList.add('bc-law-relocated'));
     body.querySelectorAll(TOOL_BUTTONS).forEach(button => {
       if (LAW_TEXT.test(button.textContent) && !button.closest('[data-bc-module-law]')) button.classList.add('bc-law-relocated');
     });
+  }
+  function placeLinks(body, after) {
+    const slot = slotFor(body, after);
+    const panel = body.querySelector('[data-bcq-module-panel]');
+    if (panel && panel.parentElement !== slot) slot.append(panel);
+    if (slot.hidden !== !panel) slot.hidden = !panel;
     syncTecTool(body, !!panel);
+    return panel;
   }
   function refresh() {
     CONFIG.forEach(cfg => document.querySelectorAll(cfg.modules).forEach(module => {

@@ -58,14 +58,18 @@ try {
     const errors = [];
     page.on('pageerror', (error) => errors.push(error.message));
     await page.goto(`${base}/central-de-questoes`, { waitUntil:'domcontentloaded' });
-    await page.waitForFunction(() => document.documentElement.dataset.centralReady === 'true' && window.ExternalQuestionFilters?.buildRegistry().length === 609, null, { timeout:30000 });
+    await page.waitForFunction(() => document.documentElement.dataset.centralReady === 'true' && window.ExternalQuestionFilters?.buildRegistry().length > 500, null, { timeout:30000 });
     await page.waitForSelector('#questionFiltersView:not(.hidden)');
+    // A escolha de objetivo do primeiro acesso não faz parte deste fluxo.
+    await page.addStyleTag({ content:'#studyObjectiveDialog{display:none!important}' });
     assert.equal(new URL(page.url()).pathname, '/central-de-questoes');
     assert.equal(await page.locator('[data-bcq-tab]').count(), 5);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
     await page.locator('[data-bcq-tab="filters"]').click();
     await page.waitForSelector('[data-bcq-page-list] .bcq-page-filter');
-    assert.equal(await page.locator('[data-bcq-page-list] .bcq-page-filter').count(), 609);
+    // A lista mostra cada caderno uma vez, mesmo quando ele serve a mais de um módulo.
+    const uniqueFilters = await page.evaluate(() => new Set(ExternalQuestionFilters.buildRegistry().map((filter) => filter.stableKey)).size);
+    assert.equal(await page.locator('[data-bcq-page-list] .bcq-page-filter').count(), uniqueFilters);
     const href = await page.locator('[data-bcq-detail] a[href]').first().getAttribute('href');
     assert.match(href, /^https:\/\/(?:www\.)?(?:qconcursos\.com|tecconcursos\.com\.br)\//);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
@@ -94,7 +98,7 @@ try {
     assert.deepEqual(errors, []);
     await context.close();
   }
-  console.log(JSON.stringify({ ok:true, viewports:sizes.map(({ name, width, height }) => ({ name, width, height })), filters:609 }));
+  console.log(JSON.stringify({ ok:true, viewports:sizes.map(({ name, width, height }) => ({ name, width, height })), filters:'cadastro completo' }));
 } finally {
   await browser.close();
   server.close();

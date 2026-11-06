@@ -137,10 +137,12 @@
     var strong=card.querySelector('strong');
     var small=strong&&strong.parentElement?strong.parentElement.querySelector('small'):null;
     var action=card.querySelector('.bc-native-material-action span:first-child');
-    if(strong)strong.textContent='Infográfico de revisão';
-    if(small)small.textContent='Resumo visual completo do módulo, com pontos-chave, regras, pegadinhas e revisão expressa.';
-    if(action)action.textContent='Abrir';
-    card.setAttribute('aria-label','Abrir infográfico de revisão');
+    // Só grava quando muda: regravar o mesmo texto disparava este observador sem parar.
+    var setText=function(el,text){if(el&&el.textContent!==text)el.textContent=text;};
+    setText(strong,'Infográfico de revisão');
+    setText(small,'Resumo visual completo do módulo, com pontos-chave, regras, pegadinhas e revisão expressa.');
+    setText(action,'Abrir');
+    if(card.getAttribute('aria-label')!=='Abrir infográfico de revisão')card.setAttribute('aria-label','Abrir infográfico de revisão');
     card.onclick=function(ev){
       ev.preventDefault();
       ev.stopPropagation();

@@ -93,8 +93,8 @@ test('sem filtros publicados o espaço de links fica oculto e a Lei em Dia conti
 
 test('Central carrega o organizador com versão de cache própria', () => {
   const central = read('central-v119.html');
-  assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261106links2/);
-  assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261106links2/);
+  assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261106pt1/);
+  assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261106pt1/);
   assert.match(read('ui/external-question-filters-v1.js'), /data-bcq-module-slot/);
 });
 
@@ -133,4 +133,18 @@ test('Voltar do navegador fecha a Central de Questões e o Vade Mecum oferece re
   const vade = read('tools/vade.html');
   assert.match(vade, /class="vm-return" onclick="vmGoCentral\(\)"/);
   assert.match(vade, /central-v6:tool-return/);
+});
+
+test('Português: bloco de links logo após a teoria, sem cartão de Lei em Dia', () => {
+  const dom = setup('<section class="subject" data-id="pt"><section class="cf-module" data-pt-current="m04"><div class="cf-module-body"><div class="pt-cf-module-inside">'
+    + '<section class="pt-cf-reading" data-role="reading"></section><section class="pt-cf-cards" data-role="theory">Teorias</section></div>'
+    + panel('portugues:M04')
+    + '<section class="ds-module-footer"><section class="resource ds-footer-tools"><div class="chips"><button>⚖ Vade Mecum</button><button>▤ Cadernos do TEC</button></div></section></section>'
+    + '</div></section></section>');
+  const d = dom.window.document;
+  assert.deepEqual(order(d.querySelector('.pt-cf-module-inside')), ['reading', 'theory', 'links']);
+  assert.ok(d.querySelector('[data-bc-module-links] [data-bcq-module-panel="portugues:M04"]'));
+  assert.equal(d.querySelector('[data-bc-module-law]'), null);
+  assert.ok(d.querySelectorAll('.ds-footer-tools button')[1].classList.contains('bc-tool-relocated'));
+  dom.window.close();
 });
