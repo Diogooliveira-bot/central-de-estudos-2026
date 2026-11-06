@@ -1,16 +1,18 @@
 /* Base Completa — ordem dos módulos com legislação correspondente.
-   Teoria completa → Versão de revisão → links do QConcursos/TEC → Lei em Dia do módulo.
+   Versão de revisão → Teoria completa → Lei em Dia do módulo → links do QConcursos/TEC.
    Apenas reposiciona elementos já renderizados; não altera conteúdo, progresso nem filtros.
    Processo Penal já nasce nesta ordem (ui/cpp-native-study-v1.js). */
 (function (g) {
   'use strict';
   if (g.CentralModuleLinksLei) return;
   const LAW_TEXT = /lei em dia/i;
-  // anchor: último cartão de teoria. law: bloco de Lei em Dia existente a reposicionar.
+  // anchor: último cartão de teoria (a teoria completa vem depois da revisão). law: bloco de Lei em Dia existente a reposicionar.
   // trigger: botão já ligado ao módulo, usado pelo cartão novo quando não há bloco próprio.
   const CONFIG = [
     { id: 'cf', modules: '#subjects .subject[data-id="cf"] .cf-module[data-cf]', body: ':scope > .cf-module-body',
-      anchor: '.cf-native-cards > .cf-study-review', law: '.cf-native-cards > .cf-study-law' },
+      anchor: '.cf-native-cards > .cf-study-primary', law: '.cf-native-cards > .cf-study-law',
+      // Módulos sem cartão próprio (ex.: M03–M05) abrem a Lei em Dia do módulo pelo mesmo atalho do Constitucional.
+      open: module => g.CfNativeStudy?.openDecorando?.(Number(String(module.dataset.cf || '').replace(/\D/g, ''))) },
     { id: 'cpc', modules: '#subjects .subject[data-id="cpc"] .cf-module[data-cf]', body: ':scope > .cf-module-body',
       anchor: ':scope > .bc-native-materials', law: ':scope > .cpc-bottom-grid' },
     { id: 'penal', modules: '#subjects .subject[data-id="penal"] .cf-module[data-cf]', body: ':scope > .cf-module-body',
@@ -22,7 +24,7 @@
   ];
   const TOOL_BUTTONS = '.ds-footer-tools .chips > *, .cv-tools button, .adm-native-module-tools button';
 
-  function slotFor(body, anchor) {
+  function slotFor(body, after) {
     let slot = body.querySelector('[data-bc-module-links]');
     if (!slot) {
       slot = document.createElement('section');
@@ -31,10 +33,10 @@
       slot.setAttribute('data-bcq-module-slot', '1');
       slot.innerHTML = '<div class="bc-module-links-head"><span>QUESTÕES DO MÓDULO</span><b>Links do QConcursos e do TEC</b></div>';
     }
-    if (anchor.nextElementSibling !== slot) anchor.after(slot);
+    if (after.nextElementSibling !== slot) after.after(slot);
     return slot;
   }
-  function lawCard(body, cfg) {
+  function lawCard(body, cfg, module) {
     let card = body.querySelector('[data-bc-module-law]');
     if (card) return card;
     card = document.createElement('article');
@@ -42,8 +44,8 @@
     card.setAttribute('data-bc-module-law', cfg.id);
     card.innerHTML = '<div class="bc-module-law-icon" aria-hidden="true">⚖️</div><div class="bc-module-law-copy"><span>LEI EM DIA</span><h4>Lei em Dia do módulo</h4><p>Artigos e questões de lei seca já filtrados para este módulo.</p></div><div class="bc-module-law-actions"><button type="button" class="bc-module-law-open">Abrir Lei em Dia</button></div>';
     card.querySelector('button').addEventListener('click', () => {
-      const trigger = body.querySelector(cfg.trigger) || body.closest(cfg.modules)?.querySelector(cfg.trigger);
-      trigger?.click();
+      const trigger = cfg.trigger && (body.querySelector(cfg.trigger) || module.querySelector(cfg.trigger));
+      if (trigger) trigger.click(); else cfg.open?.(module);
     });
     return card;
   }
@@ -54,16 +56,16 @@
     if (!anchor) return;
     let law = cfg.law ? body.querySelector(cfg.law) : null;
     if (cfg.law && law && !LAW_TEXT.test(law.textContent)) law = null;
-    if (!law && cfg.trigger) {
-      if (!body.querySelector(cfg.trigger)) return;
-      law = lawCard(body, cfg);
+    if (!law && (cfg.trigger || cfg.open)) {
+      if (!cfg.open && !body.querySelector(cfg.trigger)) return;
+      law = lawCard(body, cfg, module);
     }
     if (!law) return;
-    const slot = slotFor(body, anchor);
+    if (anchor.nextElementSibling !== law) anchor.after(law);
+    const slot = slotFor(body, law);
     const panel = body.querySelector('[data-bcq-module-panel]');
     if (panel && panel.parentElement !== slot) slot.append(panel);
     if (slot.hidden !== !panel) slot.hidden = !panel;
-    if (slot.nextElementSibling !== law) slot.after(law);
     if (cfg.hideLaw) body.querySelectorAll(cfg.hideLaw).forEach(node => node.classList.add('bc-law-relocated'));
     body.querySelectorAll(TOOL_BUTTONS).forEach(button => {
       if (LAW_TEXT.test(button.textContent) && !button.closest('[data-bc-module-law]')) button.classList.add('bc-law-relocated');

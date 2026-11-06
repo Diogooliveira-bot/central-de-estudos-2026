@@ -20,21 +20,21 @@ function order(container) {
         : node.dataset.role || node.className.split(' ')[0]);
 }
 
-test('Constitucional: links entre a versão de revisão e a Lei em Dia do módulo', () => {
+test('Constitucional: revisão, teoria completa, Lei em Dia do módulo e links', () => {
   const dom = setup('<section class="subject" data-id="cf"><section class="cf-module" data-cf="w1"><div class="cf-module-body">'
-    + '<section class="cf-native-cards"><article class="cf-study-card cf-study-primary" data-role="complete">Teoria completa</article><article class="cf-study-card cf-study-review" data-role="review">Versão de revisão</article><article class="cf-study-card cf-study-law"><b>Lei em Dia</b><button onclick="CfNativeStudy.openDecorando(1)">Abrir Lei em Dia</button></article></section>'
+    + '<section class="cf-native-cards"><article class="cf-study-card cf-study-review" data-role="review">Versão de revisão</article><article class="cf-study-card cf-study-primary" data-role="complete">Teoria completa</article><article class="cf-study-card cf-study-law"><b>Lei em Dia</b><button onclick="CfNativeStudy.openDecorando(1)">Abrir Lei em Dia</button></article></section>'
     + '<section class="cf-native-note notes">Anotações</section>' + panel('constitucional:M01')
     + '<section class="ds-module-footer"><section class="resource ds-footer-tools"><div class="chips"><button>📖 Lei em Dia</button><button>⚖ Vade Mecum</button></div></section></section>'
     + '</div></section></section>');
   const d = dom.window.document;
   const cards = d.querySelector('.cf-native-cards');
-  assert.deepEqual(order(cards), ['complete', 'review', 'links', 'lei']);
+  assert.deepEqual(order(cards), ['review', 'complete', 'lei', 'links']);
   assert.ok(d.querySelector('[data-bc-module-links] [data-bcq-module-panel="constitucional:M01"]'));
   assert.equal(d.querySelectorAll('[data-bcq-module-panel]').length, 1);
   assert.ok(d.querySelector('.ds-footer-tools button').classList.contains('bc-law-relocated'));
   assert.ok(!d.querySelectorAll('.ds-footer-tools button')[1].classList.contains('bc-law-relocated'));
   dom.window.CentralModuleLinksLei.refresh();
-  assert.deepEqual(order(cards), ['complete', 'review', 'links', 'lei'], 'reaplicar não altera a ordem');
+  assert.deepEqual(order(cards), ['review', 'complete', 'lei', 'links'], 'reaplicar não altera a ordem');
   assert.equal(d.querySelectorAll('[data-bc-module-links]').length, 1);
   dom.window.close();
 });
@@ -45,7 +45,7 @@ test('Processo Civil: preserva o painel de Lei em Dia com o botão de conclusão
     + '<div class="cpc-bottom-grid"><section class="cpc-mini-panel"><h4>⚖️ Lei em Dia</h4><button onclick="openLeiSecaEnxuta(null,\'cpc\',\'cpc-m01\')">Abrir Lei em Dia</button><button>Marcar concluído</button></section></div>'
     + panel('processual-civil:M01') + '</div></section></section>');
   const body = dom.window.document.querySelector('.cf-module-body');
-  assert.deepEqual(order(body), ['theory', 'links', 'lei']);
+  assert.deepEqual(order(body), ['theory', 'lei', 'links']);
   assert.match(body.querySelector('.cpc-bottom-grid').textContent, /Marcar concluído/);
   dom.window.close();
 });
@@ -70,7 +70,7 @@ test('Penal, Civil e Administrativo ganham cartão de Lei em Dia ligado ao botã
   w.AdmNative = { tool: (uid, kind) => { w.opened = kind === 'decorando' ? uid : null; } };
   for (const [selector, expected] of [['.subject[data-id="penal"] .cf-module-body', 'pen-m01'], ['.subject[data-id="civil"] .cv-zone', 'civil-1'], ['.subject[data-id="adm"] .adm-native-zone', 'adm-01']]) {
     const body = d.querySelector(selector);
-    assert.deepEqual(order(body).slice(0, 3), ['theory', 'links', 'lei'], selector);
+    assert.deepEqual(order(body).slice(0, 3), ['theory', 'lei', 'links'], selector);
     assert.equal(body.querySelectorAll('[data-bc-module-law]').length, 1);
     w.opened = null;
     body.querySelector('[data-bc-module-law] button').click();
@@ -86,14 +86,27 @@ test('sem filtros publicados o espaço de links fica oculto e a Lei em Dia conti
     + '<div class="cv-cards" data-role="theory">Teorias</div><div class="cv-tools"><button onclick="return CivilNative.tool(2,\'decorando\')">📖 Lei em Dia</button></div>'
     + '</section></div></article></section>');
   const zone = dom.window.document.querySelector('.cv-zone');
-  assert.deepEqual(order(zone).slice(0, 3), ['theory', 'links', 'lei']);
+  assert.deepEqual(order(zone).slice(0, 3), ['theory', 'lei', 'links']);
   assert.equal(zone.querySelector('[data-bc-module-links]').hidden, true);
   dom.window.close();
 });
 
 test('Central carrega o organizador com versão de cache própria', () => {
   const central = read('central-v119.html');
-  assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261106links1/);
-  assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261106links1/);
+  assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261106ordem1/);
+  assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261106ordem1/);
   assert.match(read('ui/external-question-filters-v1.js'), /data-bcq-module-slot/);
+});
+
+test('Constitucional sem cartão próprio de Lei em Dia ganha o cartão ligado ao módulo', () => {
+  const dom = setup('<section class="subject" data-id="cf"><section class="cf-module" data-cf="w4"><div class="cf-module-body">'
+    + '<section class="cf-native-cards"><article class="cf-study-card cf-study-review" data-role="review">Versão de revisão</article><article class="cf-study-card cf-study-primary" data-role="complete">Teoria completa</article><article class="cf-study-card cf-study-map" data-role="map">Infográfico</article></section>'
+    + panel('constitucional:M04') + '</div></section></section>');
+  const w = dom.window;
+  w.CfNativeStudy = { openDecorando: n => { w.opened = n; } };
+  const cards = w.document.querySelector('.cf-native-cards');
+  assert.deepEqual(order(cards), ['review', 'complete', 'lei', 'links', 'map']);
+  cards.querySelector('[data-bc-module-law] button').click();
+  assert.equal(w.opened, 4);
+  dom.window.close();
 });

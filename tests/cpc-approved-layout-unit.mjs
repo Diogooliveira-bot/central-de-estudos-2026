@@ -56,15 +56,15 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
   assert.equal(modules.length, 20);
   for (const [index, module] of modules.entries()) {
     const cards = [...module.querySelectorAll('.cpc-approved-card')];
-    assert.deepEqual(cards.map(card => card.dataset.cpcApprovedCard), index === 7 ? ['complete','summary'] : ['complete','summary','map']);
-    assert.equal(cards[0].querySelector('h3').textContent, 'Teoria completa');
-    assert.equal(cards[0].querySelector('.cpc-approved-primary').textContent, 'Estudar conteúdo');
-    assert.equal(cards[0].querySelector('.cpc-approved-secondary').textContent, 'Resolver 10 questões');
-    assert.equal(cards[1].querySelector('h3').textContent, 'Versão de revisão');
-    assert.equal(cards[1].querySelector('.cpc-approved-primary').textContent, 'Revisar conteúdo');
-    assert.equal(cards[1].querySelector('.cpc-approved-secondary').textContent, 'Resolver 5 questões');
-    assert.match(cards[0].querySelector('.cpc-approved-primary').getAttribute('onclick'), /complete/);
-    assert.match(cards[1].querySelector('.cpc-approved-primary').getAttribute('onclick'), /summary/);
+    assert.deepEqual(cards.map(card => card.dataset.cpcApprovedCard), index === 7 ? ['summary','complete'] : ['summary','complete','map']);
+    assert.equal(cards[1].querySelector('h3').textContent, 'Teoria completa');
+    assert.equal(cards[1].querySelector('.cpc-approved-primary').textContent, 'Estudar conteúdo');
+    assert.equal(cards[1].querySelector('.cpc-approved-secondary').textContent, 'Resolver 10 questões');
+    assert.equal(cards[0].querySelector('h3').textContent, 'Versão de revisão');
+    assert.equal(cards[0].querySelector('.cpc-approved-primary').textContent, 'Revisar conteúdo');
+    assert.equal(cards[0].querySelector('.cpc-approved-secondary').textContent, 'Resolver 5 questões');
+    assert.match(cards[1].querySelector('.cpc-approved-primary').getAttribute('onclick'), /complete/);
+    assert.match(cards[0].querySelector('.cpc-approved-primary').getAttribute('onclick'), /summary/);
     if (index !== 7) {
       assert.match(cards[2].querySelector('.cpc-approved-primary').textContent, /mapa mental/i);
       assert.match(cards[2].querySelector('.cpc-approved-primary').getAttribute('onclick'), /Map/);
@@ -107,8 +107,8 @@ test('usa o banco validado para habilitar as baterias CPC M07–M17 sem depender
     const module=dom.window.document.querySelector(`.cf-module[data-cf="cpc${index+1}"]`);
     const buttons=[...module.querySelectorAll('.cpc-approved-card .cpc-approved-secondary')];
     const available=index>=6&&index<=16;
-    assert.equal(buttons[0].textContent,available?'Resolver 10 questões':'Questões internas indisponíveis');
-    assert.equal(buttons[1].textContent,available?'Resolver 5 questões':'Questões internas indisponíveis');
+    assert.equal(buttons[0].textContent,available?'Resolver 5 questões':'Questões internas indisponíveis');
+    assert.equal(buttons[1].textContent,available?'Resolver 10 questões':'Questões internas indisponíveis');
     assert.equal(buttons.every(button=>button.disabled),!available);
   }
   dom.window.close();
@@ -119,7 +119,7 @@ test('reconhece banco CPC validado apesar de contador visual inicial 0/0', async
   await new Promise(resolve => dom.window.requestAnimationFrame(() => dom.window.requestAnimationFrame(resolve)));
   const module = dom.window.document.querySelector('.cf-module[data-cf="cpc1"]');
   const buttons = [...module.querySelectorAll('.cpc-approved-card .cpc-approved-secondary')];
-  assert.deepEqual(buttons.map(button => button.textContent), ['Resolver 10 questões','Resolver 5 questões']);
+  assert.deepEqual(buttons.map(button => button.textContent), ['Resolver 5 questões','Resolver 10 questões']);
   assert.ok(buttons.every(button => !button.disabled));
   dom.window.close();
 });
@@ -129,8 +129,8 @@ test('não habilita questionário completo com banco validado insuficiente', asy
   await new Promise(resolve => dom.window.requestAnimationFrame(() => dom.window.requestAnimationFrame(resolve)));
   const module = dom.window.document.querySelector('.cf-module[data-cf="cpc1"]');
   const buttons = [...module.querySelectorAll('.cpc-approved-card .cpc-approved-secondary')];
-  assert.deepEqual(buttons.map(button => button.textContent), ['Questões internas indisponíveis','Resolver 5 questões']);
-  assert.equal(buttons[0].disabled,true);
-  assert.equal(buttons[1].disabled,false);
+  assert.deepEqual(buttons.map(button => button.textContent), ['Resolver 5 questões','Questões internas indisponíveis']);
+  assert.equal(buttons[0].disabled,false);
+  assert.equal(buttons[1].disabled,true);
   dom.window.close();
 });

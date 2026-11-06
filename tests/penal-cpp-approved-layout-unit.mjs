@@ -53,7 +53,7 @@ test('Penal reaproveita os leitores, links e dados no padrão vertical aprovado'
   assert.equal(body.querySelector(':scope > .penal-approved-review [data-penal-approved-questions="5"]').textContent,'Resolver 5 questões');
   assert.equal(body.querySelector(':scope > .pen-full-entry [data-penal-approved-questions="10"]').textContent,'Resolver 10 questões');
   const ordered=[...body.children].filter(node=>node.matches('.penal-approved-progress,.penal-approved-reading,.pen-full-entry,.penal-approved-review,.ds-module-footer')).map(node=>node.classList.contains('pen-full-entry')?'complete':node.classList.contains('penal-approved-review')?'review':node.classList.contains('penal-approved-reading')?'reading':node.classList.contains('penal-approved-progress')?'progress':'footer');
-  assert.deepEqual(ordered.slice(0,5),['progress','reading','complete','review','footer']);
+  assert.deepEqual(ordered.slice(0,5),['progress','reading','review','complete','footer']);
   assert.equal(body.querySelectorAll('.ds-notes textarea').length,1);
   assert.equal(body.querySelector('.ds-notes textarea').value,'anotação preservada');
   assert.ok(body.querySelector('.ds-footer-tools').textContent.includes('Lei em Dia'));
@@ -117,7 +117,7 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   assert.ok(body.querySelector(':scope > .penal-approved-reading'));
   assert.equal(materials.querySelector('.bc-native-metrics'),null);
   assert.equal(materials.querySelector('.bc-native-materials-head'),null);
-  assert.deepEqual([...materials.querySelectorAll('.penal-approved-card')].map(card=>card.dataset.penalApprovedCard),['complete','summary']);
+  assert.deepEqual([...materials.querySelectorAll('.penal-approved-card')].map(card=>card.dataset.penalApprovedCard),['summary','complete']);
   assert.equal(materials.querySelector('[data-penal-approved-card="complete"] h3').textContent,'Teoria completa');
   assert.equal(materials.querySelector('[data-penal-approved-card="complete"] .penal-approved-primary').textContent,'Estudar conteúdo');
   assert.equal(materials.querySelector('[data-penal-approved-card="summary"] h3').textContent,'Versão de revisão');
@@ -177,8 +177,8 @@ test('runtime de filtros reutiliza painel aninhado e não duplica após atualiza
   assert.ok(body.querySelector('[data-bcq-module-panel] a[href*="101897431"]'));
 });
 
-test('Processo Penal monta os links do QC/TEC no espaço logo após as teorias',async()=>{
-  const dom=new JSDOM('<!doctype html><div id="subjects"><section class="subject" data-id="cpp"><div class="subject-body"><article class="topic-item" data-cpp-native-module="1"><div class="topic-detail"><div class="detail-panel"><section class="adm-native-zone"><div class="adm-native-material-grid"><article data-kind="complete"></article><article data-kind="summary"></article><section class="cpp-native-links" data-cpp-links-slot="1" data-bcq-module-slot="1"><div class="cpp-native-links-head"></div><section class="cpp-native-tec-panel" data-cpp-tec-panel="1"></section></section><article data-kind="lei-em-dia"></article></div></section><section class="adm-native-notes"></section></div></div></article></div></section></div>',{url:'https://study.test/',runScripts:'dangerously',pretendToBeVisual:true});
+test('Processo Penal monta os links do QC/TEC logo após a Lei em Dia do módulo',async()=>{
+  const dom=new JSDOM('<!doctype html><div id="subjects"><section class="subject" data-id="cpp"><div class="subject-body"><article class="topic-item" data-cpp-native-module="1"><div class="topic-detail"><div class="detail-panel"><section class="adm-native-zone"><div class="adm-native-material-grid"><article data-kind="summary"></article><article data-kind="complete"></article><article data-kind="lei-em-dia"></article><section class="cpp-native-links" data-cpp-links-slot="1" data-bcq-module-slot="1"><div class="cpp-native-links-head"></div><section class="cpp-native-tec-panel" data-cpp-tec-panel="1"></section></section></div></section><section class="adm-native-notes"></section></div></div></article></div></section></div>',{url:'https://study.test/',runScripts:'dangerously',pretendToBeVisual:true});
   const w=dom.window;
   w.TEC_PENAL_CPP_LINKS={records:[{status:'VALIDADO_NA_CONTA_CRIADORA',discipline:'cpp',module:'M01',id:'105849897',quantity:10,url:'https://www.tecconcursos.com.br/questoes/cadernos/105849897',title:'Introdução ao Direito Processual Penal'}]};
   w.requestAnimationFrame=callback=>callback();
@@ -187,8 +187,8 @@ test('Processo Penal monta os links do QC/TEC no espaço logo após as teorias',
   const slot=w.document.querySelector('[data-cpp-links-slot="1"]');
   const panel=w.document.querySelector('[data-bcq-module-panel="processual-penal:M01"]');
   assert.ok(panel,'painel de links criado');
-  assert.equal(panel.parentElement,slot,'links ficam junto da teoria completa e da revisão');
-  assert.equal(slot.nextElementSibling.dataset.kind,'lei-em-dia','Lei em Dia vem logo em seguida');
+  assert.equal(panel.parentElement,slot,'links ficam no espaço reservado do módulo');
+  assert.equal(slot.previousElementSibling.dataset.kind,'lei-em-dia','Lei em Dia vem antes dos links');
   assert.equal(slot.querySelector('.cpp-native-tec-panel').getAttribute('data-bcq-original'),'1');
   dom.window.close();
 });
@@ -219,8 +219,8 @@ test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manu
   const links=first.indexOf('data-cpp-links-slot="1"');
   const tec=first.indexOf('data-cpp-tec-panel');
   const lei=first.indexOf('data-kind="lei-em-dia"');
-  // Links do QC/TEC logo após as teorias e, em seguida, a Lei em Dia vinculada ao módulo.
-  assert.ok(progress>=0&&progress<guided&&guided<complete&&complete<summary&&summary<links&&links<tec&&tec<lei&&lei<infographic&&infographic<notes&&notes<tools);
+  // Ordem pedida: revisão, teoria completa, Lei em Dia do módulo e links do QC/TEC.
+  assert.ok(progress>=0&&progress<guided&&guided<summary&&summary<complete&&complete<lei&&lei<links&&links<tec&&tec<infographic&&infographic<notes&&notes<tools);
   assert.match(first,/data-cpp-lei-module="cpp-m01"/);
   assert.match(first,/CppNative\.tool\(1,'decorando'\)/);
   assert.equal((first.match(/Lei em Dia<\/button>|Abrir Lei em Dia/g)||[]).length,1);
