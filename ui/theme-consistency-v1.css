@@ -52,3 +52,61 @@ html[data-central-theme] body .bcq-detail-head button {
   border-color: var(--button-bg) !important;
   color: var(--button-text) !important;
 }
+
+/* 3) Início (Fase C): cada disciplina mostra o próprio progresso (barra fina + %) e a seta
+   fica centralizada na linha. Os elementos já existiam, só estavam ocultos. */
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head {
+  grid-template-rows: auto auto !important;
+  align-items: center !important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head .bc-row-icon { grid-row: 1 / 3 !important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head .subject-name { grid-column: 2 !important; grid-row: 1 !important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head .bc-row-track {
+  display: block !important;
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  height: 5px !important;
+  max-width: 320px;
+  margin-top: 4px;
+  background: var(--progress-track) !important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head .bc-row-track > span { background: var(--progress-fill) !important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head .bc-row-meta { grid-column: 3 !important; grid-row: 1 !important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head .subject-pct {
+  display: block !important;
+  grid-column: 3 !important;
+  grid-row: 2 !important;
+  justify-self: end;
+  font: 700 12px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  color: var(--accent) !important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head .chev {
+  grid-column: 4 !important;
+  grid-row: 1 / 3 !important;
+  align-self: center !important;
+  justify-self: center !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 20px !important;
+  height: 20px !important;
+  line-height: 1 !important;
+  color: var(--accent) !important;
+}
+
+/* 4) Progresso no primeiro uso (Fase C; classe posta por ui/progress-first-use-v1.js):
+   o convite para começar sobe para o topo; gráfico vazio e lista de zeros ficam ocultos. */
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty:not(.hidden) { display: flex !important; flex-direction: column !important; }
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty > .central-view-back { order: -3; align-self: flex-start; }
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty > .bc-page-header { order: -2; }
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty > #studentPerformanceInsight { order: -1; margin-bottom: 16px !important; }
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty #studentPerformanceInsight > button { margin-top: 8px; }
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty .student-week-chart,
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty #perfBySubject,
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty .student-performance-heading { display: none !important; }
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty #studentPerformanceInsight {
+  display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 12px !important;
+}
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty #studentPerformanceInsight > div { flex: 1 1 auto; min-width: min(100%, 300px); }
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty #studentPerformanceInsight > button { margin: 0 !important; }
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty #studentProgressWeek,
+html[data-central-theme] body #appRoot #performanceView.bc-progress-empty .card:has(> .bc-stat-strip) { display: none !important; }
