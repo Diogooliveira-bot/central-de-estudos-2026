@@ -100,6 +100,9 @@
   function relevantMutation(mutation) {
     if (mutation.type === 'childList') return mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0;
     const target = mutation.target;
+    // Regravar o mesmo valor (ex.: classList.add de classe já presente) não muda a tela;
+    // reagir a isso criava um ciclo contínuo com outros scripts de padronização.
+    if (mutation.type === 'attributes' && mutation.oldValue === target.getAttribute?.(mutation.attributeName)) return false;
     return target instanceof Element && target.matches('.view,.subject,.bc-native-reader-overlay,.cf-native-overlay,#studentMorePanel,[data-student-onboarding]');
   }
   function start() {
@@ -110,7 +113,7 @@
       if (mutations.some(relevantMutation)) schedule();
     });
     observer.observe(document.body, {
-      childList:true, subtree:true, attributes:true,
+      childList:true, subtree:true, attributes:true, attributeOldValue:true,
       attributeFilter:['class', 'hidden', 'aria-hidden'],
     });
     document.addEventListener('central:discipline-ready', schedule);

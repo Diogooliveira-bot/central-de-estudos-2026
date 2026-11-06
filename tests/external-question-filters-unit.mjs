@@ -141,3 +141,29 @@ test('componente compartilhado substitui a apresentação antiga no módulo', as
   await settle(dom.window);
 });
 
+
+test('Português: cadernos TEC antigos (PORT 01–16) vão para os módulos atuais e aparecem dentro do módulo', async () => {
+  const dom = new JSDOM(`<!doctype html><html><body>
+    <div id="centralSidebar"><div class="nav"></div></div><div class="workspace"><section id="homeView" class="view"></section></div>
+    <section id="subjects"><article class="subject" data-id="pt">
+      <section class="cf-module pt-cf-module open" data-pt-current="m04"><button class="cf-module-head"><span class="cf-module-no">MÓDULO 4</span></button><div class="cf-module-body"><div class="pt-cf-module-inside"><section class="pt-cf-cards"></section><section data-bcq-module-slot="1" data-bc-module-links="1"></section></div></div></section>
+      <section class="cf-module pt-cf-module" data-pt-current="review"><button class="cf-module-head"><span class="cf-module-no">REVISÃO FINAL</span></button><div class="cf-module-body"></div></section>
+    </article></section></body></html>`, { url: 'https://preview.example.test/central-v119.html', runScripts: 'outside-only', pretendToBeVisual: true });
+  const { window } = dom;
+  window.scrollTo = () => {};
+  const caderno = (n, nome, id) => ({ id: `port-${n}`, grupo: 'portugues', grupoNome: 'Português', nome, questoes: 100, url: `https://www.tecconcursos.com.br/questoes/cadernos/${id}` });
+  window.PT_TEC_CADERNOS = [caderno('01', 'PORT 01 - Interpretação de textos', 1), caderno('04', 'PORT 04 - Ortografia, acentuação e fonética', 4), caderno('16', 'PORT 16 - Questões mescladas', 16)];
+  window.eval(source);
+  window.document.dispatchEvent(new window.Event('DOMContentLoaded'));
+  await settle(window);
+  const rows = window.ExternalQuestionFilters.buildRegistry().filter((row) => row.disciplineKey === 'portugues');
+  const where = (code) => JSON.parse(JSON.stringify(rows.filter((row) => row.legacyCid === code.replace('PORT ', 'port-')).map((row) => row.module).sort()));
+  assert.deepEqual(where('PORT 01'), ['M24'], 'Interpretação de textos → M24');
+  assert.deepEqual(where('PORT 04'), ['M02', 'M03', 'M04'], 'Ortografia, acentuação e fonética → M02 a M04');
+  assert.deepEqual(where('PORT 16'), ['M25'], 'Questões mescladas → Revisão final');
+  const panel = window.document.querySelector('[data-bcq-module-panel="portugues:M04"]');
+  assert.ok(panel, 'o módulo 4 mostra os filtros');
+  assert.ok(panel.parentElement.matches('[data-bcq-module-slot]'), 'dentro do bloco de links');
+  assert.match(panel.textContent, /Ortografia, acentuação e fonética/);
+  await settle(window);
+});

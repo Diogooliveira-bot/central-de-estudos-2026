@@ -283,6 +283,14 @@
 
   }
 
+  // Cadernos TEC de Português (PORT 01–16) foram numerados para o curso antigo.
+  // Correspondência por assunto com os módulos atuais (M01–M24 e Revisão final = M25).
+  const PT_TEC_MODULES = {
+    '01': ['M24'], '02': ['M22', 'M23'], '03': ['M22'], '04': ['M02', 'M03', 'M04'],
+    '05': ['M04', 'M05', 'M06'], '06': ['M08', 'M13'], '07': ['M07', 'M15'], '08': ['M09'],
+    '09': ['M21'], '10': ['M10', 'M11', 'M12'], '11': ['M14'], '12': ['M16'],
+    '13': ['M19', 'M20'], '14': ['M13', 'M17', 'M18'], '15': ['M07', 'M14'], '16': ['M25']
+  };
   function curatedModuleSet(list) {
     return new Set(list.filter((item) => /^tec-.*-curated$/.test(item.source)).map((item) => `${item.disciplineKey}|${item.module}`));
   }
@@ -308,11 +316,12 @@
       if (!module || curated.has(`${disciplineKey}|${module}`)) return;
       // A numeração antiga dos cadernos RLM (rlm-01…) não corresponde aos módulos atuais.
       if (disciplineKey === 'rlm') return;
-      pushFilter(list, seen, {
-        platform: 'tec', disciplineKey, discipline: item.grupoNome, module, code: module,
+      const modules = disciplineKey === 'portugues' ? PT_TEC_MODULES[pad(codeMatch[1])] || [] : [module];
+      modules.forEach((target) => pushFilter(list, seen, {
+        platform: 'tec', disciplineKey, discipline: item.grupoNome, module: target, code: target,
         title: item.nome, id: notebookIdFromUrl(item.url) || item.id, count: item.questoes,
         url: item.url, legacyCid: item.id, source: 'tec-general'
-      });
+      }));
     });
   }
 
@@ -488,6 +497,12 @@
     let subjectId = element.closest('.subject[data-id]')?.getAttribute('data-id') || '';
     let disciplineKey = SUBJECT_DISCIPLINE[subjectId] || '';
     if (element.matches('.pt-module-card[data-module-card]')) disciplineKey = 'portugues';
+    // Curso atual de Português: m01…m24 e a Revisão final (M25).
+    if (element.hasAttribute('data-pt-current')) {
+      const current = element.getAttribute('data-pt-current');
+      const number = current === 'review' ? 25 : Number(String(current).replace(/\D/g, ''));
+      return number ? { disciplineKey: 'portugues', module: `M${pad(number)}` } : null;
+    }
     if (element.hasAttribute('data-adm-native')) disciplineKey = 'administrativo';
     else if (element.hasAttribute('data-cpp-native-module')) disciplineKey = 'processual-penal';
     else if (element.hasAttribute('data-rlm-module')) disciplineKey = 'rlm';
@@ -502,7 +517,7 @@
   function moduleTargetPriority(element) {
     if (element.matches('[data-adm-native],[data-civil-native-module]')) return 60;
     if (element.matches('[data-cpp-native-module],[data-rlm-module]')) return 50;
-    if (element.matches('.pt-module-card[data-module-card]')) return 45;
+    if (element.matches('.pt-module-card[data-module-card],[data-pt-current]')) return 45;
     if (element.matches('.civil-module[data-civil-analista],.civil-module[data-civil]')) return 40;
     if (element.matches('.cf-module[data-cf]')) return 30;
     return 10;
@@ -515,7 +530,8 @@
       '#subjects .subject[data-id="cpc"] .cf-module[data-cf]',
       '#subjects .subject[data-id="cf"] .cf-module[data-cf]',
       '#subjects .topic-item[data-uid]',
-      '.pt-module-card[data-module-card]'
+      '.pt-module-card[data-module-card]',
+      '#subjects .subject[data-id="pt"] .cf-module[data-pt-current]'
     ];
     const selected = new Map();
     Array.from(new Set(document.querySelectorAll(selectors.join(',')))).forEach((element) => {
@@ -541,7 +557,8 @@
     if (root?.matches?.('[data-bcq-module-host="1"]')) hosts.push(root);
     root?.querySelectorAll?.('[data-bcq-module-host="1"]').forEach((node) => hosts.push(node));
     hosts.forEach((body) => {
-      if (!body.querySelector(':scope > [data-bcq-module-panel]')) showOriginalPanels(body);
+      // O painel pode estar dentro do bloco de links do módulo (data-bcq-module-slot).
+      if (!body.querySelector(':scope > [data-bcq-module-panel], [data-bcq-module-slot] > [data-bcq-module-panel]')) showOriginalPanels(body);
     });
   }
   function updateModuleMetric(element, filters) {
