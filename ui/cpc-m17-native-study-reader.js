@@ -12,8 +12,27 @@ function key(part){return STORAGE+':'+part}
 function chapterDone(mode,id){return localStorage.getItem(key('chapter:'+mode+':'+id))==='1'}
 function setChapterDone(mode,id,v){localStorage.setItem(key('chapter:'+mode+':'+id),v?'1':'0')}
 
+function prepareCpcLines(raw){
+ const stripped=String(raw||'').replace(/BASE COMPLETA\s*[·•|]\s*CPC\s*[·•|]\s*M\d{2}\s+\d+\s*\/\s*\d{1,2}(?=\d+\.\s)/gi,'\n');
+ const lines=stripped.replace(/\r/g,'').split('\n');
+ const result=[];
+ for(let i=0;i<lines.length;i++){
+  let line=norm(lines[i]);
+  if(/^\d+(?:\.\d+)*\.?(?:\s|$)/.test(line)){
+   const letters=line.replace(/\bx\b/g,'').replace(/[^A-Za-zÀ-ÿ]/g,'');
+   if(letters.length&&letters.replace(/[a-zà-ÿ]/g,'').length/letters.length>=.72)while(i+1<lines.length){
+    const next=norm(lines[i+1]),chars=next.replace(/[^A-Za-zÀ-ÿ]/g,'');
+    if(!next||/^\d+(?:\.\d+)*\.?\s/.test(next)||next.length>110||!((chars.length&&chars===chars.toUpperCase())||/^\d+[ºo]?$/.test(next)))break;
+    if(/^(?:BASE|COMPLETA|M\d{2})$/.test(next))break;
+    line+=' '+next;i++;
+   }
+  }
+  result.push(line);
+ }
+ return result.join('\n');
+}
 function cleanLines(raw){
- return String(raw||'').replace(/\r/g,'').split('\n').map(norm).filter((line,i)=>{
+ return prepareCpcLines(raw).replace(/\r/g,'').split('\n').map(norm).filter((line,i)=>{
    if(!line)return true;
    if(/^BASE COMPLETA(?:\s*[|•·-]|$)/i.test(line))return false;
    if(/^Resumo para primeira leitura/i.test(line))return false;
@@ -27,7 +46,7 @@ function cleanLines(raw){
 }
 function headingInfo(line){
  const l=norm(line); if(!l)return null;
- let m=l.match(/^(\d+)\.\s+(.{3,180})$/); if(m)return {level:2,text:l};
+ let m=l.match(/^(\d+)\.\s+(.{3,180})$/); if(m){const chars=m[2].replace(/\bx\b/g,'').replace(/[^A-Za-zÀ-ÿ]/g,'');if(chars.length&&chars.replace(/[a-zà-ÿ]/g,'').length/chars.length<.72&&!(m[2].length<80&&!/[:;]|[,?.!]$/.test(m[2])))return null;return {level:2,text:l};}
  // "2.1 Conceito" e "2.1. Conceito" (com ponto, como no material de origem).
  m=l.match(/^(\d+)\.(\d+)(?:\.\d+)?\.?\s+(.{3,120})$/); if(m&&!/[;,]$/.test(l))return {level:3,text:l};
  // Subtítulo de enumeração: "b) Substitutividade" (curto e sem pontuação final).
@@ -111,7 +130,7 @@ function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
- const ordered=Array.from(current.article.querySelectorAll('h2,h3'));
+ const ordered=Array.from(current.article.querySelectorAll('h2,h3')).filter(el=>!el.closest('.cpc-overview,.cpc-synthesis'));
  if(!ordered.length)return null;
  // Primeiro pelo título do capítulo: a posição muda quando há subtítulos.
  const target=normKey(ch.match||ch.title);
@@ -156,22 +175,25 @@ function autoCheck(){
  if(changed)refresh();
 }
 function close(){
+ global.__CPC_VISUAL_REQUEST=(global.__CPC_VISUAL_REQUEST||0)+1;
  const ov=document.getElementById(OVERLAY_ID); if(ov)ov.remove();
  document.body.style.overflow='';
  current=null;
  const mod=document.querySelector('#subjects .subject[data-id="cpc"] .cf-module[data-cf="cpc17"]');
  if(mod)mod.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function open(mode){
+async function open(mode){
  const data=source(); if(!data){alert('Conteúdo do CPC M17 ainda está carregando.');return}
  close();
  const raw=mode==='summary'?data.summary:data.complete,parsed=(mode==='summary'&&data.summaryHtml)?buildFromHtml(data.summaryHtml,raw):build(raw),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
+ const request=global.__CPC_VISUAL_REQUEST=(global.__CPC_VISUAL_REQUEST||0)+1;
+ try{if(!global.CpcApostilaReading)await import('/ui/cpc-apostila-reading-v1.js?v=20261107cpc1');parsed.body=await global.CpcApostilaReading.transform(parsed.body,17,mode);if(request!==global.__CPC_VISUAL_REQUEST)return;}catch(error){console.warn('[CPC apostila]',error);alert('Não foi possível preparar a leitura. Confira sua conexão e tente novamente.');return;}
  const ov=document.createElement('div');ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true">'+
  '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M17 — '+esc(data.title)+'</b><small>'+label+' • leitura incorporada à Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-cpc-close>×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
  '<div class="bc-native-reader-tools"><button class="primary" data-cpc-back>← Voltar ao M17</button><input type="search" placeholder="Buscar neste material…"><button data-cpc-font="-1">A−</button><button data-cpc-font="1">A+</button><button data-cpc-top>Topo</button></div>'+
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
- '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
+ '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Teoria completa do módulo, com exemplos e legislação para consulta.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
