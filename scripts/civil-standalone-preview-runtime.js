@@ -8,7 +8,7 @@ function civilPreviewOpen(n){
  const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent='DIREITO CIVIL · MÓDULO '+String(n).padStart(2,'0');
  const h1=document.createElement('h1');h1.textContent=m.title;
  const meta=document.createElement('div');meta.className='meta';meta.textContent='TEORIA COMPLETA · PRÉVIA PARA AVALIAÇÃO';
- hero.append(eyebrow,h1,meta);civilMain.innerHTML=m.html;civilMain.prepend(hero);
+ hero.append(eyebrow,h1,meta);civilMain.innerHTML=m.html;civilMain.prepend(hero);window.CivilLawDisclosure?.enhance(civilMain);
  const label=document.createElement('p');label.textContent='NESTE MÓDULO';civilNav.replaceChildren(label);
  for(const h of civilMain.querySelectorAll('h2,h3')){
   if(h.closest('.overview,.synthesis'))continue;

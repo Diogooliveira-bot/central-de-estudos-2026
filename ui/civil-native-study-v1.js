@@ -30,7 +30,7 @@ async function openReader(n,kind){
   const d=await load(n);if(activeReader!==session)return;
   let html=kind==='summary'?d.summaryHtml:d.completeHtml;
   if(kind==='complete'){
-   if(!g.CivilVisualApostila)await import('/ui/civil-visual-apostila-v1.js?v=20261107civil2');
+   if(!g.CivilVisualApostila)await import('/ui/civil-visual-apostila-v1.js?v=20261107civil4');
    html=await g.CivilVisualApostila.html(n);
    if(activeReader!==session)return;
   }

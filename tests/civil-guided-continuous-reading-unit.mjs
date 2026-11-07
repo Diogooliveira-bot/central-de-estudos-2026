@@ -20,7 +20,7 @@ test('Civil: 205 topics keep explanations, examples, laws and revision without r
    const topic=rendered[i],data=expected[i];assert(topic.querySelector('h2').textContent.includes(data[0]));
    const fields=[...topic.querySelectorAll('.bc-m01-card')];assert.equal(fields.length,6);
    for(let field=1;field<=6;field++)assert.equal(normalize([...fields[field-1].children].filter(x=>x.tagName==='P').map(p=>p.textContent).join(' ')),normalize(data[field]));
-   if(w.BC_CIV_GUIDED_LAW[n]?.[i]?.length){assert(topic.querySelector('.bc-m01-law details[open]'));assert.equal(topic.querySelectorAll('.bc-m01-lei-art').length,w.BC_CIV_GUIDED_LAW[n][i].length);}
+   if(w.BC_CIV_GUIDED_LAW[n]?.[i]?.length){assert(topic.querySelector('.bc-m01-law details:not([open])'));assert.equal(topic.querySelectorAll('.bc-m01-lei-art').length,w.BC_CIV_GUIDED_LAW[n][i].length);}
   }
   overlay.querySelector('[data-bc-guided-mode="review"]').click();assert.equal(overlay.querySelector('.bc-m01-reader').dataset.view,'review');
   overlay.querySelector('[data-bc-guided-mode="study"]').click();assert.equal(overlay.querySelector('.bc-m01-reader').dataset.view,'study');

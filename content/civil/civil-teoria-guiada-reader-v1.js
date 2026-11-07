@@ -15,7 +15,7 @@ function lawBox(n,index){
  const L=global.BC_CIV_GUIDED_LAW&&global.BC_CIV_GUIDED_LAW[n],items=L&&L[index];
  if(!Array.isArray(items)||!items.length)return '';
  const names=items.map(x=>x[0]),head=names.length===1?names[0]:names[0]+' e mais '+(names.length-1);
- return '<details open class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+items.map(x=>'<div class="bc-m01-lei-art">'+(x[1]||[]).map(t=>'<p>'+esc(t)+'</p>').join('')+'</div>').join('')+'</details>';
+ return '<details class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+items.map(x=>'<div class="bc-m01-lei-art">'+(x[1]||[]).map(t=>'<p>'+esc(t)+'</p>').join('')+'</div>').join('')+'</details>';
 }
 function card(topic,index,n){
   const sections=[
