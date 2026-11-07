@@ -38,15 +38,16 @@
       const box = head.closest(BOX_SELECTOR);
       if (!box || seen.has(box)) return null;
       seen.add(box);
-      const count = compact(head.querySelector('.cf-module-no,.cv-module-no,.cv-module-num,.ds-module-no,.pt-module-no,[class*="module-no"]')?.textContent)
+      const rawCount = compact(head.querySelector('.cf-module-no,.cv-module-no,.cv-module-num,.ds-module-no,.pt-module-no,[class*="module-no"]')?.textContent)
         || 'Módulo ' + String(index + 1).padStart(2, '0');
+      const count=/^M[ÓO]DULO\s+\d+$/i.test(rawCount)?'MÓDULO '+rawCount.match(/\d+/)[0].padStart(2,'0'):rawCount;
       const label = compact(head.querySelector('.cf-module-title,.cv-module-title,.cv-module-head > span > b,.ds-module-title,.pt-module-title,[class*="module-title"]')?.textContent)
         || compact(box.querySelector('.topic-title')?.textContent)
         || compact(head.textContent).replace(count, '').trim()
         || 'Conteúdo do módulo';
       const key = compact(box.dataset.cf || box.dataset.ptnModule || box.dataset.module || box.dataset.uid || box.dataset.id || String(index));
       const meta=compact(head.querySelector('.cv-module-head > span > small,.cf-module-meta,.ds-module-meta,.pt-module-meta')?.textContent);
-      const progress=compact(head.querySelector('.cv-pct,.cf-module-pct,.ds-module-pct,.pt-module-pct')?.textContent);
+      const progress=compact(head.querySelector('.cv-pct,.cf-module-pct,.cf-module-stat,.ds-module-pct,.pt-module-pct')?.textContent).match(/\d+(?:[.,]\d+)?%/)?.[0]||'';
       return { head,box,key,label,count,meta,progress };
     }).filter(Boolean);
   }
