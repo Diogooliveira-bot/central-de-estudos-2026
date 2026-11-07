@@ -1,0 +1,1488 @@
+{
+  "added": 246,
+  "modulesChecked": 15,
+  "unresolvedCurrentReferences": 0,
+  "excludedHistoricalReferences": [
+    "CC 757–802 (revoked insurance chapter)",
+    "CC 206 §1 II (revoked insurance rule)",
+    "CPC/1973 historical comparison"
+  ],
+  "articles": [
+    {
+      "module": 1,
+      "key": "cc:9",
+      "reason": "Cited article or range: arts. 1º a 39",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 1,
+      "key": "cc:10",
+      "reason": "Cited article or range: arts. 1º a 39",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 2,
+      "key": "cc:77",
+      "reason": "Cited article or range: arts. 40 a 78",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 5,
+      "key": "cpc:487",
+      "reason": "Cited article or range: art. 487",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2015/lei-13105-16-marco-2015-780273-normaatualizada-pl.html"
+    },
+    {
+      "module": 5,
+      "key": "cc:3",
+      "reason": "Cited article or range: art. 3º",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 5,
+      "key": "cpc:921",
+      "reason": "Cited article or range: art. 921",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2015/lei-13105-16-marco-2015-780273-normaatualizada-pl.html"
+    },
+    {
+      "module": 5,
+      "key": "cpc:369",
+      "reason": "Cited article or range: art. 369",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2015/lei-13105-16-marco-2015-780273-normaatualizada-pl.html"
+    },
+    {
+      "module": 6,
+      "key": "cc:94",
+      "reason": "Cited article or range: art. 94",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:458",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:459",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:460",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:461",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:462",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:463",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:464",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:465",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 7,
+      "key": "cc:466",
+      "reason": "Cited article or range: arts. 421 a 480",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 9,
+      "key": "cc:931",
+      "reason": "Cited article or range: art. 931",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 9,
+      "key": "cc:935",
+      "reason": "Cited article or range: art. 935",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 9,
+      "key": "cc:954",
+      "reason": "Cited article or range: arts. 944 a 954",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 9,
+      "key": "cc:952",
+      "reason": "Cited article or range: arts. 944 a 954",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 9,
+      "key": "cc:953",
+      "reason": "Cited article or range: arts. 944 a 954",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1085",
+      "reason": "Cited article or range: art. 1.085",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:926",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:891",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:892",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:893",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:894",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:895",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:896",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:897",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:898",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:899",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:900",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:901",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:902",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:904",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:905",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:906",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:907",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:908",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:909",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:910",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:911",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:912",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:913",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:914",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:915",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:916",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:917",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:918",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:919",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:920",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:921",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:922",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:923",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:924",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:925",
+      "reason": "Cited article or range: arts. 887 a 926",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:972",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:973",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:974",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:975",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:976",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:977",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:978",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:979",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:980",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:984",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:987",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:988",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:989",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:990",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:992",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:993",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:994",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:995",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:996",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:998",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:999",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1000",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1001",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1002",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1003",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1004",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1005",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1006",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1007",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1008",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1009",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1010",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1011",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1012",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1013",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1014",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1015",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1016",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1017",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1018",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1019",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1020",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1021",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1022",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1023",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1024",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1025",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1026",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1027",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1028",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1029",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1030",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1031",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1032",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1036",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1037",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1038",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1039",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1040",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1041",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1042",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1043",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1044",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1045",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1046",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1047",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1048",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1049",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1050",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1051",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1055",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1056",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1057",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1058",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1059",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1062",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1063",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1064",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1065",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1066",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1067",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1068",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1069",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1070",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1072",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1073",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1074",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1075",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1077",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1079",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1080",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1081",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1082",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1083",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1084",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1086",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1088",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1089",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1090",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1091",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1092",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1093",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1094",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1095",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1096",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1097",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1098",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1099",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1100",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1101",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1103",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1104",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1105",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1106",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1107",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1108",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1109",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1110",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1111",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1112",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1114",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1115",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1117",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1118",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1120",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1121",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1122",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1123",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1124",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1125",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1126",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1127",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1128",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1129",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1130",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1131",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1132",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1133",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1134",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1135",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1136",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1137",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1138",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1139",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1140",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1141",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1150",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1151",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1152",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1153",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1154",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1182",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1183",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1184",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1185",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1186",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1187",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1188",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1189",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1190",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1191",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1192",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 10,
+      "key": "cc:1193",
+      "reason": "Cited article or range: arts. 966 a 1.195",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 12,
+      "key": "cc:1240-A",
+      "reason": "Cited article or range: art. 1.240-A",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 12,
+      "key": "cc:1225",
+      "reason": "Cited article or range: arts. 1.225 a 1.368-E",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 12,
+      "key": "cc:1368-E",
+      "reason": "Cited article or range: arts. 1.225 a 1.368-E",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 12,
+      "key": "cc:1354-A",
+      "reason": "Cited article or range: Art. 1.354-A",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 12,
+      "key": "cc:1368-A",
+      "reason": "Lettered article in the cited subject",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 12,
+      "key": "cc:1368-B",
+      "reason": "Lettered article in the cited subject",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 12,
+      "key": "cc:1368-C",
+      "reason": "Lettered article in the cited subject",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 12,
+      "key": "cc:1368-D",
+      "reason": "Lettered article in the cited subject",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 13,
+      "key": "cc:2038",
+      "reason": "Cited article or range: art. 2.038",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:1",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:2",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:3",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:4",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:5",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:6",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:7",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:8",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "mp2220:9",
+      "reason": "Special concession for housing",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2220-4-setembro-2001-396074-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "dl271:7",
+      "reason": "Concession of real right of use",
+      "source": "https://www2.camara.leg.br/legin/fed/declei/1960-1969/decreto-lei-271-28-fevereiro-1967-378103-normaatualizada-pe.html"
+    },
+    {
+      "module": 13,
+      "key": "dl271:8",
+      "reason": "Concession of real right of use",
+      "source": "https://www2.camara.leg.br/legin/fed/declei/1960-1969/decreto-lei-271-28-fevereiro-1967-378103-normaatualizada-pe.html"
+    },
+    {
+      "module": 14,
+      "key": "cc:1668",
+      "reason": "Cited article or range: art. 1.668",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 15,
+      "key": "cc:1815-A",
+      "reason": "Cited article or range: art. 1.815-A",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 15,
+      "key": "cc:205",
+      "reason": "Cited article or range: art. 205",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html"
+    },
+    {
+      "module": 15,
+      "key": "cpc:610",
+      "reason": "Cited article or range: art. 610",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2015/lei-13105-16-marco-2015-780273-normaatualizada-pl.html"
+    },
+    {
+      "module": 15,
+      "key": "cpc:648",
+      "reason": "Cited article or range: art. 648",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2015/lei-13105-16-marco-2015-780273-normaatualizada-pl.html"
+    }
+  ]
+}
