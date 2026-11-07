@@ -1,0 +1,167 @@
+[
+  {
+    "module": 1,
+    "title": "Pessoa Natural e Direitos da Personalidade",
+    "sourceHash": "8ae26df3cf06a4167dd3c33089ef87abe97f449e639bc9801cef09f4bef9edeb",
+    "sourceWords": 3237,
+    "headings": 32,
+    "lawBlocks": 18,
+    "lawArticles": 54,
+    "tables": 5,
+    "remainingPre": 0
+  },
+  {
+    "module": 2,
+    "title": "Pessoas Jurídicas e Domicílio",
+    "sourceHash": "3b8711142602f9aa05adfa6f2050b10b514350291cb62184d3bc76f2c745a78f",
+    "sourceWords": 3238,
+    "headings": 28,
+    "lawBlocks": 14,
+    "lawArticles": 49,
+    "tables": 4,
+    "remainingPre": 0
+  },
+  {
+    "module": 3,
+    "title": "Bens",
+    "sourceHash": "e99fd03278a5de738cfe7efbefed28dc232868ec0501866dfd71e8f66b53f4cd",
+    "sourceWords": 2515,
+    "headings": 27,
+    "lawBlocks": 11,
+    "lawArticles": 27,
+    "tables": 16,
+    "remainingPre": 0
+  },
+  {
+    "module": 4,
+    "title": "Negócio Jurídico",
+    "sourceHash": "e18b465cb1ed3ab070906824a8073f21cb8fbe6017bb17e895e2348df71cb422",
+    "sourceWords": 5441,
+    "headings": 53,
+    "lawBlocks": 36,
+    "lawArticles": 158,
+    "tables": 9,
+    "remainingPre": 0
+  },
+  {
+    "module": 5,
+    "title": "Prescrição, Decadência e Prova",
+    "sourceHash": "b303c681443d1081246438eaf654cdf97e12b1e41420dc195a178e3c8047f3cf",
+    "sourceWords": 2668,
+    "headings": 24,
+    "lawBlocks": 13,
+    "lawArticles": 49,
+    "tables": 4,
+    "remainingPre": 0
+  },
+  {
+    "module": 6,
+    "title": "Obrigações",
+    "sourceHash": "0c2c7d4ab8475a750c14dc248acdd3a0b63f7bbe77816ec625754ebe25019004",
+    "sourceWords": 4138,
+    "headings": 34,
+    "lawBlocks": 16,
+    "lawArticles": 238,
+    "tables": 6,
+    "remainingPre": 0
+  },
+  {
+    "module": 7,
+    "title": "Contratos em Geral",
+    "sourceHash": "0a096c1bf4c1dc31387cd7d6b911afa8eec266261095cb22485c4ec425bd80bd",
+    "sourceWords": 2002,
+    "headings": 27,
+    "lawBlocks": 13,
+    "lawArticles": 63,
+    "tables": 5,
+    "remainingPre": 0
+  },
+  {
+    "module": 8,
+    "title": "Contratos em Espécie",
+    "sourceHash": "6729400e76205591f215951815bfa09f2de280c42d275002486c12ab99d66c04",
+    "sourceWords": 4551,
+    "headings": 35,
+    "lawBlocks": 20,
+    "lawArticles": 364,
+    "tables": 3,
+    "remainingPre": 0
+  },
+  {
+    "module": 9,
+    "title": "Responsabilidade Civil",
+    "sourceHash": "a3b7195c73cd7bfc24da4beb54beae89f8cb9ab45ea54839b925c3c5ea16f0c0",
+    "sourceWords": 2488,
+    "headings": 26,
+    "lawBlocks": 14,
+    "lawArticles": 44,
+    "tables": 4,
+    "remainingPre": 0
+  },
+  {
+    "module": 10,
+    "title": "Direito de Empresa e Nome Empresarial",
+    "sourceHash": "117462b7c51037dfc79eb5e9a44cdb53e2a02d2b8d071ff8950c551c5d32359b",
+    "sourceWords": 3326,
+    "headings": 41,
+    "lawBlocks": 12,
+    "lawArticles": 273,
+    "tables": 8,
+    "remainingPre": 0
+  },
+  {
+    "module": 11,
+    "title": "Posse",
+    "sourceHash": "713f7ca1424aefd5a60bce56ec74dc5d0e478ee5faaa532afe7ffa30c90255f6",
+    "sourceWords": 3802,
+    "headings": 33,
+    "lawBlocks": 12,
+    "lawArticles": 57,
+    "tables": 7,
+    "remainingPre": 0
+  },
+  {
+    "module": 12,
+    "title": "Propriedade, Vizinhança e Condomínios",
+    "sourceHash": "ed6f8b0f12c464066abfa87f21a37983b038da626ae44970e71e7ff6a3a91471",
+    "sourceWords": 3208,
+    "headings": 31,
+    "lawBlocks": 16,
+    "lawArticles": 166,
+    "tables": 4,
+    "remainingPre": 0
+  },
+  {
+    "module": 13,
+    "title": "Outros Direitos Reais e Garantias",
+    "sourceHash": "0d224f247d5e49be8396a5c3bd4f0f229fbab24bf844160660055fbf85ef6c33",
+    "sourceWords": 4011,
+    "headings": 26,
+    "lawBlocks": 12,
+    "lawArticles": 159,
+    "tables": 2,
+    "remainingPre": 0
+  },
+  {
+    "module": 14,
+    "title": "Direito de Família",
+    "sourceHash": "1db21d374f9779a9af46b4232813d98f2d6ac4b64820cd29360b0f6716b75e4b",
+    "sourceWords": 2954,
+    "headings": 27,
+    "lawBlocks": 13,
+    "lawArticles": 98,
+    "tables": 3,
+    "remainingPre": 0
+  },
+  {
+    "module": 15,
+    "title": "Direito das Sucessões",
+    "sourceHash": "4bbc55c97cbc10dcb403fcae12289d60f9092011b30bd538f2acd9a946135eae",
+    "sourceWords": 4185,
+    "headings": 32,
+    "lawBlocks": 21,
+    "lawArticles": 246,
+    "tables": 5,
+    "remainingPre": 0
+  }
+]
