@@ -38,14 +38,16 @@
       const box = head.closest(BOX_SELECTOR);
       if (!box || seen.has(box)) return null;
       seen.add(box);
-      const count = compact(head.querySelector('.cf-module-no,.cv-module-no,.ds-module-no,.pt-module-no,[class*="module-no"]')?.textContent)
+      const count = compact(head.querySelector('.cf-module-no,.cv-module-no,.cv-module-num,.ds-module-no,.pt-module-no,[class*="module-no"]')?.textContent)
         || 'Módulo ' + String(index + 1).padStart(2, '0');
-      const label = compact(head.querySelector('.cf-module-title,.cv-module-title,.ds-module-title,.pt-module-title,[class*="module-title"]')?.textContent)
+      const label = compact(head.querySelector('.cf-module-title,.cv-module-title,.cv-module-head > span > b,.ds-module-title,.pt-module-title,[class*="module-title"]')?.textContent)
         || compact(box.querySelector('.topic-title')?.textContent)
         || compact(head.textContent).replace(count, '').trim()
         || 'Conteúdo do módulo';
       const key = compact(box.dataset.cf || box.dataset.ptnModule || box.dataset.module || box.dataset.uid || box.dataset.id || String(index));
-      return { head,box,key,label,count };
+      const meta=compact(head.querySelector('.cv-module-head > span > small,.cf-module-meta,.ds-module-meta,.pt-module-meta')?.textContent);
+      const progress=compact(head.querySelector('.cv-pct,.cf-module-pct,.ds-module-pct,.pt-module-pct')?.textContent);
+      return { head,box,key,label,count,meta,progress };
     }).filter(Boolean);
   }
   // O estado provisório depende do carregador real, nunca de um tempo artificial.
@@ -125,7 +127,7 @@
     if(back)back.hidden=state.stage!=='reading';
     header.classList.toggle('bc-focus-sticky',state.stage==='reading');
     if(state.stage==='modules') {
-      const signature=JSON.stringify([state.subject,phase,modules.map(m=>[m.key,m.label,m.count])]);
+      const signature=JSON.stringify([state.subject,phase,modules.map(m=>[m.key,m.label,m.count,m.meta,m.progress])]);
       if(list.dataset.signature!==signature) {
         list.dataset.signature=signature;
         list.replaceChildren();
@@ -137,7 +139,7 @@
         } else {
           const intro=document.createElement('div');
           intro.className='bc-focus-modules-intro';
-          intro.innerHTML='<h2>Escolha um módulo</h2><p>Conteúdo original da Base Completa, sem alterações.</p>';
+          intro.innerHTML='<h2>Escolha um módulo</h2><p>Selecione o assunto para acessar a teoria, a revisão e as questões.</p>';
           list.appendChild(intro);
           if(phase==='empty'){
             const empty=document.createElement('div');empty.className='bc-focus-empty';
@@ -152,11 +154,14 @@
           } else {
             modules.forEach((m,index)=>{
               const button=document.createElement('button');button.type='button';button.className='bc-focus-module-card';
-              button.setAttribute('aria-label',m.count+': '+m.label);
+              button.setAttribute('aria-label',m.count+': '+m.label+(m.progress?' · '+m.progress+' concluído':''));
               const number=document.createElement('span');number.className='bc-focus-module-number';number.textContent=m.count;
-              const name=document.createElement('strong');name.textContent=m.label;
+              const copy=document.createElement('span');copy.className='bc-focus-module-copy';
+              const name=document.createElement('strong');name.textContent=m.label;copy.appendChild(name);
+              if(m.meta){const meta=document.createElement('small');meta.textContent=m.meta;copy.appendChild(meta);}
+              const progress=document.createElement('span');progress.className='bc-focus-module-progress';progress.textContent=m.progress;progress.hidden=!m.progress;
               const arrow=document.createElement('span');arrow.className='bc-focus-arrow';arrow.textContent='›';arrow.setAttribute('aria-hidden','true');
-              button.append(number,name,arrow);
+              button.append(number,copy,progress,arrow);
               button.addEventListener('click',()=>openModule(index));
               list.appendChild(button);
             });
