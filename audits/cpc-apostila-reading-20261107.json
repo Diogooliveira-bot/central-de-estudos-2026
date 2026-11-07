@@ -1,0 +1,424 @@
+{
+  "modules": 20,
+  "modes": 2,
+  "articles": 807,
+  "unresolved": 0,
+  "checks": [
+    {
+      "module": 1,
+      "mode": "complete",
+      "title": "Normas fundamentais, fontes, aplicação e direito intertemporal",
+      "sourceHash": "4fd1c5ad9d7ff43ecfa3392bc247b03f7f9758ddc3e95befcea9802df950a234",
+      "lawBlocks": 47,
+      "lawArticles": 247,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 1,
+      "mode": "summary",
+      "title": "Normas fundamentais, fontes, aplicação e direito intertemporal",
+      "sourceHash": "f968a2760bdea1cb663ccbe3c25c5a092f9a98d66567db03516ca5b1c9ea16fd",
+      "lawBlocks": 14,
+      "lawArticles": 90,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 2,
+      "mode": "complete",
+      "title": "Jurisdição, ação, processo, pressupostos e mérito",
+      "sourceHash": "8baf5b39887169ef7bd40d19c68dee29b8bfcff2851332a5b385399402630bdc",
+      "lawBlocks": 22,
+      "lawArticles": 75,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 2,
+      "mode": "summary",
+      "title": "Jurisdição, ação, processo, pressupostos e mérito",
+      "sourceHash": "3ce3b4527d451c933ed5652bdfd6729eeb78ba9b188e85beca2ddfdce7d8173c",
+      "lawBlocks": 9,
+      "lawArticles": 59,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 3,
+      "mode": "complete",
+      "title": "Competência, conexão, continência e conflitos",
+      "sourceHash": "48d0ad73bfc06ca84fdb3d9c2c27dd2c369e3b97b84bd8a6a5c06cb4855a623a",
+      "lawBlocks": 42,
+      "lawArticles": 82,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 3,
+      "mode": "summary",
+      "title": "Competência, conexão, continência e conflitos",
+      "sourceHash": "ccd84d44c9d114e81517997c22bfa9d21294023c31cb10720f903a3646293ba1",
+      "lawBlocks": 4,
+      "lawArticles": 31,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 4,
+      "mode": "complete",
+      "title": "Partes, procuradores, responsabilidades, despesas e gratuidade",
+      "sourceHash": "ef3a6554ea7edf06333c403099779765557f2a14ea1c3cf5aa91a01245845216",
+      "lawBlocks": 50,
+      "lawArticles": 146,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 4,
+      "mode": "summary",
+      "title": "Partes, procuradores, responsabilidades, despesas e gratuidade",
+      "sourceHash": "0b5e389fd6f74132b1f40f61f2c39d8309659d131bd9aa08cbf845f063cb831e",
+      "lawBlocks": 8,
+      "lawArticles": 81,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 5,
+      "mode": "complete",
+      "title": "Litisconsórcio e intervenção de terceiros",
+      "sourceHash": "75c9a64ad66339ad3174b303ce7de9a9de320c79c6bb377c1b61efeb6ef77f85",
+      "lawBlocks": 38,
+      "lawArticles": 137,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 5,
+      "mode": "summary",
+      "title": "Litisconsórcio e intervenção de terceiros",
+      "sourceHash": "35af7dc4a2bbfaa3c88991e41f49246a5d1ed71ecbc59005ca2f39f1bf73ca95",
+      "lawBlocks": 7,
+      "lawArticles": 87,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 6,
+      "mode": "complete",
+      "title": "Juiz, auxiliares da justiça, Ministério Público, Advocacia Pública e Defensoria Pública",
+      "sourceHash": "ba259c5cba03d801bbd92f10833e43fc43cfdb01c50533bbd9cbccc6cdeb6a60",
+      "lawBlocks": 51,
+      "lawArticles": 161,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 6,
+      "mode": "summary",
+      "title": "Juiz, auxiliares da justiça, Ministério Público, Advocacia Pública e Defensoria Pública",
+      "sourceHash": "8e3b73dfe5a71795a36f0ae3b69c951eb653b1be20145dbd2921eacba2d784b2",
+      "lawBlocks": 13,
+      "lawArticles": 106,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 7,
+      "mode": "complete",
+      "title": "Atos processuais, negócios, tempo, lugar e prazos",
+      "sourceHash": "abc2597a4da835e27465ab85f0e6cc87047ab108b93c6947f602931d0922b97d",
+      "lawBlocks": 57,
+      "lawArticles": 161,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 7,
+      "mode": "summary",
+      "title": "Atos processuais, negócios, tempo, lugar e prazos",
+      "sourceHash": "bedda7dc199878f8dbd460ea8f09c029d7520c0328fd4cb0213cdc0ba4d6d2f6",
+      "lawBlocks": 16,
+      "lawArticles": 256,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 8,
+      "mode": "complete",
+      "title": "Comunicação dos atos processuais e nulidades",
+      "sourceHash": "217ee7c5cc9350c58b348cc09e16d220541582b1fbe1c5a1d1dcf2b36e90adaa",
+      "lawBlocks": 38,
+      "lawArticles": 180,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 8,
+      "mode": "summary",
+      "title": "Comunicação dos atos processuais e nulidades",
+      "sourceHash": "eebbf16df0376072085c4887ab20db1ec68ee24a73a58adecc72db6740bf8677",
+      "lawBlocks": 21,
+      "lawArticles": 124,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 9,
+      "mode": "complete",
+      "title": "Tutela provisória de urgência e de evidência",
+      "sourceHash": "6c4ae73e239d426619bc2f2f4d8033d06fa84c2cdabe2177ea2e8a2e5e6c4b04",
+      "lawBlocks": 11,
+      "lawArticles": 23,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 9,
+      "mode": "summary",
+      "title": "Tutela provisória de urgência e de evidência",
+      "sourceHash": "9ebdd9b7d0e965a2dbf727dae40fe5f04a122df531c3acf900dab7831ff5fe7c",
+      "lawBlocks": 4,
+      "lawArticles": 30,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 10,
+      "mode": "complete",
+      "title": "Formação, suspensão, extinção e petição inicial",
+      "sourceHash": "e54144413369c69f48dfa70f0ae9571fd434f2cfc0b13a7b998d043a2f661164",
+      "lawBlocks": 14,
+      "lawArticles": 32,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 10,
+      "mode": "summary",
+      "title": "Formação, suspensão, extinção e petição inicial",
+      "sourceHash": "58f4e9efcaf1ca988c960966e5fd0ada48cfc96aaca584e4b18cbe67df3fc98f",
+      "lawBlocks": 5,
+      "lawArticles": 31,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 11,
+      "mode": "complete",
+      "title": "Defesa, revelia, saneamento e julgamento conforme o estado",
+      "sourceHash": "885941fcf21b7d310a438da5779cbb6c7a5a5200a8077cd82a93a1665dae4b9d",
+      "lawBlocks": 15,
+      "lawArticles": 78,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 11,
+      "mode": "summary",
+      "title": "Defesa, revelia, saneamento e julgamento conforme o estado",
+      "sourceHash": "d3712c7fe821d4e9f2706e686b9a81d3a27644c2e205771dbced4f63465d9d78",
+      "lawBlocks": 4,
+      "lawArticles": 42,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 12,
+      "mode": "complete",
+      "title": "Provas: teoria geral e meios em espécie",
+      "sourceHash": "c513208d029e51546dd21389c044813446923ba2d1fe16900fc019a44d01a2b0",
+      "lawBlocks": 15,
+      "lawArticles": 124,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 12,
+      "mode": "summary",
+      "title": "Provas: teoria geral e meios em espécie",
+      "sourceHash": "349673177e3f6daa6c8364ca09aca3d5fefb930998e95d4705d2d92d07f552a9",
+      "lawBlocks": 4,
+      "lawArticles": 36,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 13,
+      "mode": "complete",
+      "title": "Sentença, remessa necessária, coisa julgada e liquidação",
+      "sourceHash": "135ac69cada7576e75c976b22ec15c14d990bce3eea0be323eafb94286c6e351",
+      "lawBlocks": 12,
+      "lawArticles": 26,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 13,
+      "mode": "summary",
+      "title": "Sentença, remessa necessária, coisa julgada e liquidação",
+      "sourceHash": "facc5031e44f16047275c5ffce46f6259f0389c9be26388ad6cc9ab936f8787a",
+      "lawBlocks": 4,
+      "lawArticles": 45,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 14,
+      "mode": "complete",
+      "title": "Cumprimento de sentença e meios de impugnação",
+      "sourceHash": "514e52acdaf1596ccb2504baf4c4cdff10fd154cd6523b0a40402def1a0501ad",
+      "lawBlocks": 17,
+      "lawArticles": 39,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 14,
+      "mode": "summary",
+      "title": "Cumprimento de sentença e meios de impugnação",
+      "sourceHash": "0364405f3c26617e89e1049f6937e2f805a59735cebacdbd616980854215c232",
+      "lawBlocks": 4,
+      "lawArticles": 29,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 15,
+      "mode": "complete",
+      "title": "Recursos, precedentes, repercussão e repetitivos",
+      "sourceHash": "78d9755cf41f3aedcb027e7db8b1fb1075e1a788af3dfaf5d67f491480e5a7a8",
+      "lawBlocks": 11,
+      "lawArticles": 15,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 15,
+      "mode": "summary",
+      "title": "Recursos, precedentes, repercussão e repetitivos",
+      "sourceHash": "deddb4fdb4546b3f9a3970bfb6d530a8b2145bcd7c3ce1b4f8c1ccd95ddc9c04",
+      "lawBlocks": 5,
+      "lawArticles": 6,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 16,
+      "mode": "complete",
+      "title": "Execução: princípios, títulos, obrigações e Fazenda Pública",
+      "sourceHash": "98eb38d3eaf27154b9ca5e5f5b6f7c9efd567ba99942fc97c2fb027bb3d49463",
+      "lawBlocks": 20,
+      "lawArticles": 70,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 16,
+      "mode": "summary",
+      "title": "Execução: princípios, títulos, obrigações e Fazenda Pública",
+      "sourceHash": "d87e91f470d1dac18e9bbe37319fbdbd1f8697c900e3732ec7c0f3d7a2a224d3",
+      "lawBlocks": 4,
+      "lawArticles": 38,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 17,
+      "mode": "complete",
+      "title": "Execução por quantia, penhora, expropriação e embargos",
+      "sourceHash": "563c6c9090cc54cf97a99e7f5c0adb506a94f715ec0442b39fd8ba418b0b9a65",
+      "lawBlocks": 21,
+      "lawArticles": 28,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 17,
+      "mode": "summary",
+      "title": "Execução por quantia, penhora, expropriação e embargos",
+      "sourceHash": "993d610dae23a39eef904105e40b802eeb60186509342c80c185426984b73168",
+      "lawBlocks": 4,
+      "lawArticles": 12,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 18,
+      "mode": "complete",
+      "title": "Procedimentos especiais previstos no edital",
+      "sourceHash": "446992564a77824094aefe5db187e34b5455bfed789ac359100f9f4ea8cbda2d",
+      "lawBlocks": 19,
+      "lawArticles": 35,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 18,
+      "mode": "summary",
+      "title": "Procedimentos especiais previstos no edital",
+      "sourceHash": "d7648fb2f2295431ddf024241a341b52aec9e25775e50d5a2e5cf08036efd78e",
+      "lawBlocks": 3,
+      "lawArticles": 3,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 19,
+      "mode": "complete",
+      "title": "Ações coletivas, constitucionais e controle de constitucionalidade",
+      "sourceHash": "09d1b4c49ca36bbac7159637b00c39985584d4bd36529977c53501c01ed9f6bc",
+      "lawBlocks": 43,
+      "lawArticles": 176,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 19,
+      "mode": "summary",
+      "title": "Ações coletivas, constitucionais e controle de constitucionalidade",
+      "sourceHash": "b5956e4e13fc7e6d504d9230dfaa4ef5ebb4d71def1aa8beb28bb64543d49032",
+      "lawBlocks": 4,
+      "lawArticles": 11,
+      "comparisonTables": 0,
+      "unresolved": 0
+    },
+    {
+      "module": 20,
+      "mode": "complete",
+      "title": "Processos nos tribunais, ação rescisória, IAC, IRDR e reclamação",
+      "sourceHash": "1673f109da81af6dd76f2477387c2d745f1ef19b1bd087faac46dccfe6ba6ef2",
+      "lawBlocks": 27,
+      "lawArticles": 48,
+      "comparisonTables": 1,
+      "unresolved": 0
+    },
+    {
+      "module": 20,
+      "mode": "summary",
+      "title": "Processos nos tribunais, ação rescisória, IAC, IRDR e reclamação",
+      "sourceHash": "ff1f717c6ec5f92a88c90bd6888461841a245045a261e022e8df2cb455c25e8a",
+      "lawBlocks": 3,
+      "lawArticles": 12,
+      "comparisonTables": 0,
+      "unresolved": 0
+    }
+  ],
+  "sources": {
+    "cpc": "https://www2.camara.leg.br/legin/fed/lei/2015/lei-13105-16-marco-2015-780273-normaatualizada-pl.html",
+    "cf": "https://www2.camara.leg.br/legin/fed/consti/1988/constituicao-1988-5-outubro-1988-322142-normaatualizada-pl.html",
+    "cc": "https://www2.camara.leg.br/legin/fed/lei/2002/lei-10406-10-janeiro-2002-432893-normaatualizada-pl.html",
+    "lindb": "https://www2.camara.leg.br/legin/fed/declei/1940-1949/decreto-lei-4657-4-setembro-1942-414605-normaatualizada-pe.html",
+    "arbitragem": "https://www2.camara.leg.br/legin/fed/lei/1996/lei-9307-23-setembro-1996-349058-normaatualizada-pl.html",
+    "popular": "https://www2.camara.leg.br/legin/fed/lei/1960-1969/lei-4717-29-junho-1965-377818-normaatualizada-pl.html",
+    "acp": "https://www2.camara.leg.br/legin/fed/lei/1980-1987/lei-7347-24-julho-1985-356939-normaatualizada-pl.html",
+    "cdc": "https://www2.camara.leg.br/legin/fed/lei/1990/lei-8078-11-setembro-1990-365086-normaatualizada-pl.html",
+    "ms": "https://www2.camara.leg.br/legin/fed/lei/2009/lei-12016-7-agosto-2009-590271-normaatualizada-pl.html",
+    "mi": "https://www2.camara.leg.br/legin/fed/lei/2016/lei-13300-23-junho-2016-783275-publicacaooriginal-150634-pl.html",
+    "hd": "https://www2.camara.leg.br/legin/fed/lei/1997/lei-9507-12-novembro-1997-365372-publicacaooriginal-1-pl.html",
+    "adi": "https://www2.camara.leg.br/legin/fed/lei/1999/lei-9868-10-novembro-1999-369587-normaatualizada-pl.html",
+    "adpf": "https://www2.camara.leg.br/legin/fed/lei/1999/lei-9882-3-dezembro-1999-369889-publicacaooriginal-1-pl.html",
+    "relevancia": "https://www2.camara.leg.br/legin/fed/lei/2026/lei-15484-4-agosto-2026-799698-publicacaooriginal-180680-pl.html"
+  }
+}

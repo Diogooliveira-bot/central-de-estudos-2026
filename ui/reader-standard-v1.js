@@ -107,6 +107,7 @@
       hits[index]?.classList.remove('current');
       index = (index + 1) % hits.length;
       hits[index].classList.add('current');
+      if(info.subject==='cpc'){let law=hits[index].closest('details');while(law){law.open=true;law=law.parentElement?.closest('details');}}
       hits[index].scrollIntoView({block: 'center'});
     };
     let timer = 0;
@@ -182,6 +183,7 @@
   // CPC M01–M07: capa do PDF (BASE COMPLETA, letras espaçadas) antes do 1º capítulo,
   // como o leitor de Penal já remove. Só sai o trecho com a marca da capa.
   function removeCover(article) {
+    if(article.querySelector('[data-cpc-apostila]'))return;
     const nodes = [];
     for (let node = article.querySelector(':scope > h1')?.nextElementSibling; node && node.tagName !== 'H2'; node = node.nextElementSibling) {
       if (!node.matches('.bc-native-kicker, .lead, .bc-native-study-progress')) nodes.push(node);
