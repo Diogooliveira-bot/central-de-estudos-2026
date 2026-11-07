@@ -19,15 +19,15 @@ function lawBox(n,index){
 }
 function card(topic,index,n){
   const sections=[
-    ['bc-m01-foundation','Entenda',topic[1]],
-    ['bc-m01-example','Na prática',topic[2]],
-    ['bc-m01-law','Regra e fundamento',topic[3]],
-    ['bc-m01-deeper','Aprofundamento',topic[4]],
-    ['bc-m01-trap','Pegadinha de prova',topic[5]],
-    ['bc-m01-recall','Revisão em 30 segundos',topic[6]]
+    ['bc-m01-foundation',topic[1]],
+    ['bc-m01-example',topic[2]],
+    ['bc-m01-law',topic[3]],
+    ['bc-m01-deeper',topic[4]],
+    ['bc-m01-trap',topic[5]],
+    ['bc-m01-recall',topic[6]]
   ];
   return '<section class="bc-m01-topic" aria-labelledby="bc-guided-title-'+index+'"><h2 id="bc-guided-title-'+index+'"><span>'+String(index+1).padStart(2,'0')+'</span> '+esc(topic[0])+'</h2>'+
-    sections.map(s=>'<div class="bc-m01-card '+s[0]+'"><h3>'+esc(s[1])+'</h3>'+p(s[2])+(s[0]==='bc-m01-law'?lawBox(n,index):'')+'</div>').join('')+'</section>';
+    sections.map(s=>'<div class="bc-m01-card '+s[0]+'">'+p(s[1])+(s[0]==='bc-m01-law'?lawBox(n,index):'')+'</div>').join('')+'</section>';
 }
 function checklist(n,topics){
  const s=state(n);
@@ -64,7 +64,7 @@ function open(n){
  const d=get(n);if(!d||n<MIN||n>MAX||!Array.isArray(d.topics))return false;
  close();origin=document.activeElement;originalOverflow=document.body.style.overflow;
  const o=document.createElement('div');
- o.className='bc-m01-overlay bc-guided-overlay';
+ o.className='bc-m01-overlay bc-guided-overlay civil-guided-reading';
  o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');
  o.setAttribute('aria-label','Teoria guiada de Direito Civil, módulo '+n);
  o.innerHTML='<div class="bc-m01-reader" data-view="study">'+
@@ -130,6 +130,7 @@ function open(n){
       '.bc-m01-checklist input{margin-top:2px;width:18px;height:18px;accent-color:#203b61;}',
       '.bc-m01-checklist .bc-m01-local-note{font-size:12px;color:#65788d;}',
       '@media(max-width:600px){.bc-m01-toolbar{gap:5px;padding:8px}.bc-m01-toolbar button{font-size:12px;padding:9px}.bc-m01-modes button{padding:8px 6px}.bc-m01-paper{padding-top:18px;width:calc(100% - 22px)}.bc-m01-card{padding:14px 15px}.bc-m01-card p{font-size:15px;line-height:1.7}.bc-m01-topic{margin-bottom:30px}}',
+      '.civil-guided-reading{background:#fff;}.civil-guided-reading .bc-m01-card{border:0;border-radius:0;box-shadow:none;background:none;padding:0;margin:0 0 14px;}.civil-guided-reading .bc-m01-card h3{color:#385b80;}.civil-guided-reading .bc-m01-card p{color:#27384e;}.civil-guided-reading .bc-m01-topic{border-top:1px solid #dbe5ed;padding-top:25px;margin-bottom:45px;}.civil-guided-reading .bc-m01-lei-seca{border:0;border-left:3px solid #89b3d0;border-radius:0;background:none;padding:4px 0 4px 18px;}.civil-guided-reading .bc-m01-lei-seca summary{color:#3377a4;}.civil-guided-reading .bc-m01-checklist label{border:0;border-bottom:1px solid #dbe5ed;border-radius:0;padding:12px 0;}',
       '@media(prefers-reduced-motion:reduce){.bc-m01-scroll{scroll-behavior:auto}}'
     ].join('\n');
     document.head.appendChild(style);

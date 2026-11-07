@@ -18,6 +18,7 @@ function protectedContentPath(path){
     ||path.startsWith('/Central_de_Estudos_OFFLINE_FUNCIONAL/')
     ||path==='/content/tec-cadernos-data.js'
     ||path==='/content/penal/penal-visual-law.js'
+    ||path==='/content/civil/civil-visual-apostila-packed.js'
     ||path==='/content/civil/civil-native-content-packed.js'||path==='/content/cpp/cpp-native-content-packed.js'
     ||/^\/content\/cf\/editorial\/m\d{2}-(?:apostila\.txt|didatico\.md|questions\.json)$/i.test(path)
     ||/^\/content\/rlm-tjce-2026\/(?:aulas-[a-z-]+\.js|complementos-teoria\.js)$/i.test(path)
