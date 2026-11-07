@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {JSDOM} from 'jsdom';
 const pause=ms=>new Promise(r=>setTimeout(r,ms));
-test('Civil module list separates number, title, question counts and progress and opens the correct module',async t=>{
+test('Civil module list shows number, title and progress without question counts and opens the correct module',async t=>{
  const title='Propriedade, Vizinhança e Condomínios';
  const dom=new JSDOM(`<div id="appRoot"><main id="homeView"><div><div id="subjects"><section class="subject" data-id="civil"><button class="subject-head"><span class="subject-name">Direito Civil</span></button><article class="cv-module" data-civil-native-module="12"><button class="cv-module-head"><span class="cv-module-num">MÓDULO 12</span><span><b>${title}</b><small>5 questões resumidas · 10 questões completas</small></span><b class="cv-pct">50%</b><span class="cv-chevron">⌄</span></button><div class="cv-module-body"></div></article></section></div></div></main></div>`,{runScripts:'outside-only',pretendToBeVisual:true,url:'https://preview.local'});
  t.after(()=>dom.window.close());const w=dom.window,d=w.document;w.HTMLElement.prototype.scrollIntoView=()=>{};w.toggleSubject=()=>d.querySelector('.subject').classList.add('open');let opened=0;d.querySelector('.cv-module-head').onclick=()=>{opened++;d.querySelector('.cv-module').classList.add('open')};
@@ -11,7 +11,9 @@ test('Civil module list separates number, title, question counts and progress an
  const card=d.querySelector('#bcFocusModules .bc-focus-module-card');assert(card);
  assert.equal(card.querySelector('.bc-focus-module-number').textContent,'MÓDULO 12');
  assert.equal(card.querySelector('strong').textContent,title);
- assert.equal(card.querySelector('small').textContent,'5 questões resumidas · 10 questões completas');
+ assert.equal(card.querySelector('small'),null);
+ assert.ok(!card.textContent.includes('questões'));
+ assert.ok(d.querySelector('.cv-module-head small').textContent.includes('5 questões resumidas'));
  assert.equal(card.querySelector('.bc-focus-module-progress').textContent,'50%');
  assert.equal(card.textContent.match(/MÓDULO 12/g).length,1);
  card.click();await pause(30);assert.equal(opened,1);assert.equal(d.querySelector('#bcFocusModuleLabel').textContent,'MÓDULO 12 · '+title);

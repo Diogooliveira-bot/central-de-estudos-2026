@@ -158,7 +158,6 @@
               const number=document.createElement('span');number.className='bc-focus-module-number';number.textContent=m.count;
               const copy=document.createElement('span');copy.className='bc-focus-module-copy';
               const name=document.createElement('strong');name.textContent=m.label;copy.appendChild(name);
-              if(m.meta){const meta=document.createElement('small');meta.textContent=m.meta;copy.appendChild(meta);}
               const progress=document.createElement('span');progress.className='bc-focus-module-progress';progress.textContent=m.progress;progress.hidden=!m.progress;
               const arrow=document.createElement('span');arrow.className='bc-focus-arrow';arrow.textContent='›';arrow.setAttribute('aria-hidden','true');
               button.append(number,copy,progress,arrow);
