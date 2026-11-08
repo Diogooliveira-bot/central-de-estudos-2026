@@ -58,7 +58,9 @@
 #adm-native-reader .bc-native-article.adm-apostila table{min-width: 500px;}}
 #adm-native-reader{--bc-reading-paper:#fff;--bc-reading-text:#2c3e4d;--bc-reading-line:#dbe5ed;--bc-reading-inset:#f6f9fc;}
 #adm-native-reader .bc-native-article.adm-apostila{width:min(100%,1000px)!important;max-width:1000px!important;padding:32px 38px 80px!important;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;}
-#adm-native-reader .bc-native-article.adm-apostila > :is(h1,h2,h3){background:none!important;box-shadow:none!important;border-radius:0!important;border-left:0!important;color:var(--bc-reading-text)!important;font-family:inherit!important;}
+#adm-native-reader .bc-native-article.adm-apostila > :is(h1,h2,h3){background:none!important;box-shadow:none!important;border-radius:0!important;border-left:0!important;color:#173854!important;font-family:inherit!important;}
+#adm-native-reader .bc-native-article.adm-apostila > h1{border:0!important;padding:0!important;margin:0 0 32px!important;}
+#adm-native-reader .bc-native-article.adm-apostila :is(.overview,.flow) :is(p,li){text-align:left!important;text-align-last:auto!important;}
 #adm-native-reader .bc-native-article.adm-apostila > h2{font-size:1.3em!important;padding:25px 0 0!important;border-top:1px solid var(--bc-reading-line)!important;border-bottom:0!important;margin:48px 0 18px!important;}
 #adm-native-reader .bc-native-article.adm-apostila > h3{font-size:1.08em!important;border:0!important;padding:0!important;margin:28px 0 12px!important;}
 #adm-native-reader .bc-native-article.adm-apostila table :is(td,th){font-size:.84em!important;}
@@ -66,5 +68,4 @@ html[data-bc-reading-mode="night"] #adm-native-reader{--bc-reading-paper:#252525
 html[data-bc-reading-mode="night"] #adm-native-reader .bc-native-article.adm-apostila :is(.law,th){background:var(--bc-reading-inset)!important;color:var(--bc-reading-text)!important;}
 html[data-bc-reading-mode="night"] #adm-native-reader .bc-native-article.adm-apostila :is(h1,h2,h3,h4,p,li,strong,summary){color:var(--bc-reading-text)!important;}
 @media(max-width:700px){#adm-native-reader .bc-native-article.adm-apostila{width:100%!important;padding:22px 18px 65px!important;}}
-
 @media(max-width:700px){#adm-native-reader .bc-native-article.adm-apostila table.bc-tcards tr{display:table-row!important}#adm-native-reader .bc-native-article.adm-apostila table.bc-tcards :is(td,th){display:table-cell!important}#adm-native-reader .bc-native-article.adm-apostila table.bc-tcards td::before{display:none!important}}
