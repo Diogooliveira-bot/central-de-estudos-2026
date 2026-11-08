@@ -97,10 +97,34 @@ function prepare(markup){
  template.content.querySelectorAll('table').forEach(table=>{const wrap=document.createElement('div');wrap.className='pt-table-wrap';table.replaceWith(wrap);wrap.appendChild(table)});
  return {template,headings};
 }
+/* Presentation only: keep source nodes, wording, answers and activity IDs intact. */
+function visualPresentation(root){
+ root.querySelectorAll('.pt-doc h2,.pt-doc h3,.pt-doc h4').forEach(h=>{
+  if(h.closest('.pta-question,.pta-feedback,.pta-guided'))return;
+  const text=h.textContent.replace(/\s+/g,' ').trim();
+  const kind=/^(?:\d+\.\s*)?(?:CAMADA\s*\d|PARTE\s*\d)/i.test(text)?'layer':
+   /^(?:\d+\.\s*)?AULA\s*\d/i.test(text)?'lesson':
+   PT_MAIN.test(text)?'section':
+   /^(?:Regra de bolso|Li[çc][aã]o|Pr[aá]tica (?:independente|guiada)|Exemplo|Gabarito|Resposta|Passo\s*\d|Observe|Aten[çc][aã]o|N[aã]o confunda)\b/i.test(text)?'label':'topic';
+  h.classList.add('pt-visual-'+kind);
+ });
+ root.querySelectorAll('.pt-doc p').forEach(p=>{
+  if(p.closest('.pta-question,.pta-feedback,.pta-guided,details'))return;
+  const text=p.textContent.trim();
+  if((text.match(/→/g)||[]).length>=3&&text.length<350)p.classList.add('pt-visual-route');
+  else if(/^(?:Exemplos?\s*:|Compare\s*:|Observe\s*:)/i.test(text))p.classList.add('pt-visual-example');
+ });
+}
+function visualStyle(){
+ if(document.getElementById('pt-visual-style'))return;
+ const link=document.createElement('link');link.id='pt-visual-style';link.rel='stylesheet';
+ link.href='/ui/portuguese-visual-v1.css?v=20261108pt2';document.head.appendChild(link);
+}
 async function open(id,mode='complete'){
  const module=item(id);if(!module)return;
  const practiceMode=PRACTICE_MODES[mode]||null;
  close();
+ visualStyle();
  const overlay=document.createElement('div');overlay.id=ID;overlay.className='bc-native-reader-overlay pt-native-reader';
  overlay.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true" aria-label="'+esc(module.title)+'"><header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>Português • '+esc(module.title)+'</b><small>'+(practiceMode?esc(practiceMode.title):mode==='review'?'Revisão e exercícios':'Conteúdo completo')+'</small></div><button type="button" class="bc-native-reader-close" aria-label="Fechar conteúdo">×</button></header><div class="pt-native-loading" role="status">Carregando conteúdo…</div></section>';
  document.body.appendChild(overlay);overlay.querySelector('.bc-native-reader-close').onclick=close;
@@ -125,6 +149,7 @@ async function open(id,mode='complete'){
   hideLooseAnswers(article);orgStyle();
   overlay.querySelector('.bc-native-toc').insertAdjacentHTML('beforeend',outline(article).map(x=>'<button type="button" class="pt-toc-l'+x.level+'" data-pt-jump="'+x.h.id+'">'+esc(x.text)+'</button>').join(''));
  }
+ visualPresentation(article);
  const scroll=overlay.querySelector('.bc-native-scroll');active={id,scroll};
  let size=Math.max(85,Math.min(180,Number(localStorage.getItem('central-v6:reading-font-size'))||100));
  const applyFont=()=>article.style.fontSize=size/100+'em';applyFont();
