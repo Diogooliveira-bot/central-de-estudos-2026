@@ -84,12 +84,12 @@ test('índice, interface, estilos e cache offline são carregados com a versão 
  const shell=read('central-v119.html');
  const manifest=JSON.parse(read('central-offline-files-v66172.json')).files;
  for(const name of ['content/adm/adm-native-index.js','ui/adm-native-layer.js']){
-  const version=name==='ui/adm-native-layer.js'?'20261106ordem1':'20261102admguide1';
+  const version=name==='ui/adm-native-layer.js'?'20261108adm1':'20261102admguide1';
   assert.ok(loader.includes(name+'?v='+version),name+' no carregador');
   assert.ok(manifest.includes('/'+name+'?v='+version),name+' no cache');
  }
  for(const name of ['central-lazy-theory-v66119.js','ui/adm-native-layer.css']){
-  const version=name==='central-lazy-theory-v66119.js'?'20261106ordem1':'20261102admguide1';
+  const version=name==='central-lazy-theory-v66119.js'?'20261108adm1':'20261102admguide1';
   assert.ok(shell.includes(name+'?v='+version),name+' no bootstrap');
   assert.ok(manifest.includes('/'+name+'?v='+version),name+' no cache');
  }

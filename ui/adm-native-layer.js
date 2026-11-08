@@ -103,7 +103,8 @@ function updateCards(uid){
 function updateSubject(){const el=document.querySelector('.subject[data-id="adm"]');if(!el)return;const uids=Object.keys(INDEX),vals=uids.map(moduleProgress),pct=Math.round(vals.reduce((a,b)=>a+b,0)/(vals.length||1)),done=vals.filter(x=>x>=100).length;const c=el.querySelector('.subject-count'),p=el.querySelector('.subject-pct'),bar=el.querySelector('.subject-bar span');if(c)c.textContent=`${done}/${uids.length} módulos`;if(p){p.textContent=pct+'%';p.classList.toggle('done',pct===100)}if(bar)bar.style.width=pct+'%';el.querySelectorAll('.topic-item').forEach(row=>{const uid=row.dataset.uid;if(!INDEX[uid])return;row.classList.add('adm-native-module-row');const origin=row.querySelector('.topic-origin');if(origin)origin.textContent=`Módulo ${String(num(uid)).padStart(2,'0')}`;const type=row.querySelector('.type');if(type)type.textContent=moduleProgress(uid)+'%';})}
 let active=null;
 let checksObserver=null;
-function buildToc(body){const hs=[...body.querySelectorAll('h1,h2,h3')].filter(h=>!h.closest('details'));return hs.slice(0,40).map((h,i)=>{if(!h.id)h.id='adm-native-h-'+i;return `<button onclick="document.getElementById('${h.id}').scrollIntoView({behavior:'smooth',block:'start'})">${esc(h.textContent)}</button>`}).join('')}
+function buildToc(body){const hs=[...body.querySelectorAll('h1,h2,h3')].filter(h=>!h.closest('details'));return hs.map((h,i)=>{if(!h.id)h.id='adm-native-h-'+i;return `<button onclick="document.getElementById('${h.id}').scrollIntoView({behavior:'smooth',block:'start'})">${esc(h.textContent)}</button>`}).join('')}
+function sessionHeadings(article){return [...article.querySelectorAll('h2')].filter(h=>h.hasAttribute('data-adm-session')||/^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(h.textContent.trim()));}
 /* Destaque de subtítulos das apostilas completas; não altera o leitor compartilhado. */
 const ADM_MINOR_TITLES=/^(?:Como estudar (?:este|o) módulo|Entenda primeiro|Regra jurídica|Por que isso existe\?|Como cai na prova|O que levar(?: para a prova)?|O que decorar|O mérito administrativo|Exemplos?(?: práticos?| de prova)?|Atenção(?: à prova)?|Pegadinha(?: da banca)?|Resumo(?: final)?|Conceito(?:-chave)?|Critério-chave|Síntese(?: para revisão)?|Caso prático)$/i;
 function emphasizeAdmTitles(article){
@@ -126,7 +127,7 @@ function setupCompleteChecks(uid,body){
  const hydrate=()=>{
   emphasizeAdmTitles(article);
   const headings=[...article.querySelectorAll('h2')];
-  const sectionHeadings=headings.filter(h=>/^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(h.textContent.trim()));
+  const sectionHeadings=sessionHeadings(article);
   sectionHeadings.forEach((heading,i)=>{
    const n=i+1,next=headings.find(h=>heading.compareDocumentPosition(h)&Node.DOCUMENT_POSITION_FOLLOWING);
    if(!article.querySelector(`[data-adm-session-check="${n}"]`)){
@@ -167,9 +168,13 @@ async function open(uid,kind,jump,sectionNumber){
     if(!d.completeAppendHtml)throw new Error('Questões completas ADM não localizadas');
     content+=d.completeAppendHtml;
   }
+  if(!g.AdmApostilaReading)await import('/ui/adm-apostila-reading-v1.js?v=20261108adm1');
+  content=await g.AdmApostilaReading.load(num(uid),kind);
+  if(active!==session)return;
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
+  body.querySelector('.bc-native-article').classList.add('adm-apostila');
   if(kind==='complete')setupCompleteChecks(uid,body);
-  if(kind==='complete'&&sectionNumber)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const h=[...body.querySelectorAll('h2')].filter(x=>/^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(x.textContent.trim()))[sectionNumber-1];h?.scrollIntoView({block:'start'})}));
+  if(kind==='complete'&&sectionNumber)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const h=sessionHeadings(body)[sectionNumber-1];h?.scrollIntoView({block:'start'})}));
   if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const hs=[...body.querySelectorAll('h1,h2,h3')],q=hs.find(h=>/^(?:\d+\s*)?quest(?:ões|ao)\b/i.test(h.textContent.trim()))||hs.find(h=>/questões internas|questões de fixação/i.test(h.textContent))||body.querySelector('details.question');q?.scrollIntoView({block:'start'})}));
   localStorage.setItem('central-v6:last',JSON.stringify({topicUid:uid,title:`Direito Administrativo · Módulo ${d.number} · ${d.title}`,at:Date.now()}));
   g.renderContinue?.();

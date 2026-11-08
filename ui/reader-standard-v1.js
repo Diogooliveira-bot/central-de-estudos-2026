@@ -107,7 +107,7 @@
       hits[index]?.classList.remove('current');
       index = (index + 1) % hits.length;
       hits[index].classList.add('current');
-      if(info.subject==='cpc'){let law=hits[index].closest('details');while(law){law.open=true;law=law.parentElement?.closest('details');}}
+      if(info.subject==='cpc'||info.subject==='adm'){let law=hits[index].closest('details');while(law){law.open=true;law=law.parentElement?.closest('details');}}
       hits[index].scrollIntoView({block: 'center'});
     };
     let timer = 0;
