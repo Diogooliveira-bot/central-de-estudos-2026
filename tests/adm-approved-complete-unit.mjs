@@ -3,8 +3,10 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 import { JSDOM } from 'jsdom';
+import {gunzipSync} from 'node:zlib';
 
 const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
+function installApprovedReading(window,number){window.AdmApostilaReading={load:async(n,mode)=>{assert.equal(n,number);const context={window:{}};vm.createContext(context);vm.runInContext(read(`content/adm/m${String(n).padStart(2,'0')}-apostila-${mode}.js`),context);return gunzipSync(Buffer.from(context.window.ADM_APOSTILA_PACKED[n+':'+mode],'base64')).toString();}};}
 
 test('20 apostilas aprimoradas carregam com teoria e questões no leitor ADM', () => {
   const context = { window: {} };
@@ -91,14 +93,16 @@ test('títulos e subtítulos ADM recebem hierarquia sem modificar o leitor compa
     percent(){},canTrack(){return true},fail(){},
   };
   window.renderDetail=()=>'';window.renderAll=()=>{};
+  installApprovedReading(window,4);
   window.eval(read('ui/adm-native-layer.js'));
   const uid=Object.keys(window.ADM_NATIVE_INDEX.modules).find(id=>window.ADM_NATIVE_INDEX.modules[id].number===4);
   await window.AdmNative.open(uid,'complete',false);
   const article=window.document.querySelector('.bc-native-article');
   assert.ok(article.classList.contains('adm-approved-reading'));
-  assert.match(article.querySelector('h2').textContent,/SESSÃO 01/);
-  assert.ok([...article.querySelectorAll('h3.adm-approved-subtitle')].some(h=>h.textContent==='Entenda primeiro'));
-  assert.ok([...article.querySelectorAll('h3.adm-approved-subtitle')].some(h=>h.textContent==='Regra jurídica'));
+  assert.match(article.querySelector('h2').textContent,/01\s+VISÃO GERAL/);
+  assert.ok(article.classList.contains('adm-apostila'));
+  assert.equal([...article.querySelectorAll('h3')].filter(h=>/^(Entenda primeiro|Regra jurídica)$/.test(h.textContent)).length,0);
+  assert.ok(article.querySelector('details.law:not([open])'));
   assert.ok(article.querySelector('[data-adm-check="1"]'),'checks preservados');
   assert.ok(article.querySelector('[data-adm-session-check="1"]'),'checks de sessão preservados');
   const css=read('ui/adm-native-layer.css');
@@ -118,6 +122,7 @@ test('checks continuam marcáveis após o editor substituir o conteúdo do módu
     percent(){},canTrack(){return true},fail(){},
   };
   window.renderDetail=()=>'';window.renderAll=()=>{};
+  installApprovedReading(window,4);
   window.eval(read('ui/adm-native-layer.js'));
   const uid=Object.keys(window.ADM_NATIVE_INDEX.modules).find(id=>window.ADM_NATIVE_INDEX.modules[id].number===4);
   await window.AdmNative.open(uid,'complete',false);
