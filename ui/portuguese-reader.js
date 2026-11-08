@@ -111,14 +111,14 @@ function visualPresentation(root){
  root.querySelectorAll('.pt-doc p').forEach(p=>{
   if(p.closest('.pta-question,.pta-feedback,.pta-guided,details'))return;
   const text=p.textContent.trim();
-  if(text.includes('→')&&text.length<350)p.classList.add('pt-visual-route');
+  if((text.match(/→/g)||[]).length>=3&&text.length<350)p.classList.add('pt-visual-route');
   else if(/^(?:Exemplos?\s*:|Compare\s*:|Observe\s*:)/i.test(text))p.classList.add('pt-visual-example');
  });
 }
 function visualStyle(){
  if(document.getElementById('pt-visual-style'))return;
  const link=document.createElement('link');link.id='pt-visual-style';link.rel='stylesheet';
- link.href='/ui/portuguese-visual-v1.css?v=20261108pt1';document.head.appendChild(link);
+ link.href='/ui/portuguese-visual-v1.css?v=20261108pt2';document.head.appendChild(link);
 }
 async function open(id,mode='complete'){
  const module=item(id);if(!module)return;

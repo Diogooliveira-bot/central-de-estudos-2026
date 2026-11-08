@@ -39,6 +39,8 @@ html[data-bc-reading-mode="night"] #centralPortugueseReader {
 #centralPortugueseReader .bc-native-article li {margin:7px 0!important;padding-left:3px}
 #centralPortugueseReader .bc-native-article .pt-visual-example {padding:12px 18px!important;border-left:3px solid var(--bc-reading-line)!important;background:var(--pt-example)!important;border-radius:0!important}
 #centralPortugueseReader .bc-native-article .pt-visual-route {padding:16px 20px!important;border-block:1px solid var(--bc-reading-line)!important;background:var(--pt-example)!important;line-height:2!important;color:var(--pt-heading)!important;overflow-wrap:anywhere}
+#centralPortugueseReader .bc-native-article blockquote {margin:22px 0!important;padding:6px 0 6px 20px!important;border:0!important;border-left:2px solid var(--bc-reading-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+#centralPortugueseReader .bc-native-article blockquote:has(>.pt-visual-route) {border:0!important;padding:0!important}
 #centralPortugueseReader .bc-native-article .pt-table-wrap {margin:24px 0!important;border:1px solid var(--bc-reading-line);border-radius:6px;overflow-x:auto}
 #centralPortugueseReader .bc-native-article table {margin:0!important;font-size:.92em!important;background:transparent!important}
 #centralPortugueseReader .bc-native-article :is(td,th) {padding:12px 16px!important;border-color:var(--bc-reading-line)!important}
