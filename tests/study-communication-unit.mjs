@@ -46,7 +46,7 @@ test('o resumo automático de progresso inclui os módulos existentes',()=>{
 });
 
 test('WhatsApp oficial exige DDI + DDD + número brasileiro',()=>{
-  const backend=read('api/study-communication.js')
+  const backend=read('lib/study-communication.js')
     .replace(/^import[\s\S]*?;\s*$/gm,'')
     .replace('export default async function handler','async function handler');
   const ctx={process:{env:{}},console};
@@ -58,7 +58,7 @@ test('WhatsApp oficial exige DDI + DDD + número brasileiro',()=>{
 });
 
 test('envio por e-mail não aceita destinatário arbitrário',()=>{
-  const backend=read('api/study-communication.js');
+  const backend=read('lib/study-communication.js');
   assert.match(backend,/requireSession\(req,/);
   assert.match(backend,/!sameOriginRequest\(req\)/);
   assert.match(backend,/to:session\.user\.email/);
