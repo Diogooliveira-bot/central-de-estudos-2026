@@ -15,12 +15,12 @@ function respond(res, status, body) {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.end(JSON.stringify(body));
 }
-function clean(v, max=160) { return String(v == null ? '' : v).trim().replace(/[\\x00-\\x1F\\x7F]/g, ' ').replace(/\\s+/g, ' ').slice(0, max); }
+function clean(v, max=160) { return String(v == null ? '' : v).trim().replace(/[\x00-\x1F\x7F]/g, ' ').replace(/\s+/g, ' ').slice(0, max); }
 function escapeHtml(v) { return String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function integer(v, max=100) { const n=Number(v); return Number.isFinite(n) ? Math.max(0, Math.min(max, Math.round(n))) : 0; }
 function supportWhatsapp(env=process.env) {
-  const digits=String(env.BC_SUPPORT_WHATSAPP_NUMBER||'').replace(/\\D/g,'');
-  return /^55\\d{10,11}$/.test(digits) ? 'https://wa.me/'+digits : null;
+  const digits=String(env.BC_SUPPORT_WHATSAPP_NUMBER||'').replace(/\D/g,'');
+  return /^55\d{10,11}$/.test(digits) ? 'https://wa.me/'+digits : null;
 }
 function safeReport(input) {
   const source=Array.isArray(input?.disciplines) ? input.disciplines.slice(0, 20) : [];
@@ -71,8 +71,8 @@ function reportMessage(user, report) {
   lines.push('Os indicadores de tempo e questões são aproximados e não constituem certificação de carga horária.');
   return {
     subject:'Seu relatório de estudos · Base Completa',
-    text:lines.join('\\n'),
-    html:'<main style="max-width:720px;margin:auto;font:15px/1.65 Arial,sans-serif;color:#15314b;padding:26px"><h1 style="font-size:23px">Base Completa · Relatório de estudos</h1><div style="white-space:pre-wrap">'+escapeHtml(lines.join('\\n'))+'</div></main>'
+    text:lines.join('\n'),
+    html:'<main style="max-width:720px;margin:auto;font:15px/1.65 Arial,sans-serif;color:#15314b;padding:26px"><h1 style="font-size:23px">Base Completa · Relatório de estudos</h1><div style="white-space:pre-wrap">'+escapeHtml(lines.join('\n'))+'</div></main>'
   };
 }
 async function ensureTables(sql) {
@@ -146,7 +146,7 @@ export default async function handler(req,res) {
       const cfg=emailConfig();
       if (cfg) {
         try {
-          const text='Novo chamado de suporte Base Completa\\nAluno: '+session.user.name+'\\nE-mail: '+session.user.email+'\\nProtocolo: '+id+'\\nAssunto: '+subject+'\\n\\n'+message;
+          const text='Novo chamado de suporte Base Completa\nAluno: '+session.user.name+'\nE-mail: '+session.user.email+'\nProtocolo: '+id+'\nAssunto: '+subject+'\n\n'+message;
           await deliverViaGmail({from:cfg.from,to:SUPPORT_EMAIL,subject:'Suporte Base Completa · '+subject,text},cfg);
         } catch(e) { console.warn('support ticket mail not delivered',String(e?.code||e?.name||'ERROR').slice(0,24)); }
       }
