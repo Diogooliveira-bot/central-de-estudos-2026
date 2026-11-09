@@ -20,6 +20,7 @@
 #cf-native-reader .cf-apostila .cf-apostila-law-body{padding:7px 7px 20px 0;font-size:.92em;line-height:1.75}
 #cf-native-reader .cf-apostila .cf-apostila-law-body p{margin:0 0 10px}
 #cf-native-reader .cf-apostila .cf-apostila-tableline{color:#526d80;font-size:.92em}
+#cf-native-reader .cf-apostila .cf-apostila-outline{font-size:.92em;color:#526d80;margin:0 0 7px;padding-left:8px;border-left:1px solid #dce7ef}
 /* Revisão guiada: conservar todos os campos pedagógicos, não empilhar seis cartões por assunto. */
 .bc-m01-reader.cf-guided-editorial .bc-m01-paper{width:min(900px,calc(100% - 32px));background:#fff;padding:28px 34px 90px}
 .bc-m01-reader.cf-guided-editorial .bc-m01-topic{margin:0 0 50px}
