@@ -90,8 +90,11 @@ function reviewCard(){
  '<span class="cf-module-no">REVISÃO FINAL</span><span class="cf-module-title">Revisão cumulativa e simulado de concursos</span>'+
  '<span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
  '<div class="cf-module-body ds-module-body"><div class="cf-subtitle">20 questões autorais, reunindo os 14 módulos teóricos.</div>'+
- '<section class="bc-native-materials bc-native-materials-static"><div class="bc-native-materials-head"><div><b>Material de revisão</b><small>Questões comentadas com correção imediata.</small></div><small>Revisão final</small></div>'+
- '<div class="bc-native-material-grid">'+materialCard('RF','review','Simulado cumulativo','20 questões autorais e comentários imediatos.','✓')+'</div></section>'+
+ '<section class="bc-native-materials bc-native-materials-static"><div class="bc-native-materials-head"><div><b>Revisão final</b><small>Escolha o modo de prática.</small></div></div>'+
+ '<div class="bc-native-material-grid">'+
+ materialCard('RF','exam','Simulado · modo prova','20 questões, correção ao entregar.','✓')+
+ materialCard('RF','review','Prática com correção','20 questões e comentário imediato.','↺')+
+ materialCard('RF','errors','Revisar meus erros','Caderno com respostas erradas.','▤')+'</div></section>'+
  '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+'onchange="RlmNative.mark(\'RF\',this.checked)">Revisão concluída</label></div></section>';
 }
 function renderMaster(){
@@ -125,7 +128,7 @@ function open(id='M02',stage='theory'){
  if(!m)return false;
  close(false);
  lastFocus=document.activeElement;
- active={id,stage:id==='M01'?'speed':id==='RF'?'review':normStage(stage)};
+ active={id,stage:id==='M01'?'speed':id==='RF'?(stage==='exam'||stage==='errors'?stage:'review'):normStage(stage)};
  if(g.CentralStudyNavigation?.rememberReturn)try{g.CentralStudyNavigation.rememberReturn()}catch(_){}
  const wrapper=document.createElement('div');wrapper.id=OVER;wrapper.className='bc-rlm-overlay bc-native-reader-overlay';
  wrapper.setAttribute('role','presentation');
@@ -148,14 +151,16 @@ function normStage(stage){return stage==='recap'?'recap':stage==='summary'||stag
 function move(id){return open(id,id==='RF'?'review':id==='M01'?'speed':'theory');}
 /* Leitor RLM com o mesmo shell, índice lateral e ferramentas do leitor nativo de Penal. */
 function stageLabel(stage){
- return ({speed:'Treino de velocidade',theory:'Teoria completa',recap:'Revisão',quiz:'Questões',map:'Mapa mental',review:'Revisão final'})[stage]||'Material';
+ return ({speed:'Treino de velocidade',theory:'Teoria completa',recap:'Revisão',quiz:'Questões',map:'Mapa mental',review:'Revisão comentada',exam:'Simulado modo prova',errors:'Caderno de erros'})[stage]||'Material';
 }
 function stageSections(stage){
  return stage==='theory'?'.bc-rlm-lesson':
   stage==='recap'?'.bc-rlm-recap-item':
  stage==='quiz'?'.bc-rlm-quiz':
  stage==='map'?'.bc-rlm-map-node':
- stage==='review'?'.bc-rlm-quiz':'';
+ stage==='review'?'.bc-rlm-quiz':
+ stage==='exam'?'.bc-rlm-exam-question':
+ stage==='errors'?'.bc-rlm-error-item':'';
 }
 function setupToc(stage){
  const root=el('bcRlmScroll'),toc=el('bcRlmToc');
@@ -276,7 +281,7 @@ function updateReadBar(){
 function tab(stage){
  if(!active)return;
  stage=normStage(stage);
- if(!['theory','recap','quiz','map','review','speed'].includes(stage))return;
+ if(!['theory','recap','quiz','map','review','exam','errors','speed'].includes(stage))return;
  active.stage=stage;renderOverlay();el('bcRlmScroll').scrollTop=0;
 }
 function next(){
@@ -291,6 +296,8 @@ function next(){
 function bodyFor(m,stage){
  if(stage==='speed')return speed();
  if(stage==='review')return review();
+ if(stage==='exam')return g.RlmExam?g.RlmExam.renderExam():'<p>Simulado temporariamente indisponível.</p>';
+ if(stage==='errors')return g.RlmExam?g.RlmExam.renderErrors():'<p>Revisão temporariamente indisponível.</p>';
  const d=lesson(m.id);
  if(!d)return '<div class="bc-rlm-warn">Os dados deste módulo ainda não foram carregados. Volte à Central e atualize a página.</div>';
  if(stage==='theory')return theory(m,d);
@@ -351,6 +358,17 @@ function answer(id,i,choice,review=false){
  const node=el('bcRlmQ-'+area+'-'+id+'-'+i);if(node)node.outerHTML=cardQuestion(id,q,i,review);
  const score=el('bcRlmScore');if(score)score.innerHTML=review?reviewScore():scoreHtml(id);
 }
+function refreshBody(){
+ if(!active)return;
+ const root=el('bcRlmScroll'),article=el('bcRlmArticle');if(!article)return;
+ const oldY=root?.scrollTop||0;
+ const m=active.id==='RF'?{id:'RF',titulo:'Revisão cumulativa'}:mod(active.id);
+ if(!m)return;
+ article.innerHTML=bodyFor(m,active.stage);
+ setupToc(active.stage);
+ if(root)root.scrollTop=oldY;
+ updateReadBar();
+}
 function mindmap(m,d){
  return title('Mapa mental','Ramos e subtemas da aula estruturados para revisão visual, sem rolagem lateral.')+
  '<div class="bc-rlm-map"><div class="bc-rlm-map-center">'+esc(m.titulo)+'</div>'+
@@ -401,7 +419,7 @@ function onKey(ev){
  }
 }
 document.addEventListener('keydown',onKey,true);
-g.RlmNative={renderMaster,open,close,tab,next,move,mark,stats,answer,speedReady,oldTarget,toggleModule,toggleToc,jump,search,setFont,top,readProgress};
+g.RlmNative={renderMaster,open,close,tab,next,move,mark,stats,answer,speedReady,oldTarget,toggleModule,toggleToc,jump,search,setFont,top,readProgress,reviewSpec,refreshBody};
 try{
  const prev=g.openEmbeddedTool;
  if(typeof prev==='function'){
