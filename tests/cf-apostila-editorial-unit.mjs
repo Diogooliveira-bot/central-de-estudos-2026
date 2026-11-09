@@ -47,6 +47,7 @@ test('CF M12: linhas numeradas da tabela não viram cabeçalhos',()=>{
  const d=context.window.BASE_NATIVE_CONTENT.cf.m12;
  const html=e.render(d.complete,12);
  assert.match(html,/<div class="cf-apostila-table-scroll"/);
+ assert.match(html,/<h3>/,'subtítulos precisam ser distintos de capítulos');
  assert.match(html,/<td>1<\/td>/);
  assert.doesNotMatch(html,/<h2>1<\/h2>/);
  assert.match(html,/Controle de constitucionalidade|controle de constitucionalidade/i);
