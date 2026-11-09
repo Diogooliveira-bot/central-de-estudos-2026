@@ -238,7 +238,7 @@ export default async function middleware(request) {
   }
   if (path.startsWith('/api/')) return next();
   // Amostra visual de Constitucional: acessível somente no ambiente Preview.
-  if (process.env.VERCEL_ENV === 'preview' && path === '/preview-constitucional-15-modulos.html') return next();
+  if (process.env.VERCEL_ENV === 'preview' && ['/preview-constitucional-15-modulos.html','/ui/cf-apostila-reading-v1.js','/ui/cf-apostila-reading-v1.css'].includes(path)) return next();
   if (PUBLIC_PATHS.has(path)) return next();
 
   const token = parseCookie(request.headers.get('cookie'), COOKIE_NAME);
