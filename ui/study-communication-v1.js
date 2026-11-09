@@ -7,6 +7,7 @@
   const clamp = v => { const n=Number(v); return Number.isFinite(n) ? Math.max(0,Math.min(100,Math.round(n))) : 0; };
   const statusName = p => p===100 ? 'Concluído' : p>0 ? 'Em andamento' : 'Sem progresso registrado';
   const user = () => window.BASE_COMPLETA_USER || {};
+  const isPreviewDemo = () => user().id === 'bc-preview-demo-20261109';
   let layer, currentReport, config, statusElement;
 
   function findSubjects() {
@@ -244,6 +245,7 @@
       <button type="button" class="bc-comm-close" aria-label="Fechar janela">×</button>
       <h2>Acompanhamento e suporte</h2>
       <p class="bc-comm-caption">Base Completa · Seu espaço de estudos</p>
+      ${isPreviewDemo()?'<p class="bc-comm-note"><strong>Modo de teste:</strong> as informações e mensagens ficam no ambiente de homologação, sem envio automático de e-mails.</p>':''}
       <div class="bc-comm-tabs" role="tablist">
         <button type="button" data-bc-tab="report" aria-selected="true">Meu relatório</button>
         <button type="button" data-bc-tab="support" aria-selected="false">Fale conosco</button>
@@ -254,7 +256,7 @@
         <p class="bc-comm-note">Veja os módulos concluídos, em andamento e sem progresso registrado.</p>
         <div id="bcCommReport"></div>
         <div class="bc-comm-actions">
-          <button type="button" id="bcCommSendEmail">Enviar ao meu e-mail</button>
+          ${isPreviewDemo()?'<p class="bc-comm-note">Demonstração: envio de relatório por e-mail desativado.</p>':'<button type="button" id="bcCommSendEmail">Enviar ao meu e-mail</button>'}
           <button type="button" id="bcCommSendWhatsapp">Compartilhar pelo WhatsApp</button>
           <button type="button" id="bcCommPrint">Imprimir / salvar PDF</button>
         </div>
@@ -286,7 +288,7 @@
       const ticket=e.target.closest('[data-bc-ticket]');if (ticket) changeTicket(ticket);
     });
     document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!layer.hidden)close()});
-    layer.querySelector('#bcCommSendEmail').addEventListener('click',sendEmail);
+    layer.querySelector('#bcCommSendEmail')?.addEventListener('click',sendEmail);
     layer.querySelector('#bcCommSendWhatsapp').addEventListener('click',sendWhatsapp);
     layer.querySelector('#bcCommPrint').addEventListener('click',printReport);
     layer.querySelector('#bcCommTicketForm').addEventListener('submit',sendTicket);
