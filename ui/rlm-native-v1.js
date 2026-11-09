@@ -85,11 +85,14 @@ function card(m){
 }
 function reviewCard(){
  const opened=isModuleOpen('RF'),done=isDone('RF');
+ const exam=g.RlmExam?.summary?.()||null,errors=g.RlmExam?.mistakes?.().length||0;
+ const examLabel=exam?(exam.submitted?'Último simulado '+exam.pct+'%':'Simulado '+exam.answered+'/20'):'Simulado disponível';
  return '<section class="cf-module ds-module bc-rlm-module'+(opened?' open':'')+'" data-rlm-module="RF">'+
  '<button class="cf-module-head ds-module-head" aria-expanded="'+opened+'" onclick="return RlmNative.toggleModule(\'RF\')">'+
  '<span class="cf-module-no">REVISÃO FINAL</span><span class="cf-module-title">Revisão cumulativa e simulado de concursos</span>'+
  '<span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
  '<div class="cf-module-body ds-module-body"><div class="cf-subtitle">20 questões autorais, reunindo os 14 módulos teóricos.</div>'+
+ '<p class="bc-rlm-stage-progress"><span>'+examLabel+'</span><span>Erros para revisar '+errors+'</span></p>'+
  '<section class="bc-native-materials bc-native-materials-static"><div class="bc-native-materials-head"><div><b>Revisão final</b><small>Escolha o modo de prática.</small></div></div>'+
  '<div class="bc-native-material-grid">'+
  materialCard('RF','exam','Simulado · modo prova','20 questões, correção ao entregar.','✓')+
