@@ -159,7 +159,11 @@ function buildHtml(data,mode){
   return {body,headings,words,mins:Math.max(1,Math.round(words/(mode==='summary'?220:190)))};
 }
 function modeChapters(data,mode){return Array.isArray(data?.chapters?.[mode])?data.chapters[mode]:[]}
-function modeQuestions(data,mode){return Array.isArray(data?.internalQuestions?.[mode])?data.internalQuestions[mode]:[]}
+function modeQuestions(data,mode){
+ // Os exercícios autorais são exibidos na bateria separada.
+ // Os dados originais e as respostas anteriores permanecem intactos.
+ return [];
+}
 function chapterDone(mode,id){return localStorage.getItem(storageKey('chapter:'+mode+':'+id))==='1'}
 function setChapterDone(mode,id,done){
   localStorage.setItem(storageKey('chapter:'+mode+':'+id),done?'1':'0');
