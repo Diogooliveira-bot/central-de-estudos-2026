@@ -9,12 +9,12 @@ function inject(){
   host.setAttribute('data-bc-native-m15','');
   host.innerHTML=
     '<section class="bc-native-metrics" aria-label="Indicadores do módulo">'+
-      '<article class="bc-native-metric-card"><div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>0%</b><span>teoria</span></div></div><div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 50 pontos concluídos</strong><span>Checks dos capítulos + questões internas.</span></div></article>'+
+      '<article class="bc-native-metric-card"><div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>0%</b><span>teoria</span></div></div><div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 50 pontos concluídos</strong><span>Leitura dos capítulos da teoria.</span></div></article>'+
       '<article class="bc-native-metric-card"><div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div><div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong data-native-metric-detail="external">Nenhuma questão externa respondida</strong><span data-native-metric-meta="external">Registre questões externas no final do módulo</span></div></article>'+
     '</section>'+
     '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>M15 • conteúdo nativo</small></div>'+
     '<div class="bc-native-material-grid">'+
-      '<button type="button" class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, exemplos e revisão.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
       '<button type="button" class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M15 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
       '<button type="button" class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
     '</div>'+
@@ -22,6 +22,13 @@ function inject(){
   host.querySelector('[data-native-kind="summary"]').onclick=()=>global.BaseNativeReaderM15?.open('summary');
   host.querySelector('[data-native-kind="complete"]').onclick=()=>global.BaseNativeReaderM15?.open('complete');
   host.querySelector('[data-native-kind="mindmap"]').onclick=()=>global.BaseMindMap?.open('penal','p15');
+  const grid=host.querySelector('.bc-native-material-grid');
+  if(grid){
+   grid.insertAdjacentHTML('beforeend', '<button type="button" class="bc-native-material-card" data-native-kind="authorial10"><span class="bc-native-material-icon">✓</span><span><strong>Resumido · 10 questões autorais</strong><small>Exercícios com gabarito e comentário, separados da leitura.</small></span><span class="bc-native-material-action">Abrir →</span></button>'+
+    '<button type="button" class="bc-native-material-card" data-native-kind="official10"><span class="bc-native-material-icon">▤</span><span><strong>Completo · 10 questões de bancas reais</strong><small>Em breve — aguardando seleção das questões oficiais.</small></span><span class="bc-native-material-action">Ver aviso →</span></button>');
+   grid.querySelector('[data-native-kind="authorial10"]').onclick=()=>global.CentralAuthorialQuiz?.openPenal(15);
+   grid.querySelector('[data-native-kind="official10"]').onclick=()=>global.CentralInternalQuestionPolicy?.modal('Direito Penal','M15');
+  }
   const subtitle=body.querySelector('.cf-subtitle');
   if(subtitle)subtitle.insertAdjacentElement('afterend',host); else body.insertAdjacentElement('afterbegin',host);
   global.BaseNativeReaderM15?.refreshMetrics?.();
