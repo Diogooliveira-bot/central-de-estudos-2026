@@ -17,6 +17,11 @@ function cleanSummary(input){
     name:String(d?.name||'').slice(0,120),
     pct:Math.round(clamp(d?.pct,0,100)),
   })).filter((d)=>d.id&&d.name):[];
+  const modules=Array.isArray(input?.modules)?input.modules.slice(0,800).map(m=>({
+    subjectId:String(m?.subjectId||'').slice(0,40),
+    name:String(m?.name||'').slice(0,150),
+    pct:Math.round(clamp(m?.pct,0,100))
+  })).filter(m=>m.subjectId&&m.name):[];
   const lastStudyRaw=input?.lastStudy?new Date(input.lastStudy):null;
   return {
     overallPct:Math.round(clamp(input?.overallPct,0,100)),
@@ -24,6 +29,7 @@ function cleanSummary(input){
     studySeconds:Math.max(0,Math.trunc(clamp(input?.studySeconds,0,100_000_000))),
     lastStudy:lastStudyRaw&&!Number.isNaN(lastStudyRaw.getTime())?lastStudyRaw.toISOString():null,
     disciplines,
+    modules,
   };
 }
 async function ensureTable(sql){
@@ -35,9 +41,11 @@ async function ensureTable(sql){
       study_seconds BIGINT NOT NULL DEFAULT 0,
       last_study TIMESTAMPTZ,
       disciplines JSONB NOT NULL DEFAULT '[]'::jsonb,
+      modules JSONB NOT NULL DEFAULT '[]'::jsonb,
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `;
+  await sql`ALTER TABLE central_user_progress_summary ADD COLUMN IF NOT EXISTS modules JSONB NOT NULL DEFAULT '[]'::jsonb`;
 }
 
 export default async function handler(req,res){
@@ -50,7 +58,7 @@ export default async function handler(req,res){
 
     if(req.method==='GET'){
       const rows=await sql`
-        SELECT overall_pct,questions,study_seconds,last_study,disciplines,updated_at
+        SELECT overall_pct,questions,study_seconds,last_study,disciplines,modules,updated_at
         FROM central_user_progress_summary
         WHERE user_id=${session.user.id}
         LIMIT 1
@@ -62,17 +70,19 @@ export default async function handler(req,res){
       const body=await readJsonBody(req);
       const summary=cleanSummary(body?.summary||body||{});
       const disciplines=JSON.stringify(summary.disciplines);
+      const modules=JSON.stringify(summary.modules);
       const rows=await sql`
         INSERT INTO central_user_progress_summary
-          (user_id,overall_pct,questions,study_seconds,last_study,disciplines,updated_at)
+          (user_id,overall_pct,questions,study_seconds,last_study,disciplines,modules,updated_at)
         VALUES
-          (${session.user.id},${summary.overallPct},${summary.questions},${summary.studySeconds},${summary.lastStudy},${disciplines}::jsonb,NOW())
+          (${session.user.id},${summary.overallPct},${summary.questions},${summary.studySeconds},${summary.lastStudy},${disciplines}::jsonb,${modules}::jsonb,NOW())
         ON CONFLICT(user_id) DO UPDATE SET
           overall_pct=EXCLUDED.overall_pct,
           questions=EXCLUDED.questions,
           study_seconds=EXCLUDED.study_seconds,
           last_study=EXCLUDED.last_study,
           disciplines=EXCLUDED.disciplines,
+          modules=EXCLUDED.modules,
           updated_at=NOW()
         RETURNING updated_at
       `;
