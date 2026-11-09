@@ -14,7 +14,7 @@ button,.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink
 .grid{display:grid;grid-template-columns:340px minmax(0,1fr);gap:18px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 12px 30px rgba(69,56,45,.05)}h2{font-size:15px;margin:0 0 14px}
 label{display:block;font-size:11px;font-weight:800;margin:12px 0 5px;color:#5f5751}input,select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px;background:#fff;color:var(--ink)}.hint{font-size:11px;color:var(--muted);margin-top:8px}.status{min-height:20px;margin-top:10px;font-size:12px;color:var(--muted)}.status.err{color:var(--red)}.status.ok{color:var(--green)}
 .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}.toolbar input{margin:0}.toolbar select{max-width:160px}
-.list{display:grid;gap:10px}.user{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff}.user.inactive{opacity:.64}.user-head{display:grid;grid-template-columns:minmax(0,1fr) 130px 96px auto;gap:10px;align-items:center}.who b{display:block}.who small{display:block;color:var(--muted);margin-top:2px}.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.pill{display:inline-block;padding:3px 7px;border-radius:999px;background:#eee8f2;color:#5f4d75;font-size:10px;font-weight:800}.pill.ok{background:#e8f3ed;color:var(--green)}.pill.warn{background:#f6ead9;color:var(--amber)}.row-actions{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}.row-actions button{padding:7px 9px;font-size:11px}
+.list{display:grid;gap:10px}.user{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff}.user.inactive{opacity:.64}.user-head{display:grid;grid-template-columns:minmax(0,1fr) 130px 96px auto;gap:10px;align-items:center}.who b{display:block}.who small{display:block;color:var(--muted);margin-top:2px}.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.pill{display:inline-block;padding:3px 7px;border-radius:999px;background:#eee8f2;color:#5f4d75;font-size:10px;font-weight:800}.pill.ok{background:#e8f3ed;color:var(--green)}.pill.warn{background:#f6ead9;color:var(--amber)}.row-actions{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}.row-actions button{padding:7px 9px;font-size:11px}.row-actions .delete-student{border-color:#d9a6a6;color:#9d3434;background:#fff8f8}.row-actions .delete-student:hover{background:#fceaea}
 .activity{margin-top:10px;padding-top:10px;border-top:1px solid #eee7de;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.activity div{background:#faf7f2;border:1px solid #eee7de;border-radius:9px;padding:9px}.activity small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase}.activity b{display:block;margin-top:2px;font-size:12px}
 .progress-box{margin-top:10px;border-top:1px solid #eee7de;padding-top:10px}.progress-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;background:#faf7f2;border:1px solid #eee7de}.progress-detail{display:none;padding:10px 2px 0}.progress-detail.open{display:block}.overall{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:center;margin-bottom:10px}.overall strong{font-size:24px;color:var(--purple)}.bar{height:8px;background:#eae4dc;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--purple);border-radius:999px}.disciplines{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.discipline{border:1px solid #eee7de;border-radius:9px;padding:8px;background:#fff}.discipline-head{display:flex;justify-content:space-between;gap:8px;font-size:11px;margin-bottom:5px}.discipline-head span{color:var(--muted)}
 .empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
@@ -123,7 +123,7 @@ function render(){
     '<div class="who"><b>'+esc(u.name)+'</b><small>'+esc(u.email)+'</small><div class="meta"><span class="pill">'+roleLabel(u.role)+'</span><span class="pill '+(u.active?'ok':'warn')+'">'+(u.active?'ATIVO':'INATIVO')+'</span>'+(hasProgress?'<span class="pill ok">PROGRESSO ATIVO</span>':'<span class="pill warn">SEM ATIVIDADE AINDA</span>')+'</div></div>'+
     '<select class="role" aria-label="Perfil do usuário"><option value="aluno">Aluno</option><option value="editor">Editor</option><option value="admin">Administrador</option></select>'+
     '<label style="margin:0;display:flex;gap:6px;align-items:center;font-size:11px"><input class="active" type="checkbox" style="width:auto"> Ativo</label>'+
-    '<div class="row-actions"><button class="save">Salvar</button><button class="reset">Nova senha</button></div>'+
+    '<div class="row-actions"><button class="save">Salvar</button><button class="reset">Nova senha</button>'+(u.role==='aluno'?'<button type="button" class="delete-student">Excluir aluno</button>':'')+'</div>'+
    '</div>'+
    '<div class="activity">'+
     '<div><small>Último acesso</small><b>'+esc(dt(u.lastLogin))+'</b></div>'+
@@ -136,6 +136,21 @@ function render(){
   if(u.id===currentUserId){row.querySelector('.role').disabled=true;row.querySelector('.active').disabled=true}
   row.querySelector('.save').onclick=async function(){try{await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'update',userId:u.id,role:row.querySelector('.role').value,active:row.querySelector('.active').checked})});await load()}catch(e){alert(e.message)}};
   row.querySelector('.reset').onclick=async function(){var pass=prompt('Digite a nova senha (mínimo 8 caracteres):');if(!pass)return;try{await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'reset-password',userId:u.id,password:pass})});alert('Senha atualizada.')}catch(e){alert(e.message)}};
+  var deleteButton=row.querySelector('.delete-student');
+  if(deleteButton)deleteButton.onclick=async function(){
+   var email=prompt('EXCLUSÃO DEFINITIVA de '+u.name+' ('+u.email+').\\n\\nO aluno perderá o acesso e seus dados de estudo serão excluídos. Compras e registros fiscais podem ser mantidos conforme obrigações legais.\\n\\nPara continuar, digite o E-MAIL exato do aluno:');
+   if(email===null)return;
+   if(email.trim().toLowerCase()!==u.email.trim().toLowerCase()){alert('E-mail diferente do cadastro. Exclusão cancelada.');return}
+   var confirmation=prompt('Última confirmação: digite EXCLUIR para apagar a conta de '+u.name+'. Esta operação não pode ser desfeita.');
+   if(confirmation===null)return;
+   if(confirmation.trim().toUpperCase()!=='EXCLUIR'){alert('Confirmação incorreta. Exclusão cancelada.');return}
+   deleteButton.disabled=true;
+   try{
+    await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'delete-student',userId:u.id,email:u.email,confirmation:'EXCLUIR'})});
+    await load();await loadPublicSignups();
+    alert('Conta do aluno excluída.');
+   }catch(error){deleteButton.disabled=false;alert(error.message||'Não foi possível excluir o aluno.')}
+  };
   row.querySelector('.progress-toggle').onclick=function(){var box=row.querySelector('.progress-detail');box.classList.toggle('open');this.querySelector('b').textContent=Number(p.overallPct||0)+'% '+(box.classList.contains('open')?'▴':'▾')};
   host.appendChild(row);
  })
