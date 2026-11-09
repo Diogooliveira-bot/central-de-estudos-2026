@@ -74,3 +74,28 @@
  .bc-rlm-overlay .bc-rlm-lesson,.bc-rlm-overlay .bc-rlm-recap-item{break-inside:auto}
  .bc-rlm-overlay .bc-rlm-worked-solution{break-inside:avoid}
 }
+
+/* Etapa 3 — simulado modo prova e caderno de erros: sem competir com o leitor Premium. */
+.bc-rlm-overlay .bc-rlm-exam-status,.bc-rlm-overlay .bc-rlm-exam-score{border:1px solid var(--bc-color-border,#dce7ef);border-radius:8px;background:var(--bc-color-surface-elevated,#f8fbfd);padding:18px 20px;margin:20px 0 27px}
+.bc-rlm-overlay .bc-rlm-exam-status p,.bc-rlm-overlay .bc-rlm-exam-score p{font-size:13px;line-height:1.6;margin:8px 0 0}
+.bc-rlm-overlay .bc-rlm-exam-score h3{margin:0;font-weight:750;font-size:21px}
+.bc-rlm-overlay .bc-rlm-exam-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:23px 0 15px}
+.bc-rlm-overlay .bc-rlm-exam-actions .bc-rlm-btn:disabled{opacity:.5;cursor:not-allowed}
+.bc-rlm-overlay .bc-rlm-exam-question{border:0;border-top:1px solid var(--bc-color-border,#dce7ef);border-radius:0;padding:24px 0;background:transparent;box-shadow:none;margin:0}
+.bc-rlm-overlay .bc-rlm-exam-question .bc-rlm-options{margin:12px 0}
+.bc-rlm-overlay .bc-rlm-exam-question .bc-rlm-option{background:var(--bc-color-surface,#fff);color:var(--bc-color-text,#24384b)}
+.bc-rlm-overlay .bc-rlm-exam-question .bc-rlm-option.selected{border-color:#598cad;background:var(--bc-color-surface-elevated,#ecf4f9);box-shadow:inset 3px 0 0 #598cad}
+.bc-rlm-overlay .bc-rlm-exam-question .bc-rlm-feedback{margin:15px 0 0}
+.bc-rlm-overlay .bc-rlm-exam-history{font-size:12px;color:var(--bc-color-text-secondary,#687c90)}
+.bc-rlm-overlay .bc-rlm-errors-count{color:var(--bc-color-text-secondary,#58788c);font-size:13px!important}
+.bc-rlm-overlay .bc-rlm-error-item{padding:22px 0;border-top:1px solid var(--bc-color-border,#dce7ef)}
+.bc-rlm-overlay .bc-rlm-error-item h3{font-size:17px;margin:0 0 12px}
+.bc-rlm-overlay .bc-rlm-error-item p{font-size:14px;line-height:1.7;margin-bottom:10px}
+.bc-rlm-overlay .bc-rlm-error-item small{color:var(--bc-color-text-secondary,#64788b)}
+.bc-rlm-overlay .bc-rlm-error-explanation{border-left:2px solid #89adbd;padding-left:15px;margin:16px 0}
+.bc-rlm-overlay .bc-rlm-empty-errors{font-size:15px;line-height:1.65}
+@media(max-width:760px){
+ .bc-rlm-overlay .bc-rlm-exam-status,.bc-rlm-overlay .bc-rlm-exam-score{padding:15px}
+ .bc-rlm-overlay .bc-rlm-exam-actions .bc-rlm-btn{flex:1 1 140px}
+ .bc-rlm-overlay .bc-rlm-exam-question{padding:20px 0}
+}
