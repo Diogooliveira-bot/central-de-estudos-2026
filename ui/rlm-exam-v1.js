@@ -45,12 +45,14 @@ function submit(){
  const score=counts(d.draft);if(!score.answered)return;
  if(score.answered<score.total&&typeof g.confirm==='function'&&!g.confirm('Existem questões em branco. Elas contam como incorretas. Entregar assim mesmo?'))return;
  const last={answers:{...d.draft},correct:score.correct,answered:score.answered,total:score.total,endedAt:new Date().toISOString()};
+ const reviewed=read(REVIEWED);
  for(const [id,index] of spec()){
-  const q=question(id,index),choice=d.draft[itemKey(id,index)];
+  const q=question(id,index),choice=d.draft[itemKey(id,index)],key=itemKey(id,index);
   if(!q||!validChoice(choice))continue;
-  if(choice===q.answer)delete d.errors[itemKey(id,index)];
-  else d.errors[itemKey(id,index)]=choice;
+  if(choice===q.answer){delete d.errors[key];reviewed[key]=Date.now()}
+  else {d.errors[key]=choice;delete reviewed[key]}
  }
+ try{localStorage.setItem(REVIEWED,JSON.stringify(reviewed))}catch(_){}
  d.last=last;d.attempts=[...d.attempts,{correct:last.correct,answered:last.answered,total:last.total,endedAt:last.endedAt}].slice(-10);d.draft={};
  if(save(d))g.RlmNative?.refreshBody?.();
 }
