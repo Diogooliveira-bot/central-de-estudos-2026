@@ -27,7 +27,7 @@ function card(topic,index,n){
     ['bc-m01-recall','Revisão em 30 segundos',topic[6]]
   ];
   return '<section class="bc-m01-topic" aria-labelledby="bc-guided-title-'+index+'"><h2 id="bc-guided-title-'+index+'"><span>'+String(index+1).padStart(2,'0')+'</span> '+esc(topic[0])+'</h2>'+
-    sections.map(s=>'<div class="bc-m01-card '+s[0]+'"><h3>'+esc(s[1])+'</h3>'+p(s[2])+(s[0]==='bc-m01-law'?lawBox(n,index):'')+'</div>').join('')+'</section>';
+    sections.map(s=>'<div class="bc-m01-card '+s[0]+'">'+p(s[2])+(s[0]==='bc-m01-law'?lawBox(n,index):'')+'</div>').join('')+'</section>';
 }
 function checklist(n,topics){
  const s=state(n);
@@ -67,7 +67,7 @@ function open(n){
  o.className='bc-m01-overlay bc-guided-overlay';
  o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');
  o.setAttribute('aria-label','Teoria guiada de Direito Constitucional, módulo '+n);
- o.innerHTML='<div class="bc-m01-reader" data-view="study">'+
+ o.innerHTML='<div class="bc-m01-reader cf-guided-editorial" data-view="study">'+
   '<nav class="bc-m01-toolbar" aria-label="Controles de leitura">'+
    '<button type="button" data-bc-guided-close>← Voltar</button>'+
    '<div class="bc-m01-modes" role="group" aria-label="Modo de leitura">'+
