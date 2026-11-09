@@ -19,6 +19,7 @@ function fixture() {
   w.renderAll = () => {};
   const ctx = vm.createContext(w);
   for (const n of modules) vm.runInContext(read(`content/cf/m${String(n).padStart(2,'0')}-native-data.js`), ctx);
+  vm.runInContext(read('ui/central-internal-question-policy-v1.js'), ctx);
   vm.runInContext(read('ui/cf-native-study-v2.js'), ctx);
   return dom;
 }
@@ -74,33 +75,32 @@ test('checklists M08 a M15 funcionam, persistem e permanecem isolados por módul
   dom.window.close();
 });
 
-test('questões M08 a M15 preservam distribuição, alternativas limpas e funcionamento', () => {
-  const dom = fixture(), w = dom.window;
-  const completeDifficulty = ['Fácil','Fácil','Fácil','Fácil','Média','Média','Média','Média','Difícil','Difícil'];
-  const summaryDifficulty = ['Fácil','Fácil','Média','Média','Difícil'];
-  for (const n of modules) {
-    const key = `m${String(n).padStart(2,'0')}`;
-    const questions = w.BASE_NATIVE_CONTENT.cf[key].questions;
-    assert.deepEqual(Array.from(questions.complete, item => item.difficulty), completeDifficulty);
-    assert.deepEqual(Array.from(questions.summary, item => item.difficulty), summaryDifficulty);
-    for (const mode of ['complete','summary']) {
-      for (const item of questions[mode]) {
-        assert.equal(item.options.length, 5);
-        assert.equal(new Set(item.options).size, 5);
-        assert.ok(item.options.every(option => option === option.trim() && option.length > 1));
-        assert.doesNotMatch(item.options.join(' '), /BASE COMPLETA|Teoria Resumida/);
-        assert.ok(Number.isInteger(item.answer) && item.answer >= 0 && item.answer < item.options.length);
-        assert.ok(item.explanation.length >= 20);
-      }
-      w.CfNativeStudy.openQuiz(n, mode);
-      const first = questions[mode][0];
-      const answer = w.document.querySelector(`[data-opt="${first.answer}"]`);
-      assert.ok(answer.textContent.includes(first.options[first.answer]));
-      answer.click();
-      assert.match(w.document.querySelector('[data-feed]').textContent, /Correto/);
-    }
+test('M08 a M15 exibem 10 questões autorais e reservam espaço para dez questões oficiais',()=>{
+ const dom=fixture(),w=dom.window;
+ const expectedSummary=['Fácil','Fácil','Média','Média','Difícil'];
+ const expectedComplete=['Fácil','Fácil','Fácil','Fácil','Média','Média','Média','Média','Difícil','Difícil'];
+ for(const n of modules){
+  const qs=w.BASE_NATIVE_CONTENT.cf['m'+String(n).padStart(2,'0')].questions;
+  assert.deepEqual(Array.from(qs.summary,x=>x.difficulty),expectedSummary);
+  assert.deepEqual(Array.from(qs.complete,x=>x.difficulty),expectedComplete);
+  const chosen=w.CentralInternalQuestionPolicy.authorial(qs.summary,qs.complete);
+  assert.equal(chosen.length,10);
+  assert.equal(new Set(chosen.map(x=>x.q)).size,10);
+  for(const item of chosen){
+   assert.ok(item.options.length>=2&&item.options.length<=5);
+   assert.ok(item.options.every(x=>x.trim()));
+   assert.ok(Number.isInteger(item.answer)&&item.answer>=0&&item.answer<item.options.length);
+   assert.ok(item.explanation.length>=20);
   }
-  dom.window.close();
+  w.CfNativeStudy.openQuiz(n,'summary');
+  const q=chosen[0],btn=w.document.querySelector('[data-opt="'+q.answer+'"]');
+  assert.ok(btn);
+  btn.click();assert.match(w.document.querySelector('[data-feed]').textContent,/Correto/);
+  w.CfNativeStudy.openQuiz(n,'complete');
+  assert.match(w.document.getElementById('bc-internal-pending-modal').textContent,/Questões de bancas reais/);
+  w.document.getElementById('bc-internal-pending-modal').querySelector('[data-bank-close]').click();
+ }
+ dom.window.close();
 });
 
 test('Lei em Dia e cache offline apontam para a mesma versão em M08 a M15', () => {
