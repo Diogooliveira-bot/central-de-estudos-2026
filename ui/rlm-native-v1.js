@@ -53,7 +53,7 @@ function toggleModule(id){
 }
 function materialCard(id,stage,label,description,icon){
  const action=stage==='theory'?'Estudar conteúdo':stage==='recap'?'Revisar conteúdo':
-  stage==='quiz'?'Resolver questões':stage==='banca'?'Ver disponibilidade':stage==='map'?'Visualizar mapa':
+  stage==='quiz'||stage==='ai-m01'?'Resolver questões':stage==='banca'?'Ver disponibilidade':stage==='map'?'Visualizar mapa':
   stage==='exam'?'Iniciar simulado':stage==='errors'?'Revisar erros':
   stage==='review'?'Praticar questões':'Iniciar treino';
  return '<article class="cf-study-card bc-rlm-study-card bc-rlm-study-'+stage+'">'+
@@ -80,7 +80,9 @@ function card(m){
  const openState=isModuleOpen(m.id);
  const percent=done?100:p;
  const cards=m.id==='M01'?
-  materialCard(m.id,'speed','Treino de velocidade','Seis treinos cronometrados, sem sair da Central.','⏱'):
+  materialCard(m.id,'speed','Treino de velocidade','Seis treinos cronometrados, sem sair da Central.','⏱')+
+  materialCard(m.id,'ai-m01','10 questões autorais','Revisão de cálculo rápido e fundamentos matemáticos.','✓')+
+  materialCard(m.id,'banca','10 questões de bancas reais','Em breve.','▤'):
   materialCard(m.id,'recap','Versão de revisão','Fórmulas, métodos e erros frequentes.','↺')+
   materialCard(m.id,'theory','Teoria completa','Conceitos, fórmulas e resoluções guiadas.','📖')+
   materialCard(m.id,'map','Mapa mental','Síntese visual do conteúdo.','▤')+
@@ -154,6 +156,7 @@ function open(id='M02',stage='theory'){
  const m=id==='RF'?{id:'RF',titulo:'Revisão cumulativa'}:mod(id);
  if(!m)return false;
  if(stage==='banca')return g.CentralInternalQuestionPolicy?.modal('Raciocínio Lógico-Matemático',m.titulo);
+ if(id==='M01'&&stage==='ai-m01')return g.CentralAuthorialQuiz?.open({discipline:'Raciocínio Lógico-Matemático',module:'M01',title:'M01 · Treino de velocidade',items:g.BC_RLM_M01_AUTHORIAL||[]});
  close(false);
  lastFocus=document.activeElement;
  active={id,stage:id==='M01'?'speed':id==='RF'?(stage==='exam'||stage==='errors'?stage:'review'):normStage(stage)};
