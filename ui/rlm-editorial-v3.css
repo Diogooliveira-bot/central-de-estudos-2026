@@ -99,3 +99,41 @@
  .bc-rlm-overlay .bc-rlm-exam-actions .bc-rlm-btn{flex:1 1 140px}
  .bc-rlm-overlay .bc-rlm-exam-question{padding:20px 0}
 }
+
+/* Correção editorial: RLM adota a mesma abertura orientada e os mesmos
+ * cartões de estudo da disciplina Constitucional, sem uma segunda linguagem visual. */
+.bc-rlm-course .bc-rlm-module .cf-module-body{padding:18px 21px 21px}
+.bc-rlm-course .bc-rlm-module .cf-module-bar{height:3px;margin:-18px -21px 16px;background:#edf3f7;overflow:hidden}
+.bc-rlm-course .bc-rlm-module .cf-module-bar>span{display:block;height:100%;background:#5b96ba;min-width:0;transition:width .2s ease}
+.bc-rlm-course .bc-rlm-orientation.cf-native-oriented{border:1px solid #dbe6ed;border-radius:9px;background:#f8fbfd;box-shadow:none;margin:14px 0 19px;padding:18px 20px}
+.bc-rlm-course .bc-rlm-orientation .cf-native-reading-head{display:flex;align-items:flex-start;gap:13px;margin:0}
+.bc-rlm-course .bc-rlm-orientation .cf-native-oriented-icon{font-size:20px;line-height:1.35;flex:0 0 25px}
+.bc-rlm-course .bc-rlm-orientation .cf-native-reading-head>div{min-width:0}
+.bc-rlm-course .bc-rlm-orientation .cf-native-reading-head b{display:block;font-size:15px;line-height:1.4;color:#173759;margin:0 0 5px}
+.bc-rlm-course .bc-rlm-orientation .cf-native-reading-head small{display:block;font-size:13px;line-height:1.62;color:#5c7388}
+.bc-rlm-course .bc-rlm-orientation details{border:0;border-top:1px solid #e0eaf1;padding:12px 0 0;margin:15px 0 0;background:transparent;border-radius:0}
+.bc-rlm-course .bc-rlm-orientation summary{cursor:pointer;font-weight:650;color:#315c78;font-size:13px;line-height:1.4}
+.bc-rlm-course .bc-rlm-orientation li{margin:7px 0;line-height:1.6;font-size:13px;color:#385a71}
+.bc-rlm-course .bc-native-materials.bc-native-materials-static{margin:0}
+.bc-rlm-course .bc-rlm-study-grid.cf-native-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0!important}
+.bc-rlm-course .bc-rlm-study-card.cf-study-card{display:flex;flex-direction:column;min-width:0;min-height:172px;background:#fff!important;color:#24384b;border:1px solid #dce7ef!important;border-radius:10px!important;padding:17px 19px;box-shadow:none!important;margin:0!important}
+.bc-rlm-course .bc-rlm-study-card .cf-study-icon{font-size:20px;margin:0 0 11px;color:#346b8d}
+.bc-rlm-course .bc-rlm-study-card>b{font-size:15px;font-weight:750;line-height:1.4;color:#173759}
+.bc-rlm-course .bc-rlm-study-card>small{display:block;font-size:12px;color:#60788b;line-height:1.55;margin:6px 0 16px;flex:1}
+.bc-rlm-course .bc-rlm-study-card .cf-study-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.bc-rlm-course .bc-rlm-study-card button.bc-rlm-study-open.cf-study-open{display:inline-flex;justify-content:center;align-items:center;min-height:37px;width:auto;max-width:100%;border:1px solid #c9dfe9!important;border-radius:6px;padding:9px 14px!important;background:#eaf4f9!important;color:#173759!important;cursor:pointer;font:700 12px/1.25 Inter,system-ui,sans-serif;box-shadow:none!important;text-align:center}
+.bc-rlm-course .bc-rlm-study-card button.bc-rlm-study-open:hover{background:#dceef7!important;border-color:#95bacc!important}
+.bc-rlm-course .bc-rlm-study-card button.bc-rlm-study-open:focus-visible{outline:3px solid #6095b3;outline-offset:2px}
+.bc-rlm-course .bc-rlm-stage-progress{border:0;border-top:1px solid #e1eaf0;padding:14px 0 0;margin:18px 0 12px;gap:9px 19px;font-size:12px;line-height:1.5}
+.bc-rlm-overlay .bc-rlm-article .bc-rlm-power{white-space:nowrap;color:inherit}
+.bc-rlm-overlay .bc-rlm-article .bc-rlm-power sup{font-size:.72em;position:relative;top:-.05em}
+.bc-rlm-overlay .bc-rlm-article :is(p,li){overflow-wrap:break-word;word-break:normal}
+@media(max-width:760px){
+ .bc-rlm-course .bc-rlm-module .cf-module-body{padding:12px}
+ .bc-rlm-course .bc-rlm-module .cf-module-bar{margin:-12px -12px 14px}
+ .bc-rlm-course .bc-rlm-orientation.cf-native-oriented{padding:14px 13px;margin:12px 0 16px}
+ .bc-rlm-course .bc-rlm-study-grid.cf-native-cards{grid-template-columns:1fr;gap:10px}
+ .bc-rlm-course .bc-rlm-study-card.cf-study-card{min-height:0;padding:15px}
+ .bc-rlm-course .bc-rlm-study-card>small{margin-bottom:14px}
+ .bc-rlm-course .bc-rlm-study-card .cf-study-icon{margin:0 0 8px}
+}
