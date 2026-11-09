@@ -128,7 +128,19 @@
       const email=layer.querySelector('#bcCommEmailSupport');
       email.href='mailto:'+config.email+'?subject='+encodeURIComponent('Suporte Base Completa');
       email.textContent='Enviar e-mail para '+config.email;
+      const phone=layer.querySelector('#bcCommPhone');
+      if (phone) phone.value=config.whatsappNumber||'';
     } catch(e) { setStatus(e.message,true); }
+  }
+  async function saveWhatsappNumber(event) {
+    event.preventDefault();
+    const form=event.currentTarget,button=form.querySelector('button[type="submit"]');
+    button.disabled=true;setStatus('Salvando número oficial...');
+    try {
+      await request('whatsapp-config','POST',{phone:form.elements.phone.value});
+      await loadConfig();setStatus('Número de WhatsApp atualizado para todos os alunos.');
+    } catch(e) { setStatus(e.message,true); }
+    finally { button.disabled=false; }
   }
   async function sendTicket(event) {
     event.preventDefault();
@@ -254,6 +266,7 @@
           <a id="bcCommEmailSupport" href="mailto:basecompleta.estudos@gmail.com">Enviar e-mail</a>
         </div>
         <p id="bcCommWhatsappHint" class="bc-comm-note">O WhatsApp de suporte será exibido quando o número oficial for configurado.</p>
+        ${user().role==='admin'?'<form id="bcCommPhoneForm"><h3>Configurar WhatsApp oficial</h3><label for="bcCommPhone">Número com DDI e DDD</label><input id="bcCommPhone" name="phone" inputmode="tel" placeholder="Ex.: 5585999999999"><p class="bc-comm-note">Deixe vazio para desativar o botão. Somente administradores podem alterar.</p><button type="submit">Salvar WhatsApp de suporte</button></form>':''}
         <form id="bcCommTicketForm">
           <h3>Enviar mensagem pela Central</h3>
           <label for="bcCommSubject">Assunto</label><input id="bcCommSubject" name="subject" maxlength="120" minlength="4" required placeholder="Ex.: dúvida sobre meu acesso">
@@ -277,6 +290,7 @@
     layer.querySelector('#bcCommSendWhatsapp').addEventListener('click',sendWhatsapp);
     layer.querySelector('#bcCommPrint').addEventListener('click',printReport);
     layer.querySelector('#bcCommTicketForm').addEventListener('submit',sendTicket);
+    layer.querySelector('#bcCommPhoneForm')?.addEventListener('submit',saveWhatsappNumber);
 
     function addNavigation() {
       const nav=document.querySelector('#centralSidebar .nav,#centralSidebar nav,aside .nav');
