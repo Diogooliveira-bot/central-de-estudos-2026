@@ -99,6 +99,10 @@ test('Correção na entrega, histórico, reinício e caderno de erros não apaga
  assert.equal(exam.summary().attempts,1);
  assert.equal(exam.mistakes().filter(x=>x.id===id&&x.index===index).length,1,'erro do simulado continua no caderno após novo começo');
  assert.equal(JSON.parse(storage.get('central-v6:rlm-tjce2026:answers:'+id))[index],wrong);
+ exam.markReviewed(id,index);
+ assert.equal(exam.mistakes().filter(x=>x.id===id&&x.index===index).length,0,'questão revisada sai das pendências');
+ exam.select(0,wrong);exam.submit();
+ assert.equal(exam.mistakes().filter(x=>x.id===id&&x.index===index).length,1,'novo erro volta ao caderno');
 });
 
 test('Os catálogos de cadernos mantêm vínculos verificáveis; lacunas seguem registradas',()=>{
