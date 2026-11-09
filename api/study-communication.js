@@ -18,8 +18,8 @@ function respond(res, status, body) {
 function clean(v, max=160) { return String(v == null ? '' : v).trim().replace(/[\x00-\x1F\x7F]/g, ' ').replace(/\s+/g, ' ').slice(0, max); }
 function escapeHtml(v) { return String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function integer(v, max=100) { const n=Number(v); return Number.isFinite(n) ? Math.max(0, Math.min(max, Math.round(n))) : 0; }
-function supportWhatsapp(env=process.env) {
-  const digits=String(env.BC_SUPPORT_WHATSAPP_NUMBER||'').replace(/\D/g,'');
+function supportWhatsapp(phone) {
+  const digits=String(phone||'').replace(/\D/g,'');
   return /^55\d{10,11}$/.test(digits) ? 'https://wa.me/'+digits : null;
 }
 function safeReport(input) {
@@ -98,6 +98,7 @@ async function ensureTables(sql) {
     )
   `;
   await sql`CREATE INDEX IF NOT EXISTS central_study_report_delivery_user_idx ON central_study_report_delivery(user_id, created_at DESC)`;
+  await sql`CREATE TABLE IF NOT EXISTS central_app_contact_settings(setting_key TEXT PRIMARY KEY, setting_value TEXT NOT NULL DEFAULT '', updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW())`;
 }
 export default async function handler(req,res) {
   if (!['GET','POST'].includes(req.method)) {
@@ -109,11 +110,14 @@ export default async function handler(req,res) {
   if (!session.ok) return respond(res,session.status,{error:session.error});
   const action=String(req.query?.action||'config').trim().toLowerCase();
   try {
-    if (req.method==='GET' && action==='config') {
-      return respond(res,200,{email:SUPPORT_EMAIL,whatsappUrl:supportWhatsapp(),userEmail:session.user.email});
-    }
     const sql=session.sql;
     await ensureTables(sql);
+    if (req.method==='GET' && action==='config') {
+      const rows=await sql`SELECT setting_value FROM central_app_contact_settings WHERE setting_key='support_whatsapp' LIMIT 1`;
+      const number=rows.length?rows[0].setting_value:String(process.env.BC_SUPPORT_WHATSAPP_NUMBER||'');
+      return respond(res,200,{email:SUPPORT_EMAIL,whatsappUrl:supportWhatsapp(number),userEmail:session.user.email,
+        whatsappNumber:session.user.role==='admin'?String(number||'').replace(/\D/g,''):undefined});
+    }
     if (req.method==='GET' && action==='tickets') {
       if (session.user.role!=='admin') return respond(res,403,{error:'Acesso administrativo necessário'});
       const tickets=await sql`
@@ -128,6 +132,13 @@ export default async function handler(req,res) {
     if (req.method!=='POST') return respond(res,404,{error:'Ação inválida'});
     const body=await readJsonBody(req);
     if (JSON.stringify(body).length>100000) return respond(res,413,{error:'Dados excessivamente grandes'});
+    if (action==='whatsapp-config') {
+      if (session.user.role!=='admin') return respond(res,403,{error:'Acesso administrativo necessário'});
+      const digits=String(body.phone||'').replace(/\D/g,'');
+      if (digits && !/^55\d{10,11}$/.test(digits)) return respond(res,400,{error:'Informe o DDI 55 e um número brasileiro com DDD, ou deixe em branco para desativar.'});
+      await sql`INSERT INTO central_app_contact_settings(setting_key,setting_value,updated_at) VALUES('support_whatsapp',${digits},NOW()) ON CONFLICT(setting_key) DO UPDATE SET setting_value=EXCLUDED.setting_value,updated_at=NOW()`;
+      return respond(res,200,{ok:true,whatsappUrl:supportWhatsapp(digits)});
+    }
     if (action==='contact') {
       const subject=clean(body.subject,120), message=String(body.message||'').trim().slice(0,3000);
       if (subject.length<4 || message.length<12 || message.length>3000) {
