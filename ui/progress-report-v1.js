@@ -89,6 +89,7 @@ function snapshot(){
     disciplines:disciplines
   };
 }
+window.BaseCompletaProgressReportSnapshot=snapshot;
 async function report(){
   if(!navigator.onLine)return;
   try{
