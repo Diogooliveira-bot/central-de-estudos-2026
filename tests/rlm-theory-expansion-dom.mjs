@@ -13,7 +13,7 @@ class LocalFiles extends ResourceLoader{
   return Promise.resolve(fs.readFileSync(p));
  }
 }
-test('leitor integrado abre os capítulos, revela exemplos, busca e preserva respostas',async()=>{
+test('leitor integrado mostra resoluções, busca capítulos e preserva respostas',async()=>{
  const errors=[],vc=new VirtualConsole();
  vc.on('jsdomError',e=>{if(!e.message.includes('CSS stylesheet'))errors.push(e.message)});
  const dom=new JSDOM(fs.readFileSync(path.join(root,'preview-central-rlm-integrada.html'),'utf8'),{
@@ -28,11 +28,13 @@ test('leitor integrado abre os capítulos, revela exemplos, busca e preserva res
   for(let i=2;i<=15;i++){
    const id='M'+String(i).padStart(2,'0');w.RlmNative.open(id,'theory');
    assert.equal(doc.querySelectorAll('.bc-rlm-lesson').length,5,id);
-   assert.equal(doc.querySelectorAll('.bc-rlm-worked').length,5,id);
+   assert.equal(doc.querySelectorAll('.bc-rlm-worked-solution').length,5,id);
    assert.equal(doc.querySelectorAll('.bc-rlm-method').length,5,id);
    tables+=doc.querySelectorAll('.bc-rlm-table').length;figures+=doc.querySelectorAll('.bc-rlm-figure').length;
-   const example=doc.querySelector('.bc-rlm-worked');assert.equal(example.open,false);
-   example.querySelector('summary').click();assert.equal(example.open,true,id+' revela resolução por clique');
+   const example=doc.querySelector('.bc-rlm-worked-solution');
+   assert.ok(example,id+' mostra a resolução sem clique');
+   assert.ok(example.querySelector('.bc-rlm-solution-steps li'),id+' mantém as etapas');
+   assert.ok(example.querySelector('.bc-rlm-worked-answer'),id+' mostra o resultado');
    w.RlmNative.close();
   }
   assert.equal(tables,36);assert.equal(figures,10);
