@@ -126,6 +126,34 @@ export default async function handler(req, res) {
         return send(res, 200, { ok: true, user: publicUser(rows[0]) });
       }
 
+      if (action === 'delete-student') {
+        const userId = String(body.userId || '').trim();
+        const confirmation = String(body.confirmation || '').trim().toUpperCase();
+        const confirmedEmail = normalizeEmail(body.email);
+        if (!userId || confirmation !== 'EXCLUIR' || !confirmedEmail) {
+          return send(res, 400, { error: 'Confirme a exclusão informando o e-mail e a palavra EXCLUIR.' });
+        }
+        if (userId === session.user.id) return send(res, 403, { error: 'Não é possível excluir a própria conta administrativa.' });
+        // O filtro por perfil é aplicado no banco: nunca excluir editor ou administrador.
+        // A exclusão da conta segue as FKs de dados pedagógicos com ON DELETE CASCADE.
+        // Os registros fiscais da Hotmart permanecem sob a política de retenção existente.
+        const deleted = await sql`
+          WITH removed AS (
+            DELETE FROM central_users
+            WHERE user_id=${userId} AND role='aluno' AND LOWER(email)=${confirmedEmail}
+            RETURNING user_id,email
+          ), pending AS (
+            DELETE FROM public.central_free_signup_pending
+            WHERE LOWER(email) IN (SELECT LOWER(email) FROM removed)
+            RETURNING email
+          )
+          SELECT user_id FROM removed
+        `;
+        if (!deleted.length) return send(res, 404, { error: 'Aluno não encontrado ou e-mail de confirmação incorreto.' });
+        console.info('admin student deletion', 'ok');
+        return send(res, 200, { ok: true });
+      }
+
       if (action === 'reset-password') {
         const userId = String(body.userId || '');
         const password = String(body.password || '');
