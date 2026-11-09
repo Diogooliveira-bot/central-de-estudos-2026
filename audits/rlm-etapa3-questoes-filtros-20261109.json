@@ -1,0 +1,513 @@
+{
+  "type": "rlm-etapa3-auditoria",
+  "date": "2026-11-09",
+  "scope": {
+    "modules": "M02–M15",
+    "totalQuestions": 140,
+    "finalSimulationItems": 20
+  },
+  "questionChecks": {
+    "criteria": [
+      "Enunciado presente",
+      "Cinco alternativas distintas",
+      "Índice de gabarito válido",
+      "Comentário preenchido",
+      "Enunciado único no módulo",
+      "Distribuição de dificuldade 3/4/3"
+    ],
+    "moduleResults": [
+      {
+        "id": "M02",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M03",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M04",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M05",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M06",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M07",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M08",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M09",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M10",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M11",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M12",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M13",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M14",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      },
+      {
+        "id": "M15",
+        "questions": 10,
+        "levels": {
+          "fácil": 3,
+          "médio": 4,
+          "difícil": 3
+        },
+        "structurallyValid": true
+      }
+    ],
+    "failures": [],
+    "confirmedArithmeticIndependentValidation": false,
+    "note": "Todas as 140 questões passaram nos testes estruturais. A inspeção do gabarito e do comentário não substitui uma segunda correção matemática independente nem comprova ausência de alternativas múltiplas."
+  },
+  "filters": {
+    "qcGeneratedAt": "2026-10-20T10:17:10+00:00",
+    "qcValidatedEntries": 14,
+    "tecCatalogGeneratedAt": "2026-08-28T09:54:04.307Z",
+    "coverageByModule": [
+      {
+        "id": "M01",
+        "title": "Treino de Velocidade",
+        "qc": [
+          {
+            "code": "M01",
+            "quantity": 51,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15312965"
+          }
+        ],
+        "tec": [],
+        "notes": ""
+      },
+      {
+        "id": "M02",
+        "title": "Fundamentos da Lógica",
+        "qc": [
+          {
+            "code": "M02",
+            "quantity": 15,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15312990"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "rlm-01",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 61
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M03",
+        "title": "Negações e Equivalências Lógicas",
+        "qc": [
+          {
+            "code": "M03",
+            "quantity": 11,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313016"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "rlm-02",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 142
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M04",
+        "title": "Argumentação e Dedução Lógica",
+        "qc": [
+          {
+            "code": "M04",
+            "quantity": 19,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313027"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "rlm-03",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 214
+          },
+          {
+            "catalogId": "rlm-06",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 46
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M05",
+        "title": "Conjuntos e Diagramas Lógicos",
+        "qc": [
+          {
+            "code": "M05",
+            "quantity": 11,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313045"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "rlm-03",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 214
+          },
+          {
+            "catalogId": "mat-01",
+            "found": true,
+            "group": "matematica",
+            "questionCount": 107
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M06",
+        "title": "Associação de Informações",
+        "qc": [
+          {
+            "code": "M06.02",
+            "quantity": 6,
+            "kind": "subdivision",
+            "status": "VALIDADO no catálogo",
+            "id": "15292600"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "rlm-04",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 130
+          },
+          {
+            "catalogId": "rlm-06",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 46
+          }
+        ],
+        "notes": "Há caderno específico M06.02 Quantificadores; confirmar classificação temática antes de reatribuir"
+      },
+      {
+        "id": "M07",
+        "title": "Raciocínio Verbal e Formação de Conceitos",
+        "qc": [],
+        "tec": [
+          {
+            "catalogId": "rlm-06",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 46
+          }
+        ],
+        "notes": "Sem caderno QC geral"
+      },
+      {
+        "id": "M08",
+        "title": "Sequências e Padrões Lógicos",
+        "qc": [
+          {
+            "code": "M08",
+            "quantity": 10,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313089"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "rlm-05",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 195
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M09",
+        "title": "Orientação Espacial e Temporal",
+        "qc": [
+          {
+            "code": "M09",
+            "quantity": 1,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313108"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "rlm-05",
+            "found": true,
+            "group": "rlm",
+            "questionCount": 195
+          }
+        ],
+        "notes": "Caderno QC geral com apenas uma questão"
+      },
+      {
+        "id": "M10",
+        "title": "Fundamentos Matemáticos",
+        "qc": [
+          {
+            "code": "M10",
+            "quantity": 17,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313153"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "mat-02",
+            "found": true,
+            "group": "matematica",
+            "questionCount": 332
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M11",
+        "title": "Razão, Proporção e Regra de Três",
+        "qc": [
+          {
+            "code": "M11",
+            "quantity": 24,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313167"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "mat-04",
+            "found": true,
+            "group": "matematica",
+            "questionCount": 390
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M12",
+        "title": "Porcentagem, Acréscimos e Descontos",
+        "qc": [
+          {
+            "code": "M12",
+            "quantity": 14,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313176"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "mat-04",
+            "found": true,
+            "group": "matematica",
+            "questionCount": 390
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M13",
+        "title": "Tabelas e Gráficos",
+        "qc": [
+          {
+            "code": "M13",
+            "quantity": 10,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313189"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "mat-05",
+            "found": true,
+            "group": "matematica",
+            "questionCount": 107
+          }
+        ],
+        "notes": ""
+      },
+      {
+        "id": "M14",
+        "title": "Média, Mediana e Moda",
+        "qc": [
+          {
+            "code": "M14",
+            "quantity": 3,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313200"
+          }
+        ],
+        "tec": [
+          {
+            "catalogId": "mat-05",
+            "found": true,
+            "group": "matematica",
+            "questionCount": 107
+          }
+        ],
+        "notes": "Caderno QC geral com apenas três questões"
+      },
+      {
+        "id": "M15",
+        "title": "Amplitude, Desvio Médio, Variância e Desvio Padrão",
+        "qc": [
+          {
+            "code": "M15",
+            "quantity": 11,
+            "kind": "general",
+            "status": "VALIDADO no catálogo",
+            "id": "15313216"
+          }
+        ],
+        "tec": [],
+        "notes": "Sem caderno TEC candidato"
+      }
+    ],
+    "followUps": [
+      "Conferir adequação do QC M06.02 Quantificadores ao assunto do M06",
+      "Buscar novos cadernos QC para M06, M07 e ampliar M09 e M14",
+      "Localizar caderno TEC correspondente ao M15",
+      "Validar se cadernos TEC de lógica antiga abrangem os novos tópicos, pois há reuso entre módulos",
+      "Testar abertura e conteúdo atual dos links em seus provedores antes de alterar catálogo"
+    ],
+    "linksUntouched": true,
+    "originalFreePremiumAccessPolicyUnchanged": true
+  },
+  "software": {
+    "examMode": "gabarito e comentários liberados na entrega",
+    "legacyInstantFeedback": "preservado",
+    "errorNotebook": "exibe erros das questões e simulado",
+    "dataStorage": "localStorage; sem acesso a outros alunos",
+    "originalQuestionBankModified": false
+  }
+}

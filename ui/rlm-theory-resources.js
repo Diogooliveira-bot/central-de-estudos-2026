@@ -2,6 +2,21 @@
 (function(g){
 'use strict';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Fórmulas são texto, não código executável. Tipografar expoentes sem inserir
+// MathML no meio de palavras nem converter datas, horários e barras de proporção.
+// Nunca aplicar expressões regulares sobre HTML já construído.
+function mathText(value){
+ const source=String(value??'');
+ const exponent=/(?<![A-Za-z0-9_])([A-Za-z]|\d{1,6})\^([A-Za-z]|\d{1,2})(?![A-Za-z0-9_])/g;
+ let html='',last=0,m;
+ while((m=exponent.exec(source))){
+  html+=esc(source.slice(last,m.index));
+  html+='<span class="bc-rlm-power" aria-label="'+esc(m[1]+' elevado a '+m[2])+'">'+esc(m[1])+'<sup>'+esc(m[2])+'</sup></span>';
+  last=m.index+m[0].length;
+ }
+ return html+esc(source.slice(last));
+}
+
 function table(t){
  if(!t?.headers?.length)return '';
  return '<div class="bc-rlm-table-wrap" tabindex="0" role="region" aria-label="'+esc(t.caption)+'"><table class="bc-rlm-table"><caption>'+esc(t.caption)+'</caption><thead><tr>'+t.headers.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+t.rows.map(row=>'<tr>'+row.map((x,i)=>i?'<td>'+esc(x)+'</td>':'<th scope="row">'+esc(x)+'</th>').join('')+'</tr>').join('')+'</tbody></table></div>';
@@ -51,17 +66,28 @@ function figure(f){
  return '<figure class="bc-rlm-figure"><svg viewBox="'+view+'" role="img" aria-label="'+esc(f.description)+'" xmlns="http://www.w3.org/2000/svg" focusable="false">'+body+'</svg><figcaption>'+esc(f.description)+'</figcaption></figure>';
 }
 function chapter(ch){
- return ch.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+
- (ch.development||[]).map(p=>'<p>'+esc(p)+'</p>').join('')+
- (ch.tables||[]).map(table).join('')+figure(ch.figure)+
- (ch.method?.length?'<aside class="bc-rlm-method"><h4>Como resolver</h4><ol>'+ch.method.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ol></aside>':'')+
- '<details class="bc-rlm-example"><summary>Exemplo rápido</summary><p>'+esc(ch.example)+'</p></details>'+
- (ch.workedExamples||[]).map(ex=>'<details class="bc-rlm-example bc-rlm-worked"><summary>Exemplo guiado: '+esc(ex.prompt)+'</summary><ol>'+ex.steps.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ol><p class="bc-rlm-worked-answer"><strong>Resposta: </strong>'+esc(ex.answer)+'</p></details>').join('')+
- (ch.pitfall?'<aside class="bc-rlm-pitfall"><strong>Erro comum: </strong>'+esc(ch.pitfall)+'</aside>':'');
+ const words=(ch.paragraphs||[]).map(p=>'<p>'+mathText(p)+'</p>').join('')+
+  (ch.development||[]).map(p=>'<p>'+mathText(p)+'</p>').join('');
+ const tables=(ch.tables||[]).map(table).join('');
+ const visual=figure(ch.figure);
+ const method=ch.method?.length?
+  '<section class="bc-rlm-method"><h4>Como resolver</h4><ol>'+ch.method.map(s=>'<li>'+mathText(s)+'</li>').join('')+'</ol></section>':'';
+ const quick=String(ch.example||'').replace(/^Exemplo resolvido:\s*/i,'');
+ const example=quick?'<section class="bc-rlm-example-primary"><h4>Exemplo resolvido</h4><p>'+mathText(quick)+'</p></section>':'';
+ const detailed=(ch.workedExamples||[]).map((ex,i)=>{
+  const inner='<p class="bc-rlm-problem">'+mathText(ex.prompt)+'</p>'+
+   '<ol class="bc-rlm-solution-steps">'+(ex.steps||[]).map(s=>'<li>'+mathText(s)+'</li>').join('')+'</ol>'+
+   '<p class="bc-rlm-worked-answer"><strong>Resposta: </strong>'+mathText(ex.answer)+'</p>';
+  return i===0?
+   '<section class="bc-rlm-worked-solution"><h4>Exemplo guiado: '+esc(ex.prompt)+'</h4>'+inner+'</section>':
+   '<details class="bc-rlm-example bc-rlm-worked"><summary>Exemplo guiado: '+esc(ex.prompt)+'</summary>'+inner+'</details>';
+ }).join('');
+ const pitfall=ch.pitfall?'<p class="bc-rlm-pitfall"><strong>Erro comum. </strong>'+mathText(ch.pitfall)+'</p>':'';
+ return words+tables+visual+method+example+detailed+pitfall;
 }
 function references(d){
  const refs=(d.references||[]).filter(r=>{try{return new URL(r.url).protocol==='https:'}catch(_){return false}});
  return refs.length?'<aside class="bc-rlm-references"><h3>Leituras de apoio</h3><p>Explicações e exemplos autorais. Estas fontes ajudam a aprofundar os conceitos; os exemplos desta aula não são questões oficiais da FCC.</p><ul>'+refs.map(r=>'<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.title)+' ↗</a></li>').join('')+'</ul></aside>':'';
 }
-g.RlmTheoryResources={chapter,references};
+g.RlmTheoryResources={chapter,references,mathText};
 })(window);
