@@ -36,8 +36,8 @@ test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros of
     assert.equal(module.querySelector('.cv-card-complete b').textContent, 'Teoria completa');
     assert.equal(module.querySelector('.cv-card-review b').textContent, 'Versão de revisão');
     assert.equal(module.querySelector('.cv-card-infographic b').textContent, 'Infográfico');
-    assert.deepEqual([...module.querySelectorAll('.cv-card-complete .cv-standard-actions button')].map((button) => button.textContent.trim()), ['Estudar conteúdo', `Resolver ${source.completeQuestions} questões`]);
-    assert.deepEqual([...module.querySelectorAll('.cv-card-review .cv-standard-actions button')].map((button) => button.textContent.trim()), ['Revisar conteúdo', `Resolver ${source.summaryQuestions} questões`]);
+    assert.deepEqual([...module.querySelectorAll('.cv-card-complete .cv-standard-actions button')].map((button) => button.textContent.trim()), ['Estudar conteúdo', '10 questões de bancas reais · em breve']);
+    assert.deepEqual([...module.querySelectorAll('.cv-card-review .cv-standard-actions button')].map((button) => button.textContent.trim()), ['Revisar conteúdo', 'Resolver 10 questões autorais']);
     assert.equal(module.querySelector('.cv-card-infographic button').textContent, 'Visualizar infográfico');
     assert(module.querySelector('[data-bcq-platform="tec"]'), `M${n}: filtros TEC oficiais ausentes.`);
     assert.equal(module.querySelectorAll('.cv-sharing-link, .cv-sharing, .cv-tec-panel, [data-civil-share]').length, 0, `M${n}: links/blocos antigos ainda visíveis.`);
