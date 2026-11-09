@@ -52,53 +52,76 @@ function toggleModule(id){
  return false;
 }
 function materialCard(id,stage,label,description,icon){
- return '<button type="button" class="bc-native-material-card" data-rlm-kind="'+stage+'" onclick="RlmNative.open(\''+id+'\',\''+stage+'\')">'+
- '<span class="bc-native-material-icon" aria-hidden="true">'+icon+'</span>'+
- '<span><strong>'+esc(label)+'</strong><small>'+esc(description)+'</small></span>'+
- '<span class="bc-native-material-action">Abrir →</span></button>';
+ const action=stage==='theory'?'Estudar conteúdo':stage==='recap'?'Revisar conteúdo':
+  stage==='quiz'?'Resolver questões':stage==='map'?'Visualizar mapa':
+  stage==='exam'?'Iniciar simulado':stage==='errors'?'Revisar erros':
+  stage==='review'?'Praticar questões':'Iniciar treino';
+ return '<article class="cf-study-card bc-rlm-study-card bc-rlm-study-'+stage+'">'+
+  '<span class="cf-study-icon" aria-hidden="true">'+icon+'</span>'+
+  '<b>'+esc(label)+'</b><small>'+esc(description)+'</small>'+
+  '<div class="cf-study-actions"><button type="button" class="cf-study-open bc-rlm-study-open" data-rlm-kind="'+stage+
+  '" onclick="RlmNative.open(\''+id+'\',\''+stage+'\')">'+action+'</button></div></article>';
+}
+function readingOrientation(m){
+ const topics=m.id==='M01'?(m.legado?.blocos||[]):(lesson(m.id)?.theory||[]).map(ch=>ch.title);
+ const lines=topics.slice(0,5);
+ const intro=m.id==='M01'?
+  'Pratique cálculo rápido em seis treinos cronometrados; acompanhe o tempo e os resultados.':
+  'Comece pela teoria, acompanhe as resoluções passo a passo e consolide os conceitos na revisão.';
+ return '<section class="cf-native-oriented bc-rlm-orientation">'+
+  '<div class="cf-native-reading-head"><span class="cf-native-oriented-icon" aria-hidden="true">📖</span>'+
+  '<div><b>Leitura orientada inicial</b><small>'+esc(intro)+'</small></div></div>'+
+  (lines.length?'<details><summary>O que aprender neste módulo</summary><ul>'+
+   lines.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></details>':'')+
+  '</section>';
 }
 function card(m){
- const done=isDone(m.id),p=m.id==='M01'?0:Math.round(result(m.id).count/10*100);
+ const done=isDone(m.id),progress=result(m.id),p=m.id==='M01'?0:Math.round(progress.count/10*100);
  const openState=isModuleOpen(m.id);
  const percent=done?100:p;
  const cards=m.id==='M01'?
   materialCard(m.id,'speed','Treino de velocidade','Seis treinos cronometrados, sem sair da Central.','⏱'):
+  materialCard(m.id,'recap','Versão de revisão','Fórmulas, métodos e erros frequentes.','↺')+
   materialCard(m.id,'theory','Teoria completa','Conceitos, fórmulas e resoluções guiadas.','📖')+
-  materialCard(m.id,'recap','Revisão','Fórmulas, métodos e erros frequentes.','↺')+
-  materialCard(m.id,'quiz','Questões','Prática comentada com 10 questões.','✓')+
-  materialCard(m.id,'map','Mapa mental','Síntese visual do conteúdo.','▤');
+  materialCard(m.id,'map','Mapa mental','Síntese visual do conteúdo.','▤')+
+  materialCard(m.id,'quiz','Questões de fixação','Prática comentada com 10 questões.','✓');
  const sub=m.id==='M01'?'Treino de cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
- '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
- '<span class="cf-module-no">'+(m.id==='M01'?'MÓDULO 01':'MÓDULO '+Number(m.id.slice(1)))+'</span>'+
- '<span class="cf-module-title">'+esc(m.titulo)+'</span>'+
- '<span class="cf-module-stat">'+(done?'100%':p+'%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
- '<div class="cf-module-body ds-module-body"><div class="cf-subtitle">'+esc(sub)+'</div>'+
- '<section class="bc-native-materials bc-native-materials-static">'+
- (m.id==='M01'?'<p class="bc-rlm-stage-progress">Treino preservado · cronômetro e histórico do módulo</p>':
-  '<p class="bc-rlm-stage-progress"><span>Leitura '+readProgress(m.id)+'%</span><span>Prática '+result(m.id).count+'/10</span>'+
-  '<span>Acertos '+result(m.id).pct+'% das respondidas</span><span>'+(done?'Concluído':'Conclusão manual')+'</span></p>')+
- '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha uma etapa</small></div></div>'+
- '<div class="bc-native-material-grid">'+cards+'</div></section>'+
- '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+
- 'onchange="RlmNative.mark(\''+m.id+'\',this.checked)">Marcar módulo como concluído</label></div></section>';
+  '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
+  '<span class="cf-module-no">'+(m.id==='M01'?'MÓDULO 01':'MÓDULO '+Number(m.id.slice(1)))+'</span>'+
+  '<span class="cf-module-title">'+esc(m.titulo)+'</span>'+
+  '<span class="cf-module-stat">'+percent+'%</span><span class="chev" aria-hidden="true">⌄</span></button>'+
+  '<div class="cf-module-body ds-module-body"><div class="cf-module-bar"><span style="width:'+percent+'%"></span></div>'+
+  '<div class="cf-subtitle">'+esc(sub)+'</div>'+readingOrientation(m)+
+  '<section class="bc-native-materials bc-native-materials-static">'+
+  '<div class="bc-native-material-grid cf-native-cards bc-rlm-study-grid">'+cards+'</div>'+
+  (m.id==='M01'?'<p class="bc-rlm-stage-progress">Cronômetro e histórico do treino preservados.</p>':
+   '<p class="bc-rlm-stage-progress"><span>Leitura '+readProgress(m.id)+'%</span>'+
+   '<span>Prática '+progress.count+'/10</span><span>Acertos '+progress.pct+'% das respondidas</span></p>')+
+  '</section>'+
+  '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+
+  'onchange="RlmNative.mark(\''+m.id+'\',this.checked)">Marcar módulo como concluído</label></div></section>';
 }
 function reviewCard(){
  const opened=isModuleOpen('RF'),done=isDone('RF');
  const exam=g.RlmExam?.summary?.()||null,errors=g.RlmExam?.mistakes?.().length||0;
  const examLabel=exam?(exam.submitted?'Último simulado '+exam.pct+'%':'Simulado '+exam.answered+'/20'):'Simulado disponível';
  return '<section class="cf-module ds-module bc-rlm-module'+(opened?' open':'')+'" data-rlm-module="RF">'+
- '<button class="cf-module-head ds-module-head" aria-expanded="'+opened+'" onclick="return RlmNative.toggleModule(\'RF\')">'+
- '<span class="cf-module-no">REVISÃO FINAL</span><span class="cf-module-title">Revisão cumulativa e simulado de concursos</span>'+
- '<span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
- '<div class="cf-module-body ds-module-body"><div class="cf-subtitle">20 questões autorais, reunindo os 14 módulos teóricos.</div>'+
- '<p class="bc-rlm-stage-progress"><span>'+examLabel+'</span><span>Erros para revisar '+errors+'</span></p>'+
- '<section class="bc-native-materials bc-native-materials-static"><div class="bc-native-materials-head"><div><b>Revisão final</b><small>Escolha o modo de prática.</small></div></div>'+
- '<div class="bc-native-material-grid">'+
- materialCard('RF','exam','Simulado · modo prova','20 questões, correção ao entregar.','✓')+
- materialCard('RF','review','Prática com correção','20 questões e comentário imediato.','↺')+
- materialCard('RF','errors','Revisar meus erros','Caderno com respostas erradas.','▤')+'</div></section>'+
- '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+'onchange="RlmNative.mark(\'RF\',this.checked)">Revisão concluída</label></div></section>';
+  '<button class="cf-module-head ds-module-head" aria-expanded="'+opened+'" onclick="return RlmNative.toggleModule(\'RF\')">'+
+  '<span class="cf-module-no">REVISÃO FINAL</span><span class="cf-module-title">Revisão cumulativa e simulado de concursos</span>'+
+  '<span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
+  '<div class="cf-module-body ds-module-body"><div class="cf-module-bar"><span style="width:'+(done?'100':'0')+'%"></span></div>'+
+  '<section class="cf-native-oriented bc-rlm-orientation"><div class="cf-native-reading-head">'+
+  '<span class="cf-native-oriented-icon" aria-hidden="true">📖</span><div>'+
+  '<b>Revisão geral</b><small>20 questões autorais reunindo os 14 módulos teóricos. Escolha entre simulado e correção imediata.</small>'+
+  '</div></div></section>'+
+  '<section class="bc-native-materials bc-native-materials-static">'+
+  '<div class="bc-native-material-grid cf-native-cards bc-rlm-study-grid">'+
+  materialCard('RF','exam','Simulado · modo prova','20 questões, correção ao entregar.','✓')+
+  materialCard('RF','review','Prática com correção','20 questões e comentário imediato.','↺')+
+  materialCard('RF','errors','Revisar meus erros','Caderno com respostas erradas.','▤')+'</div>'+
+  '<p class="bc-rlm-stage-progress"><span>'+examLabel+'</span><span>Erros para revisar '+errors+'</span></p></section>'+
+  '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+'onchange="RlmNative.mark(\'RF\',this.checked)">Revisão concluída</label></div></section>';
 }
 function renderMaster(){
  if(!manifest().length)return '<div class="bc-rlm-warn">A matriz do curso RLM não está carregada.</div>';
