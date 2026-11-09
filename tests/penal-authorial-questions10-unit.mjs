@@ -65,6 +65,7 @@ test('Scripts e CSS do leitor independente carregam antes dos módulos',()=>{
  const policy=html.indexOf('/ui/central-internal-question-policy-v1.js'),
    engine=html.indexOf('/ui/central-authorial-quiz-v1.js'),
    shell=read('central-v119.html').indexOf('ui/native-module-m01-shell.js');
- assert.ok(policy>=0&&engine>policy&&shell>engine);
+ assert.ok(policy>=0&&engine>policy,'motor carregado depois da política no index');
+ assert.ok(shell>=0,'leitores Penal injetados pelo bootstrap central-v119');
  assert.match(html,/central-authorial-quiz-v1\.css/);
 });
