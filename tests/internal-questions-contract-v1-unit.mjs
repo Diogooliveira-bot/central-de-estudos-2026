@@ -47,3 +47,21 @@ test('Leitores alterados não expõem as questões antigas da teoria completa',(
  assert.match(civil,/Resolver 10 questões autorais/);
  assert.match(rlm,/10 questões autorais/);
 });
+
+
+test('RLM M01 contém 10 questões autorais novas, independentes do treino cronometrado',()=>{
+ const scope={window:{}};vm.runInNewContext(read('content/rlm-tjce-2026/m01-authorial10.js'),scope);
+ const questions=scope.window.BC_RLM_M01_AUTHORIAL;
+ assert.equal(questions.length,10);
+ assert.equal(new Set(Array.from(questions,q=>q.q)).size,10);
+ for(const [i,q] of questions.entries()){
+  assert.equal(q.options.length,4,'alternativas da questão '+(i+1));
+  assert.equal(new Set(Array.from(q.options)).size,4,'alternativas únicas '+(i+1));
+  assert.ok(q.answer>=0&&q.answer<4,'gabarito '+(i+1));
+  assert.ok(q.explanation.length>=40,'comentário '+(i+1));
+ }
+ const ui=read('ui/rlm-native-v1.js'),home=read('index.html');
+ assert.match(ui,/ai-m01/);
+ assert.match(ui,/BC_RLM_M01_AUTHORIAL/);
+ assert.match(home,/content\/rlm-tjce-2026\/m01-authorial10\.js/);
+});
