@@ -237,6 +237,8 @@ export default async function middleware(request) {
     });
   }
   if (path.startsWith('/api/')) return next();
+  // Prévia pública somente em deployment Preview, com trechos limitados e sem dados de aluno.
+  if (process.env.VERCEL_ENV === 'preview' && path === '/preview-constitucional-m01-m12.html') return next();
   if (PUBLIC_PATHS.has(path)) return next();
 
   const token = parseCookie(request.headers.get('cookie'), COOKIE_NAME);
