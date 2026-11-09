@@ -71,7 +71,7 @@
    if(/central-structural-v66119\/(cf|penal|cpc)-questions-(?!000)/.test(path))group=path.match(/\/(cf|penal|cpc)-questions-/)[1];
    // Teoria completa de Penal (≈400 KB protegidos) só é usada dentro da disciplina.
    else if(/^penal-full-theory-data-\d+\.js$/.test(path))group='penal';
-   else if(path.indexOf('content/cf/')===0||path==='ui/cf-native-study-v2.js')group='cf';
+   else if(path.indexOf('content/cf/')===0||path==='ui/cf-native-study-v2.js'||path==='ui/cf-apostila-reading-v1.js')group='cf';
    else if(path.indexOf('content/cpc/')===0||/^cpc-/.test(path)||/^ui\/cpc-/.test(path))group='cpc';
    else if(path.indexOf('content/penal/')===0||/^ui\/(?:native-study-reader|native-module-|penal-|m\d+-header)/.test(path))group='penal';
    else if(/^cpp-course-/.test(path))return '';
