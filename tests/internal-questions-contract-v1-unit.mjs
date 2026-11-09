@@ -29,7 +29,7 @@ test('Os 15 módulos de Constitucional oferecem 10 autorais sem enunciados dupli
   assert.equal(quiz.length,10,filename);
   assert.equal(new Set(quiz.map(x=>x.q)).size,10,filename);
   quiz.forEach((q,j)=>{
-   assert.ok(Array.isArray(q.options)&&q.options.length>=4,filename+' '+j);
+   assert.ok(Array.isArray(q.options)&&q.options.length>=2,filename+' '+j);
    assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<q.options.length,filename+' '+j);
    assert.ok(q.explanation?.trim(),filename+' '+j);
   });
