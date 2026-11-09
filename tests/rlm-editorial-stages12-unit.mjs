@@ -54,13 +54,17 @@ test('Etapas 1 e 2: todos os 14 módulos mantêm as teorias e os exemplos resolv
  assert.equal(JSON.stringify(g.RLM_CURSO_AULAS),before,'o renderizador não altera os dados originais');
 });
 
-test('Notação matemática é segura e mantém a equivalência textual',()=>{
+test('Notação matemática conserva o texto, sem fragmentar palavras ou datas',()=>{
  const {g}=fixture(),render=g.RlmTheoryResources.mathText;
- assert.match(render('1/2 + 1/4 = 3/4'),/<math class="bc-rlm-math"/);
+ assert.equal(render('1/2 + 1/4 = 3/4'),'1/2 + 1/4 = 3/4');
+ assert.equal(render('Data: 10/11/2026; taxa 25/100.'),'Data: 10/11/2026; taxa 25/100.');
+ assert.equal(render('3/4 do total'),'3/4 do total');
  assert.match(render('2^3'),/<sup>3<\/sup>/);
+ assert.match(render('a^n'),/<sup>n<\/sup>/);
  assert.match(render('P → Q'),/P → Q/);
  assert.doesNotMatch(render('<img src=x onerror=alert(1)>'),/<img/);
- assert.match(render('<img src=x>'),/&lt;img/);
+ assert.equal(render('<img src=x>'),'&lt;img src=x&gt;');
+ assert.doesNotMatch(render('2^3'),/<math|<mfrac/);
 });
 
 test('RLM possui navegação Teoria, Revisão, Questões e Mapa; M01 preserva o motor de velocidade',()=>{
@@ -100,12 +104,25 @@ test('M03, M12 e M13 abrem no leitor real com revisão independente',()=>{
 
 test('Leitor mobile e CSS editorial estão ligados na Central original',()=>{
  const html=read('index.html'),script=read('ui/rlm-native-v1.js'),css=read('ui/rlm-editorial-v3.css');
- assert.ok(html.includes('ui/rlm-editorial-v3.css?v=20261109etapas3'));
- assert.ok(html.includes('ui/rlm-native-v1.js?v=20261109etapas3'));
+ assert.ok(html.includes('ui/rlm-editorial-v3.css?v=20261109rlmfix1'));
+ assert.ok(html.includes('ui/rlm-native-v1.js?v=20261109rlmfix1'));
  assert.ok(script.includes('function toggleToc(force)'));
  assert.ok(script.includes("if(active?.stage==='theory')writeReadProgress(active.id,pct)"));
  assert.ok(css.includes('.bc-rlm-toc.open'));
- assert.ok(css.includes('math.bc-rlm-math'));
+ assert.ok(css.includes('bc-rlm-power'));
+ assert.ok(css.includes('bc-rlm-study-grid'));
  assert.ok(script.includes("stage==='recap'"));
  assert.ok(script.includes("function speed()"));
+});
+
+test('Abertura de RLM acompanha Constitucional: leitura orientada, barra e cartões',()=>{
+ const {g}=fixture(),html=g.RlmNative.renderMaster();
+ assert.equal((html.match(/cf-native-oriented bc-rlm-orientation/g)||[]).length,16);
+ assert.equal((html.match(/cf-native-cards bc-rlm-study-grid/g)||[]).length,16);
+ assert.equal((html.match(/cf-module-bar/g)||[]).length,16);
+ assert.equal((html.match(/Leitura orientada inicial/g)||[]).length,15);
+ assert.equal((html.match(/data-rlm-kind="recap"/g)||[]).length,14);
+ assert.ok(html.indexOf('Leitura orientada inicial')<html.indexOf('data-rlm-kind="recap"'));
+ assert.match(html,/O que aprender neste módulo/);
+ assert.match(html,/Revisão geral/);
 });
