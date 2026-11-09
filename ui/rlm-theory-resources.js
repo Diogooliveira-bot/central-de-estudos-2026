@@ -2,13 +2,19 @@
 (function(g){
 'use strict';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-// Tipografia matemática sem dependências: somente padrões inequívocos após escapar HTML.
-// O conteúdo original permanece imutável; MathML melhora frações e expoentes no leitor.
+// Fórmulas são texto, não código executável. Tipografar expoentes sem inserir
+// MathML no meio de palavras nem converter datas, horários e barras de proporção.
+// Nunca aplicar expressões regulares sobre HTML já construído.
 function mathText(value){
- return esc(value).replace(/(?<![a-zA-Z0-9_])(\d{1,3})\s*\/\s*(\d{1,3})(?![0-9\/])/g,(_,n,d)=>
-  '<math class="bc-rlm-math" aria-label="'+n+' sobre '+d+'"><mfrac><mn>'+n+'</mn><mn>'+d+'</mn></mfrac></math>')
- .replace(/(?<![a-zA-Z0-9_])([A-Za-z]|\d{1,4})\^(\d{1,2})(?!\d)/g,(_,base,power)=>
-  '<span class="bc-rlm-power" aria-label="'+base+' elevado a '+power+'">'+base+'<sup>'+power+'</sup></span>');
+ const source=String(value??'');
+ const exponent=/(?<![A-Za-z0-9_])([A-Za-z]|\d{1,6})\^([A-Za-z]|\d{1,2})(?![A-Za-z0-9_])/g;
+ let html='',last=0,m;
+ while((m=exponent.exec(source))){
+  html+=esc(source.slice(last,m.index));
+  html+='<span class="bc-rlm-power" aria-label="'+esc(m[1]+' elevado a '+m[2])+'">'+esc(m[1])+'<sup>'+esc(m[2])+'</sup></span>';
+  last=m.index+m[0].length;
+ }
+ return html+esc(source.slice(last));
 }
 
 function table(t){
