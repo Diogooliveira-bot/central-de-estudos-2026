@@ -16,6 +16,8 @@ function readJSON(key){try{return JSON.parse(localStorage.getItem(key)||'{}')||{
 function answers(id){return readJSON(PREFIX+'answers:'+id);}
 function saveAnswers(id,x){try{localStorage.setItem(PREFIX+'answers:'+id,JSON.stringify(x))}catch(e){console.warn('[RLM] Sem armazenamento local',e)}}
 function answered(id){return Object.keys(answers(id)).length;}
+function readProgress(id){try{return Math.max(0,Math.min(100,Number(localStorage.getItem(PREFIX+'read:'+id)||0)||0))}catch(_){return 0}}
+function writeReadProgress(id,pct){if(!id||id==='M01'||id==='RF')return;const value=Math.max(0,Math.min(100,Math.round(pct)));if(value<=readProgress(id))return;try{localStorage.setItem(PREFIX+'read:'+id,String(value))}catch(_){}}
 function isDone(id){return localStorage.getItem(markKey(id))==='1';}
 function result(id){
  const arr=lesson(id)?.questions||[],record=answers(id);
@@ -61,22 +63,22 @@ function card(m){
  const percent=done?100:p;
  const cards=m.id==='M01'?
   materialCard(m.id,'speed','Treino de velocidade','Seis treinos cronometrados, sem sair da Central.','⏱'):
-  materialCard(m.id,'theory','Aula','Teoria, exemplos resolvidos e revisão rápida com bizus.','📚')+
-  materialCard(m.id,'quiz','Questões','10 questões: clique na alternativa e veja a correção na hora.','✓')+
-  materialCard(m.id,'map','Mapa mental','Síntese visual com os ramos e conceitos do módulo.','🧠');
+  materialCard(m.id,'theory','Teoria completa','Conceitos, fórmulas e resoluções guiadas.','📖')+
+  materialCard(m.id,'recap','Revisão','Fórmulas, métodos e erros frequentes.','↺')+
+  materialCard(m.id,'quiz','Questões','Prática comentada com 10 questões.','✓')+
+  materialCard(m.id,'map','Mapa mental','Síntese visual do conteúdo.','▤');
  const sub=m.id==='M01'?'Treino de cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
  '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
  '<span class="cf-module-no">'+(m.id==='M01'?'MÓDULO 01':'MÓDULO '+Number(m.id.slice(1)))+'</span>'+
  '<span class="cf-module-title">'+esc(m.titulo)+'</span>'+
- '<span class="cf-module-stat">'+(done?'100%':p?p+'% prática':'0%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
+ '<span class="cf-module-stat">'+(done?'100%':p+'%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
  '<div class="cf-module-body ds-module-body"><div class="cf-subtitle">'+esc(sub)+'</div>'+
- '<section class="bc-native-materials bc-native-materials-static"><div class="bc-native-metrics">'+
- '<article class="bc-native-metric-card"><div class="bc-native-ring" style="--pct:'+percent+'"><div class="bc-native-ring-inner"><b>'+percent+'%</b><span>'+ (m.id==='M01'?'módulo':'atividade')+'</span></div></div>'+
- '<div class="bc-native-metric-copy"><small>'+ (m.id==='M01'?'CONCLUSÃO DO TREINO':'ACOMPANHAMENTO DO MÓDULO')+'</small>'+
- '<strong>'+ (done?'Módulo concluído':m.id==='M01'?'Treino disponível':result(m.id).count+' de 10 questões respondidas')+'</strong>'+
- '<span>'+ (m.id==='M01'?'Seu histórico e o cronômetro ficam salvos.':'O percentual da prática não substitui a conclusão manual do módulo.')+'</span></div></article></div>'+
- '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+esc(m.id)+'</small></div>'+
+ '<section class="bc-native-materials bc-native-materials-static">'+
+ (m.id==='M01'?'<p class="bc-rlm-stage-progress">Treino preservado · cronômetro e histórico do módulo</p>':
+  '<p class="bc-rlm-stage-progress"><span>Leitura '+readProgress(m.id)+'%</span><span>Prática '+result(m.id).count+'/10</span>'+
+  '<span>Acertos '+result(m.id).pct+'% das respondidas</span><span>'+(done?'Concluído':'Conclusão manual')+'</span></p>')+
+ '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha uma etapa</small></div></div>'+
  '<div class="bc-native-material-grid">'+cards+'</div></section>'+
  '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+
  'onchange="RlmNative.mark(\''+m.id+'\',this.checked)">Marcar módulo como concluído</label></div></section>';
@@ -102,8 +104,8 @@ function renderMaster(){
  ];
  const done=list.filter(m=>isDone(m.id)).length;
  return '<div class="bc-rlm-course" data-central-native-rlm="1"><section class="bc-rlm-intro ds-course-intro">'+
- '<span class="bc-rlm-kicker">Analista Judiciário · TJCE 2026 · Concursos</span>'+
- '<h3>Raciocínio Lógico-Matemático</h3><p>Aula, questões comentadas e mapa mental em cada módulo, com os filtros de questões do TEC e do QC.</p>'+
+ '<span class="bc-rlm-kicker">Base Completa · Preparação para concursos</span>'+
+ '<h3>Raciocínio Lógico-Matemático</h3><p>Teoria, revisão, questões comentadas e mapas mentais, com filtros de questões disponíveis no Premium.</p>'+
  '<div class="bc-rlm-stats"><span class="bc-rlm-stat"><strong>15</strong> módulos</span>'+
  '<span class="bc-rlm-stat"><strong>14</strong> apostilas</span><span class="bc-rlm-stat"><strong>140</strong> questões autorais</span>'+
  '<span class="bc-rlm-stat"><strong>'+done+'/15</strong> módulos concluídos</span></div>'+
@@ -141,14 +143,15 @@ function close(restoreFocus=true){
  active=null;
  if(restoreFocus&&lastFocus&&lastFocus.isConnected)lastFocus.focus();
 }
-function normStage(stage){return stage==='summary'||stage==='sources'?'quiz':stage;}
+function normStage(stage){return stage==='summary'||stage==='recap'?'recap':stage==='sources'?'quiz':stage;}
 function move(id){return open(id,id==='RF'?'review':id==='M01'?'speed':'theory');}
 /* Leitor RLM com o mesmo shell, índice lateral e ferramentas do leitor nativo de Penal. */
 function stageLabel(stage){
- return ({speed:'Treino de velocidade',theory:'Aula',quiz:'Questões',map:'Mapa mental',review:'Revisão final'})[stage]||'Material';
+ return ({speed:'Treino de velocidade',theory:'Teoria completa',recap:'Revisão',quiz:'Questões',map:'Mapa mental',review:'Revisão final'})[stage]||'Material';
 }
 function stageSections(stage){
- return stage==='theory'?'.bc-rlm-lesson,.bc-rlm-tips-block':
+ return stage==='theory'?'.bc-rlm-lesson':
+  stage==='recap'?'.bc-rlm-recap-item':
  stage==='quiz'?'.bc-rlm-quiz':
  stage==='map'?'.bc-rlm-map-node':
  stage==='review'?'.bc-rlm-quiz':'';
@@ -218,7 +221,7 @@ function renderOverlay(){
  const stage=active.stage;
  const previous=el('bcRlmScroll'),oldY=previous?.scrollTop||0;
  const links=active.id==='M01'?[]:active.id==='RF'?[]:[
- ['theory','Aula'],['quiz','Questões'],['map','Mapa mental']
+ ['theory','Teoria'],['recap','Revisão'],['quiz','Questões'],['map','Mapa mental']
  ];
  const actions=links.map(([kind,label])=>'<button type="button" class="bc-rlm-tool-tab'+(kind===stage?' active':'')+
  '" aria-pressed="'+(kind===stage)+'" onclick="RlmNative.tab(\''+kind+'\')">'+label+'</button>').join('');
@@ -262,14 +265,14 @@ function updateReadBar(){
 function tab(stage){
  if(!active)return;
  stage=normStage(stage);
- if(!['theory','quiz','map','review','speed'].includes(stage))return;
+ if(!['theory','recap','quiz','map','review','speed'].includes(stage))return;
  active.stage=stage;renderOverlay();el('bcRlmScroll').scrollTop=0;
 }
 function next(){
  if(!active)return;
  if(active.id==='M01')return open('M02','theory');
  if(active.id==='RF')return close();
- const order=['theory','quiz','map'],i=order.indexOf(active.stage);
+ const order=['theory','recap','quiz','map'],i=order.indexOf(active.stage);
  if(i<order.length-1)return tab(order[i+1]);
  const pos=manifest().findIndex(x=>x.id===active.id);
  return pos>=manifest().length-1?open('RF'):open(manifest()[pos+1].id);
@@ -280,18 +283,32 @@ function bodyFor(m,stage){
  const d=lesson(m.id);
  if(!d)return '<div class="bc-rlm-warn">Os dados deste módulo ainda não foram carregados. Volte à Central e atualize a página.</div>';
  if(stage==='theory')return theory(m,d);
+ if(stage==='recap')return recap(m,d);
  if(stage==='quiz')return quiz(m,d);
  if(stage==='map')return mindmap(m,d);
  return theory(m,d);
 }
 function title(txt,desc){return '<span class="bc-rlm-kicker">Base Completa · edição de estudos</span><h2>'+esc(txt)+'</h2><p class="bc-rlm-article-lead">'+esc(desc)+'</p>'}
 function theory(m,d){
- return title('Aula','Conceitos, métodos de resolução, exemplos guiados e recursos visuais. Abra as resoluções depois de tentar cada exemplo e use o índice para retomar um capítulo.')+
- d.theory.map((ch,i)=>'<section class="bc-rlm-lesson"><h3>'+String(i+1).padStart(2,'0')+' · '+esc(ch.title)+'</h3>'+
- (g.RlmTheoryResources?g.RlmTheoryResources.chapter(ch):ch.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'<details class="bc-rlm-example"><summary>Ver exemplo resolvido</summary><p>'+esc(ch.example)+'</p></details>')+'</section>').join('')+
- '<section class="bc-rlm-tips-block"><h3>Revisão rápida · bizus</h3><div class="bc-rlm-tips">'+d.summary.map((q,i)=>'<section class="bc-rlm-tip"><b>'+String(i+1).padStart(2,'0')+' · '+esc(q.title)+'</b><p>'+esc(q.text)+'</p><em><strong>BIZU: </strong>'+esc(q.bizu)+'</em></section>').join('')+'</div></section>'+
- (g.RlmTheoryResources?.references(d)||'')+
- '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'quiz\')">Resolver as questões →</button></div>';
+ return title('Teoria completa','Conceitos, cálculos e exemplos guiados organizados para leitura. A primeira resolução de cada capítulo está visível.')+
+  d.theory.map((ch,i)=>'<section class="bc-rlm-lesson"><h3>'+String(i+1).padStart(2,'0')+' · '+esc(ch.title)+'</h3>'+
+  (g.RlmTheoryResources?g.RlmTheoryResources.chapter(ch):ch.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join(''))+'</section>').join('')+
+  (g.RlmTheoryResources?.references(d)||'')+
+  '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'recap\')">Revisar fórmulas e métodos →</button></div>';
+}
+function recap(m,d){
+ const math=g.RlmTheoryResources?.mathText||esc;
+ return title('Revisão · '+m.titulo,'Conceitos essenciais, métodos de resolução e erros mais comuns. Consulte esta seção sempre que precisar rever um assunto.')+
+  '<div class="bc-rlm-recap">'+d.summary.map((item,i)=>{
+   const ch=d.theory[i]||{},method=(ch.method||[]).slice(0,3),tip=String(item.bizu||'').trim();
+   return '<section class="bc-rlm-recap-item"><h3>'+String(i+1).padStart(2,'0')+' · '+esc(item.title)+'</h3>'+
+    '<p>'+math(item.text)+'</p>'+
+    (method.length?'<h4>Método de resolução</h4><ol>'+method.map(step=>'<li>'+math(step)+'</li>').join('')+'</ol>':'')+
+    (tip?'<p class="bc-rlm-recap-tip"><strong>Para lembrar: </strong>'+math(tip)+'</p>':'')+
+    (ch.pitfall?'<p class="bc-rlm-recap-error"><strong>Evite este erro: </strong>'+math(ch.pitfall)+'</p>':'')+
+    '</section>';
+  }).join('')+'</div>'+
+  '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'quiz\')">Praticar com questões →</button></div>';
 }
 function quiz(m,d){
  return title('Questões','3 fáceis • 4 médias • 3 difíceis. Clique na alternativa: o gabarito e a explicação aparecem na hora.')+
