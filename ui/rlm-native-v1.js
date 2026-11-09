@@ -141,6 +141,7 @@ function close(restoreFocus=true){
  if(item){item.querySelector('iframe')?.remove();item.remove();}
  document.body.classList.remove('bc-rlm-open');
  active=null;
+ syncCentral();
  if(restoreFocus&&lastFocus&&lastFocus.isConnected)lastFocus.focus();
 }
 function normStage(stage){return stage==='summary'||stage==='recap'?'recap':stage==='sources'?'quiz':stage;}
@@ -174,6 +175,13 @@ function jump(i){
  target.scrollIntoView({behavior:'smooth',block:'start'});
  const buttons=el('bcRlmToc')?.querySelectorAll('button')||[];
  buttons.forEach(b=>b.classList.toggle('active',b.dataset.rlmJump===String(i)));
+ toggleToc(false);
+}
+function toggleToc(force){
+ const toc=el('bcRlmToc'),button=el('bcRlmIndexToggle');if(!toc||!button)return;
+ const opened=typeof force==='boolean'?force:!toc.classList.contains('open');
+ toc.classList.toggle('open',opened);button.setAttribute('aria-expanded',String(opened));
+ if(opened)toc.querySelector('button')?.focus();
 }
 function removeSearchMarks(){
  const root=el('bcRlmScroll');if(!root)return;
@@ -237,7 +245,8 @@ function renderOverlay(){
  '<span class="bc-rlm-search-meta" id="bcRlmSearchMeta" aria-live="polite"></span>'+
  '<button type="button" title="Diminuir fonte" onclick="RlmNative.setFont(-1)">A−</button>'+
  '<button type="button" title="Aumentar fonte" onclick="RlmNative.setFont(1)">A+</button>'+
- '<button type="button" onclick="RlmNative.top()">↑ Topo</button>'+
+ '<button type="button" onclick="RlmNative.top()">↑ Topo</button>'+ 
+ '<button type="button" id="bcRlmIndexToggle" class="bc-rlm-index-toggle" aria-expanded="false" aria-controls="bcRlmToc" onclick="RlmNative.toggleToc()">☰ Índice</button>'+
  (actions?'<span class="bc-rlm-tool-divider"></span>'+actions:'')+
  '</div>'+
  '<div class="bc-native-reader-body bc-rlm-reader-body"><nav class="bc-native-toc bc-rlm-toc" id="bcRlmToc" aria-label="Índice de capítulos"></nav>'+
@@ -259,7 +268,9 @@ function top(){el('bcRlmScroll')?.scrollTo({top:0,behavior:'smooth'})}
 function updateReadBar(){
  const node=el('bcRlmScroll'),bar=el('bcRlmReadBar');if(!node||!bar)return;
  const max=node.scrollHeight-node.clientHeight;
- bar.style.width=(max>0?Math.min(100,Math.round(node.scrollTop/max*100)):100)+'%';
+ const pct=max>0?Math.min(100,Math.round(node.scrollTop/max*100)):100;
+ bar.style.width=pct+'%';
+ if(active?.stage==='theory')writeReadProgress(active.id,pct);
 }
 
 function tab(stage){
@@ -390,7 +401,7 @@ function onKey(ev){
  }
 }
 document.addEventListener('keydown',onKey,true);
-g.RlmNative={renderMaster,open,close,tab,next,move,mark,stats,answer,speedReady,oldTarget,toggleModule,jump,search,setFont,top};
+g.RlmNative={renderMaster,open,close,tab,next,move,mark,stats,answer,speedReady,oldTarget,toggleModule,toggleToc,jump,search,setFont,top,readProgress};
 try{
  const prev=g.openEmbeddedTool;
  if(typeof prev==='function'){
