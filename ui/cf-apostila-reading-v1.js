@@ -10,9 +10,10 @@ const isRow=s=>/\S(?: {3,}|\t{2,})\S/.test(s);
 const isList=s=>/^[•▪]\s+/.test(s);
 function heading(s){
  if(/^\d+\.\d+(?:\.\d+)*\.?\s+\S/.test(s))return 3;
- if(/^(?:CAP[ÍI]TULO\s+\d+\b|PARTE\s+[IVX]+\b|\d+[.)]\s+\S|\d+\s+[A-ZÁÉÍÓÚÂÊÔÃÕÇ][A-ZÁÉÍÓÚÂÊÔÃÕÇ ]{3,})/i.test(s))return 2;
+ if(/^(?:CAP[ÍI]TULO\s+\d+\b|PARTE\s+[IVX]+\b|\d+[.)]\s+\S)/i.test(s))return 2;
+ if(/^\d+\s+[A-ZÁÉÍÓÚÂÊÔÃÕÇ][A-ZÁÉÍÓÚÂÊÔÃÕÇ ]{3,}/.test(s))return 2;
  if(/^(?:LEITURA ORIENTADA|PERCURSO DO M[ÓO]DULO|TR[ÊE]S SITUA[ÇC][ÕO]ES-PROBLEMA|CAMINHO DO INICIANTE E CAMINHO DO AVAN[ÇC]ADO|ROTEIRO DE ESTUDO|VIS[ÃA]O GERAL DO M[ÓO]DULO)$/i.test(s))return 2;
- if(s.length>6&&s.length<110&&/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9]/.test(s)&&s===s.toUpperCase()&&!/[.!?]$/.test(s))return 2;
+ if(s.length>6&&s.length<110&&/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9]/.test(s)&&s===s.toUpperCase()&&!/[.!?]$/.test(s))return 3;
  return 0;
 }
 const note=/^(Teste de compreens[ãa]o|Resposta comentada|Exemplo explicado|Caso explicado|Caso de compara[çc][ãa]o|Aprofundamento|Jurisprud[êe]ncia|Uso de jurisprud[êe]ncia|Aten[çc][ãa]o (?:[àa] atualiza[çc][ãa]o|[àa] desatualiza[çc][ãa]o)|Atualiza[çc][ãa]o importante|Erro comum|Pegadinha|Risco de erro|N[ãa]o confundir|Regra de bolso|Guarde o essencial|Memoriza[çc][ãa]o|Cai muito|Como estudar|Artigos para lembrar|Legitimados especiais|Exce[çc][ãa]o importante|Decreto aut[ôo]nomo|Qu[óo]runs|Aten[çc][ãa]o)\.\s*/i;
@@ -43,7 +44,7 @@ function lawList(n){
 }
 function render(raw,n){
  const lines=String(raw||'').replace(/\r/g,'').split('\n');
- let output='',buffer=[],rows=[],list=[],started=false;
+ let output='',buffer=[],rows=[],list=[],started=false,outline=false,seenParts=new Set();
  const flushText=()=>{if(!buffer.length)return;const s=buffer.join(' ').replace(/\s+/g,' ').trim();buffer=[];if(!s)return;
   if(n>=8&&!started&&/^Esta apostila reescreve o texto original do m[óo]dulo CF M\d+/i.test(s)){started=true;return}
   started=true;output+=paragraph(s);
@@ -65,6 +66,14 @@ function render(raw,n){
   flushRows();
   if(isList(s)){flushText();list.push(s.replace(/^[•▪]\s+/,''));continue;}
   flushList();
+  if(/^PERCURSO DO M[ÓO]DULO$/i.test(s))outline=true;
+  if(outline&&/^\d+[.)]\s+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-zàâãéêíóôõúç]/.test(s)){
+   flushText();output+='<p class="cf-apostila-outline">'+escape(s)+'</p>';continue;
+  }
+  if(/^CAP[ÍI]TULO\s+\d+\b/i.test(s)||/^\d+[.)]\s+[A-ZÁÉÍÓÚÂÊÔÃÕÇ]{3}/.test(s))outline=false;
+  if(/^PARTE\s+[IVX]+\b/i.test(s)){
+   flushText();const key=simple(s);if(seenParts.has(key))continue;seenParts.add(key);
+  }
   const level=heading(s);
   if(level){flushText();output+='<h'+level+'>'+escape(s)+'</h'+level+'>';continue;}
   buffer.push(s);
