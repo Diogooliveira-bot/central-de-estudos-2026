@@ -29,6 +29,7 @@ import handlePrivateContent from '../lib/private-content-handler.js';
 import handleHotmartWebhook from '../lib/hotmart-webhook.js';
 import handleHotmartClaim from '../lib/hotmart-claim-handler.js';
 import handlePremiumExpiryReminders from '../lib/premium-expiry-reminders.js';
+import handleStudyCommunication from '../lib/study-communication.js';
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -183,6 +184,7 @@ export default async function handler(req, res) {
     const premiumApi = String(req.query?.bc_api || '').toLowerCase();
     if (premiumApi === 'hotmart-webhook') return await handleHotmartWebhook(req, res);
     if (premiumApi === 'premium-expiry-reminders') return await handlePremiumExpiryReminders(req, res);
+    if (premiumApi === 'study-communication') return await handleStudyCommunication(req, res);
     if (premiumApi === 'hotmart-claim') return await handleHotmartClaim(req, res);
     if (premiumApi === 'plans') return await handlePlans(req, res);
     if (premiumApi === 'private-content') return await handlePrivateContent(req, res);
