@@ -8,6 +8,10 @@
   },
   "rewrites": [
     {
+      "source": "/api/study-communication",
+      "destination": "/api/auth?bc_api=study-communication"
+    },
+    {
       "source": "/api/premium-expiry-reminders",
       "destination": "/api/auth?bc_api=premium-expiry-reminders"
     },
