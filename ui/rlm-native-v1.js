@@ -53,7 +53,7 @@ function toggleModule(id){
 }
 function materialCard(id,stage,label,description,icon){
  const action=stage==='theory'?'Estudar conteúdo':stage==='recap'?'Revisar conteúdo':
-  stage==='quiz'?'Resolver questões':stage==='map'?'Visualizar mapa':
+  stage==='quiz'?'Resolver questões':stage==='banca'?'Ver disponibilidade':stage==='map'?'Visualizar mapa':
   stage==='exam'?'Iniciar simulado':stage==='errors'?'Revisar erros':
   stage==='review'?'Praticar questões':'Iniciar treino';
  return '<article class="cf-study-card bc-rlm-study-card bc-rlm-study-'+stage+'">'+
@@ -84,7 +84,8 @@ function card(m){
   materialCard(m.id,'recap','Versão de revisão','Fórmulas, métodos e erros frequentes.','↺')+
   materialCard(m.id,'theory','Teoria completa','Conceitos, fórmulas e resoluções guiadas.','📖')+
   materialCard(m.id,'map','Mapa mental','Síntese visual do conteúdo.','▤')+
-  materialCard(m.id,'quiz','Questões de fixação','Prática comentada com 10 questões.','✓');
+  materialCard(m.id,'quiz','10 questões autorais','Exercícios da versão resumida.','✓')+
+  materialCard(m.id,'banca','10 questões de bancas reais','Em breve.','▤');
  const sub=m.id==='M01'?'Treino de cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
   '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
@@ -152,6 +153,7 @@ function oldTarget(value){
 function open(id='M02',stage='theory'){
  const m=id==='RF'?{id:'RF',titulo:'Revisão cumulativa'}:mod(id);
  if(!m)return false;
+ if(stage==='banca')return g.CentralInternalQuestionPolicy?.modal('Raciocínio Lógico-Matemático',m.titulo);
  close(false);
  lastFocus=document.activeElement;
  active={id,stage:id==='M01'?'speed':id==='RF'?(stage==='exam'||stage==='errors'?stage:'review'):normStage(stage)};
@@ -355,7 +357,7 @@ function recap(m,d){
   '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'quiz\')">Praticar com questões →</button></div>';
 }
 function quiz(m,d){
- return title('Questões','3 fáceis • 4 médias • 3 difíceis. Clique na alternativa: o gabarito e a explicação aparecem na hora.')+
+ return title('10 questões autorais','Versão resumida · 3 fáceis, 4 médias e 3 difíceis. Clique na alternativa para conferir o comentário.')+
  '<div class="bc-rlm-scores" id="bcRlmScore">'+scoreHtml(m.id)+'</div>'+
  d.questions.map((q,i)=>cardQuestion(m.id,q,i)).join('')+
  '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'map\')">Abrir mapa mental →</button></div>';
