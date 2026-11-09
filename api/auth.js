@@ -31,6 +31,42 @@ import handleHotmartClaim from '../lib/hotmart-claim-handler.js';
 import handlePremiumExpiryReminders from '../lib/premium-expiry-reminders.js';
 import handleStudyCommunication from '../lib/study-communication.js';
 
+const PREVIEW_DEMO_BRANCH = 'feature/contato-relatorio-aluno-20261109';
+const PREVIEW_DEMO_ID = 'bc-preview-demo-20261109';
+const PREVIEW_DEMO_EMAIL = 'aluno-demo@basecompleta.invalid';
+
+function previewDemoEnabled() {
+  return process.env.VERCEL_ENV === 'preview' &&
+    process.env.VERCEL_GIT_COMMIT_REF === PREVIEW_DEMO_BRANCH &&
+    process.env.BC_PREVIEW_NEON_GUARD === 'YES' &&
+    process.env.BC_PREVIEW_DEMO_ENABLED === 'YES';
+}
+
+async function startPreviewDemo(res) {
+  if (!previewDemoEnabled()) return send(res, 404, { error: 'Demonstração indisponível' });
+  // database() enforces the pinned Neon TEST host before any SQL.
+  const sql = database();
+  await ensureUsersTable(sql);
+  const passwordHash = hashPassword(crypto.randomBytes(32).toString('hex'));
+  await sql`
+    INSERT INTO central_users(user_id,name,email,role,password_hash,active)
+    VALUES(${PREVIEW_DEMO_ID},'Aluno de demonstração',${PREVIEW_DEMO_EMAIL},'aluno',${passwordHash},TRUE)
+    ON CONFLICT(user_id) DO NOTHING
+  `;
+  const rows = await sql`
+    SELECT user_id,name,email,role,active,session_version,created_at,updated_at,last_login
+    FROM central_users
+    WHERE user_id=${PREVIEW_DEMO_ID} AND LOWER(email)=${PREVIEW_DEMO_EMAIL}
+      AND role='aluno' AND active=TRUE
+    LIMIT 1
+  `;
+  if (!rows.length) return send(res, 409, { error: 'Conta demonstrativa indisponível' });
+  const ttl = 60 * 60;
+  const token = createSessionToken(rows[0], ttl);
+  return send(res, 200, { ok: true, previewDemo: true, user: publicUser(rows[0]) },
+    { 'Set-Cookie': sessionCookie(token, ttl) });
+}
+
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -89,7 +125,7 @@ async function currentUser(req, res) {
   }
   const session = await requireSession(req);
   if (!session.ok) return send(res, 200, { authenticated: false });
-  return send(res, 200, { authenticated: true, user: session.user });
+  return send(res, 200, { authenticated: true, previewDemo: previewDemoEnabled() && session.user.id===PREVIEW_DEMO_ID, user: session.user });
 }
 
 async function login(req, res) {
@@ -206,6 +242,8 @@ export default async function handler(req, res) {
     if (action.startsWith('invite-')) return await handleInviteAction(req, res, action.slice('invite-'.length));
     if (action.startsWith('password-reset-')) return await handlePasswordReset(req, res, action.slice('password-reset-'.length));
 
+    if (req.method === 'GET' && action === 'preview-demo-status') return send(res, 200, { enabled: previewDemoEnabled() });
+    if (req.method === 'POST' && action === 'preview-demo-start') return await startPreviewDemo(res);
     if (req.method === 'GET' && action === 'me') return await currentUser(req, res);
     if (req.method === 'GET' && action === 'bootstrap-status') return await bootstrapStatus(res);
 
