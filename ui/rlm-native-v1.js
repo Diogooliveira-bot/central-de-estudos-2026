@@ -144,7 +144,7 @@ function close(restoreFocus=true){
  syncCentral();
  if(restoreFocus&&lastFocus&&lastFocus.isConnected)lastFocus.focus();
 }
-function normStage(stage){return stage==='summary'||stage==='recap'?'recap':stage==='sources'?'quiz':stage;}
+function normStage(stage){return stage==='recap'?'recap':stage==='summary'||stage==='sources'?'quiz':stage;}
 function move(id){return open(id,id==='RF'?'review':id==='M01'?'speed':'theory');}
 /* Leitor RLM com o mesmo shell, índice lateral e ferramentas do leitor nativo de Penal. */
 function stageLabel(stage){
