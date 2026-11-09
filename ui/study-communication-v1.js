@@ -29,7 +29,7 @@
         }
         const pct=clamp(value);
         if (pct===100) done++; else if (pct>0) underway++; else pending++;
-        return {title:String(m.title||m.name||('Módulo '+(index+1))).replace(/^\\d+\\s*[-–]?\\s*/,''),pct};
+        return {title:String(m.title||m.name||('Módulo '+(index+1))).replace(/^\d+\s*[-–]?\s*/,''),pct};
       });
       const pct=modules.length ? Math.round(modules.reduce((sum,m)=>sum+m.pct,0)/modules.length) : 0;
       return {id:s.id,name:String(s.name||s.id),pct,modules};
@@ -57,7 +57,7 @@
       if (focus.length>12) lines.push('E mais '+(focus.length-12)+' módulos sem conclusão registrada.');
     }
     lines.push('','0% significa falta de registro na plataforma, não ausência de estudo fora dela.');
-    return lines.join('\\n');
+    return lines.join('\n');
   }
 
   function setStatus(message,error=false) {
