@@ -159,6 +159,52 @@ export default async function handler(req,res) {
       const updated=await sql`UPDATE central_student_support_tickets SET status=${status},updated_at=NOW() WHERE ticket_id=${id} RETURNING ticket_id`;
       return respond(res,updated.length?200:404,updated.length?{ok:true}:{error:'Mensagem não encontrada'});
     }
+    if (action==='admin-report-email') {
+      if (session.user.role!=='admin') return respond(res,403,{error:'Acesso administrativo necessário'});
+      const studentId=clean(body.userId,64);
+      if (!/^[a-f0-9-]{36}$/i.test(studentId)) return respond(res,400,{error:'Aluno inválido'});
+      const cfg=emailConfig();
+      if (!cfg) return respond(res,503,{error:'Envio de e-mail não configurado'});
+      const rows=await sql`
+        SELECT u.name,u.email,p.disciplines,p.modules,p.questions,p.study_seconds
+        FROM central_users u
+        LEFT JOIN central_user_progress_summary p ON p.user_id=u.user_id
+        WHERE u.user_id=${studentId} AND u.role='aluno' AND u.active=TRUE LIMIT 1
+      `;
+      if (!rows.length) return respond(res,404,{error:'Aluno ativo não encontrado'});
+      const row=rows[0], stored=Array.isArray(row.disciplines)?row.disciplines:[];
+      const modules=Array.isArray(row.modules)?row.modules:[];
+      if (!modules.length) return respond(res,409,{error:'O aluno ainda não sincronizou o progresso por módulo.'});
+      const grouped=stored.map(d=>({id:String(d.id||''),name:String(d.name||''),pct:d.pct,modules:[]}));
+      for (const m of modules) {
+        const group=grouped.find(d=>d.id===String(m.subjectId||''));
+        if (group) group.modules.push({title:m.name,pct:m.pct});
+      }
+      const report=safeReport({disciplines:grouped,questions:row.questions,studySeconds:row.study_seconds});
+      const id=crypto.randomUUID();
+      const reserved=await sql`
+        INSERT INTO central_study_report_delivery(delivery_id,user_id,status)
+        SELECT ${id},${studentId},'sending'
+        WHERE (SELECT COUNT(*) FROM central_study_report_delivery
+               WHERE user_id=${studentId} AND created_at>NOW()-INTERVAL '1 day')<3
+          AND NOT EXISTS (
+            SELECT 1 FROM central_study_report_delivery
+            WHERE user_id=${studentId} AND created_at>NOW()-INTERVAL '5 minutes'
+          )
+        RETURNING delivery_id
+      `;
+      if (!reserved.length) return respond(res,429,{error:'Aguarde cinco minutos entre envios (limite de três por aluno/dia).'});
+      try {
+        const mail=reportMessage({name:row.name},report);
+        await deliverViaGmail({from:cfg.from,to:row.email,...mail,messageId:'<'+id+'@basecompleta.local>'},cfg);
+        await sql`UPDATE central_study_report_delivery SET status='sent',completed_at=NOW() WHERE delivery_id=${id}`;
+        return respond(res,200,{ok:true,email:row.email});
+      } catch(e) {
+        await sql`UPDATE central_study_report_delivery SET status='failed',completed_at=NOW() WHERE delivery_id=${id}`;
+        console.warn('admin study report failed',String(e?.code||e?.name||'ERROR').slice(0,24));
+        return respond(res,503,{error:'Não foi possível enviar o relatório agora'});
+      }
+    }
     if (action==='report-email') {
       const cfg=emailConfig();
       if (!cfg) return respond(res,503,{error:'Envio por e-mail ainda não configurado no servidor.'});
