@@ -38,7 +38,7 @@ test('interface mostra guia e mantém ações de leitura e questões', () => {
   }
   assert.ok(ui.includes('learningGuide(w)'), 'Guia precisa estar vinculado aos módulos');
   assert.ok(ui.includes('toggleLegacyReading'), 'Marcação de leitura preservada');
-  assert.ok(ui.includes('Resolver 10 questões') && ui.includes('Resolver 5 questões'), 'Exercícios preservados');
+  assert.ok(ui.includes('Resolver 10 questões') && ui.includes('Resolver 10 questões autorais'), 'Bateria autoral de 10 exercícios preservada');
   for (const name of ['cf-weeks-001.js', 'cf-weeks-002.js', 'cf-weeks-003.js', 'cf-native-study-v2.js']) {
     assert.ok(html.includes(`${name}?v=${name === 'cf-native-study-v2.js' ? '20261106ordem1' : '20261101cfguide1'}`), `Cache não renovado: ${name}`);
   }
