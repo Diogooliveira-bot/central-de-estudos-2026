@@ -1,0 +1,14 @@
+/* Baterias internas: resumo com 10 questões autorais; completa com 10 oficiais futuras. */
+.bc-bank-pending-overlay{position:fixed;inset:0;z-index:2147483300;background:#12263ecc;display:flex;align-items:center;justify-content:center;padding:17px}
+.bc-bank-pending-dialog{width:min(560px,100%);max-height:90vh;overflow:auto;background:#fff;color:#233c52;border-radius:12px;box-shadow:0 16px 60px #0b264e35}
+.bc-bank-pending-dialog header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;border-bottom:1px solid #e2eaf1}
+.bc-bank-pending-dialog header b{display:block;color:#143a5d;font-size:16px}
+.bc-bank-pending-dialog header small{display:block;color:#668195;font-size:12px;margin-top:5px}
+.bc-bank-pending-dialog header button{background:#fff;border:1px solid #cfdae5;border-radius:7px;color:#294760;font-size:20px;padding:6px 12px;cursor:pointer}
+.bc-bank-pending{padding:27px 24px 22px;font:400 15px/1.72 Inter,system-ui,sans-serif;color:#34556b}
+.bc-bank-pending-label{display:inline-block;font:700 11px/1.4 Inter,system-ui,sans-serif;letter-spacing:.065em;color:#527f9b}
+.bc-bank-pending h2{font:740 25px/1.28 Inter,system-ui,sans-serif;color:#173958;margin:13px 0}
+.bc-bank-pending p{margin:13px 0;max-width:55ch}
+.bc-bank-pending-dialog footer{padding:0 24px 24px}
+.bc-bank-pending-dialog footer button{background:#e7f2f9;border:1px solid #cee3ee;border-radius:7px;padding:11px 16px;color:#214f70;font:700 13px Inter,system-ui,sans-serif;cursor:pointer}
+@media(max-width:600px){.bc-bank-pending-dialog header{padding:15px}.bc-bank-pending{padding:20px 16px 15px}.bc-bank-pending h2{font-size:21px}.bc-bank-pending-dialog footer{padding:0 16px 16px}}
