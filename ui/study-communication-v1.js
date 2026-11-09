@@ -295,17 +295,44 @@
     layer.querySelector('#bcCommPhoneForm')?.addEventListener('submit',saveWhatsappNumber);
 
     function addNavigation() {
-      const nav=document.querySelector('#centralSidebar .nav,#centralSidebar nav,aside .nav');
-      if (nav) {
-        for (const [id,title,tab,icon] of [
-          ['bcStudyReportNav','Meu relatório','report','▤'],
-          ['bcStudySupportNav','Fale conosco','support','✉']
+      const modern = document.documentElement.classList.contains('student-experience-v3');
+      const more = document.querySelector('#studentMorePanel .student-more-grid');
+      // V3 hides every unregistered direct navigation child. Expose the tools
+      // in the existing Mais panel instead of adding invisible sidebar entries.
+      if (modern && more) {
+        document.getElementById('bcStudyReportNav')?.remove();
+        document.getElementById('bcStudySupportNav')?.remove();
+        for (const [id,title,subtitle,tab,icon] of [
+          ['bcStudyReportMore','Meu relatório','Módulos e progresso','report','▤'],
+          ['bcStudySupportMore','Fale conosco','Dúvidas e atendimento','support','✉']
         ]) {
           if (document.getElementById(id)) continue;
-          const a=document.createElement('button');a.id=id;a.type='button';a.className='bc-auth-nav-link';
-          a.innerHTML='<span class="nav-icon" aria-hidden="true">'+icon+'</span><span class="nav-text">'+title+'</span>';
-          a.addEventListener('click',()=>open(tab));
-          nav.insertBefore(a,nav.querySelector('#bcLogoutNav'));
+          const button=document.createElement('button');
+          button.id=id;button.type='button';
+          button.innerHTML='<span aria-hidden="true">'+icon+'</span><span><b>'+title+'</b><small>'+subtitle+'</small></span>';
+          button.addEventListener('click',()=>{
+            const panel=document.getElementById('studentMorePanel');
+            if(panel) panel.hidden=true;
+            document.documentElement.classList.remove('student-more-open');
+            const trigger=document.getElementById('studentMoreButton');
+            trigger?.setAttribute('aria-expanded','false');
+            open(tab);
+          });
+          more.insertBefore(button,more.querySelector('[data-student-more-action="logout"]'));
+        }
+      } else if (!modern) {
+        const nav=document.querySelector('#centralSidebar .nav,#centralSidebar nav,aside .nav');
+        if (nav) {
+          for (const [id,title,tab,icon] of [
+            ['bcStudyReportNav','Meu relatório','report','▤'],
+            ['bcStudySupportNav','Fale conosco','support','✉']
+          ]) {
+            if (document.getElementById(id)) continue;
+            const button=document.createElement('button');button.id=id;button.type='button';button.className='bc-auth-nav-link';
+            button.innerHTML='<span class="nav-icon" aria-hidden="true">'+icon+'</span><span class="nav-text">'+title+'</span>';
+            button.addEventListener('click',()=>open(tab));
+            nav.appendChild(button);
+          }
         }
       }
       const perf=document.getElementById('performanceView');
