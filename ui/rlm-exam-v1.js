@@ -7,6 +7,7 @@
 if(g.RlmExam)return;
 const KEY='central-v6:rlm-tjce2026:exam:v1';
 const OLD='central-v6:rlm-tjce2026:answers:';
+const REVIEWED='central-v6:rlm-tjce2026:reviewed-errors:v1';
 const ESC=v=>String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const letters=['A','B','C','D','E'];
 function read(key){try{const x=JSON.parse(localStorage.getItem(key)||'{}');return x&&typeof x==='object'&&!Array.isArray(x)?x:{}}catch(_){return {}}}
@@ -88,6 +89,12 @@ function renderExam(){
   ' onclick="RlmExam.submit()">Entregar e corrigir simulado</button></div>';
  return heading+top+questions+footer;
 }
+function markReviewed(id,index){
+ if(!question(id,index))return;
+ const past=read(REVIEWED);past[itemKey(id,index)]=Date.now();
+ try{localStorage.setItem(REVIEWED,JSON.stringify(past))}catch(_){return}
+ g.RlmNative?.refreshBody?.();
+}
 function mistakes(){
  const result=new Map(),add=(id,index,choice,source)=>{
   const q=question(id,index);if(!q||!validChoice(choice)||choice===q.answer)return;
@@ -103,7 +110,9 @@ function mistakes(){
  const exam=data(),last=exam.last;
  for(const [id,index] of spec())add(id,index,exam.errors?.[itemKey(id,index)],'Simulado');
  if(last)for(const [id,index] of spec())add(id,index,last.answers?.[itemKey(id,index)],'Simulado');
- return [...result.values()].sort((a,b)=>Number(a.id.slice(1))-Number(b.id.slice(1))||a.index-b.index);
+ const reviewed=read(REVIEWED);
+ return [...result.values()].filter(x=>!reviewed[itemKey(x.id,x.index)])
+  .sort((a,b)=>Number(a.id.slice(1))-Number(b.id.slice(1))||a.index-b.index);
 }
 function renderErrors(){
  const items=mistakes();
@@ -117,7 +126,8 @@ function renderErrors(){
   '<p><strong>Resposta correta:</strong> '+letters[q.answer]+' — '+ESC(q.options[q.answer])+'</p>'+
   '<p class="bc-rlm-error-explanation">'+ESC(q.explanation)+'</p>'+
   '<small>Origem: '+ESC(sources.join(', '))+'</small>'+
-  '<div class="bc-rlm-module-next"><button class="bc-rlm-btn" type="button" onclick="RlmNative.open(\''+id+'\',\'quiz\')">Abrir módulo '+id+'</button></div></section>').join('');
+  '<div class="bc-rlm-module-next"><button class="bc-rlm-btn" type="button" onclick="RlmNative.open(\''+id+'\',\'quiz\')">Abrir módulo '+id+'</button>'+ 
+ '<button class="bc-rlm-btn" type="button" onclick="RlmExam.markReviewed(\''+id+'\','+index+')">Marcar como revisado</button></div></section>').join('');
 }
-g.RlmExam=Object.freeze({renderExam,renderErrors,select,submit,retry,summary,mistakes});
+g.RlmExam=Object.freeze({renderExam,renderErrors,select,submit,retry,summary,mistakes,markReviewed});
 })(window);
