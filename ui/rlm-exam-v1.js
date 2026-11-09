@@ -14,7 +14,8 @@ function data(){
  const d=read(KEY);
  return {draft:d.draft&&typeof d.draft==='object'&&!Array.isArray(d.draft)?d.draft:{},
   last:d.last&&typeof d.last==='object'?d.last:null,
-  attempts:Array.isArray(d.attempts)?d.attempts.slice(-10):[]};
+  attempts:Array.isArray(d.attempts)?d.attempts.slice(-10):[],
+  errors:d.errors&&typeof d.errors==='object'&&!Array.isArray(d.errors)?d.errors:{}};
 }
 function save(value){try{localStorage.setItem(KEY,JSON.stringify(value));return true}catch(_){return false}}
 function spec(){return g.RlmNative?.reviewSpec||[]}
@@ -43,6 +44,12 @@ function submit(){
  const score=counts(d.draft);if(!score.answered)return;
  if(score.answered<score.total&&typeof g.confirm==='function'&&!g.confirm('Existem questões em branco. Elas contam como incorretas. Entregar assim mesmo?'))return;
  const last={answers:{...d.draft},correct:score.correct,answered:score.answered,total:score.total,endedAt:new Date().toISOString()};
+ for(const [id,index] of spec()){
+  const q=question(id,index),choice=d.draft[itemKey(id,index)];
+  if(!q||!validChoice(choice))continue;
+  if(choice===q.answer)delete d.errors[itemKey(id,index)];
+  else d.errors[itemKey(id,index)]=choice;
+ }
  d.last=last;d.attempts=[...d.attempts,{correct:last.correct,answered:last.answered,total:last.total,endedAt:last.endedAt}].slice(-10);d.draft={};
  if(save(d))g.RlmNative?.refreshBody?.();
 }
@@ -93,7 +100,8 @@ function mistakes(){
   q.forEach((_,index)=>add(id,index,saved[String(index)],'Questões do módulo'));
  }
  const practice=read(OLD+'RF');for(const [id,index] of spec())add(id,index,practice['R'+id+'-'+index],'Revisão final');
- const last=data().last;
+ const exam=data(),last=exam.last;
+ for(const [id,index] of spec())add(id,index,exam.errors?.[itemKey(id,index)],'Simulado');
  if(last)for(const [id,index] of spec())add(id,index,last.answers?.[itemKey(id,index)],'Simulado');
  return [...result.values()].sort((a,b)=>Number(a.id.slice(1))-Number(b.id.slice(1))||a.index-b.index);
 }
