@@ -57,7 +57,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 294–311",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Helena depende de um medicamento que seu plano de saúde se recusa a fornecer. A ação pode durar meses, mas a falta do tratamento pode prejudicá-la agora. Como o juiz protege o direito sem decidir definitivamente a causa antes de ouvir todos?",
+      "steps": [
+        [
+          "A demora pode transformar a vitória em derrota",
+          [
+            "Imagine Helena vencer a ação daqui a um ano, quando o tratamento já não tiver utilidade. Nesse caso, a sentença favorável pode chegar tarde. A tutela provisória existe para proteger a efetividade do processo antes da decisão final, quando a lei autoriza.",
+            "Mas a urgência, sozinha, não prova que Helena tem direito. O juiz precisa examinar os elementos disponíveis e a finalidade da medida. Assim surge a distinção entre proteger algo para o futuro e entregar provisoriamente o próprio resultado pretendido."
+          ],
+          "Pergunta: a tutela provisória substitui automaticamente a sentença final?",
+          "Não. Ela é concedida em caráter provisório e sujeita à disciplina legal de modificação ou revogação."
+        ],
+        [
+          "Quais perguntas o juiz deve fazer?",
+          [
+            "Primeiro: existem elementos que indiquem a probabilidade do direito de Helena? Segundo: esperar a decisão final representa perigo de dano ou risco ao resultado útil? O art. 300 exige essa combinação para tutela de urgência.",
+            "Depois vem outra pergunta: o que a medida deve fazer? Mandar fornecer o medicamento agora antecipa uma utilidade e caracteriza tutela antecipada. Bloquear a alienação de bem necessário a futura satisfação preserva o resultado e caracteriza tutela cautelar."
+          ],
+          "Pergunta: cautelar e antecipada têm exatamente a mesma finalidade?",
+          "Não. A cautelar conserva; a antecipada satisfaz provisoriamente."
+        ],
+        [
+          "Por que a forma do pedido importa?",
+          [
+            "Helena pode ajuizar ação completa e pedir proteção incidental; se a urgência coincidir com o ajuizamento, a lei admite procedimentos antecedentes, com exigências específicas para completar a demanda.",
+            "A estabilização prevista nos arts. 303–304 é vinculada à tutela antecipada antecedente, quando presentes os requisitos legais. Isso não significa coisa julgada material. A cautelar antecedente segue outro percurso e exige formulação do pedido principal no prazo legal após efetivação."
+          ],
+          "Pergunta: qualquer decisão provisória que não receba recurso vira coisa julgada?",
+          "Não. Estabilização tem regime próprio e não se confunde com coisa julgada material."
+        ],
+        [
+          "E se não houver urgência, mas o direito for evidente?",
+          [
+            "Suponha outro caso: documentos claros demonstram a obrigação e a controvérsia se enquadra nas hipóteses legais do art. 311. A tutela da evidência permite proteção provisória sem exigir perigo de dano. Isso não quer dizer que qualquer documentação basta: o CPC enumera situações específicas.",
+            "A possibilidade de decisão liminar também é restrita no art. 311. O aluno precisa separar fundamento da proteção — urgência ou evidência — do momento e da forma em que o juiz pode concedê-la."
+          ],
+          "Pergunta: tutela da evidência sempre exige comprovação de perigo?",
+          "Não. A dispensa do perigo é justamente uma de suas características, observadas as hipóteses legais."
+        ],
+        [
+          "Resolva o caso antes de decorar",
+          [
+            "Retorne a Helena: a prova inicial indica cobertura e necessidade do medicamento; o atraso pode agravar sua situação. O raciocínio é identificar probabilidade, risco e finalidade satisfativa, e só então escolher a tutela adequada.",
+            "Se a questão mudar o fato — por exemplo, não há risco temporal, mas existe hipótese qualificada de evidência —, a resposta pode mudar. O importante é não confundir medidas cautelares, antecipadas, de evidência e julgamento definitivo."
+          ],
+          "Pergunta: qual é a sequência que reduz erros?",
+          "Direito provável → risco da espera ou hipótese de evidência → finalidade da medida → procedimento e limites legais."
+        ]
+      ],
+      "conclusion": "A tutela provisória é resposta ao tempo do processo, não atalho indiscriminado para vencer a causa. O tipo de proteção nasce da necessidade concreta."
+    }
   },
   "10": {
     "title": "Formação do processo, petição inicial e audiência",
@@ -116,7 +167,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 312–334",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Roberto pagou por uma reforma que não foi concluída e deseja processar a empresa. Ele sabe que foi prejudicado, mas não sabe como transformar essa história em um pedido que o juiz possa analisar. O que deve acontecer até a primeira resposta do réu?",
+      "steps": [
+        [
+          "O conflito precisa virar uma demanda compreensível",
+          [
+            "O processo começa com a petição inicial, apresentada ao Judiciário. Roberto precisa explicar quem é a empresa, quais fatos ocorreram, por que pede tutela judicial e que resultado pretende obter. O art. 319 transforma essas informações em requisitos processuais.",
+            "Protocolar a inicial considera a ação proposta, mas não significa que o réu já participou nem que o juiz acolherá o pedido. Ainda será preciso verificar a regularidade da demanda e garantir defesa."
+          ],
+          "Pergunta: a ação só é proposta quando a empresa é citada?",
+          "Não. A propositura ocorre com o protocolo; a citação tem efeitos próprios."
+        ],
+        [
+          "O pedido precisa dizer o que Roberto quer",
+          [
+            "Ele poderia pedir conclusão do serviço, restituição de valor ou indenização, conforme os fatos e o direito aplicável. O pedido deve permitir identificar a providência e o objeto, observadas exceções legais. É por isso que a lei distingue pedidos certos, determinados, alternativos e subsidiários.",
+            "Não é suficiente dizer genericamente 'quero Justiça'. O juiz não deve adivinhar a tutela pretendida. A clareza também permite que a empresa saiba exatamente o que terá de contestar."
+          ],
+          "Pergunta: pedido certo e pedido determinado são termos perfeitamente iguais?",
+          "Não. Um se refere à identificação da tutela; o outro, à delimitação de seu objeto."
+        ],
+        [
+          "E se a petição vier incompleta?",
+          [
+            "Imagine que Roberto esqueça documento indispensável ou descreva o pedido de maneira contraditória. Antes de indeferir por defeito sanável, o juiz deve indicar o problema e oportunizar emenda conforme o art. 321.",
+            "A razão é simples: se o erro pode ser corrigido, o sistema prefere que a controvérsia seja examinada no mérito, sem desperdiçar o processo. O indeferimento da petição inicial trata de falhas processuais; já a improcedência liminar do art. 332 é julgamento de mérito em hipóteses legais."
+          ],
+          "Pergunta: indeferir a inicial por inépcia é julgar que Roberto não sofreu dano?",
+          "Não. Em regra, o obstáculo é processual, não decisão sobre a existência do prejuízo."
+        ],
+        [
+          "Depois disso, o juiz chama as partes ao diálogo",
+          [
+            "Se a inicial está apta e não cabe improcedência liminar, pode haver audiência de conciliação ou mediação segundo o art. 334. A ideia é oferecer chance de acordo antes de aprofundar o conflito. A realização e a dispensa dependem das situações previstas em lei.",
+            "A citação leva a empresa ao processo. O marco inicial do prazo da contestação dependerá da audiência ou das outras hipóteses do art. 335, e não de uma regra única baseada apenas no protocolo."
+          ],
+          "Pergunta: apenas o réu não querer conciliar basta, por si só, para cancelar toda audiência?",
+          "Não. Deve ser observada a hipótese legal aplicável."
+        ],
+        [
+          "Como o procedimento pode parar ou terminar?",
+          [
+            "O processo às vezes precisa aguardar evento previsto em lei: isso é suspensão, uma pausa temporária. A extinção encerra o processo por sentença, com ou sem exame do mérito conforme a causa. Os conceitos resolvem perguntas diferentes.",
+            "No caso de Roberto, o roteiro é: formular a inicial → corrigir eventual defeito → verificar hipótese de julgamento imediato ou audiência → citar a empresa → receber sua resposta. Só depois faz sentido aprofundar defesa e provas."
+          ],
+          "Pergunta: suspensão e extinção significam a mesma coisa?",
+          "Não. A primeira interrompe temporariamente o andamento; a segunda encerra o processo."
+        ]
+      ],
+      "conclusion": "A petição inicial não é uma coleção de formalidades: é a tradução jurídica de um conflito para que juiz e réu compreendam o que está sendo discutido."
+    }
   },
   "11": {
     "title": "Defesa, revelia, saneamento e julgamento",
@@ -175,7 +277,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 335–368",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "A empresa que Roberto processou foi citada. Ela afirma que fez toda a obra, que o recibo do autor está incompleto e que ele próprio causou o problema. O que o juiz precisa fazer antes de sentenciar?",
+      "steps": [
+        [
+          "A contestação apresenta a outra versão da história",
+          [
+            "A empresa deve reunir na contestação as defesas pertinentes, inclusive questões processuais e argumentos de mérito. Isso é a concentração da defesa, com prazo e termo inicial disciplinados pelo CPC. A resposta precisa enfrentar fatos relevantes, não apenas dizer 'discordo'.",
+            "O art. 337 reúne matérias preliminares; a defesa de mérito enfrenta a obrigação alegada. Conhecer essa diferença permite saber se a empresa discute o direito de cobrar ou um problema anterior na condução da demanda."
+          ],
+          "Pergunta: discutir incompetência do juízo e afirmar pagamento da dívida são o mesmo tipo de defesa?",
+          "Não. A primeira é processual; a segunda enfrenta fato relevante ao mérito."
+        ],
+        [
+          "O que ocorre se a empresa não responder?",
+          [
+            "Se a empresa não apresentar contestação, poderá ocorrer revelia. Isso pode produzir presunção relativa sobre fatos afirmados pelo autor, mas não obriga o juiz a acolher automaticamente todos os pedidos. O art. 345 estabelece exceções importantes.",
+            "A ausência de defesa não substitui requisitos jurídicos, documentos indispensáveis nem avaliação de direito indisponível. Por isso, 'réu revel' não é sinônimo de 'réu condenado'."
+          ],
+          "Pergunta: revelia obriga procedência automática do pedido de Roberto?",
+          "Não. O efeito de presunção tem condições e exceções."
+        ],
+        [
+          "E se a empresa também quiser cobrar Roberto?",
+          [
+            "Suponha que ela afirme ter realizado serviços extras não pagos. Em determinadas condições, poderá formular reconvenção, uma demanda própria do réu contra o autor, dentro do mesmo processo. Isso é diferente de apenas dizer que nada deve.",
+            "A reconvenção tem pressupostos e gera possibilidade de resposta. Pode existir mesmo sem contestação nas condições legais. Assim, o processo pode passar a resolver pretensões de ambos os lados."
+          ],
+          "Pergunta: toda acusação feita pelo réu na contestação já é uma reconvenção?",
+          "Não. Reconvenção formula pretensão própria contra o autor."
+        ],
+        [
+          "O juiz precisa perguntar o que ainda está em disputa",
+          [
+            "Roberto apresenta fotografias; a empresa junta recibos. O juiz deve identificar fatos controvertidos e permitir manifestação sobre documentos e alegações relevantes. Se não houver necessidade de outras provas, o caso pode estar pronto para julgamento antecipado.",
+            "Se apenas um pedido estiver maduro e outro precisar de perícia, poderá caber julgamento parcial do mérito. Essa decisão tem natureza interlocutória e regime recursal específico."
+          ],
+          "Pergunta: o juiz precisa esperar perícia sobre todos os pedidos se um deles já está pronto para julgamento?",
+          "Não necessariamente. Há disciplina de julgamento parcial de mérito."
+        ],
+        [
+          "Quando faltam provas, é hora do saneamento",
+          [
+            "O saneamento organiza o restante do processo: identifica as questões pendentes, os fatos que exigem prova, a distribuição do ônus probatório e os meios adequados. É um plano de instrução, não um julgamento disfarçado.",
+            "Volte à obra de Roberto: o juiz pode definir se a discussão é sobre execução do serviço e escolher prova documental, testemunhal ou técnica. Com isso, audiência e eventual sentença deixam de ser atos improvisados."
+          ],
+          "Pergunta: saneamento serve para repetir todos os argumentos da petição inicial?",
+          "Não. Serve para organizar concretamente as questões e provas necessárias ao julgamento."
+        ]
+      ],
+      "conclusion": "A sequência correta é: ouvir a defesa → garantir contraditório → descobrir fatos controvertidos → julgar o que já está pronto → organizar a prova do que ainda falta."
+    }
   },
   "12": {
     "title": "Provas: fatos, ônus e meios de demonstração",
@@ -234,7 +387,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 369–484",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Roberto afirma que a reforma foi mal executada; a empresa diz o contrário. Há fotos, conversas e um orçamento técnico. O juiz não viu a obra. Como pode decidir de forma fundamentada sobre o que realmente aconteceu?",
+      "steps": [
+        [
+          "A prova responde a uma dúvida sobre fatos",
+          [
+            "Primeiro é preciso identificar os fatos que importam para decidir. Se todos concordam que o contrato existiu, discutir sua existência pode ser desnecessário; o foco talvez seja a qualidade do serviço ou o pagamento.",
+            "Provar não é produzir um volume enorme de papéis. É fornecer elementos legítimos para esclarecer pontos controvertidos, respeitado o contraditório. O CPC admite diversos meios de prova, inclusive formas não expressamente tipificadas, quando juridicamente legítimas."
+          ],
+          "Pergunta: toda informação apresentada ao juiz precisa ser produzida novamente por testemunhas?",
+          "Não. O meio adequado depende do fato e da disciplina legal."
+        ],
+        [
+          "Quem deve provar cada afirmação?",
+          [
+            "Roberto normalmente precisa demonstrar fatos constitutivos de sua pretensão, como contratação e defeito alegado. Se a empresa afirma que já pagou indenização ou que houve fato extintivo, terá em regra o ônus de demonstrar essa circunstância. Essa é a distribuição comum do art. 373.",
+            "O ônus da prova não determina quem deve 'falar primeiro': indica quem suporta o risco quando fato essencial permanece não demonstrado. Em condições previstas em lei, pode haver redistribuição dinâmica, com fundamentação e chance real de cumprimento."
+          ],
+          "Pergunta: o juiz pode surpreender as partes na sentença com novo ônus impossível de cumprir?",
+          "Não. Redistribuição deve respeitar requisitos e oportunidade de produção."
+        ],
+        [
+          "Que meio de prova faz sentido para a obra?",
+          [
+            "Fotografias podem mostrar o estado aparente, conversas podem indicar obrigações combinadas, testemunhas podem narrar o que viram e perícia pode analisar causa técnica do defeito. O juiz escolhe e valoriza meios pertinentes, sem presumir que um tipo de prova resolve sozinho qualquer caso.",
+            "Uma ata notarial pode registrar a existência de determinado conteúdo, mas não certifica automaticamente a veracidade de tudo que uma pessoa afirmou. Documentos eletrônicos também precisam ser apreciados quanto à autenticidade, integridade e contraditório."
+          ],
+          "Pergunta: uma foto juntada por Roberto só pode beneficiá-lo?",
+          "Não. A prova integra o processo e pode ser valorada a favor de qualquer parte."
+        ],
+        [
+          "E se a obra estiver prestes a ser demolida?",
+          [
+            "Nesse cenário, uma vistoria futura pode ser impossível. A produção antecipada de prova permite registrar elementos antes da demanda principal em hipóteses legais. Além do risco de perda, o CPC também admite finalidades ligadas a autocomposição ou avaliação prévia da conveniência da ação.",
+            "Isso mostra por que a prova não serve exclusivamente ao julgamento. Ela pode ajudar as pessoas a compreender o conflito e até a resolvê-lo sem prosseguir a uma sentença."
+          ],
+          "Pergunta: toda produção antecipada depende de perigo de desaparecimento da prova?",
+          "Não. A lei prevê outras finalidades."
+        ],
+        [
+          "Como o juiz chega à conclusão?",
+          [
+            "Depois de ouvir as partes, receber documentos e eventualmente um laudo, o juiz deve explicar quais elementos foram decisivos. Não está vinculado automaticamente à conclusão do perito e não pode ignorar argumentos relevantes sem fundamentação.",
+            "No caso da reforma, o caminho é identificar o defeito alegado → distribuir o ônus da prova → escolher meios adequados → respeitar contraditório → valorar os elementos e fundamentar a decisão."
+          ],
+          "Pergunta: laudo pericial substitui a fundamentação judicial?",
+          "Não. O julgador deve explicar sua apreciação da prova."
+        ]
+      ],
+      "conclusion": "Prova é o elo entre uma narrativa e a decisão. O CPC organiza a pergunta, a responsabilidade de demonstrar e o modo como o juiz deve justificar o que considerou comprovado."
+    }
   },
   "13": {
     "title": "Sentença, coisa julgada, remessa e liquidação",
@@ -293,7 +497,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 485–512",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Após a instrução, o juiz decide a disputa de Roberto com a construtora. Uma parte do pedido é acolhida, mas o valor da reparação ainda depende de cálculo. O que significa sentenciar, quando a decisão fica estável e como descobrir quanto pagar?",
+      "steps": [
+        [
+          "A decisão resolveu o direito ou parou antes dele?",
+          [
+            "Se o juiz extingue o processo porque faltou requisito processual, pode não ter examinado o pedido de reparação. Esse é, em regra, o campo das hipóteses sem resolução de mérito do art. 485. Se acolhe ou rejeita a indenização, ou reconhece outras hipóteses do art. 487, enfrenta o mérito.",
+            "Essa diferença importa porque um encerramento sem mérito e uma decisão definitiva sobre o direito produzem consequências distintas. É errado tratar qualquer sentença como reconhecimento de quem tinha razão."
+          ],
+          "Pergunta: falta de legitimidade e improcedência da indenização resolvem o mesmo problema?",
+          "Não. Uma pode impedir o exame da pretensão; a outra enfrenta seu mérito."
+        ],
+        [
+          "O juiz pode decidir qualquer coisa?",
+          [
+            "A sentença precisa respeitar o objeto da demanda e enfrentar adequadamente as questões relevantes. Se Roberto pediu determinado provimento, o magistrado não deve inventar outro pedido sem base legal, nem apresentar fundamentos genéricos desconectados do caso.",
+            "O CPC exige fundamentação e congruência. Isso permite que as partes entendam a decisão e avaliem eventual recurso. A forma pode variar, mas a justificativa jurídica não pode desaparecer."
+          ],
+          "Pergunta: copiar artigo sem explicar sua aplicação basta como fundamentação em toda situação?",
+          "Não. O art. 489 exige fundamentação adequada."
+        ],
+        [
+          "E se a condenação for contra a Fazenda Pública?",
+          [
+            "Em hipóteses legais, certas sentenças contra entes públicos se submetem à remessa necessária. Não é apelação interposta voluntariamente: é mecanismo legal de reexame. Há dispensas relacionadas ao valor e ao fundamento da decisão.",
+            "O aluno precisa identificar primeiro quem foi condenado e qual decisão foi proferida. Só então verifica limites monetários e exceções do art. 496. Sem essa ordem, os números viram decoreba sem aplicação."
+          ],
+          "Pergunta: remessa necessária depende sempre de a Fazenda apresentar recurso?",
+          "Não. Seu regime decorre da lei, com dispensas específicas."
+        ],
+        [
+          "Quando uma decisão deixa de poder ser rediscutida?",
+          [
+            "Se a decisão de mérito não está mais sujeita a recurso, forma-se coisa julgada material nos limites do CPC. Não significa que toda frase da fundamentação virou verdade imutável contra o mundo inteiro.",
+            "A proteção incide sobre o que foi decidido e, em condições específicas, certas questões prejudiciais. Motivos e verdade dos fatos seguem disciplina própria. O objetivo é dar estabilidade à relação jurídica sem ampliar indevidamente os efeitos do julgamento."
+          ],
+          "Pergunta: um comentário lateral do juiz ganha automaticamente coisa julgada?",
+          "Não. É necessário observar limites objetivos e requisitos legais."
+        ],
+        [
+          "Como transformar a condenação em valor?",
+          [
+            "O juiz reconheceu que houve dano, mas a extensão da reparação ainda não está determinada. Se basta cálculo aritmético, o credor pode apresentar demonstrativo sem fase autônoma de liquidação. Quando são necessárias avaliação técnica ou prova de fato novo para quantificar, a lei prevê modalidades de liquidação.",
+            "Liquidação não permite reabrir a discussão sobre a responsabilidade já reconhecida. É etapa para determinar o valor ou extensão da obrigação, não um segundo julgamento completo."
+          ],
+          "Pergunta: calcular o valor devido permite negar novamente a existência da dívida já reconhecida?",
+          "Não. A liquidação não modifica a decisão de mérito."
+        ]
+      ],
+      "conclusion": "Sentença resolve ou encerra a demanda; coisa julgada estabiliza o que foi decidido; liquidação, quando necessária, determina a expressão concreta da condenação."
+    }
   },
   "14": {
     "title": "Cumprimento de sentença e meios de impugnação",
@@ -356,6 +611,57 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Lei 15.479/2026 — vigência",
         "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15479.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "A condenação em favor de Roberto transitou em julgado, mas a construtora não paga. Agora existe uma decisão favorável. Como transformá-la em dinheiro recebido, e quais possibilidades de defesa ainda restam à empresa?",
+      "steps": [
+        [
+          "Ganhar a causa não significa receber automaticamente",
+          [
+            "A sentença é um título judicial quando preenche os requisitos legais. Se o condenado não cumpre espontaneamente, o credor pode promover cumprimento de sentença segundo a espécie de obrigação. Essa fase não rediscute livremente tudo o que já foi decidido.",
+            "Isso difere da execução de título extrajudicial, como certos documentos que permitem cobrar diretamente sem sentença anterior. O ponto de partida determina regras de defesa, intimação e procedimento."
+          ],
+          "Pergunta: cheque extrajudicial e sentença condenatória seguem necessariamente o mesmo caminho processual?",
+          "Não. Títulos de natureza diversa possuem procedimentos próprios."
+        ],
+        [
+          "O que ocorre quando o devedor é intimado a pagar?",
+          [
+            "Para obrigação de pagar quantia certa no procedimento geral, o art. 523 estabelece prazo para pagamento voluntário. Se o devedor não paga, podem incidir multa e honorários legais e seguir-se atos de constrição patrimonial.",
+            "A finalidade dessas consequências é estimular cumprimento e permitir satisfação do credor. Antes de calcular, é indispensável verificar se a hipótese realmente se enquadra no rito comum de quantia, pois alimentos, Fazenda Pública e outras obrigações têm regras especiais."
+          ],
+          "Pergunta: a multa do art. 523 incide indistintamente em qualquer execução contra a Fazenda?",
+          "Não. A Fazenda possui disciplina específica."
+        ],
+        [
+          "A empresa ainda pode contestar a cobrança?",
+          [
+            "Ela pode apresentar impugnação nas matérias e prazo do art. 525, como questionamentos sobre excesso de execução nos termos legais. Mas a impugnação não é uma segunda contestação de toda a causa, nem suspende automaticamente o cumprimento.",
+            "Se a empresa afirma que o credor calculou mais do que a sentença autoriza, deve indicar o valor que entende correto e demonstrá-lo quando a lei exigir. A defesa busca controlar a execução do título, preservando sua autoridade."
+          ],
+          "Pergunta: basta apresentar impugnação para paralisar todo o pagamento?",
+          "Não. Efeito suspensivo depende dos requisitos legais."
+        ],
+        [
+          "E se ainda houver recurso?",
+          [
+            "O cumprimento provisório pode ser admitido quando a decisão é passível de execução apesar de recurso sem efeito suspensivo. Nesse caso, quem promove atua sob os riscos e garantias previstos no CPC.",
+            "A distinção não está em a decisão ser 'importante' ou 'injusta', mas na sua eficácia executiva e nos efeitos do recurso. O regime protege o credor sem ignorar possibilidade de reforma e restituição nas hipóteses legais."
+          ],
+          "Pergunta: qualquer recurso apresentado impede, automaticamente, todo cumprimento provisório?",
+          "Não. É preciso examinar seus efeitos e as condições legais."
+        ],
+        [
+          "Como mudam as providências conforme a obrigação?",
+          [
+            "Se a decisão determina entregar coisa, fazer algo ou parar determinada conduta, a tutela específica pode utilizar busca e apreensão, imissão, multa coercitiva e outras medidas adequadas. Alimentos têm regime especial, inclusive meios de coerção pessoal em hipóteses estritas.",
+            "Na execução contra a Fazenda, pagamento pode seguir precatório ou requisição de pequeno valor. O método final é: identificar o título e a obrigação → escolher o rito → intimar corretamente → oferecer defesa própria → buscar satisfação."
+          ],
+          "Pergunta: todas as condenações são resolvidas por penhora de dinheiro?",
+          "Não. As medidas mudam conforme a prestação e o devedor."
+        ]
+      ],
+      "conclusion": "Cumprimento de sentença é a passagem do direito reconhecido ao resultado concreto. Saber o tipo de obrigação é mais importante que decorar um procedimento único para todos os casos."
+    }
   }
 });
