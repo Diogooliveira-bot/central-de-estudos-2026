@@ -55,9 +55,9 @@ function closeQuiz(){document.getElementById('cpcM19Quiz')?.remove();document.bo
 function openQuiz(mode){
  if(mode==='complete')return g.CentralInternalQuestionPolicy?.modal('Direito Processual Civil','M19');
  const norm=q=>({id:'legacy-'+(q.id||q.q.slice(0,20)),q:q.q,options:q.o,answer:q.a,explanation:q.e});
- const list=g.CentralInternalQuestionPolicy?.authorial(QUESTIONS.summary.map(norm),QUESTIONS.complete.map(norm))||[];
- if(list.length!==10||!list.every(g.CentralAuthorialQuiz?.valid||(()=>false)))return g.BcCpcInternal?.open(19,'summary');
- return g.CentralAuthorialQuiz?.open({discipline:'Direito Processual Civil',module:'M19',title:'CPC M19',items:list});
+ const authorials=g.CentralInternalQuestionPolicy?.authorial(QUESTIONS.summary.map(norm),QUESTIONS.complete.map(norm))||[];
+ if(authorials.length!==10||!authorials.every(g.CentralAuthorialQuiz?.valid||(()=>false)))return g.BcCpcInternal?.open(19,'summary');
+ return g.CentralAuthorialQuiz?.open({discipline:'Direito Processual Civil',module:'M19',title:'CPC M19',items:authorials});
 
  closeQuiz();
  const list=QUESTIONS[mode],o=document.createElement('div');o.id='cpcM19Quiz';o.className='bc-native-reader-overlay';
