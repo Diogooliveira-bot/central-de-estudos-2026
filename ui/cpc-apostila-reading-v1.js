@@ -143,6 +143,7 @@ function insertDidactic(host,n,data){
   const body=d.createElement('div');body.className='cpc-study-step-body';
   for(const txt of paragraphs||[]){const p=d.createElement('p');p.textContent=txt;body.append(p);}
   if(example){const p=d.createElement('p'),strong=d.createElement('strong');p.className='cpc-didactic-example';strong.textContent='Exemplo: ';p.append(strong,d.createTextNode(String(example).replace(/^Exemplo:\s*/i,'')));body.append(p);}
+  const done=d.createElement('button');done.type='button';done.className='cpc-study-done';done.dataset.cpcStepDone=String(i);done.textContent='Concluir esta etapa';body.append(done);
   step.append(body);stages.append(step);
  }
  part.append(stages);
@@ -168,7 +169,7 @@ function insertDidactic(host,n,data){
 }
 let pending;
 async function laws(){if(!pending)pending=(async()=>{if(!g.CPC_READING_LAWS_B64)await import('/content/cpc/cpc-reading-laws-v1.js?v=20261107cpc2');const bytes=Uint8Array.from(atob(g.CPC_READING_LAWS_B64),c=>c.charCodeAt(0));return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());})().catch(e=>{pending=null;throw e});return pending;}
-function styles(){if(document.getElementById('cpc-apostila-style'))return;const link=document.createElement('link');link.id='cpc-apostila-style';link.rel='stylesheet';link.href='/ui/cpc-apostila-reading-v1.css?v=20261110cpcdidatico1';document.head.append(link);}
+function styles(){if(document.getElementById('cpc-apostila-style'))return;const link=document.createElement('link');link.id='cpc-apostila-style';link.rel='stylesheet';link.href='/ui/cpc-apostila-reading-v1.css?v=20261110cpcsimplificado2';document.head.append(link);}
 g.CpcApostilaReading=Object.freeze({references,enhance,routes,lawNames,async transform(html,n,mode){styles();const registry=await laws(),review=mode==='summary'?await didactic(n):null,template=document.createElement('template');template.innerHTML=html;const host=document.createElement('article');host.append(template.content);enhance(host,n,mode,registry);if(review)insertDidactic(host,n,review);return '<div class="cpc-apostila" data-cpc-apostila="'+mode+'">'+host.innerHTML+'</div>';}});
 
 // O cabeçalho dos leitores calcula a duração antes da transformação editorial.
@@ -176,6 +177,29 @@ g.CpcApostilaReading=Object.freeze({references,enhance,routes,lawNames,async tra
 if(typeof MutationObserver!=='undefined'&&document.body){
  const updateReadingTime=()=>{
   for(const overlay of document.querySelectorAll('.bc-native-reader-overlay')){
+   const guided=overlay.querySelector('.cpc-learning-path');
+   if(guided&&!overlay.dataset.cpcGuidedBound){
+    overlay.dataset.cpcGuidedBound='1';
+    const steps=[...guided.querySelectorAll('.cpc-study-step')];
+    const checks=[...overlay.querySelectorAll('[data-cpc-chapter-check]')];
+    const segment=i=>checks.slice(Math.floor(i*checks.length/steps.length),Math.floor((i+1)*checks.length/steps.length));
+    const refreshButtons=()=>steps.forEach((step,i)=>{
+     const button=step.querySelector('[data-cpc-step-done]');
+     if(button){const done=segment(i).length>0&&segment(i).every(x=>x.classList.contains('done'));button.textContent=done?'Etapa concluída ✓':'Concluir esta etapa';button.classList.toggle('done',done);}
+    });
+    guided.addEventListener('click',event=>{
+     const button=event.target.closest('[data-cpc-step-done]');
+     if(!button)return;
+     const i=Number(button.dataset.cpcStepDone);
+     for(const check of segment(i))if(!check.classList.contains('done'))check.click();
+     refreshButtons();
+     if(i+1<steps.length){
+      steps[i].open=false;steps[i+1].open=true;
+      steps[i+1].scrollIntoView?.({behavior:'smooth',block:'nearest'});
+     }else guided.querySelector('.cpc-study-recall')?.setAttribute('open','');
+    });
+    refreshButtons();
+   }
    if(overlay.dataset.cpcDidacticTiming)return;
    const didactic=overlay.querySelector('.cpc-didactic-review'),meta=overlay.querySelector('.bc-native-reader-meta'),article=overlay.querySelector('.bc-native-article');
    if(!didactic||!meta||!article)continue;
