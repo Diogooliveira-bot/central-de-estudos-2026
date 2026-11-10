@@ -1,0 +1,26 @@
+name: Administrativo — revisão didática M01–M10
+on:
+  pull_request:
+    paths:
+      - 'content/adm/adm-review-didactic-*.js'
+      - 'ui/adm-apostila-reading-v1.js'
+      - 'tests/adm-review-didactic-v2-unit.mjs'
+      - 'package.json'
+      - '.github/workflows/adm-didatico-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  adm-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run test:adm-didatico
