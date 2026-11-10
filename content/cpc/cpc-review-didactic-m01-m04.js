@@ -57,7 +57,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 1º–15",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Marina contratou uma empresa para consertar o telhado. Pagou adiantado, mas o serviço não foi feito. Ela procura a Justiça e pergunta: “O juiz pode obrigar a empresa a cumprir o contrato? Como isso acontece sem que ninguém seja tratado injustamente?”",
+      "steps": [
+        [
+          "O problema não é apenas saber quem tem razão",
+          [
+            "Antes de decidir sobre o contrato, o Estado precisa oferecer um caminho confiável para resolver a disputa. Marina terá de formular seu pedido, a empresa deverá ter oportunidade de responder e o juiz terá de explicar a decisão. É isso que as normas fundamentais do processo procuram assegurar.",
+            "Perceba a diferença: o direito de Marina ao serviço depende do contrato; o modo justo de examinar esse direito depende das regras do processo. Por essa razão, o art. 1º do CPC manda interpretar o procedimento à luz da Constituição."
+          ],
+          "Pergunta: ganhar a ação é a mesma coisa que ter direito a um processo justo?",
+          "Não. O processo deve ser justo mesmo quando a parte perde no mérito."
+        ],
+        [
+          "Quem põe o processo em movimento?",
+          [
+            "Marina precisa procurar a Justiça e apresentar sua demanda. Em regra, o juiz não sai procurando contratos descumpridos para abrir ações por iniciativa própria: essa é a ideia de iniciativa da parte. Uma vez instaurado o processo, o juiz deve conduzir os atos necessários ao seu desenvolvimento, o chamado impulso oficial (art. 2º).",
+            "O CPC também valoriza conciliação e mediação. Isso faz sentido: às vezes o conflito termina com acordo, sem que uma sentença de procedência ou improcedência seja necessária. O acesso à Justiça não significa obrigatoriamente chegar ao julgamento final."
+          ],
+          "Pergunta: se as partes concordarem em resolver o problema, o processo precisa continuar até a sentença de mérito?",
+          "Não necessariamente. A autocomposição pode solucionar a controvérsia observada a disciplina legal."
+        ],
+        [
+          "Por que ouvir a outra parte importa?",
+          [
+            "Imagine que Marina apresente fotografias do telhado e o juiz decida imediatamente contra a empresa, sem qualquer chance de defesa. Isso pode comprometer o contraditório. A regra do art. 9º é permitir manifestação antes de decisão desfavorável; existem exceções legais para situações que não podem esperar.",
+            "O art. 10 acrescenta outra proteção: o juiz não deve decidir com base em fundamento relevante sobre o qual as partes não puderam se manifestar. Mesmo um assunto que o magistrado pode conhecer de ofício não autoriza, em regra, uma decisão-surpresa."
+          ],
+          "Pergunta: matéria de ordem pública dispensa sempre a oitiva das partes?",
+          "Não. O art. 10 protege a oportunidade de manifestação também sobre fundamentos de ofício."
+        ],
+        [
+          "E se uma providência não puder esperar?",
+          [
+            "Suponha que o telhado esteja prestes a desabar e a demora possa causar dano grave. Em hipóteses legais, o juiz pode analisar uma medida provisória antes de ouvir a empresa. Isso não elimina o contraditório: a defesa ocorrerá depois, de modo compatível com a urgência.",
+            "O ponto é conciliar proteção efetiva e participação das partes, não escolher uma garantia e abandonar a outra. Boa-fé, cooperação, igualdade de tratamento e duração razoável do processo servem a esse mesmo objetivo: chegar a uma solução fundamentada e útil."
+          ],
+          "Pergunta: contraditório posterior significa que o réu perdeu definitivamente o direito de se defender?",
+          "Não. A oitiva é diferida, e a decisão provisória não equivale ao julgamento definitivo."
+        ],
+        [
+          "Como lidar com uma mudança na lei processual?",
+          [
+            "Enquanto o processo de Marina tramita, entra em vigor uma nova regra de procedimento. Em princípio, a lei processual nova aplica-se imediatamente aos atos futuros, mas não desfaz o que foi praticado validamente sob a norma anterior. É a lógica do art. 14.",
+            "Agora você pode reconhecer uma sequência: a pessoa provoca a Justiça, todos participam de forma leal, o juiz decide sem surpresa e o procedimento se adapta às normas vigentes sem invalidar o passado. Os artigos deixam de ser uma lista solta e passam a explicar como o conflito é tratado."
+          ],
+          "Pergunta: uma lei processual nova torna inválida toda intimação feita corretamente antes de sua vigência?",
+          "Não. A aplicação imediata respeita atos já praticados e situações consolidadas."
+        ]
+      ],
+      "conclusion": "O processo civil não é um obstáculo entre Marina e o direito. Ele é o caminho organizado para decidir o conflito com participação, fundamentação e possibilidade de efetivação."
+    }
   },
   "2": {
     "title": "Jurisdição, ação, processo e pressupostos",
@@ -116,7 +167,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 16–41",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Paulo emprestou dinheiro a uma pessoa que não devolveu. Ele quer procurar a Justiça, mas escuta cinco palavras novas: jurisdição, ação, processo, procedimento e mérito. Como essas ideias ajudam a resolver um único problema?",
+      "steps": [
+        [
+          "Comece pelo que Paulo realmente quer",
+          [
+            "Paulo quer receber o que acredita ser devido. Esse é o resultado material pretendido: seu pedido de tutela. Para que o Estado examine a pretensão, ele apresenta uma demanda. Exercer o direito de ação não significa que ele já provou a dívida; significa provocar a atuação jurisdicional.",
+            "O juiz analisará primeiro se a demanda pode ser apreciada e, depois, se o direito afirmado procede. É por isso que alguém pode acessar o Judiciário e perder a ação: direito de ação e razão no mérito são coisas distintas."
+          ],
+          "Pergunta: só pode ajuizar ação quem já sabe que vencerá?",
+          "Não. O julgamento do mérito ocorre ao longo do processo, depois de observados seus requisitos."
+        ],
+        [
+          "Quem pode pedir e contra quem?",
+          [
+            "Suponha que o dinheiro tenha sido emprestado por Paulo, mas o pedido seja apresentado por outra pessoa sem vínculo jurídico com a dívida. Surge um problema anterior ao mérito: legitimidade. Se ele procura um procedimento que não lhe oferece utilidade ou necessidade concreta, pode surgir questão de interesse processual.",
+            "O art. 17 exige interesse e legitimidade para postular em juízo. Essas condições não resolvem a controvérsia sobre a dívida: elas ajudam a verificar se a pretensão está sendo levada ao Judiciário pela pessoa adequada e pelo caminho apropriado."
+          ],
+          "Pergunta: discutir legitimidade é decidir se a dívida foi paga?",
+          "Não. A legitimidade examina quem deve ocupar a relação processual; pagamento é tema de mérito."
+        ],
+        [
+          "Onde entram jurisdição, processo e procedimento?",
+          [
+            "Jurisdição é a função de dar uma solução jurídica ao conflito. Processo é a relação jurídica em que Paulo e o devedor participam, produzem manifestações e recebem uma decisão. Procedimento é a sequência dos atos: petição inicial, citação, defesa, prova e julgamento, com variações conforme o caso.",
+            "A competência determina qual órgão poderá exercer jurisdição naquele conflito. Portanto, um juiz pode integrar o Judiciário e, ainda assim, não ser o competente para aquela demanda. Separar a função de julgar da divisão de tarefas entre juízos é essencial."
+          ],
+          "Pergunta: processo e procedimento são sinônimos?",
+          "Não. O procedimento é o caminho dos atos dentro da estrutura jurídica do processo."
+        ],
+        [
+          "E se houver um defeito antes do julgamento?",
+          [
+            "Imagine que a petição de Paulo não contenha representação processual regular. Em vez de concluir imediatamente que ele não tem direito ao dinheiro, o juiz deve verificar se o vício pode ser corrigido. Pressupostos processuais dizem respeito à constituição e ao desenvolvimento válido da relação processual.",
+            "Quando um defeito sanável é corrigido, o processo pode prosseguir até o exame do mérito. Se for caso de extinção sem resolução do mérito, isso não significa necessariamente que a dívida não existe. A distinção aparece de forma mais detalhada no módulo de sentença."
+          ],
+          "Pergunta: extinguir sem mérito é igual a declarar inexistente a dívida?",
+          "Não. A pretensão material pode nem ter sido examinada."
+        ],
+        [
+          "E se um ato precisar acontecer fora do Brasil?",
+          [
+            "Imagine que uma testemunha importante viva em outro país. O juiz brasileiro não perde automaticamente a jurisdição sobre toda a demanda. Pode haver cooperação jurídica internacional para colher prova ou comunicar atos, respeitando tratados e regras dos arts. 21 a 41.",
+            "Assim você vê o mapa inteiro: Paulo provoca o Judiciário por meio da ação; o processo organiza participantes e atos; o procedimento determina a sequência; a competência indica o juízo; e o mérito define se a pretensão material será acolhida."
+          ],
+          "Pergunta: colher prova no exterior significa obrigatoriamente transferir o processo para outro país?",
+          "Não. Cooperação em atos específicos e jurisdição sobre a causa são questões diferentes."
+        ]
+      ],
+      "conclusion": "Ao encontrar uma questão, pergunte primeiro se ela discute quem pode agir, onde agir, como agir ou se o pedido merece procedência. Isso indica qual conceito processual realmente importa."
+    }
   },
   "3": {
     "title": "Competência, conexão, continência e conflitos",
@@ -179,7 +281,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Lei 14.879/2024 — foro de eleição",
         "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14879.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Renata mora em uma cidade e cobra judicialmente um contrato de Tiago, que vive em outra. As partes também escreveram um foro no contrato. Antes de discutir a dívida, surge uma pergunta: qual juízo pode receber essa ação?",
+      "steps": [
+        [
+          "Por que existem regras de competência?",
+          [
+            "Se todos os juízes pudessem decidir qualquer demanda, haveria insegurança e disputas sobre onde ajuizar cada processo. As regras de competência distribuem as causas por matéria, pessoa, função, território e valor, quando aplicáveis.",
+            "A primeira decisão de Renata é identificar a Justiça competente e os critérios que apontam o foro adequado. Jurisdição é a função estatal de julgar; competência organiza quem exercerá essa função em cada situação."
+          ],
+          "Pergunta: um juiz competente para causas civis comuns julga automaticamente qualquer causa do país?",
+          "Não. Outros critérios legais podem atribuir a demanda a juízo diferente."
+        ],
+        [
+          "Qual a diferença entre competência absoluta e relativa?",
+          [
+            "Regras de competência absoluta protegem a organização judiciária em situações que não podem ser livremente alteradas pelas partes. A relativa, em geral, admite prorrogação ou modificação nos limites legais, exigindo que o interessado a questione no momento adequado.",
+            "Matéria, pessoa e função são critérios tipicamente absolutos; território e valor, em geral, relativos, mas a lei prevê exceções. Portanto, não memorize a frase 'foro é sempre relativo'. Analise a natureza da demanda e a regra concreta."
+          ],
+          "Pergunta: basta saber que a disputa envolve cidades diferentes para classificar a competência?",
+          "Não. É preciso verificar o critério legal aplicável e possíveis exceções."
+        ],
+        [
+          "O contrato pode escolher qualquer cidade?",
+          [
+            "Suponha que o contrato de Renata e Tiago eleja um lugar sem ligação com as partes ou com o negócio. A eleição de foro não é um cheque em branco. A disciplina atual do art. 63 exige pertinência e combate a escolha abusiva de foro aleatório, observados seus requisitos legais.",
+            "Antes de aceitar a cláusula, o raciocínio é: existe foro legal? A escolha foi válida? O lugar eleito tem vínculo relevante? Há alguma competência absoluta que não pode ser afastada por acordo?"
+          ],
+          "Pergunta: foro de eleição vale automaticamente só porque está escrito no contrato?",
+          "Não. Sua validade depende dos requisitos legais e não supera competência absoluta."
+        ],
+        [
+          "Por que processos semelhantes às vezes são reunidos?",
+          [
+            "Imagine que Renata e Tiago litiguem em duas ações relacionadas ao mesmo contrato. O CPC prevê conexão quando há pedido ou causa de pedir em comum e continência em hipótese mais específica de mesmas partes e causa, com pedido de uma ação abrangendo o da outra.",
+            "A reunião pode evitar decisões contraditórias, mas não ocorre mecanicamente em toda situação. É necessário considerar regras de competência e fase processual. A prevenção em geral decorre do registro ou distribuição, não do momento em que o réu recebe a citação."
+          ],
+          "Pergunta: duas ações conexas devem sempre ser reunidas, mesmo quando uma já foi julgada?",
+          "Não. A reunião depende das condições e limites previstos no CPC."
+        ],
+        [
+          "O que fazer quando os próprios juízos discordam?",
+          [
+            "Se um juízo diz ser competente e outro também, ou ambos recusam a causa, surge conflito de competência. O tribunal competente resolverá a questão. Isso é diferente de julgar o mérito: determinar qual juiz pode atuar não significa decidir se Tiago deve dinheiro a Renata.",
+            "Ao fim, o aluno consegue seguir a ordem correta: Justiça e critério → competência absoluta ou relativa → foro legal ou eleição válida → eventual conexão ou conflito. Essa ordem é mais segura que decorar nomes isolados."
+          ],
+          "Pergunta: resolver conflito de competência encerra necessariamente a cobrança do contrato?",
+          "Não. Em regra, define-se o órgão competente para que o processo siga."
+        ]
+      ],
+      "conclusion": "Competência é uma pergunta anterior ao mérito: quem deve julgar? Saber responder a essa pergunta evita confundir foro, jurisdição, conexão e conflito."
+    }
   },
   "4": {
     "title": "Partes, procuradores, despesas e gratuidade",
@@ -238,6 +391,57 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 70–112",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Uma criança sofre dano em acidente e sua família deseja pedir indenização. A criança pode ser parte? Quem apresenta a ação? Quem contrata o advogado? E se a família não tiver recursos para custear o processo?",
+      "steps": [
+        [
+          "Participar do processo não é fazer tudo sozinho",
+          [
+            "A criança pode ocupar o polo ativo de uma ação: isso diz respeito à capacidade de ser parte. Mas, conforme sua situação jurídica, precisará de representação ou assistência para praticar validamente atos processuais. Outra questão é quem tem aptidão técnica para postular, normalmente o advogado.",
+            "Assim surgem três capacidades diferentes: ser parte, praticar pessoalmente atos e postular tecnicamente. O fato de alguém precisar de representante não elimina seu direito de ter a pretensão apreciada."
+          ],
+          "Pergunta: precisar de representante significa não poder figurar como autor?",
+          "Não. A criança pode ser parte e atuar por representação adequada."
+        ],
+        [
+          "Como garantir defesa de quem precisa de proteção?",
+          [
+            "Imagine conflito entre o interesse da criança e o do responsável que deveria representá-la. O CPC prevê providências como nomeação de curador especial nas hipóteses legais. A preocupação não é formalismo inútil: é impedir que alguém vulnerável fique sem defesa adequada.",
+            "A regularidade da representação deve ser conferida. Se o vício for sanável, a prioridade normalmente é permitir correção, e não rejeitar a pretensão de indenização sem examinar o acidente."
+          ],
+          "Pergunta: qualquer falha de representação obriga encerramento imediato da ação?",
+          "Não. O CPC prevê oportunidade de saneamento nas hipóteses legais."
+        ],
+        [
+          "Todos precisam agir com lealdade",
+          [
+            "A família, a empresa ré, os advogados e os demais participantes devem respeitar deveres processuais. Não é preciso concordar com o adversário, mas não se pode utilizar o processo deliberadamente para alterar a verdade ou obstruir providências legítimas.",
+            "O CPC distingue comportamento ilícito, litigância de má-fé e ato atentatório à dignidade da Justiça. Perder a ação, por si só, não demonstra má-fé. O fundamento da sanção precisa ser uma conduta definida na lei."
+          ],
+          "Pergunta: se a família perder o pedido, será automaticamente punida por má-fé?",
+          "Não. A sanção depende de conduta enquadrada em hipótese legal."
+        ],
+        [
+          "Quem paga as despesas?",
+          [
+            "O processo pode exigir custas, perícia e honorários. Essas parcelas não são todas a mesma coisa. A regra de adiantamento de despesas pode diferir da distribuição final da sucumbência, e os honorários advocatícios obedecem a disciplina própria.",
+            "Se a família não possuir recursos suficientes, a gratuidade da Justiça pode permitir o acesso ao processo sem desembolso imediato de despesas cobertas, mas não significa que toda consequência econômica desapareça. Obrigações de sucumbência podem ficar com exigibilidade suspensa nos termos da lei."
+          ],
+          "Pergunta: gratuidade significa que nunca haverá condenação em honorários?",
+          "Não. Ela altera o regime de pagamento e exigibilidade conforme as hipóteses legais."
+        ],
+        [
+          "O papel do advogado e as mudanças durante a ação",
+          [
+            "O advogado recebe procuração e atua dentro dos poderes concedidos. Alguns atos, como transigir ou renunciar, demandam poderes específicos, pois podem alterar materialmente a posição do cliente. Renúncia do advogado e revogação pelo cliente são acontecimentos diferentes, com deveres e prazos próprios.",
+            "Se o direito litigioso for alienado ou houver mudança de sujeitos, não presuma substituição automática de parte. Ao fim, o raciocínio está encadeado: quem pode ser parte → quem atua em seu nome → quais deveres cumprir → quem suporta custos → quem pode praticar atos técnicos."
+          ],
+          "Pergunta: um advogado com procuração genérica pode praticar sem limites todos os atos que importem disposição do direito?",
+          "Não. O CPC exige poderes especiais para certos atos."
+        ]
+      ],
+      "conclusion": "A justiça processual depende de participação válida e defesa efetiva. Por isso capacidade, representação, custos e procuradores fazem parte de um único problema: permitir que a pretensão seja examinada corretamente."
+    }
   }
 });
