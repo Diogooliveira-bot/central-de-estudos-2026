@@ -101,8 +101,57 @@ function enhance(article,n,mode,registry){
  const route=routes[n];article.prepend(textSection(d,'Visão do módulo','cpc-overview',route));article.append(textSection(d,'Síntese para revisar','cpc-synthesis',route));
  return {missing,bodyBefore};
 }
+
+/* Revisão explicada M09–M20: a apresentação é aditiva. O índice, o texto original,
+   as questões e a teoria completa permanecem intocados. */
+const didacticPending=new Map();
+async function didactic(n){
+ if(n<9||n>20)return null;
+ if(g.CPC_DIDACTIC_REVIEW?.[n])return g.CPC_DIDACTIC_REVIEW[n];
+ const group=n<=14?'m09-m14':'m15-m20';
+ if(!didacticPending.has(group)){
+  const task=new Promise((resolve,reject)=>{
+   const script=document.createElement('script');
+   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261110cpc1';
+   script.onload=()=>{script.remove();resolve();};
+   script.onerror=()=>{script.remove();reject(new Error('Não foi possível carregar a revisão didática do CPC'));};
+   document.head.append(script);
+  }).catch(error=>{didacticPending.delete(group);throw error;});
+  didacticPending.set(group,task);
+ }
+ await didacticPending.get(group);
+ const result=g.CPC_DIDACTIC_REVIEW?.[n];
+ if(!result||!Array.isArray(result.sections)||!result.sections.length)
+  throw new Error('Revisão explicada do CPC M'+n+' indisponível');
+ return result;
+}
+function insertDidactic(host,n,data){
+ const d=host.ownerDocument,part=d.createElement('section');
+ part.className='cpc-didactic-review';part.dataset.cpcReview=String(n);
+ const heading=d.createElement('h2');heading.textContent='Revisão explicada — aprenda o essencial';part.append(heading);
+ const lead=d.createElement('p');lead.className='cpc-didactic-lead';lead.textContent=data.intro;part.append(lead);
+ for(const [title,paragraphs,example] of data.sections){
+  const h=d.createElement('h3');h.textContent=title;part.append(h);
+  for(const txt of paragraphs||[]){const p=d.createElement('p');p.textContent=txt;part.append(p);}
+  if(example){const p=d.createElement('p'),strong=d.createElement('strong');p.className='cpc-didactic-example';strong.textContent='Exemplo prático: ';p.append(strong,d.createTextNode(String(example).replace(/^Exemplo:\\s*/i,'')));part.append(p);}
+ }
+ const h=d.createElement('h3');h.textContent='O que memorizar';part.append(h);
+ const list=d.createElement('ul');list.className='cpc-didactic-memory';
+ for(const txt of data.remember||[]){const item=d.createElement('li');item.textContent=txt;list.append(item);}part.append(list);
+ if(data.laws?.length){
+  const details=d.createElement('details');details.className='cpc-didactic-sources';
+  const sum=d.createElement('summary');sum.textContent='Fontes jurídicas para consulta';details.append(sum);
+  const links=d.createElement('ul');
+  for(const [name,url] of data.laws){if(!/^https:\/\//.test(url))continue;const li=d.createElement('li'),a=d.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=name;li.append(a);links.append(li);}
+  details.append(links);part.append(details);
+ }
+ const segue=d.createElement('p');segue.className='cpc-didactic-bridge';segue.textContent='A seguir, consulte o roteiro rápido e os artigos do material original para fixar prazos e distinções.';part.append(segue);
+ const overview=host.querySelector('.cpc-overview');
+ if(overview)overview.after(part);else host.prepend(part);
+}
+
 let pending;
 async function laws(){if(!pending)pending=(async()=>{if(!g.CPC_READING_LAWS_B64)await import('/content/cpc/cpc-reading-laws-v1.js?v=20261107cpc2');const bytes=Uint8Array.from(atob(g.CPC_READING_LAWS_B64),c=>c.charCodeAt(0));return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());})().catch(e=>{pending=null;throw e});return pending;}
 function styles(){if(document.getElementById('cpc-apostila-style'))return;const link=document.createElement('link');link.id='cpc-apostila-style';link.rel='stylesheet';link.href='/ui/cpc-apostila-reading-v1.css?v=20261107cpc2';document.head.append(link);}
-g.CpcApostilaReading=Object.freeze({references,enhance,routes,lawNames,async transform(html,n,mode){styles();const registry=await laws(),template=document.createElement('template');template.innerHTML=html;const host=document.createElement('article');host.append(template.content);enhance(host,n,mode,registry);return '<div class="cpc-apostila" data-cpc-apostila="'+mode+'">'+host.innerHTML+'</div>';}});
+g.CpcApostilaReading=Object.freeze({references,enhance,routes,lawNames,async transform(html,n,mode){styles();const registry=await laws(),review=mode==='summary'?await didactic(n):null,template=document.createElement('template');template.innerHTML=html;const host=document.createElement('article');host.append(template.content);enhance(host,n,mode,registry);if(review)insertDidactic(host,n,review);return '<div class="cpc-apostila" data-cpc-apostila="'+mode+'">'+host.innerHTML+'</div>';}});
 })(window);
