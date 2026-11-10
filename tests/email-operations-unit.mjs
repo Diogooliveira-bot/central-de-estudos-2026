@@ -71,6 +71,7 @@ test('snapshot collection is disabled by default and only scoped to consented st
   const r=await captureStudyEmailSnapshots({env:{VERCEL_ENV:'production'},sqlProvider:()=>{throw Error('must not connect')}});
   assert.deepEqual(r,{disabled:true,saved:0});
   const file=readFileSync(new URL('../lib/email-study-snapshots.js',base),'utf8');
-  assert.match(file,/u\.email_marketing_opt_in=TRUE/);
+  assert.match(file,/consent\.email_marketing_opt_in=TRUE/);
+  assert.match(file,/consent\.email_marketing_revoked_at IS NULL/);
   assert.match(file,/snapshot_date<\(NOW\(\) AT TIME ZONE 'America\/Fortaleza'\)::date-70/);
 });
