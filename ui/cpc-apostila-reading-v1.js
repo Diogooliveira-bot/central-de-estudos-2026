@@ -106,13 +106,13 @@ function enhance(article,n,mode,registry){
    as questões e a teoria completa permanecem intocados. */
 const didacticPending=new Map();
 async function didactic(n){
- if(n<9||n>20)return null;
+ if(n<1||n>20)return null;
  if(g.CPC_DIDACTIC_REVIEW?.[n])return g.CPC_DIDACTIC_REVIEW[n];
- const group=n<=14?'m09-m14':'m15-m20';
+ const group=n<=4?'m01-m04':n<=8?'m05-m08':n<=14?'m09-m14':'m15-m20';
  if(!didacticPending.has(group)){
   const task=new Promise((resolve,reject)=>{
    const script=document.createElement('script');
-   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261110cpc1';
+   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261110cpcfinal1';
    script.onload=()=>{script.remove();resolve();};
    script.onerror=()=>{script.remove();reject(new Error('Não foi possível carregar a revisão didática do CPC'));};
    document.head.append(script);
