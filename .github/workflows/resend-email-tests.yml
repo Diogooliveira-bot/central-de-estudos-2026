@@ -1,0 +1,30 @@
+name: Resend email integration tests
+on:
+  push:
+    branches:
+      - feature/resend-email-integration-20261109
+  pull_request:
+    paths:
+      - 'lib/resend-email.js'
+      - 'lib/transactional-email.js'
+      - 'lib/password-reset.js'
+      - 'lib/free-signup-handler.js'
+      - 'tests/resend-email-unit.mjs'
+      - 'tests/transactional-email-unit.mjs'
+      - 'tests/password-reset-unit.mjs'
+      - 'package.json'
+jobs:
+  resend-unit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run test:email-provider
