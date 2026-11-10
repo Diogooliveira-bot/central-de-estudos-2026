@@ -1,0 +1,30 @@
+name: CPC — revisões didáticas M09–M20
+on:
+  push:
+    branches:
+      - preview/cpc-revisoes-didaticas-m09-m20-20261110
+    paths:
+      - 'content/cpc/cpc-review-didactic-*.js'
+      - 'ui/cpc-apostila-reading-v1.*'
+      - 'tests/cpc-*.mjs'
+      - 'package.json'
+      - '.github/workflows/cpc-revisao-didatica.yml'
+  pull_request:
+    paths:
+      - 'content/cpc/cpc-review-didactic-*.js'
+      - 'ui/cpc-apostila-reading-v1.*'
+      - 'tests/cpc-*.mjs'
+      - 'package.json'
+      - '.github/workflows/cpc-revisao-didatica.yml'
+permissions:
+  contents: read
+jobs:
+  cpc-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run test:cpc-didatico
