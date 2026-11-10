@@ -259,6 +259,7 @@ function m01Html(w){
 }
 
 function openQuiz(id,track){
+ return global.BcCpcInternal?.open(1,track==='summary'?'summary':'complete');
  const list=internalQuestions(id,track);
  const target=track==='summary'?5:10;
  if(list.length<target){alert('Banco interno ainda não tem questões suficientes para esta etapa.');return false}
