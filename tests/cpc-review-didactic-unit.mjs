@@ -23,6 +23,17 @@ test('CPC M01–M20: cobertura integral, sem duplicar títulos e com explicaçõ
   }
   assert.ok(d.remember.length>=5,'M'+n+' síntese final');
   assert.ok(d.laws.length>=1&&d.laws.every(a=>a[0]&&/^https:\/\//.test(a[1])),'M'+n+' fontes');
+  assert.ok(d.story&&d.story.case.length>=160,'M'+n+' caso inicial');
+  assert.ok(d.story.steps.length>=5,'M'+n+' cinco passos');
+  assert.ok(d.story.conclusion.length>=90,'M'+n+' conclusão encadeada');
+  for(const [i,step] of d.story.steps.entries()){
+   assert.ok(step[0].length>15,'M'+n+' passo '+(i+1)+' com título claro');
+   assert.ok(Array.isArray(step[1])&&step[1].length>=2,'M'+n+' passo '+(i+1)+' em prosa');
+   assert.ok(step[1].every(p=>p.length>=100),'M'+n+' passo '+(i+1)+' explica, não só cita');
+   assert.ok(step[2].startsWith('Pergunta:'),'M'+n+' passo '+(i+1)+' pergunta');
+   assert.ok(step[3].length>=35,'M'+n+' passo '+(i+1)+' resposta');
+  }
+
   const words=[d.intro,...d.sections.flatMap(s=>[s[0],...s[1],s[2]]),...d.remember].join(' ').split(/\s+/).filter(Boolean).length;
   assert.ok(words>=580,'M'+n+' insuficiente: '+words);
  }
