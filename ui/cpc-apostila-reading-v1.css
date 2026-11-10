@@ -41,3 +41,30 @@ html[data-bc-reading-mode="night"] :is(#cpcNativeReaderOverlay,#cpcM02NativeRead
 .cpc-apostila .cpc-didactic-review .cpc-didactic-sources a{color:var(--cpc-navy,#173759);text-decoration:underline;text-underline-offset:3px}
 .cpc-apostila .cpc-didactic-review .cpc-didactic-bridge{font-size:.94em;color:var(--bc-reading-muted,#64788b);border-top:1px solid var(--cpc-line,#dbe5ed);padding-top:.9em;margin-top:1.4em}
 @media(max-width:600px){.cpc-apostila .cpc-didactic-review{margin:1.2em 0;padding:1em 0}.cpc-apostila .cpc-didactic-review>h2{font-size:1.15em}}
+
+/* CPC: modo primeira leitura. Apresentar uma etapa aberta por vez, sem duplicação de apostilas. */
+.cpc-apostila .cpc-learning-path{max-width:760px;margin:0 auto 2.1em;padding:0;border:0}
+.cpc-apostila .cpc-learning-path>.cpc-study-eyebrow{font:700 .72em/1.5 Inter,system-ui,sans-serif!important;letter-spacing:.13em;color:var(--cpc-muted);margin:0 0 .85em!important}
+.cpc-apostila .cpc-learning-path>h2{font-size:1.38em!important;border:0!important;padding:0!important;margin:0 0 .65em!important;letter-spacing:-.025em}
+.cpc-apostila .cpc-learning-path>.cpc-didactic-lead{max-width:65ch;font-size:1em;line-height:1.65!important}
+.cpc-apostila .cpc-learning-path>.cpc-study-instruction{font-size:.9em;color:var(--cpc-muted);margin:1.2em 0 .8em!important}
+.cpc-apostila .cpc-study-stages{border-top:1px solid var(--cpc-line)}
+.cpc-apostila details.cpc-study-step{margin:0!important;padding:0!important;border:0!important;border-bottom:1px solid var(--cpc-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.cpc-apostila .cpc-study-step>summary{cursor:pointer;display:flex;align-items:flex-start;gap:14px;padding:17px 5px 17px 0!important;font-size:1em!important;line-height:1.45;font-weight:650;color:var(--cpc-navy);list-style:none}
+.cpc-apostila .cpc-study-step>summary::-webkit-details-marker{display:none}
+.cpc-apostila .cpc-study-step>summary::after{content:"+";margin-left:auto;font-size:1.1em;color:var(--cpc-muted);font-weight:500}
+.cpc-apostila .cpc-study-step[open]>summary::after{content:"−"}
+.cpc-apostila .cpc-study-number{font-size:.79em;letter-spacing:.04em;color:var(--cpc-muted);padding-top:2px;min-width:23px}
+.cpc-apostila .cpc-study-step-body{padding:0 4px 18px 37px}
+.cpc-apostila .cpc-study-step-body p{line-height:1.7!important;margin:0 0 1.05em!important}
+.cpc-apostila .cpc-study-step-body .cpc-didactic-example{padding:10px 14px;margin:1.1em 0 0!important;border:0;border-left:2px solid #8fb2c8;background:rgba(129,176,204,.075);border-radius:0}
+.cpc-apostila details.cpc-study-recall,.cpc-apostila details.cpc-didactic-sources,.cpc-apostila details.cpc-original-reference{border:0;border-bottom:1px solid var(--cpc-line);margin:.6em 0 0;padding:0;background:transparent;box-shadow:none}
+.cpc-apostila .cpc-study-recall>summary,.cpc-apostila .cpc-didactic-sources>summary,.cpc-apostila .cpc-original-reference>summary{cursor:pointer;padding:15px 4px;line-height:1.45;color:var(--cpc-navy);font-weight:650}
+.cpc-apostila .cpc-study-recall .cpc-didactic-memory{padding-left:22px;padding-bottom:12px}
+.cpc-apostila .cpc-original-reference{max-width:760px;margin:1.35em auto!important;padding-top:10px!important}
+.cpc-apostila .cpc-original-reference>summary{font-size:.91em;font-weight:500;color:var(--cpc-muted)}
+.cpc-apostila .cpc-original-body{padding-top:12px}
+/* O índice de capítulos antigos é apresentado apenas quando a referência antiga é expandida.
+   Os controles internos e as chaves de progresso continuam disponíveis para consulta. */
+.bc-native-reader-overlay:has(.cpc-learning-path):not(:has(.cpc-original-reference[open])) .bc-native-toc{display:none!important}
+@media(max-width:600px){.cpc-apostila .cpc-learning-path{width:100%;margin:0}.cpc-apostila .cpc-study-step-body{padding-left:18px}.cpc-apostila .cpc-study-step>summary{gap:9px;padding:15px 0!important}}
