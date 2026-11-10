@@ -165,7 +165,7 @@ if(typeof MutationObserver!=='undefined'&&document.body){
    if(!didactic||!meta||!article)continue;
    const visible=article.cloneNode(true);
    visible.querySelectorAll('details').forEach(node=>node.remove());
-   const count=visible.textContent.trim().split(/\\s+/).filter(Boolean).length;
+   const count=visible.textContent.trim().split(/\s+/).filter(Boolean).length;
    meta.textContent=count.toLocaleString('pt-BR')+' palavras • ~'+Math.max(1,Math.ceil(count/210))+' min';
    overlay.dataset.cpcDidacticTiming='1';
   }
