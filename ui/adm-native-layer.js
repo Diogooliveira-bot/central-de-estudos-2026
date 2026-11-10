@@ -47,7 +47,7 @@ function orientation(uid){
  </section>`;
 }
 function sessionPanel(uid){const list=sessions(uid);if(!list.length)return '';return `<details class="adm-session-plan" data-adm-sessions="${escAttr(uid)}"><summary><span>Estudar por sessão</span><small data-adm-session-count>${sessionCount(uid)}/${list.length} concluídas</small></summary><p>Abra uma sessão no leitor e marque o check quando terminar. Você pode continuar depois.</p><div class="adm-session-list">${list.map((title,i)=>{const n=i+1,done=sessionDone(uid,n);return `<div class="adm-session-row${done?' is-done':''}" data-adm-session-row="${n}"><label><input type="checkbox" ${done?'checked ':''}onchange="AdmNative.toggleSession('${uid}',${n},this.checked)"><span>${title}</span></label><button type="button" onclick="AdmNative.open('${uid}','complete',false,${n})">Abrir sessão</button></div>`}).join('')}</div></details>`}
-function card(uid,kind,title,desc,qs){const p=progress(uid,kind),isSummary=kind==='summary';return `<article class="adm-cf-card ${isSummary?'adm-cf-card-review':'adm-cf-card-primary'}" data-kind="${kind}"><span class="adm-cf-icon" aria-hidden="true">${isSummary?'⚡':'📚'}</span><b>${title}</b><small>${desc}</small><span class="adm-cf-tags" aria-hidden="true"><span>${isSummary?'▤ Resumo':'▤ Apostila'}</span><span>${isSummary?'Pontos essenciais':'Conteúdo completo'}</span></span><div class="adm-cf-actions"><button type="button" class="adm-cf-button" onclick="AdmNative.open('${uid}','${kind}',false)">${isSummary?'Revisar conteúdo':'Estudar conteúdo'}${p?' · '+p+'% lido':''}</button><button type="button" class="adm-cf-button adm-cf-quiz" onclick="AdmNative.open('${uid}','${kind}',true)">Resolver ${qs} questões</button></div><span class="adm-cf-progress" aria-label="${p}% lido"><i style="width:${p}%"></i></span></article>`}
+function card(uid,kind,title,desc,qs){const p=progress(uid,kind),isSummary=kind==='summary';return `<article class="adm-cf-card ${isSummary?'adm-cf-card-review':'adm-cf-card-primary'}" data-kind="${kind}"><span class="adm-cf-icon" aria-hidden="true">${isSummary?'⚡':'📚'}</span><b>${title}</b><small>${desc}</small><span class="adm-cf-tags" aria-hidden="true"><span>${isSummary?'▤ Resumo':'▤ Apostila'}</span><span>${isSummary?'Pontos essenciais':'Conteúdo completo'}</span></span><div class="adm-cf-actions"><button type="button" class="adm-cf-button" onclick="AdmNative.open('${uid}','${kind}',false)">${isSummary?'Revisar conteúdo':'Estudar conteúdo'}${p?' · '+p+'% lido':''}</button><button type="button" class="adm-cf-button adm-cf-quiz" onclick="AdmNative.open('${uid}','${kind}',true)">${isSummary?'Resolver 10 questões autorais':'10 questões de bancas reais · em breve'}</button></div><span class="adm-cf-progress" aria-label="${p}% lido"><i style="width:${p}%"></i></span></article>`}
 function visualCard(uid){return `<article class="adm-cf-card adm-cf-card-map"><span class="adm-cf-icon" aria-hidden="true">🧠</span><b>Infográfico</b><small>Imagem de revisão visual do módulo, com opção de ampliar e baixar.</small><span class="adm-cf-tags" aria-hidden="true"><span>▧ Mapa mental</span><span>Revisão visual</span></span><div class="adm-cf-actions"><button type="button" class="adm-cf-button" onclick="AdmNative.openImage('${uid}')">Visualizar infográfico</button></div></article>`}
 function reviewPanel(uid){let saved='';try{saved=localStorage.getItem(typeof g.key==='function'?g.key(uid,'review'):`central-v6:${uid}:review`)||''}catch(_){}const date=saved||new Date().toISOString().slice(0,10);return `<section class="adm-cf-scheduled-review"><b>REVISÃO</b>${saved?`<small>Marcada para ${esc(saved.split('-').reverse().join('/'))}</small>`:''}<input id="rev-${escAttr(uid)}" type="date" value="${escAttr(date)}"><button type="button" onclick="scheduleReview('${String(uid).replace(/'/g,"\\'")}')">Agendar revisão</button></section>`}
 function cards(uid){const m=INDEX[uid];if(!m)return '';return `<section class="adm-native-zone" data-adm-native="${uid}"><div class="adm-native-zone-head"><div><span>MÓDULO ${String(m.number).padStart(2,'0')}</span><b>${esc(m.title)}</b></div><strong>${moduleProgress(uid)}% leitura</strong></div>${progressPanel(uid)}${orientation(uid)}${sessionPanel(uid)}<div class="adm-cf-cards" aria-label="Materiais e exercícios do módulo">${card(uid,'summary','Versão de revisão','Teoria resumida para retomar os pontos essenciais e revisar rapidamente.',m.summaryQuestions)}${card(uid,'complete','Teoria completa','Apostila integral do módulo, para estudar o conteúdo em profundidade.',m.completeQuestions)}${visualCard(uid)}</div>${notesPanel(uid)}${reviewPanel(uid)}${tools(uid)}</section>`}
@@ -149,8 +149,15 @@ function setupCompleteChecks(uid,body){
  checksObserver=new MutationObserver(mutations=>{if(mutations.some(m=>m.target===article&&m.type==='childList'))hydrate()});
  checksObserver.observe(article,{childList:true});
 }
+async function openAuthorial(uid){
+ const d=await loadData(uid);
+ const pack=g.BcAdmAuthorialSource?.select(d?.summaryHtml,d?.completeAppendHtml);
+ if(!pack?.ready){alert('As 10 questões autorais deste módulo ainda precisam ser completadas e revisadas.');return false;}
+ return g.CentralAuthorialQuiz?.open({discipline:'Direito Administrativo',module:'M'+String(num(uid)).padStart(2,'0'),title:INDEX[uid].title,items:pack.items});
+}
 async function open(uid,kind,jump,sectionNumber){
  if(!INDEX[uid])return;
+ if(jump)return kind==='complete'?g.CentralInternalQuestionPolicy?.modal('Direito Administrativo','Módulo '+String(num(uid)).padStart(2,'0')):openAuthorial(uid);
  close();
  const session=active={uid,kind},reader=g.CentralNativeReadingSession;
  const o=reader.create({id:'adm-native-reader',subject:'adm',title:INDEX[uid].title,
@@ -173,9 +180,10 @@ async function open(uid,kind,jump,sectionNumber){
   if(active!==session)return;
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
   body.querySelector('.bc-native-article').classList.add('adm-apostila');
+  g.BcAdmAuthorialSource?.strip(body.querySelector('.bc-native-article'));
   if(kind==='complete')setupCompleteChecks(uid,body);
   if(kind==='complete'&&sectionNumber)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const h=sessionHeadings(body)[sectionNumber-1];h?.scrollIntoView({block:'start'})}));
-  if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const hs=[...body.querySelectorAll('h1,h2,h3')],q=hs.find(h=>/^(?:\d+\s*)?quest(?:ões|ao)\b/i.test(h.textContent.trim()))||hs.find(h=>/questões internas|questões de fixação/i.test(h.textContent))||body.querySelector('details.question');q?.scrollIntoView({block:'start'})}));
+
   localStorage.setItem('central-v6:last',JSON.stringify({topicUid:uid,title:`Direito Administrativo · Módulo ${d.number} · ${d.title}`,at:Date.now()}));
   g.renderContinue?.();
  }catch(error){if(active===session){console.warn('[ADM reader]',error);reader.fail(o,()=>open(uid,kind,jump))}}
@@ -216,5 +224,5 @@ function saveNativeNote(uid){const input=document.querySelector(`[data-adm-note-
 function alignModuleContent(){document.querySelectorAll('[data-adm-native]').forEach(z=>{const panel=z.querySelector(':scope > [data-bcq-module-panel]'),review=z.querySelector(':scope > .adm-cf-scheduled-review'),toolsEl=z.querySelector(':scope > .adm-native-module-tools');if(panel&&review&&panel.previousElementSibling!==review)review.after(panel);if(toolsEl&&toolsEl!==z.lastElementChild)z.append(toolsEl)})}
 function install(){if(!patchRenderDetail())return false;patchSubjStats();updateSubject();const host=document.getElementById('subjects');if(host){const opts={childList:true,subtree:true};const mo=new MutationObserver(()=>{mo.disconnect();try{alignModuleContent();updateSubject();Object.keys(INDEX).forEach(updateCards)}finally{mo.observe(host,opts)}});mo.observe(host,opts)}return true}
 function boot(){if(install())return;let n=0,t=setInterval(()=>{if(install()||++n>160)clearInterval(t)},50)}
-g.AdmNative={open,close,font:fontSize,openImage,closeImage,zoomImage,markModuleRead,toggleSession,progress,moduleProgress,stats,updateSubject,tool,saveNote:saveNativeNote,externalStats,version:'2026.10.24-adm-sessoes'};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+g.AdmNative={open,openAuthorial,close,font:fontSize,openImage,closeImage,zoomImage,markModuleRead,toggleSession,progress,moduleProgress,stats,updateSubject,tool,saveNote:saveNativeNote,externalStats,version:'2026.10.24-adm-sessoes'};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })(window);
