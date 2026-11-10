@@ -29,7 +29,7 @@
     "test:premium-and-auth": "npm run test:premium-protection && npm run test:password-reset",
     "test:hotmart-webhook": "node --test tests/hotmart-webhook-unit.mjs tests/hotmart-pg-scenarios.mjs",
     "test:discipline-loading": "node --test tests/disciplinas-foco-loading-unit.mjs",
-    "test:adm-didatico": "node --test tests/adm-learning-guide-unit.mjs tests/adm-standardization-unit.mjs tests/adm-approved-complete-unit.mjs",
+    "test:adm-didatico": "node --test tests/adm-learning-guide-unit.mjs tests/adm-standardization-unit.mjs tests/adm-approved-complete-unit.mjs tests/adm-review-didactic-v2-unit.mjs",
     "test:rlm-editorial": "node --test tests/rlm-editorial-stages12-unit.mjs tests/rlm-stage3-unit.mjs tests/rlm-theory-expansion-unit.mjs tests/rlm-theory-expansion-dom.mjs",
     "test:editor-premium": "node --test tests/editor-premium-v1-unit.mjs tests/editor-premium-fase1-unit.mjs tests/editor-premium-fase2-unit.mjs tests/editor-premium-video-regression-unit.mjs tests/admin-module-images-unit.mjs",
     "test:cpc-apostila": "node --test tests/cpc-apostila-reading-unit.mjs tests/cpc-reader-parse-unit.mjs tests/cpc-approved-layout-unit.mjs tests/cpc-sharing-links-unit.mjs tests/protected-content-unit.mjs tests/vercel-private-static-output-unit.mjs"
