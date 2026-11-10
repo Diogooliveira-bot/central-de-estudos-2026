@@ -5,6 +5,8 @@ on:
       - 'content/adm/adm-review-didactic-*.js'
       - 'ui/adm-apostila-reading-v1.js'
       - 'tests/adm-review-didactic-v2-unit.mjs'
+      - 'tests/adm-review-didactic-m11-m20-unit.mjs'
+      - 'tests/adm-review-all-m01-m20-unit.mjs'
       - 'package.json'
       - '.github/workflows/adm-didatico-v2.yml'
   workflow_dispatch:
