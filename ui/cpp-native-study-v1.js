@@ -10,7 +10,7 @@ function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 function tecButtons(n){const m=BYNUM[n];return (m.tec||[]).map(id=>{const t=CFG.tecs[id];return t?`<button type="button" class="chip tec-auto" onclick="return CppNative.openTec('${id}')">↗ TEC · ${esc(t.name.replace(/^CPP\\s+\\d+\\s+-\\s+/i,''))} <span class="tec-auto-count">${t.count}q</span></button>`:''}).join('')}
 function tools(n){return `<div class="adm-native-module-tools"><span>FERRAMENTAS DO MÓDULO</span><div><button onclick="CppNative.tool(${n},'vade')">⚖ Vade Mecum</button><button onclick="CppNative.tool(${n},'tec')">▤ Cadernos TEC</button></div></div>`}
 function progressPanel(n){const theory=moduleProgress(n),ext=externalStats(n);return `<section class="adm-native-progress-panel"><div class="adm-native-progress-line"><div class="adm-native-progress-copy"><b>Progresso da teoria</b><span>${theory}% concluído</span></div><div class="adm-native-wide-bar"><i style="width:${theory}%"></i></div><small>Versão resumida + versão completa</small></div><div class="adm-native-progress-line"><div class="adm-native-progress-copy"><b>Questões externas</b><span>${ext.pct}% · ${ext.completed}/3 rodadas</span></div><div class="adm-native-wide-bar external"><i style="width:${ext.pct}%"></i></div><small>${ext.done?`${ext.done} feitas · ${ext.correct} acertos · ${ext.accuracy}% de aproveitamento`:'Nenhuma rodada registrada ainda'}</small></div></section>`}
-function card(n,kind,title,desc,q){const p=progress(n,kind),complete=kind==='complete',icon=complete?'📚':'⚡',tag=complete?'Apostila':'Resumo',tag2=complete?'Conteúdo completo':'Pontos essenciais',read=complete?'Estudar conteúdo':'Revisar conteúdo';return '<article class="adm-native-card" data-kind="'+kind+'"><div class="adm-native-card-icon" aria-hidden="true">'+icon+'</div><div class="adm-native-card-copy"><div class="adm-native-card-top"><span>'+(complete?'TEORIA COMPLETA':'REVISÃO')+'</span><b>'+p+'% lido</b></div><h4>'+esc(title)+'</h4><p>'+esc(desc)+'</p><div class="adm-native-tags"><span>'+tag+'</span><span>'+tag2+'</span></div><div class="adm-native-mini-bar"><i style="width:'+p+'%"></i></div></div><div class="adm-native-card-actions"><button class="primary" onclick="CppNative.open('+n+',\''+kind+'\',false)">'+read+'</button><button class="ghost" onclick="CppNative.open('+n+',\''+kind+'\',true)">Resolver '+q+' questões</button></div></article>'}
+function card(n,kind,title,desc,q){const p=progress(n,kind),complete=kind==='complete',icon=complete?'📚':'⚡',tag=complete?'Apostila':'Resumo',tag2=complete?'Conteúdo completo':'Pontos essenciais',read=complete?'Estudar conteúdo':'Revisar conteúdo';return '<article class="adm-native-card" data-kind="'+kind+'"><div class="adm-native-card-icon" aria-hidden="true">'+icon+'</div><div class="adm-native-card-copy"><div class="adm-native-card-top"><span>'+(complete?'TEORIA COMPLETA':'REVISÃO')+'</span><b>'+p+'% lido</b></div><h4>'+esc(title)+'</h4><p>'+esc(desc)+'</p><div class="adm-native-tags"><span>'+tag+'</span><span>'+tag2+'</span></div><div class="adm-native-mini-bar"><i style="width:'+p+'%"></i></div></div><div class="adm-native-card-actions"><button class="primary" onclick="CppNative.open('+n+',\''+kind+'\',false)">'+read+'</button><button class="ghost" onclick="CppNative.open('+n+',\''+kind+'\',true)">'+(complete?'10 questões de bancas reais · em breve':'Resolver 10 questões autorais')+'</button></div></article>'}
 function visual(n){return '<article class="adm-native-card adm-native-visual" data-kind="infographic"><div class="adm-native-card-icon" aria-hidden="true">🧠</div><div class="adm-native-card-copy"><div class="adm-native-card-top"><span>VISUAL REAL</span><b>Imagem do pacote</b></div><h4>Infográfico</h4><p>Imagem original do módulo, com opção de ampliar e baixar.</p><div class="adm-native-tags"><span>Mapa mental</span><span>Revisão visual</span></div></div><div class="adm-native-card-actions"><button class="primary" onclick="CppNative.openImage('+n+')">Visualizar infográfico</button></div></article>'}
 function guidedReading(n){const m=BYNUM[n];return '<section class="adm-native-guided-reading"><div class="adm-native-reading-icon" aria-hidden="true">📖</div><div><b>Leitura orientada inicial</b><p>Comece pela versão de revisão de '+esc(m?.title||'este módulo')+', aprofunde na teoria completa e finalize com a Lei em Dia e as questões do módulo.</p></div></section>'}
 function noteKey(n){return `central-v6:cpp-native:m${String(n).padStart(2,'0')}:notes`}
@@ -42,6 +42,22 @@ function questionBlocks(body){
   return {heading:h,nodes,id:Number(/quest[aã]o\s+(\d+)/i.exec(h.textContent)[1]),prompt,options,answer:key[1].toUpperCase().charCodeAt(0)-65,explanation};
  }).filter(Boolean);
 }
+function extractAuthorial(html){
+ const root=document.createElement('div');root.innerHTML=html||'';
+ return questionBlocks(root).map(q=>({q:q.prompt,options:q.options,answer:q.answer,explanation:q.explanation,id:'legacy-'+q.id}));
+}
+function stripInternalQuestions(body){
+ // Apenas blocos completos, identificados por pergunta e gabarito, são removidos.
+ // Tabelas, exemplos práticos, lei seca e teoria permanecem intactos.
+ questionBlocks(body).forEach(q=>{q.nodes.forEach(n=>n.remove());q.heading.remove()});
+}
+async function openAuthorial(n){
+ const d=await load(n),list=g.CentralInternalQuestionPolicy?.authorial(extractAuthorial(d.summaryHtml),extractAuthorial(d.completeHtml))||[];
+ if(list.length!==10||!list.every(g.CentralAuthorialQuiz?.valid||(()=>false))){
+  alert('Este módulo ainda não tem dez questões autorais conferidas.');return false;
+ }
+ return g.CentralAuthorialQuiz.open({discipline:'Direito Processual Penal',module:'M'+String(n).padStart(2,'0'),title:BYNUM[n].title,items:list});
+}
 function bindQuestions(body,n,kind){
  const questions=questionBlocks(body);if(!questions.length)return;
  const storageKey=k(n,kind,'answers');let saved={};try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}')||{}}catch(_){}
@@ -65,6 +81,7 @@ function bindQuestions(body,n,kind){
 let active=null;function toc(body){return [...body.querySelectorAll('h1,h2,h3')].slice(0,50).map((h,i)=>{if(!h.id)h.id='cpp-native-h-'+i;return `<button onclick="document.getElementById('${h.id}').scrollIntoView({behavior:'smooth',block:'start'})">${h.textContent.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</button>`}).join('')}
 async function open(n,kind,jump){
  n=Number(n);if(!BYNUM[n])return;
+ if(jump)return kind==='complete'?g.CentralInternalQuestionPolicy?.modal('Direito Processual Penal','Módulo '+String(n).padStart(2,'0')):openAuthorial(n);
  if(document.getElementById('cpp-native-reader'))close();
  const session=active={n,kind},reader=g.CentralNativeReadingSession;
  const o=reader.create({id:'cpp-native-reader',subject:'cpp',title:BYNUM[n].title,
@@ -74,9 +91,8 @@ async function open(n,kind,jump){
  try{
   const d=await load(n);if(active!==session)return;
   const body=reader.show(o,kind==='summary'?d.summaryHtml:d.completeHtml,toc,Number(localStorage.getItem(k(n,kind,'scroll'))||0),onScroll);
-  bindQuestions(body,n,kind);
+  stripInternalQuestions(body);
   g.CppVisualPilot?.enhance(body,n,kind);
-  if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const q=body.querySelector('.cpp-native-question');(q?.previousElementSibling||q)?.scrollIntoView({block:'start'})}));
   localStorage.setItem('central-v6:last',JSON.stringify({cppModule:n,cppKind:kind,title:`Direito Processual Penal · M${String(n).padStart(2,'0')} · ${d.title}`,at:Date.now()}));
   g.renderContinue?.();
  }catch(error){if(active===session){console.warn('[CPP reader]',error);reader.fail(o,()=>open(n,kind,jump))}}
@@ -113,6 +129,6 @@ function syncSubjectRegistry(){
 }
 function patchSubjStats(){if(g.__cppNativeSubjStatsPatched||typeof g.subjStats!=='function')return;const base=g.subjStats;g.subjStats=function(subject){if(subject&&subject.id==='cpp'){const st=stats();return {total:st.total,done:st.done,pct:st.pct,unit:'módulos'}}return base.apply(this,arguments)};g.__cppNativeSubjStatsPatched=true}
 function installObserver(){const host=document.getElementById('subjects');if(!host||g.__cppNativeObserver)return;const opts={childList:true,subtree:true};const mo=new MutationObserver(()=>{const body=document.querySelector('.subject[data-id="cpp"] .subject-body');if(body&&!body.dataset.cppNative){mo.disconnect();try{render()}finally{mo.observe(host,opts)}}});mo.observe(host,opts);g.__cppNativeObserver=mo}
-g.CppNative={render,toggle,openModule,open,close,font:fontSize,openImage,zoomImage,downloadImage,closeImage,openTec,tool,saveNote,saveRound,stats,moduleProgress,externalStats,version:'2026.10.19-approved-standard1'};
+g.CppNative={render,toggle,openModule,open,openAuthorial,extractAuthorial,stripInternalQuestions,close,font:fontSize,openImage,zoomImage,downloadImage,closeImage,openTec,tool,saveNote,saveRound,stats,moduleProgress,externalStats,version:'2026.10.19-approved-standard1'};
 function boot(){migrate();syncSubjectRegistry();patchSubjStats();render();installObserver();document.addEventListener('central:discipline-ready',event=>{if(event.detail.id==='cpp'){syncSubjectRegistry();render()}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })(window);
