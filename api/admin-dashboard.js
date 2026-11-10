@@ -1,6 +1,7 @@
 import {requireSession,safeSecretEqual} from '../lib/auth.js';
 import {runPremiumEmailAutomation,premiumAutomationEnabled} from '../lib/email-premium-automation.js';
 import {captureStudyEmailSnapshots,studySnapshotsEnabled} from '../lib/email-study-snapshots.js';
+import {runWeeklyEmailAutomation,weeklyEmailEnabled} from '../lib/email-weekly-automation.js';
 import {ensureEmailAuditTable} from '../lib/email-audit.js';
 
 function send(res,status,body){
@@ -42,13 +43,14 @@ export default async function handler(req,res){
   const auth=String(req.headers?.authorization||'');
   if(req.method==='GET' && secret.length>=32 &&
      safeSecretEqual(auth,'Bearer '+secret)){
-    if(!premiumAutomationEnabled()&&!studySnapshotsEnabled())
+    if(!premiumAutomationEnabled()&&!studySnapshotsEnabled()&&!weeklyEmailEnabled())
       return send(res,200,{enabled:false,attempted:0,sent:0,failed:0});
     try{
-      const [premium,snapshots]=await Promise.all([
-        runPremiumEmailAutomation(),captureStudyEmailSnapshots()
-      ]);
-      return send(res,200,{premium,snapshots});
+      // Primeiro captura os contadores do dia; resumo semanal só roda depois.
+      const snapshots=await captureStudyEmailSnapshots();
+      const premium=await runPremiumEmailAutomation();
+      const weekly=await runWeeklyEmailAutomation();
+      return send(res,200,{premium,snapshots,weekly});
     }catch(error){
       console.error('email cron failure',String(error?.code||error?.name||'UNKNOWN').slice(0,32));
       return send(res,503,{error:'Rotina de e-mails indisponível'});
