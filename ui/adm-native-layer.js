@@ -168,7 +168,7 @@ async function open(uid,kind,jump,sectionNumber){
     if(!d.completeAppendHtml)throw new Error('Questões completas ADM não localizadas');
     content+=d.completeAppendHtml;
   }
-  if(!g.AdmApostilaReading)await import('/ui/adm-apostila-reading-v1.js?v=20261108adm1');
+  if(!g.AdmApostilaReading)await import('/ui/adm-apostila-reading-v1.js?v=20261110admautor1');
   content=await g.AdmApostilaReading.load(num(uid),kind);
   if(active!==session)return;
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
