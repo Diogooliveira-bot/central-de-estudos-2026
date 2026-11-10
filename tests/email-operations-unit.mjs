@@ -53,7 +53,7 @@ test('admin email page only uses authenticated history endpoint, no untrusted HT
  assert.doesNotMatch(html,/innerHTML\s*=\s*item/);
 });
 test('cron requires a bearer token and disabled automation never sends',()=>{
- const cron=readFileSync(new URL('../api/premium-expiry-reminders.js',base),'utf8');
+ const cron=readFileSync(new URL('../api/admin-dashboard.js',base),'utf8');
  assert.match(cron,/safeSecretEqual\(auth,'Bearer '\+secret\)/);
  assert.match(cron,/premiumAutomationEnabled\(\)/);
 });
