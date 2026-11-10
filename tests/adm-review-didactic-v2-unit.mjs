@@ -41,7 +41,7 @@ test('Leitor substitui somente a teoria resumida e preserva questões e completo
   window.DecompressionStream=globalThis.DecompressionStream;
   window.eval(read('content/adm/adm-review-didactic-m01-m05.js'));
   window.eval(read('content/adm/adm-review-didactic-m06-m10.js'));
-  for(let n=1;n<=10;n++)window.eval(read('content/adm/m'+num(n)+'-apostila-summary.js'));
+  for(let n=1;n<=10;n++){window.eval(read('content/adm/m'+num(n)+'-apostila-summary.js'));window.eval(read('content/adm/autor-20261110/adm-m'+num(n)+'-submitted-review.js'));}
   window.eval(read('content/adm/m01-apostila-complete.js'));
   window.eval(read('ui/adm-apostila-reading-v1.js'));
   for(let n=1;n<=10;n++){
@@ -55,9 +55,9 @@ test('Leitor substitui somente a teoria resumida e preserva questões e completo
     assert.equal(result.slice(resultQuestionPos),raw.slice(originalQuestionPos));
     const doc=new JSDOM('<main>'+result+'</main>').window.document;
     const headers=[...doc.querySelectorAll('main h2')].map(h=>h.textContent);
-    assert.ok(headers.includes('Revisão final — o que lembrar'), 'M'+n+' não mostra revisão final');
+    assert.ok(doc.querySelector('.adm-author-reading'), 'M'+n+' apostila autoral ausente');
     assert.ok(doc.querySelectorAll('p').length>=12, 'M'+n+' precisa de explicações em parágrafos');
-    assert.ok(doc.querySelectorAll('details.law a[href]').length>=1, 'M'+n+' deve oferecer base legal');
+    assert.ok(doc.querySelectorAll('.adm-author-reading table').length>=1, 'M'+n+' deve preservar as tabelas explicativas');
   }
   const oldComplete=gunzipSync(Buffer.from(window.ADM_APOSTILA_PACKED['1:complete'],'base64')).toString('utf8');
   assert.equal(await window.AdmApostilaReading.load(1,'complete'),oldComplete,'Teoria completa deve permanecer intocada');
