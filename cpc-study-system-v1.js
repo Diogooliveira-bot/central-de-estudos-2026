@@ -242,7 +242,7 @@ function m01Html(w){
     </div>
    </section>
 
-   <section class="cpc-study-intro" style="margin-top:12px"><div><h3>Fixação interna</h3><p>As questões ficam separadas da leitura para não quebrar seu fluxo de estudo.</p></div><div class="cpc-study-actions"><button class="cf-btn ${sq.done?'good':''}" onclick="cpcStudyOpenQuiz('w1','summary')">5 do resumido · ${sq.n}/${sq.list.length}</button><button class="cf-btn ${fq.done?'good':''}" onclick="cpcStudyOpenQuiz('w1','full')">10 do completo · ${fq.n}/${fq.list.length}</button></div></section>
+   <section class="cpc-study-intro" style="margin-top:12px"><div><h3>Fixação interna</h3><p>As questões ficam separadas da leitura para não quebrar seu fluxo de estudo.</p></div><div class="cpc-study-actions"><button class="cf-btn ${sq.done?'good':''}" onclick="cpcStudyOpenQuiz('w1','summary')">10 questões autorais · versão resumida</button><button class="cf-btn ${fq.done?'good':''}" onclick="cpcStudyOpenQuiz('w1','full')">10 questões de bancas reais · em breve</button></div></section>
 
    <div class="cpc-bottom-grid">
     <section class="cpc-mini-panel"><h4>⚖️ Lei em Dia</h4><p>Artigos do módulo. Entra na cobertura quando você concluir.</p><div class="cpc-study-actions" style="margin-top:9px"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'cpc','cpc-m01')">Abrir Lei em Dia</button><button class="cf-btn ${m.decorando?'good':''}" onclick="cpcStudySetModule('w1',{decorando:${!m.decorando}})">${m.decorando?'✓ Concluído':'Marcar concluído'}</button></div></section>
