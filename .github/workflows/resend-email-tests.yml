@@ -12,6 +12,7 @@ on:
       - 'tests/resend-email-unit.mjs'
       - 'tests/transactional-email-unit.mjs'
       - 'tests/password-reset-unit.mjs'
+      - 'tests/transactional-email-templates-unit.mjs'
       - 'package.json'
 jobs:
   resend-unit:
@@ -27,4 +28,4 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - run: npm run test:email-provider
+      - run: npm run test:emails
