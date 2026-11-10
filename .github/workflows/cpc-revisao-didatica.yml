@@ -6,6 +6,8 @@ on:
     paths:
       - 'content/cpc/cpc-review-didactic-*.js'
       - 'ui/cpc-apostila-reading-v1.*'
+      - 'ui/cpc-*-native-study-reader.js'
+      - 'ui/cpc-native-study-reader.js'
       - 'tests/cpc-*.mjs'
       - 'package.json'
       - '.github/workflows/cpc-revisao-didatica.yml'
@@ -13,6 +15,8 @@ on:
     paths:
       - 'content/cpc/cpc-review-didactic-*.js'
       - 'ui/cpc-apostila-reading-v1.*'
+      - 'ui/cpc-*-native-study-reader.js'
+      - 'ui/cpc-native-study-reader.js'
       - 'tests/cpc-*.mjs'
       - 'package.json'
       - '.github/workflows/cpc-revisao-didatica.yml'
