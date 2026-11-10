@@ -225,9 +225,9 @@ test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manu
   assert.match(first,/CppNative\.tool\(1,'decorando'\)/);
   assert.equal((first.match(/Lei em Dia<\/button>|Abrir Lei em Dia/g)||[]).length,1);
   assert.match(first,/Estudar conteúdo/);
-  assert.match(first,/Resolver 10 questões/);
+  assert.match(first,/10 questões de bancas reais/);
   assert.match(first,/Revisar conteúdo/);
-  assert.match(first,/Resolver 5 questões/);
+  assert.match(first,/Resolver 10 questões autorais/);
   assert.match(first,/Visualizar infográfico/);
   assert.match(first,/Lei em Dia/);
   assert.doesNotMatch(first,/Registrar questões externas|cpp-round-done|adm-native-external-entry/);
