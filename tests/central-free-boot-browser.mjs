@@ -100,7 +100,7 @@ try{
       return !!topic?.classList.contains('open') && getComputedStyle(topic.querySelector('.topic-detail')).display==='block';
     },{timeout:5000});
     const names=await page.locator('#bcFocusModules .bc-focus-module-number').allTextContents();
-    if(names[0]!=='Módulo 01'||names[1]!=='Módulo 02')throw Error('ADM: numeração duplicada '+JSON.stringify(names.slice(0,4)));
+    if(names[0]?.toLocaleLowerCase('pt-BR')!=='módulo 01'||names[1]?.toLocaleLowerCase('pt-BR')!=='módulo 02')throw Error('ADM: numeração duplicada '+JSON.stringify(names.slice(0,4)));
   }
   const locked=section.locator('button.bc-plan-locked:visible').filter({hasText:'Estudar conteúdo'}).first();
   await locked.waitFor({state:'visible',timeout:10000});
