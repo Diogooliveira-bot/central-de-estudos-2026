@@ -188,7 +188,7 @@ async function open(mode){
  close();
  const raw=mode==='summary'?data.summary:data.complete,parsed=(mode==='summary'&&data.summaryHtml)?buildFromHtml(data.summaryHtml,raw):build(raw),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
  const request=global.__CPC_VISUAL_REQUEST=(global.__CPC_VISUAL_REQUEST||0)+1;
- try{if(!global.CpcApostilaReading)await import('/ui/cpc-apostila-reading-v1.js?v=20261107cpc2');parsed.body=await global.CpcApostilaReading.transform(parsed.body,20,mode);if(request!==global.__CPC_VISUAL_REQUEST)return;}catch(error){console.warn('[CPC apostila]',error);alert('Não foi possível preparar a leitura. Confira sua conexão e tente novamente.');return;}
+ try{if(!global.CpcApostilaReading)await import('/ui/cpc-apostila-reading-v1.js?v=20261110cpcraciocinio1');parsed.body=await global.CpcApostilaReading.transform(parsed.body,20,mode);if(request!==global.__CPC_VISUAL_REQUEST)return;}catch(error){console.warn('[CPC apostila]',error);alert('Não foi possível preparar a leitura. Confira sua conexão e tente novamente.');return;}
  const ov=document.createElement('div');ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true">'+
  '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M20 — '+esc(data.title)+'</b><small>'+label+' • leitura incorporada à Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-cpc-close>×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
