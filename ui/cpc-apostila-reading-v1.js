@@ -152,6 +152,25 @@ function insertDidactic(host,n,data){
 
 let pending;
 async function laws(){if(!pending)pending=(async()=>{if(!g.CPC_READING_LAWS_B64)await import('/content/cpc/cpc-reading-laws-v1.js?v=20261107cpc2');const bytes=Uint8Array.from(atob(g.CPC_READING_LAWS_B64),c=>c.charCodeAt(0));return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());})().catch(e=>{pending=null;throw e});return pending;}
-function styles(){if(document.getElementById('cpc-apostila-style'))return;const link=document.createElement('link');link.id='cpc-apostila-style';link.rel='stylesheet';link.href='/ui/cpc-apostila-reading-v1.css?v=20261107cpc2';document.head.append(link);}
+function styles(){if(document.getElementById('cpc-apostila-style'))return;const link=document.createElement('link');link.id='cpc-apostila-style';link.rel='stylesheet';link.href='/ui/cpc-apostila-reading-v1.css?v=20261110cpcdidatico1';document.head.append(link);}
 g.CpcApostilaReading=Object.freeze({references,enhance,routes,lawNames,async transform(html,n,mode){styles();const registry=await laws(),review=mode==='summary'?await didactic(n):null,template=document.createElement('template');template.innerHTML=html;const host=document.createElement('article');host.append(template.content);enhance(host,n,mode,registry);if(review)insertDidactic(host,n,review);return '<div class="cpc-apostila" data-cpc-apostila="'+mode+'">'+host.innerHTML+'</div>';}});
+
+// O cabeçalho dos leitores calcula a duração antes da transformação editorial.
+// Atualizamos apenas o número exibido, sem tocar na progressão salva.
+if(typeof MutationObserver!=='undefined'&&document.body){
+ const updateReadingTime=()=>{
+  for(const overlay of document.querySelectorAll('.bc-native-reader-overlay')){
+   if(overlay.dataset.cpcDidacticTiming)return;
+   const didactic=overlay.querySelector('.cpc-didactic-review'),meta=overlay.querySelector('.bc-native-reader-meta'),article=overlay.querySelector('.bc-native-article');
+   if(!didactic||!meta||!article)continue;
+   const visible=article.cloneNode(true);
+   visible.querySelectorAll('details').forEach(node=>node.remove());
+   const count=visible.textContent.trim().split(/\\s+/).filter(Boolean).length;
+   meta.textContent=count.toLocaleString('pt-BR')+' palavras • ~'+Math.max(1,Math.ceil(count/210))+' min';
+   overlay.dataset.cpcDidacticTiming='1';
+  }
+ };
+ const listener=new MutationObserver(updateReadingTime);
+ listener.observe(document.body,{childList:true});
+}
 })(window);
