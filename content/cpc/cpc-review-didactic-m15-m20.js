@@ -61,7 +61,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Lei 15.484/2026 — relevância do REsp",
         "https://www2.camara.leg.br/legin/fed/lei/2026/lei-15484-4-agosto-2026-799698-publicacaooriginal-180680-pl.html"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Roberto perdeu parte de sua demanda e considera injusta a decisão. O advogado pensa em recorrer, mas qual instrumento usar? A resposta depende do tipo de decisão, da questão discutida e do momento processual.",
+      "steps": [
+        [
+          "Antes de escolher recurso, descubra o que foi decidido",
+          [
+            "Se houve sentença que encerrou a fase cognitiva, em regra o caminho é a apelação. Se o juiz resolveu questão incidental, pode haver agravo de instrumento nas hipóteses legais, conforme o art. 1.015 e a interpretação jurisprudencial aplicável.",
+            "O nome dado pelo juiz ao pronunciamento não é a única pista. O importante é sua natureza, conteúdo e função processual. Escolher recurso errado pode impedir o exame da insatisfação, mesmo que a parte tenha bons argumentos."
+          ],
+          "Pergunta: qualquer decisão do primeiro grau pode ser combatida imediatamente por apelação?",
+          "Não. É preciso identificar o pronunciamento e as hipóteses legais de recurso."
+        ],
+        [
+          "O que significa recorrer adequadamente?",
+          [
+            "O recurso precisa caber contra aquela decisão, ser apresentado pela pessoa legitimada, no prazo, com preparo quando devido e fundamentação capaz de enfrentar os motivos do julgamento. Por isso a simples frase 'não concordo' não substitui razões recursais.",
+            "O CPC prevê prazo geral de quinze dias para recursos, com exceção conhecida dos embargos de declaração em cinco dias. Recurso não suspende automaticamente qualquer decisão, embora cada espécie tenha regime de efeitos próprio."
+          ],
+          "Pergunta: recorrer dentro do prazo resolve, sozinho, todos os requisitos de admissibilidade?",
+          "Não. Cabimento, regularidade, interesse, preparo e fundamentação podem importar."
+        ],
+        [
+          "Por que os embargos de declaração são diferentes?",
+          [
+            "Suponha que a sentença deixe de enfrentar uma alegação essencial de Roberto. Antes de rediscutir o mérito como faria na apelação, cabe investigar se existe omissão, obscuridade, contradição ou erro material. É a finalidade típica dos embargos de declaração.",
+            "Eles não são uma segunda chance universal para formular toda a defesa. O seu efeito sobre prazos recursais também segue regra própria de interrupção, que não se confunde com suspensão de prazo."
+          ],
+          "Pergunta: embargos de declaração servem sempre para substituir apelação?",
+          "Não. Sua finalidade é integrar ou esclarecer o pronunciamento nos vícios legais."
+        ],
+        [
+          "Quando o debate chega ao STF ou STJ?",
+          [
+            "Se a controvérsia envolve questão federal infraconstitucional nas hipóteses constitucionais, pode surgir recurso especial ao STJ. Se envolve questão constitucional nos requisitos legais, pode surgir recurso extraordinário ao STF. Não basta escolher o tribunal que parece 'mais importante'.",
+            "O extraordinário possui repercussão geral; o especial se relaciona ao regime de relevância da questão federal, regulamentado por lei. Ambos exigem filtros próprios. Precedentes repetitivos orientam a solução uniforme, mas não dispensam verificar correspondência entre casos."
+          ],
+          "Pergunta: qualquer discussão sobre lei federal pode ser levada diretamente ao STF por recurso extraordinário?",
+          "Não. É preciso distinguir questão constitucional e federal, além de requisitos específicos."
+        ],
+        [
+          "O precedente realmente resolve este caso?",
+          [
+            "Imagine tese repetitiva do STJ sobre contrato com características distintas do contrato de Roberto. Antes de aplicar mecanicamente o precedente, o julgador deve identificar a razão decisiva e avaliar se os fatos relevantes correspondem.",
+            "Se há diferença juridicamente relevante, pode ocorrer distinguishing; se a orientação é superada, overruling. Assim, recorrer e trabalhar com precedentes são exercícios de argumentação jurídica, não escolha de sigla e reprodução de ementa."
+          ],
+          "Pergunta: toda decisão anterior deve ser aplicada automaticamente a qualquer causa parecida?",
+          "Não. A pertinência do precedente precisa ser demonstrada."
+        ]
+      ],
+      "conclusion": "A ordem correta para pensar recursos é: natureza da decisão → objetivo da impugnação → recurso cabível → prazo e requisitos → efeitos → precedentes e filtros aplicáveis."
+    }
   },
   "16": {
     "title": "Execução: títulos e obrigações",
@@ -124,7 +175,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Lei 15.479/2026 — vigência futura",
         "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15479.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Uma empresa deve uma quantia representada em documento que, em tese, pode ser título executivo extrajudicial. O credor quer receber sem começar por uma ação de conhecimento. O que torna possível a execução e quais limites protegem o devedor?",
+      "steps": [
+        [
+          "A cobrança pode começar diretamente?",
+          [
+            "O primeiro passo é identificar se o documento constitui título executivo extrajudicial admitido pelo ordenamento. Ter um papel assinado ou uma mensagem sobre dívida não é, por si só, garantia de executividade. Além do título, a obrigação deve ser certa, líquida e exigível.",
+            "Certeza identifica o dever, liquidez permite determinar a prestação e exigibilidade indica que chegou o momento de cobrar. Se um requisito faltar, poderá ser necessário outro caminho processual, como ação de conhecimento ou monitória conforme o caso."
+          ],
+          "Pergunta: qualquer documento que mencione dinheiro permite execução direta?",
+          "Não. É preciso título executivo e obrigação com requisitos legais."
+        ],
+        [
+          "Execução busca resultado, não castigo",
+          [
+            "Quando se executa, a finalidade é satisfazer o crédito. O procedimento pode realizar atos sobre o patrimônio do devedor ou utilizar técnicas coercitivas proporcionais. A efetividade não autoriza punições arbitrárias nem desconsidera garantias fundamentais.",
+            "O CPC também prevê menor onerosidade quando houver meio igualmente eficaz. Não significa que o executado possa simplesmente escolher não pagar: a alternativa menos gravosa precisa preservar possibilidade concreta de satisfação do crédito."
+          ],
+          "Pergunta: alegar que a penhora é desconfortável basta para impedir a execução?",
+          "Não. A avaliação considera efetividade e alternativa adequada nos termos legais."
+        ],
+        [
+          "Que patrimônio pode responder?",
+          [
+            "O devedor responde em regra com seus bens presentes e futuros, respeitadas limitações legais. A proteção de determinados bens e a responsabilidade excepcional de terceiros exigem regras próprias.",
+            "Se ele vende patrimônio durante demanda, pode surgir discussão sobre fraude à execução, observados requisitos e proteção de terceiros. Isso não torna toda venda feita por devedor automaticamente nula. É preciso conectar o ato às condições legais."
+          ],
+          "Pergunta: dívida empresarial permite automaticamente penhorar qualquer bem particular dos sócios?",
+          "Não. Responsabilidade patrimonial de terceiros depende de hipótese legal."
+        ],
+        [
+          "E quando a obrigação não é pagar dinheiro?",
+          [
+            "Imagine que o título exija entrega de máquina específica. A medida adequada pode ser busca e apreensão, não necessariamente penhora de outra quantia. Se a obrigação é fazer obra, importa saber se terceiro pode substituí-lo; se é não fazer, pode ser necessário desfazer um ato.",
+            "O tipo de prestação indica o meio executivo. A execução deve aproximar o credor do resultado devido, e não apenas repetir fórmulas de cobrança de quantia."
+          ],
+          "Pergunta: execução de entrega de bem móvel é idêntica à execução para pagar quantia?",
+          "Não. Cada obrigação demanda técnica própria."
+        ],
+        [
+          "Por que existem regimes especiais?",
+          [
+            "Alimentos podem envolver meios coercitivos próprios em hipóteses estritas. A Fazenda Pública segue disciplina particular de pagamento, inclusive precatório ou requisição de pequeno valor quando aplicável. Essas regras mostram que não há uma execução única para qualquer devedor.",
+            "Em provas, raciocine nesta ordem: título → certeza, liquidez e exigibilidade → natureza da obrigação → sujeito executado → meio de satisfação e defesa cabível."
+          ],
+          "Pergunta: o mesmo rito é usado indistintamente para alimentos, Fazenda e dívida contratual comum?",
+          "Não. O CPC prevê procedimentos específicos."
+        ]
+      ],
+      "conclusion": "Execução é o processo de transformar um dever exigível em satisfação concreta, escolhendo meios adequados ao título, à prestação e aos limites patrimoniais legais."
+    }
   },
   "17": {
     "title": "Execução por quantia: penhora e embargos",
@@ -183,7 +285,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 824–925",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "O credor encontrou bens do devedor, mas não recebeu a dívida. O juiz determina providências patrimoniais. Penhora significa perder imediatamente o bem? O devedor pode defender-se e o que ocorre se ninguém encontrar patrimônio suficiente?",
+      "steps": [
+        [
+          "A execução por quantia começa dando chance de pagamento",
+          [
+            "Na execução fundada em título extrajudicial de quantia certa, o executado é citado, em regra, para pagar em três dias. Essa etapa antecede diversos atos de constrição, respeitadas hipóteses legais.",
+            "Se não há pagamento, a execução precisa localizar e individualizar bens para satisfação do crédito. O objetivo não é punir a pessoa por estar endividada, mas usar o patrimônio juridicamente responsável pelo cumprimento da obrigação."
+          ],
+          "Pergunta: na execução extrajudicial de quantia, o devedor é chamado apenas para oferecer defesa e nunca para pagar?",
+          "Não. O art. 829 prevê oportunidade inicial de pagamento no prazo legal."
+        ],
+        [
+          "Penhora é afetação, não compra compulsória imediata",
+          [
+            "Penhorar significa vincular bem ao processo executivo, sujeitando-o a atos posteriores para satisfação. Não equivale a entregar imediatamente a propriedade ao credor. Em seguida podem ocorrer avaliação e formas de expropriação, como adjudicação, alienação por iniciativa particular e leilão.",
+            "O dinheiro tem posição preferencial na ordem legal, mas a execução deve respeitar impenhorabilidades e regras de substituição. É preciso saber qual bem está em jogo antes de afirmar que qualquer patrimônio pode ser atingido."
+          ],
+          "Pergunta: após a penhora o credor vira automaticamente proprietário do bem?",
+          "Não. A transferência ou satisfação depende dos atos e regras correspondentes."
+        ],
+        [
+          "Alguns bens são protegidos — mas por quê?",
+          [
+            "O CPC estabelece impenhorabilidades para proteger condições mínimas de vida, trabalho e situações legalmente definidas. Entretanto, há exceções e interpretações jurisprudenciais que exigem análise concreta.",
+            "Por isso, frases como 'salário nunca pode ser penhorado' ou 'qualquer depósito é sempre penhorável' podem estar erradas. Pergunte qual verba foi atingida, qual crédito está sendo cobrado, quais são as exceções e o entendimento aplicável."
+          ],
+          "Pergunta: basta a pessoa dizer que o bem é impenhorável, sem examinar a regra, para encerrar a execução?",
+          "Não. O juiz precisa avaliar requisitos e prova pertinente."
+        ],
+        [
+          "Como o devedor pode se defender?",
+          [
+            "Nos títulos extrajudiciais, os embargos à execução podem discutir matérias previstas no CPC, em prazo próprio e independentemente de garantia prévia para sua apresentação. Eles não suspendem automaticamente o procedimento.",
+            "Parcelamento legal do art. 916 exige condições específicas e não se estende ao cumprimento de sentença. A defesa não deve ser confundida com impugnação ao cumprimento de título judicial, nem com simples objeção de pré-executividade, que possui limites probatórios."
+          ],
+          "Pergunta: apresentar embargos significa necessariamente interromper todos os atos executivos?",
+          "Não. A suspensão exige requisitos legais."
+        ],
+        [
+          "O que acontece quando a execução não encontra bens?",
+          [
+            "Se o credor não localiza o devedor ou bens penhoráveis, o processo pode sofrer suspensão na forma do art. 921. A lei também disciplina prescrição intercorrente, para evitar processos executivos sem fim.",
+            "Antes de contar um prazo isolado, é preciso identificar a tentativa infrutífera, marcos de suspensão, fatos que podem influenciar a prescrição e contraditório antes de seu reconhecimento. O caso ensina a sequência completa: pagamento → constrição → avaliação/expropriação → defesa → satisfação ou consequências da paralisação."
+          ],
+          "Pergunta: uma execução pode permanecer paralisada indefinidamente sem observar regras de prescrição?",
+          "Não. A lei disciplina suspensão e prescrição intercorrente."
+        ]
+      ],
+      "conclusion": "A execução por quantia não é uma única penhora. É um percurso de satisfação patrimonial com limites de proteção e meios de defesa."
+    }
   },
   "18": {
     "title": "Procedimentos especiais: qual instrumento escolher",
@@ -242,7 +395,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "CPC, arts. 539–549, 674–681, 700–702 e 712–718",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Quatro pessoas procuram um advogado: um devedor quer pagar, mas o credor recusa; uma proprietária teve bem penhorado por dívida alheia; um credor tem prova escrita sem título executivo; e um processo físico desapareceu. Por que não usar a mesma ação para todos?",
+      "steps": [
+        [
+          "O nome da ação nasce do problema concreto",
+          [
+            "O CPC cria procedimentos especiais para situações que não se ajustam inteiramente ao percurso comum. Antes de memorizar seus títulos, investigue o que a pessoa busca: pagar corretamente, proteger bem próprio, formar título a partir de prova escrita ou recuperar os autos.",
+            "As quatro necessidades são juridicamente diferentes. Misturá-las significa escolher instrumento que talvez não resolva a dificuldade enfrentada."
+          ],
+          "Pergunta: um procedimento especial é escolhido só porque parece mais rápido?",
+          "Não. Precisa atender aos pressupostos e finalidade previstos em lei."
+        ],
+        [
+          "Quem quer pagar, mas não consegue",
+          [
+            "Imagine que o credor recuse sem razão receber quantia devida, ou exista dúvida legítima sobre quem deve receber. A consignação em pagamento pode permitir depósito nas condições legais para buscar liberação da obrigação.",
+            "O problema aqui é o pagamento impedido, não a cobrança do devedor. Por isso a lógica da consignação é inversa à de uma execução: em vez de forçar recebimento, a pessoa tenta cumprir corretamente."
+          ],
+          "Pergunta: consignação serve para cobrar dívida de alguém?",
+          "Não. Seu núcleo é permitir pagamento adequado quando existe obstáculo jurídico."
+        ],
+        [
+          "Quem não é parte, mas perdeu o bem",
+          [
+            "Uma pessoa que não integra a execução descobre que seu veículo foi penhorado por dívida de terceiro. Ela precisa proteger posse ou direito incompatível com a constrição. Os embargos de terceiro podem ser o instrumento adequado nas condições legais.",
+            "O ponto decisivo é ser terceiro para essa finalidade. Não se confunda com embargos à execução oferecidos pelo próprio executado, pois posição processual e objeto de proteção são distintos."
+          ],
+          "Pergunta: qualquer executado pode chamar sua defesa de embargos de terceiro só porque houve penhora?",
+          "Não. É preciso preencher a condição de terceiro segundo o CPC."
+        ],
+        [
+          "Quem possui prova escrita, mas não título executivo",
+          [
+            "O credor apresenta documento que indica a obrigação, mas não preenche requisitos de título executivo. Uma ação monitória pode oferecer caminho para exigir pagamento ou prestação nas hipóteses legais e, não havendo resistência adequada, formar título judicial.",
+            "É uma ponte entre a prova escrita e a execução. Por isso a monitória não é sinônimo de execução direta: existe etapa processual própria para possibilitar contraditório e constituição do título."
+          ],
+          "Pergunta: qualquer documento escrito permite pular automaticamente para a execução?",
+          "Não. É preciso verificar se existe título executivo; caso contrário, outro procedimento pode ser cabível."
+        ],
+        [
+          "E quando os autos desaparecem?",
+          [
+            "A restauração de autos tenta recompor peças e atos de processo perdido, com base em cópias e elementos disponíveis. Não existe para reabrir livremente discussão já decidida nem inventar novo mérito.",
+            "Agora conecte cada situação a uma finalidade: consignação libera pagamento, embargos de terceiro protegem patrimônio alheio à demanda, monitória forma título a partir de prova escrita e restauração recompõe registro processual."
+          ],
+          "Pergunta: encontrar o nome de um procedimento basta sem identificar o problema que ele resolve?",
+          "Não. A finalidade concreta é o primeiro critério de escolha."
+        ]
+      ],
+      "conclusion": "O procedimento especial não é um capítulo arbitrário do CPC: cada rito surge porque um problema jurídico exige resposta processual própria."
+    }
   },
   "19": {
     "title": "Tutela coletiva, ações constitucionais e controle",
@@ -317,7 +521,58 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Constituição Federal",
         "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Uma empresa despeja resíduos num rio usado por milhares de moradores. Algumas pessoas também sofreram prejuízos individuais; outras reclamam de omissão do poder público. Qual instrumento protege cada interesse e quem pode agir?",
+      "steps": [
+        [
+          "O primeiro passo é descobrir de quem é o direito",
+          [
+            "A poluição de um rio pode atingir pessoas indeterminadas e um bem indivisível: direito difuso. Quando a proteção envolve grupo determinável ligado por relação jurídica-base, há direito coletivo em sentido estrito. Se muitas pessoas possuem perdas individuais divisíveis de origem comum, pode tratar-se de direitos individuais homogêneos.",
+            "A classificação não se decide contando quantos autores existem. Ela depende da natureza do objeto e do vínculo que une titulares. Isso define como a tutela coletiva será estruturada."
+          ],
+          "Pergunta: várias pessoas prejudicadas significam automaticamente direito difuso?",
+          "Não. A relação jurídica e a divisibilidade do direito importam."
+        ],
+        [
+          "Quem pode defender o interesse coletivo?",
+          [
+            "Se existe lesão a patrimônio público, moralidade administrativa ou meio ambiente, a ação popular pode ser cabível por cidadão nos termos legais. Já a ação civil pública possui lista específica de legitimados, incluindo entidades e instituições autorizadas por lei.",
+            "Não basta qualquer pessoa chamar sua demanda de coletiva. A legitimidade e o objeto precisam corresponder ao instrumento. A ação popular não se confunde com a ACP, embora ambos possam proteger certos bens semelhantes."
+          ],
+          "Pergunta: pessoa jurídica pode ajuizar ação popular apenas por ter interesse ambiental?",
+          "Não. A ação popular tem legitimidade ativa própria ligada à condição de cidadão."
+        ],
+        [
+          "Quando a lesão vem de ato ilegal e está demonstrada?",
+          [
+            "Imagine que autoridade negue um ato devido e a pessoa já possua documentos suficientes para provar o direito. O mandado de segurança pode proteger direito líquido e certo nas condições constitucionais e legais, sem instrução probatória ampla.",
+            "Se o problema é diferente — falta uma norma regulamentadora indispensável ao exercício de direito constitucional — o instrumento pode ser mandado de injunção. A pergunta é: já existe direito demonstrável frustrado por ato ilegal ou existe omissão normativa que inviabiliza seu exercício?"
+          ],
+          "Pergunta: mandado de segurança e mandado de injunção têm exatamente a mesma finalidade?",
+          "Não. Respondem a problemas jurídicos diferentes."
+        ],
+        [
+          "E se o conflito envolve dados pessoais?",
+          [
+            "Se uma pessoa precisa conhecer ou corrigir informações relativas a si em registros governamentais ou de caráter público, pode surgir hipótese de habeas data, observadas exigências legais de resistência administrativa.",
+            "Isso não se confunde com toda solicitação de documento público nem com habeas corpus, destinado à liberdade de locomoção. O nome do remédio constitucional vem do bem que ele protege."
+          ],
+          "Pergunta: habeas data é ação genérica para pedir qualquer arquivo da administração?",
+          "Não. Sua finalidade constitucional é específica."
+        ],
+        [
+          "E se a própria lei usada no caso for inconstitucional?",
+          [
+            "Uma controvérsia concreta pode exigir exame incidental de constitucionalidade, com observância da reserva de plenário quando cabível. Em outras situações, os legitimados constitucionais podem propor ações concentradas, como ADI, ADC ou ADPF, com objetos e requisitos diferentes.",
+            "Retorne ao rio: a tutela do dano ambiental, a proteção de dados e a validade abstrata de norma não são o mesmo pedido. A escolha correta nasce de identificar o bem protegido, o ato questionado e o legitimado."
+          ],
+          "Pergunta: uma ação popular pode substituir indistintamente qualquer ADI, ADC ou ADPF?",
+          "Não. São instrumentos com finalidades e legitimidades específicas."
+        ]
+      ],
+      "conclusion": "Em questões constitucionais e coletivas, pergunte: qual direito está em risco, quem é seu titular, contra qual conduta e quem tem legitimidade para agir?"
+    }
   },
   "20": {
     "title": "Processos nos tribunais, rescisória, IAC e IRDR",
@@ -380,6 +635,57 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Lei 15.484/2026 — alterações em precedentes e reclamação",
         "https://www2.camara.leg.br/legin/fed/lei/2026/lei-15484-4-agosto-2026-799698-publicacaooriginal-180680-pl.html"
       ]
-    ]
+    ],
+    "story": {
+      "case": "Tribunais recebem centenas de processos sobre a mesma cobrança; outra causa apresenta questão inédita de grande repercussão; uma decisão antiga transitou em julgado e talvez contenha vício grave. Qual instrumento resolve cada situação?",
+      "steps": [
+        [
+          "Primeiro descubra qual problema o tribunal precisa resolver",
+          [
+            "Tribunais não atuam apenas como instâncias recursais. Também podem uniformizar questões jurídicas, definir competência, reconhecer decisões estrangeiras e examinar demandas autônomas excepcionais.",
+            "Escolher instrumento exige observar o problema concreto. Se a dúvida é quem julga, pense em conflito de competência. Se é reconhecer efeito no Brasil de decisão estrangeira, examine homologação. Se é uniformizar uma questão de direito, há mecanismos próprios."
+          ],
+          "Pergunta: qualquer procedimento no tribunal é recurso contra sentença?",
+          "Não. O CPC prevê incidentes e ações autônomas."
+        ],
+        [
+          "IAC e IRDR respondem a situações diferentes",
+          [
+            "No incidente de assunção de competência, a questão de direito é relevante e tem grande repercussão social, sem repetição múltipla de processos, ou existe hipótese legal de prevenir/compor divergência interna. A preocupação central é formar orientação qualificada.",
+            "No incidente de resolução de demandas repetitivas, há efetiva repetição de processos sobre a mesma questão unicamente de direito, com risco à isonomia e segurança jurídica. A multiplicação de casos e a necessidade de solução uniforme fazem diferença."
+          ],
+          "Pergunta: basta risco abstrato de surgirem milhares de ações para preencher todos os pressupostos de IRDR?",
+          "Não. É preciso observar a efetiva repetição e demais requisitos legais."
+        ],
+        [
+          "Quem decide quando há conflito ou dúvida constitucional?",
+          [
+            "Se dois juízos afirmam ou negam sua competência, o incidente próprio define qual órgão deve atuar. Quando um órgão fracionário de tribunal encontra questão de constitucionalidade, o procedimento deve respeitar a reserva de plenário nas hipóteses aplicáveis.",
+            "Esses instrumentos não se substituem: conflito trata de distribuição de jurisdição, arguição de inconstitucionalidade trata da validade de norma no caso e da forma colegiada de decidir."
+          ],
+          "Pergunta: conflito de competência serve para declarar que uma das partes venceu a cobrança?",
+          "Não. Seu objeto principal é identificar o juízo competente."
+        ],
+        [
+          "É possível desfazer decisão transitada em julgado?",
+          [
+            "A coisa julgada protege estabilidade, mas o CPC admite ação rescisória em hipóteses taxativas e prazo próprio, normalmente dois anos. Não é um recurso tardio para reavaliar qualquer prova ou discordância com sentença.",
+            "A ação rescisória separa a possibilidade de desconstituir o julgamento e, quando cabível, novo exame da causa. Propositura da ação não suspende automaticamente todos os efeitos da decisão rescindenda."
+          ],
+          "Pergunta: perder o prazo da apelação autoriza sempre ação rescisória para repetir os argumentos?",
+          "Não. Rescisória possui fundamentos legais específicos."
+        ],
+        [
+          "E se a autoridade de decisão qualificada não for respeitada?",
+          [
+            "A reclamação pode preservar competência de tribunal, garantir autoridade de suas decisões ou assegurar hipóteses de observância de precedentes qualificados nos limites do art. 988. Ela não é ação genérica para reclamar de qualquer divergência de entendimento.",
+            "Com alterações legislativas recentes, incluindo lei de 2026, os requisitos de cabimento devem ser conferidos conforme o regime vigente. Ao concluir, use um mapa: repetição efetiva → IRDR; questão relevante sem multiplicidade → IAC; decisão transitada com vício legal → rescisória; competência ou autoridade qualificada → instrumentos próprios."
+          ],
+          "Pergunta: basta dizer que juiz contrariou 'a jurisprudência' para caber reclamação?",
+          "Não. É necessário enquadrar a hipótese legal de cabimento."
+        ]
+      ],
+      "conclusion": "Os processos nos tribunais ficam compreensíveis quando o aluno identifica a função de cada procedimento, e não quando apenas memoriza sua sigla."
+    }
   }
 });
