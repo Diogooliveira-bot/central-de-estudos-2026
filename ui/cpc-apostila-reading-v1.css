@@ -68,3 +68,21 @@ html[data-bc-reading-mode="night"] :is(#cpcNativeReaderOverlay,#cpcM02NativeRead
    Os controles internos e as chaves de progresso continuam disponíveis para consulta. */
 .bc-native-reader-overlay:has(.cpc-learning-path):not(:has(.cpc-original-reference[open])) .bc-native-toc{display:none!important}
 @media(max-width:600px){.cpc-apostila .cpc-learning-path{width:100%;margin:0}.cpc-apostila .cpc-study-step-body{padding-left:18px}.cpc-apostila .cpc-study-step>summary{gap:9px;padding:15px 0!important}}
+
+/* Base Completa — sequência de raciocínio. Sem cartões empilhados. */
+.cpc-apostila .cpc-reasoning-path>h2{max-width:23ch;line-height:1.3!important;margin-bottom:18px!important}
+.cpc-apostila .cpc-reasoning-path>.cpc-didactic-lead{font-size:1.04em;line-height:1.75!important;max-width:63ch;padding:0 0 12px;margin-bottom:1.2em!important}
+.cpc-apostila .cpc-reasoning-path .cpc-study-instruction{font-size:.84em;line-height:1.6!important;color:var(--cpc-muted)}
+.cpc-apostila .cpc-reasoning-path .cpc-study-step>summary{font-size:.99em!important;font-weight:650}
+.cpc-apostila .cpc-reasoning-path .cpc-study-step-body>p{max-width:65ch;line-height:1.76!important}
+.cpc-apostila .cpc-reasoning-path .cpc-think-question{margin:20px 0 2px!important;font-weight:650;font-size:.97em;color:var(--cpc-navy);line-height:1.6!important}
+.cpc-apostila .cpc-reasoning-path .cpc-think-check{border:0;margin:0 0 18px;padding:0;background:transparent}
+.cpc-apostila .cpc-reasoning-path .cpc-think-check>summary{cursor:pointer;color:var(--cpc-blue);font-size:.87em;font-weight:650;padding:8px 0;list-style:none}
+.cpc-apostila .cpc-reasoning-path .cpc-think-check>summary::before{content:"+";margin-right:7px;font-weight:700}
+.cpc-apostila .cpc-reasoning-path .cpc-think-check[open]>summary::before{content:"−"}
+.cpc-apostila .cpc-reasoning-path .cpc-think-check>p{margin:.3em 0 1em!important;color:inherit;font-size:.94em;line-height:1.7!important}
+.cpc-apostila .cpc-reasoning-path .cpc-reasoning-conclusion{max-width:63ch;border-top:1px solid var(--cpc-line);padding:19px 0;margin:20px 0!important;line-height:1.75!important}
+.cpc-apostila .cpc-reasoning-path .cpc-study-done{appearance:none;border:1px solid var(--cpc-navy);border-radius:6px;background:transparent;color:var(--cpc-navy);font:650 .89em Inter,system-ui,sans-serif;padding:10px 15px;margin:7px 0 0;cursor:pointer}
+.cpc-apostila .cpc-reasoning-path .cpc-study-done.done{border-color:var(--cpc-line);color:var(--cpc-muted)}
+.cpc-apostila .cpc-reasoning-path .cpc-study-done:focus-visible,.cpc-apostila .cpc-reasoning-path .cpc-study-step>summary:focus-visible{outline:2px solid var(--cpc-blue);outline-offset:3px}
+@media(max-width:600px){.cpc-apostila .cpc-reasoning-path>h2{font-size:1.3em!important}.cpc-apostila .cpc-reasoning-path>.cpc-didactic-lead{font-size:1em}}
