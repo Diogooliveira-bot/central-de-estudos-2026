@@ -8,7 +8,7 @@
   },
   "rewrites": [
     {
-      "source": "/api/premium-expiry-reminders",
+      "source": "/api/admin-dashboard",
       "destination": "/api/auth?bc_api=premium-expiry-reminders"
     },
     {
