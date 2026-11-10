@@ -133,7 +133,7 @@ function insertDidactic(host,n,data){
  for(const [title,paragraphs,example] of data.sections){
   const h=d.createElement('h3');h.textContent=title;part.append(h);
   for(const txt of paragraphs||[]){const p=d.createElement('p');p.textContent=txt;part.append(p);}
-  if(example){const p=d.createElement('p'),strong=d.createElement('strong');p.className='cpc-didactic-example';strong.textContent='Exemplo prático: ';p.append(strong,d.createTextNode(String(example).replace(/^Exemplo:\\s*/i,'')));part.append(p);}
+  if(example){const p=d.createElement('p'),strong=d.createElement('strong');p.className='cpc-didactic-example';strong.textContent='Exemplo prático: ';p.append(strong,d.createTextNode(String(example).replace(/^Exemplo:\s*/i,'')));part.append(p);}
  }
  const h=d.createElement('h3');h.textContent='O que memorizar';part.append(h);
  const list=d.createElement('ul');list.className='cpc-didactic-memory';
