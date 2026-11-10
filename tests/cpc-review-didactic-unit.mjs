@@ -5,17 +5,17 @@ import vm from 'node:vm';
 const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 function load(){
  const window={},ctx=vm.createContext({window});
- for(const range of ['m09-m14','m15-m20'])vm.runInContext(read('content/cpc/cpc-review-didactic-'+range+'.js'),ctx);
+ for(const range of ['m01-m04','m05-m08','m09-m14','m15-m20'])vm.runInContext(read('content/cpc/cpc-review-didactic-'+range+'.js'),ctx);
  return window.CPC_DIDACTIC_REVIEW;
 }
 const records=load();
-test('CPC M09–M20: cobertura integral, sem duplicar títulos e com explicações reais',()=>{
- assert.deepEqual(Object.keys(records).map(Number),Array.from({length:12},(_,i)=>i+9));
- for(let n=9;n<=20;n++){
+test('CPC M01–M20: cobertura integral, sem duplicar títulos e com explicações reais',()=>{
+ assert.deepEqual(Object.keys(records).map(Number),Array.from({length:20},(_,i)=>i+1));
+ for(let n=1;n<=20;n++){
   const d=records[n];
   assert.ok(d.title.length>20,'M'+n+' título');
   assert.ok(d.intro.length>160,'M'+n+' introdução');
-  assert.equal(d.sections.length,5,'M'+n+' seções');
+  assert.ok(d.sections.length>=5&&d.sections.length<=6,'M'+n+' seções');
   for(const [heading,paragraphs,example] of d.sections){
    assert.ok(heading&&paragraphs.length>=2,'M'+n+' seção com dois parágrafos');
    assert.ok(paragraphs.every(p=>p.length>=125),'M'+n+' parágrafos explicativos');
@@ -37,10 +37,10 @@ test('CPC: fontes atualizadas em 2026 não antecipam vacatio legis e distinguem 
  assert.match(m20,/IAC/);
  assert.match(m20,/IRDR/);
 });
-test('CPC: leitura completa e m01–m08 não sofrem remapeamento do resumo',()=>{
+test('CPC: leitura completa não recebe revisão explicada, e progresso não é alterado',()=>{
  const s=read('ui/cpc-apostila-reading-v1.js');
  assert.match(s,/mode==='summary'\?await didactic\(n\):null/);
- assert.match(s,/if\(n<9\|\|n>20\)return null/);
+ assert.match(s,/if\(n<1\|\|n>20\)return null/);
  assert.match(s,/enhance\(host,n,mode,registry\);if\(review\)insertDidactic/);
  assert.doesNotMatch(s,/\.setItem\(|fetch\(['"]\/api|localStorage|sessionStorage/);
 });
