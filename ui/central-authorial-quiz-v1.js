@@ -11,7 +11,7 @@ const letters='ABCDE';
 let session=null,lastFocus=null;
 function storage(key){try{const x=JSON.parse(localStorage.getItem(key)||'{}');return x&&typeof x==='object'&&!Array.isArray(x)?x:{}}catch(_){return {}}}
 function save(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(_){return false}}
-function valid(q){return q&&typeof q.q==='string'&&q.q.trim()&&Array.isArray(q.options)&&q.options.length>=2&&q.options.length<=5&&q.options.every(x=>typeof x==='string'&&x.trim())&&Number.isInteger(q.answer)&&q.answer>=0&&q.answer<q.options.length&&typeof q.explanation==='string'&&q.explanation.trim()}
+function valid(q){return !!(q&&typeof q.q==='string'&&q.q.trim()&&typeof q.explanation==='string'&&q.explanation.trim()&&(q.type==='open'?typeof q.answerText==='string'&&q.answerText.trim():Array.isArray(q.options)&&q.options.length>=2&&q.options.length<=5&&q.options.every(x=>typeof x==='string'&&x.trim())&&Number.isInteger(q.answer)&&q.answer>=0&&q.answer<q.options.length))}
 function lesson(d){
  const pool=g.CentralInternalQuestionPolicy?.authorial(d?.summary||[],d?.complete||[])||[];
  return pool.length===10&&pool.every(valid)?pool:null;
@@ -20,10 +20,12 @@ function recordId(q,i){
  const id=String(q.id||q.n||i+1);
  return (q._bcSource||'item')+':'+id+':'+i;
 }
-function counts(items,answers){let answered=0,correct=0;items.forEach((q,i)=>{const c=answers[recordId(q,i)];if(Number.isInteger(c)&&c>=0&&c<q.options.length){answered++;if(c===q.answer)correct++}});return {answered,correct};}
+function counts(items,answers){let answered=0,correct=0;items.forEach((q,i)=>{const c=answers[recordId(q,i)];if(q.type==='open'){if(c==='revealed')answered++}else if(Number.isInteger(c)&&c>=0&&c<q.options.length){answered++;if(c===q.answer)correct++}});return {answered,correct};}
 function close(){document.getElementById(OVER)?.remove();document.body.classList.remove('bc-authorial-open');if(lastFocus?.isConnected)lastFocus.focus();session=null;}
 function renderCard(q,i){
- const key=recordId(q,i),chosen=session.answers[key],answered=Number.isInteger(chosen)&&chosen>=0&&chosen<q.options.length;
+ const key=recordId(q,i),chosen=session.answers[key],answered=q.type==='open'?chosen==='revealed':Number.isInteger(chosen)&&chosen>=0&&chosen<q.options.length;
+ if(q.type==='open')return '<section class="bc-authorial-question" data-authorial-index="'+i+'"><p class="bc-authorial-meta">QUESTÃO '+String(i+1).padStart(2,'0')+' DE 10 · AUTORAL</p><h3>'+esc(q.q)+'</h3>'+
+ (answered?'<div class="bc-authorial-feedback" role="status"><b>Resposta explicada</b><p>'+esc(q.answerText)+'</p><p>'+esc(q.explanation)+'</p><button class="bc-authorial-retry" type="button" data-retry>Refazer esta questão</button></div>':'<button class="bc-authorial-retry" type="button" data-reveal>Mostrar resposta comentada</button>')+'</section>';
  return '<section class="bc-authorial-question" data-authorial-index="'+i+'"><p class="bc-authorial-meta">QUESTÃO '+String(i+1).padStart(2,'0')+' DE 10 · AUTORAL</p>'+
  '<h3>'+esc(q.q)+'</h3><div class="bc-authorial-options">'+q.options.map((option,j)=>{
   const status=answered?(j===q.answer?' correct':j===chosen?' wrong':''):(j===chosen?' selected':'');
@@ -35,12 +37,17 @@ function renderCard(q,i){
 function updateScores(){
  if(!session)return;
  const n=counts(session.items,session.answers),node=document.querySelector('#'+OVER+' [data-quiz-stats]');
- if(node)node.textContent=n.answered+'/10 respondidas · '+n.correct+' acertos';
+ if(node)node.textContent=n.answered+'/10 concluídas · '+n.correct+' acertos em itens objetivos';
  const bar=document.querySelector('#'+OVER+' [data-quiz-progress]');
  if(bar)bar.style.width=n.answered*10+'%';
 }
 function bindCard(node,index){
  if(!node||!session)return;
+ node.querySelector('[data-reveal]')?.addEventListener('click',()=>{
+  if(!session)return;
+  const q=session.items[index];session.answers[recordId(q,index)]='revealed';save(session.key,session.answers);
+  node.outerHTML=renderCard(q,index);bindCard(document.querySelector('#'+OVER+' [data-authorial-index="'+index+'"]'),index);updateScores();
+ });
  node.querySelectorAll('[data-answer]').forEach(btn=>btn.addEventListener('click',()=>{
   if(!session)return;
   const q=session.items[index],choice=Number(btn.dataset.answer),key=recordId(q,index);
@@ -70,7 +77,7 @@ function open({discipline,module,title,items}){
  const overlay=document.createElement('div');overlay.id=OVER;overlay.className='bc-authorial-overlay';
  overlay.innerHTML='<div role="dialog" aria-modal="true" aria-label="10 questões autorais" class="bc-authorial-dialog">'+
   '<header><div><b>'+esc(title||'Questões autorais')+'</b><small>'+esc(discipline)+' · versão resumida</small></div><button type="button" data-authorial-close aria-label="Fechar">×</button></header>'+
-  '<div class="bc-authorial-content"><div class="bc-authorial-intro"><h2>10 questões autorais</h2><p>Pratique os conceitos do módulo. Gabarito e comentário aparecem após responder cada questão.</p>'+
+  '<div class="bc-authorial-content"><div class="bc-authorial-intro"><h2>10 questões autorais</h2><p>Pratique os conceitos do módulo. Questões objetivas têm correção imediata; nas discursivas, revele a resposta comentada.</p>'+
   '<strong data-quiz-stats></strong><div class="bc-authorial-track"><span data-quiz-progress></span></div></div>'+
   items.map(renderCard).join('')+'<footer><button type="button" data-authorial-close>Voltar ao módulo</button></footer></div></div>';
  overlay.addEventListener('mousedown',e=>{if(e.target===overlay)close()});
