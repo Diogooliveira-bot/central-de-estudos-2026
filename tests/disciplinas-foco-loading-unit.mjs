@@ -113,3 +113,40 @@ test('estilos acessíveis e cache versionado',()=>{
     assert.ok(boot.includes(asset.slice(1)),file+' boot e manifesto usam a mesma versão');
   }
 });
+
+
+test('pré-carrega só scripts essenciais e preserva os scripts das disciplinas', () => {
+  const boot = readFileSync('central-v119.html', 'utf8');
+  const start = boot.indexOf(' function addScriptPreloads(html){');
+  const end = boot.indexOf('\n try{\n  var authResponse=', start);
+  assert.ok(start >= 0 && end > start, 'Encontrar o carregador usado na produção');
+  const preload = new Function('html', boot.slice(start, end) + '\nreturn addScriptPreloads(html);');
+
+  const critical = [
+    '/central-home-progress-data.js', '/central-discipline-loader.js',
+    '/central-free-disciplines.js', '/central-structural-v66119/runtime.js',
+    '/ui/shell.js', '/ui/discipline-standard.js', '/ui/home-topnav-v1.js',
+    '/ui/student-ux-core-v3.js', '/ui/student-shell-v3.js',
+    '/ui/student-dashboard-v3.js', '/ui/disciplinas-foco-v1.js',
+  ];
+  const optional = [
+    '/content/penal/m01-native-data.js',
+    '/content/cpc/m03-native-data.js',
+    '/content/adm/m08-native-data.js',
+    '/ui/editor-premium-v1.js',
+    '/ui/visual-editor-v1.js',
+    ...Array.from({length: 65}, (_, i) => '/content/cf/m' + i + '-native-data.js'),
+  ];
+  const srcs = [...critical, ...optional, critical[0]].map(path => path + '?v=teste');
+  const html = '<!doctype html><html><head><title>Central</title></head><body>'
+    + srcs.map(src => '<script defer src="' + src + '"></script>').join('')
+    + '</body></html>';
+  const result = preload(html);
+  const hints = Array.from(result.matchAll(/<link rel="preload" as="script" href="([^"]+)">/g), m => m[1]);
+
+  assert.deepEqual(hints, critical.map(path => path + '?v=teste'), 'Só a home deve ter prioridade');
+  assert.equal((result.match(/<script defer src=/g) || []).length, srcs.length,
+    'Todos os scripts permanecem na página, com ordem de execução intacta');
+  assert.ok(!hints.some(src => src.includes('native-data') || src.includes('editor-')),
+    'Não antecipar apostilas privadas nem editor');
+});
