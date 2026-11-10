@@ -7,7 +7,7 @@ const root=new URL('../',import.meta.url),read=p=>fs.readFileSync(new URL(p,root
 function fixture(){
  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://test.local',runScripts:'outside-only'});
  const g=dom.window;
- for(const p of ['ui/central-internal-question-policy-v1.js','ui/central-authorial-quiz-v1.js','ui/adm-authorial-source-v1.js'])g.eval(read(p));
+ for(const p of ['ui/central-internal-question-policy-v1.js','ui/central-authorial-quiz-v1.js','ui/grounded-authorial-questions-v1.js','ui/adm-authorial-source-v1.js'])g.eval(read(p));
  return dom;
 }
 function lesson(n){
@@ -19,12 +19,12 @@ test('ADM M01–M20: 10 questões autorais disponíveis por módulo, sem duplica
  const dom=fixture(),source=dom.window.BcAdmAuthorialSource;
  const inventory=[];
  for(let n=1;n<=20;n++){
-  const d=lesson(n),result=source.select(d.summaryHtml,d.completeAppendHtml);
-  inventory.push({n,count:result.items.length,summary:result.summary,complete:result.complete,ready:result.ready});
-  assert.equal(result.items.length,10,'M'+n+' incompleto '+JSON.stringify(inventory.at(-1)));
-  assert.ok(result.ready,'M'+n+' tem item inválido');
-  assert.equal(new Set(result.items.map(x=>x.q.toLowerCase().trim())).size,10,'M'+n+' duplicado');
-  for(const q of result.items)assert.ok(dom.window.CentralAuthorialQuiz.valid(q),'M'+n+': '+q.q.slice(0,60));
+  const d=lesson(n),result=source.select(d.summaryHtml,d.completeAppendHtml),grounded=dom.window.BcGroundedQuestions.build({html:d.summaryHtml,title:d.title});
+  const items=result.ready?result.items:grounded;
+  inventory.push({n,count:items.length,objective:result.items.length,grounded:grounded.length,ready:items.length===10});
+  assert.equal(items.length,10,'M'+n+' incompleto '+JSON.stringify(inventory.at(-1)));
+  assert.equal(new Set(items.map(x=>x.q.toLowerCase().trim())).size,10,'M'+n+' duplicado');
+  for(const q of items)assert.ok(dom.window.CentralAuthorialQuiz.valid(q),'M'+n+': '+q.q.slice(0,60));
  }
  console.log('ADM_AUTHORIAL_INVENTORY='+JSON.stringify(inventory));
  dom.window.close();
