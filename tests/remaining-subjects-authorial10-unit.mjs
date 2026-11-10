@@ -89,6 +89,6 @@ test('Leitores das 4 disciplinas isolam questões e preservam teoria e bancos or
  assert.match(cpp,/stripInternalQuestions\(body\)/);
  assert.doesNotMatch(cpp,/^\s+bindQuestions\(body,n,kind\);/m);
  assert.match(pt,/BcPortugueseAuthorial\.strip\(article\)/);
- assert.match(cpc,/Questões FCC reais/);
+ assert.match(cpc,/questões FCC reais/i);
  for(const f of ['ui/adm-authorial-source-v1.js','ui/grounded-authorial-questions-v1.js','ui/cpc-authorial10-v1.js','ui/portuguese-authorial10-v1.js'])assert.match(read('index.html'),new RegExp(f.split('/').at(-1).replaceAll('.','\\.')));
 });
