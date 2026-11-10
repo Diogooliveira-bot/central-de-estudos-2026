@@ -2,6 +2,7 @@
 // Só executa se houver CRON_SECRET e a automação estiver explicitamente habilitada.
 import {safeSecretEqual} from '../lib/auth.js';
 import {runPremiumEmailAutomation,premiumAutomationEnabled} from '../lib/email-premium-automation.js';
+import {captureStudyEmailSnapshots,studySnapshotsEnabled} from '../lib/email-study-snapshots.js';
 
 export default async function handler(req,res){
   res.setHeader('Cache-Control','private, no-store');
@@ -12,12 +13,12 @@ export default async function handler(req,res){
   if(secret.length<32||!safeSecretEqual(auth,'Bearer '+secret)){
     res.statusCode=401;return res.end(JSON.stringify({error:'Não autorizado'}));
   }
-  if(!premiumAutomationEnabled()){
+  if(!premiumAutomationEnabled()&&!studySnapshotsEnabled()){
     res.statusCode=200;return res.end(JSON.stringify({enabled:false,attempted:0,sent:0,failed:0}));
   }
   try{
-    const result=await runPremiumEmailAutomation();
-    res.statusCode=200;return res.end(JSON.stringify(result));
+    const [premium,snapshots]=await Promise.all([runPremiumEmailAutomation(),captureStudyEmailSnapshots()]);
+    res.statusCode=200;return res.end(JSON.stringify({premium,snapshots}));
   }catch(err){
     console.error('premium email cron failed',String(err?.code||err?.name||'UNKNOWN').slice(0,36));
     res.statusCode=503;return res.end(JSON.stringify({error:'Não foi possível processar a rotina'}));
