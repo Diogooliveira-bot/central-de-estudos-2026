@@ -9,8 +9,8 @@ test('Leitor ADM M01–M20 mantém o texto das questões e a teoria completa',as
  const dom=new JSDOM('<!doctype html><html><head></head><body></body></html>',{url:'https://example.org/',runScripts:'outside-only'});
  const g=dom.window;
  g.Response=globalThis.Response;g.Blob=globalThis.Blob;g.DecompressionStream=globalThis.DecompressionStream;
- for(const range of ['m01-m05','m06-m10','m11-m15','m16-m20'])g.eval(read('content/adm/adm-review-didactic-'+range+'.js'));
- assert.deepEqual(Object.keys(g.ADM_REVIEW_V2_DATA).map(Number),Array.from({length:20},(_,i)=>i+1));
+ for(let n=1;n<=20;n++)g.eval(read('content/adm/autor-20261110/adm-m'+num(n)+'-submitted-review.js'));
+ assert.deepEqual(Object.keys(g.ADM_SUBMITTED_REVIEW).map(Number),Array.from({length:20},(_,i)=>i+1));
  for(let n=1;n<=20;n++)g.eval(read('content/adm/m'+num(n)+'-apostila-summary.js'));
  g.eval(read('content/adm/m01-apostila-complete.js'));
  g.eval(read('ui/adm-apostila-reading-v1.js'));
@@ -24,8 +24,8 @@ test('Leitor ADM M01–M20 mantém o texto das questões e a teoria completa',as
   const doc=new JSDOM('<main>'+html+'</main>').window.document;
   assert.ok(doc.querySelectorAll('main h2').length>=5,'M'+n+': faltam tópicos');
   assert.ok(doc.querySelectorAll('main p').length>=10,'M'+n+': faltam explicações');
-  assert.ok(doc.querySelectorAll('details.law a[href]').length>=1,'M'+n+': faltam fontes legais');
-  assert.ok(html.includes(g.ADM_REVIEW_V2_DATA[n].intro.slice(0,25)),'M'+n+': não carregou revisão nova');
+  assert.ok(doc.querySelectorAll('.adm-author-reading table').length>=1,'M'+n+': tabelas autorais ausentes');
+  assert.ok(html.includes('adm-author-reading'),'M'+n+': não carregou revisão autoral');
  }
  const complete=gunzipSync(Buffer.from(g.ADM_APOSTILA_PACKED['1:complete'],'base64')).toString('utf8');
  assert.equal(await g.AdmApostilaReading.load(1,'complete'),complete);
@@ -34,7 +34,7 @@ test('Leitor ADM M01–M20 mantém o texto das questões e a teoria completa',as
 });
 test('Somente ADM M01–M20 tem novo leitor; sem tocar armazenamento ou APIs',()=>{
  const src=read('ui/adm-apostila-reading-v1.js');
- for(const group of ['m01-m05','m06-m10','m11-m15','m16-m20'])assert.ok(src.includes(group));
- assert.match(src,/if\(mode!=='summary'\)return originalHtml/);
+ assert.ok(src.includes('/content/adm/autor-20261110/'));
+ assert.match(src,/if\(mode==='complete'\)return originalHtml/);
  assert.doesNotMatch(src,/localStorage|sessionStorage|\.setItem\(|fetch\(['"]\/api|git push|create_deployment/);
 });
