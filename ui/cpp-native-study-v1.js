@@ -53,6 +53,9 @@ function stripInternalQuestions(body){
 }
 async function openAuthorial(n){
  const d=await load(n),list=g.CentralInternalQuestionPolicy?.authorial(extractAuthorial(d.summaryHtml),extractAuthorial(d.completeHtml))||[];
+ const more=g.BcGroundedQuestions?.build({html:d.summaryHtml,discipline:'Direito Processual Penal',module:'M'+String(n).padStart(2,'0'),title:BYNUM[n].title})||[];
+ const used=new Set(list.map(q=>q.q.trim().toLowerCase()));
+ for(const q of more){if(list.length===10)break;if(!used.has(q.q.trim().toLowerCase())){list.push(q);used.add(q.q.trim().toLowerCase())}}
  if(list.length!==10||!list.every(g.CentralAuthorialQuiz?.valid||(()=>false))){
   alert('Este módulo ainda não tem dez questões autorais conferidas.');return false;
  }
