@@ -1,4 +1,5 @@
 import { requireSession } from '../lib/auth.js';
+import {ensureEmailAuditTable} from '../lib/email-audit.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -42,6 +43,27 @@ export default async function handler(req,res){
 
   try{
     const sql=session.sql;
+    if(req.query?.action==='email-history'){
+      await ensureEmailAuditTable(sql);
+      const [events,counts]=await Promise.all([
+        sql`
+          SELECT id,created_at,kind,provider,outcome,error_code
+          FROM public.central_email_audit
+          ORDER BY id DESC LIMIT 100
+        `,
+        sql`
+          SELECT outcome,COUNT(*)::int AS total
+          FROM public.central_email_audit
+          WHERE created_at>=NOW()-INTERVAL '30 days'
+          GROUP BY outcome
+        `
+      ]);
+      return send(res,200,{events,summary:{
+        accepted:Number(counts.find(x=>x.outcome==='accepted')?.total||0),
+        failed:Number(counts.find(x=>x.outcome==='failed')?.total||0),
+        period:'30d'
+      }});
+    }
     await ensureTables(sql);
     const rows=await sql`
       SELECT
