@@ -27,6 +27,19 @@ function fromMarkup(markup){
   }
   if(accept(topic,body))result.push({topic,body:safe(body)});
  }
+ if(result.length<10){
+  // Em resumos com poucas seções, recuperar blocos explicativos independentes.
+  // Alternativas, listas de gabarito e exercícios de fixação não entram.
+  const blocks=[...root.querySelectorAll('p,li')];
+  for(let i=0;i<blocks.length&&result.length<30;i++){
+   const el=blocks[i];
+   if(el.closest('details,article.q,.qgrid,.questions,.pta-question,.pta-feedback,[data-pta-source-hidden]'))continue;
+   const body=safe(el.textContent);
+   if(body.length<90||body.length>850||/^[A-E][).]\s|^Gabarito\s*:|^Quest[aã]o\s*\d/i.test(body))continue;
+   const topic=(body.match(/^.{1,95}?[.!?:](?:\s|$)/)?.[0]||body.slice(0,90)).trim();
+   if(accept(topic,body))result.push({topic,body});
+  }
+ }
  return result;
 }
 function fromText(text){
