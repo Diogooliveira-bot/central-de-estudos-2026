@@ -1,4 +1,4 @@
-name: CPC — revisões didáticas M09–M20
+name: CPC — revisões didáticas M01–M20
 on:
   push:
     branches:
