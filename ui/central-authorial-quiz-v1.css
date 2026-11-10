@@ -29,3 +29,11 @@
 .bc-authorial-retry,.bc-authorial-content footer button{border:1px solid #c9e0eb;border-radius:7px;background:#eaf4fa;color:#24516e;padding:9px 14px;font-weight:700;cursor:pointer}
 .bc-authorial-content footer{padding:23px 0 7px}
 @media(max-width:640px){.bc-authorial-dialog{height:100%;max-height:100dvh;border-radius:0}.bc-authorial-overlay{padding:0}.bc-authorial-dialog>header{padding:12px 15px}.bc-authorial-content{padding:0 15px 18px}.bc-authorial-question h3{font-size:15px}.bc-authorial-option{font-size:13px;padding:10px}}
+
+
+/* Acesso compacto às baterias em Português, também fora da apostila. */
+.pt-internal-questions-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:13px 17px;border:1px solid #dce7ef;border-radius:8px;background:#f7fafc;margin:12px 0 17px;color:#254b66;font:500 13px/1.55 Inter,system-ui,sans-serif}
+.pt-internal-questions-toolbar>b{margin-right:8px;color:#183e5c;font-weight:750}
+.pt-internal-questions-toolbar>button{border:1px solid #cadfeb;border-radius:6px;padding:9px 12px;background:#ecf5fa;color:#214e6c;font:700 12px/1.4 Inter,system-ui,sans-serif;cursor:pointer}
+.pt-internal-questions-toolbar>button:hover{background:#dbeef8}
+@media(max-width:620px){.pt-internal-questions-toolbar{margin:8px 0 13px;padding:12px}.pt-internal-questions-toolbar>button{width:100%;text-align:left}}
