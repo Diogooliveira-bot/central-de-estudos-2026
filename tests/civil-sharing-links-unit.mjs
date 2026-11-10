@@ -30,7 +30,8 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   assert.equal(data.items.length, 66);
   assert.equal(new Set(data.items.map((x) => x.subdivisao || x.modulo)).size, 66);
   assert(boot.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
-  assert(boot.includes('ui/civil-native-study-v1.js?v=20261106ordem1'));
+  assert(boot.includes('ui/civil-native-study-v1.js?v=20261107civilvisual4'));
+  assert(boot.includes('content/civil/civil-teoria-guiada-reader-v1.js?v=20261107civilreading4'));
   assert(boot.includes('ui/civil-native-study-v1.css?v=20261019civilstandard1'));
   assert(lazy.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
   assert(lazy.includes('ui/civil-native-study-v1.js?v=20261106ordem1'));
@@ -73,7 +74,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   const bootCivilFiles = [
     'content/civil/civil-native-index.js?v=20261018civiljur1',
     'content/civil/civil-sharing-links.js?v=20261009civilsharing2',
-    'ui/civil-native-study-v1.js?v=20261106ordem1',
+    'ui/civil-native-study-v1.js?v=20261107civilvisual4',
   ];
   for (const src of bootCivilFiles) assert(boot.includes(src));
   const rawCivilFiles = [...originalCivilFiles,
@@ -100,7 +101,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   const effectivePaths = effectiveCivilFiles.map((src) => new URL(src, 'http://localhost').pathname);
   assert.equal(effectivePaths.filter((p) => p === '/ui/civil-native-study-v1.js').length, 1);
   assert.equal(effectivePaths.filter((p) => p === '/content/civil/civil-sharing-links.js').length, 1);
-  assert(effectiveCivilFiles.indexOf('content/civil/civil-sharing-links.js?v=20261009civilsharing2') < effectiveCivilFiles.indexOf('ui/civil-native-study-v1.js?v=20261106ordem1'));
+  assert(effectiveCivilFiles.indexOf('content/civil/civil-sharing-links.js?v=20261009civilsharing2') < effectiveCivilFiles.indexOf('ui/civil-native-study-v1.js?v=20261107civilvisual4'));
 
   const server = createServer((req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
