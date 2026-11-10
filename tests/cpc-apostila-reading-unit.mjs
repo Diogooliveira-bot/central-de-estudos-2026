@@ -23,6 +23,29 @@ test('20 CPC readers preserve both source texts, all articles, chapter controls 
   dom.window.close();
  }
 });
+test('CPC guided story reveals reasoning and advances one step while keeping old summary hidden',async()=>{
+ for(const n of [1,9,15]){
+  const{dom,w,api}=setup(n);await api.open('summary');await pause(40);
+  const d=w.document,overlay=d.querySelector('.bc-native-reader-overlay');
+  const guided=overlay.querySelector('.cpc-reasoning-path');
+  assert(guided,'M'+n+' pedagogical story');
+  assert(guided.querySelector('.cpc-didactic-lead').textContent.length>=160);
+  assert.equal(guided.querySelectorAll('details.cpc-study-step[open]').length,1);
+  const check=guided.querySelector('.cpc-think-check');
+  assert.equal(check.open,false);
+  check.querySelector('summary').click();
+  assert.equal(check.open,true,'student can reveal reasoning checkpoint');
+  const steps=[...guided.querySelectorAll('.cpc-study-step')];
+  const original=overlay.querySelector('.cpc-original-reference');
+  assert.equal(original.open,false,'old material remains optional');
+  steps[0].querySelector('[data-cpc-step-done]').click();
+  await pause(50);
+  assert.equal(steps[0].open,false,'completed step closes');
+  assert.equal(steps[1].open,true,'next step opens');
+  assert.equal(original.open,false,'old reference remains collapsed');
+  api.close();dom.window.close();
+ }
+});
 test('CPC and constitutional citations keep distinct identities, ranges include lettered articles',async()=>{
  const{dom,w,api}=setup(19);await api.open('complete');const d=w.document;
  for(const key of ['popular:21','acp:5','cdc:81','ms:23','mi:12','hd:8','adi:12-H','adpf:11','cf:5'])assert(d.querySelector('[data-law-key="'+key+'"]'),key);
