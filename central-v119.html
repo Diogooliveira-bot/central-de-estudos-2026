@@ -95,15 +95,34 @@
  shellRequest.catch(function(){});
  var localStateModule=import('/sync-local-state.js?v=20261101objective4');
  localStateModule.catch(function(){});
- // A Central é escrita com document.write; assim o navegador não antecipa os
- // scripts e baixava um por vez (uma ida e volta de rede para cada). Os avisos de
- // pré-carregamento no início do <head> fazem todos baixarem em paralelo; a ordem
- // de execução continua exatamente a mesma.
+ // A Central é escrita com document.write; priorizar só os arquivos necessários
+ // à navegação inicial. Antecipar cada script da disciplina/edição competia com
+ // os recursos da home por banda no celular, sem reduzir o JavaScript executado.
+ // Arquivos não listados continuam sendo carregados normalmente pela página ou
+ // pelo carregador de disciplinas, mantendo sua ordem e controle de acesso.
  function addScriptPreloads(html){
+  var critical=new Set([
+   '/central-home-progress-data.js',
+   '/central-discipline-loader.js',
+   '/central-free-disciplines.js',
+   '/central-structural-v66119/runtime.js',
+   '/ui/shell.js',
+   '/ui/discipline-standard.js',
+   '/ui/home-topnav-v1.js',
+   '/ui/student-ux-core-v3.js',
+   '/ui/student-shell-v3.js',
+   '/ui/student-dashboard-v3.js',
+   '/ui/disciplinas-foco-v1.js'
+  ]);
   var seen={},links='';
-  html.replace(/<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi,function(tag,src){
-   if(!seen[src]&&!/\btype=/i.test(tag)){seen[src]=true;links+='<link rel="preload" as="script" href="'+src+'">';}
-   return tag;
+  html.replace(/<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi,function(script,src){
+   var path=src.split('?')[0];
+   if(path.charAt(0)!=='/')path='/'+path;
+   if(critical.has(path)&&!seen[src]&&!/\btype=/i.test(script)){
+    seen[src]=true;
+    links+='<link rel="preload" as="script" href="'+src+'">';
+   }
+   return script;
   });
   return html.replace(/<head\b[^>]*>/i,function(head){return head+links});
  }
