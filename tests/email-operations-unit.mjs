@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {emailAuditKind,auditEmailDelivery} from '../lib/email-audit.js';
 import {premiumAutomationEnabled,premiumAutomationFields,runPremiumEmailAutomation} from '../lib/email-premium-automation.js';
+import {studySnapshotsEnabled,captureStudyEmailSnapshots,weeklyDelta} from '../lib/email-study-snapshots.js';
 const base=import.meta.url;
 test('audit events explicitly recognized; never store content or recipient',async()=>{
  assert.equal(emailAuditKind({auditKind:'signup-confirmation'}),'signup-confirmation');
@@ -55,4 +56,21 @@ test('cron requires a bearer token and disabled automation never sends',()=>{
  const cron=readFileSync(new URL('../api/premium-expiry-reminders.js',base),'utf8');
  assert.match(cron,/safeSecretEqual\(auth,'Bearer '\+secret\)/);
  assert.match(cron,/premiumAutomationEnabled\(\)/);
+});
+
+test('weekly summary uses actual accumulated differences instead of inventing weekly totals',()=>{
+  const before={questions:100,study_seconds:7200,disciplines:[{id:'civil',name:'Civil',pct:35}]};
+  const after={questions:128,study_seconds:10800,disciplines:[{id:'civil',name:'Civil',pct:50},{id:'adm',name:'Administrativo',pct:10}]};
+  assert.deepEqual(weeklyDelta(before,after),{questions:28,studySeconds:3600,disciplines:['Civil','Administrativo']});
+  assert.equal(weeklyDelta(null,after),null);
+  assert.equal(weeklyDelta({...before,questions:200},after),null);
+});
+test('snapshot collection is disabled by default and only scoped to consented students',async()=>{
+  assert.equal(studySnapshotsEnabled({VERCEL_ENV:'production'}),false);
+  assert.equal(studySnapshotsEnabled({VERCEL_ENV:'preview',BC_STUDY_EMAIL_SNAPSHOTS_ENABLED:'YES'}),false);
+  const r=await captureStudyEmailSnapshots({env:{VERCEL_ENV:'production'},sqlProvider:()=>{throw Error('must not connect')}});
+  assert.deepEqual(r,{disabled:true,saved:0});
+  const file=readFileSync(new URL('../lib/email-study-snapshots.js',base),'utf8');
+  assert.match(file,/u\.email_marketing_opt_in=TRUE/);
+  assert.match(file,/snapshot_date<\(NOW\(\) AT TIME ZONE 'America\/Fortaleza'\)::date-70/);
 });
