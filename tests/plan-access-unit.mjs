@@ -86,3 +86,36 @@ test('verificação de entitlement permite gratuito mas bloqueia links TEC/QC', 
   assert.equal(await canAccessFeature(sql, user, 'tec.question_books_filters'), false);
   assert.equal(await canAccessFeature(sql, user, 'qc.question_books_filters'), false);
 });
+
+test('reaproveita plano resolvido sem consultar assinatura novamente', async () => {
+  let subscriptionReads = 0;
+  let entitlementReads = 0;
+  const sql = async (parts, ...values) => {
+    const query = parts.join('?');
+    if (query.includes('LEFT JOIN LATERAL')) {
+      subscriptionReads += 1;
+      throw new Error('A assinatura não deve ser consultada novamente');
+    }
+    if (query.includes('central_plan_entitlements')) {
+      entitlementReads += 1;
+      return [{ enabled: values.at(-1) === 'theory.summary' }];
+    }
+    throw new Error('Consulta inesperada no teste');
+  };
+  const user = { id: 'fake-free', role: 'aluno', active: true };
+  const current = { role: 'aluno', plan: 'free', status: 'active', isStaff: false };
+
+  assert.equal(await canAccessFeature(sql, user, 'theory.summary', current), true);
+  assert.equal(await canAccessFeature(sql, user, 'tec.links', current), false);
+  assert.equal(subscriptionReads, 0);
+  assert.equal(entitlementReads, 2);
+});
+
+test('plano pré-resolvido não concede acesso a contas inativas ou sem plano', async () => {
+  let queries = 0;
+  const sql = async () => { queries += 1; throw new Error('Consulta inesperada'); };
+  const user = { id: 'fake-free', role: 'aluno', active: true };
+  assert.equal(await canAccessFeature(sql, { ...user, active: false }, 'theory.summary', { plan: 'premium' }), false);
+  assert.equal(await canAccessFeature(sql, user, 'theory.summary', { plan: 'unassigned' }), false);
+  assert.equal(queries, 0);
+});
