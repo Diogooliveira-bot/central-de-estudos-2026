@@ -24,4 +24,4 @@ Origem: pacote enviado em 10/11/2026, composto de 20 arquivos Word e 20 PDFs cor
 7. Executar CI e confirmar implantação `READY` da versão aprovada.
 
 ## Estado
-**EM PREPARAÇÃO.** Os arquivos convertidos foram gerados no ambiente de artefatos do ChatGPT, mas ainda não foram enviados binariamente ao repositório pelo conector GitHub disponível nesta conversa. Não efetuar merge nem anunciar a publicação antes desse envio e dos testes.
+**PRONTA PARA VALIDAÇÃO E PUBLICAÇÃO.** Os 20 arquivos autorais foram transferidos ao repositório; o leitor de revisão, o CSS e a correção de cache foram integrados. A suíte isolada ADM foi executada em GitHub Actions e passou. Verificar demais checks no PR, implantação Preview e após merge o estado READY da produção.
