@@ -1,46 +1,33 @@
-# Base Completa — Processo Civil M01–M20 | Versão didática final para aprovação
-Data-base editorial: 10/11/2026.
+# Processo Civil M01–M20 — auditoria pedagógica e prévia narrativa
+Data-base: 10/11/2026. Estado: **prévia, sem publicação em produção**.
 
-## Escopo implementado
-- M01–M04: novo roteiro autoral com explicação contextual, 5 temas, 5 exemplos, pontos de memorização e fontes.
-- M05–M08: novo roteiro autoral com 5–6 temas, exemplos e fontes.
-- M09–M14 e M15–M20: ampliação dos resumos curtos com explicações, distinções, 5 exemplos e fontes em cada módulo.
-- O complemento didático é inserido exclusivamente na versão **resumida** pelo leitor compartilhado `ui/cpc-apostila-reading-v1.js`, antes do roteiro existente, permitindo que o aluno primeiro compreenda e depois revise.
-- A leitura **completa** não recebe adições. As fontes originais dos 20 módulos, questões, gabaritos, imagens, referências legais, chaves de progresso e IDs de capítulos não são substituídos.
-- Apresentação em prosa contínua, fonte limpa, sem mosaico excessivo de cartões; legislação apenas em uma seção recolhível por módulo.
-- Cálculo de palavras/tempo de leitura ajustado para o texto apresentado.
+## Problema pedagógico detectado
+Os módulos de revisão anteriores apresentavam conceitos, leis e diferenças sem construção suficiente do raciocínio. A primeira tentativa acrescentava explicações, mas ainda tinha listas conceituais. A segunda tentativa separou assuntos em etapas, porém não resolvia a lógica interna de ensino.
 
-## Conteúdo de cada módulo
-| Módulo | Tema |
-|---|---|
-| 01 | Normas fundamentais, fontes e aplicação da lei |
-| 02 | Jurisdição, ação e pressupostos processuais |
-| 03 | Competência, conexão, continência e conflitos |
-| 04 | Partes, procuradores, despesas e gratuidade |
-| 05 | Litisconsórcio e intervenção de terceiros |
-| 06 | Juiz, auxiliares, MP, Advocacia e Defensoria |
-| 07 | Atos processuais, negócios e prazos |
-| 08 | Comunicação, citação, intimação e nulidades |
-| 09 | Tutela provisória de urgência e evidência |
-| 10 | Formação do processo e petição inicial |
-| 11 | Defesa, revelia, saneamento e julgamento |
-| 12 | Provas |
-| 13 | Sentença, remessa, coisa julgada e liquidação |
-| 14 | Cumprimento de sentença |
-| 15 | Recursos e precedentes |
-| 16 | Execução: títulos e obrigações |
-| 17 | Execução por quantia e penhora |
-| 18 | Procedimentos especiais |
-| 19 | Ações coletivas e constitucionais |
-| 20 | Processos nos tribunais, IAC, IRDR e rescisória |
+## Nova proposta implementada
+Cada **um dos 20 módulos** possui agora:
+1. Um **caso concreto inicial** com conflito realista e dúvida central.
+2. **Cinco etapas causais**: cada uma apresenta uma decisão ou pergunta necessária para resolver o caso. A terminologia só surge depois da necessidade prática.
+3. **Explicações em linguagem simples** com transições entre as etapas, em vez de definições independentes.
+4. Uma **pergunta de compreensão por etapa**; resposta recolhível sob “Conferir o raciocínio”, para tentar responder antes da explicação.
+5. Uma **conclusão que amarra o caso** e o percurso aprendido.
+6. Seções opcionais e recolhíveis de **“Agora, o que memorizar”** e **“Consultar legislação”**.
+7. A antiga revisão integral fica recolhida em **“Consulta avançada: resumo original e artigos”**, para quem precisa da consulta detalhada.
 
-## Verificações
-- `npm run test:cpc-didatico`: testes de cobertura textual, integração e preservação das 40 leituras (20 resumos e 20 versões completas).
-- `tests/cpc-apostila-reading-unit.mjs`: integridade dos hashes dos materiais originais, fontes legais recolhíveis, preservação de capítulos, progressão e fechamento do leitor.
-- `tests/cpc-review-didactic-unit.mjs`: 20 módulos com explicações, exemplos, pontos-chave e fontes.
-- Validar em prévia isolada **sem login**, conforme `docs/PREVIA_SEM_LOGIN_PADRAO.md`: abertura dos M01, M08, M09, M15 e M20, texto responsivo, alternância resumido/completo e capítulos.
-- Conferir vigência antes de eventual publicação: CPC compilado, Lei 14.879/2024, Lei 15.479/2026 (vacatio legis) e Lei 15.484/2026.
-- Esta atualização não altera banco de dados nem ambiente de produção. A publicação ocorrerá somente mediante autorização expressa.
+A tela abre somente a primeira etapa. O botão “Concluir esta etapa” aciona as chaves existentes de progresso e abre a próxima. Os 20 leitores nativos ignoram a rolagem de capítulos antigos ocultos para não marcá-los automaticamente. Nenhum capítulo ou pergunta é excluído do repositório.
 
-## Limite do escopo
-A estrutura anterior de consulta/revisão permanece disponível após a explicação didática, como material complementar, para preservar integralidade e capítulos. A remoção integral desse material antigo exigiria migração explícita de âncoras e testes de progresso; não se fez essa migração.
+## Arquivos modificados
+- `content/cpc/cpc-review-didactic-m01-m04.js`, `m05-m08.js`, `m09-m14.js`, `m15-m20.js`: narrativas autorais e checkpoints para 20 módulos, mantendo resumo anterior na fonte.
+- `ui/cpc-apostila-reading-v1.js`: apresentação de história, perguntas recolhíveis e progressão.
+- `ui/cpc-apostila-reading-v1.css`: layout editorial minimalista.
+- `ui/cpc-native-study-reader.js` e `ui/cpc-m02-native-study-reader.js` até `m20`: preservação do progresso dos capítulos ocultos e atualização de versão do JS compartilhado.
+- `tests/cpc-review-didactic-unit.mjs` e `tests/cpc-apostila-reading-unit.mjs`: cobertura textual dos 20 casos e testes dos leitores, checkpoints, avanço de etapa e preservação de completos.
+- `.github/workflows/cpc-revisao-didatica.yml`: validações automáticas.
+
+## Limites importantes
+- Esta intervenção melhora a **versão de revisão/primeiro contato**. A teoria completa e suas fontes originais não foram reescritas.
+- As versões completas, questões, gabaritos, artigos e registros de progresso existentes permanecem conservados.
+- Exige validar o novo percurso na prévia verdadeira da Central, pelo menos nos M01, M08, M09, M15 e M20 em desktop/móvel.
+- O teste automatizado por navegador de terceiros não pôde ser executado nesta rodada, por indisponibilidade de saldo no serviço opcional. JSDOM e checks CI não substituem integralmente a inspeção visual.
+- A prévia deverá abrir sem login, por mecanismo temporário de visitante e sem acesso aos dados reais de estudantes, conforme `docs/PREVIA_SEM_LOGIN_PADRAO.md`.
+- **Não fazer merge em `main` ou publicar na produção sem aprovação expressa do usuário.**
