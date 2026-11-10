@@ -31,8 +31,8 @@ test('Direito Administrativo renders the approved module structure without dropp
   assert.equal(zone.querySelectorAll('.adm-native-notes').length, 1);
   assert.ok(zone.querySelector('.adm-cf-scheduled-review'));
   assert.equal(zone.querySelectorAll('[data-kind="complete"] .adm-cf-quiz').length, 1);
-  assert.match(zone.querySelector('[data-kind="complete"] .adm-cf-quiz').textContent, /10 questões/);
-  assert.match(zone.querySelector('[data-kind="summary"] .adm-cf-quiz').textContent, /5 questões/);
+  assert.match(zone.querySelector('[data-kind="complete"] .adm-cf-quiz').textContent, /10 questões de bancas reais/);
+  assert.match(zone.querySelector('[data-kind="summary"] .adm-cf-quiz').textContent, /10 questões autorais/);
   for (const legacyLabel of ['Filtro do TEC deste módulo', 'Registrar questões externas', 'Questões feitas', 'Questões certas']) assert.doesNotMatch(html, new RegExp(legacyLabel));
   const readerLegacy = window.ADM_NATIVE_LEGACY[uid];
   assert.match(readerLegacy, /QUESTÃO INTERNA INTACTA/);
