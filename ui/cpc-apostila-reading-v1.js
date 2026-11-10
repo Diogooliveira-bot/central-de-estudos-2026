@@ -220,9 +220,7 @@ if(typeof MutationObserver!=='undefined'&&document.body){
    if(overlay.dataset.cpcDidacticTiming)return;
    const didactic=overlay.querySelector('.cpc-didactic-review'),meta=overlay.querySelector('.bc-native-reader-meta'),article=overlay.querySelector('.bc-native-article');
    if(!didactic||!meta||!article)continue;
-   const visible=article.cloneNode(true);
-   visible.querySelectorAll('details').forEach(node=>node.remove());
-   const count=visible.textContent.trim().split(/\s+/).filter(Boolean).length;
+   const count=didactic.textContent.trim().split(/\s+/).filter(Boolean).length;
    meta.textContent=count.toLocaleString('pt-BR')+' palavras • ~'+Math.max(1,Math.ceil(count/210))+' min';
    overlay.dataset.cpcDidacticTiming='1';
   }
