@@ -112,7 +112,7 @@ async function didactic(n){
  if(!didacticPending.has(group)){
   const task=new Promise((resolve,reject)=>{
    const script=document.createElement('script');
-   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261110cpcfinal1';
+   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261110cpcsimplificado2';
    script.onload=()=>{script.remove();resolve();};
    script.onerror=()=>{script.remove();reject(new Error('Não foi possível carregar a revisão didática do CPC'));};
    document.head.append(script);
@@ -127,29 +127,45 @@ async function didactic(n){
 }
 function insertDidactic(host,n,data){
  const d=host.ownerDocument,part=d.createElement('section');
- part.className='cpc-didactic-review';part.dataset.cpcReview=String(n);
- const heading=d.createElement('h2');heading.textContent='Revisão explicada — aprenda o essencial';part.append(heading);
+ part.className='cpc-didactic-review cpc-learning-path';
+ part.dataset.cpcReview=String(n);
+ const eyebrow=d.createElement('p');eyebrow.className='cpc-study-eyebrow';eyebrow.textContent='REVISÃO GUIADA · MÓDULO '+String(n).padStart(2,'0');part.append(eyebrow);
+ const heading=d.createElement('h2');heading.textContent='Comece pelo essencial';part.append(heading);
  const lead=d.createElement('p');lead.className='cpc-didactic-lead';lead.textContent=data.intro;part.append(lead);
- for(const [title,paragraphs,example] of data.sections){
-  const h=d.createElement('h3');h.textContent=title;part.append(h);
-  for(const txt of paragraphs||[]){const p=d.createElement('p');p.textContent=txt;part.append(p);}
-  if(example){const p=d.createElement('p'),strong=d.createElement('strong');p.className='cpc-didactic-example';strong.textContent='Exemplo prático: ';p.append(strong,d.createTextNode(String(example).replace(/^Exemplo:\s*/i,'')));part.append(p);}
+ const guide=d.createElement('p');guide.className='cpc-study-instruction';guide.textContent='Leia uma etapa por vez. Abra a próxima quando terminar.';part.append(guide);
+ const stages=d.createElement('div');stages.className='cpc-study-stages';
+ for(let i=0;i<data.sections.length;i++){
+  const [title,paragraphs,example]=data.sections[i];
+  const step=d.createElement('details');step.className='cpc-study-step';step.dataset.step=String(i+1);if(i===0)step.open=true;
+  const label=d.createElement('summary'),number=d.createElement('span'),name=d.createElement('strong');
+  number.className='cpc-study-number';number.textContent=String(i+1).padStart(2,'0');
+  name.textContent=title;label.append(number,name);step.append(label);
+  const body=d.createElement('div');body.className='cpc-study-step-body';
+  for(const txt of paragraphs||[]){const p=d.createElement('p');p.textContent=txt;body.append(p);}
+  if(example){const p=d.createElement('p'),strong=d.createElement('strong');p.className='cpc-didactic-example';strong.textContent='Exemplo: ';p.append(strong,d.createTextNode(String(example).replace(/^Exemplo:\s*/i,'')));body.append(p);}
+  step.append(body);stages.append(step);
  }
- const h=d.createElement('h3');h.textContent='O que memorizar';part.append(h);
+ part.append(stages);
+ const recall=d.createElement('details');recall.className='cpc-study-recall';
+ const summary=d.createElement('summary');summary.textContent='Para memorizar antes das questões';recall.append(summary);
  const list=d.createElement('ul');list.className='cpc-didactic-memory';
- for(const txt of data.remember||[]){const item=d.createElement('li');item.textContent=txt;list.append(item);}part.append(list);
+ for(const txt of data.remember||[]){const item=d.createElement('li');item.textContent=txt;list.append(item);}
+ recall.append(list);part.append(recall);
  if(data.laws?.length){
-  const details=d.createElement('details');details.className='cpc-didactic-sources';
-  const sum=d.createElement('summary');sum.textContent='Fontes jurídicas para consulta';details.append(sum);
+  const sources=d.createElement('details');sources.className='cpc-didactic-sources';
+  const sum=d.createElement('summary');sum.textContent='Consultar legislação';sources.append(sum);
   const links=d.createElement('ul');
   for(const [name,url] of data.laws){if(!/^https:\/\//.test(url))continue;const li=d.createElement('li'),a=d.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=name;li.append(a);links.append(li);}
-  details.append(links);part.append(details);
+  sources.append(links);part.append(sources);
  }
- const segue=d.createElement('p');segue.className='cpc-didactic-bridge';segue.textContent='A seguir, consulte o roteiro rápido e os artigos do material original para fixar prazos e distinções.';part.append(segue);
- const overview=host.querySelector('.cpc-overview');
- if(overview)overview.after(part);else host.prepend(part);
+ const original=d.createElement('details');original.className='cpc-original-reference';
+ const originalLabel=d.createElement('summary');originalLabel.textContent='Consultar o resumo antigo e seus artigos (opcional)';
+ const originalBody=d.createElement('div');originalBody.className='cpc-original-body';
+ while(host.firstChild)originalBody.append(host.firstChild);
+ original.append(originalLabel,originalBody);
+ host.append(part,original);
+ return host;
 }
-
 let pending;
 async function laws(){if(!pending)pending=(async()=>{if(!g.CPC_READING_LAWS_B64)await import('/content/cpc/cpc-reading-laws-v1.js?v=20261107cpc2');const bytes=Uint8Array.from(atob(g.CPC_READING_LAWS_B64),c=>c.charCodeAt(0));return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());})().catch(e=>{pending=null;throw e});return pending;}
 function styles(){if(document.getElementById('cpc-apostila-style'))return;const link=document.createElement('link');link.id='cpc-apostila-style';link.rel='stylesheet';link.href='/ui/cpc-apostila-reading-v1.css?v=20261110cpcdidatico1';document.head.append(link);}
