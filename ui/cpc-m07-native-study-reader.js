@@ -166,6 +166,7 @@ function toc(mode){
 }
 function autoCheck(){
  if(!current)return;
+ if(current.mode==='summary' && current.article.querySelector('.cpc-original-reference:not([open])'))return;
  const sc=current.scroll,bottom=sc.scrollTop+sc.clientHeight; let changed=false;
  current.map.forEach((x,i)=>{
    if(chapterDone(current.mode,x.chapter.id)||!x.heading)return;
