@@ -9,6 +9,7 @@ on:
       - 'lib/transactional-email.js'
       - 'lib/free-signup-handler.js'
       - 'lib/password-reset.js'
+      - 'lib/hotmart-webhook.js'
       - 'lib/approved-email-dispatcher.js'
       - 'api/admin-dashboard.js'
       - 'api/premium-expiry-reminders.js'
@@ -32,3 +33,4 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: node --test tests/email-operations-unit.mjs
       - run: npm run test:emails
+      - run: npm run test:hotmart-webhook
