@@ -17,17 +17,27 @@ function lawBox(n,index){
  const names=items.map(x=>x[0]),head=names.length===1?names[0]:names[0]+' e mais '+(names.length-1);
  return '<details class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+items.map(x=>'<div class="bc-m01-lei-art">'+(x[1]||[]).map(t=>'<p>'+esc(t)+'</p>').join('')+'</div>').join('')+'</details>';
 }
+
+/* A edição teórica de novembro/2026 substitui o leitor anterior de cartões.
+ * Texto fiel aos tópicos usados nas apostilas M01–M15; não toca em questões ou teoria integral. */
 function card(topic,index,n){
-  const sections=[
-    ['bc-m01-foundation',topic[1]],
-    ['bc-m01-example',topic[2]],
-    ['bc-m01-law',topic[3]],
-    ['bc-m01-deeper',topic[4]],
-    ['bc-m01-trap',topic[5]],
-    ['bc-m01-recall',topic[6]]
-  ];
-  return '<section class="bc-m01-topic" aria-labelledby="bc-guided-title-'+index+'"><h2 id="bc-guided-title-'+index+'"><span>'+String(index+1).padStart(2,'0')+'</span> '+esc(topic[0])+'</h2>'+
-    sections.map(s=>'<div class="bc-m01-card '+s[0]+'">'+p(s[1])+(s[0]==='bc-m01-law'?lawBox(n,index):'')+'</div>').join('')+'</section>';
+ const name=esc(topic[0]),num=String(index+1).padStart(2,'0');
+ const explain='<div class="bc-apostila-prose">'+p(topic[1])+(topic[4]?p(topic[4]):'')+'</div>';
+ const example=topic[2]?'<p class="bc-apostila-example"><strong>Exemplo prático.</strong> '+esc(topic[2])+'</p>':'';
+ const law=topic[3]?'<p class="bc-apostila-law"><strong>Base legal.</strong> '+esc(topic[3])+'</p>':'';
+ const warning=topic[5]&&(index%4===1||index%4===2)?'<p class="bc-apostila-alert"><strong>Atenção.</strong> '+esc(topic[5])+'</p>':'';
+ return '<section class="bc-m01-topic bc-apostila-topic" aria-labelledby="bc-guided-title-'+n+'-'+index+'"><h2 id="bc-guided-title-'+n+'-'+index+'"><span>'+num+'</span> '+name+'</h2>'+explain+example+law+lawBox(n,index)+warning+'</section>';
+}
+function apostilaInicio(d,n){
+ const first=d.topics&&d.topics[0]||[],title=esc(d.title||'Módulo '+n),name='Direito Civil';
+ const basis=d.base?'Base normativa: '+esc(d.base):'';
+ const lead=first[2]?'Imagine o seguinte: '+esc(first[2]):'Leia o problema, identifique a regra e acompanhe sua aplicação prática.';
+ return '<header class="bc-apostila-hero"><p class="bc-apostila-overline">BASE COMPLETA &nbsp; / &nbsp; APOSTILA TEÓRICA</p><p class="bc-apostila-mod"> '+name.toUpperCase()+' &nbsp; • &nbsp; MÓDULO '+String(n).padStart(2,'0')+'</p><h1>'+title+'</h1>'+(basis?'<p class="bc-apostila-base">'+basis+'</p>':'')+'<p class="bc-apostila-intro">'+lead+'</p></header><section class="bc-apostila-abertura"><h2>Antes de começar: o raciocínio principal</h2><p>O caminho desta leitura é entender a situação concreta, construir o raciocínio, reconhecer o conceito jurídico e aplicar a regra. Os exemplos e as referências normativas integram a explicação, sem questões ou gabaritos.</p></section>';
+}
+function apostilaSintese(d,n){
+ const topics=d.topics||[],chosen=[0,Math.floor((topics.length-1)/3),Math.floor(2*(topics.length-1)/3),topics.length-1];
+ const rows=[...new Set(chosen)].map(i=>topics[i]).filter(Boolean).map(t=>'<li><strong>'+esc(t[0])+'.</strong> '+esc(t[6]||'')+'</li>').join('');
+ return '<section class="bc-apostila-sintese" aria-label="Síntese do módulo"><h2>Síntese do módulo</h2><ul>'+rows+'</ul><p>Material teórico de revisão • Novembro de 2026</p></section>';
 }
 function checklist(n,topics){
  const s=state(n);
@@ -55,15 +65,14 @@ function open(n){
  const d=get(n);if(!d||n<MIN||n>MAX||!Array.isArray(d.topics))return false;
  close();origin=document.activeElement;originalOverflow=document.body.style.overflow;
  const o=document.createElement('div');
- o.className='bc-m01-overlay bc-guided-overlay civil-guided-reading';
+ o.className='bc-m01-overlay bc-guided-overlay civil-guided-reading bc-apostila-overlay';
  o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');
  o.setAttribute('aria-label','Teoria guiada de Direito Civil, módulo '+n);
- o.innerHTML='<div class="bc-m01-reader">'+
-  '<nav class="bc-m01-toolbar" aria-label="Controles de leitura">'+
-   '<button type="button" data-bc-guided-close>← Voltar</button>'+
-   '</nav>'+
-  '<main class="bc-m01-scroll" tabindex="0"><div class="bc-m01-paper">'+
-  d.topics.map((topic,i)=>card(topic,i,n)).join('')+checklist(n,d.topics)+'</div></main></div>';
+ o.innerHTML='<div class="bc-m01-reader bc-apostila-v20261111">'+
+  '<nav class="bc-m01-toolbar" aria-label="Controles de leitura"><button type="button" data-bc-guided-close>← Voltar</button><span class="bc-apostila-toolbar-label">Leitura teórica • M'+String(n).padStart(2,'0')+'</span></nav>'+
+  '<main class="bc-m01-scroll" tabindex="0"><article class="bc-m01-paper bc-apostila-paper">'+
+  apostilaInicio(d,n)+d.topics.map((topic,i)=>card(topic,i,n)).join('')+apostilaSintese(d,n)+
+  '<details class="bc-apostila-checklist"><summary>Minha checagem de compreensão</summary>'+checklist(n,d.topics)+'</details></article></main></div>';
  overlay=o;document.body.appendChild(o);document.body.style.overflow='hidden';
  o.querySelector('[data-bc-guided-close]').addEventListener('click',close);
  o.querySelectorAll('[data-bc-guided-check]').forEach(input=>input.addEventListener('change',()=>save(n,input.getAttribute('data-bc-guided-check'),input.checked)));
@@ -116,6 +125,7 @@ function open(n){
       '.civil-guided-reading{background:#fff;}.civil-guided-reading .bc-m01-card{border:0;border-radius:0;box-shadow:none;background:none;padding:0;margin:0 0 14px;}.civil-guided-reading .bc-m01-card h3{color:#385b80;}.civil-guided-reading .bc-m01-card p{color:#27384e;}.civil-guided-reading .bc-m01-topic{border-top:1px solid #dbe5ed;padding-top:25px;margin-bottom:45px;}.civil-guided-reading .bc-m01-lei-seca{border:0;border-left:3px solid #89b3d0;border-radius:0;background:none;padding:4px 0 4px 18px;}.civil-guided-reading .bc-m01-lei-seca summary{color:#3377a4;}.civil-guided-reading .bc-m01-checklist label{border:0;border-bottom:1px solid #dbe5ed;border-radius:0;padding:12px 0;}',
       '@media(prefers-reduced-motion:reduce){.bc-m01-scroll{scroll-behavior:auto}}'
     ].join('\n');
+    style.textContent += '\n' + "\n.bc-m01-overlay .bc-apostila-v20261111{background:#fff;color:#1b2e47}\n.bc-apostila-v20261111 .bc-m01-toolbar{background:#fff;border-bottom:1px solid #dce8f1;min-height:58px;}\n.bc-apostila-v20261111 .bc-m01-paper.bc-apostila-paper{width:min(820px,calc(100% - 36px));padding:34px 0 92px}\n.bc-apostila-v20261111 .bc-apostila-toolbar-label{font:600 12px/1.3 system-ui,sans-serif;color:#7188a2}\n.bc-apostila-v20261111 .bc-apostila-hero{padding-bottom:24px;border-bottom:2px solid #d4e5f2;margin-bottom:28px}\n.bc-apostila-v20261111 .bc-apostila-overline{font-size:11px;color:#6a829b;font-weight:650;letter-spacing:.09em;margin:0 0 17px}\n.bc-apostila-v20261111 .bc-apostila-mod{font-size:11px;font-weight:750;letter-spacing:.08em;color:#326c95;margin:0 0 9px}\n.bc-apostila-v20261111 h1{font-size:clamp(24px,3.6vw,33px);color:#183653;letter-spacing:-.025em;line-height:1.16;margin:0 0 12px}\n.bc-apostila-v20261111 .bc-apostila-base{font-size:13px;color:#627890;margin:0 0 18px}\n.bc-apostila-v20261111 .bc-apostila-intro{font-size:16px;line-height:1.72;color:#304864;margin:0}\n.bc-apostila-v20261111 .bc-apostila-abertura{margin:0 0 28px}\n.bc-apostila-v20261111 .bc-apostila-abertura h2{font-size:18px;line-height:1.3;color:#1e446c;margin:0 0 10px}\n.bc-apostila-v20261111 .bc-apostila-abertura p{font-size:15.5px;line-height:1.8;margin:0;color:#30465f}\n.bc-apostila-v20261111 .bc-m01-topic.bc-apostila-topic{padding:23px 0 12px;border-top:1px solid #dce6ee;margin:0 0 10px}\n.bc-apostila-v20261111 .bc-apostila-topic h2{font-size:clamp(19px,2.7vw,22px);line-height:1.3;margin:0 0 13px;font-weight:750}\n.bc-apostila-v20261111 .bc-apostila-topic h2 span{font-size:12px;vertical-align:baseline;margin-right:9px;color:#6a98b6}\n.bc-apostila-v20261111 .bc-apostila-prose p{font-size:15.4px;line-height:1.81;color:#283c55;margin:0 0 13px}\n.bc-apostila-v20261111 .bc-apostila-example{font-size:14.5px;line-height:1.75;color:#23435b;background:#f3f8fc;padding:12px 16px;border-left:3px solid #7caecb;margin:13px 0 12px;border-radius:0 5px 5px 0}\n.bc-apostila-v20261111 .bc-apostila-law{font-size:13.3px;line-height:1.68;color:#4a6581;margin:10px 0 13px}\n.bc-apostila-v20261111 .bc-apostila-alert{font-size:13.5px;line-height:1.65;margin:9px 0 13px;color:#51687d}\n.bc-apostila-v20261111 .bc-m01-lei-seca{margin:9px 0 14px;border:0;border-left:3px solid #89b2d0;border-radius:0;background:transparent;padding:6px 0 6px 16px}\n.bc-apostila-v20261111 .bc-m01-lei-seca summary{color:#2a709e;font-size:13px}\n.bc-apostila-v20261111 .bc-apostila-sintese{border-top:2px solid #c9deed;margin-top:24px;padding-top:24px}\n.bc-apostila-v20261111 .bc-apostila-sintese h2{font-size:20px;color:#1f4667;margin:0 0 13px}\n.bc-apostila-v20261111 .bc-apostila-sintese ul{margin:0;padding-left:21px}\n.bc-apostila-v20261111 .bc-apostila-sintese li{font-size:14.6px;line-height:1.72;color:#2e4660;padding-bottom:9px}\n.bc-apostila-v20261111 .bc-apostila-sintese>p{font-size:12px;color:#8294a7;margin:20px 0 0}\n.bc-apostila-v20261111 .bc-apostila-checklist{border-top:1px solid #dce6ee;margin-top:28px;padding:12px 0}\n.bc-apostila-v20261111 .bc-apostila-checklist>summary{font-size:14px;font-weight:650;color:#2a678b;cursor:pointer;padding:9px 0}\n.bc-apostila-v20261111 .bc-m01-checklist{padding-top:12px}\n.bc-apostila-v20261111 .bc-m01-checklist label{border:0;border-bottom:1px solid #dce6ee;border-radius:0;padding:11px 0;background:transparent}\n@media(max-width:600px){.bc-apostila-v20261111 .bc-m01-paper.bc-apostila-paper{width:calc(100% - 26px);padding-top:22px}.bc-apostila-v20261111 .bc-apostila-intro{font-size:15px}.bc-apostila-v20261111 .bc-apostila-prose p{font-size:15px}.bc-apostila-v20261111 .bc-apostila-topic h2{font-size:19px}.bc-apostila-v20261111 .bc-apostila-toolbar-label{font-size:11px}}\n";
     document.head.appendChild(style);
   }
 
