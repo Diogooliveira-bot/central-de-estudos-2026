@@ -40,7 +40,16 @@ test('Civil M01–M15: revisão guiada entregue ao aluno gratuito, sem liberar t
     assert.notEqual(protectedAsset(path)?.feature,'theory.summary','outro material permanece protegido: '+path);
     const projected=await freePlanAsset(root,path);
     if(protectedAsset(path)?.kind==='file')assert.equal(projected?.status,403,'recurso Premium não liberado: '+path);
-    else assert(projected?.status===200 && !String(projected.body).includes('teoria integral'), 'teoria Premium deve continuar filtrada: '+path);
+    else {
+      assert.equal(projected?.status,200,'projeção gratuita preservada: '+path);
+      if(protectedAsset(path)?.kind==='native'){
+        const context={window:{}};vm.runInNewContext(projected.body,context);
+        const mod=context.window.BASE_NATIVE_CONTENT?.civil?.m01;
+        assert(mod,'resumo de Civil projetado');
+        assert.match(mod.complete,/exclusivo do Base Completa Premium/);
+        assert(!('questions' in mod)&&!('internalQuestions' in mod),'banco de questões não exposto');
+      }
+    }
   }
 
   const {readFileSync}=await import('node:fs');
