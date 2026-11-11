@@ -136,7 +136,7 @@
   ],
   "crons": [
     {
-      "path": "/api/premium-expiry-reminders",
+      "path": "/api/admin-dashboard",
       "schedule": "0 12 * * *"
     }
   ]
