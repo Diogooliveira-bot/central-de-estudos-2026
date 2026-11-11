@@ -21,10 +21,13 @@ test('Direito Civil M01–M15: leitor de um único fluxo sem abas de revisão, p
  assert(!overlay.querySelector('[data-bc-guided-mode]'),'sem botões de modos');
  assert(!overlay.textContent.includes('Revisão rápida'),'sem aba de revisão rápida');
  assert(!overlay.querySelector('[data-view="review"]'),'sem modo que oculte a teoria');
- for(const cls of ['foundation','example','law','deeper','trap','recall']){
-   const el=overlay.querySelector('.bc-m01-'+cls);
+ assert(overlay.querySelector('.bc-apostila-v20261111'),'leitor unificado ativo');
+ const topicView=overlay.querySelector('.bc-apostila-topic');
+ for(const cls of ['prose','example','law']){
+   const el=topicView?.querySelector('.bc-apostila-'+cls);
    assert(el&&el.textContent.trim().length>0,cls+' preservado');
  }
+ assert(overlay.querySelector('.bc-apostila-sintese'),'síntese mantida');
  assert(overlay.querySelector('.bc-m01-lei-seca summary'),'lei seca preservada');
  const check=overlay.querySelector('[data-bc-guided-check="0"]');
  assert(check);
