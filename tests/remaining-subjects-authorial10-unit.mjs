@@ -7,7 +7,7 @@ const read=x=>fs.readFileSync(new URL('../'+x,import.meta.url),'utf8');
 function fresh(){
  const dom=new JSDOM('<!doctype html><html><body><main id="subjects"></main></body></html>',{runScripts:'outside-only',url:'https://test.local'});
  const w=dom.window;
- for(const f of ['ui/central-internal-question-policy-v1.js','ui/central-authorial-quiz-v1.js','ui/grounded-authorial-questions-v1.js','ui/adm-authorial-source-v1.js'])w.eval(read(f));
+ for(const f of ['ui/central-internal-question-policy-v1.js','ui/central-authorial-quiz-v1.js','ui/grounded-authorial-questions-v1.js','ui/adm-authorial-source-v1.js','content/adm/m03-authorial10-v1.js'])w.eval(read(f));
  return dom;
 }
 test('ADM M01–M20: 10 questões autorais no resumo, usando banco seguro ou revisão ancorada',()=>{
@@ -17,7 +17,7 @@ test('ADM M01–M20: 10 questões autorais no resumo, usando banco seguro ou rev
   w.eval(read('content/adm/m'+code+'-native-data-lite.js'));
   const lesson=Object.values(w.ADM_NATIVE_CONTENT).find(x=>x.number===n);
   assert.ok(lesson,'M'+n+' conteúdo');
-  const old=w.BcAdmAuthorialSource.select(lesson.summaryHtml,lesson.completeAppendHtml);
+  const old=w.BcAdmAuthorialSource.select(lesson.summaryHtml,lesson.completeAppendHtml,n);
   const generated=w.BcGroundedQuestions.build({html:lesson.summaryHtml,title:lesson.title});
   const result=old.ready?old.items:generated;
   summary.push({module:n,objective:old.items.length,generated:generated.length,ready:result.length===10});

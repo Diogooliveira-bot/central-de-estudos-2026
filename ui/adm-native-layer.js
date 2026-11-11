@@ -151,7 +151,7 @@ function setupCompleteChecks(uid,body){
 }
 async function openAuthorial(uid){
  const d=await loadData(uid);
- const pack=g.BcAdmAuthorialSource?.select(d?.summaryHtml,d?.completeAppendHtml);
+ const pack=g.BcAdmAuthorialSource?.select(d?.summaryHtml,d?.completeAppendHtml,num(uid));
  let items=pack?.ready?pack.items:null;
  if(!items){const grounded=g.BcGroundedQuestions?.build({html:d?.summaryHtml,discipline:'Direito Administrativo',module:'M'+String(num(uid)).padStart(2,'0'),title:INDEX[uid].title})||[];
   if(grounded.length===10&&grounded.every(g.CentralAuthorialQuiz?.valid||(()=>false)))items=grounded;}

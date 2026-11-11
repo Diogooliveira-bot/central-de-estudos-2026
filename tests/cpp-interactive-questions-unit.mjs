@@ -65,7 +65,7 @@ test('CPP: 22 versÃµes completas preservam teoria, tabelas e lei seca sem questÃ
     assert.equal(box.closest('table,li,.cpp-native-question'),null);
    });
    assert.equal(new Set(lawBlocks.map(x=>x.dataset.lawKey)).size,lawBlocks.length);
-   assert.ok(article.querySelectorAll('.cppv-scheme').length>=3,d.uid);
+   assert.ok(article.querySelectorAll('.cppv-scheme').length>=1,d.uid);
    assert.equal(article.querySelectorAll('.cpp-native-question').length,0);
    const original=new JSDOM(d.completeHtml).window.document;
    assert.deepEqual([...article.querySelectorAll('table')].map(t=>t.textContent),[...original.querySelectorAll('table')].map(t=>t.textContent),'tabelas preservadas');

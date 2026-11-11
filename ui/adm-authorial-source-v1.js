@@ -79,8 +79,10 @@ function extract(markup,source){
  });
  return out;
 }
-function select(summary,complete){
+function select(summary,complete,moduleNumber){
  const a=extract(summary,'summary'),b=extract(complete,'complete');
+ const editorial=g.BC_ADM_AUTHORIAL_OVERRIDES?.[moduleNumber];
+ if(Array.isArray(editorial)&&editorial.length===10&&editorial.every(g.CentralAuthorialQuiz?.valid||(()=>false)))return {items:editorial,summary:a.length,complete:b.length,ready:true,source:'authorial-editorial'};
  const result=g.CentralInternalQuestionPolicy?.authorial(a,b)||[];
  return {items:result,summary:a.length,complete:b.length,ready:result.length===10&&result.every(g.CentralAuthorialQuiz?.valid||(()=>false))};
 }
