@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';import {JSDOM}from'jsdom';
 const read=p=>fs.readFileSync(p,'utf8'),audit=JSON.parse(read('audits/cpc-apostila-reading-20261107.json'));
 const pause=ms=>new Promise(r=>setTimeout(r,ms));
-function setup(n){const dom=new JSDOM('<!doctype html><body></body>',{runScripts:'outside-only',url:'https://preview.local',pretendToBeVisual:true}),w=dom.window;w.HTMLElement.prototype.scrollIntoView=()=>{};w.Response=Response;w.Blob=Blob;w.DecompressionStream=DecompressionStream;w.alert=msg=>{throw Error(msg)};w.eval(read('content/cpc/m'+String(n).padStart(2,'0')+'-native-data.js'));w.eval(read('content/cpc/cpc-reading-laws-v1.js'));w.eval(read('ui/cpc-apostila-reading-v1.js'));w.eval(read(n===1?'ui/cpc-native-study-reader.js':'ui/cpc-m'+String(n).padStart(2,'0')+'-native-study-reader.js'));return{dom,w,api:n===1?w.CpcNativeReader:w['CpcM'+String(n).padStart(2,'0')+'NativeReader']};}
+function setup(n){const dom=new JSDOM('<!doctype html><body></body>',{runScripts:'outside-only',url:'https://preview.local',pretendToBeVisual:true}),w=dom.window;w.HTMLElement.prototype.scrollIntoView=()=>{};w.Response=Response;w.Blob=Blob;w.DecompressionStream=DecompressionStream;w.alert=msg=>{throw Error(msg)};w.eval(read('content/cpc/m'+String(n).padStart(2,'0')+'-native-data.js'));w.eval(read('content/cpc/cpc-review-didactic-'+(n<=4?'m01-m04':n<=8?'m05-m08':n<=14?'m09-m14':'m15-m20')+'.js'));w.eval(read('content/cpc/cpc-reading-laws-v1.js'));w.eval(read('ui/cpc-apostila-reading-v1.js'));w.eval(read(n===1?'ui/cpc-native-study-reader.js':'ui/cpc-m'+String(n).padStart(2,'0')+'-native-study-reader.js'));return{dom,w,api:n===1?w.CpcNativeReader:w['CpcM'+String(n).padStart(2,'0')+'NativeReader']};}
 test('20 CPC readers preserve both source texts, all articles, chapter controls and close behavior',async()=>{
  assert.equal(audit.modules,20);assert.equal(audit.checks.length,40);assert.equal(audit.unresolved,0);
  for(let n=1;n<=20;n++){
@@ -10,7 +10,7 @@ test('20 CPC readers preserve both source texts, all articles, chapter controls 
    const source=w.BASE_NATIVE_CONTENT.cpc['m'+String(n).padStart(2,'0')];const row=audit.checks.find(x=>x.module===n&&x.mode===mode);
    assert.equal(crypto.createHash('sha256').update(source[mode]).digest('hex'),row.sourceHash,'source unchanged M'+n);
    await api.open(mode);const article=d.querySelector('.bc-native-article');assert(article,'open M'+n+' '+mode);assert(article.querySelector('.cpc-apostila'));
-   assert(article.querySelector('.cpc-overview'));assert(article.querySelector('.cpc-synthesis'));
+   assert(article.querySelector('.cpc-overview'));assert(article.querySelector('.cpc-synthesis'));if(mode==='summary'&&n<=15){assert.equal(article.querySelector('.cpc-didactic-review'),null,'CPC M'+n+' mantém o resumo do PDF como leitura principal');}if(mode==='summary'&&n>=16){const review=article.querySelector('.cpc-didactic-review');assert(review,'CPC M'+n+' resumo didático');assert(review.querySelectorAll('details.cpc-study-step').length>=5);assert.equal(review.querySelectorAll('details.cpc-study-step[open]').length,1);assert(review.querySelectorAll('.cpc-think-question').length>=5);assert(review.querySelectorAll('.cpc-think-check').length>=5);assert(review.textContent.includes('O raciocínio que você construiu'));assert(article.querySelector('details.cpc-original-reference:not([open])'));assert(article.querySelector('details.cpc-original-reference .cpc-overview'));assert(review.querySelectorAll('.cpc-didactic-memory li').length>=5);}else assert(!article.querySelector('.cpc-didactic-review'));
    assert.equal(article.querySelectorAll('details.cpc-law[open]').length,0);
    assert.equal(article.querySelectorAll('details.cpc-law').length,row.lawBlocks);
    assert.equal(article.querySelectorAll('[data-law-key]').length,row.lawArticles);
@@ -21,6 +21,29 @@ test('20 CPC readers preserve both source texts, all articles, chapter controls 
    api.close();assert.equal(d.querySelector('.bc-native-reader-overlay'),null);
   }
   dom.window.close();
+ }
+});
+test('CPC guided story reveals reasoning and advances one step while keeping old summary hidden',async()=>{
+ for(const n of [16,18,20]){
+  const{dom,w,api}=setup(n);await api.open('summary');await pause(40);
+  const d=w.document,overlay=d.querySelector('.bc-native-reader-overlay');
+  const guided=overlay.querySelector('.cpc-reasoning-path');
+  assert(guided,'M'+n+' pedagogical story');
+  assert(guided.querySelector('.cpc-didactic-lead').textContent.length>=160);
+  assert.equal(guided.querySelectorAll('details.cpc-study-step[open]').length,1);
+  const check=guided.querySelector('.cpc-think-check');
+  assert.equal(check.open,false);
+  check.querySelector('summary').click();
+  assert.equal(check.open,true,'student can reveal reasoning checkpoint');
+  const steps=[...guided.querySelectorAll('.cpc-study-step')];
+  const original=overlay.querySelector('.cpc-original-reference');
+  assert.equal(original.open,false,'old material remains optional');
+  steps[0].querySelector('[data-cpc-step-done]').click();
+  await pause(50);
+  assert.equal(steps[0].open,false,'completed step closes');
+  assert.equal(steps[1].open,true,'next step opens');
+  assert.equal(original.open,false,'old reference remains collapsed');
+  api.close();dom.window.close();
  }
 });
 test('CPC and constitutional citations keep distinct identities, ranges include lettered articles',async()=>{
