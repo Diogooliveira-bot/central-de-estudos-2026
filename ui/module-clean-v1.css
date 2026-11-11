@@ -1,0 +1,16 @@
+/* Base Completa — leitura de módulos sem elementos de navegação redundantes.
+   Apenas apresentação: dados, questões, progresso e ações originais são preservados. */
+html #homeView.bc-focus-has-module .bc-module-quickbar {
+  display: none !important;
+}
+html #homeView.bc-focus-has-module .cv-module-head small {
+  display: none !important;
+}
+html #homeView.bc-focus-has-module .cv-progress-grid > .cv-progress-card ~ .cv-progress-card,
+html #homeView.bc-focus-has-module .penal-approved-progress > .penal-approved-progress-card ~ .penal-approved-progress-card {
+  display: none !important;
+}
+html #homeView.bc-focus-has-module .cv-progress-grid,
+html #homeView.bc-focus-has-module .penal-approved-progress {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
