@@ -1,5 +1,5 @@
-/* Base Completa | ADM M04 (Poderes Administrativos): dez questões originais autorais, jurídicas e comentadas.
- * Não são questões reais de bancas. Escritas em 11/11/2026 no nível de prova (FCC/FGV, 5 alternativas),
+/* Base Completa | Direito Administrativo M04 (Poderes Administrativos): dez questões originais autorais e comentadas.
+ * Não são questões reais de bancas. Escritas em 11/11/2026 no nível de prova (5 alternativas),
  * com gabarito equilibrado (A–E, duas vezes cada); cada lei citada traz o nome e cada artigo, o que ele diz.
  * Fontes: Constituição Federal (arts. 49, V; 84, IV, VI e parágrafo único; 144), Lei 9.784/1999, Lei 4.717/1965, Lei 5.172/1966 (CTN), Lei 14.133/2021, Lei 10.826/2003, Lei 9.873/1999, Súmula 510 do STF e Tema 532 do STF.
  */

@@ -1,5 +1,5 @@
-/* Base Completa | ADM M02 (Organização Administrativa): dez questões originais autorais, jurídicas e comentadas.
- * Não são questões reais de bancas. Escritas em 11/11/2026 no nível de prova (FCC/FGV, 5 alternativas),
+/* Base Completa | Direito Administrativo M02 (Organização Administrativa): dez questões originais autorais e comentadas.
+ * Não são questões reais de bancas. Escritas em 11/11/2026 no nível de prova (5 alternativas),
  * com gabarito equilibrado (A–E, duas vezes cada); cada lei citada traz o nome e cada artigo, o que ele diz.
  * Fontes: Constituição Federal (arts. 37, XIX, XX e § 6º; 150, § 2º), Decreto-Lei 200/1967, Lei 13.303/2016, Lei 13.848/2019, Lei 9.986/2000, Lei 11.107/2005, Lei 9.637/1998, Lei 9.784/1999, Súmula 525 do STJ e Temas 545 e 940 do STF.
  */

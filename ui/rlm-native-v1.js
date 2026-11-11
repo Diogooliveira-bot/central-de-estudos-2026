@@ -152,7 +152,20 @@ function oldTarget(value){
  if(t==='rf')return 'RF';
  return map[t]||'M01';
 }
+// Questões de IA revisadas (M02–M15): substituem as 10 da aula; respostas antigas eram de outras questões.
+const IA_APPLIED={};
+function applyCurated(id,items){
+ const d=lesson(id);if(!d||!Array.isArray(items)||items.length!==10)return;
+ d.questions=items.map(q=>({level:'prova',prompt:q.q,options:q.options,answer:q.answer,explanation:q.explanation,origin:'autoral-IA',id:q.id}));
+ try{if(localStorage.getItem(PREFIX+'bank:'+id)!=='ia1'){localStorage.removeItem(PREFIX+'answers:'+id);localStorage.setItem(PREFIX+'bank:'+id,'ia1')}}catch(_){}
+ IA_APPLIED[id]=true;
+}
 function open(id='M02',stage='theory'){
+ const nIA=/^M(0[2-9]|1[0-5])$/.test(id)?Number(id.slice(1)):0;
+ if(nIA&&!IA_APPLIED[id]&&g.CentralAuthorialBank?.has('rlm',nIA)){
+  g.CentralAuthorialBank.ensure('rlm',nIA).then(items=>{applyCurated(id,items);IA_APPLIED[id]=true;open(id,stage)});
+  return false;
+ }
  const m=id==='RF'?{id:'RF',titulo:'Revisão cumulativa'}:mod(id);
  if(!m)return false;
  if(stage==='banca')return g.CentralInternalQuestionPolicy?.modal('Raciocínio Lógico-Matemático',m.titulo);

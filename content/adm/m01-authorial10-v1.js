@@ -1,5 +1,5 @@
-/* Base Completa | ADM M01 (Regime Jurídico e Princípios Administrativos): dez questões originais autorais, jurídicas e comentadas.
- * Não são questões reais de bancas. Escritas em 11/11/2026 no nível de prova (FCC/FGV, 5 alternativas),
+/* Base Completa | Direito Administrativo M01 (Regime Jurídico e Princípios Administrativos): dez questões originais autorais e comentadas.
+ * Não são questões reais de bancas. Escritas em 11/11/2026 no nível de prova (5 alternativas),
  * com gabarito equilibrado (A–E, duas vezes cada); cada lei citada traz o nome e cada artigo, o que ele diz.
  * Fontes: Constituição Federal (arts. 5º, II, X, XXXIII e LXXIII; 37, caput, II e § 1º; 41, § 1º; 84, VI), Lei 9.784/1999 (Lei do Processo Administrativo Federal), Lei 8.112/1990, Lei 9.307/1996, Lei 14.133/2021, Súmula Vinculante 13 e jurisprudência do STF.
  */

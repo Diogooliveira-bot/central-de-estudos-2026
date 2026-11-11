@@ -89,7 +89,7 @@ test('índice, interface, estilos e cache offline são carregados com a versão 
   assert.ok(manifest.includes('/'+name+'?v='+version),name+' no cache');
  }
  for(const name of ['central-lazy-theory-v66119.js','ui/adm-native-layer.css']){
-  const version=name==='central-lazy-theory-v66119.js'?'20261111bank1':'20261102admguide1';
+  const version=name==='central-lazy-theory-v66119.js'?'20261111ia2':'20261102admguide1';
   assert.ok(shell.includes(name+'?v='+version),name+' no bootstrap');
   assert.ok(manifest.includes('/'+name+'?v='+version),name+' no cache');
  }

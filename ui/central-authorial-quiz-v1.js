@@ -96,7 +96,9 @@ async function openPenal(number){
   d=g.BASE_NATIVE_CONTENT?.penal?.['m'+code];
  }
  if(!d)return false;
- const list=lesson(d.internalQuestions);
+ // Questões de IA revisadas do módulo, quando existirem; senão, o banco autoral anterior.
+ const curated=await g.CentralAuthorialBank?.ensure('penal',n);
+ const list=(Array.isArray(curated)&&curated.length===10&&curated.every(valid))?curated:lesson(d.internalQuestions);
  if(!list){g.alert?.('Esta bateria ainda não tem dez questões autorais validadas.');return false;}
  return open({discipline:'Direito Penal',module:'M'+code,title:'M'+code+' · '+d.title,items:list});
 }

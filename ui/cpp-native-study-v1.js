@@ -52,6 +52,8 @@ function stripInternalQuestions(body){
  questionBlocks(body).forEach(q=>{q.nodes.forEach(n=>n.remove());q.heading.remove()});
 }
 async function openAuthorial(n){
+ const curated=await g.CentralAuthorialBank?.ensure('cpp',n);
+ if(Array.isArray(curated)&&curated.length===10&&curated.every(g.CentralAuthorialQuiz?.valid||(()=>false)))return g.CentralAuthorialQuiz.open({discipline:'Direito Processual Penal',module:'M'+String(n).padStart(2,'0'),title:BYNUM[n].title,items:curated});
  const d=await load(n),list=g.CentralInternalQuestionPolicy?.authorial(extractAuthorial(d.summaryHtml),extractAuthorial(d.completeHtml))||[];
  const more=g.BcGroundedQuestions?.build({html:d.summaryHtml,discipline:'Direito Processual Penal',module:'M'+String(n).padStart(2,'0'),title:BYNUM[n].title})||[];
  const used=new Set(list.map(q=>q.q.trim().toLowerCase()));

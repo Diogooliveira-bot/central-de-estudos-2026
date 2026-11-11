@@ -8,17 +8,27 @@
 'use strict';
 if(g.CentralAuthorialBank)return;
 // Atualize VERSION sempre que um arquivo de questões mudar (renova o cache do aparelho).
-const VERSION='20261111bank1';
+const VERSION='20261111ia2';
 // Módulos que já têm arquivo de questões. O teste unitário confere esta lista com a pasta.
 const AVAILABLE={
  adm:[1,2,3,4],
  cpc:[1],
- pt:[]
+ pt:[],
+ penal:[],
+ cpp:[],
+ cf:[],
+ civil:[],
+ rlm:[]
 };
 const SOURCES={
  adm:{dir:'/content/adm/',get:n=>g.BC_ADM_AUTHORIAL_OVERRIDES?.[n]},
  cpc:{dir:'/content/cpc/',get:n=>g.BC_CPC_AUTHORIAL_OVERRIDES?.[n]},
- pt:{dir:'/content/portugues/',get:n=>g.BC_PT_AUTHORIAL_OVERRIDES?.[n]}
+ pt:{dir:'/content/portugues/',get:n=>g.BC_PT_AUTHORIAL_OVERRIDES?.[n]},
+ penal:{dir:'/content/penal/',get:n=>g.BC_PENAL_AUTHORIAL_OVERRIDES?.[n]},
+ cpp:{dir:'/content/cpp/',get:n=>g.BC_CPP_AUTHORIAL_OVERRIDES?.[n]},
+ cf:{dir:'/content/cf/',get:n=>g.BC_CF_AUTHORIAL_OVERRIDES?.[n]},
+ civil:{dir:'/content/civil/',get:n=>g.BC_CIVIL_AUTHORIAL_OVERRIDES?.[n]},
+ rlm:{dir:'/content/rlm-tjce-2026/',get:n=>g.BC_RLM_AUTHORIAL_OVERRIDES?.[n]}
 };
 const pending={};
 function file(discipline,n){return SOURCES[discipline].dir+'m'+String(n).padStart(2,'0')+'-authorial10-v1.js?v='+VERSION}

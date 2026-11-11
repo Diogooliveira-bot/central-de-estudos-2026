@@ -44,13 +44,18 @@ function bankAvailable(){const w={};vm.runInNewContext(read('ui/central-authoria
 
 test('carregador sob demanda: a lista de módulos confere com os arquivos e cada matéria usa o carregador',()=>{
  const av=bankAvailable();
- for(const [d,dir] of [['adm','content/adm/'],['cpc','content/cpc/'],['pt','content/portugues/']]){
+ for(const [d,dir] of [['adm','content/adm/'],['cpc','content/cpc/'],['pt','content/portugues/'],['penal','content/penal/'],['cpp','content/cpp/'],['cf','content/cf/'],['civil','content/civil/'],['rlm','content/rlm-tjce-2026/']]){
   let files=[];try{files=readdirSync(new URL('../'+dir,import.meta.url))}catch(_){}
   const onDisk=files.map(f=>/^m(\d{2})-authorial10-v1\.js$/.exec(f)).filter(Boolean).map(m=>Number(m[1])).sort((a,b)=>a-b);
   assert.deepEqual([...av[d]].sort((a,b)=>a-b),onDisk,d+': lista do carregador × arquivos');
  }
  assert.match(read('ui/adm-native-layer.js'),/CentralAuthorialBank\?\.ensure\('adm',num\(uid\)\)/);
  assert.match(read('ui/portuguese-authorial10-v1.js'),/CentralAuthorialBank\?\.ensure\('pt',mod\.num\)/);
+ assert.match(read('ui/central-authorial-quiz-v1.js'),/CentralAuthorialBank\?\.ensure\('penal',n\)/);
+ assert.match(read('ui/cpp-native-study-v1.js'),/CentralAuthorialBank\?\.ensure\('cpp',n\)/);
+ assert.match(read('ui/cf-native-study-v2.js'),/CentralAuthorialBank\??\.ensure\('cf',n\)/);
+ assert.match(read('ui/civil-native-study-v1.js'),/CentralAuthorialBank\?\.ensure\('civil',n\)/);
+ assert.match(read('ui/rlm-native-v1.js'),/CentralAuthorialBank\.ensure\('rlm',nIA\)/);
  const index=read('index.html');
  assert.ok(!/\/content\/(adm|cpc)\/m\d{2}-authorial10-v1\.js/.test(index),'questões não são baixadas na abertura da Central');
 });
