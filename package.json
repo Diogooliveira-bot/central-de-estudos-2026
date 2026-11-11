@@ -36,7 +36,8 @@
     "test:email-provider": "node --test tests/resend-email-unit.mjs tests/transactional-email-unit.mjs tests/password-reset-unit.mjs tests/transactional-email-templates-unit.mjs",
     "test:emails": "node --test tests/transactional-email-templates-unit.mjs tests/approved-email-packs-unit.mjs tests/approved-email-dispatcher-unit.mjs tests/resend-email-unit.mjs tests/transactional-email-unit.mjs tests/password-reset-unit.mjs tests/public-free-signup-4-5-unit.mjs",
     "test:adm-autoral": "node --test tests/adm-autoral-m01-m20-unit.mjs tests/adm-apostila-reading-unit.mjs tests/adm-review-all-m01-m20-unit.mjs tests/adm-review-didactic-v2-unit.mjs",
-    "test:cpc-didatico": "node --test tests/cpc-review-didactic-unit.mjs tests/cpc-apostila-reading-unit.mjs"
+    "test:cpc-didatico": "node --test tests/cpc-review-didactic-unit.mjs tests/cpc-apostila-reading-unit.mjs",
+    "test:study-communication": "node --test tests/study-communication-unit.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.3.16",
