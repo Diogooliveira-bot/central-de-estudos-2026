@@ -50,15 +50,6 @@ function close(){
  overlay.remove();overlay=null;document.body.style.overflow=originalOverflow;
  if(origin&&origin.isConnected)origin.focus();
 }
-function switchMode(mode){
- if(!overlay)return;
- overlay.querySelector('.bc-m01-reader').dataset.view=mode;
- overlay.querySelectorAll('[data-bc-guided-mode]').forEach(btn=>{
-  const on=btn.getAttribute('data-bc-guided-mode')===mode;
-  btn.classList.toggle('active',on);btn.setAttribute('aria-pressed',on?'true':'false');
- });
- const sc=overlay.querySelector('.bc-m01-scroll');if(sc)sc.scrollTop=0;
-}
 function open(n){
  n=Number(n);
  const d=get(n);if(!d||n<MIN||n>MAX||!Array.isArray(d.topics))return false;
@@ -67,18 +58,14 @@ function open(n){
  o.className='bc-m01-overlay bc-guided-overlay civil-guided-reading';
  o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');
  o.setAttribute('aria-label','Teoria guiada de Direito Civil, módulo '+n);
- o.innerHTML='<div class="bc-m01-reader" data-view="study">'+
+ o.innerHTML='<div class="bc-m01-reader">'+
   '<nav class="bc-m01-toolbar" aria-label="Controles de leitura">'+
    '<button type="button" data-bc-guided-close>← Voltar</button>'+
-   '<div class="bc-m01-modes" role="group" aria-label="Modo de leitura">'+
-    '<button type="button" data-bc-guided-mode="study" class="active" aria-pressed="true">Primeira leitura</button>'+
-    '<button type="button" data-bc-guided-mode="review" aria-pressed="false">Revisão rápida</button>'+
-   '</div></nav>'+
+   '</nav>'+
   '<main class="bc-m01-scroll" tabindex="0"><div class="bc-m01-paper">'+
   d.topics.map((topic,i)=>card(topic,i,n)).join('')+checklist(n,d.topics)+'</div></main></div>';
  overlay=o;document.body.appendChild(o);document.body.style.overflow='hidden';
  o.querySelector('[data-bc-guided-close]').addEventListener('click',close);
- o.querySelectorAll('[data-bc-guided-mode]').forEach(btn=>btn.addEventListener('click',()=>switchMode(btn.getAttribute('data-bc-guided-mode'))));
  o.querySelectorAll('[data-bc-guided-check]').forEach(input=>input.addEventListener('change',()=>save(n,input.getAttribute('data-bc-guided-check'),input.checked)));
  document.addEventListener('keydown',keydown);
  const scroller=o.querySelector('.bc-m01-scroll');
@@ -103,9 +90,6 @@ function open(n){
       '.bc-m01-reader{width:100%;height:100%;display:flex;flex-direction:column;}',
       '.bc-m01-toolbar{flex:0 0 auto;min-height:54px;padding:8px max(14px,env(safe-area-inset-right));border-bottom:1px solid #dce3eb;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;}',
       '.bc-m01-toolbar button{font:600 13px/1.3 inherit;padding:10px 13px;border-radius:8px;cursor:pointer;border:1px solid #cbd6e2;background:#fff;color:#183653;}',
-      '.bc-m01-modes{display:flex;gap:4px;padding:4px;background:#edf2f7;border-radius:10px;}',
-      '.bc-m01-modes button{border:0;background:transparent;padding:9px 12px;}',
-      '.bc-m01-modes button.active{background:#203b61;color:#fff;}',
       '.bc-m01-toolbar button:focus-visible,.bc-m01-checklist input:focus-visible{outline:3px solid #3988d9;outline-offset:2px;}',
       '.bc-m01-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;}',
       '.bc-m01-paper{width:min(780px,calc(100% - 28px));margin:0 auto;padding:28px 0 90px;}',
@@ -122,14 +106,13 @@ function open(n){
       '.bc-m01-trap{background:#fff8e3;border-left:4px solid #d5a62e;}',
       '.bc-m01-recall{background:#203b61;border-color:#203b61;}',
       '.bc-m01-recall h3,.bc-m01-recall p{color:#fff;}',
-      '.bc-m01-reader[data-view="review"] .bc-m01-foundation,.bc-m01-reader[data-view="review"] .bc-m01-example,.bc-m01-reader[data-view="review"] .bc-m01-deeper{display:none;}',
       '.bc-m01-checklist{border-top:1px solid #d7e1eb;padding:22px 0;}',
       '.bc-m01-checklist h2{margin:0 0 8px;font-size:22px;color:#1d3657;}',
       '.bc-m01-checklist>p{font-size:14px;color:#5b6d82;line-height:1.5;}',
       '.bc-m01-checklist label{display:flex;align-items:flex-start;gap:12px;margin:7px 0;padding:12px 14px;background:#fff;border:1px solid #dce3eb;border-radius:10px;font-size:14px;line-height:1.4;cursor:pointer;}',
       '.bc-m01-checklist input{margin-top:2px;width:18px;height:18px;accent-color:#203b61;}',
       '.bc-m01-checklist .bc-m01-local-note{font-size:12px;color:#65788d;}',
-      '@media(max-width:600px){.bc-m01-toolbar{gap:5px;padding:8px}.bc-m01-toolbar button{font-size:12px;padding:9px}.bc-m01-modes button{padding:8px 6px}.bc-m01-paper{padding-top:18px;width:calc(100% - 22px)}.bc-m01-card{padding:14px 15px}.bc-m01-card p{font-size:15px;line-height:1.7}.bc-m01-topic{margin-bottom:30px}}',
+      '@media(max-width:600px){.bc-m01-toolbar{gap:5px;padding:8px}.bc-m01-toolbar button{font-size:12px;padding:9px}.bc-m01-paper{padding-top:18px;width:calc(100% - 22px)}.bc-m01-card{padding:14px 15px}.bc-m01-card p{font-size:15px;line-height:1.7}.bc-m01-topic{margin-bottom:30px}}',
       '.civil-guided-reading{background:#fff;}.civil-guided-reading .bc-m01-card{border:0;border-radius:0;box-shadow:none;background:none;padding:0;margin:0 0 14px;}.civil-guided-reading .bc-m01-card h3{color:#385b80;}.civil-guided-reading .bc-m01-card p{color:#27384e;}.civil-guided-reading .bc-m01-topic{border-top:1px solid #dbe5ed;padding-top:25px;margin-bottom:45px;}.civil-guided-reading .bc-m01-lei-seca{border:0;border-left:3px solid #89b3d0;border-radius:0;background:none;padding:4px 0 4px 18px;}.civil-guided-reading .bc-m01-lei-seca summary{color:#3377a4;}.civil-guided-reading .bc-m01-checklist label{border:0;border-bottom:1px solid #dbe5ed;border-radius:0;padding:12px 0;}',
       '@media(prefers-reduced-motion:reduce){.bc-m01-scroll{scroll-behavior:auto}}'
     ].join('\n');
