@@ -7,7 +7,7 @@ const read=x=>fs.readFileSync(new URL('../'+x,import.meta.url),'utf8');
 function fresh(){
  const dom=new JSDOM('<!doctype html><html><body><main id="subjects"></main></body></html>',{runScripts:'outside-only',url:'https://test.local'});
  const w=dom.window;
- for(const f of ['ui/central-internal-question-policy-v1.js','ui/central-authorial-quiz-v1.js','ui/grounded-authorial-questions-v1.js','ui/adm-authorial-source-v1.js','content/adm/m03-authorial10-v1.js'])w.eval(read(f));
+ for(const f of ['ui/central-internal-question-policy-v1.js','ui/central-authorial-quiz-v1.js','ui/grounded-authorial-questions-v1.js','ui/adm-authorial-source-v1.js','content/adm/m03-authorial10-v1.js','content/cpc/m01-authorial10-v1.js'])w.eval(read(f));
  return dom;
 }
 test('ADM M01–M20: 10 questões autorais no resumo, usando banco seguro ou revisão ancorada',()=>{
@@ -60,11 +60,12 @@ test('CPC M01–M20: dez questões autorais derivadas da teoria, sem utilizar ba
   const code=String(n).padStart(2,'0');
   w.eval(read('content/cpc/m'+code+'-native-data.js'));
   const d=w.BASE_NATIVE_CONTENT.cpc['m'+code];assert.ok(d,'CPC M'+n);
-  const qs=w.BcGroundedQuestions.build({html:d.summaryHtml||'',text:d.summary||'',title:d.title});
+  const qs=w.BC_CPC_AUTHORIAL_OVERRIDES?.[n]||w.BcGroundedQuestions.build({html:d.summaryHtml||'',text:d.summary||'',title:d.title});
   summary.push({n,count:qs.length});
   assert.equal(qs.length,10,'CPC M'+code+' sem 10: '+JSON.stringify(summary.at(-1)));
   assert.ok(qs.every(w.CentralAuthorialQuiz.valid),'CPC M'+code+' dados inválidos');
-  assert.ok(qs.every(q=>q.type==='open'&&!q.bank&&!q.real),'CPC sem questão real reclassificada');
+  assert.ok(qs.every(q=>!q.bank&&!q.real&&!q.banca&&!q.official),'CPC sem questão real reclassificada');
+  if(n===1)assert.ok(qs.every(q=>Array.isArray(q.options)&&q.options.length===4&&q.provenance==='questao-autoral-IA-revisada'),'CPC M01: 10 questões objetivas revisadas');
  }
  console.log('CPC_AUDIT='+JSON.stringify(summary));dom.window.close();
 });
