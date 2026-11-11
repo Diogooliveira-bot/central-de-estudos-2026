@@ -4,6 +4,7 @@ on:
     paths:
       - 'lib/protected-content.js'
       - 'tests/revisoes-cf-penal-aluno-gratuito-unit.mjs'
+      - 'tests/revisoes-adm-cpc-aluno-gratuito-unit.mjs'
       - '.github/workflows/revisoes-cf-penal-free.yml'
   workflow_dispatch:
 permissions:
@@ -19,4 +20,4 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - name: Testar controle de acesso e dados das 32 revisões
-        run: node --test tests/revisoes-cf-penal-aluno-gratuito-unit.mjs tests/protected-content-unit.mjs tests/civil-free-guided-access-unit.mjs
+        run: node --test tests/revisoes-cf-penal-aluno-gratuito-unit.mjs tests/revisoes-adm-cpc-aluno-gratuito-unit.mjs tests/protected-content-unit.mjs tests/civil-free-guided-access-unit.mjs
