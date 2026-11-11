@@ -1,10 +1,10 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261111-apostilas-civil-cf-v1';
+var CACHE='central-20261111-apostilas-pt-rlm-v1';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261111-civil-cf-v1';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261111-pt-rlm-v1';
 var OFFLINE_READY='/central-offline-ready.json?v=20261022-online-first-recovery-v1';
 
 function publicPath(path){
@@ -13,7 +13,8 @@ function publicPath(path){
 function protectedContentPath(path){
   path=String(path||'').split('?')[0];
   try{path=decodeURIComponent(path)}catch(_){return false}
-  return path==='/lei-em-dia-aprovadas-20261012.js'
+  return /^\/apostilas\/(?:portugues\/pt|rlm\/rlm)-m\d{2}\.pdf$/i.test(path)
+    ||path==='/lei-em-dia-aprovadas-20261012.js'
     ||path==='/Central_de_Estudos_v6.6.75_PLANO_6_MESES.zip'
     ||path.startsWith('/Central_de_Estudos_OFFLINE_FUNCIONAL/')
     ||path==='/content/tec-cadernos-data.js'

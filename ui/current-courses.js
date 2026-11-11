@@ -51,6 +51,8 @@ function ptMaster(){
  const card=(id,type,icon,title,description,labels,actionLabel,mode,quizLabel,quizMode)=>{
   const action=type==='map'
    ? 'return openPtInfographic('+Number(id.slice(1))+')'
+   : type==='pdf'
+   ? 'return BaseApostilasPdf.open(\'pt\','+Number(id.slice(1))+')'
    : 'return CentralPortugueseReader.open(\''+id+'\',\''+mode+'\')';
   const quiz=quizMode
    ? '<button type="button" class="pt-cf-button pt-cf-button-quiz" data-pt-cf-quiz="'+esc(quizMode)+'" onclick="return CentralPortugueseReader.open(\''+id+'\',\''+quizMode+'\')">'+esc(quizLabel)+'</button>'
@@ -95,8 +97,11 @@ function ptMaster(){
   const infographic=hasInfographic?card(m.id,'map','🧠','Infográfico',
    'Imagem de revisão visual do módulo, com opção de download.',
    ['Imagem','Revisão visual'],'Visualizar infográfico','infographic','',''):'';
+  const apostila=review?'':card(m.id,'pdf','PDF','Apostila teórica (PDF)',
+   'Síntese didática com exemplos e checklist, para ler ou baixar.',
+   ['PDF','Revisão'],'Abrir apostila','pdf','','');
   const content='<div class="pt-cf-module-inside">'+reading+oriented+
-   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">'+full+summary+infographic+'</section></div>';
+   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">'+full+summary+apostila+infographic+'</section></div>';
   return '<section class="cf-module pt-cf-module '+(open?'open':'')+'" data-pt-current="'+esc(m.id)+'">'+
    '<button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')" aria-expanded="'+(open?'true':'false')+'">'+
     '<span class="cf-module-no">'+(review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span>'+

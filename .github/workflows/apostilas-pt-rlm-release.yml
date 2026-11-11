@@ -1,0 +1,38 @@
+name: Apostilas Português e RLM — publicação dos PDFs
+on:
+  pull_request:
+    paths:
+      - 'apostilas/portugues/**'
+      - 'apostilas/rlm/**'
+      - 'ui/apostilas-pdf-v1.js'
+      - 'ui/current-courses.js'
+      - 'ui/rlm-native-v1.js'
+      - 'index.html'
+      - 'central-v119.html'
+      - 'sw.js'
+      - 'lib/protected-content.js'
+      - 'tests/apostilas-pt-rlm-release-unit.mjs'
+      - '.github/workflows/apostilas-pt-rlm-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Checar sintaxe do leitor e dos dois cursos
+        run: |
+          node --check ui/apostilas-pdf-v1.js
+          node --check ui/current-courses.js
+          node --check ui/rlm-native-v1.js
+          node --check sw.js
+      - name: Validar os 39 PDFs, acessos e integridade dos cards
+        run: node --test tests/apostilas-pt-rlm-release-unit.mjs
