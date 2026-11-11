@@ -67,7 +67,9 @@ test('CF: código da central adia o carregamento junto com a disciplina e manté
  assert.ok(guided.includes('bc-apostila-v20261111'));
  assert.ok(!guided.includes('data-bc-guided-mode="review"'));
  assert.ok(guided.includes('apostilaSintese'));
- assert.ok(guided.includes("markSummaryRead(n)"));
+ // A apostila contínua registra a leitura ao final (chamada opcional, se o módulo já carregou).
+ assert.match(guided,/CfNativeStudy\?\.markSummaryRead\?\.\(n\)/);
+ assert.ok(ui.includes('markSummaryRead(n){'));
  assert.ok(css.includes('.cf-apostila-law'));
  assert.ok(css.includes('.cf-m01')===false);
 });
