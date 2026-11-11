@@ -1,0 +1,32 @@
+name: Diagnóstico público acesso alunos (somente GET)
+on:
+  push:
+    branches:
+      - diagnostico/acesso-alunos-20261111
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+      - name: Verificar somente páginas públicas e respostas anônimas de autenticação
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          const base='https://app.basecompleta.com.br';
+          const paths=['/','/login.html','/cadastro-gratuito.html','/conheca.html','/central-v119.html','/api/auth?action=me','/api/auth?action=free-signup-status','/api/plans?action=me'];
+          for(const path of paths){
+            try {
+              const r=await fetch(base+path,{redirect:'manual',signal:AbortSignal.timeout(15000),headers:{'accept':'text/html,application/json;q=0.9'}});
+              const info={path,status:r.status,redirectTo:r.headers.get('location')?.split('?')[0]||null,contentType:r.headers.get('content-type')?.split(';')[0]};
+              if(path.includes('free-signup-status')&&r.ok){const j=await r.json();info.signupEnabled=j.enabled===true;info.captchaConfigured=Boolean(j.siteKey)}
+              if(path.includes('action=me')&&r.ok){const j=await r.json();info.authenticated=j.authenticated===true}
+              console.log('BC_PUBLIC_PROBE='+JSON.stringify(info));
+            }catch(e){console.log('BC_PUBLIC_PROBE='+JSON.stringify({path,error:e.name+':'+e.message}));process.exitCode=1}
+          }
+          NODE
