@@ -8,12 +8,12 @@
 'use strict';
 if(g.CentralAuthorialBank)return;
 // Atualize VERSION sempre que um arquivo de questões mudar (renova o cache do aparelho).
-const VERSION='20261111ia5';
+const VERSION='20261112ia6';
 // Módulos que já têm arquivo de questões. O teste unitário confere esta lista com a pasta.
 const AVAILABLE={
  adm:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
- cpc:[1,2,3,4,5,6,7,8,11,17],
- pt:[17,21],
+ cpc:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18,19],
+ pt:[1,17,21],
  penal:[],
  cpp:[],
  cf:[],
