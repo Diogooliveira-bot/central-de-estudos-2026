@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { JSDOM } from 'jsdom';
+import { contentEditorReadFeature } from '../lib/content-editor-access.js';
 
 const premium=readFileSync(new URL('../ui/editor-premium-v1.js',import.meta.url),'utf8');
 const legacy=readFileSync(new URL('../ui/visual-editor-v1.js',import.meta.url),'utf8');
@@ -88,4 +89,25 @@ test('aluno não recebe ferramenta administrativa; versão publicada usa o leito
  assert.equal(doc.querySelector('[data-bc-guided-check]'),app.originalCheck);
  assert.ok(app.calls.some(call=>call.target.startsWith('/api/content-editor?id=')));
  app.cleanup();
+});
+
+test('revisões oficiais editadas são gratuitas; teoria completa segue Premium',()=>{
+ function hash(value){
+  let h=2166136261;
+  for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}
+  return 'reader:'+(h>>>0).toString(36);
+ }
+ for(const [subject,count] of [['Civil',15],['Constitucional',15],['Penal',17]]){
+  for(let n=1;n<=count;n++){
+   const label='/central-v119.html|guided-review|Teoria guiada de Direito '+subject+', módulo '+n;
+   assert.equal(contentEditorReadFeature(hash(label)),'theory.summary',subject+' M'+n);
+  }
+  assert.equal(contentEditorReadFeature(hash('/central-v119.html|guided-review|Teoria guiada de Direito '+subject+', módulo '+(count+1))),'theory.complete');
+ }
+ for(const candidate of [
+   '', 'reader:arbitrario','reader:0',
+   hash('/central-v119.html|Teoria completa|Direito Civil'),
+   hash('/central-v119.html|guided-review|Teoria guiada de Direito Civil, módulo 99'),
+   hash('/outra-rota|guided-review|Teoria guiada de Direito Civil, módulo 1')
+ ])assert.equal(contentEditorReadFeature(candidate),'theory.complete',candidate);
 });
