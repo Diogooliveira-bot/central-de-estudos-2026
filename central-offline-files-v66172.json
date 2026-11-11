@@ -1,5 +1,5 @@
 {
-  "build": "20261111-apostilas-civil-cf-v1",
+  "build": "20261111-apostilas-pt-rlm-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261106nav1",
@@ -98,7 +98,8 @@
     "/adm-m8-runtime-v66149.js?v=66149a1",
     "/portugues.html",
     "/portugues-site.js?v=20261023ptorg1",
-    "/ui/current-courses.js?v=20261010auditfix1",
+    "/ui/current-courses.js?v=20261111-apostilas-pt-rlm-v1",
+    "/ui/apostilas-pdf-v1.js?v=20261111-apostilas-pt-rlm-v1",
     "/base-completa-home-v3.css?v=20261001v5",
     "/base-completa-home-v3.js?v=20261106nav1",
     "/ui/study-navigation.js?v=20261023-remove-labor-disciplines-v1",

@@ -55,12 +55,14 @@ function materialCard(id,stage,label,description,icon){
  const action=stage==='theory'?'Estudar conteúdo':stage==='recap'?'Revisar conteúdo':
   stage==='quiz'?'Resolver questões':stage==='map'?'Visualizar mapa':
   stage==='exam'?'Iniciar simulado':stage==='errors'?'Revisar erros':
-  stage==='review'?'Praticar questões':'Iniciar treino';
+  stage==='review'?'Praticar questões':stage==='pdf'?'Ler apostila':'Iniciar treino';
+ const target=stage==='pdf'?'return BaseApostilasPdf.open(\'rlm\','+Number(id.slice(1))+')':
+  'return RlmNative.open(\''+id+'\',\''+stage+'\')';
  return '<article class="cf-study-card bc-rlm-study-card bc-rlm-study-'+stage+'">'+
   '<span class="cf-study-icon" aria-hidden="true">'+icon+'</span>'+
   '<b>'+esc(label)+'</b><small>'+esc(description)+'</small>'+
   '<div class="cf-study-actions"><button type="button" class="cf-study-open bc-rlm-study-open" data-rlm-kind="'+stage+
-  '" onclick="RlmNative.open(\''+id+'\',\''+stage+'\')">'+action+'</button></div></article>';
+  '" onclick="'+target+'">'+action+'</button></div></article>';
 }
 function readingOrientation(m){
  const topics=m.id==='M01'?(m.legado?.blocos||[]):(lesson(m.id)?.theory||[]).map(ch=>ch.title);
@@ -80,8 +82,10 @@ function card(m){
  const openState=isModuleOpen(m.id);
  const percent=done?100:p;
  const cards=m.id==='M01'?
-  materialCard(m.id,'speed','Treino de velocidade','Seis treinos cronometrados, sem sair da Central.','⏱'):
+  materialCard(m.id,'speed','Treino de velocidade','Seis treinos cronometrados, sem sair da Central.','⏱')+
+  materialCard(m.id,'pdf','Apostila teórica (PDF)','Síntese do módulo de cálculo rápido, com exemplos.','PDF'):
   materialCard(m.id,'recap','Versão de revisão','Fórmulas, métodos e erros frequentes.','↺')+
+  materialCard(m.id,'pdf','Apostila teórica (PDF)','Material para leitura e download em PDF.','PDF')+
   materialCard(m.id,'theory','Teoria completa','Conceitos, fórmulas e resoluções guiadas.','📖')+
   materialCard(m.id,'map','Mapa mental','Síntese visual do conteúdo.','▤')+
   materialCard(m.id,'quiz','Questões de fixação','Prática comentada com 10 questões.','✓');
@@ -136,7 +140,7 @@ function renderMaster(){
  '<span class="bc-rlm-kicker">Base Completa · Preparação para concursos</span>'+
  '<h3>Raciocínio Lógico-Matemático</h3><p>Teoria, revisão, questões comentadas e mapas mentais, com filtros de questões disponíveis no Premium.</p>'+
  '<div class="bc-rlm-stats"><span class="bc-rlm-stat"><strong>15</strong> módulos</span>'+
- '<span class="bc-rlm-stat"><strong>14</strong> apostilas</span><span class="bc-rlm-stat"><strong>140</strong> questões autorais</span>'+
+ '<span class="bc-rlm-stat"><strong>15</strong> apostilas</span><span class="bc-rlm-stat"><strong>140</strong> questões autorais</span>'+
  '<span class="bc-rlm-stat"><strong>'+done+'/15</strong> módulos concluídos</span></div>'+
  '</section>'+
  groups.map(([name,arr])=>'<section class="bc-rlm-group"><h4>'+esc(name)+'</h4><div class="cf-modules bc-rlm-modules">'+arr.map(card).join('')+'</div></section>').join('')+
