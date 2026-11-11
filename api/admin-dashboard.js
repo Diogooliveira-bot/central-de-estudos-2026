@@ -31,9 +31,11 @@ async function ensureTables(sql){
       study_seconds BIGINT NOT NULL DEFAULT 0,
       last_study TIMESTAMPTZ,
       disciplines JSONB NOT NULL DEFAULT '[]'::jsonb,
+      modules JSONB NOT NULL DEFAULT '[]'::jsonb,
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `;
+  await sql`ALTER TABLE central_user_progress_summary ADD COLUMN IF NOT EXISTS modules JSONB NOT NULL DEFAULT '[]'::jsonb`;
 }
 
 export default async function handler(req,res){
@@ -91,7 +93,7 @@ export default async function handler(req,res){
       SELECT
         u.user_id,u.name,u.email,u.role,u.active,u.created_at,u.updated_at,u.last_login,
         s.revision AS sync_revision,s.updated_at AS last_sync,s.payload_bytes,
-        p.overall_pct,p.questions,p.study_seconds,p.last_study,p.disciplines,p.updated_at AS progress_updated_at
+        p.overall_pct,p.questions,p.study_seconds,p.last_study,p.disciplines,p.modules,p.updated_at AS progress_updated_at
       FROM central_users u
       LEFT JOIN central_user_sync_state s ON s.user_id=u.user_id
       LEFT JOIN central_user_progress_summary p ON p.user_id=u.user_id
@@ -118,7 +120,8 @@ export default async function handler(req,res){
         studySeconds:Number(row.study_seconds||0),
         lastStudy:row.last_study||null,
         updatedAt:row.progress_updated_at||null,
-        disciplines:Array.isArray(row.disciplines)?row.disciplines:[]
+        disciplines:Array.isArray(row.disciplines)?row.disciplines:[],
+        modules:Array.isArray(row.modules)?row.modules:[]
       }
     }));
 

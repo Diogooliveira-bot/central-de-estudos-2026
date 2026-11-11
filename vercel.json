@@ -8,6 +8,10 @@
   },
   "rewrites": [
     {
+      "source": "/api/study-communication",
+      "destination": "/api/auth?bc_api=study-communication"
+    },
+    {
       "source": "/api/admin-dashboard",
       "destination": "/api/auth?bc_api=premium-expiry-reminders"
     },
@@ -132,7 +136,7 @@
   ],
   "crons": [
     {
-      "path": "/api/premium-expiry-reminders",
+      "path": "/api/admin-dashboard",
       "schedule": "0 12 * * *"
     }
   ]

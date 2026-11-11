@@ -70,6 +70,27 @@ function questionsFromKnownStores(){
   }catch(_){}
   return Math.round(total);
 }
+function moduleRows(){
+  var out=[];
+  try{
+    var subjects=(typeof SUBJECTS!=='undefined'&&Array.isArray(SUBJECTS))?SUBJECTS:(Array.isArray(window.SUBJECTS)?window.SUBJECTS:[]);
+    subjects.forEach(function(s){
+      var topics=s.id==='cpp'?(window.CentralHomeProgressData?.cppModules||s.topics):s.topics;
+      if(!Array.isArray(topics))return;
+      var saved=null;try{saved=window.CentralDisciplineLoader?.percentages(s)}catch(_){}
+      topics.slice(0,75).forEach(function(t,index){
+        var p=saved?.[index];
+        if(!Number.isFinite(Number(p))){
+          try{p=typeof window.mapaTopicPct==='function'?window.mapaTopicPct(s,index,t):0}catch(_){p=0}
+        }
+        p=Number(p);p=Number.isFinite(p)?Math.max(0,Math.min(100,Math.round(p))):0;
+        out.push({subjectId:String(s.id||'').slice(0,40),
+          name:String(t.title||t.name||('Módulo '+(index+1))).slice(0,150),pct:p});
+      });
+    });
+  }catch(_){}
+  return out.slice(0,800);
+}
 function lastStudy(){
   var a=activity(),latest=a.lastStudy?new Date(a.lastStudy).getTime():0;
   try{
@@ -86,9 +107,11 @@ function snapshot(){
     questions:questionsFromKnownStores(),
     studySeconds:Math.max(0,Math.round(Number(a.studySeconds)||0)),
     lastStudy:lastStudy(),
-    disciplines:disciplines
+    disciplines:disciplines,
+    modules:moduleRows()
   };
 }
+window.BaseCompletaProgressReportSnapshot=snapshot;
 async function report(){
   if(!navigator.onLine)return;
   try{
