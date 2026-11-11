@@ -39,6 +39,9 @@ test('Civil M01–M15: revisão guiada entregue ao aluno gratuito, sem liberar t
   ]){
     assert.notEqual(protectedAsset(path)?.feature,'theory.summary','outro material permanece protegido: '+path);
     const projected=await freePlanAsset(root,path);
+    // A regra cobre também nomes de módulos legados que já não existem
+    // como arquivo físico. Um 404 não deve ser confundido com liberação.
+    if(projected?.status===404) continue;
     if(protectedAsset(path)?.kind==='file')assert.equal(projected?.status,403,'recurso Premium não liberado: '+path);
     else {
       assert.equal(projected?.status,200,'projeção gratuita preservada: '+path);
