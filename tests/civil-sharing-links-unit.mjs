@@ -31,7 +31,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   assert.equal(new Set(data.items.map((x) => x.subdivisao || x.modulo)).size, 66);
   assert(boot.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
   assert(boot.includes('ui/civil-native-study-v1.js?v=20261107civilvisual4'));
-  assert(boot.includes('content/civil/civil-teoria-guiada-reader-v1.js?v=20261107civilreading4'));
+  assert(boot.includes('content/civil/civil-teoria-guiada-reader-v1.js?v=20261111leituraunica1'));
   assert(boot.includes('ui/civil-native-study-v1.css?v=20261019civilstandard1'));
   assert(lazy.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
   assert(lazy.includes('ui/civil-native-study-v1.js?v=20261106ordem1'));
