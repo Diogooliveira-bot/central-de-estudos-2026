@@ -34,8 +34,8 @@ test('Civil M01–M15: revisão guiada entregue ao aluno gratuito, sem liberar t
     '/content/civil/m01-native-data.js',
     '/content/civil/civil-native-content-packed.js',
     '/content/civil/civil-native-images.js',
-    '/content/penal/m01-teoria-guiada-data.js',
-    '/content/cf/m01-teoria-guiada-data.js'
+    '/content/penal/penal-visual-law.js',
+    '/content/cf/editorial/m01-apostila.txt'
   ]){
     assert.notEqual(protectedAsset(path)?.feature,'theory.summary','outro material permanece protegido: '+path);
     const projected=await freePlanAsset(root,path);
