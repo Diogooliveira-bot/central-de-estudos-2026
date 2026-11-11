@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,readdirSync} from 'node:fs';
 import vm from 'node:vm';
 const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 test('M03 ADM e M01 CPC: 10 questões autorais inéditas, objetivas e comentadas, sem banca fictícia',()=>{
@@ -27,11 +27,39 @@ test('M03 ADM e M01 CPC: 10 questões autorais inéditas, objetivas e comentadas
  assert.match(index,/m03-authorial10-v1\.js/);
 });
 
-test('questões de IA no nível de prova: gabarito distribuído e alternativa certa sem "pista" de tamanho',()=>{
+// Todos os conjuntos de questões de IA já escritos: ADM (um arquivo por módulo), CPC M01 e RLM M01.
+const admFiles=readdirSync(new URL('../content/adm/',import.meta.url)).filter(f=>/^m\d{2}-authorial10-v1\.js$/.test(f)).sort();
+function aiSets({withRlm=true}={}){
  const ctx={window:{}};
- for(const p of ['content/adm/m03-authorial10-v1.js','content/cpc/m01-authorial10-v1.js','content/rlm-tjce-2026/m01-authorial10.js'])vm.runInNewContext(read(p),ctx);
- const sets=[['ADM M03',ctx.window.BC_ADM_AUTHORIAL_OVERRIDES[3],true],['CPC M01',ctx.window.BC_CPC_AUTHORIAL_OVERRIDES[1],true],['RLM M01',ctx.window.BC_RLM_M01_AUTHORIAL,false]];
- for(const [subject,items,textual] of sets){
+ for(const f of admFiles)vm.runInNewContext(read('content/adm/'+f),ctx);
+ vm.runInNewContext(read('content/cpc/m01-authorial10-v1.js'),ctx);
+ if(withRlm)vm.runInNewContext(read('content/rlm-tjce-2026/m01-authorial10.js'),ctx);
+ const sets=admFiles.map(f=>{const n=Number(f.slice(1,3));return ['ADM M'+f.slice(1,3),ctx.window.BC_ADM_AUTHORIAL_OVERRIDES[n],true]});
+ sets.push(['CPC M01',ctx.window.BC_CPC_AUTHORIAL_OVERRIDES[1],true]);
+ if(withRlm)sets.push(['RLM M01',ctx.window.BC_RLM_M01_AUTHORIAL,false]);
+ return sets;
+}
+
+test('ADM: cada módulo com questões de IA tem 10 itens válidos, ids próprios e está carregado no index',()=>{
+ const index=read('index.html');
+ assert.ok(admFiles.length>=4,'ao menos M01, M02, M03 e M04');
+ for(const [subject,items] of aiSets({withRlm:false}).filter(([s])=>s.startsWith('ADM'))){
+  const nn=subject.slice(-2);
+  assert.equal(items.length,10,subject);
+  assert.equal(new Set(items.map(q=>q.q)).size,10,subject+' enunciados distintos');
+  assert.ok(items.every((q,i)=>q.id==='adm-m'+nn+'-autoral-'+String(i+1).padStart(2,'0')),subject+' ids');
+  for(const q of items){
+   assert.equal(new Set(q.options).size,5,subject);
+   assert.ok(q.lawRef&&q.explanation.length>=150,subject+' comentário completo');
+   assert.equal(q.provenance,'questao-autoral-IA-revisada');
+   for(const key of ['banca','bank','official','real','sourceUrl'])assert.ok(!q[key],subject+' sem atribuição de concurso real');
+  }
+  assert.match(index,new RegExp('/content/adm/m'+nn+'-authorial10-v1\\.js\\?v='),subject+' carregado no index');
+ }
+});
+
+test('questões de IA no nível de prova: gabarito distribuído e alternativa certa sem "pista" de tamanho',()=>{
+ for(const [subject,items,textual] of aiSets()){
   const counts=[0,0,0,0,0];
   let longest=0;
   for(const q of Array.from(items)){
@@ -47,9 +75,7 @@ test('questões de IA no nível de prova: gabarito distribuído e alternativa ce
 });
 
 test('comentários jurídicos: toda lei citada vem com o nome e todo artigo citado vem com o que ele diz',()=>{
- const ctx={window:{}};
- for(const p of ['content/adm/m03-authorial10-v1.js','content/cpc/m01-authorial10-v1.js'])vm.runInNewContext(read(p),ctx);
- for(const [subject,items] of [['ADM M03',ctx.window.BC_ADM_AUTHORIAL_OVERRIDES[3]],['CPC M01',ctx.window.BC_CPC_AUTHORIAL_OVERRIDES[1]]]){
+ for(const [subject,items] of aiSets({withRlm:false})){
   Array.from(items).forEach((q,i)=>{
    for(const field of ['q','explanation','lawRef']){
     const text=q[field];
