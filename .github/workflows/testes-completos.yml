@@ -1,0 +1,35 @@
+name: Testes completos da Central
+# Roda a suíte geral (npm test) em toda PR e em todo envio ao main.
+# Os outros workflows só rodam quando arquivos específicos mudam; este evita que uma
+# publicação quebre testes de outra parte sem ninguém perceber (ex.: versão de cache
+# do manifesto offline diferente da Central e do service worker).
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: testes-completos-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  npm-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Instalar Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci
+      - name: Suíte geral (npm test)
+        run: npm test
