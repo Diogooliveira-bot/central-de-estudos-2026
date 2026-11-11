@@ -1,0 +1,23 @@
+name: Civil — revisão atual para alunos gratuitos
+on:
+  pull_request:
+    paths:
+      - 'lib/protected-content.js'
+      - 'tests/helpers/free-plan-content.mjs'
+      - 'tests/civil-free-guided-access-unit.mjs'
+      - '.github/workflows/civil-free-guided-access.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Simular aluno gratuito e confirmar leitor atual M01-M15
+        run: node --test tests/civil-free-guided-access-unit.mjs tests/civil-leitura-unica-unit.mjs tests/protected-content-unit.mjs tests/civil-teoria-guiada-unit.mjs
