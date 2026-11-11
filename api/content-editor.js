@@ -2,6 +2,7 @@ import { neon } from '@neondatabase/serverless';
 import { requireSession, sameOriginRequest } from '../lib/auth.js';
 import { requirePlanFeature } from '../lib/plan-access.js';
 import { handleContentImage } from '../lib/content-image-handler.js';
+import { contentEditorReadFeature } from '../lib/content-editor-access.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -77,9 +78,9 @@ export default async function handler(req,res){
       return send(res,200,{id,versions:rows.map(r=>({revision:Number(r.revision),label:r.label||'',archivedAt:r.archived_at}))});
     }
     if(req.method==='GET'){
-      // Override HTML may contain complete theory. Fail closed for students
-      // until content IDs have an explicit, audited free/premium classification.
-      const reader=await requirePlanFeature(req,'theory.complete',['admin','editor','aluno']);
+      // Only fixed, audited guided-review IDs use the free summary entitlement.
+      // Every other edited document fails closed under the Premium theory policy.
+      const reader=await requirePlanFeature(req,contentEditorReadFeature(id),['admin','editor','aluno']);
       if(!reader.ok)return send(res,reader.status,{error:reader.error});
       if(!id)return send(res,400,{error:'ID do conteúdo não informado'});
       const rows=await sql`SELECT content_id,label,html,revision,updated_at FROM central_content_overrides WHERE content_id=${id} LIMIT 1`;
