@@ -22,11 +22,12 @@ test('ADM M01–M20: 10 questões autorais disponíveis por módulo, sem duplica
   const d=lesson(n),result=source.select(d.summaryHtml,d.completeAppendHtml),grounded=dom.window.BcGroundedQuestions.build({html:d.summaryHtml,title:d.title});
   const items=result.ready?result.items:grounded;
   inventory.push({n,count:items.length,objective:result.items.length,grounded:grounded.length,ready:items.length===10});
-  assert.equal(items.length,10,'M'+n+' incompleto '+JSON.stringify(inventory.at(-1)));
+  if(items.length!==10)console.error('ADM_MISSING='+JSON.stringify(inventory.at(-1)));
   assert.equal(new Set(items.map(x=>x.q.toLowerCase().trim())).size,10,'M'+n+' duplicado');
   for(const q of items)assert.ok(dom.window.CentralAuthorialQuiz.valid(q),'M'+n+': '+q.q.slice(0,60));
  }
  console.log('ADM_AUTHORIAL_INVENTORY='+JSON.stringify(inventory));
+ assert.equal(inventory.filter(x=>!x.ready).length,0,'ADM incompletos: '+JSON.stringify(inventory.filter(x=>!x.ready)));
  dom.window.close();
 });
 test('ADM separa leitura e 10+10 sem mexer nos arquivos autorais originais',()=>{
