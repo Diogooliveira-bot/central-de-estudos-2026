@@ -85,7 +85,7 @@ window.BC_CPC_AUTHORIAL_OVERRIDES[19]=[
     "q": "Sindicato impetra mandado de segurança coletivo em favor de parte da categoria, sem autorização expressa dos filiados. Um dos servidores beneficiados já havia impetrado mandado de segurança individual com o mesmo objeto. Segundo a Lei 12.016/2009 (Lei do Mandado de Segurança) e a jurisprudência do STF:",
     "options": [
       "o mandado de segurança coletivo é incabível, pois o sindicato precisaria de autorização expressa e lista nominal dos substituídos",
-      "o coletivo não induz litispendência para o individual, mas o servidor só será beneficiado se desistir do seu em 30 dias da ciência comprovada",
+      "o coletivo não induz litispendência para o individual, mas só beneficiará o servidor que desistir do seu em 30 dias da ciência comprovada",
       "o sindicato só pode impetrar em defesa da totalidade da categoria, nunca em favor de apenas uma parte de seus membros ou filiados",
       "o mandado de segurança individual deve ser extinto por litispendência, a partir da impetração do coletivo com o mesmo objeto",
       "a liminar no coletivo só pode ser concedida depois de ouvido, em 72 horas, o representante judicial da pessoa jurídica de direito público"
@@ -129,7 +129,7 @@ window.BC_CPC_AUTHORIAL_OVERRIDES[19]=[
     "id": "cpc-m19-autoral-09",
     "q": "Câmara de Tribunal de Justiça, ao julgar apelação, deixa de aplicar lei estadual editada em 2020 por entendê-la incompatível com a Constituição Federal, sem declarar expressamente sua inconstitucionalidade e sem submeter a questão ao órgão especial. Não há pronunciamento anterior do órgão especial nem do STF sobre a lei. A decisão:",
     "options": [
-      "viola a cláusula de reserva de plenário, pois afastar a incidência da lei, no todo ou em parte, equivale a declarar sua inconstitucionalidade",
+      "viola a reserva de plenário, pois afastar a incidência da lei, no todo ou em parte, equivale a declarar sua inconstitucionalidade",
       "é válida, pois a reserva de plenário só se aplica quando o órgão fracionário declara de modo expresso a inconstitucionalidade da lei",
       "é válida, pois a reserva de plenário só alcança o controle concentrado, e não o difuso, exercido incidentalmente em casos concretos",
       "viola a reserva de plenário, que exige o voto de dois terços dos membros do tribunal ou do órgão especial para afastar a lei",
