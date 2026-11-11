@@ -3,6 +3,8 @@
 (function (global) {
   'use strict';
   if (global.BCModuleCleanV1) return;
+  // Mantém o registro legado do script de ações, mas não cria sua barra redundante.
+  global.BCModuleQuickActions = global.BCModuleQuickActions || { update: function () {} };
 
   function norm(value) {
     return String(value || '').normalize('NFD')
