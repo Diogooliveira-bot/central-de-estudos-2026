@@ -23,7 +23,7 @@ async function open(number,kind='summary'){
  if(kind==='complete'||kind==='full'||kind==='fixation')return g.CentralInternalQuestionPolicy?.modal('Direito Processual Civil',id);
  try{
   const d=await getModule(n);
-  const curated=g.BC_CPC_AUTHORIAL_OVERRIDES?.[n];
+  const curated=(await g.CentralAuthorialBank?.ensure('cpc',n))||g.BC_CPC_AUTHORIAL_OVERRIDES?.[n];
   const result=Array.isArray(curated)?curated:(g.BcGroundedQuestions?.build({html:d.summaryHtml||'',text:d.summary||'',discipline:'Direito Processual Civil',module:id,title:d.title})||[]);
   if(result.length!==10||!result.every(g.CentralAuthorialQuiz?.valid||(()=>false))){
    alert('As dez questões autorais deste módulo ainda precisam ser revisadas e completadas.');return false;

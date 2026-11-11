@@ -23,8 +23,8 @@ test('M03 ADM e M01 CPC: 10 questões autorais inéditas, objetivas e comentadas
  const ui=read('ui/cpc-authorial10-v1.js'),adm=read('ui/adm-authorial-source-v1.js'),index=read('index.html');
  assert.match(ui,/BC_CPC_AUTHORIAL_OVERRIDES/);
  assert.match(adm,/BC_ADM_AUTHORIAL_OVERRIDES/);
- assert.match(index,/m01-authorial10-v1\.js/);
- assert.match(index,/m03-authorial10-v1\.js/);
+ assert.match(index,/\/ui\/central-authorial-bank-v1\.js\?v=/);
+ assert.match(ui,/CentralAuthorialBank\?\.ensure\('cpc',n\)/);
 });
 
 // Todos os conjuntos de questões de IA já escritos: ADM (um arquivo por módulo), CPC M01 e RLM M01.
@@ -40,7 +40,22 @@ function aiSets({withRlm=true}={}){
  return sets;
 }
 
-test('ADM: cada módulo com questões de IA tem 10 itens válidos, ids próprios e está carregado no index',()=>{
+function bankAvailable(){const w={};vm.runInNewContext(read('ui/central-authorial-bank-v1.js'),{window:w});return w.CentralAuthorialBank.available}
+
+test('carregador sob demanda: a lista de módulos confere com os arquivos e cada matéria usa o carregador',()=>{
+ const av=bankAvailable();
+ for(const [d,dir] of [['adm','content/adm/'],['cpc','content/cpc/'],['pt','content/portugues/']]){
+  let files=[];try{files=readdirSync(new URL('../'+dir,import.meta.url))}catch(_){}
+  const onDisk=files.map(f=>/^m(\d{2})-authorial10-v1\.js$/.exec(f)).filter(Boolean).map(m=>Number(m[1])).sort((a,b)=>a-b);
+  assert.deepEqual([...av[d]].sort((a,b)=>a-b),onDisk,d+': lista do carregador × arquivos');
+ }
+ assert.match(read('ui/adm-native-layer.js'),/CentralAuthorialBank\?\.ensure\('adm',num\(uid\)\)/);
+ assert.match(read('ui/portuguese-authorial10-v1.js'),/CentralAuthorialBank\?\.ensure\('pt',mod\.num\)/);
+ const index=read('index.html');
+ assert.ok(!/\/content\/(adm|cpc)\/m\d{2}-authorial10-v1\.js/.test(index),'questões não são baixadas na abertura da Central');
+});
+
+test('ADM: cada módulo com questões de IA tem 10 itens válidos, ids próprios e está no carregador',()=>{
  const index=read('index.html');
  assert.ok(admFiles.length>=4,'ao menos M01, M02, M03 e M04');
  for(const [subject,items] of aiSets({withRlm:false}).filter(([s])=>s.startsWith('ADM'))){
@@ -54,7 +69,7 @@ test('ADM: cada módulo com questões de IA tem 10 itens válidos, ids próprios
    assert.equal(q.provenance,'questao-autoral-IA-revisada');
    for(const key of ['banca','bank','official','real','sourceUrl'])assert.ok(!q[key],subject+' sem atribuição de concurso real');
   }
-  assert.match(index,new RegExp('/content/adm/m'+nn+'-authorial10-v1\\.js\\?v='),subject+' carregado no index');
+  assert.ok(bankAvailable().adm.includes(Number(nn)),subject+' listado no carregador sob demanda');
  }
 });
 

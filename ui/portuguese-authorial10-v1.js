@@ -10,7 +10,9 @@ async function open(id){
  const course=g.CentralPortugueseCourse,mod=course?.modules.find(m=>m.id===id);
  if(!mod)return false;
  try{
-  const data=await course.load(),markup=data[id],questions=g.BcGroundedQuestions?.build({html:markup,discipline:'Português',module:id.toUpperCase(),title:mod.title})||[];
+  // Questões de IA revisadas do módulo, quando existirem; senão, as perguntas geradas da leitura.
+  const curated=await g.CentralAuthorialBank?.ensure('pt',mod.num);
+  const questions=Array.isArray(curated)?curated:await (async()=>{const data=await course.load();return g.BcGroundedQuestions?.build({html:data[id],discipline:'Português',module:id.toUpperCase(),title:mod.title})||[]})();
   if(questions.length!==10||!questions.every(g.CentralAuthorialQuiz?.valid||(()=>false))){
    alert('As dez questões autorais deste módulo ainda precisam ser conferidas.');return false;
   }
