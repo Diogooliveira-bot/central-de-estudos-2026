@@ -65,7 +65,7 @@ test('CPC M01–M20: dez questões autorais derivadas da teoria, sem utilizar ba
   assert.equal(qs.length,10,'CPC M'+code+' sem 10: '+JSON.stringify(summary.at(-1)));
   assert.ok(qs.every(w.CentralAuthorialQuiz.valid),'CPC M'+code+' dados inválidos');
   assert.ok(qs.every(q=>!q.bank&&!q.real&&!q.banca&&!q.official),'CPC sem questão real reclassificada');
-  if(n===1)assert.ok(qs.every(q=>Array.isArray(q.options)&&q.options.length===4&&q.provenance==='questao-autoral-IA-revisada'),'CPC M01: 10 questões objetivas revisadas');
+  if(n===1)assert.ok(qs.every(q=>Array.isArray(q.options)&&q.options.length===5&&q.provenance==='questao-autoral-IA-revisada'),'CPC M01: 10 questões objetivas revisadas');
  }
  console.log('CPC_AUDIT='+JSON.stringify(summary));dom.window.close();
 });
