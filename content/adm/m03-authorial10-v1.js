@@ -8,7 +8,7 @@ window.BC_ADM_AUTHORIAL_OVERRIDES=window.BC_ADM_AUTHORIAL_OVERRIDES||{};
 window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
   {
     "id": "adm-m03-autoral-01",
-    "q": "Segundo a Lei 9.784/1999, pode ser objeto de delegação:",
+    "q": "Segundo a Lei 9.784/1999 (Lei do Processo Administrativo Federal), pode ser objeto de delegação:",
     "options": [
       "a edição de atos de caráter normativo, desde que o ato de delegação seja publicado no meio oficial e especifique a duração e os objetivos",
       "a decisão de recursos administrativos, quando houver excesso de demanda no órgão",
@@ -17,13 +17,13 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "a totalidade da competência do órgão, desde que por prazo determinado"
     ],
     "answer": 2,
-    "explanation": "O art. 12 admite a delegação de parte da competência, inclusive a órgão não subordinado, por circunstâncias de índole técnica, social, econômica, jurídica ou territorial. O art. 13 proíbe delegar a edição de atos normativos, a decisão de recursos administrativos e as matérias de competência exclusiva. A delegação é sempre parcial.",
-    "lawRef": "Lei 9.784/1999, arts. 12 e 13",
+    "explanation": "A Lei 9.784/1999 (Lei do Processo Administrativo Federal) trata da delegação nos arts. 12 e 13. O art. 12 diz que o órgão administrativo e seu titular podem, se não houver impedimento legal, delegar parte da sua competência a outros órgãos ou titulares, ainda que não lhes sejam hierarquicamente subordinados, quando for conveniente em razão de circunstâncias de índole técnica, social, econômica, jurídica ou territorial. O art. 13 proíbe delegar: I) a edição de atos de caráter normativo; II) a decisão de recursos administrativos; III) as matérias de competência exclusiva do órgão ou autoridade. As alternativas sobre atos normativos, recursos e competência exclusiva repetem exatamente essas três proibições, e a que fala em \"totalidade da competência\" contraria o art. 12, que só admite delegar parte dela.",
+    "lawRef": "Lei 9.784/1999 (Lei do Processo Administrativo Federal), art. 12 (delegação de parte da competência) e art. 13 (matérias indelegáveis)",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
     "id": "adm-m03-autoral-02",
-    "q": "Logo depois de uma servidora depor contra a chefia em sindicância, o prefeito a remove para um posto distante. O ato respeita competência e forma, mas fica comprovado que a intenção era puni-la. À luz da Lei 4.717/1965, o vício está no elemento:",
+    "q": "Logo depois de uma servidora depor contra a chefia em sindicância, o prefeito a remove para um posto distante. O ato respeita competência e forma, mas fica comprovado que a intenção era puni-la. À luz da Lei 4.717/1965 (Lei da Ação Popular), o vício está no elemento:",
     "options": [
       "motivo, porque a necessidade de serviço alegada não existia",
       "forma, porque a remoção com caráter punitivo exigiria processo disciplinar prévio com contraditório",
@@ -32,8 +32,8 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "finalidade, porque o ato buscou fim diverso do previsto na regra de competência"
     ],
     "answer": 4,
-    "explanation": "Há desvio de finalidade quando o agente pratica o ato visando fim diverso daquele previsto, explícita ou implicitamente, na regra de competência (Lei 4.717/1965, art. 2º, 'e', e parágrafo único, 'e'). A remoção serve ao interesse do serviço e não pode ser usada como punição. O motivo poderia estar viciado também, mas o defeito descrito no enunciado é a finalidade.",
-    "lawRef": "Lei 4.717/1965, art. 2º, 'e', e parágrafo único, 'e'",
+    "explanation": "A Lei 4.717/1965 (Lei da Ação Popular) lista, no art. 2º, os vícios que tornam nulo o ato: incompetência, vício de forma, ilegalidade do objeto, inexistência dos motivos e desvio de finalidade (alínea \"e\"). O parágrafo único, alínea \"e\", define: \"o desvio de finalidade se verifica quando o agente pratica o ato visando a fim diverso daquele previsto, explícita ou implicitamente, na regra de competência\". A remoção existe para atender à necessidade do serviço, não para punir; usá-la como castigo é desvio de finalidade. O motivo também poderia ser questionado, mas o defeito descrito no enunciado é a intenção de punir, ou seja, a finalidade.",
+    "lawRef": "Lei 4.717/1965 (Lei da Ação Popular), art. 2º, \"e\" (desvio de finalidade), e parágrafo único, \"e\" (definição)",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
@@ -47,8 +47,8 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "o ato é nulo por vício de forma, pois a exoneração exigiria processo administrativo prévio"
     ],
     "answer": 0,
-    "explanation": "Pela teoria dos motivos determinantes, quando a Administração declara o motivo do ato, fica vinculada a ele, ainda que a motivação fosse dispensável, como na exoneração ad nutum. Se o motivo é falso ou inexistente, o ato é inválido. A nomeação imediata de outra pessoa demonstra que a falta de verba não era real.",
-    "lawRef": "Teoria dos motivos determinantes — doutrina e jurisprudência do STJ",
+    "explanation": "Cargo em comissão é de livre nomeação e exoneração: a Constituição Federal, no art. 37, II, exige concurso para cargos e empregos públicos, \"ressalvadas as nomeações para cargo em comissão declarado em lei de livre nomeação e exoneração\". Por isso essa exoneração (ad nutum) dispensa motivação. Mas, pela teoria dos motivos determinantes, criada pela doutrina e aplicada pelo STJ, quando a Administração declara o motivo do ato, fica vinculada a ele, mesmo que não precisasse motivar. Se o motivo declarado é falso ou inexistente, o ato é inválido. A nomeação de outra pessoa dias depois demonstra que a falta de verba não era real.",
+    "lawRef": "Constituição Federal, art. 37, II (cargo em comissão de livre nomeação e exoneração); teoria dos motivos determinantes (doutrina e STJ)",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
@@ -62,8 +62,8 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "decorre da imperatividade e, por isso, só alcança os atos que impõem obrigações ao particular, e não os demais"
     ],
     "answer": 3,
-    "explanation": "A presunção de veracidade (fatos) e de legitimidade (conformidade com a lei) é relativa (juris tantum): admite prova em contrário e não impede o controle administrativo ou judicial. Seu efeito prático é, em regra, inverter o ônus da prova, cabendo ao administrado demonstrar que os fatos não ocorreram. É atributo de todos os atos administrativos, e não só dos imperativos.",
-    "lawRef": "Atributos do ato administrativo — doutrina (presunção de legitimidade e veracidade)",
+    "explanation": "A presunção de veracidade (os fatos descritos pelo agente são tidos como verdadeiros) e a de legitimidade (o ato é tido como conforme a lei) não estão escritas em um artigo específico: são atributos reconhecidos pela doutrina e pela jurisprudência. Elas são relativas (juris tantum): admitem prova em contrário e não impedem o controle administrativo ou judicial. O efeito prático é, em regra, inverter o ônus da prova: cabe ao administrado demonstrar que os fatos não ocorreram. São atributos de todos os atos administrativos, e não só dos que impõem obrigações.",
+    "lawRef": "Atributos do ato administrativo: presunção de legitimidade e de veracidade (doutrina e jurisprudência)",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
@@ -77,8 +77,8 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "tipicidade e imperatividade"
     ],
     "answer": 1,
-    "explanation": "Na multa, a Administração usa meios indiretos de coerção (exigibilidade), como impedir o licenciamento do veículo; a cobrança forçada depende de execução fiscal. Na demolição urgente, ela age diretamente, sem ordem judicial (autoexecutoriedade ou executoriedade), o que se admite quando há previsão legal ou urgência. Trocar esses dois atributos é a confusão mais cobrada.",
-    "lawRef": "Atributos do ato administrativo — doutrina (exigibilidade e executoriedade); Lei 6.830/1980",
+    "explanation": "Na multa, a Administração usa meios indiretos de coerção (exigibilidade). Exemplo: o Código de Trânsito Brasileiro (Lei 9.503/1997), no art. 131, § 2º, diz que o veículo só é considerado licenciado se estiverem quitados os débitos de tributos, encargos e multas de trânsito vinculados a ele. Para tomar o dinheiro à força, a Administração precisa da execução fiscal, regulada pela Lei 6.830/1980 (Lei de Execução Fiscal), que trata da cobrança judicial da dívida ativa. Na demolição urgente, a Administração age diretamente, por meios próprios e sem ordem judicial (autoexecutoriedade ou executoriedade), o que se admite quando há previsão legal ou urgência. Trocar esses dois atributos é a confusão mais cobrada.",
+    "lawRef": "Atributos do ato administrativo (exigibilidade e autoexecutoriedade); Código de Trânsito Brasileiro (Lei 9.503/1997), art. 131, § 2º; Lei 6.830/1980 (Lei de Execução Fiscal)",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
@@ -92,8 +92,8 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "a certidão de tempo de serviço expedida a pedido do servidor"
     ],
     "answer": 4,
-    "explanation": "Não se revogam atos vinculados, atos que já exauriram seus efeitos, atos que geraram direitos adquiridos nem atos meramente enunciativos, como certidões e atestados, cujos efeitos decorrem da lei. Autorização e permissão de uso são precárias e revogáveis, assim como os atos discricionários com efeitos pendentes e as portarias de organização interna.",
-    "lawRef": "Lei 9.784/1999, art. 53; Súmula 473 do STF; doutrina sobre limites à revogação",
+    "explanation": "O art. 53 da Lei 9.784/1999 (Lei do Processo Administrativo Federal) diz que a Administração \"deve anular seus próprios atos, quando eivados de vício de legalidade, e pode revogá-los por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos\". A Súmula 473 do STF (\"A administração pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, porque deles não se originam direitos; ou revogá-los, por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos, e ressalvada, em todos os casos, a apreciação judicial\") diz o mesmo. Por isso a doutrina aponta atos que não podem ser revogados: atos vinculados, atos que já esgotaram seus efeitos, atos que geraram direitos adquiridos e atos meramente enunciativos, como certidões e atestados, que só declaram uma situação e cujos efeitos vêm da lei. Já a autorização e a permissão de uso são precárias e revogáveis, assim como os atos discricionários com efeitos pendentes e as portarias de organização interna.",
+    "lawRef": "Lei 9.784/1999 (Lei do Processo Administrativo Federal), art. 53 (anulação e revogação); Súmula 473 do STF; doutrina sobre limites à revogação",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
@@ -107,13 +107,13 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "anulado obrigatoriamente, pois o vício de competência é insanável qualquer que seja a matéria"
     ],
     "answer": 0,
-    "explanation": "O art. 55 admite a convalidação de defeitos sanáveis quando não houver lesão ao interesse público nem prejuízo a terceiros. O vício de competência é sanável por ratificação da autoridade competente, salvo nas matérias de competência exclusiva, em que o ato deve ser anulado. Revogação pressupõe ato válido, por isso não serve para corrigir ilegalidade.",
-    "lawRef": "Lei 9.784/1999, art. 55; doutrina sobre convalidação (ratificação)",
+    "explanation": "O art. 55 da Lei 9.784/1999 (Lei do Processo Administrativo Federal) diz: \"Em decisão na qual se evidencie não acarretarem lesão ao interesse público nem prejuízo a terceiros, os atos que apresentarem defeitos sanáveis poderão ser convalidados pela própria Administração\". O vício de competência é sanável por ratificação, isto é, a autoridade competente confirma o ato. A exceção são as matérias de competência exclusiva, em que o ato deve ser anulado. A revogação não serve para corrigir ilegalidade, porque pressupõe ato válido, retirado por conveniência e oportunidade.",
+    "lawRef": "Lei 9.784/1999 (Lei do Processo Administrativo Federal), art. 55 (convalidação de defeitos sanáveis); doutrina sobre ratificação",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
     "id": "adm-m03-autoral-08",
-    "q": "Um servidor recebe, de boa-fé, vantagem concedida por ato ilegal, com pagamentos mensais. Pela Lei 9.784/1999, o prazo de cinco anos para a Administração anular o ato conta-se:",
+    "q": "Um servidor recebe, de boa-fé, vantagem concedida por ato ilegal, com pagamentos mensais. Pela Lei 9.784/1999 (Lei do Processo Administrativo Federal), o prazo de cinco anos para a Administração anular o ato conta-se:",
     "options": [
       "da data em que o ato foi praticado",
       "da data em que a Administração tomou ciência do vício",
@@ -122,13 +122,13 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "do trânsito em julgado de eventual ação judicial sobre a vantagem"
     ],
     "answer": 2,
-    "explanation": "A regra geral do art. 54 conta os cinco anos da data em que o ato foi praticado, salvo comprovada má-fé. Quando há efeitos patrimoniais contínuos, o § 1º manda contar o prazo da percepção do primeiro pagamento. Pelo § 2º, qualquer medida de autoridade que importe impugnação à validade do ato também é considerada exercício do direito de anular.",
-    "lawRef": "Lei 9.784/1999, art. 54, caput e §§ 1º e 2º",
+    "explanation": "O art. 54 da Lei 9.784/1999 (Lei do Processo Administrativo Federal) diz que \"o direito da Administração de anular os atos administrativos de que decorram efeitos favoráveis para os destinatários decai em cinco anos, contados da data em que foram praticados, salvo comprovada má-fé\". O § 1º traz a regra cobrada: \"No caso de efeitos patrimoniais contínuos, o prazo de decadência contar-se-á da percepção do primeiro pagamento\". E o § 2º diz que qualquer medida de autoridade administrativa que importe impugnação à validade do ato já é considerada exercício do direito de anular.",
+    "lawRef": "Lei 9.784/1999 (Lei do Processo Administrativo Federal), art. 54, caput (prazo de 5 anos), § 1º (efeitos patrimoniais contínuos: primeiro pagamento) e § 2º",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
     "id": "adm-m03-autoral-09",
-    "q": "De acordo com a Lei 9.784/1999, sobre a motivação dos atos administrativos, é correto afirmar que:",
+    "q": "De acordo com a Lei 9.784/1999 (Lei do Processo Administrativo Federal), sobre a motivação dos atos administrativos, é correto afirmar que:",
     "options": [
       "é exigida apenas nos atos vinculados, pois nos discricionários prevalece o juízo de conveniência",
       "pode consistir em declaração de concordância com fundamentos de pareceres, informações ou decisões anteriores",
@@ -137,8 +137,8 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "é dispensada nos atos que imponham deveres, encargos ou sanções, por serem dotados de autoexecutoriedade e imperatividade"
     ],
     "answer": 1,
-    "explanation": "O art. 50, § 1º, admite a motivação aliunde: a declaração de concordância com fundamentos de anteriores pareceres, informações, decisões ou propostas, que passam a integrar o ato. O art. 50 exige motivação, entre outros, nos atos que imponham ou agravem deveres, encargos ou sanções (II) e nos que decidam recursos administrativos (V), sejam vinculados ou discricionários.",
-    "lawRef": "Lei 9.784/1999, art. 50, caput, II e V, e § 1º",
+    "explanation": "O art. 50 da Lei 9.784/1999 (Lei do Processo Administrativo Federal) diz que os atos administrativos \"deverão ser motivados, com indicação dos fatos e dos fundamentos jurídicos\", entre outros casos, quando imponham ou agravem deveres, encargos ou sanções (inciso II) e quando decidam recursos administrativos (inciso V), sejam vinculados ou discricionários. O § 1º permite a chamada motivação aliunde: \"A motivação deve ser explícita, clara e congruente, podendo consistir em declaração de concordância com fundamentos de anteriores pareceres, informações, decisões ou propostas, que, neste caso, serão parte integrante do ato\".",
+    "lawRef": "Lei 9.784/1999 (Lei do Processo Administrativo Federal), art. 50, caput, II e V (quando motivar), e § 1º (motivação por remissão a pareceres)",
     "provenance": "questao-autoral-IA-revisada"
   },
   {
@@ -152,8 +152,8 @@ window.BC_ADM_AUTHORIAL_OVERRIDES[3]=[
       "exige a concordância do beneficiário quando o ato lhe for favorável, em respeito à segurança jurídica"
     ],
     "answer": 3,
-    "explanation": "Pelo art. 53 e pela Súmula 473 do STF, a Administração deve anular seus atos ilegais, de ofício ou por provocação, sem prejuízo do controle judicial. A anulação, em regra, produz efeitos ex tunc, ressalvados os direitos de terceiros de boa-fé e o prazo decadencial do art. 54. Juízo de conveniência e oportunidade é próprio da revogação.",
-    "lawRef": "Lei 9.784/1999, arts. 53 e 54; Súmula 473 do STF",
+    "explanation": "O art. 53 da Lei 9.784/1999 (Lei do Processo Administrativo Federal) diz que a Administração \"deve anular seus próprios atos, quando eivados de vício de legalidade\". A Súmula 473 do STF (\"A administração pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, porque deles não se originam direitos; ou revogá-los, por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos, e ressalvada, em todos os casos, a apreciação judicial\") confirma. A anulação pode ser feita de ofício ou a pedido, sem prejuízo do controle judicial, e em regra produz efeitos retroativos (ex tunc), ressalvados os terceiros de boa-fé e o prazo de cinco anos do art. 54 da mesma lei, que limita o tempo para anular atos favoráveis ao destinatário de boa-fé. O juízo de conveniência e oportunidade é próprio da revogação, não da anulação.",
+    "lawRef": "Lei 9.784/1999 (Lei do Processo Administrativo Federal), art. 53 (dever de anular) e art. 54 (prazo de 5 anos); Súmula 473 do STF",
     "provenance": "questao-autoral-IA-revisada"
   }
 ];

@@ -45,3 +45,22 @@ test('questões de IA no nível de prova: gabarito distribuído e alternativa ce
   if(textual)assert.ok(longest<=3,subject+': a alternativa certa é a mais longa em '+longest+' de 10');
  }
 });
+
+test('comentários jurídicos: toda lei citada vem com o nome e todo artigo citado vem com o que ele diz',()=>{
+ const ctx={window:{}};
+ for(const p of ['content/adm/m03-authorial10-v1.js','content/cpc/m01-authorial10-v1.js'])vm.runInNewContext(read(p),ctx);
+ for(const [subject,items] of [['ADM M03',ctx.window.BC_ADM_AUTHORIAL_OVERRIDES[3]],['CPC M01',ctx.window.BC_CPC_AUTHORIAL_OVERRIDES[1]]]){
+  Array.from(items).forEach((q,i)=>{
+   for(const field of ['q','explanation','lawRef']){
+    const text=q[field];
+    const laws=new Set(text.match(/Lei \d[\d.]*\/\d{4}/g)||[]);
+    for(const law of laws){
+     const at=[...text.matchAll(new RegExp(law.replace(/[.\/]/g,'\\$&'),'g'))].map(m=>m.index);
+     const named=at.some(k=>text.slice(k+law.length,k+law.length+2)===' ('||/\([^()]*$/.test(text.slice(Math.max(0,k-60),k)));
+     assert.ok(named,`${subject} ${i+1} (${field}): "${law}" citada sem dizer qual lei é`);
+    }
+   }
+   if(/\bart(s)?\.\s*\d/.test(q.explanation))assert.match(q.explanation,/\bdiz\b|"/,`${subject} ${i+1}: artigo citado sem dizer o que está escrito`);
+  });
+ }
+});
