@@ -108,7 +108,7 @@ test('o fluxo usa resgate SQL atômico, invalida sessões e exige role aluno',as
  assert.match(page,/name="viewport"/);
  assert.match(login,/href="\/recuperar-senha\.html"/);
  assert.match(page,/Se houver uma conta ativa/);
- assert.match(reset,/password reset email accepted by SMTP/);
+ assert.match(reset,/password reset email accepted by (SMTP|configured provider)/);
  const scripts=[...page.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
  assert.equal(scripts.length,1);
  assert.doesNotThrow(()=>new vm.Script(scripts[0][1]));

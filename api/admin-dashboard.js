@@ -1,4 +1,8 @@
-import { requireSession } from '../lib/auth.js';
+import {requireSession,safeSecretEqual} from '../lib/auth.js';
+import {runPremiumEmailAutomation,premiumAutomationEnabled} from '../lib/email-premium-automation.js';
+import {captureStudyEmailSnapshots,studySnapshotsEnabled} from '../lib/email-study-snapshots.js';
+import {runWeeklyEmailAutomation,weeklyEmailEnabled} from '../lib/email-weekly-automation.js';
+import {ensureEmailAuditTable} from '../lib/email-audit.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -33,6 +37,25 @@ async function ensureTables(sql){
 }
 
 export default async function handler(req,res){
+  // Vercel Cron reutiliza a função existente. Nunca criar endpoint extra no plano Hobby.
+  // O cron usa CRON_SECRET e não expõe dados de alunos ou administrativos.
+  const secret=String(process.env.CRON_SECRET||'');
+  const auth=String(req.headers?.authorization||'');
+  if(req.method==='GET' && secret.length>=32 &&
+     safeSecretEqual(auth,'Bearer '+secret)){
+    if(!premiumAutomationEnabled()&&!studySnapshotsEnabled()&&!weeklyEmailEnabled())
+      return send(res,200,{enabled:false,attempted:0,sent:0,failed:0});
+    try{
+      // Primeiro captura os contadores do dia; resumo semanal só roda depois.
+      const snapshots=await captureStudyEmailSnapshots();
+      const premium=await runPremiumEmailAutomation();
+      const weekly=await runWeeklyEmailAutomation();
+      return send(res,200,{premium,snapshots,weekly});
+    }catch(error){
+      console.error('email cron failure',String(error?.code||error?.name||'UNKNOWN').slice(0,32));
+      return send(res,503,{error:'Rotina de e-mails indisponível'});
+    }
+  }
   const session=await requireSession(req,['admin']);
   if(!session.ok)return send(res,session.status,{error:session.error});
   if(req.method!=='GET'){
@@ -42,6 +65,27 @@ export default async function handler(req,res){
 
   try{
     const sql=session.sql;
+    if(req.query?.action==='email-history'){
+      await ensureEmailAuditTable(sql);
+      const [events,counts]=await Promise.all([
+        sql`
+          SELECT id,created_at,kind,provider,outcome,error_code
+          FROM public.central_email_audit
+          ORDER BY id DESC LIMIT 100
+        `,
+        sql`
+          SELECT outcome,COUNT(*)::int AS total
+          FROM public.central_email_audit
+          WHERE created_at>=NOW()-INTERVAL '30 days'
+          GROUP BY outcome
+        `
+      ]);
+      return send(res,200,{events,summary:{
+        accepted:Number(counts.find(x=>x.outcome==='accepted')?.total||0),
+        failed:Number(counts.find(x=>x.outcome==='failed')?.total||0),
+        period:'30d'
+      }});
+    }
     await ensureTables(sql);
     const rows=await sql`
       SELECT

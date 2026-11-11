@@ -178,7 +178,7 @@ async function open(uid,kind,jump,sectionNumber){
     if(!d.completeAppendHtml)throw new Error('Questões completas ADM não localizadas');
     content+=d.completeAppendHtml;
   }
-  if(!g.AdmApostilaReading)await import('/ui/adm-apostila-reading-v1.js?v=20261108adm1');
+  if(!g.AdmApostilaReading)await import('/ui/adm-apostila-reading-v1.js?v=20261110admautor1');
   content=await g.AdmApostilaReading.load(num(uid),kind);
   if(active!==session)return;
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
@@ -186,7 +186,6 @@ async function open(uid,kind,jump,sectionNumber){
   g.BcAdmAuthorialSource?.strip(body.querySelector('.bc-native-article'));
   if(kind==='complete')setupCompleteChecks(uid,body);
   if(kind==='complete'&&sectionNumber)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const h=sessionHeadings(body)[sectionNumber-1];h?.scrollIntoView({block:'start'})}));
-
   localStorage.setItem('central-v6:last',JSON.stringify({topicUid:uid,title:`Direito Administrativo · Módulo ${d.number} · ${d.title}`,at:Date.now()}));
   g.renderContinue?.();
  }catch(error){if(active===session){console.warn('[ADM reader]',error);reader.fail(o,()=>open(uid,kind,jump))}}

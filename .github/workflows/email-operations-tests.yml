@@ -1,0 +1,36 @@
+name: Email operations isolated tests
+on:
+  push:
+    branches:
+      - feature/email-operations-admin-20261110
+  pull_request:
+    paths:
+      - 'lib/email-*.js'
+      - 'lib/transactional-email.js'
+      - 'lib/free-signup-handler.js'
+      - 'lib/password-reset.js'
+      - 'lib/hotmart-webhook.js'
+      - 'lib/approved-email-dispatcher.js'
+      - 'api/admin-dashboard.js'
+      - 'api/premium-expiry-reminders.js'
+      - 'admin-email-ops.html'
+      - 'usuarios.html'
+      - 'tests/email-operations-unit.mjs'
+permissions:
+  contents: read
+jobs:
+  email-ops:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: node --test tests/email-operations-unit.mjs
+      - run: npm run test:emails
+      - run: npm run test:hotmart-webhook

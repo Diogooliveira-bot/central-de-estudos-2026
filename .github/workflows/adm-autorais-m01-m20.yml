@@ -1,0 +1,35 @@
+name: Administrativo — apostilas autorais M01–M20
+on:
+  push:
+    branches:
+      - feat/adm-apostilas-autorais-m01-m20-20261110
+    paths:
+      - 'content/adm/autor-20261110/**'
+      - 'ui/adm-apostila-reading-v1.*'
+      - 'ui/adm-native-layer.js'
+      - 'tests/adm-*.mjs'
+      - 'package.json'
+      - '.github/workflows/adm-autorais-m01-m20.yml'
+  pull_request:
+    paths:
+      - 'content/adm/autor-20261110/**'
+      - 'ui/adm-apostila-reading-v1.*'
+      - 'ui/adm-native-layer.js'
+      - 'tests/adm-*.mjs'
+      - 'package.json'
+      - '.github/workflows/adm-autorais-m01-m20.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run test:adm-autoral
+      - run: npm run test:adm-didatico
