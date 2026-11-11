@@ -37,7 +37,9 @@ test('Civil M01–M15: carregador e leitor oficiais na Preview sem mudar banco o
   assert.ok(ui.includes("openQuestions(${m.number},'${kind}')"),'questões internas preservadas');
   assert.ok(ui.includes('markGuidedRead'),'marcação isolada do progresso mantida');
   assert.ok(reader.includes('MIN=1,MAX=15'));
-  assert.ok(reader.includes('data-bc-guided-mode="review"'));
+  assert.ok(!reader.includes('data-bc-guided-mode'), 'abas de modos de leitura removidas');
+  assert.ok(!reader.includes('Revisão rápida'), 'revisão rápida não é opção no leitor');
+  assert.ok(!reader.includes('data-view="review"'), 'conteúdo não pode ser ocultado por modo de revisão');;
   assert.ok(reader.includes('data-bc-guided-check'));
   assert.ok(!reader.includes('fetch('),'sem uso de API no leitor');
   assert.ok(!reader.includes('Nova teoria guiada · testar'),'sem card de piloto');
