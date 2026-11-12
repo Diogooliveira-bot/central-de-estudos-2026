@@ -35,10 +35,10 @@ test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros of
     assert.equal(module.querySelectorAll('.cv-rounds, input[id^="cv-ext-"]').length, 0, `M${n}: campos manuais legados visíveis.`);
     assert.equal(module.querySelector('.cv-card-complete b').textContent, 'Teoria completa');
     assert.equal(module.querySelector('.cv-card-review b').textContent, 'Versão de revisão');
-    assert.equal(module.querySelector('.cv-card-infographic b').textContent, 'Infográfico');
+    assert.equal(module.querySelectorAll('.cv-cards .cv-standard-card').length, 2);
     assert.deepEqual([...module.querySelectorAll('.cv-card-complete .cv-standard-actions button')].map((button) => button.textContent.trim()), ['Estudar conteúdo', `Resolver ${source.completeQuestions} questões`]);
     assert.deepEqual([...module.querySelectorAll('.cv-card-review .cv-standard-actions button')].map((button) => button.textContent.trim()), ['Revisar conteúdo', `Resolver ${source.summaryQuestions} questões`]);
-    assert.equal(module.querySelector('.cv-card-infographic button').textContent, 'Visualizar infográfico');
+    assert.equal(module.querySelector('.cv-card-infographic'), null);
     assert(module.querySelector('[data-bcq-platform="tec"]'), `M${n}: filtros TEC oficiais ausentes.`);
     assert.equal(module.querySelectorAll('.cv-sharing-link, .cv-sharing, .cv-tec-panel, [data-civil-share]').length, 0, `M${n}: links/blocos antigos ainda visíveis.`);
     assert.equal(module.querySelectorAll('[data-bcq-module-panel]').length, 1, `M${n}: painel QC/TEC duplicado.`);
@@ -64,16 +64,8 @@ test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros of
   assert.equal(window.localStorage.getItem('central-v6:civil-native:m01:summary:read'), '100');
   assert.equal(window.localStorage.getItem('central-v6:civil-native:m01:complete:read'), '100');
 
-  window.CIVIL_NATIVE_IMAGES = { m01: 'data:image/webp;base64,UklGRg==' };
-  await window.CivilNative.openImage(1);
-  const viewer = window.document.getElementById('civil-native-image-viewer');
-  assert.equal(viewer.hidden, false);
-  assert.match(window.document.getElementById('cv-img-download').download, /direito-civil-modulo-01-infografico\.webp/);
-  assert.equal(window.document.getElementById('cv-img-download').href, window.CIVIL_NATIVE_IMAGES.m01);
-  window.CivilNative.zoomImage(.5);
-  assert.equal(viewer.dataset.zoom, '1.5');
-  window.CivilNative.closeImage();
-  assert.equal(viewer.hidden, true);
+  assert.equal(window.CivilNative.openImage, undefined);
+  assert.equal(window.document.getElementById('civil-native-image-viewer'), null);
 
   const css = read('ui/civil-native-study-v1.css');
   assert(css.includes('html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card'));

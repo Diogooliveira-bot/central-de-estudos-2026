@@ -56,7 +56,7 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
   assert.equal(modules.length, 20);
   for (const [index, module] of modules.entries()) {
     const cards = [...module.querySelectorAll('.cpc-approved-card')];
-    assert.deepEqual(cards.map(card => card.dataset.cpcApprovedCard), index === 7 ? ['summary','complete'] : ['summary','complete','map']);
+    assert.deepEqual(cards.map(card => card.dataset.cpcApprovedCard), ['summary','complete']);
     assert.equal(cards[1].querySelector('h3').textContent, 'Teoria completa');
     assert.equal(cards[1].querySelector('.cpc-approved-primary').textContent, 'Estudar conteúdo');
     assert.equal(cards[1].querySelector('.cpc-approved-secondary').textContent, 'Resolver 10 questões');
@@ -65,10 +65,7 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
     assert.equal(cards[0].querySelector('.cpc-approved-secondary').textContent, 'Resolver 5 questões');
     assert.match(cards[1].querySelector('.cpc-approved-primary').getAttribute('onclick'), /complete/);
     assert.match(cards[0].querySelector('.cpc-approved-primary').getAttribute('onclick'), /summary/);
-    if (index !== 7) {
-      assert.match(cards[2].querySelector('.cpc-approved-primary').textContent, /mapa mental/i);
-      assert.match(cards[2].querySelector('.cpc-approved-primary').getAttribute('onclick'), /Map/);
-    }
+    assert.equal(module.querySelector('.cpc-approved-map'),null);
     assert.equal(module.querySelectorAll('.cpc-approved-reading').length, 1);
     assert.equal(module.querySelectorAll('.cpc-study-intro').length, 0);
     assert.equal(module.querySelector('.bc-native-metrics'), null, 'o painel nativo duplicado não aparece no corpo do módulo');
