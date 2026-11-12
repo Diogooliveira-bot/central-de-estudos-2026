@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lei em Dia • Base Completa</title>
+<style>
+:root{color-scheme:light;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#123148;background:#f5f8fb}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:940px;margin:auto;padding:18px 16px 90px}
+header{display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid #d9e3ea;padding:16px 0 20px}h1{font-size:clamp(27px,4vw,36px);margin:5px 0}header small{color:#547286;letter-spacing:.1em;font-weight:750}
+a{color:#154a6b;text-decoration:none;font-weight:700}.panel,.card{background:#fff;border:1px solid #dce6ed;border-radius:15px;padding:22px;margin:20px 0;box-shadow:0 2px 8px #122f4708}
+label{display:grid;gap:7px;font-size:14px;font-weight:700;margin:0 0 17px}select{font:inherit;width:100%;padding:14px;border:1px solid #b6cbd8;border-radius:10px;color:#153449;background:white}
+button{font:inherit;border:0;border-radius:10px;background:#12374d;color:white;padding:13px 18px;font-weight:700;cursor:pointer;min-height:46px}
+button:disabled{opacity:.55;cursor:wait}.secondary{background:#edf5f8;color:#163b50}.grid{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.meta{font-size:13px;color:#597386}.statement{font-size:18px;white-space:pre-wrap;line-height:1.65;color:#1b3346;margin:20px 0}
+.feedback{background:#f1f6f9;padding:16px;border-radius:10px;line-height:1.6;margin-top:16px}.notice{font-size:14px;color:#566d7c;line-height:1.6}.err{color:#952d2d;background:#fff1f0;border-radius:10px;padding:12px}.hidden{display:none!important}
+@media(max-width:600px){.grid{grid-template-columns:1fr}header{align-items:flex-start}.panel{padding:16px}}
+</style>
+</head><body><div class="wrap">
+<header><div><small>BASE COMPLETA · PLANO GRATUITO</small><h1>Lei em Dia</h1><span class="meta">Pratique a lei seca, uma questão de cada vez.</span></div><a href="/" aria-label="Voltar à Central">Voltar</a></header>
+<div class="panel"><p class="notice">Você pode abrir até <strong>20 questões diferentes por dia</strong>. Reabrir uma questão já utilizada não consome uma nova tentativa. As questões e o gabarito são enviados individualmente, após sua escolha.</p>
+<p id="catalogStatus" role="status">Preparando os assuntos...</p>
+<div id="filters" class="hidden"><label>Disciplina<select id="discipline"></select></label><label>Assunto<select id="topic"></select></label><label>Questão<select id="question"></select></label><button id="load" type="button">Abrir questão</button></div></div>
+<div id="exercise" class="card hidden" aria-live="polite"></div>
+</div>
+<script src="/api/lei-em-dia-questions?mode=catalog&v=20261026-free1" onerror="window.__freeCatalogFailed=true"></script>
+<script>
+(function(){
+'use strict';
+const el=id=>document.getElementById(id),status=el('catalogStatus'),filters=el('filters'),exercise=el('exercise');
+const bank=typeof DATA_LED_APPROVED!=='undefined'&&Array.isArray(DATA_LED_APPROVED)?DATA_LED_APPROVED:[];
+const names={cf:'Direito Constitucional',civil:'Direito Civil',penal:'Direito Penal',cpc:'Direito Processual Civil',cpp:'Direito Processual Penal',adm:'Direito Administrativo',consumidor:'Direito do Consumidor'};
+const d=el('discipline'),t=el('topic'),q=el('question'),button=el('load');
+const option=(value,label)=>{const o=document.createElement('option');o.value=value;o.textContent=label;return o};
+const selection=()=>bank.filter(item=>item.discipline===d.value);
+function updateTopics(){
+ const items=selection(),previous=t.value;t.replaceChildren();
+ const ids=new Map();items.forEach(x=>{const id=String(x.topicId||'');if(!ids.has(id))ids.set(id,String(x.title||x.topicId||'Assunto'))});
+ ids.forEach((label,id)=>t.add(option(id,label)));if(ids.has(previous))t.value=previous;updateQuestions();
+}
+function updateQuestions(){
+ const previous=q.value;q.replaceChildren();
+ const items=selection().filter(item=>item.topicId===t.value);
+ items.forEach((item,i)=>q.add(option(item.id,(i+1)+'. '+(item.number||item.subtopic||item.title||'Questão'))));
+ if(items.some(x=>x.id===previous))q.value=previous;
+}
+function text(tag,value,cls){const e=document.createElement(tag);e.textContent=String(value??'');if(cls)e.className=cls;return e}
+function error(message){status.textContent=message;status.className='err'}
+if(!bank.length){
+ error('Não foi possível carregar os assuntos. Volte à Central e tente novamente. Nenhuma questão foi contabilizada.');
+ return;
+}
+new Set(bank.map(x=>x.discipline)).forEach(code=>d.add(option(code,names[code]||code)));
+d.addEventListener('change',()=>{updateTopics();exercise.classList.add('hidden')});
+t.addEventListener('change',()=>{updateQuestions();exercise.classList.add('hidden')});
+updateTopics();status.textContent=bank.length+' questões disponíveis para escolha.';filters.classList.remove('hidden');
+button.addEventListener('click',async()=>{
+ const id=q.value;if(!id)return;button.disabled=true;status.textContent='Carregando somente a questão selecionada...';status.className='';
+ try{
+ const r=await fetch('/api/lei-em-dia-questions?action=question',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({id}),cache:'no-store'});
+ const body=await r.json().catch(()=>({}));
+ if(!r.ok){error(r.status===429?'Limite diário de 20 questões atingido. Você pode continuar revisando as questões já abertas hoje.':body.error||'Não foi possível carregar a questão.');return}
+ const data=body.question||{},quiz=data.question||{};
+ if(!quiz.statement){error('Questão temporariamente indisponível.');return}
+ exercise.replaceChildren(text('small',names[data.discipline]||data.discipline,'meta'),text('h2',data.title||'Questão de lei seca'),text('p',quiz.statement,'statement'));
+ const choices=document.createElement('div');choices.className='grid';
+ const feedback=document.createElement('div');feedback.className='feedback hidden';
+ for(const [value,label] of [[true,'Certo'],[false,'Errado']]){
+ const answer=text('button',label);answer.type='button';answer.onclick=()=>{
+  [...choices.querySelectorAll('button')].forEach(b=>b.disabled=true);
+  const correct=Boolean(quiz.answer)===value;
+  feedback.replaceChildren(text('strong',correct?'Resposta correta.':'Resposta incorreta.'),text('p',quiz.explanation||'Confira o dispositivo legal estudado.'));
+  feedback.classList.remove('hidden');
+ };choices.append(answer)}
+ exercise.append(choices,feedback);exercise.classList.remove('hidden');
+ status.textContent='Questão carregada. O limite é controlado pelo servidor.';status.className='';
+ exercise.scrollIntoView({behavior:'smooth',block:'start'});
+ }catch(_){error('Não foi possível conectar ao Lei em Dia. Verifique a conexão e tente novamente.')}
+ finally{button.disabled=false}
+});
+})();
+</script>
+</body></html>

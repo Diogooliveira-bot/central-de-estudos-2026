@@ -1,0 +1,79 @@
+﻿nome;tipo;numero;ano;status;url;detalhe
+CLT - Decreto-Lei 5.452/1943;decreto-lei;5452;1943;OK;https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm;768734
+LC 101/2000 - Lei de Responsabilidade Fiscal;lc;101;2000;OK;https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp101.htm;157309
+LC 150/2015 - Empregado Domestico;lc;150;2015;OK;https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm;74950
+LC 75/1993 - Lei Organica do MPU;lc;75;1993;OK;https://legis.senado.leg.br/norma/572830/publicacao/36345452;190392
+Lei 1.079/1950 - Crimes de Responsabilidade;lei;1079;1950;OK;https://www.planalto.gov.br/ccivil_03/leis/l1079.htm;67350
+Lei 10.028/2000 - Crimes contra as Financas Publicas;lei;10028;2000;OK;https://www.planalto.gov.br/ccivil_03/leis/l10028.htm;33288
+Lei 11.107/2005 - Consorcios publicos;lei;11107;2005;OK;https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm;47180
+Lei 11.340/2006 - Maria da Penha;lei;11340;2006;OK;https://legis.senado.leg.br/norma/572125/publicacao/34620955;122612
+Lei 11.343/2006 - Drogas;lei;11343;2006;OK;https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm;173488
+Lei 11.417/2006 - Sumula Vinculante;lei;11417;2006;OK;https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11417.htm;29359
+Lei 11.419/2006 - Processo Judicial Eletronico;lei;11419;2006;OK;https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11419.htm;50516
+Lei 11.648/2008 - Centrais Sindicais;lei;11648;2008;OK;https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11648.htm;32000
+Lei 11.788/2008 - Estagio;lei;11788;2008;OK;https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm;45938
+Lei 11.804/2008 - Alimentos Gravidicos;lei;11804;2008;OK;https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11804.htm;25693
+Lei 12.016/2009 - Mandado de Seguranca;lei;12016;2009;OK;https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12016.htm;43551
+Lei 12.830/2013 - Investigacao Criminal pelo Delegado;lei;12830;2013;OK;https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12830.htm;25677
+Lei 12.850/2013 - Organizacoes Criminosas;lei;12850;2013;OK;https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12850.htm;79350
+Lei 13.019/2014 - MROSC;lei;13019;2014;OK;https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm;139711
+Lei 13.146/2015 - Estatuto da Pessoa com Deficiencia;lei;13146;2015;OK;https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm;145887
+Lei 13.300/2016 - Mandado de Injuncao;lei;13300;2016;OK;https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13300.htm;30590
+Lei 13.344/2016 - Trafico de Pessoas;lei;13344;2016;OK;https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13344.htm;39105
+Lei 13.465/2017 - REURB;lei;13465;2017;OK;https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13465.htm;236586
+Lei 13.709/2018 - LGPD;lei;13709;2018;OK;https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm;117139
+Lei 13.848/2019 - Agencias reguladoras;lei;13848;2019;OK;https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm;76136
+Lei 13.869/2019 - Abuso de autoridade;lei;13869;2019;OK;https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13869compilado.htm;53363
+Lei 14.129/2021 - Governo Digital;lei;14129;2021;OK;https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm;72018
+Lei 14.382/2022 - SERP e Registros Publicos Eletronicos;lei;14382;2022;OK;https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14382.htm;116277
+Lei 14.457/2022 - Emprega Mais Mulheres;lei;14457;2022;OK;https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14457.htm;56799
+Lei 14.478/2022 - Marco dos Criptoativos;lei;14478;2022;OK;https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14478.htm;33642
+Lei 14.611/2023 - Igualdade Salarial;lei;14611;2023;OK;https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm;29769
+Lei 14.711/2023 - Marco Legal das Garantias;lei;14711;2023;OK;https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14711.htm;108216
+Lei 14.824/2024 - Conselho Superior da Justica do Trabalho;lei;14824;2024;OK;https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14824.htm;45595
+Lei 15.040/2024 - Marco Legal dos Seguros;lei;15040;2024;OK;https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l15040.htm;78609
+Lei 4.090/1962 - 13o Salario;lei;4090;1962;OK;https://www.planalto.gov.br/ccivil_03/leis/l4090.htm;23983
+Lei 4.717/1965 - Acao Popular;lei;4717;1965;OK;https://www.planalto.gov.br/ccivil_03/leis/l4717.htm;47239
+Lei 4.749/1965 - Adiantamento do 13o;lei;4749;1965;OK;https://www.planalto.gov.br/ccivil_03/leis/l4749.htm;24647
+Lei 5.478/1968 - Alimentos;lei;5478;1968;OK;https://www.planalto.gov.br/ccivil_03/leis/l5478.htm;38691
+Lei 5.584/1970 - Procedimentos Trabalhistas;lei;5584;1970;OK;https://www.planalto.gov.br/ccivil_03/leis/l5584.htm;36591
+Lei 5.889/1973 - Trabalho Rural;lei;5889;1973;OK;https://www.planalto.gov.br/ccivil_03/leis/l5889.htm;50278
+Lei 6.015/1973 - Registros Publicos;lei;6015;1973;OK;https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm;288627
+Lei 6.019/1974 - Trabalho Temporario e Terceirizacao;lei;6019;1974;OK;https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm;47867
+Lei 6.404/1976 - Sociedades por Acoes;lei;6404;1976;OK;https://legis.senado.leg.br/norma/548280/publicacao/34619484;478891
+Lei 6.766/1979 - Parcelamento do Solo Urbano;lei;6766;1979;OK;https://www.planalto.gov.br/ccivil_03/leis/l6766compilado.htm;93589
+Lei 6.830/1980 - Execucao Fiscal;lei;6830;1980;OK;https://www.planalto.gov.br/ccivil_03/leis/l6830.htm;48931
+Lei 7.347/1985 - Acao Civil Publica;lei;7347;1985;OK;https://www.planalto.gov.br/ccivil_03/leis/l7347compilada.htm;41651
+Lei 7.701/1988 - Processamento nos Tribunais Trabalhistas;lei;7701;1988;OK;https://www.planalto.gov.br/ccivil_03/leis/l7701.htm;32684
+Lei 7.716/1989 - Crimes de Racismo;lei;7716;1989;OK;https://www.planalto.gov.br/ccivil_03/leis/l7716compilado.htm;35833
+Lei 7.783/1989 - Greve;lei;7783;1989;OK;https://www.planalto.gov.br/ccivil_03/leis/l7783.htm;33433
+Lei 8.009/1990 - Bem de Familia;lei;8009;1990;OK;https://www.planalto.gov.br/ccivil_03/leis/l8009.htm;26515
+Lei 8.036/1990 - FGTS;lei;8036;1990;OK;https://www.planalto.gov.br/ccivil_03/leis/l8036compilada.htm;133987
+Lei 8.069/1990 - ECA;lei;8069;1990;OK;https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm;315187
+Lei 8.072/1990 - Crimes Hediondos;lei;8072;1990;OK;https://www.planalto.gov.br/ccivil_03/leis/l8072compilada.htm;44799
+Lei 8.078/1990 - Codigo de Defesa do Consumidor;lei;8078;1990;OK;https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm;137838
+Lei 8.137/1990 - Crimes contra a Ordem Tributaria;lei;8137;1990;OK;https://www.planalto.gov.br/ccivil_03/leis/l8137.htm;46522
+Lei 8.213/1991 - Beneficios Previdenciarios;lei;8213;1991;OK;https://www.planalto.gov.br/ccivil_03/leis/l8213compilado.htm;222410
+Lei 8.245/1991 - Inquilinato;lei;8245;1991;OK;https://www.planalto.gov.br/ccivil_03/leis/l8245compilado.htm;79294
+Lei 8.443/1992 - Lei Organica do TCU;lei;8443;1992;OK;https://www.planalto.gov.br/ccivil_03/leis/l8443.htm;87728
+Lei 8.560/1992 - Investigacao de Paternidade;lei;8560;1992;OK;https://www.planalto.gov.br/ccivil_03/leis/l8560.htm;29903
+Lei 8.745/1993 - Contratacao temporaria federal;lei;8745;1993;OK;https://www.planalto.gov.br/ccivil_03/leis/l8745compilada.htm;59723
+Lei 8.958/1994 - Fundacoes de apoio;lei;8958;1994;OK;https://www.planalto.gov.br/ccivil_03/leis/l8958compilado.htm;52107
+Lei 9.029/1995 - Discriminacao no Trabalho;lei;9029;1995;OK;https://www.planalto.gov.br/ccivil_03/leis/l9029.htm;26355
+Lei 9.074/1995 - Concessoes e permissoes;lei;9074;1995;OK;https://www.planalto.gov.br/ccivil_03/leis/l9074compilada.htm;94574
+Lei 9.099/1995 - Juizados Especiais;lei;9099;1995;OK;https://www.planalto.gov.br/ccivil_03/leis/l9099.htm;69989
+Lei 9.278/1996 - Uniao Estavel;lei;9278;1996;OK;https://www.planalto.gov.br/ccivil_03/leis/l9278.htm;24845
+Lei 9.279/1996 - Propriedade Industrial;lei;9279;1996;OK;https://www.planalto.gov.br/ccivil_03/leis/l9279.htm;134699
+Lei 9.307/1996 - Arbitragem;lei;9307;1996;OK;https://www.planalto.gov.br/ccivil_03/leis/l9307.htm;55500
+Lei 9.434/1997 - Transplantes;lei;9434;1997;OK;https://www.planalto.gov.br/ccivil_03/leis/l9434compilado.htm;42560
+Lei 9.455/1997 - Tortura;lei;9455;1997;OK;https://www.planalto.gov.br/ccivil_03/leis/l9455.htm;26200
+Lei 9.507/1997 - Habeas Data;lei;9507;1997;OK;https://www.planalto.gov.br/ccivil_03/leis/l9507.htm;28881
+Lei 9.514/1997 - Alienacao fiduciaria de imoveis;lei;9514;1997;OK;https://www.planalto.gov.br/ccivil_03/leis/l9514.htm;114136
+Lei 9.601/1998 - Contrato por prazo determinado;lei;9601;1998;OK;https://www.planalto.gov.br/ccivil_03/leis/l9601.htm;37269
+Lei 9.605/1998 - Crimes Ambientais;lei;9605;1998;OK;https://www.planalto.gov.br/ccivil_03/leis/l9605.htm;90673
+Lei 9.608/1998 - Servico Voluntario;lei;9608;1998;OK;https://www.planalto.gov.br/ccivil_03/leis/l9608compilado.htm;23269
+Lei 9.613/1998 - Lavagem de Dinheiro;lei;9613;1998;OK;https://www.planalto.gov.br/ccivil_03/leis/l9613compilado.htm;68681
+Lei 9.637/1998 - Organizacoes Sociais;lei;9637;1998;OK;https://www.planalto.gov.br/ccivil_03/leis/l9637.htm;49214
+Lei 9.790/1999 - OSCIP;lei;9790;1999;OK;https://www.planalto.gov.br/ccivil_03/leis/l9790.htm;49331
+Lei 9.868/1999 - ADI e ADC;lei;9868;1999;OK;https://www.planalto.gov.br/ccivil_03/leis/l9868.htm;44057
+Lei 9.882/1999 - ADPF;lei;9882;1999;OK;https://www.planalto.gov.br/ccivil_03/leis/l9882.htm;29085

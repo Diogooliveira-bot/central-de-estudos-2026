@@ -1,0 +1,422 @@
+﻿Regime Jurídico e Princípios Administrativos
+DIREITO ADMINISTRATIVO · MÓDULO 01 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 01
+
+Apostila de estudo
+
+Regime jurídico e princípios administrativos
+
+Do regime jurídico-administrativo ao LIMPE e aos princípios reconhecidos pela doutrina e pela Lei 9.784/99.
+
+Base: PDF “1. Princípios Administrativos” · apoio: Lei 9.784/99 · legislação vigente conferida em fonte oficial.
+
+Como estudar este módulo
+
+Faça uma leitura ativa: primeiro entenda por que a Administração recebe prerrogativas e sofre restrições; depois encaixe cada princípio nessa lógica. Em prova, a banca costuma trocar a finalidade de um princípio pela de outro ou transformar uma regra relativa em absoluta.
+
+conceito→regra→efeito→exemplo→comparação→pegadinha
+
+SESSÃO 01
+
+Regime jurídico-administrativo: a lógica que vem antes dos princípios
+
+1. Entenda primeiro
+
+Regime jurídico é o conjunto de normas que disciplina uma relação. A Administração pode atuar sob regras predominantemente de direito público ou sob modelos de direito privado. A divisão é útil para a prova, mas a realidade é híbrida: mesmo quando a Administração usa formas privadas, ela não abandona por completo os limites constitucionais e administrativos.
+
+Regime de direito público | Regime de direito privado
+Predomina a verticalidade jurídica quando a lei confere prerrogativas. | Predomina a horizontalidade e a autonomia privada.
+Busca diretamente fins públicos indisponíveis. | Organiza relações patrimoniais e privadas em posição tendencialmente paritária.
+Há prerrogativas e sujeições especiais. | Não há, por regra, poderes públicos unilaterais típicos.
+Ex.: poder de polícia, desapropriação, certas prerrogativas contratuais. | Ex.: relações privadas em que o Estado atua sem prerrogativa pública específica.
+
+Vocabulário que a prova diferencia: “regime jurídico da Administração Pública” é expressão ampla, capaz de abranger incidências de direito público e de direito privado. “Regime jurídico-administrativo” designa o núcleo publicístico especial do Direito Administrativo.
+
+2. Regra
+
+O regime jurídico-administrativo combina dois polos: prerrogativas, que dão instrumentos diferenciados para a realização do interesse público, e sujeições, que limitam a liberdade estatal justamente porque o agente administra interesses que não lhe pertencem.
+
+regime jurídico-administrativo=prerrogativas+sujeições
+
+3. Como funciona na prática
+
+Quando a lei autoriza uma medida unilateral para proteger finalidade coletiva, aparece a face das prerrogativas. Quando exige concurso, licitação quando cabível, motivação, finalidade pública ou respeito a direitos, aparece a face das sujeições. O mesmo sistema que fortalece a Administração também a controla.
+
+4. Compare
+
+Supremacia do interesse público | Indisponibilidade do interesse público
+Explica prerrogativas conferidas por lei para realizar interesses coletivos. | Explica limites, deveres e a ideia de poder-dever.
+Olha para a posição da Administração perante o particular, quando a ordem jurídica autoriza tratamento diferenciado. | Olha para a posição do agente perante o interesse que administra: ele não é “dono” da coisa pública.
+Não é carta branca para esmagar direitos individuais. | Não proíbe toda negociação ou solução consensual; exige fundamento jurídico e preservação da finalidade pública.
+
+5. Como cai na prova
+
+• Troca de conceitos: dizer que prerrogativas decorrem da indisponibilidade e restrições decorrem da supremacia.
+• Absolutização: afirmar que o interesse público sempre prevalece, sem base normativa ou sem ponderação de direitos.
+• Confusão de expressões: tratar “regime jurídico da Administração” e “regime jurídico-administrativo” como sinônimos perfeitos.
+
+6. Pegadinha
+
+Interesse público primário ≠ simples interesse financeiro do Estado. A finalidade pública é voltada à coletividade e à ordem jurídica. A conveniência patrimonial da máquina estatal, isoladamente, não autoriza afastar direitos.
+
+7. O que decorar
+
+Prerrogativas ↔ supremacia. Sujeições ↔ indisponibilidade. Regime jurídico-administrativo = posição diferenciada com limites.
+
+8. O que levar para a prova
+
+Comece qualquer questão perguntando: “a alternativa está dando um poder especial à Administração ou impondo um dever/limite?” Essa pergunta identifica a lógica do regime antes mesmo de você nomear o princípio.
+
+9. Check da leitura
+
+• □ Consigo diferenciar regime público, regime privado e regime jurídico-administrativo.
+• □ Consigo explicar por que prerrogativa e sujeição coexistem.
+• □ Sei separar supremacia de indisponibilidade.
+
+SESSÃO 02
+
+Princípios expressos — LIMPE I: legalidade e impessoalidade
+
+1. Entenda primeiro
+
+O caput do art. 37 da Constituição traz o núcleo clássico dos princípios expressos aplicáveis à Administração direta e indireta de qualquer dos Poderes e de todos os entes federativos: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência — LIMPE. Eles convivem com outros princípios constitucionais, legais e reconhecidos pela doutrina e jurisprudência.
+
+Não existe hierarquia automática entre princípios. Em conflito aparente, a solução exige harmonização conforme a Constituição, a lei e o caso concreto.
+
+2. Regra — Legalidade
+
+Para o particular, a lógica geral é a liberdade: pode fazer o que a ordem jurídica não proíbe. Para a Administração, a atuação depende de competência e fundamento jurídico: o agente não cria para si um poder apenas porque a conduta “parece útil”. A legalidade administrativa deve ser lida em sentido amplo, integrada à juridicidade: lei, Constituição, princípios e demais normas válidas.
+
+Legalidade do particular | Legalidade administrativa
+Autonomia: liberdade dentro do que não é proibido. | Competência vinculada ao ordenamento: agir quando e como a ordem jurídica autoriza ou determina.
+Regra de liberdade. | Regra de competência e finalidade.
+O silêncio normativo tende a preservar liberdade privada. | O silêncio não cria, por si só, poder público para restringir direitos.
+
+Lei x regulamento: regulamentos detalham e executam a lei dentro do espaço jurídico permitido; não podem, como regra, inventar obrigação primária sem fundamento normativo competente.
+
+3. Como funciona na prática
+
+Se uma autoridade quer exigir documento, impor sanção ou restringir atividade, deve existir competência e fundamento jurídico. A boa intenção do gestor não substitui a legalidade. Ao mesmo tempo, “legalidade” não significa leitura mecânica de uma frase isolada: a Lei 9.784/99 manda atuar conforme “a lei e o Direito”.
+
+4. Compare — Impessoalidade
+
+A impessoalidade aparece em quatro leituras que se reforçam:
+
+Finalidadeo ato deve perseguir o fim público e o fim específico previsto pela norma.
+
+Isonomiasituações equivalentes devem receber tratamento objetivo, sem favorecimento arbitrário.
+
+Imputação ao órgãoa atuação funcional é atribuída à pessoa jurídica/órgão, não ao agente como realização pessoal.
+
+Imparcialidadeimpedimento, suspeição e critérios objetivos afastam interesse pessoal da decisão.
+
+A Constituição reforça essa lógica ao vedar que a publicidade oficial seja usada como promoção pessoal de autoridades ou servidores.
+
+5. Como cai na prova
+
+• Legalidade: “se não há proibição, a Administração pode fazer” — em regra, errado.
+• Impessoalidade: banca troca o princípio pela publicidade quando o caso é promoção pessoal; a publicidade é o meio, a proibição de personalização decorre fortemente da impessoalidade.
+• Finalidade: ato praticado por autoridade competente e formalmente correto pode ser inválido se usado para fim diverso do previsto.
+
+6. Pegadinha
+
+Legalidade não é sinônimo de reserva legal. Reserva legal pergunta se determinada matéria precisa ser disciplinada por lei em sentido formal. Legalidade administrativa pergunta se a atuação pública está juridicamente autorizada e conformada pelo ordenamento.
+
+7. O que decorar
+
+LIMPE. Particular = autonomia. Administração = competência/fundamento jurídico. Impessoalidade = finalidade + isonomia + imputação + imparcialidade.
+
+8. O que levar para a prova
+
+Em alternativa sobre agente público, substitua mentalmente “eu quero fazer” por “qual norma me dá competência e para qual finalidade?”. Isso elimina grande parte das afirmações incompatíveis com a legalidade.
+
+9. Check da leitura
+
+• □ Sei o LIMPE sem esforço.
+• □ Sei diferenciar legalidade privada e administrativa.
+• □ Consigo reconhecer as quatro dimensões da impessoalidade.
+
+SESSÃO 03
+
+Princípios expressos — LIMPE II: moralidade, publicidade e eficiência
+
+1. Entenda primeiro
+
+Esses três princípios controlam como a Administração decide, como torna sua atuação cognoscível e com que qualidade entrega resultados. A prova erra quando transforma eficiência em autorização para ignorar legalidade, ou publicidade em sinônimo de validade do ato.
+
+2. Regra — Moralidade
+
+Moralidade administrativa é um parâmetro jurídico de conduta: probidade, lealdade institucional, decoro e boa-fé. Não é “moral comum” variável ao gosto do examinador. Um ato pode cumprir uma formalidade legal e ainda assim ser inválido por desvio ético-jurídico, fraude de finalidade ou uso desleal da competência.
+
+Moralidade | Probidade
+Princípio constitucional amplo de correção ético-jurídica da atuação administrativa. | Ideia de integridade, honestidade e retidão no exercício da função.
+Abrange boa-fé, lealdade, finalidade e padrões institucionais de conduta. | Relaciona-se fortemente à moralidade, mas não deve ser tratada como rótulo idêntico em toda questão.
+
+3. Como funciona na prática — Publicidade
+
+A publicidade possui ao menos duas funções: dar conhecimento oficial aos atos nos casos em que a divulgação é juridicamente necessária e viabilizar transparência e controle social. O sigilo é excepcional e depende de fundamento constitucional ou legal.
+
+Publicidade | Transparência
+Princípio constitucional; envolve divulgação oficial e cognoscibilidade dos atos. | Expressão mais ampla de abertura, acesso e compreensão da atuação estatal.
+Pode ser requisito de eficácia/oponibilidade em hipóteses previstas, não “fonte automática de validade”. | Pode ser ativa (Administração divulga) ou passiva (responde a pedido), conforme o regime de acesso à informação.
+
+4. Compare — Eficiência
+
+Eficiência exige atuação com qualidade, produtividade, economicidade e foco em resultados públicos. Incide tanto sobre o desempenho dos agentes quanto sobre a organização administrativa. Resultado bom obtido por meio ilegal continua juridicamente defeituoso.
+
+Fórmula de prova: eficiência melhora o modo de cumprir a ordem jurídica; não suspende os demais princípios.
+
+5. Como cai na prova
+
+• Afirma que publicidade é absoluta e elimina qualquer sigilo — errado.
+• Afirma que falta de publicação sempre torna o ato inexistente ou inválido — generalização indevida; a consequência depende do regime do ato.
+• Afirma que eficiência autoriza “flexibilizar” legalidade — errado.
+• Confunde moralidade jurídica com opinião moral subjetiva — errado.
+
+6. Pegadinha
+
+Publicidade do ato ≠ propaganda do agente. Comunicação institucional deve informar, educar ou orientar; a máquina pública não pode ser convertida em vitrine pessoal.
+
+7. O que decorar
+
+Moralidade = padrão jurídico de probidade/decoro/boa-fé. Publicidade = divulgação + controle, com sigilo excepcional. Eficiência = qualidade/resultados dentro da legalidade.
+
+8. O que levar para a prova
+
+Se a alternativa usa palavras como “sempre”, “nunca”, “em qualquer hipótese” ou “independentemente de previsão legal”, desconfie: princípios administrativos raramente funcionam como comandos absolutos isolados.
+
+9. Check da leitura
+
+• □ Sei diferenciar moralidade jurídica de moral subjetiva.
+• □ Sei que publicidade e transparência se relacionam, mas não são conceitos idênticos.
+• □ Sei que eficiência não corrige ilegalidade.
+
+SESSÃO 04
+
+Vetores do regime: supremacia, indisponibilidade, razoabilidade e proporcionalidade
+
+1. Entenda primeiro
+
+Supremacia e indisponibilidade explicam a estrutura do regime jurídico-administrativo. Razoabilidade e proporcionalidade controlam o modo como os poderes são exercidos, sobretudo quando existe margem de escolha administrativa.
+
+2. Regra
+
+Supremacia: determinadas prerrogativas públicas permitem tratamento jurídico diferenciado quando a lei o autoriza para satisfazer finalidade coletiva. Indisponibilidade: o agente exerce competências em nome da coletividade; por isso, poderes públicos são em grande medida poderes-deveres, não vantagens pessoais disponíveis.
+
+3. Como funciona na prática
+
+A Lei 9.784/99 traduz a indisponibilidade ao vedar, como critério do processo federal, a renúncia total ou parcial de poderes ou competências, salvo autorização legal. Ao mesmo tempo, a própria evolução do Direito Administrativo admite consensualidade quando juridicamente prevista e compatível com a finalidade pública.
+
+4. Compare — Razoabilidade x Proporcionalidade
+
+Razoabilidade | Proporcionalidade
+Exige coerência, racionalidade e adequação da decisão ao senso jurídico de equilíbrio. | Analisa a relação entre meio empregado e fim público.
+Pergunta: “a decisão faz sentido dentro do caso e do sistema?” | Pergunta em sequência: “é adequada? necessária? o benefício justifica o custo/restrição?”
+Evita escolhas arbitrárias, extravagantes ou incompatíveis com a finalidade. | Evita excesso e medidas mais gravosas do que o necessário.
+
+1 · Adequaçãoo meio é apto a contribuir para o fim?
+
+2 · Necessidadeexiste meio igualmente eficaz e menos gravoso?
+
+3 · Proporcionalidade estritaas vantagens justificam as desvantagens impostas?
+
+A Lei 9.784/99 positivou a proporcionalidade no processo administrativo federal ao exigir adequação entre meios e fins e vedar obrigações, restrições e sanções superiores ao estritamente necessário ao interesse público.
+
+Dupla face: a proporcionalidade não serve apenas para coibir excesso; no campo dos direitos fundamentais, também pode exigir proteção estatal suficiente contra proteção deficiente.
+
+5. Como cai na prova
+
+• “Razoabilidade e proporcionalidade só servem para atos administrativos” — falso; são parâmetros de controle jurídico mais amplos.
+• “O Judiciário pode substituir livremente a escolha administrativa por outra que considere melhor” — falso; o controle incide sobre juridicidade, finalidade, proporcionalidade etc., não sobre simples preferência de mérito.
+• “Necessidade” é confundida com “adequação”: adequação pergunta se funciona; necessidade pergunta se há alternativa menos gravosa.
+
+6. Pegadinha
+
+O reconhecimento de discricionariedade não cria zona imune a controle. Discricionariedade permanece limitada por competência, finalidade, motivos juridicamente relevantes, razoabilidade, proporcionalidade e demais princípios.
+
+7. O que decorar
+
+A-N-P: Adequação → Necessidade → Proporcionalidade em sentido estrito. Supremacia dá ferramentas; indisponibilidade impede tratá-las como propriedade do agente.
+
+8. O que levar para a prova
+
+Quando aparecer uma sanção ou restrição muito pesada, faça a pergunta da proporcionalidade: “era apta, indispensável e equilibrada?” Quando aparecer renúncia livre de competência, lembre da indisponibilidade.
+
+9. Check da leitura
+
+• □ Sei os três subtestes da proporcionalidade na ordem.
+• □ Consigo explicar por que discricionariedade não significa arbitrariedade.
+• □ Sei relacionar indisponibilidade a poder-dever.
+
+SESSÃO 05
+
+Controle, motivação, continuidade, contraditório e especialidade
+
+1. Entenda primeiro
+
+Este bloco reúne princípios que organizam controle e garantia: quem fiscaliza entidades, como a Administração corrige os próprios atos, como fundamenta decisões e como protege participação e continuidade da atividade administrativa.
+
+2. Regra — Tutela x Autotutela
+
+Tutela / controle finalístico | Autotutela
+Controle da Administração Direta sobre entidades da Indireta, nos limites previstos no ordenamento, para verificar aderência às finalidades institucionais. | Poder-dever de a Administração controlar os próprios atos.
+Há vinculação, não subordinação hierárquica geral. | Atos ilegais: anulação. Atos válidos, porém inconvenientes ou inoportunos, quando revogáveis: revogação.
+Conecta-se ao princípio da especialidade. | Na esfera federal, Lei 9.784/99, arts. 53 a 55.
+
+Lei 9.784/99: a Administração deve anular ato com vício de legalidade e pode revogar ato por conveniência ou oportunidade, respeitados direitos adquiridos. Para atos favoráveis, a lei federal prevê decadência de cinco anos para anulação, salvo comprovada má-fé.
+
+3. Como funciona na prática — Motivação
+
+Motivar é indicar os pressupostos de fato e os fundamentos jurídicos que sustentam a decisão, permitindo compreensão e controle. A Lei 9.784/99 enumera hipóteses em que a motivação é obrigatória e exige que ela seja explícita, clara e congruente. A lei admite motivação por remissão a pareceres, informações ou decisões anteriores, desde que seus fundamentos passem a integrar o ato.
+
+4. Compare — Continuidade, contraditório e especialidade
+
+Continuidade
+
+Atividades e serviços públicos relevantes devem ser organizados para não sofrer interrupções arbitrárias. O princípio não é absoluto; interrupções juridicamente admitidas dependem do regime legal aplicável.
+
+Contraditório e ampla defesa
+
+Contraditório assegura ciência e possibilidade real de participação; ampla defesa assegura meios, alegações, provas e recursos cabíveis. Incidem também no processo administrativo quando houver litígio ou acusação/sanção.
+
+Especialidade
+
+Entidades administrativas são criadas ou autorizadas para finalidades específicas. Sua autonomia não elimina o controle finalístico previsto em lei.
+
+5. Como cai na prova
+
+• “Administração Direta e entidade da Indireta têm relação hierárquica” — em regra, errado; há vinculação e tutela nos limites legais.
+• “Autotutela = controle da Direta sobre a Indireta” — errado; isso é tutela/controle finalístico.
+• “Toda motivação deve repetir integralmente os fundamentos no próprio ato” — errado; a Lei 9.784/99 admite fundamentação por referência, nas condições do art. 50, §1º.
+• “Continuidade impede qualquer interrupção” — absoluto e, portanto, suspeito.
+
+6. Pegadinha
+
+Anular ≠ revogar. Anulação combate ilegalidade; revogação é juízo de mérito sobre ato válido e revogável. A Administração não “revoga ato ilegal” para consertar vício de legalidade.
+
+7. O que decorar
+
+Tutela = Direta → Indireta, finalidades, sem hierarquia geral. Autotutela = Administração → próprios atos. Anulação = ilegalidade. Revogação = conveniência/oportunidade.
+
+8. O que levar para a prova
+
+Ao ler “controle”, identifique primeiro o objeto: se são os próprios atos, pense autotutela; se é a entidade vinculada, pense tutela e especialidade.
+
+9. Check da leitura
+
+• □ Não confundo tutela e autotutela.
+• □ Não confundo anulação e revogação.
+• □ Sei o núcleo da motivação, do contraditório e da especialidade.
+
+SESSÃO 06
+
+Segurança jurídica, confiança, boa-fé e princípios complementares
+
+1. Entenda primeiro
+
+O Direito Administrativo precisa permitir correção de ilegalidades sem transformar a relação Estado–cidadão em instabilidade permanente. Daí a importância da segurança jurídica, da proteção da confiança e da boa-fé.
+
+2. Regra
+
+Segurança jurídica | Proteção da confiança
+Dimensão objetiva: estabilidade, previsibilidade e coerência do ordenamento e da atuação administrativa. | Dimensão subjetiva: proteção de expectativas legítimas criadas pela própria atuação estatal, nos limites jurídicos.
+Na Lei 9.784/99 aparece, entre outros pontos, no art. 2º e na vedação à aplicação retroativa de nova interpretação administrativa. | Ajuda a explicar por que mudanças administrativas não podem ignorar, automaticamente, situações legitimamente consolidadas.
+
+Boa-fé exige lealdade, coerência e honestidade de comportamento tanto da Administração quanto do administrado. Na Lei 9.784/99, ela aparece expressamente entre os padrões éticos de atuação e também como dever do administrado.
+
+3. Como funciona na prática
+
+A decadência quinquenal do art. 54 da Lei 9.784/99, para a Administração Federal anular atos que produziram efeitos favoráveis, salvo comprovada má-fé, é uma manifestação concreta da segurança jurídica. A regra não deve ser transportada mecanicamente para qualquer situação fora de seu campo normativo.
+
+4. Compare — expressos x implícitos/reconhecidos
+
+Expressos no art. 37, caput, CF | Outros relevantes no M1
+Legalidade · Impessoalidade · Moralidade · Publicidade · Eficiência. | Finalidade, motivação, razoabilidade, proporcionalidade, ampla defesa, contraditório, segurança jurídica, interesse público, supremacia, indisponibilidade, autotutela, tutela, especialidade, continuidade, boa-fé etc.
+Expressos constitucionalmente no dispositivo-base. | Podem ter fonte constitucional, legal, doutrinária ou jurisprudencial; vários são expressos na Lei 9.784/99.
+
+5. Como cai na prova — mapa complementar
+
+Presunção de legitimidade/veracidadeatos administrativos nascem com presunção relativa, que admite prova em contrário.
+
+Hierarquiaorganiza relações internas de subordinação; não existe hierarquia entre entes federativos nem, em regra, entre Direta e Indireta.
+
+Sindicabilidadeatividade administrativa não é imune a controle; discricionariedade não exclui exame de juridicidade.
+
+Precauçãoem cenários de risco relevante, a atuação preventiva pode ser exigida pelo regime jurídico, sem autorizar restrições arbitrárias.
+
+Intranscendência das sançõesa sanção deve atingir o responsável juridicamente alcançado, evitando transferências automáticas a quem não praticou a conduta.
+
+Consensualidadeacordos e soluções negociadas podem servir ao interesse público quando houver suporte jurídico; indisponibilidade não significa proibição absoluta de consenso.
+
+Responsividadereforça dever de resposta, prestação de contas e aderência da Administração às necessidades legitimamente apresentadas.
+
+Subsidiariedadevetor doutrinário de baixa prioridade neste módulo; use com cautela e conforme o contexto normativo da questão.
+
+6. Pegadinha
+
+“Implícito” não significa “sem base jurídica”. Muitos princípios chamados de implícitos no art. 37 aparecem expressamente em leis, em outros dispositivos constitucionais ou em construção consolidada do sistema.
+
+7. O que decorar
+
+Segurança jurídica = estabilidade objetiva. Confiança = expectativa legítima do administrado. Boa-fé = lealdade recíproca. Presunção de legitimidade = relativa. Hierarquia ≠ vinculação.
+
+8. O que levar para a prova
+
+Não tente decorar uma lista infinita de princípios no mesmo nível. Priorize: LIMPE → supremacia/indisponibilidade → razoabilidade/proporcionalidade → tutela/autotutela → motivação → segurança/confiança/boa-fé. O restante funciona como mapa complementar.
+
+9. Check da leitura
+
+• □ Sei diferenciar segurança jurídica e proteção da confiança.
+• □ Sei que a presunção de legitimidade é relativa.
+• □ Sei separar princípios centrais dos complementares.
+
+Como os princípios conversam entre si
+
+Situação | Princípios que mais ajudam a resolver | Raciocínio
+Sanção excessiva | Legalidade + proporcionalidade + razoabilidade | A competência existe? A medida é adequada, necessária e equilibrada?
+Favorecimento pessoal | Impessoalidade + moralidade + finalidade | A decisão atende critério objetivo e fim público ou interesse particular?
+Ato sem fundamentos | Motivação + publicidade/transparência + controle | É possível saber fatos e fundamentos e controlar a decisão?
+Entidade da Indireta desviando da finalidade | Especialidade + tutela | O controle finalístico está sendo exercido nos limites legais?
+Administração corrige ato próprio | Autotutela + legalidade + segurança jurídica | É ilegalidade ou mérito? Há limite temporal/proteção de confiança aplicável?
+
+O que decorar
+
+LIMPE: Legalidade · Impessoalidade · Moralidade · Publicidade · Eficiência.
+
+Regime: prerrogativas ↔ supremacia | sujeições ↔ indisponibilidade.
+
+Proporcionalidade: adequação → necessidade → proporcionalidade em sentido estrito.
+
+Controle: tutela = Direta sobre Indireta nos limites legais | autotutela = próprios atos.
+
+Autotutela: ilegalidade → anulação | mérito → revogação, quando cabível.
+
+Segurança: objetiva = segurança jurídica | subjetiva = confiança legítima.
+
+Artigos para ler
+
+Leitura curta, de alto retorno. Não substitui a teoria; serve para fixar a literalidade que a banca pode copiar.
+
+CF, art. 37, caput e §1ºLIMPE e vedação à promoção pessoal na publicidade oficial.Lei 9.784/99, art. 2ºPrincípios e critérios do processo administrativo federal.Lei 9.784/99, art. 50Hipóteses e forma da motivação.Lei 9.784/99, arts. 53 a 55Anulação, revogação, decadência e convalidação.
+
+REVISÃO FINAL · 5–10 MIN
+
+Se você lembrar disto, entra forte nas questões
+
+• Regime jurídico-administrativo não é só privilégio: é prerrogativa + sujeição.
+• Supremacia explica instrumentos diferenciados; indisponibilidade explica limites e poderes-deveres.
+• LIMPE está no art. 37, caput, e alcança Administração direta e indireta de todos os Poderes e entes.
+• Legalidade administrativa: o agente precisa de competência/fundamento jurídico; não vale “não é proibido, então posso”.
+• Impessoalidade: finalidade, isonomia, imputação e imparcialidade; promoção pessoal é incompatível.
+• Moralidade é jurídica; publicidade admite sigilo fundamentado; eficiência não vence legalidade.
+• Proporcionalidade: adequação → necessidade → ponderação estrita.
+• Tutela não é hierarquia; autotutela corrige os próprios atos.
+• Anulação enfrenta ilegalidade; revogação enfrenta conveniência/oportunidade de ato válido e revogável.
+• Segurança jurídica, confiança e boa-fé impedem instabilidade e comportamento estatal contraditório sem fundamento.
+
+Último alerta de prova: desconfie de alternativas absolutas. O examinador costuma errar pelo excesso: “sempre”, “jamais”, “sem exceção”, “independentemente de lei”, “todo ato”, “qualquer situação”.
+
+□ Faça agora uma rodada curta de questões e registre o percentual no TEC já existente deste tópico. Este bloco não altera nem marca automaticamente seu progresso.
+
+10 Questões Internas — Conteúdo Completo

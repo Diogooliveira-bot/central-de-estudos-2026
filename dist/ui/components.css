@@ -1,0 +1,133 @@
+/* BASE COMPLETA — componentes reutilizáveis */
+html.bc-ui-v1 .bc-ui-icon{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html.bc-ui-v1 .bc-button{
+  min-height:44px;
+  padding:10px 16px;
+  border:1px solid transparent;
+  border-radius:var(--bc-radius-md);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:transparent;
+  color:var(--bc-color-secondary);
+  font-size:14px;
+  line-height:20px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background var(--bc-transition),border-color var(--bc-transition),color var(--bc-transition),box-shadow var(--bc-transition),transform 80ms ease;
+}
+html.bc-ui-v1 .bc-button--primary{background:var(--bc-color-primary);color:#fff}
+html[data-bc-theme="dark"].bc-ui-v1 .bc-button--primary,
+html[data-bc-theme="oled"].bc-ui-v1 .bc-button--primary{color:#062126}
+html.bc-ui-v1 .bc-button--secondary{background:var(--bc-color-surface);border-color:var(--bc-color-border-interactive);color:var(--bc-color-secondary)}
+html.bc-ui-v1 .bc-button--ghost{background:transparent;color:var(--bc-color-secondary)}
+html.bc-ui-v1 .bc-button--danger{background:var(--bc-color-error);color:#fff}
+html.bc-ui-v1 .bc-button:hover{background:var(--bc-color-bg-secondary)}
+html.bc-ui-v1 .bc-button--primary:hover{background:color-mix(in srgb,var(--bc-color-primary) 90%,#000)}
+html.bc-ui-v1 .bc-button:active{transform:translateY(1px)}
+html.bc-ui-v1 .bc-button:disabled,
+html.bc-ui-v1 .bc-button[aria-disabled="true"]{
+  opacity:.58;
+  cursor:not-allowed;
+  box-shadow:none;
+  transform:none;
+}
+html.bc-ui-v1 .bc-button .bc-ui-icon{flex:0 0 auto}
+html.bc-ui-v1 .bc-icon-button{width:44px;height:44px;padding:0}
+
+html.bc-ui-v1 .bc-card{
+  background:var(--bc-color-surface);
+  border:1px solid var(--bc-color-border);
+  border-radius:var(--bc-radius-lg);
+  padding:24px;
+  box-shadow:none;
+}
+html.bc-ui-v1 .bc-card--interactive{cursor:pointer;transition:border-color var(--bc-transition),background var(--bc-transition),box-shadow var(--bc-transition)}
+@media(hover:hover){
+  html.bc-ui-v1 .bc-card--interactive:hover{border-color:var(--bc-color-primary);background:var(--bc-color-surface-elevated)}
+}
+
+html.bc-ui-v1 .bc-badge{
+  min-height:24px;
+  padding:3px 9px;
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  background:color-mix(in srgb,var(--bc-color-accent) 11%,var(--bc-color-surface));
+  color:var(--bc-color-accent);
+  font-size:12px;
+  line-height:18px;
+  font-weight:600;
+}
+html.bc-ui-v1 .bc-badge--success{background:color-mix(in srgb,var(--bc-color-success) 10%,var(--bc-color-surface));color:var(--bc-color-success)}
+html.bc-ui-v1 .bc-badge--warning{background:color-mix(in srgb,var(--bc-color-warning) 10%,var(--bc-color-surface));color:var(--bc-color-warning)}
+html.bc-ui-v1 .bc-badge--error{background:color-mix(in srgb,var(--bc-color-error) 10%,var(--bc-color-surface));color:var(--bc-color-error)}
+
+html.bc-ui-v1 .bc-progress{height:8px;border-radius:999px;background:color-mix(in srgb,var(--bc-color-border) 68%,transparent);overflow:hidden}
+html.bc-ui-v1 .bc-progress>span{display:block;height:100%;border-radius:inherit;background:var(--bc-color-accent);transition:width 180ms ease}
+
+html.bc-ui-v1 .bc-input,html.bc-ui-v1 .bc-select{
+  width:100%;
+  min-height:44px;
+  padding:0 12px;
+  border:1px solid var(--bc-color-border-interactive);
+  border-radius:var(--bc-radius-md);
+  background:var(--bc-color-surface);
+  color:var(--bc-color-text);
+  font-size:16px;
+}
+html.bc-ui-v1 textarea.bc-input{min-height:88px;padding:12px;resize:vertical}
+html.bc-ui-v1 .bc-field-label{display:block;margin-bottom:8px;color:var(--bc-color-text);font-size:14px;line-height:20px;font-weight:600}
+
+html.bc-ui-v1 .bc-tabs{display:flex;gap:22px;border-bottom:1px solid var(--bc-color-border);overflow:auto}
+html.bc-ui-v1 .bc-tab{position:relative;min-height:44px;padding:0 2px;border:0;background:transparent;color:var(--bc-color-text-secondary);font-size:14px;line-height:20px;font-weight:600;cursor:pointer;transition:color var(--bc-transition),background var(--bc-transition)}
+@media(hover:hover){html.bc-ui-v1 .bc-tab:hover{color:var(--bc-color-text)}}
+html.bc-ui-v1 .bc-tab.active,html.bc-ui-v1 .bc-tab[aria-selected="true"]{color:var(--bc-color-text)}
+html.bc-ui-v1 .bc-tab.active::after,html.bc-ui-v1 .bc-tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--bc-color-primary);border-radius:3px 3px 0 0}
+
+html.bc-ui-v1 .bc-accordion{background:var(--bc-color-surface);border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-lg);overflow:hidden}
+html.bc-ui-v1 .bc-accordion-header{min-height:56px;transition:background var(--bc-transition),color var(--bc-transition)}
+html.bc-ui-v1 .bc-accordion-header:hover{background:var(--bc-color-surface-elevated)}
+
+html.bc-ui-v1 .bc-subject-card{min-height:154px}
+html.bc-ui-v1 .bc-module-card{border-radius:var(--bc-radius-lg)}
+
+html.bc-ui-v1 .bc-breadcrumb{color:var(--bc-color-text-secondary);font-size:14px;line-height:21px}
+html.bc-ui-v1 .bc-empty-state{min-height:112px;padding:32px;display:grid;place-items:center;text-align:center;color:var(--bc-color-text-secondary);line-height:1.5}
+html.bc-ui-v1 .bc-divider{height:1px;background:var(--bc-color-border);margin:16px 0}
+
+html.bc-ui-v1 .bc-modal-surface{
+  width:min(560px,100%);
+  max-height:90dvh;
+  overflow:auto;
+  padding:24px;
+  background:var(--bc-color-surface);
+  border:1px solid var(--bc-color-border);
+  border-radius:var(--bc-radius-modal);
+  box-shadow:var(--bc-shadow-elevated);
+}
+
+@media(max-width:639px){
+  html.bc-ui-v1 .bc-card{padding:16px}
+  html.bc-ui-v1 .bc-button{min-height:44px}
+  html.bc-ui-v1 .bc-modal-surface{padding:16px}
+}
+html.bc-ui-v1 .bc-stat-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+html.bc-ui-v1 .bc-stat{min-width:0}
+html.bc-ui-v1 .bc-checkbox-target{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+}
+html.bc-ui-v1 .bc-checkbox-target>input[type="checkbox"]{
+  width:20px;
+  height:20px;
+  margin:0;
+  accent-color:var(--bc-color-primary);
+}
+@media(max-width:1023px){
+  html.bc-ui-v1 .bc-stat-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

@@ -1,0 +1,48 @@
+/* Base Completa — área Questões (banco de questões inéditas). Usa as cores do tema da Central. */
+body.bcqa-open{overflow:hidden}
+.bcqa-overlay{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;background:rgba(10,20,35,.62);padding:14px;font-family:Inter,system-ui,sans-serif}
+.bcqa-dialog{width:min(880px,100%);height:min(94vh,980px);display:flex;flex-direction:column;overflow:hidden;background:var(--panel,#fff);color:var(--text,#1f3a52);border:1px solid var(--line,#dce7ee);border-radius:14px;box-shadow:0 24px 70px rgba(5,15,30,.35)}
+.bcqa-dialog>header{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line,#dce7ee)}
+.bcqa-dialog>header .bcqa-title{flex:1;min-width:0}
+.bcqa-dialog>header b{display:block;font-size:16px;line-height:1.3}
+.bcqa-dialog>header small{display:block;font-size:12px;color:var(--muted,#667e8d);margin-top:2px}
+.bcqa-btn{border:1px solid var(--line,#cfe0ea);border-radius:8px;background:var(--panel2,#f3f8fb);color:var(--text,#24516e);padding:8px 13px;font:700 13px/1.3 inherit;cursor:pointer}
+.bcqa-btn:hover{filter:brightness(.97)}
+.bcqa-btn:focus-visible,.bcqa-option:focus-visible,.bcqa-card:focus-visible{outline:2px solid var(--purple,#4f8fb8);outline-offset:2px}
+.bcqa-x{font-size:20px;line-height:1;padding:5px 11px}
+.bcqa-body{padding:18px;overflow-y:auto;min-height:0;flex:1}
+.bcqa-intro{margin:0 0 14px;color:var(--muted,#5f7889);font-size:14px;line-height:1.55}
+.bcqa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.bcqa-card{display:flex;flex-direction:column;gap:6px;text-align:left;width:100%;padding:14px;border:1px solid var(--line,#dce7ee);border-radius:11px;background:var(--panel2,#f7fafc);color:inherit;cursor:pointer;font:inherit}
+.bcqa-card:hover{border-color:var(--purple,#7fb0cc)}
+.bcqa-card b{font-size:14px;line-height:1.35}
+.bcqa-card small{font-size:12px;color:var(--muted,#667e8d)}
+.bcqa-card[disabled]{opacity:.55;cursor:default}
+.bcqa-bar{height:5px;background:var(--line,#e3edf2);border-radius:5px;overflow:hidden}
+.bcqa-bar i{display:block;height:100%;width:0;background:var(--green,#3a9d6e);transition:width .2s}
+.bcqa-stats{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:0 0 14px;font-size:13px;color:var(--muted,#5f7889)}
+.bcqa-q{padding:18px 0;border-top:1px solid var(--line,#dce7ee)}
+.bcqa-q:first-of-type{border-top:0}
+.bcqa-meta{letter-spacing:.06em;font-size:11px;font-weight:700;color:var(--muted,#57819b);margin:0 0 8px}
+.bcqa-q h3{font:700 16px/1.55 inherit;margin:0 0 13px;white-space:pre-line}
+.bcqa-options{display:grid;gap:8px}
+.bcqa-option{display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;padding:11px 13px;border:1px solid var(--line,#dae6ec);border-radius:9px;background:transparent;color:inherit;cursor:pointer;font:400 14px/1.55 inherit}
+.bcqa-option b{flex:0 0 22px;font-weight:750;color:var(--muted,#517895)}
+.bcqa-option:not(:disabled):hover{border-color:var(--purple,#81b1ce)}
+.bcqa-option:disabled{cursor:default;opacity:1}
+.bcqa-option.correct{border-color:var(--green,#4aa37b);background:rgba(58,157,110,.13)}
+.bcqa-option.wrong{border-color:var(--red,#c46a6a);background:rgba(196,106,106,.13)}
+.bcqa-feedback{margin-top:14px;padding:12px 15px;border-left:3px solid var(--purple,#9ac0cf);background:var(--panel2,#f7fafc);font-size:13.5px;line-height:1.6;border-radius:0 8px 8px 0}
+.bcqa-feedback strong{display:block;margin-bottom:5px}
+.bcqa-feedback .bcqa-base{display:block;margin-top:8px;font-size:12px;color:var(--muted,#667e8d)}
+.bcqa-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.bcqa-result{margin:6px 0 18px;padding:14px 16px;border:1px solid var(--line,#dce7ee);border-radius:11px;background:var(--panel2,#f7fafc)}
+.bcqa-result b{display:block;font-size:15px;margin-bottom:4px}
+.bcqa-empty{padding:26px 6px;color:var(--muted,#667e8d);text-align:center}
+.bcqa-module-card{display:flex;align-items:center;gap:13px;padding:14px 16px;margin:12px 0;border:1px solid var(--line,#dce7ee);border-radius:12px;background:var(--panel2,#f7fafc)}
+.bcqa-module-card .bcqa-mc-icon{flex:0 0 38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(79,143,184,.15);font-size:19px}
+.bcqa-module-card .bcqa-mc-copy{flex:1;min-width:0}
+.bcqa-module-card span.bcqa-mc-tag{display:block;font-size:11px;letter-spacing:.06em;font-weight:700;color:var(--muted,#57819b)}
+.bcqa-module-card h4{margin:2px 0 2px;font-size:15px}
+.bcqa-module-card p{margin:0;font-size:12.5px;color:var(--muted,#667e8d)}
+@media(max-width:640px){.bcqa-overlay{padding:0}.bcqa-dialog{height:100%;max-height:100dvh;border-radius:0;border:0}.bcqa-dialog>header{padding:11px 13px}.bcqa-body{padding:13px}.bcqa-q h3{font-size:15px}.bcqa-option{font-size:13.5px;padding:10px}.bcqa-module-card{flex-wrap:wrap}.bcqa-module-card .bcqa-btn{width:100%}}

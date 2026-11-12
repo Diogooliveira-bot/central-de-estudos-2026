@@ -1,0 +1,54 @@
+/* Base Completa — cabeçalho das ferramentas (Lei em Dia e Vade Mecum) igual ao da Central:
+   barra azul-marinho, "BASE COMPLETA" em maiúsculas e o nome da ferramenta em verde-água.
+   Na Lei em Dia, a barra de retorno e o cabeçalho ficam unidos, parecendo uma barra só.
+   Só apresentação: botões, links e ações continuam os mesmos. */
+:root { --bc-tool-navy: #08283b; --bc-tool-ink: #e9f9ff; --bc-tool-accent: #10c9c1; }
+
+/* Lei em Dia: barra "← Voltar à Central" (ui/tool-navigation.js) + cabeçalho .filter-topbar */
+.central-tool-navigation {
+  background: var(--bc-tool-navy) !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 8px 16px 0 !important;
+}
+.central-tool-navigation a {
+  color: #bfe9ef !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, .18) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  font: 650 13px/1 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  padding: 8px 12px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+}
+.central-tool-navigation a:hover, .central-tool-navigation a:focus-visible { color: #fff !important; border-color: rgba(255, 255, 255, .4) !important; }
+header.filter-topbar, .vm-header {
+  background: var(--bc-tool-navy) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+  color: var(--bc-tool-ink) !important;
+}
+header.filter-topbar .brand strong, .vm-header .vm-brand strong {
+  color: var(--bc-tool-ink) !important;
+  font: 800 16px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  letter-spacing: .05em !important;
+  text-transform: uppercase !important;
+}
+header.filter-topbar .brand span, .vm-header .vm-brand small {
+  color: var(--bc-tool-accent) !important;
+  font: 600 11px/1.3 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  margin-top: 3px !important;
+}
+header.filter-topbar .sync-indicator { color: #9fc3cc !important; }
+header.filter-topbar :is(.header-action, .theme-toggle),
+.vm-header :is(button:not(.vm-brand), .vm-tool, .vm-icon-button) {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, .22) !important;
+  color: var(--bc-tool-ink) !important;
+}
+header.filter-topbar :is(.header-action, .theme-toggle):hover,
+.vm-header :is(button:not(.vm-brand), .vm-tool, .vm-icon-button):hover { border-color: rgba(255, 255, 255, .45) !important; }
+.vm-header :is(input, .vm-search input) { background: rgba(255, 255, 255, .96) !important; color: #12344d !important; }
+.vm-header .vm-save { color: #9fc3cc !important; }
+/* Botões só com ícone (lua do tema, A−, A+) com a mesma largura. */
+.vm-header :is(button:not(.vm-brand), .vm-tool, .vm-icon-button) { min-width: 40px !important; justify-content: center !important; }

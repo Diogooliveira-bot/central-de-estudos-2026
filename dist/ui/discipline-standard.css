@@ -1,0 +1,527 @@
+/* Direito Civil is the shared visual reference for every discipline. */
+html.bc-ui-v1 #subjects { --ds-accent:var(--bc-color-success); display:grid; gap:16px; }
+html.bc-ui-v1 #subjects .bc-discipline-kit { display:none; }
+html.bc-ui-v1 #subjects .bc-civil-legacy-intro.ds-course-intro { display:block!important; }
+html.bc-ui-v1 #subjects :is(.ptn-intro,.cpp-course-top) { display:none; }
+html.bc-ui-v1 #subjects .ds-course-intro { padding:20px!important; border:1px solid var(--bc-color-border); border-radius:12px; background:var(--bc-color-surface-elevated); margin:0 0 16px; }
+html.bc-ui-v1 #subjects .ds-course-intro h3 { margin:0; font-size:20px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects .ds-course-intro p { margin:6px 0 0; font-size:14px!important; line-height:1.6!important; color:var(--bc-color-text-secondary); }
+html.bc-ui-v1 #subjects :is(.cf-modules,.civil-master,.cpp-course) { display:grid; gap:12px; }
+html.bc-ui-v1 #subjects .ds-module { border:1px solid var(--bc-color-border)!important; border-radius:14px!important; background:var(--bc-color-surface)!important; overflow:hidden; margin:0 0 12px; scroll-margin-top:140px; }
+html.bc-ui-v1 #subjects .ds-module.open { border-color:var(--bc-color-border-interactive)!important; }
+html.bc-ui-v1 #subjects .ds-module-head { width:100%; min-height:76px; height:auto!important; display:grid!important; grid-template-columns:92px minmax(0,1fr) auto 24px!important; align-items:center; gap:16px!important; padding:18px 20px!important; border:0!important; border-radius:0!important; background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important; text-align:left; cursor:pointer; }
+html.bc-ui-v1 #subjects .ds-module-head:hover { background:var(--bc-color-surface-elevated)!important; }
+html.bc-ui-v1 #subjects :is(.civil-module-num,.cf-module-no,.cpp-num) { font-size:12px!important; line-height:1.5!important; color:var(--bc-color-text-secondary)!important; font-weight:700; white-space:normal!important; }
+html.bc-ui-v1 #subjects :is(.civil-module-title,.cf-module-title,.cpp-mod-title,.topic-title) { min-width:0; font-size:16px!important; line-height:1.45!important; font-weight:700!important; color:var(--bc-color-text)!important; white-space:normal!important; overflow-wrap:anywhere; }
+html.bc-ui-v1 #subjects :is(.civil-module-title b,.cpp-mod-title b) { font-size:16px!important; line-height:1.45!important; }
+html.bc-ui-v1 #subjects :is(.civil-module-title small,.cpp-mod-title small) { display:block; font-size:13px!important; line-height:1.5!important; font-weight:400; color:var(--bc-color-text-secondary)!important; margin-top:4px; }
+html.bc-ui-v1 #subjects :is(.civil-module-state,.cf-module-stat,.cpp-mpct) { font-size:13px!important; line-height:1.5!important; color:var(--ds-accent)!important; white-space:normal!important; text-align:right; max-width:170px; }
+html.bc-ui-v1 #subjects .civil-pct { font-size:16px!important; }
+html.bc-ui-v1 #subjects .csp-stage-summary { font-size:12px!important; color:var(--bc-color-text-secondary)!important; }
+html.bc-ui-v1 #subjects .ds-module-body { padding:20px!important; border-top:1px solid var(--bc-color-border); background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important; }
+html.bc-ui-v1 #subjects .ds-module :is(h2,h3,h4,p,li,button,input,textarea,summary) { font-family:var(--bc-font)!important; }
+html.bc-ui-v1 #subjects .ds-module :is(.cpc-apostila-cover,.cpc-law-card,.cpc-apostila-topic,.cf-theory-text,.cpp-summary,.cpp-source) { background:var(--bc-color-surface-elevated)!important; color:var(--bc-color-text-secondary)!important; border-color:var(--bc-color-border)!important; }
+html.bc-ui-v1 #subjects .ds-module .cpc-apostila-cover h2 { font-size:20px!important; line-height:1.5!important; color:var(--bc-color-text)!important; }
+html.bc-ui-v1 #subjects .ds-module-body :is(.cpc-apostila-study,.cpc-flow-nav) { display:none!important; }
+html.bc-ui-v1 #subjects .ds-module-body> :is(.cf-module-bar,.civil-overall) { display:none; }
+html.bc-ui-v1 #subjects :is(.csp-panel,.csp-stage-card,.cf-step,.civil-step,.civil-a-card,.cf-advanced,.cf-theory,.ptn-session,.ptn-review-card,.ptn-q,.cpp-sec,.cpp-box,.resource,.prestudy,.tips,.ds-notes) { border:1px solid var(--bc-color-border)!important; border-radius:12px!important; background:var(--bc-color-surface-elevated)!important; color:var(--bc-color-text)!important; box-shadow:none!important; }
+html.bc-ui-v1 #subjects .csp-panel { padding:16px!important; margin:0 0 16px!important; border-color:color-mix(in srgb,var(--ds-accent) 40%,var(--bc-color-border))!important; background:color-mix(in srgb,var(--ds-accent) 5%,var(--bc-color-surface))!important; }
+html.bc-ui-v1 #subjects .csp-panel-head { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; margin-bottom:12px; }
+html.bc-ui-v1 #subjects .csp-panel-head span { font-size:12px!important; line-height:1.5!important; letter-spacing:.04em; color:var(--ds-accent)!important; }
+html.bc-ui-v1 #subjects .csp-panel-head b { display:block; font-size:18px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects :is(.csp-panel-note,.csp-stage-head small,.csp-auto-status,.csp-empty,.csp-tec-target>small) { font-size:13px!important; line-height:1.55!important; color:var(--bc-color-text-secondary)!important; }
+html.bc-ui-v1 #subjects .csp-panel-note { max-width:240px; }
+html.bc-ui-v1 #subjects .csp-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }
+html.bc-ui-v1 #subjects .csp-stage-card { padding:16px!important; min-width:0; }
+html.bc-ui-v1 #subjects .csp-stage-head { display:flex; justify-content:space-between; gap:12px; }
+html.bc-ui-v1 #subjects .csp-stage-head>div { flex:1; min-width:0; }
+html.bc-ui-v1 #subjects .csp-stage-head>strong { flex:0 0 auto; }
+html.bc-ui-v1 #subjects .csp-stage-head b { display:block; font-size:15px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects .csp-stage-head small { display:block; margin-top:4px; }
+html.bc-ui-v1 #subjects .csp-stage-head strong { font-size:15px!important; line-height:1.5!important; color:var(--ds-accent)!important; white-space:normal!important; }
+html.bc-ui-v1 #subjects .csp-tec { grid-column:1/-1; }
+html.bc-ui-v1 #subjects .csp-meter { height:7px; border-radius:999px; overflow:hidden; margin-top:12px; background:var(--bc-color-border); }
+html.bc-ui-v1 #subjects .csp-meter>span { display:block; height:100%; border-radius:inherit; background:var(--ds-accent)!important; }
+html.bc-ui-v1 #subjects .ds-module-nav { display:flex; flex-wrap:wrap; gap:8px; padding-bottom:16px; margin-bottom:20px; border-bottom:1px solid var(--bc-color-border); }
+html.bc-ui-v1 #subjects :is(.ds-module-nav button,.ds-action,.civil-btn,.cf-btn,.ptn-btn,.cpp-actions button,.cpp-tec-btn,.csp-add-round,.csp-topic-read button,.csp-target-control button,.inline-tools button) { min-height:44px!important; padding:10px 14px!important; border:1px solid var(--bc-color-border-interactive)!important; border-radius:9px!important; font-size:14px!important; line-height:1.4!important; font-weight:600; background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important; cursor:pointer; white-space:normal!important; }
+html.bc-ui-v1 #subjects :is(.civil-btn.primary,.cf-btn.primary,.ptn-btn.primary,.csp-topic-read button.done) { background:var(--bc-color-primary)!important; border-color:var(--bc-color-primary)!important; color:#fff!important; }
+html[data-bc-theme="dark"].bc-ui-v1 #subjects :is(.civil-btn.primary,.cf-btn.primary,.ptn-btn.primary,.csp-topic-read button.done),
+html[data-bc-theme="oled"].bc-ui-v1 #subjects :is(.civil-btn.primary,.cf-btn.primary,.ptn-btn.primary,.csp-topic-read button.done) { color:#062126!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-grid,.cpp-sections,.cf-theory-grid,.cf-advanced-grid,.cpp-two) { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:12px!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-card,.cpp-sec,.cpp-box,.cf-advanced,.ptn-review-card,.resource,.prestudy,.tips) { padding:16px!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-card b,.cpp-sec b,.cpp-box h5,.cf-advanced b,.civil-a-section>h4,.resource-label,.tips-title,.pre-title) { font-size:15px!important; line-height:1.5!important; color:var(--bc-color-text)!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-card p,.civil-a-list,.cpp-sec p,.cpp-box li,.cf-theory-text,.cf-reading li,.cf-advanced div,.ptn-session-body p,.ptn-session-body li,.tips li) { font-size:var(--central-reading-font-large,16px)!important; line-height:1.7!important; color:var(--bc-color-text-secondary)!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-basis,.cf-source,.cpp-chip,.civil-a-chip,.cf-step-copy small,.civil-step-title small,.ptn-session-title small,.topic-origin,.type) { font-size:13px!important; line-height:1.5!important; color:var(--bc-color-text-secondary)!important; }
+html.bc-ui-v1 #subjects :is(.cf-step-copy b,.civil-step-title b,.ptn-session-title b,.cf-theory summary) { font-size:16px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects :is(.cf-step-head,.civil-step-head,.ptn-session summary) { padding:16px!important; gap:12px; }
+html.bc-ui-v1 #subjects :is(.cf-step-body,.civil-step-body,.ptn-session-body) { padding:16px!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-section,.cf-step,.civil-step,.ptn-session) { margin-top:16px!important; }
+html.bc-ui-v1 #subjects .ds-notes { display:grid; gap:10px; margin-top:24px; padding:16px!important; }
+html.bc-ui-v1 #subjects .ds-notes :is(label,h4,.resource-label) { margin:0; font-size:15px!important; font-weight:700; color:var(--bc-color-text); }
+html.bc-ui-v1 #subjects .ds-notes textarea { width:100%; min-height:120px!important; padding:12px!important; box-sizing:border-box; border:1px solid var(--bc-color-border-interactive)!important; border-radius:9px!important; background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important; font:inherit; font-size:16px!important; line-height:1.6!important; resize:vertical; }
+html.bc-ui-v1 #subjects .ds-actions { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+html.bc-ui-v1 #subjects .ds-note-status { font-size:13px; color:var(--bc-color-text-secondary); }
+html.bc-ui-v1 #subjects .ds-module :is(button,input,textarea,a):focus-visible { outline:3px solid var(--bc-color-accent); outline-offset:3px; }
+html.bc-ui-v1 #subjects :is(.subject-head,.civil-master-intro,.ptn-intro,.cpp-course-top) { padding:18px!important; border-radius:12px!important; }
+html.bc-ui-v1 #subjects :is(.subject-name,.civil-master-intro h3,.ptn-intro h3,.cpp-course-top b) { font-size:18px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects .topic-header { display:none; }
+html.bc-ui-v1 #subjects .topic-row.ds-module-head { grid-template-columns:24px minmax(0,1fr) auto 44px!important; }
+html.bc-ui-v1 #subjects .topic-row>.topic-origin { display:none; }
+html.bc-ui-v1 #subjects .open-topic { min-height:44px; min-width:44px; }
+html.bc-ui-v1 #subjects :is(.cpp-round label,.cpp-round b,.cpp-score,.csp-tec-row,.csp-tec-row small,.csp-tec-summary span) { font-size:13px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects :is(.cpp-round input,.csp-target-control input) { min-height:44px; font-size:16px!important; padding:8px!important; }
+html.bc-ui-v1 #subjects .csp-target-control { display:flex!important; gap:8px; align-items:end; flex-wrap:wrap; }
+html.bc-ui-v1 #subjects .csp-target-control label { display:grid; gap:6px; font-size:13px!important; line-height:1.4!important; }
+html.bc-ui-v1 #subjects .csp-target-control input { max-width:100px; }
+html.bc-ui-v1 #subjects .csp-tec-target { border-color:var(--bc-color-border)!important; background:var(--bc-color-surface-elevated)!important; }
+html.bc-ui-v1 #subjects .ptn-tabs { display:flex; flex-wrap:wrap; gap:8px; }
+html.bc-ui-v1 #subjects .ptn-tab { min-height:44px!important; font-size:14px!important; padding:10px 14px!important; }
+/* Match the reading controls' scaling for Civil and the other disciplines. */
+html.bc-ui-v1 #subjects .ds-module-body { scroll-margin-top:90px; }
+html.bc-ui-v1 #subjects :is(.cf-step,.civil-a-section,.cpp-rounds,.ds-notes) { scroll-margin-top:90px; }
+@media(max-width:760px) {
+  html.bc-ui-v1 #subjects .ds-module-head { grid-template-columns:minmax(0,1fr) auto 20px!important; gap:8px!important; padding:16px!important; }
+  html.bc-ui-v1 #subjects :is(.civil-module-num,.cf-module-no,.cpp-num) { grid-column:1; grid-row:1; }
+  html.bc-ui-v1 #subjects :is(.civil-module-title,.cf-module-title,.cpp-mod-title) { grid-column:1; grid-row:2; }
+  html.bc-ui-v1 #subjects :is(.civil-module-state,.cf-module-stat,.cpp-mpct) { display:block!important; grid-column:2; grid-row:1/3; max-width:88px; font-size:12px!important; }
+  html.bc-ui-v1 #subjects .ds-module-head>:is(.chev,.cpp-chevron) { grid-column:3; grid-row:1/3; }
+  html.bc-ui-v1 #subjects .ds-module-body { padding:14px!important; }
+  html.bc-ui-v1 #subjects :is(.csp-grid,.civil-a-grid,.cpp-sections,.cf-theory-grid,.cf-advanced-grid,.cpp-two,.cpp-round-grid) { grid-template-columns:minmax(0,1fr)!important; }
+  html.bc-ui-v1 #subjects .csp-panel-head { flex-direction:column; gap:4px; }
+  html.bc-ui-v1 #subjects .csp-panel-note { text-align:left; max-width:none; }
+  html.bc-ui-v1 #subjects :is(.csp-panel,.csp-stage-card) { padding:12px!important; }
+  html.bc-ui-v1 #subjects .ds-module-nav { display:grid; grid-template-columns:1fr 1fr; }
+  html.bc-ui-v1 #subjects .civil-a-scope { columns:1; }
+  html.bc-ui-v1 #subjects .csp-stage-head { flex-wrap:nowrap; }
+  html.bc-ui-v1 #subjects .topic-row.ds-module-head { grid-template-columns:24px minmax(0,1fr) 44px!important; }
+  html.bc-ui-v1 #subjects .topic-row>.topic-title { grid-column:2; grid-row:1; }
+  html.bc-ui-v1 #subjects .topic-row>div:has(.type) { grid-column:2; grid-row:2; }
+  html.bc-ui-v1 #subjects .topic-row>.open-topic { grid-column:3; grid-row:1/3; }
+  html.bc-ui-v1 #subjects .topic-row>input { grid-column:1; grid-row:1/3; }
+}
+
+/* Final de cada módulo: apenas questões, revisão, ferramentas e anotações. */
+html.bc-ui-v1 #subjects .ds-footer-replaced { display:none!important; }
+html.bc-ui-v1 #subjects .ds-module-footer {
+  display:flex; flex-direction:column; gap:12px;
+  margin-top:24px; min-width:0; width:100%;
+  color:var(--bc-color-text);
+  scroll-margin-top:86px;
+}
+html.bc-ui-v1 #subjects .ds-footer-questions {
+  border-top:1px solid var(--bc-color-border-interactive);
+  padding-top:16px; min-width:0;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form {
+  display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px; padding:0; margin:0; border:0; background:transparent;
+  scroll-margin-top:86px;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form .field { min-width:0; margin:0; display:grid; gap:14px; }
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form label {
+  color:var(--bc-color-text); font-size:14px!important; line-height:1.5!important; font-weight:700;
+}
+html.bc-ui-v1 #subjects .ds-module-footer :is(input,textarea) {
+  min-width:0; max-width:100%; box-sizing:border-box;
+  border:1px solid var(--bc-color-border-interactive)!important;
+  background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important;
+  border-radius:10px!important; padding:12px!important;
+  font:400 16px/1.5 var(--bc-font)!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form input { width:100%; min-height:44px; }
+html.bc-ui-v1 #subjects .ds-module-footer button {
+  font:600 14px/1.4 var(--bc-font)!important;
+  color:var(--bc-color-secondary)!important;
+  background:var(--bc-color-surface)!important;
+  border:1px solid var(--bc-color-border-interactive)!important;
+  border-radius:10px!important; box-shadow:none!important;
+  min-height:44px; padding:10px 16px!important; cursor:pointer;
+  white-space:normal!important; max-width:100%; touch-action:manipulation;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form > button {
+  grid-column:1/-1; width:100%; color:var(--bc-color-primary)!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .history-label {
+  margin:14px 0 8px; font:400 12px/1.55 var(--bc-font)!important;
+  letter-spacing:.07em; text-transform:uppercase; color:var(--bc-color-text-secondary)!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .muted.small {
+  padding:0!important; font:400 14px/1.5 var(--bc-font)!important; color:var(--bc-color-text-secondary)!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer :is(.ds-footer-review,.ds-footer-tools,.ds-notes) {
+  padding:16px!important; margin:0!important; border:1px solid var(--bc-color-border)!important;
+  border-radius:12px!important; background:var(--bc-color-surface-elevated)!important;
+  min-width:0; display:block; box-shadow:none!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .ds-notes { margin-top:12px!important; }
+html.bc-ui-v1 #subjects .ds-module-footer :is(.resource-label,h4,.ds-notes > label) {
+  display:block; margin:0 0 12px!important;
+  color:var(--bc-color-text)!important; font:700 16px/1.4 var(--bc-font)!important;
+  text-transform:uppercase; letter-spacing:.055em;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .ds-footer-review .chips {
+  display:flex; flex-direction:column; align-items:flex-start; gap:8px;
+}
+html.bc-ui-v1 #subjects .ds-module-footer input[type=date] { padding:6px!important; min-height:34px; width:156px; }
+html.bc-ui-v1 #subjects .ds-module-footer .ds-footer-tools .chips { display:flex; flex-wrap:wrap; gap:6px; }
+html.bc-ui-v1 #subjects .ds-module-footer .ds-footer-tools button {
+  min-height:28px; padding:4px 8px!important;
+  color:var(--bc-color-accent)!important; border-color:var(--bc-color-primary)!important;
+  background:color-mix(in srgb,var(--bc-color-primary) 7%,var(--bc-color-surface))!important;
+  border-radius:10px!important; font-size:12px!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .ds-notes textarea { width:100%; min-height:120px!important; }
+html.bc-ui-v1 #subjects .ds-module-footer :is(.ds-actions,.cf-actions,.action-row) { margin-top:10px; display:flex; justify-content:flex-start!important; align-items:center; gap:8px; }
+html.bc-ui-v1 #subjects .ds-module-footer .hist {
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) auto auto;
+  gap:8px; font-size:13px; line-height:1.5; color:var(--bc-color-text-secondary);
+}
+html.bc-ui-v1 #subjects .ds-module-footer .ds-footer-status { grid-column:1/-1; color:var(--bc-color-error); font-size:14px; }
+@media(max-width:420px) {
+  html.bc-ui-v1 #subjects .ds-module-footer .hist { grid-template-columns:minmax(0,1fr) auto; }
+}
+
+/* ADM and CPP display completion through their progress badge, without a checkbox column. */
+html.bc-ui-v1 #subjects .adm-native-module-row > .topic-row.ds-module-head {
+  grid-template-columns:minmax(0,1fr) auto 44px!important;
+}
+html.bc-ui-v1 #subjects .adm-native-module-row > .topic-row > :is(.topic-title,div:has(>.topic-title)) {
+  grid-column:1; grid-row:1; min-width:0;
+}
+html.bc-ui-v1 #subjects .adm-native-module-row > .topic-row > div:has(>.type) {
+  display:block!important; grid-column:2; grid-row:1;
+}
+html.bc-ui-v1 #subjects .adm-native-module-row > .topic-row .type {
+  display:inline-flex!important;
+}
+html.bc-ui-v1 #subjects .adm-native-module-row > .topic-row > .open-topic {
+  grid-column:3; grid-row:1;
+}
+html.bc-ui-v1 #subjects .adm-native-module-row > .topic-detail {
+  padding:0!important;
+}
+@media(max-width:760px) {
+  html.bc-ui-v1 #subjects .adm-native-module-row > .topic-row > :is(.topic-title,div:has(>.topic-title)) {
+    grid-column:1/3;
+  }
+  html.bc-ui-v1 #subjects .adm-native-module-row > .topic-row > div:has(>.type) {
+    grid-column:1; grid-row:2;
+  }
+  html.bc-ui-v1 #subjects .adm-native-module-row > .topic-row > .open-topic {
+    grid-row:1/3;
+  }
+}
+
+
+/* Penal and CPP use the same vertical study-card hierarchy as the approved CPC layout. */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module-bar { display:none!important; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 14px;
+}
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-card {
+  min-width:0; padding:13px 14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff;
+}
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-head {
+  display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; color:#263442; font-size:12px;
+}
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-head strong { color:#12a8ad; font-size:11px; text-align:right; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-card small { display:block; margin-top:6px; color:#687582; font-size:10px; line-height:1.4; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-track { height:7px; overflow:hidden; border-radius:99px; background:#e9edf0; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-track span { display:block; height:100%; border-radius:inherit; background:#16824a; transition:width .2s ease; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-card:nth-child(2) .penal-approved-progress-track span { background:#16824a; }
+
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading {
+  display:block; margin:0 0 14px; padding:16px; border:1px solid #d8d5e4; border-radius:16px; background:#f8f7fc; color:#17212f;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-head { padding:0; border:0; background:transparent; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-no { display:grid; flex:0 0 42px; width:42px; height:42px; place-items:center; border-radius:12px; background:#ebe8f5; font-size:0!important; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-no::before { content:'📖'; font-size:22px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-copy b { color:#17212f; font-size:15px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-copy small { color:#53606f; font-size:13px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-body { padding:10px 0 0 56px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-topic { margin:0 0 8px; color:#53606f; font-size:13px; line-height:1.5; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-reading { color:#53606f; font-size:13px; line-height:1.55; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-reading ul { margin:6px 0 0; padding-left:20px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card {
+  display:grid; grid-template-columns:82px minmax(0,1fr) 210px; align-items:center; gap:18px;
+  min-width:0; margin:0 0 12px; padding:20px 22px; border:1px solid; border-radius:18px;
+  box-shadow:0 4px 12px rgba(21,45,65,.05);
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-complete { border-color:#c5dceb; background:#eef7fd; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-icon { display:grid; width:82px; height:82px; place-items:center; border-radius:22px; background:rgba(13,116,210,.08); font-size:39px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy { min-width:0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy h3 { margin:0 0 6px; color:#142234; font-size:21px; line-height:1.25; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy p { margin:0; color:#596676; font-size:14px; line-height:1.55; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-tags span { padding:4px 9px; border:1px solid rgba(91,112,132,.12); border-radius:999px; background:rgba(255,255,255,.65); color:#5d6a78; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card-actions { display:flex; flex-direction:column; gap:9px; width:100%; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-primary,
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary {
+  display:flex; width:100%; min-height:48px; align-items:center; justify-content:center; padding:10px 14px;
+  border:1px solid #cbd7e1; border-radius:12px; font-family:inherit; font-size:14px; font-weight:600;
+  line-height:1.35; text-align:center; cursor:pointer; white-space:normal;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-primary { border-color:#0876d2!important; background:linear-gradient(180deg,#168be8,#0867c3)!important; color:#fff!important; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary { border-color:#c7dceb!important; background:#e5f3fc!important; color:#245477!important; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary:disabled { opacity:.62; cursor:not-allowed; }
+
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review {
+  display:block; margin:0 0 12px; padding:18px 20px; border:1px solid #eee3c7; border-radius:18px; background:#fffaf0;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-head { padding:0; border:0; background:transparent; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-no { display:grid; flex:0 0 56px; width:56px; height:56px; place-items:center; border-radius:17px; background:#fff0cf; font-size:0!important; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-no::before { content:'⚡'; font-size:30px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-copy b { color:#142234; font-size:21px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-copy small { color:#596676; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-body { padding:12px 0 0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-actions { display:flex; flex-direction:column; gap:9px; margin:12px 0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-theory-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-extra { margin:0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters { margin:0; padding:14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters > summary { color:#263442; font-size:14px; font-weight:700; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters .cf-resource-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters .cf-resource-box { min-width:0; border:1px solid #d9e1e6; border-radius:12px; background:#f8fafc; padding:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters .cf-resource-box h4 { margin:0 0 8px; color:#263442; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer { gap:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-review { order:5; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-tools { order:3; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-notes { order:1; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .penal-approved-extra { order:2; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .penal-approved-filter-panel { order:2; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .cf-resources { order:4; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-questions { display:none!important; }
+
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone { margin:12px 0 14px; padding:14px; border:1px solid #d7e1d1; border-radius:14px; background:#e9efe2; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone-head { margin-bottom:10px; color:#17212f; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone-head span { color:#63717c; font-size:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone-head b { color:#17212f; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone-head strong { color:#12a8ad; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-panel { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-line { padding:13px 14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-copy b { color:#263442; font-size:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-copy span { color:#12a8ad; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-line small { color:#687582; font-size:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-wide-bar { background:#e9edf0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-wide-bar i { background:#16824a; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-wide-bar.external i { background:#16824a; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading {
+  display:flex; align-items:flex-start; gap:14px; margin:0 0 14px; padding:16px;
+  border:1px solid #d8d5e4; border-radius:16px; background:#f8f7fc; color:#17212f;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-reading-icon {
+  display:grid; flex:0 0 42px; width:42px; height:42px; place-items:center; border-radius:12px; background:#ebe8f5; font-size:24px;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading b { display:block; margin-bottom:4px; color:#17212f; font-size:15px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading p { margin:0; color:#53606f; font-size:13px; line-height:1.5; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid { display:flex!important; flex-direction:column!important; gap:12px!important; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card {
+  display:grid; grid-template-columns:82px minmax(0,1fr) 210px; align-items:center; gap:18px;
+  min-width:0; min-height:0; padding:20px 22px; border:1px solid; border-radius:18px; box-shadow:0 4px 12px rgba(21,45,65,.05);
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card[data-kind="complete"] { border-color:#c5dceb; background:#eef7fd; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card[data-kind="summary"] { border-color:#eee3c7; background:#fffaf0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-visual { border-color:#c8e4d9; background:#f0fbf6; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-icon { display:grid; width:82px; height:82px; place-items:center; border-radius:22px; background:rgba(13,116,210,.08); font-size:39px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card[data-kind="summary"] .adm-native-card-icon { background:#fff0cf; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-visual .adm-native-card-icon { background:#dcf4e9; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-copy { min-width:0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-top { color:#637384; font-size:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card h4 { margin:6px 0; color:#142234; font-size:21px; line-height:1.25; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card p { margin:0; color:#596676; font-size:14px; line-height:1.55; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-tags span { padding:4px 9px; border:1px solid rgba(91,112,132,.12); border-radius:999px; background:rgba(255,255,255,.65); color:#5d6a78; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-mini-bar { margin:10px 0 0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions { display:flex; flex-direction:column; gap:9px; width:100%; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions button {
+  display:flex; width:100%; min-height:48px; align-items:center; justify-content:center; padding:10px 14px;
+  border:1px solid #cbd7e1; border-radius:12px; font-family:inherit; font-size:14px; font-weight:600; line-height:1.35; text-align:center; cursor:pointer; white-space:normal;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions button.primary { border-color:#0876d2; background:linear-gradient(180deg,#168be8,#0867c3); color:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions button.ghost { border-color:#c7dceb; background:#e5f3fc; color:#245477; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-visual .adm-native-card-actions button { border-color:#0876d2; background:linear-gradient(180deg,#168be8,#0867c3); color:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes { background:#fff; border-color:#d9e1e6; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes-head span { color:#637384; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes-head b { color:#142234; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes-head small { color:#637384; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes textarea { min-height:110px; border-color:#e4dcc8; border-radius:10px; background:#fffaf0; color:#17212f; font-size:15px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes button { min-height:42px; border-radius:10px; background:#0fb9bd; color:#06474a; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools {
+  display:flex; align-items:center; justify-content:space-between; gap:10px; margin:12px 0; padding:13px 14px;
+  border:1px solid #d9e1d6; border-radius:14px; background:#f0f5eb;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools>span { color:#637384; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools>div { justify-content:flex-start; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools button { min-height:40px; padding:8px 12px; border:1px solid #d9e1e6; border-radius:9px; background:#fff; color:#263442; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel { margin-top:12px; padding:14px; border-color:#d9e1e6; background:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel .adm-native-preserved-head b { color:#263442; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel .adm-native-preserved-head small { color:#637384; font-size:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel .chips { display:flex; flex-wrap:wrap; gap:8px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel .chip { min-height:40px; border-radius:10px; font-size:13px; }
+html.bc-ui-v1 .cpp-native-image-viewer .cpp-native-image-controls { display:flex; flex-wrap:wrap; gap:7px; justify-content:flex-end; }
+html.bc-ui-v1 .cpp-native-image-viewer header { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+html.bc-ui-v1 .cpp-native-image-viewer>div { overflow:auto; align-items:flex-start; justify-content:center; }
+html.bc-ui-v1 .cpp-native-infographic-svg { width:min(100%,700px); height:auto; }
+@media(max-width:700px) {
+  html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress { grid-template-columns:1fr; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card { grid-template-columns:58px minmax(0,1fr); gap:12px; padding:15px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-icon { width:56px; height:56px; border-radius:16px; font-size:29px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy h3 { font-size:18px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card-actions { grid-column:1/-1; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-theory-grid { grid-template-columns:minmax(0,1fr); }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-body { padding-left:0; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-panel { grid-template-columns:1fr; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card { grid-template-columns:58px minmax(0,1fr); gap:12px; padding:15px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-icon { width:56px; height:56px; border-radius:16px; font-size:29px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card h4 { font-size:18px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions { grid-column:1/-1; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading { padding:13px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools { align-items:flex-start; flex-direction:column; }
+}
+@media(max-width:420px) {
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading { padding:13px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review { padding:15px; }
+  html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-head { align-items:flex-start; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading { gap:9px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-reading-icon { flex-basis:34px; width:34px; height:34px; font-size:20px; }
+}
+
+/* Direito Penal: reuse the approved vertical card layout over its native reader buttons. */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .bc-native-materials.penal-approved-native-materials {
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-native-materials .bc-native-material-grid {
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:12px!important;
+  margin:0!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-native-materials .bc-native-material-grid > .penal-approved-card {
+  width:100%;
+  margin:0;
+}
+
+/* Keep Penal's native review card aligned with the approved desktop card layout. */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card.penal-approved-review {
+  display:grid!important; grid-template-columns:82px minmax(0,1fr) 210px; align-items:center; gap:18px;
+}
+@media(max-width:700px) {
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card.penal-approved-review {
+    grid-template-columns:58px minmax(0,1fr)!important;
+  }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card.penal-approved-review .penal-approved-card-actions { grid-column:1/-1; }
+}
+
+
+/* Direito do Trabalho: mesma hierarquia dos cards aprovados, isolada do renderer compartilhado. */
+html.bc-ui-v1 #subjects .work-approved-layout {
+  display:grid; gap:12px; padding:14px; border:1px solid #d9e1d6; border-radius:16px; background:#e7ecdf; color:#17212f;
+}
+html.bc-ui-v1 #subjects .work-approved-progress { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 2px; }
+html.bc-ui-v1 #subjects .work-approved-progress article { min-width:0; padding:13px 14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff; }
+html.bc-ui-v1 #subjects .work-approved-progress article>div:first-child { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; color:#263442; font-size:12px; }
+html.bc-ui-v1 #subjects .work-approved-progress article strong { color:#12a8ad; font-size:11px; text-align:right; }
+html.bc-ui-v1 #subjects .work-approved-progress small { display:block; margin-top:6px; color:#687582; font-size:10px; line-height:1.45; }
+html.bc-ui-v1 #subjects .work-approved-track { height:7px; overflow:hidden; border-radius:99px; background:#e9edf0; }
+html.bc-ui-v1 #subjects .work-approved-track i { display:block; width:0; height:100%; border-radius:inherit; background:#16824a; transition:width .2s ease; }
+html.bc-ui-v1 #subjects .work-approved-reading {
+  display:grid; grid-template-columns:48px minmax(0,1fr); gap:12px; margin:0; padding:16px;
+  border:1px solid #d8d5e4; border-radius:16px; background:#f8f7fc; color:#17212f;
+}
+html.bc-ui-v1 #subjects .work-approved-reading-icon { display:grid; width:42px; height:42px; place-items:center; border-radius:12px; background:#ebe8f5; font-size:22px; }
+html.bc-ui-v1 #subjects .work-approved-reading-copy { min-width:0; }
+html.bc-ui-v1 #subjects .work-approved-reading-copy>b { color:#17212f; font-size:15px; }
+html.bc-ui-v1 #subjects .work-approved-reading-copy p { margin:5px 0 8px; color:#53606f; font-size:13px; line-height:1.55; }
+html.bc-ui-v1 #subjects .work-approved-reading-copy details { color:#53606f; font-size:13px; line-height:1.55; }
+html.bc-ui-v1 #subjects .work-approved-reading-copy summary { cursor:pointer; color:#17212f; font-weight:700; }
+html.bc-ui-v1 #subjects .work-approved-reading-copy ul { margin:7px 0 0; padding-left:20px; }
+html.bc-ui-v1 #subjects .work-approved-mark { min-height:42px; margin-top:10px; padding:9px 14px; border:1px solid #cbd7e1; border-radius:10px; background:#fff; color:#263442; font-size:14px; font-weight:600; cursor:pointer; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card {
+  display:grid; grid-template-columns:82px minmax(0,1fr) 210px; align-items:center; gap:18px;
+  min-width:0; margin:0!important; padding:20px 22px; border:1px solid; border-radius:18px;
+  box-shadow:0 4px 12px rgba(21,45,65,.05);
+}
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card.penal-approved-complete { border-color:#c5dceb; background:#eef7fd; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card.penal-approved-review { border-color:#eee3c7; background:#fffaf0; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card.penal-approved-visual { border-color:#cbe5da; background:#f0fbf6; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-icon { display:grid; width:82px; height:82px; place-items:center; border-radius:22px; background:rgba(13,116,210,.08); font-size:39px; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card.penal-approved-review .penal-approved-icon { background:#fff0cf; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card.penal-approved-visual .penal-approved-icon { background:#d9f4e9; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-copy { min-width:0; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-copy h3 { margin:0 0 6px; color:#142234; font-size:21px; line-height:1.25; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-copy p { margin:0; color:#596676; font-size:14px; line-height:1.55; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-tags span { padding:4px 9px; border:1px solid rgba(91,112,132,.12); border-radius:999px; background:rgba(255,255,255,.65); color:#5d6a78; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-card-actions { display:flex; flex-direction:column; gap:9px; width:100%; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-primary,
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-secondary {
+  display:flex; width:100%; min-height:48px; align-items:center; justify-content:center; padding:10px 14px;
+  border:1px solid #cbd7e1; border-radius:12px; font-family:inherit; font-size:14px; font-weight:600;
+  line-height:1.35; text-align:center; cursor:pointer; white-space:normal;
+}
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-primary { border-color:#0876d2!important; background:linear-gradient(180deg,#168be8,#0867c3)!important; color:#fff!important; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-secondary { border-color:#c7dceb!important; background:#e5f3fc!important; color:#245477!important; }
+html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-secondary:disabled { opacity:.62; cursor:not-allowed; }
+html.bc-ui-v1 #subjects .work-approved-note { margin:0!important; padding:16px!important; border:1px solid #d9e1e6!important; border-radius:15px!important; background:#fff!important; }
+html.bc-ui-v1 #subjects .work-approved-note .resource-label { margin-bottom:8px; color:#263442; font-size:14px; font-weight:800; }
+html.bc-ui-v1 #subjects .work-approved-note textarea { min-height:110px; border-color:#e4dcc8!important; border-radius:10px!important; background:#fffaf0!important; color:#17212f; font-size:15px; }
+html.bc-ui-v1 #subjects .work-approved-note .action-row { display:flex; justify-content:flex-end; }
+html.bc-ui-v1 #subjects .work-approved-filters,
+html.bc-ui-v1 #subjects .work-approved-history,
+html.bc-ui-v1 #subjects .work-approved-extras,
+html.bc-ui-v1 #subjects .work-approved-review-date {
+  min-width:0; margin:0!important; padding:14px!important; border:1px solid #d9e1e6!important; border-radius:14px!important; background:#fff!important; color:#263442;
+}
+html.bc-ui-v1 #subjects .work-approved-filters h4 { margin:0 0 5px; font-size:14px; }
+html.bc-ui-v1 #subjects .work-approved-filters p { margin:0 0 10px; color:#687582; font-size:13px; line-height:1.45; }
+html.bc-ui-v1 #subjects .work-approved-filter-links { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:10px; }
+html.bc-ui-v1 #subjects .work-approved-filter-links>a,
+html.bc-ui-v1 #subjects .work-approved-filter-links>button,
+html.bc-ui-v1 #subjects .work-approved-pending,
+html.bc-ui-v1 #subjects .work-approved-center,
+html.bc-ui-v1 #subjects .work-approved-tools button,
+html.bc-ui-v1 #subjects .work-approved-review-date button {
+  display:inline-flex; min-height:42px; align-items:center; justify-content:center; padding:9px 12px;
+  border:1px solid #d9e1e6; border-radius:10px; background:#fff; color:#263442;
+  font-family:inherit; font-size:14px; font-weight:600; line-height:1.35; text-decoration:none; white-space:normal;
+}
+html.bc-ui-v1 #subjects .work-approved-pending { border-style:dashed; background:#f8fafc; color:#637384; cursor:not-allowed; }
+html.bc-ui-v1 #subjects .work-approved-center { width:100%; border-color:#0876d2; background:linear-gradient(180deg,#168be8,#0867c3); color:#fff; cursor:pointer; }
+html.bc-ui-v1 #subjects .work-approved-history summary,
+html.bc-ui-v1 #subjects .work-approved-extras summary { cursor:pointer; color:#263442; font-size:14px; font-weight:700; }
+html.bc-ui-v1 #subjects .work-approved-history-content,
+html.bc-ui-v1 #subjects .work-approved-extra-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+html.bc-ui-v1 #subjects .work-approved-tools { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:0!important; padding:13px 14px!important; border:1px solid #d9e1d6!important; border-radius:14px!important; background:#f0f5eb!important; }
+html.bc-ui-v1 #subjects .work-approved-tools>span { color:#637384; font-size:11px; font-weight:900; letter-spacing:.1em; }
+html.bc-ui-v1 #subjects .work-approved-tools>div { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
+html.bc-ui-v1 #subjects .work-approved-review-date .resource-label { margin:0 0 8px; color:#263442; font-size:14px; font-weight:800; }
+html.bc-ui-v1 #subjects .work-approved-review-date .chips { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+html.bc-ui-v1 #subjects .work-approved-review-date input[type="date"] { min-height:42px; padding:8px 10px; border:1px solid #d9e1e6; border-radius:10px; background:#fff; color:#263442; }
+html.bc-ui-v1 #subjects .work-approved-history-label,
+html.bc-ui-v1 #subjects .work-approved-history .history-label { color:#687582; }
+@media(max-width:780px) {
+ html.bc-ui-v1 #subjects .work-approved-layout { padding:10px; }
+ html.bc-ui-v1 #subjects .work-approved-progress { grid-template-columns:minmax(0,1fr); }
+ html.bc-ui-v1 #subjects .work-approved-reading { grid-template-columns:38px minmax(0,1fr); padding:13px; }
+ html.bc-ui-v1 #subjects .work-approved-reading-icon { width:36px; height:36px; font-size:20px; }
+ html.bc-ui-v1 #subjects .work-approved-tools { align-items:flex-start; flex-direction:column; }
+ html.bc-ui-v1 #subjects .work-approved-tools>div { justify-content:flex-start; }
+}
+@media(max-width:700px) {
+ html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card { grid-template-columns:58px minmax(0,1fr)!important; gap:12px!important; padding:15px!important; }
+ html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-icon { width:56px; height:56px; border-radius:16px; font-size:29px; }
+ html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-copy h3 { font-size:18px; }
+ html.bc-ui-v1 #subjects .subject[data-id="trab"] .work-approved-card .penal-approved-card-actions { grid-column:1/-1; }
+}
+@media(max-width:430px) {
+ html.bc-ui-v1 #subjects .work-approved-layout { padding:8px; }
+ html.bc-ui-v1 #subjects .work-approved-reading { grid-template-columns:34px minmax(0,1fr); gap:9px; }
+ html.bc-ui-v1 #subjects .work-approved-reading-icon { width:32px; height:32px; font-size:18px; }
+}

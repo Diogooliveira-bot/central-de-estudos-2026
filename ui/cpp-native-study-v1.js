@@ -22,7 +22,7 @@ function progressPanel(n){
     '</div>'+
   '</section>';
 }
-function card(n,kind,title,desc,q){const p=progress(n,kind),complete=kind==='complete',icon=complete?'📚':'⚡',tag=complete?'Apostila':'Resumo',tag2=complete?'Conteúdo completo':'Pontos essenciais',read=complete?'Estudar conteúdo':'Revisar conteúdo';return '<article class="adm-native-card" data-kind="'+kind+'"><div class="adm-native-card-icon" aria-hidden="true">'+icon+'</div><div class="adm-native-card-copy"><div class="adm-native-card-top"><span>'+(complete?'TEORIA COMPLETA':'REVISÃO')+'</span><b>'+p+'% lido</b></div><h4>'+esc(title)+'</h4><p>'+esc(desc)+'</p><div class="adm-native-tags"><span>'+tag+'</span><span>'+tag2+'</span></div><div class="adm-native-mini-bar"><i style="width:'+p+'%"></i></div></div><div class="adm-native-card-actions"><button class="primary" onclick="CppNative.open('+n+',\''+kind+'\',false)">'+read+'</button><button class="ghost" onclick="CppNative.open('+n+',\''+kind+'\',true)">Resolver '+q+' questões</button></div></article>'}
+function card(n,kind,title,desc,q){const p=progress(n,kind),complete=kind==='complete',icon=complete?'📚':'⚡',tag=complete?'Apostila':'Resumo',tag2=complete?'Conteúdo completo':'Pontos essenciais',read=complete?'Estudar conteúdo':'Revisar conteúdo';return '<article class="adm-native-card" data-kind="'+kind+'"><div class="adm-native-card-icon" aria-hidden="true">'+icon+'</div><div class="adm-native-card-copy"><div class="adm-native-card-top"><span>'+(complete?'TEORIA COMPLETA':'REVISÃO')+'</span><b>'+p+'% lido</b></div><h4>'+esc(title)+'</h4><p>'+esc(desc)+'</p><div class="adm-native-tags"><span>'+tag+'</span><span>'+tag2+'</span></div><div class="adm-native-mini-bar"><i style="width:'+p+'%"></i></div></div><div class="adm-native-card-actions"><button class="primary" onclick="CppNative.open('+n+',\''+kind+'\',false)">'+read+'</button>'+(g.BCQuestionsRemoved?'':'<button class="ghost" onclick="CppNative.open('+n+',\''+kind+'\',true)">Resolver '+q+' questões</button>')+'</div></article>'}
 function guidedReading(n){const m=BYNUM[n];return '<section class="adm-native-guided-reading"><div class="adm-native-reading-icon" aria-hidden="true">📖</div><div><b>Leitura orientada inicial</b><p>Comece pela versão de revisão de '+esc(m?.title||'este módulo')+', aprofunde na teoria completa e finalize com a Lei em Dia e as questões do módulo.</p></div></section>'}
 function noteKey(n){return `central-v6:cpp-native:m${String(n).padStart(2,'0')}:notes`}
 function readNotes(n){let rows=[];try{rows=JSON.parse(localStorage.getItem(noteKey(n))||'[]');if(!Array.isArray(rows))rows=[]}catch(_){rows=[]}const legacy=String(oldState().modules?.[n]?.note||'').trim();if(legacy&&!rows.some(x=>x.text===legacy))rows.unshift({id:'legacy',text:legacy,at:null});return rows}
@@ -54,6 +54,13 @@ function questionBlocks(body){
  }).filter(Boolean);
 }
 function bindQuestions(body,n,kind){
+ if(g.BCQuestionsRemoved){
+  // A apostila permanece; apenas os blocos de perguntas/gabaritos são retirados.
+  body.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(h=>{
+   if(!/\bquest[aã]o\s+\d+\b/i.test(h.textContent))return;
+   let next=h.nextElementSibling;while(next&&!/^H[1-6]$/.test(next.tagName)&&next.tagName!=='HR'){const old=next;next=next.nextElementSibling;old.remove()}h.remove();
+  });return;
+ }
  const questions=questionBlocks(body);if(!questions.length)return;
  const storageKey=k(n,kind,'answers');let saved={};try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}')||{}}catch(_){}
  if(typeof saved!=='object'||Array.isArray(saved))saved={};
@@ -75,6 +82,7 @@ function bindQuestions(body,n,kind){
 }
 let active=null;function toc(body){return [...body.querySelectorAll('h1,h2,h3')].slice(0,50).map((h,i)=>{if(!h.id)h.id='cpp-native-h-'+i;return `<button onclick="document.getElementById('${h.id}').scrollIntoView({behavior:'smooth',block:'start'})">${h.textContent.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</button>`}).join('')}
 async function open(n,kind,jump){
+ if(g.BCQuestionsRemoved)jump=false;
  n=Number(n);if(!BYNUM[n])return;
  if(document.getElementById('cpp-native-reader'))close();
  const session=active={n,kind},reader=g.CentralNativeReadingSession;
