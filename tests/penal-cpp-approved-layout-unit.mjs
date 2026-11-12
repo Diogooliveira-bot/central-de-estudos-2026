@@ -210,6 +210,10 @@ test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manu
   assert.equal((html.match(/data-cpp-native-module=/g)||[]).length,22);
   const first=html.slice(html.indexOf('data-cpp-native-module="1"'),html.indexOf('data-cpp-native-module="2"'));
   const progress=first.indexOf('adm-native-progress-panel');
+  assert.match(first,/Leitura do módulo/,'CPP usa uma barra única de leitura');
+  assert.match(first,/bc-reading-progress-only/);
+  assert.equal((first.match(/adm-native-progress-line/g)||[]).length,1,'o módulo contém apenas um indicador de progresso');
+  assert.doesNotMatch(first,/Questões externas/,'o painel duplicado de questões externas não aparece');
   const guided=first.indexOf('adm-native-guided-reading');
   const complete=first.indexOf('data-kind="complete"');
   const summary=first.indexOf('data-kind="summary"');
