@@ -86,7 +86,7 @@ test('pacote CPP contém 22 pares de teoria com 5 e 10 exercícios reais',async(
   assert.equal((m.summaryHtml.match(/Ver gabarito e explicação/g)||[]).length,5,`${id} resumo`);
   assert.equal((m.completeHtml.match(/Gabarito:/g)||[]).length,10,`${id} completo`);
  }
- await access(new URL('assets/cpp/infograficos.webp',root));
+ assert.equal((await read('content/cpp/cpp-native-index.js')).includes('infograficos.webp'),false);
 });
 
 test('metadados de Português refletem as unidades existentes em M01 e M13',async()=>{

@@ -56,7 +56,7 @@ test('módulos ADM apresentam guia antes de materiais, sem alterar funcionalidad
   assert.equal(doc.querySelectorAll('.adm-reading-focus li').length,3,'M'+m.number+': leitura orientada');
   assert.ok(doc.querySelector('.adm-learning-tip')?.textContent.includes(m.studyTip));
   assert.ok(doc.querySelector('.adm-learning-warning')?.textContent.includes(m.examPitfall));
-  assert.equal(doc.querySelectorAll('.adm-cf-card').length,3,'M'+m.number+': materiais mantidos');
+  assert.equal(doc.querySelectorAll('.adm-cf-card').length,2,'M'+m.number+': dois materiais preservados');
   assert.match(html,/Estudar conteúdo/);
   assert.match(html,/Resolver 10 questões/);
   assert.match(html,/Resolver 5 questões/);
@@ -84,7 +84,7 @@ test('índice, interface, estilos e cache offline são carregados com a versão 
  const shell=read('central-v119.html');
  const manifest=JSON.parse(read('central-offline-files-v66172.json')).files;
  for(const name of ['content/adm/adm-native-index.js','ui/adm-native-layer.js']){
-  const version=name==='ui/adm-native-layer.js'?'20261108adm1':'20261102admguide1';
+  const version=name==='ui/adm-native-layer.js'?'20261112nographic1':'20261102admguide1';
   assert.ok(loader.includes(name+'?v='+version),name+' no carregador');
   assert.ok(manifest.includes('/'+name+'?v='+version),name+' no cache');
  }
