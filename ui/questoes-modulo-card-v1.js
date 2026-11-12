@@ -29,7 +29,7 @@
     el.className = 'bcqa-module-card';
     el.setAttribute('data-bc-questoes-area', '1');
     el.setAttribute('data-bcqa-module-card', disc + ':' + n);
-    el.innerHTML = '<div class="bcqa-mc-icon" aria-hidden="true">✍️</div><div class="bcqa-mc-copy"><span class="bcqa-mc-tag">QUESTÕES</span><h4>Questões do módulo</h4><p>10 questões inéditas, com correção na hora e comentário.</p></div><button type="button" class="bcqa-btn" data-bcqa-abrir>Resolver questões</button>';
+    el.innerHTML = '<div class="bcqa-mc-icon" aria-hidden="true">✍️</div><div class="bcqa-mc-copy"><span class="bcqa-mc-tag">QUESTÕES</span><h4>Questões do módulo</h4><p>Questões inéditas, com correção na hora e comentário.</p></div><button type="button" class="bcqa-btn" data-bcqa-abrir>Resolver questões</button>';
     el.querySelector('[data-bcqa-abrir]').addEventListener('click', ev => { ev.stopPropagation(); g.BCQuestoesArea?.openModule(disc, n); });
     return el;
   }

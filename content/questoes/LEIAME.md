@@ -28,6 +28,6 @@ Crie `content/questoes/<disciplina>/mNN.js` copiando o formato de outro módulo 
 - Questão **autoral** nunca recebe banca, ano, órgão, cargo ou prova. Este banco não tem questões de banca real.
 
 ## Como o aluno vê
-- Menu **Questões** (atalho do topo e menu "Mais" no celular): disciplina → módulo → 10 questões.
+- Menu **Questões** (atalho do topo e menu "Mais" no celular): disciplina → módulo → questões do módulo (quantas houver).
 - Em cada módulo, o cartão **Questões do módulo** (depois da Lei em Dia) abre as mesmas questões já no módulo.
 - Títulos dos módulos: `content/questoes/titulos.js`. O progresso fica no aparelho do aluno.

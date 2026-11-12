@@ -88,3 +88,19 @@ test('todo módulo do banco tem título para exibir', () => {
   const idx = {}; new Function('window', read('content/questoes/index.js'))(idx);
   for (const [d, mods] of Object.entries(idx.BC_QUESTOES_INDICE)) for (const n of mods) assert.ok(w.BC_QUESTOES_TITULOS[d]?.[n], `${d} M${n} sem título`);
 });
+
+test('módulo com mais de 10 questões: tudo acompanha a quantidade real', async () => {
+  const dom = fixture(), w = dom.window, d = w.document;
+  const banco = w.BC_QUESTOES.adm[3];
+  banco.push({ ...banco[0], id: 'adm-m03-autoral-11' }, { ...banco[1], id: 'adm-m03-autoral-12' });
+  w.BC_QUESTOES_QTD.adm[3] = 12;
+  w.BCQuestoesArea.openModule('adm', 3);
+  await tick();
+  assert.equal(d.querySelectorAll('.bcqa-q').length, 12);
+  assert.match(d.querySelector('.bcqa-q[data-i="11"] .bcqa-meta').textContent, /QUESTÃO 12 DE 12/);
+  assert.match(d.querySelector('[data-stats]').textContent, /0\/12 respondidas/);
+  w.BCQuestoesArea.openHub();
+  assert.match(d.querySelector('[data-disc="adm"]').textContent, /202 questões/);
+  assert.doesNotMatch(d.body.textContent, /Dez questões|10 questões inéditas/);
+  dom.window.close();
+});

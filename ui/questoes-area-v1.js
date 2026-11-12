@@ -1,5 +1,5 @@
 /* Base Completa — área "Questões".
- * Disciplinas → módulos → 10 questões do módulo, com correção imediata, comentário e progresso.
+ * Disciplinas → módulos → as questões do módulo, com correção imediata, comentário e progresso.
  * As questões vêm do banco (ui/questoes-bank-v1.js). Os módulos também abrem a mesma tela já
  * no módulo certo (ui/questoes-modulo-card-v1.js), no padrão da Lei em Dia.
  * Tudo que esta área desenha fica dentro de [data-bc-questoes-area]. */
@@ -13,6 +13,7 @@
   const nn = n => String(Number(n)).padStart(2, '0');
   const bank = () => g.BCQuestoes;
   const titulos = () => g.BC_QUESTOES_TITULOS || {};
+  const qtdDe = (disc, n) => ((g.BC_QUESTOES_QTD || {})[disc] || {})[n] || 10;
   let overlay = null, lastFocus = null, view = null, fromModule = false;
 
   // ---- progresso (somente neste aparelho; não apaga nada dos outros registros do aluno) ----
@@ -85,10 +86,10 @@
     const cards = ORDEM.filter(d => B && B.modulos(d).length).map(d => {
       const mods = B.modulos(d); let resp = 0;
       mods.forEach(n => { resp += resumoModulo(d, n).respondidas; });
-      const total = mods.length * 10, pct = total ? Math.round(resp / total * 100) : 0;
+      const total = mods.reduce((a, n) => a + qtdDe(d, n), 0), pct = total ? Math.round(resp / total * 100) : 0;
       return '<button type="button" class="bcqa-card" data-disc="' + d + '"><b>' + esc(B.nomes[d]) + '</b><small>' + mods.length + ' módulos · ' + total + ' questões</small>' + barra(pct) + '<small>' + resp + ' respondidas</small></button>';
     }).join('');
-    const corpo = pintar('Questões', 'Escolha a disciplina', '<p class="bcqa-intro">Dez questões inéditas por módulo, com correção na hora e comentário. Seu progresso fica salvo neste aparelho.</p><div class="bcqa-grid">' + (cards || '<p class="bcqa-empty">As questões ainda estão carregando. Tente de novo em instantes.</p>') + '</div>', false);
+    const corpo = pintar('Questões', 'Escolha a disciplina', '<p class="bcqa-intro">Questões inéditas por módulo, com correção na hora e comentário. Seu progresso fica salvo neste aparelho.</p><div class="bcqa-grid">' + (cards || '<p class="bcqa-empty">As questões ainda estão carregando. Tente de novo em instantes.</p>') + '</div>', false);
     corpo.querySelectorAll('[data-disc]').forEach(b => b.addEventListener('click', () => abrirDisciplina(b.dataset.disc)));
     corpo.querySelector('[data-disc]')?.focus();
     return false;
@@ -97,23 +98,23 @@
     const B = bank(); view = { tipo: 'disc', disc };
     const mods = B ? B.modulos(disc) : [];
     const cards = mods.map(n => {
-      const s = resumoModulo(disc, n), pct = Math.round(Math.min(s.respondidas, 10) / 10 * 100);
+      const s = resumoModulo(disc, n), qt = qtdDe(disc, n), pct = Math.round(Math.min(s.respondidas, qt) / qt * 100);
       const t = (titulos()[disc] || {})[n] || ('Módulo ' + nn(n));
-      return '<button type="button" class="bcqa-card" data-mod="' + n + '"><small>MÓDULO ' + nn(n) + '</small><b>' + esc(t) + '</b>' + barra(pct) + '<small>' + s.respondidas + '/10 respondidas' + (s.respondidas ? ' · ' + s.acertos + ' acertos' : '') + '</small></button>';
+      return '<button type="button" class="bcqa-card" data-mod="' + n + '"><small>MÓDULO ' + nn(n) + '</small><b>' + esc(t) + '</b>' + barra(pct) + '<small>' + s.respondidas + '/' + qt + ' respondidas' + (s.respondidas ? ' · ' + s.acertos + ' acertos' : '') + '</small></button>';
     }).join('');
     const corpo = pintar(B ? B.nomes[disc] : 'Questões', 'Escolha o módulo', '<div class="bcqa-grid">' + cards + '</div>', true);
     corpo.querySelectorAll('[data-mod]').forEach(b => b.addEventListener('click', () => abrirModulo(disc, Number(b.dataset.mod), false)));
     corpo.querySelector('[data-mod]')?.focus();
     return false;
   }
-  function cardQuestao(q, i, escolha) {
+  function cardQuestao(q, i, escolha, total) {
     const feita = Number.isInteger(escolha) && escolha >= 0 && escolha < q.options.length;
     const ops = q.options.map((o, j) => {
       const st = feita ? (j === q.answer ? ' correct' : j === escolha ? ' wrong' : '') : '';
       return '<button type="button" class="bcqa-option' + st + '" data-op="' + j + '" ' + (feita ? 'disabled' : '') + ' aria-pressed="' + (j === escolha) + '"><b>' + LETRAS[j] + '</b><span>' + esc(o) + '</span></button>';
     }).join('');
     const fb = feita ? '<div class="bcqa-feedback" role="status"><strong>' + (escolha === q.answer ? '✓ Resposta correta' : '✕ Resposta incorreta · gabarito ' + LETRAS[q.answer]) + '</strong>' + esc(q.explanation) + (q.lawRef ? '<span class="bcqa-base">Base: ' + esc(q.lawRef) + '</span>' : '') + '</div>' : '';
-    return '<section class="bcqa-q" data-i="' + i + '"><p class="bcqa-meta">QUESTÃO ' + nn(i + 1) + ' DE 10</p><h3>' + esc(q.q) + '</h3><div class="bcqa-options">' + ops + '</div>' + fb + '</section>';
+    return '<section class="bcqa-q" data-i="' + i + '"><p class="bcqa-meta">QUESTÃO ' + nn(i + 1) + ' DE ' + total + '</p><h3>' + esc(q.q) + '</h3><div class="bcqa-options">' + ops + '</div>' + fb + '</section>';
   }
   async function abrirModulo(disc, n, doModulo) {
     const B = bank(); if (!B) return false;
@@ -134,7 +135,7 @@
     const botoes = '<div class="bcqa-actions">' + (c.respondidas - c.acertos > 0 ? '<button type="button" class="bcqa-btn" data-erros>Refazer só os erros</button>' : '') + (c.respondidas ? '<button type="button" class="bcqa-btn" data-zerar>Refazer o módulo</button>' : '') + '</div>';
     const corpo = pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n),
       '<div class="bcqa-stats"><span data-stats>' + c.respondidas + '/' + items.length + ' respondidas · ' + c.acertos + ' acertos</span></div>' + barra(pct) + final + botoes +
-      items.map((q, i) => cardQuestao(q, i, r[q.id])).join(''), true);
+      items.map((q, i) => cardQuestao(q, i, r[q.id], items.length)).join(''), true);
     corpo.querySelectorAll('.bcqa-q').forEach(sec => {
       const i = Number(sec.dataset.i), q = items[i];
       sec.querySelectorAll('[data-op]').forEach(b => b.addEventListener('click', () => {
@@ -175,7 +176,7 @@
     if (grid && !grid.querySelector('[data-bcqa-more]')) {
       const b = document.createElement('button');
       b.type = 'button'; b.setAttribute('data-bcqa-more', '1'); b.setAttribute('data-student-more-action', 'questoes');
-      b.innerHTML = '<span aria-hidden="true">?</span><span><b>Questões</b><small>10 por módulo, com comentário</small></span><span class="student-more-arrow" aria-hidden="true">→</span>';
+      b.innerHTML = '<span aria-hidden="true">?</span><span><b>Questões</b><small>Por módulo, com comentário</small></span><span class="student-more-arrow" aria-hidden="true">→</span>';
       b.addEventListener('click', e => { e.stopPropagation(); document.getElementById('studentMorePanel')?.setAttribute('hidden', ''); abrirDoMenu(b); });
       grid.insertBefore(b, grid.firstChild);
     }

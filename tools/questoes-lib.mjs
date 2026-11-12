@@ -66,9 +66,11 @@ export function validarTudo(root) {
   const base = path.join(root, 'content/questoes');
   const erros = [];
   const indice = {};
+  const qtd = {};
   const ids = new Set();
   for (const disc of Object.keys(DISCIPLINAS)) {
     indice[disc] = [];
+    qtd[disc] = {};
     const dir = path.join(base, disc);
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir).sort()) {
@@ -83,7 +85,8 @@ export function validarTudo(root) {
       erros.push(...validarModulo(disc, n, items));
       for (const x of items) { if (ids.has(x.id)) erros.push(`${disc} M${n}: id repetido no banco inteiro: ${x.id}`); ids.add(x.id); }
       indice[disc].push(n);
+      qtd[disc][n] = items.length;
     }
   }
-  return { erros, indice, total: ids.size };
+  return { erros, indice, qtd, total: ids.size };
 }
