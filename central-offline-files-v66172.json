@@ -1,5 +1,5 @@
 {
-  "build": "20261112-clean-infographics-v1",
+  "build": "20261112-sem-questoes-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261112nographic1",
@@ -262,6 +262,8 @@
     "/content/adm/m17-apostila-summary.js?v=20261108adm1",
     "/content/adm/m18-apostila-summary.js?v=20261108adm1",
     "/content/adm/m19-apostila-summary.js?v=20261108adm1",
-    "/content/adm/m20-apostila-summary.js?v=20261108adm1"
+    "/content/adm/m20-apostila-summary.js?v=20261108adm1",
+    "/ui/questions-removed-v1.js?v=20261112-sem-questoes-v1",
+    "/ui/questions-removed-v1.css?v=20261112-sem-questoes-v1"
   ]
 }

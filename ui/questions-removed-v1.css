@@ -1,7 +1,7 @@
 /* Base Completa — nenhum banco de questões é exibido no ambiente do aluno.
    Mantém a teoria, a revisão textual, as notas e os percentuais de leitura. */
-:where(
- .pt-cf-button-quiz,[data-pt-cf-quiz],.pta-question,.pta-feedback,.pta-practice,
+html body :is(
+ .pt-cf-button-quiz,[data-pt-cf-quiz],.pta-question,.pta-feedback,.pta-practice,.pta-guided,.pta-module-summary,
  .cv-standard-quiz,#civil-native-questions,.cv-question-card,
  .adm-cf-quiz,.adm-native-card-actions button.ghost,
  .cf-study-quiz,.cf-study-law,.cpp-native-lei-card,.cpp-native-question,

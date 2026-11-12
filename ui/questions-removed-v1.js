@@ -6,7 +6,7 @@
  if(global.BCQuestionsRemoved)return;
  global.BCQuestionsRemoved=true;
  const selector=[
-  '.pt-cf-button-quiz','[data-pt-cf-quiz]','.pta-question','.pta-feedback','.pta-practice',
+  '.pt-cf-button-quiz','[data-pt-cf-quiz]','.pta-question','.pta-feedback','.pta-practice','.pta-guided','.pta-module-summary',
   '.cv-standard-quiz','.cv-standard-card .cv-standard-quiz','.cv-question-card','#civil-native-questions',
   '.adm-cf-quiz','.adm-native-card-actions button.ghost',
   '.cf-study-quiz','.cf-study-law','.cpp-native-lei-card','.cpp-native-question',
@@ -44,7 +44,7 @@
   const label=String(el.getAttribute('aria-label')||el.textContent||'').replace(/\s+/g,' ').trim().slice(0,135);
   const action=el.getAttribute('onclick')||'';
   const href=el.getAttribute('href')||'';
-  return hit(label,actions)||hit(label,standalone)||exactSpecial(label)||
+  return hit(label,actions)||hit(label,standalone)||exactSpecial(label)||/^(?:simulados?\b|cadernos?\s+(?:qc|tec)|filtro de questoes|questoes do modulo)/i.test(word(label))||
    handlers.test(action)||hrefs.test(href)||
    /^(?:quiz|questions|exam|errors|cumulative-review|active)$/.test(el.dataset.ptCfQuiz||'')||
    /^(?:quiz|exam|errors)$/.test(el.dataset.rlmKind||'');
@@ -58,7 +58,7 @@
     if(!el.isConnected||el.closest('blockquote,.cf-native-table,table'))return;
     const t=word(el.textContent).slice(0,160);
     if(/^(?:questao\s*(?:no?\.?\s*)?\d+\s*[:.)-]|gabarito(?:\s+comentado)?\s*[:.]|alternativas?\s*[:.]|resposta correta\s*:)/.test(t)){
-     if(el.children.length===0||el.matches('h3,h4'))kill(el);
+     if(!el.querySelector('table,img,video'))kill(el);
     }
    });
    root.querySelectorAll('section,article,details').forEach(el=>{
