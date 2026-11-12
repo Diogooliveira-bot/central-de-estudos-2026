@@ -68,8 +68,24 @@
    });
   });
  }
+ function removeSuggestedQuestionJourney(){
+  const view=document.getElementById('homeView')||document.body;
+  if(!view)return;
+  for(const label of view.querySelectorAll('small,span,b,strong,p,h2,h3,h4,div')){
+   if(label.childElementCount||label.textContent.length>50||word(label.textContent)!=='sequencia sugerida')continue;
+   let parent=label.parentElement,panel=null;
+   for(let depth=0;parent&&parent!==view&&depth<6;depth++,parent=parent.parentElement){
+    const copy=word(parent.textContent);
+    if(copy.length>600)break;
+    if(copy.includes('avance uma etapa por vez')&&copy.includes('conclua')&&
+       !parent.querySelector('.bc-focus-current-module,.cv-module,.cf-module,.cpp-mod,.topic-item'))panel=parent;
+   }
+   if(panel)panel.remove();
+  }
+ }
  function sweep(){
   if(!document.body)return;
+  removeSuggestedQuestionJourney();
   document.querySelectorAll(selector).forEach(kill);
   document.querySelectorAll('button,a,[role="button"],[role="tab"]').forEach(el=>{
    if(!isQuestionAction(el))return;
