@@ -48,7 +48,9 @@ test('CF: leitor de revisão é substituído sem botão de piloto, sem tocar nos
  assert.ok(!reader.includes('Nova teoria guiada · testar'));
  assert.ok(!reader.includes('function mount()'));
  assert.ok(!reader.includes('fetch('));
- assert.ok(reader.includes('data-bc-guided-mode="review"'));
+ assert.ok(reader.includes('bc-apostila-v20261111'));
+ assert.ok(reader.includes('apostilaSintese'));
+ assert.ok(!reader.includes('data-bc-guided-mode="review"'));
  assert.ok(reader.includes('bc-m01-checklist'));
  assert.ok(reader.includes('localStorage'));
  assert.ok(reader.includes('const MIN=1,MAX=15'));

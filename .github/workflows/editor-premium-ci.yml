@@ -7,6 +7,7 @@ on:
       - 'api/content-editor.js'
       - 'central-v119.html'
       - 'tests/editor-premium-v1-unit.mjs'
+      - 'tests/editor-guided-revisions-unit.mjs'
       - 'tests/editor-premium-fase1-unit.mjs'
       - 'tests/editor-premium-fase2-unit.mjs'
       - 'ui/visual-editor-v1.js'
@@ -38,6 +39,7 @@ jobs:
       - name: Verificar sintaxe
         run: |
           node --check ui/editor-premium-v1.js
+          node --check ui/visual-editor-v1.js
           node --check api/content-editor.js
       - name: Rodar testes do Editor Premium e das imagens
         run: npm run test:editor-premium

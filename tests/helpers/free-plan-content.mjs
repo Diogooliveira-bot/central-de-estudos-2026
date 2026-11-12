@@ -52,6 +52,9 @@ export async function freePlanAsset(root, path) {
     return ok(safe && `window.${variable}=${JSON.stringify(gzipSync(Buffer.from(JSON.stringify(safe))).toString('base64'))};`);
   }
   if (policy.kind === 'file') {
+    // Simula a autorização real do servidor: teoria resumida é liberada
+    // no Gratuito; outras classes de recursos permanecem protegidas.
+    if (policy.feature === 'theory.summary') return { status: 200, type: JS, body: data.toString('utf8') };
     if (LOCKED_FILES[path]) return ok(LOCKED_FILES[path]);
     if (path === '/content/qc-sharing-links.json') return { status: 200, type: 'application/json', body: '{"schemaVersion":1,"locked":true,"items":[]}' };
     if (path === '/content/cpp/cpp-native-index.js') {

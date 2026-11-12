@@ -31,7 +31,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   assert.equal(new Set(data.items.map((x) => x.subdivisao || x.modulo)).size, 66);
   assert(boot.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
   assert(boot.includes('ui/civil-native-study-v1.js?v=20261111ia2'));
-  assert(boot.includes('content/civil/civil-teoria-guiada-reader-v1.js?v=20261107civilreading4'));
+  assert(boot.includes('content/civil/civil-teoria-guiada-reader-v1.js?v=20261111-apostilas-civil-cf-v1'));
   assert(boot.includes('ui/civil-native-study-v1.css?v=20261019civilstandard1'));
   assert(lazy.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
   assert(lazy.includes('ui/civil-native-study-v1.js?v=20261111ia2a'));
@@ -42,7 +42,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     '/ui/civil-native-study-v1.js?v=20261111ia2a',
     '/ui/civil-native-study-v1.css?v=20261019civilstandard1',
   ]) assert(manifest.files.includes(asset), `${asset}: ausente no pacote offline.`);
-  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261028singleloading1/);
+  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261111-pt-rlm-v1/);
 
   const moduleByUid = new Map(index.modules.map((m) => [m.uid, m]));
   const perModule = new Map();
@@ -168,9 +168,9 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
       assert.equal(module.review, 'Versão de revisão', `M${module.number}: card de versão de revisão ausente.`);
       assert.equal(module.infographic, 'Infográfico', `M${module.number}: card de infográfico ausente.`);
       assert(module.completeActions[0].startsWith('Estudar conteúdo'));
-      assert.equal(module.completeActions[1], 'Resolver 10 questões');
+      assert.equal(module.completeActions[1], '10 questões de bancas reais · em breve');
       assert(module.reviewActions[0].startsWith('Revisar conteúdo'));
-      assert.equal(module.reviewActions[1], 'Resolver 5 questões');
+      assert.equal(module.reviewActions[1], 'Resolver 10 questões autorais');
       assert.equal(module.notes, 1, `M${module.number}: notas duplicadas ou ausentes.`);
       assert.equal(module.legacyManualEntry, false, `M${module.number}: formulário manual redundante permaneceu.`);
     }
@@ -223,9 +223,12 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     await page.locator('[data-civil-native-module="1"] .cv-oriented-done').click();
     assert.equal(await page.evaluate(() => localStorage.getItem('central-v6:civil-native:m01:summary:read')), '100');
     assert.equal(await page.evaluate(() => localStorage.getItem('central-v6:civil-native:m01:complete:read')), '100');
-    await page.locator('[data-civil-native-module="1"] .cv-card-complete .cv-standard-quiz').click();
-    await page.waitForFunction(() => !document.getElementById('civil-native-questions')?.hidden);
-    assert.match(await page.locator('#cv-q-eye').textContent(), /COMPLETA/);
+    // 10 + 10: a versão de revisão abre as 10 questões de IA (a teoria completa reserva as de bancas reais).
+    await page.addScriptTag({ path: path.join(root, 'ui/central-internal-question-policy-v1.js') });
+    await page.addScriptTag({ path: path.join(root, 'ui/central-authorial-bank-v1.js') });
+    await page.locator('[data-civil-native-module="1"] .cv-card-review .cv-standard-quiz').click();
+    await page.waitForFunction(() => document.getElementById('civil-native-questions') && !document.getElementById('civil-native-questions').hidden);
+    assert.match(await page.locator('#cv-q-eye').textContent(), /RESUMIDA/);
     await page.evaluate(() => CivilNative.closeQuestions());
     await page.locator('[data-civil-native-module="1"] .cv-card-infographic .cv-standard-button').click();
     await page.waitForFunction(() => !document.getElementById('civil-native-image-viewer')?.hidden && document.getElementById('cv-img')?.complete && document.getElementById('cv-img').naturalWidth > 0);

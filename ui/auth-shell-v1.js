@@ -41,7 +41,7 @@ function inject(user){
  if(top&&!document.getElementById('bcAuthActions')){
   var actions=document.createElement('div');actions.id='bcAuthActions';actions.className='bc-auth-actions';
   actions.innerHTML='<div class="bc-auth-chip"><span>👤</span><span><b></b><small></small></span></div>'+(user.role==='admin'?'<a class="bc-auth-users" href="/usuarios.html">Usuários</a>':'')+'<button type="button" data-bc-logout>⇥ Sair</button>';
-  actions.querySelector('b').textContent=user.name||user.email;actions.querySelector('small').textContent=roleLabel(user.role);
+  actions.querySelector('b').textContent=user.name||user.email;actions.querySelector('small').textContent=user.id==='bc-preview-demo-20261109'?'Aluno de teste':roleLabel(user.role);
   actions.querySelector('[data-bc-logout]').onclick=logout;
   top.appendChild(actions);
  }

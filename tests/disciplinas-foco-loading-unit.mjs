@@ -113,3 +113,25 @@ test('estilos acessíveis e cache versionado',()=>{
     assert.ok(boot.includes(asset.slice(1)),file+' boot e manifesto usam a mesma versão');
   }
 });
+
+
+test('módulo em foco usa título apenas no cabeçalho superior, mantendo controles originais',()=>{
+  const clean=readFileSync('ui/module-clean-v1.css','utf8');
+  const civil=readFileSync('ui/civil-native-study-v1.js','utf8');
+  const cpp=readFileSync('ui/cpp-native-study-v1.js','utf8');
+  const boot=readFileSync('central-v119.html','utf8');
+  const files=JSON.parse(readFileSync('central-offline-files-v66172.json','utf8')).files;
+  const version='/ui/module-clean-v1.css?v=20261112single-title1';
+  assert.ok(boot.includes(version));
+  assert.ok(files.includes(version));
+  assert.match(clean,/\.cv-module\.bc-focus-current-module\s*>\s*\.cv-module-head\s*\{/);
+  assert.match(clean,/\.cv-module\.bc-focus-current-module\s*>\s*\.cv-module-head\s*>\s*:not\(\.cv-chevron\)/);
+  assert.match(clean,/\.cv-module\.bc-focus-current-module\s+\.cv-zone-head\s*\{\s*display:none!important/);
+  assert.match(clean,/\.cv-module\.bc-focus-current-module\s*>\s*\.cv-module-head::before/);
+  assert.match(clean,/\.topic-item\.bc-focus-current-module\s*>\s*\.topic-row\s*>\s*:not\(\.open-topic\)/);
+  assert.match(civil,/onclick="CivilNative\.toggle\(\$\{n\}\)"/);
+  assert.match(cpp,/onclick="CppNative\.toggle\('/);
+  assert.match(civil,/function progressPanel\(n\)/);
+  assert.match(cpp,/function progressPanel\(n\)/);
+  assert.doesNotMatch(clean,/\.cv-module-body\s*\{\s*display:none/);
+});

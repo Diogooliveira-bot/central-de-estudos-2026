@@ -141,6 +141,11 @@ button:active{transform:translateY(1px)}
 <p id="publicSignupLink" class="access-help bc-signup-link">Ainda não tem conta? <a href="/cadastro-gratuito.html">Criar minha conta gratuita</a></p>
 <p class="access-help"><a id="commercialSiteLink" href="https://basecompleta.com.br/" style="color:#17658a;text-decoration:none">Conhecer a plataforma</a></p>
 </form>
+<div id="previewDemoAccess" hidden style="margin-top:16px;padding-top:15px;border-top:1px solid #cfe0e8;text-align:center">
+ <p style="margin:0 0 8px;color:#4c6c80;font-size:13px">Prévia de testes · sem senha e sem acesso a alunos reais.</p>
+ <button type="button" id="previewDemoBtn" style="background:#173b5d;color:white">Entrar como aluno de teste</button>
+ <p style="margin:9px 0 0;color:#637d8e;font-size:12px">Você poderá ver relatórios, mas e-mails reais não serão enviados.</p>
+</div>
 
 <form id="setupForm" class="setup">
 <label for="adminName">Seu nome</label>
@@ -166,6 +171,10 @@ function setMsg(text,type){msg.textContent=text||'';msg.className='msg'+(type?' 
 function nextUrl(){var p=new URLSearchParams(location.search).get('next')||'/';return p.startsWith('/')&&!p.startsWith('//')?p:'/'}
 async function jsonFetch(url,opt){var r=await fetch(url,opt||{}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j}
 async function init(){
+ jsonFetch('/api/auth?action=preview-demo-status').then(function(state){
+  if(state.enabled)document.getElementById('previewDemoAccess').hidden=false;
+ }).catch(function(){});
+
  try{
   jsonFetch('/api/auth?action=free-signup-status').then(function(signup){
    if(signup.enabled){document.getElementById('firstAccessInviteHint').hidden=true;}
@@ -183,6 +192,14 @@ async function init(){
 document.getElementById('togglePassword').addEventListener('click',function(){
  var input=document.getElementById('password'),visible=input.type==='text';
  input.type=visible?'password':'text';this.classList.toggle('is-visible',!visible);this.setAttribute('aria-pressed',String(!visible));this.setAttribute('aria-label',visible?'Mostrar senha':'Ocultar senha');this.setAttribute('title',visible?'Mostrar senha':'Ocultar senha');
+});
+document.getElementById('previewDemoBtn').addEventListener('click',async function(){
+ var button=this;button.disabled=true;setMsg('Abrindo ambiente de testes...');
+ try {
+  await jsonFetch('/api/auth?action=preview-demo-start',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
+  setMsg('Acesso de demonstração liberado.','ok');
+  location.replace(nextUrl());
+ } catch(err) {setMsg(err.message||'Não foi possível abrir a demonstração.','err');button.disabled=false;}
 });
 loginForm.addEventListener('submit',async function(e){
  e.preventDefault();var btn=document.getElementById('loginBtn');btn.disabled=true;setMsg('Entrando...');

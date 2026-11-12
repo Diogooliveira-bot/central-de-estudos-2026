@@ -109,9 +109,34 @@ function filtered(){
 }
 function disciplineHtml(p){
  var rows=Array.isArray(p.disciplines)?p.disciplines:[];
+ var modules=Array.isArray(p.modules)?p.modules:[];
  if(!rows.length)return '<div class="hint">Este usuário ainda não enviou percentuais das disciplinas.</div>';
- return '<div class="disciplines">'+rows.map(function(d){var pct=Math.max(0,Math.min(100,Number(d.pct)||0));return '<div class="discipline"><div class="discipline-head"><b>'+esc(d.name)+'</b><span>'+pct+'%</span></div><div class="bar"><i style="width:'+pct+'%"></i></div></div>'}).join('')+'</div>';
+ return '<div class="disciplines">'+rows.map(function(d){
+  var pct=Math.max(0,Math.min(100,Number(d.pct)||0));
+  var items=modules.filter(function(m){return m.subjectId===d.id});
+  var detail=items.length
+   ?'<details style="margin-top:8px"><summary style="cursor:pointer;font-size:11px;color:#49647b">Ver '+items.length+' módulos concluídos, em andamento ou sem registro</summary>'+
+      items.map(function(m){var v=Math.max(0,Math.min(100,Number(m.pct)||0));var state=v===100?'Concluído':v>0?'Em andamento':'Sem progresso registrado';
+       return '<div style="display:flex;gap:12px;justify-content:space-between;padding:5px 0;border-bottom:1px solid #e9eef2;font-size:11px"><span>'+esc(m.name)+'</span><span style="flex:none">'+state+' · '+v+'%</span></div>';
+      }).join('')+'</details>'
+   :'<div class="hint" style="font-size:10px">Detalhes por módulo ainda não sincronizados.</div>';
+  return '<div class="discipline"><div class="discipline-head"><b>'+esc(d.name)+'</b><span>'+pct+'%</span></div><div class="bar"><i style="width:'+pct+'%"></i></div>'+detail+'</div>';
+ }).join('')+'</div>';
 }
+function adminWhatsappText(u,p){
+ var lines=['BASE COMPLETA | RELATÓRIO DE ESTUDOS','Aluno: '+u.name,'',
+  'Progresso registrado por disciplina:'];
+ (p.disciplines||[]).forEach(function(d){lines.push(d.name+': '+d.pct+'%')});
+ var pending=(p.modules||[]).filter(function(m){return Number(m.pct)<100});
+ if(pending.length){
+  lines.push('','Módulos pendentes ou sem conclusão registrada:');
+  pending.slice(0,12).forEach(function(m){lines.push('• '+m.name+' ('+m.pct+'%)')});
+  if(pending.length>12)lines.push('E mais '+(pending.length-12)+' módulos.');
+ }
+ lines.push('','Dados registrados na Central. 0% não comprova ausência de estudo fora da plataforma.');
+ return lines.join('\n');
+}
+
 function render(){
  var list=filtered();host.innerHTML='';
  if(!list.length){host.innerHTML='<div class="empty">Nenhum usuário encontrado.</div>';return}
@@ -131,7 +156,7 @@ function render(){
     '<div><small>Questões registradas</small><b>'+Number(p.questions||0).toLocaleString('pt-BR')+'</b></div>'+
     '<div><small>Tempo ativo de estudo</small><b>'+esc(duration(p.studySeconds))+'</b></div>'+
    '</div>'+
-   '<div class="progress-box"><button type="button" class="progress-toggle"><span>Progresso pedagógico</span><b>'+Number(p.overallPct||0)+'% ▾</b></button><div class="progress-detail"><div class="overall"><strong>'+Number(p.overallPct||0)+'%</strong><div><div class="bar"><i style="width:'+Math.max(0,Math.min(100,Number(p.overallPct)||0))+'%"></i></div><div class="hint">Média atual das disciplinas exibidas na Central.</div></div></div>'+disciplineHtml(p)+'<div class="hint">Última leitura do painel: '+esc(dt(p.updatedAt))+' · dados sincronizados: '+(sync.hasData?esc(bytes(sync.bytes)):'ainda não')+'.</div></div></div>';
+   '<div class="progress-box"><button type="button" class="progress-toggle"><span>Progresso pedagógico</span><b>'+Number(p.overallPct||0)+'% ▾</b></button><div class="progress-detail"><div class="overall"><strong>'+Number(p.overallPct||0)+'%</strong><div><div class="bar"><i style="width:'+Math.max(0,Math.min(100,Number(p.overallPct)||0))+'%"></i></div><div class="hint">Média atual das disciplinas exibidas na Central.</div></div></div>'+disciplineHtml(p)+'<div class="hint">Última leitura do painel: '+esc(dt(p.updatedAt))+' · dados sincronizados: '+(sync.hasData?esc(bytes(sync.bytes)):'ainda não')+'.</div>'+(u.role==='aluno'?'<div class="row-actions" style="margin-top:12px"><button type="button" class="admin-report-email">Enviar relatório por e-mail</button><button type="button" class="admin-report-whatsapp">Compartilhar pelo WhatsApp</button></div>':'')+'</div></div>';
   row.querySelector('.role').value=u.role;row.querySelector('.active').checked=!!u.active;
   if(u.id===currentUserId){row.querySelector('.role').disabled=true;row.querySelector('.active').disabled=true}
   row.querySelector('.save').onclick=async function(){try{await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'update',userId:u.id,role:row.querySelector('.role').value,active:row.querySelector('.active').checked})});await load()}catch(e){alert(e.message)}};
@@ -150,6 +175,23 @@ function render(){
     await load();await loadPublicSignups();
     alert('Conta do aluno excluída.');
    }catch(error){deleteButton.disabled=false;alert(error.message||'Não foi possível excluir o aluno.')}
+  };
+  var sendReport=row.querySelector('.admin-report-email');
+  if(sendReport)sendReport.onclick=async function(){
+    if(!confirm('Enviar o relatório ao e-mail cadastrado de '+u.name+'?'))return;
+    sendReport.disabled=true;
+    try{
+      var r=await fetchJson('/api/study-communication?action=admin-report-email',{
+        method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({userId:u.id})
+      });
+      alert('Relatório enviado ao e-mail cadastrado: '+r.email);
+    }catch(e){alert(e.message)}finally{sendReport.disabled=false}
+  };
+  var shareReport=row.querySelector('.admin-report-whatsapp');
+  if(shareReport)shareReport.onclick=function(){
+    if(!Array.isArray(p.disciplines)||!p.disciplines.length){alert('Este aluno ainda não tem progresso sincronizado.');return}
+    if(!confirm('O WhatsApp abrirá com um resumo preenchido. Confira o destinatário antes de enviar.'))return;
+    window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(adminWhatsappText(u,p)),'_blank','noopener,noreferrer');
   };
   row.querySelector('.progress-toggle').onclick=function(){var box=row.querySelector('.progress-detail');box.classList.toggle('open');this.querySelector('b').textContent=Number(p.overallPct||0)+'% '+(box.classList.contains('open')?'▴':'▾')};
   host.appendChild(row);

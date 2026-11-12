@@ -1,0 +1,25 @@
+name: CPC M01-M15 — resumos do PDF
+on:
+  pull_request:
+    paths:
+      - 'content/cpc/cpc-resumos-pdf-m*-20261110.js'
+      - 'tests/cpc-pdf-resumos-m01-m15-unit.mjs'
+      - 'index.html'
+      - '.github/workflows/cpc-pdf-resumos-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Testar substituição e estabilidade das leituras
+        run: node --test tests/cpc-pdf-resumos-m01-m15-unit.mjs
+      - name: Testes atuais de leitura CPC
+        run: npm run test:cpc-apostila
