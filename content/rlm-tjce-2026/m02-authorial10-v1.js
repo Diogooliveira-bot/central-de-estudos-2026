@@ -76,7 +76,7 @@ window.BC_RLM_AUTHORIAL_OVERRIDES[2]=[
       "Se Lia tomou posse, então foi nomeada."
     ],
     "answer": 2,
-    "explanation": "A verdade de uma condicional P → Q não prova que P ocorreu nem que Q ocorreu: ela apenas proíbe o caso \"P verdadeiro e Q falso\". Por isso a primeira e a segunda alternativas afirmam fatos que a informação não garante, e a terceira nega a nomeação sem base (Lia pode ter sido nomeada e tomado posse). A quarta é a recíproca (Q → P), que não decorre da condicional original: pode ter tomado posse por outra via. Resta a quinta, que escreve P → Q como ¬P ∨ Q: se a condicional é verdadeira, então ou o antecedente é falso (Lia não foi nomeada) ou o consequente é verdadeiro (tomou posse). Confirma-se por tabela: nas três linhas em que P → Q é V, ¬P ∨ Q também é V.",
+    "explanation": "A verdade de uma condicional P → Q não prova que P ocorreu nem que Q ocorreu: ela apenas proíbe o caso \"P verdadeiro e Q falso\". Por isso \"Lia foi nomeada\" e \"Lia tomou posse\" afirmam fatos que a informação não garante, e \"Lia não foi nomeada\" nega a nomeação sem base (Lia pode ter sido nomeada e tomado posse). \"Se Lia tomou posse, então foi nomeada\" é a recíproca (Q → P), que não decorre da condicional original: ela pode ter tomado posse por outra via. Resta a alternativa que escreve P → Q como ¬P ∨ Q: se a condicional é verdadeira, então ou o antecedente é falso (Lia não foi nomeada) ou o consequente é verdadeiro (tomou posse). Confirma-se por tabela: nas três linhas em que P → Q é V, ¬P ∨ Q também é V.",
     "lawRef": "Condicional — equivalência com ¬P ∨ Q",
     "provenance": "questao-autoral-IA-revisada"
   },
@@ -91,7 +91,7 @@ window.BC_RLM_AUTHORIAL_OVERRIDES[2]=[
       "¬R ∧ (¬J → A)"
     ],
     "answer": 1,
-    "explanation": "\"Nem R nem J\" significa que as duas coisas deixaram de ocorrer: ¬R ∧ ¬J (equivale a ¬(R ∨ J) por De Morgan). A conjunção final \"e a audiência foi realizada\" acrescenta A, de modo que a forma é (¬R ∧ ¬J) ∧ A. A primeira alternativa troca o \"e\" por \"ou\" (basta uma das ausências); a segunda nega apenas a conjunção de três fatos, o que é verdadeiro até quando o réu compareceu e a audiência não ocorreu; a terceira transforma a afirmação em promessa condicional, verdadeira sempre que as ausências não ocorrerem; a quarta mistura condicional dentro da conjunção. Confira por tabela: só a forma correta é verdadeira apenas na linha R = F, J = F, A = V.",
+    "explanation": "\"Nem R nem J\" significa que as duas coisas deixaram de ocorrer: ¬R ∧ ¬J (equivale a ¬(R ∨ J) por De Morgan). A conjunção final \"e a audiência foi realizada\" acrescenta A, de modo que a forma é (¬R ∧ ¬J) ∧ A. (¬R ∨ ¬J) ∧ A troca o \"e\" por \"ou\" (bastaria uma das ausências); ¬(R ∧ J ∧ A) nega a conjunção de três fatos, o que é verdadeiro até quando o réu compareceu e a audiência não ocorreu; (¬R ∧ ¬J) → A transforma a afirmação em promessa condicional, verdadeira sempre que as ausências não ocorrerem; ¬R ∧ (¬J → A) mistura uma condicional dentro da conjunção. Confira por tabela: só a forma correta é verdadeira apenas na linha R = F, J = F, A = V.",
     "lawRef": "Tradução para a linguagem simbólica — \"nem...nem\"",
     "provenance": "questao-autoral-IA-revisada"
   },
