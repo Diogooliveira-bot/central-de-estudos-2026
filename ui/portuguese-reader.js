@@ -138,8 +138,8 @@ async function open(id,mode='complete'){
  const shell=overlay.querySelector('.bc-native-reader');overlay.querySelector('.pt-native-loading').remove();
  shell.insertAdjacentHTML('beforeend','<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar no conteúdo"><button type="button" data-pt-font="-1" aria-label="Diminuir fonte">A−</button><button type="button" data-pt-font="1" aria-label="Aumentar fonte">A+</button><button type="button" class="primary" data-pt-top>Ir ao topo</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc" aria-label="Índice do material"><div class="bc-native-toc-label">Índice do módulo</div></nav><main class="bc-native-scroll"><div class="bc-native-article"></div></main></div>');
  const article=overlay.querySelector('.bc-native-article');article.appendChild(template.content);
- const exerciseRecords=global.BCQuestionsRemoved?[]:(global.BasePortugueseActivities?.enhance(article,{moduleId:id})||[]);
- if(practiceMode&&!global.BCQuestionsRemoved)focusedPractice(article,exerciseRecords,mode,id);
+ const exerciseRecords=global.BasePortugueseActivities?.enhance(article,{moduleId:id})||[];
+ if(practiceMode)focusedPractice(article,exerciseRecords,mode,id);
  else{
   hideLooseAnswers(article);orgStyle();
   overlay.querySelector('.bc-native-toc').insertAdjacentHTML('beforeend',outline(article).map(x=>'<button type="button" class="pt-toc-l'+x.level+'" data-pt-jump="'+x.h.id+'">'+esc(x.text)+'</button>').join(''));

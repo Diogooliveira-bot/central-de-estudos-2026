@@ -149,7 +149,7 @@
       if (handler) primary.setAttribute('onclick', handler);
       else primary.addEventListener('click', () => original.click());
       actions.appendChild(primary);
-      if(!window.BCQuestionsRemoved)actions.appendChild(penalQuestionAction(week, isComplete ? 10 : 5, isComplete ? 'fixation' : 'intermediate', primary, type));
+      actions.appendChild(penalQuestionAction(week, isComplete ? 10 : 5, isComplete ? 'fixation' : 'intermediate', primary, type));
       return article;
     };
     const fullCard = makeCard(complete, 'complete');
@@ -210,7 +210,7 @@
       review.scrollIntoView?.({block:'center',behavior:'smooth'});
     });
     reviewActions.appendChild(reviewButton);
-    if(!window.BCQuestionsRemoved)reviewActions.appendChild(penalQuestionAction(week,5,'intermediate'));
+    reviewActions.appendChild(penalQuestionAction(week,5,'intermediate'));
     review.querySelector('.cf-step-head')?.after(reviewActions);
 
     if (full) {
@@ -233,7 +233,7 @@
         existingButton.textContent = 'Estudar conteúdo';
         actions.appendChild(existingButton);
       }
-      if(!window.BCQuestionsRemoved)actions.appendChild(penalQuestionAction(week,10,'fixation'));
+      actions.appendChild(penalQuestionAction(week,10,'fixation'));
       full.replaceChildren(icon,copy,actions);
     }
 
@@ -408,7 +408,7 @@
       primary.type = 'button'; primary.className = 'cpc-approved-primary'; primary.textContent = action;
       const handler = original.getAttribute('onclick'); if (handler) primary.setAttribute('onclick',handler);
       article.querySelector('.cpc-approved-actions').append(primary);
-      if (!window.BCQuestionsRemoved && quiz?.button) {
+      if (quiz?.button) {
         quiz.button.classList.remove('good'); quiz.button.classList.add('cpc-approved-secondary');
         quiz.button.textContent = quiz.count ? 'Resolver ' + quiz.count + ' questões' : 'Questões internas indisponíveis';
         if (!quiz.count) { quiz.button.disabled = true; quiz.button.setAttribute('aria-label','Não há questões disponíveis nesta bateria'); }

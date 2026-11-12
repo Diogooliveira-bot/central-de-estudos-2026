@@ -42,21 +42,6 @@
   ],
   "redirects": [
     {
-      "source": "/central-de-questoes",
-      "destination": "/central-v119.html",
-      "permanent": false
-    },
-    {
-      "source": "/tools/decorando.html",
-      "destination": "/central-v119.html",
-      "permanent": false
-    },
-    {
-      "source": "/tools/lei-em-dia-gratis.html",
-      "destination": "/central-v119.html",
-      "permanent": false
-    },
-    {
       "source": "/login.html",
       "has": [
         {
