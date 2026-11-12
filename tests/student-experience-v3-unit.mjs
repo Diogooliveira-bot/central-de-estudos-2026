@@ -157,6 +157,6 @@ test('prévia visual V2 mantém ações nativas e libera atalhos agrupados somen
     assert.ok(css.includes('data-student-primary-nav="' + action + '"'), action + ' so pode ser compactado no celular');
   }
   assert.match(nav, /original\.click\(\)/);
-  assert.match(nav, /origins\.some\(button => !button\) return false/);
+  assert.match(nav, /origins\.some\(button => !button\)\) return false/);
   assert.doesNotMatch(nav, /localStorage|sessionStorage|fetch\(|removeChild|\.remove\(\)/);
 });
