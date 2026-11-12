@@ -264,7 +264,7 @@ function renderOverlay(){
  const stage=active.stage;
  const previous=el('bcRlmScroll'),oldY=previous?.scrollTop||0;
  const links=active.id==='M01'?[]:active.id==='RF'?[]:[
- ['theory','Teoria'],['recap','Revisão'],['quiz','Questões'],['map','Mapa mental']
+ ['theory','Teoria'],['recap','Revisão'],['quiz','Questões']
  ];
  const actions=links.map(([kind,label])=>'<button type="button" class="bc-rlm-tool-tab'+(kind===stage?' active':'')+
  '" aria-pressed="'+(kind===stage)+'" onclick="RlmNative.tab(\''+kind+'\')">'+label+'</button>').join('');
@@ -318,7 +318,7 @@ function next(){
  if(!active)return;
  if(active.id==='M01')return open('M02','theory');
  if(active.id==='RF')return close();
- const order=['theory','recap','quiz','map'],i=order.indexOf(active.stage);
+ const order=['theory','recap','quiz'],i=order.indexOf(active.stage);
  if(i<order.length-1)return tab(order[i+1]);
  const pos=manifest().findIndex(x=>x.id===active.id);
  return pos>=manifest().length-1?open('RF'):open(manifest()[pos+1].id);
@@ -362,7 +362,7 @@ function quiz(m,d){
  return title('Questões','3 fáceis • 4 médias • 3 difíceis. Clique na alternativa: o gabarito e a explicação aparecem na hora.')+
  '<div class="bc-rlm-scores" id="bcRlmScore">'+scoreHtml(m.id)+'</div>'+
  d.questions.map((q,i)=>cardQuestion(m.id,q,i)).join('')+
- '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'map\')">Abrir mapa mental →</button></div>';
+ '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.next()">Próximo módulo →</button></div>';
 }
 function scoreHtml(id){
  const p=result(id);return '<b>'+p.count+'/'+p.total+' respondidas</b> · '+p.correct+' acertos · '+p.pct+'% nas respondidas';

@@ -176,3 +176,34 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-readin
 .adm-native-progress-panel {
   grid-template-columns:minmax(0,1fr)!important;
 }
+
+
+/* 12/11 — Remoção global dos infográficos independentes dos módulos.
+   O conteúdo das apostilas, imagens didáticas internas, questões, progresso,
+   anotações e arquivos originais permanecem preservados.
+   CSS cobre módulos montados por JavaScript após a primeira renderização. */
+html #homeView #subjects :is(
+  .cv-standard-card.cv-card-infographic,
+  .adm-cf-card.adm-cf-card-map,
+  .adm-native-card.adm-native-visual[data-kind="infographic"],
+  .cf-study-card.cf-study-map,
+  .pt-cf-card.pt-cf-card-map,
+  .bc-native-material-card[data-native-kind="mindmap"],
+  .cpc-approved-card.cpc-approved-map,
+  .bc-mindmap-entry,
+  .bc-rlm-study-card.bc-rlm-study-map
+) {
+  display:none!important;
+}
+/* O exportador antigo tratava somente dos infográficos removidos. */
+html #centralSidebar .nav [data-bc-image-export] {
+  display:none!important;
+}
+/* Leitor RLM: a etapa de mapa visual deixa de aparecer na lista de etapas. */
+html .bc-rlm-reader .bc-rlm-tool-tab[onclick*="'map'"] {
+  display:none!important;
+}
+/* O acesso a infográficos não deve criar uma terceira coluna vazia. */
+html #homeView #subjects .subject[data-id="cf"] .cf-native-cards {
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))!important;
+}
