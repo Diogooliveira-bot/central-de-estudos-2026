@@ -524,10 +524,6 @@ function open(mode){
     restoreScroll();updateScrollProgress();refreshReaderStudyUI();autoMarkViewedChapters();
   });
 }
-function openMap(){
-  if(global.BaseMindMap?.open)global.BaseMindMap.open('penal','p1');
-  else alert('O mapa mental interativo ainda está carregando. Tente novamente em alguns segundos.');
-}
 function removeLegacyM01Content(){
   const module=document.querySelector(M1_SELECTOR);
   if(!module)return;
@@ -545,11 +541,9 @@ function inject(){
       '<div class="bc-native-material-grid">'+
         '<button class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
         '<button class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M01 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
-        '<button class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
       '</div>';
     host.querySelector('[data-native-kind="summary"]').onclick=()=>open('summary');
     host.querySelector('[data-native-kind="complete"]').onclick=()=>open('complete');
-    host.querySelector('[data-native-kind="mindmap"]').onclick=openMap;
     const subtitle=body.querySelector('.cf-subtitle');
     if(subtitle)subtitle.insertAdjacentElement('afterend',host);else body.insertAdjacentElement('afterbegin',host);
   }

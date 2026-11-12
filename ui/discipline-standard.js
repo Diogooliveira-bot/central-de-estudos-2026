@@ -110,7 +110,6 @@
     const originals = Array.from(grid.querySelectorAll(':scope > .bc-native-material-card'));
     const complete = originals.find(button => button.dataset.nativeKind === 'complete' || /conteúdo completo/i.test(button.textContent));
     const summary = originals.find(button => button.dataset.nativeKind === 'summary' || /conteúdo resumido/i.test(button.textContent));
-    const mindmap = originals.find(button => button.dataset.nativeKind === 'mindmap' || /mapa mental/i.test(button.textContent));
     if (!complete || !summary) return false;
 
     const state = typeof window.penalWeekState === 'function' ? window.penalWeekState(week.id) : {};
@@ -155,8 +154,7 @@
     };
     const fullCard = makeCard(complete, 'complete');
     const reviewCard = makeCard(summary, 'summary');
-    const preservedExtras = mindmap ? [mindmap] : [];
-    grid.replaceChildren(reviewCard, fullCard, ...preservedExtras);
+    grid.replaceChildren(reviewCard, fullCard);
     materials.querySelector(':scope > .bc-native-metrics')?.remove();
     materials.querySelector(':scope > .bc-native-materials-head')?.remove();
     materials.classList.add('penal-approved-native-materials');
@@ -350,7 +348,6 @@
 
     const complete = originals.find(button => /complete/i.test(button.getAttribute('onclick') || '') || /conteúdo completo/i.test(button.textContent));
     const summary = originals.find(button => button !== complete && (/summary/i.test(button.getAttribute('onclick') || '') || /resumido|resumo/i.test(button.textContent)));
-    const map = originals.find(button => button !== complete && button !== summary) || null;
     if (!complete || !summary) return;
 
     const state = typeof window.cpcWeekState === 'function' ? window.cpcWeekState(week.id) : {};
@@ -393,11 +390,11 @@
       return {button,count};
     };
     const card = (original,type,quiz) => {
-      const tone = type === 'complete' ? 'complete' : type === 'summary' ? 'summary' : 'map';
-      const title = type === 'complete' ? 'Teoria completa' : type === 'summary' ? 'Versão de revisão' : 'Mapa mental';
-      const action = type === 'complete' ? 'Estudar conteúdo' : type === 'summary' ? 'Revisar conteúdo' : 'Visualizar mapa mental';
-      const icon = type === 'complete' ? '📚' : type === 'summary' ? '⚡' : '🧠';
-      const description = original.querySelector('span:nth-of-type(2) small')?.textContent.trim() || (type === 'map' ? 'Revise visualmente os principais pontos do módulo.' : 'Retome os pontos principais do módulo.');
+      const tone = type === 'complete' ? 'complete' : 'summary';
+      const title = type === 'complete' ? 'Teoria completa' : 'Versão de revisão';
+      const action = type === 'complete' ? 'Estudar conteúdo' : 'Revisar conteúdo';
+      const icon = type === 'complete' ? '📚' : '⚡';
+      const description = original.querySelector('span:nth-of-type(2) small')?.textContent.trim() || 'Retome os pontos principais do módulo.';
       const sourceTitle = original.querySelector('strong')?.textContent.trim() || title;
       const progress = original.querySelector('.bc-native-material-action')?.textContent.replace(/→/g,'').trim() || '';
       const article = document.createElement('article');
@@ -420,7 +417,6 @@
       return article;
     };
     grid.replaceChildren(card(summary,'summary',question('summary')),card(complete,'complete',question('complete')));
-    if (map) grid.append(card(map,'map',null));
     materials.classList.add('cpc-approved-materials'); materials.querySelector('.bc-native-materials-head')?.remove();
     intro?.remove(); body.querySelector(':scope > .cf-module-bar')?.remove();
     // Render the approved two-bar progress summary; native counters/history remain untouched.
