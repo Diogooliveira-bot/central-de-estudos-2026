@@ -1,0 +1,28 @@
+/* Base Completa — nenhum banco de questões é exibido no ambiente do aluno.
+   Mantém a teoria, a revisão textual, as notas e os percentuais de leitura. */
+html body :is(
+ .pt-cf-button-quiz,[data-pt-cf-quiz],.pta-question,.pta-feedback,.pta-practice,.pta-guided,.pta-module-summary,
+ .cv-standard-quiz,#civil-native-questions,.cv-question-card,
+ .adm-cf-quiz,.adm-native-card-actions button.ghost,
+ .cf-study-quiz,.cf-study-law,.cpp-native-lei-card,.cpp-native-question,
+ .bc-native-quiz-card,.bc-native-internal-review,.bc-rlm-quiz,
+ [data-rlm-kind="quiz"],[data-rlm-kind="exam"],[data-rlm-kind="review"],[data-rlm-kind="errors"],[data-rlm-module="RF"],
+ [data-penal-approved-questions],.cpc-approved-card .cpc-approved-secondary,
+ .cf-question,.cf-questions,.cf-qtop,.cf-qbar,.cf-option-row,.cf-result-grid,
+ .bcq-module-panels,[data-bcq-module-panel],[data-bcq-module-slot],
+ .bcq-page-layout,.bcq-center-panel,.bcq-center-tabs,.bcq-page-head,
+ .tec-validated-panel,.cpp-native-tec-panel,.adm-native-tec-filter,
+ .cpc-external-form,.cpp-native-round,.cv-rounds,.adm-native-external-entry,
+ [data-bc-question-center],[data-bcq-platform],.bc-question-center,
+ #leiEmDiaOverlay,#centralQuestionOverlay,#bcQuestionCenterOverlay,
+ .bc-iq,.bc-iq-answer,.bc-iq-check,.bc-iq-button,
+ .pt-questions,.pt-quiz,.pt-native-quiz,.pt-active-quiz,
+ .cf-native-quiz,.cf-native-options,.bc-rlm-exam,.bc-rlm-errors,.bc-rlm-review-quiz,
+ .penal-approved-progress-card:nth-child(2),
+ .cv-progress-grid > .cv-progress-card:nth-child(2),
+ .adm-native-progress-panel .adm-native-progress-line:nth-child(2)
+){display:none!important}
+html #subjects .bc-rlm-study-grid,
+html #subjects .cv-progress-grid,
+html #subjects .penal-approved-progress,
+html #subjects .adm-native-progress-panel{grid-template-columns:minmax(0,1fr)}

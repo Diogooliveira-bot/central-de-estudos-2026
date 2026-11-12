@@ -78,7 +78,7 @@ function readingOrientation(m){
   '</section>';
 }
 function card(m){
- const done=isDone(m.id),progress=result(m.id),p=m.id==='M01'?0:Math.round(progress.count/10*100);
+ const done=isDone(m.id),progress=result(m.id),p=m.id==='M01'?0:(g.BCQuestionsRemoved?readProgress(m.id):Math.round(progress.count/10*100));
  const openState=isModuleOpen(m.id);
  const percent=done?100:p;
  const cards=m.id==='M01'?
@@ -87,7 +87,7 @@ function card(m){
   materialCard(m.id,'recap','Versão de revisão','Fórmulas, métodos e erros frequentes.','↺')+
   materialCard(m.id,'pdf','Apostila teórica (PDF)','Material para leitura e download em PDF.','PDF')+
   materialCard(m.id,'theory','Teoria completa','Conceitos, fórmulas e resoluções guiadas.','📖')+
-  materialCard(m.id,'quiz','Questões de fixação','Prática comentada com 10 questões.','✓');
+  (g.BCQuestionsRemoved?'':materialCard(m.id,'quiz','Questões de fixação','Prática comentada com 10 questões.','✓'));
  const sub=m.id==='M01'?'Treino de cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
   '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
@@ -100,7 +100,7 @@ function card(m){
   '<div class="bc-native-material-grid cf-native-cards bc-rlm-study-grid">'+cards+'</div>'+
   (m.id==='M01'?'<p class="bc-rlm-stage-progress">Cronômetro e histórico do treino preservados.</p>':
    '<p class="bc-rlm-stage-progress"><span>Leitura '+readProgress(m.id)+'%</span>'+
-   '<span>Prática '+progress.count+'/10</span><span>Acertos '+progress.pct+'% das respondidas</span></p>')+
+   (g.BCQuestionsRemoved?'':'<span>Prática '+progress.count+'/10</span><span>Acertos '+progress.pct+'% das respondidas</span>')+'</p>')+
   '</section>'+
   '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+
   'onchange="RlmNative.mark(\''+m.id+'\',this.checked)">Marcar módulo como concluído</label></div></section>';
@@ -137,13 +137,13 @@ function renderMaster(){
  const done=list.filter(m=>isDone(m.id)).length;
  return '<div class="bc-rlm-course" data-central-native-rlm="1"><section class="bc-rlm-intro ds-course-intro">'+
  '<span class="bc-rlm-kicker">Base Completa · Preparação para concursos</span>'+
- '<h3>Raciocínio Lógico-Matemático</h3><p>Teoria, revisão, questões comentadas e mapas mentais, com filtros de questões disponíveis no Premium.</p>'+
+ '<h3>Raciocínio Lógico-Matemático</h3><p>'+(g.BCQuestionsRemoved?'Teoria completa, leitura guiada e revisão de conteúdos.':'Teoria, revisão, questões comentadas e mapas mentais, com filtros de questões disponíveis no Premium.')+'</p>'+
  '<div class="bc-rlm-stats"><span class="bc-rlm-stat"><strong>15</strong> módulos</span>'+
- '<span class="bc-rlm-stat"><strong>15</strong> apostilas</span><span class="bc-rlm-stat"><strong>140</strong> questões autorais</span>'+
+ '<span class="bc-rlm-stat"><strong>15</strong> apostilas</span>'+(g.BCQuestionsRemoved?'':'<span class="bc-rlm-stat"><strong>140</strong> questões autorais</span>')+
  '<span class="bc-rlm-stat"><strong>'+done+'/15</strong> módulos concluídos</span></div>'+
  '</section>'+
  groups.map(([name,arr])=>'<section class="bc-rlm-group"><h4>'+esc(name)+'</h4><div class="cf-modules bc-rlm-modules">'+arr.map(card).join('')+'</div></section>').join('')+
- '<section class="bc-rlm-group"><h4>Revisão geral</h4><div class="cf-modules bc-rlm-modules">'+reviewCard()+'</div></section></div>';
+ (g.BCQuestionsRemoved?'':'<section class="bc-rlm-group"><h4>Revisão geral</h4><div class="cf-modules bc-rlm-modules">'+reviewCard()+'</div></section>')+'</div>';
 }
 function oldTarget(value){
  let t=String(value||'').replace(/^#/,'').toLowerCase();
@@ -262,9 +262,11 @@ function renderOverlay(){
  if(!m)return;
  const stage=active.stage;
  const previous=el('bcRlmScroll'),oldY=previous?.scrollTop||0;
- const links=active.id==='M01'?[]:active.id==='RF'?[]:[
+ const links=active.id==='M01'?[]:active.id==='RF'?[]:(g.BCQuestionsRemoved?[
+ ['theory','Teoria'],['recap','Revisão']
+ ]:[
  ['theory','Teoria'],['recap','Revisão'],['quiz','Questões']
- ];
+ ]);
  const actions=links.map(([kind,label])=>'<button type="button" class="bc-rlm-tool-tab'+(kind===stage?' active':'')+
  '" aria-pressed="'+(kind===stage)+'" onclick="RlmNative.tab(\''+kind+'\')">'+label+'</button>').join('');
  host.innerHTML='<section class="bc-native-reader bc-rlm-reader" role="dialog" aria-modal="true" aria-label="Leitor nativo de RLM">'+
@@ -309,6 +311,7 @@ function updateReadBar(){
 
 function tab(stage){
  if(!active)return;
+ if(g.BCQuestionsRemoved&&['quiz','review','exam','errors'].includes(stage))return;
  stage=normStage(stage);
  if(!['theory','recap','quiz','map','review','exam','errors','speed'].includes(stage))return;
  active.stage=stage;renderOverlay();el('bcRlmScroll').scrollTop=0;
@@ -317,10 +320,10 @@ function next(){
  if(!active)return;
  if(active.id==='M01')return open('M02','theory');
  if(active.id==='RF')return close();
- const order=['theory','recap','quiz'],i=order.indexOf(active.stage);
+ const order=g.BCQuestionsRemoved?['theory','recap']:['theory','recap','quiz'],i=order.indexOf(active.stage);
  if(i<order.length-1)return tab(order[i+1]);
  const pos=manifest().findIndex(x=>x.id===active.id);
- return pos>=manifest().length-1?open('RF'):open(manifest()[pos+1].id);
+ return pos>=manifest().length-1?(g.BCQuestionsRemoved?close():open('RF')):open(manifest()[pos+1].id);
 }
 function bodyFor(m,stage){
  if(stage==='speed')return speed();

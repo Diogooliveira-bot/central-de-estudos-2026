@@ -125,8 +125,8 @@ try{
         if(id==='cf')assert.ok(row.cards.cf>=30,'Constitucional requer os dois cards de estudo por módulo');
         if(id==='civil')assert.equal(row.cards.civil,30,'Civil requer 30 cards de teoria/revisão');
         if(id==='cpp'){
-          assert.equal(row.cppLawCards,n,'cada módulo CPP mantém seu acesso ao Lei em Dia');
-          assert.equal(row.cards.cpp,3*n,'CPP mantém teoria, revisão e Lei em Dia por módulo');
+          assert.equal(row.cppLawCards,0,'Lei em Dia foi retirado dos módulos CPP');
+          assert.equal(row.cards.cpp,2*n,'CPP mantém apenas teoria e revisão por módulo');
         }
         if(id==='penal')assert.ok(row.cards.penal+row.penalApproved>=34,'Penal requer os cards nativos');
         if(id==='cpc')assert.equal(row.cards.cpc,2,'CPC requer dois cards no módulo aberto');
