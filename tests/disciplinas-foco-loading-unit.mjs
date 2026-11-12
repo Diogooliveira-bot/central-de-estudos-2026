@@ -121,7 +121,7 @@ test('módulo em foco usa título apenas no cabeçalho superior, mantendo contro
   const cpp=readFileSync('ui/cpp-native-study-v1.js','utf8');
   const boot=readFileSync('central-v119.html','utf8');
   const files=JSON.parse(readFileSync('central-offline-files-v66172.json','utf8')).files;
-  const version='/ui/module-clean-v1.css?v=20261112single-title1';
+  const version='/ui/module-clean-v1.css?v=20261112admsingle1';
   assert.ok(boot.includes(version));
   assert.ok(files.includes(version));
   assert.match(clean,/\.cv-module\.bc-focus-current-module\s*>\s*\.cv-module-head\s*\{/);
@@ -134,4 +134,22 @@ test('módulo em foco usa título apenas no cabeçalho superior, mantendo contro
   assert.match(civil,/function progressPanel\(n\)/);
   assert.match(cpp,/function progressPanel\(n\)/);
   assert.doesNotMatch(clean,/\.cv-module-body\s*\{\s*display:none/);
+});
+
+
+test('ADM no módulo em foco não repete título ou percentual além da barra de leitura',()=>{
+  const clean=readFileSync('ui/module-clean-v1.css','utf8');
+  const adm=readFileSync('ui/adm-native-layer.js','utf8');
+  const css=clean.slice(clean.indexOf('12/11 — ADM: título'));
+  assert.ok(css.length>300,'limpeza de ADM deve existir');
+  assert.match(css,/\.subject\[data-id="adm"\] \.topic-item\.adm-native-module-row\.bc-focus-current-module/);
+  assert.match(css,/\.topic-row > :not\(\.open-topic\) \{\s*display:none!important/);
+  assert.match(css,/\.adm-native-zone > \.adm-native-zone-head \{\s*display:none!important/);
+  assert.match(css,/\.adm-native-progress-panel \{\s*grid-template-columns:minmax\(0,1fr\)!important/);
+  assert.match(css,/\.topic-row::before \{\s*content:"Recolher módulo"/);
+  assert.match(adm,/function progressPanel\(uid\)/);
+  assert.match(adm,/data-adm-theory-bar/);
+  assert.match(adm,/function moduleProgress\(uid\)/);
+  assert.match(adm,/function updateSubject\(\)/);
+  assert.doesNotMatch(css,/\.adm-native-progress-line\s*\{\s*display:none/);
 });
