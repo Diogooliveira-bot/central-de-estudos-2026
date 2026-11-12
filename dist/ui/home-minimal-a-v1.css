@@ -1,0 +1,190 @@
+/* BASE COMPLETA | HOME MINIMALISTA A — prévia isolada.
+   Somente apresentação da tela inicial. Não altera navegação, autenticação,
+   acessibilidade dos botões, dados, progresso, módulos nem o leitor. */
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView{
+  background:#f1f8fc!important;
+  color:#12344d!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-grid{
+  gap:20px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step{
+  position:relative!important;
+  isolation:isolate;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 128px!important;
+  grid-template-rows:auto auto!important;
+  align-items:center!important;
+  gap:12px 18px!important;
+  min-height:172px!important;
+  padding:21px 24px!important;
+  margin-bottom:16px!important;
+  overflow:hidden!important;
+  border:1px solid rgba(20,129,150,.16)!important;
+  border-radius:18px!important;
+  background:linear-gradient(112deg,#0b304b 0%,#064766 65%,#086e80 100%)!important;
+  box-shadow:0 10px 24px rgba(12,56,82,.12)!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step::before{
+  content:"";position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  width:168px;height:168px;border-radius:50%;
+  background:rgba(65,191,203,.07);pointer-events:none;z-index:-1;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step::after{
+  content:"";position:absolute;right:16px;bottom:3px;
+  width:140px;height:155px;
+  background:url("/assets/mascote-oficial-estudando.png?v=20261101-oficial1") center bottom/contain no-repeat;
+  opacity:.88;pointer-events:none;z-index:-1;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy{
+  grid-column:1!important;grid-row:1!important;
+  position:relative;z-index:1;min-width:0;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy h2{
+  font-size:clamp(20px,2.5vw,27px)!important;
+  line-height:1.15!important;letter-spacing:-.02em;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step>.btn{
+  grid-column:1!important;grid-row:2!important;
+  width:100%!important;max-width:380px!important;
+  justify-self:start!important;position:relative;z-index:1;
+  margin:0!important;min-height:47px!important;
+  padding:11px 17px!important;border-radius:11px!important;
+  background:#19cfc8!important;color:#093c47!important;
+  box-shadow:none!important;font-weight:800!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card{
+  margin-bottom:15px!important;
+  min-height:96px!important;
+  padding:17px 20px!important;
+  border:1px solid #d9e8ef!important;
+  border-radius:15px!important;
+  background:#fff!important;
+  box-shadow:0 4px 14px rgba(22,64,87,.045)!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card h2{
+  display:flex!important;align-items:center;gap:9px!important;
+  font-size:18px!important;letter-spacing:-.015em;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card h2::before{
+  content:"";width:23px;height:23px;flex:0 0 23px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230f5675' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M7 3v4M17 3v4M3 10h18'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card>.card-head>.btn{
+  background:transparent!important;
+  color:#077b9a!important;
+  border:1px solid #bcdce7!important;
+  border-radius:9px!important;
+  box-shadow:none!important;
+  padding:10px 14px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary{
+  gap:13px 22px!important;
+  padding:17px 20px!important;
+  margin-bottom:22px!important;
+  border:1px solid #d9e8ef!important;
+  border-radius:15px!important;
+  background:#fff!important;
+  box-shadow:0 4px 14px rgba(22,64,87,.045)!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary>div:first-child small{
+  color:#12344d!important;letter-spacing:0!important;
+  text-transform:none!important;font-size:17px!important;font-weight:800!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary>div:first-child b{
+  font-size:12px!important;font-weight:500!important;color:#6a8494!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary>div:last-child{
+  gap:16px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary span b{
+  font-size:20px!important;font-variant-numeric:tabular-nums;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary span small{
+  color:#607e91!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #disciplinasHome{
+  margin:22px 0 11px!important;padding:0 3px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #disciplinasHome h2{
+  margin:2px 0 3px!important;
+  font-size:clamp(18px,2vw,23px)!important;
+  letter-spacing:-.02em;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #disciplinasHome p{
+  font-size:12px!important;color:#688091!important;line-height:1.45!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #subjects{
+  gap:8px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject:nth-child(even){
+  border:1px solid #dfebf1!important;
+  border-radius:13px!important;
+  background:#fff!important;
+  box-shadow:0 3px 12px rgba(19,57,80,.038)!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject>.subject-head{
+  min-height:66px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .bc-row-icon{
+  border-radius:10px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .bc-row-track{
+  height:5px!important;
+  background:#e1edf3!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .bc-row-track>span{
+  background:#16c6c2!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject>.subject-head .subject-name{
+  font-size:15px!important;letter-spacing:-.01em;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .side-col>.card{
+  border-radius:13px!important;
+  border-color:#dfebf1!important;
+  box-shadow:0 3px 12px rgba(19,57,80,.04)!important;
+}
+@media(max-width:800px){
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step{
+    grid-template-columns:minmax(0,1fr) 90px!important;
+    gap:10px 11px!important;
+    min-height:176px!important;
+    padding:17px 18px!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step::after{
+    width:103px;height:133px;right:2px;opacity:.88;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step::before{
+    width:124px;height:124px;right:-2px;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step>.btn{
+    width:100%!important;min-height:46px!important;
+    padding:11px 9px!important;font-size:13px!important;
+    white-space:normal!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card{
+    padding:15px!important;
+    min-height:94px!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary{
+    padding:14px 15px!important;gap:12px!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary>div:last-child{
+    width:100%;justify-content:space-between!important;gap:9px!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject>.subject-head{
+    min-height:79px!important;padding:10px 11px!important;
+  }
+}
+@media(max-width:360px){
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step{
+    grid-template-columns:minmax(0,1fr) 64px!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step::after{
+    width:86px!important;opacity:.68;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy h2{
+    font-size:19px!important;
+  }
+}

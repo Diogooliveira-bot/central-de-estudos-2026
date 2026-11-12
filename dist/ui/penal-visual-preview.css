@@ -1,0 +1,32 @@
+/* Continuous reading: clear outline, original tables and discreet statutory quotations. */
+.bc-native-reader-overlay:has(.penal-visual-preview) .bc-native-scroll{background:#fff!important}
+.bc-native-reader-overlay .penal-visual-preview{box-sizing:border-box;max-width:940px!important;margin:0 auto!important;padding:32px 48px 80px!important;background:#fff!important;color:#172e45!important;line-height:1.85!important}
+.penal-visual-preview>.bc-native-kicker,.penal-visual-preview>.lead,.penal-visual-preview>.bc-native-study-progress,.penal-visual-preview .penv-source-title,.penal-visual-preview .pen-m1-hero,.penal-visual-preview .pen-cover,.penal-visual-preview [class$="-cover"],.penal-visual-preview .penv-editorial-note{display:none!important}
+.penal-visual-preview :is(main,article,section)[class*="book"]{max-width:none!important;width:auto!important;padding:0!important;margin:0!important;box-shadow:none!important;background:transparent!important;border:0!important}
+.penal-visual-preview .penv-hero{margin:0 0 28px;padding:0 0 20px;border-bottom:1px solid #dce6ef}
+.penal-visual-preview .penv-eyebrow{font-size:10px;letter-spacing:.1em;color:#53677a;margin-bottom:14px}
+.penal-visual-preview .penv-hero h1{display:block!important;line-height:1.25!important;margin:0 0 12px!important}
+.penal-visual-preview .penv-reading-route{font-size:14px!important;color:#53677a!important;margin:0!important}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview h2.penv-chapter{display:block!important;clear:both;font-size:24px!important;font-weight:750!important;line-height:1.4!important;margin:38px 0 16px!important;padding:0!important;border:0!important;background:transparent!important;text-transform:none!important;letter-spacing:normal!important;break-after:avoid;scroll-margin-top:20px}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview h3.penv-subsection{font-size:19px!important;font-weight:700!important;line-height:1.5!important;margin:26px 0 12px!important;padding:0!important;border:0!important;background:transparent!important;text-transform:none!important;letter-spacing:normal!important;break-after:avoid}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview h4.penv-subsection{font-size:17px!important;line-height:1.5!important;margin:20px 0 10px!important;padding:0!important;border:0!important;background:transparent!important;break-after:avoid}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview p.penv-label{display:block!important;font-size:13px!important;font-weight:750!important;line-height:1.6!important;margin:20px 0 8px!important;padding:0!important;border:0!important;background:transparent!important;letter-spacing:.02em!important;text-transform:none!important}
+/* Teaching passages stay in the flow, without turning every paragraph into a box. */
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview :is(blockquote,aside,.layer,.bc-native-callout){border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;padding:0!important;margin:20px 0!important}
+.penal-visual-preview table{width:100%!important;border-collapse:collapse;margin:20px 0;font-size:14px!important;line-height:1.65!important}
+.penal-visual-preview th{background:#f4f7fa!important;text-align:left!important;padding:12px!important}
+.penal-visual-preview td{padding:12px!important;border-bottom:1px solid #dce6ef!important;vertical-align:top}
+/* Literal law remains open after the explanation, with only a fine left rule. */
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview .penv-law-group{margin:20px 0 26px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview .penv-literal-law{border:0!important;border-left:2px solid #b8ccdd!important;border-radius:0!important;background:transparent!important;padding:2px 0 2px 18px!important;margin:18px 0!important;box-shadow:none!important}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview .penv-literal-law>summary{cursor:pointer;font-size:12px!important;font-weight:750!important;color:#365b7a!important;line-height:1.6!important;padding:0!important;background:transparent!important;border:0!important}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview .penv-literal-law blockquote{border:0!important;margin:10px 0!important;padding:0!important;background:transparent!important}
+.bc-native-reader-overlay .bc-native-article.penal-visual-preview .penv-literal-law blockquote p{font-size:16px!important;line-height:1.8!important;text-align:left!important;margin:10px 0!important}
+.penal-visual-preview .penv-literal-law a{font-size:12px;color:#53677a;text-decoration:underline}
+.penal-visual-preview summary:focus-visible{outline:2px solid #235578;outline-offset:5px}
+.penal-visual-preview .penv-law-library{margin:30px 0}
+.penal-visual-preview .penv-law-title{font-size:18px;font-weight:700}
+.penal-visual-preview .penv-law-library>p{font-size:14px!important;color:#53677a!important}
+.penal-visual-preview .penv-law-fold{border:0!important;padding:12px 0!important;background:transparent!important}
+.penal-visual-preview .penv-law-fold>summary{cursor:pointer;font-size:14px;font-weight:700;line-height:1.6;color:#365b7a}
+@media(max-width:600px){.bc-native-reader-overlay .penal-visual-preview{padding:24px 20px 60px!important}.bc-native-reader-overlay .bc-native-article.penal-visual-preview h2.penv-chapter{font-size:21px!important}.bc-native-reader-overlay .bc-native-article.penal-visual-preview h3.penv-subsection{font-size:18px!important}.bc-native-reader-overlay .bc-native-article.penal-visual-preview h4.penv-subsection{font-size:16px!important}}

@@ -67,20 +67,24 @@ test('abrir pelo módulo: Voltar fecha a janela; Esc fecha', async () => {
   dom.window.close();
 });
 
-test('ligação na Central: scripts, estilos e arquivos offline do banco', () => {
+test('ligação na Central: scripts e estilos no bootstrap; banco atrás do login e fora do manifesto offline público', async () => {
+  const { protectedAsset } = await import('../lib/protected-content.js');
   const boot = read('central-v119.html');
   const man = JSON.parse(read('central-offline-files-v66172.json'));
   for (const f of ['ui/questoes-area-v1.js', 'ui/questoes-modulo-card-v1.js', 'ui/questoes-bank-v1.js', 'content/questoes/index.js', 'content/questoes/titulos.js', 'ui/questoes-area-v1.css']) {
     assert.ok(boot.includes(f + '?v='), 'bootstrap sem ' + f);
+  }
+  for (const f of ['ui/questoes-area-v1.js', 'ui/questoes-modulo-card-v1.js', 'ui/questoes-bank-v1.js', 'ui/questoes-area-v1.css']) {
     assert.ok(man.files.some(x => x.startsWith('/' + f + '?v=')), 'manifesto offline sem ' + f);
   }
   const arquivos = fs.readdirSync(path.join(root, 'content/questoes')).filter(d => fs.statSync(path.join(root, 'content/questoes', d)).isDirectory())
     .flatMap(d => fs.readdirSync(path.join(root, 'content/questoes', d)).map(f => `/content/questoes/${d}/${f}`));
   assert.equal(arquivos.length, 148);
-  for (const a of arquivos) assert.ok(man.files.some(x => x.startsWith(a + '?v=')), 'manifesto offline sem ' + a);
-  // a versão do carregador é a mesma usada no manifesto
-  const v = /const VERSION = '([^']+)'/.exec(read('ui/questoes-bank-v1.js'))[1];
-  for (const a of arquivos) assert.ok(man.files.includes(a + '?v=' + v), 'versão do banco diferente no manifesto: ' + a);
+  // O banco é liberado a todo aluno logado (inclusive Gratuito) pelo servidor e não vai no manifesto público.
+  for (const a of ['/content/questoes/index.js', '/content/questoes/titulos.js', ...arquivos]) {
+    assert.equal(protectedAsset(a)?.feature, 'theory.summary', 'regra de acesso do banco: ' + a);
+    assert.ok(!man.files.some(x => x.split('?')[0] === a), 'manifesto público não pode listar ' + a);
+  }
 });
 
 test('todo módulo do banco tem título para exibir', () => {

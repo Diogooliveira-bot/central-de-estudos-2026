@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "BASE COMPLETA — Central de Estudos",
+  "short_name": "BASE COMPLETA",
+  "description": "Plataforma de estudos BASE COMPLETA, com conteúdos, revisão, progresso e recursos offline.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f1ea",
+  "theme_color": "#f4f1ea",
+  "icons": [
+    {
+      "src": "/assets/base-completa-symbol.webp?v=20261006icon2",
+      "sizes": "640x640",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/base-completa-symbol.webp?v=20261006icon2",
+      "sizes": "640x640",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ]
+}

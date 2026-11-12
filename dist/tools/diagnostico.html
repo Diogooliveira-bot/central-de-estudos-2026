@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saúde da Central — v6.6.119</title>
+<style>
+:root{color-scheme:light;--bg:#f5f7fb;--card:#fff;--text:#172033;--muted:#687386;--line:#dfe5ee;--accent:#6d5dfc;--ok:#16865f;--warn:#a56a00;--bad:#b4233b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(920px,calc(100% - 24px));margin:auto;padding:16px 0 50px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.back,.button{border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--text);padding:10px 13px;font-weight:800;text-decoration:none;cursor:pointer}.button.primary{background:var(--accent);border-color:var(--accent);color:#fff}.hero{margin-top:14px;padding:20px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#fff,#f0efff)}h1{margin:0;font-size:clamp(24px,5vw,34px)}.hero p{margin:7px 0 0;color:var(--muted)}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.sum,.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px}.sum b{display:block;font-size:22px}.sum small,.muted{color:var(--muted)}.list{display:grid;gap:9px;margin-top:14px}.check{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:11px;align-items:start}.dot{width:12px;height:12px;margin-top:5px;border-radius:50%;background:#aab2c0}.check.ok .dot{background:var(--ok)}.check.warn .dot{background:var(--warn)}.check.bad .dot{background:var(--bad)}.check b{display:block}.check small{display:block;color:var(--muted);margin-top:2px}.status{font-weight:900;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.privacy{margin-top:14px;color:var(--muted);font-size:13px}.loading{opacity:.65}@media(max-width:650px){.summary{grid-template-columns:1fr}.check{grid-template-columns:12px minmax(0,1fr)}.status{grid-column:2}.wrap{width:min(100% - 16px,920px)}.hero{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+ <div class="top"><a class="back" href="../index.html">‹ Central</a><span class="muted">v6.6.119</span></div>
+ <section class="hero"><h1>Saúde da Central</h1><p>Verificação segura do aparelho, cache offline e ferramentas. Nenhum progresso é modificado.</p></section>
+ <section class="summary"><div class="sum"><b id="okCount">—</b><small>verificações aprovadas</small></div><div class="sum"><b id="dataCount">—</b><small>registros locais protegidos</small></div><div class="sum"><b id="cacheCount">—</b><small>itens essenciais no cache</small></div></section>
+ <section class="list" id="checks"><div class="card loading">Executando a verificação…</div></section>
+ <div class="actions"><button class="button primary" id="run">Executar novamente</button><button class="button" id="export">Exportar diagnóstico</button></div>
+ <p class="privacy">O relatório contém somente estados, contagens e nomes técnicos das categorias. O conteúdo dos seus estudos, respostas e marcações não é incluído.</p>
+</main>
+<script>
+(function(){'use strict';
+var VERSION='6.6.119';
+var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s1';
+var EXPECTED=['/central-v119.html?direct=4','/index.html',STRUCTURAL_MANIFEST,'/manifest.webmanifest','/tools/anki.html','/tools/decorando.html','/tools/vade.html','/tools/rlm.html','/tools/cronograma.html','/tools/progresso.html','/tools/diagnostico.html'];
+var lastReport=null;
+function esc(v){return String(v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function item(name,detail,state){return{name:name,detail:detail,state:state}}
+function dataInventory(){
+ var groups={anki:0,tec:0,decorando:0,vade:0,progresso:0,cronograma:0,outros:0},bytes=0,total=0;
+ for(var i=0;i<localStorage.length;i++){
+  var key=localStorage.key(i)||'',value=localStorage.getItem(key)||'',low=key.toLowerCase();total++;bytes+=key.length+value.length;
+  if(/anki/.test(low))groups.anki++;else if(/tec/.test(low))groups.tec++;else if(/decor|lei.?seca/.test(low))groups.decorando++;else if(/vade|highlight/.test(low))groups.vade++;else if(/progress|progresso|check|answer|study/.test(low))groups.progresso++;else if(/agenda|cronograma|plan/.test(low))groups.cronograma++;else groups.outros++;
+ }
+ return{total:total,bytes:bytes,groups:groups};
+}
+async function cacheInventory(){
+ var expected=EXPECTED.slice();
+ try{var manifest=await fetch(STRUCTURAL_MANIFEST).then(function(r){return r.ok?r.json():null});if(manifest&&Array.isArray(manifest.files))expected=expected.concat(manifest.files)}catch(e){}
+ if(!('caches' in window))return{available:false,count:0,total:expected.length,names:[]};
+ var names=(await caches.keys()).filter(function(n){return n.indexOf('central-')===0}),count=0;
+ for(var i=0;i<names.length;i++){
+  var cache=await caches.open(names[i]);
+  for(var j=0;j<expected.length;j++)if(await cache.match(expected[j]))count++;
+ }
+ return{available:true,count:Math.min(count,expected.length),total:expected.length,names:names};
+}
+async function run(){
+ var box=document.getElementById('checks');box.innerHTML='<div class="card loading">Executando a verificação…</div>';
+ var checks=[],storage=false;
+ try{var probe='__central_health_probe__';localStorage.setItem(probe,'1');storage=localStorage.getItem(probe)==='1';localStorage.removeItem(probe)}catch(e){}
+ checks.push(item('Armazenamento local',storage?'Leitura e gravação disponíveis.':'O navegador bloqueou a gravação local.',storage?'ok':'bad'));
+ var data=dataInventory();checks.push(item('Dados preservados',data.total+' registros locais identificados; nenhuma informação foi alterada.',data.total?'ok':'warn'));
+ var registration=null;try{registration='serviceWorker' in navigator?await navigator.serviceWorker.getRegistration():null}catch(e){}
+ checks.push(item('Aplicativo offline',registration?'Serviço offline instalado neste aparelho.':'Ainda não instalado neste navegador.',registration?'ok':'warn'));
+ var cache=await cacheInventory();checks.push(item('Cache essencial',cache.count+' de '+cache.total+' itens essenciais disponíveis.',cache.count===cache.total?'ok':cache.count?'warn':'bad'));
+ var online=navigator.onLine,reachable=false;try{var r=await fetch('/central-v119.html?health='+Date.now(),{method:'HEAD',cache:'no-store'});reachable=r.ok}catch(e){}
+ checks.push(item('Acesso ao site',reachable?'Endereço oficial respondendo normalmente.':online?'Não foi possível confirmar o endereço agora.':'Aparelho sem conexão; usando o conteúdo salvo.',reachable?'ok':cache.count?'warn':'bad'));
+ checks.push(item('Versão publicada','Central de Estudos v'+VERSION+'.','ok'));
+ var ok=checks.filter(function(x){return x.state==='ok'}).length;
+ document.getElementById('okCount').textContent=ok+'/'+checks.length;document.getElementById('dataCount').textContent=data.total;document.getElementById('cacheCount').textContent=cache.count+'/'+cache.total;
+ box.innerHTML=checks.map(function(x){return'<article class="card check '+x.state+'"><span class="dot"></span><div><b>'+esc(x.name)+'</b><small>'+esc(x.detail)+'</small></div><span class="status">'+(x.state==='ok'?'OK':x.state==='warn'?'ATENÇÃO':'ERRO')+'</span></article>'}).join('');
+ lastReport={app:'Central de Estudos',version:VERSION,generatedAt:new Date().toISOString(),checks:checks,data:{totalKeys:data.total,approxBytes:data.bytes,categories:data.groups},cache:{essential:cache.count,total:cache.total,cacheNames:cache.names},userAgent:navigator.userAgent};
+}
+document.getElementById('run').addEventListener('click',run);
+document.getElementById('export').addEventListener('click',function(){if(!lastReport)return;var blob=new Blob([JSON.stringify(lastReport,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='diagnostico-central-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)});
+run();
+})();
+</script>
+</body>
+</html>

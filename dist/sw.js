@@ -1,0 +1,300 @@
+/* Base Completa — PWA autenticado e offline por sessão verificada. */
+var CACHE='central-20261112-questoes-novas-v1';
+var AUTH_CACHE='central-auth-session-v1';
+var AUTH_KEY='/__bc_offline_auth__';
+var AUTH_TTL_MS=72*60*60*1000;
+var BOOT='/central-v119.html';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261112-questoes-novas-v1';
+var OFFLINE_READY='/central-offline-ready.json?v=20261022-online-first-recovery-v1';
+
+function publicPath(path){
+  return path==='/login.html'||path==='/recuperar-senha.html'||path==='/ativar-acesso.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
+}
+function protectedContentPath(path){
+  path=String(path||'').split('?')[0];
+  try{path=decodeURIComponent(path)}catch(_){return false}
+  return /^\/apostilas\/(?:portugues\/pt|rlm\/rlm)-m\d{2}\.pdf$/i.test(path)
+    ||path==='/lei-em-dia-aprovadas-20261012.js'
+    ||path==='/Central_de_Estudos_v6.6.75_PLANO_6_MESES.zip'
+    ||path.startsWith('/Central_de_Estudos_OFFLINE_FUNCIONAL/')
+    ||path==='/content/tec-cadernos-data.js'
+    ||path==='/content/penal/penal-visual-law.js'
+    ||path==='/content/civil/civil-visual-apostila-packed.js'
+    ||path==='/content/civil/civil-native-content-packed.js'||path==='/content/cpp/cpp-native-content-packed.js'
+    ||/^\/content\/cf\/editorial\/m\d{2}-(?:apostila\.txt|didatico\.md|questions\.json)$/i.test(path)
+    ||/^\/content\/rlm-tjce-2026\/(?:aulas-[a-z-]+\.js|complementos-teoria\.js)$/i.test(path)
+    ||path==='/content/civil/civil-native-images.js'||path==='/content/civil/civil-teoria-guiada-lei-seca.js'
+    ||path==='/content/adm/adm-sharing-links.js'
+    ||path==='/content/civil/civil-sharing-links.js'
+    ||path==='/content/cpp/cpp-sharing-links.js'
+    ||path==='/content/cpp/cpp-native-index.js'
+    ||path==='/cpp-course-core-v1.js'
+    ||path==='/portugues-m2-tec-link-v1.js'
+    ||/^\/portugues-m\d+-runtime-v\d+\.js$/i.test(path)
+    ||path==='/tools/cronograma.html'||path==='/tools/rlm.html'||path==='/portugues-m3-preview-v1.html'
+    ||/^\/content\/(?:[^/]+\/)?[^/]*sharing-links\.js$/i.test(path)
+    ||/^\/central-structural-v\d+\/civil-course-\d+\.js$/i.test(path)
+    ||/^\/audits\/qc-integral-20261019\/(?:PROGRESSO_CRIACAO_57\.json|fontes\/qc_todos_cadernos_416\.json)$/i.test(path)
+    ||path==='/tools/decorando-data-led-aprovadas.js'
+    ||path==='/content/qc-sharing-links.json'
+    ||path==='/content/qc-sharing-links.js'
+    ||path==='/content/qc-notebook-catalog.js'
+    ||path==='/content/penal-cpp-tec-links.js'
+    ||path==='/ui/tec-penal-cpp-links.js'
+    ||path==='/portugues-tec-data-v1.js'
+    ||/^\/content\/(?:adm|cf|civil|cpc|cpp|penal|portugues|rlm)\/m\d{2}-native-data(?:-part\d+)?\.js$/i.test(path)
+    ||/^\/content\/adm\/m\d{2}-native-data-lite\.js$/i.test(path)
+    ||/^\/content\/adm\/m(?:0[1-9]|1\d|20)-approved-complete\.js$/i.test(path)
+    ||/^\/content\/adm\/m(?:0[1-9]|1\d|20)-apostila-complete\.js$/i.test(path)
+    ||/^\/content\/(?:cf|civil)\/m\d{2}-teoria-guiada-data\.js$/i.test(path)
+    ||/^\/content\/penal\/m\d{2}-teoria-guiada-data\.js$/i.test(path)
+    ||/^\/tools\/decorando-data-(?!led-aprovadas)[a-z0-9-]+\.js$/i.test(path)
+    ||(/^\/content\/.+\.(?:js|json)$/i.test(path)&&/(?:question|questoes|questões|notebook|catalog)/i.test(path))
+    ||(/^\/central-structural-v\d+\/.+\.js$/i.test(path)&&/(?:question|questoes|questões|notebook|catalog)/i.test(path))
+    ||/^\/(?:penal-full-theory-data-\d+\.js|penal-full-theory-ui-v\d+\.js)$/i.test(path)
+    ||/^\/(?:civil-theory-module\d+(?:-part\d+|-runtime)?-v\d+\.js|cpc-theory-module\d+-v\d+\.js|adm-m\d+-theory-v\d+\.js)$/i.test(path)
+    ||/^\/adm-m\d+-content-p\d+-v\d+\.js$/i.test(path)
+    ||/^\/adm-m9-m20-bundle-v\d+\.js$/i.test(path)
+    ||/^\/cpp-course-data-\d+\.js$/i.test(path)
+    ||/^\/portugues-native-data\/m\d+\.js$/i.test(path)
+    ||path==='/portugues-autodidata-data.txt'
+    ||/^\/central-structural-v\d+\/(?:cf|penal|cpc)-questions-\d+-init\.js$/i.test(path)
+    ||(/\.pdf$/i.test(path)&&!path.startsWith('/assets/vademecum-pdf/'));
+}
+async function purgeProtectedOfflineContent(){
+  try{
+    var cache=await caches.open(CACHE),requests=await cache.keys();
+    await Promise.all(requests.filter(function(request){return protectedContentPath(new URL(request.url).pathname)}).map(function(request){return cache.delete(request).catch(function(){return false})}));
+  }catch(_){}
+}
+// Arquivos com ?v= mudam de endereço quando o conteúdo muda (regra do projeto).
+// Eles podem abrir direto do cache do aparelho e são conferidos em segundo plano.
+function versionedAsset(url){
+  return url.searchParams.has('v')&&/\.(?:js|css|webp|png|svg|ico|woff2?)$/i.test(url.pathname)&&!protectedContentPath(url.pathname);
+}
+// Sessão verificada recentemente neste aparelho (evita ler o cache a cada arquivo).
+var sessionMemo={at:0,ok:false};
+async function recentSession(){
+  if(Date.now()-sessionMemo.at<10000)return sessionMemo.ok;
+  var ok=await offlineAllowed();
+  sessionMemo={at:Date.now(),ok:ok};
+  return ok;
+}
+// O servidor marca conteúdo Premium como "private": nunca fica guardado no aparelho,
+// mesmo que o arquivo não esteja na lista protectedContentPath acima.
+function privateResponse(response){
+  return /(?:^|[,\s])private(?:$|[,\s])/i.test(String(response&&response.headers&&response.headers.get('Cache-Control')||''));
+}
+function sameVersion(a,b){
+  var etagA=a&&a.headers.get('ETag'),etagB=b&&b.headers.get('ETag');
+  return !!etagA&&etagA===etagB;
+}
+function revalidate(event,request,hit){
+  // "no-cache" pergunta ao servidor se mudou (resposta 304 é quase sem dados).
+  event.waitUntil(fetch(request,{cache:'no-cache'}).then(function(response){
+    if(!response||!response.ok||response.redirected||privateResponse(response)||sameVersion(response,hit))return;
+    return caches.open(CACHE).then(function(cache){return cache.put(request,response)});
+  }).catch(function(){}));
+}
+function cacheResponse(event,request,response){
+  // Cache Storage must never prevent a healthy online response from loading.
+  if(response&&response.ok&&!response.redirected&&!privateResponse(response)&&!protectedContentPath(new URL(request.url).pathname)){
+    try {
+      var copy=response.clone();
+      event.waitUntil(caches.open(CACHE).then(function(cache){return cache.put(request,copy)}).catch(function(){}));
+    } catch(_) {}
+  }
+  return response;
+}
+async function clearOfflineAuth(){
+  sessionMemo={at:0,ok:false};
+  try{var cache=await caches.open(AUTH_CACHE);await cache.delete(AUTH_KEY)}catch(_){}
+  await purgeProtectedOfflineContent();
+}
+async function cacheOfflineAuth(response){
+  sessionMemo={at:0,ok:false};
+  if(!response||!response.ok)return response;
+  try{
+    var data=await response.clone().json(),cache=await caches.open(AUTH_CACHE);
+    if(data&&data.authenticated&&data.user){
+      await cache.put(AUTH_KEY,new Response(JSON.stringify({verifiedAt:Date.now(),data:data}),{headers:{'Content-Type':'application/json','Cache-Control':'no-store'}}));
+    }else await cache.delete(AUTH_KEY);
+  }catch(_){}
+  return response;
+}
+async function offlineAuthData(){
+  try{
+    var cache=await caches.open(AUTH_CACHE),hit=await cache.match(AUTH_KEY);
+    if(!hit)return null;
+    var wrapper=await hit.json(),verifiedAt=Number(wrapper&&wrapper.verifiedAt||0),data=wrapper&&wrapper.data;
+    if(!data||!data.authenticated||!data.user||!verifiedAt||Date.now()-verifiedAt>AUTH_TTL_MS){
+      await cache.delete(AUTH_KEY);return null;
+    }
+    return data;
+  }catch(_){return null}
+}
+async function offlineAuthResponse(){
+  var data=await offlineAuthData();
+  if(!data)return new Response(JSON.stringify({authenticated:false,offline:true}),{status:200,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
+  return new Response(JSON.stringify(Object.assign({},data,{offline:true})),{status:200,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
+}
+async function offlineAllowed(){return !!(await offlineAuthData())}
+function offlineDenied(){
+  return new Response('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Base Completa</title><body style="font:16px system-ui;padding:28px;background:#f3efe7;color:#312d29"><h1>Base Completa</h1><p>Não há uma sessão offline válida neste aparelho. Conecte-se à internet e entre novamente.</p><button onclick=\"location.reload()\" style=\"margin-top:16px;border:0;border-radius:8px;padding:12px 18px;background:#283b69;color:#fff;font:600 15px system-ui\">Tentar novamente</button></body></html>',{status:401,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
+}
+
+var pauseOfflineUntil=0;
+async function yieldToStudy(){while(Date.now()<pauseOfflineUntil)await new Promise(function(resolve){setTimeout(resolve,300)})}
+async function prepareOffline(){
+  try{
+    var auth=await fetch('/api/auth?action=me',{cache:'no-store'});
+    await cacheOfflineAuth(auth);
+  }catch(_){}
+  if(!(await offlineAllowed()))return;
+  var cache=await caches.open(CACHE);
+  try{
+    var boot=await fetch(BOOT,{cache:'no-store'});
+    if(boot&&boot.ok&&!boot.redirected)await cache.put(BOOT,boot.clone());
+  }catch(_){}
+  try{
+    var response=await fetch(OFFLINE_MANIFEST,{cache:'no-store'});
+    if(response&&response.ok&&!response.redirected){
+      var manifestResponse=response.clone();
+      var manifest=await response.json(),files=Array.isArray(manifest.files)?manifest.files.filter(function(file){return !protectedContentPath(new URL(file,self.location.origin).pathname)}):[];
+      var index=0,saved=0,failed=[];
+      async function worker(){
+        while(index<files.length){
+          await yieldToStudy();
+          var url=files[index++];
+          try{
+            // Arquivo versionado já salvo nesta versão do cache não precisa baixar de novo.
+            if(versionedAsset(new URL(url,self.location.origin))&&await cache.match(url)){saved++;continue}
+            var asset=await fetch(url,{cache:'no-cache'});
+            if(asset&&asset.ok&&!asset.redirected){await cache.put(url,asset.clone());saved++}else failed.push(url+': HTTP '+asset.status);
+          }catch(error){failed.push(url+': '+error.message)}
+        }
+      }
+      await Promise.all([worker(),worker()]);
+      await cache.put(OFFLINE_MANIFEST,manifestResponse);
+      await cache.put(OFFLINE_READY,new Response(JSON.stringify({total:files.length,saved:saved,failed:failed.slice(0,10)})));
+    }
+  }catch(_){}
+  await self.skipWaiting();
+}
+
+self.addEventListener('install',function(event){
+  // Offline content is cached only after a verified login (PREPARE_OFFLINE).
+  // Do not let an unavailable/corrupt Cache Storage block installation.
+  event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener('activate',function(event){
+  event.waitUntil((async function(){
+    try{
+      var keys=await caches.keys();
+      await Promise.all(keys.filter(function(key){
+        return key!==CACHE&&key!==AUTH_CACHE&&key.indexOf('central-')===0;
+      }).map(function(key){return caches.delete(key).catch(function(){})}));
+    }catch(_){}
+    await purgeProtectedOfflineContent();
+    // Cache cleanup failures must not stop the new worker claiming clients.
+    await self.clients.claim();
+  })());
+});
+
+self.addEventListener('fetch',function(event){
+  var request=event.request,url=new URL(request.url);
+  if(url.origin!==self.location.origin)return;
+
+  if(url.pathname==='/api/auth'&&url.searchParams.get('action')==='me'&&request.method==='GET'){
+    event.respondWith(fetch(request,{cache:'no-store'}).then(cacheOfflineAuth).catch(function(){return offlineAuthResponse()}));
+    return;
+  }
+
+  if(url.pathname==='/api/auth'&&url.searchParams.get('action')==='logout'&&request.method==='POST'){
+    event.respondWith((async function(){
+      try{
+        var response=await fetch(request);
+        if(response&&response.ok)await clearOfflineAuth();
+        return response;
+      }catch(_){
+        return new Response(JSON.stringify({error:'Sair da conta requer conexão com a internet'}),{status:503,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
+      }
+    })());
+    return;
+  }
+
+  if(request.method!=='GET'||url.pathname.startsWith('/api/'))return;
+  // Password-reset links must never be stored in the offline cache.
+  if(url.pathname==='/recuperar-senha.html')return;
+  if(url.pathname==='/ativar-acesso.html')return;
+  if(protectedContentPath(url.pathname)){
+    event.respondWith(fetch(request,{cache:'no-store'}).catch(function(){return Response.error()}));
+    return;
+  }
+
+  if(request.mode==='navigate'){
+    event.respondWith((async function(){
+      // Always request the ORIGINAL URL so auth redirects and routing work.
+      // Do not open Cache Storage before fetching: a failed cache must not
+      // turn a working online site into Chrome's ERR_FAILED.
+      try{
+        return await fetch(request,{cache:'no-store'});
+      }catch(_){
+        try{
+          if(await offlineAllowed()){
+            var offlineCache=await caches.open(CACHE);
+            var boot=await offlineCache.match(BOOT);
+            if(boot)return boot;
+          }
+        }catch(_){}
+        // A real HTML response makes the error recoverable in the browser.
+        return offlineDenied();
+      }
+    })());
+    return;
+  }
+
+  var html=/\.html$/.test(url.pathname);
+  var dynamic=/\.(?:js|css|json|woff2?|png|webp|avif|ico|svg)$/.test(url.pathname)||/\.txt$/.test(url.pathname)||url.search;
+  if(html||dynamic){
+    // A página pode exigir download novo pedindo "no-store"; o padrão agora é
+    // "no-cache": o navegador reaproveita o arquivo quando o servidor responde 304.
+    var mode=request.cache==='no-store'||request.cache==='reload'?'no-store':'no-cache';
+    var fromDevice=mode==='no-cache'&&versionedAsset(url);
+    event.respondWith((async function(){
+      if(fromDevice){
+        try{
+          if(await recentSession()){
+            var saved=await (await caches.open(CACHE)).match(request);
+            if(saved&&!privateResponse(saved)){revalidate(event,request,saved);return saved}
+          }
+        }catch(_){}
+      }
+      try{
+        var response=await fetch(request,{cache:mode});
+        return cacheResponse(event,request,response);
+      }catch(_){
+        if(!publicPath(url.pathname)&&!(await offlineAllowed())){
+          return html?offlineDenied():Response.error();
+        }
+        try{
+          var cache=await caches.open(CACHE);
+          var hit=await cache.match(request);
+          if(!hit&&url.pathname==='/tools/decorando.html')hit=await cache.match(url.pathname);
+          if(hit)return hit;
+        }catch(_){}
+        return html?offlineDenied():Response.error();
+      }
+    })());
+  }
+});
+
+var offlineJob=null;
+self.addEventListener('message',function(event){
+  if(event.data&&event.data.type==='CLEAR_OFFLINE_AUTH'){event.waitUntil(clearOfflineAuth());return}
+  if(event.data&&event.data.type==='PAUSE_OFFLINE'){pauseOfflineUntil=Date.now()+45000;return}
+  if(event.data&&event.data.type==='RESUME_OFFLINE'){pauseOfflineUntil=0;return}
+  if(event.data&&event.data.type==='PREPARE_OFFLINE')event.waitUntil(offlineJob||(offlineJob=caches.open(CACHE).then(function(cache){return cache.match(OFFLINE_READY)}).then(function(hit){if(!hit)return prepareOffline()}).finally(function(){offlineJob=null})))
+});
+

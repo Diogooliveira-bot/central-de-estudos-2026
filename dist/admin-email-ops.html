@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Base Completa — Histórico de e-mails</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#123149;background:#f5f8fb}
+*{box-sizing:border-box}body{margin:0}main{max-width:1060px;margin:0 auto;padding:30px 20px 70px}
+header{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}a{color:#155c82}
+h1{font-size:clamp(24px,4vw,32px);letter-spacing:-.03em;margin:22px 0 8px}p{color:#576d7e;line-height:1.6}.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}
+.card{background:#fff;border:1px solid #dfe9f0;border-radius:10px;padding:20px}.card strong{display:block;font-size:30px;margin-top:8px}.label{color:#5b7182;font-size:13px}
+table{border-collapse:collapse;width:100%;background:#fff;border:1px solid #e0e9f0}th,td{padding:13px 15px;text-align:left;border-bottom:1px solid #edf1f5;font-size:13px}th{background:#eff5fa;color:#315269}
+.table-scroll{overflow-x:auto;border-radius:9px}button{background:#133b56;color:white;border:0;border-radius:7px;padding:10px 16px;cursor:pointer}
+#notice{margin-top:15px}small{color:#617b8c}
+@media(max-width:540px){th,td{padding:10px}.summary{gap:8px}.card{padding:15px}}
+</style></head><body><main>
+<header><strong>BASE COMPLETA <small> / ADMINISTRAÇÃO</small></strong><nav><a href="/index.html">Voltar à Central</a></nav></header>
+<h1>Histórico de e-mails</h1><p>Acompanhe o aceite pelo provedor e as falhas registradas a partir da implantação deste recurso. Aceite não significa entrega na caixa de entrada.</p>
+<div class="summary"><div class="card"><span class="label">Aceitos nos últimos 30 dias</span><strong id="accepted">—</strong></div>
+<div class="card"><span class="label">Falhas nos últimos 30 dias</span><strong id="failed">—</strong></div></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:22px 0 12px"><h2 style="font-size:18px;margin:0">Últimos 100 registros</h2><button id="refresh" type="button">Atualizar</button></div>
+<div class="table-scroll"><table><thead><tr><th>Data</th><th>Mensagem</th><th>Provedor</th><th>Resultado</th><th>Erro</th></tr></thead><tbody id="rows"><tr><td colspan="5">Carregando…</td></tr></tbody></table></div>
+<p id="notice" role="status"></p><p><small>Apenas administradores autenticados podem consultar esses dados. Destinatários e conteúdo não são exibidos.</small></p>
+</main><script>
+const labels={'signup-confirmation':'Confirmar cadastro','signup-welcome':'Boas-vindas','password-reset':'Recuperação de senha','password-changed':'Senha alterada','premium-activated':'Premium ativado','premium-expiring':'Premium perto do vencimento','premium-expired':'Premium expirado','weekly-study':'Resumo semanal','support-received':'Atendimento'};
+async function load(){
+ const notice=document.getElementById('notice'),body=document.getElementById('rows');
+ notice.textContent='Carregando…';
+ try{
+  const response=await fetch('/api/admin-dashboard?action=email-history',{credentials:'same-origin',cache:'no-store'});
+  if(!response.ok){if(response.status===401||response.status===403){notice.textContent='Acesso restrito. Entre com uma conta administrativa.';body.replaceChildren();return;}throw Error('Falha na consulta');}
+  const data=await response.json();document.getElementById('accepted').textContent=String(data.summary?.accepted??0);document.getElementById('failed').textContent=String(data.summary?.failed??0);
+  body.replaceChildren();
+  for(const item of data.events||[]){
+   const tr=document.createElement('tr');
+   for(const value of [item.created_at?new Date(item.created_at).toLocaleString('pt-BR'):'—',labels[item.kind]||item.kind,item.provider,item.outcome==='accepted'?'Aceito':'Falhou',item.error_code||'—']){
+    const td=document.createElement('td');td.textContent=String(value||'—');tr.appendChild(td);
+   }
+   body.appendChild(tr);
+  }
+  if(!data.events?.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=5;td.textContent='Ainda não há e-mails registrados.';tr.appendChild(td);body.appendChild(tr);}
+  notice.textContent='Atualizado. Histórico disponível somente a administradores.';
+ }catch(e){notice.textContent='Não foi possível carregar o histórico. Tente novamente.';}
+}
+document.getElementById('refresh').addEventListener('click',load);load();
+</script></body></html>

@@ -1,0 +1,1 @@
+const PT_CONTENT=JSON.parse(__PT_CONTENT_JSON);__PT_CONTENT_JSON='';
