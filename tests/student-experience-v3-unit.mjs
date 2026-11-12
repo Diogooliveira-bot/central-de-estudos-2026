@@ -132,3 +132,31 @@ test('fluxo progressivo usa módulos reais e não altera o conteúdo ou o acesso
   assert.doesNotMatch(css,/#studentMorePanel/);
   assert.match(css,/#homeView\.bc-focus-choice/);
 });
+
+
+test('prévia visual V2 mantém ações nativas e libera atalhos agrupados somente após instalação', async () => {
+  const [boot, manifest, css, nav] = await Promise.all([
+    read('central-v119.html'), read('central-offline-files-v66172.json'),
+    read('ui/visual-clean-v2.css'), read('ui/visual-clean-v2-nav.js'),
+  ]);
+  const files = JSON.parse(manifest).files;
+  assert.ok(boot.includes('ui/visual-clean-v2.css?v=20261112preview5'));
+  assert.ok(boot.includes('ui/visual-clean-v2-nav.js?v=20261112preview5'));
+  assert.ok(files.includes('/ui/visual-clean-v2.css?v=20261112preview5'));
+  assert.ok(files.includes('/ui/visual-clean-v2-nav.js?v=20261112preview5'));
+  assert.ok(boot.indexOf('/ui/visual-clean-v2.css') > boot.indexOf('/ui/module-clean-v1.css'));
+  assert.ok(boot.indexOf('ui/visual-clean-v2-nav.js') > boot.indexOf('ui/student-shell-v3.js'));
+  assert.match(css, /#homeView\.bc-focus-has-module/);
+  assert.match(css, /\.cv-zone-head\s*\{\s*display:none!important/);
+  assert.match(css, /\.cv-standard-actions/);
+  assert.match(css, /\.bc-native-reader-tools/);
+  assert.match(css, /bc-clean-nav-ready/);
+  assert.match(css, /@media\(max-width:800px\)/);
+  for (const action of ['vade','edital','filters']) {
+    assert.ok(nav.includes("key:'" + action + "'"), action + ' precisa ter substituto no menu');
+    assert.ok(css.includes('data-student-primary-nav="' + action + '"'), action + ' so pode ser compactado no celular');
+  }
+  assert.match(nav, /original\.click\(\)/);
+  assert.match(nav, /origins\.some\(button => !button\) return false/);
+  assert.doesNotMatch(nav, /localStorage|sessionStorage|fetch\(|removeChild|\.remove\(\)/);
+});
