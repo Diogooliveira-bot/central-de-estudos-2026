@@ -8,7 +8,7 @@
 'use strict';
 if(g.CentralAuthorialBank)return;
 // Atualize VERSION sempre que um arquivo de questões mudar (renova o cache do aparelho).
-const VERSION='20261112ia17';
+const VERSION='20261112ia18';
 // Módulos que já têm arquivo de questões. O teste unitário confere esta lista com a pasta.
 const AVAILABLE={
  adm:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
@@ -17,8 +17,8 @@ const AVAILABLE={
  penal:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
  cpp:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
  cf:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
- civil:[1,2,3,4,9,10,13,14],
- rlm:[]
+ civil:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+ rlm:[2]
 };
 const SOURCES={
  adm:{dir:'/content/adm/',get:n=>g.BC_ADM_AUTHORIAL_OVERRIDES?.[n]},
