@@ -196,7 +196,7 @@ function resetInternalAnswer(mode,id){localStorage.removeItem(storageKey('intern
 
 function modeStudyStats(data,mode){
   const chapters=modeChapters(data,mode);
-  const questions=global.BCQuestionsRemoved?[]:modeQuestions(data,mode);
+  const questions=modeQuestions(data,mode);
   const chapterDoneCount=chapters.filter(ch=>chapterDone(mode,ch.id)).length;
   const answered=questions.filter(q=>!!internalAnswer(mode,q.id)).length;
   const correct=questions.filter(q=>internalAnswer(mode,q.id)?.correct).length;
@@ -397,7 +397,7 @@ function chapterTocHtml(data,mode){
     '</div>';
   }).join('');
 }
-function quizHtml(data,mode){if(global.BCQuestionsRemoved)return '';
+function quizHtml(data,mode){
   const qs=modeQuestions(data,mode);
   if(!qs.length)return '';
   const cards=qs.map((q,i)=>{
