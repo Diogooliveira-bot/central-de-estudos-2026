@@ -79,3 +79,62 @@ html #homeView.bc-focus-has-module #subjects [data-cpp-native-zone] .bc-reading-
   height:100%!important;
   background:var(--bc-color-primary,#0b8f9c)!important;
 }
+
+
+/* 12/11 — Título do módulo aparece apenas no cabeçalho superior (breadcrumb).
+   Mantém os botões originais de expandir/recolher, os indicadores de leitura
+   e o botão superior "Módulos". Afeta somente a visualização de um módulo aberto. */
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="civil"] .cv-module.bc-focus-current-module > .cv-module-head {
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:8px!important;
+  width:100%!important;
+  min-height:34px!important;
+  padding:3px 12px!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  text-align:right!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="civil"] .cv-module.bc-focus-current-module > .cv-module-head
+> :not(.cv-chevron) {
+  display:none!important; /* Título e percentual repetidos: presentes apenas na barra de leitura. */
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="civil"] .cv-module.bc-focus-current-module > .cv-module-head::before {
+  content:"Recolher módulo";
+  color:var(--bc-color-text-secondary,#60798a)!important;
+  font-size:12px!important;
+  font-weight:600!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="civil"] .cv-module.bc-focus-current-module .cv-zone-head {
+  display:none!important; /* Segundo cabeçalho interno duplicava módulo e nome. */
+}
+/* Processo Penal: o cabeçalho interno já era removido; a linha exterior fica
+   compacta e conserva o controle nativo de expandir/recolher. */
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="cpp"] .topic-item.bc-focus-current-module > .topic-row {
+  display:flex!important;
+  justify-content:flex-end!important;
+  align-items:center!important;
+  gap:8px!important;
+  min-height:34px!important;
+  padding:4px 12px!important;
+  border:0!important;
+  background:transparent!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="cpp"] .topic-item.bc-focus-current-module > .topic-row > :not(.open-topic) {
+  display:none!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="cpp"] .topic-item.bc-focus-current-module > .topic-row::before {
+  content:"Recolher módulo";
+  color:var(--bc-color-text-secondary,#60798a)!important;
+  font-size:12px!important;
+  font-weight:600!important;
+}
