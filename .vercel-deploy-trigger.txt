@@ -4,3 +4,5 @@ Merge PR de produção ADM M4.
 Editor v3 production trigger: 2026-09-29T13:43Z
 
 Correções de estabilidade e navegação publicadas em produção: 2026-09-30T15:46Z
+
+Preview módulo clean sem login (apenas ambiente Preview): 2026-11-12.
