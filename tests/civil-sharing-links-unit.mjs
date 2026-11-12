@@ -30,19 +30,19 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   assert.equal(data.items.length, 66);
   assert.equal(new Set(data.items.map((x) => x.subdivisao || x.modulo)).size, 66);
   assert(boot.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
-  assert(boot.includes('ui/civil-native-study-v1.js?v=20261111ia2'));
+  assert(boot.includes('ui/civil-native-study-v1.js?v=20261112nographic1'));
   assert(boot.includes('content/civil/civil-teoria-guiada-reader-v1.js?v=20261111-apostilas-civil-cf-v1'));
   assert(boot.includes('ui/civil-native-study-v1.css?v=20261019civilstandard1'));
   assert(lazy.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
-  assert(lazy.includes('ui/civil-native-study-v1.js?v=20261111ia2a'));
+  assert(lazy.includes('ui/civil-native-study-v1.js?v=20261106ordem1'));
   assert(boot.includes('groups.civil=groups.civil.filter('), 'Bootstrap deve retirar primeiro os scripts antigos do mesmo caminho.');
   assert(loader.includes('const path=new URL(src,location.origin).pathname') && loader.includes('seen.has(path)'), 'O teste precisa cobrir a deduplicação real do carregador.');
   assert(!manifest.files.includes('/content/civil/civil-sharing-links.js?v=20261009civilsharing2'), 'catálogo TEC deve ficar fora do cache público');
   for (const asset of [
-    '/ui/civil-native-study-v1.js?v=20261111ia2a',
+    '/ui/civil-native-study-v1.js?v=20261112nographic1',
     '/ui/civil-native-study-v1.css?v=20261019civilstandard1',
   ]) assert(manifest.files.includes(asset), `${asset}: ausente no pacote offline.`);
-  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261111-pt-rlm-v1/);
+  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261112-restaura-tec-qc-lei-v1/);
 
   const moduleByUid = new Map(index.modules.map((m) => [m.uid, m]));
   const perModule = new Map();
@@ -74,12 +74,12 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   const bootCivilFiles = [
     'content/civil/civil-native-index.js?v=20261018civiljur1',
     'content/civil/civil-sharing-links.js?v=20261009civilsharing2',
-    'ui/civil-native-study-v1.js?v=20261111ia2',
+    'ui/civil-native-study-v1.js?v=20261112nographic1',
   ];
   for (const src of bootCivilFiles) assert(boot.includes(src));
   const rawCivilFiles = [...originalCivilFiles,
     'content/civil/civil-native-index.js?v=20261018civiljur1',
-    'ui/civil-native-study-v1.js?v=20261111ia2a',
+    'ui/civil-native-study-v1.js?v=20261106ordem1',
   ];
   const currentCivilFiles = rawCivilFiles.filter((src) => {
     const path = src.split('?')[0].replace(/^\//, '');
@@ -101,7 +101,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   const effectivePaths = effectiveCivilFiles.map((src) => new URL(src, 'http://localhost').pathname);
   assert.equal(effectivePaths.filter((p) => p === '/ui/civil-native-study-v1.js').length, 1);
   assert.equal(effectivePaths.filter((p) => p === '/content/civil/civil-sharing-links.js').length, 1);
-  assert(effectiveCivilFiles.indexOf('content/civil/civil-sharing-links.js?v=20261009civilsharing2') < effectiveCivilFiles.indexOf('ui/civil-native-study-v1.js?v=20261111ia2'));
+  assert(effectiveCivilFiles.indexOf('content/civil/civil-sharing-links.js?v=20261009civilsharing2') < effectiveCivilFiles.indexOf('ui/civil-native-study-v1.js?v=20261112nographic1'));
 
   const server = createServer((req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
@@ -166,11 +166,11 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
       assert.deepEqual(module.children.filter((name) => name !== 'bcq-module-panels'), ['cv-zone-head', 'cv-progress-grid', 'cv-oriented', 'cv-cards', 'cv-panel', 'cv-tools'], `M${module.number}: ordem visual diferente do padrão.`);
       assert.equal(module.complete, 'Teoria completa', `M${module.number}: card completo ausente.`);
       assert.equal(module.review, 'Versão de revisão', `M${module.number}: card de versão de revisão ausente.`);
-      assert.equal(module.infographic, 'Infográfico', `M${module.number}: card de infográfico ausente.`);
+      assert.equal(module.infographic, undefined, `M${module.number}: infográficos foram removidos (#281).`);
       assert(module.completeActions[0].startsWith('Estudar conteúdo'));
-      assert.equal(module.completeActions[1], '10 questões de bancas reais · em breve');
+      assert.equal(module.completeActions[1], 'Resolver 10 questões');
       assert(module.reviewActions[0].startsWith('Revisar conteúdo'));
-      assert.equal(module.reviewActions[1], 'Resolver 10 questões autorais');
+      assert.equal(module.reviewActions[1], 'Resolver 5 questões');
       assert.equal(module.notes, 1, `M${module.number}: notas duplicadas ou ausentes.`);
       assert.equal(module.legacyManualEntry, false, `M${module.number}: formulário manual redundante permaneceu.`);
     }
@@ -223,24 +223,12 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     await page.locator('[data-civil-native-module="1"] .cv-oriented-done').click();
     assert.equal(await page.evaluate(() => localStorage.getItem('central-v6:civil-native:m01:summary:read')), '100');
     assert.equal(await page.evaluate(() => localStorage.getItem('central-v6:civil-native:m01:complete:read')), '100');
-    // 10 + 10: a versão de revisão abre as 10 questões de IA (a teoria completa reserva as de bancas reais).
-    await page.addScriptTag({ path: path.join(root, 'ui/central-internal-question-policy-v1.js') });
-    await page.addScriptTag({ path: path.join(root, 'ui/central-authorial-bank-v1.js') });
-    await page.locator('[data-civil-native-module="1"] .cv-card-review .cv-standard-quiz').click();
-    await page.waitForFunction(() => document.getElementById('civil-native-questions') && !document.getElementById('civil-native-questions').hidden);
-    assert.match(await page.locator('#cv-q-eye').textContent(), /RESUMIDA/);
+    await page.locator('[data-civil-native-module="1"] .cv-card-complete .cv-standard-quiz').click();
+    await page.waitForFunction(() => !document.getElementById('civil-native-questions')?.hidden);
+    assert.match(await page.locator('#cv-q-eye').textContent(), /COMPLETA/);
     await page.evaluate(() => CivilNative.closeQuestions());
-    await page.locator('[data-civil-native-module="1"] .cv-card-infographic .cv-standard-button').click();
-    await page.waitForFunction(() => !document.getElementById('civil-native-image-viewer')?.hidden && document.getElementById('cv-img')?.complete && document.getElementById('cv-img').naturalWidth > 0);
-    const image = await page.locator('#cv-img').evaluate((img) => ({ width: img.naturalWidth, height: img.naturalHeight, src: img.src, fit: getComputedStyle(img).objectFit, download: document.getElementById('cv-img-download').download }));
-    assert(image.width > 0 && image.height > 0, 'O infográfico real não abriu integralmente.');
-    assert.equal(image.fit, 'contain');
-    assert.match(image.download, /direito-civil-modulo-01-infografico\.webp/);
-    await page.evaluate(() => { CivilNative.zoomImage(.5); });
-    assert.equal(await page.locator('#civil-native-image-viewer').getAttribute('data-zoom'), '1.5');
-    await page.evaluate(() => CivilNative.closeImage());
     assert.deepEqual(pageErrors, []);
-    console.log(JSON.stringify({ loadedThrough: 'CentralDisciplineLoader.load(civil)', retainedFilterRecords: actual.length, oldLinksRendered: oldLinks, modules: 15, general: 15, subdivisions: 51, standardOrderAndCards: moduleAudit.length, responsiveWidths: [1440, 1024, 768, 390], infographic: `${image.width}x${image.height}`, studentData: 'preserved', browserErrors: pageErrors }, null, 2));
+    console.log(JSON.stringify({ loadedThrough: 'CentralDisciplineLoader.load(civil)', retainedFilterRecords: actual.length, oldLinksRendered: oldLinks, modules: 15, general: 15, subdivisions: 51, standardOrderAndCards: moduleAudit.length, responsiveWidths: [1440, 1024, 768, 390], studentData: 'preserved', browserErrors: pageErrors }, null, 2));
   } finally {
     await browser.close();
     await new Promise((resolve) => server.close(resolve));

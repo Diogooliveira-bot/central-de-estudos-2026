@@ -77,14 +77,7 @@ function load(id){
  var item=ITEMS.find(function(x){return x.id===id});var host=document.getElementById('pt-body-'+id);if(!item||!host)return;
  if(host.dataset.loaded==='1'){bindCompletion(host,id);return}
  host.innerHTML='<div class="pt-loading">Carregando conteúdo…</div>';
- loadData().then(function(data){var markup=data[id];if(!markup)throw new Error('Conteúdo '+id+' não encontrado');host.innerHTML=markup;host.dataset.loaded='1';if(id!=='review'&&window.BcPortugueseAuthorial){
-  window.BcPortugueseAuthorial.strip(host);
-  var actions=document.createElement('section');actions.className='pt-internal-questions-toolbar';
-  actions.innerHTML='<b>Questões do módulo</b><button type="button" data-pt-authorial>Resolver 10 questões autorais · resumido</button><button type="button" data-pt-official>10 questões de bancas reais · em breve</button>';
-  host.prepend(actions);
-  actions.querySelector('[data-pt-authorial]').onclick=function(){window.BcPortugueseAuthorial.open(id)};
-  actions.querySelector('[data-pt-official]').onclick=function(){window.BcPortugueseAuthorial.notice(id)};
- }bindCompletion(host,id);applyEnhancements(host)}).catch(function(err){host.innerHTML='<div class="pt-error"><b>Não foi possível carregar este conteúdo.</b><span>'+esc(err.message||err)+'</span><button type="button" data-retry="'+id+'">Tentar novamente</button></div>';var b=host.querySelector('[data-retry]');if(b)b.onclick=function(){host.dataset.loaded='0';DATA_PROMISE=null;load(id)}})
+ loadData().then(function(data){var markup=data[id];if(!markup)throw new Error('Conteúdo '+id+' não encontrado');host.innerHTML=markup;host.dataset.loaded='1';bindCompletion(host,id);applyEnhancements(host)}).catch(function(err){host.innerHTML='<div class="pt-error"><b>Não foi possível carregar este conteúdo.</b><span>'+esc(err.message||err)+'</span><button type="button" data-retry="'+id+'">Tentar novamente</button></div>';var b=host.querySelector('[data-retry]');if(b)b.onclick=function(){host.dataset.loaded='0';DATA_PROMISE=null;load(id)}})
 }
 function bindCompletion(host,id){var cb=host.querySelector('[data-pt-complete="'+id+'"]');if(!cb)return;cb.checked=done(id);cb.onchange=function(){setDone(id,cb.checked)}}
 function applyEnhancements(host){

@@ -40,8 +40,8 @@ test('CF: leitor de revisão é substituído sem botão de piloto, sem tocar nos
  assert.ok(html.indexOf('cf-teoria-guiada-reader-v1.js')<html.indexOf('ui/cf-native-study-v2.js'));
  assert.ok(ui.includes("mode==='summary'&&g.BcCfGuidedReader?.open(n)"));
  assert.ok(ui.includes('Teoria completa'));
- assert.ok(ui.includes('Questões de bancas reais • em breve'));
- assert.ok(ui.includes('Resolver 10 questões autorais'));
+ assert.ok(ui.includes('Resolver 10 questões'));
+ assert.ok(ui.includes('Resolver 5 questões'));
  assert.ok(ui.includes('Revisar conteúdo'));
  assert.ok(ui.includes('markSummaryRead(n)'));
  assert.ok(!html.includes('m01-teoria-guiada-preview.js'));

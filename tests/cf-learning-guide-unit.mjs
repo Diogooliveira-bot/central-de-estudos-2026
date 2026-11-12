@@ -38,9 +38,9 @@ test('interface mostra guia e mantém ações de leitura e questões', () => {
   }
   assert.ok(ui.includes('learningGuide(w)'), 'Guia precisa estar vinculado aos módulos');
   assert.ok(ui.includes('toggleLegacyReading'), 'Marcação de leitura preservada');
-  assert.ok(ui.includes('Resolver 10 questões') && ui.includes('Resolver 10 questões autorais'), 'Bateria autoral de 10 exercícios preservada');
+  assert.ok(ui.includes('Resolver 10 questões') && ui.includes('Resolver 5 questões'), 'Exercícios preservados');
   for (const name of ['cf-weeks-001.js', 'cf-weeks-002.js', 'cf-weeks-003.js', 'cf-native-study-v2.js']) {
-    assert.ok(html.includes(`${name}?v=${name === 'cf-native-study-v2.js' ? '20261111ia2' : '20261101cfguide1'}`), `Cache não renovado: ${name}`);
+    assert.ok(html.includes(`${name}?v=${name === 'cf-native-study-v2.js' ? '20261112nographic1' : '20261101cfguide1'}`), `Cache não renovado: ${name}`);
   }
 });
 
@@ -54,6 +54,6 @@ test('layout de CF não força cards em flex e oferece grade responsiva por larg
   assert.ok(ui.includes('@container cf-reading (min-width:610px)'), 'Duas colunas apenas quando couberem');
   assert.ok(ui.includes('.cf-learning-goals,.cf-learning-check{grid-column:1/-1}'), 'Objetivos e conferência em largura total');
   assert.ok(ui.includes('cf-learning-tip') && ui.includes('cf-learning-warning'), 'Orientações devem ter estilo independente');
-  assert.ok(manifest.includes('ui/cf-native-study-v2.js?v=20261111ia2'), 'Manifesto offline deve usar a versão atual');
-  for (const key of ['toggleLegacyReading', 'openReader', 'openQuiz', 'openMap']) assert.ok(ui.includes(key), 'Fluxo existente preservado: ' + key);
+  assert.ok(manifest.includes('ui/cf-native-study-v2.js?v=20261112nographic1'), 'Manifesto offline deve usar a versão atual');
+  for (const key of ['toggleLegacyReading', 'openReader', 'openQuiz']) assert.ok(ui.includes(key), 'Fluxo existente preservado: ' + key);
 });

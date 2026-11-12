@@ -53,7 +53,7 @@ function toggleModule(id){
 }
 function materialCard(id,stage,label,description,icon){
  const action=stage==='theory'?'Estudar conteúdo':stage==='recap'?'Revisar conteúdo':
-  stage==='quiz'||stage==='ai-m01'?'Resolver questões':stage==='banca'?'Ver disponibilidade':stage==='map'?'Visualizar mapa':
+  stage==='quiz'?'Resolver questões':stage==='map'?'Visualizar mapa':
   stage==='exam'?'Iniciar simulado':stage==='errors'?'Revisar erros':
   stage==='review'?'Praticar questões':stage==='pdf'?'Ler apostila':'Iniciar treino';
  const target=stage==='pdf'?'return BaseApostilasPdf.open(\'rlm\','+Number(id.slice(1))+')':
@@ -83,15 +83,11 @@ function card(m){
  const percent=done?100:p;
  const cards=m.id==='M01'?
   materialCard(m.id,'speed','Treino de velocidade','Seis treinos cronometrados, sem sair da Central.','⏱')+
-  materialCard(m.id,'pdf','Apostila teórica (PDF)','Síntese do módulo de cálculo rápido, com exemplos.','PDF')+
-  materialCard(m.id,'ai-m01','10 questões autorais','Revisão de cálculo rápido e fundamentos matemáticos.','✓')+
-  materialCard(m.id,'banca','10 questões de bancas reais','Em breve.','▤'):
+  materialCard(m.id,'pdf','Apostila teórica (PDF)','Síntese do módulo de cálculo rápido, com exemplos.','PDF'):
   materialCard(m.id,'recap','Versão de revisão','Fórmulas, métodos e erros frequentes.','↺')+
   materialCard(m.id,'pdf','Apostila teórica (PDF)','Material para leitura e download em PDF.','PDF')+
   materialCard(m.id,'theory','Teoria completa','Conceitos, fórmulas e resoluções guiadas.','📖')+
-  materialCard(m.id,'map','Mapa mental','Síntese visual do conteúdo.','▤')+
-  materialCard(m.id,'quiz','10 questões autorais','Exercícios da versão resumida.','✓')+
-  materialCard(m.id,'banca','10 questões de bancas reais','Em breve.','▤');
+  materialCard(m.id,'quiz','Questões de fixação','Prática comentada com 10 questões.','✓');
  const sub=m.id==='M01'?'Treino de cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
   '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
@@ -156,24 +152,9 @@ function oldTarget(value){
  if(t==='rf')return 'RF';
  return map[t]||'M01';
 }
-// Questões de IA revisadas (M02–M15): substituem as 10 da aula; respostas antigas eram de outras questões.
-const IA_APPLIED={};
-function applyCurated(id,items){
- const d=lesson(id);if(!d||!Array.isArray(items)||items.length!==10)return;
- d.questions=items.map(q=>({level:'prova',prompt:q.q,options:q.options,answer:q.answer,explanation:q.explanation,origin:'autoral-IA',id:q.id}));
- try{if(localStorage.getItem(PREFIX+'bank:'+id)!=='ia1'){localStorage.removeItem(PREFIX+'answers:'+id);localStorage.setItem(PREFIX+'bank:'+id,'ia1')}}catch(_){}
- IA_APPLIED[id]=true;
-}
 function open(id='M02',stage='theory'){
- const nIA=/^M(0[2-9]|1[0-5])$/.test(id)?Number(id.slice(1)):0;
- if(nIA&&!IA_APPLIED[id]&&g.CentralAuthorialBank?.has('rlm',nIA)){
-  g.CentralAuthorialBank.ensure('rlm',nIA).then(items=>{applyCurated(id,items);IA_APPLIED[id]=true;open(id,stage)});
-  return false;
- }
  const m=id==='RF'?{id:'RF',titulo:'Revisão cumulativa'}:mod(id);
  if(!m)return false;
- if(stage==='banca')return g.CentralInternalQuestionPolicy?.modal('Raciocínio Lógico-Matemático',m.titulo);
- if(id==='M01'&&stage==='ai-m01')return g.CentralAuthorialQuiz?.open({discipline:'Raciocínio Lógico-Matemático',module:'M01',title:'M01 · Treino de velocidade',items:g.BC_RLM_M01_AUTHORIAL||[]});
  close(false);
  lastFocus=document.activeElement;
  active={id,stage:id==='M01'?'speed':id==='RF'?(stage==='exam'||stage==='errors'?stage:'review'):normStage(stage)};
@@ -199,7 +180,7 @@ function normStage(stage){return stage==='recap'?'recap':stage==='summary'||stag
 function move(id){return open(id,id==='RF'?'review':id==='M01'?'speed':'theory');}
 /* Leitor RLM com o mesmo shell, índice lateral e ferramentas do leitor nativo de Penal. */
 function stageLabel(stage){
- return ({speed:'Treino de velocidade',theory:'Teoria completa',recap:'Revisão',quiz:'Questões',map:'Mapa mental',review:'Revisão comentada',exam:'Simulado modo prova',errors:'Caderno de erros'})[stage]||'Material';
+ return ({speed:'Treino de velocidade',theory:'Teoria completa',recap:'Revisão',quiz:'Questões',review:'Revisão comentada',exam:'Simulado modo prova',errors:'Caderno de erros'})[stage]||'Material';
 }
 function stageSections(stage){
  return stage==='theory'?'.bc-rlm-lesson':
@@ -282,7 +263,7 @@ function renderOverlay(){
  const stage=active.stage;
  const previous=el('bcRlmScroll'),oldY=previous?.scrollTop||0;
  const links=active.id==='M01'?[]:active.id==='RF'?[]:[
- ['theory','Teoria'],['recap','Revisão'],['quiz','Questões'],['map','Mapa mental']
+ ['theory','Teoria'],['recap','Revisão'],['quiz','Questões']
  ];
  const actions=links.map(([kind,label])=>'<button type="button" class="bc-rlm-tool-tab'+(kind===stage?' active':'')+
  '" aria-pressed="'+(kind===stage)+'" onclick="RlmNative.tab(\''+kind+'\')">'+label+'</button>').join('');
@@ -336,7 +317,7 @@ function next(){
  if(!active)return;
  if(active.id==='M01')return open('M02','theory');
  if(active.id==='RF')return close();
- const order=['theory','recap','quiz','map'],i=order.indexOf(active.stage);
+ const order=['theory','recap','quiz'],i=order.indexOf(active.stage);
  if(i<order.length-1)return tab(order[i+1]);
  const pos=manifest().findIndex(x=>x.id===active.id);
  return pos>=manifest().length-1?open('RF'):open(manifest()[pos+1].id);
@@ -351,7 +332,6 @@ function bodyFor(m,stage){
  if(stage==='theory')return theory(m,d);
  if(stage==='recap')return recap(m,d);
  if(stage==='quiz')return quiz(m,d);
- if(stage==='map')return mindmap(m,d);
  return theory(m,d);
 }
 function title(txt,desc){return '<span class="bc-rlm-kicker">Base Completa · edição de estudos</span><h2>'+esc(txt)+'</h2><p class="bc-rlm-article-lead">'+esc(desc)+'</p>'}
@@ -377,10 +357,10 @@ function recap(m,d){
   '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'quiz\')">Praticar com questões →</button></div>';
 }
 function quiz(m,d){
- return title('10 questões autorais','Versão resumida · 3 fáceis, 4 médias e 3 difíceis. Clique na alternativa para conferir o comentário.')+
+ return title('Questões','3 fáceis • 4 médias • 3 difíceis. Clique na alternativa: o gabarito e a explicação aparecem na hora.')+
  '<div class="bc-rlm-scores" id="bcRlmScore">'+scoreHtml(m.id)+'</div>'+
  d.questions.map((q,i)=>cardQuestion(m.id,q,i)).join('')+
- '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'map\')">Abrir mapa mental →</button></div>';
+ '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.next()">Próximo módulo →</button></div>';
 }
 function scoreHtml(id){
  const p=result(id);return '<b>'+p.count+'/'+p.total+' respondidas</b> · '+p.correct+' acertos · '+p.pct+'% nas respondidas';
@@ -416,13 +396,6 @@ function refreshBody(){
  setupToc(active.stage);
  if(root)root.scrollTop=oldY;
  updateReadBar();
-}
-function mindmap(m,d){
- return title('Mapa mental','Ramos e subtemas da aula estruturados para revisão visual, sem rolagem lateral.')+
- '<div class="bc-rlm-map"><div class="bc-rlm-map-center">'+esc(m.titulo)+'</div>'+
- '<div class="bc-rlm-map-grid">'+d.mindmap.map(node=>'<section class="bc-rlm-map-node"><b>'+esc(node.name)+'</b><ul>'+
- node.branches.map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></section>').join('')+'</div></div>'+
- '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.next()">Próximo módulo →</button></div>';
 }
 const reviewSpec=[['M02',4],['M03',4],['M04',4],['M05',4],['M06',4],['M07',4],['M08',4],['M09',4],['M10',4],['M11',4],['M12',4],['M13',4],['M14',4],['M15',4],['M03',7],['M04',7],['M05',7],['M11',7],['M12',7],['M14',7]];
 function reviewScore(){

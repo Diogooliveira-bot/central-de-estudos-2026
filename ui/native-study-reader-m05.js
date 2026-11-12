@@ -161,11 +161,7 @@ function buildHtml(data,mode){
   return {body,headings,words,mins};
 }
 function modeChapters(data,mode){return Array.isArray(data?.chapters?.[mode])?data.chapters[mode]:[]}
-function modeQuestions(data,mode){
- // Questões agora pertencem à atividade autoral independente (CentralAuthorialQuiz).
- // Mantemos as fontes e o histórico sem duplicar exercícios dentro da apostila.
- return [];
-}
+function modeQuestions(data,mode){return Array.isArray(data?.internalQuestions?.[mode])?data.internalQuestions[mode]:[]}
 function chapterDone(mode,id){return localStorage.getItem(storageKey('chapter:'+mode+':'+id))==='1'}
 function setChapterDone(mode,id,done){
   localStorage.setItem(storageKey('chapter:'+mode+':'+id),done?'1':'0');

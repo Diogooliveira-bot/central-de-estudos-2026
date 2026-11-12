@@ -27,30 +27,40 @@ function setup(){
  w.requestAnimationFrame=()=>0;
  w.HTMLElement.prototype.scrollIntoView=function(){};
  w.CPP_NATIVE_CONTENT=content;
- for(const p of ['content/cpp/cpp-native-index.js','content/cpp/cpp-visual-law.js','ui/native-reading-session.js','ui/cpp-m01-visual-pilot.js','ui/central-internal-question-policy-v1.js','ui/central-authorial-quiz-v1.js','ui/grounded-authorial-questions-v1.js','ui/cpp-native-study-v1.js','ui/reader-questions-v1.js'])w.eval(read(p));
+ for(const p of ['content/cpp/cpp-native-index.js','content/cpp/cpp-visual-law.js','ui/native-reading-session.js','ui/cpp-m01-visual-pilot.js','ui/cpp-native-study-v1.js','ui/reader-questions-v1.js'])w.eval(read(p));
  return {dom,w};
 }
-test('CPP M01–M22: 330 itens originais continuam nas fontes, mas não entram na leitura',async()=>{
+test('CPP M01–M22: as 330 questões originais oferecem alternativas e correção',async()=>{
  const {dom,w}=setup();let total=0;
  try{
   for(const d of Object.values(content))for(const kind of ['summary','complete']){
-   const original=new JSDOM(d[kind+'Html']).window.document;
-   const keys=[...original.body.textContent.matchAll(/Gabarito:\s*([A-E])\b/gi)];
-   assert.equal(keys.length,kind==='summary'?5:10,d.uid+' '+kind+' fonte intacta');
-   total+=keys.length;original.defaultView.close();
-   await w.CppNative.open(d.number,kind,false);
+   await w.CppNative.open(d.number,kind,true);
    const body=w.document.querySelector('#cpp-native-reader .bc-native-scroll');
-   assert(body,d.uid+' '+kind+' leitura aberta');
    w.CentralReaderQuestions.process(body);
-   assert.equal(body.querySelectorAll('.cpp-native-question,[data-cpp-option],.bc-iq').length,0,d.uid+' '+kind+' sem perguntas intercaladas');
-   w.CppNative.close();
+   const cards=[...body.querySelectorAll('.cpp-native-question')];
+   assert.equal(cards.length,kind==='summary'?5:10,`${d.uid}/${kind}`);
+   assert.equal(body.querySelectorAll('.bc-iq').length,0,'não duplicar questões com o conversor genérico');
+   const original=new JSDOM(d[kind+'Html']).window.document;
+   const keys=[...original.body.textContent.matchAll(/Gabarito:\s*([A-E])\b/gi)].map(m=>m[1].toUpperCase());
+   assert.equal(keys.length,cards.length);
+   cards.forEach((card,i)=>{
+    const optionCount=card.querySelectorAll('[data-cpp-option]').length;
+    assert.ok(optionCount>=2&&optionCount<=5);
+    assert.doesNotMatch(card.textContent,/Gabarito:/);
+    const correct=keys[i].charCodeAt(0)-65;
+    card.querySelector(`[data-cpp-option="${correct}"]`).click();
+    assert.match(card.querySelector('[role="status"]').textContent,/✓ Correto/);
+    assert.equal(card.querySelectorAll('[data-cpp-option]:disabled').length,optionCount);
+    assert.ok(card.querySelector('[role="status"] p').textContent.trim());
+    total++;
+   });
+   original.defaultView.close();
   }
-  assert.equal(total,330,'todos os 330 itens legados permanecem como origem auditável');
- }finally{dom.window.close();}
+  assert.equal(total,330);
+ }finally{dom.window.close()}
 });
-test('CPP: 22 versões completas preservam teoria, tabelas e lei seca sem questões intercaladas',async()=>{
- const {dom,w}=setup();
- try{
+test('CPP visual: 22 completas preservam texto e tabelas, com quadros inteiros e revisão antes das questões',async()=>{
+ const {dom,w}=setup();try{
   for(const d of Object.values(content)){
    await w.CppNative.open(d.number,'complete',false);
    const article=w.document.querySelector('.cpp-visual-pilot');
@@ -62,58 +72,56 @@ test('CPP: 22 versões completas preservam teoria, tabelas e lei seca sem quest�
     const source=w.CPP_VISUAL_LAW.articles[box.dataset.lawKey];
     assert.deepEqual([...box.querySelectorAll('blockquote p')].map(p=>p.textContent),[...source.paragraphs]);
     assert.match(box.querySelector('a').href,/^https:\/\/(www2\.camara\.leg\.br|legis\.senado\.leg\.br)\//);
+    assert.ok(box.compareDocumentPosition(article.querySelector('.cpp-native-question'))&w.Node.DOCUMENT_POSITION_FOLLOWING,'lei seca antes das questões');
     assert.equal(box.closest('table,li,.cpp-native-question'),null);
    });
-   assert.equal(new Set(lawBlocks.map(x=>x.dataset.lawKey)).size,lawBlocks.length);
-   assert.ok(article.querySelectorAll('.cppv-scheme').length>=1,d.uid);
-   assert.equal(article.querySelectorAll('.cpp-native-question').length,0);
+   assert.equal(new Set(lawBlocks.map(x=>x.dataset.lawKey)).size,lawBlocks.length,'sem repetir artigos no módulo');
+   assert.ok(article.querySelectorAll('.cppv-scheme').length>=3,d.uid);
    const original=new JSDOM(d.completeHtml).window.document;
-   assert.deepEqual([...article.querySelectorAll('table')].map(t=>t.textContent),[...original.querySelectorAll('table')].map(t=>t.textContent),'tabelas preservadas');
+   const tables=[...original.querySelectorAll('table')].map(t=>t.textContent);
+   assert.deepEqual([...article.querySelectorAll('table')].map(t=>t.textContent),tables,'tabelas originais preservadas');
    const questionStart=[...original.querySelectorAll('h1,h2,h3,h4,h5,h6')].find(h=>/quest[aã]o\s+\d+/i.test(h.textContent));
-   const normalize=t=>t.replace(/\s+/g,' ').trim(),articleText=normalize(article.textContent);
+   const normalize=s=>s.replace(/\s+/g,' ').trim(),articleText=normalize(article.textContent);
    for(const p of original.querySelectorAll('p')){
     if(questionStart&&(questionStart.compareDocumentPosition(p)&original.defaultView.Node.DOCUMENT_POSITION_FOLLOWING))continue;
     if(/Gabarito:|Explicação:|Dificuldade:|^[A-E][).]/.test(p.textContent.trim()))continue;
-    assert.ok(articleText.includes(normalize(p.textContent)),d.uid+': teoria preservada: '+p.textContent.slice(0,100));
+    assert.ok(articleText.includes(normalize(p.textContent)),d.uid+': texto preservado: '+p.textContent.slice(0,240));
    }
-   original.defaultView.close();
+   const review=[...article.querySelectorAll('.cppv-scheme')].find(el=>el.textContent.includes('ANTES DE RESPONDER'));
+   assert.ok(review.compareDocumentPosition(article.querySelector('.cpp-native-question'))&w.Node.DOCUMENT_POSITION_FOLLOWING);
    const count=article.querySelectorAll('.cppv-scheme').length;
    w.CppVisualPilot.enhance(w.document.querySelector('.bc-native-scroll'),d.number,'complete');
    assert.equal(article.querySelectorAll('.cppv-scheme').length,count);
+   original.defaultView.close();
    w.CppNative.close();await w.CppNative.open(d.number,'summary',false);
-   assert.equal(w.document.querySelector('.cpp-visual-pilot'),null);
-   assert.equal(w.document.querySelectorAll('.cpp-native-question').length,0);
-   w.CppNative.close();
+   assert.equal(w.document.querySelector('.cpp-visual-pilot'),null,'resumida permanece no formato anterior');
   }
- }finally{dom.window.close();}
+ }finally{dom.window.close()}
 });
-test('CPP: 10 questões autorais fora da leitura, resposta e progresso separados da versão completa',async()=>{
- const {dom,w}=setup();
- try{
-  const key='central-v6:cpp-native:m01:summary:read';
-  w.localStorage.setItem(key,'40');
+test('CPP: erro, refazer e respostas preservadas ao reabrir; módulos e modos isolados',async()=>{
+ const {dom,w}=setup();try{
+  const readingKey='central-v6:cpp-native:m01:summary:read';
+  w.localStorage.setItem(readingKey,'40');
   await w.CppNative.open(1,'summary',true);
-  let overlay=w.document.getElementById('bc-authorial-quiz');
-  assert.ok(overlay,'M01 abre questionário separado');
-  assert.equal(overlay.querySelectorAll('[data-authorial-index]').length,10);
-  let card=overlay.querySelector('[data-authorial-index="0"]');
-  const reveal=card.querySelector('[data-reveal]'),option=card.querySelector('[data-answer]');
-  assert.ok(reveal||option,'questão autoral interativa');
-  (reveal||option).click();
-  const stored=w.localStorage.getItem('central-v6:authorial-ten:Direito Processual Penal:M01');
-  assert.ok(stored&&stored!=='{}','resposta de treino salva em chave própria');
-  overlay.querySelector('[data-authorial-close]').click();
-  await w.CppNative.open(1,'summary',true);
-  overlay=w.document.getElementById('bc-authorial-quiz');
-  card=overlay.querySelector('[data-authorial-index="0"]');
-  assert.ok(card.querySelector('[data-retry]'),'reabre resposta anterior');
-  card.querySelector('[data-retry]').click();
-  assert.ok(card.querySelector('[data-reveal],[data-answer]'),'refazer questão funciona');
-  overlay.querySelector('[data-authorial-close]').click();
-  await w.CppNative.open(1,'complete',true);
-  assert.ok(w.document.getElementById('bc-internal-pending-modal'),'completo reserva questões reais em breve');
-  assert.equal(w.document.getElementById('bc-authorial-quiz'),null,'não apresenta itens autorais como oficiais');
-  assert.equal(w.localStorage.getItem(key),'40','leitura preservada');
+  let card=w.document.querySelector('.cpp-native-question');
+  card.querySelector('[data-cpp-option="0"]').click();
+  const selected=card.querySelector('[role="status"]').textContent;
+  assert.match(selected,/Gabarito:/);
+  w.CppNative.close();await w.CppNative.open(1,'summary',true);
+  card=w.document.querySelector('.cpp-native-question');
+  assert.equal(card.querySelector('[role="status"]').textContent,selected);
+  card.querySelector('[data-cpp-retry]').click();
+  assert.equal(card.querySelectorAll('[data-cpp-option]:disabled').length,0);
+  assert.doesNotMatch(card.textContent,/Gabarito:/);
+  const correctText=content['cpp-m01'].summaryHtml.match(/Gabarito:\s*([A-E])/i)[1];
+  const wrong=(correctText.charCodeAt(0)-65+1)%5;
+  card.querySelector(`[data-cpp-option="${wrong}"]`).click();
+  assert.match(card.querySelector('[role="status"]').textContent,/✕ Incorreto/);
+  w.CppNative.close();await w.CppNative.open(1,'complete',false);
+  assert.equal(w.document.querySelectorAll('[data-cpp-option]:disabled').length,0);
+  w.CppNative.close();await w.CppNative.open(2,'summary',false);
+  assert.equal(w.document.querySelectorAll('[data-cpp-option]:disabled').length,0);
+  assert.equal(w.localStorage.getItem(readingKey),'40');
   assert.equal(w.localStorage.getItem('central-v6:cpp:curso22:v1'),null);
- }finally{dom.window.close();}
+ }finally{dom.window.close()}
 });

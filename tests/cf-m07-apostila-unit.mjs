@@ -15,7 +15,6 @@ function fixture() {
   w.renderAll = () => {};
   const ctx = vm.createContext(w);
   for (const n of [2,7]) vm.runInContext(read(`content/cf/m${String(n).padStart(2,'0')}-native-data.js`),ctx);
-  vm.runInContext(read('ui/central-internal-question-policy-v1.js'),ctx);
   vm.runInContext(read('ui/cf-native-study-v2.js'),ctx);
   return dom;
 }
@@ -25,7 +24,7 @@ test('M07 preserva identidade e oferece material didático sem tabelas partidas'
   assert.equal(d.number,7);
   assert.equal(d.moduleId,'w7');
   assert.equal(d.lawTopicId,'cf-m07');
-  assert.match(d.mapUrl,/m07-infografico/);
+  assert.equal(d.mapUrl,undefined);
   assert.ok(d.complete.length>50000);
   assert.doesNotMatch(d.complete,/\{\{(?:QUESTIONS|REVIEW_QUESTIONS)\}\}|Warning: truncated output/);
   w.CfNativeStudy.openReader(7,'complete');
@@ -63,26 +62,30 @@ test('checklist do M07 persiste sem alterar checklist ou progresso do M02', () =
   dom.window.close();
 });
 
-test('M07: 10 autorais no resumo, 10 questões de banca reservadas para inclusão futura',()=>{
- const dom=fixture(),w=dom.window,qs=w.BASE_NATIVE_CONTENT.cf.m07.questions;
- assert.equal(qs.summary.length,5);assert.equal(qs.complete.length,10);
- const bank=w.CentralInternalQuestionPolicy.authorial(qs.summary,qs.complete);
- assert.equal(bank.length,10);
- w.CfNativeStudy.openQuiz(7,'summary');
- for(const q of bank){
-   const button=w.document.querySelector('[data-opt="'+q.answer+'"]');
-   assert.ok(button,'alternativa correta não exibida');
-   button.click();
-   assert.match(w.document.querySelector('[data-feed]').textContent,/Correto/);
-   w.document.querySelector('[data-next]').click();
- }
- assert.match(w.document.querySelector('[data-host]').textContent,/10 \/ 10/);
- const state=JSON.parse(w.localStorage.getItem('central-v6:cf-native-v2'));
- assert.equal(state.modules[7].summaryScore,10);
- assert.equal(state.modules[7].completeQuiz,undefined);
- w.CfNativeStudy.openQuiz(7,'complete');
- assert.match(w.document.getElementById('bc-internal-pending-modal').textContent,/Questões de bancas reais/);
- dom.window.close();
+test('15 questões do M07 mantêm distribuição e pontuação mesmo com alternativas embaralhadas', () => {
+  const dom=fixture(),w=dom.window,qs=w.BASE_NATIVE_CONTENT.cf.m07.questions;
+  assert.deepEqual(Array.from(qs.complete,q=>q.difficulty),['Fácil','Fácil','Fácil','Fácil','Média','Média','Média','Média','Difícil','Difícil']);
+  assert.deepEqual(Array.from(qs.summary,q=>q.difficulty),['Fácil','Fácil','Média','Média','Difícil']);
+  for(const mode of ['complete','summary']){
+    w.CfNativeStudy.openQuiz(7,mode);
+    for(const q of qs[mode]){
+      assert.equal(q.options.length,4);
+      assert.equal(new Set(q.options).size,4);
+      assert.ok(q.options.every(option=>option.length>25));
+      assert.ok(q.explanation.length>100);
+      const button=w.document.querySelector(`[data-opt="${q.answer}"]`);
+      assert.ok(button.textContent.includes(q.options[q.answer]));
+      button.click();
+      assert.match(w.document.querySelector('[data-feed]').textContent,/Correto/);
+      w.document.querySelector('[data-next]').click();
+    }
+    assert.match(w.document.querySelector('[data-host]').textContent,new RegExp(`${qs[mode].length} / ${qs[mode].length}`));
+  }
+  const state=JSON.parse(w.localStorage.getItem('central-v6:cf-native-v2'));
+  assert.equal(state.modules[7].completeScore,10);
+  assert.equal(state.modules[7].summaryScore,5);
+  assert.equal(state.modules[2],undefined);
+  dom.window.close();
 });
 
 test('M07 tem fonte editorial reproduzível e a mesma versão no pacote offline', () => {

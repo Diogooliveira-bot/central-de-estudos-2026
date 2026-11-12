@@ -46,8 +46,7 @@
     const action = original.getAttribute('onclick') || '';
     const typeInfo = {
       complete: { title:'Teoria completa', description:'Aprofunde o conteúdo integral do módulo.', icon:'📚', button:'Estudar conteúdo', tone:'complete' },
-      summary: { title:'Versão de revisão', description:'Retome os pontos essenciais com rapidez.', icon:'⚡', button:'Revisar conteúdo', tone:'summary' },
-      map: { title:'Mapa mental', description:'Revise visualmente os principais pontos do módulo.', icon:'🧠', button:'Visualizar mapa mental', tone:'map' }
+      summary: { title:'Versão de revisão', description:'Retome os pontos essenciais com rapidez.', icon:'⚡', button:'Revisar conteúdo', tone:'summary' }
     }[type];
     return { ...typeInfo, sourceTitle, sourceDescription:description, progress, action };
   }
@@ -99,19 +98,17 @@
     const week = moduleWeek(module);
     const grid = materials.querySelector('.bc-native-material-grid');
     const originals = Array.from(grid?.querySelectorAll('.bc-native-material-card') || []);
-    if (!week || originals.length < 3) return;
+    if (!week || originals.length < 2) return;
     const complete = originals.find(button => /complete/i.test(button.getAttribute('onclick') || '') || /conteúdo completo/i.test(button.textContent));
     const summary = originals.find(button => button !== complete && (/summary/i.test(button.getAttribute('onclick') || '') || /resumido|resumo/i.test(button.textContent)));
-    const map = originals.find(button => button !== complete && button !== summary);
-    if (!complete || !summary || !map) return;
+    if (!complete || !summary) return;
     const intro = body.querySelector(':scope > .cpc-study-intro');
     const completeQuiz = questionFor(intro, 'complete');
     const summaryQuiz = questionFor(intro, 'summary');
     readingCard(module, week);
     const cards = [
       materialCard(cardInfo(complete, 'complete'), completeQuiz, 'complete'),
-      materialCard(cardInfo(summary, 'summary'), summaryQuiz, 'summary'),
-      materialCard(cardInfo(map, 'map'), null, 'map')
+      materialCard(cardInfo(summary, 'summary'), summaryQuiz, 'summary')
     ];
     materials.classList.add('cpc-approved-materials');
     materials.querySelector('.bc-native-materials-head')?.remove();

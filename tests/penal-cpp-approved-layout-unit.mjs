@@ -124,7 +124,7 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   assert.equal(materials.querySelector('[data-penal-approved-card="summary"] .penal-approved-primary').textContent,'Revisar conteúdo');
   assert.equal(materials.querySelector('[data-penal-approved-card="complete"] [data-penal-approved-questions="10"]').textContent,'Resolver 10 questões');
   assert.equal(materials.querySelector('[data-penal-approved-card="summary"] [data-penal-approved-questions="5"]').textContent,'Resolver 5 questões');
-  assert.ok(materials.querySelector('[data-native-kind="mindmap"]'),'recurso nativo de mapa mental preservado');
+  assert.equal(materials.querySelector('[data-native-kind="mindmap"]'),null);
   assert.match(body.querySelector('.penal-approved-progress').textContent,/25% concluído/);
   const reading=body.querySelector('.penal-approved-reading');
   assert.match(reading.textContent,/CF, art\. 5º; CP, arts\. 1º e 12/);
@@ -217,27 +217,25 @@ test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manu
   const guided=first.indexOf('adm-native-guided-reading');
   const complete=first.indexOf('data-kind="complete"');
   const summary=first.indexOf('data-kind="summary"');
-  const infographic=first.indexOf('data-kind="infographic"');
+  assert.doesNotMatch(first,/data-kind="infographic"/);
   const notes=first.indexOf('adm-native-notes');
   const tools=first.indexOf('adm-native-module-tools');
   const links=first.indexOf('data-cpp-links-slot="1"');
   const tec=first.indexOf('data-cpp-tec-panel');
   const lei=first.indexOf('data-kind="lei-em-dia"');
   // Ordem pedida: revisão, teoria completa, Lei em Dia do módulo e links do QC/TEC.
-  assert.ok(progress>=0&&progress<guided&&guided<summary&&summary<complete&&complete<lei&&lei<links&&links<tec&&tec<infographic&&infographic<notes&&notes<tools);
+  assert.ok(progress>=0&&progress<guided&&guided<summary&&summary<complete&&complete<lei&&lei<links&&links<tec&&tec<notes&&notes<tools);
   assert.match(first,/data-cpp-lei-module="cpp-m01"/);
   assert.match(first,/CppNative\.tool\(1,'decorando'\)/);
   assert.equal((first.match(/Lei em Dia<\/button>|Abrir Lei em Dia/g)||[]).length,1);
   assert.match(first,/Estudar conteúdo/);
-  assert.match(first,/10 questões de bancas reais/);
+  assert.match(first,/Resolver 10 questões/);
   assert.match(first,/Revisar conteúdo/);
-  assert.match(first,/Resolver 10 questões autorais/);
-  assert.match(first,/Visualizar infográfico/);
+  assert.match(first,/Resolver 5 questões/);
+  assert.doesNotMatch(first,/Visualizar infográfico/);
   assert.match(first,/Lei em Dia/);
   assert.doesNotMatch(first,/Registrar questões externas|cpp-round-done|adm-native-external-entry/);
-  assert.match(read('ui/cpp-native-study-v1.js'),/drawImage\(img,-m\.spriteX,-m\.spriteY\)/);
-  assert.match(read('ui/cpp-native-study-v1.js'),/Baixar imagem/);
-  assert.match(read('ui/cpp-native-study-v1.js'),/zoomImage,downloadImage/);
+  assert.doesNotMatch(read('ui/cpp-native-study-v1.js'),/openImage|downloadImage|zoomImage/);
   assert.equal(localStorage.getItem('central-v6:cpp:curso22:v1'),JSON.stringify({modules:{1:{rounds:[{valid:'12',correct:'9'}]}}}));
 });
 

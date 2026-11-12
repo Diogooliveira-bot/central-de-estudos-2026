@@ -138,3 +138,47 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-readin
   font-size:12px!important;
   font-weight:600!important;
 }
+
+
+/* 12/11 — ADM: título e percentual somente no breadcrumb e na barra de leitura.
+   A linha expansível permanece clicável; a ação .open-topic não muda.
+   Esconde apenas os cabeçalhos duplicados quando UM módulo está em foco. */
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="adm"] .topic-item.adm-native-module-row.bc-focus-current-module > .topic-row {
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:8px!important;
+  min-height:36px!important;
+  padding:4px 12px!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="adm"] .topic-item.adm-native-module-row.bc-focus-current-module > .topic-row > :not(.open-topic) {
+  display:none!important; /* Não duplicar título nem 21% fora da barra real. */
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="adm"] .topic-item.adm-native-module-row.bc-focus-current-module > .topic-row::before {
+  content:"Recolher módulo";
+  color:var(--bc-color-text-secondary,#60798a)!important;
+  font-size:12px!important;
+  font-weight:600!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="adm"] .topic-item.adm-native-module-row.bc-focus-current-module
+.adm-native-zone > .adm-native-zone-head {
+  display:none!important; /* Segundo percentual e título dentro do painel verde. */
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject[data-id="adm"] .topic-item.adm-native-module-row.bc-focus-current-module
+.adm-native-progress-panel {
+  grid-template-columns:minmax(0,1fr)!important;
+}
+
+
+/* Grade responsiva da disciplina Constitucional. */
+html #homeView #subjects .subject[data-id="cf"] .cf-native-cards {
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))!important;
+}

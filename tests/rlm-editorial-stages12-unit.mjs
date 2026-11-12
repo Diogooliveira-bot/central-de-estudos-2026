@@ -67,13 +67,13 @@ test('Notação matemática conserva o texto, sem fragmentar palavras ou datas',
  assert.doesNotMatch(render('2^3'),/<math|<mfrac/);
 });
 
-test('RLM possui navegação Teoria, Revisão, Questões e Mapa; M01 preserva o motor de velocidade',()=>{
+test('RLM possui navegação Teoria, Revisão e Questões; M01 preserva o motor de velocidade',()=>{
  const {g,localStorage}=fixture();
  let html=g.RlmNative.renderMaster();
  assert.equal((html.match(/data-rlm-kind="recap"/g)||[]).length,14);
  assert.equal((html.match(/data-rlm-kind="theory"/g)||[]).length,14);
  assert.equal((html.match(/data-rlm-kind="quiz"/g)||[]).length,14);
- assert.equal((html.match(/data-rlm-kind="map"/g)||[]).length,14);
+ assert.equal((html.match(/data-rlm-kind="map"/g)||[]).length,0);
  assert.equal((html.match(/data-rlm-kind="speed"/g)||[]).length,1);
  assert.match(html,/Leitura 0%/);
  assert.doesNotMatch(html,/Analista Judiciário · TJCE 2026/);
@@ -105,7 +105,7 @@ test('M03, M12 e M13 abrem no leitor real com revisão independente',()=>{
 test('Leitor mobile e CSS editorial estão ligados na Central original',()=>{
  const html=read('index.html'),script=read('ui/rlm-native-v1.js'),css=read('ui/rlm-editorial-v3.css');
  assert.ok(html.includes('ui/rlm-editorial-v3.css?v=20261109rlmfix1'));
- assert.ok(html.includes('ui/rlm-native-v1.js?v=20261111-apostilas-pt-rlm-v1ia'));
+ assert.ok(html.includes('ui/rlm-native-v1.js?v=20261112nographic1'));
  assert.ok(script.includes('function toggleToc(force)'));
  assert.ok(script.includes("if(active?.stage==='theory')writeReadProgress(active.id,pct)"));
  assert.ok(css.includes('.bc-rlm-toc.open'));
