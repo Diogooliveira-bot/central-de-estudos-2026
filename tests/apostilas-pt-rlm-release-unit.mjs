@@ -56,6 +56,6 @@ test('Cards de Português e RLM oferecem PDF sem substituir aulas, questões e p
   assert.match(rlm, /RlmNative\.open/);
   assert.match(rlm, /<strong>15<\/strong> apostilas/);
   assert.match(index, /\/ui\/apostilas-pdf-v1\.js/);
-  assert.match(index, /\/ui\/current-courses\.js\?v=20261111-apostilas-pt-rlm-v1/);
-  assert.match(index, /\/ui\/rlm-native-v1\.js\?v=20261112nomaps1/);
+  assert.match(index, /\/ui\/current-courses\.js\?v=20261112nographic1/);
+  assert.match(index, /\/ui\/rlm-native-v1\.js\?v=20261112nographic1/);
 });
