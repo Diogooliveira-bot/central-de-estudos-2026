@@ -13,7 +13,7 @@ Crie `content/questoes/<disciplina>/mNN.js` copiando o formato de outro módulo 
 ## Formato de cada questão
 ```js
 { id: 'adm-m03-autoral-11',
-  origem: 'autoral-ia',            // ou 'banca' (ver abaixo)
+  origem: 'autoral-ia',
   q: 'Enunciado…',
   options: ['A…', 'B…', 'C…', 'D…', 'E…'],   // 5 alternativas diferentes
   answer: 2,                        // índice da correta: 0=A … 4=E
@@ -25,5 +25,9 @@ Crie `content/questoes/<disciplina>/mNN.js` copiando o formato de outro módulo 
 - 5 alternativas diferentes, gabarito de 0 a 4, comentário completo (mín. 150 caracteres; 100 em Português e Raciocínio Lógico).
 - Cada letra A–E correta em 10% a 30% das questões do módulo; a certa só pode ser a mais longa em até 30%.
 - Toda lei citada vem com o nome (`Lei 9.784/1999 (Lei do Processo Administrativo Federal)`). Todo artigo citado no comentário vem com o que ele diz.
-- Questão **autoral** nunca recebe banca, ano, órgão, cargo ou prova.
-- Questão de **banca real** exige `banca`, `ano`, `orgao`, `cargo` e a identificação da prova, e fica em área protegida (premium), não neste diretório.
+- Questão **autoral** nunca recebe banca, ano, órgão, cargo ou prova. Este banco não tem questões de banca real.
+
+## Como o aluno vê
+- Menu **Questões** (atalho do topo e menu "Mais" no celular): disciplina → módulo → 10 questões.
+- Em cada módulo, o cartão **Questões do módulo** (depois da Lei em Dia) abre as mesmas questões já no módulo.
+- Títulos dos módulos: `content/questoes/titulos.js`. O progresso fica no aparelho do aluno.

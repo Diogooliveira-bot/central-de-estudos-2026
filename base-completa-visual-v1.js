@@ -89,7 +89,7 @@
       const done=Math.max(0,Number(stats.done)||0),total=Math.max(0,Number(stats.total)||0),pct=Math.max(0,Math.min(100,Number(stats.pct)||0));
       const preserved=id==='civil'
         ? 'Teoria completa, jurisprudência, exemplos e pegadinhas organizados em 15 módulos para Analista Judiciário.'
-        : 'Teoria, revisões, questões e registros existentes continuam no mesmo módulo.';
+        : (window.BCQuestionsRemoved?'Teoria, revisões e registros de leitura continuam no mesmo módulo.':'Teoria, revisões, questões e registros existentes continuam no mesmo módulo.');
       const kit='<section class="bc-discipline-kit" data-bc-kit="'+escapeHtml(id)+'">'+
         '<div class="bc-kit-head"><div><span class="bc-kit-eyebrow">BASE COMPLETA</span><h3>'+escapeHtml(name)+'</h3></div>'+
         '<div class="bc-kit-stat"><b>'+done+'/'+total+'</b><small>Módulos concluídos · '+pct+'%</small></div></div>'+

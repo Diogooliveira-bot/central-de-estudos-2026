@@ -35,7 +35,7 @@ function ptMaster(){
   const action=type==='pdf'
    ? 'return BaseApostilasPdf.open(\'pt\','+Number(id.slice(1))+')'
    : 'return CentralPortugueseReader.open(\''+id+'\',\''+mode+'\')';
-  const quiz=quizMode
+  const quiz=quizMode&&!global.BCQuestionsRemoved
    ? '<button type="button" class="pt-cf-button pt-cf-button-quiz" data-pt-cf-quiz="'+esc(quizMode)+'" onclick="return CentralPortugueseReader.open(\''+id+'\',\''+quizMode+'\')">'+esc(quizLabel)+'</button>'
    : '';
   return '<article class="pt-cf-card pt-cf-card-'+type+'">'+
@@ -136,9 +136,9 @@ if(global.CPP_NATIVE_INDEX&&typeof SUBJECTS!=='undefined'){
    type:'Curso',
    studyUrl:null,
    ankiDeck:null,
-   sourceInfo:'Conteúdo resumido, teoria completa e questões de fixação do módulo.',
+   sourceInfo:'Conteúdo de revisão e teoria completa do módulo.',
    sourceStats:{cards:0,views:0,correct:0,wrong:0,accuracy:null},
-   tips:['Estude primeiro o conteúdo resumido e depois a teoria completa.','Finalize com 5 questões do resumido e 10 do completo.']
+   tips:['Estude primeiro o conteúdo resumido e depois a teoria completa.','Revise os conceitos antes de avançar.']
   }));
  }
 }
