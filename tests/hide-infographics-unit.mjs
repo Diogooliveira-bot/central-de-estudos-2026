@@ -14,7 +14,8 @@ const CARDS='<section class="subject">'+
  '<article class="cpc-approved-card" data-cpc-approved-card="map" id="cpc"></article>'+
  '<article class="adm-native-card adm-native-visual" data-kind="infographic" id="cpp"></article>'+
  '<article class="cv-standard-card cv-card-infographic" id="civil"></article>'+
- '<article class="adm-cf-card adm-cf-card-map" id="adm"></article>'+
+ '<article class="adm-cf-card adm-cf-card-map" id="adm"></article>'+ 
+ '<article class="bc-rlm-study-card bc-rlm-study-map" id="rlm"><button>Visualizar mapa</button></article>'+ 
  '</section>';
 
 async function setup(role,{guest=false}={}){
@@ -29,7 +30,7 @@ async function setup(role,{guest=false}={}){
 
 test('aluno não vê infográficos nem mapas mentais em nenhuma disciplina',async()=>{
  const a=await setup('aluno');
- for(const id of ['pt','cf','penal','cpc','cpp','civil','adm'])assert.ok(a.hidden(id),id+' deveria estar oculto');
+ for(const id of ['pt','cf','penal','cpc','cpp','civil','adm','rlm'])assert.ok(a.hidden(id),id+' deveria estar oculto');
  assert.notEqual(a.w.getComputedStyle(a.d.querySelector('.pt-cf-card-complete')).display,'none');
  a.w.close();
 });
@@ -46,12 +47,12 @@ test('clique que chegue ao cartão não abre a imagem',async()=>{
  assert.equal(a.w.opened,undefined);
  a.w.close();
 });
-test('administrador e editor continuam vendo para revisar',async()=>{
+test('infográficos removidos também para administrador e editor',async()=>{
  for(const role of ['admin','editor']){
   const a=await setup(role);
-  assert.equal(a.d.documentElement.classList.contains('bc-infographics-hidden'),false);
-  assert.equal(a.hidden('pt'),false);
-  a.d.querySelector('#pt button').click();assert.equal(a.w.opened,1);
+  assert.equal(a.d.documentElement.classList.contains('bc-infographics-hidden'),true);
+  for(const id of ['pt','cf','penal','cpc','cpp','civil','adm','rlm'])assert.ok(a.hidden(id),id+' deve ficar oculto para '+role);
+  a.d.querySelector('#pt button').click();assert.equal(a.w.opened,undefined);
   a.w.close();
  }
 });
