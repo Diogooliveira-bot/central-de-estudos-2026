@@ -3,7 +3,6 @@
 'use strict';
 function esc(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function modules(){return global.CentralPortugueseCourse?.modules||[]}
-const ptInfographicModules={1:'/assets/portugues-infograficos/m01.webp',2:'/assets/portugues-infograficos/m02.webp',3:'/assets/portugues-infograficos/m03.webp',4:'/assets/portugues-infograficos/m04.webp',5:'/assets/portugues-infograficos/m05.webp',6:'/assets/portugues-infograficos/m06.webp',7:'/assets/portugues-infograficos/m07.webp',8:'/assets/portugues-infograficos/m08.webp',9:'/assets/portugues-infograficos/m09.webp',10:'/assets/portugues-infograficos/m10.webp',11:'/assets/portugues-infograficos/m11.webp',12:'/assets/portugues-infograficos/m12.webp',13:'/assets/portugues-infograficos/m13.webp',14:'/assets/portugues-infograficos/m14.webp',15:'/assets/portugues-infograficos/m15.webp',16:'/assets/portugues-infograficos/m16.webp',17:'/assets/portugues-infograficos/m17.webp',18:'/assets/portugues-infograficos/m18.webp',19:'/assets/portugues-infograficos/m19.webp',20:'/assets/portugues-infograficos/m20.webp',21:'/assets/portugues-infograficos/m21.webp',22:'/assets/portugues-infograficos/m22.webp',23:'/assets/portugues-infograficos/m23.webp',24:'/assets/portugues-infograficos/m24.webp'};
 function ptStats(){const total=modules().length,done=modules().filter(m=>localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1').length;return {total,done,pct:total?Math.round(done/total*100):0,unit:'módulos'}}
 function openPt(id){
  const course=global.CentralPortugueseCourse;
@@ -23,25 +22,9 @@ function togglePt(id){
  if(el?.classList.contains('open')){el.classList.remove('open');localStorage.removeItem('central-v6:pt:auto24:open');const url=new URL(location.href);url.searchParams.delete('module');history.replaceState(null,'',url);return false}
  return openPt(id);
 }
-function openPtInfographic(num){
- const image=ptInfographicModules[Number(num)];if(!image)return false;
- const module=modules().find(m=>Number(m.num)===Number(num));
- const title=module?.title||('Módulo '+num);
- const label='Português M'+String(num).padStart(2,'0')+' — '+title;
- const filename='Portugues-M'+String(num).padStart(2,'0')+'-Infografico.webp';
- const overlay=document.createElement('div');overlay.id='pt-infographic-overlay';overlay.className='cf-native-overlay';
- overlay.innerHTML='<section class="cf-native-shell" role="dialog" aria-modal="true" aria-label="'+esc(label)+'"><header><div><b>'+esc(label)+'</b><small>Infográfico do módulo • imagem para visualizar e baixar</small></div><button type="button" data-close aria-label="Fechar infográfico">×</button></header><div class="cf-native-map"><img src="'+image+'?v=20261018ptinfographics1" alt="'+esc(label)+'" decoding="async"></div><footer style="display:flex;justify-content:center;padding:10px 14px 14px;border-top:1px solid var(--line)"><a class="cf-btn primary" href="'+image+'?v=20261018ptinfographics1" download="'+filename+'">⬇ Baixar infográfico</a></footer></section>';
- document.body.appendChild(overlay);document.body.style.overflow='hidden';
- const close=()=>{overlay.remove();document.body.style.overflow='';document.removeEventListener('keydown',onKey)};
- const onKey=e=>{if(e.key==='Escape')close()};
- overlay.querySelector('[data-close]').onclick=close;
- overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
- document.addEventListener('keydown',onKey);
- return false;
-}
 /**
  * 24-module Portuguese visual shell, aligned with the approved CF layout.
- * The lessons, interactive question state, review and downloadable infographic
+ * The lessons, interactive question state, and review
  * remain managed by their existing, authoritative components.
  */
 function ptMaster(){
@@ -49,9 +32,7 @@ function ptMaster(){
  if(!course)return '';
  const all=course.modules.concat([course.review]);
  const card=(id,type,icon,title,description,labels,actionLabel,mode,quizLabel,quizMode)=>{
-  const action=type==='map'
-   ? 'return openPtInfographic('+Number(id.slice(1))+')'
-   : type==='pdf'
+  const action=type==='pdf'
    ? 'return BaseApostilasPdf.open(\'pt\','+Number(id.slice(1))+')'
    : 'return CentralPortugueseReader.open(\''+id+'\',\''+mode+'\')';
   const quiz=quizMode
@@ -67,7 +48,7 @@ function ptMaster(){
  return '<div class="cf-modules pt-cf-modules">'+all.map(m=>{
   const done=localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1';
   const open=localStorage.getItem('central-v6:pt:auto24:open')===m.id;
-  const pct=done?100:0,review=!!m.review,hasInfographic=!review&&Boolean(ptInfographicModules[Number(m.num)]);
+  const pct=done?100:0,review=!!m.review;
   const orientation=review?[
    'Retome os principais conceitos estudados do M01 ao M24.',
    'Resolva a revisão cumulativa antes de consultar as respostas.',
@@ -94,14 +75,11 @@ function ptMaster(){
    review?'Recupere os conteúdos estudados com perguntas e respostas comentadas.':'Retome os pontos essenciais e faça recuperação ativa.',
    ['Resumo','Revisão ativa'],review?'Revisar conteúdos':'Revisar conteúdo','review',
    review?'Praticar revisão final':'Resolver 5 questões',review?'cumulative-review':'active');
-  const infographic=hasInfographic?card(m.id,'map','🧠','Infográfico',
-   'Imagem de revisão visual do módulo, com opção de download.',
-   ['Imagem','Revisão visual'],'Visualizar infográfico','infographic','',''):'';
   const apostila=review?'':card(m.id,'pdf','PDF','Apostila teórica (PDF)',
    'Síntese didática com exemplos e checklist, para ler ou baixar.',
    ['PDF','Revisão'],'Abrir apostila','pdf','','');
   const content='<div class="pt-cf-module-inside">'+reading+oriented+
-   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">'+full+summary+apostila+infographic+'</section></div>';
+   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">' +full+summary+apostila+'</section></div>';
   return '<section class="cf-module pt-cf-module '+(open?'open':'')+'" data-pt-current="'+esc(m.id)+'">'+
    '<button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')" aria-expanded="'+(open?'true':'false')+'">'+
     '<span class="cf-module-no">'+(review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span>'+
@@ -116,7 +94,6 @@ if(!global.__centralCurrentPortuguese){
  const originalGoalDone=global.goalDone;
  global.goalDone=function(uid){if(/^pt-auto24-/.test(uid))return localStorage.getItem('central-v6:pt:auto24:done:'+uid.replace('pt-auto24-',''))==='1';return originalGoalDone(uid)};
  global.renderPortugueseMaster=ptMaster;
- global.openPtInfographic=openPtInfographic;
  global.openPtCurrentModule=openPt;
  global.togglePtCurrentModule=togglePt;
  // Old saved module numbers belong to a different syllabus. Retain their data,
@@ -132,17 +109,13 @@ function penalMasterModule(w){
  const api=global[apiName],stats=api?.theoryStats?.();
  const pct=stats?.pct||0;
  const open=localStorage.getItem('central-v6:penal-open:'+w.id)==='1';
- const button=(kind,title,description,icon)=>'<button type="button" class="bc-native-material-card" data-native-kind="'+kind+'" onclick="'+(kind==='mindmap'?"BaseMindMap.open('penal','"+w.id+"')":apiName+".open('"+kind+"')")+'"><span class="bc-native-material-icon">'+icon+'</span><span><strong>'+title+'</strong><small>'+description+'</small></span><span class="bc-native-material-action">Abrir →</span></button>';
- return '<section class="cf-module '+(open?'open':'')+'" data-cf="'+w.id+'"><button class="cf-module-head" type="button" onclick="togglePenalModule(\''+w.id+'\')"><span class="cf-module-no">MÓDULO '+w.num+'</span><span class="cf-module-title">'+esc(w.title)+'</span><span class="cf-module-stat">'+pct+'%</span><span class="chev">⌄</span></button><div class="cf-module-body"><div class="cf-subtitle">'+esc(w.subtitle)+'</div><section class="bc-native-materials bc-native-materials-static" data-bc-native-'+key+'><section class="bc-native-metrics" aria-label="Indicadores do módulo"><article class="bc-native-metric-card"><div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>'+pct+'%</b><span>teoria</span></div></div><div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">Progresso de leitura</strong><span>Checks dos capítulos + questões internas.</span></div></article><article class="bc-native-metric-card"><div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div><div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong data-native-metric-detail="external">Nenhuma questão externa respondida</strong><span data-native-metric-meta="external">Registre questões externas no final do módulo.</span></div></article></section><div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+key.toUpperCase()+' • conteúdo nativo</small></div><div class="bc-native-material-grid">'+button('summary','Conteúdo resumido','Primeira leitura, revisão rápida e revisão ativa.','⚡')+button('complete','Conteúdo completo','Teoria integral, índice, busca e progresso de leitura.','📚')+button('mindmap','Mapa mental','Mapa interativo com zoom e tela cheia.','🧠')+'</div></section><div class="cf-resource-box"><h4>Lei em Dia</h4><button class="cf-btn primary" onclick="openEmbeddedTool(\'decorando\',{discipline:\'penal\',module:\'pen-m'+String(w.num).padStart(2,'0')+'\'},this)">Abrir questões deste módulo</button></div></div></section>';
+ const button=(kind,title,description,icon)=>`<button type="button" class="bc-native-material-card" data-native-kind="${kind}" onclick="${apiName}.open('${kind}')"><span class="bc-native-material-icon">${icon}</span><span><strong>${title}</strong><small>${description}</small></span><span class="bc-native-material-action">Abrir →</span></button>`;
+ return '<section class="cf-module '+(open?'open':'')+'" data-cf="'+w.id+'"><button class="cf-module-head" type="button" onclick="togglePenalModule(\''+w.id+'\')"><span class="cf-module-no">MÓDULO '+w.num+'</span><span class="cf-module-title">'+esc(w.title)+'</span><span class="cf-module-stat">'+pct+'%</span><span class="chev">⌄</span></button><div class="cf-module-body"><div class="cf-subtitle">'+esc(w.subtitle)+'</div><section class="bc-native-materials bc-native-materials-static" data-bc-native-'+key+'><section class="bc-native-metrics" aria-label="Indicadores do módulo"><article class="bc-native-metric-card"><div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>'+pct+'%</b><span>teoria</span></div></div><div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">Progresso de leitura</strong><span>Checks dos capítulos + questões internas.</span></div></article><article class="bc-native-metric-card"><div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div><div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong data-native-metric-detail="external">Nenhuma questão externa respondida</strong><span data-native-metric-meta="external">Registre questões externas no final do módulo.</span></div></article></section><div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+key.toUpperCase()+' • conteúdo nativo</small></div><div class="bc-native-material-grid">'+button('summary','Conteúdo resumido','Primeira leitura, revisão rápida e revisão ativa.','⚡')+button('complete','Conteúdo completo','Teoria integral, índice, busca e progresso de leitura.','📚')+'</div></section><div class="cf-resource-box"><h4>Lei em Dia</h4><button class="cf-btn primary" onclick="openEmbeddedTool(\'decorando\',{discipline:\'penal\',module:\'pen-m'+String(w.num).padStart(2,'0')+'\'},this)">Abrir questões deste módulo</button></div></div></section>';
 }
 // Loaded again at the end of the boot, after all native readers are registered.
 if(global.BaseNativeReader&&!global.__centralCurrentPenal){
  global.__centralCurrentPenal=true;
  global.renderPenalModule=penalMasterModule;
- PENAL_WEEKS.forEach(function(w){
-  const data=global.BASE_NATIVE_CONTENT?.penal?.['m'+String(w.num).padStart(2,'0')];
-  if(data?.chapters?.complete&&global.BaseMindMap)global.BaseMindMap.register('penal',w.id,{label:data.title,expanded:true,children:data.chapters.complete.map(c=>({label:c.title,children:[]}))});
- });
  const originalStats=global.subjStats;
  global.subjStats=function(subject){
   if(subject.id!=='penal')return originalStats(subject);

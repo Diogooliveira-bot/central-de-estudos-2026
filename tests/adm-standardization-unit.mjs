@@ -27,7 +27,7 @@ test('Direito Administrativo renders the approved module structure without dropp
   const doc = result.window.document;
   const zone = doc.querySelector('[data-adm-native]');
   assert.ok(zone);
-  assert.deepEqual([...zone.querySelectorAll('.adm-cf-card > b')].map((x) => x.textContent), ['Versão de revisão', 'Teoria completa', 'Infográfico']);
+  assert.deepEqual([...zone.querySelectorAll('.adm-cf-card > b')].map((x) => x.textContent), ['Versão de revisão', 'Teoria completa']);
   assert.equal(zone.querySelectorAll('.adm-native-notes').length, 1);
   assert.ok(zone.querySelector('.adm-cf-scheduled-review'));
   assert.equal(zone.querySelectorAll('[data-kind="complete"] .adm-cf-quiz').length, 1);
@@ -41,7 +41,7 @@ test('Direito Administrativo renders the approved module structure without dropp
   assert.equal(JSON.parse(window.localStorage.getItem(`central-v6:module-rounds:${uid}`))[0].done, 8);
   assert.equal(window.localStorage.getItem(`central-v6:adm-native:${uid}:summary:read`), '40');
   assert.equal(Object.keys(window.ADM_NATIVE_INDEX.modules).length, 20);
-  assert.ok(Object.values(window.ADM_NATIVE_INDEX.modules).every((module) => module.summaryQuestions === 5 && module.completeQuestions === 10 && module.spriteHeight > 0));
+  assert.ok(Object.values(window.ADM_NATIVE_INDEX.modules).every((module) => module.summaryQuestions === 5 && module.completeQuestions === 10));
   dom.window.close();
   result.window.close();
 });

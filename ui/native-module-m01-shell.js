@@ -16,12 +16,10 @@ function inject(){
     '<div class="bc-native-material-grid">'+
       '<button type="button" class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
       '<button type="button" class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M01 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
-      '<button type="button" class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
     '</div>'+
     '<section class="bc-native-quick-summary" aria-label="Resumo do módulo"><div class="bc-native-quick-summary-head"><span class="bc-native-quick-summary-no">1</span><div><b>Resumo do módulo</b><small>O M01 em poucas palavras.</small></div></div><div class="bc-native-quick-summary-body">Princípios penais • legalidade e anterioridade • interpretação • analogia • conflito aparente de normas • garantias constitucionais.</div></section>';
   host.querySelector('[data-native-kind="summary"]').onclick=()=>global.BaseNativeReader?.open('summary');
   host.querySelector('[data-native-kind="complete"]').onclick=()=>global.BaseNativeReader?.open('complete');
-  host.querySelector('[data-native-kind="mindmap"]').onclick=()=>global.BaseMindMap?.open('penal','p1');
   const subtitle=body.querySelector('.cf-subtitle');
   if(subtitle)subtitle.insertAdjacentElement('afterend',host); else body.insertAdjacentElement('afterbegin',host);
   global.BaseNativeReader?.refreshMetrics?.();

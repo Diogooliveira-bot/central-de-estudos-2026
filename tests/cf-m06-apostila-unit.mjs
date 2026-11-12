@@ -24,7 +24,7 @@ test('M06 preserva identidade e oferece material didático sem tabelas partidas'
   assert.equal(d.number,6);
   assert.equal(d.moduleId,'w6');
   assert.equal(d.lawTopicId,'cf-m06');
-  assert.match(d.mapUrl,/m06-infografico/);
+  assert.equal(d.mapUrl,undefined);
   assert.ok(d.complete.length>50000);
   assert.doesNotMatch(d.complete,/\{\{(?:QUESTIONS|REVIEW_QUESTIONS)\}\}|Warning: truncated output/);
   w.CfNativeStudy.openReader(6,'complete');

@@ -87,7 +87,6 @@ function card(m){
   materialCard(m.id,'recap','Versão de revisão','Fórmulas, métodos e erros frequentes.','↺')+
   materialCard(m.id,'pdf','Apostila teórica (PDF)','Material para leitura e download em PDF.','PDF')+
   materialCard(m.id,'theory','Teoria completa','Conceitos, fórmulas e resoluções guiadas.','📖')+
-  materialCard(m.id,'map','Mapa mental','Síntese visual do conteúdo.','▤')+
   materialCard(m.id,'quiz','Questões de fixação','Prática comentada com 10 questões.','✓');
  const sub=m.id==='M01'?'Treino de cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
@@ -181,7 +180,7 @@ function normStage(stage){return stage==='recap'?'recap':stage==='summary'||stag
 function move(id){return open(id,id==='RF'?'review':id==='M01'?'speed':'theory');}
 /* Leitor RLM com o mesmo shell, índice lateral e ferramentas do leitor nativo de Penal. */
 function stageLabel(stage){
- return ({speed:'Treino de velocidade',theory:'Teoria completa',recap:'Revisão',quiz:'Questões',map:'Mapa mental',review:'Revisão comentada',exam:'Simulado modo prova',errors:'Caderno de erros'})[stage]||'Material';
+ return ({speed:'Treino de velocidade',theory:'Teoria completa',recap:'Revisão',quiz:'Questões',review:'Revisão comentada',exam:'Simulado modo prova',errors:'Caderno de erros'})[stage]||'Material';
 }
 function stageSections(stage){
  return stage==='theory'?'.bc-rlm-lesson':
@@ -333,7 +332,6 @@ function bodyFor(m,stage){
  if(stage==='theory')return theory(m,d);
  if(stage==='recap')return recap(m,d);
  if(stage==='quiz')return quiz(m,d);
- if(stage==='map')return mindmap(m,d);
  return theory(m,d);
 }
 function title(txt,desc){return '<span class="bc-rlm-kicker">Base Completa · edição de estudos</span><h2>'+esc(txt)+'</h2><p class="bc-rlm-article-lead">'+esc(desc)+'</p>'}
@@ -398,13 +396,6 @@ function refreshBody(){
  setupToc(active.stage);
  if(root)root.scrollTop=oldY;
  updateReadBar();
-}
-function mindmap(m,d){
- return title('Mapa mental','Ramos e subtemas da aula estruturados para revisão visual, sem rolagem lateral.')+
- '<div class="bc-rlm-map"><div class="bc-rlm-map-center">'+esc(m.titulo)+'</div>'+
- '<div class="bc-rlm-map-grid">'+d.mindmap.map(node=>'<section class="bc-rlm-map-node"><b>'+esc(node.name)+'</b><ul>'+
- node.branches.map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></section>').join('')+'</div></div>'+
- '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.next()">Próximo módulo →</button></div>';
 }
 const reviewSpec=[['M02',4],['M03',4],['M04',4],['M05',4],['M06',4],['M07',4],['M08',4],['M09',4],['M10',4],['M11',4],['M12',4],['M13',4],['M14',4],['M15',4],['M03',7],['M04',7],['M05',7],['M11',7],['M12',7],['M14',7]];
 function reviewScore(){
