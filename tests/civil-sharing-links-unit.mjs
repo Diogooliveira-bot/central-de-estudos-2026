@@ -42,7 +42,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     '/ui/civil-native-study-v1.js?v=20261112nographic1',
     '/ui/civil-native-study-v1.css?v=20261019civilstandard1',
   ]) assert(manifest.files.includes(asset), `${asset}: ausente no pacote offline.`);
-  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261112-clean-infographics-v1/);
+  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261112-restaura-tec-qc-lei-v1/);
 
   const moduleByUid = new Map(index.modules.map((m) => [m.uid, m]));
   const perModule = new Map();
@@ -166,7 +166,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
       assert.deepEqual(module.children.filter((name) => name !== 'bcq-module-panels'), ['cv-zone-head', 'cv-progress-grid', 'cv-oriented', 'cv-cards', 'cv-panel', 'cv-tools'], `M${module.number}: ordem visual diferente do padrão.`);
       assert.equal(module.complete, 'Teoria completa', `M${module.number}: card completo ausente.`);
       assert.equal(module.review, 'Versão de revisão', `M${module.number}: card de versão de revisão ausente.`);
-      assert.equal(module.infographic, 'Infográfico', `M${module.number}: card de infográfico ausente.`);
+      assert.equal(module.infographic, undefined, `M${module.number}: infográficos foram removidos (#281).`);
       assert(module.completeActions[0].startsWith('Estudar conteúdo'));
       assert.equal(module.completeActions[1], 'Resolver 10 questões');
       assert(module.reviewActions[0].startsWith('Revisar conteúdo'));
@@ -227,17 +227,8 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     await page.waitForFunction(() => !document.getElementById('civil-native-questions')?.hidden);
     assert.match(await page.locator('#cv-q-eye').textContent(), /COMPLETA/);
     await page.evaluate(() => CivilNative.closeQuestions());
-    await page.locator('[data-civil-native-module="1"] .cv-card-infographic .cv-standard-button').click();
-    await page.waitForFunction(() => !document.getElementById('civil-native-image-viewer')?.hidden && document.getElementById('cv-img')?.complete && document.getElementById('cv-img').naturalWidth > 0);
-    const image = await page.locator('#cv-img').evaluate((img) => ({ width: img.naturalWidth, height: img.naturalHeight, src: img.src, fit: getComputedStyle(img).objectFit, download: document.getElementById('cv-img-download').download }));
-    assert(image.width > 0 && image.height > 0, 'O infográfico real não abriu integralmente.');
-    assert.equal(image.fit, 'contain');
-    assert.match(image.download, /direito-civil-modulo-01-infografico\.webp/);
-    await page.evaluate(() => { CivilNative.zoomImage(.5); });
-    assert.equal(await page.locator('#civil-native-image-viewer').getAttribute('data-zoom'), '1.5');
-    await page.evaluate(() => CivilNative.closeImage());
     assert.deepEqual(pageErrors, []);
-    console.log(JSON.stringify({ loadedThrough: 'CentralDisciplineLoader.load(civil)', retainedFilterRecords: actual.length, oldLinksRendered: oldLinks, modules: 15, general: 15, subdivisions: 51, standardOrderAndCards: moduleAudit.length, responsiveWidths: [1440, 1024, 768, 390], infographic: `${image.width}x${image.height}`, studentData: 'preserved', browserErrors: pageErrors }, null, 2));
+    console.log(JSON.stringify({ loadedThrough: 'CentralDisciplineLoader.load(civil)', retainedFilterRecords: actual.length, oldLinksRendered: oldLinks, modules: 15, general: 15, subdivisions: 51, standardOrderAndCards: moduleAudit.length, responsiveWidths: [1440, 1024, 768, 390], studentData: 'preserved', browserErrors: pageErrors }, null, 2));
   } finally {
     await browser.close();
     await new Promise((resolve) => server.close(resolve));
