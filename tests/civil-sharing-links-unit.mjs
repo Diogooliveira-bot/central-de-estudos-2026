@@ -39,10 +39,10 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   assert(loader.includes('const path=new URL(src,location.origin).pathname') && loader.includes('seen.has(path)'), 'O teste precisa cobrir a deduplicação real do carregador.');
   assert(!manifest.files.includes('/content/civil/civil-sharing-links.js?v=20261009civilsharing2'), 'catálogo TEC deve ficar fora do cache público');
   for (const asset of [
-    '/ui/civil-native-study-v1.js?v=20261106ordem1',
+    '/ui/civil-native-study-v1.js?v=20261112nographic1',
     '/ui/civil-native-study-v1.css?v=20261019civilstandard1',
   ]) assert(manifest.files.includes(asset), `${asset}: ausente no pacote offline.`);
-  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261111-pt-rlm-v1/);
+  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261112-clean-infographics-v1/);
 
   const moduleByUid = new Map(index.modules.map((m) => [m.uid, m]));
   const perModule = new Map();
