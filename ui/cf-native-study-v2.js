@@ -52,7 +52,7 @@ function finishQ(){const k=quiz.mode+'Quiz',s=quiz.mode+'Score';set(quiz.n,{[k]:
 function legacyReadingDone(n){try{const w=weeks().find(x=>x.num===n);if(!w)return false;if(typeof g.cfWeekState==='function')return !!g.cfWeekState(w.id).reading;const s=JSON.parse(localStorage.getItem('cf_tjce_fcc_guided_v23')||localStorage.getItem('cf_tjce_fcc_guided_v22')||'{}');return !!s.weeks?.[w.id]?.reading}catch(_){return false}}
 function toggleLegacyReading(n){const w=weeks().find(x=>x.num===n);if(!w)return;const next=!legacyReadingDone(n);try{if(typeof g.cfUpdateWeek==='function')g.cfUpdateWeek(w.id,{reading:next});else{const k='cf_tjce_fcc_guided_v23',s=JSON.parse(localStorage.getItem(k)||'{}');s.weeks=s.weeks||{};s.weeks[w.id]=Object.assign({},s.weeks[w.id]||{},{reading:next});localStorage.setItem(k,JSON.stringify(s));renderAll()}}catch(_){}}
 function openDecorando(n){const topic=data(n)?.lawTopicId||'cf-m'+String(n).padStart(2,'0');set(n,{decorando:true});if(typeof g.openLeiSecaEnxuta==='function')g.openLeiSecaEnxuta(null,'cf',topic)}
-function pct(n){const x=ms(n);const done=[legacyReadingDone(n),x.map,x.summaryRead,x.summaryQuiz,x.completeRead,x.completeQuiz,x.decorando].filter(Boolean).length;return Math.round(done/7*100)}
+function pct(n){const x=ms(n);const done=[legacyReadingDone(n),x.summaryRead,x.summaryQuiz,x.completeRead,x.completeQuiz,x.decorando].filter(Boolean).length;return Math.round(done/6*100)}
 function learningGuide(w){
  const goals=Array.isArray(w.learning_goals)?w.learning_goals:[];
  const checks=Array.isArray(w.learning_check)?w.learning_check:[];
