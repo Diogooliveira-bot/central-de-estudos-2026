@@ -363,3 +363,99 @@ html.student-experience-v3.bc-ui-v1 #homeView.bc-focus-has-module #subjects :is(
     padding:20px 15px 64px!important;
   }
 }
+
+/* ETAPA 5: navegação móvel limpa; os três atalhos vão para Mais com os mesmos eventos */
+html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-group {
+  display:none;
+}
+@media(max-width:800px) {
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-group {
+    display:block;
+    padding-bottom:13px;
+    margin-bottom:13px;
+    border-bottom:1px solid var(--bc-clean-border);
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-heading {
+    display:block;
+    margin:0 0 9px;
+    color:var(--bc-clean-muted);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.01em;
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-list {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:7px;
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-option {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:72px;
+    padding:10px 6px;
+    border:1px solid var(--bc-clean-border);
+    border-radius:9px;
+    background:var(--bc-clean-surface);
+    color:var(--bc-clean-text);
+    cursor:pointer;
+    text-align:center;
+    box-shadow:none;
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-option b {
+    display:block;
+    font-size:12px;
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-option small {
+    display:block;
+    margin-top:2px;
+    color:var(--bc-clean-muted);
+    font-size:10px;
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-icon {
+    display:block;
+    width:22px;
+    height:22px;
+    margin-bottom:6px;
+    color:var(--bc-clean-brand);
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-icon svg {
+    width:100%;
+    height:100%;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav.bc-clean-nav-ready #centralSidebar .student-nav-scroll button[data-student-primary-nav="vade"],
+  html.student-experience-v3.bc-ui-v1.bc-topnav.bc-clean-nav-ready #centralSidebar .student-nav-scroll button[data-student-primary-nav="edital"],
+  html.student-experience-v3.bc-ui-v1.bc-topnav.bc-clean-nav-ready #centralSidebar .student-nav-scroll button[data-student-primary-nav="filters"] {
+    display:none!important; /* Após inserir substitutos funcionais no menu Mais. */
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav.bc-clean-nav-ready #centralSidebar .student-nav-scroll {
+    justify-content:space-around!important;
+    flex:1!important;
+    overflow:visible!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav.bc-clean-nav-ready #centralSidebar .student-nav-scroll button[data-student-primary-nav] {
+    flex:1 1 0!important;
+    min-width:0!important;
+    width:auto!important;
+    scroll-snap-align:none!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav.bc-clean-nav-ready #centralSidebar .nav #studentMoreButton {
+    flex:0 0 70px!important;
+  }
+}
+@media(max-width:350px) {
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-list {
+    grid-template-columns:1fr;
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-option {
+    flex-direction:row;
+    min-height:44px;
+    justify-content:flex-start;
+    text-align:left;
+    gap:10px;
+  }
+  html.student-experience-v3.bc-ui-v1 .student-more-panel .bc-clean-tool-icon {
+    margin:0;
+  }
+}
