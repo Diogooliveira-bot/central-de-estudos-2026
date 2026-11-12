@@ -105,7 +105,7 @@ test('M03, M12 e M13 abrem no leitor real com revisão independente',()=>{
 test('Leitor mobile e CSS editorial estão ligados na Central original',()=>{
  const html=read('index.html'),script=read('ui/rlm-native-v1.js'),css=read('ui/rlm-editorial-v3.css');
  assert.ok(html.includes('ui/rlm-editorial-v3.css?v=20261109rlmfix1'));
- assert.ok(html.includes('ui/rlm-native-v1.js?v=20261111-apostilas-pt-rlm-v1'));
+ assert.ok(html.includes('ui/rlm-native-v1.js?v=20261112nomaps1'));
  assert.ok(script.includes('function toggleToc(force)'));
  assert.ok(script.includes("if(active?.stage==='theory')writeReadProgress(active.id,pct)"));
  assert.ok(css.includes('.bc-rlm-toc.open'));
