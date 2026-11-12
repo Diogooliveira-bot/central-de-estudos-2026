@@ -1,0 +1,37 @@
+/* Base Completa — Proposta de limpeza visual V2 (prévia de aprovação).
+   Apresentação apenas: nenhum botão, dado, progresso ou permissão é removido.
+   Camada única carregada após os estilos existentes para evitar conflitos. */
+
+/* ETAPA 1: superfícies, bordas, ritmo e tipografia */
+html.student-experience-v3.bc-ui-v1 {
+  --bc-clean-surface:var(--bc-color-surface,#fff);
+  --bc-clean-page:var(--bc-color-bg,#f8fbfd);
+  --bc-clean-text:var(--bc-color-text,#163149);
+  --bc-clean-muted:var(--bc-color-text-secondary,#64788a);
+  --bc-clean-border:var(--bc-color-border,#dce7ed);
+  --bc-clean-brand:var(--bc-color-primary,#078b9d);
+  --bc-clean-radius:12px;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView {
+  background:var(--bc-clean-page)!important;
+  color:var(--bc-clean-text)!important;
+}
+html.student-experience-v3.bc-ui-v1 #appRoot :is(#homeView,#disciplinesView,#performanceView) :is(.home-today-card,.student-week-summary,.student-progress-week,.disc-card,.student-discipline-card,.card):not(.student-next-step) {
+  border-color:var(--bc-clean-border)!important;
+  border-radius:var(--bc-clean-radius)!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 #appRoot :is(#homeView,#disciplinesView,#performanceView) :is(.card-head h2,.bc-focus-modules-intro h2,.subject-name,.disc-card strong) {
+  letter-spacing:-.02em!important;
+  text-transform:none!important;
+}
+html.student-experience-v3.bc-ui-v1 #appRoot :is(#homeView,#disciplinesView,#performanceView) :is(.home-today-card,.student-week-summary,.disc-card) {
+  background:var(--bc-clean-surface)!important;
+}
+html.student-experience-v3.bc-ui-v1 :is(button,a,input,textarea,summary):focus-visible {
+  outline:2px solid var(--bc-clean-brand)!important;
+  outline-offset:2px;
+}
+@media(prefers-reduced-motion:reduce) {
+  html.student-experience-v3.bc-ui-v1 #appRoot :is(.bc-focus-module-card,.disc-card,.student-next-step) { transition:none!important; }
+}
