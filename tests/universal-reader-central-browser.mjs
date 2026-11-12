@@ -57,12 +57,12 @@ try{
           }catch(e){problems.push({uid,error:e.message})}
         }
         return {indexCount:uids.length,legacyAvailable:stages.filter(x=>x.legacyLength>0).length,
-          stageCount:stages.filter(x=>x.htmlLength>0).length,threeCards:stages.filter(x=>x.visualCards===3).length,problems:problems.slice(0,6),samples:stages.slice(0,2)};
+          stageCount:stages.filter(x=>x.htmlLength>0).length,twoCards:stages.filter(x=>x.visualCards===2).length,problems:problems.slice(0,6),samples:stages.slice(0,2)};
       });
       console.log('ADM_RUNTIME',JSON.stringify(adm));
       assert.equal(adm.indexCount,20);
       assert.equal(adm.legacyAvailable,20);
-      assert.equal(adm.threeCards,20,'todos os módulos ADM devem apresentar os três cards aprovados');
+      assert.equal(adm.twoCards,20,'todos os módulos ADM devem apresentar revisão e teoria');
       const attempts=await page.evaluate(async()=>{
         const items=Object.keys(window.ADM_NATIVE_INDEX.modules),checks=[];
         for(const uid of items){
@@ -122,14 +122,14 @@ try{
       for(const [id,n] of Object.entries({cf:15,civil:15,cpp:22,penal:17,cpc:20})){
         const row=otherLayouts.find(x=>x.id===id);
         assert.equal(row?.modules,n,id+' deve apresentar todos os módulos');
-        if(id==='cf')assert.ok(row.cards.cf>=45,'Constitucional requer três cards por módulo');
-        if(id==='civil')assert.equal(row.cards.civil,45,'Civil requer os 45 cards');
+        if(id==='cf')assert.ok(row.cards.cf>=30,'Constitucional requer os dois cards de estudo por módulo');
+        if(id==='civil')assert.equal(row.cards.civil,30,'Civil requer 30 cards de teoria/revisão');
         if(id==='cpp'){
           assert.equal(row.cppLawCards,n,'cada módulo CPP mantém seu acesso ao Lei em Dia');
-          assert.equal(row.cards.cpp,4*n,'CPP mantém teoria, revisão, infográfico e Lei em Dia por módulo');
+          assert.equal(row.cards.cpp,3*n,'CPP mantém teoria, revisão e Lei em Dia por módulo');
         }
-        if(id==='penal')assert.ok(row.cards.penal+row.penalApproved>=49,'Penal requer os cards nativos');
-        if(id==='cpc')assert.equal(row.cards.cpc,3,'CPC requer três cards no módulo aberto');
+        if(id==='penal')assert.ok(row.cards.penal+row.penalApproved>=34,'Penal requer os cards nativos');
+        if(id==='cpc')assert.equal(row.cards.cpc,2,'CPC requer dois cards no módulo aberto');
       }
       const cpp=otherLayouts.find(x=>x.id==='cpp');
       assert.ok(cpp.cppColumns.startsWith('minmax(')&&cpp.cppColumns.endsWith('1fr)'), 'Processo Penal precisa de uma coluna de cards');

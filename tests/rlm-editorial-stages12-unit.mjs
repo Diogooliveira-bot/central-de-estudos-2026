@@ -67,13 +67,13 @@ test('Notação matemática conserva o texto, sem fragmentar palavras ou datas',
  assert.doesNotMatch(render('2^3'),/<math|<mfrac/);
 });
 
-test('RLM possui navegação Teoria, Revisão, Questões e Mapa; M01 preserva o motor de velocidade',()=>{
+test('RLM possui navegação Teoria, Revisão e Questões; M01 preserva o motor de velocidade',()=>{
  const {g,localStorage}=fixture();
  let html=g.RlmNative.renderMaster();
  assert.equal((html.match(/data-rlm-kind="recap"/g)||[]).length,14);
  assert.equal((html.match(/data-rlm-kind="theory"/g)||[]).length,14);
  assert.equal((html.match(/data-rlm-kind="quiz"/g)||[]).length,14);
- assert.equal((html.match(/data-rlm-kind="map"/g)||[]).length,14);
+ assert.equal((html.match(/data-rlm-kind="map"/g)||[]).length,0);
  assert.equal((html.match(/data-rlm-kind="speed"/g)||[]).length,1);
  assert.match(html,/Leitura 0%/);
  assert.doesNotMatch(html,/Analista Judiciário · TJCE 2026/);

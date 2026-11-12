@@ -41,7 +41,7 @@ test('Direito Administrativo renders the approved module structure without dropp
   assert.equal(JSON.parse(window.localStorage.getItem(`central-v6:module-rounds:${uid}`))[0].done, 8);
   assert.equal(window.localStorage.getItem(`central-v6:adm-native:${uid}:summary:read`), '40');
   assert.equal(Object.keys(window.ADM_NATIVE_INDEX.modules).length, 20);
-  assert.ok(Object.values(window.ADM_NATIVE_INDEX.modules).every((module) => module.summaryQuestions === 5 && module.completeQuestions === 10 && module.spriteHeight > 0));
+  assert.ok(Object.values(window.ADM_NATIVE_INDEX.modules).every((module) => module.summaryQuestions === 5 && module.completeQuestions === 10));
   dom.window.close();
   result.window.close();
 });

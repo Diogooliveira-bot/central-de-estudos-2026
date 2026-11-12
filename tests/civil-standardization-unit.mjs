@@ -72,5 +72,7 @@ test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros of
   const civilOverrides = css.split('/* Direito Civil segue')[1] || '';
   assert(civilOverrides.length > 0);
   assert(!/html\.bc-ui-v1\s+(?!#subjects)/.test(civilOverrides), 'Os novos estilos de Civil devem ficar limitados ao contêiner da disciplina.');
+  window.__civilNativeObserver?.disconnect();
+  await new Promise(resolve=>setTimeout(resolve,70));
   dom.window.close();
 });
