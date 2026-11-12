@@ -275,3 +275,91 @@ html.student-experience-v3.bc-ui-v1 #homeView.bc-focus-has-module #subjects :is(
     grid-template-columns:1fr!important;
   }
 }
+
+/* ETAPA 4: leitura longa e recursos, sem tocar no conteúdo ou no controle de fonte */
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-reader-head {
+  min-height:51px!important;
+  padding:8px 17px!important;
+  border-color:var(--bc-reading-line,var(--bc-clean-border))!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-reader-title b {
+  font-size:14px!important;
+  font-weight:750!important;
+  letter-spacing:-.015em!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools {
+  gap:6px!important;
+  padding:8px 16px!important;
+  min-height:46px!important;
+  border-color:var(--bc-reading-line,var(--bc-clean-border))!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools :is(button,input),
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-reading-appearance-controls button {
+  min-height:39px!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-reader-close {
+  border-radius:8px!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-article {
+  max-width:min(920px,100%)!important;
+  padding-top:32px!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-article :is(h1,h2,h3) {
+  letter-spacing:-.018em!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-article :is(.bc-native-callout,.bc-universal-law) {
+  border-radius:0 7px 7px 0!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-universal-sheet :is(blockquote,.bc-native-callout) {
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-universal-sheet :is(table,pre) {
+  max-width:100%!important;
+  overflow-x:auto!important;
+}
+html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-universal-sheet details>summary {
+  cursor:pointer;
+  border-radius:7px;
+}
+html.student-experience-v3.bc-ui-v1 .cv-overlay header {
+  padding:9px 14px!important;
+  gap:8px!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 .cv-overlay header button {
+  min-height:40px!important;
+  border-radius:8px!important;
+}
+html.student-experience-v3.bc-ui-v1 .cv-overlay .cv-reader-content {
+  max-width:840px!important;
+}
+html.student-experience-v3.bc-ui-v1 .cv-overlay .cv-question-card {
+  border-radius:10px!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 #homeView.bc-focus-has-module #subjects :is(.ds-footer-tools,.ds-footer-review,.ds-notes,.cv-tools,.cv-panel,.cv-sharing,.cf-resources) {
+  border-radius:10px!important;
+  box-shadow:none!important;
+}
+html.student-experience-v3.bc-ui-v1 #homeView.bc-focus-has-module #subjects :is(.ds-footer-tools,.cv-tools,.cf-resources) :is(button,a,summary) {
+  min-height:40px;
+}
+@media(max-width:600px) {
+  html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-reader-head {
+    padding:7px 11px!important;
+  }
+  html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools {
+    padding:8px 10px!important;
+  }
+  html.student-experience-v3.bc-ui-v1 .bc-reading-appearance .bc-native-article {
+    padding:23px 16px 72px!important;
+  }
+  html.student-experience-v3.bc-ui-v1 .cv-overlay .cv-reader-body {
+    padding:20px 15px 64px!important;
+  }
+}
