@@ -1,16 +1,14 @@
-/* Infográficos e mapas mentais em revisão: ficam ocultos para alunos até a
-   edição correta. Administradores e editores continuam vendo para revisar.
-   Para liberar de novo, basta retirar este arquivo da lista de scripts da Central.
-   É uma ocultação de interface, não um controle de acesso às imagens. */
+/* Infográficos independentes removidos da interface das disciplinas, em todos
+   os perfis. Arquivos históricos ficam preservados e não são apagados.
+   Não afeta imagens didáticas dentro das apostilas nem questões e progresso. */
 (function(g){
 'use strict';
-const user=g.BASE_COMPLETA_USER||{};
-const role=String(g.__BASE_COMPLETA_USER_ROLE__||user.role||'aluno');
-if(g.__BASE_COMPLETA_PREVIEW_GUEST__!==true&&(role==='admin'||role==='editor'))return;
+// Mesmo padrão visual para aluno, administrador, editor e visitante da prévia.
 
 // Cartões de imagem de cada disciplina (Português, CF, Penal, CPC, CPP, Civil, ADM).
 const CARDS=['.pt-cf-card-map','.cf-study-map','[data-native-kind="mindmap"]','[data-cpc-approved-card="map"]',
- '.adm-native-visual','[data-kind="infographic"]','.cv-card-infographic','.adm-cf-card-map','.bc-infographic-hidden'];
+ '.adm-native-visual','[data-kind="infographic"]','.cv-card-infographic','.adm-cf-card-map',
+ '.bc-rlm-study-map','.cpc-approved-map','.bc-mindmap-entry','.bc-infographic-hidden'];
 const LABEL=/^(?:Visualizar (?:infográfico|mapa mental)|Abrir infográfico de revisão)$/i;
 const SELECTOR=CARDS.join(',');
 
