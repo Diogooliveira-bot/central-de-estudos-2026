@@ -93,7 +93,7 @@ test('sem filtros publicados o espaço de links fica oculto e a Lei em Dia conti
 
 test('Central carrega o organizador com versão de cache própria', () => {
   const central = read('central-v119.html');
-  assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261112q6/);
+  assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261113qc1/);
   assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261112q3/);
   assert.match(read('ui/external-question-filters-v1.js'), /data-bcq-module-slot/);
 });
@@ -113,7 +113,7 @@ test('Constitucional sem cartão próprio de Lei em Dia ganha o cartão ligado a
   dom.window.close();
 });
 
-test('atalho "Cadernos do TEC" das ferramentas some quando o módulo já mostra os filtros', () => {
+test('atalho TEC é removido com ou sem filtros QC do módulo', () => {
   const footer = '<section class="ds-module-footer"><section class="resource ds-footer-tools"><div class="chips"><button>⚖ Vade Mecum</button><button>▤ Cadernos do TEC</button></div></section></section>';
   const dom = setup('<section class="subject" data-id="cpc">'
     + '<section class="cf-module" data-cf="w1"><div class="cf-module-body"><section class="bc-native-materials">Teorias</section><div class="cpc-bottom-grid"><section class="cpc-mini-panel"><h4>Lei em Dia</h4><button>Abrir</button></section></div>' + panel('processual-civil:M01') + footer + '</div></section>'
@@ -122,10 +122,10 @@ test('atalho "Cadernos do TEC" das ferramentas some quando o módulo já mostra 
     + '<section class="subject" data-id="cpp"><article data-cpp-native-module="1"><section class="cpp-native-links" data-cpp-links-slot="1">' + panel('processual-penal:M01') + '</section><div class="adm-native-module-tools"><div><button>⚖ Vade Mecum</button><button>▤ Cadernos TEC</button></div></div></article></section>');
   const d = dom.window.document;
   const [withLinks, withoutLinks] = [...d.querySelectorAll('.subject[data-id="cpc"] .cf-module')];
-  assert.ok(withLinks.querySelectorAll('.ds-footer-tools button')[1].classList.contains('bc-tool-relocated'));
+  assert.equal(withLinks.querySelectorAll('.ds-footer-tools button').length, 1);
   assert.ok(!withLinks.querySelectorAll('.ds-footer-tools button')[0].classList.contains('bc-tool-relocated'), 'Vade Mecum continua');
-  assert.ok(!withoutLinks.querySelectorAll('.ds-footer-tools button')[1].classList.contains('bc-tool-relocated'), 'sem filtros, o atalho continua');
-  assert.ok(d.querySelectorAll('.adm-native-module-tools button')[1].classList.contains('bc-tool-relocated'));
+  assert.equal(withoutLinks.querySelectorAll('.ds-footer-tools button').length, 1, 'sem filtros, TEC também é removido');
+  assert.equal(d.querySelectorAll('.adm-native-module-tools button').length, 1);
   dom.window.close();
 });
 
@@ -147,6 +147,6 @@ test('Português: bloco de links logo após a teoria, sem cartão de Lei em Dia'
   assert.deepEqual(order(d.querySelector('.pt-cf-module-inside')), ['reading', 'theory', 'links']);
   assert.ok(d.querySelector('[data-bc-module-links] [data-bcq-module-panel="portugues:M04"]'));
   assert.equal(d.querySelector('[data-bc-module-law]'), null);
-  assert.ok(d.querySelectorAll('.ds-footer-tools button')[1].classList.contains('bc-tool-relocated'));
+  assert.equal(d.querySelectorAll('.ds-footer-tools button').length, 1);
   dom.window.close();
 });

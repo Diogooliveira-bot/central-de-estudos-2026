@@ -236,12 +236,14 @@ function mount(id){
 window.ptNativeMount=mount;
 
 function renderModuleContent(id,data,tab){
- const tabs=[['teoria','Teoria'],['revisao','Revisão'],['questoes','Questões'],['tec','TEC']];
+  if(tab==='tec')tab='questoes';
+ const tabs=[['teoria','Teoria'],['revisao','Revisão'],['questoes','Questões']];
  const locked=data.summaryOnly&&tab!=='teoria';
  return '<div class="ptn-tabs">'+tabs.map(x=>'<button type="button" class="ptn-tab '+(tab===x[0]?'active':'')+'" onclick="return ptNativeTab(\''+id+'\',\''+x[0]+'\')">'+x[1]+(data.summaryOnly&&x[0]!=='teoria'?' 🔒':'')+'</button>').join('')+'</div>'+
-  '<div class="ptn-content">'+(locked?'<div class="ptn-review-card"><b>Recurso exclusivo do Premium</b><p>Este módulo gratuito mostra os pontos de revisão já preparados no material da Central. O conteúdo completo, revisões, questões e cadernos TEC permanecem no plano Premium.</p><div class="ptn-actions"><button type="button" class="ptn-btn primary" onclick="window.alert(\'Este recurso é exclusivo do Base Completa Premium.\')">Conhecer o Premium</button></div></div>':tab==='teoria'?renderTheory(id,data):tab==='revisao'?renderReview(id,data):tab==='questoes'?renderQuestions(id,data):renderTec(id,data))+'</div>';
+  '<div class="ptn-content">'+(locked?'<div class="ptn-review-card"><b>Recurso exclusivo do Premium</b><p>Este módulo gratuito mostra os pontos de revisão já preparados no material da Central. O conteúdo completo, revisões e questões permanecem no plano Premium.</p><div class="ptn-actions"><button type="button" class="ptn-btn primary" onclick="window.alert(\'Este recurso é exclusivo do Base Completa Premium.\')">Conhecer o Premium</button></div></div>':tab==='teoria'?renderTheory(id,data):tab==='revisao'?renderReview(id,data):tab==='questoes'?renderQuestions(id,data):renderQuestions(id,data))+'</div>';
 }
 function setTab(id,tab){
+  if(tab==='tec')tab='questoes';
  saveScroll(id);
  localStorage.setItem(tabKey(id),tab);
  loadData(id).then(data=>{const host=document.querySelector('[data-ptn-host="'+id+'"]');if(!host)return;host.innerHTML=renderModuleContent(id,data,tab);hydrate(id,data,tab);restoreScroll(id)});
@@ -267,7 +269,7 @@ function renderReview(id,data){
  const st=readState(id),items=rememberItems(data);
  let html='';
  if(Array.isArray(data.review)&&data.review.length)html+=data.review.join('');
- html+='<div class="ptn-review-grid">'+(items.length?items.map((x,i)=>'<div class="ptn-review-card"><b>'+(i+1)+'. Ponto de revisão</b><p>'+esc(x)+'</p></div>').join(''):'<div class="ptn-review-card"><b>Revisão ativa</b><p>Releia somente as sessões em que houve dúvida ou erro. Use o caderno de erros e o TEC como recuperação ativa.</p></div>')+'</div>';
+ html+='<div class="ptn-review-grid">'+(items.length?items.map((x,i)=>'<div class="ptn-review-card"><b>'+(i+1)+'. Ponto de revisão</b><p>'+esc(x)+'</p></div>').join(''):'<div class="ptn-review-card"><b>Revisão ativa</b><p>Releia somente as sessões em que houve dúvida ou erro. Use o caderno de erros e os filtros Qconcursos como recuperação ativa.</p></div>')+'</div>';
  html+='<label class="ptn-done"><input type="checkbox" data-ptn-review '+(st.reviewDone?'checked':'')+'> Revisão deste módulo concluída</label>';
  return html;
 }
@@ -292,7 +294,7 @@ function renderQuestions(id,data){
     }).join('')+'</div>'+(answered?'<div class="ptn-feedback"><b>'+(ok?'✓ Correto.':'✗ Revise.')+'</b> '+esc(q.explanation||'')+'</div>':'')+'</div>';
   }).join('');
  }else{
-  html+='<div class="ptn-review-card"><b>Treino por rodadas</b><p>O conteúdo teórico deste módulo já foi migrado. Registre abaixo o desempenho das rodadas e use o caderno TEC na aba seguinte.</p></div>';
+  html+='<div class="ptn-review-card"><b>Treino por rodadas</b><p>O conteúdo teórico deste módulo já foi migrado. Registre abaixo o desempenho das rodadas e pratique também com os filtros do Qconcursos disponíveis na Central de Questões.</p></div>';
  }
  html+='<div class="ptn-rounds">'+[['r1','R1 / 20'],['r2','R2 / 25'],['final','Final / 30']].map(x=>'<label class="ptn-round"><b>'+x[1]+'</b><input type="number" min="0" data-ptn-round="'+x[0]+'" value="'+escAttr(st.rounds[x[0]]??'')+'" placeholder="Acertos"></label>').join('')+'</div>';
  return html;
@@ -304,31 +306,8 @@ function answer(id,qid,choice){
 }
 window.ptNativeAnswer=answer;
 
-const TEC_MAP={
- m1:['port-04'],m2:['port-05'],m3:['port-08'],m4:['port-07'],m5:['port-07'],m6:['port-06'],
- m7:['port-06','port-14'],m8:['port-10'],m9:['port-11'],m10:['port-12'],m11:['port-14'],
- m12:['port-13'],m13:['port-13'],m14:['port-02','port-03'],m15:['port-09'],m16:['port-01'],m17:['port-02']
-};
-function tecData(){
- if(Array.isArray(window.PT_TEC_CADERNOS))return window.PT_TEC_CADERNOS;
- const d=window.TEC_CADERNOS_DATA;return d&&Array.isArray(d.cadernos)?d.cadernos:[];
-}
-function renderTec(id){
- const ids=TEC_MAP[id]||[],index=new Map(tecData().map(x=>[x.id,x])),items=ids.map(x=>index.get(x)).filter(Boolean);
- if(items.length){
-  return '<div class="ptn-review-grid">'+items.map(t=>'<div class="ptn-review-card"><b>'+esc(t.nome)+'</b><p>'+Number(t.questoes||0).toLocaleString('pt-BR')+' questões · caderno já cadastrado na base de Português da Central.</p><div class="ptn-actions"><button class="ptn-btn primary" onclick="window.open(\''+escAttr(t.url)+'\',\'_blank\',\'noopener\')">Abrir TEC ↗</button></div></div>').join('')+'</div>';
- }
- return '<div class="ptn-review-card"><b>Cadernos TEC de Língua Portuguesa</b><p>Abra a área de Cadernos TEC da Central e filtre a disciplina. Nenhum endereço novo é inventado pelo módulo.</p><div class="ptn-actions"><button class="ptn-btn primary" onclick="return ptNativeOpenTec()">Abrir Cadernos TEC</button></div></div>';
-}
-function openTec(){
- try{
-  if(typeof window.openTecCadernos==='function')window.openTecCadernos();
-  else if(typeof window.centralSidebarAction==='function')window.centralSidebarAction('tec-cadernos');
-  setTimeout(()=>{const sel=document.getElementById('tecMateria');if(sel&&[...sel.options].some(o=>o.value==='Língua Portuguesa'))sel.value='Língua Portuguesa';if(typeof window.tecCadernosRender==='function')window.tecCadernosRender()},30);
- }catch(e){console.warn('[PT TEC]',e)}
- return false;
-}
-window.ptNativeOpenTec=openTec;
+window.ptNativeOpenTec=()=>false;
+
 
 function hydrateInlineStudy(host){
  if(!host)return;

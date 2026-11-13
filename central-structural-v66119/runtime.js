@@ -159,7 +159,7 @@ function centralSidebarAction(action,btn){
   if(action==='disciplines'){openDisciplines(btn);return false}
   const routes={
    home:()=>openHome(btn),anki:()=>false,decorando:()=>openEmbeddedTool('decorando',{},btn),
-   vade:()=>openEmbeddedTool('vade',{},btn),performance:()=>openPerformance(btn),'tec-cadernos':()=>openTecCadernos(btn),settings:()=>openCentralSettings()
+   vade:()=>openEmbeddedTool('vade',{},btn),performance:()=>openPerformance(btn),'tec-cadernos':()=>window.ExternalQuestionFilters?.openPage(btn),settings:()=>openCentralSettings()
   };
   const run=routes[action];if(!run)throw new Error('Destino lateral inválido: '+action);run();
  }catch(e){
@@ -564,7 +564,7 @@ function civilQuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
-  <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+  <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
    <div class="civil-qnav"><button class="civil-btn" onclick="civilMove('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civilMove('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
    ${locked?`<button class="civil-btn" onclick="civilRetry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civilSubmit('${escJs(q.id)}','${stage}')">Responder</button>`}
   </div>${feedback}</article>`
@@ -724,7 +724,7 @@ function civil2QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil2Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil2Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil2Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil2Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -879,7 +879,7 @@ function civil3QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil3Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil3Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil3Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil3Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -1059,7 +1059,7 @@ function civil4QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil4Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil4Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil4Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil4Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -1240,7 +1240,7 @@ function civil5QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil5Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil5Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil5Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil5Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -1437,7 +1437,7 @@ function civil6QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil6Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil6Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil6Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil6Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -1638,7 +1638,7 @@ function civil7QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil7Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil7Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil7Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil7Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -1836,7 +1836,7 @@ function civil8QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil8Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil8Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil8Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil8Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -2027,7 +2027,7 @@ function civil9QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil9Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil9Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil9Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil9Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -2240,7 +2240,7 @@ function civil10QuestionCard(q,stage,index,total){
  }).join('');
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
  return `<article class="civil-qcard">${civilQuestionMeta(q)}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
- <div class="civil-submit-row"><div>${q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
+ <div class="civil-submit-row"><div>${q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso criado para aplicação da regra.</span>'}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil10Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil10Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
  ${locked?`<button class="civil-btn" onclick="civil10Retry('${escJs(q.id)}')">Refazer</button>`:`<button class="civil-btn primary" onclick="civil10Submit('${escJs(q.id)}','${stage}')">Responder</button>`}
  </div>${feedback}</article>`
@@ -2708,7 +2708,7 @@ function civil12QuestionCard(q,stage,index,total){
  }).join('');
  const meta=q.kind==='real'?civil12QuestionMeta(q):`<div class="civil-qmeta"><span class="civil-chip authorial">AUTORAL</span><span class="civil-chip role">Nível Analista/Oficial</span><span class="civil-chip">${esc(q.basis)}</span><span class="civil-qsource">${esc(q.source)}</span></div>`;
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
- const source=q.kind==='real'?(q.url?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Questão real FCC recuperada do PDF enviado.</span>'):'<span class="muted small">Caso criado para aplicação da regra.</span>';
+ const source=q.kind==='real'?(q.url?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Questão real FCC recuperada do PDF enviado.</span>'):'<span class="muted small">Caso criado para aplicação da regra.</span>';
  return `<article class="civil-qcard">${meta}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
  <div class="civil-submit-row"><div>${source}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil12Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil12Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
@@ -2929,7 +2929,7 @@ function civil13QuestionCard(q,stage,index,total){
  }).join('');
  const meta=q.kind==='real'?civil13QuestionMeta(q):`<div class="civil-qmeta"><span class="civil-chip authorial">AUTORAL</span><span class="civil-chip role">Nível Analista/Oficial</span><span class="civil-chip">${esc(q.basis)}</span><span class="civil-qsource">${esc(q.source)}</span></div>`;
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
- const source=q.kind==='real'?(q.url?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Questão real FCC recuperada dos PDFs enviados.</span>'):'<span class="muted small">Caso criado para aplicação da regra.</span>';
+ const source=q.kind==='real'?(q.url?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Questão real FCC recuperada dos PDFs enviados.</span>'):'<span class="muted small">Caso criado para aplicação da regra.</span>';
  return `<article class="civil-qcard">${meta}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
  <div class="civil-submit-row"><div>${source}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil13Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil13Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
@@ -3156,7 +3156,7 @@ function civil14QuestionCard(q,stage,index,total){
  }).join('');
  const meta=q.kind==='real'?civil14QuestionMeta(q):`<div class="civil-qmeta"><span class="civil-chip authorial">AUTORAL</span><span class="civil-chip role">Nível Analista/Oficial</span><span class="civil-chip">${esc(q.basis)}</span><span class="civil-qsource">${esc(q.source)}</span></div>`;
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
- const source=q.kind==='real'?(q.url?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Questão real recuperada dos PDFs enviados; origem identificada acima.</span>'):'<span class="muted small">Caso criado para aplicação da regra.</span>';
+ const source=q.kind==='real'?(q.url?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Questão real recuperada dos PDFs enviados; origem identificada acima.</span>'):'<span class="muted small">Caso criado para aplicação da regra.</span>';
  return `<article class="civil-qcard">${meta}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
  <div class="civil-submit-row"><div>${source}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil14Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil14Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
@@ -3465,7 +3465,7 @@ function civil15QuestionCard(q,stage,index,total){
  }).join('');
  const meta=q.kind==='real'?civil15QuestionMeta(q):`<div class="civil-qmeta"><span class="civil-chip authorial">AUTORAL</span><span class="civil-chip role">Nível Analista/Oficial</span><span class="civil-chip">${esc(q.basis)}</span><span class="civil-qsource">${esc(q.source)}</span></div>`;
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
- const source=q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso autoral criado para aplicação da regra.</span>';
+ const source=q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso autoral criado para aplicação da regra.</span>';
  return `<article class="civil-qcard">${meta}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
  <div class="civil-submit-row"><div>${source}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil15Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil15Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
@@ -3717,7 +3717,7 @@ function civil16QuestionCard(q,stage,index,total){
  }).join('');
  const meta=q.kind==='real'?civil16QuestionMeta(q):`<div class="civil-qmeta"><span class="civil-chip authorial">AUTORAL</span><span class="civil-chip role">Nível Analista/Oficial</span><span class="civil-chip">${esc(q.basis)}</span><span class="civil-qsource">${esc(q.source)}</span></div>`;
  const feedback=locked?`<div class="civil-feedback ${a.lastCorrect?'good':'bad'}"><b>${a.lastCorrect?'✓ Resposta correta':'✕ Resposta incorreta — gabarito '+q.answer}</b>${esc(q.explanation)}<span class="basis">Fundamento: ${esc(q.basis)}${a.attempts>1?' · '+a.attempts+' tentativas':''}</span></div>`:'';
- const source=q.kind==='real'?`<a class="civil-source-link" href="${escAttr(q.url)}" target="_blank" rel="noopener">Fonte da questão no TEC ↗</a>`:'<span class="muted small">Caso autoral criado para aplicação da regra.</span>';
+ const source=q.kind==='real'?`<span class="muted small">Questão de banca — referência disponível no enunciado.</span>`:'<span class="muted small">Caso autoral criado para aplicação da regra.</span>';
  return `<article class="civil-qcard">${meta}<h4>${esc(q.prompt)}</h4><div class="civil-options">${opts}</div>
  <div class="civil-submit-row"><div>${source}</div>
  <div class="civil-qnav"><button class="civil-btn" onclick="civil16Move('${stage}',-1)" ${index===0?'disabled':''}>←</button><span>${index+1} / ${total}</span><button class="civil-btn" onclick="civil16Move('${stage}',1)" ${index===total-1?'disabled':''}>→</button></div>
@@ -3922,7 +3922,7 @@ function civilStandardFooter(moduleId){
    <div class="cf-resource-grid">
     <div class="cf-resource-box"><h4>Lei em Dia</h4><button class="civil-btn" onclick="openEmbeddedTool('decorando',{},this)">Abrir Lei em Dia</button></div>
     <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="civil-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
-    <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="civil-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos</button></div>
+    
     <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea id="civil-note-${moduleId}" placeholder="Regra, dúvida ou observação do módulo..." oninput="localStorage.setItem('${key}',this.value)">${esc(localStorage.getItem(key)||'')}</textarea></div>
    </div>
   </div>
@@ -4090,10 +4090,10 @@ function renderCfModule(w){
      </div>
      <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
-         <div class="cf-resource-box"><h4>Filtro do TEC</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCfResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
+         <div class="cf-resource-box"><h4>Filtro Qconcursos</h4><div class="cf-actions"><button class="cf-btn" onclick="openCfResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Lei em Dia</h4><button class="cf-btn" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">Abrir artigos deste módulo</button></div>
          <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
-         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
+         
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cfNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCfNote('${w.id}')">Salvar anotação</button></div></div>
          ${renderBaseModuleRounds("cf:"+w.id)}
        </div>
@@ -4394,10 +4394,10 @@ function renderPenalModule(w){
      </div>
      <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
-         <div class="cf-resource-box"><h4>Filtro do TEC</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openPenalResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
+         <div class="cf-resource-box"><h4>Filtro Qconcursos</h4><div class="cf-actions"><button class="cf-btn" onclick="openPenalResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Lei em Dia</h4><button class="cf-btn" onclick="openLeiSecaEnxuta(null,'penal','${w.editalModule}')">Abrir artigos deste módulo</button></div>
          <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
-         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
+         
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(penalNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="savePenalNote('${w.id}')">Salvar anotação</button></div></div>
          ${renderBaseModuleRounds("penal:"+w.id)}
        </div>
@@ -4609,7 +4609,7 @@ function renderCpcModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
-     ${w.questionGaps?.length?`<aside class="cpc-coverage-warning"><div class="cpc-warning-title">⚠ Complementação externa de questões</div><p>O banco FCC local não cobre suficientemente: <b>${w.questionGaps.map(esc).join("; ")}</b>.</p><p>A teoria e a leitura esquematizada abaixo cobrem todo o conteúdo. Faça questões adicionais desses pontos no TEC ou QConcursos.</p></aside>`:``}
+     ${w.questionGaps?.length?`<aside class="cpc-coverage-warning"><div class="cpc-warning-title">⚠ Complementação externa de questões</div><p>O banco FCC local não cobre suficientemente: <b>${w.questionGaps.map(esc).join("; ")}</b>.</p><p>A teoria e a leitura esquematizada abaixo cobrem todo o conteúdo. Faça questões adicionais desses pontos no Qconcursos.</p></aside>`:``}
      <div class="cf-steps">
        ${cpcStep(1,'Diagnóstico','Questões de concursos antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startCpcQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
        ${cpcStep(2,'Leitura orientada','Dispositivos e pontos para observar na legislação processual civil.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>${(w.lawScheme||[]).length?`<div class="cpc-law-heading"><b>Lei seca esquematizada</b><span>${w.lawScheme.length} blocos de leitura</span></div><div class="cpc-law-grid">${w.lawScheme.map((item,i)=>`<article class="cpc-law-card"><div class="cpc-law-kicker">BLOCO ${i+1}</div><h4>${esc(item.title)}</h4><strong>${esc(item.articles)}</strong><ul>${item.checkpoints.map(point=>`<li>${esc(point)}</li>`).join('')}</ul></article>`).join('')}</div>`:``}<div class="cf-actions">${cpcDecorandoButton(w)}<button class="cf-btn ${ws.reading?'good':''}" onclick="cpcUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
@@ -4621,10 +4621,10 @@ function renderCpcModule(w){
      </div>
      <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
-         <div class="cf-resource-box"><h4>Filtro do TEC</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCpcResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
+         <div class="cf-resource-box"><h4>Filtro Qconcursos</h4><div class="cf-actions"><button class="cf-btn" onclick="openCpcResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Lei em Dia</h4>${cpcDecorandoButton(w,true)}</div>
          <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
-         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
+         
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cpcNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCpcNote('${w.id}')">Salvar anotação</button></div></div>
          ${renderBaseModuleRounds("cpc:"+w.id)}
        </div>
@@ -4764,7 +4764,7 @@ function renderTopic(s,t){
 function renderDetail(s,t,r){
  const perf=getPerf(t.uid),q=perf.reduce((a,x)=>a+x.q,0),c=perf.reduce((a,x)=>a+x.c,0);
  const tecAuto=(typeof window.tecContextButtons==='function'?window.tecContextButtons(t.uid,'chip'):'');
- const moduleTools=(s.id==='pt'||s.id==='rlm')?'<button class="chip real" onclick="centralSidebarAction(&quot;tec-cadernos&quot;,this)">▤ Cadernos do TEC</button>':'<button class="chip real" onclick="openEmbeddedTool(&quot;decorando&quot;,{discipline:&quot;${s.id}&quot;,module:&quot;${t.uid}&quot;},this)">📖 Lei em Dia</button><button class="chip real" onclick="openEmbeddedTool(&quot;vade&quot;,{},this)">⚖ Vade Mecum</button><button class="chip real" onclick="centralSidebarAction(&quot;tec-cadernos&quot;,this)">▤ Cadernos do TEC</button>';
+ const moduleTools=(s.id==='pt'||s.id==='rlm')?'<button class="chip real" onclick="window.ExternalQuestionFilters?.openPage()">↗ Filtros Qconcursos</button>':'<button class="chip real" onclick="openEmbeddedTool(&quot;decorando&quot;,{discipline:&quot;${s.id}&quot;,module:&quot;${t.uid}&quot;},this)">📖 Lei em Dia</button><button class="chip real" onclick="openEmbeddedTool(&quot;vade&quot;,{},this)">⚖ Vade Mecum</button>';
  const decorandoId=s.id==='cpp'?`cpp-${String(s.topics.indexOf(t)+1).padStart(2,'0')}`:'';
  const pre=(r.prestudy||[]);
  const preHtml=`<div class="prestudy"><div class="pre-title">▶ ${pre.length?pre.length+' AULA'+(pre.length>1?'S':'')+' / ORIENTAÇÃO'+(pre.length>1?'ÕES':''):'AULAS / ORIENTAÇÕES ANTES DE ESTUDAR'}</div>${pre.length?pre.map((x,i)=>`<div class="pre-row"><span>${i+1}</span><a href="${escAttr(safeUrl(x.url))}" target="_blank">${esc(x.name)}</a><span>→</span></div>`).join(''):`<div class="pre-row"><span>+</span><a href="#" onclick="editNamedLinks('${t.uid}','prestudy');return false">Adicionar aula, mentoria ou orientação preparatória</a><span>→</span></div>`}</div>`;
@@ -4780,7 +4780,7 @@ function renderDetail(s,t,r){
   <div class="inline-tools"><button onclick="toggleTopic('${t.uid}')">⌃ Fechar</button><button onclick="focusNote('${t.uid}')">✎ Anotar</button><button onclick="startTimer('${t.uid}',this)">◷ <span data-timer="${t.uid}">${formatTimer(Number(localStorage.getItem(key(t.uid,'timer'))||0))}</span></button><button onclick="quickReview('${t.uid}')">▣ Agendar revisão</button></div>
   <div class="tips"><div class="tips-title">💡 Dicas</div><ul>${tips.map(x=>`<li>${x}</li>`).join('')}</ul><button class="edit-link" onclick="editTips('${t.uid}')">editar dicas</button></div>
   <div class="resource"><div class="resource-label">O que já existe neste tópico</div><div class="chips">${realButtons||'<span class="muted small">Sem módulo teórico separado; o conteúdo existente é o baralho/recursos abaixo.</span>'}</div></div>
-  <div class="resource"><div class="resource-label">Filtro do TEC</div><div class="chips">${tecAuto}${r.tec?linkChip(r.tec,'↗ TEC personalizado','',t.uid,'tec'):(tecAuto?'':linkChip(r.tec,'+ TEC Concursos','',t.uid,'tec'))}${linkChip(r.qc,'↗ QConcursos','',t.uid,'qc')}<button class="edit-link" onclick="editLink('${t.uid}','tec')">TEC manual</button><button class="edit-link" onclick="editLink('${t.uid}','qc')">QC</button></div></div>
+  <div class="resource"><div class="resource-label">Filtro Qconcursos</div><div class="chips">${linkChip(r.qc,'↗ Qconcursos','',t.uid,'qc')}<button class="edit-link" onclick="editLink('${t.uid}','qc')">QC</button></div></div>
   <div class="resource"><div class="resource-label">Lei Seca</div><div class="chips">${linkChip(r.law,'⚖ Lei / artigo','law',t.uid,'law')}<a class="chip law" href="#" onclick="openInternal('modules/lei-seca-juridica/index.html','Lei Seca Jurídica');return false">⚖ Biblioteca geral</a><button class="edit-link" onclick="editLink('${t.uid}','law')">editar link</button></div></div>
   <div class="resource"><div class="resource-label">Videoaulas</div><div class="chips">${namedLinks(r.videos,'video')}<button class="edit-link" onclick="editNamedLinks('${t.uid}','videos')">+ videoaula</button></div></div>
   <div class="resource"><div class="resource-label">Materiais</div><div class="chips">${namedLinks(r.materials,'')}<button class="edit-link" onclick="editNamedLinks('${t.uid}','materials')">+ material</button></div></div>
@@ -5091,7 +5091,7 @@ function openCentralRouteFromLocation(){
   if(route==='agenda')openAgenda(button('CentralAgenda.open'));
   else if(route==='disciplines')openDisciplines(button("'disciplines'"));
   else if(route==='performance')openPerformance(button("'performance'"));
-  else if(route==='tec-cadernos')openTecCadernos(button("'tec-cadernos'"));
+  else if(route==='tec-cadernos')openHome(button("'home'"));
   else openHome(button("'home'"));
  }finally{centralApplyingHistory=false}
 }

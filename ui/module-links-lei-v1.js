@@ -1,5 +1,5 @@
 /* Base Completa — ordem dos módulos com legislação correspondente.
-   Versão de revisão → Teoria completa → Lei em Dia do módulo → links do QConcursos/TEC.
+   Versão de revisão → Teoria completa → Lei em Dia do módulo → links do Qconcursos.
    Apenas reposiciona elementos já renderizados; não altera conteúdo, progresso nem filtros.
    Processo Penal já nasce nesta ordem (ui/cpp-native-study-v1.js).
    O atalho "Cadernos do TEC" das ferramentas some quando o módulo já mostra os filtros. */
@@ -33,7 +33,7 @@
   function syncTecTool(container, hasLinks) {
     container.querySelectorAll(TOOL_BUTTONS).forEach(button => {
       if (!TEC_TOOL_TEXT.test(button.textContent)) return;
-      if (button.classList.contains('bc-tool-relocated') !== hasLinks) button.classList.toggle('bc-tool-relocated', hasLinks);
+      button.remove(); // Sem acesso ao TEC para os alunos.
     });
   }
 
@@ -44,7 +44,7 @@
       slot.className = 'bc-module-links';
       slot.setAttribute('data-bc-module-links', '1');
       slot.setAttribute('data-bcq-module-slot', '1');
-      slot.innerHTML = '<div class="bc-module-links-head"><span>QUESTÕES DO MÓDULO</span><b>Links do QConcursos e do TEC</b></div>';
+      slot.innerHTML = '<div class="bc-module-links-head"><span>QUESTÕES DO MÓDULO</span><b>Filtros Qconcursos</b></div>';
     }
     if (after.nextElementSibling !== slot) after.after(slot);
     return slot;
@@ -84,7 +84,7 @@
       if (LAW_TEXT.test(button.textContent) && !button.closest('[data-bc-module-law]')) button.classList.add('bc-law-relocated');
     });
   }
-  // Ordem do módulo: revisão, teoria completa, Lei em Dia, Questões do módulo, filtros QC/TEC.
+  // Ordem do módulo: revisão, teoria completa, Lei em Dia, Questões do módulo, filtros QC.
   // Os filtros vêm depois do cartão "Questões do módulo" quando ele existe.
   function depoisDeQuestoes(body, fallback) {
     const q = body.querySelector('[data-bcqa-module-card]');

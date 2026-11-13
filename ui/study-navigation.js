@@ -68,7 +68,7 @@
     const actions = {
       agenda: () => window.CentralAgenda.open(),
       disciplines: () => window.centralHardOpen('disciplines', document.querySelector('[data-central-native="disciplines"]')),
-      tec: () => window.openTecCadernos(document.querySelector('.nav button[onclick*="tec-cadernos"]')),
+      tec: () => window.ExternalQuestionFilters?.openPage?.(),
       performance: () => window.openPerformance(document.querySelector('.nav button[onclick*="performance"]')),
       home: () => window.openHome()
     };

@@ -130,9 +130,9 @@ test('componente compartilhado substitui a apresentação antiga no módulo', as
   await new Promise((resolve) => dom.window.requestAnimationFrame(resolve));
   const body = dom.window.document.querySelector('[data-cf="p3"] .cf-module-body');
   assert.equal(body.querySelector('.qc-platform-sharing').getAttribute('data-bcq-original'), '1');
-  assert.equal(body.querySelectorAll('[data-bcq-module-panel] .bcq-platform').length, 2);
+  assert.equal(body.querySelectorAll('[data-bcq-module-panel] .bcq-platform').length, 1);
   assert.equal(body.querySelector('[data-bcq-platform="qc"] .bcq-add').textContent, '+');
-  assert.equal(body.querySelector('[data-bcq-platform="tec"] .bcq-ring b').textContent, '—');
+  assert.equal(body.querySelector('[data-bcq-platform="tec"]'), null, 'TEC não aparece para alunos');
   assert.equal(dom.window.document.querySelector('[data-bcq-nav]'), null);
   assert.equal(dom.window.document.querySelector('[data-bcq-more-nav]'), null);
   assert.equal(typeof dom.window.ExternalQuestionFilters.openPage, 'function');
@@ -142,7 +142,7 @@ test('componente compartilhado substitui a apresentação antiga no módulo', as
 });
 
 
-test('Português: cadernos TEC antigos (PORT 01–16) vão para os módulos atuais e aparecem dentro do módulo', async () => {
+test('Português: legado TEC fica no registro, mas não aparece dentro do módulo', async () => {
   const dom = new JSDOM(`<!doctype html><html><body>
     <div id="centralSidebar"><div class="nav"></div></div><div class="workspace"><section id="homeView" class="view"></section></div>
     <section id="subjects"><article class="subject" data-id="pt">
@@ -162,8 +162,7 @@ test('Português: cadernos TEC antigos (PORT 01–16) vão para os módulos atua
   assert.deepEqual(where('PORT 04'), ['M02', 'M03', 'M04'], 'Ortografia, acentuação e fonética → M02 a M04');
   assert.deepEqual(where('PORT 16'), ['M25'], 'Questões mescladas → Revisão final');
   const panel = window.document.querySelector('[data-bcq-module-panel="portugues:M04"]');
-  assert.ok(panel, 'o módulo 4 mostra os filtros');
-  assert.ok(panel.parentElement.matches('[data-bcq-module-slot]'), 'dentro do bloco de links');
-  assert.match(panel.textContent, /Ortografia, acentuação e fonética/);
+  assert.equal(panel, null, 'módulo sem QC não reexibe o TEC antigo');
+  assert.equal(window.ExternalQuestionFilters.visibleModuleFilters().filter(row => row.disciplineKey === 'portugues').length, 0);
   await settle(window);
 });

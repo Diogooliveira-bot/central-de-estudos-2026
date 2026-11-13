@@ -62,6 +62,29 @@
   const moduleOpenState = new Map();
   const ROUTE = '/central-de-questoes';
   const TABS = new Set(['overview', 'disciplines', 'filters', 'history', 'review']);
+  // Política editorial dos filtros externos: QC, mínimo de 20 questões e 1 caderno por módulo.
+  const MIN_QUESTIONS = 20;
+  const MODULE_TITLE_KEYS = {
+    administrativo: 'adm', constitucional: 'cf', civil: 'civil',
+    penal: 'penal', 'processual-civil': 'cpc', 'processual-penal': 'cpp',
+    portugues: 'pt', rlm: 'rlm'
+  };
+  // Exceções comprovadas: dois recortes temáticos diferentes substituem um geral com menos de 20 questões.
+  const COMPLEMENTARY_QC = {
+    'penal|M05': ['M05.1', 'M05.2'],
+    'processual-penal|M03': ['M03.1', 'M03.2']
+  };
+  // Títulos de recortes cujo nome veio truncado do inventário QC; não altera o nome do caderno original.
+  const REVIEWED_QC_SUBTOPICS = {
+    'penal|M05.1': 'Culpabilidade e imputabilidade',
+    'penal|M05.2': 'Erro penal e descriminantes putativas',
+    'penal|M06.1': 'Autoria e coautoria',
+    'processual-penal|M01.2': 'Princípios e garantias processuais penais',
+    'processual-penal|M03.1': 'Noções e características do inquérito policial',
+    'processual-penal|M03.2': 'Instauração e diligências do inquérito policial',
+    'processual-penal|M15.2': 'Procedimentos ordinário e sumário',
+    'processual-penal|M22.1': 'Habeas corpus'
+  };
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (character) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -92,17 +115,36 @@
       .trim();
     return text;
   }
-  const catalogFilterTitle = (filter) => (filter.revision > 0 ? simpleCatalogTitle(filter.title) : '') || simpleCatalogTitle(filter.displayTitle) || simpleCatalogTitle(filter.title) || simpleCatalogTitle(filter.moduleTitle) || filter.title;
-  function catalogModuleTitle(rows) {
-    const explicit = rows.map((row) => simpleCatalogTitle(row.moduleTitle)).find(Boolean);
-    if (explicit) return explicit;
-    for (const row of rows) {
-      const parts = String(row.title || '').split('|').map((part) => part.trim()).filter(Boolean);
-      const moduleIndex = parts.findIndex((part) => part.toUpperCase() === row.module);
-      const title = moduleIndex >= 0 ? simpleCatalogTitle(parts[moduleIndex + 1]) : simpleCatalogTitle(row.title);
-      if (title) return title;
+  function moduleLearningTitle(filter) {
+    const category = MODULE_TITLE_KEYS[filter.disciplineKey];
+    const num = String(Number(filter.module.slice(1)));
+    const published = global.BC_QUESTOES_TITULOS?.[category]?.[num];
+    if (published) return String(published).trim();
+    // Processo Civil publica também os títulos integrais em sua matriz de cadernos.
+    if (filter.disciplineKey === 'processual-civil') {
+      const cpcTitle = global.CPC_SHARING_LINKS?.modules?.[filter.module]?.title;
+      if (cpcTitle) return String(cpcTitle).trim();
     }
-    return 'Conteúdo do módulo';
+    return simpleCatalogTitle(filter.moduleTitle) || simpleCatalogTitle(filter.title) || 'Conteúdo do módulo';
+  }
+  function catalogFilterTitle(filter) {
+    const title = moduleLearningTitle(filter);
+    const edited = filter.revision > 0 ? simpleCatalogTitle(filter.title) : '';
+    if (edited && !/(?:^|\\s)(?:geral|filtro)(?:\\s|$)/i.test(edited)) return edited;
+    if (filter.code === filter.module) return title;
+    const key = filter.disciplineKey + '|' + filter.code;
+    const reviewed = REVIEWED_QC_SUBTOPICS[key];
+    if (reviewed) return title + ' — ' + reviewed;
+    // Não exibir prefixos, palavras truncadas ou nomes genéricos vindos do inventário.
+    const raw = simpleCatalogTitle(filter.displayTitle || filter.title);
+    const compact = raw.replace(/^(?:DP|DPP|PC)\\s*M?\\d{1,2}(?:\\.\\d+)?\\s*/i, '').trim();
+    const apparentlyCut = /(?:\\s|^)(?:e|de|do|da|dos|das|para|com|sobre|em)$|\\b(?:característ|imput|garanti|descrimi|procedime|patrimô|condenaç|recurs|licitaç|interve|processu|norma|legislaç)$/i.test(compact);
+    if (compact.length >= 18 && !apparentlyCut && compact !== title && !/^geral$/i.test(compact)) return title + ' — ' + compact;
+    return title + ' — questões específicas';
+  }
+  function catalogModuleTitle(rows) {
+    if (!rows.length) return 'Conteúdo do módulo';
+    return moduleLearningTitle(rows[0]);
   }
   const safeUrl = (value, platform) => {
     try {
@@ -462,9 +504,46 @@
     const name = PLATFORM_LABEL[platform];
     const icon = platform === 'qc' ? 'Q' : 'T';
     return `<section class="bcq-platform" data-bcq-platform="${platform}">
-      <header class="bcq-platform-head"><span class="bcq-platform-icon" aria-hidden="true">${icon}</span><span><b>${name}</b><small>Selecione um filtro para praticar questões.</small></span><em>${rows.length} filtro${rows.length === 1 ? '' : 's'} disponíve${rows.length === 1 ? 'l' : 'is'}</em></header>
+      <header class="bcq-platform-head"><span class="bcq-platform-icon" aria-hidden="true">${icon}</span><span><b>${name}</b><small>Abra o caderno principal para praticar questões.</small></span><em>${rows.length} filtro${rows.length === 1 ? '' : 's'} disponíve${rows.length === 1 ? 'l' : 'is'}</em></header>
       <div class="bcq-card-grid">${rows.map(filterCard).join('')}</div>
     </section>`;
+  }
+
+
+  // Os dados brutos e os históricos continuam preservados. O aluno só vê QC
+  // disponível, com pelo menos 20 questões, sem repetições por módulo.
+  function selectPreferredModuleFilters(filters) {
+    const groups = new Map();
+    filters.filter((filter) =>
+      filter.platform === 'qc' && filter.status === 'available' && filter.count >= MIN_QUESTIONS
+    ).forEach((filter) => {
+      const key = filter.disciplineKey + '|' + filter.module;
+      if (!groups.has(key)) groups.set(key, []);
+      const entries = groups.get(key);
+      if (!entries.some((item) => item.stableKey === filter.stableKey)) entries.push(filter);
+    });
+    return Array.from(groups.entries()).flatMap(([key, group]) => {
+      // Um filtro geral adequado cobre o módulo e prevalece sobre subdivisões.
+      const general = group.find((filter) => filter.code === filter.module);
+      if (general) return [general];
+      const ordered = group.slice().sort((a, b) =>
+        b.count - a.count ||
+        String(a.code).localeCompare(String(b.code), 'pt-BR', { numeric: true }) ||
+        String(a.id).localeCompare(String(b.id))
+      );
+      const complementaryCodes = COMPLEMENTARY_QC[key];
+      if (complementaryCodes) {
+        const separate = complementaryCodes.map((code) =>
+          ordered.find((filter) => filter.code === code)
+        ).filter(Boolean);
+        if (separate.length === 2 && separate[0].stableKey !== separate[1].stableKey) return separate;
+      }
+      return ordered.slice(0, 1);
+    });
+  }
+
+  function visibleModuleFilters() {
+    return selectPreferredModuleFilters(registry.filter((filter) => filter.platform === 'qc'));
   }
 
   function filtersForModule(disciplineKey, module) {
@@ -558,7 +637,7 @@
     root?.querySelectorAll?.('[data-bcq-module-host="1"]').forEach((node) => hosts.push(node));
     hosts.forEach((body) => {
       // O painel pode estar dentro do bloco de links do módulo (data-bcq-module-slot).
-      if (!body.querySelector(':scope > [data-bcq-module-panel], [data-bcq-module-slot] > [data-bcq-module-panel]')) showOriginalPanels(body);
+      // Não reativar filtros antigos abaixo do mínimo nem a plataforma TEC.
     });
   }
   function updateModuleMetric(element, filters) {
@@ -585,7 +664,8 @@
     moduleTargets().forEach((element) => {
       const identity = identityFor(element);
       if (!identity) return;
-      const filters = filtersForModule(identity.disciplineKey, identity.module);
+      const allModuleFilters = filtersForModule(identity.disciplineKey, identity.module);
+      const filters = selectPreferredModuleFilters(allModuleFilters.filter((filter) => filter.platform === 'qc'));
       const body = moduleBody(element);
       if (!body) return;
       if (element.matches('.pt-module-card[data-module-card]') && body.dataset.loaded !== '1') return;
@@ -593,15 +673,15 @@
       let panel = mountedPanels.shift() || null;
       mountedPanels.forEach((duplicate) => duplicate.remove());
       if (!filters.length) {
-        panel?.remove(); showOriginalPanels(body);
+        panel?.remove(); hideOriginalPanels(body);
         return;
       }
       try {
-        const signature = `approved-v1|${filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|')}`;
+        const signature = `qc-only-v1|${filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|')}`;
         if (panel && panel.dataset.bcqSignature === signature) {
           hideOriginalPanels(body); updateModuleMetric(element, filters); return;
         }
-        const markup = `<div class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}">${platformPanel(filters, 'qc')}${platformPanel(filters, 'tec')}</div>`;
+        const markup = `<div class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}">${platformPanel(filters, 'qc')}</div>`;
         const template = document.createElement('template');
         template.innerHTML = markup.trim();
         const replacement = template.content.firstElementChild;
@@ -618,23 +698,24 @@
         updateModuleMetric(element, filters);
       } catch (reason) {
         panel = body.querySelector('[data-bcq-module-panel]');
-        if (panel) hideOriginalPanels(body); else showOriginalPanels(body);
-        console.warn('[Central de Questões] Mantendo os filtros originais do módulo.', reason);
+        hideOriginalPanels(body);
+        console.warn('[Central de Questões] O painel QC não pôde ser atualizado; links antigos permanecem ocultos.', reason);
       }
     });
   }
 
-  function uniqueFilters() {
-    return Array.from(new Map(registry.map((filter) => [filter.stableKey, filter])).values());
+  function uniqueFilters(filters = registry) {
+    return Array.from(new Map(filters.map((filter) => [filter.stableKey, filter])).values());
   }
   // The registry and each TEC/QC notebook remain unchanged; this is a view
   // scope for the student's selected objective only.
-  function objectiveScopedFilters(filters = uniqueFilters()) {
+  function objectiveScopedFilters(filters = uniqueFilters(visibleModuleFilters())) {
     const keys = global.CentralStudyObjectives?.questionDisciplineKeys?.();
-    return keys instanceof Set ? filters.filter((filter) => keys.has(filter.disciplineKey)) : filters;
+    const qc = filters.filter((filter) => filter.platform === 'qc');
+    return keys instanceof Set ? qc.filter((filter) => keys.has(filter.disciplineKey)) : qc;
   }
   function allSessionEntries() {
-    return uniqueFilters().flatMap((filter) => sessionsFor(filter).map((session) => ({ filter, session })))
+    return uniqueFilters(visibleModuleFilters()).flatMap((filter) => sessionsFor(filter).map((session) => ({ filter, session })))
       .sort((a, b) => String(b.session.date).localeCompare(String(a.session.date)) || String(b.session.createdAt || '').localeCompare(String(a.session.createdAt || '')));
   }
   function objectiveScopedSessions() {
@@ -686,7 +767,7 @@
         <section data-bcq-panel="disciplines" hidden></section>
         <section data-bcq-panel="filters" hidden>
           <details class="bcq-qc-inventory" data-bcq-qc-inventory hidden></details>
-          <div class="bcq-toolbar"><label><span>Pesquisar</span><input type="search" data-bcq-search placeholder="Disciplina, módulo, título ou ID"></label><label><span>Disciplina</span><select data-bcq-discipline><option value="">Todas</option></select></label><label><span>Plataforma</span><select data-bcq-platform-select><option value="">QC e TEC</option><option value="qc">QConcursos</option><option value="tec">TEC Concursos</option></select></label></div>
+          <div class="bcq-toolbar"><label><span>Pesquisar</span><input type="search" data-bcq-search placeholder="Disciplina, módulo, título ou ID"></label><label><span>Disciplina</span><select data-bcq-discipline><option value="">Todas</option></select></label></div>
           <div class="bcq-page-layout"><div class="bcq-page-list" data-bcq-page-list></div><aside class="bcq-detail" data-bcq-detail><div class="bcq-detail-empty"><b>Selecione um filtro</b><span>O histórico completo aparecerá aqui.</span></div></aside></div>
         </section>
         <section data-bcq-panel="history" hidden></section>
@@ -772,10 +853,10 @@
     if (!page) return [];
     const search = String(page.querySelector('[data-bcq-search]')?.value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
     const discipline = page.querySelector('[data-bcq-discipline]')?.value || '';
-    const platform = page.querySelector('[data-bcq-platform-select]')?.value || '';
-    return objectiveScopedFilters().filter((filter) => !discipline || filter.disciplineKey === discipline).filter((filter) => !platform || filter.platform === platform).filter((filter) => {
+    
+    return objectiveScopedFilters(visibleModuleFilters()).filter((filter) => !discipline || filter.disciplineKey === discipline).filter((filter) => {
       if (!search) return true;
-      return `${filter.discipline} ${filter.module} ${filter.code} ${filter.title} ${filter.id} ${filter.platformLabel}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(search);
+      return `${filter.discipline} ${filter.module} ${filter.code} ${filter.title} ${catalogFilterTitle(filter)} ${filter.id} ${filter.platformLabel}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(search);
     });
   }
   function syncDisciplineOptions() {
@@ -788,7 +869,7 @@
   }
   function filterListButton(filter, simple = false) {
     const stats = statsFor(filter);
-    const title = simple ? catalogFilterTitle(filter) : `${filter.code} · ${filter.title}`;
+    const title = catalogFilterTitle(filter);
     const content = `<span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><span><b>${esc(title)}</b><small>${filter.count.toLocaleString('pt-BR')} questões · ID ${esc(filter.id)}${filter.status === 'unavailable' ? ' · indisponível' : ''}</small></span><strong aria-label="${stats.percent == null ? 'Sem resultados registrados' : stats.percent + '% de acertos'}">${stats.percent == null ? '—' : `${stats.percent}%`}</strong>`;
     if (simple) {
       return filter.status === 'available'
@@ -799,17 +880,17 @@
   }
   function historyRow(entry) {
     const { filter, session } = entry;
-    return `<article class="bcq-center-history-row"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${esc(filter.code)} · ${esc(filter.title)}</b><small>${esc(filter.discipline)} · ${esc(filter.module)} · ${fmtDate(session.date)}</small></div><span>${session.answered} respondidas</span><span>${session.correct} acertos</span><span>${session.answered - session.correct} erros</span><strong>${percent(session.answered, session.correct)}%</strong><div><button type="button" data-bcq-history-edit="${attr(session.id)}" data-bcq-history-key="${attr(filter.stableKey)}">Editar</button><button type="button" data-bcq-history-delete="${attr(session.id)}" data-bcq-history-key="${attr(filter.stableKey)}">Excluir</button></div></article>`;
+    return `<article class="bcq-center-history-row"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${esc(filter.module)} · ${esc(catalogFilterTitle(filter))}</b><small>${esc(filter.discipline)} · ${esc(filter.module)} · ${fmtDate(session.date)}</small></div><span>${session.answered} respondidas</span><span>${session.correct} acertos</span><span>${session.answered - session.correct} erros</span><strong>${percent(session.answered, session.correct)}%</strong><div><button type="button" data-bcq-history-edit="${attr(session.id)}" data-bcq-history-key="${attr(filter.stableKey)}">Editar</button><button type="button" data-bcq-history-delete="${attr(session.id)}" data-bcq-history-key="${attr(filter.stableKey)}">Excluir</button></div></article>`;
   }
   function renderOverview(page) {
     const filters = objectiveScopedFilters();
     const totals = aggregateFilters(filters);
     const sessions = objectiveScopedSessions();
     const qc = filters.filter((filter) => filter.platform === 'qc');
-    const tec = filters.filter((filter) => filter.platform === 'tec');
+    
     const overview = page.querySelector('[data-bcq-panel="overview"]');
     overview.innerHTML = `<div class="bcq-center-stats"><article><span>Questões resolvidas</span><b>${totals.answered.toLocaleString('pt-BR')}</b><small>Em ${totals.sessions} sessões</small></article><article><span>Acertos</span><b>${totals.correct.toLocaleString('pt-BR')}</b><small>${totals.errors.toLocaleString('pt-BR')} erros</small></article><article><span>Aproveitamento</span><b>${percent(totals.answered, totals.correct) == null ? '—' : `${percent(totals.answered, totals.correct)}%`}</b><small>Média acumulada</small></article><article><span>Cadernos únicos</span><b>${filters.filter((filter) => filter.status === 'available').length}</b><small>${filters.length} vínculos neste objetivo</small></article></div>
-      <div class="bcq-overview-grid"><section class="bcq-center-panel"><header><div><span>DESEMPENHO</span><h2>Evolução das sessões</h2></div><button type="button" data-bcq-go-tab="history">Ver histórico</button></header>${evolutionSvg(sessions.map((entry) => entry.session), 'all')}</section><section class="bcq-center-panel"><header><div><span>PLATAFORMAS</span><h2>Biblioteca de filtros</h2></div></header><div class="bcq-platform-summary"><article data-platform="qc"><b>${qc.length}</b><span>QConcursos</span><small>${aggregateFilters(qc).sessions} sessões</small></article><article data-platform="tec"><b>${tec.length}</b><span>TEC Concursos</span><small>${aggregateFilters(tec).sessions} sessões</small></article></div></section></div>
+      <div class="bcq-overview-grid"><section class="bcq-center-panel"><header><div><span>DESEMPENHO</span><h2>Evolução das sessões</h2></div><button type="button" data-bcq-go-tab="history">Ver histórico</button></header>${evolutionSvg(sessions.map((entry) => entry.session), 'all')}</section><section class="bcq-center-panel"><header><div><span>CADERNOS</span><h2>Filtros Qconcursos</h2></div></header><div class="bcq-platform-summary"><article data-platform="qc"><b>${qc.length}</b><span>Qconcursos</span><small>${aggregateFilters(qc).sessions} sessões</small></article></div></section></div>
       <section class="bcq-center-panel"><header><div><span>ATIVIDADE RECENTE</span><h2>Últimas sessões</h2></div><button type="button" data-bcq-go-tab="history">Ver todas</button></header>${sessions.length ? `<div class="bcq-center-history">${sessions.slice(0, 5).map(historyRow).join('')}</div>` : '<div class="bcq-empty">Nenhuma sessão registrada. Use o botão + em um filtro para começar.</div>'}</section>`;
   }
   function disciplineDetails(host) {
@@ -848,7 +929,7 @@
   }
   function renderDisciplines(page) {
     const groups = new Map();
-    objectiveScopedFilters().forEach((filter) => {
+    objectiveScopedFilters(visibleModuleFilters()).forEach((filter) => {
       if (!groups.has(filter.disciplineKey)) groups.set(filter.disciplineKey, { label: filter.discipline, modules: new Map() });
       const modules = groups.get(filter.disciplineKey).modules;
       if (!modules.has(filter.module)) modules.set(filter.module, []);
@@ -867,9 +948,9 @@
       const accuracy = percent(totals.answered, totals.correct);
       return `<details class="bcq-discipline" data-bcq-discipline="${esc(Array.from(groups.keys())[index])}"${(disciplineOpenState.has(Array.from(groups.keys())[index]) ? disciplineOpenState.get(Array.from(groups.keys())[index]) : index === 0) ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${accuracy === null ? "—" : accuracy + "%"} acertos <span aria-hidden="true">·</span> ${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
         const qc = rows.filter((row) => row.platform === 'qc');
-        const tec = rows.filter((row) => row.platform === 'tec');
-        const platformColumn = (platform, items) => `<section class="bcq-discipline-platform" data-platform="${platform}"><header><span class="bcq-page-platform" data-platform="${platform}">${platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
-        return `<details class="bcq-discipline-module" data-bcq-module="${esc(Array.from(groups.keys())[index] + "|" + module)}"${moduleOpenState.get(Array.from(groups.keys())[index] + "|" + module) ? " open" : ""}><summary><div class="bcq-discipline-module-title"><b>${esc(module)}</b><strong>${esc(catalogModuleTitle(rows))}</strong></div><span>${qc.length} QC · ${tec.length} TEC</span></summary><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></details>`;
+        
+        const platformColumn = (items) => `<section class="bcq-discipline-platform" data-platform="qc"><header><span class="bcq-page-platform" data-platform="qc">QC</span><div><b>Qconcursos</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
+        return `<details class="bcq-discipline-module" data-bcq-module="${esc(Array.from(groups.keys())[index] + "|" + module)}"${moduleOpenState.get(Array.from(groups.keys())[index] + "|" + module) ? " open" : ""}><summary><div class="bcq-discipline-module-title"><b>${esc(module)}</b><strong>${esc(catalogModuleTitle(rows))}</strong></div><span>${qc.length} filtro${qc.length === 1 ? '' : 's'} QC</span></summary><div class="bcq-discipline-columns">${platformColumn(qc)}</div></details>`;
       }).join('')}</div></details>`;
     }).join('')}</div></section>`;
     bindDisciplineControls(host);
@@ -939,7 +1020,7 @@
   }
   function renderReview(page) {
     const rows = objectiveScopedFilters().map((filter) => ({ filter, stats: statsFor(filter) })).filter((item) => item.stats.answered > 0).sort((a, b) => a.stats.percent - b.stats.percent || b.stats.answered - a.stats.answered);
-    page.querySelector('[data-bcq-panel="review"]').innerHTML = `<section class="bcq-center-panel"><header><div><span>PRIORIDADE DE ESTUDO</span><h2>Revisão por desempenho</h2><p>Filtros com menor aproveitamento aparecem primeiro.</p></div></header>${rows.length ? `<div class="bcq-review-list">${rows.map(({ filter, stats }) => `<article data-platform="${filter.platform}"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${esc(filter.code)} · ${esc(filter.title)}</b><small>${esc(filter.discipline)} · ${stats.answered} respondidas · ${stats.errors} erros</small></div>${ringMarkup(stats.percent)}<div><a${filter.status === 'available' ? ` href="${attr(filter.url)}" target="_blank" rel="noopener noreferrer"` : ' aria-disabled="true"'}>${filter.status === 'available' ? 'Abrir filtro ↗' : 'Indisponível'}</a><button type="button" data-bcq-add="${attr(filter.stableKey)}">+</button></div></article>`).join('')}</div>` : '<div class="bcq-empty">Registre sessões para que a Central identifique suas prioridades de revisão.</div>'}</section>`;
+    page.querySelector('[data-bcq-panel="review"]').innerHTML = `<section class="bcq-center-panel"><header><div><span>PRIORIDADE DE ESTUDO</span><h2>Revisão por desempenho</h2><p>Filtros com menor aproveitamento aparecem primeiro.</p></div></header>${rows.length ? `<div class="bcq-review-list">${rows.map(({ filter, stats }) => `<article data-platform="${filter.platform}"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${esc(filter.module)} · ${esc(catalogFilterTitle(filter))}</b><small>${esc(filter.discipline)} · ${stats.answered} respondidas · ${stats.errors} erros</small></div>${ringMarkup(stats.percent)}<div><a${filter.status === 'available' ? ` href="${attr(filter.url)}" target="_blank" rel="noopener noreferrer"` : ' aria-disabled="true"'}>${filter.status === 'available' ? 'Abrir filtro ↗' : 'Indisponível'}</a><button type="button" data-bcq-add="${attr(filter.stableKey)}">+</button></div></article>`).join('')}</div>` : '<div class="bcq-empty">Registre sessões para que a Central identifique suas prioridades de revisão.</div>'}</section>`;
   }
   function renderPage() {
     const page = document.getElementById('questionFiltersView');
@@ -981,21 +1062,21 @@
     if (!filter) { host.innerHTML = '<div class="bcq-detail-empty"><b>Selecione um filtro</b><span>O histórico completo aparecerá aqui.</span></div>'; return; }
     const stats = statsFor(filter);
     host.dataset.platform = filter.platform;
-    host.innerHTML = `<header class="bcq-detail-head"><span>${filter.platformLabel}${filter.status === 'unavailable' ? ' · INDISPONÍVEL' : ''}</span><h2>${esc(filter.code)} · ${esc(filter.title)}</h2><p>${esc(filter.discipline)} · ${esc(filter.module)} · ID ${esc(filter.id)} · ${filter.count.toLocaleString('pt-BR')} questões</p><div>${filter.status === 'available' ? `<a href="${attr(filter.url)}" target="_blank" rel="noopener noreferrer">Abrir caderno original ↗</a>` : '<span class="bcq-unavailable">Link temporariamente indisponível</span>'}<button type="button" data-bcq-add="${attr(filter.stableKey)}">+ Registrar resultado</button>${canManageFilters ? `<button type="button" class="bcq-manage" data-bcq-manage="${attr(filter.stableKey)}">Gerenciar filtro</button>` : ''}</div></header>
+    host.innerHTML = `<header class="bcq-detail-head"><span>${filter.platformLabel}${filter.status === 'unavailable' ? ' · INDISPONÍVEL' : ''}</span><h2>${esc(filter.module)} · ${esc(catalogFilterTitle(filter))}</h2><p>${esc(filter.discipline)} · ${esc(filter.module)} · ID ${esc(filter.id)} · ${filter.count.toLocaleString('pt-BR')} questões</p><div>${filter.status === 'available' ? `<a href="${attr(filter.url)}" target="_blank" rel="noopener noreferrer">Abrir caderno original ↗</a>` : '<span class="bcq-unavailable">Link temporariamente indisponível</span>'}<button type="button" data-bcq-add="${attr(filter.stableKey)}">+ Registrar resultado</button>${canManageFilters ? `<button type="button" class="bcq-manage" data-bcq-manage="${attr(filter.stableKey)}">Gerenciar filtro</button>` : ''}</div></header>
       <div class="bcq-detail-stats"><article><b>${stats.answered}</b><span>respondidas</span></article><article><b>${stats.correct}</b><span>acertos</span></article><article><b>${stats.errors}</b><span>erros</span></article><article><b>${stats.percent == null ? '—' : `${stats.percent}%`}</b><span>acumulado</span></article></div>
       <section class="bcq-evolution"><h3>Evolução do desempenho</h3>${evolutionSvg(stats.sessions, filter.platform)}</section>
       <section class="bcq-history"><h3>Histórico de sessões</h3>${stats.sessions.length ? `<div class="bcq-history-list">${stats.sessions.map((session) => `<article><time>${fmtDate(session.date)}</time><span>${session.answered} respondidas</span><span>${session.correct} acertos</span><span>${session.answered - session.correct} erros</span><b>${percent(session.answered, session.correct)}%</b><div><button type="button" data-bcq-edit="${attr(session.id)}" aria-label="Editar sessão">Editar</button><button type="button" data-bcq-delete="${attr(session.id)}" aria-label="Excluir sessão">Excluir</button></div></article>`).join('')}</div>` : '<div class="bcq-history-empty">Nenhuma sessão registrada neste filtro.</div>'}</section>`;
   }
 
-  function filterByKey(key) { return registry.find((filter) => filter.stableKey === key) || null; }
+  function filterByKey(key) { return visibleModuleFilters().find((filter) => filter.stableKey === key) || null; }
   function openModal(filter, session) {
-    if (!filter || ['trabalho','processual-trabalho'].includes(filter.disciplineKey)) return;
+    if (!filter || !visibleModuleFilters().some((item) => item.stableKey === filter.stableKey) || ['trabalho','processual-trabalho'].includes(filter.disciplineKey)) return;
     modalReturnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     injectModal(); modalFilter = filter; modalSession = session || null;
     const modal = document.getElementById('bcqSessionModal');
     const form = modal.querySelector('[data-bcq-form]');
     modal.querySelector('[data-bcq-modal-platform]').textContent = filter.platformLabel;
-    modal.querySelector('[data-bcq-modal-filter]').textContent = `${filter.code} · ${filter.title}`;
+    modal.querySelector('[data-bcq-modal-filter]').textContent = `${filter.module} · ${catalogFilterTitle(filter)}`;
     modal.querySelector('h2').textContent = session ? 'Editar resultado' : 'Registrar resultado';
     form.elements.date.value = session?.date || today();
     form.elements.answered.value = session?.answered || '';
@@ -1035,7 +1116,7 @@
   }
 
   function openAdminModal(filter) {
-    if (!canManageFilters || !filter) return;
+    if (!canManageFilters || !filter || filter.platform !== 'qc') return;
     injectAdminModal(); adminFilter = filter;
     const modal = document.getElementById('bcqAdminModal');
     const form = modal.querySelector('[data-bcq-admin-form]');
@@ -1179,7 +1260,7 @@
   }
 
   global.ExternalQuestionFilters = {
-    buildRegistry, refresh: refreshAll, openPage, openModal,
+    buildRegistry, selectPreferredModuleFilters, visibleModuleFilters, catalogFilterTitle, moduleLearningTitle, minQuestions: MIN_QUESTIONS, refresh: refreshAll, openPage, openModal,
     sessionsFor, statsFor, saveSession, deleteSession,
     get canManage() { return canManageFilters; },
     get overridesReady() { return overridesLoaded; },
