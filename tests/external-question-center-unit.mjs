@@ -97,14 +97,17 @@ test('rodapé do módulo preserva o visual aprovado e não repete filtros', asyn
   const panel = dom.window.document.querySelector('[data-bcq-module-panel="penal:M03"]');
   assert.equal(panel.querySelector('.bcq-module-filter-head'), null);
   assert.equal(panel.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b').textContent, 'Teoria do Crime');
-  assert.equal(panel.querySelector('[data-bcq-platform="tec"] .bcq-card-copy b').textContent, 'Teoria do Crime');
+  assert.equal(panel.querySelector('[data-bcq-platform="tec"]'), null);
   assert.doesNotMatch(panel.querySelector('.bcq-card-copy b').textContent, /M03|PEN/);
   assert.equal(panel.querySelectorAll('[data-bcq-key="qc:15288411"]').length, 1);
-  assert.equal(panel.querySelectorAll('[data-bcq-key="tec:105849634"]').length, 1);
+  assert.equal(panel.querySelectorAll('[data-bcq-key="tec:105849634"]').length, 0);
   assert.equal(dom.window.document.querySelector('[data-test-original]').getAttribute('data-bcq-original'), '1');
   assert.equal(dom.window.document.querySelector('.cf-module-body').getAttribute('data-bcq-module-host'), '1');
   assert.match(styles, /\.bcq-card-copy b\{[^}]*white-space:normal;[^}]*overflow-wrap:anywhere/);
   assert.doesNotMatch(styles, /\.bcq-card-copy b\{[^}]*text-overflow:ellipsis/);
+  const fullTitleCss = styles.split('.bcq-page-filter>span:nth-child(2) b{')[1]?.split('}')[0] || '';
+  assert.match(fullTitleCss, /white-space:normal/);
+  assert.doesNotMatch(fullTitleCss, /text-overflow:ellipsis/);
 });
 
 test('atualizações externas não remontam nem fazem o painel piscar', async () => {
@@ -137,32 +140,32 @@ test('módulo nativo com tópico interno recebe somente um painel QC/TEC', async
   assert.equal(subject.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b')?.textContent, 'Atos Administrativos');
 });
 
-test('mantém os filtros originais visíveis se o painel compacto não puder ser montado', async () => {
+test('mantém os filtros originais ocultos se o painel compacto não puder ser montado', async () => {
   const dom = setup({ failModuleMount: true });
   await settle(dom.window);
   assert.equal(dom.window.document.querySelector('[data-bcq-module-panel]'), null);
-  assert.equal(dom.window.document.querySelector('[data-test-original]').hasAttribute('data-bcq-original'), false);
+  assert.equal(dom.window.document.querySelector('[data-test-original]').hasAttribute('data-bcq-original'), true, 'painel legado fica oculto');
 });
 
-test('catálogo organiza QC e TEC em colunas próprias por módulo', async () => {
+test('catálogo mostra somente QC e não oferece links TEC', async () => {
   const dom = setup();
   await settle(dom.window);
   dom.window.document.querySelector('[data-bcq-tab="disciplines"]').click();
   const module = dom.window.document.querySelector('.bcq-discipline-module');
   const columns = module.querySelectorAll(':scope > .bcq-discipline-columns > .bcq-discipline-platform');
-  assert.equal(columns.length, 2);
+  assert.equal(columns.length, 1);
   assert.equal(columns[0].dataset.platform, 'qc');
-  assert.equal(columns[1].dataset.platform, 'tec');
-  assert.match(columns[0].querySelector('header').textContent, /QConcursos/);
-  assert.match(columns[1].querySelector('header').textContent, /TEC Concursos/);
+  assert.equal(columns[1], undefined);
+  assert.match(columns[0].querySelector('header').textContent, /Qconcursos/i);
+  assert.doesNotMatch(module.textContent, /TEC Concursos/);
   const qcLink = columns[0].querySelector('a.bcq-page-filter');
-  const tecLink = columns[1].querySelector('a.bcq-page-filter');
+  const tecLink = module.querySelector('a[href*="tecconcursos.com.br"]');
   assert.ok(qcLink, 'o filtro QC deve abrir o caderno correspondente');
-  assert.ok(tecLink, 'o filtro TEC deve abrir o caderno correspondente');
+  assert.equal(tecLink, null);
   assert.match(qcLink.getAttribute('href'), /notebook_ids/);
-  assert.match(tecLink.getAttribute('href'), /^https:\/\/www\.tecconcursos\.com\.br\//);
+
   assert.equal(qcLink.getAttribute('target'), '_blank');
-  assert.equal(tecLink.getAttribute('target'), '_blank');
+
   assert.match(module.querySelector('.bcq-discipline-module-title').textContent, /M03.*Teoria do Crime/);
   assert.equal(columns[0].querySelector('.bcq-page-filter b').textContent, 'Teoria do Crime');
   assert.doesNotMatch(columns[0].querySelector('.bcq-page-filter b').textContent, /M03|PEN/);
@@ -225,7 +228,7 @@ test('objetivo restringe apenas a visualização da Central de Questões e prese
   await settle(window);
   const values = Array.from(window.document.querySelector('[data-bcq-discipline]').options).map((option) => option.value);
   assert.deepEqual(Array.from(values), ['', 'penal']);
-  assert.equal(window.document.querySelectorAll('[data-bcq-page-list] .bcq-page-filter').length, 2, 'QC e TEC do assunto ativo continuam disponíveis');
+  assert.equal(window.document.querySelectorAll('[data-bcq-page-list] .bcq-page-filter').length, 1, 'somente QC do assunto ativo permanece disponível');
 
   window.document.querySelector('[data-bcq-tab="history"]').click();
   await settle(window);

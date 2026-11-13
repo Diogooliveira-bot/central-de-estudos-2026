@@ -200,7 +200,8 @@ test('página de cadastro remove token da URL e não libera Premium',()=>{
  assert.match(page,/autocomplete="new-password"/);
  assert.match(page,/action:'confirm'/);
  assert.match(page,/20 questões por dia/);
- assert.match(page,/TEC, QConcursos/);
+ assert.match(page,/filtros do Qconcursos/i);
+  assert.doesNotMatch(page,/\bTEC\b/);
 });
 
 test('middleware libera somente tela de cadastro, sem recursos pagos',()=>{

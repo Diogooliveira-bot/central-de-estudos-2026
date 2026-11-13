@@ -10,7 +10,7 @@ function markup(d,code){
  const actions=rows.filter(approved).map(r=>'<a class="tec-validated-button" data-tec-validated-link="'+esc(r.id)+'" data-tec-part="'+esc(r.part||'')+'" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer"><b>'+esc(r.subtitle)+'</b><span>'+r.quantity+' '+(r.quantity===1?'questão':'questões')+'</span></a>'+(r.shared?'<small class="tec-validated-note">Filtro compartilhado entre M13 e M14.</small>':'')).join('');
  return '<section class="tec-validated-panel" data-tec-validated-panel="'+d+':'+code+'" aria-label="Questões TEC '+esc(code)+'"><header><b>TEC Concursos</b><small>'+(code==='GERAL'?'Caderno existente · cobertura específica':'Questões do módulo')+'</small></header><div class="tec-validated-actions">'+actions+'</div>'+(note?'<p class="tec-validated-note">'+esc(note)+'</p>':'')+(code==='GERAL'?'<p class="tec-validated-note">Este caderno cobre o recorte registrado; não é um geral completo da disciplina.</p>':'')+'</section>';
 }
-function mount(host,d,code){if(!host||host.querySelector('[data-tec-validated-panel="'+d+':'+code+'"]'))return;const holder=document.createElement('div');holder.innerHTML=markup(d,code);host.appendChild(holder.firstElementChild);}
+function mount(host,d,code){if(window.BC_STUDENT_TEC_DISABLED)return;if(!host||host.querySelector('[data-tec-validated-panel="'+d+':'+code+'"]'))return;const holder=document.createElement('div');holder.innerHTML=markup(d,code);host.appendChild(holder.firstElementChild);}
 function refresh(){
  for(const d of ['penal','cpp']){
   const subject=document.querySelector('#subjects .subject[data-id="'+d+'"]');if(!subject)continue;

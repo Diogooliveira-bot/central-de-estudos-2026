@@ -28,8 +28,9 @@ test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros of
     const n = Number(module.dataset.civilNativeModule);
     const source = index.find((item) => item.number === n);
     const zone = module.querySelector('.cv-zone');
+    const hasQc = n !== 3 && n !== 10; // Sem caderno QC de 20+ questões nestes dois módulos.
     assert.deepEqual([...zone.children].map((node) => node.matches('[data-bcq-module-panel]') ? 'bcq-module-panels' : node.classList[0]), [
-      'cv-zone-head', 'cv-progress-grid', 'cv-oriented', 'cv-cards', 'cv-panel', 'bcq-module-panels', 'cv-tools',
+      'cv-zone-head', 'cv-progress-grid', 'cv-oriented', 'cv-cards', 'cv-panel', ...(hasQc ? ['bcq-module-panels'] : []), 'cv-tools',
     ], `M${n}: hierarquia visual divergente.`);
     assert.equal(module.querySelectorAll('.cv-note-input').length, 1, `M${n}: card de notas não é único.`);
     assert.equal(module.querySelectorAll('.cv-rounds, input[id^="cv-ext-"]').length, 0, `M${n}: campos manuais legados visíveis.`);
@@ -39,9 +40,10 @@ test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros of
     assert.deepEqual([...module.querySelectorAll('.cv-card-complete .cv-standard-actions button')].map((button) => button.textContent.trim()), ['Estudar conteúdo', `Resolver ${source.completeQuestions} questões`]);
     assert.deepEqual([...module.querySelectorAll('.cv-card-review .cv-standard-actions button')].map((button) => button.textContent.trim()), ['Revisar conteúdo', `Resolver ${source.summaryQuestions} questões`]);
     assert.equal(module.querySelector('.cv-card-infographic'), null);
-    assert(module.querySelector('[data-bcq-platform="tec"]'), `M${n}: filtros TEC oficiais ausentes.`);
+    assert.equal(module.querySelector('[data-bcq-platform="tec"]'), null, `M${n}: TEC não deve aparecer aos alunos.`);
+    assert.equal(Boolean(module.querySelector('[data-bcq-platform="qc"]')), hasQc, `M${n}: seleção QC divergente.`);
     assert.equal(module.querySelectorAll('.cv-sharing-link, .cv-sharing, .cv-tec-panel, [data-civil-share]').length, 0, `M${n}: links/blocos antigos ainda visíveis.`);
-    assert.equal(module.querySelectorAll('[data-bcq-module-panel]').length, 1, `M${n}: painel QC/TEC duplicado.`);
+    assert.equal(module.querySelectorAll('[data-bcq-module-panel]').length, hasQc ? 1 : 0, `M${n}: painel QC duplicado ou indevido.`);
   }
   assert.equal(window.CIVIL_SHARING_LINKS.items.length, 66, 'Os 66 links oficiais permanecem no catálogo original.');
   assert.equal(window.ExternalQuestionFilters.buildRegistry().filter((filter) => filter.disciplineKey === 'civil' && filter.platform === 'tec').length, 66);

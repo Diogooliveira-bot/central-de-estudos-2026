@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<style id="bc-tec-retired-student">
+/* Remoção visual dos caminhos legados sem afetar QC ou o histórico armazenado. */
+#tecCadernosView,#centralSidebar button[onclick*="'tec-cadernos'"],
+[data-bcq-platform="tec"],[data-platform="tec"],.tec-context-panel,
+.tec-validated-panel,.cpp-native-tec-panel,.adm-native-tec-filter,
+.cv-tec-panel,.csp-tec-panel,.tec-auto,.tec-validated-button,
+.bc-tec-tabs,a[href*="tecconcursos.com.br"]{display:none!important}
+</style>
+<script>window.BC_STUDENT_TEC_DISABLED=true;</script>
 <link rel="stylesheet" href="/ui/old-questions-removed-v1.css?v=20261113-questoes-novas-v3">
 <script src="/ui/old-questions-removed-v1.js?v=20261113-questoes-novas-v3"></script>
 <script src="/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1"></script>
@@ -894,10 +903,6 @@ setTimeout(function(){
    </span>
    <span class="nav-text">Disciplinas</span>
   </button>
-  <button type="button" data-i="TEC" onclick="return centralSidebarAction('tec-cadernos',this)">
-   <span class="nav-icon nav-badge">T</span>
-   <span class="nav-text">Cadernos TEC</span>
-  </button>
   <div class="label">Ferramentas já criadas</div>
   
 
@@ -981,41 +986,7 @@ setTimeout(function(){
 
   <section class="view hidden" id="performanceView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><div class="hero"><div><h1>Desempenho</h1><p>Resultados registrados nos tópicos desta Central, sem substituir as estatísticas próprias dos módulos existentes.</p></div></div><div class="card" style="padding:16px"><div class="summary" style="grid-template-columns:repeat(4,1fr)"><div class="sum"><small>Sessões</small><b id="gpSessions">0</b></div><div class="sum"><small>Questões</small><b id="gpQ">0</b></div><div class="sum"><small>Acertos</small><b id="gpC">0</b></div><div class="sum"><small>Aproveitamento</small><b id="gpA">—</b></div></div><div id="perfBySubject" style="margin-top:15px"></div></div><div class="card" style="padding:0;overflow:hidden"><div id="mapaEstudos"></div></div></section>
 
-  <section class="view hidden" id="tecCadernosView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button>
-   <div class="tec-shell">
-    <div class="hero"><div><h1>Cadernos TEC</h1><p>Todos os cadernos organizados por matéria e prontos para abrir no TEC Concursos.</p></div><div class="tec-hero-actions"><button class="btn" type="button" onclick="tecAbrirPastaGeral()">Abrir pasta geral ↗</button></div></div>
-    <div class="tec-summary"><div class="card"><small>Cadernos vinculados</small><b id="tecTotalCadernos">—</b></div><div class="card"><small>Matérias</small><b id="tecTotalMaterias">—</b></div><div class="card"><small>Questões disponíveis</small><b id="tecTotalQuestoes">—</b></div></div>
-    <div class="card" id="tecVisaoGeral" style="margin-top:14px">
-      <b>📊 Visão geral</b><span class="muted small"> — questões registradas por matéria</span>
-      <div class="tv-grid" id="tecVisaoGrid"><div class="muted small">Sem registros ainda.</div></div>
-     </div>
-     <div class="card" id="tecHistCard" style="margin-top:14px">
-      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><b>📝 Registro de questões</b><span class="muted small">anote o que resolveu hoje — fica salvo neste dispositivo</span></div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:end;margin-top:10px">
-       <label style="flex:2 1 200px;display:flex;flex-direction:column;gap:4px;font-size:12px">Caderno
-        <select id="tecRegCaderno" style="width:100%"></select></label>
-       <label style="flex:1 1 120px;display:flex;flex-direction:column;gap:4px;font-size:12px">Data
-        <input id="tecRegData" type="date" style="width:100%"></label>
-       <label style="flex:1 1 90px;display:flex;flex-direction:column;gap:4px;font-size:12px">Feitas
-        <input id="tecRegFeitas" type="number" min="1" step="1" inputmode="numeric" placeholder="0" style="width:100%"></label>
-       <label style="flex:1 1 90px;display:flex;flex-direction:column;gap:4px;font-size:12px">Acertos
-        <input id="tecRegAcertos" type="number" min="0" step="1" inputmode="numeric" placeholder="0" style="width:100%"></label>
-       <label style="flex:0 0 76px;display:flex;flex-direction:column;gap:4px;font-size:12px">%</label>
-       <button class="btn" type="button" onclick="return tecRegSalvar()" id="tecRegBtn" style="align-self:end">+ Registrar</button>
-      </div>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px" class="summary">
-       <div class="sum"><small>Sessões</small><b id="tecRegSess">0</b></div>
-       <div class="sum"><small>Feitas</small><b id="tecRegFeitasTotal">0</b></div>
-       <div class="sum"><small>Acertos</small><b id="tecRegAcertosTotal">0</b></div>
-       <div class="sum"><small>Aproveitamento</small><b id="tecRegPctTotal">—</b></div>
-      </div>
-      <div id="tecRegLista" style="margin-top:12px"></div>
-     </div>
-     <div class="card tec-toolbar"><input id="tecBusca" type="search" placeholder="Pesquisar por código ou assunto" autocomplete="off" oninput="tecCadernosRender()"><select id="tecMateria" onchange="tecCadernosRender()"><option value="">Todas as matérias</option></select></div>
-    <div class="tec-groups" id="tecCadernosLista"><div class="tec-empty">Carregando os cadernos…</div></div>
-   </div>
-  </section>
-
+  <section class="view hidden" id="tecCadernosView" aria-hidden="true" inert hidden></section>
 
   <section class="view module-view hidden" id="leiSecaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><iframe id="leiSecaFrame" class="module-frame" title="Lei em Dia"></iframe></section>
 
@@ -1076,7 +1047,7 @@ setTimeout(function(){
      <button type="button" class="central-theme-option" data-central-theme-choice="oled-black" onclick="setCentralTheme('oled-black')">Aplicar tema</button>
     </article>
    </div>
-   <div class="central-settings-note">O tema é aplicado à tela inicial, agenda, disciplinas, módulos, questões, anotações, Vade Mecum, Lei em Dia, Cadernos TEC, editor, menus, modais, tabelas e progresso. Nenhum conteúdo ou avanço é alterado.</div>
+   <div class="central-settings-note">O tema é aplicado à tela inicial, agenda, disciplinas, módulos, questões, anotações, Vade Mecum, Lei em Dia, editor, menus, modais, tabelas e progresso. Nenhum conteúdo ou avanço é alterado.</div>
 
    <span class="central-setting-label">Minha conta</span>
    <div class="central-account-row" style="display:flex;flex-wrap:wrap;gap:8px">
@@ -1096,7 +1067,7 @@ setTimeout(function(){
    <div id="centralBackupStatus" class="central-backup-status">O backup por arquivo funciona mesmo sem banco online. Quando o site estiver no Vercel com o banco configurado, você também poderá guardar snapshots gerais no servidor.</div>
    <div id="centralBackupHistoryList" class="central-backup-history hidden"></div>
    <button class="central-btn-sec" id="centralPwaInstall" type="button" onclick="centralPwaInstall()" style="margin-top:8px;width:100%">📱 Instalar como aplicativo</button>
-   <div class="central-settings-note"><b>Backup geral:</b> inclui os dados da Central — progresso, Português nativo, agenda, cadernos TEC, Vade Mecum, Lei Seca, RLM e preferências.</div>
+   <div class="central-settings-note"><b>Backup geral:</b> inclui os dados da Central — progresso, Português nativo, agenda, resultados de questões já registrados, Vade Mecum, Lei Seca, RLM e preferências.</div>
    <div class="central-settings-note" style="margin-top:7px"><b>Segurança do backup online:</b> configure no Vercel as variáveis <code>DATABASE_URL</code> e <code>BACKUP_SECRET</code>. A chave é solicitada somente quando você usa o histórico online e fica apenas na sessão atual do navegador.</div>
   <script id="central-backup-geral-v6674">
 (function(){
@@ -1266,9 +1237,9 @@ window.centralBackupImport=function(inp){
   select.innerHTML='<option value="">Todas as matérias</option>'+gruposOrdenados(dados().cadernos).map(([nome])=>`<option value="${textoSeguro(nome)}">${textoSeguro(nome)}</option>`).join('');
   select.dataset.ready='1';
  }
- window.tecAbrirCaderno=function(url){const segura=urlCaderno(url);if(!segura)return false;if(typeof openExternalUrl==='function')openExternalUrl(segura);else window.open(segura,'_blank','noopener');return false};
- window.tecAbrirPastaGeral=function(){const url=String(dados().pastaTec||'');if(/^https:\/\/www\.tecconcursos\.com\.br\/questoes\/pastas\/\d+$/.test(url)){if(typeof openExternalUrl==='function')openExternalUrl(url);else window.open(url,'_blank','noopener')}return false};
- window.tecCadernosRender=function(){
+ window.tecAbrirCaderno=function(url){if(window.BC_STUDENT_TEC_DISABLED)return false;const segura=urlCaderno(url);if(!segura)return false;if(typeof openExternalUrl==='function')openExternalUrl(segura);else window.open(segura,'_blank','noopener');return false};
+ window.tecAbrirPastaGeral=function(){if(window.BC_STUDENT_TEC_DISABLED)return false;const url=String(dados().pastaTec||'');if(/^https:\/\/www\.tecconcursos\.com\.br\/questoes\/pastas\/\d+$/.test(url)){if(typeof openExternalUrl==='function')openExternalUrl(url);else window.open(url,'_blank','noopener')}return false};
+ window.tecCadernosRender=function(){if(window.BC_STUDENT_TEC_DISABLED)return;
   const data=dados(),host=document.getElementById('tecCadernosLista');if(!host)return;
   if(data.locked||!window.TEC_CADERNOS_DATA){host.innerHTML='<div class="card tec-empty"><p>🔒 Este recurso é exclusivo do Base Completa Premium.</p><button type="button" class="btn primary" onclick="window.tecConhecerPremium()">Conhecer o Premium</button></div>';return}
   preencherMaterias();
@@ -1281,7 +1252,7 @@ window.centralBackupImport=function(inp){
   const expandir=!!busca||!!materia;
   host.innerHTML=grupos.map(([nome,cadernos],indice)=>`<details class="tec-group" ${(expandir||indice===0)?'open':''}><summary><span>${textoSeguro(nome)} <small>${cadernos.length} caderno${cadernos.length===1?'':'s'}</small></span></summary><div class="tec-list">${cadernos.map(c=>`<div class="tec-row"><span class="tec-code">${textoSeguro(codigo(c.id))}</span><span class="tec-name">${textoSeguro(c.nome)}</span><span class="tec-count" data-base="${numero.format(Number(c.questoes)||0)} questões">${numero.format(Number(c.questoes)||0)} questões${(window.tecResumoCaderno?tecResumoCaderno(c.id):'')}</span><button class="tec-open" type="button" onclick="return tecAbrirCaderno('${textoSeguro(c.url)}')">Abrir no TEC • internet ↗</button><button class="tec-reg-full" type="button" onclick="return tecRegCadernoInline('${textoSeguro(c.id)}',this)">＋ Adicionar questões</button></div><div class="tec-reg-slot" data-cid="${textoSeguro(c.id)}" id="trslot-${textoSeguro(c.id).replace(/[^a-zA-Z0-9]/g,'_')}"></div>`).join('')}</div></details>`).join('');
  };
- window.openTecCadernos=function(btn){
+ window.openTecCadernos=function(btn){if(window.BC_STUDENT_TEC_DISABLED)return false;
   const view=typeof centralShowNativeView==='function'?centralShowNativeView('tecCadernosView','Cadernos TEC',btn):document.getElementById('tecCadernosView');
   if(view){view.classList.remove('hidden');try{view.classList.add('central-view-visible')}catch(_){}window.tecCadernosRender()}
   return false;
@@ -2007,19 +1978,19 @@ window.openEmbeddedTool=openEmbeddedTool;
  function groupFor(key){key=String(key||'');if(/^w\d+$/.test(key))return 'Direito Constitucional';if(key.startsWith('adm-'))return 'Direito Administrativo';if(key.startsWith('civ-'))return key==='civ-empresa'?'Direito Empresarial':'Direito Civil';if(key.startsWith('cpc'))return 'Direito Processual Civil';if(/^p\d+$/.test(key))return 'Direito Penal';if(key.startsWith('cpp-'))return 'Direito Processual Penal';if(key.startsWith('rlm-'))return 'Raciocínio Lógico';return ''}
  function byIds(ids){const index=new Map(data().map(c=>[c.id,c]));return (ids||[]).map(id=>index.get(id)).filter(Boolean)}
  function shortName(c){return String(c.nome||'').replace(/^[A-ZÇ-]+(?:-[A-ZÇ]+)?\s+\d+\s+-\s+/i,'').replace(/^CC\s+\d+\s+-\s+/i,'').replace(/^CP\s+\d+\s+-\s+/i,'').replace(/^CPP\s+\d+\s+-\s+/i,'')}
- window.tecCadernosPara=function(key){return byIds(MAP[String(key||'')]||[])};
- window.tecAbrirListaContexto=function(groupName,search){
+ window.tecCadernosPara=function(key){if(window.BC_STUDENT_TEC_DISABLED)return [];return byIds(MAP[String(key||'')]||[])};
+ window.tecAbrirListaContexto=function(groupName,search){if(window.BC_STUDENT_TEC_DISABLED)return false;
   if(typeof window.openTecCadernos==='function')window.openTecCadernos();
   setTimeout(()=>{const sel=document.getElementById('tecMateria'),q=document.getElementById('tecBusca');if(sel&&groupName)sel.value=groupName;if(q)q.value=search||'';if(typeof window.tecCadernosRender==='function')window.tecCadernosRender()},0);
   return false;
  };
- window.tecContextButtons=function(key,baseClass){
+ window.tecContextButtons=function(key,baseClass){if(window.BC_STUDENT_TEC_DISABLED)return '';
   const items=window.tecCadernosPara(key),cls=(baseClass||'chip');
   if(items.length)return items.map(c=>`<button type="button" class="${esc(cls)} tec-auto" title="${esc(c.nome)}" onclick="return tecAbrirCaderno('${esc(c.url)}')">↗ TEC · ${esc(shortName(c))} <span class="tec-auto-count">${Number(c.questoes)||0}q</span></button>`).join('');
   const group=groupFor(key);
   return group?`<button type="button" class="${esc(cls)} tec-auto" onclick="return tecAbrirListaContexto('${esc(group)}','')">↗ Ver cadernos TEC da disciplina</button>`:'';
  };
- window.tecContextPanel=function(key,title){const buttons=window.tecContextButtons(key,'chip');return buttons?`<div class="tec-context-panel"><div class="tec-context-title">${esc(title||'Questões TEC')}</div><div class="tec-context-links">${buttons}</div></div>`:''};
+ window.tecContextPanel=function(key,title){if(window.BC_STUDENT_TEC_DISABLED)return '';const buttons=window.tecContextButtons(key,'chip');return buttons?`<div class="tec-context-panel"><div class="tec-context-title">${esc(title||'Questões TEC')}</div><div class="tec-context-links">${buttons}</div></div>`:''};
  window.__tecContextSelfTest=function(){
   const keys=Object.keys(MAP),missing=[];for(const k of keys)for(const id of MAP[k])if(!data().some(c=>c.id===id))missing.push({key:k,id});
   return {version:'6.6.55',mappedKeys:keys.length,directLinks:keys.reduce((n,k)=>n+MAP[k].length,0),missing,dataCount:data().length};
