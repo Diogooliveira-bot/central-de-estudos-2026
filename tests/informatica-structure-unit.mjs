@@ -95,7 +95,7 @@ test("Informática padroniza quatro cartões por módulo com avisos seguros",()=
    assert.ok(js.includes(label),"cartão ausente "+label);
  assert.match(js,/pt-cf-cards bc-info-materials/);
  assert.match(js,/pt-cf-reading/);
- assert.match(js,/pt-cf-oriented/);
+ assert.match(js,/BCOrientation\.html\('info:'/);
  assert.match(js,/bc-info-status">Em construção/);
  assert.match(js,/disabled aria-disabled="true"/);
  const reader=read("ui/informatica-reader-v1.js");

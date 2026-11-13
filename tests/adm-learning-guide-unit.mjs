@@ -43,19 +43,19 @@ test('módulos ADM apresentam guia antes de materiais, sem alterar funcionalidad
  win.renderAll=()=>{};
  win.renderDisciplineGrid=()=>{};
  win.subjStats=()=>({});
+ win.eval(read('ui/orientation-defaults-v1.js'));
+ win.eval(read('ui/orientation-v1.js'));
  win.eval(read('ui/adm-native-layer.js'));
  await new Promise(resolve=>win.document.addEventListener('DOMContentLoaded',resolve,{once:true}));
  for(const m of modules){
   const html=win.renderDetail({id:'adm'},{uid:m.uid});
   const result=new JSDOM('<main>'+html+'</main>');
   const doc=result.window.document;
-  const guide=doc.querySelector('.adm-learning-guide');
-  assert.ok(guide,'M'+m.number+': guia renderizado');
-  assert.equal(guide.querySelectorAll('.adm-learning-goals li').length,3,'M'+m.number+': objetivos');
-  assert.equal(guide.querySelectorAll('.adm-learning-check li').length,2,'M'+m.number+': autoavaliação');
-  assert.equal(doc.querySelectorAll('.adm-reading-focus li').length,3,'M'+m.number+': leitura orientada');
-  assert.ok(doc.querySelector('.adm-learning-tip')?.textContent.includes(m.studyTip));
-  assert.ok(doc.querySelector('.adm-learning-warning')?.textContent.includes(m.examPitfall));
+  const orient=doc.querySelector('.bc-orient');
+  assert.ok(orient,'M'+m.number+': orientação curta renderizada');
+  assert.equal(orient.dataset.bcOrient,'adm:'+m.number);
+  assert.equal(orient.querySelectorAll('p').length,3,'M'+m.number+': foco, atenção e como estudar');
+  assert.equal(doc.querySelectorAll('.adm-learning-guide,.adm-learning-panel,.adm-reading-focus,details').length,0,'M'+m.number+': sem painéis nem blocos expansíveis');
   assert.equal(doc.querySelectorAll('.adm-cf-card').length,2,'M'+m.number+': dois materiais preservados');
   assert.match(html,/Estudar conteúdo/);
   assert.match(html,/Resolver 10 questões/);
@@ -66,15 +66,10 @@ test('módulos ADM apresentam guia antes de materiais, sem alterar funcionalidad
  dom.window.close();
 });
 
-test('guia responsivo respeita largura interna e blocos expansíveis',()=>{
- const css=read('ui/adm-native-layer.css');
+test('orientação ADM usa o bloco único e preserva progresso e anotações',()=>{
  const ui=read('ui/adm-native-layer.js');
- assert.match(css,/container:adm-reading\/inline-size/);
- assert.match(css,/@container adm-reading \(min-width:610px\)/);
- assert.match(css,/\.adm-learning-goals,[\s\S]*?\.adm-learning-check\{grid-column:1\/-1\}/);
- assert.ok(!css.includes('.adm-cf-oriented details{margin:10px 0 0 54px}'),'Evitar alinhamento antigo dentro do guia');
- assert.match(ui,/<details class="adm-learning-panel adm-learning-check"/);
- assert.match(ui,/<details class="adm-reading-focus"/);
+ assert.match(ui,/BCOrientation\.html\('adm:'/);
+ assert.ok(!ui.includes('adm-learning-panel'),'painéis antigos removidos');
  assert.match(ui,/function progress\(uid,kind\)/);
  assert.match(ui,/central-v6:adm-native:/);
 });
@@ -84,12 +79,12 @@ test('índice, interface, estilos e cache offline são carregados com a versão 
  const shell=read('central-v119.html');
  const manifest=JSON.parse(read('central-offline-files-v66172.json')).files;
  for(const name of ['content/adm/adm-native-index.js','ui/adm-native-layer.js']){
-  const version=name==='ui/adm-native-layer.js'?'20261113sessao1':'20261102admguide1';
+  const version=name==='ui/adm-native-layer.js'?'20261113orient1':'20261102admguide1';
   assert.ok(loader.includes(name+'?v='+version),name+' no carregador');
   assert.ok(manifest.includes('/'+name+'?v='+version),name+' no cache');
  }
  for(const name of ['central-lazy-theory-v66119.js','ui/adm-native-layer.css']){
-  const version=name==='central-lazy-theory-v66119.js'?'20261108adm1':'20261102admguide1';
+  const version=name==='central-lazy-theory-v66119.js'?'20261113orient1':'20261102admguide1';
   assert.ok(shell.includes(name+'?v='+version),name+' no bootstrap');
   assert.ok(manifest.includes('/'+name+'?v='+version),name+' no cache');
  }

@@ -329,10 +329,7 @@
       '<small>Acompanhe a teoria e a revisão. Questões ainda em construção.</small></div>'+
       '<strong class="bc-info-reading-value">0%</strong></div>'+
       '<div class="pt-cf-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura"><span style="width:0%"></span></div></section>';
-    const oriented='<section class="pt-cf-oriented" aria-label="Orientação do módulo">'+
-      '<div class="pt-cf-oriented-top"><span class="pt-cf-oriented-symbol" aria-hidden="true">▤</span>'+
-      '<div><b>Leitura orientada</b><small>Estude a teoria, faça a revisão ativa e pratique quando as questões forem publicadas.</small></div></div>'+
-      '<details><summary>Ver assuntos deste módulo</summary><ul>'+outline+'</ul></details></section>';
+    const oriented=global.BCOrientation?global.BCOrientation.html('info:'+Number(String(m.id).replace(/\D/g,''))):'';
     const materials='<section class="pt-cf-cards bc-info-materials" aria-label="Materiais e links do módulo">'+
       materialCard(m,'review','↺','Versão de revisão','Síntese, conceitos para memorizar e recuperação ativa.',['Resumo','Revisão disponível'],'review','Revisar conteúdo')+
       materialCard(m,'primary','≡','Teoria completa','Leitura por capítulos com exemplos e acompanhamento.',['Apostila','Teoria disponível'],'complete','Estudar conteúdo')+
