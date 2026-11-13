@@ -36,17 +36,36 @@ test('a conferência barra questões mal formadas', () => {
   assert.match(erros, /não pode ter banca/);
 });
 
-test('carregador: devolve as questões do módulo e [] quando não há arquivo', async () => {
-  const w = { document: undefined };
-  const ctx = { window: w };
+test('carregador: enunciados e correção vêm do servidor; sem gabarito no cliente', async () => {
+  const w = {};
+  const ctx = { window: w, URL };
   vm.createContext(ctx);
   vm.runInContext(fs.readFileSync(path.join(root, 'content/questoes/index.js'), 'utf8'), ctx);
   vm.runInContext(fs.readFileSync(path.join(root, 'content/questoes/adm/m03.js'), 'utf8'), ctx);
+  const { installFakeQuestoesApi } = await import('./helpers/fake-questoes-api.mjs');
+  const api = installFakeQuestoesApi(w, { plan: 'free', limit: 2 });
+  ctx.fetch = w.fetch;
   vm.runInContext(fs.readFileSync(path.join(root, 'ui/questoes-bank-v1.js'), 'utf8'), ctx);
   const B = w.BCQuestoes;
   assert.equal(B.has('adm', 3), true);
   assert.equal(B.has('adm', 21), false);
   assert.equal(B.modulos('rlm').length, 15);
+  const itens = await B.get('adm', 3);
+  assert.equal(itens.length, 10);
+  assert.ok(!JSON.stringify(itens).match(/"answer"|"explanation"|"lawRef"/), 'sem gabarito antes de responder');
+  assert.equal(B.usage().remaining, 2);
   assert.equal((await B.get('adm', 3)).length, 10);
+  assert.equal(api.chamadas.modulo, 1, 'segunda abertura usa o cache do enunciado');
   assert.equal((await B.get('adm', 21)).length, 0);
+  const ok = await B.answer('adm', 3, itens[0].id, 0);
+  assert.equal(ok.ok, true);
+  assert.equal(typeof ok.correct, 'boolean');
+  assert.ok(ok.explanation.length > 50);
+  assert.equal(B.usage().used, 1);
+  await B.answer('adm', 3, itens[1].id, 0);
+  const negada = await B.answer('adm', 3, itens[2].id, 0);
+  assert.equal(negada.ok, false);
+  assert.equal(negada.status, 429);
+  assert.equal(B.usage().remaining, 0);
+  assert.ok(!('answer' in negada) && !('explanation' in negada));
 });

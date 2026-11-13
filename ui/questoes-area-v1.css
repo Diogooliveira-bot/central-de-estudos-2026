@@ -121,3 +121,15 @@ html #subjects .subject[data-id="rlm"] .bc-rlm-study-card>small{grid-area:de;ali
 html #subjects .subject[data-id="rlm"] .bc-rlm-study-card .cf-study-actions{grid-area:ac;margin:0!important;display:flex;flex-direction:column}
 html #subjects .subject[data-id="rlm"] .bc-rlm-study-card button.bc-rlm-study-open.cf-study-open{display:flex!important;width:100%!important;min-height:48px;justify-content:center;align-items:center;padding:10px 14px;border:1px solid #0876d2!important;border-radius:12px!important;background:linear-gradient(180deg,#168be8,#0867c3)!important;color:#fff!important;box-shadow:0 5px 12px rgba(10,102,191,.15);font:700 14px/1.35 inherit;text-align:center}
 @media(max-width:700px){html #subjects .subject[data-id="rlm"] .bc-rlm-course .bc-rlm-study-card.cf-study-card{grid-template-columns:58px minmax(0,1fr);grid-template-areas:"ic ti" "ic de" "ac ac";gap:6px 12px;padding:14px!important}html #subjects .subject[data-id="rlm"] .bc-rlm-study-card .cf-study-icon{width:50px;height:50px;border-radius:15px;font-size:27px!important}html #subjects .subject[data-id="rlm"] .bc-rlm-study-pdf .cf-study-icon{font-size:14px!important}html #subjects .subject[data-id="rlm"] .bc-rlm-study-card>b{font-size:17px!important}}
+
+/* ===== Limite diário do plano Gratuito ===== */
+.bcqa-uso{margin:12px 0;padding:11px 14px;border:1px solid #c5dceb;border-radius:12px;background:#eef7fd;color:#24384b;font-size:13px;line-height:1.5}
+.bcqa-uso b{color:#142234}
+.bcqa-uso-fim{border-color:#f0dfb8;background:#fffaf0;color:#5c4a1e}
+.bcqa-link{color:#0b57a8;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.bcqa-dica-limite{color:#8a5a00;font-weight:600}
+.bcqa-erro{display:block;margin-top:8px;color:#a3402a;font-size:13px;font-weight:600}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcqa-uso{background:var(--panel2,#0c1828);border-color:var(--line,#26364f);color:var(--text,#edf5ff)}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcqa-uso b{color:var(--text,#edf5ff)}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcqa-uso-fim{background:#2a2412;border-color:#5a4a1a;color:#f1deae}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcqa-link{color:#8cc4ff}

@@ -24,6 +24,7 @@ import handleAdminPublicSignups from '../lib/admin-public-signups-handler.js';
 import {signupCaptchaConfigured} from '../lib/free-signup-security.js';
 import handlePasswordReset from '../lib/password-reset.js';
 import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
+import handleQuestoes from '../lib/questoes-handler.js';
 import handlePlans from '../lib/plans-handler.js';
 import handlePrivateContent from '../lib/private-content-handler.js';
 import handleHotmartWebhook from '../lib/hotmart-webhook.js';
@@ -225,6 +226,7 @@ export default async function handler(req, res) {
     if (premiumApi === 'plans') return await handlePlans(req, res);
     if (premiumApi === 'private-content') return await handlePrivateContent(req, res);
     if (premiumApi === 'lei-em-dia-questions') return await handleLeiEmDiaQuestions(req, res);
+    if (premiumApi === 'questoes') return await handleQuestoes(req, res);
 
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });

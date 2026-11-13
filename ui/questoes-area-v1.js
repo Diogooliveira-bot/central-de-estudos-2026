@@ -6,7 +6,9 @@
  *   - cada alternativa pode ser riscada (descarte);
  *   - toda vez que o módulo é aberto, as respostas começam zeradas;
  *   - um mini histórico por questão mostra se o aluno acertou ou errou da última vez.
- * As questões vêm do banco (ui/questoes-bank-v1.js). Tudo fica dentro de [data-bc-questoes-area]. */
+ * As questões e a correção vêm do servidor (ui/questoes-bank-v1.js → /api/questoes). O plano Gratuito responde
+ * até N questões distintas por dia (N vem do servidor, hoje 5); o gabarito só aparece depois de "Responder".
+ * Tudo fica dentro de [data-bc-questoes-area]. */
 (function (g) {
   'use strict';
   if (g.BCQuestoesArea) return;
@@ -90,6 +92,11 @@
     const corpo = pintar('Questões', 'Escolha a disciplina', '<p class="bcqa-intro">Questões inéditas por módulo, com correção na hora e comentário. Ao abrir um módulo, as respostas começam zeradas; o histórico mostra se você acertou ou errou da última vez.</p><div class="bcqa-grid">' + (cards || '<p class="bcqa-empty">As questões ainda estão carregando. Tente de novo em instantes.</p>') + '</div>', false);
     corpo.querySelectorAll('[data-disc]').forEach(b => b.addEventListener('click', () => abrirDisciplina(b.dataset.disc)));
     corpo.querySelector('[data-disc]')?.focus();
+    // Faixa do limite diário (só aparece para o plano Gratuito).
+    if (B && B.carregarUso) B.carregarUso().then(() => {
+      if (!view || view.tipo !== 'hub' || !corpo.isConnected) return;
+      const h = usoHtml(); if (h && !corpo.querySelector('[data-uso]')) corpo.insertAdjacentHTML('afterbegin', h);
+    });
     return false;
   }
   function abrirDisciplina(disc) {
@@ -114,16 +121,30 @@
     pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<p class="bcqa-empty">Carregando as questões…</p>', true);
     const items = await B.get(disc, n);
     if (!view || view.tipo !== 'quiz' || view.disc !== disc || view.n !== n) return false; // aluno já saiu
-    if (!items.length) { pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<p class="bcqa-empty">As questões deste módulo ainda não estão disponíveis.</p>', true); return false; }
+    if (!items.length) { pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<p class="bcqa-empty">' + esc(B.erro ? B.erro().mensagem : 'As questões deste módulo ainda não estão disponíveis.') + '</p>', true); return false; }
     // Sempre começa do zero: a sessão não vem de aberturas anteriores.
-    sess = { disc, n, titulo, items, mode: modoSalvo(), i: 0, sel: {}, ans: {}, strike: {}, previa: lerHist().h };
+    sess = { disc, n, titulo, items, mode: modoSalvo(), i: 0, sel: {}, ans: {}, res: {}, strike: {}, erro: {}, busy: {}, previa: lerHist().h };
     desenhar();
     return false;
   }
-  const respondida = q => Number.isInteger(sess.ans[q.id]);
+  const respondida = q => !!sess.res[q.id];
   function contagem() {
-    let r = 0, a = 0; sess.items.forEach(q => { if (respondida(q)) { r++; if (sess.ans[q.id] === q.answer) a++; } });
+    let r = 0, a = 0; sess.items.forEach(q => { if (respondida(q)) { r++; if (sess.res[q.id].correct) a++; } });
     return { r, a, total: sess.items.length };
+  }
+  // ---- limite diário do plano Gratuito (a regra e o valor vêm do servidor) ----
+  const uso = () => (bank() && bank().usage ? bank().usage() : null);
+  const limitado = () => { const u = uso(); return !!(u && u.plan === 'free' && u.limit != null); };
+  const jaContou = q => { const u = uso(); return !!(u && (u.answeredToday || []).includes(q.id)); };
+  // Sem cota: o Gratuito já usou tudo e esta questão ainda não foi respondida hoje.
+  const semCota = q => { const u = uso(); return limitado() && u.remaining === 0 && !jaContou(q) && !respondida(q); };
+  function usoHtml() {
+    const u = uso();
+    if (!u || u.plan === 'premium' || u.plan === 'staff') return '';
+    if (!limitado()) return '';
+    const pl = '<a class="bcqa-link" href="https://basecompleta.com.br/#planos" target="_blank" rel="noopener">Conheça o Premium</a>';
+    if (u.remaining === 0) return '<div class="bcqa-uso bcqa-uso-fim" role="status" data-uso><b>Você usou as ' + u.limit + ' questões gratuitas de hoje.</b> A cota volta à meia-noite (horário de Brasília). Você ainda pode rever as que já respondeu hoje. No Premium não há limite diário · ' + pl + '</div>';
+    return '<div class="bcqa-uso" role="status" data-uso><b>Plano gratuito:</b> ' + u.used + ' de ' + u.limit + ' questões respondidas hoje · restam ' + u.remaining + '. Cada questão nova gasta 1; repetir uma já respondida hoje não gasta.</div>';
   }
   function histHtml(q) {
     const h = sess.previa[q.id];
@@ -132,15 +153,18 @@
     return '<span class="bcqa-hist ' + (h.u === 'c' ? 'bcqa-hist-ok' : 'bcqa-hist-erro') + '">' + (h.u === 'c' ? '✓ Acertou da última vez' : '✕ Errou da última vez') + (cont ? ' · ' + cont : '') + '</span>';
   }
   function cardQuestao(q, i) {
-    const feita = respondida(q), escolha = feita ? sess.ans[q.id] : sess.sel[q.id], riscadas = sess.strike[q.id] || {};
+    const feita = respondida(q), r = feita ? sess.res[q.id] : null, escolha = feita ? sess.ans[q.id] : sess.sel[q.id], riscadas = sess.strike[q.id] || {}, bloqueada = semCota(q), ocupada = !!sess.busy[q.id];
     const ops = q.options.map((o, j) => {
-      const st = feita ? (j === q.answer ? ' correct' : j === escolha ? ' wrong' : '') : (j === escolha ? ' selected' : '');
+      const st = feita ? (j === r.answer ? ' correct' : j === escolha ? ' wrong' : '') : (j === escolha ? ' selected' : '');
       const risc = riscadas[j] ? ' struck' : '';
       return '<div class="bcqa-optrow"><button type="button" class="bcqa-option' + st + risc + '" data-op="' + j + '" ' + (feita ? 'disabled' : '') + ' role="radio" aria-checked="' + (j === escolha) + '"><b>' + LETRAS[j] + '</b><span>' + esc(o) + '</span></button>' +
         (feita ? '' : '<button type="button" class="bcqa-strike' + (riscadas[j] ? ' on' : '') + '" data-strike="' + j + '" aria-pressed="' + !!riscadas[j] + '" aria-label="' + (riscadas[j] ? 'Desfazer risco da' : 'Riscar a') + ' alternativa ' + LETRAS[j] + '" title="Riscar alternativa">' + (riscadas[j] ? 'Desfazer' : 'Riscar') + '</button>') + '</div>';
     }).join('');
-    const acao = feita ? '' : '<div class="bcqa-actions"><button type="button" class="bcqa-btn bcqa-primary" data-responder ' + (Number.isInteger(escolha) ? '' : 'disabled') + '>Responder</button>' + (Number.isInteger(escolha) ? '' : '<small class="bcqa-dica">Selecione uma alternativa para responder.</small>') + '</div>';
-    const fb = feita ? '<div class="bcqa-feedback" role="status"><strong>' + (escolha === q.answer ? '✓ Resposta correta' : '✕ Resposta incorreta · gabarito ' + LETRAS[q.answer]) + '</strong>' + esc(q.explanation) + (q.lawRef ? '<span class="bcqa-base">Base: ' + esc(q.lawRef) + '</span>' : '') + '</div>' : '';
+    const dica = bloqueada ? '<small class="bcqa-dica bcqa-dica-limite">Limite diário atingido: volte amanhã para responder esta questão.</small>'
+      : (Number.isInteger(escolha) ? '' : '<small class="bcqa-dica">Selecione uma alternativa para responder.</small>');
+    const erro = sess.erro[q.id] ? '<small class="bcqa-erro" role="alert">' + esc(sess.erro[q.id]) + '</small>' : '';
+    const acao = feita ? '' : '<div class="bcqa-actions"><button type="button" class="bcqa-btn bcqa-primary" data-responder ' + (Number.isInteger(escolha) && !bloqueada && !ocupada ? '' : 'disabled') + '>' + (ocupada ? 'Corrigindo…' : 'Responder') + '</button>' + dica + erro + '</div>';
+    const fb = feita ? '<div class="bcqa-feedback" role="status"><strong>' + (r.correct ? '✓ Resposta correta' : '✕ Resposta incorreta · gabarito ' + LETRAS[r.answer]) + '</strong>' + esc(r.explanation) + (r.lawRef ? '<span class="bcqa-base">Base: ' + esc(r.lawRef) + '</span>' : '') + '</div>' : '';
     return '<section class="bcqa-q" data-i="' + i + '"><p class="bcqa-meta">QUESTÃO ' + nn(i + 1) + ' DE ' + sess.items.length + '</p>' + histHtml(q) + '<h3>' + esc(q.q) + '</h3><div class="bcqa-options" role="radiogroup" aria-label="Alternativas">' + ops + '</div>' + acao + fb + '</section>';
   }
   function resultadoHtml(c) {
@@ -156,9 +180,9 @@
     let lista;
     if (sess.mode === 'foco') {
       const q = sess.items[sess.i], ultima = sess.i === sess.items.length - 1;
-      lista = cardQuestao(q, sess.i) + '<div class="bcqa-nav"><button type="button" class="bcqa-btn" data-ant ' + (sess.i === 0 ? 'disabled' : '') + '>‹ Anterior</button><button type="button" class="bcqa-btn bcqa-primary" data-prox ' + (respondida(q) ? '' : 'disabled') + '>' + (ultima ? 'Ver resultado' : 'Avançar ›') + '</button></div>' + '';
+      lista = cardQuestao(q, sess.i) + '<div class="bcqa-nav"><button type="button" class="bcqa-btn" data-ant ' + (sess.i === 0 ? 'disabled' : '') + '>‹ Anterior</button><button type="button" class="bcqa-btn bcqa-primary" data-prox ' + (respondida(q) || semCota(q) ? '' : 'disabled') + '>' + (ultima ? 'Ver resultado' : 'Avançar ›') + '</button></div>' + '';
     } else lista = sess.items.map((q, i) => cardQuestao(q, i)).join('');
-    const corpo = pintar(sess.titulo, B.nomes[sess.disc] + ' · módulo ' + nn(sess.n), barraModo + stats + resultadoHtml(c) + botoes + lista, true);
+    const corpo = pintar(sess.titulo, B.nomes[sess.disc] + ' · módulo ' + nn(sess.n), barraModo + stats + usoHtml() + resultadoHtml(c) + botoes + lista, true);
     ligar(corpo);
     return corpo;
   }
@@ -181,9 +205,15 @@
         if (r[j]) delete r[j]; else { r[j] = true; if (sess.sel[q.id] === j) sess.sel[q.id] = undefined; }
         redesenhar();
       }));
-      sec.querySelector('[data-responder]')?.addEventListener('click', () => {
-        const j = sess.sel[q.id]; if (!Number.isInteger(j) || respondida(q)) return;
-        sess.ans[q.id] = j; registrar(q.id, j === q.answer);
+      sec.querySelector('[data-responder]')?.addEventListener('click', async () => {
+        const j = sess.sel[q.id]; if (!Number.isInteger(j) || respondida(q) || sess.busy[q.id] || semCota(q)) return;
+        const atual = sess; sess.busy[q.id] = true; delete sess.erro[q.id]; redesenhar();
+        const r = await bank().answer(atual.disc, atual.n, q.id, j);
+        if (sess !== atual) return;                       // aluno saiu ou recomeçou
+        delete sess.busy[q.id];
+        if (r && r.ok) { sess.ans[q.id] = j; sess.res[q.id] = r; registrar(q.id, r.correct === true); }
+        else if (r && r.status === 429) { sess.erro[q.id] = 'Você já usou as questões gratuitas de hoje. A cota volta à meia-noite (Brasília).'; }
+        else sess.erro[q.id] = (r && r.mensagem) || 'Não foi possível corrigir agora. Tente de novo.';
         redesenhar();
       });
     });
@@ -193,10 +223,10 @@
       else { const topo = desenhar(); topo.scrollTop = 0; }   // última: o resultado aparece no topo
     });
     corpo.querySelector('[data-erros]')?.addEventListener('click', () => {
-      sess.items.forEach(q => { if (respondida(q) && sess.ans[q.id] !== q.answer) { delete sess.ans[q.id]; delete sess.sel[q.id]; } });
+      sess.items.forEach(q => { if (respondida(q) && !sess.res[q.id].correct) { delete sess.ans[q.id]; delete sess.res[q.id]; delete sess.sel[q.id]; } });
       sess.previa = lerHist().h; sess.i = Math.max(0, sess.items.findIndex(q => !respondida(q))); desenhar();
     });
-    corpo.querySelector('[data-zerar]')?.addEventListener('click', () => { sess.sel = {}; sess.ans = {}; sess.strike = {}; sess.i = 0; sess.previa = lerHist().h; desenhar(); });
+    corpo.querySelector('[data-zerar]')?.addEventListener('click', () => { sess.sel = {}; sess.ans = {}; sess.res = {}; sess.erro = {}; sess.strike = {}; sess.i = 0; sess.previa = lerHist().h; desenhar(); });
   }
 
   // ---- entradas: atalho do topo, menu lateral e menu "Mais" no celular ----
