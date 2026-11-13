@@ -44,14 +44,22 @@ async function novaPagina(width = 1200) {
   await page.waitForSelector('.bcqa-q');
   if (await page.locator('.bcqa-q').count() !== 10) failures.push('quiz: esperava 10 questões');
   if (await page.locator('.bcqa-q').first().locator('.bcqa-option').count() !== 5) failures.push('quiz: esperava 5 alternativas');
-  // responde a 1ª errando de propósito e a 2ª acertando
+  // seleciona e só então responde: a 1ª errando de propósito, a 2ª acertando
   const q = await page.evaluate(async () => (await window.BCQuestoes.get('adm', 3)).slice(0, 2).map(x => x.answer));
   const errada = q[0] === 0 ? 1 : 0;
   await page.locator('.bcqa-q').nth(0).locator('[data-op="' + errada + '"]').click();
+  if (await page.locator('.bcqa-q').nth(0).locator('.bcqa-feedback').count()) failures.push('selecionar não pode responder');
+  await page.locator('.bcqa-q').nth(0).locator('[data-strike="' + ((errada + 1) % 5) + '"]').click();
+  await page.locator('.bcqa-q').nth(0).locator('[data-responder]').click();
   await page.locator('.bcqa-q').nth(1).locator('[data-op="' + q[1] + '"]').click();
+  await page.locator('.bcqa-q').nth(1).locator('[data-responder]').click();
   const stats = await page.locator('[data-stats]').textContent();
   if (!/2\/10 respondidas · 1 acertos/.test(stats)) failures.push('placar: ' + stats);
   if (!(await page.locator('.bcqa-feedback').first().textContent()).includes('Resposta incorreta')) failures.push('feedback da errada');
+  // modo Foco: uma por vez
+  await page.locator('[data-modo="foco"]').click();
+  if (await page.locator('.bcqa-q').count() !== 1) failures.push('modo Foco deve mostrar uma questão');
+  await page.locator('[data-modo="rolagem"]').click();
   // refazer só os erros libera a 1ª
   await page.locator('[data-erros]').click();
   if (await page.locator('.bcqa-q').nth(0).locator('[data-op]:not([disabled])').count() !== 5) failures.push('refazer erros não liberou a questão');
@@ -75,7 +83,7 @@ for (const [id, idx, n] of casos) {
     await openModule(page, id, idx, '.cf-module-head');
     const card = page.locator('.subject[data-id="' + id + '"] [data-bcqa-module-card="' + id + ':' + n + '"]').first();
     await card.waitFor({ state: 'attached', timeout: 15000 });
-    await card.locator('[data-bcqa-abrir]').evaluate(e => e.click());
+    await card.locator('.bcqa-abrir').evaluate(e => e.click());
     await page.waitForSelector('.bcqa-q', { timeout: 15000 });
     const total = await page.locator('.bcqa-q').count();
     const sub = await page.locator('[data-bcqa-sub]').textContent();
@@ -84,16 +92,43 @@ for (const [id, idx, n] of casos) {
   } catch (e) { failures.push(id + ' M' + n + ': ' + String(e.message).split('\n')[0].slice(0, 160)); }
   await page.context().close();
 }
-// 3) As questões antigas continuam fora e o Lei em Dia/QC/TEC continuam
-{
+// 3) Questões antigas fora; Lei em Dia e Questões no mesmo padrão de cartão; rodapé retirado
+for (const [id, idx] of [['cpc', 4], ['cf', 4], ['cpp', 4], ['adm', 4], ['civil', 6], ['penal', 2], ['pt', 4], ['rlm', 2]]) {
   const page = await novaPagina();
   await page.evaluate(() => window.openDisciplines());
-  await page.locator('#disciplineGrid [data-study-open-subject="adm"]').first().click();
-  await page.waitForFunction(() => window.CentralDisciplineLoader.isReady('adm'), null, { timeout: 30000 });
-  await openModule(page, 'adm', 4, '.cf-module-head');
-  const txt = await page.evaluate(() => document.body.innerText);
-  if (/Resolver 5 questões|Resolver 10 questões\b(?! autorais)/.test(txt)) failures.push('ainda aparecem botões das questões antigas');
-  if (!/Lei em Dia/i.test(txt)) failures.push('Lei em Dia sumiu do módulo');
+  await page.locator('#disciplineGrid [data-study-open-subject="' + id + '"]').first().click();
+  await page.waitForFunction(id => window.CentralDisciplineLoader.isReady(id), id, { timeout: 30000 });
+  await openModule(page, id, idx, '.cf-module-head');
+  await page.waitForTimeout(2200);
+  const r = await page.evaluate(id => {
+    const root = document.querySelector('.subject[data-id="' + id + '"]');
+    const vis = el => { const b = el.getBoundingClientRect(); const cs = getComputedStyle(el); return b.width > 0 && b.height > 0 && cs.visibility !== 'hidden'; };
+    const visiveis = sel => [...root.querySelectorAll(sel)].filter(vis);
+    const texto = [...root.querySelectorAll('*')].filter(e => vis(e) && !e.children.length).map(e => e.textContent.trim()).join('\n');
+    return {
+      lei: visiveis('.bcmc-law').length, questoes: visiveis('.bcmc-questions').length,
+      marcarNaLei: visiveis('.bcmc-law button').filter(b => /marcar conclu/i.test(b.textContent)).length + visiveis('.cpc-mini-panel').filter(p => /lei em dia/i.test(p.textContent) && /marcar conclu[íi]do/i.test(p.textContent)).length,
+      ferramentas: /ferramentas do m[óo]dulo/i.test(texto), rodadas: /quest[õo]es feitas por rodadas/i.test(texto),
+      antigas: /Resolver 5 quest[õo]es|Resolver 10 quest[õo]es(?! autorais)/.test(texto),
+      // Ordem: revisão → teoria completa → Lei em Dia → Questões → filtros QC/TEC → anotações → agendar revisão
+      ordem: (() => {
+        const mod = root.querySelector('.bc-focus-current-module') || root;
+        const marcas = [/^(⚡|↺)?\s*Versão de revisão$/, /^(📚|📖)?\s*Teoria completa$/, /^(⚖️)?\s*Lei em Dia$/, /^(✍️)?\s*Questões do módulo$/, /^Links do QConcursos e do TEC$|^QQConcursos/, /^Anotações( do módulo)?$|^ANOTAÇÕES DO MÓDULO$/i, /^Agendar revisão$/];
+        const els = [...mod.querySelectorAll('*')].filter(e => vis(e) && !e.closest('.bc-law-relocated,.bc-footer-removed') && (e.children.length === 0 || /^(B|H3|H4|STRONG|LABEL|SPAN)$/.test(e.tagName)));
+        const tops = marcas.map(re => { const e = els.find(x => re.test(x.textContent.trim().replace(/\s+/g, ' '))); return e ? e.getBoundingClientRect().top + scrollY : null; });
+        const achados = tops.filter(t => t != null);
+        return { tops, ok: achados.every((t, i) => i === 0 || t >= achados[i - 1]), questoes: tops[3] != null, filtros: tops[4] != null };
+      })()
+    };
+  }, id);
+  if (id !== 'pt' && id !== 'rlm' && r.lei < 1) failures.push(id + ': cartão de Lei em Dia no padrão novo não apareceu');
+  if (r.questoes < 1) failures.push(id + ': cartão de Questões não apareceu');
+  if (r.marcarNaLei) failures.push(id + ': Lei em Dia ainda tem "Marcar concluído"');
+  if (r.ferramentas) failures.push(id + ': "Ferramentas do módulo" ainda aparece');
+  if (r.rodadas) failures.push(id + ': "Questões feitas por rodadas" ainda aparece');
+  if (!r.ordem.ok) failures.push(id + ': ordem dos blocos fora do padrão ' + JSON.stringify(r.ordem.tops));
+  if (r.ordem.questoes && r.ordem.filtros && r.ordem.tops[3] > r.ordem.tops[4]) failures.push(id + ': filtros QC/TEC antes de Questões');
+  if (r.antigas) failures.push(id + ': ainda aparecem botões das questões antigas');
   await page.context().close();
 }
 if (errors.length) failures.push('erros de página: ' + JSON.stringify([...new Set(errors)].slice(0, 3)));

@@ -1,12 +1,17 @@
 /* Base Completa — área "Questões".
- * Disciplinas → módulos → as questões do módulo, com correção imediata, comentário e progresso.
- * As questões vêm do banco (ui/questoes-bank-v1.js). Os módulos também abrem a mesma tela já
- * no módulo certo (ui/questoes-modulo-card-v1.js), no padrão da Lei em Dia.
- * Tudo que esta área desenha fica dentro de [data-bc-questoes-area]. */
+ * Disciplinas → módulos → questões do módulo.
+ * Como resolver:
+ *   - modo Rolagem (todas na tela) ou Foco (uma por vez, com "Avançar");
+ *   - o aluno SELECIONA a alternativa e depois toca em "Responder";
+ *   - cada alternativa pode ser riscada (descarte);
+ *   - toda vez que o módulo é aberto, as respostas começam zeradas;
+ *   - um mini histórico por questão mostra se o aluno acertou ou errou da última vez.
+ * As questões vêm do banco (ui/questoes-bank-v1.js). Tudo fica dentro de [data-bc-questoes-area]. */
 (function (g) {
   'use strict';
   if (g.BCQuestoesArea) return;
-  const STORE = 'central-v6:questoes:v1';
+  const STORE = 'central-v6:questoes:v2';   // histórico por questão (não guarda a sessão)
+  const MODE_KEY = 'central-v6:questoes:modo';
   const LETRAS = 'ABCDE';
   const ORDEM = ['adm', 'cf', 'civil', 'cpc', 'cpp', 'penal', 'pt', 'rlm'];
   const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -14,36 +19,29 @@
   const bank = () => g.BCQuestoes;
   const titulos = () => g.BC_QUESTOES_TITULOS || {};
   const qtdDe = (disc, n) => ((g.BC_QUESTOES_QTD || {})[disc] || {})[n] || 10;
-  let overlay = null, lastFocus = null, view = null, fromModule = false;
+  let overlay = null, lastFocus = null, view = null, fromModule = false, sess = null;
 
-  // ---- progresso (somente neste aparelho; não apaga nada dos outros registros do aluno) ----
-  function lerTudo() { try { const x = JSON.parse(localStorage.getItem(STORE) || '{}'); return x && typeof x === 'object' && x.r && typeof x.r === 'object' ? x : { r: {} }; } catch (_) { return { r: {} }; } }
-  function gravarTudo(x) { try { localStorage.setItem(STORE, JSON.stringify(x)); } catch (_) { /* sem armazenamento: segue sem salvar */ } }
-  function respostas(disc, n) { return lerTudo().r[disc + ':' + n] || {}; }
-  function gravarResposta(disc, n, id, escolha) { const t = lerTudo(), k = disc + ':' + n; (t.r[k] = t.r[k] || {})[id] = escolha; gravarTudo(t); }
-  function limpar(disc, n, soErros, items) {
-    const t = lerTudo(), k = disc + ':' + n, r = t.r[k] || {};
-    items.forEach(q => { if (!soErros || (Number.isInteger(r[q.id]) && r[q.id] !== q.answer)) delete r[q.id]; });
-    t.r[k] = r; gravarTudo(t);
+  // ---- histórico (somente neste aparelho): id → { u: 'c'|'e' (última vez), c: acertos, e: erros } ----
+  function lerHist() { try { const x = JSON.parse(localStorage.getItem(STORE) || '{}'); return x && typeof x === 'object' && x.h && typeof x.h === 'object' ? x : { h: {} }; } catch (_) { return { h: {} }; } }
+  function gravarHist(x) { try { localStorage.setItem(STORE, JSON.stringify(x)); } catch (_) { /* sem armazenamento: segue sem salvar */ } }
+  function registrar(id, acertou) {
+    const t = lerHist(), r = t.h[id] || { c: 0, e: 0 };
+    r.u = acertou ? 'c' : 'e'; if (acertou) r.c++; else r.e++;
+    t.h[id] = r; gravarHist(t);
   }
-  function contar(items, r) {
-    let respondidas = 0, acertos = 0;
-    items.forEach(q => { const c = r[q.id]; if (Number.isInteger(c) && c >= 0 && c < q.options.length) { respondidas++; if (c === q.answer) acertos++; } });
-    return { respondidas, acertos, total: items.length };
-  }
-  // Resumo por módulo/disciplina sem baixar os arquivos: usa só o que já foi respondido.
+  // Resumo por módulo a partir do histórico (sem baixar os arquivos): id "adm-m03-autoral-01" → adm:3.
   function resumoModulo(disc, n) {
-    const r = respostas(disc, n); let respondidas = 0, acertos = 0;
-    // O gabarito não está em memória até o módulo abrir; guardamos o placar no registro.
-    const t = lerTudo().p && lerTudo().p[disc + ':' + n];
-    if (t) { respondidas = t.r; acertos = t.a; } else respondidas = Object.keys(r).length;
+    const t = lerHist(), pref = disc + '-m' + nn(n) + '-';
+    let respondidas = 0, acertos = 0;
+    Object.keys(t.h).forEach(id => { if (id.startsWith(pref)) { respondidas++; if (t.h[id].u === 'c') acertos++; } });
     return { respondidas, acertos };
   }
-  function salvarPlacar(disc, n, c) { const t = lerTudo(); t.p = t.p || {}; t.p[disc + ':' + n] = { r: c.respondidas, a: c.acertos }; gravarTudo(t); }
+  function modoSalvo() { try { return localStorage.getItem(MODE_KEY) === 'foco' ? 'foco' : 'rolagem'; } catch (_) { return 'rolagem'; } }
+  function salvarModo(m) { try { localStorage.setItem(MODE_KEY, m); } catch (_) { /* ignora */ } }
 
-  // ---- estrutura da janela ----
+  // ---- janela ----
   function fechar() {
-    if (overlay) overlay.remove(); overlay = null; view = null;
+    if (overlay) overlay.remove(); overlay = null; view = null; sess = null;
     document.body.classList.remove('bcqa-open');
     document.removeEventListener('keydown', teclas);
     if (lastFocus && lastFocus.isConnected) try { lastFocus.focus(); } catch (_) { /* ignora */ }
@@ -79,76 +77,129 @@
     return abrirHub();
   }
 
-  // ---- telas ----
+  // ---- hub e lista de módulos ----
   function barra(pct) { return '<div class="bcqa-bar" aria-hidden="true"><i style="width:' + pct + '%"></i></div>'; }
   function abrirHub() {
-    const B = bank(); fromModule = false; view = { tipo: 'hub' };
+    const B = bank(); fromModule = false; view = { tipo: 'hub' }; sess = null;
     const cards = ORDEM.filter(d => B && B.modulos(d).length).map(d => {
       const mods = B.modulos(d); let resp = 0;
       mods.forEach(n => { resp += resumoModulo(d, n).respondidas; });
       const total = mods.reduce((a, n) => a + qtdDe(d, n), 0), pct = total ? Math.round(resp / total * 100) : 0;
-      return '<button type="button" class="bcqa-card" data-disc="' + d + '"><b>' + esc(B.nomes[d]) + '</b><small>' + mods.length + ' módulos · ' + total + ' questões</small>' + barra(pct) + '<small>' + resp + ' respondidas</small></button>';
+      return '<button type="button" class="bcqa-card" data-disc="' + d + '"><b>' + esc(B.nomes[d]) + '</b><small>' + mods.length + ' módulos · ' + total + ' questões</small>' + barra(pct) + '<small>' + resp + ' já respondidas</small></button>';
     }).join('');
-    const corpo = pintar('Questões', 'Escolha a disciplina', '<p class="bcqa-intro">Questões inéditas por módulo, com correção na hora e comentário. Seu progresso fica salvo neste aparelho.</p><div class="bcqa-grid">' + (cards || '<p class="bcqa-empty">As questões ainda estão carregando. Tente de novo em instantes.</p>') + '</div>', false);
+    const corpo = pintar('Questões', 'Escolha a disciplina', '<p class="bcqa-intro">Questões inéditas por módulo, com correção na hora e comentário. Ao abrir um módulo, as respostas começam zeradas; o histórico mostra se você acertou ou errou da última vez.</p><div class="bcqa-grid">' + (cards || '<p class="bcqa-empty">As questões ainda estão carregando. Tente de novo em instantes.</p>') + '</div>', false);
     corpo.querySelectorAll('[data-disc]').forEach(b => b.addEventListener('click', () => abrirDisciplina(b.dataset.disc)));
     corpo.querySelector('[data-disc]')?.focus();
     return false;
   }
   function abrirDisciplina(disc) {
-    const B = bank(); view = { tipo: 'disc', disc };
+    const B = bank(); view = { tipo: 'disc', disc }; sess = null;
     const mods = B ? B.modulos(disc) : [];
     const cards = mods.map(n => {
       const s = resumoModulo(disc, n), qt = qtdDe(disc, n), pct = Math.round(Math.min(s.respondidas, qt) / qt * 100);
       const t = (titulos()[disc] || {})[n] || ('Módulo ' + nn(n));
-      return '<button type="button" class="bcqa-card" data-mod="' + n + '"><small>MÓDULO ' + nn(n) + '</small><b>' + esc(t) + '</b>' + barra(pct) + '<small>' + s.respondidas + '/' + qt + ' respondidas' + (s.respondidas ? ' · ' + s.acertos + ' acertos' : '') + '</small></button>';
+      return '<button type="button" class="bcqa-card" data-mod="' + n + '"><small>MÓDULO ' + nn(n) + '</small><b>' + esc(t) + '</b>' + barra(pct) + '<small>' + (s.respondidas ? s.respondidas + '/' + qt + ' já respondidas · ' + s.acertos + ' certas na última vez' : qt + ' questões') + '</small></button>';
     }).join('');
     const corpo = pintar(B ? B.nomes[disc] : 'Questões', 'Escolha o módulo', '<div class="bcqa-grid">' + cards + '</div>', true);
     corpo.querySelectorAll('[data-mod]').forEach(b => b.addEventListener('click', () => abrirModulo(disc, Number(b.dataset.mod), false)));
     corpo.querySelector('[data-mod]')?.focus();
     return false;
   }
-  function cardQuestao(q, i, escolha, total) {
-    const feita = Number.isInteger(escolha) && escolha >= 0 && escolha < q.options.length;
-    const ops = q.options.map((o, j) => {
-      const st = feita ? (j === q.answer ? ' correct' : j === escolha ? ' wrong' : '') : '';
-      return '<button type="button" class="bcqa-option' + st + '" data-op="' + j + '" ' + (feita ? 'disabled' : '') + ' aria-pressed="' + (j === escolha) + '"><b>' + LETRAS[j] + '</b><span>' + esc(o) + '</span></button>';
-    }).join('');
-    const fb = feita ? '<div class="bcqa-feedback" role="status"><strong>' + (escolha === q.answer ? '✓ Resposta correta' : '✕ Resposta incorreta · gabarito ' + LETRAS[q.answer]) + '</strong>' + esc(q.explanation) + (q.lawRef ? '<span class="bcqa-base">Base: ' + esc(q.lawRef) + '</span>' : '') + '</div>' : '';
-    return '<section class="bcqa-q" data-i="' + i + '"><p class="bcqa-meta">QUESTÃO ' + nn(i + 1) + ' DE ' + total + '</p><h3>' + esc(q.q) + '</h3><div class="bcqa-options">' + ops + '</div>' + fb + '</section>';
-  }
+
+  // ---- questionário ----
   async function abrirModulo(disc, n, doModulo) {
     const B = bank(); if (!B) return false;
-    fromModule = !!doModulo; view = { tipo: 'quiz', disc, n };
+    fromModule = !!doModulo; view = { tipo: 'quiz', disc, n }; sess = null;
     const titulo = (titulos()[disc] || {})[n] || ('Módulo ' + nn(n));
     pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<p class="bcqa-empty">Carregando as questões…</p>', true);
     const items = await B.get(disc, n);
     if (!view || view.tipo !== 'quiz' || view.disc !== disc || view.n !== n) return false; // aluno já saiu
     if (!items.length) { pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<p class="bcqa-empty">As questões deste módulo ainda não estão disponíveis.</p>', true); return false; }
-    desenharQuiz(disc, n, titulo, items);
+    // Sempre começa do zero: a sessão não vem de aberturas anteriores.
+    sess = { disc, n, titulo, items, mode: modoSalvo(), i: 0, sel: {}, ans: {}, strike: {}, previa: lerHist().h };
+    desenhar();
     return false;
   }
-  function desenharQuiz(disc, n, titulo, items) {
-    const B = bank(), r = respostas(disc, n), c = contar(items, r); salvarPlacar(disc, n, c);
-    const pct = Math.round(c.respondidas / items.length * 100);
-    const final = c.respondidas === items.length
-      ? '<div class="bcqa-result" role="status"><b>Resultado: ' + c.acertos + ' de ' + items.length + ' (' + Math.round(c.acertos / items.length * 100) + '%)</b>' + (c.acertos === items.length ? 'Sem erros neste módulo.' : 'Revise os comentários das que errou e refaça só os erros.') + '</div>' : '';
-    const botoes = '<div class="bcqa-actions">' + (c.respondidas - c.acertos > 0 ? '<button type="button" class="bcqa-btn" data-erros>Refazer só os erros</button>' : '') + (c.respondidas ? '<button type="button" class="bcqa-btn" data-zerar>Refazer o módulo</button>' : '') + '</div>';
-    const corpo = pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n),
-      '<div class="bcqa-stats"><span data-stats>' + c.respondidas + '/' + items.length + ' respondidas · ' + c.acertos + ' acertos</span></div>' + barra(pct) + final + botoes +
-      items.map((q, i) => cardQuestao(q, i, r[q.id], items.length)).join(''), true);
+  const respondida = q => Number.isInteger(sess.ans[q.id]);
+  function contagem() {
+    let r = 0, a = 0; sess.items.forEach(q => { if (respondida(q)) { r++; if (sess.ans[q.id] === q.answer) a++; } });
+    return { r, a, total: sess.items.length };
+  }
+  function histHtml(q) {
+    const h = sess.previa[q.id];
+    if (!h) return '<span class="bcqa-hist bcqa-hist-novo">Ainda não respondida</span>';
+    const cont = [h.c ? h.c + (h.c === 1 ? ' acerto' : ' acertos') : '', h.e ? h.e + (h.e === 1 ? ' erro' : ' erros') : ''].filter(Boolean).join(' · ');
+    return '<span class="bcqa-hist ' + (h.u === 'c' ? 'bcqa-hist-ok' : 'bcqa-hist-erro') + '">' + (h.u === 'c' ? '✓ Acertou da última vez' : '✕ Errou da última vez') + (cont ? ' · ' + cont : '') + '</span>';
+  }
+  function cardQuestao(q, i) {
+    const feita = respondida(q), escolha = feita ? sess.ans[q.id] : sess.sel[q.id], riscadas = sess.strike[q.id] || {};
+    const ops = q.options.map((o, j) => {
+      const st = feita ? (j === q.answer ? ' correct' : j === escolha ? ' wrong' : '') : (j === escolha ? ' selected' : '');
+      const risc = riscadas[j] ? ' struck' : '';
+      return '<div class="bcqa-optrow"><button type="button" class="bcqa-option' + st + risc + '" data-op="' + j + '" ' + (feita ? 'disabled' : '') + ' role="radio" aria-checked="' + (j === escolha) + '"><b>' + LETRAS[j] + '</b><span>' + esc(o) + '</span></button>' +
+        (feita ? '' : '<button type="button" class="bcqa-strike' + (riscadas[j] ? ' on' : '') + '" data-strike="' + j + '" aria-pressed="' + !!riscadas[j] + '" aria-label="' + (riscadas[j] ? 'Desfazer risco da' : 'Riscar a') + ' alternativa ' + LETRAS[j] + '" title="Riscar alternativa">' + (riscadas[j] ? 'Desfazer' : 'Riscar') + '</button>') + '</div>';
+    }).join('');
+    const acao = feita ? '' : '<div class="bcqa-actions"><button type="button" class="bcqa-btn bcqa-primary" data-responder ' + (Number.isInteger(escolha) ? '' : 'disabled') + '>Responder</button>' + (Number.isInteger(escolha) ? '' : '<small class="bcqa-dica">Selecione uma alternativa para responder.</small>') + '</div>';
+    const fb = feita ? '<div class="bcqa-feedback" role="status"><strong>' + (escolha === q.answer ? '✓ Resposta correta' : '✕ Resposta incorreta · gabarito ' + LETRAS[q.answer]) + '</strong>' + esc(q.explanation) + (q.lawRef ? '<span class="bcqa-base">Base: ' + esc(q.lawRef) + '</span>' : '') + '</div>' : '';
+    return '<section class="bcqa-q" data-i="' + i + '"><p class="bcqa-meta">QUESTÃO ' + nn(i + 1) + ' DE ' + sess.items.length + '</p>' + histHtml(q) + '<h3>' + esc(q.q) + '</h3><div class="bcqa-options" role="radiogroup" aria-label="Alternativas">' + ops + '</div>' + acao + fb + '</section>';
+  }
+  function resultadoHtml(c) {
+    if (c.r !== c.total) return '';
+    const erros = c.r - c.a;
+    return '<div class="bcqa-result" role="status"><b>Resultado: ' + c.a + ' de ' + c.total + ' (' + Math.round(c.a / c.total * 100) + '%)</b>' + (erros ? 'Revise os comentários das que errou e refaça só os erros.' : 'Sem erros neste módulo.') + '</div>';
+  }
+  function desenhar(manterRolagem) {
+    const B = bank(), c = contagem(), pct = Math.round(c.r / c.total * 100);
+    const barraModo = '<div class="bcqa-modes" role="tablist" aria-label="Modo de resolução"><button type="button" role="tab" class="bcqa-mode' + (sess.mode === 'rolagem' ? ' on' : '') + '" aria-selected="' + (sess.mode === 'rolagem') + '" data-modo="rolagem">☰ Rolagem</button><button type="button" role="tab" class="bcqa-mode' + (sess.mode === 'foco' ? ' on' : '') + '" aria-selected="' + (sess.mode === 'foco') + '" data-modo="foco">◎ Foco</button></div>';
+    const stats = '<div class="bcqa-stats"><span data-stats>' + c.r + '/' + c.total + ' respondidas · ' + c.a + ' acertos</span></div>' + barra(pct);
+    const botoes = '<div class="bcqa-actions">' + (c.r - c.a > 0 ? '<button type="button" class="bcqa-btn" data-erros>Refazer só os erros</button>' : '') + (c.r ? '<button type="button" class="bcqa-btn" data-zerar>Recomeçar o módulo</button>' : '') + '</div>';
+    let lista;
+    if (sess.mode === 'foco') {
+      const q = sess.items[sess.i], ultima = sess.i === sess.items.length - 1;
+      lista = cardQuestao(q, sess.i) + '<div class="bcqa-nav"><button type="button" class="bcqa-btn" data-ant ' + (sess.i === 0 ? 'disabled' : '') + '>‹ Anterior</button><button type="button" class="bcqa-btn bcqa-primary" data-prox ' + (respondida(q) ? '' : 'disabled') + '>' + (ultima ? 'Ver resultado' : 'Avançar ›') + '</button></div>' + '';
+    } else lista = sess.items.map((q, i) => cardQuestao(q, i)).join('');
+    const corpo = pintar(sess.titulo, B.nomes[sess.disc] + ' · módulo ' + nn(sess.n), barraModo + stats + resultadoHtml(c) + botoes + lista, true);
+    ligar(corpo);
+    return corpo;
+  }
+  function rolar(corpo, y) { corpo.scrollTop = y; }
+  function ligar(corpo) {
+    const redesenhar = () => { const pos = overlay.querySelector('[data-bcqa-corpo]').scrollTop; rolar(desenhar(), pos); };
+    corpo.querySelectorAll('[data-modo]').forEach(b => b.addEventListener('click', () => { if (sess.mode === b.dataset.modo) return; sess.mode = b.dataset.modo; salvarModo(sess.mode); desenhar(); }));
     corpo.querySelectorAll('.bcqa-q').forEach(sec => {
-      const i = Number(sec.dataset.i), q = items[i];
+      const i = Number(sec.dataset.i), q = sess.items[i];
       sec.querySelectorAll('[data-op]').forEach(b => b.addEventListener('click', () => {
-        if (Number.isInteger(respostas(disc, n)[q.id])) return;
-        gravarResposta(disc, n, q.id, Number(b.dataset.op));
-        const rolagem = corpo.scrollTop; desenharQuiz(disc, n, titulo, items); overlay.querySelector('[data-bcqa-corpo]').scrollTop = rolagem;
+        if (respondida(q)) return;
+        const j = Number(b.dataset.op);
+        sess.sel[q.id] = sess.sel[q.id] === j ? undefined : j;
+        if (sess.sel[q.id] === j && (sess.strike[q.id] || {})[j]) delete sess.strike[q.id][j]; // escolher desfaz o risco
+        redesenhar();
       }));
+      sec.querySelectorAll('[data-strike]').forEach(b => b.addEventListener('click', () => {
+        if (respondida(q)) return;
+        const j = Number(b.dataset.strike), r = (sess.strike[q.id] = sess.strike[q.id] || {});
+        if (r[j]) delete r[j]; else { r[j] = true; if (sess.sel[q.id] === j) sess.sel[q.id] = undefined; }
+        redesenhar();
+      }));
+      sec.querySelector('[data-responder]')?.addEventListener('click', () => {
+        const j = sess.sel[q.id]; if (!Number.isInteger(j) || respondida(q)) return;
+        sess.ans[q.id] = j; registrar(q.id, j === q.answer);
+        redesenhar();
+      });
     });
-    corpo.querySelector('[data-erros]')?.addEventListener('click', () => { limpar(disc, n, true, items); desenharQuiz(disc, n, titulo, items); });
-    corpo.querySelector('[data-zerar]')?.addEventListener('click', () => { limpar(disc, n, false, items); desenharQuiz(disc, n, titulo, items); });
+    corpo.querySelector('[data-ant]')?.addEventListener('click', () => { if (sess.i > 0) { sess.i--; desenhar(); } });
+    corpo.querySelector('[data-prox]')?.addEventListener('click', () => {
+      if (sess.i < sess.items.length - 1) { sess.i++; desenhar(); }
+      else { const topo = desenhar(); topo.scrollTop = 0; }   // última: o resultado aparece no topo
+    });
+    corpo.querySelector('[data-erros]')?.addEventListener('click', () => {
+      sess.items.forEach(q => { if (respondida(q) && sess.ans[q.id] !== q.answer) { delete sess.ans[q.id]; delete sess.sel[q.id]; } });
+      sess.previa = lerHist().h; sess.i = Math.max(0, sess.items.findIndex(q => !respondida(q))); desenhar();
+    });
+    corpo.querySelector('[data-zerar]')?.addEventListener('click', () => { sess.sel = {}; sess.ans = {}; sess.strike = {}; sess.i = 0; sess.previa = lerHist().h; desenhar(); });
   }
 
-  // ---- entradas: menu lateral e menu "Mais" no celular ----
+  // ---- entradas: atalho do topo, menu lateral e menu "Mais" no celular ----
   function abrirDoMenu(botao) { lastFocus = botao || document.activeElement; abrirHub(); return false; }
   function criarEntradaMenu() {
     if (!document.body) return;

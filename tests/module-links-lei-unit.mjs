@@ -93,8 +93,8 @@ test('sem filtros publicados o espaço de links fica oculto e a Lei em Dia conti
 
 test('Central carrega o organizador com versão de cache própria', () => {
   const central = read('central-v119.html');
-  assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261106pt1/);
-  assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261106pt1/);
+  assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261112q6/);
+  assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261112q3/);
   assert.match(read('ui/external-question-filters-v1.js'), /data-bcq-module-slot/);
 });
 
@@ -105,8 +105,10 @@ test('Constitucional sem cartão próprio de Lei em Dia ganha o cartão ligado a
   const w = dom.window;
   w.CfNativeStudy = { openDecorando: n => { w.opened = n; } };
   const cards = w.document.querySelector('.cf-native-cards');
-  assert.deepEqual(order(cards), ['review', 'complete', 'lei', 'links', 'map']);
-  cards.querySelector('[data-bc-module-law] button').click();
+  // O cartão novo da Lei fica fora da grade de revisão/teoria, em largura total.
+  assert.deepEqual(order(cards), ['review', 'complete', 'map']);
+  assert.deepEqual(order(cards.parentElement).slice(0, 3), ['cf-native-cards', 'lei', 'links']);
+  w.document.querySelector('[data-bc-module-law] button').click();
   assert.equal(w.opened, 4);
   dom.window.close();
 });

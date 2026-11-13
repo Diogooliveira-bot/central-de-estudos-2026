@@ -46,3 +46,57 @@ body.bcqa-open{overflow:hidden}
 .bcqa-module-card h4{margin:2px 0 2px;font-size:15px}
 .bcqa-module-card p{margin:0;font-size:12.5px;color:var(--muted,#667e8d)}
 @media(max-width:640px){.bcqa-overlay{padding:0}.bcqa-dialog{height:100%;max-height:100dvh;border-radius:0;border:0}.bcqa-dialog>header{padding:11px 13px}.bcqa-body{padding:13px}.bcqa-q h3{font-size:15px}.bcqa-option{font-size:13.5px;padding:10px}.bcqa-module-card{flex-wrap:wrap}.bcqa-module-card .bcqa-btn{width:100%}}
+
+/* ===== Padrão único dos cartões de módulo (Lei em Dia e Questões do módulo) =====
+   Segue o cartão aprovado de "Versão de revisão" / "Teoria completa": ícone grande, título, descrição,
+   etiquetas e botão principal à direita. */
+.bcmc-card{display:grid;grid-template-columns:102px minmax(0,1fr) 210px;align-items:center;gap:18px;min-width:0;margin:0 0 12px;padding:20px 22px;border:1px solid #c5dceb;border-radius:18px;background:#eef7fd;color:#17212f;box-shadow:0 4px 12px rgba(21,45,65,.05)}
+.bcmc-law{border-color:#c9d8ee;background:#f1f6fd}
+.bcmc-questions{border-color:#dccbee;background:#f8f3fd}
+.bcmc-icon{display:grid;width:82px;height:82px;place-items:center;border-radius:22px;background:rgba(13,116,210,.09);font-size:39px}
+.bcmc-questions .bcmc-icon{background:#eadcf8}
+.bcmc-copy{min-width:0}
+.bcmc-copy h3{margin:0 0 6px;color:#142234;font-size:21px;line-height:1.25}
+.bcmc-copy p{margin:0;color:#596676;font-size:14px;line-height:1.55}
+.bcmc-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.bcmc-tags span{padding:4px 9px;border:1px solid rgba(91,112,132,.12);border-radius:999px;background:rgba(255,255,255,.65);color:#5d6a78;font-size:11px}
+.bcmc-actions{display:flex;flex-direction:column;gap:9px;width:100%}
+.bcmc-primary{display:flex;width:100%;min-height:48px;align-items:center;justify-content:center;padding:10px 14px;border:1px solid #0876d2;border-radius:12px;background:linear-gradient(180deg,#168be8,#0867c3);color:#fff;box-shadow:0 5px 12px rgba(10,102,191,.15);font:600 14px/1.35 inherit;text-align:center;cursor:pointer}
+.bcmc-primary:hover{filter:brightness(1.06)}
+.bcmc-primary:focus-visible{outline:2px solid #0b57a8;outline-offset:2px}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcmc-card{background:var(--panel2,#0c1828);border-color:var(--line,#26364f);color:var(--text,#edf5ff)}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcmc-copy h3{color:var(--text,#edf5ff)}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcmc-copy p{color:var(--muted,#a9bdd2)}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcmc-icon{background:rgba(148,163,184,.14)}
+html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcmc-tags span{background:rgba(255,255,255,.06);color:var(--muted,#a9bdd2);border-color:var(--line,#26364f)}
+@media(max-width:700px){.bcmc-card{grid-template-columns:58px minmax(0,1fr);gap:8px 12px;padding:14px}.bcmc-icon{width:50px;height:50px;border-radius:15px;font-size:27px;align-self:start}.bcmc-card .bcmc-copy h3{font-size:17px;font-weight:760}.bcmc-card .bcmc-copy p{font-size:13px;line-height:1.5}.bcmc-actions{grid-column:1/-1}.bcmc-card .bcmc-primary{min-height:46px;font-size:14px;font-weight:700}}
+
+/* Rodapé dos módulos (Ferramentas do módulo e Questões feitas por rodadas) retirado de todas as disciplinas. */
+.bc-footer-removed{display:none!important}
+
+/* ===== Resolução das questões: modos, seleção + responder, riscar e histórico ===== */
+.bcqa-modes{display:inline-flex;gap:4px;margin:0 0 12px;padding:4px;border:1px solid var(--line,#dce7ee);border-radius:12px;background:var(--panel2,#f3f8fb)}
+.bcqa-mode{border:0;border-radius:9px;background:transparent;color:inherit;padding:8px 14px;font:600 13px/1.2 inherit;cursor:pointer}
+.bcqa-mode.on{background:#1769b5;color:#fff}
+.bcqa-mode:focus-visible{outline:2px solid var(--purple,#4f8fb8);outline-offset:2px}
+.bcqa-primary{background:linear-gradient(180deg,#168be8,#0867c3)!important;color:#fff!important;border-color:#0876d2!important}
+.bcqa-primary[disabled]{opacity:.45;cursor:not-allowed;filter:grayscale(.3)}
+.bcqa-btn[disabled]{opacity:.45;cursor:not-allowed}
+.bcqa-hist{display:inline-block;margin:0 0 9px;padding:3px 10px;border-radius:99px;font-size:11.5px;font-weight:650;border:1px solid var(--line,#dce7ee);color:var(--muted,#5f7889)}
+.bcqa-hist-ok{background:rgba(58,157,110,.12);border-color:rgba(58,157,110,.45);color:#1d6b46}
+.bcqa-hist-erro{background:rgba(196,106,106,.12);border-color:rgba(196,106,106,.5);color:#9b3535}
+.bcqa-optrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:stretch}
+.bcqa-option.selected{border-color:#1769b5;background:rgba(23,105,181,.1);box-shadow:inset 0 0 0 1px #1769b5}
+.bcqa-option.struck span{text-decoration:line-through;opacity:.55}
+.bcqa-option.struck{border-style:dashed}
+.bcqa-strike{align-self:flex-start;min-height:44px;border:1px solid var(--line,#dae6ec);border-radius:9px;background:transparent;color:var(--muted,#5f7889);padding:0 10px;font:600 12px/1 inherit;cursor:pointer;min-width:62px}
+.bcqa-strike.on{background:rgba(23,105,181,.1);color:#1769b5;border-color:#1769b5}
+.bcqa-strike:focus-visible{outline:2px solid var(--purple,#4f8fb8);outline-offset:2px}
+.bcqa-dica{align-self:center;color:var(--muted,#667e8d);font-size:12px}
+.bcqa-nav{display:flex;justify-content:space-between;gap:10px;margin:14px 0 4px}
+@media(max-width:640px){.bcqa-strike{min-width:56px;padding:0 6px;font-size:11px}.bcqa-modes{display:flex}.bcqa-mode{flex:1}}
+
+/* Rodapé do módulo: anotações antes de agendar revisão (coluna flex; independe da ordem em que o rodapé é montado). */
+html #subjects .ds-module-footer>.ds-notes{order:1}
+html #subjects .ds-module-footer>.ds-footer-review{order:2}
+html #subjects .ds-module-footer>.ds-footer-tools{order:3}
