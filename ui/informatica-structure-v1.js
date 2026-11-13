@@ -300,10 +300,10 @@
   const subject = SUBJECTS.find(s => s.id === ID) || {
     id:ID,
     name:"Informática",
-    special:"13 módulos • conteúdos em produção",
+    special:"13 módulos • teorias disponíveis",
     topics:MODULES.map(m=>({
       uid:"info-" + m.id, title:pad(m.number) + " " + m.title.toUpperCase(),
-      origin:"Módulo " + pad(m.number) + " • Em produção", type:"Curso",
+      origin:"Módulo " + pad(m.number) + " • Teoria disponível", type:"Curso",
       tips:["Conteúdo teórico em elaboração; nenhum estudo está marcado como concluído."]
     }))
   };
@@ -332,7 +332,7 @@
   function shell() {
     return '<div class="subject-bar"><span style="width:0%"></span></div>' +
       '<div class="bc-info-intro"><b>Informática para concursos públicos</b>' +
-      '<p>13 módulos organizados por assunto. O sumário está disponível para consulta; as leituras serão publicadas progressivamente.</p></div>' +
+      '<p>13 módulos organizados por assunto. A teoria completa e o modo de revisão estão disponíveis. Questões e links do QC serão adicionados posteriormente.</p></div>' +
       '<div class="cf-modules bc-info-modules">' + MODULES.map(moduleMarkup).join("") + '</div>';
   }
   const previousStats = global.subjStats;
@@ -378,7 +378,7 @@
     },
     hasPublishedTheory(id) {
       const m = MODULES.find(item=>item.id===id);
-      return Boolean(m && m.status==="published" && m.theory.summary && m.theory.complete);
+      return Boolean(m && (m.status==="published" || m.status==="theory_published") && m.theory.summary && m.theory.complete);
     }
   };
   Object.freeze(MODULES);
