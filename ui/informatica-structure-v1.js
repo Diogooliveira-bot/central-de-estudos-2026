@@ -300,39 +300,57 @@
   const subject = SUBJECTS.find(s => s.id === ID) || {
     id:ID,
     name:"Informática",
-    special:"13 módulos • teorias disponíveis",
+    special:"13 módulos • teoria e revisão disponíveis",
     topics:MODULES.map(m=>({
       uid:"info-" + m.id, title:pad(m.number) + " " + m.title.toUpperCase(),
-      origin:"Módulo " + pad(m.number) + " • Teoria disponível", type:"Curso",
+      origin:"Módulo " + pad(m.number) + " • Em construção", type:"Curso",
       tips:["Conteúdo teórico em elaboração; nenhum estudo está marcado como concluído."]
     }))
   };
   if (!SUBJECTS.some(s => s.id === ID)) SUBJECTS.push(subject);
+
+  // Cartões no padrão visual das disciplinas já aprovadas. Não simula links ou questões.
+  function materialCard(m,kind,icon,title,description,labels,mode,action) {
+    const available=mode==="complete"||mode==="review";
+    const tags=labels.map(x=>'<span>'+esc(x)+'</span>').join('');
+    const button=available
+      ? '<button type="button" class="pt-cf-button pt-cf-button-open" data-bc-info-mode="'+mode+'" onclick="return BaseInformaticaReader.open(\''+esc(m.id)+'\',\''+mode+'\')">'+esc(action)+'</button>'
+      : '<button type="button" class="pt-cf-button bc-info-disabled" disabled aria-disabled="true" title="Em construção">Em construção</button>';
+    return '<article class="pt-cf-card pt-cf-card-'+kind+(available?'':' bc-info-coming-card')+'" data-bc-info-card="'+kind+'">'+
+      '<span class="pt-cf-icon" aria-hidden="true">'+esc(icon)+'</span>'+
+      '<b>'+esc(title)+'</b><small>'+esc(description)+'</small>'+
+      '<span class="pt-cf-tags">'+tags+'</span><div class="pt-cf-actions">'+button+'</div></article>';
+  }
   function moduleMarkup(m) {
-    const open = (()=>{try { return global.localStorage.getItem(PREFIX + m.id) === "1"; } catch (_) { return false; }})();
-    const titles = m.outline.map(t=>"<li>" + esc(t) + "</li>").join("");
-    return '<section class="cf-module bc-info-module ' + (open ? 'open' : '') + '" data-module="info-' + esc(m.id) + '">' +
-      '<button type="button" class="cf-module-head" aria-expanded="' + (open ? "true" : "false") + '" onclick="return BaseInformatica.toggle(\'' + esc(m.id) + '\')">' +
-        '<span class="cf-module-no">MÓDULO ' + pad(m.number) + '</span>' +
-        '<span class="cf-module-title">' + esc(m.title) + '</span>' +
-        '<span class="bc-info-status">Em produção</span><span class="cf-module-stat">0%</span><span class="chev">⌄</span>' +
-      '</button>' +
-      '<div class="cf-module-body">' +
-        '<div class="bc-info-inside">' +
-          '<p class="bc-info-caption">Programa teórico previsto para este módulo</p>' +
-          '<ul class="bc-info-outline">' + titles + '</ul>' +
-          '<div class="bc-info-materials" aria-label="Materiais teóricos em elaboração">' +
-            '<article class="bc-info-material"><strong>Conteúdo resumido</strong><small>Em produção — acesso liberado após a conclusão da teoria.</small></article>' +
-            '<article class="bc-info-material"><strong>Conteúdo completo</strong><small>Em produção — apostila e leitura orientada serão adicionadas gradualmente.</small></article>' +
-          '</div>' +
-          '<p class="bc-info-note">As questões autorais e o filtro do Qconcursos serão incluídos em uma etapa posterior, no padrão atual da Central.</p>' +
-        '</div>' +
-      '</div></section>';
+    const open=(()=>{try{return global.localStorage.getItem(PREFIX+m.id)==="1";}catch(_){return false;}})();
+    const outline=m.outline.map(t=>'<li>'+esc(t)+'</li>').join('');
+    const reading='<section class="pt-cf-reading bc-info-reading" aria-label="Progresso de leitura">'+
+      '<div class="pt-cf-reading-line"><div><b>Leitura do módulo</b>'+
+      '<small>Acompanhe a teoria e a revisão. Questões ainda em construção.</small></div>'+
+      '<strong class="bc-info-reading-value">0%</strong></div>'+
+      '<div class="pt-cf-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura"><span style="width:0%"></span></div></section>';
+    const oriented='<section class="pt-cf-oriented" aria-label="Orientação do módulo">'+
+      '<div class="pt-cf-oriented-top"><span class="pt-cf-oriented-symbol" aria-hidden="true">▤</span>'+
+      '<div><b>Leitura orientada</b><small>Estude a teoria, faça a revisão ativa e pratique quando as questões forem publicadas.</small></div></div>'+
+      '<details><summary>Ver assuntos deste módulo</summary><ul>'+outline+'</ul></details></section>';
+    const materials='<section class="pt-cf-cards bc-info-materials" aria-label="Materiais e links do módulo">'+
+      materialCard(m,'review','↺','Versão de revisão','Síntese, conceitos para memorizar e recuperação ativa.',['Resumo','Revisão disponível'],'review','Revisar conteúdo')+
+      materialCard(m,'primary','≡','Teoria completa','Leitura por capítulos com exemplos e acompanhamento.',['Apostila','Teoria disponível'],'complete','Estudar conteúdo')+
+      materialCard(m,'questions','?','Questões do módulo','Questões autorais com correção e comentários, em preparação.',['Questões autorais','Em construção'],'questions','Em construção')+
+      materialCard(m,'map','QC','Filtro Qconcursos','Caderno de questões específico do assunto, pendente de validação.',['QC','Em construção'],'qc','Em construção')+
+      '</section>';
+    return '<section class="cf-module bc-info-module '+(open?'open':'')+'" data-module="info-'+esc(m.id)+'">'+
+      '<button type="button" class="cf-module-head" aria-expanded="'+(open?'true':'false')+'" onclick="return BaseInformatica.toggle(\''+esc(m.id)+'\')">'+
+      '<span class="cf-module-no">MÓDULO '+pad(m.number)+'</span><span class="cf-module-title">'+esc(m.title)+'</span>'+
+      '<span class="bc-info-status">Em construção</span><span class="cf-module-stat">0%</span><span class="chev">⌄</span></button>'+
+      '<div class="cf-module-body"><div class="pt-cf-module-inside bc-info-inside">'+reading+oriented+materials+
+      '<p class="bc-info-note">A teoria e a revisão estão disponíveis. Questões autorais e filtros Qconcursos: <strong>em construção</strong>. O percentual mede apenas a leitura, não a conclusão integral.</p>'+
+      '</div></div></section>';
   }
   function shell() {
     return '<div class="subject-bar"><span style="width:0%"></span></div>' +
       '<div class="bc-info-intro"><b>Informática para concursos públicos</b>' +
-      '<p>13 módulos organizados por assunto. A teoria completa e o modo de revisão estão disponíveis. Questões e links do QC serão adicionados posteriormente.</p></div>' +
+      '<p>13 módulos com teoria completa e revisão disponíveis. Questões autorais e links do Qconcursos permanecem em construção.</p></div>' +
       '<div class="cf-modules bc-info-modules">' + MODULES.map(moduleMarkup).join("") + '</div>';
   }
   const previousStats = global.subjStats;
@@ -357,7 +375,7 @@
     if (card) {
       const description = card.querySelector("small");
       const stats = card.querySelector(".disc-meta");
-      if (description) description.textContent = "13 módulos • conteúdo teórico em produção";
+      if (description) description.textContent = "13 módulos • teoria e revisão disponíveis";
       if (stats) stats.textContent = "0/13 módulos · 0%";
     }
     return result;

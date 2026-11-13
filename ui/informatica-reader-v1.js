@@ -3,7 +3,7 @@
 (function (global) {
  "use strict";
  if (global.BaseInformaticaReader || !global.BaseInformatica) return;
- const VERSION="20261113teoria2";
+ const VERSION="20261113teoria3";
  const AVAILABLE=new Set(Array.from({length:13},(_,i)=>"m"+String(i+1).padStart(2,"0")));
  const API=global.BaseInformatica;
  for(const m of API.modules){if(AVAILABLE.has(m.id)){m.status="theory_published";m.theory.summary=true;m.theory.complete=true;}}
@@ -40,24 +40,27 @@
    const total=full.total+review.total,done=full.done+review.done;
    return {done,total,pct:total?Math.round(done/total*100):0};
  }
- function updateModuleRows(){
-   for(const m of API.modules){
+
+ function updateModuleRows() {
+   for(const m of API.modules) {
      const host=$('#subjects .bc-info-module[data-module="info-'+m.id+'"]');
      if(!host)continue;
-     const available=AVAILABLE.has(m.id);
-     const label=host.querySelector(".bc-info-status");
-     if(label)label.textContent=available?"Teoria disponível":"Em produção";
-     const status=host.querySelector(".cf-module-stat");
-     const dat=lesson(m.id);
-     if(status)status.textContent=dat?combined(m.id,dat).pct+"%":"0%";
-     const materials=host.querySelector(".bc-info-materials");
-     if(!materials)continue;
-     if(available){
-       materials.innerHTML='<button class="bc-info-material bc-info-material-open" type="button" data-bc-info-mode="complete" onclick="return BaseInformaticaReader.open(\''+m.id+'\',\'complete\')"><strong>Teoria completa</strong><small>Leitura organizada em capítulos, com exemplos e acompanhamento.</small><span>Abrir teoria</span></button>' +
-        '<button class="bc-info-material bc-info-material-open" type="button" data-bc-info-mode="review" onclick="return BaseInformaticaReader.open(\''+m.id+'\',\'review\')"><strong>Modo de revisão</strong><small>Síntese, conceitos para memorizar e recuperação ativa.</small><span>Revisar conteúdo</span></button>';
-       const note=host.querySelector(".bc-info-note");
-       if(note)note.textContent="Questões autorais e filtro do Qconcursos: em produção. O percentual exibido aqui corresponde somente à leitura teórica.";
+     // A disciplina ainda está em construção: perguntas e filtro QC não publicados.
+     const badge=host.querySelector(".bc-info-status");
+     if(badge)badge.textContent="Em construção";
+     const data=lesson(m.id);
+     const pct=data?combined(m.id,data).pct:0;
+     const stat=host.querySelector(".cf-module-stat");
+     if(stat)stat.textContent=pct+"%";
+     const value=host.querySelector(".bc-info-reading-value");
+     if(value)value.textContent=pct+"%";
+     const track=host.querySelector(".pt-cf-progress-track");
+     if(track){
+       track.setAttribute("aria-valuenow",String(pct));
+       const bar=track.querySelector("span");
+       if(bar)bar.style.width=pct+"%";
      }
+     // Preserva os quatro cartões existentes, inclusive os links funcionais para leituras.
    }
  }
  function renderDialog(data,mode){
@@ -152,7 +155,7 @@
  if(typeof previousGrid==="function")global.renderDisciplineGrid=function(){const result=previousGrid.apply(this,arguments);
    const card=$('#disciplineGrid .disc-card[data-id="info"]');
    const desc=card?.querySelector("small");
-   if(desc)desc.textContent=AVAILABLE.size+" módulos com teoria · "+(API.modules.length-AVAILABLE.size)+" em produção";
+   if(desc)desc.textContent=AVAILABLE.size+" módulos com teoria e revisão · questões em construção";
    return result;
  };
  global.BaseInformaticaReader=Object.freeze({open,close:closeReader,available:()=>Array.from(AVAILABLE),load});

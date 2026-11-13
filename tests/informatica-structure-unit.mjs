@@ -88,3 +88,22 @@ test("Boot e CSS carregam a teoria sem alterar a produção",()=>{
   assert.match(style,/max-width:780px/);
   assert.match(style,/\.bc-info-reader-overlay/);
 });
+
+test("Informática padroniza quatro cartões por módulo com avisos seguros",()=>{
+ const js=read("ui/informatica-structure-v1.js");
+ for(const label of ["Versão de revisão","Teoria completa","Questões do módulo","Filtro Qconcursos"])
+   assert.ok(js.includes(label),"cartão ausente "+label);
+ assert.match(js,/pt-cf-cards bc-info-materials/);
+ assert.match(js,/pt-cf-reading/);
+ assert.match(js,/pt-cf-oriented/);
+ assert.match(js,/bc-info-status">Em construção/);
+ assert.match(js,/disabled aria-disabled="true"/);
+ const reader=read("ui/informatica-reader-v1.js");
+ assert.doesNotMatch(reader,/materials\.innerHTML=/,"não sobrescrever cartões e links");
+ assert.match(reader,/bc-info-reading-value/);
+ const css=read("ui/informatica-approved-layout-v1.css");
+ assert.match(css,/pt-cf-card-review/);
+ assert.match(css,/pt-cf-actions/);
+ assert.match(css,/max-width:540px/);
+ assert.match(read("central-v119.html"),/informatica-approved-layout-v1\.css/);
+});

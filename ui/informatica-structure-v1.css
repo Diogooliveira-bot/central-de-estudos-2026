@@ -10,14 +10,9 @@
 #subjects .subject[data-id="info"] .bc-info-inside{padding:14px 18px 18px}
 #subjects .subject[data-id="info"] .bc-info-caption{margin:0 0 10px;font-size:13px;font-weight:700;color:inherit}
 #subjects .subject[data-id="info"] .bc-info-outline{margin:0 0 17px;padding-left:19px;display:grid;gap:7px;color:var(--text,#334155);font-size:13px;line-height:1.5}
-#subjects .subject[data-id="info"] .bc-info-materials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-#subjects .subject[data-id="info"] .bc-info-material{padding:13px 14px;border:1px solid rgba(103,134,159,.23);border-radius:8px;background:rgba(111,143,172,.035)}
-#subjects .subject[data-id="info"] .bc-info-material strong{display:block;font-size:13px;color:inherit;font-weight:700}
-#subjects .subject[data-id="info"] .bc-info-material small{display:block;margin-top:6px;color:var(--muted,#64748b);font-size:12px;line-height:1.5}
 #subjects .subject[data-id="info"] .bc-info-note{margin:15px 0 0;font-size:12px;line-height:1.5;color:var(--muted,#64748b)}
 @media(max-width:640px){
   #subjects .subject[data-id="info"] .bc-info-module .cf-module-head{flex-wrap:wrap}
   #subjects .subject[data-id="info"] .bc-info-status{order:4;margin-left:auto}
-  #subjects .subject[data-id="info"] .bc-info-materials{grid-template-columns:1fr}
   #subjects .subject[data-id="info"] .bc-info-inside{padding:12px 14px 16px}
 }
