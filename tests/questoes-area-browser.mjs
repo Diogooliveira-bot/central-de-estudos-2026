@@ -1,14 +1,37 @@
 // Navegador real: área Questões (menu → disciplina → módulo → responder) e cartão dentro do módulo.
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import crypto from 'node:crypto';
+import { PGlite } from '@electric-sql/pglite';
+import { createQuestoesHandler } from '../lib/questoes-handler.js';
 import { resolve, extname } from 'node:path';
 import { chromium } from 'playwright';
 import { openModule } from './helpers/focus-navigation.mjs';
 const root = process.cwd();
+// Servidor real de questões (handler + migrações) sobre PostgreSQL em memória; um aluno fictício por página.
+const db = new PGlite();
+for (const f of fs.readdirSync(new URL('../db/migrations/', import.meta.url)).sort()) await db.exec(fs.readFileSync(new URL('../db/migrations/' + f, import.meta.url), 'utf8'));
+const sql = (strings, ...values) => db.query(strings.reduce((a, part, i) => a + '$' + i + part), values.map(v => v instanceof Date ? v.toISOString() : v)).then(r => r.rows);
+const conhecidos = new Set();
+async function garantirAluno(id, plano) {
+  if (conhecidos.has(id)) return; conhecidos.add(id);
+  await sql`INSERT INTO central_users(user_id,name,email,role,password_hash,active) VALUES(${id},'Aluno Ficticio',${id + '@example.invalid'},'aluno','x',TRUE)`;
+  await sql`INSERT INTO central_user_subscriptions(subscription_id,user_id,plan_code,status,starts_at,ends_at,grant_source)
+    VALUES(${crypto.randomUUID()},${id},${plano},'active',NOW()-INTERVAL '1 day',${plano === 'premium' ? new Date(Date.now() + 90 * 86400000) : null},'manual')`;
+}
+const questoesApi = createQuestoesHandler({ requireSession: async req => { const id = String(req.headers['x-test-user'] || ''); await garantirAluno(id, id.startsWith('premium-') ? 'premium' : 'free'); return { ok: true, sql, user: { id } }; } });
+function gabarito(disc, n) {
+  const w = { window: {} };
+  new vm.Script(fs.readFileSync(new URL(`../content/questoes/${disc}/m${String(n).padStart(2, '0')}.js`, import.meta.url), 'utf8')).runInNewContext(w);
+  return w.window.BC_QUESTOES[disc][n].map(q => q.answer);
+}
 const mime = { '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css', '.json': 'application/json' };
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost'), path = url.pathname;
   const json = (b, s = 200) => { res.writeHead(s, { 'content-type': 'application/json' }); res.end(JSON.stringify(b)); };
+  if (path === '/api/questoes') { req.query = Object.fromEntries(url.searchParams); return questoesApi(req, res); }
   if (path === '/api/auth') return json({ authenticated: true, user: { id: 'fictional-free', name: 'Aluno Fictício', role: 'aluno', plan: 'free' } });
   if (path === '/api/sync') return json(req.method === 'POST' ? { revision: 1 } : { exists: false });
   if (path === '/api/plans') return json({ role: 'aluno', plan: 'free', status: 'active', isStaff: false, entitlements: {} });
@@ -22,8 +45,8 @@ const base = 'http://127.0.0.1:' + server.address().port;
 const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
 const failures = [];
 const errors = [];
-async function novaPagina(width = 1200) {
-  const ctx = await browser.newContext({ viewport: { width, height: 900 }, serviceWorkers: 'block' });
+async function novaPagina(width = 1200, usuario = crypto.randomUUID()) {
+  const ctx = await browser.newContext({ viewport: { width, height: 900 }, serviceWorkers: 'block', extraHTTPHeaders: { 'x-test-user': usuario } });
   const page = await ctx.newPage();
   page.on('pageerror', e => errors.push(e.message.slice(0, 200)));
   await page.goto(base + '/central-v119.html?view=home');
@@ -45,7 +68,8 @@ async function novaPagina(width = 1200) {
   if (await page.locator('.bcqa-q').count() !== 10) failures.push('quiz: esperava 10 questões');
   if (await page.locator('.bcqa-q').first().locator('.bcqa-option').count() !== 5) failures.push('quiz: esperava 5 alternativas');
   // seleciona e só então responde: a 1ª errando de propósito, a 2ª acertando
-  const q = await page.evaluate(async () => (await window.BCQuestoes.get('adm', 3)).slice(0, 2).map(x => x.answer));
+  const q = gabarito('adm', 3).slice(0, 2);
+  if (await page.evaluate(() => typeof window.BC_QUESTOES !== 'undefined')) failures.push('o gabarito não pode existir no navegador');
   const errada = q[0] === 0 ? 1 : 0;
   await page.locator('.bcqa-q').nth(0).locator('[data-op="' + errada + '"]').click();
   if (await page.locator('.bcqa-q').nth(0).locator('.bcqa-feedback').count()) failures.push('selecionar não pode responder');
@@ -71,6 +95,41 @@ async function novaPagina(width = 1200) {
   await page.keyboard.press('Escape');                       // fecha
   if (await page.locator('[data-bc-questoes-area].bcqa-overlay').count()) failures.push('Esc não fechou a área');
   await page.context().close();
+}
+// 1b) Limite diário: Gratuito responde 5 e a 6ª fica bloqueada; Premium sem limite; reabrir não zera a cota
+{
+  const gab = gabarito('adm', 3);
+  const page = await novaPagina(900);
+  await page.evaluate(() => window.BCQuestoesArea.openModule('adm', 3));
+  await page.waitForSelector('.bcqa-q');
+  const uso0 = await page.locator('[data-uso]').textContent();
+  if (!/0 de 5 questões respondidas hoje/.test(uso0)) failures.push('faixa de uso inicial: ' + uso0);
+  for (let i = 0; i < 5; i++) {
+    await page.locator('.bcqa-q').nth(i).locator('[data-op="' + gab[i] + '"]').click();
+    await page.locator('.bcqa-q').nth(i).locator('[data-responder]').click();
+    await page.locator('.bcqa-q').nth(i).locator('.bcqa-feedback').waitFor({ timeout: 8000 });
+  }
+  if (!/Você usou as 5 questões gratuitas/.test(await page.locator('[data-uso]').textContent())) failures.push('aviso de limite não apareceu');
+  await page.locator('.bcqa-q').nth(5).locator('[data-op="0"]').click();
+  if (!(await page.locator('.bcqa-q').nth(5).locator('[data-responder]').isDisabled())) failures.push('a 6ª questão não pode ser respondida no Gratuito');
+  // fechar e reabrir: a sessão zera, mas a cota do dia continua gasta (vem do servidor)
+  await page.evaluate(() => window.BCQuestoesArea.close());
+  await page.evaluate(() => window.BCQuestoesArea.openModule('adm', 3));
+  await page.waitForSelector('.bcqa-q');
+  if (!/Você usou as 5 questões gratuitas/.test(await page.locator('[data-uso]').textContent())) failures.push('reabrir não pode devolver a cota');
+  if (await page.locator('.bcqa-feedback').count()) failures.push('reabrir deve zerar as respostas da tela');
+  await page.context().close();
+
+  const premium = await novaPagina(900, 'premium-' + crypto.randomUUID());
+  await premium.evaluate(() => window.BCQuestoesArea.openModule('adm', 3));
+  await premium.waitForSelector('.bcqa-q');
+  for (let i = 0; i < 7; i++) {
+    await premium.locator('.bcqa-q').nth(i).locator('[data-op="' + gab[i] + '"]').click();
+    await premium.locator('.bcqa-q').nth(i).locator('[data-responder]').click();
+    await premium.locator('.bcqa-q').nth(i).locator('.bcqa-feedback').waitFor({ timeout: 8000 });
+  }
+  if (await premium.locator('[data-uso]').count()) failures.push('Premium não deve ver faixa de limite');
+  await premium.context().close();
 }
 // 2) Cartão "Questões do módulo" dentro de cada disciplina
 const casos = [['adm', 4, 5], ['penal', 2, 3], ['cpc', 2, 3], ['civil', 6, 7], ['cf', 7, 8], ['cpp', 4, 5], ['rlm', 2, 3], ['pt', 4, 5]];

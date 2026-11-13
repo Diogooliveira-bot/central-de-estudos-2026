@@ -36,6 +36,10 @@
       "destination": "/api/auth?bc_api=lei-em-dia-questions"
     },
     {
+      "source": "/api/questoes",
+      "destination": "/api/auth?bc_api=questoes"
+    },
+    {
       "source": "/central-de-questoes",
       "destination": "/central-v119.html"
     }

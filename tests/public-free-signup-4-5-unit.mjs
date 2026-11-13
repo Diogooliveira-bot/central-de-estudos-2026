@@ -452,7 +452,7 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
 
 test('pedido válido apaga solicitações expiradas e controles antigos (retenção)',async()=>{
  const {handler,calls}=setup();
- const ok=await handler(req({action:'request',name:'Pessoa Fictícia',email:'retencao@example.invalid',password:'SenhaForte#2026',ageConfirmed:true,termsAccepted:true,termsVersion:'terms-2026-11-13-v5'}),res());
+ const ok=await handler(req({action:'request',name:'Pessoa Fictícia',email:'retencao@example.invalid',password:'SenhaForte#2026',ageConfirmed:true,termsAccepted:true,termsVersion:'terms-2026-11-13-v6'}),res());
  const sources=calls.map(c=>c.source);
  assert.ok(sources.some(s=>/^DELETE FROM public\.central_free_signup_pending WHERE expires_at<NOW\(\)$/.test(s)));
  assert.ok(sources.some(s=>/DELETE FROM public\.central_free_signup_limits WHERE window_start<NOW\(\)-INTERVAL '7 days'/.test(s)));

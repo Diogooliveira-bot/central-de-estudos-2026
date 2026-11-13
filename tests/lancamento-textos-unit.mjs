@@ -14,7 +14,8 @@ test('vitrine e página "Conheça" não prometem TEC nem Informática e mostram 
     assert.match(read(f), /<strong>08<\/strong> disciplinas/, f + ': 8 disciplinas');
   }
   const v = texto('vitrine/index.html');
-  assert.match(v, /questões inéditas/i, 'vitrine cita as questões inéditas');
+  assert.match(v, /até 5 questões inéditas por dia/i, 'vitrine cita o limite do plano gratuito');
+  assert.match(v, /Premium não tem limite diário/i);
   assert.doesNotMatch(v, /Questões internas/);
   assert.doesNotMatch(read('vitrine/index.html'), /data-provider="TEC"/);
 });
@@ -29,7 +30,7 @@ test('Termos, Privacidade, Cookies, formulário e backend usam a mesma versão',
 
 test('Termos descrevem o plano gratuito e o Qconcursos como Premium, sem TEC', () => {
   const t = texto('termos-de-uso.html');
-  assert.match(t, /questões inéditas por módulo/i);
+  assert.match(t, /até 5 questões inéditas por dia/i);
   assert.match(t, /filtros e links externos do QConcursos[^.]*exclusivos dos assinantes Premium/i);
   assert.doesNotMatch(t, /TEC Concursos/);
   assert.doesNotMatch(texto('politica-de-cookies.html'), /TEC Concursos/);

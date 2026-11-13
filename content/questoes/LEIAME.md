@@ -31,3 +31,10 @@ Crie `content/questoes/<disciplina>/mNN.js` copiando o formato de outro módulo 
 - Menu **Questões** (atalho do topo e menu "Mais" no celular): disciplina → módulo → questões do módulo (quantas houver).
 - Em cada módulo, o cartão **Questões do módulo** (depois da Lei em Dia) abre as mesmas questões já no módulo.
 - Títulos dos módulos: `content/questoes/titulos.js`. O progresso fica no aparelho do aluno.
+
+
+## Entrega no servidor (desde 13/11/2026)
+Os arquivos `content/questoes/<disciplina>/mNN.js` agora são lidos **só pelo servidor** (`lib/questoes-handler.js`):
+o navegador recebe os enunciados sem gabarito e a correção só depois que o aluno responde. O plano Gratuito tem
+limite diário (veja `docs/QUESTOES_LIMITE_DIARIO_20261113.md`). O formato dos arquivos não mudou: continue
+acrescentando questões como antes e rode `npm run questoes:check` e `npm run questoes:index`.
