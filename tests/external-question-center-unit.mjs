@@ -137,11 +137,11 @@ test('módulo nativo com tópico interno recebe somente um painel QC/TEC', async
   assert.equal(subject.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b')?.textContent, 'Atos Administrativos');
 });
 
-test('mantém os filtros originais visíveis se o painel compacto não puder ser montado', async () => {
+test('mantém os filtros originais ocultos se o painel compacto não puder ser montado', async () => {
   const dom = setup({ failModuleMount: true });
   await settle(dom.window);
   assert.equal(dom.window.document.querySelector('[data-bcq-module-panel]'), null);
-  assert.equal(dom.window.document.querySelector('[data-test-original]').hasAttribute('data-bcq-original'), false);
+  assert.equal(dom.window.document.querySelector('[data-test-original]').hasAttribute('data-bcq-original'), true, 'painel legado fica oculto');
 });
 
 test('catálogo mostra somente QC e não oferece links TEC', async () => {
