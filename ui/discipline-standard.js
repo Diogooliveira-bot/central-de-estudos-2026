@@ -119,7 +119,7 @@
     const reading = document.createElement('section');
     reading.className = 'cf-step penal-approved-reading' + (state.reading ? ' done' : '');
     reading.innerHTML = '<div class="cf-step-head"><div class="cf-step-no">' + (state.reading ? '✓' : '1') + '</div><div class="cf-step-copy"><b>Leitura orientada inicial</b><small>Leia os dispositivos indicados e observe os pontos centrais do módulo.</small></div></div>' +
-      '<div class="cf-step-body"><div class="cf-reading"><strong>' + esc(statute) + '</strong><details><summary>Ver pontos para observar</summary><ul>' + focus.map(point => '<li>' + esc(point) + '</li>').join('') + '</ul></details></div><div class="cf-actions"><button type="button" class="cf-btn ' + (state.reading ? 'good' : '') + '" data-penal-reading-toggle>' + (state.reading ? '✓ Concluída' : 'Marcar concluída') + '</button></div></div>';
+      '<div class="cf-step-body"><div class="cf-reading"><strong>' + esc(statute) + '</strong>' + (window.BCOrientation ? window.BCOrientation.html('penal:' + week.num, {bare: true}) : '') + '</div><div class="cf-actions"><button type="button" class="cf-btn ' + (state.reading ? 'good' : '') + '" data-penal-reading-toggle>' + (state.reading ? '✓ Concluída' : 'Marcar concluída') + '</button></div></div>';
     reading.querySelector('[data-penal-reading-toggle]').addEventListener('click', function () {
       const current = typeof window.penalWeekState === 'function' ? window.penalWeekState(week.id) : {};
       if (typeof window.penalUpdateWeek === 'function') window.penalUpdateWeek(week.id, {reading: !current.reading});
@@ -356,9 +356,9 @@
     const reading = document.createElement('section');
     reading.className = 'cpc-approved-reading';
     reading.innerHTML = '<div class="cpc-approved-reading-icon" aria-hidden="true">📖</div>' +
-      '<div class="cpc-approved-reading-copy"><h3>Leitura orientada inicial</h3><p>' + esc(week.read || '') + '</p>' +
-      '<details><summary>Ver pontos para observar</summary><ul>' + (week.read_focus || []).map(point => '<li>' + esc(point) + '</li>').join('') +
-      '</ul></details><div class="cpc-approved-reading-actions">' +
+      '<div class="cpc-approved-reading-copy"><h3>Leitura orientada inicial</h3>' +
+      (window.BCOrientation ? window.BCOrientation.html('cpc:' + week.num, {bare: true}) : '') +
+      '<div class="cpc-approved-reading-actions">' +
       '<button type="button" class="cpc-approved-secondary" data-cpc-reading-toggle>' + (completed ? '✓ Leitura concluída' : 'Marcar concluída') + '</button>' +
       '</div></div>';
     reading.querySelector('[data-cpc-reading-toggle]').addEventListener('click', () => {

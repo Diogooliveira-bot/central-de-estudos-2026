@@ -30,30 +30,25 @@ test('leitura jurídica e roteiro preexistentes foram preservados', () => {
   }
 });
 
-test('interface mostra guia e mantém ações de leitura e questões', () => {
+test('interface mostra orientação curta e mantém ações de leitura e questões', () => {
   const ui = readFileSync('ui/cf-native-study-v2.js', 'utf8');
   const html = readFileSync('index.html', 'utf8');
-  for (const section of ['O que você vai aprender', 'Como estudar', 'Atenção na prova', 'Confira se aprendeu']) {
-    assert.ok(ui.includes(section), `Seção ausente: ${section}`);
+  assert.ok(ui.includes("BCOrientation.html('cf:'"), 'Orientação curta vinculada aos módulos');
+  for (const old of ['O que você vai aprender', 'Atenção na prova', 'Confira se aprendeu']) {
+    assert.ok(!ui.includes(old), `Painel antigo removido: ${old}`);
   }
-  assert.ok(ui.includes('learningGuide(w)'), 'Guia precisa estar vinculado aos módulos');
   assert.ok(ui.includes('toggleLegacyReading'), 'Marcação de leitura preservada');
   assert.ok(ui.includes('Resolver 10 questões') && ui.includes('Resolver 5 questões'), 'Exercícios preservados');
   for (const name of ['cf-weeks-001.js', 'cf-weeks-002.js', 'cf-weeks-003.js', 'cf-native-study-v2.js']) {
-    assert.ok(html.includes(`${name}?v=${name === 'cf-native-study-v2.js' ? '20261112nographic1' : '20261101cfguide1'}`), `Cache não renovado: ${name}`);
+    assert.ok(html.includes(`${name}?v=${name === 'cf-native-study-v2.js' ? '20261113orient1' : '20261101cfguide1'}`), `Cache não renovado: ${name}`);
   }
 });
 
-test('layout de CF não força cards em flex e oferece grade responsiva por largura real', () => {
+test('layout de CF usa o bloco único de orientação e preserva o fluxo existente', () => {
   const ui = readFileSync('ui/cf-native-study-v2.js', 'utf8');
   const manifest = readFileSync('central-offline-files-v66172.json', 'utf8');
-  assert.ok(!ui.includes('.cf-native-oriented>div{display:flex'), 'Seletor genérico reintroduz flex e comprime os cartões');
-  assert.ok(ui.includes('.cf-native-oriented>.cf-native-reading-head{display:flex'), 'Somente o cabeçalho da leitura deve usar flex');
-  assert.ok(ui.includes('class="cf-native-reading-head"'), 'Cabeçalho precisa da classe específica');
-  assert.ok(ui.includes('container:cf-reading/inline-size'), 'Layout deve reagir ao espaço do módulo');
-  assert.ok(ui.includes('@container cf-reading (min-width:610px)'), 'Duas colunas apenas quando couberem');
-  assert.ok(ui.includes('.cf-learning-goals,.cf-learning-check{grid-column:1/-1}'), 'Objetivos e conferência em largura total');
-  assert.ok(ui.includes('cf-learning-tip') && ui.includes('cf-learning-warning'), 'Orientações devem ter estilo independente');
-  assert.ok(manifest.includes('ui/cf-native-study-v2.js?v=20261112nographic1'), 'Manifesto offline deve usar a versão atual');
+  assert.ok(ui.includes("BCOrientation.html('cf:'"), 'CF usa a orientação curta compartilhada');
+  assert.ok(!ui.includes('cf-learning-panel') || !ui.includes('learningGuide(w)+'), 'painéis antigos não são mais renderizados');
+  assert.ok(manifest.includes('ui/cf-native-study-v2.js?v=20261113orient1'), 'Manifesto offline deve usar a versão atual');
   for (const key of ['toggleLegacyReading', 'openReader', 'openQuiz']) assert.ok(ui.includes(key), 'Fluxo existente preservado: ' + key);
 });

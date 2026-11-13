@@ -108,6 +108,8 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   w.todayISO=()=> '2026-10-19';
   w.key=(uid,kind)=>'test:'+uid+':'+kind;
   w.requestAnimationFrame=callback=>callback();
+  w.eval(read('ui/orientation-defaults-v1.js'));
+  w.eval(read('ui/orientation-v1.js'));
   w.eval(read('ui/discipline-standard.js'));
   w.CentralDisciplineStandard.refresh();
 
@@ -128,7 +130,13 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   assert.match(body.querySelector('.penal-approved-progress').textContent,/25% concluído/);
   const reading=body.querySelector('.penal-approved-reading');
   assert.match(reading.textContent,/CF, art\. 5º; CP, arts\. 1º e 12/);
-  assert.match(reading.textContent,/Separe legalidade e anterioridade/);
+  const orient=reading.querySelector('.bc-orient');
+  assert.ok(orient,'orientação curta única');
+  assert.equal(orient.dataset.bcOrient,'penal:1');
+  assert.match(orient.textContent,/Foco:/);
+  assert.match(orient.textContent,/Atenção:/);
+  assert.match(orient.textContent,/Como estudar:/);
+  assert.equal(orient.querySelector('details,ul,li'),null);
   reading.querySelector('[data-penal-reading-toggle]').click();
   assert.equal(readingState.reading,true);
   materials.querySelector('[data-penal-approved-card="complete"] .penal-approved-primary').click();
@@ -209,7 +217,10 @@ test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manu
   const document={readyState:'loading',querySelector:selector=>selector==='.subject[data-id="cpp"]'?subject:null,addEventListener(){}};
   const window={CPP_NATIVE_INDEX:index,CPP_NATIVE_CONTENT:{}};
   const context={window,document,localStorage,console,MutationObserver:class{observe(){}},setTimeout(){},URL,Image:function(){}};
-  vm.runInNewContext(read('ui/cpp-native-study-v1.js'),context);
+  vm.createContext(context);
+  vm.runInContext(read('ui/orientation-defaults-v1.js'),context);
+  vm.runInContext(read('ui/orientation-v1.js'),context);
+  vm.runInContext(read('ui/cpp-native-study-v1.js'),context);
   assert.equal(window.CppNative.render(),true);
   const html=body.innerHTML;
   assert.equal((html.match(/data-cpp-native-module=/g)||[]).length,22);
@@ -219,7 +230,8 @@ test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manu
   assert.match(first,/bc-reading-progress-only/);
   assert.equal((first.match(/adm-native-progress-line/g)||[]).length,1,'o módulo contém apenas um indicador de progresso');
   assert.doesNotMatch(first,/Questões externas/,'o painel duplicado de questões externas não aparece');
-  const guided=first.indexOf('adm-native-guided-reading');
+  const guided=first.indexOf('data-bc-orient="cpp:1"');
+  assert.ok(guided>=0,'orientação curta do CPP M01');
   const complete=first.indexOf('data-kind="complete"');
   const summary=first.indexOf('data-kind="summary"');
   assert.doesNotMatch(first,/data-kind="infographic"/);

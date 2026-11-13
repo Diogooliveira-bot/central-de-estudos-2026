@@ -65,17 +65,8 @@ function materialCard(id,stage,label,description,icon){
   '" onclick="'+target+'">'+action+'</button></div></article>';
 }
 function readingOrientation(m){
- const topics=m.id==='M01'?(m.legado?.blocos||[]):(lesson(m.id)?.theory||[]).map(ch=>ch.title);
- const lines=topics.slice(0,5);
- const intro=m.id==='M01'?
-  'Pratique cálculo rápido em seis treinos cronometrados; acompanhe o tempo e os resultados.':
-  'Comece pela teoria, acompanhe as resoluções passo a passo e consolide os conceitos na revisão.';
- return '<section class="cf-native-oriented bc-rlm-orientation">'+
-  '<div class="cf-native-reading-head"><span class="cf-native-oriented-icon" aria-hidden="true">📖</span>'+
-  '<div><b>Leitura orientada inicial</b><small>'+esc(intro)+'</small></div></div>'+
-  (lines.length?'<details><summary>O que aprender neste módulo</summary><ul>'+
-   lines.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></details>':'')+
-  '</section>';
+ const n=parseInt(String(m.id||'').replace(/\D/g,''),10);
+ return g.BCOrientation&&n?g.BCOrientation.html('rlm:'+n):'';
 }
 function card(m){
  const done=isDone(m.id),progress=result(m.id),p=m.id==='M01'?0:(g.BCQuestionsRemoved?readProgress(m.id):Math.round(progress.count/10*100));

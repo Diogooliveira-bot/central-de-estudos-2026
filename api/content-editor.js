@@ -50,6 +50,25 @@ function cleanHtml(value){
   html=html.replace(/\s(href|src)\s*=\s*(["'])\s*javascript:[\s\S]*?\2/gi,'');
   return html;
 }
+const ORIENTATION_ID=/^orient:(?:adm|cf|civil|cpc|penal|cpp|rlm|info):\d{1,2}$/;
+const ORIENTATION_FIELDS=['foco','atencao','dica'];
+// Orientações iniciais são texto simples curto: aceitamos somente JSON com os três campos conhecidos.
+export function normalizeOrientation(html){
+  let data;
+  try{data=JSON.parse(String(html||''))}catch(_){return null}
+  if(!data||typeof data!=='object'||Array.isArray(data))return null;
+  const out={};
+  for(const field of ORIENTATION_FIELDS){
+    const value=data[field];
+    if(value===undefined||value===null||value==='')continue;
+    if(typeof value!=='string')return null;
+    const text=value.replace(/[<>]/g,'').replace(/\s+/g,' ').trim();
+    if(text.length>400)return null;
+    if(text)out[field]=text;
+  }
+  if(Object.keys(data).some(key=>!ORIENTATION_FIELDS.includes(key)))return null;
+  return Object.keys(out).length?JSON.stringify(out):null;
+}
 export function imageSignature(html){
   const value=String(html||'');
   // O perfil editor pode preservar imagens existentes, mas não incluir,
@@ -77,6 +96,14 @@ export default async function handler(req,res){
       const rows=await sql`SELECT revision,label,archived_at FROM central_content_override_history WHERE content_id=${id} ORDER BY revision DESC LIMIT 25`;
       return send(res,200,{id,versions:rows.map(r=>({revision:Number(r.revision),label:r.label||'',archivedAt:r.archived_at}))});
     }
+    if(req.method==='GET'&&req.query?.action==='orientations'){
+      // Orientação inicial é material gratuito e curto: qualquer conta ativa pode ler.
+      const reader=await requireSession(req,['admin','editor','aluno']);
+      if(!reader.ok)return send(res,reader.status,{error:reader.error});
+      const rows=await sql`SELECT content_id,html,revision FROM central_content_overrides WHERE content_id LIKE 'orient:%' LIMIT 300`;
+      const items=rows.filter(r=>ORIENTATION_ID.test(r.content_id)).map(r=>({id:r.content_id,html:r.html,revision:Number(r.revision||1)}));
+      return send(res,200,{items});
+    }
     if(req.method==='GET'){
       // Only fixed, audited guided-review IDs use the free summary entitlement.
       // Every other edited document fails closed under the Premium theory policy.
@@ -95,7 +122,12 @@ export default async function handler(req,res){
       const body=await readJsonBody(req);
       const contentId=String(body?.id||'').trim().slice(0,240);
       const label=String(body?.label||'').slice(0,240);
-      const html=cleanHtml(body?.html||'');
+      let html=cleanHtml(body?.html||'');
+      if(contentId.startsWith('orient:')){
+        if(!ORIENTATION_ID.test(contentId))return send(res,400,{error:'Identificador de orientação inválido'});
+        html=normalizeOrientation(html);
+        if(!html)return send(res,400,{error:'Orientação inválida: use apenas foco, atenção e dica (até 400 caracteres cada)'});
+      }
       if(!contentId||!html)return send(res,400,{error:'Conteúdo definitivo inválido'});
       const bytes=Buffer.byteLength(html,'utf8');
       if(bytes>1_500_000)return send(res,413,{error:'Conteúdo acima de 1,5 MB'});
