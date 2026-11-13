@@ -986,41 +986,7 @@ setTimeout(function(){
 
   <section class="view hidden" id="performanceView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><div class="hero"><div><h1>Desempenho</h1><p>Resultados registrados nos tópicos desta Central, sem substituir as estatísticas próprias dos módulos existentes.</p></div></div><div class="card" style="padding:16px"><div class="summary" style="grid-template-columns:repeat(4,1fr)"><div class="sum"><small>Sessões</small><b id="gpSessions">0</b></div><div class="sum"><small>Questões</small><b id="gpQ">0</b></div><div class="sum"><small>Acertos</small><b id="gpC">0</b></div><div class="sum"><small>Aproveitamento</small><b id="gpA">—</b></div></div><div id="perfBySubject" style="margin-top:15px"></div></div><div class="card" style="padding:0;overflow:hidden"><div id="mapaEstudos"></div></div></section>
 
-  <section class="view hidden" id="tecCadernosView" aria-hidden="true" inert hidden><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button>
-   <div class="tec-shell">
-    <div class="hero"><div><h1>Cadernos TEC</h1><p>Todos os cadernos organizados por matéria e prontos para abrir no TEC Concursos.</p></div><div class="tec-hero-actions"><button class="btn" type="button" onclick="tecAbrirPastaGeral()">Abrir pasta geral ↗</button></div></div>
-    <div class="tec-summary"><div class="card"><small>Cadernos vinculados</small><b id="tecTotalCadernos">—</b></div><div class="card"><small>Matérias</small><b id="tecTotalMaterias">—</b></div><div class="card"><small>Questões disponíveis</small><b id="tecTotalQuestoes">—</b></div></div>
-    <div class="card" id="tecVisaoGeral" style="margin-top:14px">
-      <b>📊 Visão geral</b><span class="muted small"> — questões registradas por matéria</span>
-      <div class="tv-grid" id="tecVisaoGrid"><div class="muted small">Sem registros ainda.</div></div>
-     </div>
-     <div class="card" id="tecHistCard" style="margin-top:14px">
-      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><b>📝 Registro de questões</b><span class="muted small">anote o que resolveu hoje — fica salvo neste dispositivo</span></div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:end;margin-top:10px">
-       <label style="flex:2 1 200px;display:flex;flex-direction:column;gap:4px;font-size:12px">Caderno
-        <select id="tecRegCaderno" style="width:100%"></select></label>
-       <label style="flex:1 1 120px;display:flex;flex-direction:column;gap:4px;font-size:12px">Data
-        <input id="tecRegData" type="date" style="width:100%"></label>
-       <label style="flex:1 1 90px;display:flex;flex-direction:column;gap:4px;font-size:12px">Feitas
-        <input id="tecRegFeitas" type="number" min="1" step="1" inputmode="numeric" placeholder="0" style="width:100%"></label>
-       <label style="flex:1 1 90px;display:flex;flex-direction:column;gap:4px;font-size:12px">Acertos
-        <input id="tecRegAcertos" type="number" min="0" step="1" inputmode="numeric" placeholder="0" style="width:100%"></label>
-       <label style="flex:0 0 76px;display:flex;flex-direction:column;gap:4px;font-size:12px">%</label>
-       <button class="btn" type="button" onclick="return tecRegSalvar()" id="tecRegBtn" style="align-self:end">+ Registrar</button>
-      </div>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px" class="summary">
-       <div class="sum"><small>Sessões</small><b id="tecRegSess">0</b></div>
-       <div class="sum"><small>Feitas</small><b id="tecRegFeitasTotal">0</b></div>
-       <div class="sum"><small>Acertos</small><b id="tecRegAcertosTotal">0</b></div>
-       <div class="sum"><small>Aproveitamento</small><b id="tecRegPctTotal">—</b></div>
-      </div>
-      <div id="tecRegLista" style="margin-top:12px"></div>
-     </div>
-     <div class="card tec-toolbar"><input id="tecBusca" type="search" placeholder="Pesquisar por código ou assunto" autocomplete="off" oninput="tecCadernosRender()"><select id="tecMateria" onchange="tecCadernosRender()"><option value="">Todas as matérias</option></select></div>
-    <div class="tec-groups" id="tecCadernosLista"><div class="tec-empty">Carregando os cadernos…</div></div>
-   </div>
-  </section>
-
+  <section class="view hidden" id="tecCadernosView" aria-hidden="true" inert hidden></section>
 
   <section class="view module-view hidden" id="leiSecaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><iframe id="leiSecaFrame" class="module-frame" title="Lei em Dia"></iframe></section>
 
