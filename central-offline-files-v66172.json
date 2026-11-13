@@ -1,5 +1,5 @@
 {
-  "build": "20261112-questoes-novas-v1",
+  "build": "20261112-questoes-novas-v2",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261112nographic1",
@@ -114,7 +114,7 @@
     "/ui/portuguese-activities-v1.js?v=20261013ptactivities1",
     "/ui/portuguese-reader.js?v=20261023ptorg1",
     "/ui/portuguese-reader.css?v=20261003ptnative2",
-    "/base-completa-visual-v1.js?v=20261112-questoes-novas-v1",
+    "/base-completa-visual-v1.js?v=20261112-questoes-novas-v2",
     "/ui/cpc-native-study-reader.js?v=20261111cpcpdf1",
     "/cpc-study-system-v1.js?v=20261031fix1",
     "/ui/cpc-m02-native-study-reader.js?v=20261111cpcpdf1",
@@ -195,8 +195,8 @@
     "/ui/visual-editor-v1.js?v=20261025tables1",
     "/ui/visual-editor-v1.css?v=20261025tables1",
     "/ui/cpp-native-study-v1.js?v=20261112nographic1",
-    "/ui/module-links-lei-v1.css?v=20261106pt1",
-    "/ui/module-links-lei-v1.js?v=20261106pt1",
+    "/ui/module-links-lei-v1.css?v=20261112q3",
+    "/ui/module-links-lei-v1.js?v=20261112q3",
     "/ui/cpp-m01-visual-pilot.js?v=20261105literal3",
     "/ui/cpp-m01-visual-pilot.css?v=20261105literal3",
     "/content/cpp/cpp-visual-law.js?v=20261105literal3",
@@ -263,11 +263,11 @@
     "/content/adm/m18-apostila-summary.js?v=20261108adm1",
     "/content/adm/m19-apostila-summary.js?v=20261108adm1",
     "/content/adm/m20-apostila-summary.js?v=20261108adm1",
-    "/ui/old-questions-removed-v1.js?v=20261112-questoes-novas-v1",
-    "/ui/old-questions-removed-v1.css?v=20261112-questoes-novas-v1",
-    "/ui/questoes-area-v1.css?v=20261112q2",
+    "/ui/old-questions-removed-v1.js?v=20261112-questoes-novas-v2",
+    "/ui/old-questions-removed-v1.css?v=20261112-questoes-novas-v2",
+    "/ui/questoes-area-v1.css?v=20261112q4",
     "/ui/questoes-bank-v1.js?v=20261112q1",
-    "/ui/questoes-area-v1.js?v=20261112q3",
-    "/ui/questoes-modulo-card-v1.js?v=20261112q2"
+    "/ui/questoes-area-v1.js?v=20261112q4",
+    "/ui/questoes-modulo-card-v1.js?v=20261112q3"
   ]
 }

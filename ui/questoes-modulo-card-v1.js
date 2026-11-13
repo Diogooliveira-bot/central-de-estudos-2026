@@ -24,14 +24,51 @@
     { disc: 'rlm', modules: '#subjects .subject[data-id="rlm"] .bc-rlm-module[data-rlm-module]', num: m => dig(m.dataset.rlmModule), body: ':scope > .cf-module-body',
       after: '.bc-native-materials' }
   ];
+  function cardHtml(cls, icone, titulo, desc, tags, botao, botaoCls) {
+    return '<div class="bcmc-icon" aria-hidden="true">' + icone + '</div><div class="bcmc-copy"><h3>' + titulo + '</h3><p>' + desc + '</p><div class="bcmc-tags">' + tags.map(t => '<span>' + t + '</span>').join('') + '</div></div><div class="bcmc-actions"><button type="button" class="bcmc-primary' + (botaoCls ? ' ' + botaoCls : '') + '">' + botao + '</button></div>';
+  }
   function card(disc, n) {
     const el = document.createElement('article');
-    el.className = 'bcqa-module-card';
+    el.className = 'bcmc-card bcmc-questions';
     el.setAttribute('data-bc-questoes-area', '1');
     el.setAttribute('data-bcqa-module-card', disc + ':' + n);
-    el.innerHTML = '<div class="bcqa-mc-icon" aria-hidden="true">✍️</div><div class="bcqa-mc-copy"><span class="bcqa-mc-tag">QUESTÕES</span><h4>Questões do módulo</h4><p>Questões inéditas, com correção na hora e comentário.</p></div><button type="button" class="bcqa-btn" data-bcqa-abrir>Resolver questões</button>';
-    el.querySelector('[data-bcqa-abrir]').addEventListener('click', ev => { ev.stopPropagation(); g.BCQuestoesArea?.openModule(disc, n); });
+    el.innerHTML = cardHtml('', '✍️', 'Questões do módulo', 'Questões inéditas, com correção na hora e comentário.', ['Questões inéditas', 'Com comentário'], 'Resolver questões', 'bcqa-abrir');
+    el.querySelector('.bcqa-abrir').addEventListener('click', ev => { ev.stopPropagation(); g.BCQuestoesArea?.openModule(disc, n); });
     return el;
+  }
+  // Lei em Dia no mesmo padrão: o bloco original continua existindo (escondido) e é ele que abre a Lei em Dia.
+  const LEI_NATIVA = [
+    { disc: 'cpc', modules: '#subjects .subject[data-id="cpc"] .cf-module[data-cf]', native: '.cpc-mini-panel', gatilho: 'button[onclick*="openLeiSecaEnxuta"]', texto: /lei em dia/i },
+    { disc: 'cf', modules: '#subjects .subject[data-id="cf"] .cf-module[data-cf]', native: '.cf-study-law', gatilho: 'button' },
+    { disc: 'cpp', modules: '#subjects .subject[data-id="cpp"] [data-cpp-native-module]', native: '.cpp-native-lei-card', gatilho: 'button' }
+  ];
+  function leiPadrao(cfg, module) {
+    const nativos = [...module.querySelectorAll(cfg.native)].filter(el => !cfg.texto || cfg.texto.test((el.querySelector('h4,h3,b')||el).textContent));
+    nativos.forEach(nat => {
+      if (nat.dataset.bcmcDone) return;
+      const trig = nat.querySelector(cfg.gatilho);
+      if (!trig) return;
+      nat.dataset.bcmcDone = '1';
+      const el = document.createElement('article');
+      el.className = 'bc-module-law-card bcmc-card bcmc-law';
+      el.setAttribute('data-bc-module-law', cfg.disc);
+      el.innerHTML = cardHtml('', '⚖️', 'Lei em Dia', 'Artigos e questões de lei seca já filtrados para este módulo.', ['Lei seca', 'Vinculado ao módulo'], 'Abrir Lei em Dia', 'bc-module-law-open');
+      el.querySelector('button').addEventListener('click', () => trig.click());
+      // No Processo Civil o bloco nativo vive numa grade de dois painéis: o cartão fica antes da grade.
+      const grade = nat.parentElement && nat.parentElement.classList.contains('cpc-bottom-grid') ? nat.parentElement : null;
+      if (grade) grade.before(el); else nat.after(el);
+      nat.classList.add('bc-law-relocated');
+    });
+  }
+  // Rodapé de todos os módulos: "Ferramentas do módulo" e "Questões feitas por rodadas" saem da tela.
+  // Ficam só escondidos (os atalhos internos continuam funcionando para a Lei em Dia).
+  const RODAPE = '.ds-footer-tools, .ds-footer-questions, .adm-native-module-tools, .cv-tools';
+  function limparRodape() {
+    document.querySelectorAll('#subjects ' + RODAPE.split(',').map(x => x.trim()).join(', #subjects ')).forEach(el => el.classList.add('bc-footer-removed'));
+    document.querySelectorAll('#subjects .ds-module-footer').forEach(f => {
+      const resto = [...f.children].some(c => !c.classList.contains('bc-footer-removed') && !c.matches(RODAPE));
+      f.classList.toggle('bc-footer-removed', !resto);
+    });
   }
   function apply(cfg, module) {
     const n = cfg.num(module);
@@ -44,11 +81,13 @@
     for (const sel of cfg.after.split(/\s*,\s*(?![^()]*\))/)) { ref = body.querySelector(sel); if (ref) break; }
     if (!ref) return;
     // Lei em Dia (se existir) vem antes; o cartão de questões fica logo depois dela.
-    const lei = body.querySelector('[data-bc-module-law], .cpp-native-lei-card');
+    const lei = body.querySelector('[data-bc-module-law]') || body.querySelector('.cpp-native-lei-card');
     const anchor = lei && lei !== el ? lei : ref;
     if (anchor.nextElementSibling !== el) anchor.after(el);
   }
   function refresh() {
+    LEI_NATIVA.forEach(cfg => document.querySelectorAll(cfg.modules).forEach(m => { try { leiPadrao(cfg, m); } catch (e) { console.warn('[Lei em Dia]', cfg.disc, e); } }));
+    limparRodape();
     CONFIG.forEach(cfg => document.querySelectorAll(cfg.modules).forEach(module => {
       try { apply(cfg, module); } catch (e) { console.warn('[Questões do módulo]', cfg.disc, e); }
     }));

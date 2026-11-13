@@ -25,7 +25,9 @@ test('menu: entrada "Questões" antes da Lei em Dia e no menu Mais', async () =>
   dom.window.close();
 });
 
-test('área: hub → disciplina → módulo, responder, placar, refazer erros e salvar progresso', async () => {
+const responder = (d, i, j) => { d.querySelector('.bcqa-q[data-i="' + i + '"] [data-op="' + j + '"]').click(); d.querySelector('.bcqa-q[data-i="' + i + '"] [data-responder]').click(); };
+
+test('área: hub → disciplina → módulo; selecionar e só então responder', async () => {
   const dom = fixture(), w = dom.window, d = w.document;
   w.BCQuestoesArea.openHub();
   assert.equal(d.querySelectorAll('[data-bc-questoes-area] [data-disc]').length, 8);
@@ -35,22 +37,83 @@ test('área: hub → disciplina → módulo, responder, placar, refazer erros e 
   await tick();
   assert.equal(d.querySelectorAll('.bcqa-q').length, 10);
   const banco = w.BC_QUESTOES.adm[3];
+  // selecionar não responde: o botão Responder só habilita depois da escolha
+  assert.equal(d.querySelector('.bcqa-q[data-i="0"] [data-responder]').disabled, true);
+  d.querySelector('.bcqa-q[data-i="0"] [data-op="2"]').click();
+  assert.equal(d.querySelector('.bcqa-q[data-i="0"] [data-responder]').disabled, false);
+  assert.match(d.querySelector('[data-stats]').textContent, /0\/10 respondidas/);
+  assert.equal(d.querySelector('.bcqa-q[data-i="0"] .bcqa-feedback'), null);
+  // responder: erra a 1ª e acerta a 2ª
   const errada = (banco[0].answer + 1) % 5;
   d.querySelector('.bcqa-q[data-i="0"] [data-op="' + errada + '"]').click();
-  d.querySelector('.bcqa-q[data-i="1"] [data-op="' + banco[1].answer + '"]').click();
+  d.querySelector('.bcqa-q[data-i="0"] [data-responder]').click();
+  responder(d, 1, banco[1].answer);
   assert.match(d.querySelector('[data-stats]').textContent, /2\/10 respondidas · 1 acertos/);
   assert.match(d.querySelector('.bcqa-q[data-i="0"] .bcqa-feedback').textContent, /Resposta incorreta/);
   assert.match(d.querySelector('.bcqa-q[data-i="1"] .bcqa-feedback').textContent, /Base:/);
-  // progresso salvo
-  const salvo = JSON.parse(w.localStorage.getItem('central-v6:questoes:v1'));
-  assert.equal(Object.keys(salvo.r['adm:3']).length, 2);
-  // refazer só os erros libera a questão 1 e mantém a 2
+  // refazer só os erros libera a 1ª e mantém a 2ª
   d.querySelector('[data-erros]').click();
   assert.equal(d.querySelectorAll('.bcqa-q[data-i="0"] [data-op]:not([disabled])').length, 5);
   assert.equal(d.querySelectorAll('.bcqa-q[data-i="1"] [data-op]:not([disabled])').length, 0);
-  // refazer o módulo zera tudo
   d.querySelector('[data-zerar]').click();
   assert.match(d.querySelector('[data-stats]').textContent, /0\/10 respondidas/);
+  dom.window.close();
+});
+
+test('riscar alternativa: risco visual, não responde e desfaz a seleção', async () => {
+  const dom = fixture(), w = dom.window, d = w.document;
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  d.querySelector('.bcqa-q[data-i="0"] [data-op="1"]').click();
+  d.querySelector('.bcqa-q[data-i="0"] [data-strike="1"]').click();
+  const op = () => d.querySelector('.bcqa-q[data-i="0"] [data-op="1"]');
+  assert.ok(op().classList.contains('struck'));
+  assert.ok(!op().classList.contains('selected'), 'riscar tira a seleção');
+  assert.equal(d.querySelector('.bcqa-q[data-i="0"] [data-responder]').disabled, true);
+  d.querySelector('.bcqa-q[data-i="0"] [data-strike="1"]').click();
+  assert.ok(!op().classList.contains('struck'));
+  dom.window.close();
+});
+
+test('histórico: mostra se errou ou acertou da última vez; cada abertura começa zerada', async () => {
+  const dom = fixture(), w = dom.window, d = w.document;
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  const banco = w.BC_QUESTOES.adm[3];
+  assert.match(d.querySelector('.bcqa-q[data-i="0"] .bcqa-hist').textContent, /Ainda não respondida/);
+  d.querySelector('.bcqa-q[data-i="0"] [data-op="' + ((banco[0].answer + 1) % 5) + '"]').click();
+  d.querySelector('.bcqa-q[data-i="0"] [data-responder]').click();
+  responder(d, 1, banco[1].answer);
+  d.querySelector('[data-bcqa-voltar]').click();
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  // zerou a sessão, mas o histórico lembra
+  assert.match(d.querySelector('[data-stats]').textContent, /0\/10 respondidas/);
+  assert.equal(d.querySelectorAll('.bcqa-feedback').length, 0);
+  assert.match(d.querySelector('.bcqa-q[data-i="0"] .bcqa-hist').textContent, /Errou da última vez · 1 erro/);
+  assert.match(d.querySelector('.bcqa-q[data-i="1"] .bcqa-hist').textContent, /Acertou da última vez · 1 acerto/);
+  // o hub mostra o que já foi respondido
+  d.querySelector('[data-bcqa-voltar]').click();
+  w.BCQuestoesArea.openHub();
+  assert.match(d.querySelector('[data-disc="adm"]').textContent, /2 já respondidas/);
+  dom.window.close();
+});
+
+test('modo Foco: uma questão por vez, Avançar só depois de responder; modo é lembrado', async () => {
+  const dom = fixture(), w = dom.window, d = w.document;
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  assert.equal(d.querySelectorAll('.bcqa-q').length, 10, 'padrão: rolagem');
+  d.querySelector('[data-modo="foco"]').click();
+  assert.equal(d.querySelectorAll('.bcqa-q').length, 1);
+  assert.match(d.querySelector('.bcqa-meta').textContent, /QUESTÃO 01 DE 10/);
+  assert.equal(d.querySelector('[data-prox]').disabled, true);
+  responder(d, 0, w.BC_QUESTOES.adm[3][0].answer);
+  assert.equal(d.querySelector('[data-prox]').disabled, false);
+  d.querySelector('[data-prox]').click();
+  assert.match(d.querySelector('.bcqa-meta').textContent, /QUESTÃO 02 DE 10/);
+  d.querySelector('[data-ant]').click();
+  assert.match(d.querySelector('.bcqa-meta').textContent, /QUESTÃO 01 DE 10/);
+  assert.equal(w.localStorage.getItem('central-v6:questoes:modo'), 'foco');
+  d.querySelector('[data-bcqa-fechar]').click();
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  assert.equal(d.querySelectorAll('.bcqa-q').length, 1, 'continua em Foco');
   dom.window.close();
 });
 

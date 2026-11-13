@@ -53,9 +53,9 @@
     let card = body.querySelector('[data-bc-module-law]');
     if (card) return card;
     card = document.createElement('article');
-    card.className = 'bc-module-law-card';
+    card.className = 'bc-module-law-card bcmc-card bcmc-law';
     card.setAttribute('data-bc-module-law', cfg.id);
-    card.innerHTML = '<div class="bc-module-law-icon" aria-hidden="true">⚖️</div><div class="bc-module-law-copy"><span>LEI EM DIA</span><h4>Lei em Dia do módulo</h4><p>Artigos e questões de lei seca já filtrados para este módulo.</p></div><div class="bc-module-law-actions"><button type="button" class="bc-module-law-open">Abrir Lei em Dia</button></div>';
+    card.innerHTML = '<div class="bcmc-icon" aria-hidden="true">⚖️</div><div class="bcmc-copy"><h3>Lei em Dia</h3><p>Artigos e questões de lei seca já filtrados para este módulo.</p><div class="bcmc-tags"><span>Lei seca</span><span>Vinculado ao módulo</span></div></div><div class="bcmc-actions"><button type="button" class="bcmc-primary bc-module-law-open">Abrir Lei em Dia</button></div>';
     card.querySelector('button').addEventListener('click', () => {
       const trigger = cfg.trigger && (body.querySelector(cfg.trigger) || module.querySelector(cfg.trigger));
       if (trigger) trigger.click(); else cfg.open?.(module);
