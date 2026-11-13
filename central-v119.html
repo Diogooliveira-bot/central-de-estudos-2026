@@ -60,7 +60,7 @@
  var bootScreen=document.getElementById('central-boot-screen').outerHTML;
  entryUrl.searchParams.delete('direct');
  entryUrl.searchParams.delete('central_source');
- var scripts=['ui/study-objectives-catalog-v1.js?v=20261105fasea1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','ui/external-question-filters-v1.js?v='+BUILD+'-mais1-links3'];
+ var scripts=['ui/study-objectives-catalog-v1.js?v=20261105fasea1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','ui/external-question-filters-v1.js?v='+BUILD+'-principal1'];
  function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
  function prepareDisciplineLoading(html){
   html=html.replace(/(<meta name="central-source-version" content=")[^"]+("\s*\/?>)/i,'$1'+APP_VERSION+'$2');
