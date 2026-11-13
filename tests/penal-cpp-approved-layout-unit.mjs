@@ -162,6 +162,7 @@ test('runtime de filtros reutiliza painel aninhado e não duplica após atualiza
   const dom=new JSDOM('<!doctype html><div id="subjects"><section class="subject" data-id="penal"><section class="cf-module" data-cf="p1"><div class="cf-module-body"><div class="ds-module-footer"><div class="ds-notes adm-native-notes"></div></div></div></section></section></div><div class="workspace"></div>',{url:'https://study.test/',runScripts:'dangerously',pretendToBeVisual:true});
   const w=dom.window;
   w.TEC_PENAL_CPP_LINKS={records:[{status:'VALIDADO_NA_CONTA_CRIADORA',discipline:'penal',module:'M01',id:'101897431',quantity:55,url:'https://www.tecconcursos.com.br/questoes/cadernos/101897431',title:'CP 01 - Conceitos, princípios e lei penal'}]};
+  w.QC_CENTRAL_SHARING_LINKS={items:[{discipline:'Direito Penal',disciplineKey:'penal',code:'M01',title:'Princípios penais',id:'15299001',quantity:55,status:'VALIDADO',public:true,link:'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15299001'}]};
   w.requestAnimationFrame=callback=>callback();
   w.eval(read('ui/external-question-filters-v1.js'));
   await new Promise(resolve=>w.setTimeout(resolve,20));
@@ -169,18 +170,20 @@ test('runtime de filtros reutiliza painel aninhado e não duplica após atualiza
   const footer=body.querySelector('.ds-module-footer');
   const note=footer.querySelector('.ds-notes');
   const panel=body.querySelector('[data-bcq-module-panel]');
-  assert.ok(panel,'painel de filtro TEC real foi criado');
+  assert.ok(panel,'painel QC com 20+ questões é criado');
   note.after(panel);
   for(let i=0;i<8;i++)w.ExternalQuestionFilters.refresh();
   await new Promise(resolve=>w.setTimeout(resolve,20));
   assert.equal(body.querySelectorAll('[data-bcq-module-panel]').length,1);
-  assert.ok(body.querySelector('[data-bcq-module-panel] a[href*="101897431"]'));
+  assert.ok(body.querySelector('[data-bcq-module-panel] a[href*="15299001"]'));
+  assert.equal(body.querySelector('[data-bcq-platform="tec"]'),null,'TEC não aparece no painel');
 });
 
-test('Processo Penal monta os links do QC/TEC logo após a Lei em Dia do módulo',async()=>{
+test('Processo Penal monta somente QC logo após a Lei em Dia do módulo',async()=>{
   const dom=new JSDOM('<!doctype html><div id="subjects"><section class="subject" data-id="cpp"><div class="subject-body"><article class="topic-item" data-cpp-native-module="1"><div class="topic-detail"><div class="detail-panel"><section class="adm-native-zone"><div class="adm-native-material-grid"><article data-kind="summary"></article><article data-kind="complete"></article><article data-kind="lei-em-dia"></article><section class="cpp-native-links" data-cpp-links-slot="1" data-bcq-module-slot="1"><div class="cpp-native-links-head"></div><section class="cpp-native-tec-panel" data-cpp-tec-panel="1"></section></section></div></section><section class="adm-native-notes"></section></div></div></article></div></section></div>',{url:'https://study.test/',runScripts:'dangerously',pretendToBeVisual:true});
   const w=dom.window;
   w.TEC_PENAL_CPP_LINKS={records:[{status:'VALIDADO_NA_CONTA_CRIADORA',discipline:'cpp',module:'M01',id:'105849897',quantity:10,url:'https://www.tecconcursos.com.br/questoes/cadernos/105849897',title:'Introdução ao Direito Processual Penal'}]};
+  w.QC_CENTRAL_SHARING_LINKS={items:[{discipline:'Direito Processual Penal',disciplineKey:'processual-penal',code:'M01',title:'Introdução ao Direito Processual Penal',id:'15299002',quantity:27,status:'VALIDADO',public:true,link:'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15299002'}]};
   w.requestAnimationFrame=callback=>callback();
   w.eval(read('ui/external-question-filters-v1.js'));
   await new Promise(resolve=>w.setTimeout(resolve,20));
@@ -188,8 +191,10 @@ test('Processo Penal monta os links do QC/TEC logo após a Lei em Dia do módulo
   const panel=w.document.querySelector('[data-bcq-module-panel="processual-penal:M01"]');
   assert.ok(panel,'painel de links criado');
   assert.equal(panel.parentElement,slot,'links ficam no espaço reservado do módulo');
+  assert.equal(panel.querySelector('[data-bcq-platform="tec"]'),null);
+  assert.ok(panel.querySelector('a[href*="15299002"]'));
+  assert.equal(slot.querySelector('.cpp-native-tec-panel')?.getAttribute('data-bcq-original'),'1');
   assert.equal(slot.previousElementSibling.dataset.kind,'lei-em-dia','Lei em Dia vem antes dos links');
-  assert.equal(slot.querySelector('.cpp-native-tec-panel').getAttribute('data-bcq-original'),'1');
   dom.window.close();
 });
 
@@ -221,10 +226,10 @@ test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manu
   const notes=first.indexOf('adm-native-notes');
   const tools=first.indexOf('adm-native-module-tools');
   const links=first.indexOf('data-cpp-links-slot="1"');
-  const tec=first.indexOf('data-cpp-tec-panel');
   const lei=first.indexOf('data-kind="lei-em-dia"');
-  // Ordem pedida: revisão, teoria completa, Lei em Dia do módulo e links do QC/TEC.
-  assert.ok(progress>=0&&progress<guided&&guided<summary&&summary<complete&&complete<lei&&lei<links&&links<tec&&tec<notes&&notes<tools);
+  // Ordem pedida: revisão, teoria completa, Lei em Dia e somente os links QC.
+  assert.ok(progress>=0&&progress<guided&&guided<summary&&summary<complete&&complete<lei&&lei<links&&links<notes&&notes<tools);
+  assert.doesNotMatch(first,/data-cpp-tec-panel/, 'TEC antigo não aparece no módulo');
   assert.match(first,/data-cpp-lei-module="cpp-m01"/);
   assert.match(first,/CppNative\.tool\(1,'decorando'\)/);
   assert.equal((first.match(/Lei em Dia<\/button>|Abrir Lei em Dia/g)||[]).length,1);

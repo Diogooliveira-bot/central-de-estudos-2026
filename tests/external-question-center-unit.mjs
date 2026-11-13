@@ -105,8 +105,9 @@ test('rodapé do módulo preserva o visual aprovado e não repete filtros', asyn
   assert.equal(dom.window.document.querySelector('.cf-module-body').getAttribute('data-bcq-module-host'), '1');
   assert.match(styles, /\.bcq-card-copy b\{[^}]*white-space:normal;[^}]*overflow-wrap:anywhere/);
   assert.doesNotMatch(styles, /\.bcq-card-copy b\{[^}]*text-overflow:ellipsis/);
-  assert.match(styles, /\.bcq-page-filter>span:nth-child\\(2\\) b\\{[^}]*white-space:normal/);
-  assert.doesNotMatch(styles, /\.bcq-page-filter>span:nth-child\\(2\\) b\\{[^}]*text-overflow:ellipsis/);
+  const fullTitleCss = styles.split('.bcq-page-filter>span:nth-child(2) b{')[1]?.split('}')[0] || '';
+  assert.match(fullTitleCss, /white-space:normal/);
+  assert.doesNotMatch(fullTitleCss, /text-overflow:ellipsis/);
 });
 
 test('atualizações externas não remontam nem fazem o painel piscar', async () => {
