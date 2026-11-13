@@ -121,7 +121,7 @@ test('módulo em foco usa título apenas no cabeçalho superior, mantendo contro
   const cpp=readFileSync('ui/cpp-native-study-v1.js','utf8');
   const boot=readFileSync('central-v119.html','utf8');
   const files=JSON.parse(readFileSync('central-offline-files-v66172.json','utf8')).files;
-  const version='/ui/module-clean-v1.css?v=20261112nographic1';
+  const version='/ui/module-clean-v1.css?v=20261113cards1';
   assert.ok(boot.includes(version));
   assert.ok(files.includes(version));
   assert.match(clean,/\.cv-module\.bc-focus-current-module\s*>\s*\.cv-module-head\s*\{/);

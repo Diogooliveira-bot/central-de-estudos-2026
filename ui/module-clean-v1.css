@@ -178,7 +178,8 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-readin
 }
 
 
-/* Grade responsiva da disciplina Constitucional. */
+/* Constitucional: cartões empilhados em largura total, como nas demais disciplinas
+   (em colunas estreitas o cartão horizontal ícone/texto/botão quebrava o texto letra por letra). */
 html #homeView #subjects .subject[data-id="cf"] .cf-native-cards {
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))!important;
+  grid-template-columns:minmax(0,1fr)!important;
 }
