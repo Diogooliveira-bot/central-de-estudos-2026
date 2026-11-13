@@ -26,7 +26,7 @@ test('catálogo principal e objetivos preservam as disciplinas existentes e regi
   const catalog = evaluate('ui/study-objectives-catalog-v1.js','window.CentralStudyObjectiveCatalog');
   assert.equal(Object.keys(catalog.subjects).length,9);
   assert.equal(catalog.subjects.info.name,'Informática');
-  assert.equal(catalog.subjects.info.status,'in_production');
+  assert.equal(catalog.subjects.info.status,'theory_published');
   for(const goal of Object.values(catalog.goals)) {
     assert.ok(goal.subjectIds.every(id=>!retired.has(id)));
     assert.ok((goal.examSubjects||[]).every(s=>!retired.has(s.subjectId)));
