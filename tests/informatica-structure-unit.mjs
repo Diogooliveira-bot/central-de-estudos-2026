@@ -41,3 +41,50 @@ test("A Central carrega o catálogo e estrutura em ordem adequada",()=>{
   assert.match(read("ui/study-objectives-catalog-v1.js"),/info:\s*\{\s*id:'info',\s*name:'Informática'/);
   assert.doesNotMatch(read("ui/informatica-structure-v1.js"),/tecconcursos\.com\.br|qconcursos\.com\/questoes/);
 });
+
+test("M01 a M13 têm apostilas reais de teoria e revisão, sem questões fictícias",()=>{
+  const subjects=[];
+  const glob={};
+  for(let n=1;n<=13;n++){
+    const id="m"+String(n).padStart(2,"0");
+    vm.runInNewContext(read("content/informatica/"+id+".js"),{window:glob,console});
+    const m=glob.BC_INFO_CONTENT[id];
+    assert.equal(m.id,id);
+    assert.equal(m.status,"revisado");
+    assert.ok(Array.isArray(m.full)&&m.full.length>=7,id+" precisa de capítulos suficientes");
+    assert.ok(Array.isArray(m.review)&&m.review.length>=3,id+" precisa de revisão");
+    assert.ok(m.full.every(c=>c.title&&c.html.includes("<p>")||c.html.includes("<table>")),id+" estrutura de texto");
+    assert.ok(m.review.every(c=>c.title&&c.html.length>=250),id+" revisão não pode ser vazia");
+    const words=m.full.map(c=>c.html.replace(/<[^>]*>/g," ")).join(" ").trim().split(/\s+/);
+    assert.ok(words.length>=650,id+" teoria não pode ser somente sumário");
+    assert.ok((m.resources||[]).every(r=>r.url.startsWith("https://")),id+" referência segura");
+    assert.equal(m.questions,undefined,id+" material teórico não deve adicionar questões");
+  }
+  assert.equal(Object.keys(glob.BC_INFO_CONTENT).length,13);
+});
+test("Leitor registra 13 teorias e permite abri-las separadamente",()=>{
+  const subjects=[];
+  const glob={
+    document:{querySelector:()=>null},
+    localStorage:{getItem:()=>null,setItem:()=>{}},
+    renderSubjects:()=>{},renderDisciplineGrid:()=>{},renderAll:()=>{},
+    subjStats:s=>({total:s.topics.length,done:0,pct:0,unit:"metas"})
+  };
+  const context={window:glob,SUBJECTS:subjects,console};
+  vm.runInNewContext(read("ui/informatica-structure-v1.js"),context);
+  const reader=read("ui/informatica-reader-v1.js");
+  new vm.Script(reader,{filename:"ui/informatica-reader-v1.js"});
+  vm.runInNewContext(reader,context);
+  assert.equal(glob.BaseInformaticaReader.available().length,13);
+  assert.ok(glob.BaseInformatica.modules.every(m=>glob.BaseInformatica.hasPublishedTheory(m.id)), "teoria marcada disponível");
+  assert.equal(glob.BaseInformatica.modules.filter(m=>m.questions.authorial||m.questions.qc).length,0);
+});
+test("Boot e CSS carregam a teoria sem alterar a produção",()=>{
+  const boot=read("central-v119.html");
+  assert.match(boot,/ui\/informatica-reader-v1\.js\?v=/);
+  assert.match(boot,/ui\/informatica-reader-v1\.css\?v=/);
+  assert.ok(boot.indexOf("ui/informatica-structure-v1.js") < boot.indexOf("ui/informatica-reader-v1.js"));
+  const style=read("ui/informatica-reader-v1.css");
+  assert.match(style,/max-width:780px/);
+  assert.match(style,/\.bc-info-reader-overlay/);
+});
