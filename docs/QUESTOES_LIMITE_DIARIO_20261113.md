@@ -1,6 +1,6 @@
 # Questões do módulo — limite diário do plano Gratuito (5 por dia)
 
-**Estado:** código publicável a qualquer momento. O limite só **liga** quando a migração 010 é aplicada no banco de Production; antes disso a API funciona como antes (sem limite).
+**Estado (13/11/2026): ATIVO em Production.** Migração 010 aplicada às 21:55 UTC e testada com conta gratuita de teste (5 respostas, 6ª bloqueada, cota mantida ao reabrir). (Texto original: código publicável a qualquer momento.) O limite só **liga** quando a migração 010 é aplicada no banco de Production; antes disso a API funciona como antes (sem limite).
 
 ## Regra
 - **Gratuito:** até **5 questões distintas por dia** (dia civil em `America/Sao_Paulo`, zera à meia-noite de Brasília).

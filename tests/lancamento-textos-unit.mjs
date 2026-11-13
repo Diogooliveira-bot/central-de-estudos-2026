@@ -41,3 +41,21 @@ test('Política de Privacidade cita o provedor de e-mail em uso (Resend) e a Hot
   assert.match(t, /Resend \(envio de mensagens essenciais/);
   assert.match(t, /Hotmart intermedeia a venda/);
 });
+
+test('vitrine: botões Premium levam ao checkout da Hotmart (links exatos, nova aba, sem texto de "indisponível")', () => {
+  const SEM = 'https://pay.hotmart.com/B108186453Y?off=o4y1mlg9', ANU = 'https://pay.hotmart.com/B108186453Y?off=gh4ajvj1';
+  for (const f of ['vitrine/index.html', 'conheca.html']) {
+    const h = read(f);
+    for (const [id, url] of [['cta-premium-97', SEM], ['cta-premium-179', ANU]]) {
+      const a = h.match(new RegExp('<a [^>]*id="' + id + '"[^>]*>'))?.[0] || '';
+      assert.ok(a.includes('href="' + url + '"'), f + ' ' + id + ': href');
+      assert.match(a, /target="_blank"/); assert.match(a, /rel="noopener noreferrer"/);
+      assert.doesNotMatch(a, /aria-disabled|data-preview-only/);
+    }
+    assert.doesNotMatch(texto(f), /indisponível até a liberação|Checkout aguardando|botões de compra permanecem desativados|nenhum checkout está integrado/i);
+    // só pode haver links de pagamento para o produto e as duas ofertas aprovadas
+    const todos = [...h.matchAll(/https:\/\/pay\.hotmart\.com[^"'\s<]*/g)].map(m => m[0]);
+    assert.ok(todos.length >= 2 && todos.every(u => u === SEM || u === ANU), f + ': ' + todos.join(' '));
+  }
+  assert.match(read('vitrine/index.html'), /const PREMIUM=\{semestral:'https:\/\/pay\.hotmart\.com\/B108186453Y\?off=o4y1mlg9',anual:'https:\/\/pay\.hotmart\.com\/B108186453Y\?off=gh4ajvj1'\}/);
+});

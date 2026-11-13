@@ -6,15 +6,15 @@
 
 ## Situação em 13/11/2026 (revisão de lançamento)
 
-**Já resolvido desde 29/10:** Termos/Privacidade/Cookies em versão final (`terms-2026-11-13-v4`, sem `draft`); cadastro gratuito ativo em Production (Turnstile + e-mail); domínios `app.basecompleta.com.br` e `basecompleta.com.br` no ar; Hotmart com webhook de Production, 34 cenários de teste e migrações 007–009 aplicadas; 8 disciplinas com questões inéditas por módulo; Qconcursos exclusivo (TEC retirado dos alunos).
+**Resolvido:** textos legais finais (`terms-2026-11-13-v6`); cadastro gratuito em Production com Turnstile e e-mails pelo Resend (confirmação, boas-vindas e recuperação testados de ponta a ponta com conta de teste); Hotmart com webhook de Production, 34 cenários de teste e migrações 007–010 aplicadas; 8 disciplinas com questões inéditas; Qconcursos exclusivo (TEC fora dos alunos); **limite de 5 questões/dia no Gratuito ativo** (migração 010 aplicada em 13/11/2026 às 21:55 UTC no Neon de Production `br-gentle-rice-aw5a3i2i`, sem backup em branch por limite do plano; conferido com conta de teste).
 
-**Texto público alinhado ao produto (13/11):** vitrine e `conheca.html` só citam Qconcursos, mostram 8 disciplinas (sem Informática) e as questões inéditas gratuitas; Termos/Cookies sem TEC. Teste: `tests/lancamento-textos-unit.mjs`.
+**Checkout:** botões da vitrine e de `conheca.html` apontam para os links da Hotmart (Semestral `o4y1mlg9`, Anual `gh4ajvj1`, produto `B108186453Y`). A vitrine é um projeto separado: só mostra os botões depois de publicada pelo painel da Vercel.
 
-**Ainda falta para vender o Premium (depende do proprietário/Hotmart):**
-1. Links de checkout das ofertas Semestral (R$ 97) e Anual (R$ 179) na vitrine e textos/termos/suporte no checkout da Hotmart. Enquanto isso, a vitrine mantém "contratação indisponível" e os Termos dizem "Premium disponível" — a divergência some quando o checkout abrir.
-2. Compra real de teste (conta própria) com conferência de liberação, e-mail de convite e reembolso (revogação). Reteste oficial do alerta único (#219) pendente.
-3. Se o Resend for ativado em Production, incluí-lo na Política de Privacidade (hoje cita só Gmail).
-4. Alertas de erro da Vercel (issue #206) e um cadastro real de teste em Production para confirmar Turnstile/e-mail no domínio final.
+**Ainda falta (depende do proprietário):**
+1. Publicar a vitrine (projeto separado) e conferir `basecompleta.com.br`.
+2. Compra real de teste do Semestral com reembolso em até 7 dias (liberação do Premium, e-mail de ativação, `/vendas-hotmart.html` sem falhas e revogação).
+3. Decidir o plano Pro da Vercel (limites de deploys e transferência; uso comercial).
+4. Alertas de erro da Vercel (issue #206) — indisponíveis no Hobby.
 
 Backup externo segue fora deste escopo (issue #194).
 
