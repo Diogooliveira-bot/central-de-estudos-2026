@@ -1,5 +1,20 @@
 /* Títulos dos módulos exibidos na área Questões. Atualize aqui se um módulo mudar de nome. */
 window.BC_QUESTOES_TITULOS={
+ "info": {
+   "1": "Fundamentos de Informática",
+   "2": "Windows 10 e 11",
+   "3": "Linux",
+   "4": "Microsoft Word",
+   "5": "Microsoft Excel I — Fundamentos",
+   "6": "Microsoft Excel II — Funções e Recursos",
+   "7": "Microsoft PowerPoint",
+   "8": "LibreOffice e Ferramentas Online",
+   "9": "Internet, Navegadores e Pesquisa",
+   "10": "Redes de Computadores",
+   "11": "Correio Eletrônico e Nuvem",
+   "12": "Segurança da Informação",
+   "13": "Inteligência Artificial e Tecnologias Digitais"
+ },
  "cpc": {
   "1": "Normas fundamentais, fontes, aplicação e direito intertemporal",
   "2": "Jurisdição, ação, processo, pressupostos e mérito",
