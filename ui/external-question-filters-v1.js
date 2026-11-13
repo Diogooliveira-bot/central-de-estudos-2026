@@ -462,9 +462,54 @@
     const name = PLATFORM_LABEL[platform];
     const icon = platform === 'qc' ? 'Q' : 'T';
     return `<section class="bcq-platform" data-bcq-platform="${platform}">
-      <header class="bcq-platform-head"><span class="bcq-platform-icon" aria-hidden="true">${icon}</span><span><b>${name}</b><small>Selecione um filtro para praticar questões.</small></span><em>${rows.length} filtro${rows.length === 1 ? '' : 's'} disponíve${rows.length === 1 ? 'l' : 'is'}</em></header>
+      <header class="bcq-platform-head"><span class="bcq-platform-icon" aria-hidden="true">${icon}</span><span><b>${name}</b><small>Abra o caderno principal para praticar questões.</small></span><em>${rows.length} filtro${rows.length === 1 ? '' : 's'} disponíve${rows.length === 1 ? 'l' : 'is'}</em></header>
       <div class="bcq-card-grid">${rows.map(filterCard).join('')}</div>
     </section>`;
+  }
+
+
+  // Somente cadernos principais ficam visíveis; o inventário e as sessões
+  // dos demais cadernos continuam preservados no registro original.
+  function selectPreferredModuleFilters(filters) {
+    const groups = new Map();
+    filters.forEach((filter) => {
+      const key = [filter.disciplineKey, filter.module, filter.platform].join('|');
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(filter);
+    });
+    return Array.from(groups.values()).flatMap((group) => {
+      const available = group.filter((filter) => filter.status !== 'unavailable');
+      const candidates = available.length ? available : group;
+      const ordered = candidates.slice().sort((a, b) =>
+        b.count - a.count ||
+        String(a.code).localeCompare(String(b.code), 'pt-BR', { numeric: true }) ||
+        String(a.id).localeCompare(String(b.id))
+      );
+      // Caderno geral do módulo prevalece sobre todas as subdivisões.
+      const general = ordered.find((filter) =>
+        String(filter.code).toUpperCase() === filter.module &&
+        !/\bparte\s*[12]\b/i.test(filter.title)
+      );
+      if (general) return [general];
+
+      // Só permite 2 links quando os próprios cadernos foram publicados
+      // como Partes 1 e 2 de conteúdos complementares.
+      const part1 = ordered.find((filter) => /\bparte\s*1\b/i.test(filter.title));
+      const part2 = ordered.find((filter) => /\bparte\s*2\b/i.test(filter.title));
+      if (part1 && part2 && part1.stableKey !== part2.stableKey) return [part1, part2];
+
+      // RLM utiliza mapeamento editorial explícito de dois assuntos distintos.
+      if (group[0].disciplineKey === 'rlm' && group[0].platform === 'tec' &&
+          ordered.length === 2 && ordered.every((filter) => filter.source === 'tec-rlm-curated')) {
+        return ordered;
+      }
+      // Sem um caderno geral comprovado, não exibir subdivisões em cascata.
+      return ordered.slice(0, 1);
+    });
+  }
+
+  function visibleModuleFilters() {
+    return selectPreferredModuleFilters(registry);
   }
 
   function filtersForModule(disciplineKey, module) {
@@ -585,7 +630,8 @@
     moduleTargets().forEach((element) => {
       const identity = identityFor(element);
       if (!identity) return;
-      const filters = filtersForModule(identity.disciplineKey, identity.module);
+      const allModuleFilters = filtersForModule(identity.disciplineKey, identity.module);
+      const filters = selectPreferredModuleFilters(allModuleFilters);
       const body = moduleBody(element);
       if (!body) return;
       if (element.matches('.pt-module-card[data-module-card]') && body.dataset.loaded !== '1') return;
@@ -597,9 +643,9 @@
         return;
       }
       try {
-        const signature = `approved-v1|${filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|')}`;
+        const signature = `primary-links-v1|${filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|')}`;
         if (panel && panel.dataset.bcqSignature === signature) {
-          hideOriginalPanels(body); updateModuleMetric(element, filters); return;
+          hideOriginalPanels(body); updateModuleMetric(element, allModuleFilters); return;
         }
         const markup = `<div class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}">${platformPanel(filters, 'qc')}${platformPanel(filters, 'tec')}</div>`;
         const template = document.createElement('template');
@@ -615,7 +661,7 @@
         }
         if (!replacement.isConnected) throw new Error('Painel compacto não foi inserido');
         hideOriginalPanels(body);
-        updateModuleMetric(element, filters);
+        updateModuleMetric(element, allModuleFilters);
       } catch (reason) {
         panel = body.querySelector('[data-bcq-module-panel]');
         if (panel) hideOriginalPanels(body); else showOriginalPanels(body);
@@ -624,12 +670,12 @@
     });
   }
 
-  function uniqueFilters() {
-    return Array.from(new Map(registry.map((filter) => [filter.stableKey, filter])).values());
+  function uniqueFilters(filters = registry) {
+    return Array.from(new Map(filters.map((filter) => [filter.stableKey, filter])).values());
   }
   // The registry and each TEC/QC notebook remain unchanged; this is a view
   // scope for the student's selected objective only.
-  function objectiveScopedFilters(filters = uniqueFilters()) {
+  function objectiveScopedFilters(filters = uniqueFilters(visibleModuleFilters())) {
     const keys = global.CentralStudyObjectives?.questionDisciplineKeys?.();
     return keys instanceof Set ? filters.filter((filter) => keys.has(filter.disciplineKey)) : filters;
   }
@@ -773,7 +819,7 @@
     const search = String(page.querySelector('[data-bcq-search]')?.value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
     const discipline = page.querySelector('[data-bcq-discipline]')?.value || '';
     const platform = page.querySelector('[data-bcq-platform-select]')?.value || '';
-    return objectiveScopedFilters().filter((filter) => !discipline || filter.disciplineKey === discipline).filter((filter) => !platform || filter.platform === platform).filter((filter) => {
+    return objectiveScopedFilters(visibleModuleFilters()).filter((filter) => !discipline || filter.disciplineKey === discipline).filter((filter) => !platform || filter.platform === platform).filter((filter) => {
       if (!search) return true;
       return `${filter.discipline} ${filter.module} ${filter.code} ${filter.title} ${filter.id} ${filter.platformLabel}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(search);
     });
@@ -848,7 +894,7 @@
   }
   function renderDisciplines(page) {
     const groups = new Map();
-    objectiveScopedFilters().forEach((filter) => {
+    objectiveScopedFilters(visibleModuleFilters()).forEach((filter) => {
       if (!groups.has(filter.disciplineKey)) groups.set(filter.disciplineKey, { label: filter.discipline, modules: new Map() });
       const modules = groups.get(filter.disciplineKey).modules;
       if (!modules.has(filter.module)) modules.set(filter.module, []);
@@ -1179,7 +1225,7 @@
   }
 
   global.ExternalQuestionFilters = {
-    buildRegistry, refresh: refreshAll, openPage, openModal,
+    buildRegistry, selectPreferredModuleFilters, visibleModuleFilters, refresh: refreshAll, openPage, openModal,
     sessionsFor, statsFor, saveSession, deleteSession,
     get canManage() { return canManageFilters; },
     get overridesReady() { return overridesLoaded; },
