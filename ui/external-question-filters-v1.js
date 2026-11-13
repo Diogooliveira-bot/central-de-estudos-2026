@@ -485,6 +485,11 @@
         String(a.code).localeCompare(String(b.code), 'pt-BR', { numeric: true }) ||
         String(a.id).localeCompare(String(b.id))
       );
+      // RLM usa dois cadernos distintos quando a matriz editorial assim indica.
+      if (group[0].disciplineKey === 'rlm' && group[0].platform === 'tec' &&
+          ordered.length === 2 && ordered.every((filter) => filter.source === 'tec-rlm-curated')) {
+        return ordered;
+      }
       // Caderno geral do módulo prevalece sobre todas as subdivisões.
       const general = ordered.find((filter) =>
         String(filter.code).toUpperCase() === filter.module &&
@@ -498,11 +503,6 @@
       const part2 = ordered.find((filter) => /\bparte\s*2\b/i.test(filter.title));
       if (part1 && part2 && part1.stableKey !== part2.stableKey) return [part1, part2];
 
-      // RLM utiliza mapeamento editorial explícito de dois assuntos distintos.
-      if (group[0].disciplineKey === 'rlm' && group[0].platform === 'tec' &&
-          ordered.length === 2 && ordered.every((filter) => filter.source === 'tec-rlm-curated')) {
-        return ordered;
-      }
       // Sem um caderno geral comprovado, não exibir subdivisões em cascata.
       return ordered.slice(0, 1);
     });
