@@ -8,7 +8,7 @@
   const VERSION = '20261112q1';
   const NOMES = {
     adm: 'Direito Administrativo', cpc: 'Direito Processual Civil', pt: 'Português', penal: 'Direito Penal',
-    cpp: 'Direito Processual Penal', cf: 'Direito Constitucional', civil: 'Direito Civil', rlm: 'Raciocínio Lógico-Matemático'
+    cpp: 'Direito Processual Penal', cf: 'Direito Constitucional', civil: 'Direito Civil', rlm: 'Raciocínio Lógico-Matemático', info: 'Informática'
   };
   const pending = {};
   const indice = () => g.BC_QUESTOES_INDICE || {};
