@@ -23,10 +23,8 @@
     card.className = 'cpc-approved-reading';
     card.innerHTML = '<div class="cpc-approved-reading-icon" aria-hidden="true">📖</div>' +
       '<div class="cpc-approved-reading-copy"><h3>Leitura orientada inicial</h3>' +
-      '<p>' + esc(week.read || '') + '</p>' +
-      '<details><summary>Ver pontos para observar</summary><ul>' +
-      (week.read_focus || []).map(point => '<li>' + esc(point) + '</li>').join('') +
-      '</ul></details><div class="cpc-approved-reading-actions">' +
+      (global.BCOrientation ? global.BCOrientation.html('cpc:' + week.num, {bare: true}) : '') +
+      '<div class="cpc-approved-reading-actions">' +
       '<button type="button" class="cpc-approved-secondary" data-cpc-reading-toggle>' + (completed ? '✓ Leitura concluída' : 'Marcar concluída') + '</button>' +
       '<button type="button" class="cpc-approved-secondary" data-cpc-law>📖 Lei em Dia deste módulo</button>' +
       '</div></div>';

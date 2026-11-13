@@ -26,6 +26,8 @@ function fixture(){
   new vm.Script(read('content/rlm-tjce-2026/'+name+'.js'),{filename:name}).runInContext(c);
  }
  new vm.Script(read('ui/rlm-theory-resources.js'),{filename:'resources'}).runInContext(c);
+ new vm.Script(read('ui/orientation-defaults-v1.js'),{filename:'orient-defaults'}).runInContext(c);
+ new vm.Script(read('ui/orientation-v1.js'),{filename:'orient'}).runInContext(c);
  new vm.Script(read('ui/rlm-native-v1.js'),{filename:'reader'}).runInContext(c);
  return {g,doc,storage,nodes,localStorage};
 }
@@ -105,7 +107,7 @@ test('M03, M12 e M13 abrem no leitor real com revisão independente',()=>{
 test('Leitor mobile e CSS editorial estão ligados na Central original',()=>{
  const html=read('index.html'),script=read('ui/rlm-native-v1.js'),css=read('ui/rlm-editorial-v3.css');
  assert.ok(html.includes('ui/rlm-editorial-v3.css?v=20261109rlmfix1'));
- assert.ok(html.includes('ui/rlm-native-v1.js?v=20261112nographic1'));
+ assert.ok(html.includes('ui/rlm-native-v1.js?v=20261113orient1'));
  assert.ok(script.includes('function toggleToc(force)'));
  assert.ok(script.includes("if(active?.stage==='theory')writeReadProgress(active.id,pct)"));
  assert.ok(css.includes('.bc-rlm-toc.open'));
@@ -117,12 +119,12 @@ test('Leitor mobile e CSS editorial estão ligados na Central original',()=>{
 
 test('Abertura de RLM acompanha Constitucional: leitura orientada, barra e cartões',()=>{
  const {g}=fixture(),html=g.RlmNative.renderMaster();
- assert.equal((html.match(/cf-native-oriented bc-rlm-orientation/g)||[]).length,16);
+ assert.equal((html.match(/data-bc-orient="rlm:\d+"/g)||[]).length,15,'orientação curta em M01–M15');
+ assert.equal((html.match(/cf-native-oriented bc-rlm-orientation/g)||[]).length,1,'só a revisão final mantém o bloco antigo');
  assert.equal((html.match(/cf-native-cards bc-rlm-study-grid/g)||[]).length,16);
  assert.equal((html.match(/cf-module-bar/g)||[]).length,16);
- assert.equal((html.match(/Leitura orientada inicial/g)||[]).length,15);
  assert.equal((html.match(/data-rlm-kind="recap"/g)||[]).length,14);
- assert.ok(html.indexOf('Leitura orientada inicial')<html.indexOf('data-rlm-kind="recap"'));
- assert.match(html,/O que aprender neste módulo/);
+ assert.ok(html.indexOf('data-bc-orient="rlm:2"')<html.indexOf('data-rlm-kind="recap"'));
+ assert.doesNotMatch(html,/O que aprender neste módulo/);
  assert.match(html,/Revisão geral/);
 });

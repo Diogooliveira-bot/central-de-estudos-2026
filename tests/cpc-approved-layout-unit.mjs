@@ -44,6 +44,7 @@ function fixture(emptyQuestions = false, questionLabelsWithoutTotals = false, va
   window.readingState = {};
   window.cpcUpdateWeek = (id, patch) => { window.readingState[id] = patch.reading; };
   window.openLeiSecaEnxuta = () => {};
+  for (const file of ['ui/orientation-defaults-v1.js','ui/orientation-v1.js']) vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'), dom.getInternalVMContext(), { filename:file });
   vm.runInContext(source, dom.getInternalVMContext(), { filename:'discipline-standard.js' });
   for (const module of dom.window.document.querySelectorAll('.cf-module[data-cf]')) dom.window.CentralDisciplineStandard.cpcApprovedLayout(module);
   return dom;
@@ -78,7 +79,11 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
     assert.equal(module.querySelectorAll('.cpc-bottom-grid button').length, 1, 'Lei em Dia continua acessível');
     assert.equal(module.querySelector('.cpc-approved-reading [data-cpc-law]'), null, 'o link de Lei em Dia permanece no card próprio, sem duplicar na leitura');
     assert.equal(module.querySelector('.cpc-bottom-grid button').textContent, 'Lei em Dia', 'o vínculo nativo de Lei em Dia permanece disponível');
-    assert.equal(module.querySelector('.cpc-approved-reading p').textContent, `Leitura legal M${index+1}`);
+    const orient = module.querySelector('.cpc-approved-reading .bc-orient');
+    assert.ok(orient, 'orientação curta única no módulo CPC');
+    assert.equal(orient.dataset.bcOrient, 'cpc:' + (index+1));
+    assert.equal(orient.querySelectorAll('p').length, 3, 'Foco, Atenção e Como estudar');
+    assert.equal(orient.querySelector('details,ul,li'), null, 'sem listas nem blocos expansíveis');
     assert.equal(module.querySelector('#cf-note-cpc' + (index+1)).value, `Nota preservada ${index+1}`);
     module.querySelector('[data-cpc-reading-toggle]').click();
     assert.equal(dom.window.readingState['cpc' + (index+1)], true);
