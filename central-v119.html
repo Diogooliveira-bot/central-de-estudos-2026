@@ -60,7 +60,7 @@
  var bootScreen=document.getElementById('central-boot-screen').outerHTML;
  entryUrl.searchParams.delete('direct');
  entryUrl.searchParams.delete('central_source');
- var scripts=['ui/study-objectives-catalog-v1.js?v=20261105fasea1','ui/orientation-defaults-v1.js?v=20261113orient1','ui/orientation-v1.js?v=20261113orient1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','content/questoes/titulos.js?v=20261112q2','ui/external-question-filters-v1.js?v='+BUILD+'-min20-titles1'];
+ var scripts=['ui/study-objectives-catalog-v1.js?v=20261105fasea1','ui/orientation-defaults-v1.js?v=20261113orient2','ui/orientation-v1.js?v=20261113orient1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','content/questoes/titulos.js?v=20261112q2','ui/external-question-filters-v1.js?v='+BUILD+'-min20-titles1'];
  function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
  function prepareDisciplineLoading(html){
   html=html.replace(/(<meta name="central-source-version" content=")[^"]+("\s*\/?>)/i,'$1'+APP_VERSION+'$2');

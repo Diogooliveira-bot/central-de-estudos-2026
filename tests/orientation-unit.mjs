@@ -149,8 +149,9 @@ test('as 8 disciplinas usam o renderizador único e o carregador/offline incluem
   const shell = read('central-v119.html');
   const manifest = JSON.parse(read('central-offline-files-v66172.json')).files;
   for (const name of ['ui/orientation-defaults-v1.js', 'ui/orientation-v1.js']) {
-    assert.ok(shell.includes(name + '?v=20261113orient1'), name + ' no carregador');
-    assert.ok(manifest.includes('/' + name + '?v=20261113orient1'), name + ' no cache offline');
+    const ver = name.includes('defaults') ? '20261113orient2' : '20261113orient1';
+    assert.ok(shell.includes(name + '?v=' + ver), name + ' no carregador');
+    assert.ok(manifest.includes('/' + name + '?v=' + ver), name + ' no cache offline');
   }
   assert.ok(shell.indexOf('ui/orientation-defaults-v1.js') < shell.indexOf('ui/orientation-v1.js'));
 });
