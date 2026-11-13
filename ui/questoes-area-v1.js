@@ -13,7 +13,7 @@
   const STORE = 'central-v6:questoes:v2';   // histórico por questão (não guarda a sessão)
   const MODE_KEY = 'central-v6:questoes:modo';
   const LETRAS = 'ABCDE';
-  const ORDEM = ['adm', 'cf', 'civil', 'cpc', 'cpp', 'penal', 'pt', 'rlm'];
+  const ORDEM = ['adm', 'cf', 'civil', 'cpc', 'cpp', 'penal', 'pt', 'rlm', 'info'];
   const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const nn = n => String(Number(n)).padStart(2, '0');
   const bank = () => g.BCQuestoes;
