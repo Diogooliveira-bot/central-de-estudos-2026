@@ -19,12 +19,14 @@ function evaluate(file,expression) {
   return vm.runInContext(expression,context);
 }
 
-test('catálogo principal e objetivos mantêm as oito disciplinas atuais',()=>{
+test('catálogo principal e objetivos preservam as disciplinas existentes e registram Informática',()=>{
   const subjects = jsonVariable('central-structural-v66119/runtime.js','const SUBJECTS');
   assert.deepEqual(subjects.map(s=>s.id),['cf','adm','civil','cpc','penal','cpp','rlm']);
   assert.deepEqual(subjects.map(s=>s.topics.length),[15,20,15,20,17,16,16]);
   const catalog = evaluate('ui/study-objectives-catalog-v1.js','window.CentralStudyObjectiveCatalog');
-  assert.equal(Object.keys(catalog.subjects).length,8);
+  assert.equal(Object.keys(catalog.subjects).length,9);
+  assert.equal(catalog.subjects.info.name,'Informática');
+  assert.equal(catalog.subjects.info.status,'in_production');
   for(const goal of Object.values(catalog.goals)) {
     assert.ok(goal.subjectIds.every(id=>!retired.has(id)));
     assert.ok((goal.examSubjects||[]).every(s=>!retired.has(s.subjectId)));
