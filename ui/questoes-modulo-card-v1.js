@@ -21,6 +21,8 @@
       after: '.cpp-native-lei-card, .adm-native-card:last-of-type' },
     { disc: 'pt', modules: '#subjects .subject[data-id="pt"] .cf-module[data-pt-current]', num: m => dig(m.dataset.ptCurrent), body: ':scope > .cf-module-body',
       after: '.pt-cf-module-inside > .pt-cf-cards' },
+    { disc: 'info', modules: '#subjects .subject[data-id="info"] .cf-module[data-module^="info-m"]', num: m => dig(m.dataset.module), body: ':scope > .cf-module-body',
+      after: '.bc-info-materials' },
     { disc: 'rlm', modules: '#subjects .subject[data-id="rlm"] .bc-rlm-module[data-rlm-module]', num: m => dig(m.dataset.rlmModule), body: ':scope > .cf-module-body',
       after: '.bc-native-materials' }
   ];

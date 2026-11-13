@@ -26,7 +26,7 @@ test('duas opções de edital independentes no catálogo',()=>{
  assert.equal(Object.values(w.CentralStudyObjectiveCatalog.goals).filter(x=>x.type==='exam').length,2);
  assert.equal(w.CentralStudyObjectiveCatalog.goals[goalR].examSubjects.length,10);
  assert.equal(w.CentralStudyObjectiveCatalog.goals[goalT].examSubjects.length,10);
- assert.deepEqual(Object.keys(w.CentralStudyObjectiveCatalog.subjects).sort(),['pt','cf','adm','civil','cpc','penal','cpp','rlm'].sort());
+ assert.deepEqual(Object.keys(w.CentralStudyObjectiveCatalog.subjects).sort(),['pt','cf','adm','civil','cpc','penal','cpp','rlm','info'].sort());
  dom.window.close();
 });
 test('TJPB e TRT8 têm instâncias e armazenamento separados sem apagar o legado undefined',()=>{

@@ -1,6 +1,6 @@
 # Banco de questões — como acrescentar
 
-Cada módulo tem um arquivo: `content/questoes/<disciplina>/mNN.js` (disciplinas: `adm`, `cpc`, `pt`, `penal`, `cpp`, `cf`, `civil`, `rlm`).
+Cada módulo tem um arquivo: `content/questoes/<disciplina>/mNN.js` (disciplinas: `adm`, `cpc`, `pt`, `penal`, `cpp`, `cf`, `civil`, `rlm`; `info` reservado para Informática — ainda sem questões publicadas).
 
 ## Acrescentar questões a um módulo existente
 1. Abra o arquivo do módulo e inclua novos objetos no fim da lista, com `id` seguindo a numeração (`adm-m03-autoral-11`, `-12`, …).

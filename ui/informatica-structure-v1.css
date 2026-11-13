@@ -1,0 +1,18 @@
+/* Informática — organização inicial no padrão visual de módulos da Central. */
+#subjects .subject[data-id="info"] .bc-info-intro{margin:18px 0 16px;padding:0 2px;color:var(--text,#233044)}
+#subjects .subject[data-id="info"] .bc-info-intro b{display:block;font-size:16px;font-weight:700;letter-spacing:-.02em}
+#subjects .subject[data-id="info"] .bc-info-intro p{margin:7px 0 0;color:var(--muted,#64748b);font-size:13px;line-height:1.55}
+#subjects .subject[data-id="info"] .bc-info-modules{display:grid;gap:10px}
+#subjects .subject[data-id="info"] .bc-info-module{overflow:hidden}
+#subjects .subject[data-id="info"] .bc-info-module .cf-module-head{display:flex;align-items:center;gap:10px;min-width:0}
+#subjects .subject[data-id="info"] .bc-info-module .cf-module-title{flex:1;min-width:0;line-height:1.45}
+#subjects .subject[data-id="info"] .bc-info-status{font-size:11px;line-height:1.4;color:#476a83;border:1px solid rgba(77,131,165,.22);border-radius:5px;padding:3px 7px;white-space:nowrap;font-weight:600;background:rgba(125,167,191,.06)}
+#subjects .subject[data-id="info"] .bc-info-inside{padding:14px 18px 18px}
+#subjects .subject[data-id="info"] .bc-info-caption{margin:0 0 10px;font-size:13px;font-weight:700;color:inherit}
+#subjects .subject[data-id="info"] .bc-info-outline{margin:0 0 17px;padding-left:19px;display:grid;gap:7px;color:var(--text,#334155);font-size:13px;line-height:1.5}
+#subjects .subject[data-id="info"] .bc-info-note{margin:15px 0 0;font-size:12px;line-height:1.5;color:var(--muted,#64748b)}
+@media(max-width:640px){
+  #subjects .subject[data-id="info"] .bc-info-module .cf-module-head{flex-wrap:wrap}
+  #subjects .subject[data-id="info"] .bc-info-status{order:4;margin-left:auto}
+  #subjects .subject[data-id="info"] .bc-info-inside{padding:12px 14px 16px}
+}

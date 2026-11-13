@@ -12,6 +12,7 @@
     penal: { id:'penal', name:'Direito Penal', available:true, questionKey:'penal', },
     cpp: { id:'cpp', name:'Direito Processual Penal', available:true, questionKey:'processual-penal' },
     rlm: { id:'rlm', name:'Raciocínio Lógico-Matemático', available:true, questionKey:'rlm' },
+    info: { id:'info', name:'Informática', available:true, questionKey:'informatica', status:'theory_published' },
   };
 
   const goals = {

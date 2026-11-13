@@ -55,6 +55,13 @@ test('Vercel static output omits protected source files but retains the public a
       assert.equal(paths.has(name), false, `${name} contains premium full theory`);
     }
 
+    for (let n=1;n<=13;n++) {
+      const filename = '/content/informatica/m'+String(n).padStart(2,'0')+'.js';
+      assert.equal(paths.has(filename),false,filename+' não pode ser publicado estaticamente');
+      assert.deepEqual(protectedAsset(filename),{
+        kind:'informatica',feature:'theory.complete',moduleKey:'m'+String(n).padStart(2,'0')
+      });
+    }
     const leaked = files.filter(file => protectedAsset(`/${file}`));
     assert.deepEqual(leaked, []);
 
