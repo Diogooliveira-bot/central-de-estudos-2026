@@ -100,3 +100,24 @@ html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcmc-tags span{backgroun
 html #subjects .ds-module-footer>.ds-notes{order:1}
 html #subjects .ds-module-footer>.ds-footer-review{order:2}
 html #subjects .ds-module-footer>.ds-footer-tools{order:3}
+
+/* ===== Acabamento dos cartões do módulo (tablet/desktop) ===== */
+/* Bloco nativo da Lei (Processo Penal etc.) escondido de verdade, mesmo com regras !important de layout das disciplinas. */
+html.bc-ui-v1 #subjects .subject[data-id] .bc-law-relocated.bc-law-relocated{display:none!important}
+/* Tipografia dos cartões novos igual à dos nativos, sem herdar tamanhos de parágrafo/título da disciplina. */
+html #subjects .bcmc-card{margin-top:12px;margin-bottom:12px}
+html #subjects .bcmc-card .bcmc-copy h3{font-size:19px!important;line-height:1.25!important;font-weight:760!important;margin:0 0 6px!important}
+html #subjects .bcmc-card .bcmc-copy p{color:#596676!important;font-size:13px!important;line-height:1.55!important;margin:0!important}
+html #subjects .bcmc-card .bcmc-primary{font-size:14px!important;font-weight:700!important}
+@media(max-width:700px){html #subjects .bcmc-card .bcmc-copy h3{font-size:17px!important}}
+/* Raciocínio Lógico: cartões de Revisão, Teoria e PDF no mesmo padrão (ícone | texto | botão). */
+html #subjects .subject[data-id="rlm"] .bc-rlm-course .bc-rlm-study-grid.cf-native-cards{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+html #subjects .subject[data-id="rlm"] .bc-rlm-course .bc-rlm-study-card.cf-study-card{display:grid!important;grid-template-columns:102px minmax(0,1fr) 210px;grid-template-areas:"ic ti ac" "ic de ac";align-items:center;gap:4px 18px;min-height:0!important;padding:20px 22px!important;border:1px solid #c5dceb!important;border-radius:18px!important;background:#eef7fd!important;box-shadow:0 4px 12px rgba(21,45,65,.05)}
+html #subjects .subject[data-id="rlm"] .bc-rlm-course .bc-rlm-study-recap.cf-study-card{background:#fffaf0!important;border-color:#f0dfb8!important}
+html #subjects .subject[data-id="rlm"] .bc-rlm-study-card .cf-study-icon{grid-area:ic;display:grid;width:82px;height:82px;place-items:center;margin:0!important;border-radius:22px;background:rgba(13,116,210,.09);font-size:39px!important;color:inherit}
+html #subjects .subject[data-id="rlm"] .bc-rlm-study-pdf .cf-study-icon{font-size:22px!important;font-weight:800;white-space:nowrap}
+html #subjects .subject[data-id="rlm"] .bc-rlm-study-card>b{grid-area:ti;align-self:end;font-size:19px!important;font-weight:760!important;line-height:1.25;color:#142234}
+html #subjects .subject[data-id="rlm"] .bc-rlm-study-card>small{grid-area:de;align-self:start;display:block;margin:0!important;font-size:13px!important;line-height:1.55;color:#596676}
+html #subjects .subject[data-id="rlm"] .bc-rlm-study-card .cf-study-actions{grid-area:ac;margin:0!important;display:flex;flex-direction:column}
+html #subjects .subject[data-id="rlm"] .bc-rlm-study-card button.bc-rlm-study-open.cf-study-open{display:flex!important;width:100%!important;min-height:48px;justify-content:center;align-items:center;padding:10px 14px;border:1px solid #0876d2!important;border-radius:12px!important;background:linear-gradient(180deg,#168be8,#0867c3)!important;color:#fff!important;box-shadow:0 5px 12px rgba(10,102,191,.15);font:700 14px/1.35 inherit;text-align:center}
+@media(max-width:700px){html #subjects .subject[data-id="rlm"] .bc-rlm-course .bc-rlm-study-card.cf-study-card{grid-template-columns:58px minmax(0,1fr);grid-template-areas:"ic ti" "ic de" "ac ac";gap:6px 12px;padding:14px!important}html #subjects .subject[data-id="rlm"] .bc-rlm-study-card .cf-study-icon{width:50px;height:50px;border-radius:15px;font-size:27px!important}html #subjects .subject[data-id="rlm"] .bc-rlm-study-pdf .cf-study-icon{font-size:14px!important}html #subjects .subject[data-id="rlm"] .bc-rlm-study-card>b{font-size:17px!important}}

@@ -106,7 +106,7 @@ for (const [id, idx] of [['cpc', 4], ['cf', 4], ['cpp', 4], ['adm', 4], ['civil'
     const visiveis = sel => [...root.querySelectorAll(sel)].filter(vis);
     const texto = [...root.querySelectorAll('*')].filter(e => vis(e) && !e.children.length).map(e => e.textContent.trim()).join('\n');
     return {
-      lei: visiveis('.bcmc-law').length, questoes: visiveis('.bcmc-questions').length,
+      lei: visiveis('.bcmc-law').length, nativaDuplicada: visiveis('.bc-law-relocated').length, questoes: visiveis('.bcmc-questions').length,
       marcarNaLei: visiveis('.bcmc-law button').filter(b => /marcar conclu/i.test(b.textContent)).length + visiveis('.cpc-mini-panel').filter(p => /lei em dia/i.test(p.textContent) && /marcar conclu[íi]do/i.test(p.textContent)).length,
       ferramentas: /ferramentas do m[óo]dulo/i.test(texto), rodadas: /quest[õo]es feitas por rodadas/i.test(texto),
       antigas: /Resolver 5 quest[õo]es|Resolver 10 quest[õo]es(?! autorais)/.test(texto),
@@ -123,6 +123,7 @@ for (const [id, idx] of [['cpc', 4], ['cf', 4], ['cpp', 4], ['adm', 4], ['civil'
   }, id);
   if (id !== 'pt' && id !== 'rlm' && r.lei < 1) failures.push(id + ': cartão de Lei em Dia no padrão novo não apareceu');
   if (r.questoes < 1) failures.push(id + ': cartão de Questões não apareceu');
+  if (r.nativaDuplicada) failures.push(id + ': bloco antigo da Lei em Dia continua visível (duplicado)');
   if (r.marcarNaLei) failures.push(id + ': Lei em Dia ainda tem "Marcar concluído"');
   if (r.ferramentas) failures.push(id + ': "Ferramentas do módulo" ainda aparece');
   if (r.rodadas) failures.push(id + ': "Questões feitas por rodadas" ainda aparece');
