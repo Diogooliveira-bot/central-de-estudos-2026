@@ -3,9 +3,10 @@
 (function (global) {
  "use strict";
  if (global.BaseInformaticaReader || !global.BaseInformatica) return;
- const VERSION="20261113teoria1";
- const AVAILABLE=new Set(["m01"]);
+ const VERSION="20261113teoria2";
+ const AVAILABLE=new Set(Array.from({length:13},(_,i)=>"m"+String(i+1).padStart(2,"0")));
  const API=global.BaseInformatica;
+ for(const m of API.modules){if(AVAILABLE.has(m.id)){m.status="theory_published";m.theory.summary=true;m.theory.complete=true;}}
  const $=s=>global.document.querySelector(s);
  const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const key=(m,k,i)=>"central-v6:info:read:"+m+":"+k+":"+i;
