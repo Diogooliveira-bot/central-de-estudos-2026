@@ -1,6 +1,6 @@
 # Questões do módulo — limite diário do plano Gratuito (5 por dia)
 
-**Estado:** pronto no código, **não publicado**. Depende de aplicar a migração 010 antes do merge.
+**Estado:** código publicável a qualquer momento. O limite só **liga** quando a migração 010 é aplicada no banco de Production; antes disso a API funciona como antes (sem limite).
 
 ## Regra
 - **Gratuito:** até **5 questões distintas por dia** (dia civil em `America/Sao_Paulo`, zera à meia-noite de Brasília).
@@ -27,12 +27,12 @@ UPDATE public.central_plan_entitlements SET daily_limit = 10, updated_at = NOW()
 ```
 O texto da tela e a faixa usam o valor do servidor. Os textos públicos (Termos, vitrine, cadastro) dizem "até 5" e precisam ser atualizados se o número mudar.
 
-## Ordem de publicação (importante)
-1. **Backup/ponto de restauração** do banco de Production (a migração é aditiva, mas siga o procedimento padrão).
-2. Aplicar `010_questoes_daily_limit.sql` no banco **real** de Production (confira a branch Neon antes: ver `docs/HOTMART_HOMOLOGACAO_20261101.md`, seção sobre o banco errado).
-3. Conferir: `SELECT * FROM central_plan_entitlements WHERE feature_code='questoes_modulo';` → 2 linhas (free=5, premium=NULL).
-4. Só então fazer o merge do PR. Sem a migração, a API responde 503 e nenhum aluno consegue resolver questões.
-5. Smoke em Production com conta fictícia Gratuita: responder 5, ver o aviso na 6ª; reabrir o módulo e confirmar que a cota não voltou.
+## Ordem de publicação
+O código tolera a migração ausente: sem a função/tabela da 010, a API **não limita** (comportamento anterior) e registra um aviso no log; depois de aplicada, o limite de 5 vale na hora, sem novo deploy.
+1. Merge/deploy do código (seguro com ou sem a migração).
+2. **Backup/ponto de restauração** do banco real de Production e aplicação de `010_questoes_daily_limit.sql` (aditiva) no banco **real** — confira a branch Neon antes (ver `docs/HOTMART_HOMOLOGACAO_20261101.md`, seção sobre o banco errado: Production = projeto `neon-beige-arrow`, branch `br-gentle-rice-aw5a3i2i`).
+3. Conferir: `SELECT plan_code,enabled,daily_limit FROM central_plan_entitlements WHERE feature_code='questoes_modulo';` → free = 5, premium = NULL; e `SELECT proname FROM pg_proc WHERE proname='central_claim_questao';` → 1 linha.
+4. Smoke em Production com conta fictícia Gratuita: responder 5, ver o aviso na 6ª; reabrir o módulo e confirmar que a cota não voltou.
 
 ## Reversão
 - Rápida (sem código): `UPDATE ... SET daily_limit = NULL` libera o Gratuito sem limite.
