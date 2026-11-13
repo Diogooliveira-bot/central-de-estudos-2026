@@ -34,3 +34,9 @@ test('Termos descrevem o plano gratuito e o Qconcursos como Premium, sem TEC', (
   assert.doesNotMatch(t, /TEC Concursos/);
   assert.doesNotMatch(texto('politica-de-cookies.html'), /TEC Concursos/);
 });
+
+test('Política de Privacidade cita o provedor de e-mail em uso (Resend) e a Hotmart', () => {
+  const t = texto('politica-de-privacidade.html');
+  assert.match(t, /Resend \(envio de mensagens essenciais/);
+  assert.match(t, /Hotmart intermedeia a venda/);
+});
