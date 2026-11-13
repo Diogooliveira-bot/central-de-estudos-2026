@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
-test('página comercial somente em prévia, com CTA de acesso já existente',()=>{
+test('página comercial em prévia (noindex), com CTAs do Premium apontando para o checkout da Hotmart',()=>{
 const p=read('conheca.html');
 assert.match(p, /<html lang="pt-BR">/);
 assert.match(p,/name="viewport"/);
@@ -25,8 +25,9 @@ assert.match(p,/20 questões/);
 assert.match(p,/filtros (?:do )?Qconcursos/i);
 assert.doesNotMatch(p,/TEC Concursos|tecconcursos\.com\.br/i);
 assert.match(p,/sem promessa de aprovação|sem promessa de aprovaç|sem promessa/i);
-assert.match(p,/Checkout aguardando validação comercial/);
-assert.doesNotMatch(p,/href=["']https:\/\/pay\.hotmart\.com/);
+assert.doesNotMatch(p,/Checkout aguardando validação comercial|Contratação indisponível/);
+assert.match(p,/href="https:\/\/pay\.hotmart\.com\/B108186453Y\?off=o4y1mlg9"/);
+assert.match(p,/href="https:\/\/pay\.hotmart\.com\/B108186453Y\?off=gh4ajvj1"/);
 assert.doesNotMatch(p,/<form\b/i);
 });
 test('navegação sem links quebrados internos, com páginas conhecidas',()=>{
@@ -65,18 +66,18 @@ test('vitrine interna e Termos conservam preços consistentes e compra única',(
  assert.match(legal,/cobrança recorrente automática/i);
  assert.doesNotMatch(site,/R\$ 194|R\$ 291,00|50% maiores/);
  assert.doesNotMatch(legal,/R\$ 194/);
- assert.match(site,/data-preview-only="true"/);
- assert.match(site,/Checkout aguardando validação comercial/);
+ assert.doesNotMatch(site,/data-preview-only="true"/);
+ assert.doesNotMatch(site,/Checkout aguardando validação comercial/);
 });
 
-test('e-mail oficial de atendimento está clicável sem habilitar a compra',()=>{
+test('e-mail oficial de atendimento está clicável (a compra é pela Hotmart)',()=>{
  const p=read('conheca.html');
  const anchor=p.match(/<p class="plans-contact">([\s\S]*?)<\/p>/)?.[1]||'';
  assert.match(anchor, /href="mailto:basecompleta\.estudos@gmail\.com"/);
  assert.match(anchor, /suporte, cancelamentos e reembolsos/i);
  assert.doesNotMatch(anchor,/aria-disabled|data-preview-only/);
- assert.match(p,/Checkout aguardando validação comercial/);
- assert.match(p,/data-preview-only="true"/);
+ assert.doesNotMatch(p,/Checkout aguardando validação comercial|data-preview-only="true"/);
+ assert.match(p,/id="cta-premium-97"/);
  for(const legal of ['termos-de-uso.html','politica-de-privacidade.html','politica-de-cookies.html']){
    assert.match(read(legal),/href="mailto:basecompleta\.estudos@gmail\.com"/);
  }
