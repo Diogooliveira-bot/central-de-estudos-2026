@@ -34,10 +34,29 @@ Situação: **somente estrutura em branch de trabalho**. Publicação depende de
 5. Em etapa posterior, adicionar link QC real validado, com no mínimo 20 questões, preferencialmente um filtro por módulo. Respeitar a restrição Premium já existente.
 6. Verificar interface mobile, carregamento, histórico de progresso e ausência de interferência em outras disciplinas.
 
-## Status deste lote
-- Disciplina e 13 módulos: cadastrados **na branch**, sem merge ou publicação.
-- Ementa de cada módulo: cadastrada.
-- Teorias: **não publicadas**; campos preparados para produção posterior.
-- Questões autorais: **não publicadas**.
-- Link QC: **não publicado**.
-- Dados reais dos alunos/Neon: **não alterados**.
+## Status deste lote — teoria M01 a M13
+- Disciplina e 13 módulos: cadastrados na branch de trabalho.
+- **Teoria completa:** textos autorais em seções para os 13 módulos, com situações de prova e distinções conceituais.
+- **Modo de revisão:** sínteses e recuperação ativa para os 13 módulos.
+- **Leitor:** abertura por módulo, índice, navegação entre seções e progresso de leitura por modo salvo localmente.
+- **Carregamento sob demanda:** arquivos `content/informatica/mNN.js` baixados somente quando a leitura é aberta.
+- **Questões autorais:** em produção; a área de questões existente não recebe itens fictícios.
+- **Qconcursos:** em produção; nenhum URL externo novo foi inventado.
+- **TEC:** nenhum link foi adicionado à disciplina.
+- **Progresso global:** módulos não são contados como concluídos sem as futuras etapas de questões; percentual das seções corresponde apenas à leitura.
+- **Dados reais dos alunos / Neon:** não alterados.
+- **Produção oficial:** não publicada; PR em rascunho e deploy da branch em Preview.
+
+## Revisão técnica e atualização
+- M02: ciclo de suporte comum do Windows 10 encerrado em 14/10/2025; programas de suporte estendido são exceção.
+- M05/M06: exemplos de referências, fórmulas e funções consideram Excel em pt-BR.
+- M08: extensões ODF de Writer/Calc/Impress verificadas na documentação oficial do LibreOffice.
+- M10: HTTPS pode usar HTTP/3/QUIC, portanto não se afirma que depende exclusivamente de TCP.
+- M12: funções do NIST CSF 2.0 incluem **Governar** além das cinco funções anteriores.
+- M13: modelo generativo não é tratado como fonte confiável automática, conforme riscos descritos pelo NIST.
+
+## Próximas publicações editoriais
+1. Revisão humana de linguagem, profundidade e pertinência ao edital antes de disponibilizar como conteúdo final aos alunos.
+2. Publicar questões próprias na seção de Questões após revisão de gabaritos e comentários.
+3. Cadastrar filtros reais do QC por módulo quando validados (mínimo 20 questões; preferencialmente um por módulo).
+4. Publicar em produção somente mediante autorização do proprietário.
