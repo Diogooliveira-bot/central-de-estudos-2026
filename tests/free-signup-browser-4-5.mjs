@@ -90,7 +90,7 @@ try{
   await page.getByText('Mensagem enviada para caixa de teste simulada').waitFor();
   assert.equal(requests.at(-1).ageConfirmed,true);
   assert.equal(requests.at(-1).termsAccepted,true);
-  assert.equal(requests.at(-1).termsVersion,'terms-2026-11-04-v3');
+  assert.equal(requests.at(-1).termsVersion,'terms-2026-11-13-v5');
   assert.equal(requests.at(-1).action,'request');
   assert.equal(requests.at(-1).turnstileToken,'token-simulado','Captcha deve acompanhar solicitação no navegador');
   assert.equal(requests.at(-1).marketingOptIn,device.label==='celular');

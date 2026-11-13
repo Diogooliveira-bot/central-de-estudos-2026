@@ -4,6 +4,20 @@
 **Responsável pelo código:** PR [#187](https://github.com/Diogooliveira-bot/central-de-estudos-2026/pull/187).  
 **Regra:** não refazer auditorias aprovadas; retestar exclusivamente as alterações e os fluxos críticos que ainda não tiveram prova hospedada. Os relatórios históricos permanecem disponíveis como evidência.
 
+## Situação em 13/11/2026 (revisão de lançamento)
+
+**Já resolvido desde 29/10:** Termos/Privacidade/Cookies em versão final (`terms-2026-11-13-v4`, sem `draft`); cadastro gratuito ativo em Production (Turnstile + e-mail); domínios `app.basecompleta.com.br` e `basecompleta.com.br` no ar; Hotmart com webhook de Production, 34 cenários de teste e migrações 007–009 aplicadas; 8 disciplinas com questões inéditas por módulo; Qconcursos exclusivo (TEC retirado dos alunos).
+
+**Texto público alinhado ao produto (13/11):** vitrine e `conheca.html` só citam Qconcursos, mostram 8 disciplinas (sem Informática) e as questões inéditas gratuitas; Termos/Cookies sem TEC. Teste: `tests/lancamento-textos-unit.mjs`.
+
+**Ainda falta para vender o Premium (depende do proprietário/Hotmart):**
+1. Links de checkout das ofertas Semestral (R$ 97) e Anual (R$ 179) na vitrine e textos/termos/suporte no checkout da Hotmart. Enquanto isso, a vitrine mantém "contratação indisponível" e os Termos dizem "Premium disponível" — a divergência some quando o checkout abrir.
+2. Compra real de teste (conta própria) com conferência de liberação, e-mail de convite e reembolso (revogação). Reteste oficial do alerta único (#219) pendente.
+3. Se o Resend for ativado em Production, incluí-lo na Política de Privacidade (hoje cita só Gmail).
+4. Alertas de erro da Vercel (issue #206) e um cadastro real de teste em Production para confirmar Turnstile/e-mail no domínio final.
+
+Backup externo segue fora deste escopo (issue #194).
+
 ## Atualização após Missão 03 — 29/10/2026 (Fortaleza)
 
 **Executado com autorização explícita do proprietário:** migrações `db/migrations/002` a `007` aplicadas, em sequência, cada uma em transação própria, na branch Neon Production `br-blue-sunset-b7jcts9i`. Confirmada a existência das sete tabelas novas, quatro funções Hotmart e constraints respectivas. Contagens produtivas antes/depois preservadas: 6 usuários, 5 assinaturas, 3 preferências, 2 registros de sincronização. Novas tabelas de pedidos, inbox, cadastro pendente e avisos de vencimento permaneceram vazias (zero registros). **Não houve publicação, concessão Premium, transações financeiras nem ativação do webhook.**

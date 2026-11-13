@@ -60,6 +60,8 @@
       const grade = nat.parentElement && nat.parentElement.matches('.cpc-bottom-grid, .cf-native-cards') ? nat.parentElement : null;
       if (grade && grade.matches('.cf-native-cards')) grade.after(el); else if (grade) grade.before(el); else nat.after(el);
       nat.classList.add('bc-law-relocated');
+      // Algumas disciplinas forçam o layout dos cartões nativos com !important; o inline garante que o bloco antigo não apareça duplicado.
+      nat.style.setProperty('display', 'none', 'important');
     });
   }
   // Rodapé de todos os módulos: "Ferramentas do módulo" e "Questões feitas por rodadas" saem da tela.
