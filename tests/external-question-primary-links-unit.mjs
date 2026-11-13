@@ -111,6 +111,7 @@ test('auditoria integral: no máximo 2 filtros por módulo, 20+ questões, títu
   window.eval(read('content/cpc/cpc-sharing-links.js'));
   window.eval(read('content/questoes/titulos.js'));
   const api = window.ExternalQuestionFilters;
+  api.refresh(); // Os arquivos externos foram carregados após a inicialização do teste.
   const all = api.buildRegistry().filter((item) => item.platform === 'qc');
   assert.equal(all.length, 431, 'catálogo bruto não é eliminado');
   const chosen = api.visibleModuleFilters();
