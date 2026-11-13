@@ -67,7 +67,7 @@
     if (!body) return;
     const anchor = body.querySelector(cfg.anchor);
     if (!anchor) return;
-    if (cfg.linksOnly) return placeLinks(body, anchor);
+    if (cfg.linksOnly) return placeLinks(body, depoisDeQuestoes(body, anchor));
     let law = cfg.law ? body.querySelector(cfg.law) : null;
     if (cfg.law && law && !LAW_TEXT.test(law.textContent)) law = null;
     if (!law && (cfg.trigger || cfg.open)) {
@@ -75,12 +75,23 @@
       law = lawCard(body, cfg, module);
     }
     if (!law) return;
-    if (anchor.nextElementSibling !== law) anchor.after(law);
-    const panel = placeLinks(body, law);
+    // Constitucional: o cartão novo da Lei não fica dentro da grade de revisão/teoria (largura total, depois dela).
+    const alvo = law.matches('[data-bc-module-law]') && anchor.parentElement && anchor.parentElement.matches('.cf-native-cards') ? anchor.parentElement : anchor;
+    if (alvo.nextElementSibling !== law) alvo.after(law);
+    const panel = placeLinks(body, depoisDeQuestoes(body, law));
     if (cfg.hideLaw) body.querySelectorAll(cfg.hideLaw).forEach(node => node.classList.add('bc-law-relocated'));
     body.querySelectorAll(TOOL_BUTTONS).forEach(button => {
       if (LAW_TEXT.test(button.textContent) && !button.closest('[data-bc-module-law]')) button.classList.add('bc-law-relocated');
     });
+  }
+  // Ordem do módulo: revisão, teoria completa, Lei em Dia, Questões do módulo, filtros QC/TEC.
+  // Os filtros vêm depois do cartão "Questões do módulo" quando ele existe.
+  function depoisDeQuestoes(body, fallback) {
+    const q = body.querySelector('[data-bcqa-module-card]');
+    if (q) return q;
+    // Cartão novo da Lei (fora da grade de cartões): os filtros vêm depois dele.
+    const lei = body.querySelector('[data-bc-module-law]');
+    return lei || fallback;
   }
   function placeLinks(body, after) {
     const slot = slotFor(body, after);

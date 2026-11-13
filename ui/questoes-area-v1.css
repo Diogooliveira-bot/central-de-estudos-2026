@@ -95,3 +95,8 @@ html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcmc-tags span{backgroun
 .bcqa-dica{align-self:center;color:var(--muted,#667e8d);font-size:12px}
 .bcqa-nav{display:flex;justify-content:space-between;gap:10px;margin:14px 0 4px}
 @media(max-width:640px){.bcqa-strike{min-width:56px;padding:0 6px;font-size:11px}.bcqa-modes{display:flex}.bcqa-mode{flex:1}}
+
+/* Rodapé do módulo: anotações antes de agendar revisão (coluna flex; independe da ordem em que o rodapé é montado). */
+html #subjects .ds-module-footer>.ds-notes{order:1}
+html #subjects .ds-module-footer>.ds-footer-review{order:2}
+html #subjects .ds-module-footer>.ds-footer-tools{order:3}

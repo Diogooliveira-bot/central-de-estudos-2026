@@ -99,7 +99,7 @@ for (const [id, idx] of [['cpc', 4], ['cf', 4], ['cpp', 4], ['adm', 4], ['civil'
   await page.locator('#disciplineGrid [data-study-open-subject="' + id + '"]').first().click();
   await page.waitForFunction(id => window.CentralDisciplineLoader.isReady(id), id, { timeout: 30000 });
   await openModule(page, id, idx, '.cf-module-head');
-  await page.waitForTimeout(1200);
+  await page.waitForTimeout(2200);
   const r = await page.evaluate(id => {
     const root = document.querySelector('.subject[data-id="' + id + '"]');
     const vis = el => { const b = el.getBoundingClientRect(); const cs = getComputedStyle(el); return b.width > 0 && b.height > 0 && cs.visibility !== 'hidden'; };
@@ -109,7 +109,16 @@ for (const [id, idx] of [['cpc', 4], ['cf', 4], ['cpp', 4], ['adm', 4], ['civil'
       lei: visiveis('.bcmc-law').length, questoes: visiveis('.bcmc-questions').length,
       marcarNaLei: visiveis('.bcmc-law button').filter(b => /marcar conclu/i.test(b.textContent)).length + visiveis('.cpc-mini-panel').filter(p => /lei em dia/i.test(p.textContent) && /marcar conclu[íi]do/i.test(p.textContent)).length,
       ferramentas: /ferramentas do m[óo]dulo/i.test(texto), rodadas: /quest[õo]es feitas por rodadas/i.test(texto),
-      antigas: /Resolver 5 quest[õo]es|Resolver 10 quest[õo]es(?! autorais)/.test(texto)
+      antigas: /Resolver 5 quest[õo]es|Resolver 10 quest[õo]es(?! autorais)/.test(texto),
+      // Ordem: revisão → teoria completa → Lei em Dia → Questões → filtros QC/TEC → anotações → agendar revisão
+      ordem: (() => {
+        const mod = root.querySelector('.bc-focus-current-module') || root;
+        const marcas = [/^(⚡|↺)?\s*Versão de revisão$/, /^(📚|📖)?\s*Teoria completa$/, /^(⚖️)?\s*Lei em Dia$/, /^(✍️)?\s*Questões do módulo$/, /^Links do QConcursos e do TEC$|^QQConcursos/, /^Anotações( do módulo)?$|^ANOTAÇÕES DO MÓDULO$/i, /^Agendar revisão$/];
+        const els = [...mod.querySelectorAll('*')].filter(e => vis(e) && !e.closest('.bc-law-relocated,.bc-footer-removed') && (e.children.length === 0 || /^(B|H3|H4|STRONG|LABEL|SPAN)$/.test(e.tagName)));
+        const tops = marcas.map(re => { const e = els.find(x => re.test(x.textContent.trim().replace(/\s+/g, ' '))); return e ? e.getBoundingClientRect().top + scrollY : null; });
+        const achados = tops.filter(t => t != null);
+        return { tops, ok: achados.every((t, i) => i === 0 || t >= achados[i - 1]), questoes: tops[3] != null, filtros: tops[4] != null };
+      })()
     };
   }, id);
   if (id !== 'pt' && id !== 'rlm' && r.lei < 1) failures.push(id + ': cartão de Lei em Dia no padrão novo não apareceu');
@@ -117,6 +126,8 @@ for (const [id, idx] of [['cpc', 4], ['cf', 4], ['cpp', 4], ['adm', 4], ['civil'
   if (r.marcarNaLei) failures.push(id + ': Lei em Dia ainda tem "Marcar concluído"');
   if (r.ferramentas) failures.push(id + ': "Ferramentas do módulo" ainda aparece');
   if (r.rodadas) failures.push(id + ': "Questões feitas por rodadas" ainda aparece');
+  if (!r.ordem.ok) failures.push(id + ': ordem dos blocos fora do padrão ' + JSON.stringify(r.ordem.tops));
+  if (r.ordem.questoes && r.ordem.filtros && r.ordem.tops[3] > r.ordem.tops[4]) failures.push(id + ': filtros QC/TEC antes de Questões');
   if (r.antigas) failures.push(id + ': ainda aparecem botões das questões antigas');
   await page.context().close();
 }

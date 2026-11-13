@@ -54,9 +54,9 @@
       el.setAttribute('data-bc-module-law', cfg.disc);
       el.innerHTML = cardHtml('', '⚖️', 'Lei em Dia', 'Artigos e questões de lei seca já filtrados para este módulo.', ['Lei seca', 'Vinculado ao módulo'], 'Abrir Lei em Dia', 'bc-module-law-open');
       el.querySelector('button').addEventListener('click', () => trig.click());
-      // No Processo Civil o bloco nativo vive numa grade de dois painéis: o cartão fica antes da grade.
-      const grade = nat.parentElement && nat.parentElement.classList.contains('cpc-bottom-grid') ? nat.parentElement : null;
-      if (grade) grade.before(el); else nat.after(el);
+      // No Processo Civil o bloco nativo vive numa grade de dois painéis (cartão antes da grade); no Constitucional, a grade só tem revisão e teoria (cartão depois dela, em largura total).
+      const grade = nat.parentElement && nat.parentElement.matches('.cpc-bottom-grid, .cf-native-cards') ? nat.parentElement : null;
+      if (grade && grade.matches('.cf-native-cards')) grade.after(el); else if (grade) grade.before(el); else nat.after(el);
       nat.classList.add('bc-law-relocated');
     });
   }
@@ -68,6 +68,18 @@
     document.querySelectorAll('#subjects .ds-module-footer').forEach(f => {
       const resto = [...f.children].some(c => !c.classList.contains('bc-footer-removed') && !c.matches(RODAPE));
       f.classList.toggle('bc-footer-removed', !resto);
+    });
+  }
+  // Ordem do módulo: Revisão → Teoria completa → Lei em Dia → Questões → filtros QC/TEC → Anotações → Agendar revisão.
+  // Só troca a posição de blocos já existentes (Português e RLM); nada é recriado. No rodapé, a ordem Anotações → Agendar revisão vem do CSS (order).
+  function ordenar() {
+    document.querySelectorAll('#subjects .pt-cf-cards').forEach(g0 => {
+      const rev = g0.querySelector(':scope > .pt-cf-card-review'), prim = g0.querySelector(':scope > .pt-cf-card-primary');
+      if (rev && prim && rev.compareDocumentPosition(prim) & Node.DOCUMENT_POSITION_PRECEDING) g0.insertBefore(rev, prim);
+    });
+    document.querySelectorAll('#subjects .bc-rlm-study-grid').forEach(g0 => {
+      const rev = g0.querySelector(':scope > .bc-rlm-study-recap'), teo = g0.querySelector(':scope > .bc-rlm-study-theory');
+      if (rev && teo && rev.nextElementSibling !== teo) rev.after(teo);
     });
   }
   function apply(cfg, module) {
@@ -88,6 +100,7 @@
   function refresh() {
     LEI_NATIVA.forEach(cfg => document.querySelectorAll(cfg.modules).forEach(m => { try { leiPadrao(cfg, m); } catch (e) { console.warn('[Lei em Dia]', cfg.disc, e); } }));
     limparRodape();
+    ordenar();
     CONFIG.forEach(cfg => document.querySelectorAll(cfg.modules).forEach(module => {
       try { apply(cfg, module); } catch (e) { console.warn('[Questões do módulo]', cfg.disc, e); }
     }));
