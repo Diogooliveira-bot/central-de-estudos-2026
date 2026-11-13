@@ -33,7 +33,7 @@
   function syncTecTool(container, hasLinks) {
     container.querySelectorAll(TOOL_BUTTONS).forEach(button => {
       if (!TEC_TOOL_TEXT.test(button.textContent)) return;
-      if (button.classList.contains('bc-tool-relocated') !== hasLinks) button.classList.toggle('bc-tool-relocated', hasLinks);
+      button.remove(); // TEC desativado para os alunos.
     });
   }
 
@@ -44,7 +44,7 @@
       slot.className = 'bc-module-links';
       slot.setAttribute('data-bc-module-links', '1');
       slot.setAttribute('data-bcq-module-slot', '1');
-      slot.innerHTML = '<div class="bc-module-links-head"><span>QUESTÕES DO MÓDULO</span><b>Links do QConcursos e do TEC</b></div>';
+      slot.innerHTML = '<div class="bc-module-links-head"><span>QUESTÕES DO MÓDULO</span><b>Filtros Qconcursos</b></div>';
     }
     if (after.nextElementSibling !== slot) after.after(slot);
     return slot;
