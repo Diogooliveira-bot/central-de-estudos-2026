@@ -69,8 +69,7 @@ test('RLM preserva duas áreas editoriais comprovadas; demais subdivisões sem g
     filter('qc', 'rlm', 'M04', 'M04.2', '4', 20, 'Parte temática B')
   ];
   const selected = select(items);
-  assert.equal(selected.filter((item) => item.platform === 'tec').length, 1,
-    'mesmo com dois assuntos, o código M04 indica um caderno principal; verificar divisão antes de excepcionalizar');
+  assert.deepEqual(selected.filter((item) => item.platform === 'tec').map((item) => item.id), ['1', '2']);
   assert.deepEqual(selected.filter((item) => item.platform === 'qc').map((item) => item.id), ['4']);
   dom.window.close();
 });
