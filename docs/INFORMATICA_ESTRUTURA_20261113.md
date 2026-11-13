@@ -60,3 +60,10 @@ Situação: **somente estrutura em branch de trabalho**. Publicação depende de
 2. Publicar questões próprias na seção de Questões após revisão de gabaritos e comentários.
 3. Cadastrar filtros reais do QC por módulo quando validados (mínimo 20 questões; preferencialmente um por módulo).
 4. Publicar em produção somente mediante autorização do proprietário.
+
+## Barreira de segurança para publicação em produção
+- Os 13 arquivos `content/informatica/mNN.js` são classificados como `theory.complete` e excluídos do diretório estático da Vercel.
+- Para o plano Gratuito, o servidor projeta somente `review`; não entrega `full`, gabaritos ou links protegidos.
+- Para Premium, o servidor verifica a permissão antes de disponibilizar o arquivo integral.
+- O service worker não salva os arquivos protegidos em cache público/offline.
+- No plano Gratuito, o cartão Teoria completa permanece visível; ao abrir, informa que é exclusivo do Premium.

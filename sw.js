@@ -18,6 +18,7 @@ function protectedContentPath(path){
     ||path==='/Central_de_Estudos_v6.6.75_PLANO_6_MESES.zip'
     ||path.startsWith('/Central_de_Estudos_OFFLINE_FUNCIONAL/')
     ||path==='/content/tec-cadernos-data.js'
+    ||/^\/content\/informatica\/m(?:0[1-9]|1[0-3])\.js$/i.test(path)
     ||path==='/content/penal/penal-visual-law.js'
     ||path==='/content/civil/civil-visual-apostila-packed.js'
     ||path==='/content/civil/civil-native-content-packed.js'||path==='/content/cpp/cpp-native-content-packed.js'

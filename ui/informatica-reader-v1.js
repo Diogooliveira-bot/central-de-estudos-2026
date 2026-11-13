@@ -3,7 +3,7 @@
 (function (global) {
  "use strict";
  if (global.BaseInformaticaReader || !global.BaseInformatica) return;
- const VERSION="20261113teoria3";
+ const VERSION="20261113theorysecure1";
  const AVAILABLE=new Set(Array.from({length:13},(_,i)=>"m"+String(i+1).padStart(2,"0")));
  const API=global.BaseInformatica;
  for(const m of API.modules){if(AVAILABLE.has(m.id)){m.status="theory_published";m.theory.summary=true;m.theory.complete=true;}}
@@ -139,7 +139,7 @@
    try{
      const data=await load(id);
      if(current.id!==id || current.mode!==mode || !current.dialog)return false;
-     if(!Array.isArray(chapters(data,mode))||!chapters(data,mode).length)throw new Error("Conteúdo em elaboração.");
+     if(!Array.isArray(chapters(data,mode))||!chapters(data,mode).length)throw new Error(mode==="complete"?"Teoria completa exclusiva do Base Completa Premium. A versão de revisão permanece disponível.":"Conteúdo em elaboração.");
      renderDialog(data,mode);dialog.scrollTop=0;dialog.querySelector(".bc-info-reader-close")?.focus();
    }catch(err){
      if(current.dialog){
