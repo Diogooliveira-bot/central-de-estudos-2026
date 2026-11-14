@@ -62,6 +62,9 @@ const PUBLIC_PATHS = new Set([
   '/sw.js',
   '/icons/icon-192.png',
   '/icons/icon-512.png',
+  // Imagens dos e-mails (logo e mascote): o leitor de e-mail não tem sessão; são só marca, sem dado de aluno.
+  '/icons/email/logo.webp',
+  '/icons/email/mascote-alegre.webp',
 ]);
 
 function parseCookie(header, name) {

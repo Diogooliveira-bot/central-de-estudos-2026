@@ -1,7 +1,7 @@
 // Textos públicos coerentes com o produto: só Qconcursos, 8 disciplinas, questões inéditas e versão única dos Termos.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { FREE_SIGNUP_TERMS_VERSION } from '../lib/free-signup-handler.js';
 const read = f => readFileSync(new URL('../' + f, import.meta.url), 'utf8');
 const texto = f => read(f).replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
@@ -59,3 +59,17 @@ test('vitrine: botões Premium levam ao checkout da Hotmart (links exatos, nova 
   }
   assert.match(read('vitrine/index.html'), /const PREMIUM=\{semestral:'https:\/\/pay\.hotmart\.com\/B108186453Y\?off=o4y1mlg9',anual:'https:\/\/pay\.hotmart\.com\/B108186453Y\?off=gh4ajvj1'\}/);
 });
+
+test('imagens usadas nos e-mails são públicas (sem login) e existem no repositório', async () => {
+  const mw = read('middleware.js');
+  const urls = new Set();
+  for (const f of ['lib/transactional-email-templates.js', ...fsLs('lib/email-packs'), 'lib/hotmart-webhook.js'])
+    for (const m of read(f).matchAll(/https:\/\/app\.basecompleta\.com\.br(\/icons\/email\/[A-Za-z0-9._-]+)|'\/icons\/email\/([A-Za-z0-9._-]+)'|\/icons\/email\/([A-Za-z0-9._-]+\.webp)/g))
+      urls.add(m[1] || '/icons/email/' + (m[2] || m[3]));
+  assert.ok(urls.size >= 2, 'logo e mascote');
+  for (const u of urls) {
+    assert.ok(mw.includes("'" + u + "'"), 'middleware deve liberar ' + u + ' sem login');
+    assert.ok(existsSync(new URL('..' + u.replace('/icons/', '/icons/'), import.meta.url)), 'arquivo ausente: ' + u);
+  }
+});
+function fsLs(d) { return readdirSync(new URL('../' + d + '/', import.meta.url)).map(x => d + '/' + x); }
