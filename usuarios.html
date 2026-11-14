@@ -67,6 +67,12 @@ label{display:block;font-size:11px;font-weight:800;margin:12px 0 5px;color:#5f57
  <div id="publicSignups" class="list"><div class="hint">Carregando cadastros públicos...</div></div>
 </section>
 
+<section class="panel" id="pedidosEdital" style="margin-top:18px" aria-labelledby="examRequestsTitle">
+ <h2 id="examRequestsTitle">Pedidos de edital dos alunos</h2>
+ <p class="hint" style="font-size:12px;margin:-4px 0 16px">Concursos que os alunos escreveram na escolha de estudo, agrupados pelo mesmo nome (mais pedidos primeiro). Depois de cadastrar o edital, use “Marcar como atendido” para tirar o pedido da lista.</p>
+ <div id="examRequests" class="list"><div class="hint">Carregando pedidos de edital...</div></div>
+</section>
+
 <section class="panel" id="convites" style="margin-top:18px" aria-labelledby="invitesTitle">
  <h2 id="invitesTitle">Convites individuais para alunos</h2>
  <p class="hint" style="font-size:12px;margin:-4px 0 16px">Envie um link exclusivo pelo WhatsApp. O aluno cria seu próprio nome de usuário, e-mail e senha; o convite vale por 7 dias e só pode ser utilizado uma vez.</p>
@@ -237,6 +243,30 @@ async function loadPublicSignups(){
   });
  }catch(e){box.textContent='Falha ao carregar cadastros públicos: '+e.message}
 }
+async function loadExamRequests(){
+ var box=document.getElementById('examRequests');
+ box.textContent='Atualizando pedidos de edital...';
+ try{
+  var data=await fetchJson('/api/objective?resource=exam-requests');
+  var list=Array.isArray(data.requests)?data.requests:[];
+  box.innerHTML='';
+  if(!list.length){var empty=document.createElement('div');empty.className='empty';empty.textContent='Nenhum pedido de edital no momento.';box.appendChild(empty);return}
+  list.forEach(function(item){
+   var row=document.createElement('div');row.className='user';
+   var who=(item.students||[]).map(function(s){return esc(s.name||s.email)}).join(', ');
+   row.innerHTML='<div class="who"><b>'+esc(item.text)+'</b><div class="meta"><span class="pill ok">'+esc(item.count)+(item.count===1?' aluno':' alunos')+'</span></div>'+
+    '<div class="hint">Último pedido: '+esc(dt(item.lastAt))+'</div><div class="hint">'+who+'</div></div>';
+   var done=document.createElement('button');done.type='button';done.textContent='Marcar como atendido';
+   done.onclick=async function(){
+    if(!confirm('Marcar “'+item.text+'” como atendido e remover da lista?'))return;
+    done.disabled=true;
+    try{await fetchJson('/api/objective?resource=exam-requests',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:item.text,resolved:true})});await loadExamRequests()}
+    catch(e){done.disabled=false;alert(e.message||'Não foi possível atualizar o pedido.')}
+   };
+   row.appendChild(done);box.appendChild(row);
+  });
+ }catch(e){box.textContent='Falha ao carregar pedidos de edital: '+e.message}
+}
 function inviteStatusLabel(value){return value==='pendente'?'Pendente':value==='utilizado'?'Utilizado':value==='expirado'?'Expirado':'Revogado'}
 async function loadInvites(){
  var list=document.getElementById('inviteList');
@@ -291,9 +321,9 @@ document.getElementById('inviteCopy').onclick=async function(){
 };
 document.getElementById('search').addEventListener('input',render);
 document.getElementById('filter').addEventListener('change',render);
-document.getElementById('refresh').onclick=function(){load();loadPublicSignups();loadInvites()};
+document.getElementById('refresh').onclick=function(){load();loadPublicSignups();loadExamRequests();loadInvites()};
 document.getElementById('logout').onclick=async function(){await fetch('/api/auth?action=logout',{method:'POST'});location.replace('/login.html')};
-load();loadPublicSignups();loadInvites();
+load();loadPublicSignups();loadExamRequests();loadInvites();
 })();
 </script>
 </body>
