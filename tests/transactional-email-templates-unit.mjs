@@ -15,7 +15,7 @@ test('confirmation: approved HTML, unique token link, text alternative',()=>{
   assert.match(msg.html,/30 minutos/);
   assert.ok(msg.html.includes(confirmationLink));
   assert.ok(msg.text.includes(confirmationLink));
-  assert.ok(msg.html.includes('/img/logo.webp'));
+  assert.ok(msg.html.includes('/icons/email/logo.webp'));
   assert.doesNotMatch(msg.html,/cid:bc-|\{\{LINK_CONFIRMACAO\}\}/);
 });
 
