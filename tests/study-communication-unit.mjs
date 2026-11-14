@@ -48,7 +48,8 @@ test('o resumo automático de progresso inclui os módulos existentes',()=>{
 test('WhatsApp oficial exige DDI + DDD + número brasileiro',()=>{
   const backend=read('lib/study-communication.js')
     .replace(/^import[\s\S]*?;\s*$/gm,'')
-    .replace('export default async function handler','async function handler');
+    .replace('export default async function handler','async function handler')
+    .replace(/\bexport\s+(?=(?:async\s+)?(?:function|const|let|var|class)\b)/g,'');
   const ctx={process:{env:{}},console};
   vm.runInNewContext(backend,ctx);
   assert.equal(ctx.supportWhatsapp('5585999999999'),'https://wa.me/5585999999999');
