@@ -1,15 +1,24 @@
 Vitrine — basecompleta.com.br
 
-Projeto Vercel: base-completa-vitrine-estatica-20261027 (sem Git; publicado por envio de arquivos).
-Esta pasta guarda a cópia versionada da página inicial (index.html) e da configuração (vercel.json).
-As imagens (img/) continuam somente na Vercel e são reaproveitadas a cada publicação.
+Projeto Vercel: base-completa-vitrine-estatica-20261027 (time estudotd).
+Publicação: conectado ao repositório Diogooliveira-bot/central-de-estudos-2026 desde 14/11/2026
+(Production Branch = main, Root Directory = vitrine, Framework = Other, sem comando de build).
+Ignored Build Step: "git diff HEAD^ HEAD --quiet -- vitrine/" — só publica quando algo dentro de
+vitrine/ muda no commit; os demais merges geram um deployment cancelado (esperado, não é erro).
+Para forçar uma publicação sem mudar o conteúdo, altere este arquivo (por exemplo, a data abaixo).
+
+Esta pasta guarda a página inicial (index.html), robots.txt, sitemap.xml e a configuração (vercel.json).
+As imagens (img/) NÃO ficam no repositório: continuam guardadas na publicação original da Vercel
+(base-completa-vitrine-estatica-20261027-671jixlsk-estudotd.vercel.app) e são servidas por
+reescrita em vercel.json — NÃO apague essa publicação.
 
 Termos de Uso, Política de Privacidade e Política de Cookies NÃO ficam mais na vitrine:
 os endereços /termos-de-uso, /politica-de-privacidade e /politica-de-cookies redirecionam
 para as páginas oficiais em app.basecompleta.com.br, para que exista uma única versão vigente.
 
-Publicação a partir do Git (desde 01/11/2026): a pasta vitrine/ é publicada no projeto da
-vitrine. As imagens de img/ continuam guardadas na publicação original da Vercel
-(base-completa-vitrine-estatica-20261027-671jixlsk-estudotd.vercel.app) e são servidas por
-reescrita em vercel.json — não apague essa publicação. Indexação liberada (sem noindex),
-com robots.txt e sitemap.xml.
+Checkout Premium: botões da seção de planos apontam para a Hotmart (produto B108186453Y,
+ofertas o4y1mlg9 e gh4ajvj1). Para trocar, edite PREMIUM no script e os href de cta-premium-97 e
+cta-premium-179 em index.html.
+
+Rollback: Vercel > Deployments > abrir o deployment anterior > Promote to Production.
+Último conteúdo editado: 14/11/2026 (8 disciplinas, só Qconcursos, checkout Hotmart ligado).
