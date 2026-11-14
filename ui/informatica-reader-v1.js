@@ -3,7 +3,7 @@
 (function (global) {
  "use strict";
  if (global.BaseInformaticaReader || !global.BaseInformatica) return;
- const VERSION="20261114m02visuals1";
+ const VERSION="20261114m03visuals1";
  const AVAILABLE=new Set(Array.from({length:13},(_,i)=>"m"+String(i+1).padStart(2,"0")));
  const API=global.BaseInformatica;
  for(const m of API.modules){if(AVAILABLE.has(m.id)){m.status="theory_published";m.theory.summary=true;m.theory.complete=true;}}
