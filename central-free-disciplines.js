@@ -65,7 +65,7 @@ ready.then(()=>{
 function showLock(){
  if(document.querySelector('.bc-plan-lock-dialog'))return;
  const box=document.createElement('div');box.className='bc-plan-lock-dialog';
- box.innerHTML='<div class="bc-plan-lock-box" role="dialog" aria-modal="true" aria-label="Recurso do Premium"><div class="bc-plan-lock-icon" aria-hidden="true">🔒</div><h2>Recurso do Premium</h2><p>'+PREMIUM_TEXT+' No plano Gratuito você continua com os resumos, o Vade Mecum e até 20 questões por dia no Lei em Dia.</p><button type="button">Entendi</button></div>';
+ box.innerHTML='<div class="bc-plan-lock-box" role="dialog" aria-modal="true" aria-label="Recurso do Premium"><div class="bc-plan-lock-icon" aria-hidden="true">🔒</div><h2>Recurso do Premium</h2><p>'+PREMIUM_TEXT+' No plano Gratuito você continua com os resumos, o Vade Mecum, até 5 questões inéditas por dia nos módulos e até 20 questões por dia no Lei em Dia.</p><button type="button">Entendi</button></div>';
  const close=()=>box.remove();
  box.addEventListener('click',e=>{if(e.target===box||e.target.tagName==='BUTTON')close()});
  document.addEventListener('keydown',function esc(e){if(e.key==='Escape'){close();document.removeEventListener('keydown',esc)}});
