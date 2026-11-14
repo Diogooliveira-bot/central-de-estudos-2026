@@ -50,7 +50,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
  {
   "id": "info-m04-autoral-04",
   "origem": "autoral-ia",
-  "q": "Sobre os recursos da guia Revisão e a recuperação de edições no Word, é INCORRETO afirmar que:",
+  "q": "Sobre os recursos da guia Revisão e a recuperação de edições anteriores em documentos do Microsoft Word, é INCORRETO afirmar que:",
   "options": [
    "com Controlar Alterações ativo, inserções e exclusões podem ser registradas para aceitação ou rejeição posterior",
    "um comentário é uma anotação de revisão e, por si só, não altera o conteúdo do texto do documento",
@@ -80,7 +80,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
  {
   "id": "info-m04-autoral-06",
   "origem": "autoral-ia",
-  "q": "Sobre tabelas no Microsoft Word, é correto afirmar que:",
+  "q": "Considere o uso de tabelas em um documento do Microsoft Word, inseridas pela guia Inserir. Assinale a alternativa correta sobre elas:",
   "options": [
    "permitem mesclar e dividir células, aplicar bordas e repetir linhas de cabeçalho",
    "oferecem os mesmos recursos de cálculo de uma planilha do Excel, incluindo tabelas dinâmicas",

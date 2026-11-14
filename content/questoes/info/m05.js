@@ -95,7 +95,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
  {
   "id": "info-m05-autoral-07",
   "origem": "autoral-ia",
-  "q": "Sobre os formatos de arquivo do Excel, é correto afirmar que:",
+  "q": "Uma pessoa precisa decidir em que formato salvar uma planilha do Excel. Sobre os formatos de arquivo .xlsx, .xls e .csv, é correto afirmar que:",
   "options": [
    ".csv guarda dados em texto separados por delimitadores e não preserva todos os recursos de uma pasta .xlsx",
    ".csv preserva várias planilhas, gráficos e formatações, como uma pasta de trabalho no formato .xlsx",
@@ -110,7 +110,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
  {
   "id": "info-m05-autoral-08",
   "origem": "autoral-ia",
-  "q": "Em relação a formatação, ordenação e exibição de dados no Excel, é INCORRETO afirmar que:",
+  "q": "Em relação a recursos de formatação, ordenação, filtro e exibição de linhas e colunas de dados no Excel, é INCORRETO afirmar que:",
   "options": [
    "a formatação condicional muda a aparência das células segundo regras, sem alterar os valores",
    "filtrar exibe somente os registros que atendem ao critério, sem excluir os demais registros",
@@ -140,7 +140,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
  {
   "id": "info-m05-autoral-10",
   "origem": "autoral-ia",
-  "q": "Em A1 está o número 4 e em B1, o número 2. Qual é o resultado de =A1&B1*2 no Excel?",
+  "q": "Em A1 está o número 4 e em B1, o número 2. Considerando a precedência dos operadores, qual é o resultado de =A1&B1*2 no Excel?",
   "options": [
    "84",
    "8",
