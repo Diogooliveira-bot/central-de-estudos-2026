@@ -43,8 +43,8 @@
       const box=mk('div','bc-led-status-extra');
       const buttons=[...group.querySelectorAll(':scope > button')];
       buttons.forEach((button,i)=>{
-        if(i===1 || i===4){box.appendChild(button);if(button.classList.contains('selected'))extra.open=true}
-        if(i===2){const n=button.firstChild;if(n&&n.nodeType===3)n.textContent='Não respondidas'}
+        if(i===2 || i===4){box.appendChild(button);if(button.classList.contains('selected'))extra.open=true}
+        if(i===1){const n=button.firstChild;if(n&&n.nodeType===3)n.textContent='Não respondidas'}
         if(i===3){const n=button.firstChild;if(n&&n.nodeType===3)n.textContent='Errei'}
       });
       if(box.children.length){extra.append(summary,box);group.after(extra)}
@@ -171,10 +171,6 @@
     });
     const wrapper=by(root,'.qc-content,.audit-content,.workspace');
     if(wrapper)wrapper.style.minWidth='0';
-    if(document.documentElement.classList.contains('bc-led-slim')){
-      const main=by(root,'.filter-page,.audit-page,.app-shell');
-      if(main)main.style.overflowX='clip';
-    }
   }
 
   const originalRender=render;
@@ -202,5 +198,6 @@
   // A primeira abertura recolhe apenas filtros opcionais; depois respeita
   // as escolhas de expansão feitas pelo aluno.
   if(!ui.filterOpen)ui.filterOpen={subjects:false,banks:false};
+  else if(ui.screen==='filters')ui.filterOpen.subjects=false;
   render();
 })();
