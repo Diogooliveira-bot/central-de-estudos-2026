@@ -4,7 +4,7 @@
 (function(){
   'use strict';
   if(typeof render!=='function'||typeof ui==='undefined')return;
-  const icon='/assets/mascote/mascote-marcando-folha.webp';
+  const mascot='/assets/mascote/';
   const mk=(tag,cls,txt)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(txt!==undefined)el.textContent=txt;return el};
   const by=(root,sel)=>root&&root.querySelector(sel);
   const reviewPending=()=>typeof allActiveAll==='function'
@@ -151,13 +151,13 @@
     if(screen==='audit'){
       const bar=by(root,'.bc-led-review-bar');
       if(!bar)return;
-      const img=mk('img');img.src=icon;img.alt='';img.loading='lazy';img.width=52;img.height=56;
+      const img=mk('img');img.src=mascot+(reviewPending()?'mascote-erros.webp':'mascote-comemorando.webp');img.alt='';img.loading='lazy';img.width=52;img.height=56;
       img.style.cssText='width:52px;height:56px;object-fit:contain;flex:none';
       bar.prepend(img);
     }else if(screen==='study'){
       const empty=by(root,'.empty-status');
       if(empty&&!/limite diário|carregando|indisponível|erro/i.test(empty.textContent||'')){
-        const img=mk('img');img.src=icon;img.alt='';img.loading='lazy';img.width=70;img.height=76;
+        const img=mk('img');img.src=mascot+'mascote-livros.webp';img.alt='';img.loading='lazy';img.width=70;img.height=76;
         img.style.cssText='display:block;width:70px;height:76px;object-fit:contain;margin:0 auto 8px';
         empty.prepend(img);
       }
