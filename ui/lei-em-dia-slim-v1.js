@@ -173,6 +173,17 @@
     if(wrapper)wrapper.style.minWidth='0';
   }
 
+  // A escolha de um módulo principal é única; fechar o popover evita
+  // que seu backdrop impeça o botão "Começar a resolver".
+  if(typeof qcPick==='function'){
+    const baseQcPick=qcPick;
+    qcPick=function(field,key){
+      if(field==='module'&&!ui.selectedModules.has(key))ui.selectedModules.clear();
+      baseQcPick(field,key);
+      if(field==='module'){ui.dd=null;render()}
+    };
+  }
+
   const originalRender=render;
   let busy=false;
   render=function(){
