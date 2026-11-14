@@ -143,7 +143,7 @@
     if (!u || u.plan === 'premium' || u.plan === 'staff') return '';
     if (!limitado()) return '';
     const pl = '<a class="bcqa-link" href="https://basecompleta.com.br/#planos" target="_blank" rel="noopener">Conheça o Premium</a>';
-    if (u.remaining === 0) return '<div class="bcqa-uso bcqa-uso-fim" role="status" data-uso><b>Você usou as ' + u.limit + ' questões gratuitas de hoje.</b> A cota volta à meia-noite (horário de Brasília). Você ainda pode rever as que já respondeu hoje. No Premium não há limite diário · ' + pl + '</div>';
+    if (u.remaining === 0) return '<div class="bcqa-uso bcqa-uso-fim" role="status" data-uso>' + mascote('ideia') + '<div><b>Você usou as ' + u.limit + ' questões gratuitas de hoje.</b> A cota volta à meia-noite (horário de Brasília). Você ainda pode rever as que já respondeu hoje. No Premium não há limite diário · ' + pl + '</div></div>';
     return '<div class="bcqa-uso" role="status" data-uso><b>Plano gratuito:</b> ' + u.used + ' de ' + u.limit + ' questões respondidas hoje · restam ' + u.remaining + '. Cada questão nova gasta 1; repetir uma já respondida hoje não gasta.</div>';
   }
   function histHtml(q) {
@@ -167,10 +167,13 @@
     const fb = feita ? '<div class="bcqa-feedback" role="status"><strong>' + (r.correct ? '✓ Resposta correta' : '✕ Resposta incorreta · gabarito ' + LETRAS[r.answer]) + '</strong>' + esc(r.explanation) + (r.lawRef ? '<span class="bcqa-base">Base: ' + esc(r.lawRef) + '</span>' : '') + '</div>' : '';
     return '<section class="bcqa-q" data-i="' + i + '"><p class="bcqa-meta">QUESTÃO ' + nn(i + 1) + ' DE ' + sess.items.length + '</p>' + histHtml(q) + '<h3>' + esc(q.q) + '</h3><div class="bcqa-options" role="radiogroup" aria-label="Alternativas">' + ops + '</div>' + acao + fb + '</section>';
   }
+  function mascote(pose) { return '<img class="bcqa-mascote" src="/assets/mascote/mascote-' + pose + '.webp" alt="" aria-hidden="true" width="40" height="96" loading="lazy" decoding="async">'; }
   function resultadoHtml(c) {
     if (c.r !== c.total) return '';
     const erros = c.r - c.a;
-    return '<div class="bcqa-result" role="status"><b>Resultado: ' + c.a + ' de ' + c.total + ' (' + Math.round(c.a / c.total * 100) + '%)</b>' + (erros ? 'Revise os comentários das que errou e refaça só os erros.' : 'Sem erros neste módulo.') + '</div>';
+    const pct = Math.round(c.a / c.total * 100);
+    const pose = pct >= 80 ? 'comemorando-2' : pct >= 50 ? 'joinha' : 'erros';
+    return '<div class="bcqa-result" role="status">' + mascote(pose) + '<div><b>Resultado: ' + c.a + ' de ' + c.total + ' (' + pct + '%)</b>' + (erros ? 'Revise os comentários das que errou e refaça só os erros.' : 'Sem erros neste módulo.') + '</div></div>';
   }
   function desenhar(manterRolagem) {
     const B = bank(), c = contagem(), pct = Math.round(c.r / c.total * 100);

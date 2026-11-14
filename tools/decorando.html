@@ -572,6 +572,8 @@ body{font-family:Arial,Helvetica,sans-serif}
 .integrated-save{color:#49675c;font-size:8px;font-weight:700;white-space:nowrap}
 .compact-filter-page .filter-topbar{min-height:64px;padding-top:10px;padding-bottom:10px}
 .compact-filter-content{max-width:830px}
+.qc-mascote{display:none}
+@media (min-width:760px){.qc-title{justify-content:flex-start}.qc-title>div:first-of-type{flex:1;min-width:0}.qc-mascote{display:block;height:104px;width:auto;flex:0 0 auto;align-self:flex-end;pointer-events:none}}
 .selection-card{box-shadow:none}
 .question-actions button.delete-action{color:#91504c}
 .ls-home-back{border:1px solid #d9ddd7;border-radius:9px;background:#fff;color:#315c54;padding:9px 12px;font-size:10px;font-weight:750}
@@ -1443,7 +1445,7 @@ function renderFilters(){
   const bank=ui.fBanks.size===1?esc([...ui.fBanks][0]):ui.fBanks.size?`${ui.fBanks.size} bancas`:"Todas as bancas";
   return `<main class="filter-page compact-filter-page qc bc-steps">${topbar(false)}
     <section class="compact-filter-content qc-content">
-      <div class="qc-title"><div><span class="qc-eyebrow">Lei em Dia</span><h1>Monte seu caderno</h1><p>Escolha a disciplina e ajuste os filtros que deseja usar.</p></div>
+      <div class="qc-title"><img class="qc-mascote" src="/assets/mascote/mascote-marcando-folha.webp" alt="" aria-hidden="true" loading="lazy"><div><span class="qc-eyebrow">Lei em Dia</span><h1>Monte seu caderno</h1><p>Escolha a disciplina e ajuste os filtros que deseja usar.</p></div>
         <div class="qc-count ${picked?"":"idle"}" aria-live="polite"><strong>${picked?total.toLocaleString("pt-BR"):"—"}</strong><span>${picked?(total===1?"questão disponível":"questões disponíveis"):"Escolha uma disciplina"}</span></div></div>
       ${picked&&d.supplementNotice?`<aside class="decorando-supplement-notice"><strong>Complementação necessária</strong><p>${esc(d.supplementNotice)}</p></aside>`:""}
       <section class="qc-card bc-accordion" aria-label="Filtros do caderno">
