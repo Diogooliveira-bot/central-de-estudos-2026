@@ -332,28 +332,31 @@
     const outline=m.outline.map(t=>'<li>'+esc(t)+'</li>').join('');
     const reading='<section class="pt-cf-reading bc-info-reading" aria-label="Progresso de leitura">'+
       '<div class="pt-cf-reading-line"><div><b>Leitura do módulo</b>'+
-      '<small>Acompanhe a teoria e a revisão. Questões ainda em construção.</small></div>'+
+      '<small>Acompanhe a teoria e a revisão; depois resolva as questões do módulo.</small></div>'+
       '<strong class="bc-info-reading-value">0%</strong></div>'+
       '<div class="pt-cf-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura"><span style="width:0%"></span></div></section>';
     const oriented=global.BCOrientation?global.BCOrientation.html('info:'+Number(String(m.id).replace(/\D/g,''))):'';
     const materials='<section class="pt-cf-cards bc-info-materials" aria-label="Materiais e links do módulo">'+
       materialCard(m,'review','↺','Versão de revisão','Síntese, conceitos para memorizar e recuperação ativa.',['Resumo','Revisão disponível'],'review','Revisar conteúdo')+
       materialCard(m,'primary','≡','Teoria completa','Leitura por capítulos com exemplos e acompanhamento.',['Apostila','Teoria disponível'],'complete','Estudar conteúdo')+
-      materialCard(m,'questions','?','Questões do módulo','Questões autorais com correção e comentários, em preparação.',['Questões autorais','Em construção'],'questions','Em construção')+
+      '</section>';
+    // Questões autorais: o cartão "Questões do módulo" é inserido pelo app (ui/questoes-modulo-card-v1.js)
+    // logo depois do bloco acima; o filtro Qconcursos vem em seguida (ordem padrão: revisão, teoria, questões, QC).
+    const links='<section class="pt-cf-cards bc-info-materials bc-info-links" aria-label="Filtro de questões do módulo">'+
       materialCard(m,'map','QC',m.questions.qc.length>1?'Filtros Qconcursos':'Filtro Qconcursos','Recorte de questões validado para este módulo.',['QC',m.questions.qc.reduce((total,filter)=>total+filter.count,0)+' questões'],'qc','Abrir filtro')+
       '</section>';
     return '<section class="cf-module bc-info-module '+(open?'open':'')+'" data-module="info-'+esc(m.id)+'">'+
       '<button type="button" class="cf-module-head" aria-expanded="'+(open?'true':'false')+'" onclick="return BaseInformatica.toggle(\''+esc(m.id)+'\')">'+
       '<span class="cf-module-no">MÓDULO '+pad(m.number)+'</span><span class="cf-module-title">'+esc(m.title)+'</span>'+
       '<span class="bc-info-status">Em construção</span><span class="cf-module-stat">0%</span><span class="chev">⌄</span></button>'+
-      '<div class="cf-module-body"><div class="pt-cf-module-inside bc-info-inside">'+reading+oriented+materials+
-      '<p class="bc-info-note">A teoria e a revisão estão disponíveis. Os filtros Qconcursos foram selecionados por módulo; as questões autorais seguem em <strong>construção</strong>. O percentual mede apenas a leitura, não a conclusão integral.</p>'+
+      '<div class="cf-module-body"><div class="pt-cf-module-inside bc-info-inside">'+reading+oriented+materials+links+
+      '<p class="bc-info-note">A teoria e a revisão estão disponíveis. Os filtros Qconcursos foram selecionados por módulo; as questões autorais ficam no cartão <strong>Questões do módulo</strong>. O percentual mede apenas a leitura, não a conclusão integral.</p>'+
       '</div></div></section>';
   }
   function shell() {
     return '<div class="subject-bar"><span style="width:0%"></span></div>' +
       '<div class="bc-info-intro"><b>Informática para concursos públicos</b>' +
-      '<p>13 módulos com teoria completa, revisão e filtros Qconcursos selecionados. Questões autorais permanecem em construção.</p></div>' +
+      '<p>13 módulos com teoria completa, revisão, 10 questões autorais por módulo e filtros Qconcursos selecionados.</p></div>' +
       '<div class="cf-modules bc-info-modules">' + MODULES.map(moduleMarkup).join("") + '</div>';
   }
   const previousStats = global.subjStats;

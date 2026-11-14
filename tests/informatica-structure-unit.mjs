@@ -5,7 +5,7 @@ import fs from "node:fs";
 import vm from "node:vm";
 const read=path=>fs.readFileSync(new URL("../"+path,import.meta.url),"utf8");
 
-test("Informática registra 13 módulos em produção sem questões/links publicados",()=>{
+test("Informática registra 13 módulos em produção com filtros Qconcursos reais (≥ 20 questões) e sem TEC",()=>{
   const subjects=[];
   const html={querySelector:()=>null};
   const global={
@@ -27,7 +27,8 @@ test("Informática registra 13 módulos em produção sem questões/links public
   assert.equal(global.subjStats(subjects[0]).pct,0);
   assert.deepEqual(Array.from(global.BaseInformatica.modules,m=>m.id),Array.from({length:13},(_,i)=>"m"+String(i+1).padStart(2,"0")));
   assert.ok(global.BaseInformatica.modules.every(m=>m.status==="in_production" && !m.theory.summary && !m.theory.complete));
-  assert.ok(global.BaseInformatica.modules.every(m=>m.questions.authorial===null && m.questions.qc===null));
+  assert.ok(global.BaseInformatica.modules.every(m=>m.questions.authorial===null),"questões autorais ficam no banco /api/questoes, não na estrutura");
+  assert.ok(global.BaseInformatica.modules.every(m=>Array.isArray(m.questions.qc)&&m.questions.qc.length>=1&&m.questions.qc.every(f=>f.count>=20&&String(f.url).startsWith("https://www.qconcursos.com/"))),"filtro QC real com no mínimo 20 questões");
   assert.equal(global.BaseInformatica.hasPublishedTheory("m01"),false);
   vm.runInNewContext(source,{window:global,SUBJECTS:subjects,console});
   assert.equal(subjects.length,1,"não duplicar cadastro em recarregamentos");
@@ -39,7 +40,7 @@ test("A Central carrega o catálogo e estrutura em ordem adequada",()=>{
   assert.match(boot,/ui\/informatica-structure-v1\.js\?v=/);
   assert.ok(boot.indexOf("ui/current-courses.js?v=")<boot.indexOf("ui/informatica-structure-v1.js?v="));
   assert.match(read("ui/study-objectives-catalog-v1.js"),/info:\s*\{\s*id:'info',\s*name:'Informática'/);
-  assert.doesNotMatch(read("ui/informatica-structure-v1.js"),/tecconcursos\.com\.br|qconcursos\.com\/questoes/);
+  assert.doesNotMatch(read("ui/informatica-structure-v1.js"),/tecconcursos\.com\.br/,"nenhum link TEC em Informática");
 });
 
 test("M01 a M13 têm apostilas reais de teoria e revisão, sem questões fictícias",()=>{
@@ -77,7 +78,8 @@ test("Leitor registra 13 teorias e permite abri-las separadamente",()=>{
   vm.runInNewContext(reader,context);
   assert.equal(glob.BaseInformaticaReader.available().length,13);
   assert.ok(glob.BaseInformatica.modules.every(m=>glob.BaseInformatica.hasPublishedTheory(m.id)), "teoria marcada disponível");
-  assert.equal(glob.BaseInformatica.modules.filter(m=>m.questions.authorial||m.questions.qc).length,0);
+  assert.equal(glob.BaseInformatica.modules.filter(m=>m.questions.authorial).length,0);
+  assert.equal(glob.BaseInformatica.modules.filter(m=>!m.questions.qc||!m.questions.qc.length).length,0);
 });
 test("Boot e CSS carregam a teoria sem alterar a produção",()=>{
   const boot=read("central-v119.html");
@@ -91,8 +93,12 @@ test("Boot e CSS carregam a teoria sem alterar a produção",()=>{
 
 test("Informática padroniza quatro cartões por módulo com avisos seguros",()=>{
  const js=read("ui/informatica-structure-v1.js");
- for(const label of ["Versão de revisão","Teoria completa","Questões do módulo","Filtro Qconcursos"])
+ for(const label of ["Versão de revisão","Teoria completa","Filtro Qconcursos"])
    assert.ok(js.includes(label),"cartão ausente "+label);
+ // "Questões do módulo" é inserido pelo app (questoes-modulo-card-v1.js); não há mais cartão desativado "Em construção".
+ assert.ok(!/materialCard\(m,'questions'/.test(js),"sem cartão provisório de questões");
+ assert.match(js,/bc-info-links/,"filtro QC vem depois do cartão de questões");
+ assert.doesNotMatch(js,/Questões autorais permanecem em construção/);
  assert.match(js,/pt-cf-cards bc-info-materials/);
  assert.match(js,/pt-cf-reading/);
  assert.match(js,/BCOrientation\.html\('info:'/);
