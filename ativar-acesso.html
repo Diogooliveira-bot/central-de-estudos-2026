@@ -45,12 +45,12 @@ async function api(action,body){
  return result;
 }
 (async function(){
- if(!/^[A-Za-z0-9_-]{43}$/.test(token)){message('Link inválido. Verifique o e-mail da Hotmart.',true);return}
+ if(!/^[A-Za-z0-9_-]{43}$/.test(token)){message('Link inválido. Use o botão do e-mail "Ative seu Premium" que enviamos ao e-mail da compra. Se precisar de ajuda: basecompleta.estudos@gmail.com.',true);return}
  try{
    const result=await api('check',{token});
-   if(!result.valid){message('Este link expirou ou já foi utilizado. Se você já tem conta, faça login.',true);return}
+   if(!result.valid){message('Este link expirou ou já foi utilizado. Se você já ativou, entre em /login.html. Se ainda não ativou, escreva para basecompleta.estudos@gmail.com informando o e-mail da compra e enviaremos um novo link.',true);return}
    form.hidden=false;message('Link confirmado. Preencha os campos abaixo.');
- }catch(error){message(error.message,true)}
+ }catch(error){message(error.message+' Se precisar de ajuda: basecompleta.estudos@gmail.com.',true)}
 })();
 form.addEventListener('submit',async function(event){
  event.preventDefault();

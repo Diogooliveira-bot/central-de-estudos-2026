@@ -24,7 +24,7 @@ test('nove modelos aprovados são renderizáveis sem campos restantes nem CID',(
    assert.ok(mail.text.length>30,type);
    assert.doesNotMatch(mail.html,/cid:bc-|{{[A-Z_]+}}/,type);
    assert.doesNotMatch(mail.text,/{{[A-Z_]+}}/,type);
-   assert.ok(mail.html.includes('https://base-completa-vitrine-estatica-2026.vercel.app/img/logo.webp'),type);
+   assert.ok(mail.html.includes('https://app.basecompleta.com.br/icons/email/logo.webp'),type);
  }
 });
 test('dados incompletos ou URLs arbitrárias impedem o envio',()=>{

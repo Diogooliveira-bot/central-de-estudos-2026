@@ -29,3 +29,20 @@ test('HOTMART_ALERT_EMAIL tem prioridade e o Gmail continua funcionando', async 
 test('sem nenhum provedor configurado o alerta falha de forma explícita', async () => {
   await assert.rejects(() => sendHotmartAlert({ env: BASE, issue, transport: async () => 'x' }), /Provedor de e-mail indisponível/);
 });
+
+import { sendHotmartWelcome } from '../lib/hotmart-webhook.js';
+import fsx from 'node:fs';
+test('e-mail de ativação do comprador: marca, passos, link único, suporte e imagens hospedadas no app', async () => {
+  const enviados = [];
+  const token = 'Ab1_'.repeat(10) + 'xyz';   // 43 caracteres
+  await sendHotmartWelcome({ env: { ...RESEND, BC_PUBLIC_APP_URL: 'https://app.basecompleta.com.br' }, to: 'comprador@example.invalid', token, transport: async m => { enviados.push(m); } });
+  const [m] = enviados;
+  assert.equal(m.subject, 'Ative seu Premium | Base Completa');
+  assert.ok(m.html.includes('https://app.basecompleta.com.br/ativar-acesso.html#token=' + token));
+  assert.ok(m.text.includes('https://app.basecompleta.com.br/ativar-acesso.html#token=' + token));
+  for (const re of [/uma única vez/, /7 dias/, /basecompleta\.estudos@gmail\.com/, /Já tem conta/, /sem renovação automática/, /Nunca pedimos sua senha/]) assert.match(m.html, re);
+  assert.match(m.text, /Nunca pedimos sua senha/);
+  assert.ok(m.html.includes('https://app.basecompleta.com.br/icons/email/logo.webp'));
+  assert.ok(fsx.existsSync(new URL('../icons/email/logo.webp', import.meta.url)), 'imagem do e-mail precisa existir no repositório');
+  assert.doesNotMatch(m.html, /vitrine-estatica/);
+});
