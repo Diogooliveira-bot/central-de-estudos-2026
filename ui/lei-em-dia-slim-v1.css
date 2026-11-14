@@ -76,7 +76,9 @@ html.bc-led-slim{--led-blue:#12365a;--led-blue-soft:#eaf3fa;--led-border:#dce5ed
 @media (max-width:760px){
  .bc-led-slim .bc-discipline-step,.bc-led-slim .bc-slim-module-step{display:block;padding:13px 14px}
  .bc-led-slim .bc-discipline-step .bc-step-title,.bc-led-slim .bc-slim-module-step .bc-step-title{margin-bottom:10px}
- .bc-led-slim .qc-title{display:flex;flex-wrap:wrap;gap:7px}
+ .bc-led-slim .qc-title{display:block;gap:0}
+ .bc-led-slim .qc-title>div:first-of-type{min-height:0;display:block;flex:none}
+ .bc-led-slim .qc-title>.qc-count{display:inline-flex;margin-top:12px;min-height:0}
  .bc-led-slim .qc-title .qc-mascote{width:56px;height:60px}
  .bc-led-slim .qc-content{padding:17px 12px 38px}
  .bc-led-slim .qc-status{padding:13px}
