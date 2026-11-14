@@ -145,8 +145,8 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
    "uma aplicação de IA não precisa simular consciência humana para ser útil",
    "nem todo sistema baseado em regras fixas é aprendizado de máquina",
    "o blockchain não garante, por si só, a qualidade dos dados nele inseridos",
-   "Big Data trata de desafios de volume, variedade e velocidade, entre outros atributos",
-   "a fluência de uma resposta generativa indica que ela é verdadeira"
+   "a fluência de uma resposta generativa indica que ela é verdadeira",
+   "Big Data trata de desafios de volume, variedade e velocidade, entre outros atributos"
   ],
   "answer": 3,
   "explanation": "A afirmação incorreta é a sobre a resposta fluente: o texto plausível de um modelo generativo não é garantia de veracidade, e modelos podem confabular. O NIST trata esse tipo de problema entre os riscos da IA generativa, e por isso a conferência em fontes oficiais é necessária. As demais estão corretas: sistemas de IA podem ter objetivos limitados sem simular consciência; uma automação com condições fixas escritas à mão pode funcionar sem modelo treinado; o blockchain registra de forma encadeada, mas não valida a qualidade do que entra; e Big Data envolve volume, variedade, velocidade e outros atributos.",

@@ -35,7 +35,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
  {
   "id": "info-m02-autoral-03",
   "origem": "autoral-ia",
-  "q": "Em novembro de 2026, o que se pode afirmar corretamente sobre o ciclo comum de suporte do sistema Windows 10?",
+  "q": "Sobre o ciclo comum de suporte do sistema Windows 10, que já foi encerrado, é correto afirmar que:",
   "options": [
    "Terminou em 14/10/2025; o sistema segue funcionando, e existem programas específicos de atualizações estendidas",
    "O suporte geral continua sem data de término, e o Windows 10 recebe normalmente todas as atualizações de segurança",
