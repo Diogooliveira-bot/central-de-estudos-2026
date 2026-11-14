@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Exemplo de sessão no terminal Linux</title><desc id="desc">Terminal com comandos de navegação, criação, cópia e permissões de arquivos.</desc>
+<rect width="1600" height="900" fill="#f4f8fc"/>
+<rect x="100" y="90" width="1400" height="720" rx="24" fill="#182330"/>
+<path d="M100 160h1400" stroke="#304150" stroke-width="2"/>
+<circle cx="144" cy="125" r="12" fill="#ff6b6b"/><circle cx="182" cy="125" r="12" fill="#ffd166"/><circle cx="220" cy="125" r="12" fill="#57cc99"/>
+<text x="800" y="133" text-anchor="middle" fill="#b8c7d9" font-family="Arial, sans-serif" font-size="26">Terminal — Bash</text>
+<g font-family="Consolas, 'Liberation Mono', monospace" font-size="31">
+<text x="150" y="235" fill="#68d391">ana@pc-estudos</text><text x="425" y="235" fill="#e2e8f0">:</text><text x="445" y="235" fill="#63b3ed">~</text><text x="470" y="235" fill="#e2e8f0">$ pwd</text>
+<text x="150" y="285" fill="#e2e8f0">/home/ana</text>
+<text x="150" y="360" fill="#68d391">ana@pc-estudos</text><text x="425" y="360" fill="#e2e8f0">:</text><text x="445" y="360" fill="#63b3ed">~</text><text x="470" y="360" fill="#e2e8f0">$ mkdir estudos</text>
+<text x="150" y="435" fill="#68d391">ana@pc-estudos</text><text x="425" y="435" fill="#e2e8f0">:</text><text x="445" y="435" fill="#63b3ed">~</text><text x="470" y="435" fill="#e2e8f0">$ cp resumo.txt estudos/</text>
+<text x="150" y="510" fill="#68d391">ana@pc-estudos</text><text x="425" y="510" fill="#e2e8f0">:</text><text x="445" y="510" fill="#63b3ed">~</text><text x="470" y="510" fill="#e2e8f0">$ ls -l estudos</text>
+<text x="150" y="560" fill="#b8c7d9">-rw-r--r-- 1 ana alunos  842 nov 14  resumo.txt</text>
+<text x="150" y="635" fill="#68d391">ana@pc-estudos</text><text x="425" y="635" fill="#e2e8f0">:</text><text x="445" y="635" fill="#63b3ed">~</text><text x="470" y="635" fill="#e2e8f0">$ chmod 640 estudos/resumo.txt</text>
+<text x="150" y="710" fill="#68d391">ana@pc-estudos</text><text x="425" y="710" fill="#e2e8f0">:</text><text x="445" y="710" fill="#63b3ed">~</text><text x="470" y="710" fill="#e2e8f0">$</text><rect x="495" y="682" width="18" height="34" fill="#e2e8f0"/>
+</g>
+<text x="100" y="856" fill="#4a647c" font-family="Arial, sans-serif" font-size="23">Exemplo didático: os comandos e a sintaxe são reproduzíveis; o visual pode mudar conforme o terminal e a distribuição.</text>
+</svg>
