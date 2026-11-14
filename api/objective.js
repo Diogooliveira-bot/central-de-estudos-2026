@@ -7,7 +7,7 @@ function validObjectiveId(value) {
   return id === 'free-study' || (id.length <= 120 && /^(career|exam)-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id));
 }
 
-const FREE_STUDY_SUBJECT_IDS = new Set(['pt','cf','adm','civil','cpc','penal','cpp','rlm']);
+const FREE_STUDY_SUBJECT_IDS = new Set(['pt','cf','adm','civil','cpc','penal','cpp','rlm','info']);
 
 function validFreeSubjectIds(value) {
   return Array.isArray(value) && value.length >= 1 && value.length <= FREE_STUDY_SUBJECT_IDS.size &&
@@ -35,6 +35,8 @@ function ensureTable(sql) {
         )
       `;
       await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS free_subject_ids JSONB`;
+      await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS requested_exam TEXT`;
+      await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS requested_exam_at TIMESTAMPTZ`;
     })().catch((error) => {
       preferencesReadyPromise = null;
       throw error;
@@ -116,6 +118,67 @@ async function handleExamProgress(req, res) {
   }
 }
 
+// Pedido de edital: texto simples digitado pelo aluno (um pedido por aluno; o mais recente vale).
+export function cleanExamRequest(value) {
+  const text = String(value ?? '').replace(/[\u0000-\u001f\u007f<>]/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.length >= 3 && text.length <= 120 ? text : '';
+}
+export function examRequestKey(value) {
+  return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+async function handleExamRequest(req, res, session, sql) {
+  if (req.method !== 'PUT') {
+    res.setHeader('Allow', 'PUT');
+    return send(res, 405, { error:'Método não permitido' });
+  }
+  const body = await readJsonBody(req);
+  const text = cleanExamRequest(body?.text);
+  if (!text) return send(res, 400, { error:'Informe o nome do edital (de 3 a 120 caracteres).' });
+  await sql`
+    INSERT INTO central_user_preferences (user_id, requested_exam, requested_exam_at, updated_at)
+    VALUES (${session.user.id}, ${text}, NOW(), NOW())
+    ON CONFLICT (user_id) DO UPDATE SET requested_exam=EXCLUDED.requested_exam, requested_exam_at=NOW()
+  `;
+  return send(res, 200, { ok:true, text });
+}
+
+// Lista para o administrador: pedidos agrupados pelo mesmo texto (sem acentos/caixa).
+async function handleExamRequestsAdmin(req, res, session, sql) {
+  if (session.user.role !== 'admin') return send(res, 403, { error:'Somente o administrador acessa os pedidos de edital' });
+  if (req.method === 'PUT') {
+    const body = await readJsonBody(req);
+    const key = examRequestKey(cleanExamRequest(body?.text));
+    if (!key || body?.resolved !== true) return send(res, 400, { error:'Pedido inválido' });
+    const rows = await sql`SELECT user_id, requested_exam FROM central_user_preferences WHERE requested_exam IS NOT NULL`;
+    const ids = rows.filter((r) => examRequestKey(r.requested_exam) === key).map((r) => r.user_id);
+    for (const id of ids) {
+      await sql`UPDATE central_user_preferences SET requested_exam=NULL, requested_exam_at=NULL WHERE user_id=${id}`;
+    }
+    return send(res, 200, { ok:true, cleared:ids.length });
+  }
+  if (req.method !== 'GET') {
+    res.setHeader('Allow', 'GET, PUT');
+    return send(res, 405, { error:'Método não permitido' });
+  }
+  const rows = await sql`
+    SELECT p.requested_exam, p.requested_exam_at, u.name, u.email
+    FROM central_user_preferences p JOIN central_users u ON u.user_id = p.user_id
+    WHERE p.requested_exam IS NOT NULL
+    ORDER BY p.requested_exam_at DESC LIMIT 500
+  `;
+  const groups = new Map();
+  for (const row of rows) {
+    const key = examRequestKey(row.requested_exam);
+    if (!key) continue;
+    const group = groups.get(key) || { text:row.requested_exam, count:0, lastAt:row.requested_exam_at, students:[] };
+    group.count += 1;
+    if (group.students.length < 20) group.students.push({ name:row.name || '', email:row.email || '', at:row.requested_exam_at });
+    groups.set(key, group);
+  }
+  return send(res, 200, { requests:[...groups.values()].sort((a, b) => b.count - a.count || String(b.lastAt).localeCompare(String(a.lastAt))) });
+}
+
 export default async function handler(req, res) {
   if (req.query?.resource === 'exam-progress') return handleExamProgress(req, res);
   if (req.method !== 'GET' && !sameOriginRequest(req)) return send(res, 403, { error:'Origem da requisição não permitida' });
@@ -130,6 +193,8 @@ export default async function handler(req, res) {
   try {
     const sql = session.sql;
     await ensureTable(sql);
+    if (req.query?.resource === 'exam-request') return handleExamRequest(req, res, session, sql);
+    if (req.query?.resource === 'exam-requests') return handleExamRequestsAdmin(req, res, session, sql);
 
     if (req.method === 'GET') {
       const rows = await sql`
@@ -150,7 +215,7 @@ export default async function handler(req, res) {
     const hasFreeSelection = Object.prototype.hasOwnProperty.call(body || {}, 'freeSubjectIds');
     const freeSubjectIds = body?.freeSubjectIds;
     if (hasFreeSelection && (objectiveId !== 'free-study' || !validFreeSubjectIds(freeSubjectIds))) {
-      return send(res, 400, { error:'Selecione de 1 a 8 disciplinas válidas, sem repetições, para o Estudo livre' });
+      return send(res, 400, { error:'Selecione de 1 a 9 disciplinas válidas, sem repetições, para o Estudo livre' });
     }
     // Sem seleção enviada: preservar o que o aluno já escolheu quando alternar de carreira.
     const freeSubjectJson = hasFreeSelection ? JSON.stringify(freeSubjectIds) : null;
