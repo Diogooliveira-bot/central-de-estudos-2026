@@ -12,7 +12,8 @@
   const safeText=(el,value)=>{if(el)el.textContent=value};
   document.documentElement.classList.add('bc-led-slim');
 
-  // ETAPA 1: dois campos principais e filtros adicionais recolhíveis.
+  // ETAPA 1 revisada: somente Disciplina e Módulo na tela de escolha.
+  // Filtros e históricos seguem preservados na aplicação original.
   function simplifyFilters(root){
     const form=by(root,'.bc-accordion');
     const discipline=by(form,'.bc-discipline-step');
@@ -24,45 +25,29 @@
       block.append(title,moduleField);
       discipline.after(block);
     }
-    const sections=[...root.querySelectorAll('.bc-filter-section')];
-    if(sections[0]){
-      const title=by(sections[0],'.bc-step-title strong');
-      safeText(title,'Refinar por lei e assunto');
+    root.querySelectorAll('.bc-filter-section,.qc-status,.qc-opts,.bc-led-inline-actions').forEach(el=>el.remove());
+    safeText(by(root,'.qc-title p'),'Selecione a disciplina e depois o módulo que deseja estudar.');
+    safeText(by(root,'.qc-title h1'),'Pratique a lei com questões');
+    const mascot=by(root,'.qc-mascote');
+    if(mascot){mascot.alt='';mascot.decoding='async'}
+    const hasModule=!!(ui.discPicked&&ui.selectedModules.size===1);
+    const count=by(root,'.qc-count');
+    if(count){
+      safeText(by(count,'strong'),hasModule?visible().length.toLocaleString('pt-BR'):'—');
+      safeText(by(count,'span'),hasModule?'questões disponíveis':'Escolha um módulo');
     }
-    if(sections[1]){
-      const title=by(sections[1],'.bc-step-title strong');
-      safeText(title,'Banca, ano e origem');
+    if(!hasModule){
+      safeText(by(root,'.bc-slim-module-step .qc-select span'),'Selecione um módulo');
     }
-    const intro=by(root,'.qc-title p');
-    safeText(intro,'Escolha uma disciplina e um módulo para começar. Os demais filtros são opcionais.');
-    const stats=by(root,'.qc-status');
-    const group=by(stats,'.qc-status-options');
-    if(group){
-      const extra=mk('details','bc-led-more-status');
-      const summary=mk('summary','','Mais situações');
-      const box=mk('div','bc-led-status-extra');
-      const buttons=[...group.querySelectorAll(':scope > button')];
-      buttons.forEach((button,i)=>{
-        if(i===2 || i===4){box.appendChild(button);if(button.classList.contains('selected'))extra.open=true}
-        if(i===1){const n=button.firstChild;if(n&&n.nodeType===3)n.textContent='Não respondidas'}
-        if(i===3){const n=button.firstChild;if(n&&n.nodeType===3)n.textContent='Errei'}
-      });
-      if(box.children.length){extra.append(summary,box);group.after(extra)}
+    const action=by(root,'.bc-session-action');
+    if(action){
+      [...action.children].forEach(child=>{if(!child.classList.contains('qc-go'))child.remove()});
+      const go=by(action,'.qc-go');
+      if(go){
+        safeText(go,'Começar a resolver →');
+        go.disabled=!hasModule||!visible().length;
+      }
     }
-    const hint=by(stats,'.qc-status-heading small');
-    if(hint){
-      hint.textContent='Pratique questões novas ou revise as que errou.';
-      const note=mk('p','bc-slim-subtle','Uma questão é dominada após 5 acertos consecutivos; os erros reiniciam a sequência.');
-      if(!by(stats,'.bc-slim-subtle'))stats.append(note);
-    }
-    const oldOpts=by(root,'.qc-opts summary strong');
-    safeText(oldOpts,'Preferências de estudo');
-    const go=by(root,'.bc-session-action .qc-go');
-    safeText(go,'Começar a resolver →');
-    const title=by(root,'.qc-title h1');
-    safeText(title,'Pratique a lei com questões');
-    const topMascot=by(root,'.qc-mascote');
-    if(topMascot){topMascot.alt='';topMascot.decoding='async'}
   }
 
   // ETAPA 2: questão com foco no enunciado, resposta e fundamento legal.
@@ -125,24 +110,16 @@
       const btn=mk('button','', 'Revisar meus erros');
       btn.type='button';btn.disabled=!pending;
       btn.addEventListener('click',()=>{
-        if(typeof chooseDiscipline==='function')chooseDiscipline(saved.preferences.discipline);
+        const errors=allActiveAll().filter(q=>lastAttempt(q.id)?.correct===false);
+        const current=saved.preferences.discipline;
+        const target=errors.some(q=>q.discipline===current)?current:errors[0]?.discipline;
+        if(!target)return;
+        chooseDiscipline(target);
         ui.discPicked=true;
-        ui.screen='filters';
-        if(typeof chooseStatus==='function')chooseStatus('wrong');
-        else render();
-        window.scrollTo(0,0);
+        chooseStatus('wrong');
+        startStudy();
       });
       bar.append(msg,btn);heading.after(bar);
-    }else if(screen==='filters'){
-      const row=by(root,'.bc-session-action');
-      if(!row||!ui.discPicked||typeof statusCounts!=='function')return;
-      const wrong=statusCounts().wrong;
-      if(!wrong)return;
-      const btn=mk('button','bc-led-text-action','Revisar '+wrong+' erro'+(wrong===1?'':'s'));
-      btn.type='button';
-      btn.addEventListener('click',()=>{chooseStatus('wrong');startStudy()});
-      const wrap=mk('div','bc-led-inline-actions');wrap.append(btn);
-      row.before(wrap);
     }
   }
 
@@ -171,6 +148,19 @@
     });
     const wrapper=by(root,'.qc-content,.audit-content,.workspace');
     if(wrapper)wrapper.style.minWidth='0';
+  }
+
+  // Remover filtros internos invisíveis sempre que o usuário voltar à escolha.
+  if(typeof setScreen==='function'){
+    const baseSetScreen=setScreen;
+    setScreen=function(screen){
+      if(screen==='filters'){
+        ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();
+        ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();
+        ui.fOrigin='';ui.statusFilter='all';ui.statusPicked=false;
+      }
+      return baseSetScreen(screen);
+    };
   }
 
   // A escolha de um módulo principal é única; fechar o popover evita
@@ -206,9 +196,11 @@
       console.error('Lei em Dia (prévia): ajuste visual não aplicado',error);
     }finally{busy=false}
   };
-  // A primeira abertura recolhe apenas filtros opcionais; depois respeita
-  // as escolhas de expansão feitas pelo aluno.
-  if(!ui.filterOpen)ui.filterOpen={subjects:false,banks:false};
-  else if(ui.screen==='filters')ui.filterOpen.subjects=false;
+  // Links externos que abrem a escolha também começam sem filtros invisíveis.
+  if(ui.screen==='filters'){
+    ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();
+    ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();
+    ui.fOrigin='';ui.statusFilter='all';
+  }
   render();
 })();
