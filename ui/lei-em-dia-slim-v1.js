@@ -27,6 +27,7 @@
     }
     root.querySelectorAll('.bc-filter-section,.qc-status,.qc-opts,.bc-led-inline-actions').forEach(el=>el.remove());
     safeText(by(root,'.qc-title p'),'Selecione a disciplina e depois o módulo que deseja estudar.');
+    safeText(by(root,'.bc-slim-module-step label'),'Módulo');
     safeText(by(root,'.qc-title h1'),'Pratique a lei com questões');
     const mascot=by(root,'.qc-mascote');
     if(mascot){mascot.alt='';mascot.decoding='async'}
