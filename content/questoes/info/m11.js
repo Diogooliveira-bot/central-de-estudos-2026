@@ -129,12 +129,12 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "options": [
    "o filtro de spam, que separa mensagens indesejadas da caixa principal",
    "o histórico de versões, que permite recuperar edições anteriores do arquivo",
-   "a lixeira, destinada a itens removidos, e não a edições anteriores de um arquivo mantido",
+   "a lixeira, que restaura qualquer edição anterior sempre que o arquivo é salvo por cima",
    "o Cco, que guarda uma cópia oculta de cada alteração feita no documento",
    "a autenticação em duas etapas, que desfaz as alterações feitas por terceiros"
   ],
   "answer": 1,
-  "explanation": "O histórico de versões permite recuperar edições anteriores de um arquivo, conforme as regras do serviço, e é o recurso indicado quando o conteúdo foi substituído. A lixeira mantém itens removidos por período variável; aqui o arquivo continua existindo, apenas foi alterado, e por isso ela não é o recurso adequado. O filtro de spam atua sobre mensagens indesejadas de e-mail. O Cco é um campo de endereçamento de e-mail e não guarda versões. A autenticação em duas etapas protege o acesso à conta, mas não desfaz alterações feitas por quem já tinha permissão.",
+  "explanation": "O histórico de versões permite recuperar edições anteriores de um arquivo, conforme as regras do serviço, e é o recurso indicado quando o conteúdo foi substituído. A lixeira mantém itens removidos por período variável; aqui o arquivo continua existindo, apenas foi alterado, e por isso ela não restaura edições anteriores. O filtro de spam atua sobre mensagens indesejadas de e-mail. O Cco é um campo de endereçamento de e-mail e não guarda versões. A autenticação em duas etapas protege o acesso à conta, mas não desfaz alterações feitas por quem já tinha permissão.",
   "lawRef": "Nuvem — histórico de versões e lixeira"
  },
  {
