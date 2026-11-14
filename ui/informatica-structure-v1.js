@@ -23,7 +23,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 50 questões","count":50,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2024&publication_year%5B%5D=2025&sort=newest&subject_ids%5B%5D=4849"}]
     }
   },
   {
@@ -45,7 +45,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 41 questões","count":41,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2023&publication_year%5B%5D=2024&publication_year%5B%5D=2025&sort=newest&subject_ids%5B%5D=19793"}]
     }
   },
   {
@@ -67,7 +67,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 30 questões","count":30,"boards":"FGV, FCC e Cebraspe","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=2&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2020&publication_year%5B%5D=2021&publication_year%5B%5D=2022&publication_year%5B%5D=2023&publication_year%5B%5D=2024&publication_year%5B%5D=2025&publication_year%5B%5D=2026&sort=newest&subject_ids%5B%5D=16733"}]
     }
   },
   {
@@ -89,7 +89,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 72 questões","count":72,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2023&publication_year%5B%5D=2024&publication_year%5B%5D=2025&publication_year%5B%5D=2026&sort=newest&subject_ids%5B%5D=1102"}]
     }
   },
   {
@@ -111,7 +111,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 22 questões","count":22,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&q=SOMA&sort=newest&subject_ids%5B%5D=18405"}]
     }
   },
   {
@@ -133,7 +133,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 24 questões","count":24,"boards":"FGV, FCC, Cebraspe e VUNESP","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=2&examining_board_ids%5B%5D=63&examining_board_ids%5B%5D=152&exclude_nullified=true&exclude_outdated=true&per_page=20&q=PROCV&sort=newest&subject_ids%5B%5D=18405"}]
     }
   },
   {
@@ -155,7 +155,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 21 questões","count":21,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2023&publication_year%5B%5D=2024&publication_year%5B%5D=2025&publication_year%5B%5D=2026&sort=newest&subject_ids%5B%5D=2961"}]
     }
   },
   {
@@ -177,7 +177,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 55 questões","count":55,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&q=LibreOffice&sort=newest"}]
     }
   },
   {
@@ -199,7 +199,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 92 questões","count":92,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2023&publication_year%5B%5D=2024&publication_year%5B%5D=2025&publication_year%5B%5D=2026&sort=newest&subject_ids%5B%5D=237"}]
     }
   },
   {
@@ -221,7 +221,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 21 questões","count":21,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2023&publication_year%5B%5D=2024&publication_year%5B%5D=2025&sort=newest&subject_ids%5B%5D=324"}]
     }
   },
   {
@@ -243,7 +243,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"E-mail · 34 questões","count":34,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2023&publication_year%5B%5D=2024&publication_year%5B%5D=2025&publication_year%5B%5D=2026&sort=newest&subject_ids%5B%5D=241"},{"label":"Nuvem · 54 questões","count":54,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&sort=newest&subject_ids%5B%5D=11846"}]
     }
   },
   {
@@ -265,7 +265,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 76 questões","count":76,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&publication_year%5B%5D=2023&publication_year%5B%5D=2024&publication_year%5B%5D=2025&publication_year%5B%5D=2026&sort=newest&subject_ids%5B%5D=825"}]
     }
   },
   {
@@ -287,7 +287,7 @@
     },
     "questions": {
       "authorial": null,
-      "qc": null
+      "qc": [{"label":"Abrir filtro · 22 questões","count":22,"boards":"FGV e FCC","url":"https://www.qconcursos.com/questoes-de-concursos/questoes?discipline_ids%5B%5D=46&examining_board_ids%5B%5D=1&examining_board_ids%5B%5D=63&exclude_nullified=true&exclude_outdated=true&per_page=20&q=inteligencia%20artificial&sort=newest"}]
     }
   }
 ];
@@ -309,13 +309,19 @@
   };
   if (!SUBJECTS.some(s => s.id === ID)) SUBJECTS.push(subject);
 
-  // Cartões no padrão visual das disciplinas já aprovadas. Não simula links ou questões.
+  // Cartões no padrão visual das disciplinas já aprovadas.
   function materialCard(m,kind,icon,title,description,labels,mode,action) {
-    const available=mode==="complete"||mode==="review";
+    const filters=kind==="map"&&Array.isArray(m.questions?.qc)?m.questions.qc:[];
+    const available=mode==="complete"||mode==="review"||filters.length>0;
     const tags=labels.map(x=>'<span>'+esc(x)+'</span>').join('');
-    const button=available
-      ? '<button type="button" class="pt-cf-button pt-cf-button-open" data-bc-info-mode="'+mode+'" onclick="return BaseInformaticaReader.open(\''+esc(m.id)+'\',\''+mode+'\')">'+esc(action)+'</button>'
-      : '<button type="button" class="pt-cf-button bc-info-disabled" disabled aria-disabled="true" title="Em construção">Em construção</button>';
+    let button;
+    if (kind==="map" && filters.length) {
+      button=filters.map(filter=>'<a class="pt-cf-button pt-cf-button-open" href="'+esc(filter.url)+'" target="_blank" rel="noopener noreferrer" data-bc-info-qc="'+esc(m.id)+'"><span>'+esc(filter.label)+'</span></a>').join('');
+    } else {
+      button=available
+        ? '<button type="button" class="pt-cf-button pt-cf-button-open" data-bc-info-mode="'+mode+'" onclick="return BaseInformaticaReader.open(\''+esc(m.id)+'\',\''+mode+'\')">'+esc(action)+'</button>'
+        : '<button type="button" class="pt-cf-button bc-info-disabled" disabled aria-disabled="true" title="Em construção">Em construção</button>';
+    }
     return '<article class="pt-cf-card pt-cf-card-'+kind+(available?'':' bc-info-coming-card')+'" data-bc-info-card="'+kind+'">'+
       '<span class="pt-cf-icon" aria-hidden="true">'+esc(icon)+'</span>'+
       '<b>'+esc(title)+'</b><small>'+esc(description)+'</small>'+
@@ -334,20 +340,20 @@
       materialCard(m,'review','↺','Versão de revisão','Síntese, conceitos para memorizar e recuperação ativa.',['Resumo','Revisão disponível'],'review','Revisar conteúdo')+
       materialCard(m,'primary','≡','Teoria completa','Leitura por capítulos com exemplos e acompanhamento.',['Apostila','Teoria disponível'],'complete','Estudar conteúdo')+
       materialCard(m,'questions','?','Questões do módulo','Questões autorais com correção e comentários, em preparação.',['Questões autorais','Em construção'],'questions','Em construção')+
-      materialCard(m,'map','QC','Filtro Qconcursos','Caderno de questões específico do assunto, pendente de validação.',['QC','Em construção'],'qc','Em construção')+
+      materialCard(m,'map','QC',m.questions.qc.length>1?'Filtros Qconcursos':'Filtro Qconcursos','Recorte de questões validado para este módulo.',['QC',m.questions.qc.reduce((total,filter)=>total+filter.count,0)+' questões'],'qc','Abrir filtro')+
       '</section>';
     return '<section class="cf-module bc-info-module '+(open?'open':'')+'" data-module="info-'+esc(m.id)+'">'+
       '<button type="button" class="cf-module-head" aria-expanded="'+(open?'true':'false')+'" onclick="return BaseInformatica.toggle(\''+esc(m.id)+'\')">'+
       '<span class="cf-module-no">MÓDULO '+pad(m.number)+'</span><span class="cf-module-title">'+esc(m.title)+'</span>'+
       '<span class="bc-info-status">Em construção</span><span class="cf-module-stat">0%</span><span class="chev">⌄</span></button>'+
       '<div class="cf-module-body"><div class="pt-cf-module-inside bc-info-inside">'+reading+oriented+materials+
-      '<p class="bc-info-note">A teoria e a revisão estão disponíveis. Questões autorais e filtros Qconcursos: <strong>em construção</strong>. O percentual mede apenas a leitura, não a conclusão integral.</p>'+
+      '<p class="bc-info-note">A teoria e a revisão estão disponíveis. Os filtros Qconcursos foram selecionados por módulo; as questões autorais seguem em <strong>construção</strong>. O percentual mede apenas a leitura, não a conclusão integral.</p>'+
       '</div></div></section>';
   }
   function shell() {
     return '<div class="subject-bar"><span style="width:0%"></span></div>' +
       '<div class="bc-info-intro"><b>Informática para concursos públicos</b>' +
-      '<p>13 módulos com teoria completa e revisão disponíveis. Questões autorais e links do Qconcursos permanecem em construção.</p></div>' +
+      '<p>13 módulos com teoria completa, revisão e filtros Qconcursos selecionados. Questões autorais permanecem em construção.</p></div>' +
       '<div class="cf-modules bc-info-modules">' + MODULES.map(moduleMarkup).join("") + '</div>';
   }
   const previousStats = global.subjStats;
