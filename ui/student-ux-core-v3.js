@@ -40,7 +40,8 @@
       const objective = global.CentralStudyObjectives;
       if (!objective?.hasActiveObjective?.()) return list;
       const allowed = new Set(objective.activeSubjectIds());
-      return list.filter((subject) => allowed.has(subject.id));
+      // O objetivo define a trilha do plano; disciplinas fora dela que o aluno já começou continuam contando no painel.
+      return list.filter((subject) => allowed.has(subject.id) || (subjectProgress(subject)?.percent || 0) > 0);
     } catch (_) { return []; }
   }
   function subjectId(value) {

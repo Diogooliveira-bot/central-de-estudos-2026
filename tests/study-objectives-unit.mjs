@@ -67,14 +67,17 @@ test('catálogo TJPB possui dez blocos oficiais e sem links fictícios para prep
   dom.window.close();
 });
 
-test('boas-vindas: áreas, cargo e estudo livre sem atalho para edital',async()=>{
+test('boas-vindas: Estudo livre primeiro, perfis padrão, editais cadastrados e pedido de edital',async()=>{
   const storage=makeStorage({'central-v6:done:cf-m01':'1'});
   const {dom}=setup(storage),w=dom.window;
   await settle(w);
   assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Bem-vindo à Base Completa/);
   assert.equal(w.document.querySelectorAll('[data-study-area]').length,9);
-  assert.ok(w.document.querySelector('[data-study-free]'));
-  assert.equal(w.document.querySelector('[data-study-exams]'),null);
+  const free=w.document.querySelector('[data-study-free]');
+  assert.ok(free);
+  assert.ok(free.compareDocumentPosition(w.document.querySelector('[data-study-area]')) & 4,'Estudo livre vem antes dos perfis padrão');
+  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,2,'editais cadastrados aparecem na primeira tela');
+  assert.ok(w.document.querySelector('[data-study-exam-request] input[name="exam"]'),'campo para pedir um edital');
   assert.equal(w.document.querySelector('#studyObjectiveTopbar'),null);
   const settings=w.document.querySelector('#studySettingsObjective');
   assert.ok(settings);
@@ -96,8 +99,12 @@ test('boas-vindas: áreas, cargo e estudo livre sem atalho para edital',async()=
   await settle(w);
   assert.equal(w.CentralStudyObjectives.getActive(),'free-study');
   assert.deepEqual(Array.from(w.CentralStudyObjectives.activeSubjectIds()),['pt','penal']);
-  assert.equal(w.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length,2);
-  assert.equal(w.document.querySelector('#subjects [data-id="adm"]').hidden,true);
+  // Acesso a tudo: a escolha só destaca a trilha; nenhuma disciplina é escondida.
+  assert.equal(w.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length,9);
+  assert.equal(w.document.querySelector('#subjects [data-id="adm"]').hidden,false);
+  assert.equal(w.document.querySelector('#subjects [data-id="adm"]').dataset.studyTrail,'0');
+  assert.equal(w.document.querySelector('#subjects [data-id="pt"]').dataset.studyTrail,'1');
+  assert.equal(w.CentralStudyObjectives.questionDisciplineKeys(),null,'filtros e questões de todas as disciplinas ficam liberados');
   assert.equal(storage.getItem('central-v6:done:cf-m01'),'1');
   assert.equal(w.__fetchCalls,0);
   dom.window.close();
@@ -181,7 +188,8 @@ test('seleção do Estudo livre sincroniza entre aparelhos na conta do aluno', a
   await settle(w2);
   assert.equal(w2.CentralStudyObjectives.getActive(),'free-study');
   assert.deepEqual(Array.from(w2.CentralStudyObjectives.activeSubjectIds()),['pt','civil','rlm']);
-  assert.equal(w2.document.querySelector('#subjects [data-id="penal"]').hidden,true);
+  assert.equal(w2.document.querySelector('#subjects [data-id="penal"]').hidden,false);
+  assert.equal(w2.document.querySelector('#subjects [data-id="penal"]').dataset.studyTrail,'0');
   assert.ok(w2.document.querySelector('#studySettingsObjective [data-settings-change-objective]'));
   second.dom.window.close();
 });
@@ -219,3 +227,60 @@ test('API do objetivo valida disciplinas, persiste JSONB e mantém dados ao muda
   assert.doesNotMatch(api,/DELETE FROM central_user_preferences/i);
 });
 
+
+test('pedido de edital: texto curto é recusado; prévia guarda local; conta envia PUT à API', async () => {
+  const guest = setup(); const g = guest.dom.window; await settle(g);
+  const form = g.document.querySelector('[data-study-exam-request]');
+  form.querySelector('input').value = 'ab';
+  form.dispatchEvent(new g.Event('submit', { cancelable:true, bubbles:true })); await settle(g);
+  assert.match(form.querySelector('[data-study-exam-request-status]').textContent, /pelo menos 3/);
+  form.querySelector('input').value = 'Polícia Civil de Minas Gerais 2027';
+  form.dispatchEvent(new g.Event('submit', { cancelable:true, bubbles:true })); await settle(g);
+  assert.match(form.querySelector('[data-study-exam-request-status]').textContent, /Prévia/);
+  assert.equal(g.localStorage.getItem('central-v6:exam-request:v1'), 'Polícia Civil de Minas Gerais 2027');
+  assert.equal(g.__fetchCalls, 0, 'a prévia sem login não chama a API de conta');
+  guest.dom.window.close();
+
+  const account = setup(); const w = account.dom.window; w.__BASE_COMPLETA_PREVIEW_GUEST__ = false;
+  const calls = [];
+  w.fetch = async (url, opts = {}) => { calls.push({ url:String(url), method:opts.method || 'GET', body:opts.body }); return { ok:true, json:async () => ({ objectiveId:null, freeSubjectIds:null }) }; };
+  await settle(w); w.CentralStudyObjectives.open(); await settle(w);
+  const f = w.document.querySelector('[data-study-exam-request]');
+  f.querySelector('input').value = '  TRF 1ª Região <script> 2027 ';
+  f.dispatchEvent(new w.Event('submit', { cancelable:true, bubbles:true })); await settle(w);
+  const put = calls.find((c) => c.url.includes('resource=exam-request'));
+  assert.ok(put, 'chamou /api/objective?resource=exam-request');
+  assert.equal(put.method, 'PUT');
+  assert.equal(JSON.parse(put.body).text, 'TRF 1ª Região script 2027', 'sinais de HTML são removidos antes do envio');
+  assert.match(f.querySelector('[data-study-exam-request-status]').textContent, /Pedido registrado/);
+  account.dom.window.close();
+});
+
+test('carreira e edital não escondem disciplinas e Informática entra nas trilhas', async () => {
+  const { dom } = setup(); const w = dom.window; await settle(w);
+  const c = w.CentralStudyObjectiveCatalog;
+  assert.ok(Object.values(c.goals).filter((g) => g.type === 'career').every((g) => g.subjectIds.includes('info')), 'Informática em todas as trilhas de carreira');
+  assert.deepEqual(Array.from(c.areas.slice(0, 4), (a) => a.id), ['policial', 'judiciaria', 'administrativa', 'bancaria']);
+  w.CentralStudyObjectives.setActive('career-guarda-municipal'); await settle(w);
+  const hidden = [...w.document.querySelectorAll('#subjects > .subject')].filter((s) => s.hidden || s.classList.contains('study-objective-hidden'));
+  assert.equal(hidden.length, 0, 'nenhuma disciplina escondida');
+  w.CentralStudyObjectives.setActive('exam-tjpb-2026-analista-judiciaria'); await settle(w);
+  assert.equal([...w.document.querySelectorAll('#subjects > .subject')].filter((s) => s.hidden).length, 0);
+  dom.window.close();
+});
+
+test('API: estudo livre aceita Informática e pedidos de edital são validados e exclusivos do administrador', async () => {
+  const api = read('api/objective.js');
+  assert.match(api, /FREE_STUDY_SUBJECT_IDS = new Set\(\[[^\]]*'info'/);
+  assert.match(api, /resource === 'exam-request'/);
+  assert.match(api, /resource === 'exam-requests'/);
+  assert.match(api, /role !== 'admin'/, 'lista de pedidos só para administrador');
+  const { cleanExamRequest, examRequestKey } = await import('../api/objective.js');
+  assert.equal(cleanExamRequest('  Polícia   Civil <b>MG</b> 2027 '), 'Polícia Civil b MG /b 2027');
+  assert.equal(cleanExamRequest('ab'), '');
+  assert.equal(cleanExamRequest('x'.repeat(121)), '');
+  assert.equal(examRequestKey('Polícia Civil — MG 2027'), examRequestKey('policia civil mg 2027'));
+  const admin = read('usuarios.html');
+  assert.match(admin, /id="pedidosEdital"/);
+  assert.match(admin, /resource=exam-requests/);
+});

@@ -32,11 +32,11 @@
     if (!current) return allSubjectIds();
     return current.type === 'free' ? (savedFreeSubjectIds() || allSubjectIds()) : current.subjectIds.slice();
   }
-  function activeQuestionKeys() {
-    const allowed = new Set(activeSubjectIds());
-    if (!activeId || (activeId === 'free-study' && !savedFreeSubjectIds())) return null;
-    return new Set(Object.values(catalog.subjects).filter((subject) => allowed.has(subject.id) && subject.questionKey).map((subject) => subject.questionKey));
-  }
+  // O objetivo organiza e destaca a trilha, mas não restringe o acesso: filtros e questões de todas as disciplinas ficam liberados.
+  function activeQuestionKeys() { return null; }
+  const trailIds = () => new Set(activeSubjectIds());
+  const EXAM_REQUEST_KEY = 'central-v6:exam-request:v1';
+  function savedExamRequest() { try { return localStorage.getItem(EXAM_REQUEST_KEY) || ''; } catch (_) { return ''; } }
   function dispatchChange() {
     document.dispatchEvent(new CustomEvent('central:study-objective-changed', { detail:{ objectiveId:activeId, objective:goal() } }));
     UX.schedule();
@@ -110,15 +110,21 @@
     if (!current) return;
     const selectedIds = activeSubjectIds();
     const signature = activeId + '|' + selectedIds.join(',');
-    if (host.dataset.studyObjectiveSignature === signature && host.children.length === (current.examSubjects?.length || selectedIds.length) && [...host.children].every((el) => el.dataset.studyObjectiveGoal === activeId)) return;
+    if (host.dataset.studyObjectiveSignature === signature && host.dataset.studyObjectiveCount && host.children.length === Number(host.dataset.studyObjectiveCount) && [...host.children].every((el) => el.dataset.studyObjectiveGoal === activeId)) return;
+    const shown = new Set();
     let html = '';
     if (current.examSubjects) {
-      html = current.examSubjects.map((entry) => objectiveCard(catalog.subjects[entry.subjectId], entry)).join('');
+      html = current.examSubjects.map((entry) => { if (entry.subjectId) shown.add(entry.subjectId); return objectiveCard(catalog.subjects[entry.subjectId], entry); }).join('');
     } else {
-      html = selectedIds.map((id) => objectiveCard(catalog.subjects[id], { subjectId:id, title:catalog.subjects[id].name })).join('');
+      html = selectedIds.map((id) => { shown.add(id); return objectiveCard(catalog.subjects[id], { subjectId:id, title:catalog.subjects[id].name }); }).join('');
     }
+    // Acesso a tudo: as disciplinas fora da trilha continuam disponíveis, em seguida.
+    const rest = allSubjectIds().filter((id) => !shown.has(id));
+    const count = (current.examSubjects?.length || selectedIds.length) + rest.length;
+    html += rest.map((id) => objectiveCard(catalog.subjects[id], { subjectId:id, title:catalog.subjects[id].name })).join('');
     host.innerHTML = html;
     host.dataset.studyObjectiveSignature = signature;
+    host.dataset.studyObjectiveCount = String(count);
   }
   function ensureSettingsObjectiveControl() {
     const body = document.querySelector('#centralSettingsBackdrop .central-settings-body');
@@ -151,30 +157,32 @@
     ensureSettingsObjectiveControl();
   }
   function applyObjective() {
-    const allowed = new Set(activeSubjectIds());
-    document.querySelectorAll('#subjects > .subject[data-id]').forEach((section) => {
-      const hide = !!activeId && !allowed.has(section.dataset.id);
-      section.hidden = hide;
-      section.classList.toggle('study-objective-hidden', hide);
-    });
+    markTrail(document.querySelectorAll('#subjects > .subject[data-id]'));
     renderTopbar();
     renderDisciplineCards();
-    const activeModule = document.querySelector('#moduleView:not(.hidden) [data-subject-id],#moduleView:not(.hidden) .subject[data-id]');
-    const activeSubject = document.querySelector('#homeView #subjects > .subject.open[data-id]');
-    const currentId = activeModule?.dataset.subjectId || activeModule?.dataset.id || activeSubject?.dataset.id;
-    if (currentId && activeId && !allowed.has(currentId) && typeof global.openHome === 'function') global.openHome();
+  }
+  // Nenhuma disciplina é escondida: a trilha escolhida só vem primeiro e recebe a etiqueta "Na sua trilha".
+  function markTrail(sections) {
+    const trail = trailIds();
+    const list = document.getElementById('subjects');
+    let legend = document.querySelector('.study-trail-legend');
+    if (activeId && list && !legend) {
+      legend = document.createElement('p');
+      legend.className = 'study-trail-legend';
+      legend.innerHTML = '<b>Barra verde</b> = disciplinas da sua trilha, no topo. Todas as outras continuam liberadas logo abaixo.';
+      list.parentNode.insertBefore(legend, list);
+    } else if (!activeId && legend) legend.remove();
+    sections.forEach((section) => {
+      section.hidden = false;
+      section.classList.remove('study-objective-hidden');
+      if (activeId) section.dataset.studyTrail = trail.has(section.dataset.id) ? '1' : '0';
+      else delete section.dataset.studyTrail;
+    });
   }
   function observeDynamicSubjects() {
     const host = document.getElementById('subjects');
     if (!host || host.__studyObjectiveObserver) return;
-    const observer = new MutationObserver(() => {
-      const allowed = new Set(activeSubjectIds());
-      host.querySelectorAll(':scope > .subject[data-id]').forEach((section) => {
-        const hide = !!activeId && !allowed.has(section.dataset.id);
-        section.hidden = hide;
-        section.classList.toggle('study-objective-hidden', hide);
-      });
-    });
+    const observer = new MutationObserver(() => markTrail(host.querySelectorAll(':scope > .subject[data-id]')));
     observer.observe(host, { childList:true });
     host.__studyObjectiveObserver = observer;
     host.addEventListener('central:study-objective-changed', applyObjective);
@@ -211,21 +219,31 @@
       '<button type="button" class="study-role-card" data-study-role="' + escape(item.id) + '">' +
       '<span><strong>' + escape(item.title) + '</strong><small>Ver matérias sugeridas</small></span><b aria-hidden="true">›</b></button>';
 
-    let title = 'Bem-vindo à Base Completa!';
-    let intro = 'Vamos organizar seus estudos. Primeiro, escolha a área em que deseja atuar.';
+    let title = initial ? 'Bem-vindo à Base Completa!' : 'Como você quer estudar?';
+    let intro = 'Você já tem acesso a todas as disciplinas. Escolha como organizar seus estudos agora, e mude quando quiser.';
     let badge = initial ? 'SEU PRIMEIRO ACESSO' : 'ALTERAR OBJETIVO';
     let options = '';
     let backStep = '';
     let backValue = '';
     if (step === 'areas') {
-      const mainAreas = catalog.areas.slice(0,6);
-      const otherAreas = catalog.areas.slice(6);
-      options = '<div class="study-area-grid">' + mainAreas.map(card).join('') + '</div>' +
-        '<details class="study-more-areas"><summary>Ver outras áreas</summary><div class="study-area-grid">' +
-        otherAreas.map(card).join('') + '</div></details>' +
-        '<div class="study-start-alternatives">' +
-        '<button type="button" class="study-free-entry" data-study-free><span aria-hidden="true">✦</span><span><strong>Estudo livre</strong><small>Escolha as disciplinas que deseja estudar, sem escolher um cargo.</small></span><b aria-hidden="true">›</b></button>' +
-        '</div>';
+      const exams = Object.values(catalog.goals).filter((item) => item.type === 'exam');
+      const asked = savedExamRequest();
+      options =
+        // 1) Estudo livre sempre em primeiro lugar
+        '<button type="button" class="study-free-entry study-free-entry--first" data-study-free><span aria-hidden="true">✦</span><span><strong>Estudo livre</strong><small>Escolha as disciplinas que quer estudar primeiro. As outras continuam liberadas.</small></span><b aria-hidden="true">›</b></button>' +
+        // 2) Perfis padrão por área
+        '<section class="study-start-section" aria-labelledby="studyStartAreas"><h2 id="studyStartAreas">Perfis padrão <small>Escolha uma área e veja as disciplinas sugeridas</small></h2>' +
+        '<div class="study-area-grid">' + catalog.areas.map(card).join('') + '</div></section>' +
+        // 3) Edital específico + pedido de edital
+        '<section class="study-start-section" aria-labelledby="studyStartExams"><h2 id="studyStartExams">Edital específico <small>Concursos já cadastrados</small></h2>' +
+        '<div class="study-role-grid">' + exams.map((item) =>
+          '<button type="button" class="study-role-card" data-study-exam="' + escape(item.id) + '"><span><strong>' + escape(item.shortLabel || item.title) + '</strong><small>' +
+          escape(item.title) + '</small></span><b aria-hidden="true">›</b></button>').join('') + '</div>' +
+        '<form class="study-exam-request" data-study-exam-request novalidate><label for="studyExamRequestInput">Seu edital não está na lista?</label>' +
+        '<p>Escreva o concurso que você vai prestar e nós cadastramos. Enquanto isso, comece pelo Estudo livre ou por um perfil padrão: todas as disciplinas já estão liberadas.</p>' +
+        '<div class="study-exam-request-row"><input id="studyExamRequestInput" name="exam" type="text" maxlength="120" autocomplete="off" placeholder="Ex.: Polícia Civil de Minas Gerais 2027" value="' + escape(asked) + '">' +
+        '<button type="submit" class="study-primary-button">' + (asked ? 'Atualizar pedido' : 'Pedir este edital') + '</button></div>' +
+        '<p class="study-exam-request-status" data-study-exam-request-status role="status" aria-live="polite">' + (asked ? 'Pedido registrado: ' + escape(asked) + '.' : '') + '</p></form></section>';
     } else if (step === 'roles') {
       const area = catalog.areas.find((a) => a.id === value);
       if (!area) return renderChooser('areas');
@@ -244,15 +262,15 @@
       options = '<div class="study-review"><p>Estas são as disciplinas <strong>já disponíveis</strong> na Base Completa que podem ajudar a começar:</p>' +
         '<div class="study-subject-chips">' + chosen.subjectIds.map((id) =>
           '<span>' + escape(catalog.subjects[id]?.name || id) + '</span>').join('') +
-        '</div><p class="study-disclaimer">Esta seleção é uma referência inicial, não substitui o conteúdo programático do edital. Outras matérias específicas podem estar em preparação.</p>' +
+        '</div><p class="study-disclaimer">Esta seleção é uma referência inicial, não substitui o conteúdo programático do edital. As demais disciplinas continuam disponíveis para você.</p>' +
         '<button type="button" class="study-primary-button" data-study-confirm="' + escape(value) + '">Começar meus estudos</button></div>';
       backStep = 'roles';backValue = chosen.area;
     } else if (step === 'free') {
       title = 'Monte seu estudo livre';
-      intro = 'Escolha as disciplinas que deseja estudar. Depois de salvar, abra uma delas na página inicial e comece pelo primeiro módulo. Pode alterar sua seleção depois, sem perder o progresso.';
+      intro = 'Marque as disciplinas que quer estudar primeiro: elas aparecem no topo da página inicial. As outras continuam liberadas e você pode mudar isso quando quiser, sem perder o progresso.';
       badge = 'ESTUDO LIVRE';
       const selectedIds = savedFreeSubjectIds() || [];
-      options = '<div class="study-free-picker"><p>Selecione pelo menos uma disciplina.</p><div class="study-free-grid">' +
+      options = '<div class="study-free-picker"><div class="study-free-tools"><p>Selecione pelo menos uma disciplina.</p><span><button type="button" data-study-free-all>Marcar todas</button><button type="button" data-study-free-none>Limpar</button></span></div><div class="study-free-grid">' +
         Object.values(catalog.subjects).filter((item) => item.available).map((item) =>
           '<label class="study-free-choice"><input type="checkbox" name="studyFreeSubject" value="' + escape(item.id) + '"' +
           (selectedIds.includes(item.id) ? ' checked' : '') +
@@ -289,6 +307,10 @@
     modal.querySelectorAll('[data-study-role]').forEach((button) => button.addEventListener('click', () => renderChooser('review', button.dataset.studyRole)));
     modal.querySelector('[data-study-free]')?.addEventListener('click', () => renderChooser('free'));
     modal.querySelector('[data-study-exams]')?.addEventListener('click', () => renderChooser('exams'));
+    modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => input.addEventListener('change', () => { const e = modal.querySelector('.study-form-error'); if (e) e.hidden = true; }));
+    modal.querySelector('[data-study-free-all]')?.addEventListener('click', () => modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => { input.checked = true; }));
+    modal.querySelector('[data-study-free-none]')?.addEventListener('click', () => modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => { input.checked = false; }));
+    modal.querySelector('[data-study-exam-request]')?.addEventListener('submit', (event) => { event.preventDefault(); submitExamRequest(event.currentTarget); });
     modal.querySelectorAll('[data-study-exam]').forEach((button) => button.addEventListener('click', () => selectObjective(button.dataset.studyExam)));
     modal.querySelector('[data-study-confirm]')?.addEventListener('click', (event) => selectObjective(event.currentTarget.dataset.studyConfirm));
     modal.querySelector('[data-study-save-free]')?.addEventListener('click', () => {
@@ -306,15 +328,49 @@
       modal.addEventListener('keydown', trapFocus);
       modal.__studyObjectiveTrap = true;
     }
-    modal.querySelector('button')?.focus({ preventScroll:true });
+    // Foco no diálogo (não no primeiro cartão): nada parece pré-selecionado.
+    const dialogBox = modal.querySelector('.study-objective-dialog');
+    dialogBox?.setAttribute('tabindex', '-1');
+    dialogBox?.focus({ preventScroll:true });
     document.documentElement.classList.add('study-objective-open');
+  }
+  async function submitExamRequest(form) {
+    const input = form.querySelector('input[name="exam"]');
+    const status = form.querySelector('[data-study-exam-request-status]');
+    const text = String(input.value || '').replace(/[<>]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (text.length < 3) { status.textContent = 'Escreva o nome do concurso (pelo menos 3 letras).'; input.focus(); return false; }
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    status.textContent = 'Enviando…';
+    let saved = false;
+    if (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true) {
+      status.textContent = 'Prévia: pedido guardado somente neste navegador.';
+      saved = true;
+    } else {
+      try {
+        const response = await fetch('/api/objective?resource=exam-request', {
+          method:'PUT', cache:'no-store', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify({ text }),
+        });
+        if (!response.ok) throw new Error('Falha HTTP ' + response.status);
+        status.textContent = 'Pedido registrado: ' + text + '. Vamos cadastrar este edital; até lá, estude pelo Estudo livre ou por um perfil padrão.';
+        saved = true;
+      } catch (_) {
+        status.textContent = 'Não foi possível enviar agora. Verifique a conexão e tente de novo.';
+      }
+    }
+    if (saved) {
+      try { localStorage.setItem(EXAM_REQUEST_KEY, text); } catch (_) { /* sem armazenamento: o pedido já foi enviado */ }
+      button.textContent = 'Atualizar pedido';
+    }
+    button.disabled = false;
+    return saved;
   }
   function trapFocus(event) {
     if (event.key === 'Escape' && !activeId) { event.preventDefault(); return; }
     if (event.key === 'Escape') { close(true); return; }
     if (event.key !== 'Tab') return;
     const modal = document.getElementById('studyObjectiveDialog');
-    const focusable = Array.from(modal?.querySelectorAll('button') || []).filter((item) => !item.disabled);
+    const focusable = Array.from(modal?.querySelectorAll('button,input') || []).filter((item) => !item.disabled && item.type !== 'checkbox');
     if (!focusable.length) return;
     if (event.shiftKey && document.activeElement === focusable[0]) { event.preventDefault(); focusable.at(-1).focus(); }
     else if (!event.shiftKey && document.activeElement === focusable.at(-1)) { event.preventDefault(); focusable[0].focus(); }
