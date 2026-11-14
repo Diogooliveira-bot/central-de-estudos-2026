@@ -73,3 +73,15 @@ test('imagens usadas nos e-mails são públicas (sem login) e existem no reposit
   }
 });
 function fsLs(d) { return readdirSync(new URL('../' + d + '/', import.meta.url)).map(x => d + '/' + x); }
+
+test('vitrine mantém o SEO e os links dos guias gratuitos que a página inicial publicada já tinha', () => {
+  const h = read('vitrine/index.html');
+  assert.match(h, /<title>Base Completa \| Plataforma de Estudos para Concursos<\/title>/);
+  assert.match(h, /<meta name="description" content="Estude para concursos com resumos, teoria, lei seca, questões e revisões por disciplina\./);
+  assert.match(h, /<a class="bc-seo-guides-link" href="\/guias">Guias gratuitos<\/a>/);
+  assert.match(h, /<div class="bc-seo-guides-mobile"><a href="\/guias">Guias gratuitos para concursos<\/a><\/div>/);
+  assert.match(h, /<div class="bc-seo-guides-footer">[^<]*<a href="\/guias">explorar guias de estudos<\/a><\/div>/);
+  assert.match(h, /<style id="bc-seo-guides-css">[^<]*\.bc-seo-guides-mobile\{display:none\}/);
+  assert.match(h, /og-base-completa\.jpg" property="og:image"/);                     // imagem de compartilhamento mantida
+  assert.match(h, /"@type": "FAQPage"/);                 // dados estruturados mantidos
+});

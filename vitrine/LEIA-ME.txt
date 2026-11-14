@@ -20,5 +20,13 @@ Checkout Premium: botões da seção de planos apontam para a Hotmart (produto B
 ofertas o4y1mlg9 e gh4ajvj1). Para trocar, edite PREMIUM no script e os href de cta-premium-97 e
 cta-premium-179 em index.html.
 
+ATENÇÃO — página inicial de basecompleta.com.br: no projeto da vitrine existe a regra de roteamento
+"Página inicial — SEO e guias gratuitos" (Project CDN > Routing Rules) que, para o host basecompleta.com.br,
+reescreve "/" para https://base-completa-home-seo.vercel.app/ (outro projeto, fora do Git). Enquanto essa regra
+estiver ativa, o index.html desta pasta NÃO é a página inicial pública e as mudanças daqui não aparecem em "/".
+O index.html desta pasta já traz o SEO e os links dos guias (/guias) dessa página; para o Git passar a ser a
+fonte da página inicial, desative essa regra (as demais — /guias, sitemap, /seo-assets, imagem OG — continuam).
+Reversão: reativar a regra (histórico em Routing Rules > versões).
+
 Rollback: Vercel > Deployments > abrir o deployment anterior > Promote to Production.
 Último conteúdo editado: 14/11/2026 (8 disciplinas, só Qconcursos, checkout Hotmart ligado).
