@@ -1,0 +1,46 @@
+name: Limpeza de branches (uso único, manual)
+
+# Apaga as branches listadas em limpeza/branches-apagar-20261114.tsv.
+# Segurança: só apaga se o commit atual da branch for EXATAMENTE o da lista (ninguém commitou depois).
+# Padrão = simulação (dry-run). Para apagar de verdade, rode com confirmar = APAGAR.
+# Depois de usar, este arquivo e a pasta limpeza/ podem ser removidos.
+on:
+  workflow_dispatch:
+    inputs:
+      confirmar:
+        description: 'Digite APAGAR para apagar de verdade (qualquer outro valor = só simula)'
+        required: false
+        default: 'simular'
+
+permissions:
+  contents: write
+
+jobs:
+  limpar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Apagar branches da lista
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CONFIRMAR: ${{ inputs.confirmar }}
+        run: |
+          set -u
+          apagar=0; pular=0; erro=0; simul=0
+          while IFS=$'\t' read -r nome sha; do
+            [ -z "$nome" ] && continue
+            case "$nome" in main|ccr-*|*informatica*) echo "PROTEGIDA: $nome"; pular=$((pular+1)); continue;; esac
+            atual=$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/${nome}" --jq '.object.sha' 2>/dev/null || echo "")
+            if [ -z "$atual" ]; then echo "JA NAO EXISTE: $nome"; pular=$((pular+1)); continue; fi
+            if [ "$atual" != "$sha" ]; then echo "MUDOU DEPOIS DA LISTA (mantida): $nome"; pular=$((pular+1)); continue; fi
+            if [ "$CONFIRMAR" = "APAGAR" ]; then
+              if gh api -X DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/${nome}" >/dev/null 2>&1; then echo "APAGADA: $nome"; apagar=$((apagar+1)); else echo "ERRO: $nome"; erro=$((erro+1)); fi
+            else
+              echo "SIMULACAO (apagaria): $nome"; simul=$((simul+1))
+            fi
+          done < limpeza/branches-apagar-20261114.tsv
+          echo "== resumo: apagadas=$apagar simulacao=$simul mantidas=$pular erros=$erro"
+          echo "## Limpeza de branches" >> "$GITHUB_STEP_SUMMARY"
+          echo "apagadas: $apagar · simuladas: $simul · mantidas: $pular · erros: $erro" >> "$GITHUB_STEP_SUMMARY"
