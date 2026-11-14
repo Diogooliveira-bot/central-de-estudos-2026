@@ -58,10 +58,10 @@ test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei
  const vercel=JSON.parse(read('vercel.json'));
  assert.match(index,/ui\/old-questions-removed-v1\.js\?v=20261114-mascote-v9/);
  assert.match(index,/ui\/old-questions-removed-v1\.css\?v=20261114-mascote-v9/);
- assert.equal(man.build,'20261114-mascote-v9');
+ assert.equal(man.build,'20261114-visual-unified-v2');
  assert(man.files.includes('/ui/old-questions-removed-v1.js?v=20261114-mascote-v9'));
- assert(boot.includes("var BUILD='20261114-mascote-v9'"));
- assert(sw.includes("var CACHE='central-20261114-mascote-v9'"));
+ assert(boot.includes("var BUILD='20261114-visual-unified-v2'"));
+ assert(sw.includes("var CACHE='central-20261114-visual-unified-v2'"));
  for(const route of ['/central-de-questoes','/tools/decorando.html','/tools/lei-em-dia-gratis.html'])
   assert(!(vercel.redirects||[]).some(x=>x.source===route),'rota preservada: '+route);
  assert.match(read('ui/cf-native-study-v2.js'),/function openDecorando\(n\)\{const topic=/);
