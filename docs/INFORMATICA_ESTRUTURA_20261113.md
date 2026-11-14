@@ -40,7 +40,7 @@ Situação: **somente estrutura em branch de trabalho**. Publicação depende de
 - **Modo de revisão:** sínteses e recuperação ativa para os 13 módulos.
 - **Leitor:** abertura por módulo, índice, navegação entre seções e progresso de leitura por modo salvo localmente.
 - **Carregamento sob demanda:** arquivos `content/informatica/mNN.js` baixados somente quando a leitura é aberta.
-- **Questões autorais:** em produção; a área de questões existente não recebe itens fictícios.
+- **Questões autorais:** 130 questões (10 por módulo, M01–M13) no banco `content/questoes/info/mNN.js`, no mesmo padrão das demais disciplinas (5 alternativas, gabarito 2 por letra, comentário que explica cada alternativa errada, sem banca/ano/órgão). Entregues por `/api/questoes` (limite diário do plano Gratuito). Conferidas por validador automático e por resolução independente às cegas (2 rodadas).
 - **Qconcursos:** em produção; nenhum URL externo novo foi inventado.
 - **TEC:** nenhum link foi adicionado à disciplina.
 - **Progresso global:** módulos não são contados como concluídos sem as futuras etapas de questões; percentual das seções corresponde apenas à leitura.
