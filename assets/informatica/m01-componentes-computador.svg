@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Componentes do computador</title><desc id="desc">Diagrama didático dos principais componentes físicos e lógicos de um computador.</desc>
+<rect width="1600" height="900" fill="#f8fafc"/><rect x="70" y="58" width="12" height="112" rx="6" fill="#16b7b1"/>
+<text x="108" y="104" fill="#102a43" font-family="Arial, sans-serif" font-size="42" font-weight="700">Componentes do computador</text>
+<text x="108" y="144" fill="#486581" font-family="Arial, sans-serif" font-size="23">M01 · Fundamentos de Informática</text>
+<rect x="104" y="218" width="908" height="554" rx="32" fill="#ffffff" stroke="#d9e2ec" stroke-width="3"/>
+<text x="148" y="273" fill="#102a43" font-family="Arial, sans-serif" font-size="24" font-weight="700">HARDWARE · partes físicas</text>
+<rect x="386" y="322" width="336" height="236" rx="24" fill="#e7f8f7" stroke="#16b7b1" stroke-width="4"/>
+<text x="554" y="388" text-anchor="middle" fill="#102a43" font-family="Arial, sans-serif" font-size="34" font-weight="700">CPU</text>
+<text x="554" y="426" text-anchor="middle" fill="#486581" font-family="Arial, sans-serif" font-size="22">Executa instruções</text>
+<text x="554" y="459" text-anchor="middle" fill="#486581" font-family="Arial, sans-serif" font-size="22">e coordena operações</text>
+<rect x="148" y="356" width="182" height="156" rx="20" fill="#f1f5f9"/><text x="239" y="414" text-anchor="middle" fill="#102a43" font-family="Arial, sans-serif" font-size="25" font-weight="700">RAM</text><text x="239" y="449" text-anchor="middle" fill="#486581" font-family="Arial, sans-serif" font-size="19">Trabalho temporário</text><text x="239" y="478" text-anchor="middle" fill="#486581" font-family="Arial, sans-serif" font-size="19">· volátil</text>
+<rect x="778" y="356" width="182" height="156" rx="20" fill="#f1f5f9"/><text x="869" y="414" text-anchor="middle" fill="#102a43" font-family="Arial, sans-serif" font-size="25" font-weight="700">SSD / HDD</text><text x="869" y="449" text-anchor="middle" fill="#486581" font-family="Arial, sans-serif" font-size="19">Arquivos e dados</text><text x="869" y="478" text-anchor="middle" fill="#486581" font-family="Arial, sans-serif" font-size="19">· não volátil</text>
+<path d="M330 434H386M722 434H778" stroke="#16b7b1" stroke-width="6" stroke-linecap="round"/>
+<path d="M554 558V646M554 646H252M554 646H856" stroke="#9fb3c8" stroke-width="5" fill="none"/>
+<rect x="148" y="664" width="208" height="70" rx="16" fill="#102a43"/><text x="252" y="708" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="21" font-weight="700">Entrada · teclado, mouse</text>
+<rect x="752" y="664" width="208" height="70" rx="16" fill="#102a43"/><text x="856" y="708" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="21" font-weight="700">Saída · tela, impressora</text>
+<rect x="1082" y="218" width="414" height="554" rx="32" fill="#102a43"/>
+<text x="1128" y="276" fill="#83e4df" font-family="Arial, sans-serif" font-size="24" font-weight="700">SOFTWARE · parte lógica</text>
+<rect x="1128" y="326" width="322" height="92" rx="18" fill="#1f4665"/><text x="1160" y="368" fill="#fff" font-family="Arial, sans-serif" font-size="26" font-weight="700">Sistema operacional</text><text x="1160" y="399" fill="#d9e2ec" font-family="Arial, sans-serif" font-size="19">Gerencia memória, arquivos e dispositivos</text>
+<rect x="1128" y="450" width="322" height="92" rx="18" fill="#1f4665"/><text x="1160" y="492" fill="#fff" font-family="Arial, sans-serif" font-size="26" font-weight="700">Aplicativos</text><text x="1160" y="523" fill="#d9e2ec" font-family="Arial, sans-serif" font-size="19">Editor de texto, navegador, planilha</text>
+<rect x="1128" y="574" width="322" height="92" rx="18" fill="#1f4665"/><text x="1160" y="616" fill="#fff" font-family="Arial, sans-serif" font-size="26" font-weight="700">Drivers</text><text x="1160" y="647" fill="#d9e2ec" font-family="Arial, sans-serif" font-size="19">Permitem a comunicação com o hardware</text>
+<text x="104" y="839" fill="#486581" font-family="Arial, sans-serif" font-size="20">Ideia-chave: hardware executa e armazena; software orienta as tarefas. Um depende do outro.</text>
+</svg>
