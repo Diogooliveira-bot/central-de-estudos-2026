@@ -1,0 +1,181 @@
+/* Base Completa | Padronização visual dos módulos — V2 (14/11/2026)
+ * Somente apresentação; não modifica eventos, dados, progresso, questões,
+ * leitores nativos, permissões nem o conteúdo jurídico.
+ * O cabeçalho de leitura e as ações continuam controlados pelos módulos nativos.
+ */
+
+html.student-experience-v3.bc-ui-v1 #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject.bc-focus-selected-subject .ds-module.bc-focus-current-module {
+  min-width:0;
+  border:1px solid var(--bc-color-border,#dbe7ef)!important;
+  border-radius:14px!important;
+  background:var(--bc-color-surface,#fff)!important;
+  box-shadow:0 4px 15px rgba(17,49,75,.035)!important;
+}
+
+html.student-experience-v3.bc-ui-v1 #appRoot #homeView.bc-focus-reading.bc-focus-has-module
+#subjects .subject.bc-focus-selected-subject .ds-module.bc-focus-current-module > .ds-module-body {
+  min-width:0;
+  padding:clamp(14px,2.4vw,23px)!important;
+  background:var(--bc-color-surface,#fff)!important;
+  color:var(--bc-color-text,#173149)!important;
+}
+
+/* Penal ainda herdava cartões grandes, caixas lilás e ícones excessivos.
+   Padronizar os componentes nativos, preservando as ações originais. */
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-progress {
+  grid-template-columns:minmax(0,1fr)!important;
+  margin:0 0 13px!important;
+  gap:0!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-progress-card {
+  min-width:0!important;
+  padding:13px 16px!important;
+  border:1px solid #dbe7ef!important;
+  border-radius:11px!important;
+  background:#fff!important;
+  box-shadow:none!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-reading {
+  margin:0 0 13px!important;
+  padding:15px 17px!important;
+  border:1px solid #dbe7ef!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  color:#173149!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-reading :is(.cf-step-head,.cf-step-body) {
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card {
+  display:grid!important;
+  grid-template-columns:54px minmax(0,1fr) minmax(135px,175px)!important;
+  gap:12px 16px!important;
+  align-items:center!important;
+  min-width:0!important;
+  margin:0 0 12px!important;
+  min-height:92px!important;
+  padding:15px 18px!important;
+  border:1px solid #dbe7ef!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  color:#173149!important;
+  box-shadow:0 2px 9px rgba(17,49,75,.035)!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-icon {
+  display:grid!important;
+  place-items:center!important;
+  width:48px!important;
+  height:48px!important;
+  border-radius:10px!important;
+  background:#edf5fb!important;
+  font-size:23px!important;
+  line-height:1!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-copy h3 {
+  margin:0 0 5px!important;
+  font:750 16px/1.3 Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  color:#173149!important;
+  letter-spacing:-.01em;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-copy p {
+  margin:0!important;
+  font:400 12.5px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  color:#5e7284!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-tags {
+  display:none!important; /* os rótulos duplicavam o título e a descrição */
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card-actions {
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:7px!important;
+  min-width:0!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card-actions button {
+  width:100%!important;
+  min-height:40px!important;
+  padding:10px 12px!important;
+  border-radius:9px!important;
+  font-size:12px!important;
+  font-weight:700!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-primary {
+  background:#15577f!important;
+  border-color:#15577f!important;
+  color:#fff!important;
+}
+
+/* Proteção visual caso um leitor ainda use o cartão nativo antigo.
+   Restringe-se à grade de materiais, não a artigos ou conteúdo jurídico. */
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .bc-native-material-grid {
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:12px!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .bc-native-material-grid > .bc-native-material-card {
+  box-sizing:border-box;
+  width:100%!important;
+  min-width:0!important;
+  border:1px solid #dbe7ef!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  box-shadow:none!important;
+}
+html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .bc-native-materials-head {
+  margin-bottom:13px!important;
+}
+
+/* Mesma superfície e separação entre etapas nas disciplinas que usam
+   a estrutura legada .cf-module, sem retirar elementos funcionais. */
+html.bc-ui-v1 #appRoot #homeView.bc-focus-reading #subjects
+:is(.subject[data-id="cf"],.subject[data-id="penal"],.subject[data-id="cpc"],.subject[data-id="rlm"])
+.cf-module.bc-focus-current-module > .cf-module-body {
+  min-width:0!important;
+  background:#fff!important;
+  color:#173149!important;
+}
+html.bc-ui-v1 #appRoot #homeView.bc-focus-reading #subjects
+:is(.subject[data-id="cf"],.subject[data-id="penal"],.subject[data-id="cpc"],.subject[data-id="rlm"])
+.cf-module.bc-focus-current-module :is(.cf-native-cards,.penal-approved-cards,.cpc-approved-grid) {
+  grid-template-columns:minmax(0,1fr)!important;
+  width:100%!important;
+  gap:12px!important;
+}
+
+@media(max-width:680px){
+  html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card{
+    grid-template-columns:42px minmax(0,1fr)!important;
+    gap:9px 12px!important;
+    padding:13px!important;
+  }
+  html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-icon{
+    width:40px!important;height:40px!important;font-size:20px!important;
+  }
+  html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card-actions{
+    grid-column:1/-1!important;
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:wrap!important;
+  }
+  html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card-actions button{
+    flex:1 1 135px!important;
+  }
+  html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-reading{
+    padding:13px!important;
+  }
+}
+@media(max-width:380px){
+  html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card,
+  html.bc-ui-v1 #appRoot #homeView #subjects .subject[data-id="penal"] .penal-approved-card * {
+    animation:none!important;transition:none!important;
+  }
+}
