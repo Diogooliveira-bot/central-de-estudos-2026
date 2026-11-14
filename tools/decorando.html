@@ -788,7 +788,8 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .lei-admin-editor .editor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px}.lei-admin-editor .editor-helper{font-size:12px;line-height:1.5;opacity:.8}.lei-admin-editor .editor-error{color:#a33131;margin:12px 0}.lei-admin-editor .editor-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}@media(max-width:650px){.lei-admin-editor .editor-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 <script>try{history.scrollRestoration='manual'}catch(e){};window.addEventListener('pageshow',()=>{scrollTo(0,0);setTimeout(()=>scrollTo(0,0),30)});</script>
-<script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"><link rel="stylesheet" href="/ui/lei-em-dia-v1.css?v=20261014filter4"><link rel="stylesheet" href="/ui/tool-header-v1.css?v=20261105faseb1"></head>
+<script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/lei-em-dia-slim-v1.css?v=20261114-6etapas">
+<link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"><link rel="stylesheet" href="/ui/lei-em-dia-v1.css?v=20261014filter4"><link rel="stylesheet" href="/ui/tool-header-v1.css?v=20261105faseb1"></head>
 <body>
 <div id="app"></div>
 <script>
@@ -1660,6 +1661,7 @@ if(typeof loadAdminEdits==='function')loadAdminEdits();
 render();
 
 </script>
+<script src="../ui/lei-em-dia-slim-v1.js?v=20261114-6etapas"></script>
 <script id="central-folder-activate-v6659">(function(){function run(){const q=new URLSearchParams(location.search),topic=q.get('topic'),discipline=q.get('discipline'),module=q.get('module');if(module&&typeof centralOpenModule==='function'){if(!centralOpenModule(module,discipline,true)&&discipline)chooseDiscipline(discipline)}else if(topic&&typeof centralOpenTopic==='function')centralOpenTopic(topic,true);else if(discipline&&typeof chooseDiscipline==='function')chooseDiscipline(discipline)}if(document.readyState==='complete')setTimeout(run,0);else window.addEventListener('load',run)})();</script>
 <script defer src="../ui/tool-navigation.js?v=20261002navigation2"></script></body>
 </html>
