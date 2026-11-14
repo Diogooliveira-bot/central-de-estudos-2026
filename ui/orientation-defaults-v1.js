@@ -233,7 +233,7 @@ window.BC_ORIENTATION_DEFAULTS={
  },
  "civil:12": {
   "foco": "Domine as formas de aquisição e perda da propriedade, o direito de vizinhança, o condomínio geral e edilício, a multipropriedade e a propriedade fiduciária.",
-  "atencao": "Escritura e quitação não substituem o registro para transferir imóvel; condomínio edilício difere do geral, e a Súmula 308/STJ afasta a extensão automática da hipoteca à fiduciária.",
+  "atencao": "Escritura e quitação não substituem o registro para transferir imóvel; condomínio edilício difere do geral, e propriedade fiduciária não se confunde com hipoteca.",
   "dica": "Faça um quadro das formas de aquisição (usucapião, acessão, registro, tradição, ocupação) e outro condomínio geral × edilício × multipropriedade; liste os quóruns de assembleia."
  },
  "civil:13": {
@@ -453,7 +453,7 @@ window.BC_ORIENTATION_DEFAULTS={
  },
  "cpp:4": {
   "foco": "Diferencie ação penal pública incondicionada, condicionada e privada, com seus princípios, a representação, a queixa e a renúncia e o perdão.",
-  "atencao": "Na ação pública vale a obrigatoriedade e a indivisibilidade; na privada vale a oportunidade e a disponibilidade, e o prazo decadencial é fatal.",
+  "atencao": "Na ação pública valem a obrigatoriedade e a indisponibilidade; na privada, a oportunidade, a disponibilidade e a indivisibilidade, e o prazo decadencial é fatal.",
   "dica": "Monte um quadro das espécies de ação penal com titular, princípios e causas extintivas, e treine a identificação do tipo de ação em exemplos."
  },
  "cpp:5": {
@@ -513,7 +513,7 @@ window.BC_ORIENTATION_DEFAULTS={
  },
  "cpp:16": {
   "foco": "Entenda o Júri: princípios constitucionais, as fases (judicium accusationis e causae), pronúncia, impronúncia, desclassificação, absolvição sumária e quesitação.",
-  "atencao": "Na pronúncia vale in dubio pro societate apenas em sentido restrito; a decisão é de admissibilidade e não condena nem absolve o réu.",
+  "atencao": "A pronúncia é decisão de admissibilidade da acusação: exige prova da materialidade e indícios suficientes de autoria, e não condena nem absolve o réu.",
   "dica": "Desenhe as duas fases do Júri e as quatro decisões possíveis ao final da primeira, com os recursos cabíveis em cada uma."
  },
  "cpp:17": {
@@ -528,7 +528,7 @@ window.BC_ORIENTATION_DEFAULTS={
  },
  "cpp:19": {
   "foco": "Domine a teoria geral dos recursos: pressupostos objetivos e subjetivos, efeitos devolutivo e suspensivo, unirrecorribilidade e proibição da reformatio in pejus.",
-  "atencao": "A reforma para pior é vedada quando só a defesa recorre; a nulidade, porém, pode ser reconhecida em caso de recurso exclusivo da acusação, nas condições legais.",
+  "atencao": "É vedada a reforma para pior em recurso exclusivo da defesa; o tribunal também não pode reconhecer, contra o réu, nulidade que a acusação não arguiu (Súmula 160/STF).",
   "dica": "Faça uma tabela de pressupostos × efeitos × princípios recursais e treine a identificação de qual deles foi violado em cada situação."
  },
  "cpp:20": {

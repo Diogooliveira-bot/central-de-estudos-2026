@@ -7,11 +7,11 @@ import { fileURLToPath } from 'node:url';
 import { validarTudo, validarModulo, DISCIPLINAS, MODULOS } from '../tools/questoes-lib.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-test('banco de questões: 148 módulos, 10 questões cada, todas conferidas', () => {
+test('banco de questões: 161 módulos, 10 questões cada, todas conferidas', () => {
   const { erros, indice, total } = validarTudo(root);
   assert.deepEqual(erros, []);
   for (const d of Object.keys(DISCIPLINAS)) assert.equal(indice[d].length, MODULOS[d], `${d}: faltam módulos`);
-  assert.equal(total, 1480);
+  assert.equal(total, 1610);
 });
 
 test('índice do banco confere com os arquivos (rode "npm run questoes:index" se falhar)', () => {
@@ -50,6 +50,7 @@ test('carregador: enunciados e correção vêm do servidor; sem gabarito no clie
   assert.equal(B.has('adm', 3), true);
   assert.equal(B.has('adm', 21), false);
   assert.equal(B.modulos('rlm').length, 15);
+  assert.equal(B.modulos('info').length, 13);
   const itens = await B.get('adm', 3);
   assert.equal(itens.length, 10);
   assert.ok(!JSON.stringify(itens).match(/"answer"|"explanation"|"lawRef"/), 'sem gabarito antes de responder');

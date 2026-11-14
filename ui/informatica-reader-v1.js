@@ -155,7 +155,7 @@
  if(typeof previousGrid==="function")global.renderDisciplineGrid=function(){const result=previousGrid.apply(this,arguments);
    const card=$('#disciplineGrid .disc-card[data-id="info"]');
    const desc=card?.querySelector("small");
-   if(desc)desc.textContent=AVAILABLE.size+" módulos com teoria e revisão · questões em construção";
+   if(desc)desc.textContent=AVAILABLE.size+" módulos com teoria e revisão · 10 questões por módulo";
    return result;
  };
  global.BaseInformaticaReader=Object.freeze({open,close:closeReader,available:()=>Array.from(AVAILABLE),load});
