@@ -21,7 +21,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     const index = boot.indexOf(file);
     assert.ok(index > previous, `${file} deve carregar depois do módulo anterior`);
     previous = index;
-    const fileVersion = file.includes('study-objectives-catalog') ? '20261105fasea1' : file.includes('study-objectives') ? '20261101sync3'
+    const fileVersion = file.includes('study-objectives-catalog') ? '20261105fasea1' : file.includes('study-objectives') ? '20261114mascote1'
       : file.includes('student-plan') ? '20261019-qc-catalog1'
         : file.includes('student-shell') ? '20261105nav1' : file.includes('auth-shell') ? '20261020studyobj1'
           : file.includes('student-dashboard') ? '20261105resume1'

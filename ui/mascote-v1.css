@@ -1,0 +1,50 @@
+/* Mascote da Base Completa — decoração. Nunca bloqueia clique (pointer-events:none) e some em telas pequenas quando atrapalha a leitura.
+   Imagens em /assets/mascote/ (WebP com transparência, 560 px de altura). */
+:root{--bc-mascote-dir:"/assets/mascote/"}
+
+/* 1) Início — "Seu próximo passo": mascote sentado lendo (substitui a figura antiga) */
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step::after{
+  background:url("/assets/mascote/mascote-sentado-lendo.webp") center bottom/contain no-repeat;
+  width:132px;height:150px;right:14px;bottom:0;opacity:1;pointer-events:none;
+}
+
+@media (max-width:640px){
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step>.btn{max-width:calc(100% - 122px)!important}
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy p{padding-right:96px}
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy h2{white-space:nowrap}
+}
+
+/* 2) Início — "Hoje na agenda" sem tarefas: mascote com a lista */
+#homeView .bc-first-access{position:relative}
+#homeView .bc-first-access::after{
+  content:"";position:absolute;right:2px;bottom:0;width:58px;height:92px;
+  background:url("/assets/mascote/mascote-checklist.webp") center bottom/contain no-repeat;pointer-events:none;
+}
+#homeView .bc-first-access>strong,#homeView .bc-first-access>span{padding-right:64px}
+
+/* 3) Progresso — ainda sem questões registradas: mascote apontando o caminho */
+#performanceView.bc-progress-empty #studentPerformanceInsight{position:relative}
+#performanceView.bc-progress-empty #studentPerformanceInsight>div:first-child{padding-right:76px}
+#performanceView.bc-progress-empty #studentPerformanceInsight::after{
+  content:"";position:absolute;right:12px;top:14px;width:64px;height:104px;
+  background:url("/assets/mascote/mascote-apontando.webp") center top/contain no-repeat;pointer-events:none;
+}
+
+/* 4) Questões — resultado do módulo e aviso de limite */
+.bcqa-mascote{display:block;flex:0 0 auto;width:auto;height:96px;max-width:70px;object-fit:contain;pointer-events:none;user-select:none}
+.bcqa-result,.bcqa-uso-fim{display:flex;align-items:center;gap:14px}
+.bcqa-result>div,.bcqa-uso-fim>div{min-width:0;flex:1}
+.bcqa-uso-fim .bcqa-mascote{height:84px}
+
+/* 5) Boas-vindas (escolha do objetivo) */
+.study-welcome-intro>img{max-height:120px!important;max-width:84px!important}
+
+/* Tela pequena demais: tira os enfeites que disputam espaço com o texto */
+@media (max-width:359px){
+  #homeView .bc-first-access::after,
+  #performanceView.bc-progress-empty #studentPerformanceInsight::after{display:none}
+  #homeView .bc-first-access>strong,#homeView .bc-first-access>span,
+  #performanceView.bc-progress-empty #studentPerformanceInsight>div:first-child{padding-right:0}
+}
+@media (prefers-reduced-motion:no-preference){.bcqa-mascote{transition:transform .2s}}
+@media print{.bcqa-mascote,#homeView .bc-first-access::after,#performanceView #studentPerformanceInsight::after{display:none!important}}

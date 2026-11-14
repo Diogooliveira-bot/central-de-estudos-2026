@@ -42,7 +42,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     '/ui/civil-native-study-v1.js?v=20261113orient1',
     '/ui/civil-native-study-v1.css?v=20261019civilstandard1',
   ]) assert(manifest.files.includes(asset), `${asset}: ausente no pacote offline.`);
-  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261114-emails-imagens-v8/);
+  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261114-mascote-v9/);
 
   const moduleByUid = new Map(index.modules.map((m) => [m.uid, m]));
   const perModule = new Map();
