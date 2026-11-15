@@ -1,0 +1,38 @@
+name: Responsiveness and performance comparison
+on:
+  push:
+    branches: ['fix/responsividade-desempenho-20261115']
+  pull_request:
+    branches: [main]
+    paths: ['ui/tablet-scale-v1.js', 'tests/responsive-performance-browser.mjs', 'central-discipline-loader.js', '.github/workflows/responsive-performance.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: responsive-performance-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Baseline at the reviewed main commit
+        run: |
+          git worktree add --detach ../baseline 4defec04e2a99b4bce26f9a9573ae46a9c786454
+          BC_TEST_ROOT=../baseline BC_TEST_OUT=audits/responsividade-20261115/before BC_BASELINE=1 node tests/responsive-performance-browser.mjs
+      - name: Candidate
+        run: node tests/responsive-performance-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: responsive-performance-evidence
+          path: audits/responsividade-20261115/
