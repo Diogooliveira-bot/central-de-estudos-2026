@@ -60,10 +60,19 @@
  var bootScreen=document.getElementById('central-boot-screen').outerHTML;
  entryUrl.searchParams.delete('direct');
  entryUrl.searchParams.delete('central_source');
- var scripts=['ui/study-objectives-catalog-v1.js?v=20261114trilha1','ui/orientation-defaults-v1.js?v=20261113orient2','ui/orientation-v1.js?v=20261113orient1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','content/questoes/titulos.js?v=20261114info1','ui/external-question-filters-v1.js?v='+BUILD+'-min20-titles1'];
+ var scripts=['ui/study-objectives-catalog-v1.js?v=20261114trilha1','ui/tablet-scale-v1.js?v=20261115tablet2','ui/orientation-defaults-v1.js?v=20261113orient2','ui/orientation-v1.js?v=20261113orient1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','content/questoes/titulos.js?v=20261114info1','ui/external-question-filters-v1.js?v='+BUILD+'-min20-titles1'];
  function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
  function prepareDisciplineLoading(html){
   html=html.replace(/(<meta name="central-source-version" content=")[^"]+("\s*\/?>)/i,'$1'+APP_VERSION+'$2');
+  // Tamanho da tela (só tablets, escolha do aluno): a largura da página já sai certa na 1ª carga.
+  try{
+   var uiScale=Number(localStorage.getItem('central-v6:ui-scale:v1'));
+   var uiTablet=matchMedia('(pointer:coarse)').matches&&Math.min(screen.width,screen.height)>=700;
+   if(uiTablet&&(uiScale===1.15||uiScale===1.3)){
+    var uiPortrait=matchMedia('(orientation:portrait)').matches,uiW=uiPortrait?Math.min(screen.width,screen.height):Math.max(screen.width,screen.height);
+    html=html.replace(/<meta name="viewport"[^>]*>/i,'<meta name="viewport" content="width='+Math.round(uiW/uiScale)+',initial-scale=1">');
+   }
+  }catch(uiScaleError){}
   var groups={cf:[],penal:[],cpc:[],cpp:[],civil:[],adm:[]};
   var coursesSeen=false;
   html=html.replace(/<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>\s*<\/script>/gi,function(tag,src){
@@ -93,7 +102,7 @@
  // o resultado é descartado e o aluno vai para o login como antes.
  var shellRequest=fetch('/index.html?central_source='+BUILD,{cache:'no-cache'}).then(function(response){if(!response.ok)throw new Error('Falha HTTP '+response.status);return response.text()});
  shellRequest.catch(function(){});
- var localStateModule=import('/sync-local-state.js?v=20261101objective4');
+ var localStateModule=import('/sync-local-state.js?v=20261115tablet2');
  localStateModule.catch(function(){});
  // A Central é escrita com document.write; assim o navegador não antecipa os
  // scripts e baixava um por vez (uma ida e volta de rede para cada). Os avisos de
@@ -125,6 +134,7 @@
   html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal(?:-theme)?-v\d+\.css[^"']*["'][^>]*>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*sync-client\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*penal-full-theory-ui-v1\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace('</head>','<link rel="stylesheet" href="/ui/informatica-structure-v1.css?v=20261113cards1"></head>');
+  html=html.replace('</head>','<link rel="stylesheet" href="/ui/tablet-scale-v1.css?v=20261115tablet2"></head>');
    html=html.replace('</head>','<link rel="stylesheet" href="/ui/informatica-reader-v1.css?v=20261114responsiveimages1"></head>');
    html=html.replace('</head>','<link rel="stylesheet" href="/ui/informatica-approved-layout-v1.css?v=20261113cards1"></head>');
    html=html.replace('</head>','<link rel="stylesheet" href="/ui/external-question-filters-v1.css?v='+BUILD+'"><link rel="stylesheet" href="/ui/cpc-approved-layout-v1.css?v=20261019cpcstandard1"></head>');

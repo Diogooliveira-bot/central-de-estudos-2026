@@ -28,6 +28,7 @@ export function isSyncKey(key){
     key!=='__central_storage_probe__' && !/^central-v6:pt(?::|-)/.test(key) &&
     !/^central-v6:study-objective(?::|-)/.test(key) &&
     !/^central-v6:free-study-subjects(?::|-)/.test(key) &&
+    !/^central-v6:ui-scale(?::|-)/.test(key) && // tamanho da tela é preferência deste aparelho
     !/^dominio_portugues/i.test(key);
 }
 export function collectSyncStorage(){
