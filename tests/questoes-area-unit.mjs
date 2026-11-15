@@ -17,13 +17,13 @@ function fixture(opts) {
 }
 const tick = (ms = 80) => new Promise(r => setTimeout(r, ms));
 
-test('menu: entrada "Questões" antes da Lei em Dia e no menu Mais', async () => {
+test('menu: entrada "Questões" antes da Lei em Dia e fora do menu Mais (já está no topo)', async () => {
   const dom = fixture(), d = dom.window.document;
   await tick();
   const rail = d.querySelector('.student-nav-scroll');
   const labels = [...rail.children].map(b => b.textContent.trim());
   assert.deepEqual(labels.slice(0, 2), ['Questões', 'Lei em Dia']);
-  assert.ok(d.querySelector('#studentMorePanel [data-bcqa-more]'));
+  assert.equal(d.querySelector('#studentMorePanel [data-bcqa-more]'), null, 'sem função repetida em Mais opções');
   dom.window.close();
 });
 

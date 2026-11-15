@@ -63,7 +63,7 @@ function setup({ role = 'aluno', overrides = [], failModuleMount = false } = {})
 
 const settle = (window) => new Promise((resolve) => window.setTimeout(() => window.requestAnimationFrame(resolve), 20));
 
-test('Central de Questões possui rota nativa e exatamente cinco abas', async () => {
+test('Central de Questões possui rota nativa e mostra só a aba Disciplinas', async () => {
   const dom = setup();
   await settle(dom.window);
   const { document, location } = dom.window;
@@ -73,7 +73,11 @@ test('Central de Questões possui rota nativa e exatamente cinco abas', async ()
   ]);
   assert.equal(document.querySelector('[data-bcq-more-nav]'), null, 'A Central de Questões não deve se duplicar no Mais');
   assert.equal(document.querySelectorAll('[data-bcq-panel]').length, 5);
-  assert.equal(document.querySelector('[data-bcq-panel="overview"]').hidden, false);
+  // Central de Questões simplificada: só a aba Disciplinas fica à vista (abas ocultas) e começa com tudo recolhido.
+  assert.equal(document.querySelector('.bcq-center-tabs').hidden, true);
+  assert.equal(document.querySelector('[data-bcq-panel="disciplines"]').hidden, false);
+  assert.equal(document.querySelector('[data-bcq-panel="overview"]').hidden, true);
+  assert.equal(document.querySelectorAll('.bcq-discipline[open]').length, 0, 'nenhuma disciplina abre sozinha');
 });
 
 test('módulo, biblioteca e histórico usam o mesmo filtro e a mesma sessão', async () => {
@@ -174,11 +178,14 @@ test('catálogo mostra somente QC e não oferece links TEC', async () => {
   assert.equal(module.open, true);
   dom.window.document.body.addEventListener('click', (event) => event.stopPropagation());
   const toggle = dom.window.document.querySelector('[data-bcq-toggle-disciplines]');
+  // Nasce tudo recolhido: o primeiro toque expande, o segundo recolhe.
+  assert.equal(dom.window.document.querySelectorAll('.bcq-discipline[open]').length, 0, 'nada abre sozinho; o módulo só abriu dentro da disciplina');
+  toggle.click();
+  assert.equal(dom.window.document.querySelectorAll('.bcq-discipline[open]').length, dom.window.document.querySelectorAll('.bcq-discipline').length);
+  assert.equal(toggle.textContent, 'Recolher disciplinas');
   toggle.click();
   assert.equal(dom.window.document.querySelectorAll('.bcq-discipline[open]').length, 0);
   assert.equal(toggle.textContent, 'Expandir disciplinas');
-  toggle.click();
-  assert.equal(dom.window.document.querySelectorAll('.bcq-discipline[open]').length, 1);
 });
 
 test('somente administrador recebe gestão e sobreposição compartilhada', async () => {
@@ -226,7 +233,7 @@ test('objetivo restringe apenas a visualização da Central de Questões e prese
   assert.equal(api.buildRegistry().length, registrySize, 'catalog and cadernos are unchanged');
   window.document.querySelector('[data-bcq-tab="filters"]').click();
   await settle(window);
-  const values = Array.from(window.document.querySelector('[data-bcq-discipline]').options).map((option) => option.value);
+  const values = Array.from(window.document.querySelector('select[data-bcq-discipline]').options).map((option) => option.value);
   assert.deepEqual(Array.from(values), ['', 'penal']);
   assert.equal(window.document.querySelectorAll('[data-bcq-page-list] .bcq-page-filter').length, 1, 'somente QC do assunto ativo permanece disponível');
 

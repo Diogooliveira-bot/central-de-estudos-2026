@@ -49,7 +49,7 @@
   let registry = [];
   let registrySignature = '';
   let selectedKey = '';
-  let activeTab = 'overview';
+  let activeTab = 'disciplines';
   let sharedOverrides = new Map();
   let canManageFilters = false;
   let overridesLoaded = false;
@@ -750,11 +750,11 @@
     }, { answered: 0, correct: 0, errors: 0, sessions: 0 });
   }
   function tabFromLocation() {
-    const value = new URLSearchParams(global.location.search).get('aba') || 'overview';
-    return TABS.has(value) ? value : 'overview';
+    const value = new URLSearchParams(global.location.search).get('aba') || 'disciplines';
+    return TABS.has(value) ? value : 'disciplines';
   }
   function routeForTab(tab) {
-    return ROUTE + (tab === 'overview' ? '' : `?aba=${encodeURIComponent(tab)}`);
+    return ROUTE + (tab === 'disciplines' ? '' : `?aba=${encodeURIComponent(tab)}`);
   }
 
   function injectNavigation() {
@@ -772,7 +772,7 @@
     page.className = 'view hidden'; page.id = 'questionFiltersView';
     page.innerHTML = `<button type="button" class="central-view-back" data-bcq-home>‹ Central</button>
       <div class="bcq-page-head"><div><span>ACOMPANHAMENTO DE ESTUDOS</span><h1>Central de Questões</h1><p>Seus filtros, resultados e evolução em um só lugar.</p></div><div class="bcq-page-total" data-bcq-page-total>—</div></div>
-      <nav class="bcq-center-tabs" role="tablist" aria-label="Seções da Central de Questões">
+      <nav class="bcq-center-tabs" role="tablist" aria-label="Seções da Central de Questões" hidden>
         <button type="button" role="tab" data-bcq-tab="overview">Visão geral</button>
         <button type="button" role="tab" data-bcq-tab="disciplines">Disciplinas</button>
         <button type="button" role="tab" data-bcq-tab="filters">Meus filtros</button>
@@ -783,6 +783,7 @@
         <section data-bcq-panel="overview"></section>
         <section data-bcq-panel="disciplines" hidden></section>
         <section data-bcq-panel="filters" hidden>
+          <button type="button" class="bcq-back-link" data-bcq-go-tab="disciplines">‹ Disciplinas</button>
           <details class="bcq-qc-inventory" data-bcq-qc-inventory hidden></details>
           <div class="bcq-toolbar"><label><span>Pesquisar</span><input type="search" data-bcq-search placeholder="Disciplina, módulo, título ou ID"></label><label><span>Disciplina</span><select data-bcq-discipline><option value="">Todas</option></select></label></div>
           <div class="bcq-page-layout"><div class="bcq-page-list" data-bcq-page-list></div><aside class="bcq-detail" data-bcq-detail><div class="bcq-detail-empty"><b>Selecione um filtro</b><span>O histórico completo aparecerá aqui.</span></div></aside></div>
@@ -792,7 +793,7 @@
       </div>`;
     workspace.appendChild(page);
     page.querySelector('[data-bcq-home]').addEventListener('click', leavePage);
-    page.querySelectorAll('[data-bcq-search],[data-bcq-discipline],[data-bcq-platform-select]').forEach((field) => field.addEventListener(field.tagName === 'INPUT' ? 'input' : 'change', renderPage));
+    page.querySelectorAll('[data-bcq-search],select[data-bcq-discipline],[data-bcq-platform-select]').forEach((field) => field.addEventListener(field.tagName === 'INPUT' ? 'input' : 'change', renderPage));
   }
   function injectModal() {
     if (document.getElementById('bcqSessionModal')) return;
@@ -822,7 +823,7 @@
   }
 
   function switchTab(tab, updateRoute = true) {
-    if (!TABS.has(tab)) tab = 'overview';
+    if (!TABS.has(tab)) tab = 'disciplines';
     activeTab = tab;
     const page = document.getElementById('questionFiltersView');
     page?.querySelectorAll('[data-bcq-tab]').forEach((button) => {
@@ -869,7 +870,7 @@
     const page = document.getElementById('questionFiltersView');
     if (!page) return [];
     const search = String(page.querySelector('[data-bcq-search]')?.value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-    const discipline = page.querySelector('[data-bcq-discipline]')?.value || '';
+    const discipline = page.querySelector('select[data-bcq-discipline]')?.value || '';
     
     return objectiveScopedFilters(visibleModuleFilters()).filter((filter) => !discipline || filter.disciplineKey === discipline).filter((filter) => {
       if (!search) return true;
@@ -877,7 +878,8 @@
     });
   }
   function syncDisciplineOptions() {
-    const select = document.querySelector('[data-bcq-discipline]');
+    // Só o <select> do filtro: a aba Disciplinas também usa data-bcq-discipline nos <details>.
+    const select = document.querySelector('select[data-bcq-discipline]');
     if (!select) return;
     const value = select.value;
     const options = Array.from(new Map(objectiveScopedFilters().map((filter) => [filter.disciplineKey, filter.discipline])).entries()).sort((a, b) => a[1].localeCompare(b[1], 'pt-BR'));
@@ -963,7 +965,7 @@
         return sum;
       }, { answered: 0, correct: 0 });
       const accuracy = percent(totals.answered, totals.correct);
-      return `<details class="bcq-discipline" data-bcq-discipline="${esc(Array.from(groups.keys())[index])}"${(disciplineOpenState.has(Array.from(groups.keys())[index]) ? disciplineOpenState.get(Array.from(groups.keys())[index]) : index === 0) ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${accuracy === null ? "—" : accuracy + "%"} acertos <span aria-hidden="true">·</span> ${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
+      return `<details class="bcq-discipline" data-bcq-discipline="${esc(Array.from(groups.keys())[index])}"${(disciplineOpenState.has(Array.from(groups.keys())[index]) ? disciplineOpenState.get(Array.from(groups.keys())[index]) : false) ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${accuracy === null ? "—" : accuracy + "%"} acertos <span aria-hidden="true">·</span> ${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
         const qc = rows.filter((row) => row.platform === 'qc');
         
         const platformColumn = (items) => `<section class="bcq-discipline-platform" data-platform="qc"><header><span class="bcq-page-platform" data-platform="qc">QC</span><div><b>Qconcursos</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
@@ -1268,6 +1270,9 @@
       records.forEach((record) => restoreMissingModuleFallbacks(record.target instanceof Element ? record.target : record.target.parentElement));
       const externalMutation = records.some((record) => {
         const target = record.target instanceof Element ? record.target : record.target.parentElement;
+        // Nó já descartado pela própria renderização (ex.: <details> refeito na aba Disciplinas): não é alteração externa.
+        // Sem isso, a aba Disciplinas se redesenhava sem parar (dezenas de vezes por segundo).
+        if (!target || !target.isConnected) return false;
         return !target?.closest('#questionFiltersView,#bcqSessionModal,#bcqAdminModal,[data-bcq-module-panel],.bc-native-reader-overlay,#centralPortugueseReader,.bc-m01-overlay,.bc-info-reader-overlay');
       });
       if (externalMutation) scheduleRefresh();

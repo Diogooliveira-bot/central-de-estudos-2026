@@ -42,9 +42,13 @@
   function salvarModo(m) { try { localStorage.setItem(MODE_KEY, m); } catch (_) { /* ignora */ } }
 
   // ---- janela ----
+  let marcados = [];
   function fechar() {
     if (overlay) overlay.remove(); overlay = null; view = null; sess = null;
     document.body.classList.remove('bcqa-open');
+    const nav = document.querySelector('[data-bcqa-rail]');
+    if (nav) { nav.classList.remove('active'); nav.removeAttribute('aria-current'); }
+    marcados.forEach(b => { b.classList.add('active'); b.setAttribute('aria-current', 'page'); }); marcados = [];
     document.removeEventListener('keydown', teclas);
     if (lastFocus && lastFocus.isConnected) try { lastFocus.focus(); } catch (_) { /* ignora */ }
   }
@@ -61,6 +65,13 @@
     overlay.querySelector('[data-bcqa-voltar]').addEventListener('click', voltar);
     document.body.appendChild(overlay);
     document.body.classList.add('bcqa-open');
+    // O menu do topo passa a marcar "Questões" enquanto a janela está aberta (e devolve a marcação ao fechar).
+    const nav = document.querySelector('[data-bcqa-rail]');
+    if (nav && nav.parentElement) {
+      marcados = [...nav.parentElement.querySelectorAll('.active,[aria-current="page"]')].filter(b => b !== nav);
+      marcados.forEach(b => { b.classList.remove('active'); b.removeAttribute('aria-current'); });
+      nav.classList.add('active'); nav.setAttribute('aria-current', 'page');
+    }
     document.addEventListener('keydown', teclas);
     return overlay;
   }
@@ -256,14 +267,8 @@
       const lei = [...rail.querySelectorAll('button')].find(x => /lei em dia/i.test(x.textContent));
       if (lei) lei.before(b); else rail.appendChild(b);
     }
-    const grid = document.querySelector('#studentMorePanel .student-more-grid');
-    if (grid && !grid.querySelector('[data-bcqa-more]')) {
-      const b = document.createElement('button');
-      b.type = 'button'; b.setAttribute('data-bcqa-more', '1'); b.setAttribute('data-student-more-action', 'questoes');
-      b.innerHTML = '<span aria-hidden="true">?</span><span><b>Questões</b><small>Por módulo, com comentário</small></span><span class="student-more-arrow" aria-hidden="true">→</span>';
-      b.addEventListener('click', e => { e.stopPropagation(); document.getElementById('studentMorePanel')?.setAttribute('hidden', ''); abrirDoMenu(b); });
-      grid.insertBefore(b, grid.firstChild);
-    }
+    // "Questões" já está no menu do topo: não repetir em "Mais opções".
+    document.querySelectorAll('#studentMorePanel [data-bcqa-more]').forEach(el => el.remove());
   }
   function iniciar() {
     criarEntradaMenu();

@@ -133,3 +133,11 @@ html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcqa-uso{background:var(
 html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcqa-uso b{color:var(--text,#edf5ff)}
 html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcqa-uso-fim{background:#2a2412;border-color:#5a4a1a;color:#f1deae}
 html:is([data-bc-theme="dark"],[data-bc-theme="oled"]) .bcqa-link{color:#8cc4ff}
+
+/* Questões tem janela própria: ocupa a área abaixo do menu do topo (sem fundo escurecido nem cartão flutuante),
+   como as demais telas da Central, e deixa o menu visível. */
+html.bc-ui-v1.bc-topnav .bcqa-overlay{top:var(--bc-nav-height,88px);background:var(--bc-bg,#f4efe4);padding:0;align-items:stretch;justify-content:center;z-index:90}
+html.bc-ui-v1.bc-topnav .bcqa-overlay .bcqa-dialog{width:min(980px,100%);height:100%;max-height:none;border:0;border-radius:0;box-shadow:none;background:transparent}
+html.bc-ui-v1.bc-topnav .bcqa-overlay .bcqa-dialog>header{background:transparent}
+html.bc-ui-v1.bc-topnav .bcqa-overlay .bcqa-body{background:var(--panel,#fff);border:1px solid var(--line,#dce7ee);border-radius:14px;margin:0 0 14px}
+@media(max-width:640px){html.bc-ui-v1.bc-topnav .bcqa-overlay .bcqa-body{border-radius:0;border-left:0;border-right:0;margin:0}}

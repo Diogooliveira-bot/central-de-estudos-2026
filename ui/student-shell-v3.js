@@ -98,7 +98,7 @@
         ['law','Lei em Dia',() => global.openEmbeddedTool?.('decorando', {})],
         ['vade','Vade Mecum',() => global.openEmbeddedTool?.('vade', {})],
         ['edital','Edital',openEdital],
-        ['filters','Filtro de questões',(button) => global.ExternalQuestionFilters?.openPage(button,{tab:'filters'})],
+        ['filters','Filtro de questões',(button) => global.ExternalQuestionFilters?.openPage(button,{tab:'disciplines'})],
       ];
       actions.forEach(([key,label,action]) => {
         const button = document.createElement('button');
@@ -147,7 +147,6 @@
         <div class="student-more-head"><div><small>BASE COMPLETA</small><b>Mais opções</b></div><button type="button" data-student-close-more aria-label="Fechar">×</button></div>
         <div class="student-more-grid">
           <button type="button" data-student-more-action="settings"><span aria-hidden="true">⚙</span><span><b>Configurações</b><small>Aparência e dados</small></span></button>
-          <button type="button" data-student-more-action="onboarding"><span aria-hidden="true">◎</span><span><b>Meu perfil e plano</b><small>Objetivos e rotina</small></span></button>
           <button type="button" data-student-more-action="logout"><span aria-hidden="true">⇥</span><span><b>Sair da conta</b><small>Encerrar esta sessão</small></span></button>
         </div>
         <div id="studentConnectionStatus" class="student-connection-status" role="status"></div>`;

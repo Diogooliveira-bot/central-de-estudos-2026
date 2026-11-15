@@ -42,7 +42,7 @@ test('menu Mais não duplica atalhos da navegação inferior', async () => {
   assert.equal(panel.querySelector('[data-student-more-action="home"]'), null);
   assert.equal(panel.querySelector('[data-bcq-more-nav]'), null);
   assert.ok(panel.querySelector('[data-student-more-action="settings"]'));
-  assert.ok(panel.querySelector('[data-student-more-action="onboarding"]'));
+  assert.equal(panel.querySelector('[data-student-more-action="onboarding"]'), null, 'Meu perfil e plano repetia o Edital');
   assert.ok(panel.querySelector('[data-student-more-action="logout"]'));
   win.close();
 });
