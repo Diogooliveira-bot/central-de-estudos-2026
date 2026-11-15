@@ -92,17 +92,16 @@ html.bc-ui-v1 body #subjects .subject[data-id="cpc"] :is(.cpc-apostila-content,.
   font:400 16px/1.8 Inter,system-ui,sans-serif!important;color:#24384b!important;
 }
 
-/* Lei seca recolhível na Revisão (mesmo gesto do Constitucional) */
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei{margin:2.4em 0 1.2em}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group{border:0;border-left:3px solid #89b3d0;padding:0 0 0 17px;background:transparent}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei summary{cursor:pointer;color:#3377a4!important;font:680 .92em/1.5 Inter,system-ui,sans-serif;padding:11px 0}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei summary:focus-visible{outline:2px solid #3377a4;outline-offset:4px}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-item{border:0;border-left:2px solid #b9d1e0;margin:.4em 0 .4em 4px;padding:0 0 0 13px}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-item summary{font-weight:620;font-size:.88em;padding:8px 0}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-body{padding:2px 4px 14px 0;font-size:.92em;line-height:1.75}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-body blockquote{margin:0;padding:0;border:0;background:transparent}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-body p{margin:0 0 .7em!important;font-size:1em!important}
-html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-body a{color:#3377a4;font-size:.9em}
-html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-rev-lei summary,
-html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-rev-lei-body a{color:var(--bc-reading-accent,#56c9c5)}
+/* Lei seca recolhível na Revisão: logo após o assunto, mesmo gesto do Constitucional ("Ver lei seca — …") */
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group{display:block;border:0;border-left:3px solid #89b3d0;padding:0 0 0 17px;margin:1.1em 0;background:transparent;border-radius:0}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group>summary{cursor:pointer;color:#3377a4!important;font:680 .89em/1.5 Inter,system-ui,sans-serif!important;padding:12px 0}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group>summary:focus-visible{outline:2px solid #3377a4;outline-offset:4px}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-body{padding:2px 6px 16px 0;font-size:.92em;line-height:1.75}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art{margin:0 0 1.2em}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art h5{margin:0 0 .4em;font:700 .88em/1.45 Inter,system-ui,sans-serif!important;color:#285371!important;letter-spacing:0}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art p{margin:0 0 .65em!important;font-size:1em!important;color:inherit!important}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art a{color:#3377a4;font-size:.9em}
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group>summary,
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art a{color:var(--bc-reading-accent,#56c9c5)!important}
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art h5{color:var(--bc-reading-text,#d8d2c8)!important}
 @media print{html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group{display:none}}
