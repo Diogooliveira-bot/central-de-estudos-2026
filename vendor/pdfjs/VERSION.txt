@@ -1,0 +1,4 @@
+pdf.js (pdfjs-dist) 5.4.149, build "legacy", minificado, sem alterações.
+Licença: Apache-2.0 (LICENSE.txt). Origem: https://github.com/mozilla/pdf.js
+Usado só por ui/agenda-pdf-leo-v1.js, carregado sob demanda quando a pessoa escolhe o PDF do Léo.
+Para atualizar: npm pack pdfjs-dist@<versão> e copiar legacy/build/pdf.min.mjs e pdf.worker.min.mjs; ajustar VERSION em ui/agenda-pdf-leo-v1.js.
