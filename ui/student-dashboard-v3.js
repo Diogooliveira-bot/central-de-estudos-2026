@@ -177,6 +177,44 @@
       return { label:new Intl.DateTimeFormat('pt-BR', { weekday:'short' }).format(date).replace('.', ''), total:tasks.length, done, percent:tasks.length ? Math.round(done / tasks.length * 100) : 0 };
     });
   }
+  // Três cartões de progresso: teoria lida, questões internas (banco da Central) e questões externas (QC/TEC).
+  function internalQuestionStats() {
+    try {
+      const h = (JSON.parse(localStorage.getItem('central-v6:questoes:v2') || '{}') || {}).h || {};
+      const ids = Object.keys(h); let hits = 0;
+      ids.forEach((id) => { if (h[id] && h[id].u === 'c') hits += 1; });
+      return { answered: ids.length, hits };
+    } catch (_) { return { answered: 0, hits: 0 }; }
+  }
+  function externalQuestionStats() {
+    const api = global.ExternalQuestionFilters; const total = { answered: 0, correct: 0, sessions: 0 };
+    if (!api || typeof api.buildRegistry !== 'function' || typeof api.statsFor !== 'function') return total;
+    try {
+      api.buildRegistry().forEach((filter) => { const st = api.statsFor(filter); total.answered += st.answered; total.correct += st.correct; total.sessions += st.sessions.length; });
+    } catch (_) { /* sem registros externos */ }
+    return total;
+  }
+  function renderProgressCards(weekly, mainCard) {
+    mainCard.classList.add('bc-progress-legacy');
+    let box = byId('studentProgressCards');
+    if (!box) { box = document.createElement('section'); box.id = 'studentProgressCards'; box.className = 'student-progress-cards'; box.setAttribute('aria-label', 'Seu progresso'); weekly.insertAdjacentElement('afterend', box); }
+    const list = subjects().map((subject) => ({ subject, progress: subjectProgress(subject) })).filter((item) => item.progress);
+    const done = list.reduce((sum, item) => sum + item.progress.done, 0), total = list.reduce((sum, item) => sum + item.progress.total, 0);
+    const internal = internalQuestionStats(), external = externalQuestionStats();
+    const pct = (a, b) => (b ? Math.round(a / b * 100) : 0);
+    const signature = [done, total, internal.answered, internal.hits, external.answered, external.correct, external.sessions].join('|');
+    if (box.dataset.signature === signature) return;
+    box.dataset.signature = signature;
+    const rows = list.filter((item) => item.progress.done > 0).sort((a, b) => b.progress.done - a.progress.done).slice(0, 4)
+      .map((item) => `<li><span>${escapeHTML(UX.SUBJECT_LABELS?.[item.subject.id] || item.subject.name || item.subject.id)}</span><b>${item.progress.done}/${item.progress.total}</b></li>`).join('');
+    box.innerHTML = `
+      <article class="card student-progress-card"><small>Teoria lida</small><strong>${done}<span> de ${total} módulos</span></strong><span class="student-card-progress"><i style="width:${pct(done, total)}%"></i></span>
+        ${rows ? `<ul>${rows}</ul>` : '<p>Os módulos concluídos aparecem aqui.</p>'}</article>
+      <article class="card student-progress-card"><small>Questões internas</small><strong>${internal.answered}<span> respondidas</span></strong><span class="student-card-progress"><i style="width:${pct(internal.hits, internal.answered)}%"></i></span>
+        <p>${internal.answered ? `${internal.hits} acertos (${pct(internal.hits, internal.answered)}%) na última resposta de cada questão` : 'Resolva as questões dos módulos para ver seu desempenho.'}</p></article>
+      <article class="card student-progress-card"><small>Questões externas</small><strong>${external.answered}<span> registradas</span></strong><span class="student-card-progress"><i style="width:${pct(external.correct, external.answered)}%"></i></span>
+        <p>${external.answered ? `${external.correct} acertos (${pct(external.correct, external.answered)}%) em ${external.sessions} ${external.sessions === 1 ? 'sessão' : 'sessões'} (Qconcursos)` : 'Registre as sessões dos filtros do Qconcursos para acompanhar.'}</p></article>`;
+  }
   function ensurePerformance() {
     const view = byId('performanceView'); if (!view) return;
     view.classList.add('student-performance-view');
@@ -196,6 +234,8 @@
       weekly.innerHTML = `<div class="student-progress-week-head"><div><small>Ritmo semanal</small><h2>${total ? `${done} de ${total} tarefas concluídas` : 'Comece pelo seu plano semanal'}</h2></div><span>${total ? Math.round(done / total * 100) : 0}%</span></div>
         <div class="student-week-chart" aria-label="Conclusão dos últimos sete dias">${days.map((day) => `<div><span><i style="height:${Math.max(day.percent, day.total ? 8 : 2)}%"></i></span><b>${day.label}</b><small>${day.done}/${day.total}</small></div>`).join('')}</div>`;
     }
+    // Os cartões custam leitura de progresso e do registro externo: só montam com a tela de Progresso aberta.
+    if (!view.classList.contains('hidden')) renderProgressCards(weekly, mainCard);
     if (!mainCard.querySelector('.student-performance-heading')) {
       const heading = document.createElement('div'); heading.className = 'student-performance-heading';
       heading.innerHTML = '<div><small>Resultados</small><h2>Questões por disciplina</h2></div>'; mainCard.insertBefore(heading, host);

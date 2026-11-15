@@ -61,7 +61,9 @@ try{
       });
       console.log('ADM_RUNTIME',JSON.stringify(adm));
       assert.equal(adm.indexCount,20);
-      assert.equal(adm.legacyAvailable,20);
+      // Os 39 arquivos legados de ADM (teoria antiga) deixaram de ser carregados: nenhum leitor os consulta (ADM_NATIVE_LEGACY só era gravado).
+      // Revisão e Teoria completa vêm das apostilas nativas; o conteúdo exibido foi conferido idêntico (ver docs/PERFORMANCE_20261115.md).
+      assert.equal(adm.legacyAvailable,0);
       assert.equal(adm.twoCards,20,'todos os módulos ADM devem apresentar revisão e teoria');
       const attempts=await page.evaluate(async()=>{
         const items=Object.keys(window.ADM_NATIVE_INDEX.modules),checks=[];

@@ -49,7 +49,7 @@
   let registry = [];
   let registrySignature = '';
   let selectedKey = '';
-  let activeTab = 'overview';
+  let activeTab = 'disciplines';
   let sharedOverrides = new Map();
   let canManageFilters = false;
   let overridesLoaded = false;
@@ -367,6 +367,18 @@
     });
   }
 
+  const SORT_TEXT = new Intl.Collator('pt-BR');
+  const SORT_NUMERIC = new Intl.Collator('pt-BR', { numeric: true });
+  const SORT_DEFAULT = new Intl.Collator();
+  // O registro só muda quando os catálogos carregados ou as configurações compartilhadas mudam.
+  // Antes era refeito (e reordenado) a cada alteração do DOM, inclusive ao abrir uma leitura.
+  let registryInputsKey = '', overridesVersion = 0;
+  function inputsKey() {
+    const size = (v) => (Array.isArray(v) ? v.length : v && typeof v === 'object' ? Object.keys(v).length : 0);
+    return [global.QC_CENTRAL_SHARING_LINKS?.items, global.ADM_SHARING_LINKS?.items, global.CIVIL_SHARING_LINKS?.items,
+      global.CPC_SHARING_LINKS?.modules, global.PT_TEC_CADERNOS, global.TEC_CADERNOS_DATA?.cadernos,
+      global.TEC_PENAL_CPP_LINKS, global.RLM_TJCE_STRUCTURE].map(size).join('/') + '|' + overridesVersion;
+  }
   function buildRegistry() {
     const list = [], seen = new Set();
     collectQc(list, seen);
@@ -386,11 +398,15 @@
         overrideUpdatedAt: override.updatedAt || ''
       };
     });
-    resolved.sort((a, b) => a.discipline.localeCompare(b.discipline, 'pt-BR') || a.module.localeCompare(b.module, 'pt-BR', { numeric: true }) || a.platform.localeCompare(b.platform) || a.code.localeCompare(b.code, 'pt-BR', { numeric: true }));
+    // Collator reaproveitado: localeCompare(..., 'pt-BR') cria um coletor novo a cada comparação (era o maior custo do carregamento).
+    resolved.sort((a, b) => SORT_TEXT.compare(a.discipline, b.discipline) || SORT_NUMERIC.compare(a.module, b.module) || SORT_DEFAULT.compare(a.platform, b.platform) || SORT_NUMERIC.compare(a.code, b.code));
     return resolved;
   }
 
   function refreshRegistry() {
+    const key = inputsKey();
+    if (key === registryInputsKey && registrySignature) return false;
+    registryInputsKey = key;
     const next = buildRegistry();
     const signature = next.map((item) => `${item.disciplineKey}|${item.module}|${item.stableKey}|${item.title}|${item.count}|${item.url}|${item.status}|${item.revision}`).join(';');
     if (signature === registrySignature) return false;
@@ -405,6 +421,7 @@
       if (!response.ok) throw new Error('Falha ao carregar configurações');
       const data = await response.json();
       sharedOverrides = new Map((Array.isArray(data.overrides) ? data.overrides : []).map((item) => [item.stableKey, item]));
+      overridesVersion++;
       canManageFilters = data.canManage === true && global.BASE_COMPLETA_USER?.role === 'admin';
       overridesLoaded = true;
       registrySignature = '';
@@ -733,11 +750,11 @@
     }, { answered: 0, correct: 0, errors: 0, sessions: 0 });
   }
   function tabFromLocation() {
-    const value = new URLSearchParams(global.location.search).get('aba') || 'overview';
-    return TABS.has(value) ? value : 'overview';
+    const value = new URLSearchParams(global.location.search).get('aba') || 'disciplines';
+    return TABS.has(value) ? value : 'disciplines';
   }
   function routeForTab(tab) {
-    return ROUTE + (tab === 'overview' ? '' : `?aba=${encodeURIComponent(tab)}`);
+    return ROUTE + (tab === 'disciplines' ? '' : `?aba=${encodeURIComponent(tab)}`);
   }
 
   function injectNavigation() {
@@ -755,7 +772,7 @@
     page.className = 'view hidden'; page.id = 'questionFiltersView';
     page.innerHTML = `<button type="button" class="central-view-back" data-bcq-home>‹ Central</button>
       <div class="bcq-page-head"><div><span>ACOMPANHAMENTO DE ESTUDOS</span><h1>Central de Questões</h1><p>Seus filtros, resultados e evolução em um só lugar.</p></div><div class="bcq-page-total" data-bcq-page-total>—</div></div>
-      <nav class="bcq-center-tabs" role="tablist" aria-label="Seções da Central de Questões">
+      <nav class="bcq-center-tabs" role="tablist" aria-label="Seções da Central de Questões" hidden>
         <button type="button" role="tab" data-bcq-tab="overview">Visão geral</button>
         <button type="button" role="tab" data-bcq-tab="disciplines">Disciplinas</button>
         <button type="button" role="tab" data-bcq-tab="filters">Meus filtros</button>
@@ -766,6 +783,7 @@
         <section data-bcq-panel="overview"></section>
         <section data-bcq-panel="disciplines" hidden></section>
         <section data-bcq-panel="filters" hidden>
+          <button type="button" class="bcq-back-link" data-bcq-go-tab="disciplines">‹ Disciplinas</button>
           <details class="bcq-qc-inventory" data-bcq-qc-inventory hidden></details>
           <div class="bcq-toolbar"><label><span>Pesquisar</span><input type="search" data-bcq-search placeholder="Disciplina, módulo, título ou ID"></label><label><span>Disciplina</span><select data-bcq-discipline><option value="">Todas</option></select></label></div>
           <div class="bcq-page-layout"><div class="bcq-page-list" data-bcq-page-list></div><aside class="bcq-detail" data-bcq-detail><div class="bcq-detail-empty"><b>Selecione um filtro</b><span>O histórico completo aparecerá aqui.</span></div></aside></div>
@@ -775,7 +793,7 @@
       </div>`;
     workspace.appendChild(page);
     page.querySelector('[data-bcq-home]').addEventListener('click', leavePage);
-    page.querySelectorAll('[data-bcq-search],[data-bcq-discipline],[data-bcq-platform-select]').forEach((field) => field.addEventListener(field.tagName === 'INPUT' ? 'input' : 'change', renderPage));
+    page.querySelectorAll('[data-bcq-search],select[data-bcq-discipline],[data-bcq-platform-select]').forEach((field) => field.addEventListener(field.tagName === 'INPUT' ? 'input' : 'change', renderPage));
   }
   function injectModal() {
     if (document.getElementById('bcqSessionModal')) return;
@@ -805,7 +823,7 @@
   }
 
   function switchTab(tab, updateRoute = true) {
-    if (!TABS.has(tab)) tab = 'overview';
+    if (!TABS.has(tab)) tab = 'disciplines';
     activeTab = tab;
     const page = document.getElementById('questionFiltersView');
     page?.querySelectorAll('[data-bcq-tab]').forEach((button) => {
@@ -852,7 +870,7 @@
     const page = document.getElementById('questionFiltersView');
     if (!page) return [];
     const search = String(page.querySelector('[data-bcq-search]')?.value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-    const discipline = page.querySelector('[data-bcq-discipline]')?.value || '';
+    const discipline = page.querySelector('select[data-bcq-discipline]')?.value || '';
     
     return objectiveScopedFilters(visibleModuleFilters()).filter((filter) => !discipline || filter.disciplineKey === discipline).filter((filter) => {
       if (!search) return true;
@@ -860,7 +878,8 @@
     });
   }
   function syncDisciplineOptions() {
-    const select = document.querySelector('[data-bcq-discipline]');
+    // Só o <select> do filtro: a aba Disciplinas também usa data-bcq-discipline nos <details>.
+    const select = document.querySelector('select[data-bcq-discipline]');
     if (!select) return;
     const value = select.value;
     const options = Array.from(new Map(objectiveScopedFilters().map((filter) => [filter.disciplineKey, filter.discipline])).entries()).sort((a, b) => a[1].localeCompare(b[1], 'pt-BR'));
@@ -946,7 +965,7 @@
         return sum;
       }, { answered: 0, correct: 0 });
       const accuracy = percent(totals.answered, totals.correct);
-      return `<details class="bcq-discipline" data-bcq-discipline="${esc(Array.from(groups.keys())[index])}"${(disciplineOpenState.has(Array.from(groups.keys())[index]) ? disciplineOpenState.get(Array.from(groups.keys())[index]) : index === 0) ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${accuracy === null ? "—" : accuracy + "%"} acertos <span aria-hidden="true">·</span> ${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
+      return `<details class="bcq-discipline" data-bcq-discipline="${esc(Array.from(groups.keys())[index])}"${(disciplineOpenState.has(Array.from(groups.keys())[index]) ? disciplineOpenState.get(Array.from(groups.keys())[index]) : false) ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${accuracy === null ? "—" : accuracy + "%"} acertos <span aria-hidden="true">·</span> ${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
         const qc = rows.filter((row) => row.platform === 'qc');
         
         const platformColumn = (items) => `<section class="bcq-discipline-platform" data-platform="qc"><header><span class="bcq-page-platform" data-platform="qc">QC</span><div><b>Qconcursos</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
@@ -1251,7 +1270,10 @@
       records.forEach((record) => restoreMissingModuleFallbacks(record.target instanceof Element ? record.target : record.target.parentElement));
       const externalMutation = records.some((record) => {
         const target = record.target instanceof Element ? record.target : record.target.parentElement;
-        return !target?.closest('#questionFiltersView,#bcqSessionModal,#bcqAdminModal,[data-bcq-module-panel]');
+        // Nó já descartado pela própria renderização (ex.: <details> refeito na aba Disciplinas): não é alteração externa.
+        // Sem isso, a aba Disciplinas se redesenhava sem parar (dezenas de vezes por segundo).
+        if (!target || !target.isConnected) return false;
+        return !target?.closest('#questionFiltersView,#bcqSessionModal,#bcqAdminModal,[data-bcq-module-panel],.bc-native-reader-overlay,#centralPortugueseReader,.bc-m01-overlay,.bc-info-reader-overlay');
       });
       if (externalMutation) scheduleRefresh();
     }).observe(document.documentElement, { childList: true, subtree: true });

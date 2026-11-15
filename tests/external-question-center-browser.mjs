@@ -64,6 +64,11 @@ try {
     await page.addStyleTag({ content:'#studyObjectiveDialog{display:none!important}' });
     assert.equal(new URL(page.url()).pathname, '/central-de-questoes');
     assert.equal(await page.locator('[data-bcq-tab]').count(), 5);
+    // Produto simplificado: só Disciplinas à vista (abas ocultas, tudo recolhido). As demais abas continuam existindo
+    // internamente; este teste as exercita mostrando a barra de abas.
+    assert.equal(await page.locator('.bcq-center-tabs').isHidden(), true);
+    assert.equal(await page.locator('.bcq-discipline[open]').count(), 0);
+    await page.evaluate(() => { document.querySelector('.bcq-center-tabs').hidden = false; });
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
     await page.locator('[data-bcq-tab="filters"]').click();
     await page.waitForSelector('[data-bcq-page-list] .bcq-page-filter');
