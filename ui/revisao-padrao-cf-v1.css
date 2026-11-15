@@ -1,0 +1,107 @@
+/* Base Completa — "Revisão" de todas as disciplinas no visual aprovado do Direito Constitucional
+   (apostila teórica: fundo branco, Inter, títulos azul-marinho, seções numeradas). Somente apresentação. */
+
+/* Papel branco no modo claro; o modo noturno continua escuro. */
+html:not([data-bc-reading-mode="night"]) .bc-rev-cf{
+  --bc-reading-paper:#fff;--bc-reading-text:#24384b;--bc-reading-muted:#526d80;
+  --bc-reading-line:#dce7ef;--bc-reading-inset:#f7fafc;--bc-reading-accent:#3377a4;
+  --bc-universal-paper:#fff;--bc-universal-ink:#24384b;--bc-universal-muted:#526d80;
+  --bc-universal-line:#dce7ef;--bc-universal-inset:#f7fafc;--bc-universal-accent:#3377a4;
+}
+html.bc-ui-v1 body .bc-rev-cf{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+
+/* Corpo do texto */
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article,.bc-rev-cf .bc-universal-sheet,.bc-rev-cf .pt-doc{
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  font-size:16px!important;line-height:1.8!important;color:var(--bc-reading-text,#24384b)!important;
+  max-width:900px!important;overflow-wrap:break-word;
+}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article :is(p,li,dd,td,th,blockquote),.bc-rev-cf .pt-doc :is(p,li){
+  font-family:inherit!important;font-size:1em!important;line-height:1.8!important;color:inherit!important;
+}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article p,.bc-rev-cf .pt-doc p{margin:0 0 1em!important}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article li{margin:.45em 0!important}
+
+/* Título do módulo: o mesmo bloco do Constitucional */
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article::before,.bc-rev-cf .pt-doc::before{
+  display:block;content:"BASE COMPLETA   /   APOSTILA TEÓRICA";
+  font:700 11px/1.4 Inter,system-ui,sans-serif;letter-spacing:.12em;color:var(--bc-reading-muted,#526d80);margin:0 0 8px;
+}
+html.bc-ui-v1 body .bc-rev-cf :is(.bc-native-article,.pt-doc) :is(h1){
+  font:800 clamp(25px,6.4vw,34px)/1.2 Inter,system-ui,sans-serif!important;letter-spacing:-.02em!important;
+  color:#10283f!important;margin:.15em 0 .55em!important;
+}
+html.bc-ui-v1 body .bc-rev-cf :is(.bc-native-article,.pt-doc) :is(h2){
+  font:750 clamp(20px,5vw,25px)/1.34 Inter,system-ui,sans-serif!important;letter-spacing:-.015em!important;
+  color:#173759!important;margin:2.2em 0 .9em!important;padding-top:1.05em;border-top:1px solid var(--bc-reading-line,#dce7ef);
+}
+html.bc-ui-v1 body .bc-rev-cf :is(.bc-native-article,.pt-doc) :is(h3){
+  font:710 clamp(17px,4.4vw,19px)/1.4 Inter,system-ui,sans-serif!important;color:#274a65!important;margin:1.7em 0 .7em!important;
+}
+html.bc-ui-v1 body .bc-rev-cf :is(.bc-native-article,.pt-doc) :is(h2:first-child,header+h2,.bc-std-intro+h2){border-top:0;padding-top:0}
+html.bc-ui-v1 body .bc-rev-cf :is(.bc-native-article,.pt-doc) h4{font:700 1em/1.5 Inter,system-ui,sans-serif!important;color:#274a65!important}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article strong,.bc-rev-cf .bc-native-article b{color:inherit;font-weight:700}
+
+/* Cabeçalho "DISCIPLINA · MÓDULO 01" já existente */
+html.bc-ui-v1 body .bc-rev-cf .bc-std-intro{border:0;padding:0;margin:0 0 .6em}
+html.bc-ui-v1 body .bc-rev-cf .bc-std-intro :is(small,span,.eyebrow,p){font:700 11px/1.5 Inter,system-ui,sans-serif!important;letter-spacing:.1em;color:var(--bc-reading-muted,#526d80)!important;text-transform:uppercase}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-kicker{font:700 11px/1.5 Inter,system-ui,sans-serif!important;letter-spacing:.1em;color:var(--bc-reading-muted,#526d80)!important}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article .lead{font-size:.95em!important;color:var(--bc-reading-muted,#526d80)!important}
+
+/* Caixas e destaques: filete lateral, sem cartão */
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article :is(aside,.bc-native-callout,.callout,.bc-native-callout){
+  background:transparent!important;border:0!important;border-left:2px solid #b9d1e0!important;border-radius:0!important;
+  box-shadow:none!important;padding:0 0 0 15px!important;margin:1.4em 0!important;
+}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article :is(aside,.bc-native-callout) :is(b,strong,h4){color:#285371!important;font-family:Inter,system-ui,sans-serif!important}
+
+/* Tabelas */
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;font-size:.88em;line-height:1.55}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article :is(td,th){padding:11px 12px!important;border:1px solid #dbe5ed!important;text-align:left;vertical-align:top}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-article th{background:#edf4f9!important;color:#173759!important;font-weight:700}
+
+/* Barra de ferramentas e cabeçalho do leitor: mesma pele branca */
+html.bc-ui-v1 body .bc-rev-cf :is(.bc-native-reader-head,.bc-native-reader-tools,.bc-native-scroll){background:var(--bc-reading-paper,#fff)!important}
+html.bc-ui-v1 body .bc-rev-cf .bc-native-reader-title small{letter-spacing:.06em}
+
+@media (max-width:600px){
+  html.bc-ui-v1 body .bc-rev-cf .bc-native-article,html.bc-ui-v1 body .bc-rev-cf .bc-universal-sheet,html.bc-ui-v1 body .bc-rev-cf .pt-doc{font-size:15px!important}
+  html.bc-ui-v1 body .bc-rev-cf .bc-native-article{padding-left:16px!important;padding-right:16px!important}
+}
+@media print{html.bc-ui-v1 body .bc-rev-cf .bc-native-article::before{display:none}}
+
+/* Modo noturno: mantém o escuro tradicional, só com a tipografia do padrão. */
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf :is(.bc-native-article,.pt-doc) :is(h1,h2,h3,h4),
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-native-article :is(aside,.bc-native-callout) :is(b,strong,h4),
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-native-article th{color:var(--bc-reading-text,#d8d2c8)!important}
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-native-article th{background:var(--bc-reading-inset,#2d2d2d)!important}
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-native-article :is(td,th){border-color:var(--bc-reading-line,#414141)!important}
+
+/* Processo Civil: a revisão abre dentro do módulo (sem overlay) — mesmo bloco de título e mesma tipografia */
+html.bc-ui-v1 body #subjects .subject[data-id="cpc"] .cpc-apostila-cover::before{
+  display:block;content:"BASE COMPLETA   /   APOSTILA TEÓRICA";font:700 11px/1.4 Inter,system-ui,sans-serif;
+  letter-spacing:.12em;color:#526d80;margin:0 0 8px;
+}
+html.bc-ui-v1 body #subjects .subject[data-id="cpc"] .cpc-apostila-cover :is(h1,h2){
+  font:800 clamp(25px,6.4vw,34px)/1.2 Inter,system-ui,sans-serif!important;letter-spacing:-.02em!important;color:#10283f!important;margin:.15em 0 .55em!important;
+}
+html.bc-ui-v1 body #subjects .subject[data-id="cpc"] :is(.cpc-apostila-content,.cpc-apostila-topic) :is(h2,h3){
+  font-family:Inter,system-ui,sans-serif!important;color:#173759!important;letter-spacing:-.015em;
+}
+html.bc-ui-v1 body #subjects .subject[data-id="cpc"] :is(.cpc-apostila-content,.cpc-apostila-topic) :is(p,li){
+  font:400 16px/1.8 Inter,system-ui,sans-serif!important;color:#24384b!important;
+}
+
+/* Lei seca recolhível na Revisão: logo após o assunto, mesmo gesto do Constitucional ("Ver lei seca — …") */
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group{display:block;border:0;border-left:3px solid #89b3d0;padding:0 0 0 17px;margin:1.1em 0;background:transparent;border-radius:0}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group>summary{cursor:pointer;color:#3377a4!important;font:680 .89em/1.5 Inter,system-ui,sans-serif!important;padding:12px 0}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group>summary:focus-visible{outline:2px solid #3377a4;outline-offset:4px}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-body{padding:2px 6px 16px 0;font-size:.92em;line-height:1.75}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art{margin:0 0 1.2em}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art h5{margin:0 0 .4em;font:700 .88em/1.45 Inter,system-ui,sans-serif!important;color:#285371!important;letter-spacing:0}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art p{margin:0 0 .65em!important;font-size:1em!important;color:inherit!important}
+html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art a{color:#3377a4;font-size:.9em}
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group>summary,
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art a{color:var(--bc-reading-accent,#56c9c5)!important}
+html[data-bc-reading-mode="night"].bc-ui-v1 body .bc-rev-cf .bc-rev-lei-art h5{color:var(--bc-reading-text,#d8d2c8)!important}
+@media print{html.bc-ui-v1 body .bc-rev-cf .bc-rev-lei-group{display:none}}
