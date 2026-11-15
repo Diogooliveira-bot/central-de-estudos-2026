@@ -1,0 +1,62 @@
+/* Importação do PDF do Léo na Agenda (ui/agenda-pdf-leo-v1.js). Usa as cores do tema ativo. */
+.bc-leo-card {
+  display: grid; grid-template-columns: 64px minmax(0, 1fr); grid-template-areas: "mascot head" "mascot body"; column-gap: 16px; align-items: start;
+  margin: 0 0 14px; padding: 16px 18px !important;
+  border: 1px solid var(--border, #cfe0e8); border-radius: 16px; background: var(--card, #fff); color: var(--text, #12344d);
+}
+.bc-leo-card.is-drop { outline: 2px dashed var(--accent, #0b8f9c); outline-offset: 3px; }
+.bc-leo-card.is-busy { opacity: .75; }
+.bc-leo-mascot { grid-area: mascot; width: 64px; height: 64px; object-fit: contain; }
+.bc-leo-head { grid-area: head; min-width: 0; }
+.bc-leo-body { grid-area: body; min-width: 0; }
+.bc-leo-head > small {
+  display: block; color: var(--accent, #0b8f9c); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+}
+.bc-leo-head h2 { margin: 2px 0 6px; font-size: 20px; line-height: 26px; color: inherit; }
+.bc-leo-body p { margin: 0 0 8px; font-size: 14px; line-height: 21px; }
+.bc-leo-current b { display: block; font-size: 15px; }
+.bc-leo-current span { color: var(--text-muted, #5b7183); }
+.bc-leo-hint, .bc-leo-privacy { color: var(--text-muted, #5b7183); font-size: 13px !important; line-height: 19px !important; }
+.bc-leo-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 4px 0 6px; }
+.bc-leo-confirm { flex: 1 1 100%; font-size: 14px; line-height: 20px; }
+.bc-leo-status { min-height: 0; font-size: 14px; line-height: 20px; }
+.bc-leo-status:not(:empty) { margin: 4px 0 6px; padding: 8px 10px; border-radius: 10px; background: var(--surface-soft, #eef6f8); }
+.bc-leo-status.error { background: #fdecec; color: #8a1c1c; }
+.bc-leo-status.success { background: #e6f6ec; color: #17592f; }
+
+.bc-leo-overlay {
+  position: fixed; inset: 0; z-index: 2147483200; display: flex; align-items: center; justify-content: center;
+  padding: 16px; background: rgba(10, 25, 40, .56) !important;
+}
+.bc-leo-box {
+  width: min(640px, 100%); max-height: min(88vh, 100%); overflow: auto; padding: 20px; border-radius: 18px;
+  border: 1px solid var(--border, #cfe0e8); background: var(--card, #fff); color: var(--text, #12344d);
+  box-shadow: 0 24px 70px rgba(13, 45, 63, .35); overscroll-behavior: contain;
+}
+.bc-leo-box h2 { margin: 0 0 10px; font-size: 22px; line-height: 28px; color: inherit; }
+.bc-leo-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.bc-leo-chips span {
+  padding: 4px 10px; border-radius: 999px; background: var(--accent-soft, #d9f1f4); color: var(--text, #12344d); font-size: 13px; font-weight: 700;
+}
+.bc-leo-disc { margin: 0 0 12px; padding: 0; list-style: none; font-size: 14px; line-height: 21px; }
+.bc-leo-disc li { padding: 2px 0; }
+.bc-leo-merge { margin: 0 0 12px; font-size: 15px; line-height: 22px; font-weight: 700; }
+.bc-leo-warn, .bc-leo-days { margin: 0 0 12px; border: 1px solid var(--border, #cfe0e8); border-radius: 12px; padding: 8px 12px; font-size: 14px; }
+.bc-leo-warn summary, .bc-leo-days summary { cursor: pointer; font-weight: 700; min-height: 32px; display: flex; align-items: center; }
+.bc-leo-warn p { margin: 4px 0; color: var(--text-muted, #5b7183); }
+.bc-leo-days { max-height: 42vh; overflow: auto; }
+.bc-leo-day { padding: 8px 0; border-top: 1px solid var(--border, #cfe0e8); }
+.bc-leo-day:first-of-type { border-top: 0; }
+.bc-leo-day p { margin: 2px 0 0; font-size: 13px; line-height: 19px; color: var(--text-muted, #5b7183); }
+.bc-leo-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+.bc-leo-actions .btn { min-height: 44px; }
+html.bc-leo-open { overflow: hidden; }
+html.bc-zoom-on .bc-leo-overlay .bc-leo-box { zoom: var(--bc-zoom, 1); }
+
+@media (max-width: 560px) {
+  .bc-leo-card { grid-template-columns: 52px minmax(0, 1fr); grid-template-areas: "mascot head" "body body"; column-gap: 12px; row-gap: 4px; }
+  .bc-leo-mascot { width: 52px; height: 52px; }
+  .bc-leo-buttons .btn, .bc-leo-actions .btn { flex: 1 1 100%; min-height: 46px; }
+  .bc-leo-overlay { align-items: flex-end; padding: 8px; }
+}
+@media print { .bc-leo-card, .bc-leo-overlay { display: none !important; } }
