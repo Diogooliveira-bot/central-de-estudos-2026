@@ -4,6 +4,22 @@
 **Responsável pelo código:** PR [#187](https://github.com/Diogooliveira-bot/central-de-estudos-2026/pull/187).  
 **Regra:** não refazer auditorias aprovadas; retestar exclusivamente as alterações e os fluxos críticos que ainda não tiveram prova hospedada. Os relatórios históricos permanecem disponíveis como evidência.
 
+## Situação consolidada em 14/11/2026 (lista única para não se perder)
+
+**No ar (Production):** mascote na Central (PR #301), Estudo livre/Lei em Dia enxuto (outras sessões), vitrine com checkout Hotmart, limite de 5 questões/dia no plano Gratuito (migração 010 aplicada), e-mails com marca. **Mesclado, ver deploy:** PR #302 (e-mails: Reply-To, avisos de venda/reembolso, "Premium ativado", confirmação de suporte). Guia de e-mails: `docs/EMAILS_GUIA_DO_DONO.md`.
+
+**Falta — depende do proprietário (ordem sugerida):**
+1. **E-mail próprio `suporte@basecompleta.com.br`** (grátis): ImprovMX + DNS no Registro.br + "Enviar como" no Gmail + DMARC. Depois disso, trocar o endereço do Gmail por `suporte@` em Termos, Privacidade, Cookies, vitrine, e-mails e código (34 arquivos) em um único PR.
+2. Gmail de atendimento: resposta automática ("responderemos em até 5 dias") e filtros; conferir mensagens sem resposta.
+3. Hotmart: notificações de venda/reembolso/chargeback para o Gmail; webhook "envio de teste oficial" (esperado 7 × 200); conferir checkouts como visitante.
+4. Compra real de teste do Semestral + reembolso em 7 dias (por último, depois dos ajustes).
+5. Cadastro gratuito de teste com e-mail próprio: confirmação, login, recuperação de senha.
+6. Vercel Pro quando começar a vender (limite de 100 deploys/dia já bloqueou produção hoje por ~3 h).
+
+**Falta — pode esperar:** Informática pública (ajustar "8 disciplinas" na vitrine); e-mails de relacionamento; alertas de erro (indisponíveis no Hobby); limpeza (workflow "Limpeza de branches": simular, depois APAGAR; apagar projetos Vercel pausados; levantamento do Neon; fechar issue #193); identificação completa do fornecedor nos Termos (CPF/endereço, se desejado).
+
+**Regra de publicação:** juntar várias mudanças por deploy (Hobby: 100/dia; cada push de branch também gera prévia).
+
 ## Situação em 13/11/2026 (revisão de lançamento)
 
 **Resolvido:** textos legais finais (`terms-2026-11-13-v6`); cadastro gratuito em Production com Turnstile e e-mails pelo Resend (confirmação, boas-vindas e recuperação testados de ponta a ponta com conta de teste); Hotmart com webhook de Production, 34 cenários de teste e migrações 007–010 aplicadas; 8 disciplinas com questões inéditas; Qconcursos exclusivo (TEC fora dos alunos); **limite de 5 questões/dia no Gratuito ativo** (migração 010 aplicada em 13/11/2026 às 21:55 UTC no Neon de Production `br-gentle-rice-aw5a3i2i`, sem backup em branch por limite do plano; conferido com conta de teste).

@@ -152,7 +152,7 @@
         subject:form.elements.subject.value,message:form.elements.message.value
       });
       form.reset();
-      setStatus('Mensagem recebida! Protocolo: '+data.ticketId+'. A equipe poderá consultar seu chamado na área administrativa.');
+      setStatus('Mensagem recebida! Protocolo: '+String(data.ticketId||'').slice(0,8).toUpperCase()+'. Enviamos a confirmação para o seu e-mail; respondemos em até 5 dias, no mesmo e-mail.');
     } catch(e) { setStatus(e.message,true); }
     finally { button.disabled=false; }
   }
