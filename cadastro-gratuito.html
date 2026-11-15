@@ -92,6 +92,8 @@ async function post(body){var r=await fetch('/api/auth?action=free-signup',{meth
 var token='';try{token=new URLSearchParams(location.hash.slice(1)).get('token')||'';if(token){sessionStorage.setItem('bc_free_signup_token',token);history.replaceState(null,'',location.pathname)}}catch(_){}
 if(!token){try{token=sessionStorage.getItem('bc_free_signup_token')||''}catch(_){}}
 if(token){
+  // Quem chega pelo link de confirmação já tem cadastro liberado: o aviso de homologação não se aplica.
+  document.getElementById('signupPreviewNote').hidden=true;
   form.hidden=true;message('Confirmando seu e-mail...');
   post({action:'confirm',token:token}).then(function(){
     try{sessionStorage.removeItem('bc_free_signup_token')}catch(_){}
