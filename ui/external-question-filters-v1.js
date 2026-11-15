@@ -367,6 +367,18 @@
     });
   }
 
+  const SORT_TEXT = new Intl.Collator('pt-BR');
+  const SORT_NUMERIC = new Intl.Collator('pt-BR', { numeric: true });
+  const SORT_DEFAULT = new Intl.Collator();
+  // O registro só muda quando os catálogos carregados ou as configurações compartilhadas mudam.
+  // Antes era refeito (e reordenado) a cada alteração do DOM, inclusive ao abrir uma leitura.
+  let registryInputsKey = '', overridesVersion = 0;
+  function inputsKey() {
+    const size = (v) => (Array.isArray(v) ? v.length : v && typeof v === 'object' ? Object.keys(v).length : 0);
+    return [global.QC_CENTRAL_SHARING_LINKS?.items, global.ADM_SHARING_LINKS?.items, global.CIVIL_SHARING_LINKS?.items,
+      global.CPC_SHARING_LINKS?.modules, global.PT_TEC_CADERNOS, global.TEC_CADERNOS_DATA?.cadernos,
+      global.TEC_PENAL_CPP_LINKS, global.RLM_TJCE_STRUCTURE].map(size).join('/') + '|' + overridesVersion;
+  }
   function buildRegistry() {
     const list = [], seen = new Set();
     collectQc(list, seen);
@@ -386,11 +398,15 @@
         overrideUpdatedAt: override.updatedAt || ''
       };
     });
-    resolved.sort((a, b) => a.discipline.localeCompare(b.discipline, 'pt-BR') || a.module.localeCompare(b.module, 'pt-BR', { numeric: true }) || a.platform.localeCompare(b.platform) || a.code.localeCompare(b.code, 'pt-BR', { numeric: true }));
+    // Collator reaproveitado: localeCompare(..., 'pt-BR') cria um coletor novo a cada comparação (era o maior custo do carregamento).
+    resolved.sort((a, b) => SORT_TEXT.compare(a.discipline, b.discipline) || SORT_NUMERIC.compare(a.module, b.module) || SORT_DEFAULT.compare(a.platform, b.platform) || SORT_NUMERIC.compare(a.code, b.code));
     return resolved;
   }
 
   function refreshRegistry() {
+    const key = inputsKey();
+    if (key === registryInputsKey && registrySignature) return false;
+    registryInputsKey = key;
     const next = buildRegistry();
     const signature = next.map((item) => `${item.disciplineKey}|${item.module}|${item.stableKey}|${item.title}|${item.count}|${item.url}|${item.status}|${item.revision}`).join(';');
     if (signature === registrySignature) return false;
@@ -405,6 +421,7 @@
       if (!response.ok) throw new Error('Falha ao carregar configurações');
       const data = await response.json();
       sharedOverrides = new Map((Array.isArray(data.overrides) ? data.overrides : []).map((item) => [item.stableKey, item]));
+      overridesVersion++;
       canManageFilters = data.canManage === true && global.BASE_COMPLETA_USER?.role === 'admin';
       overridesLoaded = true;
       registrySignature = '';
@@ -1251,7 +1268,7 @@
       records.forEach((record) => restoreMissingModuleFallbacks(record.target instanceof Element ? record.target : record.target.parentElement));
       const externalMutation = records.some((record) => {
         const target = record.target instanceof Element ? record.target : record.target.parentElement;
-        return !target?.closest('#questionFiltersView,#bcqSessionModal,#bcqAdminModal,[data-bcq-module-panel]');
+        return !target?.closest('#questionFiltersView,#bcqSessionModal,#bcqAdminModal,[data-bcq-module-panel],.bc-native-reader-overlay,#centralPortugueseReader,.bc-m01-overlay,.bc-info-reader-overlay');
       });
       if (externalMutation) scheduleRefresh();
     }).observe(document.documentElement, { childList: true, subtree: true });
