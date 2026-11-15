@@ -1,0 +1,8 @@
+/* Base Completa — Tamanho da tela automático no COMPUTADOR (ui/tablet-scale-v1.js define --bc-zoom).
+   O "zoom" vale só para o conteúdo dentro de cada tela e para o menu do topo; a janela, as alturas em vh/dvh e as
+   camadas fixas continuam como antes, então nada passa do tamanho da janela. Reversível: "Normal" em Configurações. */
+html.bc-zoom-on #appRoot .workspace > .view > * { zoom: var(--bc-zoom); }
+html.bc-zoom-on #centralSidebar > * { zoom: var(--bc-nav-zoom, 1); }
+/* Janela de Questões (tela própria) acompanha o mesmo tamanho. */
+html.bc-zoom-on .bcqa-overlay .bcqa-dialog { zoom: var(--bc-zoom); }
+@media print { html.bc-zoom-on #appRoot .workspace > .view > *, html.bc-zoom-on #centralSidebar > * { zoom: 1; } }
