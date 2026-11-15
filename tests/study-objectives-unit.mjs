@@ -17,6 +17,7 @@ test('objetivo usa persistência de preferência própria e não entra no snapsh
   assert.equal(isSyncKey('central-v6:study-objective:v1'), false);
   assert.equal(isSyncKey('central-v6:study-objective:pending:v1'), false);
   assert.equal(isSyncKey('central-v6:free-study-subjects:v1'), false);
+  assert.equal(isSyncKey('central-v6:ui-scale:v1'), false, 'tamanho da tela é do aparelho, não do progresso');
   assert.equal(isSyncKey('central-v6:done:cf-m01'), true);
 });
 
