@@ -203,6 +203,12 @@ test('página de cadastro remove token da URL e não libera Premium',()=>{
  assert.match(page,/filtros do Qconcursos/i);
   assert.doesNotMatch(page,/\bTEC\b/);
 });
+test('confirmação por token oculta o aviso de homologação',()=>{
+ const page=readFileSync(new URL('../cadastro-gratuito.html',import.meta.url),'utf8');
+ const tokenBranch=page.slice(page.indexOf('if(token){'),page.indexOf("form.addEventListener('submit'"));
+ assert.match(tokenBranch,/getElementById\('signupPreviewNote'\)\.hidden=true/);
+ assert.match(tokenBranch,/Conta gratuita confirmada/);
+});
 
 test('middleware libera somente tela de cadastro, sem recursos pagos',()=>{
  const middleware=readFileSync(new URL('../middleware.js',import.meta.url),'utf8');
