@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import vm from 'node:vm';
 
 const read = f => readFileSync(f, 'utf8');
@@ -49,20 +49,11 @@ test('lei seca por assunto: só entra o artigo que o trecho cita, com a norma ce
   ctx.window = ctx;
   vm.runInNewContext(read('ui/revisao-padrao-cf-v1.js'), ctx);
   const api = ctx.BCRevisaoPadraoCF;
-  const data = {
-    articles: {
-      'cp:1': { label: 'Código Penal — art. 1', paragraphs: ['Art. 1º Não há crime sem lei anterior.'], officialUrl: 'https://legis.senado.leg.br/x' },
-      'cp:12': { label: 'Código Penal — art. 12', paragraphs: ['Art. 12. As regras gerais.'], officialUrl: 'javascript:alert(1)' },
-      'cf:5': { label: 'Constituição Federal — art. 5', paragraphs: ['Art. 5º Todos são iguais.'] },
-      'cp:3': { label: 'sem texto', paragraphs: [] },
-    },
-    modules: { 1: [{ key: 'cp:1' }, { key: 'cp:12' }, { key: 'cp:1' }, { key: 'cf:5' }, { key: 'cp:3' }, { key: 'cp:9' }] },
-  };
-  const items = api.leiItems(data, 1);
-  assert.equal(JSON.stringify(items.map(i => i.key)), JSON.stringify(['cp:1', 'cp:12', 'cf:5']));
-  assert.equal(items[0].url, 'https://legis.senado.leg.br/x');
-  assert.equal(items[1].url, '', 'só https');
-  assert.equal(api.leiItems(data, 2).length, 0);
+  const items = [
+    { key: 'cp:1', law: 'cp', ref: '1', label: 'Código Penal — art. 1', paragraphs: ['Art. 1º Não há crime sem lei anterior.'], url: '' },
+    { key: 'cp:12', law: 'cp', ref: '12', label: 'Código Penal — art. 12', paragraphs: ['Art. 12. As regras gerais.'], url: '' },
+    { key: 'cf:5', law: 'cf', ref: '5', label: 'Constituição Federal — art. 5', paragraphs: ['Art. 5º Todos são iguais.'], url: '' },
+  ];
   const keys = (text, law) => JSON.stringify(api.citedItems(text, items, law).map(i => i.key));
   assert.equal(keys('A legalidade vem do art. 1º do Código Penal e da CF, art. 5º, XXXIX.', 'cp'), JSON.stringify(['cp:1', 'cf:5']));
   assert.equal(keys('Veja o art. 12 do CP.', 'cp'), JSON.stringify(['cp:12']));
@@ -77,4 +68,41 @@ test('lei seca por assunto: só entra o artigo que o trecho cita, com a norma ce
   const cites = api.articleCitations('arts. 3º-A a 3º-F e art. 5º, § 12');
   assert.ok(cites[0].refs.includes('3-A') && cites[0].refs.includes('3-F'));
   assert.ok(!cites.flatMap(c => c.refs).includes('12'));
+});
+
+const forEachLeiFile = fn => {
+  for (const disc of ['penal', 'cpp', 'adm']) {
+    for (const f of readdirSync(`content/${disc}/lei-revisao`)) fn(disc, f, read(`content/${disc}/lei-revisao/${f}`));
+  }
+};
+
+test('lei seca da Revisão: arquivos por módulo, só redação oficial, liberados ao plano Gratuito', async () => {
+  const { protectedAsset } = await import('../lib/protected-content.js');
+  let files = 0, items = 0;
+  forEachLeiFile((disc, f, src) => {
+    files++;
+    const box = { window: {} }; box.window.window = box.window;
+    vm.runInNewContext(src, box);
+    const [n, list] = Object.entries(box.window.BC_LEI_REVISAO[disc])[0];
+    assert.equal(`m${String(n).padStart(2, '0')}.js`, f);
+    assert.ok(Array.isArray(list));
+    for (const it of list) {
+      items++;
+      assert.deepEqual(Object.keys(it).sort(), ['key', 'label', 'law', 'paragraphs', 'ref', 'url'], 'sem campos de teoria autoral (anchor, section…)');
+      assert.ok(it.paragraphs.length && it.paragraphs.every(p => typeof p === 'string' && p.length < 6000));
+      assert.ok(it.url === '' || it.url.startsWith('https://'));
+    }
+    assert.deepEqual(protectedAsset(`/content/${disc}/lei-revisao/${f}`), { kind: 'file', feature: 'theory.summary' });
+  });
+  assert.equal(files, 17 + 22 + 20);
+  assert.ok(items > 2000);
+  // a origem completa continua fechada ao Gratuito
+  assert.equal(protectedAsset('/content/penal/penal-visual-law.js').feature, 'theory.complete');
+  assert.equal(protectedAsset('/content/adm/m01-apostila-complete.js').feature, 'theory.complete');
+});
+
+test('o carregador busca o arquivo do módulo certo e não depende de arquivos Premium', () => {
+  const js = read('ui/revisao-padrao-cf-v1.js');
+  assert.ok(js.includes("'/lei-revisao/m'"));
+  assert.ok(!/penal-visual-law|cpp-visual-law|apostila-complete|AdmApostilaReading/.test(js));
 });

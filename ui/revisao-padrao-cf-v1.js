@@ -13,11 +13,9 @@
      Mesmo gesto do Constitucional: logo depois do assunto que cita o artigo, "▸ Ver lei seca — CP, art. 59 e mais 2",
      fechado. O vínculo é feito pelas citações do próprio texto ("CP, art. 59", "Constituição Federal — artigo 37").
      Usa os textos legais já existentes na Teoria completa; sem acesso a eles, nada aparece (sem erro). */
-  const LEI_FILES = {
-    penal: { name: 'PENAL_VISUAL_LAW', src: '/content/penal/penal-visual-law.js?v=20261106penal4', law: 'cp' },
-    cpp: { name: 'CPP_VISUAL_LAW', src: '/content/cpp/cpp-visual-law.js?v=20261105literal3', law: 'cpp' },
-    adm: { law: '' },
-  };
+  // Arquivos por módulo, só com a redação oficial (liberados à Revisão do plano Gratuito).
+  const LEI_DEFAULT = { penal: 'cp', cpp: 'cpp', adm: '' };
+  const LEI_VERSION = '20261115rev1';
   const SHORT = { cf: 'CF/88', cp: 'CP', cpp: 'CPP' };
   const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const norm = t => String(t || '').replace(/\s+/g, ' ').trim();
@@ -26,21 +24,6 @@
     const m = t.match(/DIREITO\s+(ADMINISTRATIVO|PROCESSUAL PENAL|PENAL)\s*[·•-]\s*M[ÓO]DULO\s*(\d{1,2})/);
     if (!m) return null;
     return { disc: m[1] === 'ADMINISTRATIVO' ? 'adm' : m[1] === 'PENAL' ? 'penal' : 'cpp', n: Number(m[2]) };
-  }
-  // Dispositivos de um módulo: {key, law, ref, label, paragraphs, url}
-  function parseKey(key) { const i = String(key).indexOf(':'); return i < 0 ? { law: '', ref: String(key) } : { law: key.slice(0, i), ref: key.slice(i + 1) }; }
-  function leiItems(data, n) {
-    const entries = data && data.modules && (data.modules[n] || data.modules[String(n)]);
-    if (!Array.isArray(entries) || !data.articles) return [];
-    const seen = new Set(), out = [];
-    entries.forEach(e => {
-      const a = data.articles[e.key];
-      if (!a || seen.has(e.key) || !Array.isArray(a.paragraphs) || !a.paragraphs.length) return;
-      seen.add(e.key);
-      const k = parseKey(e.key);
-      out.push({ key: e.key, law: k.law, ref: k.ref, label: String(a.label || e.key), paragraphs: a.paragraphs.map(String), url: /^https:\/\//.test(a.officialUrl || '') ? a.officialUrl : '' });
-    });
-    return out;
   }
   // Sinônimos com que o texto costuma chamar cada norma.
   function lawPattern(item) {
@@ -151,25 +134,9 @@
     });
   }
   async function itemsFor(info) {
-    if (info.disc === 'adm') {
-      if (!global.AdmApostilaReading) return [];
-      const html = await global.AdmApostilaReading.load(info.n, 'complete');
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const seen = new Set(), out = [];
-      doc.querySelectorAll('details.law [data-law-key]').forEach(sec => {
-        const key = sec.getAttribute('data-law-key');
-        if (seen.has(key)) return; seen.add(key);
-        const k = parseKey(key);
-        const label = norm(sec.querySelector('h4')?.textContent || key);
-        const paragraphs = [...sec.querySelectorAll('p')].map(p => norm(p.textContent)).filter(Boolean);
-        if (paragraphs.length) out.push({ key, law: k.law, ref: k.ref, label, paragraphs, url: '' });
-      });
-      return out;
-    }
-    const cfg = LEI_FILES[info.disc];
-    if (!cfg || !cfg.name) return [];
-    await loadScript(cfg.src, () => !!global[cfg.name]);
-    return leiItems(global[cfg.name], info.n);
+    const read = () => global.BC_LEI_REVISAO && global.BC_LEI_REVISAO[info.disc] && global.BC_LEI_REVISAO[info.disc][info.n];
+    await loadScript('/content/' + (info.disc === 'cpp' ? 'cpp' : info.disc) + '/lei-revisao/m' + String(info.n).padStart(2, '0') + '.js?v=' + LEI_VERSION, () => !!read());
+    return (read() || []).filter(it => it && Array.isArray(it.paragraphs) && it.paragraphs.length);
   }
   async function attachLei(overlay) {
     if (overlay.dataset.bcLei) return;
@@ -180,7 +147,7 @@
       const items = await itemsFor(info);
       const article = overlay.querySelector('.bc-native-article');
       if (!items.length || !article || article.querySelector('.bc-rev-lei-group')) { overlay.dataset.bcLei = 'vazio'; return; }
-      const n = place(article, items, (LEI_FILES[info.disc] || {}).law);
+      const n = place(article, items, LEI_DEFAULT[info.disc] || '');
       overlay.dataset.bcLei = n ? 'ok' : 'sem-citacoes';
     } catch (e) { overlay.dataset.bcLei = 'indisponivel'; }
   }
@@ -207,6 +174,6 @@
       }
     }).observe(document.body, { childList: true, subtree: true });
   }
-  global.BCRevisaoPadraoCF = { mark, leiItems, citedItems, articleCitations };
+  global.BCRevisaoPadraoCF = { mark, citedItems, articleCitations };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })(window);
