@@ -1,0 +1,26 @@
+name: Importar PDF do Leo na Agenda
+on:
+  pull_request:
+    paths:
+      - 'ui/agenda-pdf-leo-v1.js'
+      - 'ui/agenda-pdf-leo-v1.css'
+      - 'vendor/pdfjs/**'
+      - 'tests/agenda-pdf-leo-unit.mjs'
+      - 'tests/agenda-pdf-leo-browser.mjs'
+      - '.github/workflows/agenda-pdf-leo.yml'
+  workflow_dispatch:
+jobs:
+  agenda-pdf-leo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install chromium
+      - run: node --test tests/agenda-pdf-leo-unit.mjs
+      # PDF fictício gerado no próprio teste; nenhum dado de aluno.
+      - run: node tests/agenda-pdf-leo-browser.mjs
