@@ -220,6 +220,10 @@
     // The catalog does not expand the legacy subject. Materialize its real module
     // DOM only after authorization/loading, before resolving the selected index.
     if(current() && !current().classList.contains('open')) global.toggleSubject?.(subjectId);
+    // Civil/CPP replace the legacy body through their native observers. Resolve
+    // the module only after that replacement, never from the transient markup.
+    await new Promise(resolve=>requestAnimationFrame(resolve));
+    if(ticket!==selection||state.subject!==subjectId||state.stage!=='modules')return;
     const modules=moduleNodes(current()),m=modules[index];
     if(!m)return;
     state.stage='reading';state.moduleKey=m.key;state.moduleTitle=m.label;state.moduleNumber=m.count;

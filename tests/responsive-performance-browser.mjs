@@ -34,7 +34,7 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
 const readingReady=p=>p.waitForFunction(()=>[...document.querySelectorAll('.bc-native-article,.cf-native-content,.bc-info-reader-content,.bc-m01-paper')].some(e=>e.getBoundingClientRect().height>0 && e.textContent.length>200),null,{timeout:30000});
 const closeReader=p=>p.locator('.bc-native-reader-close:visible,[data-bc-guided-close]:visible,[data-bc-info-close]:visible').first().click({timeout:5000});
 const timings=p=>p.evaluate(()=>({measures:performance.getEntriesByType('measure').filter(e=>e.name.startsWith('bc:')).map(e=>({name:e.name,ms:e.duration})),requests:performance.getEntriesByType('resource').length,transferBytes:performance.getEntriesByType('resource').reduce((sum,e)=>sum+e.transferSize,0)}));
-const measure=p=>p.evaluate(()=>{const selectors=['.subject-name','.bc-focus-module-copy strong','#centralSidebar .nav-text','.bc-ui-scale-options button','.bc-native-article','.bc-m01-paper','.bcqa-title b'];return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,viewport:document.querySelector('meta[name="viewport"]')?.content,elements:selectors.map(selector=>{const e=[...document.querySelectorAll(selector)].find(e=>e.getBoundingClientRect().width);if(!e)return {selector};const r=e.getBoundingClientRect();return {selector,font:getComputedStyle(e).fontSize,width:r.width,height:r.height};})};});
+const measure=p=>p.evaluate(()=>{const selectors=['#homeView .home-grid','#studentMoreButton .nav-text','.subject-name','.bc-focus-module-copy strong','#centralSidebar .nav-text','.bc-ui-scale-options button','.bc-native-article','.bc-m01-paper','.bcqa-title b'];return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,viewport:document.querySelector('meta[name="viewport"]')?.content,elements:selectors.map(selector=>{const e=[...document.querySelectorAll(selector)].find(e=>e.getBoundingClientRect().width);if(!e)return {selector};const r=e.getBoundingClientRect();return {selector,font:getComputedStyle(e).fontSize,width:r.width,height:r.height};})};});
 try{
  for(const slow of (process.env.BC_VISUAL_ONLY?[]:[false,true])){
   const context=await browser.newContext({viewport:{width:1366,height:768},serviceWorkers:'block'}),page=await context.newPage();
@@ -83,6 +83,7 @@ try{
     }
     if(!process.env.BC_BASELINE&&screen==='modules'){
      const fonts=samples.map(s=>s.elements.find(e=>e.selector==='.bc-focus-module-copy strong')?.font);
+     if(width>=1366&&samples.some(s=>s.elements.find(e=>e.selector==='#homeView .home-grid')?.width<width*0.7))results.failures.push({screen,width,height,error:'module list still constrained on desktop'});
      if(new Set(fonts).size!==4)results.failures.push({screen,width,height,error:'scale does not produce four distinct module font sizes',fonts});
      if(samples.some(s=>s.width!==width||s.viewport!=='width=device-width,initial-scale=1'))results.failures.push({screen,width,height,error:'viewport changed'});
     }

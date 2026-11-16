@@ -171,7 +171,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice
 }
 /* Ao escolher uma disciplina, só o seletor de módulos ocupa a tela. */
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView:is(.bc-focus-modules-stage,.bc-focus-reading) .home-grid{
-  display:block!important;max-width:870px!important;margin:auto!important;
+  display:block!important;margin:auto!important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView:is(.bc-focus-modules-stage,.bc-focus-reading) .home-grid>.side-col,
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView:is(.bc-focus-modules-stage,.bc-focus-reading) #disciplinasHome,

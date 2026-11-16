@@ -45,7 +45,7 @@ test('primeiro módulo materializa o corpo nativo fechado após carregar a disci
  let ready=false,opened=0;
  w.CentralModuleCatalog={adm:[{number:1,title:'Título atual'}]};
  w.CentralDisciplineLoader={isReady:()=>ready,isLoading:()=>false,hasError:()=>false,load:async()=>{ready=true;}};
- w.toggleSubject=()=>{assert.equal(ready,true);const s=w.document.querySelector('.subject');s.classList.add('open');s.querySelector('.subject-body').innerHTML='<div class="topic-item" data-uid="adm-01"><button class="open-topic">Abrir</button><span class="topic-title">Título atual</span></div>';s.querySelector('.open-topic').onclick=()=>opened++;};
+ w.toggleSubject=()=>{assert.equal(ready,true);const s=w.document.querySelector('.subject');s.classList.add('open');s.querySelector('.subject-body').innerHTML='<div class="topic-item" data-uid="legacy"><button class="open-topic">Legado</button></div>';queueMicrotask(()=>{s.querySelector('.subject-body').innerHTML='<div class="topic-item" data-uid="adm-01"><button class="open-topic">Abrir</button><span class="topic-title">Título atual</span></div>';s.querySelector('.open-topic').onclick=()=>opened++;});};
  w.eval(readFileSync('ui/disciplinas-foco-v1.js','utf8'));await new Promise(r=>setTimeout(r,20));w.BaseCompletaFocusNavigation.chooseSubject('adm');
  await w.BaseCompletaFocusNavigation.openModule(0);
  assert.equal(opened,1);assert.equal(w.BaseCompletaFocusNavigation.state.stage,'reading');assert.equal(w.BaseCompletaFocusNavigation.state.moduleKey,'adm-01');
