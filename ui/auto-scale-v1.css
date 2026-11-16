@@ -21,7 +21,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice
 html.bc-ui-v1 body :is(button,input,select,textarea) { font-family:var(--bc-font); }
 html.bc-ui-v1 body :is(.btn,.cf-study-open,.cv-btn,.bc-ui-scale-options button) { min-height:44px; }
 html.bc-ui-v1 .bc-ui-scale-options { grid-template-columns:repeat(2,minmax(0,1fr)); }
-html.bc-ui-v1 .bc-ui-scale-options button { white-space:normal; overflow-wrap:anywhere; font-size:0.875rem; }
+html.bc-ui-v1 .bc-ui-scale-options button { white-space:normal; overflow-wrap:anywhere; font-size:1rem; }
 /* Let the navigation height follow wrapped text, rather than scaled offsetHeight. */
 @media(min-width:801px) {
   html.student-experience-v3.bc-ui-v1.bc-topnav:root { --bc-nav-height:5.5rem!important; }
@@ -55,4 +55,8 @@ html.bc-ui-v1 .bc-ui-scale-options button { white-space:normal; overflow-wrap:an
   #homeView .bc-focus-breadcrumb { flex-basis:50%; }
 }
 html.student-reader-active.bc-ui-v1.bc-topnav:root { --bc-nav-height:0px!important; }
+@media(max-width:800px) {
+  html.student-experience-v3.bc-topnav #centralSidebar .nav .nav-text { font-size:0.75rem!important; }
+  html.student-experience-v3.bc-topnav #centralSidebar .student-nav-scroll button { min-height:44px!important; min-width:5.5rem!important; }
+}
 @media print { html:root {font-size:100%} }

@@ -66,7 +66,7 @@
     block.setAttribute('aria-labelledby', 'bcUiScaleTitle');
     block.innerHTML = '<div><span class="bc-ui-scale-kicker">ESTE APARELHO</span>' +
       '<h3 id="bcUiScaleTitle">Tamanho da tela</h3>' +
-      '<p>No Automático, textos e botões se ajustam sozinhos ao tamanho da tela (celular, tablet ou computador). Se algo ainda parecer pequeno, escolha Maior. Vale só neste aparelho.</p></div>' +
+      '<p>No Automático, textos e botões se ajustam ao celular, tablet ou computador. Você também pode escolher um tamanho manual. Vale só neste aparelho.</p></div>' +
       '<div class="bc-ui-scale-options" role="group" aria-label="Tamanho da tela">' +
       OPTIONS.map(function (o) { return '<button type="button" data-bc-ui-scale="' + o[0] + '">' + o[1] + '</button>'; }).join('') +
       '</div>';
