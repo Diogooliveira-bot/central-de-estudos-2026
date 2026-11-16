@@ -27,6 +27,8 @@ const server=createServer(async(req,res)=>{
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const base='http://127.0.0.1:'+server.address().port;
 const browser=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),headless:true,args:['--no-sandbox']});
+const cpu=async cdp=>{const {metrics}=await cdp.send('Performance.getMetrics');return Object.fromEntries(metrics.filter(m=>['ScriptDuration','LayoutDuration','RecalcStyleDuration','TaskDuration'].includes(m.name)).map(m=>[m.name,m.value*1000]));};
+const delta=(a,b)=>Object.fromEntries(Object.keys(b).map(k=>[k,b[k]-(a[k]||0)]));
 const results={environment:{root,network:'local gzip; Chromium CDP throttling; mocked account/API; SW blocked'},runs:[],catalog:{},visual:[],failures:[]};
 const subjects=['cf','adm','civil','penal','cpc','cpp','pt','rlm','info'];
 const ready=p=>p.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',null,{timeout:120000});
@@ -38,16 +40,16 @@ const measure=p=>p.evaluate(()=>{const selectors=['#homeView .home-grid','#stude
 try{
  for(const slow of (process.env.BC_VISUAL_ONLY?[]:[false,true])){
   const context=await browser.newContext({viewport:{width:1366,height:768},serviceWorkers:'block'}),page=await context.newPage();
-  const errors=[];page.on('pageerror',e=>errors.push(e.message));const cdp=await context.newCDPSession(page);
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));const cdp=await context.newCDPSession(page);await cdp.send('Performance.enable');await page.addInitScript(()=>performance.setResourceTimingBufferSize(2000));
   if(slow){await cdp.send('Network.enable');await cdp.send('Network.emulateNetworkConditions',{offline:false,downloadThroughput:1600000/8,uploadThroughput:750000/8,latency:150});await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});}
   for(const access of ['cold','warm']){
-   let start=performance.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);await settle(page);
-   const run={slow,access,bootMs:performance.now()-start,subjects:[],errors,bootTiming:await timings(page)};results.runs.push(run);
+   const bootCpu=await cpu(cdp);let start=performance.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);await settle(page);
+   const run={slow,access,bootMs:performance.now()-start,subjects:[],errors,bootTiming:await timings(page),bootCpuMs:delta(bootCpu,await cpu(cdp))};results.runs.push(run);
    for(const id of subjects){
     let modulesMs=null;
     try{
      if(id!==subjects[0]){await page.goto(base,{waitUntil:'domcontentloaded',timeout:60000});await ready(page);}
-     await page.evaluate(()=>window.openHome());start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);
+     await page.evaluate(()=>window.openHome());const subjectCpu=await cpu(cdp);start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);
      await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:30000});await settle(page);
      modulesMs=performance.now()-start;
      results.catalog[id]=await page.locator('#bcFocusModules .bc-focus-module-card').evaluateAll(nodes=>nodes.map(n=>({title:n.querySelector('strong')?.textContent,number:n.querySelector('.bc-focus-module-number')?.textContent})));
@@ -60,7 +62,7 @@ try{
      const readingMs=performance.now()-start;
      await closeReader(page);
      const fullStart=performance.now();await section.locator('button:visible').filter({hasText:/Estudar conteúdo/}).first().click();await readingReady(page);await settle(page);const fullReadingMs=performance.now()-fullStart;await closeReader(page);
-     const timing=await timings(page);await page.evaluate(()=>{window.openHome();window.BaseCompletaFocusNavigation.backToSubjects();});
+     const timing=await timings(page);timing.cpuMs=delta(subjectCpu,await cpu(cdp));await page.evaluate(()=>{window.openHome();window.BaseCompletaFocusNavigation.backToSubjects();});
      start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:30000});await settle(page);
      const reopenMs=performance.now()-start;
      run.subjects.push({id,modulesMs,readingMs,fullReadingMs,reopenMs,timing,count:results.catalog[id].length});console.log(JSON.stringify({slow,access,id,modulesMs,readingMs,fullReadingMs,reopenMs}));
