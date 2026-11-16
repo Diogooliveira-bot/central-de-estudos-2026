@@ -1,10 +1,8 @@
 name: Responsiveness and performance comparison
 on:
-  push:
-    branches: ['fix/responsividade-desempenho-20261115']
   pull_request:
     branches: [main]
-    paths: ['ui/tablet-scale-v1.js', 'tests/responsive-performance-browser.mjs', 'central-discipline-loader.js', '.github/workflows/responsive-performance.yml']
+    paths: ['ui/**', 'index.html', 'central-*.js', 'central-v119.html', 'tests/responsive-performance-browser.mjs', '.github/workflows/responsive-performance.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -13,8 +11,13 @@ concurrency:
   cancel-in-progress: true
 jobs:
   browser:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [before, after]
+        mode: [visual, performance]
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,14 +28,24 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - name: Baseline at the reviewed main commit
+      - name: Select reviewed source
         run: |
-          git worktree add --detach ../baseline 4defec04e2a99b4bce26f9a9573ae46a9c786454
-          BC_TEST_ROOT=../baseline BC_TEST_OUT=audits/responsividade-20261115/before BC_BASELINE=1 node tests/responsive-performance-browser.mjs
-      - name: Candidate
+          if [ '${{ matrix.version }}' = before ]; then
+            git worktree add --detach ../baseline 4defec04e2a99b4bce26f9a9573ae46a9c786454
+            echo 'BC_TEST_ROOT=../baseline' >> "$GITHUB_ENV"
+            echo 'BC_BASELINE=1' >> "$GITHUB_ENV"
+          fi
+          if [ '${{ matrix.mode }}' = visual ]; then
+            echo 'BC_VISUAL_ONLY=1' >> "$GITHUB_ENV"
+          else
+            echo 'BC_PERF_ONLY=1' >> "$GITHUB_ENV"
+          fi
+      - name: Validate actual browser
+        env:
+          BC_TEST_OUT: audits/responsividade-20261115/${{ matrix.version }}-${{ matrix.mode }}
         run: node tests/responsive-performance-browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: responsive-performance-evidence
-          path: audits/responsividade-20261115/
+          name: responsive-${{ matrix.version }}-${{ matrix.mode }}
+          path: audits/responsividade-20261115/${{ matrix.version }}-${{ matrix.mode }}/

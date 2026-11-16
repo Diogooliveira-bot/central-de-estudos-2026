@@ -25,7 +25,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
       : file.includes('student-plan') ? '20261019-qc-catalog1'
         : file.includes('student-shell') ? '20261105nav1' : file.includes('auth-shell') ? '20261020studyobj1'
           : file.includes('student-dashboard') ? '20261105resume1'
-          : file.includes('external-question-filters') ? `${build}-min20-titles1` : file.includes('student-ux-core') ? '20261114trilha1' : '';
+          : file.includes('external-question-filters') ? `${build}-min20-titles1` : file.includes('student-ux-core') ? '20261115responsive1' : '';
     assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
   }
   assert.match(boot, /student-experience-v3\.css\?v='\+BUILD/);
@@ -103,10 +103,10 @@ test('home minimalista utiliza o mascote oficial hospedado na Central', async ()
     read('central-offline-files-v66172.json'),
     readFile(new URL('../assets/mascote-oficial-estudando.png', import.meta.url)),
   ]);
-  assert.match(boot, /home-minimal-a-v1\.css\?v=20261101oficial1/);
+  assert.match(boot, /home-minimal-a-v1\.css\?v=20261115responsive1/);
   assert.match(css, /\/assets\/mascote-oficial-estudando\.png\?v=20261101-oficial1/);
   assert.doesNotMatch(css, /basecompleta\.com\.br\/img\/mascote-estudando\.webp/);
-  assert.ok(JSON.parse(offline).files.includes('/ui/home-minimal-a-v1.css?v=20261101oficial1'));
+  assert.ok(JSON.parse(offline).files.includes('/ui/home-minimal-a-v1.css?v=20261115responsive1'));
   assert.ok(JSON.parse(offline).files.includes('/assets/mascote-oficial-estudando.png?v=20261101-oficial1'));
   assert.ok(mascot.byteLength > 1000);
   assert.equal(mascot.subarray(0,8).toString('hex'), '89504e470d0a1a0a');
@@ -120,10 +120,10 @@ test('fluxo progressivo usa módulos reais e não altera o conteúdo ou o acesso
     read('central-v119.html'),read('ui/disciplinas-foco-v1.css'),
     read('ui/disciplinas-foco-v1.js'),read('central-offline-files-v66172.json'),
   ]);
-  assert.match(boot,/disciplinas-foco-v1\.js\?v=20261107cpclist3/);
-  assert.match(boot,/disciplinas-foco-v1\.css\?v=20261107modulelist2/);
-  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.js?v=20261107cpclist3'));
-  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.css?v=20261107modulelist2'));
+  assert.match(boot,/disciplinas-foco-v1\.js\?v=20261115responsive1/);
+  assert.match(boot,/disciplinas-foco-v1\.css\?v=20261115responsive1/);
+  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.js?v=20261115responsive1'));
+  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.css?v=20261115responsive1'));
   assert.match(script,/BaseCompletaFocusNavigation/);
   assert.match(script,/moduleNodes\(subject\)/);
   assert.match(script,/m\.head\.click\(\)/);

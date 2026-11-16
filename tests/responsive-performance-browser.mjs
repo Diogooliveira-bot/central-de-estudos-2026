@@ -20,18 +20,18 @@ const server=createServer(async(req,res)=>{
  try{let body=await readFile(f);const headers={'content-type':mime[extname(f)]||'application/octet-stream','cache-control':'no-cache, must-revalidate'};
  // Match explicitly configured public versioned headers, never infer from extension.
  const config=JSON.parse(await readFile(resolve(root,'vercel.json'),'utf8'));
- for(const rule of config.headers||[])if(rule.source===p&&rule.has?.some(h=>h.type==='query'&&h.key==='v')&&u.searchParams.has('v'))for(const h of rule.headers)headers[h.key.toLowerCase()]=h.value;
+ for(const rule of config.headers||[])if((rule.source===p||(rule.source==='/ui/(.*).css'&&/^\/ui\/.*\.css$/.test(p)))&&rule.has?.some(h=>h.type==='query'&&h.key==='v')&&u.searchParams.has('v'))for(const h of rule.headers)headers[h.key.toLowerCase()]=h.value;
  if(/\.(js|html|css|json|svg)$/.test(f)){body=gzipSync(body);headers['content-encoding']='gzip';}res.writeHead(200,headers);res.end(body);
  }catch{res.writeHead(404);res.end('NOT_FOUND');}
 });
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const base='http://127.0.0.1:'+server.address().port;
 const browser=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),headless:true,args:['--no-sandbox']});
-const results={environment:{root,network:'local gzip; Chromium CDP throttling; mocked account/API; SW blocked'},runs:[],catalog:{},visual:[]};
-const subjects=['cf','adm','civil','penal','cpc','cpp','pt','rlm','informatica'];
+const results={environment:{root,network:'local gzip; Chromium CDP throttling; mocked account/API; SW blocked'},runs:[],catalog:{},visual:[],failures:[]};
+const subjects=['cf','adm','civil','penal','cpc','cpp','pt','rlm','info'];
 const ready=p=>p.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',null,{timeout:120000});
 const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-const measure=p=>p.evaluate(()=>{const selectors=['.subject-name','.bc-focus-module-copy strong','#centralSidebar .nav-text','.bc-ui-scale-options button'];return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,viewport:document.querySelector('meta[name="viewport"]')?.content,elements:selectors.map(selector=>{const e=[...document.querySelectorAll(selector)].find(e=>e.getBoundingClientRect().width);if(!e)return {selector};const r=e.getBoundingClientRect();return {selector,font:getComputedStyle(e).fontSize,width:r.width,height:r.height};})};});
+const measure=p=>p.evaluate(()=>{const selectors=['.subject-name','.bc-focus-module-copy strong','#centralSidebar .nav-text','.bc-ui-scale-options button','.bc-native-article','.bc-m01-paper','.bcqa-title b'];return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,viewport:document.querySelector('meta[name="viewport"]')?.content,elements:selectors.map(selector=>{const e=[...document.querySelectorAll(selector)].find(e=>e.getBoundingClientRect().width);if(!e)return {selector};const r=e.getBoundingClientRect();return {selector,font:getComputedStyle(e).fontSize,width:r.width,height:r.height};})};});
 try{
  for(const slow of (process.env.BC_VISUAL_ONLY?[]:[false,true])){
   const context=await browser.newContext({viewport:{width:1366,height:768},serviceWorkers:'block'}),page=await context.newPage();
@@ -41,23 +41,25 @@ try{
    let start=performance.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);await settle(page);
    const run={slow,access,bootMs:performance.now()-start,subjects:[],errors};results.runs.push(run);
    for(const id of subjects){
+    let modulesMs=null;
     try{
+     if(id!==subjects[0]){await page.goto(base,{waitUntil:'domcontentloaded',timeout:60000});await ready(page);}
      await page.evaluate(()=>window.openHome());start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);
-     await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:120000});await settle(page);
-     const modulesMs=performance.now()-start;
+     await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:30000});await settle(page);
+     modulesMs=performance.now()-start;
      results.catalog[id]=await page.locator('#bcFocusModules .bc-focus-module-card').evaluateAll(nodes=>nodes.map(n=>({title:n.querySelector('strong')?.textContent,number:n.querySelector('.bc-focus-module-number')?.textContent})));
-     start=performance.now();await page.locator('#bcFocusModules .bc-focus-module-card').first().click();
-     await page.waitForFunction(()=>window.BaseCompletaFocusNavigation.state.stage==='reading',null,{timeout:120000});
+     start=performance.now();await page.locator('#bcFocusModules .bc-focus-module-card').nth(id==='rlm'?1:0).click({timeout:15000});
+     await page.waitForFunction(()=>window.BaseCompletaFocusNavigation.state.stage==='reading',null,{timeout:30000});
      const section=page.locator('#subjects > .subject[data-id="'+id+'"]');
      const button=section.locator('button:visible').filter({hasText:/Revisar conteúdo/}).first();
      await button.waitFor({timeout:15000});await button.click();
-     await page.waitForFunction(()=>document.documentElement.classList.contains('student-reader-active') && !/Carregando (?:a )?leitura|Preparando (?:a )?leitura/.test(document.body.innerText),null,{timeout:60000});await settle(page);
+     await page.waitForFunction(()=>[...document.querySelectorAll('.bc-native-article,.cf-native-content,.ptn-reader-content,.bc-info-reader-content,.bc-m01-paper')].some(e=>e.getBoundingClientRect().height>0 && e.textContent.length>200),null,{timeout:30000});await settle(page);
      const readingMs=performance.now()-start;
-     await page.keyboard.press('Escape');await page.evaluate(()=>{window.openHome();window.BaseCompletaFocusNavigation.backToSubjects();});
+     await page.locator('.bc-native-reader-close:visible,[data-bc-guided-close]:visible,[data-bc-info-close]:visible').first().click({timeout:5000});await page.evaluate(()=>{window.openHome();window.BaseCompletaFocusNavigation.backToSubjects();});
      start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:30000});await settle(page);
      const reopenMs=performance.now()-start;
-     run.subjects.push({id,modulesMs,readingMs,reopenMs,count:results.catalog[id].length});
-    }catch(e){run.subjects.push({id,error:e.message.slice(0,280)});await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);}
+     run.subjects.push({id,modulesMs,readingMs,reopenMs,count:results.catalog[id].length});console.log(JSON.stringify({slow,access,...run.subjects.at(-1)}));
+    }catch(e){run.subjects.push({id,modulesMs,error:e.message.slice(0,280)});console.log(JSON.stringify(run.subjects.at(-1)));await page.screenshot({path:out+'/'+(slow?'slow':'normal')+'-'+access+'-'+id+'-failure.png'});await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);}
     await writeFile(out+'/results.json',JSON.stringify(results,null,2));
    }
   }
@@ -67,12 +69,38 @@ try{
   const sizes=process.env.BC_BASELINE?[[390,844],[820,1180],[1920,1080]]:[[360,800],[390,844],[430,932],[768,1024],[1024,768],[820,1180],[1180,820],[1024,1366],[1366,1024],[1366,768],[1920,1080],[2560,1440]];
   for(const [width,height] of sizes){
    const c=await browser.newContext({viewport:{width,height},isMobile:width<1100,hasTouch:width<1100,serviceWorkers:'block'}),p=await c.newPage();await p.goto(base,{waitUntil:'domcontentloaded'});await ready(p);
-   await p.screenshot({path:out+`/${width}x${height}-home.png`});
-   await p.evaluate(()=>{openHome();BaseCompletaFocusNavigation.chooseSubject('adm');});await p.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({timeout:60000});await settle(p);
-   for(const scale of [0,1,1.15,1.3]){await p.evaluate(s=>BCUiScale.set(s),scale);await settle(p);results.visual.push({width,height,scale,...await measure(p)});}
-   await p.evaluate(()=>BCUiScale.set(0));await settle(p);await p.screenshot({path:out+`/${width}x${height}-modules.png`});
+   const inspect=async screen=>{
+    const samples=[];
+    for(const scale of [0,1,1.15,1.3]){
+     await p.evaluate(s=>BCUiScale.set(s),scale);await settle(p);
+     const sample={screen,width,height,scale,...await measure(p)};samples.push(sample);results.visual.push(sample);
+     if(sample.scrollWidth>sample.width+1)results.failures.push({screen,width,height,scale,error:'document horizontal overflow'});
+    }
+    if(!process.env.BC_BASELINE&&screen==='modules'){
+     const fonts=samples.map(s=>s.elements.find(e=>e.selector==='.bc-focus-module-copy strong')?.font);
+     if(new Set(fonts).size!==4)results.failures.push({screen,width,height,error:'scale does not produce four distinct module font sizes',fonts});
+     if(samples.some(s=>s.width!==width||s.viewport!=='width=device-width,initial-scale=1'))results.failures.push({screen,width,height,error:'viewport changed'});
+    }
+    await p.evaluate(()=>BCUiScale.set(0));await settle(p);await p.screenshot({path:out+`/${width}x${height}-${screen}.png`});
+   };
+   try{
+    await inspect('home');
+    await p.evaluate(()=>openDisciplines());await settle(p);await inspect('disciplines');
+    await p.evaluate(()=>{openHome();BaseCompletaFocusNavigation.chooseSubject('adm');});await p.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({timeout:30000});await settle(p);await inspect('modules');
+    await p.locator('#bcFocusModules .bc-focus-module-card').first().click();await p.waitForFunction(()=>BaseCompletaFocusNavigation.state.stage==='reading',null,{timeout:30000});
+    await p.locator('#subjects>.subject[data-id="adm"] button:visible').filter({hasText:'Revisar conteúdo'}).first().click();await p.locator('.bc-native-article').waitFor({timeout:15000});await inspect('summary');
+    await p.locator('.bc-native-reader-close:visible').first().click();
+    await p.locator('#subjects>.subject[data-id="adm"] button:visible').filter({hasText:'Estudar conteúdo'}).first().click();await p.locator('.bc-native-article').waitFor({timeout:15000});await inspect('complete');
+    await p.locator('.bc-native-reader-close:visible').first().click();
+    await p.evaluate(()=>openAgenda());await settle(p);await inspect('agenda');
+    await p.evaluate(()=>openPerformance());await settle(p);await inspect('progress');
+    await p.evaluate(()=>BCQuestoesArea.openMenu());await settle(p);await inspect('questions');await p.evaluate(()=>BCQuestoesArea.close());
+    await p.evaluate(()=>openCentralSettings());await settle(p);await inspect('settings');await p.evaluate(()=>closeCentralSettings());
+    await p.locator('#studentMoreButton').click();await settle(p);await inspect('menu');
+   }catch(e){results.failures.push({width,height,error:e.message});await p.screenshot({path:out+`/${width}x${height}-failure.png`});}
    await c.close();await writeFile(out+'/results.json',JSON.stringify(results,null,2));
   }
  }
 }finally{await writeFile(out+'/results.json',JSON.stringify(results,null,2));await browser.close();server.close();}
-console.log(JSON.stringify({runs:results.runs.map(r=>({slow:r.slow,access:r.access,bootMs:r.bootMs,subjects:r.subjects})),visualCases:results.visual.length}));
+if(results.failures.length&&!process.env.BC_BASELINE)process.exitCode=1;
+console.log(JSON.stringify({failures:results.failures,runs:results.runs.map(r=>({slow:r.slow,access:r.access,bootMs:r.bootMs,subjects:r.subjects})),visualCases:results.visual.length}));

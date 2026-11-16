@@ -17,7 +17,7 @@
   border: 1px solid rgba(255, 255, 255, .18) !important;
   border-radius: 8px !important;
   box-shadow: none !important;
-  font: 650 13px/1 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  font: 650 0.8125rem/1 system-ui, -apple-system, "Segoe UI", sans-serif !important;
   padding: 8px 12px !important;
   text-decoration: none !important;
   display: inline-flex !important;
@@ -30,13 +30,13 @@ header.filter-topbar, .vm-header {
 }
 header.filter-topbar .brand strong, .vm-header .vm-brand strong {
   color: var(--bc-tool-ink) !important;
-  font: 800 16px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  font: 800 1rem/1.2 system-ui, -apple-system, "Segoe UI", sans-serif !important;
   letter-spacing: .05em !important;
   text-transform: uppercase !important;
 }
 header.filter-topbar .brand span, .vm-header .vm-brand small {
   color: var(--bc-tool-accent) !important;
-  font: 600 11px/1.3 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  font: 600 0.6875rem/1.3 system-ui, -apple-system, "Segoe UI", sans-serif !important;
   margin-top: 3px !important;
 }
 header.filter-topbar .sync-indicator { color: #9fc3cc !important; }

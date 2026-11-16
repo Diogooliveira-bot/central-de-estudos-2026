@@ -60,11 +60,11 @@ html #homeView.bc-focus-has-module #subjects [data-cpp-native-zone] .bc-reading-
 }
 html #homeView.bc-focus-has-module #subjects [data-cpp-native-zone] .bc-reading-progress-only .adm-native-progress-copy b {
   color:var(--bc-color-text,#173149)!important;
-  font-size:14px!important;
+  font-size:0.875rem!important;
 }
 html #homeView.bc-focus-has-module #subjects [data-cpp-native-zone] .bc-reading-progress-only .adm-native-progress-copy span {
   color:var(--bc-color-primary,#0b8f9c)!important;
-  font-size:14px!important;
+  font-size:0.875rem!important;
   font-weight:750!important;
 }
 html #homeView.bc-focus-has-module #subjects [data-cpp-native-zone] .bc-reading-progress-only .adm-native-wide-bar {
@@ -107,7 +107,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-readin
 #subjects .subject[data-id="civil"] .cv-module.bc-focus-current-module > .cv-module-head::before {
   content:"Recolher módulo";
   color:var(--bc-color-text-secondary,#60798a)!important;
-  font-size:12px!important;
+  font-size:0.75rem!important;
   font-weight:600!important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module
@@ -135,7 +135,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-readin
 #subjects .subject[data-id="cpp"] .topic-item.bc-focus-current-module > .topic-row::before {
   content:"Recolher módulo";
   color:var(--bc-color-text-secondary,#60798a)!important;
-  font-size:12px!important;
+  font-size:0.75rem!important;
   font-weight:600!important;
 }
 
@@ -163,7 +163,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-readin
 #subjects .subject[data-id="adm"] .topic-item.adm-native-module-row.bc-focus-current-module > .topic-row::before {
   content:"Recolher módulo";
   color:var(--bc-color-text-secondary,#60798a)!important;
-  font-size:12px!important;
+  font-size:0.75rem!important;
   font-weight:600!important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module

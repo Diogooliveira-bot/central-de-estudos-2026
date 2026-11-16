@@ -150,7 +150,7 @@
   const style = document.createElement('style');
   style.textContent = 'abbr.bc-acr{text-decoration:underline dotted;text-underline-offset:2px;cursor:help;border-radius:3px}' +
     'abbr.bc-acr:focus-visible{outline:2px solid #1d7f86;outline-offset:2px}' +
-    '.bc-acr-tip{position:fixed;z-index:2147483100;padding:8px 11px;border-radius:9px;background:#12384e;color:#fff;font:600 13px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.25);text-align:left}';
+    '.bc-acr-tip{position:fixed;z-index:2147483100;padding:8px 11px;border-radius:9px;background:#12384e;color:#fff;font:600 0.8125rem/1.4 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.25);text-align:left}';
   document.head.appendChild(style);
 
   let queued = false;

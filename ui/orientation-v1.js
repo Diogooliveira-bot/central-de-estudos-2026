@@ -188,18 +188,18 @@
     s.textContent =
       '.bc-orient{margin:0 0 14px;padding:12px 14px;border:1px solid var(--line,rgba(127,127,127,.28));border-left:3px solid var(--accent,#24c77a);border-radius:10px;background:var(--panel,transparent);color:var(--text,inherit)}' +
       '.bc-orient-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}' +
-      '.bc-orient-head b{font-size:13px}' +
+      '.bc-orient-head b{font-size:0.8125rem}' +
       '.bc-orient-bare{margin:0;padding:6px 0 0;border:0;border-left:0;background:transparent}' +
       '.bc-orient-bare .bc-orient-head{justify-content:flex-end;margin:0}' +
-      '.bc-orient p{margin:4px 0;font-size:13px;line-height:1.5}' +
+      '.bc-orient p{margin:4px 0;font-size:0.8125rem;line-height:1.5}' +
       '.bc-orient strong{font-weight:800}' +
-      '.bc-orient-edit,.bc-orient-actions button{min-height:30px;padding:4px 10px;border:1px solid var(--line2,rgba(127,127,127,.4));border-radius:8px;background:var(--panel2,transparent);color:var(--text,inherit);font:inherit;font-size:12px;font-weight:700;cursor:pointer}' +
+      '.bc-orient-edit,.bc-orient-actions button{min-height:30px;padding:4px 10px;border:1px solid var(--line2,rgba(127,127,127,.4));border-radius:8px;background:var(--panel2,transparent);color:var(--text,inherit);font:inherit;font-size:0.75rem;font-weight:700;cursor:pointer}' +
       '.bc-orient-form{display:grid;gap:8px}' +
-      '.bc-orient-form label{display:grid;gap:3px;font-size:12px;font-weight:800}' +
-      '.bc-orient-form textarea{width:100%;box-sizing:border-box;padding:8px;border:1px solid var(--line2,rgba(127,127,127,.4));border-radius:8px;background:var(--input,transparent);color:var(--text,inherit);font:inherit;font-size:13px;font-weight:400;resize:vertical}' +
+      '.bc-orient-form label{display:grid;gap:3px;font-size:0.75rem;font-weight:800}' +
+      '.bc-orient-form textarea{width:100%;box-sizing:border-box;padding:8px;border:1px solid var(--line2,rgba(127,127,127,.4));border-radius:8px;background:var(--input,transparent);color:var(--text,inherit);font:inherit;font-size:0.8125rem;font-weight:400;resize:vertical}' +
       '.bc-orient-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px}' +
       '.bc-orient-save{border-color:rgba(36,199,122,.7)!important}' +
-      '.bc-orient-status,.bc-orient-flash{font-size:12px;color:var(--muted,inherit)}';
+      '.bc-orient-status,.bc-orient-flash{font-size:0.75rem;color:var(--muted,inherit)}';
     document.head.appendChild(s);
   }
 

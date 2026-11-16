@@ -121,14 +121,14 @@ html.central-minimal-v66119 .ct-head{
 
 html.central-minimal-v66119 .ct-head span{
   color:var(--cm-accent)!important;
-  font-size:9px!important;
+  font-size:0.5625rem!important;
   letter-spacing:.09em!important;
 }
 
 html.central-minimal-v66119 .ct-head b{
   margin-top:5px!important;
   font-family:Georgia,"Times New Roman",serif!important;
-  font-size:17px!important;
+  font-size:1.0625rem!important;
   line-height:1.35!important;
   font-weight:600!important;
 }
@@ -136,13 +136,13 @@ html.central-minimal-v66119 .ct-head b{
 html.central-minimal-v66119 .ct-head small{
   margin-top:5px!important;
   color:var(--cm-muted)!important;
-  font-size:10px!important;
+  font-size:0.625rem!important;
   line-height:1.5!important;
 }
 
 html.central-minimal-v66119 .ct-head>strong{
   color:var(--cm-accent)!important;
-  font-size:12px!important;
+  font-size:0.75rem!important;
 }
 
 html.central-minimal-v66119 .ct-meter{
@@ -194,7 +194,7 @@ html.central-minimal-v66119 .ct-topic.done .ct-index{
 }
 
 html.central-minimal-v66119 .ct-title b{
-  font-size:13px!important;
+  font-size:0.8125rem!important;
   line-height:1.42!important;
   font-weight:650!important;
 }
@@ -202,10 +202,10 @@ html.central-minimal-v66119 .ct-title b{
 html.central-minimal-v66119 .ct-title small{
   margin-top:4px!important;
   color:var(--cm-accent)!important;
-  font-size:9px!important;
+  font-size:0.5625rem!important;
 }
 
-html.central-minimal-v66119 .ct-status{color:var(--cm-muted)!important;font-size:9px!important}
+html.central-minimal-v66119 .ct-status{color:var(--cm-muted)!important;font-size:0.5625rem!important}
 html.central-minimal-v66119 .ct-topic.done .ct-status{color:var(--cm-success)!important}
 
 html.central-minimal-v66119 .ct-body{
@@ -224,7 +224,7 @@ html.central-minimal-v66119 .ct-section li,
 html.central-minimal-v66119 .ct-callout p,
 html.central-minimal-v66119 .ct-callout li{
   font-family:Georgia,"Times New Roman",serif!important;
-  font-size:16px!important;
+  font-size:1rem!important;
   line-height:1.72!important;
 }
 
@@ -241,7 +241,7 @@ html.central-minimal-v66119 .ct-section h5{
   margin:0 0 9px!important;
   color:var(--cm-text)!important;
   font-family:Georgia,"Times New Roman",serif!important;
-  font-size:20px!important;
+  font-size:1.25rem!important;
   font-weight:600!important;
   letter-spacing:0!important;
 }
@@ -264,7 +264,7 @@ html.central-minimal-v66119 .ct-table-wrap{
 }
 
 html.central-minimal-v66119 .ct-table-wrap table{
-  font-size:11px!important;
+  font-size:0.6875rem!important;
   line-height:1.55!important;
 }
 
@@ -294,7 +294,7 @@ html.central-minimal-v66119 .ct-callout{
 
 html.central-minimal-v66119 .ct-callout>b,
 html.central-minimal-v66119 .ct-basis>b{
-  font-size:10px!important;
+  font-size:0.625rem!important;
   letter-spacing:.035em!important;
 }
 
@@ -329,7 +329,7 @@ html.central-minimal-v66119 .ct-complete button{
   border-radius:9px!important;
   background:transparent!important;
   color:var(--cm-accent)!important;
-  font-size:10px!important;
+  font-size:0.625rem!important;
   box-shadow:none!important;
 }
 
@@ -370,12 +370,12 @@ html.central-minimal-v66119 #central-update-status{
 
 @media(max-width:760px){
   html.central-minimal-v66119 .ct-shell{padding:12px!important}
-  html.central-minimal-v66119 .ct-head b{font-size:16px!important}
+  html.central-minimal-v66119 .ct-head b{font-size:1rem!important}
   html.central-minimal-v66119 .ct-topic summary{min-height:56px!important}
-  html.central-minimal-v66119 .ct-title b{font-size:12px!important}
+  html.central-minimal-v66119 .ct-title b{font-size:0.75rem!important}
   html.central-minimal-v66119 .ct-title small,
   html.central-minimal-v66119 .ct-status,
-  html.central-minimal-v66119 .ct-head small{font-size:9px!important}
+  html.central-minimal-v66119 .ct-head small{font-size:0.5625rem!important}
   html.central-minimal-v66119 .ct-rich .ct-body{
     max-width:none!important;
     padding:14px 14px 21px!important;
@@ -385,10 +385,10 @@ html.central-minimal-v66119 #central-update-status{
   html.central-minimal-v66119 .ct-section li,
   html.central-minimal-v66119 .ct-callout p,
   html.central-minimal-v66119 .ct-callout li{
-    font-size:15px!important;
+    font-size:0.9375rem!important;
     line-height:1.7!important;
   }
-  html.central-minimal-v66119 .ct-section h5{font-size:18px!important}
-  html.central-minimal-v66119 .ct-table-wrap table{font-size:10px!important}
+  html.central-minimal-v66119 .ct-section h5{font-size:1.125rem!important}
+  html.central-minimal-v66119 .ct-table-wrap table{font-size:0.625rem!important}
   html.central-minimal-v66119 .ct-complete button{width:100%!important;min-height:42px!important}
 }

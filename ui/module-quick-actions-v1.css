@@ -30,10 +30,10 @@ html body #appRoot .bc-module-quickbar .bc-module-quick-primary {
 }
 /* O texto segue a cor do botão (regras antigas de botões das disciplinas não podem escurecê-lo). */
 html body #appRoot .bc-module-quickbar .bc-module-quick :is(b, small, span) { color: inherit !important; }
-.bc-module-quick-icon { font-size: 22px; line-height: 1; flex: none; }
+.bc-module-quick-icon { font-size: 1.375rem; line-height: 1; flex: none; }
 .bc-module-quick-text { display: flex; flex-direction: column; min-width: 0; }
-.bc-module-quick-text b { font: 750 15px/1.25 system-ui, -apple-system, "Segoe UI", sans-serif; }
-.bc-module-quick-text small { font: 500 12px/1.35 system-ui, -apple-system, "Segoe UI", sans-serif; opacity: .78; margin-top: 2px; }
+.bc-module-quick-text b { font: 750 0.9375rem/1.25 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.bc-module-quick-text small { font: 500 0.75rem/1.35 system-ui, -apple-system, "Segoe UI", sans-serif; opacity: .78; margin-top: 2px; }
 .bc-module-quick-text small:empty { display: none; }
 @media (max-width: 640px) {
   .bc-module-quickbar { grid-template-columns: 1fr 1fr; }

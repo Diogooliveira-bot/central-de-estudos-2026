@@ -8,7 +8,7 @@
   border-bottom: 1px solid var(--line, #dde2df);
   background: var(--panel, var(--paper, #fff));
   color: var(--ink, var(--text, #20251f));
-  font: 600 14px/1.4 system-ui, sans-serif;
+  font: 600 0.875rem/1.4 system-ui, sans-serif;
 }
 .central-tool-navigation a {
   box-sizing: border-box;

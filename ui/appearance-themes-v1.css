@@ -185,19 +185,19 @@ html.bc-ui-v1 :is(.question-option,.answer-option,.option,.alternative,.q-option
 /* Aparência da Central. */
 .central-settings{width:min(760px,100%)!important}
 .central-appearance-heading{margin:0 0 12px}
-.central-appearance-heading h3{margin:0;color:var(--text);font-size:17px;line-height:1.35}
-.central-appearance-heading p{margin:4px 0 0;color:var(--text-muted);font-size:13px;line-height:1.45}
+.central-appearance-heading h3{margin:0;color:var(--text);font-size:1.0625rem;line-height:1.35}
+.central-appearance-heading p{margin:4px 0 0;color:var(--text-muted);font-size:0.8125rem;line-height:1.45}
 .central-theme-options{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important}
 .central-theme-card{position:relative;display:flex;min-width:0;min-height:148px;flex-direction:column;gap:10px;padding:13px;border:1px solid var(--border);border-radius:13px;background:var(--surface);color:var(--text);transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease}
 .central-theme-card:hover{border-color:var(--accent);transform:translateY(-1px)}
 .central-theme-card.active{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 20%,transparent),var(--theme-shadow)}
 .central-theme-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.central-theme-name{font-size:13px;font-weight:750;line-height:1.3;color:var(--text)}
-.central-theme-active{display:none;flex:0 0 auto;border-radius:999px;padding:3px 7px;background:var(--accent-soft);color:var(--accent);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.central-theme-name{font-size:0.8125rem;font-weight:750;line-height:1.3;color:var(--text)}
+.central-theme-active{display:none;flex:0 0 auto;border-radius:999px;padding:3px 7px;background:var(--accent-soft);color:var(--accent);font-size:0.625rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
 .central-theme-card.active .central-theme-active{display:inline-flex}
 .central-theme-preview{display:grid;grid-template-columns:1.3fr 1fr 1fr .75fr;height:34px;overflow:hidden;border:1px solid color-mix(in srgb,var(--border) 75%,transparent);border-radius:9px}
 .central-theme-preview i{display:block;background:var(--swatch)}
-.central-theme-option{width:100%;min-height:38px!important;margin-top:auto!important;padding:7px 10px!important;border-radius:9px!important;border:1px solid var(--border)!important;background:var(--card)!important;color:var(--text)!important;font-size:12px!important;font-weight:700!important}
+.central-theme-option{width:100%;min-height:38px!important;margin-top:auto!important;padding:7px 10px!important;border-radius:9px!important;border:1px solid var(--border)!important;background:var(--card)!important;color:var(--text)!important;font-size:0.75rem!important;font-weight:700!important}
 .central-theme-card.active .central-theme-option{background:var(--button-bg)!important;border-color:var(--button-bg)!important;color:var(--button-text)!important}
 .central-theme-card.active .central-theme-option::after{content:" ✓"}
 
@@ -212,7 +212,7 @@ html.bc-ui-v1 :is(.progress-line,.subject-bar,.cf-module-bar,.cf-qbar,.anki-duo-
   content:"";position:absolute;right:-5px;top:50%;width:11px;height:11px;transform:translateY(-50%);border:2px solid var(--card);border-radius:50%;background:var(--progress-fill);box-shadow:0 1px 4px rgba(0,0,0,.22)
 }
 html.bc-ui-v1 :is(.progress-line,.subject-bar,.cf-module-bar,.cf-qbar,.anki-duo-progress,.ct-meter,.bc-progress,.bc-global-progress)[data-progress-label]::after{
-  content:attr(data-progress-label);position:absolute;right:0;bottom:15px;padding:3px 7px;border:1px solid color-mix(in srgb,var(--accent) 24%,var(--border));border-radius:999px;background:var(--card);color:var(--accent);font-size:10px;font-weight:800;line-height:1.2;box-shadow:var(--theme-shadow);white-space:nowrap
+  content:attr(data-progress-label);position:absolute;right:0;bottom:15px;padding:3px 7px;border:1px solid color-mix(in srgb,var(--accent) 24%,var(--border));border-radius:999px;background:var(--card);color:var(--accent);font-size:0.625rem;font-weight:800;line-height:1.2;box-shadow:var(--theme-shadow);white-space:nowrap
 }
 
 @media(max-width:720px){

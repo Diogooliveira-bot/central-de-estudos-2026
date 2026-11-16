@@ -19,11 +19,11 @@ async function logout(){
 function addStyles(){
  if(document.getElementById('bc-auth-style'))return;
  var s=document.createElement('style');s.id='bc-auth-style';s.textContent=
- '.bc-auth-chip{display:flex;align-items:center;gap:7px;padding:5px 8px;border:1px solid var(--line,#d9d1c7);border-radius:999px;font-size:10px;background:var(--panel,#fffdf9);max-width:190px}'+
- '.bc-auth-chip span:last-child{min-width:0}.bc-auth-chip b,.bc-auth-chip small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bc-auth-chip b{font-size:10px}.bc-auth-chip small{opacity:.68;font-size:8px}'+
- '.bc-auth-actions{display:flex;align-items:center;gap:6px;margin-left:auto}.bc-auth-actions button,.bc-auth-users{border:1px solid var(--line,#d9d1c7);background:var(--panel2,var(--panel,#fffdf9));color:inherit;border-radius:8px;padding:7px 9px;font-weight:750;font-size:10px;cursor:pointer}.bc-auth-users{text-decoration:none}'+
+ '.bc-auth-chip{display:flex;align-items:center;gap:7px;padding:5px 8px;border:1px solid var(--line,#d9d1c7);border-radius:999px;font-size:0.625rem;background:var(--panel,#fffdf9);max-width:190px}'+
+ '.bc-auth-chip span:last-child{min-width:0}.bc-auth-chip b,.bc-auth-chip small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bc-auth-chip b{font-size:0.625rem}.bc-auth-chip small{opacity:.68;font-size:0.5rem}'+
+ '.bc-auth-actions{display:flex;align-items:center;gap:6px;margin-left:auto}.bc-auth-actions button,.bc-auth-users{border:1px solid var(--line,#d9d1c7);background:var(--panel2,var(--panel,#fffdf9));color:inherit;border-radius:8px;padding:7px 9px;font-weight:750;font-size:0.625rem;cursor:pointer}.bc-auth-users{text-decoration:none}'+
  '.bc-auth-nav-link{width:calc(100% - 12px);margin:3px 6px!important;border:0!important;background:transparent!important;color:var(--muted,#bdcbe0)!important;text-align:left!important;border-radius:11px!important;padding:10px 11px!important;display:flex!important;align-items:center!important;gap:11px!important;min-height:44px!important;font-weight:700!important;text-decoration:none!important}'+
- '.bc-auth-nav-link:hover{background:var(--surface-hover)!important;color:var(--text)!important}.bc-auth-nav-role{font-size:9px;opacity:.72;margin-left:auto}'+
+ '.bc-auth-nav-link:hover{background:var(--surface-hover)!important;color:var(--text)!important}.bc-auth-nav-role{font-size:0.5625rem;opacity:.72;margin-left:auto}'+
  '@media(max-width:680px){.bc-auth-actions .bc-auth-chip{display:none}.bc-auth-actions .bc-auth-users{display:none}.bc-auth-actions{margin-left:auto}.bc-auth-actions button{padding:7px 9px}.topbar .top-actions{display:none!important}}';
  document.head.appendChild(s);
 }

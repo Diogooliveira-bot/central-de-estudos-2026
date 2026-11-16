@@ -51,7 +51,7 @@ html.bc-ui-v1 .bc-reading-cf .cf-native-progress span {background:var(--bc-readi
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-head,
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools {background:var(--bc-reading-paper)!important;border-color:var(--bc-reading-line)!important;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-head {min-height:58px;padding:10px 24px;}
-html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-title b {font-size:14px;}
+html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-title b {font-size:0.875rem;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools {flex-wrap:wrap;overflow:visible;padding:10px 24px;gap:8px;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools input {flex:1 1 200px;width:auto;max-width:320px;min-width:160px;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools button,
@@ -66,11 +66,11 @@ html.bc-ui-v1 .bc-reading-appearance.bc-reading-chapters-open .bc-native-toc {di
 html.bc-ui-v1 .bc-reading-appearance .bc-native-scroll {background:var(--bc-reading-paper)!important;overscroll-behavior:contain;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-article {
   width:min(100%,78ch)!important;max-width:920px!important;padding:36px clamp(20px,4vw,48px) 90px!important;
-  font-family:Georgia,'Times New Roman',serif!important;font-size:var(--bc-reading-size,18px)!important;
+  font-family:Georgia,'Times New Roman',serif!important;font-size:var(--bc-reading-size,1.125rem)!important;
   line-height:1.7!important;color:var(--bc-reading-text)!important;overflow-wrap:break-word;
 }
 html.bc-ui-v1 .bc-reading-appearance .bc-native-article :is(p,li,blockquote,td,th) {font-family:inherit!important;font-size:1em!important;line-height:1.7!important;color:var(--bc-reading-text)!important;}
-html.bc-ui-v1 .bc-reading-appearance .bc-native-article h1 {font-family:inherit!important;font-size:clamp(28px,3vw,40px)!important;line-height:1.2!important;letter-spacing:-.02em;}
+html.bc-ui-v1 .bc-reading-appearance .bc-native-article h1 {font-family:inherit!important;font-size:clamp(1.75rem,3vw,2.5rem)!important;line-height:1.2!important;letter-spacing:-.02em;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-article h2 {font-family:inherit!important;font-size:1.5em!important;line-height:1.3!important;color:var(--bc-reading-text)!important;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-article h3 {font-family:inherit!important;font-size:1.18em!important;line-height:1.4!important;color:var(--bc-reading-text)!important;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-article .lead {color:var(--bc-reading-muted)!important;}
@@ -82,9 +82,9 @@ html.bc-ui-v1 .bc-reading-appearance .bc-native-study-progress {border-color:var
 html.bc-ui-v1 .bc-reading-appearance .bc-native-article table {display:block;max-width:100%;overflow:auto;border-color:var(--bc-reading-line)!important;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-article :is(td,th) {border-color:var(--bc-reading-line)!important;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-article th {background:var(--bc-reading-inset)!important;}
-.bc-reading-appearance-controls {display:flex;align-items:center;gap:5px;margin-left:auto;font:600 13px/1.3 system-ui,sans-serif;}
+.bc-reading-appearance-controls {display:flex;align-items:center;gap:5px;margin-left:auto;font:600 0.8125rem/1.3 system-ui,sans-serif;}
 .bc-reading-appearance-controls button {min-height:40px;padding:8px 12px;border:1px solid var(--bc-reading-line);border-radius:5px;background:var(--bc-reading-paper);color:var(--bc-reading-text);cursor:pointer;white-space:nowrap;}
-.bc-reading-appearance-controls output {min-width:42px;text-align:center;color:var(--bc-reading-muted);font-size:12px;}
+.bc-reading-appearance-controls output {min-width:42px;text-align:center;color:var(--bc-reading-muted);font-size:0.75rem;}
 .bc-reading-mode-options {display:flex;gap:3px;margin-left:7px;padding-left:10px;border-left:1px solid var(--bc-reading-line);}
 html.bc-ui-v1 .bc-reading-appearance .bc-reading-appearance-controls [aria-pressed="true"],
 .bc-reading-appearance-controls [aria-pressed="true"] {background:var(--bc-reading-selection)!important;color:var(--bc-reading-accent)!important;border-color:var(--bc-reading-accent)!important;}
@@ -103,8 +103,8 @@ html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView #su
 html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView #subjects>.central-reading-active-subject {display:block!important;background:var(--bc-reading-paper)!important;border:0!important;overflow:visible!important;}
 html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView #subjects>.central-reading-active-subject>.subject-head {display:none!important;}
 html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .central-reading-active-topic {color:var(--bc-reading-text)!important;background:var(--bc-reading-paper)!important;}
-html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .central-reading-active-topic :is(.ct-body,.cf-theory-text) {max-width:78ch!important;font-family:Georgia,'Times New Roman',serif!important;font-size:var(--bc-reading-size,18px)!important;line-height:1.7!important;}
-html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .central-reading-active-topic :is(p,li) {font-family:Georgia,'Times New Roman',serif!important;font-size:var(--bc-reading-size,18px)!important;line-height:1.7!important;color:var(--bc-reading-text)!important;}
+html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .central-reading-active-topic :is(.ct-body,.cf-theory-text) {max-width:78ch!important;font-family:Georgia,'Times New Roman',serif!important;font-size:var(--bc-reading-size,1.125rem)!important;line-height:1.7!important;}
+html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .central-reading-active-topic :is(p,li) {font-family:Georgia,'Times New Roman',serif!important;font-size:var(--bc-reading-size,1.125rem)!important;line-height:1.7!important;color:var(--bc-reading-text)!important;}
 html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .central-reading-active-topic>summary {top:0!important;background:var(--bc-reading-paper)!important;color:var(--bc-reading-text)!important;backdrop-filter:none!important;}
 #bc-reading-legacy-controls {position:fixed;top:var(--bc-nav-height,0px);left:0;right:0;z-index:99998;height:60px;padding:10px 20px;display:flex;align-items:center;background:var(--bc-reading-paper);border-bottom:1px solid var(--bc-reading-line);}
 #bc-reading-legacy-controls[hidden] {display:none!important;}

@@ -152,7 +152,7 @@ test('installation works without Cache Storage',async()=>{
 function createCentralBootHarness(){
   const source=readFileSync(new URL('../central-boot-ready.js',import.meta.url),'utf8');
   const entry=readFileSync(new URL('../central-v119.html',import.meta.url),'utf8');
-  assert.ok(entry.includes('central-boot-ready.js?v=20261026free-boot-fix1'));
+  assert.ok(entry.includes('central-boot-ready.js?v=20261115responsive1'));
 
   const winEvents=new Map(),docEvents=new Map(),classes=new Set(['central-boot-pending','bc-ui-v1','bc-topnav','bc-home-v3-active']);
   const status={textContent:'Organizando seu ambiente de estudo...'},spinner={hidden:false},retry={hidden:true};
@@ -274,7 +274,7 @@ test('a Central pede autorização, estrutura e estado local ao mesmo tempo',()=
   assert.ok(entry.indexOf("import('/sync-local-state.js")<auth);
   assert.match(entry,/location\.replace\('\/login\.html\?next='/);
   const loader=readFileSync(new URL('../central-discipline-loader.js',import.meta.url),'utf8');
-  assert.match(loader,/fetch\(url\.href,\{cache:'no-cache'/);
+  assert.match(loader,/fetch\(url\.href,\{cache:'default'/);
 });
 
 test('resposta marcada "private" pelo servidor não é guardada nem servida do aparelho',async()=>{

@@ -40,7 +40,7 @@ test('interface mostra orientação curta e mantém ações de leitura e questõ
   assert.ok(ui.includes('toggleLegacyReading'), 'Marcação de leitura preservada');
   assert.ok(ui.includes('Resolver 10 questões') && ui.includes('Resolver 5 questões'), 'Exercícios preservados');
   for (const name of ['cf-weeks-001.js', 'cf-weeks-002.js', 'cf-weeks-003.js', 'cf-native-study-v2.js']) {
-    assert.ok(html.includes(`${name}?v=${name === 'cf-native-study-v2.js' ? '20261113orient1' : '20261101cfguide1'}`), `Cache não renovado: ${name}`);
+    assert.ok(html.includes(`${name}?v=${name === 'cf-native-study-v2.js' ? '20261115responsive1' : '20261101cfguide1'}`), `Cache não renovado: ${name}`);
   }
 });
 
@@ -49,6 +49,6 @@ test('layout de CF usa o bloco único de orientação e preserva o fluxo existen
   const manifest = readFileSync('central-offline-files-v66172.json', 'utf8');
   assert.ok(ui.includes("BCOrientation.html('cf:'"), 'CF usa a orientação curta compartilhada');
   assert.ok(!ui.includes('cf-learning-panel') || !ui.includes('learningGuide(w)+'), 'painéis antigos não são mais renderizados');
-  assert.ok(manifest.includes('ui/cf-native-study-v2.js?v=20261113orient1'), 'Manifesto offline deve usar a versão atual');
+  assert.ok(manifest.includes('ui/cf-native-study-v2.js?v=20261115responsive1'), 'Manifesto offline deve usar a versão atual');
   for (const key of ['toggleLegacyReading', 'openReader', 'openQuiz']) assert.ok(ui.includes(key), 'Fluxo existente preservado: ' + key);
 });

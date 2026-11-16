@@ -33,6 +33,7 @@
       root.classList.remove('central-boot-pending');
       document.getElementById('central-boot-screen').remove();
       root.dataset.centralReady='true';
+      try{performance.measure('bc:boot-ms','bc:boot-start');performance.measure('bc:shell-ms','bc:shell-received')}catch(_){}
       document.dispatchEvent(new CustomEvent('central:ready'));
     })});
   }

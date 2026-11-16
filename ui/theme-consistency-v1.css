@@ -77,7 +77,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot 
   grid-column: 3 !important;
   grid-row: 2 !important;
   justify-self: end;
-  font: 700 12px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  font: 700 0.75rem/1.2 system-ui, -apple-system, "Segoe UI", sans-serif !important;
   color: var(--accent) !important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView.bc-focus-choice #subjects > .subject > .subject-head .chev {
