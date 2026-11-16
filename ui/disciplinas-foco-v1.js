@@ -1,5 +1,5 @@
 /* Base Completa — Seleção progressiva de disciplinas na versão oficial.
-   Usa exclusivamente os módulos renderizados pela Central.
+   Antecipa títulos públicos; abre exclusivamente os módulos renderizados pela Central.
    Nenhum dado, autorização ou script editorial é substituído. */
 (function (global) {
   'use strict';
@@ -217,6 +217,9 @@
       // A slow download must not reopen a discipline the student has left.
       if(state.subject!==subjectId||state.stage!=='modules')return;
     }
+    // The catalog does not expand the legacy subject. Materialize its real module
+    // DOM only after authorization/loading, before resolving the selected index.
+    if(current() && !current().classList.contains('open')) global.toggleSubject?.(subjectId);
     const modules=moduleNodes(current()),m=modules[index];
     if(!m)return;
     state.stage='reading';state.moduleKey=m.key;state.moduleTitle=m.label;state.moduleNumber=m.count;

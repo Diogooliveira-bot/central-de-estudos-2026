@@ -1,22 +1,4 @@
-/* Base Completa — tablet (toque): menu do topo sem itens cortados e controle "Tamanho da tela".
-   A ampliação em si é feita por ui/tablet-scale-v1.js (meta viewport), por escolha do aluno.
-   Reversível: remover este arquivo devolve o visual anterior. */
-/* Menu do topo em tablet: 1ª linha = logomarca + "Mais"; 2ª linha = os 7 atalhos em colunas iguais
-   (ícone em cima, nome embaixo), sem nada cortado. Os seletores com "body" e ":root" vencem as regras
-   do menu sem depender da ordem de carga. */
-@media (min-width:801px) and (max-width:1366px) and (min-height:700px) and (hover:none) and (pointer:coarse) {
-  html.bc-ui-v1.bc-topnav:root,
-  html.student-experience-v3.bc-ui-v1.bc-topnav:root { --bc-nav-height:124px!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar { flex-wrap:wrap!important; align-content:center!important; padding:8px 14px!important; gap:6px 10px!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .brand { flex:1 1 0!important; width:auto!important; min-width:0; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .brand-icon { width:40px!important; height:42px!important; flex:0 0 40px!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .nav { display:contents!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .student-more-button { order:2; position:static!important; transform:none!important; margin:0 0 0 auto!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll { order:3; flex:0 0 100%!important; width:100%!important; display:grid!important; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:2px!important; overflow:visible!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll button { flex-direction:column!important; align-items:center!important; justify-content:center!important; gap:3px!important; padding:6px 2px!important; min-height:58px!important; font-size:0.75rem!important; text-align:center; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll .nav-text { display:block!important; white-space:nowrap!important; font-size:0.75rem!important; }
-}
-
+/* Layout adaptativo compartilhado em auto-scale-v1.css. */
 /* Controle "Tamanho da tela" em Configurações */
 .bc-ui-scale{display:grid;gap:10px;margin:0 0 14px;padding:14px;border:1px solid #cfe0e6;border-radius:14px;background:#f4fafb;color:#12344d}
 .bc-ui-scale-kicker{font:850 0.625rem/1.2 system-ui,sans-serif;letter-spacing:.09em;color:#0b8c93}

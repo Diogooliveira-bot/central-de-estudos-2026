@@ -24,12 +24,12 @@ html.bc-ui-v1 .bc-ui-scale-options { grid-template-columns:repeat(2,minmax(0,1fr
 html.bc-ui-v1 .bc-ui-scale-options button { white-space:normal; overflow-wrap:anywhere; font-size:0.875rem; }
 /* Let the navigation height follow wrapped text, rather than scaled offsetHeight. */
 @media(min-width:801px) {
-  html.bc-ui-v1.bc-topnav:root { --bc-nav-height:5.5rem!important; }
+  html.student-experience-v3.bc-ui-v1.bc-topnav:root { --bc-nav-height:5.5rem!important; }
   html.bc-ui-v1.bc-topnav body #centralSidebar .nav button { font-size:0.875rem!important; min-height:44px!important; }
   html.bc-ui-v1.bc-topnav body #centralSidebar .nav-text { font-size:inherit!important; }
 }
 @media(min-width:801px) and (max-width:1366px) {
-  html.bc-ui-v1.bc-topnav:root { --bc-nav-height:8.5rem!important; }
+  html.student-experience-v3.bc-ui-v1.bc-topnav:root { --bc-nav-height:8.5rem!important; }
   html.bc-ui-v1.bc-topnav body #centralSidebar { flex-wrap:wrap!important; gap:0.3rem 0.6rem!important; padding:0.5rem 0.75rem!important; }
   html.bc-ui-v1.bc-topnav body #centralSidebar .brand { flex:1 1 0!important; }
   html.bc-ui-v1.bc-topnav body #centralSidebar .nav { display:contents!important; }

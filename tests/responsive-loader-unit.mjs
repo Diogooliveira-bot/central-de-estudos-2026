@@ -40,3 +40,13 @@ test('lista pública aparece sem baixar teoria; abrir módulo usa o carregador a
  assert.equal(loads,0);assert.equal(w.document.querySelectorAll('.bc-focus-module-card').length,1);
  const promise=w.BaseCompletaFocusNavigation.openModule(0);assert.equal(loads,1);w.BaseCompletaFocusNavigation.backToSubjects();resolveLoad();await promise;assert.equal(w.BaseCompletaFocusNavigation.state.stage,'choose');
 });
+test('primeiro módulo materializa o corpo nativo fechado após carregar a disciplina',async t=>{
+ const dom=new JSDOM('<main id="homeView"><div><div id="subjects"><section class="subject central-subject-pending" data-id="adm"><button class="subject-head"><span class="subject-name">ADM</span></button><div class="subject-body"></div></section></div></div></main>',{url:'https://central.test',runScripts:'outside-only',pretendToBeVisual:true});const w=dom.window;t.after(()=>w.close());w.HTMLElement.prototype.scrollIntoView=()=>{};
+ let ready=false,opened=0;
+ w.CentralModuleCatalog={adm:[{number:1,title:'Título atual'}]};
+ w.CentralDisciplineLoader={isReady:()=>ready,isLoading:()=>false,hasError:()=>false,load:async()=>{ready=true;}};
+ w.toggleSubject=()=>{assert.equal(ready,true);const s=w.document.querySelector('.subject');s.classList.add('open');s.querySelector('.subject-body').innerHTML='<div class="topic-item" data-uid="adm-01"><button class="open-topic">Abrir</button><span class="topic-title">Título atual</span></div>';s.querySelector('.open-topic').onclick=()=>opened++;};
+ w.eval(readFileSync('ui/disciplinas-foco-v1.js','utf8'));await new Promise(r=>setTimeout(r,20));w.BaseCompletaFocusNavigation.chooseSubject('adm');
+ await w.BaseCompletaFocusNavigation.openModule(0);
+ assert.equal(opened,1);assert.equal(w.BaseCompletaFocusNavigation.state.stage,'reading');assert.equal(w.BaseCompletaFocusNavigation.state.moduleKey,'adm-01');
+});

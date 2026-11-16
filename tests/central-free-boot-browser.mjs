@@ -81,8 +81,6 @@ try{
  for(const [id,head,summary] of subjects){
   await page.evaluate(()=>window.openDisciplines());
   await page.locator('#disciplineGrid [data-study-open-subject="'+id+'"]').first().click({timeout:8000});
-  await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id)||window.CentralDisciplineLoader.hasError(id),id,{timeout:30000});
-  if(await page.evaluate(id=>window.CentralDisciplineLoader.hasError(id),id))throw Error(id+': disciplina não carregou para o Gratuito');
   if(await page.locator('.central-free-study').count())throw Error(id+': ainda usa a tela gratuita separada');
   const section=page.locator('.subject[data-id="'+id+'"]');
   // Com a nova seleção progressiva, o módulo é aberto pelo seletor visível.
@@ -93,7 +91,9 @@ try{
   const entries=page.locator('#bcFocusModules .bc-focus-module-card');
   await entries.first().waitFor({state:'visible',timeout:10000});
   await entries.nth(id==='cpc'?1:0).click({timeout:8000});
-  await page.waitForFunction(()=>window.BaseCompletaFocusNavigation?.state.stage==='reading',{timeout:5000});
+  await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id)||window.CentralDisciplineLoader.hasError(id),id,{timeout:30000});
+  if(await page.evaluate(id=>window.CentralDisciplineLoader.hasError(id),id))throw Error(id+': disciplina não carregou para o Gratuito');
+  await page.waitForFunction(()=>window.BaseCompletaFocusNavigation?.state.stage==='reading',null,{timeout:10000});
   if(id==='adm'){
     await page.waitForFunction(()=>{
       const topic=document.querySelector('#subjects>.subject[data-id="adm"] .topic-item.bc-focus-current-module');

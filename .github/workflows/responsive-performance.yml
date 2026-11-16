@@ -7,8 +7,8 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: responsive-performance-${{ github.ref }}
-  cancel-in-progress: true
+  group: responsive-performance-${{ github.ref }}-${{ github.sha }}
+  cancel-in-progress: false
 jobs:
   browser:
     strategy:
