@@ -43,8 +43,8 @@ try{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));const cdp=await context.newCDPSession(page);await cdp.send('Performance.enable');await page.addInitScript(()=>performance.setResourceTimingBufferSize(2000));
   if(slow){await cdp.send('Network.enable');await cdp.send('Network.emulateNetworkConditions',{offline:false,downloadThroughput:1600000/8,uploadThroughput:750000/8,latency:150});await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});}
   for(const access of ['cold','warm']){
-   const bootCpu=await cpu(cdp);let start=performance.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);await settle(page);
-   const run={slow,access,bootMs:performance.now()-start,subjects:[],errors,bootTiming:await timings(page),bootCpuMs:delta(bootCpu,await cpu(cdp))};results.runs.push(run);
+   let start=performance.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);await settle(page);
+   const run={slow,access,bootMs:performance.now()-start,subjects:[],errors,bootTiming:await timings(page),bootCpuMs:await cpu(cdp)};results.runs.push(run);
    for(const id of subjects){
     let modulesMs=null;
     try{
