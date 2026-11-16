@@ -506,3 +506,28 @@ Pendências (não aplicadas):
 ## Administrativo — encerramento (16/11/2026)
 
 Os 20 módulos de Direito Administrativo foram revisados e aprovados, com 233 edições dos revisores e os ajustes de cada aprovador independente. A versão de carregamento foi trocada (`?v=20261116revjur1`) para que alunos e o cache offline recebam o material revisado. Pendências recorrentes para o proprietário: valores anuais da Lei nº 14.133/2021 (Decreto nº 12.807/2025) devem ser atualizados em janeiro/2027; o acórdão das ADIs 7.156 e 7.236 (improbidade, 2026) ainda não havia sido publicado; o texto compilado no Planalto não pôde ser aberto neste ambiente e convém ser conferido antes da publicação.
+
+### Constitucional M01 — Constituição, normas constitucionais e princípios fundamentais
+
+Veredito do aprovador: **APROVADO**. Módulo juridicamente sólido e didático; não encontrei erros graves. Os ajustes são precisões de quórum e conceito (art. 60, § 2º; repristinação), lacunas de alto rendimento (material x formal, tratados de direitos humanos, poder revisor, promulgação da emenda, ADI 939, ADI 2 e ADPF) e duas reescritas neutras. Nenhuma emenda até a EC nº 139/2026 (EC 137/2025: IPVA; EC 138/2025 e EC 139/2026: art. 37 e Tribunais de Contas, conforme fontes consultadas) alterou os arts. 1º a 4º ou o art. 60.
+
+- **Acréscimo** (E1): Distinção material x formal é básica e estava ausente do módulo; o art. 242, § 2º é exemplo clássico de norma formalmente constitucional. _Fonte: CF/88, art. 242, § 2º; doutrina (Lenza, Barroso)._
+- **Correção** (E2): O quórum é de três quintos dos membros de cada Casa, não dos presentes; o texto original podia induzir a erro. _Fonte: CF/88, art. 60, § 2º._
+- **Acréscimo** (E3): Lacuna de alto rendimento sobre hierarquia: bloco de constitucionalidade e supralegalidade dos tratados de direitos humanos. _Fonte: CF/88, art. 5º, § 3º (EC nº 45/2004); STF, RE 466.343, Pleno, 2008._
+- **Acréscimo** (E4): Completa a classificação das normas limitadas e liga a categoria aos instrumentos constitucionais contra a omissão. _Fonte: José Afonso da Silva (classificação); CF/88, art. 5º, LXXI e art. 103, § 2º; Lei nº 13.300/2016._
+- **Didática** (E5): Reescrita neutra (sem afirmar incidência em provas) e com exemplo do efeito jurídico mínimo das normas limitadas. _Fonte: José Afonso da Silva, Aplicabilidade das Normas Constitucionais._
+- **Acréscimo** (E6): Lacuna: a revisão constitucional do ADCT é distinta da emenda do art. 60 e é cobrada com frequência por contraste de quórum e procedimento. _Fonte: ADCT, art. 3º; Emendas Constitucionais de Revisão nº 1 a 6/1994._
+- **Acréscimo** (E7): Precisa o quórum e acrescenta promulgação sem sanção e o limite circunstancial, que o texto mencionava sem detalhar. _Fonte: CF/88, art. 60, §§ 1º a 3º._
+- **Acréscimo** (E8): Evita a leitura de que as cláusulas pétreas individuais se restringem ao art. 5º; leading case do STF. _Fonte: STF, ADI 939, Rel. Min. Sydney Sanches, 1993 (EC nº 3/1993); CF/88, art. 60, § 4º, IV._
+- **Correção** (E9): Define com precisão a repristinação e dá o fundamento legal da regra; o texto original (6.1) a definia de forma incompleta. _Fonte: Decreto-Lei nº 4.657/1942 (LINDB), art. 2º, § 3º._
+- **Didática** (E10): Reescrita neutra, sem afirmação de frequência em provas. _Fonte: STF, ADI 2, 1992._
+- **Acréscimo** (E11): Fundamenta a regra com o precedente e indica o instrumento cabível. _Fonte: STF, ADI 2, Rel. Min. Paulo Brossard, Pleno, j. 06/02/1992; Lei nº 9.882/1999, art. 1º, parágrafo único, I._
+- **Acréscimo** (E12): Indica o ano do julgado, conforme padrão editorial. _Fonte: STF, ADI 2.076/AC, Rel. Min. Carlos Velloso, 2002._
+
+Pendências (não aplicadas):
+- Conferência do conteúdo exato da EC nº 138/2025 e da EC nº 139/2026 — Fontes divergiram quanto ao objeto de cada uma (art. 37 e acumulação de cargos de professor; art. 31, § 1º e art. 75 sobre Tribunais de Contas). Irrelevante para o módulo 01, que não trata desses dispositivos; não afeta 
+- Classificação super-rígida da CF/88 (Alexandre de Moraes) e outras classificações doutrinárias — Doutrina divergente, sem enunciado jurisprudencial; mantido o texto sem acréscimo por ser controvertido e por limite de 12 edições.
+- Exemplo de norma de princípio institutivo e princípios de interpretação (concordância prática, correção funcional, força normativa) — Acréscimos possíveis, não incluídos por limite de edições e de crescimento do texto.
+- Art. 1º, caput: união indissolúvel (vedação de secessão) e art. 4º como rol exemplificativo ou taxativo — Acréscimo possível sobre indissolubilidade; a natureza do rol do art. 4º é controvertida na doutrina, sem entendimento do STF confirmado.
+- **Ajustes do aprovador (aplicados):** "os demais tratados de direitos humanos, aprovados sem o quórum qualificado, têm status supralegal" (art. 5º, § 3º, e RE 466.343, 2008); Colégio Pedro II (art. 242, § 2º) como "exemplo usualmente citado" de norma só materialmente constitucional; frase da ADI 939 reordenada; reescrita neutra de "Se uma banca menciona…", "Para a prova:" e "A banca poderá chamar…"; limites formais do art. 60 (legitimados e § 5º) e caracterização do poder constituinte originário. O aprovador confirmou que a EC nº 139/2026 (Tribunais de Contas) e a EC nº 140/2026 (aposentadoria de agentes de saúde) não tocam nos arts. 1º a 4º nem no art. 60.
+- Observação de teste: `tests/cf-m01-didatico-unit.mjs` (M01 conserva identidade) falha **antes e depois** desta revisão (confere `mapUrl` em `m01-native-data.js`, arquivo não alterado). Não foi tocado.
