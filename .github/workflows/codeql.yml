@@ -30,3 +30,30 @@ jobs:
         uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         with:
           category: /language:javascript-typescript
+          output: ./codeql-audit-results
+      - name: Diagnosticar alertas localmente no PR
+        if: github.event_name == 'pull_request'
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),path=require('node:path');
+          const root='codeql-audit-results';
+          if(!fs.existsSync(root)){console.log('SARIF_MISSING');process.exit(0);}
+          function scan(p){
+            for(const ent of fs.readdirSync(p,{withFileTypes:true})){
+              const f=path.join(p,ent.name);
+              if(ent.isDirectory())scan(f);
+              else if(/\.sarif(?:\.json)?$/i.test(ent.name)){
+                let obj;try{obj=JSON.parse(fs.readFileSync(f,'utf8'));}catch(_){continue;}
+                for(const run of obj.runs||[]){
+                  for(const res of run.results||[]){
+                    const loc=res.locations?.[0]?.physicalLocation;
+                    const src=loc?.artifactLocation?.uri||'';
+                    if(!/(^|\/)index\.html$|central-boot|tests\/central/i.test(src))continue;
+                    console.log('CODEQL_FINDING='+JSON.stringify({ruleId:res.ruleId,level:res.level,file:src,line:loc?.region?.startLine,message:res.message?.text?.slice(0,200)}));
+                  }
+                }
+              }
+            }
+          }
+          scan(root);
+          NODE
