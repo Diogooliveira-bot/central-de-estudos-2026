@@ -6,13 +6,23 @@
   var OPTIONS = [[0, 'Automático'], [1, 'Normal'], [1.15, 'Maior'], [1.3, 'Muito maior']];
 
   function isTouch() {
-    try { return global.matchMedia('(pointer:coarse)').matches; } catch (_) { return false; }
+    try {
+      return Boolean(global.matchMedia('(pointer:coarse)').matches ||
+        global.matchMedia('(any-pointer:coarse)').matches ||
+        Number(global.navigator && global.navigator.maxTouchPoints || 0) >= 2);
+    } catch (_) { return Number(global.navigator && global.navigator.maxTouchPoints || 0) >= 2; }
   }
+  // A viewport in "Versão para computador" pode ser maior que a tela física:
+  // reconhecer o tablet pela tela (CSS px), não apenas por innerWidth.
   function isTablet() {
     try {
-      var shortSide = Math.min(global.screen.width, global.screen.height);
-      return isTouch() && shortSide >= 700;
+      var shortSide = Math.min(Number(global.screen.width), Number(global.screen.height));
+      var longSide = Math.max(Number(global.screen.width), Number(global.screen.height));
+      return isTouch() && shortSide >= 600 && shortSide <= 1400 && longSide >= 900;
     } catch (_) { return false; }
+  }
+  function tabletPortrait() {
+    return Number(global.screen.height) >= Number(global.screen.width);
   }
   // 0 = Automático (padrão). Valores desconhecidos voltam ao Automático.
   function saved() {
@@ -30,10 +40,16 @@
   saved = function () { return sessionChoice === null ? readSaved() : sessionChoice; };
   function autoScale() {
     var width = global.innerWidth;
+    // Tablets com navegador em "Versão para computador" usam viewport ampliado:
+    // 1.1x (regra desktop) ainda deixa toda a interface pequena.
+    if (isTablet()) return width >= 1200 ? 1.46 : width >= 900 ? 1.36 : 1.24;
     return width < 600 ? 1.0625 : width < 1100 ? 1.1 : width < 1800 ? 1.125 : 1.2;
   }
   function apply() {
     var root = document.documentElement, chosen = saved();
+    var tablet = isTablet();
+    root.classList.toggle('bc-tablet-device', tablet);
+    root.classList.toggle('bc-tablet-portrait', tablet && tabletPortrait());
     var scale = chosen === 0 ? autoScale() : chosen;
     root.style.setProperty('--bc-ui-scale', String(scale));
     root.setAttribute('data-bc-ui-scale', String(scale));
