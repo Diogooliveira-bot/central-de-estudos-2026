@@ -132,18 +132,15 @@ try{
  await page.goto(base+'/tools/decorando.html',{waitUntil:'domcontentloaded'});
  await page.getByText('Selecione a disciplina').first().waitFor({timeout:15000});
  if(!page.url().includes('/tools/decorando.html'))throw Error('Gratuito foi desviado do Lei em Dia original');
- await page.getByText('Selecione a disciplina').first().click();
- console.log('LED_DROPDOWN_DEBUG='+JSON.stringify(await page.evaluate(()=>({
-  url:location.href,
-  selectedLabels:[...document.querySelectorAll('.qc-opt')].map(e=>e.innerText.trim().slice(0,90)).slice(0,20),
-  dialogCount:document.querySelectorAll('.qc-pop[role="dialog"]').length,
-  dialogContent:document.querySelector('.qc-pop')?.innerText.slice(0,800),
-  screenText:document.body.innerText.slice(0,1300),
-  debugUi:typeof ui!=='undefined'?{dd:ui.dd,discPicked:ui.discPicked,screen:ui.screen}:null
- }))));
- console.log('LED_DROPDOWN_PAGEERRORS='+JSON.stringify(errors.slice(-20)));
- await page.getByText(/Direito Administrativo/).first().click();
- await page.getByRole('button',{name:/Resolver questões/}).click();
+ await page.locator('.bc-discipline-step button.qc-select').click();
+ await page.locator('.qc-pop .qc-opt').filter({hasText:'Direito Administrativo'}).first().click();
+ await page.locator('.bc-slim-module-step button.qc-select').click();
+ const moduleOptions=page.locator('.qc-pop .qc-opt');
+ await moduleOptions.first().waitFor({state:'visible',timeout:10000});
+ const modules=await moduleOptions.allTextContents();
+ console.log('LED_MODULE_OPTIONS='+JSON.stringify(modules.slice(0,12)));
+ await moduleOptions.first().click();
+ await page.getByRole('button',{name:/Começar a resolver/}).click();
  await page.getByRole('button',{name:/Certo/}).first().waitFor({timeout:10000});
  await page.getByRole('button',{name:/Certo/}).first().click();
  for(let i=0;i<20&&!(await page.getByText('Limite diário atingido').count());i++){
