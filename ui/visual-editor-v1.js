@@ -8,13 +8,27 @@ var PROTECTED='.bc-native-study-progress,.bc-native-internal-review,.bc-apostila
 var mounted=new WeakSet(),canEdit=false,canUpload=false;
 function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return(h>>>0).toString(36)}
 function identity(o){if(o.matches('.bc-guided-overlay'))return location.pathname+'|guided-review|'+(o.getAttribute('aria-label')||'').trim();var t=(o.querySelector('.bc-native-reader-title b,.cf-native-shell>header b')||{}).textContent||'material';var s=(o.querySelector('.bc-native-reader-title small,.cf-native-shell>header small')||{}).textContent||'';return location.pathname+'|'+t.trim()+'|'+s.trim()}
-function contentId(o){return'reader:'+hash(identity(o))}
+// Chave estável para manter o conteúdo mesmo se o subtítulo do módulo mudar.
+function stableIdentity(o){
+ if(o.matches('.bc-guided-overlay'))return identity(o);
+ var title=(o.querySelector('.bc-native-reader-title b,.cf-native-shell>header b')||{}).textContent||'';
+ var subtitle=(o.querySelector('.bc-native-reader-title small,.cf-native-shell>header small')||{}).textContent||'';
+ var match=/(?:m[oó]dulo|modulo|module|\bm)\s*[-#]?\s*0*(\d{1,3})(?!\d)/i.exec(subtitle);
+ if(!match)return identity(o);
+ var titleKey=title.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
+ var aliases={'direito constitucional':'constitucional','direito administrativo':'administrativo','direito civil':'civil','direito penal':'penal','direito processual civil':'processo civil','direito processual penal':'processo penal','raciocinio logico matematico':'rlm'};
+ var discipline=aliases[titleKey]||titleKey;
+ var reader=o.matches('.cf-native-overlay')?'cf':'native';
+ return 'base-completa:module:v2|'+discipline+'|'+Number(match[1])+'|'+reader;
+}
+function legacyContentId(o){return'reader:'+hash(identity(o))}
+function contentId(o){return'reader:'+hash(stableIdentity(o))}
 function keyFor(o){return PREFIX+hash(identity(o))}
 function articleFor(o){return o.querySelector('.bc-native-article,.cf-native-reader article,.bc-m01-paper')}
 function toolsFor(o){return o.querySelector('.bc-native-reader-tools,.cf-native-reader>aside,.bc-m01-toolbar')}
 function toast(msg){var old=document.querySelector('.bc-block-toast');if(old)old.remove();var el=document.createElement('div');el.className='bc-block-toast';el.textContent=msg;document.body.appendChild(el);requestAnimationFrame(function(){el.classList.add('show')});setTimeout(function(){el.classList.remove('show');setTimeout(function(){el.remove()},200)},1800)}
 async function loadAuth(){try{var r=await fetch('/api/auth?action=me',{cache:'no-store'}),j=await r.json();canEdit=!!(j&&j.authenticated&&j.user&&(j.user.role==='admin'||j.user.role==='editor'));canUpload=!!(j&&j.authenticated&&j.user&&j.user.role==='admin');if(j&&j.user)window.BASE_COMPLETA_USER=j.user}catch(_){canEdit=false;canUpload=false}}
-async function cloudGet(o){try{var r=await fetch('/api/content-editor?id='+encodeURIComponent(contentId(o)),{cache:'no-store'});if(!r.ok)return null;var j=await r.json();return j&&j.exists?j:null}catch(_){return null}}
+async function cloudGet(o){try{var r=await fetch('/api/content-editor?id='+encodeURIComponent(contentId(o))+'&legacyId='+encodeURIComponent(legacyContentId(o)),{cache:'no-store'});if(!r.ok)return null;var j=await r.json();return j&&j.exists?j:null}catch(_){return null}}
 async function cloudSave(o,html){var r=await fetch('/api/content-editor',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:contentId(o),label:identity(o),html:html})});var j={};try{j=await r.json()}catch(_){}if(!r.ok)throw new Error(j.error||'Falha ao salvar');return j}
 async function cloudDelete(o){var r=await fetch('/api/content-editor?id='+encodeURIComponent(contentId(o)),{method:'DELETE'});if(!r.ok)throw new Error('Falha ao restaurar')}
 function sanitize(root){root.querySelectorAll('script,iframe,object,embed,form').forEach(function(n){n.remove()});root.querySelectorAll('*').forEach(function(el){Array.from(el.attributes).forEach(function(a){if(/^on/i.test(a.name))el.removeAttribute(a.name);if((a.name==='href'||a.name==='src')&&/^\s*javascript:/i.test(a.value))el.removeAttribute(a.name)})})}
