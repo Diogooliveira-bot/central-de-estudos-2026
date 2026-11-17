@@ -192,7 +192,7 @@ function removeLawItems(state,items){
  // Nunca apagar parágrafos de teoria para limpar um invólucro de Lei Seca.
  Array.from(wrappers).sort((a,b)=>b.querySelectorAll('*').length-a.querySelectorAll('*').length)
   .forEach(function(wrapper){
-   if(!wrapper.isConnected||remaining.some(el=>wrapper.contains(el)))return;
+   if(!wrapper.isConnected||remaining.some(el=>el!==wrapper&&el.isConnected&&wrapper.contains(el)))return;
    if(wrapper.querySelector('p,li,blockquote,details,aside,table'))return;
    if(wrapper.matches('.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]')){
     const box=wrapper.closest('.bcpe-block');
