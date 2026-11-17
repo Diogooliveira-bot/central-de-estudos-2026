@@ -1,5 +1,5 @@
 {
-  "build": "20261117-editor-publish-v1",
+  "build": "20261117-review-tablet-unified-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -216,8 +216,8 @@
     "/ui/student-dashboard-v3.js?v=20261105resume1",
     "/ui/student-plan-v3.js?v=20261019-qc-catalog1",
     "/ui/external-question-filters-v1.css?v=20261115responsive1",
-    "/ui/external-question-filters-v1.css?v=20261117-editor-publish-v1",
-    "/ui/external-question-filters-v1.js?v=20261117-editor-publish-v1-min20-titles1",
+    "/ui/external-question-filters-v1.css?v=20261117-review-tablet-unified-v1",
+    "/ui/external-question-filters-v1.js?v=20261117-review-tablet-unified-v1-min20-titles1",
     "/ui/cpc-approved-layout-v1.css?v=20261115responsive1",
     "/ui/approved-cpc-layout-v1.js?v=20261113orient1",
     "/ui/study-objectives-catalog-v1.js?v=20261114trilha1",
@@ -288,6 +288,8 @@
     "/ui/questoes-bank-v1.js?v=20261113lim1",
     "/ui/questoes-area-v1.js?v=20261114mascote1",
     "/ui/questoes-modulo-card-v1.js?v=20261113q7",
-    "/central-module-catalog.js?v=20261115responsive1"
+    "/central-module-catalog.js?v=20261115responsive1",
+    "/ui/module-review-v1.js?v=20261117review2",
+    "/ui/module-review-v1.css?v=20261117review2"
   ]
 }

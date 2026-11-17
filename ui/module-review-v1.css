@@ -5,3 +5,67 @@
 .bc-module-review-entry{display:inline-flex;align-items:center;padding:9px 12px;border-radius:8px;border:1px solid #b9cde0;color:#17456e;background:#fff;text-decoration:none;font-size:13px;font-weight:650}
 .bc-module-review-entry:hover{background:#eaf3fb}
 @media(max-width:650px){.bc-module-review-wrap{width:100%;align-items:flex-start}.bc-module-review-meta{max-width:100%}}
+
+/* Painel visível na seção de disciplinas e no menu Mais, somente quando o JS
+   confirmou uma sessão de administrador. Nenhum elemento é criado para alunos. */
+#homeView .bc-review-home-link {
+  display:inline-flex!important;align-items:center;justify-content:center;
+  margin:10px 0 0;padding:10px 15px;min-height:44px;box-sizing:border-box;
+  border:1px solid #bfdce9;border-radius:10px;background:#f0f9fc;
+  color:#135078!important;font:700 .875rem/1.35 Inter,system-ui,sans-serif;
+  text-decoration:none;letter-spacing:0;
+}
+#homeView .bc-review-home-link:hover,#homeView .bc-review-home-link:focus-visible{
+  border-color:#5aaabc;background:#e1f4f9;text-decoration:none;
+}
+.student-more-grid>.bc-module-review-menu-button{
+  display:flex!important;grid-column:1/-1;align-items:center;text-align:left;
+  gap:11px;min-height:64px;padding:10px 12px;
+  background:#edf8fa;border:1px solid #c2e2e7;color:#12344d;
+  border-radius:11px;cursor:pointer;
+}
+.student-more-grid>.bc-module-review-menu-button>span:first-child{
+  display:grid;place-items:center;width:36px;height:36px;flex:0 0 36px;
+  background:#0b6577;color:#fff;border-radius:9px;font-size:1.25rem;font-weight:800;
+}
+.student-more-grid>.bc-module-review-menu-button b,
+.student-more-grid>.bc-module-review-menu-button small{display:block}
+.student-more-grid>.bc-module-review-menu-button small{
+  font-size:.72rem;color:#597587;margin-top:4px;font-weight:400;
+}
+html.bc-ui-v1 #appRoot #homeView .bc-focus-modules>.bc-review-card-wrap{
+  grid-column:auto!important;min-width:0;display:flex;flex-direction:column;
+  border-radius:12px;overflow:hidden;
+  background:#fff;border:1px solid #c9dfe8;box-sizing:border-box;
+}
+#appRoot #homeView .bc-review-card-wrap>.bc-focus-module-card{
+  width:100%!important;max-width:none!important;
+  border:0!important;border-radius:12px 12px 0 0!important;
+  box-shadow:none!important;flex:1;
+}
+#appRoot #homeView .bc-review-card-wrap .bc-review-list{
+  display:flex;min-height:52px;align-items:center;justify-content:space-between;
+  gap:8px;flex-wrap:wrap;padding:8px 13px;
+  border-top:1px solid #e1eaf0;background:#f8fbfd;
+  margin:0;color:#234866;
+}
+#appRoot #homeView .bc-review-card-wrap .bc-module-review-control{
+  border:0;padding:6px 4px;background:transparent;font-size:.85rem;
+}
+#appRoot #homeView .bc-review-card-wrap .bc-module-review-meta{
+  font-size:.72rem;max-width:100%;
+}
+.bc-module-review-wrap.bc-review-done .bc-module-review-control{
+  border-color:#b9d7cc;background:#eff8f5;color:#17644e;
+}
+.bc-module-review-wrap.bc-review-reader{
+  padding:6px 10px;border-radius:9px;
+  background:#fff;box-shadow:0 0 0 1px rgba(18,52,77,.1);
+}
+@media(max-width:760px){
+ #appRoot #homeView .bc-focus-modules>.bc-review-card-wrap{grid-column:1/-1!important}
+ #appRoot #homeView .bc-review-card-wrap .bc-review-list{
+   align-items:flex-start;flex-direction:column;gap:4px;
+ }
+ #homeView .bc-review-home-link{width:100%;justify-content:center}
+}
