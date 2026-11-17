@@ -190,7 +190,7 @@ function removeLawItems(state,items){
  });
  const remaining=lawSections(state).map(item=>item.element);
  // Nunca apagar parágrafos de teoria para limpar um invólucro de Lei Seca.
- Array.from(wrappers).sort((a,b)=>b.querySelectorAll('*').length-a.querySelectorAll('*').length)
+ Array.from(wrappers).sort((a,b)=>a.querySelectorAll('*').length-b.querySelectorAll('*').length)
   .forEach(function(wrapper){
    if(!wrapper.isConnected||remaining.some(el=>el!==wrapper&&el.isConnected&&wrapper.contains(el)))return;
    if(wrapper.querySelector('p,li,blockquote,details,aside,table'))return;
