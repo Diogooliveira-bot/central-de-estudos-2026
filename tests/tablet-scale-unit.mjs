@@ -63,7 +63,7 @@ test('modo desktop no navegador do tablet não comprime novamente a interface',t
  const tab=boot(t,{width:1440,screenWidth:800,screenHeight:1280,touch:true});
  assert.equal(tab.BCUiScale.isTablet(),true);
  assert.equal(scale(tab),1.46);
- assert.equal(tab.document.documentElement.style.zoom,'');
+ assert.equal(tab.document.documentElement.style.getPropertyValue('zoom'),'');
  assert.equal(tab.document.querySelector('meta').content,'width=device-width,initial-scale=1');
 });
 
