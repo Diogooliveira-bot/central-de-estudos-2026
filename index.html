@@ -42,16 +42,27 @@ const localStorage = (() => {
       }
     } catch (_) {}
 
+    // Lista das chaves deste usuário em cache. Antes, cada key(i)/length relia TODO o armazenamento (O(n));
+    // varreduras como "for i<length: key(i)" viravam O(n²) e a abertura levava dezenas de segundos para
+    // quem tem muito progresso salvo. O cache vale enquanto o total de chaves do navegador não mudar;
+    // gravações e remoções feitas por aqui o atualizam, e outras abas o invalidam pelo evento "storage".
+    let keyCache = null, keyCount = -1;
     function physicalKeys() {
+      let total = -1;
+      try { total = base.length; } catch (_) {}
+      if (keyCache && total === keyCount) return keyCache;
       const keys = [];
       try {
-        for (let i = 0; i < base.length; i++) {
+        for (let i = 0; i < total; i++) {
           const key = base.key(i);
           if (key && key.startsWith(USER_PREFIX)) keys.push(key);
         }
       } catch (_) {}
+      keyCache = keys; keyCount = total;
       return keys;
     }
+    function dropKeyCache() { keyCache = null; keyCount = -1; }
+    try { window.addEventListener('storage', dropKeyCache); } catch (_) {}
 
     return {
       getItem(key) {
@@ -59,9 +70,16 @@ const localStorage = (() => {
         const value = base.getItem(USER_PREFIX + key);
         return value == null ? null : String(value);
       },
-      setItem(key, value) { base.setItem(USER_PREFIX + String(key), String(value)); },
-      removeItem(key) { base.removeItem(USER_PREFIX + String(key)); },
-      clear() { physicalKeys().forEach((key) => base.removeItem(key)); },
+      setItem(key, value) {
+        const physical = USER_PREFIX + String(key);
+        const tracked = keyCache && keyCount === base.length;
+        const known = tracked && base.getItem(physical) !== null;
+        base.setItem(physical, String(value));
+        if (!tracked) dropKeyCache();
+        else if (!known) { keyCache.push(physical); keyCount = base.length; }
+      },
+      removeItem(key) { base.removeItem(USER_PREFIX + String(key)); dropKeyCache(); },
+      clear() { physicalKeys().slice().forEach((key) => base.removeItem(key)); dropKeyCache(); },
       key(index) {
         const key = physicalKeys()[Number(index)];
         return key ? key.slice(USER_PREFIX.length) : null;
