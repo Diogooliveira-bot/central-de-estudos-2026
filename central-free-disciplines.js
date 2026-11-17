@@ -63,7 +63,7 @@ document.addEventListener('click',event=>{
  if(!isFree())return;
  const el=event.target.closest?.('button');
  if(!el)return;
- const explicitLock=el.matches('.qc-premium-cta,[data-cpc-premium-cta],.ptn-review-card .ptn-btn.primary,[data-bc-premium-cta]');
+ const explicitLock=el.matches('.qc-premium-cta,[data-cpc-premium-cta],.ptn-review-card .ptn-btn.primary,[data-bc-premium-cta],[data-student-primary-nav="filters"]');
  if(!explicitLock&&!isPremiumControl(el))return;
  event.preventDefault();event.stopImmediatePropagation();showLock();
 },true);
