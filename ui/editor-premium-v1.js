@@ -20,7 +20,21 @@ function identity(overlay){
  const s=overlay.querySelector('.bc-native-reader-title small,.cf-native-shell>header small');
  return location.pathname+'|'+(t?t.textContent.trim():'material')+'|'+(s?s.textContent.trim():'');
 }
-function contentId(o){return 'reader:'+hash(identity(o))}
+// IDs definitivos não dependem do nome do assunto: renomear o módulo não apaga as edições.
+function stableIdentity(o){
+ if(o.matches('.bc-guided-overlay'))return identity(o);
+ const title=(o.querySelector('.bc-native-reader-title b,.cf-native-shell>header b')||{}).textContent||'';
+ const subtitle=(o.querySelector('.bc-native-reader-title small,.cf-native-shell>header small')||{}).textContent||'';
+ const match=/(?:m[oó]dulo|modulo|module|\bm)\s*[-#]?\s*0*(\d{1,3})(?!\d)/i.exec(subtitle);
+ if(!match)return identity(o);
+ const titleKey=title.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
+ const aliases={'direito constitucional':'constitucional','direito administrativo':'administrativo','direito civil':'civil','direito penal':'penal','direito processual civil':'processo civil','direito processual penal':'processo penal','raciocinio logico matematico':'rlm'};
+ const discipline=aliases[titleKey]||titleKey;
+ const reader=o.matches('.cf-native-overlay')?'cf':'native';
+ return 'base-completa:module:v2|'+discipline+'|'+Number(match[1])+'|'+reader;
+}
+function legacyContentId(o){return 'reader:'+hash(identity(o))}
+function contentId(o){return 'reader:'+hash(stableIdentity(o))}
 function articleFor(o){return o.querySelector('.bc-native-article,.cf-native-reader article,.bc-m01-paper')}
 function toolsFor(o){return o.querySelector('.bc-native-reader-tools,.cf-native-reader>aside,.bc-m01-toolbar')}
 function notify(msg){
@@ -1335,7 +1349,7 @@ async function publish(state,button){
  try{
   const result=await api('/api/content-editor',{method:'POST',headers:{'Content-Type':'application/json'},
    body:JSON.stringify({id:state.id,label:state.label,html,expectedRevision:state.revision})});
-  state.revision=Number(result.revision||0);state.dirty=false;draftClear(state.id);
+  state.revision=Number(result.revision||0);state.dirty=false;draftClear(state.id);draftClear(legacyContentId(state.overlay));
   applySnapshot(state.article,html);state.status.textContent='Publicado · revisão '+state.revision;
   notify('Capítulo publicado com sucesso.');
   if(state.onSelectionChange)document.removeEventListener('selectionchange',state.onSelectionChange);
@@ -1351,10 +1365,10 @@ async function open(overlay){
  const state={overlay,article,id:contentId(overlay),label:identity(overlay),revision:0,selected:null,currentField:null,savedRange:null,dirty:false,saving:false,snapshots:[],cursor:0};
  let html=capture(article);
  try{
-  const remote=await api('/api/content-editor?id='+encodeURIComponent(state.id));
+  const remote=await api('/api/content-editor?id='+encodeURIComponent(state.id)+'&legacyId='+encodeURIComponent(legacyContentId(overlay)));
   if(remote.exists){html=remote.html;state.revision=Number(remote.revision||0)}
  }catch(err){return notify('Não foi possível carregar a versão atual. Por segurança, a edição foi cancelada.')}
- const draft=draftRead(state.id);
+ const draft=draftRead(state.id)||draftRead(legacyContentId(overlay));
  if(draft&&draft.html&&draft.html!==html){
   if(draft.revision!==state.revision)notify('Há um rascunho criado sobre outra revisão.');
   if(window.confirm('Existe um rascunho local não publicado. Deseja recuperá-lo?'))html=draft.html;
