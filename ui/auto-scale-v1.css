@@ -1,8 +1,65 @@
-/* Base Completa — Tamanho da tela automático no COMPUTADOR (ui/tablet-scale-v1.js define --bc-zoom).
-   O "zoom" vale só para o conteúdo dentro de cada tela e para o menu do topo; a janela, as alturas em vh/dvh e as
-   camadas fixas continuam como antes, então nada passa do tamanho da janela. Reversível: "Normal" em Configurações. */
-html.bc-zoom-on #appRoot .workspace > .view > * { zoom: var(--bc-zoom); }
-html.bc-zoom-on #centralSidebar > * { zoom: var(--bc-nav-zoom, 1); }
-/* Janela de Questões (tela própria) acompanha o mesmo tamanho. */
-html.bc-zoom-on .bcqa-overlay .bcqa-dialog { zoom: var(--bc-zoom); }
-@media print { html.bc-zoom-on #appRoot .workspace > .view > *, html.bc-zoom-on #centralSidebar > * { zoom: 1; } }
+/* Shared responsive contract. Typography uses rem throughout student UI and overlays.
+   Viewport, vh/dvh, reading scroll positions and pointer coordinates never scale. */
+html:root { font-size:calc(100% * var(--bc-ui-scale,1)); --bc-workspace-width:1920px; }
+html.bc-ui-v1.bc-topnav body #appRoot .workspace > .view:not(.module-view):not(#ankiView) {
+  max-width:none!important; width:100%!important; box-sizing:border-box;
+  padding-inline:clamp(12px,2vw,40px)!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-grid {
+  width:100%; max-width:1920px!important; margin-inline:auto!important; min-width:0;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading .home-grid { max-width:1100px!important; }
+#appRoot #homeView .bc-focus-modules { grid-template-columns:repeat(auto-fit,minmax(min(100%,27rem),1fr)); gap:0.75rem; }
+#appRoot #homeView .bc-focus-modules > :not(.bc-focus-module-card) { grid-column:1/-1; }
+#appRoot #homeView .bc-focus-module-card { min-width:0; min-height:4.5rem; grid-template-columns:4.5rem minmax(0,1fr) auto 1rem; gap:0.6rem; padding:0.85rem; }
+#appRoot #homeView .bc-focus-module-copy strong { font-size:1rem!important; line-height:1.4!important; }
+#appRoot #homeView .bc-focus-module-number, #appRoot #homeView .bc-focus-module-progress { font-size:0.8rem; }
+#appRoot #homeView .bc-focus-breadcrumb strong { font-size:1rem; white-space:normal; }
+#appRoot #homeView .bc-focus-back, #appRoot #homeView .bc-focus-back-modules { font-size:0.875rem; min-height:44px; }
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .subject-name { font-size:1rem!important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .bc-row-meta { font-size:0.8rem!important; }
+html.bc-ui-v1 body :is(button,input,select,textarea) { font-family:var(--bc-font); }
+html.bc-ui-v1 body :is(.btn,.cf-study-open,.cv-btn,.bc-ui-scale-options button) { min-height:44px; }
+html.bc-ui-v1 .bc-ui-scale-options { grid-template-columns:repeat(2,minmax(0,1fr)); }
+html.bc-ui-v1 .bc-ui-scale-options button { white-space:normal; overflow-wrap:anywhere; font-size:1rem; }
+/* Let the navigation height follow wrapped text, rather than scaled offsetHeight. */
+@media(min-width:801px) {
+  html.student-experience-v3.bc-ui-v1.bc-topnav:root { --bc-nav-height:5.5rem!important; }
+  html.bc-ui-v1.bc-topnav body #centralSidebar .nav button { font-size:0.875rem!important; min-height:44px!important; }
+  html.bc-ui-v1.bc-topnav body #centralSidebar .nav-text { font-size:inherit!important; }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav #studentMoreButton {
+    flex:0 0 auto; width:auto!important; min-width:7rem!important; overflow:visible;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav #studentMoreButton .student-more-icon {
+    width:auto!important; flex:0 0 auto!important;
+  }
+  html.student-experience-v3 .student-more-panel { top:calc(var(--bc-nav-height) + 0.5rem)!important; }
+}
+@media(min-width:801px) and (max-width:1366px) {
+  html.student-experience-v3.bc-ui-v1.bc-topnav:root { --bc-nav-height:8.5rem!important; }
+  html.bc-ui-v1.bc-topnav body #centralSidebar { flex-wrap:wrap!important; gap:0.3rem 0.6rem!important; padding:0.5rem 0.75rem!important; }
+  html.bc-ui-v1.bc-topnav body #centralSidebar .brand { flex:1 1 0!important; }
+  html.bc-ui-v1.bc-topnav body #centralSidebar .nav { display:contents!important; }
+  html.bc-ui-v1.bc-topnav body #centralSidebar .student-more-button { order:2; position:static!important; transform:none!important; }
+  html.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll { order:3; flex:0 0 100%!important; width:100%!important; display:grid!important; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); overflow:visible!important; }
+  html.student-experience-v3.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll button[data-student-primary-nav] { width:100%!important; min-width:0!important; flex-direction:column!important; padding:0.3rem 0.1rem!important; gap:0.2rem!important; white-space:normal!important; }
+  html.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll .nav-text { white-space:normal!important; overflow-wrap:anywhere; }
+}
+@media(min-width:700px) {
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects { grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr))!important; }
+}
+@media(max-width:600px) {
+  #appRoot #homeView .bc-focus-module-card { grid-template-columns: minmax(0,1fr) auto 1rem; }
+  #appRoot #homeView .bc-focus-module-number { grid-column:1; }
+  #appRoot #homeView .bc-focus-module-copy { grid-column:1; grid-row:2; }
+  #appRoot #homeView .bc-focus-module-progress { grid-column:2; grid-row:1/3; }
+  #appRoot #homeView .bc-focus-module-card > .bc-focus-arrow { grid-column:3; grid-row:1/3; }
+  #homeView .bc-focus-header { flex-wrap:wrap; }
+  #homeView .bc-focus-breadcrumb { flex-basis:50%; }
+}
+html.student-reader-active.bc-ui-v1.bc-topnav:root { --bc-nav-height:0px!important; }
+@media(max-width:800px) {
+  html.student-experience-v3.bc-topnav #centralSidebar .nav .nav-text { font-size:0.75rem!important; }
+  html.student-experience-v3.bc-topnav #centralSidebar .student-nav-scroll button { min-height:44px!important; min-width:5.5rem!important; }
+}
+@media print { html:root {font-size:100%} }

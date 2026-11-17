@@ -61,13 +61,13 @@
   const st = document.createElement('style');
   st.textContent =
     '.bc-acc-del{position:fixed;inset:0;z-index:2147483200;display:grid;place-items:center;padding:16px;background:rgba(10,30,45,.55)}' +
-    '.bc-acc-del-box{width:min(440px,100%);background:#fff;color:#12384e;border-radius:16px;padding:22px;box-shadow:0 18px 50px rgba(0,0,0,.25);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}' +
-    '.bc-acc-del-box h2{margin:0 0 8px;font-size:20px}.bc-acc-del-box p{margin:0 0 12px}.bc-acc-del-note{font-size:13px;color:#4b6475}' +
-    '.bc-acc-del-box label{display:block;margin:0 0 12px;font-weight:600;font-size:14px}' +
+    '.bc-acc-del-box{width:min(440px,100%);background:#fff;color:#12384e;border-radius:16px;padding:22px;box-shadow:0 18px 50px rgba(0,0,0,.25);font:0.9375rem/1.5 system-ui,-apple-system,Segoe UI,sans-serif}' +
+    '.bc-acc-del-box h2{margin:0 0 8px;font-size:1.25rem}.bc-acc-del-box p{margin:0 0 12px}.bc-acc-del-note{font-size:0.8125rem;color:#4b6475}' +
+    '.bc-acc-del-box label{display:block;margin:0 0 12px;font-weight:600;font-size:0.875rem}' +
     '.bc-acc-del-box input{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px 12px;border:1px solid #c9d6e2;border-radius:10px;font:inherit}' +
     '.bc-acc-del-msg{color:#b42318;font-weight:600}' +
     '.bc-acc-del-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}' +
-    '.bc-acc-del-actions button{font:600 15px system-ui,sans-serif;border-radius:10px;padding:10px 16px;border:1px solid #c9d6e2;background:#fff;color:#12384e;cursor:pointer}' +
+    '.bc-acc-del-actions button{font:600 0.9375rem system-ui,sans-serif;border-radius:10px;padding:10px 16px;border:1px solid #c9d6e2;background:#fff;color:#12384e;cursor:pointer}' +
     '.bc-acc-del-actions .danger{background:#b42318;border-color:#b42318;color:#fff}.bc-acc-del-actions .danger:disabled{opacity:.6}';
   document.head.appendChild(st);
   g.CentralAccountDeletion = {open};

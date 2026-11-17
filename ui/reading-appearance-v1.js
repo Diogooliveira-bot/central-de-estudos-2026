@@ -26,7 +26,7 @@
   }
   function syncPreference() {
     setAttribute(document.documentElement, 'data-bc-reading-mode', preference.mode);
-    var size = preference.size + 'px';
+    var size = (preference.size / 16) + 'rem';
     if (document.documentElement.style.getPropertyValue('--bc-reading-size') !== size)
       document.documentElement.style.setProperty('--bc-reading-size', size);
     document.querySelectorAll('.bc-reading-appearance-controls').forEach(function (group) {
@@ -122,7 +122,7 @@
       }
     }
     if (topic) topic.querySelectorAll('p,li,.cf-theory-text').forEach(function (element) {
-      var size = preference.size + 'px';
+      var size = (preference.size / 16) + 'rem';
       if (element.style.getPropertyValue('font-size') !== size || element.style.getPropertyPriority('font-size') !== 'important')
         element.style.setProperty('font-size', size, 'important');
     });

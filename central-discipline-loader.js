@@ -92,31 +92,34 @@ function placeholder(subject){
 // As apostilas ADM atuais são carregadas pelos leitores nativos, módulo a módulo.
 // A falha isolada de um bundle legado não deve impedir a instalação do visual aprovado.
 const optionalAdmLegacy=path=>/^\/adm-m(?:\d+-(?:theory|correction|content-p\d+|runtime)-v\d+|9-m20-bundle-v\d+)\.js$/i.test(path);
-async function download(files,id){
- const sources=new Array(files.length);let index=0;
- // Até 16 downloads simultâneos (HTTP/2 da Vercel usa uma só conexão). A ordem de
- // execução não muda: tudo é baixado antes e executado na sequência original.
- await Promise.all(Array.from({length:Math.min(16,files.length)},async()=>{
-  while(index<files.length){const i=index++,url=new URL(files[i],location.origin);const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+function mark(name){try{performance.mark('bc:'+name)}catch(_){}}
+function measure(name,start){try{performance.measure('bc:'+name,'bc:'+start)}catch(_){}}
+function download(files,id){
+ // Bounded parallel downloads; each source resolves independently. Execution below
+ // remains ordered, but no longer waits for the slowest unrelated response.
+ let next=0;
+ const slots=files.map(()=>{let resolve,reject;const promise=new Promise((a,b)=>{resolve=a;reject=b});promise.catch(()=>{});return {promise,resolve,reject}});
+ async function worker(){
+  while(next<files.length){
+   const i=next++,url=new URL(files[i],location.origin);
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+   mark(id+':download:'+i);
    try{
-    // "no-cache": sempre confere com o servidor, mas reaproveita o arquivo se não mudou (304).
-    // Conteúdo protegido continua sem cache, pois o servidor responde "no-store".
-    const response=await fetch(url.href,{cache:'no-cache',signal:controller.signal});
+    // The HTTP cache may reuse only responses allowed by the server. Premium
+    // authorization, private/no-store responses and 403 handling are unchanged.
+    const response=await fetch(url.href,{cache:'default',signal:controller.signal});
     if(!response.ok){
-     // Plano gratuito: arquivos exclusivos do Premium (403) ficam de fora e a
-     // mesma interface é montada apenas com os resumos liberados pelo servidor.
-     if(response.status===403&&global.CentralPlanAccess?.isFree?.()){sources[i]='';continue;}
-     if(id==='adm'&&optionalAdmLegacy(url.pathname)&&[403,404,410].includes(response.status)){
-      console.warn('[Central ADM] bundle legado indisponível; leitor nativo preservado:',url.pathname,response.status);
-      sources[i]='';continue;
-     }
+     if(response.status===403&&global.CentralPlanAccess?.isFree?.()){slots[i].resolve('');continue;}
+     if(id==='adm'&&optionalAdmLegacy(url.pathname)&&[403,404,410].includes(response.status)){slots[i].resolve('');continue;}
      throw new Error('HTTP '+response.status+': '+url.pathname);
     }
-    sources[i]=await response.text();
-   }finally{clearTimeout(timer);}
+    slots[i].resolve(await response.text());
+   }catch(error){slots[i].reject(error)}
+   finally{clearTimeout(timer);measure(id+':download-ms:'+i,id+':download:'+i)}
   }
- }));
- return sources;
+ }
+ for(let i=0;i<Math.min(8,files.length);i++)worker();
+ return slots.map(s=>s.promise);
 }
 function nativeReady(id){
  if(id==='cf')return !!global.CfNativeStudy;
@@ -144,14 +147,23 @@ function load(id){
  state.promise=(async()=>{
   navigator.serviceWorker?.controller?.postMessage({type:'PAUSE_OFFLINE'});
   document.dispatchEvent(new CustomEvent('central:discipline-loading',{detail:{id}}));
-  const files=filesFor(id),sources=await download(files,id);
-  await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-  // Download the whole ordered group before executing it, so connection retries do not redeclare globals.
+  mark(id+':start');
+  const files=filesFor(id),sources=download(files,id);
+  let sliceStart=performance.now();
   for(let i=0;i<files.length;i++){
-   const path=new URL(files[i],location.origin).pathname,script=document.createElement('script');
-   script.dataset.centralDiscipline=id;script.textContent=sources[i]+'\n//# sourceURL='+path;document.head.appendChild(script);script.remove();executed.add(path);
+   const source=await sources[i];
+   const path=new URL(files[i],location.origin).pathname;
+   mark(id+':execute:'+i);
+   const script=document.createElement('script');
+   script.dataset.centralDiscipline=id;script.textContent=source+'\n//# sourceURL='+path;
+   document.head.appendChild(script);script.remove();executed.add(path);
+   measure(id+':execute-ms:'+i,id+':execute:'+i);
+   // Release the main thread between dependency-safe scripts, never mid-script.
+   if(performance.now()-sliceStart>12){await new Promise(resolve=>setTimeout(resolve,0));sliceStart=performance.now();}
   }
-  await waitForNative(id);state.ready=true;state.promise=null;refresh();resumeOffline();
+  await waitForNative(id);state.ready=true;state.promise=null;
+  mark(id+':render');refresh();measure(id+':dom-ms',id+':render');resumeOffline();
+  measure(id+':ready-ms',id+':start');
   document.dispatchEvent(new CustomEvent('central:discipline-ready',{detail:{id}}));
  })().catch(error=>{state.promise=null;state.error=error;refresh();resumeOffline();document.dispatchEvent(new CustomEvent('central:discipline-error',{detail:{id}}));console.error('[Central discipline load]',id,error);throw error});
  return state.promise;

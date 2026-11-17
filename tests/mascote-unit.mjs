@@ -32,8 +32,8 @@ test('todo mascote referenciado existe, é WebP pequeno e é decorativo', () => 
 test('mascote é carregado no bootstrap e no pacote offline, sem capturar cliques', () => {
   const boot = readFileSync('central-v119.html', 'utf8');
   const offline = JSON.parse(readFileSync('central-offline-files-v66172.json', 'utf8')).files;
-  assert.ok(boot.includes('/ui/mascote-v1.css?v=20261114mascote1'));
-  assert.ok(offline.includes('/ui/mascote-v1.css?v=20261114mascote1'));
+  assert.ok(boot.includes('/ui/mascote-v1.css?v=20261115responsive1'));
+  assert.ok(offline.includes('/ui/mascote-v1.css?v=20261115responsive1'));
   for (const pose of ['sentado-lendo', 'checklist', 'livros', 'apontando', 'boas-vindas']) {
     assert.ok(offline.includes(`/assets/mascote/mascote-${pose}.webp`), pose);
   }

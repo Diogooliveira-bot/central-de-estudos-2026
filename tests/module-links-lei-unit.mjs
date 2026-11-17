@@ -94,7 +94,7 @@ test('sem filtros publicados o espaço de links fica oculto e a Lei em Dia conti
 test('Central carrega o organizador com versão de cache própria', () => {
   const central = read('central-v119.html');
   assert.match(central, /ui\/module-links-lei-v1\.js\?v=20261113qc1/);
-  assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261112q3/);
+  assert.match(central, /ui\/module-links-lei-v1\.css\?v=20261115responsive1/);
   assert.match(read('ui/external-question-filters-v1.js'), /data-bcq-module-slot/);
 });
 

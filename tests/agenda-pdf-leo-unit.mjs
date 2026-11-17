@@ -58,9 +58,9 @@ function pageOne() {
 test('script, estilo e arquivos do pdf.js estão registrados; pdf.js não entra no pacote offline', () => {
   const boot = read('central-v119.html');
   const offline = JSON.parse(read('central-offline-files-v66172.json')).files;
-  assert.ok(boot.includes(`/ui/agenda-pdf-leo-v1.css?v=${VERSION}`));
+  assert.ok(boot.includes(`/ui/agenda-pdf-leo-v1.css?v=20261115responsive1`));
   assert.ok(boot.includes(`ui/agenda-pdf-leo-v1.js?v=${VERSION}`));
-  assert.ok(offline.includes(`/ui/agenda-pdf-leo-v1.css?v=${VERSION}`));
+  assert.ok(offline.includes(`/ui/agenda-pdf-leo-v1.css?v=20261115responsive1`));
   assert.ok(offline.includes(`/ui/agenda-pdf-leo-v1.js?v=${VERSION}`));
   for (const file of ['vendor/pdfjs/pdf.min.mjs', 'vendor/pdfjs/pdf.worker.min.mjs', 'vendor/pdfjs/LICENSE.txt', 'vendor/pdfjs/VERSION.txt']) assert.ok(existsSync(file), file);
   assert.match(read('vendor/pdfjs/LICENSE.txt'), /Apache License/);

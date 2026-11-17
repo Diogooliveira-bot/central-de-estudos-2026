@@ -1,5 +1,5 @@
 /* Base Completa — Seleção progressiva de disciplinas na versão oficial.
-   Usa exclusivamente os módulos renderizados pela Central.
+   Antecipa títulos públicos; abre exclusivamente os módulos renderizados pela Central.
    Nenhum dado, autorização ou script editorial é substituído. */
 (function (global) {
   'use strict';
@@ -8,7 +8,7 @@
   const SELECTORS = '.cf-module > .cf-module-head, .cv-module > .cv-module-head, .ds-module > .ds-module-head, .pt-module-card > .pt-module-head, .topic-item .open-topic, [data-civil-native-module] > button, .civil-module > button, .module > .module-head';
   const BOX_SELECTOR = '.cf-module,.cv-module,.ds-module,.pt-module-card,.topic-item,[data-civil-native-module],.civil-module,.module';
   const state = { stage:'choose', subject:'', moduleKey:'', moduleTitle:'', moduleNumber:'' };
-  let scheduled = false;
+  let scheduled = false, selection = 0;
   const $ = (id) => document.getElementById(id);
   const home = () => $('homeView');
   const root = () => $('subjects');
@@ -27,6 +27,11 @@
   }
   function moduleNodes(subject) {
     if (!subject) return [];
+    const id=subject.dataset.id;
+    if (global.CentralDisciplineLoader?.isReady(id)===false && global.CentralModuleCatalog?.[id]) {
+      if (state.loadingModule || global.CentralDisciplineLoader.hasError(id)) return [];
+      return global.CentralModuleCatalog[id].map(m=>({key:String(m.number),label:m.title,count:'MÓDULO '+String(m.number).padStart(2,'0'),meta:'',progress:'',catalog:true}));
+    }
     const seen = new Set();
     // Alguns módulos (ex.: ADM) têm cabeçalho nativo e controle de tópico no mesmo bloco.
     // Priorizar a abertura real do tópico; contar cada módulo apenas uma vez.
@@ -127,6 +132,7 @@
     const back=header.querySelector('[data-bc-back="modules"]');
     if(back)back.hidden=state.stage!=='reading';
     header.classList.toggle('bc-focus-sticky',state.stage==='reading');
+    if(state.stage==='modules' && phase==='ready' && !state.measured){state.measured=true;try{performance.measure('bc:modules-visible-ms','bc:modules-start')}catch(_){}}
     if(state.stage==='modules') {
       const signature=JSON.stringify([state.subject,phase,modules.map(m=>[m.key,m.label,m.count,m.meta,m.progress])]);
       if(list.dataset.signature!==signature) {
@@ -181,23 +187,43 @@
     requestAnimationFrame(()=>{scheduled=false;render()});
   }
   function chooseSubject(id){
+    selection++;
     const s=[...(root()?.children||[])].find(el=>el.dataset.id===id);
     if(!s)return;
-    state.subject=id;state.stage='modules';state.moduleKey='';state.moduleTitle='';state.moduleNumber='';
-    if(!s.classList.contains('open')){
+    try{performance.mark('bc:modules-start')}catch(_){}
+    state.measured=false;state.loadingModule=false;state.subject=id;state.stage='modules';state.moduleKey='';state.moduleTitle='';state.moduleNumber='';
+    if(!s.classList.contains('open') && !(global.CentralModuleCatalog?.[id] && global.CentralDisciplineLoader?.isReady(id)===false)){
       if(typeof global.toggleSubject==='function')global.toggleSubject(id);
       else s.querySelector('.subject-head')?.click();
     }
     const list=$('bcFocusModules');if(list)list.dataset.signature='';
     schedule();
-    setTimeout(()=>{const l=$('bcFocusModules');if(l)l.dataset.signature='';schedule();focusScroll()},80);
-    setTimeout(()=>{const l=$('bcFocusModules');if(l)l.dataset.signature='';schedule()},900);
+    requestAnimationFrame(focusScroll);
   }
   function openOriginal(){
     state.stage='reading';state.moduleKey='';state.moduleNumber='';state.moduleTitle='Conteúdo da disciplina';
     schedule();setTimeout(focusScroll,30);
   }
-  function openModule(index){
+  async function openModule(index){
+    const ticket=selection;
+    const subjectId=state.subject;
+    if(global.CentralDisciplineLoader?.isReady(subjectId)===false){
+      if(state.loadingModule)return;
+      state.loadingModule=true;schedule();
+      try{await global.CentralDisciplineLoader.load(subjectId);}
+      catch(_){if(ticket===selection){state.loadingModule=false;schedule();}return;}
+      if(ticket!==selection)return;
+      state.loadingModule=false;
+      // A slow download must not reopen a discipline the student has left.
+      if(state.subject!==subjectId||state.stage!=='modules')return;
+    }
+    // The catalog does not expand the legacy subject. Materialize its real module
+    // DOM only after authorization/loading, before resolving the selected index.
+    if(current() && !current().classList.contains('open')) global.toggleSubject?.(subjectId);
+    // Civil/CPP replace the legacy body through their native observers. Resolve
+    // the module only after that replacement, never from the transient markup.
+    await new Promise(resolve=>requestAnimationFrame(resolve));
+    if(ticket!==selection||state.subject!==subjectId||state.stage!=='modules')return;
     const modules=moduleNodes(current()),m=modules[index];
     if(!m)return;
     state.stage='reading';state.moduleKey=m.key;state.moduleTitle=m.label;state.moduleNumber=m.count;
@@ -211,7 +237,8 @@
     schedule();setTimeout(focusScroll,30);
   }
   function backToSubjects(){
-    state.stage='choose';state.subject='';state.moduleKey='';state.moduleTitle='';state.moduleNumber='';
+    selection++;
+    state.loadingModule=false;state.stage='choose';state.subject='';state.moduleKey='';state.moduleTitle='';state.moduleNumber='';
     schedule();setTimeout(()=> $('disciplinasHome')?.scrollIntoView({behavior:'instant',block:'start'}),30);
   }
   function lastDestination(last){
@@ -248,7 +275,10 @@
   function init(){
     if(!home()||!root())return;
     nodes();render();
-    new MutationObserver(schedule).observe(root(),{childList:true,subtree:true});
+    new MutationObserver(mutations=>{
+      if(state.stage==='choose'||home().classList.contains('hidden'))return;
+      if(mutations.some(m=>m.target.isConnected && (m.target===root()||m.target.closest?.('.subject')?.dataset.id===state.subject)))schedule();
+    }).observe(root(),{childList:true,subtree:true});
     // Concluir a animação imediatamente quando a disciplina estiver pronta.
     // A falha real é comunicada pelo carregador, para exibir uma ação de repetição.
     ['central:discipline-loading','central:discipline-ready','central:discipline-error'].forEach(eventName=>{
@@ -264,7 +294,7 @@
       const hidden=home().classList.contains('hidden');
       if(hidden!==wasHidden){
         wasHidden=hidden;
-        if(hidden){state.stage='choose';state.subject='';state.moduleKey='';state.moduleTitle='';state.moduleNumber='';}
+        if(hidden){state.loadingModule=false;state.stage='choose';state.subject='';state.moduleKey='';state.moduleTitle='';state.moduleNumber='';}
         schedule();
       }
     }).observe(home(),{attributes:true,attributeFilter:['class']});
@@ -282,10 +312,8 @@
       if(external){
         const id=external.dataset.studyOpenSubject||external.dataset.id;
         if(id){
-          state.stage='modules';state.subject=id;state.moduleKey='';state.moduleTitle='';state.moduleNumber='';
-          const list=$('bcFocusModules');if(list)list.dataset.signature='';
-          setTimeout(()=>{schedule();focusScroll()},150);
-          setTimeout(()=>{const l=$('bcFocusModules');if(l)l.dataset.signature='';schedule()},900);
+          event.preventDefault();event.stopImmediatePropagation();
+          global.openHome?.();chooseSubject(id);
         }
       }
       const head=target.closest('#homeView #subjects > .subject > .subject-head');

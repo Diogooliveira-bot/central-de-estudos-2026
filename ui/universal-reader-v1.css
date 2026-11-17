@@ -28,7 +28,7 @@
   margin-inline:auto;
   color:var(--bc-universal-ink);
   font-family:Georgia,'Times New Roman',serif;
-  font-size:var(--bc-reading-size,17px);
+  font-size:var(--bc-reading-size,1.0625rem);
   line-height:1.74;
 }
 .bc-universal-sheet :is(h1,h2,h3,h4){
@@ -108,7 +108,7 @@
  .bc-universal-sheet table{font-size:.78em;}
 }
 @media(max-width:600px){
- .bc-universal-sheet{font-size:var(--bc-reading-size,16px);line-height:1.66;}
+ .bc-universal-sheet{font-size:var(--bc-reading-size,1rem);line-height:1.66;}
  .bc-universal-sheet :is(h1,h2,h3){overflow-wrap:anywhere;}
  .bc-native-reader-overlay .bc-native-reader-head{gap:8px;}
  .bc-native-reader-overlay .bc-native-reader-title{min-width:0;flex:1;}
@@ -127,7 +127,7 @@ body.bc-universal-standalone{
 body.bc-universal-standalone main{
   box-sizing:border-box;width:min(100%,88ch);max-width:100%;
   padding:clamp(18px,4vw,44px);margin-inline:auto;
-  font-size:clamp(16px,1.5vw,18px);line-height:1.75;
+  font-size:clamp(1rem,1.5vw,1.125rem);line-height:1.75;
   overflow-wrap:break-word;
 }
 body.bc-universal-standalone main :is(h1,h2,h3,h4){font-family:Georgia,'Times New Roman',serif;text-wrap:pretty;line-height:1.32;}
@@ -148,7 +148,7 @@ body.bc-universal-standalone main :is(a,button):focus-visible{outline:3px solid 
 .pen-theory-scroll{
   min-width:0;overflow-y:auto;overflow-x:hidden;
   background:var(--bc-universal-paper);color:var(--bc-universal-ink);
-  font:var(--bc-reading-size,17px)/1.74 Georgia,'Times New Roman',serif;
+  font:var(--bc-reading-size,1.0625rem)/1.74 Georgia,'Times New Roman',serif;
 }
 .pen-theory-scroll .bc-universal-sheet{max-width:85ch;margin:0 auto;box-sizing:border-box;}
 .pen-theory-scroll :is(h1,h2,h3,h4){color:var(--bc-universal-ink)!important;font-family:Georgia,'Times New Roman',serif!important;line-height:1.33!important;}

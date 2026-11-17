@@ -99,7 +99,13 @@
     if (started) schedule();
   }
   function relevantMutation(mutation) {
-    if (mutation.type === 'childList') return mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0;
+    if (!mutation.target.isConnected) return false;
+    if (mutation.type === 'childList') {
+      // Reading text changes do not change the dashboard, navigation or plan.
+      // Observe overlay insertion/removal at its parent as before.
+      if (mutation.target.closest?.('.bc-native-article,.bc-native-scroll')) return false;
+      return mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0;
+    }
     const target = mutation.target;
     // Regravar o mesmo valor (ex.: classList.add de classe já presente) não muda a tela;
     // reagir a isso criava um ciclo contínuo com outros scripts de padronização.

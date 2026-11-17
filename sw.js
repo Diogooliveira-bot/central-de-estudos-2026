@@ -1,10 +1,10 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261115-leo-v14';
+var CACHE='central-20261115-responsive-v15';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261115-leo-v14';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261115-responsive-v15';
 var OFFLINE_READY='/central-offline-ready.json?v=20261022-online-first-recovery-v1';
 
 function publicPath(path){
@@ -84,14 +84,15 @@ async function recentSession(){
 // O servidor marca conteúdo Premium como "private": nunca fica guardado no aparelho,
 // mesmo que o arquivo não esteja na lista protectedContentPath acima.
 function privateResponse(response){
-  return /(?:^|[,\s])private(?:$|[,\s])/i.test(String(response&&response.headers&&response.headers.get('Cache-Control')||''));
+  return /(?:^|[,\s])(?:private|no-store)(?:$|[,\s])/i.test(String(response&&response.headers&&response.headers.get('Cache-Control')||''));
 }
 function sameVersion(a,b){
   var etagA=a&&a.headers.get('ETag'),etagB=b&&b.headers.get('ETag');
   return !!etagA&&etagA===etagB;
 }
 function revalidate(event,request,hit){
-  // "no-cache" pergunta ao servidor se mudou (resposta 304 é quase sem dados).
+  if(/\bimmutable\b/i.test(hit.headers.get('Cache-Control')||''))return;
+  // Revalidate resources without an explicit immutable contract.
   event.waitUntil(fetch(request,{cache:'no-cache'}).then(function(response){
     if(!response||!response.ok||response.redirected||privateResponse(response)||sameVersion(response,hit))return;
     return caches.open(CACHE).then(function(cache){return cache.put(request,response)});

@@ -265,7 +265,7 @@
     '.bc-std-reader .bc-native-reader-tools input[type=search]{min-width:180px;max-width:280px;flex:1 1 200px}' +
     '.bc-std-reader .bc-std-legacy-article>.bc-native-kicker,.bc-std-reader .bc-std-legacy-article>.lead,' +
     '.bc-std-reader .bc-std-legacy-article>.bc-native-study-progress{display:none!important}' +
-    '.bc-std-intro{margin:0 0 1.4em}.bc-std-intro p{margin:0 0 .4em;font:700 12px/1.4 system-ui,sans-serif;letter-spacing:.06em;color:var(--muted,#6b7c8a)}' +
+    '.bc-std-intro{margin:0 0 1.4em}.bc-std-intro p{margin:0 0 .4em;font:700 0.75rem/1.4 system-ui,sans-serif;letter-spacing:.06em;color:var(--muted,#6b7c8a)}' +
     '.bc-std-intro h1{margin:0}mark.bc-std-hit{background:#ffe98a;color:inherit}mark.bc-std-hit.current{background:#ffb84d}';
   document.head.appendChild(style);
 

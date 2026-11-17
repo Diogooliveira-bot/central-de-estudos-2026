@@ -169,7 +169,7 @@
     '.bc-iq-option:hover:not(:disabled){border-color:#1d7f86}.bc-iq-option:disabled{cursor:default}' +
     '.bc-iq-option.correct{border-color:#1f8a52;background:rgba(31,138,82,.12)}.bc-iq-option.wrong{border-color:#c0392b;background:rgba(192,57,43,.1)}' +
     '.bc-iq-feedback{margin:10px 0 0;font-weight:700}.bc-iq-feedback.ok{color:#1f8a52}.bc-iq-feedback.bad{color:#c0392b}' +
-    '.bc-iq-retry,.bc-iq-reveal{font:600 14px system-ui,sans-serif;margin:8px 0;padding:7px 12px;border-radius:9px;border:1px solid var(--border,#cfd9e2);background:transparent;color:inherit;cursor:pointer}';
+    '.bc-iq-retry,.bc-iq-reveal{font:600 0.875rem system-ui,sans-serif;margin:8px 0;padding:7px 12px;border-radius:9px;border:1px solid var(--border,#cfd9e2);background:transparent;color:inherit;cursor:pointer}';
   document.head.appendChild(style);
 
   let queued = false;

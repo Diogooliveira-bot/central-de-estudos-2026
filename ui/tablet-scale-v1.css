@@ -1,27 +1,9 @@
-/* Base Completa — tablet (toque): menu do topo sem itens cortados e controle "Tamanho da tela".
-   A ampliação em si é feita por ui/tablet-scale-v1.js (meta viewport), por escolha do aluno.
-   Reversível: remover este arquivo devolve o visual anterior. */
-/* Menu do topo em tablet: 1ª linha = logomarca + "Mais"; 2ª linha = os 7 atalhos em colunas iguais
-   (ícone em cima, nome embaixo), sem nada cortado. Os seletores com "body" e ":root" vencem as regras
-   do menu sem depender da ordem de carga. */
-@media (min-width:801px) and (max-width:1366px) and (min-height:700px) and (hover:none) and (pointer:coarse) {
-  html.bc-ui-v1.bc-topnav:root,
-  html.student-experience-v3.bc-ui-v1.bc-topnav:root { --bc-nav-height:124px!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar { flex-wrap:wrap!important; align-content:center!important; padding:8px 14px!important; gap:6px 10px!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .brand { flex:1 1 0!important; width:auto!important; min-width:0; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .brand-icon { width:40px!important; height:42px!important; flex:0 0 40px!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .nav { display:contents!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .student-more-button { order:2; position:static!important; transform:none!important; margin:0 0 0 auto!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll { order:3; flex:0 0 100%!important; width:100%!important; display:grid!important; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:2px!important; overflow:visible!important; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll button { flex-direction:column!important; align-items:center!important; justify-content:center!important; gap:3px!important; padding:6px 2px!important; min-height:58px!important; font-size:12px!important; text-align:center; }
-  html.bc-ui-v1.bc-topnav body #centralSidebar .student-nav-scroll .nav-text { display:block!important; white-space:nowrap!important; font-size:12px!important; }
-}
-
+/* Layout adaptativo compartilhado em auto-scale-v1.css. */
 /* Controle "Tamanho da tela" em Configurações */
 .bc-ui-scale{display:grid;gap:10px;margin:0 0 14px;padding:14px;border:1px solid #cfe0e6;border-radius:14px;background:#f4fafb;color:#12344d}
-.bc-ui-scale-kicker{font:850 10px/1.2 system-ui,sans-serif;letter-spacing:.09em;color:#0b8c93}
-.bc-ui-scale h3{margin:4px 0 3px;font:850 16px/1.25 system-ui,sans-serif;color:#12344d}
-.bc-ui-scale p{margin:0;font-size:13px;line-height:1.5;color:#5c7789}
+.bc-ui-scale-kicker{font:850 0.625rem/1.2 system-ui,sans-serif;letter-spacing:.09em;color:#0b8c93}
+.bc-ui-scale h3{margin:4px 0 3px;font:850 1rem/1.25 system-ui,sans-serif;color:#12344d}
+.bc-ui-scale p{margin:0;font-size:0.8125rem;line-height:1.5;color:#5c7789}
 .bc-ui-scale-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.bc-ui-scale-options button{min-height:48px;padding:10px 6px;border:1px solid #b9d2da;border-radius:12px;background:#fff;color:#12344d;font:750 14px/1.2 system-ui,sans-serif;cursor:pointer}
+.bc-ui-scale-options button{min-height:48px;padding:10px 6px;border:1px solid #b9d2da;border-radius:12px;background:#fff;color:#12344d;font:750 0.875rem/1.2 system-ui,sans-serif;cursor:pointer}
 .bc-ui-scale-options button.is-active{border-color:#0f8c91;background:#e6f6f5;box-shadow:inset 0 0 0 1px #0f8c91;color:#0b5d66}

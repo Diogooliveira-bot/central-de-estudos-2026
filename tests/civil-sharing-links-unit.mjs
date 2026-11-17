@@ -31,8 +31,8 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   assert.equal(new Set(data.items.map((x) => x.subdivisao || x.modulo)).size, 66);
   assert(boot.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
   assert(boot.includes('ui/civil-native-study-v1.js?v=20261113orient1'));
-  assert(boot.includes('content/civil/civil-teoria-guiada-reader-v1.js?v=20261111-apostilas-civil-cf-v1'));
-  assert(boot.includes('ui/civil-native-study-v1.css?v=20261019civilstandard1'));
+  assert(boot.includes('content/civil/civil-teoria-guiada-reader-v1.js?v=20261115responsive1'));
+  assert(boot.includes('ui/civil-native-study-v1.css?v=20261115responsive1'));
   assert(lazy.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
   assert(lazy.includes('ui/civil-native-study-v1.js?v=20261113orient1'));
   assert(boot.includes('groups.civil=groups.civil.filter('), 'Bootstrap deve retirar primeiro os scripts antigos do mesmo caminho.');
@@ -40,9 +40,9 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   assert(!manifest.files.includes('/content/civil/civil-sharing-links.js?v=20261009civilsharing2'), 'catálogo TEC deve ficar fora do cache público');
   for (const asset of [
     '/ui/civil-native-study-v1.js?v=20261113orient1',
-    '/ui/civil-native-study-v1.css?v=20261019civilstandard1',
+    '/ui/civil-native-study-v1.css?v=20261115responsive1',
   ]) assert(manifest.files.includes(asset), `${asset}: ausente no pacote offline.`);
-  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261115-leo-v14/);
+  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=20261115-responsive-v15/);
 
   const moduleByUid = new Map(index.modules.map((m) => [m.uid, m]));
   const perModule = new Map();
@@ -107,7 +107,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     if (pathname === '/') {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      res.end('<!doctype html><html class="bc-ui-v1" data-bc-theme="light"><head><link rel="stylesheet" href="/ui/civil-native-study-v1.css?v=20261019civilstandard1"></head><body><main id="subjects"><section class="subject" data-id="civil"><div class="subject-body"><div class="subject-bar"><span></span></div></div></section></main></body></html>');
+      res.end('<!doctype html><html class="bc-ui-v1" data-bc-theme="light"><head><link rel="stylesheet" href="/ui/civil-native-study-v1.css?v=20261115responsive1"></head><body><main id="subjects"><section class="subject" data-id="civil"><div class="subject-body"><div class="subject-bar"><span></span></div></div></section></main></body></html>');
       return;
     }
     const filename = path.join(root, pathname.replace(/^\/+/, ''));

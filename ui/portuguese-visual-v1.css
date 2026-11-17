@@ -18,7 +18,7 @@ html[data-bc-reading-mode="night"] #centralPortugueseReader {
  box-sizing:border-box;width:100%!important;max-width:880px!important;margin-inline:auto!important;
  padding:44px clamp(22px,5vw,64px) 96px!important;
  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif!important;
- font-size:var(--bc-reading-size,18px)!important;line-height:1.8!important;
+ font-size:var(--bc-reading-size,1.125rem)!important;line-height:1.8!important;
  background:transparent!important;color:var(--bc-reading-text)!important;
 }
 #centralPortugueseReader .pt-doc {max-width:none!important;padding:0!important;background:transparent!important;color:inherit!important}
@@ -60,7 +60,7 @@ html[data-bc-reading-mode="night"] #centralPortugueseReader {
 #centralPortugueseReader .bc-native-article h2.pt-next-module {font-size:1em!important;padding:20px 0!important;border-block:1px solid var(--bc-reading-line)!important;border-radius:0!important;margin:40px 0 24px!important}
 #centralPortugueseReader .bc-native-reader-tools input {border-radius:5px!important}
 @media(max-width:600px){
- #centralPortugueseReader .bc-native-article {padding:28px 20px 80px!important;font-size:var(--bc-reading-size,17px)!important}
+ #centralPortugueseReader .bc-native-article {padding:28px 20px 80px!important;font-size:var(--bc-reading-size,1.0625rem)!important}
  #centralPortugueseReader .bc-native-article .pt-visual-layer {margin-top:40px!important;font-size:1.4em!important}
  #centralPortugueseReader .bc-native-reader-tools {padding:8px 12px!important;gap:6px!important}
  #centralPortugueseReader .pta-module-summary {grid-template-columns:minmax(0,1fr) auto!important}

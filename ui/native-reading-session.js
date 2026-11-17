@@ -2,6 +2,7 @@
 (function (g) {
   'use strict';
   function create(options) {
+    try{performance.mark('bc:reading-start')}catch(_){}
     const returnFocus = document.activeElement;
     const sourceModule = returnFocus.closest('.topic-item,.cv-module');
     const sourceSelector = sourceModule?.dataset.civilNativeModule ? '[data-civil-native-module="' + sourceModule.dataset.civilNativeModule + '"] .cv-module-head' :
@@ -58,6 +59,7 @@
     article.className = 'bc-native-article ' + overlay.id.replace('-reader', '-content');
     article.innerHTML = html;
     body.replaceChildren(article);
+    try{performance.measure('bc:reading-dom-ms','bc:reading-start')}catch(_){}
     overlay.querySelector('.bc-native-toc').innerHTML = toc(body);
     overlay.querySelector('[data-finish-reading]').disabled = false;
     body.onscroll = onScroll;

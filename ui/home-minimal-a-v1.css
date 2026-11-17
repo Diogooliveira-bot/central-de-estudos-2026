@@ -41,7 +41,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-c
   position:relative;z-index:1;min-width:0;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy h2{
-  font-size:clamp(20px,2.5vw,27px)!important;
+  font-size:clamp(1.25rem,2.5vw,1.6875rem)!important;
   line-height:1.15!important;letter-spacing:-.02em;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step>.btn{
@@ -64,7 +64,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-car
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card h2{
   display:flex!important;align-items:center;gap:9px!important;
-  font-size:18px!important;letter-spacing:-.015em;
+  font-size:1.125rem!important;letter-spacing:-.015em;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card h2::before{
   content:"";width:23px;height:23px;flex:0 0 23px;
@@ -89,16 +89,16 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-s
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary>div:first-child small{
   color:#12344d!important;letter-spacing:0!important;
-  text-transform:none!important;font-size:17px!important;font-weight:800!important;
+  text-transform:none!important;font-size:1.0625rem!important;font-weight:800!important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary>div:first-child b{
-  font-size:12px!important;font-weight:500!important;color:#6a8494!important;
+  font-size:0.75rem!important;font-weight:500!important;color:#6a8494!important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary>div:last-child{
   gap:16px!important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary span b{
-  font-size:20px!important;font-variant-numeric:tabular-nums;
+  font-size:1.25rem!important;font-variant-numeric:tabular-nums;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary span small{
   color:#607e91!important;
@@ -108,11 +108,11 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #disciplinasHom
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #disciplinasHome h2{
   margin:2px 0 3px!important;
-  font-size:clamp(18px,2vw,23px)!important;
+  font-size:clamp(1.125rem,2vw,1.4375rem)!important;
   letter-spacing:-.02em;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #disciplinasHome p{
-  font-size:12px!important;color:#688091!important;line-height:1.45!important;
+  font-size:0.75rem!important;color:#688091!important;line-height:1.45!important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #subjects{
   gap:8px!important;
@@ -138,7 +138,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .bc-row-track>s
   background:#16c6c2!important;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject>.subject-head .subject-name{
-  font-size:15px!important;letter-spacing:-.01em;
+  font-size:0.9375rem!important;letter-spacing:-.01em;
 }
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .side-col>.card{
   border-radius:13px!important;
@@ -160,7 +160,7 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .side-col>.card
   }
   html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step>.btn{
     width:100%!important;min-height:46px!important;
-    padding:11px 9px!important;font-size:13px!important;
+    padding:11px 9px!important;font-size:0.8125rem!important;
     white-space:normal!important;
   }
   html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card{
@@ -185,6 +185,6 @@ html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .side-col>.card
     width:86px!important;opacity:.68;
   }
   html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy h2{
-    font-size:19px!important;
+    font-size:1.1875rem!important;
   }
 }

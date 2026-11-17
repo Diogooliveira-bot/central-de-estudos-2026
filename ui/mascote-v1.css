@@ -55,11 +55,11 @@ html.bc-ui-v1 #subjects :is(.ds-notes,.adm-native-notes,.cms-note-final,.cv-nati
 /* Progresso: três cartões (teoria lida, questões internas, questões externas); os números antigos ficam ocultos. */
 .student-progress-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 16px}
 .student-progress-card{padding:16px 18px!important;display:grid;gap:8px;align-content:start}
-.student-progress-card small{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:var(--muted,#5b7285)}
-.student-progress-card strong{font-size:30px;line-height:1.1;letter-spacing:-.02em}
-.student-progress-card strong span{font-size:14px;font-weight:600;color:var(--muted,#5b7285);letter-spacing:0}
-.student-progress-card p{margin:0;font-size:13px;line-height:1.5;color:var(--muted,#5b7285)}
-.student-progress-card ul{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:4px;font-size:13px}
+.student-progress-card small{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:0.6875rem;color:var(--muted,#5b7285)}
+.student-progress-card strong{font-size:1.875rem;line-height:1.1;letter-spacing:-.02em}
+.student-progress-card strong span{font-size:0.875rem;font-weight:600;color:var(--muted,#5b7285);letter-spacing:0}
+.student-progress-card p{margin:0;font-size:0.8125rem;line-height:1.5;color:var(--muted,#5b7285)}
+.student-progress-card ul{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:4px;font-size:0.8125rem}
 .student-progress-card li{display:flex;justify-content:space-between;gap:8px}
 .bc-progress-legacy{display:none!important}
 @media(max-width:760px){.student-progress-cards{grid-template-columns:1fr}}

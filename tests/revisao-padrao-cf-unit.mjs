@@ -9,9 +9,9 @@ const VERSION = '20261115rev1';
 test('Revisão no padrão do Constitucional está carregada e no pacote offline', () => {
   const boot = read('central-v119.html');
   const offline = JSON.parse(read('central-offline-files-v66172.json')).files;
-  assert.ok(boot.includes('/ui/revisao-padrao-cf-v1.css?v=' + VERSION));
+  assert.ok(boot.includes('/ui/revisao-padrao-cf-v1.css?v=20261115responsive1'));
   assert.ok(boot.includes("ui/revisao-padrao-cf-v1.js?v=" + VERSION));
-  assert.ok(offline.includes('/ui/revisao-padrao-cf-v1.css?v=' + VERSION));
+  assert.ok(offline.includes('/ui/revisao-padrao-cf-v1.css?v=20261115responsive1'));
   assert.ok(offline.includes('/ui/revisao-padrao-cf-v1.js?v=' + VERSION));
   // a folha só pode ser carregada depois da aparência de leitura (papel/serifa), para não perder a cascata
   assert.ok(boot.indexOf('revisao-padrao-cf-v1.css') > boot.indexOf('/ui/mascote-v1.css'));

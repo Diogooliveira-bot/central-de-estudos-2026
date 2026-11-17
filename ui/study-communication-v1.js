@@ -181,7 +181,7 @@
     const groups=r.disciplines.map(d=>'<section><h2>'+esc(d.name)+' <small>'+d.pct+'%</small></h2><table><thead><tr><th>Módulo</th><th>Situação</th><th>Progresso</th></tr></thead><tbody>'+
       d.modules.map(m=>'<tr><td>'+esc(m.title)+'</td><td>'+esc(statusName(m.pct))+'</td><td>'+m.pct+'%</td></tr>').join('')+'</tbody></table></section>').join('');
     win.document.open();
-    win.document.write('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Relatório de estudos — Base Completa</title><style>body{font:13px/1.5 Arial,sans-serif;color:#182d42;margin:35px}h1{color:#133b5e;font-size:23px}h2{font-size:16px;margin:22px 0 8px;border-bottom:1px solid #d7e1e9;padding-bottom:6px}h2 small{float:right}table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid #e2e9ef;padding:6px}td:last-child{text-align:right}thead{background:#f1f5f9}section{break-inside:avoid}footer{margin-top:18px;color:#5d7081;font-size:11px}@media print{body{margin:14mm}}</style></head><body>'+
+    win.document.write('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Relatório de estudos — Base Completa</title><style>body{font:0.8125rem/1.5 Arial,sans-serif;color:#182d42;margin:35px}h1{color:#133b5e;font-size:1.4375rem}h2{font-size:1rem;margin:22px 0 8px;border-bottom:1px solid #d7e1e9;padding-bottom:6px}h2 small{float:right}table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid #e2e9ef;padding:6px}td:last-child{text-align:right}thead{background:#f1f5f9}section{break-inside:avoid}footer{margin-top:18px;color:#5d7081;font-size:0.6875rem}@media print{body{margin:14mm}}</style></head><body>'+
       '<p>BASE COMPLETA · CENTRAL DE ESTUDOS</p><h1>Relatório de estudos</h1><p>Aluno: <b>'+esc(r.name)+'</b><br>Emissão: '+esc(date)+'</p>'+
       '<p><b>'+r.done+'</b> concluídos · <b>'+r.underway+'</b> em andamento · <b>'+r.pending+'</b> sem progresso registrado</p>'+
       groups+'<footer>Relatório baseado nos registros da Central. 0% não comprova ausência de estudo fora da plataforma. Para salvar em PDF, selecione “Salvar como PDF” na impressão.</footer></body></html>');
@@ -212,29 +212,29 @@
       .bc-comm-open{overflow:hidden}.bc-comm-overlay[hidden],.bc-comm-overlay [hidden]{display:none!important}
       .bc-comm-overlay{position:fixed;inset:0;z-index:2147483000;background:#07162d99;display:flex;align-items:center;justify-content:center;padding:14px;font-family:Inter,system-ui,Arial,sans-serif}
       .bc-comm-dialog{position:relative;background:white;color:#17334c;width:min(840px,100%);max-height:92dvh;overflow:auto;border-radius:17px;box-shadow:0 30px 80px #07162d33;padding:25px}
-      .bc-comm-dialog h2{margin:0 32px 5px 0;font-size:23px;font-weight:800;letter-spacing:-.025em;color:#102e4c}
-      .bc-comm-dialog p{line-height:1.55}.bc-comm-caption,.bc-comm-note{color:#5b7085;font-size:12px}
-      .bc-comm-close{position:absolute;right:16px;top:16px;border:0;background:#edf3f8;color:#163854;width:35px;height:35px;border-radius:9px;font-size:22px;cursor:pointer}
+      .bc-comm-dialog h2{margin:0 32px 5px 0;font-size:1.4375rem;font-weight:800;letter-spacing:-.025em;color:#102e4c}
+      .bc-comm-dialog p{line-height:1.55}.bc-comm-caption,.bc-comm-note{color:#5b7085;font-size:0.75rem}
+      .bc-comm-close{position:absolute;right:16px;top:16px;border:0;background:#edf3f8;color:#163854;width:35px;height:35px;border-radius:9px;font-size:1.375rem;cursor:pointer}
       .bc-comm-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0;border-bottom:1px solid #dce6ee;padding-bottom:12px}
-      .bc-comm-tabs button,.bc-comm-actions button,.bc-comm-actions a,.bc-comm-dialog form button,.bc-comm-ticket button{font:700 13px Inter,system-ui,Arial,sans-serif;border:1px solid #cbd9e5;border-radius:9px;padding:11px 14px;background:white;color:#173b5d;cursor:pointer;text-decoration:none}
+      .bc-comm-tabs button,.bc-comm-actions button,.bc-comm-actions a,.bc-comm-dialog form button,.bc-comm-ticket button{font:700 0.8125rem Inter,system-ui,Arial,sans-serif;border:1px solid #cbd9e5;border-radius:9px;padding:11px 14px;background:white;color:#173b5d;cursor:pointer;text-decoration:none}
       .bc-comm-tabs button[aria-selected=true],.bc-comm-actions button:first-child,.bc-comm-dialog form button{background:#173b5d;color:white;border-color:#173b5d}
       .bc-comm-actions{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
       .bc-comm-actions button:disabled,.bc-comm-dialog button:disabled{opacity:.55;cursor:wait}
       .bc-comm-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:15px 0}
       .bc-comm-metrics>div{border:1px solid #dce7ef;border-radius:10px;padding:12px;background:#f8fbfd}
-      .bc-comm-metrics b{display:block;font-size:24px;color:#153954}.bc-comm-metrics span{color:#62778a;font-size:11px}
+      .bc-comm-metrics b{display:block;font-size:1.5rem;color:#153954}.bc-comm-metrics span{color:#62778a;font-size:0.6875rem}
       .bc-comm-group{margin:8px 0;border:1px solid #dce5eb;border-radius:9px;overflow:hidden}
-      .bc-comm-group summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;padding:13px;background:#fafcfe;font-size:13px}
+      .bc-comm-group summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;padding:13px;background:#fafcfe;font-size:0.8125rem}
       .bc-comm-group summary span{white-space:nowrap;color:#48657c}
-      .bc-comm-modules>div{display:flex;justify-content:space-between;gap:14px;padding:9px 13px;border-top:1px solid #edf1f5;font-size:12px}
+      .bc-comm-modules>div{display:flex;justify-content:space-between;gap:14px;padding:9px 13px;border-top:1px solid #edf1f5;font-size:0.75rem}
       .bc-comm-modules small{white-space:nowrap;color:#506d82}
-      .bc-comm-dialog form label{display:block;font-size:12px;font-weight:750;margin:14px 0 5px}
-      .bc-comm-dialog input,.bc-comm-dialog textarea{width:100%;background:white;color:#163650;border:1px solid #cddde8;border-radius:8px;padding:11px 12px;font:14px system-ui}
+      .bc-comm-dialog form label{display:block;font-size:0.75rem;font-weight:750;margin:14px 0 5px}
+      .bc-comm-dialog input,.bc-comm-dialog textarea{width:100%;background:white;color:#163650;border:1px solid #cddde8;border-radius:8px;padding:11px 12px;font:0.875rem system-ui}
       .bc-comm-dialog textarea{min-height:120px;resize:vertical}
-      .bc-comm-status{font-size:12px;color:#215c79;min-height:17px}.bc-comm-error{color:#a82424}
+      .bc-comm-status{font-size:0.75rem;color:#215c79;min-height:17px}.bc-comm-error{color:#a82424}
       .bc-comm-ticket{border:1px solid #dce5eb;border-radius:11px;padding:13px;margin:10px 0}
-      .bc-comm-ticket p{margin:6px 0;font-size:12px}.bc-comm-ticket-text{white-space:pre-wrap}
-      @media(max-width:640px){.bc-comm-overlay{padding:0}.bc-comm-dialog{width:100%;height:100dvh;max-height:100dvh;border-radius:0;padding:19px}.bc-comm-modules>div{display:block}.bc-comm-modules small{display:block;margin-top:4px}.bc-comm-dialog h2{font-size:20px}}
+      .bc-comm-ticket p{margin:6px 0;font-size:0.75rem}.bc-comm-ticket-text{white-space:pre-wrap}
+      @media(max-width:640px){.bc-comm-overlay{padding:0}.bc-comm-dialog{width:100%;height:100dvh;max-height:100dvh;border-radius:0;padding:19px}.bc-comm-modules>div{display:block}.bc-comm-modules small{display:block;margin-top:4px}.bc-comm-dialog h2{font-size:1.25rem}}
     `;
     document.head.appendChild(style);
   }

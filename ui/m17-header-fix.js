@@ -61,15 +61,15 @@
       '#'+OVERLAY_ID+'{position:fixed;inset:0;z-index:2147483200;background:rgba(4,13,27,.94);display:grid;place-items:center;padding:18px;box-sizing:border-box}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-shell{width:min(1180px,100%);height:min(94vh,1100px);background:#08182b;border:1px solid rgba(43,217,230,.42);border-radius:18px;overflow:hidden;display:grid;grid-template-rows:auto auto minmax(0,1fr);box-shadow:0 28px 90px rgba(0,0,0,.45)}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 18px;background:linear-gradient(135deg,#0a2542,#06385a);color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}\n'+
-      '#'+OVERLAY_ID+' .bc-pen-infographic-head b{font-size:15px}.bc-pen-infographic-head small{display:block;margin-top:3px;color:#9edfe8;font-size:11px}\n'+
-      '#'+OVERLAY_ID+' .bc-pen-infographic-close{border:0;background:rgba(255,255,255,.1);color:#fff;width:38px;height:38px;border-radius:10px;font-size:24px;line-height:1}\n'+
+      '#'+OVERLAY_ID+' .bc-pen-infographic-head b{font-size:0.9375rem}.bc-pen-infographic-head small{display:block;margin-top:3px;color:#9edfe8;font-size:0.6875rem}\n'+
+      '#'+OVERLAY_ID+' .bc-pen-infographic-close{border:0;background:rgba(255,255,255,.1);color:#fff;width:38px;height:38px;border-radius:10px;font-size:1.5rem;line-height:1}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-tools{display:none;align-items:center;gap:8px;padding:9px 12px;background:#0b1e34;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-tools button{border:1px solid #244664;background:#102a45;color:#eefbff;border-radius:8px;padding:8px 11px;font-weight:700;white-space:nowrap}\n'+
-      '#'+OVERLAY_ID+' .bc-pen-infographic-tools button:hover{background:#173a5d}.bc-pen-infographic-zoom{min-width:54px;text-align:center;color:#aeeaf0;font-weight:800;font-size:12px}\n'+
+      '#'+OVERLAY_ID+' .bc-pen-infographic-tools button:hover{background:#173a5d}.bc-pen-infographic-zoom{min-width:54px;text-align:center;color:#aeeaf0;font-weight:800;font-size:0.75rem}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-stage{overflow:auto;background:#071322;padding:16px;display:block;text-align:center;overscroll-behavior:contain}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-image{display:block;margin:0 auto;max-width:none;border-radius:8px;box-shadow:0 8px 34px rgba(0,0,0,.32);background:#fff}\n'+
       SUBJECT+' [data-native-kind="mindmap"] .bc-native-material-icon{font-size:0}\n'+
-      SUBJECT+' [data-native-kind="mindmap"] .bc-native-material-icon:after{content:"▣";font-size:22px}\n'+
+      SUBJECT+' [data-native-kind="mindmap"] .bc-native-material-icon:after{content:"▣";font-size:1.375rem}\n'+
       '@media(max-width:700px){#'+OVERLAY_ID+'{padding:0}#'+OVERLAY_ID+' .bc-pen-infographic-shell{width:100%;height:100dvh;border-radius:0;border:0}#'+OVERLAY_ID+' .bc-pen-infographic-head{padding:12px 14px}#'+OVERLAY_ID+' .bc-pen-infographic-stage{padding:10px}}';
     document.head.appendChild(style);
   }
