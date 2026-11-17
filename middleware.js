@@ -132,7 +132,10 @@ function redirectToLogin(request) {
   return Response.redirect(url, 302);
 }
 
+// Edge: o middleware roda em TODO pedido (cada .js/.css da Central). No ambiente Node, a abertura (~170 pedidos
+// em paralelo) iniciava dezenas de instâncias frias; no Edge não há partida a frio. Só usa Web APIs (crypto.subtle).
 export const config = {
+  runtime: 'edge',
   matcher: '/:path*',
 };
 
