@@ -145,3 +145,14 @@ body.bcpe-open{overflow:hidden!important}
 .bcpe-version-list li{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #dbe4ec;border-radius:8px;padding:8px 10px;font:500 13px system-ui,-apple-system,"Segoe UI",sans-serif}
 .bcpe-version-list button{border:1px solid #143c61;background:#143c61;color:#fff;border-radius:7px;padding:6px 10px;cursor:pointer;font:600 12px system-ui,sans-serif;white-space:nowrap}
 @media(max-width:640px){.bcpe-find{padding:8px 10px}.bcpe-find input[type=search],.bcpe-find input[type=text]{flex:1 1 100%}.bcpe-words{display:none}}
+
+/* Ação editorial explícita: remove exclusivamente caixas de Lei Seca do módulo atual. */
+.bcpe-toolbar .bcpe-remove-law{
+ border-color:#d8b8ac;background:#fff8f5;color:#843d28;
+ white-space:nowrap;padding:7px 12px;
+}
+.bcpe-toolbar .bcpe-remove-law:hover{background:#ffede6;border-color:#c98c76;color:#742c19}
+.bcpe-workspace .bcpe-block:has(> .bcpe-node.lei-seca)>.bcpe-block-head .bcpe-block-name,
+.bcpe-workspace .bcpe-block:has(> .bcpe-node.penv-law-library)>.bcpe-block-head .bcpe-block-name{
+ color:#8b654e;
+}
