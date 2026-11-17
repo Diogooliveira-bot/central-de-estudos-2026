@@ -156,3 +156,23 @@ body.bcpe-open{overflow:hidden!important}
 .bcpe-workspace .bcpe-block:has(> .bcpe-node.penv-law-library)>.bcpe-block-head .bcpe-block-name{
  color:#8b654e;
 }
+
+
+/* Escolha seletiva dos artigos e quadros de Lei Seca; não ocupa a tela inteira. */
+.bcpe-law-backdrop{position:absolute;inset:0;z-index:15;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(10,30,49,.54)}
+.bcpe-law-panel{width:min(620px,100%);max-height:min(690px,92vh);display:flex;flex-direction:column;min-height:0;overflow:hidden;background:#fff;border:1px solid #dce7ee;border-radius:15px;box-shadow:0 18px 55px #081d3545;color:#243a50;padding:22px 24px;font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.bcpe-law-panel h2{font:750 21px/1.35 system-ui,sans-serif;color:#143d60;margin:0 0 8px}
+.bcpe-law-panel p{font-size:14px;line-height:1.5;color:#51697f;margin:0 0 16px}
+.bcpe-law-options{display:flex;flex-direction:column;gap:5px;overflow-y:auto;min-height:0;overscroll-behavior:contain;padding:0 3px 4px}
+.bcpe-law-options label{display:flex;gap:11px;align-items:flex-start;min-height:42px;cursor:pointer;padding:10px 12px;border:1px solid #e2eaf0;border-radius:9px;color:#20384e;font:500 13px/1.5 system-ui,sans-serif}
+.bcpe-law-options label:has(input:checked){background:#eef7fb;border-color:#91c6de}
+.bcpe-law-options .bcpe-law-all{font-weight:750;background:#f5f8fb;margin-bottom:4px}
+.bcpe-law-options input{flex:0 0 17px;width:17px;height:17px;accent-color:#145c87;margin:2px 0 0}
+.bcpe-law-foot{display:block;margin:13px 0;color:#6b7f90;font-size:12px}
+.bcpe-law-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+.bcpe-law-actions button{border:1px solid #cbdbe8;border-radius:9px;background:white;color:#213e57;padding:10px 14px;min-height:42px;cursor:pointer;font:650 13px system-ui}
+.bcpe-law-actions .bcpe-law-danger{color:#fff;background:#a3432d;border-color:#a3432d}
+.bcpe-law-actions .bcpe-law-danger:hover{background:#883624}
+.bcpe-law-actions button:disabled{opacity:.5;cursor:not-allowed}
+.bcpe-law-panel button:focus-visible,.bcpe-law-panel input:focus-visible{outline:3px solid #68adca;outline-offset:2px}
+@media(max-width:620px){.bcpe-law-backdrop{padding:8px}.bcpe-law-panel{max-height:96vh;padding:17px 14px}.bcpe-law-actions button{flex:1 1 auto}}
