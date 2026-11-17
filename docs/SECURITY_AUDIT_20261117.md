@@ -69,6 +69,7 @@ Foram encontrados dois riscos altos: a rota de questões gratuitas liberava uso 
 | Dependências npm | 0 vulnerabilidades conhecidas no `npm audit` |
 | Segredos em arquivos versionados | 1.874 arquivos verificados, nenhum padrão de alto risco detectado |
 | Build Vercel privado | aprovado; materiais protegidos ficaram fora da árvore estática |
+| Prévia Vercel real | READY; link privado válido retornou 200, token inválido retornou 403 e API de dados no modo visitante retornou 403 |
 | Testes passivos de produção | rotas de usuários, planos, questões e admin recusaram sessão ausente com 401 |
 | Suíte geral existente | 408 testes: 404 aprovados, 3 falhas preexistentes de conteúdo, 1 ignorado por Chromium ausente |
 
@@ -98,6 +99,6 @@ Após 1–4, a avaliação pode subir para **APTO COM RESSALVAS**; para **APTO**
 
 ## Pull Request e prévia
 
-- Pull Request: a preencher após envio da branch.
-- Prévia Vercel: a preencher após o deployment ficar pronto.
+- Pull Request: https://github.com/Diogooliveira-bot/central-de-estudos-2026/pull/316
+- Prévia Vercel: https://central-de-estudos-aideo2x87-estudotd.vercel.app/central-v119.html
 
