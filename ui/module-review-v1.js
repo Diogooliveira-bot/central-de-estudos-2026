@@ -181,7 +181,7 @@ function scan(){
  if(!authorized)return;
  menu();
  mountModules();
- document.querySelectorAll('.bc-native-reader-overlay,.cf-native-overlay,.bc-info-overlay').forEach(mountReader);
+ document.querySelectorAll('.bc-native-reader-overlay,.cf-native-overlay,.bc-info-reader-overlay').forEach(mountReader);
 }
 function schedule(){
  if(queued)return;
