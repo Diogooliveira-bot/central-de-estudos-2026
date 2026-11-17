@@ -116,7 +116,8 @@ export default async function handler(req, res) {
     res.setHeader('Allow', 'GET, POST');
     return send(res, 405, { error: 'Método não permitido' });
   } catch (error) {
-    console.error('central user sync error', error);
-    return send(res, 500, { error: error?.message || 'Falha interna na sincronização do usuário' });
+    console.error('central user sync error', String(error?.code || error?.name || 'UNKNOWN').slice(0, 32));
+    if (Number(error?.statusCode) === 413) return send(res, 413, { error: 'Solicitação acima do limite permitido' });
+    return send(res, 500, { error: 'Falha interna na sincronização do usuário' });
   }
 }

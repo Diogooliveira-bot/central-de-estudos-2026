@@ -24,12 +24,26 @@ function validEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+async function ensureAdminAuditTable(sql) {
+  await sql`
+    CREATE TABLE IF NOT EXISTS central_admin_security_audit (
+      audit_id BIGSERIAL PRIMARY KEY,
+      actor_user_id TEXT NOT NULL,
+      action TEXT NOT NULL CHECK (action IN ('user_created','user_updated','student_deleted','password_reset')),
+      target_user_id TEXT,
+      metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    )
+  `;
+}
+
 export default async function handler(req, res) {
   try {
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
     const session = await requireSession(req, ['admin']);
     if (!session.ok) return send(res, session.status, { error: session.error });
     const sql = session.sql;
+    await ensureAdminAuditTable(sql);
 
     if (req.method === 'GET') {
       const rows = await sql`
@@ -80,13 +94,26 @@ export default async function handler(req, res) {
               SELECT user_id,subscription_id,${session.user.id},'assigned','free','active'
                 FROM assigned
               RETURNING audit_id
+            ), security_audit AS (
+              INSERT INTO central_admin_security_audit(actor_user_id,action,target_user_id,metadata)
+              SELECT ${session.user.id},'user_created',user_id,jsonb_build_object('role',role)
+                FROM created
+              RETURNING audit_id
             )
             SELECT * FROM created
           `
           : await sql`
-            INSERT INTO central_users(user_id,name,email,role,password_hash,active)
-            VALUES(${userId},${name},${email},${role},${passwordHash},TRUE)
-            RETURNING user_id,name,email,role,active,created_at,updated_at,last_login
+            WITH created AS (
+              INSERT INTO central_users(user_id,name,email,role,password_hash,active)
+              VALUES(${userId},${name},${email},${role},${passwordHash},TRUE)
+              RETURNING user_id,name,email,role,active,created_at,updated_at,last_login
+            ), security_audit AS (
+              INSERT INTO central_admin_security_audit(actor_user_id,action,target_user_id,metadata)
+              SELECT ${session.user.id},'user_created',user_id,jsonb_build_object('role',role)
+                FROM created
+              RETURNING audit_id
+            )
+            SELECT * FROM created
           `;
         return send(res, 201, { ok: true, user: publicUser(rows[0]) });
       }
@@ -116,12 +143,21 @@ export default async function handler(req, res) {
         }
 
         const rows = await sql`
-          UPDATE central_users
-          SET name=${name}, role=${role}, active=${active},
-              session_version=session_version + CASE WHEN role IS DISTINCT FROM ${role} OR active IS DISTINCT FROM ${active} THEN 1 ELSE 0 END,
-              updated_at=NOW()
-          WHERE user_id=${userId}
-          RETURNING user_id,name,email,role,active,created_at,updated_at,last_login
+          WITH updated AS (
+            UPDATE central_users
+            SET name=${name}, role=${role}, active=${active},
+                session_version=session_version + CASE WHEN role IS DISTINCT FROM ${role} OR active IS DISTINCT FROM ${active} THEN 1 ELSE 0 END,
+                updated_at=NOW()
+            WHERE user_id=${userId}
+            RETURNING user_id,name,email,role,active,created_at,updated_at,last_login
+          ), security_audit AS (
+            INSERT INTO central_admin_security_audit(actor_user_id,action,target_user_id,metadata)
+            SELECT ${session.user.id},'user_updated',user_id,
+              jsonb_build_object('oldRole',${current.role},'newRole',role,'oldActive',${current.active},'newActive',active)
+              FROM updated
+            RETURNING audit_id
+          )
+          SELECT * FROM updated
         `;
         return send(res, 200, { ok: true, user: publicUser(rows[0]) });
       }
@@ -146,6 +182,10 @@ export default async function handler(req, res) {
             DELETE FROM public.central_free_signup_pending
             WHERE LOWER(email) IN (SELECT LOWER(email) FROM removed)
             RETURNING email
+          ), security_audit AS (
+            INSERT INTO central_admin_security_audit(actor_user_id,action,target_user_id,metadata)
+            SELECT ${session.user.id},'student_deleted',user_id,'{}'::jsonb FROM removed
+            RETURNING audit_id
           )
           SELECT user_id FROM removed
         `;
@@ -162,11 +202,18 @@ export default async function handler(req, res) {
         if (passwordError) return send(res, 400, { error: passwordError });
 
         const rows = await sql`
-          UPDATE central_users
-          SET password_hash=${hashPassword(password)}, failed_attempts=0, locked_until=NULL,
-              session_version=session_version+1, updated_at=NOW()
-          WHERE user_id=${userId}
-          RETURNING user_id
+          WITH changed AS (
+            UPDATE central_users
+            SET password_hash=${hashPassword(password)}, failed_attempts=0, locked_until=NULL,
+                session_version=session_version+1, updated_at=NOW()
+            WHERE user_id=${userId}
+            RETURNING user_id
+          ), security_audit AS (
+            INSERT INTO central_admin_security_audit(actor_user_id,action,target_user_id,metadata)
+            SELECT ${session.user.id},'password_reset',user_id,'{}'::jsonb FROM changed
+            RETURNING audit_id
+          )
+          SELECT user_id FROM changed
         `;
         if (!rows.length) return send(res, 404, { error: 'Usuário não encontrado' });
         return send(res, 200, { ok: true });
@@ -178,7 +225,8 @@ export default async function handler(req, res) {
     res.setHeader('Allow', 'GET, POST');
     return send(res, 405, { error: 'Método não permitido' });
   } catch (error) {
-    console.error('users api error', error);
-    return send(res, 500, { error: error?.message || 'Falha interna ao gerenciar usuários' });
+    console.error('users api error', String(error?.code || error?.name || 'UNKNOWN').slice(0, 32));
+    if (Number(error?.statusCode) === 413) return send(res, 413, { error: 'Solicitação acima do limite permitido' });
+    return send(res, 500, { error: 'Falha interna ao gerenciar usuários' });
   }
 }

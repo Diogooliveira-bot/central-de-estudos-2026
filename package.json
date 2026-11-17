@@ -42,7 +42,9 @@
     "test:study-communication": "node --test tests/study-communication-unit.mjs",
     "test:questions-removed": "node --test tests/old-questions-removed-unit.mjs",
     "test:agenda-leo-browser": "node tests/agenda-pdf-leo-browser.mjs",
-    "test:responsive": "node --test tests/tablet-scale-unit.mjs tests/responsive-loader-unit.mjs"
+    "test:responsive": "node --test tests/tablet-scale-unit.mjs tests/responsive-loader-unit.mjs",
+    "security:static": "node scripts/security-static-check.mjs",
+    "test:security": "node --test tests/security-hardening-unit.mjs tests/auth-unit.mjs tests/plan-access-unit.mjs tests/password-reset-unit.mjs tests/account-deletion-unit.mjs tests/lei-em-dia-delivery-unit.mjs tests/questoes-limit-pg-scenarios.mjs tests/hotmart-webhook-unit.mjs tests/vercel-private-static-output-unit.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.3.16",

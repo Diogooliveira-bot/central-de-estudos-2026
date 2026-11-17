@@ -204,10 +204,10 @@ test('todos os módulos do banco têm enunciado público sem gabarito', async ()
   assert.ok(total >= 1480);
 });
 
-test('antes da migração 010 o recurso funciona SEM limite; ao aplicar a migração, o limite de 5 liga sozinho', async () => {
+test('antes da migração 010 o Gratuito falha fechado; ao aplicar a migração, o limite de 5 liga', async () => {
   const antigo = new PGlite();
   const arquivos = fs.readdirSync(new URL('../db/migrations/', import.meta.url)).sort();
-  for (const f of arquivos.filter(x => !x.startsWith('010_'))) await antigo.exec(fs.readFileSync(new URL('../db/migrations/' + f, import.meta.url), 'utf8'));
+  for (const f of arquivos.filter(x => /^00[1-9]_/.test(x))) await antigo.exec(fs.readFileSync(new URL('../db/migrations/' + f, import.meta.url), 'utf8'));
   const sqlAntigo = (strings, ...values) => antigo.query(strings.reduce((a, part, i) => a + '$' + i + part), values.map(v => v instanceof Date ? v.toISOString() : v)).then(r => r.rows);
   const h = createQuestoesHandler({ requireSession: async req => ({ ok: true, sql: sqlAntigo, user: { id: req.userId } }) });
   const chamar = async req => { const r = res(); await h({ headers: { host: 'app.example', origin: 'https://app.example' }, ...req }, r); return r; };
@@ -215,13 +215,10 @@ test('antes da migração 010 o recurso funciona SEM limite; ao aplicar a migra�
   await sqlAntigo`INSERT INTO central_users(user_id,name,email,role,password_hash,active) VALUES(${id},'Aluno Ficticio','pre010@example.invalid','aluno','x',TRUE)`;
   await sqlAntigo`INSERT INTO central_user_subscriptions(subscription_id,user_id,plan_code,status,starts_at,grant_source) VALUES(${crypto.randomUUID()},${id},'free','active',NOW()-INTERVAL '1 day','manual')`;
   const lista = await chamar({ method: 'GET', query: { action: 'modulo', disc: 'adm', n: '3' }, userId: id });
-  assert.equal(lista.statusCode, 200);
-  assert.equal(lista.body.usage.limit, null, 'sem migração não há limite');
-  for (let i = 0; i < 8; i++) {
-    const r = await chamar({ method: 'POST', query: { action: 'responder' }, body: { disc: 'adm', n: 3, id: IDS[i], choice: 0 }, userId: id });
-    assert.equal(r.statusCode, 200, 'questão ' + (i + 1) + ' sem migração');
-    assert.ok(Number.isInteger(r.body.answer));
-  }
+  assert.equal(lista.statusCode, 503);
+  const bloqueada = await chamar({ method: 'POST', query: { action: 'responder' }, body: { disc: 'adm', n: 3, id: IDS[0], choice: 0 }, userId: id });
+  assert.equal(bloqueada.statusCode, 503);
+  assert.equal(bloqueada.body.answer, undefined, 'sem quota válida o gabarito não é entregue');
   // aplica a migração: a partir daí vale o limite, sem reiniciar nada
   await antigo.exec(fs.readFileSync(new URL('../db/migrations/010_questoes_daily_limit.sql', import.meta.url), 'utf8'));
   let liberadas = 0;
@@ -233,4 +230,11 @@ test('antes da migração 010 o recurso funciona SEM limite; ao aplicar a migra�
   const uso = await chamar({ method: 'GET', query: { action: 'uso' }, userId: id });
   assert.equal(uso.body.usage.limit, 5);
   assert.equal(uso.body.usage.remaining, 0);
+  await antigo.exec(fs.readFileSync(new URL('../db/migrations/011_security_hardening.sql', import.meta.url), 'utf8'));
+  const tabelas = await antigo.query(`SELECT table_name FROM information_schema.tables
+    WHERE table_schema='public' AND table_name IN ('central_auth_rate_limits','central_admin_security_audit')
+    ORDER BY table_name`);
+  assert.deepEqual(tabelas.rows.map(row => row.table_name), ['central_admin_security_audit', 'central_auth_rate_limits']);
+  const privilegio = await antigo.query(`SELECT has_function_privilege('public','public.central_claim_questao(text,text)','EXECUTE') AS allowed`);
+  assert.equal(privilegio.rows[0].allowed, false);
 });

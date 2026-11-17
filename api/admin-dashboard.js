@@ -138,7 +138,7 @@ export default async function handler(req,res){
       users
     });
   }catch(error){
-    console.error('admin dashboard error',error);
-    return send(res,500,{error:error?.message||'Falha ao carregar o painel administrativo'});
+    console.error('admin dashboard error',String(error?.code||error?.name||'UNKNOWN').slice(0,32));
+    return send(res,500,{error:'Falha ao carregar o painel administrativo'});
   }
 }

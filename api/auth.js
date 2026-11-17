@@ -1,19 +1,23 @@
 import crypto from 'node:crypto';
 import {
   clearSessionCookie,
+  clearAuthFailures,
   createSessionToken,
   database,
+  ensureAuthRateLimitTable,
   ensureUsersTable,
   hashPassword,
   normalizeEmail,
   publicUser,
   readJsonBody,
   recordFailedLogin,
+  reserveAuthFailure,
   requireSession,
   safeSecretEqual,
   sessionCookie,
   sameOriginRequest,
   validatePassword,
+  verifiedClientIp,
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
@@ -138,6 +142,15 @@ async function login(req, res) {
 
   const sql = database();
   await ensureUsersTable(sql);
+  await ensureAuthRateLimitTable(sql);
+  const clientIp = verifiedClientIp(req);
+  const registerFailure = async () => {
+    const [emailAllowed, ipAllowed] = await Promise.all([
+      reserveAuthFailure(sql, 'login-email', email, 10, 15),
+      reserveAuthFailure(sql, 'login-ip', clientIp, 40, 15),
+    ]);
+    return emailAllowed && ipAllowed;
+  };
   const rows = await sql`
     SELECT user_id,name,email,role,password_hash,active,failed_attempts,locked_until,session_version,created_at,updated_at,last_login
     FROM central_users
@@ -147,19 +160,30 @@ async function login(req, res) {
   const row = rows[0];
 
   if (!row) {
+    const allowed = await registerFailure();
     await new Promise((resolve) => setTimeout(resolve, 350));
-    return send(res, 401, { error: 'E-mail ou senha inválidos' });
+    return send(res, allowed ? 401 : 429, {
+      error: allowed ? 'E-mail ou senha inválidos' : 'Muitas tentativas. Aguarde alguns minutos e tente novamente',
+    });
   }
-  if (row.active === false) return send(res, 403, { error: 'Este usuário está desativado' });
+  if (row.active === false) {
+    const allowed = await registerFailure();
+    return send(res, allowed ? 401 : 429, {
+      error: allowed ? 'E-mail ou senha inválidos' : 'Muitas tentativas. Aguarde alguns minutos e tente novamente',
+    });
+  }
   if (row.locked_until && new Date(row.locked_until).getTime() > Date.now()) {
     return send(res, 429, { error: 'Muitas tentativas. Aguarde alguns minutos e tente novamente' });
   }
 
   const passwordOk = verifyPassword(password, row.password_hash);
   if (!passwordOk) {
-    const attempt = await recordFailedLogin(sql, row.user_id);
-    return send(res, attempt.locked ? 429 : 401, {
-      error: attempt.locked ? 'Muitas tentativas. A conta foi bloqueada temporariamente' : 'E-mail ou senha inválidos',
+    const [allowed, attempt] = await Promise.all([
+      registerFailure(),
+      recordFailedLogin(sql, row.user_id),
+    ]);
+    return send(res, !allowed || attempt.locked ? 429 : 401, {
+      error: !allowed || attempt.locked ? 'Muitas tentativas. Aguarde alguns minutos e tente novamente' : 'E-mail ou senha inválidos',
     });
   }
 
@@ -176,6 +200,7 @@ async function login(req, res) {
   `;
   if (!authenticated.length) return send(res, 401, { error: 'Não foi possível autenticar. Tente novamente' });
   const verifiedUser = authenticated[0];
+  await clearAuthFailures(sql, 'login-email', email);
   const ttl = remember ? 30 * 24 * 60 * 60 : undefined;
   const token = createSessionToken(verifiedUser, ttl);
   return send(res, 200, { ok: true, user: publicUser(verifiedUser), remembered: remember }, { 'Set-Cookie': sessionCookie(token, ttl) });
@@ -257,6 +282,7 @@ export default async function handler(req, res) {
     return send(res, 404, { error: 'Ação de autenticação inválida' });
   } catch (error) {
     console.error('auth error', String(error?.code || error?.name || 'UNKNOWN').slice(0, 24));
+    if (Number(error?.statusCode) === 413) return send(res, 413, { error: 'Solicitação acima do limite permitido' });
     return send(res, 503, { error: 'Autenticação temporariamente indisponível' });
   }
 }

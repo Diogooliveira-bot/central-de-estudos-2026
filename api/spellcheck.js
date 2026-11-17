@@ -1,17 +1,10 @@
-import { requireSession, sameOriginRequest } from '../lib/auth.js';
+import { readJsonBody, requireSession, sameOriginRequest } from '../lib/auth.js';
 
 function send(res,status,body){
   res.statusCode=status;
   res.setHeader('Content-Type','application/json; charset=utf-8');
   res.setHeader('Cache-Control','no-store');
   res.end(JSON.stringify(body));
-}
-async function readJsonBody(req){
-  if(req.body&&typeof req.body==='object')return req.body;
-  if(typeof req.body==='string')return JSON.parse(req.body||'{}');
-  const chunks=[];for await(const chunk of req)chunks.push(chunk);
-  const raw=Buffer.concat(chunks).toString('utf8');
-  return raw?JSON.parse(raw):{};
 }
 function cleanMatch(match){
   return {
@@ -51,7 +44,8 @@ export default async function handler(req,res){
     const data=await response.json();
     return send(res,200,{language:data?.language?.code||language,matches:Array.isArray(data?.matches)?data.matches.map(cleanMatch):[]});
   }catch(error){
-    console.error('spellcheck error',error);
+    console.error('spellcheck error',String(error?.name||'UNKNOWN').slice(0,32));
+    if(Number(error?.statusCode)===413)return send(res,413,{error:'Solicitação acima do limite permitido'});
     return send(res,500,{error:error?.name==='AbortError'?'A revisão demorou mais que o esperado':'Falha interna na revisão ortográfica'});
   }
 }

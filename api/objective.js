@@ -113,8 +113,9 @@ async function handleExamProgress(req, res) {
     }
     return send(res, 200, { ok:true, examId:EXAM_ID, saved:body.changes.length });
   } catch (error) {
-    console.error('exam topic progress error', error);
-    return send(res, 500, { error:error?.message || 'Falha ao sincronizar o progresso do edital' });
+    console.error('exam topic progress error', String(error?.code||error?.name||'UNKNOWN').slice(0,32));
+    if(Number(error?.statusCode)===413)return send(res,413,{error:'Solicitação acima do limite permitido'});
+    return send(res, 500, { error:'Falha ao sincronizar o progresso do edital' });
   }
 }
 
@@ -235,7 +236,8 @@ export default async function handler(req, res) {
       updatedAt:row.updated_at,
     });
   } catch (error) {
-    console.error('study objective preference error', error);
-    return send(res, 500, { error:error?.message || 'Falha ao salvar o objetivo' });
+    console.error('study objective preference error', String(error?.code||error?.name||'UNKNOWN').slice(0,32));
+    if(Number(error?.statusCode)===413)return send(res,413,{error:'Solicitação acima do limite permitido'});
+    return send(res, 500, { error:'Falha ao salvar o objetivo' });
   }
 }
