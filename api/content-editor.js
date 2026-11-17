@@ -175,7 +175,7 @@ export default async function handler(req,res){
           RETURNING content_id,label,html,revision,updated_at
         ), archived AS (
           INSERT INTO central_content_override_history(content_id,revision,label,html,archived_at)
-          SELECT content_id,revision,label,html,NOW() FROM published
+          SELECT content_id,revision,label,html,NOW() FROM published WHERE TRUE
           ON CONFLICT(content_id,revision) DO UPDATE SET
             label=EXCLUDED.label,html=EXCLUDED.html
           RETURNING content_id,revision
