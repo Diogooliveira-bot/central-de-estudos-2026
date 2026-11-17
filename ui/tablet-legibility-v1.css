@@ -1,0 +1,147 @@
+/* Base Completa — ajustes ergonômicos apenas para tablets touch.
+   A classe vem de ui/tablet-scale-v1.js (tela física, não viewport desktop forçada).
+   Preserva os layouts de celular, desktop e a leitura em tela cheia. */
+
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView {
+  padding:1.4rem 1.35rem 2.5rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step {
+  min-height:10.5rem!important;
+  padding:1.3rem 1.55rem!important;
+  gap:.85rem 1.25rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy h2 {
+  font-size:clamp(1.35rem,2.1vw,1.8rem)!important;
+  line-height:1.27!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-copy p {
+  font-size:.9rem!important;
+  line-height:1.5!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-next-step>.btn {
+  min-height:3.2rem!important;
+  font-size:.95rem!important;
+  padding:.8rem 1.2rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card {
+  padding:1.25rem 1.4rem!important;
+  min-height:0!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card h2 {
+  font-size:1.16rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card>.agenda {
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  align-items:stretch!important;
+  gap:.8rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card>.agenda .agenda-row {
+  min-width:0!important;
+  width:100%!important;
+  max-width:none!important;
+  min-height:4.8rem!important;
+  padding:.85rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card>.agenda .agenda-row :is(button,.btn) {
+  min-height:2.75rem!important;
+  font-size:.88rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary {
+  padding:1.2rem 1.4rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .student-week-summary span b {
+  font-size:1.3rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView #disciplinasHome h2 {
+  font-size:1.55rem!important;
+}
+
+/* Na etapa de escolha, reduzir de três colunas minúsculas para duas legíveis. */
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects {
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:.85rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects>.subject>.subject-head {
+  grid-template-columns:3rem minmax(0,1fr) auto 1rem!important;
+  grid-template-rows:auto!important;
+  gap:.75rem!important;
+  min-height:6rem!important;
+  padding:.95rem 1rem!important;
+  align-items:center!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice .bc-row-icon {
+  width:3rem!important;height:3rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .subject-name {
+  font-size:1rem!important;
+  line-height:1.35!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .bc-row-meta {
+  font-size:.82rem!important;
+  white-space:normal!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .bc-focus-modules {
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:1rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .bc-focus-module-card {
+  min-height:5.2rem!important;
+  padding:1rem!important;
+}
+html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .bc-focus-module-copy strong {
+  font-size:1.03rem!important;
+}
+
+/* No retrato, o cabeçalho usa duas linhas em vez de reduzir tudo para caber. */
+@media (min-width:801px) {
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav:not(.student-reader-active):root {
+    --bc-nav-height:8.4rem!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar {
+    flex-wrap:wrap!important;
+    align-content:center!important;
+    gap:.3rem!important;
+    padding:.65rem 1.1rem!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .brand {
+    flex:0 0 100%!important;
+    min-width:0!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .nav {
+    flex:0 0 100%!important;
+    width:100%!important;
+    display:flex!important;
+    justify-content:space-between!important;
+    overflow:hidden!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .student-nav-scroll {
+    display:flex!important;
+    flex:1 1 0!important;
+    min-width:0!important;
+    overflow-x:auto!important;
+    overscroll-behavior-x:contain;
+    gap:.25rem!important;
+  }
+}
+/* Rótulos do menu sempre legíveis nos tablets, inclusive com viewport desktop. */
+@media (min-width:801px) {
+  html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .nav button[data-student-primary-nav] {
+    min-height:3rem!important;
+    font-size:.9rem!important;
+    padding:.6rem .8rem!important;
+    flex-shrink:0;
+  }
+  html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .nav .nav-text {
+    font-size:inherit!important;
+  }
+}
+@media (max-width:880px) {
+  html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects,
+  html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .bc-focus-modules,
+  html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card>.agenda {
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+}
