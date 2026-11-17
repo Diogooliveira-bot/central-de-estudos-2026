@@ -1152,7 +1152,26 @@ window.centralBackupHistory=async function(){
   var resp=await api('/api/backups');var items=resp.backups||[];
   host.classList.remove('hidden');
   if(!items.length)host.innerHTML='<div class="central-backup-status">Nenhum snapshot online salvo ainda.</div>';
-  else host.innerHTML=items.map(function(x){return '<div class="central-backup-item"><div><b>Backup #'+x.id+' · '+fmtData(x.createdAt)+'</b><small>'+(x.version||'versão não informada')+' · '+fmtBytes(x.bytes||0)+(x.note?' · '+String(x.note).replace(/[<>]/g,''):'')+'</small></div><div class="central-backup-item-actions"><button onclick="centralBackupDownloadOnline('+x.id+')">Baixar</button><button onclick="centralBackupRestoreOnline('+x.id+')">Restaurar</button><button onclick="centralBackupDeleteOnline('+x.id+')">Excluir</button></div></div>'}).join('');
+  else {
+    host.replaceChildren();
+    items.forEach(function(x){
+      var id=Number(x.id);
+      if(!Number.isSafeInteger(id)||id<=0)return;
+      var row=document.createElement('div');row.className='central-backup-item';
+      var info=document.createElement('div');
+      var title=document.createElement('b');title.textContent='Backup #'+id+' · '+fmtData(x.createdAt);
+      var details=document.createElement('small');
+      details.textContent=String(x.version||'versão não informada')+' · '+fmtBytes(x.bytes||0)+(x.note?' · '+String(x.note):'');
+      info.append(title,details);
+      var buttons=document.createElement('div');buttons.className='central-backup-item-actions';
+      [['Baixar','centralBackupDownloadOnline'],['Restaurar','centralBackupRestoreOnline'],['Excluir','centralBackupDeleteOnline']].forEach(function(action){
+        var button=document.createElement('button');button.type='button';button.textContent=action[0];
+        button.addEventListener('click',function(){if(typeof window[action[1]]==='function')window[action[1]](id)});
+        buttons.appendChild(button);
+      });
+      row.append(info,buttons);host.appendChild(row);
+    });
+  }
   setStatus(items.length+' backup(s) online encontrado(s).','ok');
  }catch(e){host.classList.add('hidden');setStatus('Não consegui abrir o histórico online: '+e.message,'err')}
 };
