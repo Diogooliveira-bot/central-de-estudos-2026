@@ -73,7 +73,7 @@ test('Lei Seca do Penal criada dinamicamente também é removível, sem eliminar
   '<p>Explicação do artigo na teoria.</p>'+
   '<section class="penv-law-group"><details class="penv-literal-law"><summary>LEI SECA · Art. 2º</summary></details></section>'+
   '<aside class="bc-native-callout law"><b>Lei seca</b><div>Citação literal</div></aside>');
- app.selectLawItems(app);
+ selectLawItems(app);
  assert.equal(app.workspace().querySelector('.penv-law-library'),null);
  assert.equal(app.workspace().querySelector('.penv-law-group'),null);
  assert.equal(app.workspace().querySelector('.bc-native-callout.law'),null);
@@ -84,14 +84,14 @@ test('Lei Seca do Penal criada dinamicamente também é removível, sem eliminar
 test('detalhes de Lei Seca sem class e dois níveis de blocos são reconhecidos',async()=>{
  const app=await setup('<section><h2>Conteúdo</h2><details><summary>Ver Lei Seca — art. 3º</summary><p>Dispositivo</p></details>'+
  '<details><summary>Ver jurisprudência</summary><p>STF</p></details></section>');
- app.selectLawItems(app);
+ selectLawItems(app);
  assert.equal(app.workspace().querySelectorAll('details').length,1);
  assert.match(app.workspace().textContent,/STF/);
  app.close();
 });
 test('desfazer restaura Lei Seca apagada antes da publicação',async()=>{
  const app=await setup('<p>Teoria.</p><details class="lei-seca"><summary>Lei seca</summary><p>Artigo</p></details>');
- app.selectLawItems(app);
+ selectLawItems(app);
  assert.equal(app.workspace().querySelector('.lei-seca'),null);
  app.d.querySelector('[data-action="undo"]').click();
  assert.ok(app.workspace().querySelector('.lei-seca'));
@@ -100,7 +100,7 @@ test('desfazer restaura Lei Seca apagada antes da publicação',async()=>{
 });
 test('cancelar confirmação não apaga conteúdo; alunos não recebem controle',async()=>{
  const admin=await setup('<p>Teoria.</p><details class="lei-seca"><summary>Lei seca</summary></details>',{allow:false});
- admin.selectLawItems(app);
+ selectLawItems(admin);
  assert.ok(admin.workspace().querySelector('.lei-seca'));
  admin.close();
  const student=await setup('<p>Teoria.</p><details class="lei-seca"><summary>Lei seca</summary></details>',{role:'aluno'});
