@@ -139,15 +139,16 @@ try{
  await moduleOptions.first().waitFor({state:'visible',timeout:10000});
  const modules=await moduleOptions.allTextContents();
  const counts=await page.locator('.qc-pop .qc-opt em').allTextContents();
- const firstWithQuestions=counts.findIndex(value=>Number(String(value).replace(/[^0-9]/g,''))>0);
+ const numericCounts=counts.map(value=>Number(String(value).replace(/[^0-9]/g,''))||0);
+ const firstWithQuestions=numericCounts.indexOf(Math.max(...numericCounts));
  console.log('LED_MODULE_OPTIONS='+JSON.stringify({total:modules.length,available:counts.filter(value=>Number(String(value).replace(/[^0-9]/g,''))>0).length,first:modules.slice(0,5)}));
- if(firstWithQuestions<0)throw Error('Lei em Dia: nenhum módulo possui questões liberadas no catálogo gratuito');
+ if(firstWithQuestions<0 || numericCounts[firstWithQuestions]<1)throw Error('Lei em Dia: nenhum módulo possui questões liberadas no catálogo gratuito');
  await moduleOptions.nth(firstWithQuestions).click();
  await page.getByRole('button',{name:/Começar a resolver/}).click();
  await page.getByRole('button',{name:/Certo/}).first().waitFor({timeout:10000});
  await page.getByRole('button',{name:/Certo/}).first().click();
  for(let i=0;i<20&&!(await page.getByText('Limite diário atingido').count());i++){
-  await page.getByRole('button',{name:/Próximo/}).click({timeout:5000});await page.waitForTimeout(250);
+  await page.getByRole('button',{name:/Próxim[oa]/}).click({timeout:5000});await page.waitForTimeout(250);
  }
  await page.getByText('Limite diário atingido').waitFor({timeout:8000});
  console.log('FREE_LEI_EM_DIA_ORIGINAL_OK=limite de 20 aplicado');
