@@ -94,7 +94,7 @@
       const panel = document.createElement('template');
       panel.innerHTML = markup;
       const element = panel.content.firstElementChild;
-      element?.querySelector('[data-cpc-premium-cta]')?.addEventListener('click', () => global.alert('Este recurso é exclusivo do Base Completa Premium.'));
+      element?.querySelector('[data-cpc-premium-cta]')?.addEventListener('click', () => global.CentralPlanAccess?.showLock ? global.CentralPlanAccess.showLock() : global.alert('Este recurso é exclusivo do Base Completa Premium.'));
       body.appendChild(element);
     });
     return template.innerHTML;
