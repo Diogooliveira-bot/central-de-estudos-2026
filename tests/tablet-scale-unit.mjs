@@ -3,11 +3,13 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {JSDOM} from 'jsdom';
 const source=readFileSync('ui/tablet-scale-v1.js','utf8');
-function boot(t,{width=390,saved=null,storageFails=false}={}){
+function boot(t,{width=390,saved=null,storageFails=false,touch=false,screenWidth=0,screenHeight=0}={}){
  const dom=new JSDOM('<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="centralSettingsBackdrop"><div class="central-settings-body"></div></div></body></html>',{url:'https://central.test',runScripts:'outside-only'});
  const w=dom.window;t.after(()=>w.close());
  Object.defineProperty(w,'innerWidth',{value:width,writable:true});
- w.matchMedia=()=>({matches:false});
+ Object.defineProperty(w.screen,'width',{configurable:true,value:screenWidth});
+ Object.defineProperty(w.screen,'height',{configurable:true,value:screenHeight});
+ w.matchMedia=query=>({matches:touch && /pointer:coarse/.test(query)});
  if(saved!==null)w.localStorage.setItem('central-v6:ui-scale:v1',saved);
  if(storageFails)Object.defineProperty(w,'localStorage',{get(){throw Error('disabled')}});
  w.eval(source);return w;
@@ -40,4 +42,56 @@ test('tipografia compartilhada não depende de zoom ou alteração dinâmica de 
  const css=readFileSync('ui/auto-scale-v1.css','utf8');assert.doesNotMatch(css,/\bzoom\s*:/);assert.doesNotMatch(source,/setAttribute\('content'/);
  assert.match(css,/--bc-ui-scale/);assert.match(css,/student-reader-active/);assert.match(css,/minmax\(min\(100%,27rem\)/);
  assert.match(readFileSync('sync-local-state.js','utf8'),/central-v6:ui-scale/);
+});
+
+test('tablet em retrato recebe escala própria e classe sem confundir com telefone',t=>{
+ const tab=boot(t,{width:1024,screenWidth:800,screenHeight:1280,touch:true});
+ assert.equal(tab.BCUiScale.isTablet(),true);
+ assert.equal(scale(tab),1.36);
+ assert.ok(tab.document.documentElement.classList.contains('bc-tablet-device'));
+ assert.ok(tab.document.documentElement.classList.contains('bc-tablet-portrait'));
+ const mobile=boot(t,{width:430,screenWidth:430,screenHeight:900,touch:true});
+ assert.equal(mobile.BCUiScale.isTablet(),false);
+ assert.equal(scale(mobile),1.0625);
+ assert.equal(mobile.document.documentElement.classList.contains('bc-tablet-device'),false);
+ const desktop=boot(t,{width:1440,screenWidth:1440,screenHeight:900,touch:false});
+ assert.equal(desktop.BCUiScale.isTablet(),false);
+ assert.equal(scale(desktop),1.125);
+});
+
+test('modo desktop no navegador do tablet não comprime novamente a interface',t=>{
+ const tab=boot(t,{width:1440,screenWidth:800,screenHeight:1280,touch:true});
+ assert.equal(tab.BCUiScale.isTablet(),true);
+ assert.equal(scale(tab),1.46);
+ assert.equal(tab.document.documentElement.style.zoom,'');
+ assert.equal(tab.document.querySelector('meta').content,'width=device-width,initial-scale=1');
+});
+
+test('escala manual e rotação continuam funcionais no tablet',async t=>{
+ const tab=boot(t,{width:1180,screenWidth:800,screenHeight:1280,touch:true});
+ tab.BCUiScale.set(1.15);
+ assert.equal(scale(tab),1.15);
+ assert.equal(tab.document.documentElement.classList.contains('bc-tablet-portrait'),true);
+ Object.defineProperty(tab.screen,'width',{configurable:true,value:1280});
+ Object.defineProperty(tab.screen,'height',{configurable:true,value:800});
+ tab.dispatchEvent(new tab.Event('orientationchange'));
+ await new Promise(resolve=>setTimeout(resolve,110));
+ assert.equal(tab.document.documentElement.classList.contains('bc-tablet-portrait'),false);
+ assert.equal(tab.document.documentElement.classList.contains('bc-tablet-device'),true);
+ assert.equal(scale(tab),1.15);
+});
+
+test('CSS responsivo de tablet é isolado e chega depois do estilo geral',()=>{
+ const css=readFileSync('ui/tablet-legibility-v1.css','utf8');
+ const boot=readFileSync('central-v119.html','utf8');
+ const manifest=JSON.parse(readFileSync('central-offline-files-v66172.json','utf8'));
+ assert.match(css,/html\.bc-tablet-device/);
+ assert.match(css,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+ assert.match(css,/bc-tablet-portrait/);
+ assert.doesNotMatch(css,/\bzoom\s*:/);
+ assert.ok(boot.indexOf('ui/tablet-scale-v1.js?v=20261117tablet1')>0);
+ assert.ok(boot.indexOf('ui/tablet-legibility-v1.css?v=20261117tablet1')>boot.indexOf('ui/auto-scale-v1.css?v=20261115responsive1'));
+ for(const p of ['/ui/tablet-scale-v1.js?v=20261117tablet1','/ui/tablet-legibility-v1.css?v=20261117tablet1']){
+  assert.ok(manifest.files.includes(p),p+' não incluído no pacote offline');
+ }
 });
