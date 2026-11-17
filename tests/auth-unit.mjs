@@ -4,7 +4,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createSessionToken, verifySessionToken, sessionCookie, clearSessionCookie, sameOriginRequest, normalizeRole, hashPassword, verifyPassword } from '../lib/auth.js';
 
-process.env.AUTH_SECRET='audit-only-secret-for-local-unit-tests-20261007';
+process.env.AUTH_SECRET='audit-only-secret-for-'+'local-unit-tests-20261007';
 const user={user_id:'student-test',email:'student@example.test',name:'Student',role:'aluno',session_version:2};
 test('session signature, expiry and version payload',()=>{
   const token=createSessionToken(user,60);

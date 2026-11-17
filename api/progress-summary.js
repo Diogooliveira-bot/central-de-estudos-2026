@@ -92,7 +92,8 @@ export default async function handler(req,res){
     res.setHeader('Allow','GET, POST');
     return send(res,405,{error:'Método não permitido'});
   }catch(error){
-    console.error('progress summary error',error);
-    return send(res,500,{error:error?.message||'Falha ao salvar resumo de progresso'});
+    console.error('progress summary error',String(error?.code||error?.name||'UNKNOWN').slice(0,32));
+    if(Number(error?.statusCode)===413)return send(res,413,{error:'Solicitação acima do limite permitido'});
+    return send(res,500,{error:'Falha ao salvar resumo de progresso'});
   }
 }

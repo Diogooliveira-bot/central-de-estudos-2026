@@ -1,5 +1,4 @@
-import { neon } from '@neondatabase/serverless';
-import { requireSession, sameOriginRequest } from '../lib/auth.js';
+import { database, readJsonBody, requireSession, sameOriginRequest } from '../lib/auth.js';
 import { requirePlanFeature } from '../lib/plan-access.js';
 import { handleContentImage } from '../lib/content-image-handler.js';
 import { contentEditorReadFeature } from '../lib/content-editor-access.js';
@@ -9,10 +8,6 @@ function send(res,status,body){
   res.setHeader('Content-Type','application/json; charset=utf-8');
   res.setHeader('Cache-Control','no-store');
   res.end(JSON.stringify(body));
-}
-function database(){
-  if(!process.env.DATABASE_URL)throw new Error('DATABASE_URL não configurado no Vercel');
-  return neon(process.env.DATABASE_URL);
 }
 async function ensureTable(sql){
   await sql`
@@ -34,13 +29,6 @@ async function ensureTable(sql){
       PRIMARY KEY(content_id, revision)
     )
   `;
-}
-async function readJsonBody(req){
-  if(req.body&&typeof req.body==='object')return req.body;
-  if(typeof req.body==='string')return JSON.parse(req.body||'{}');
-  const chunks=[];for await(const chunk of req)chunks.push(chunk);
-  const raw=Buffer.concat(chunks).toString('utf8');
-  return raw?JSON.parse(raw):{};
 }
 function cleanHtml(value){
   let html=String(value||'');
@@ -196,7 +184,8 @@ export default async function handler(req,res){
     res.setHeader('Allow','GET, POST, DELETE');
     return send(res,405,{error:'Método não permitido'});
   }catch(error){
-    console.error('content editor error',error);
-    return send(res,500,{error:error?.message||'Falha interna no editor de conteúdo'});
+    console.error('content editor error',String(error?.code||error?.name||'UNKNOWN').slice(0,32));
+    if(Number(error?.statusCode)===413)return send(res,413,{error:'Solicitação acima do limite permitido'});
+    return send(res,500,{error:'Falha interna no editor de conteúdo'});
   }
 }

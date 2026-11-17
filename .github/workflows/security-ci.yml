@@ -1,0 +1,41 @@
+name: Segurança contínua
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '30 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout sem credencial persistente
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Dependências sem scripts de instalação
+        run: npm ci --ignore-scripts --no-fund
+      - name: Dependências vulneráveis
+        run: npm audit --audit-level=high
+      - name: Segredos versionados
+        run: npm run security:static
+      - name: Contratos de autenticação e autorização
+        run: npm run test:security
+      - name: Saída privada para Vercel
+        run: npm run build:vercel-output
