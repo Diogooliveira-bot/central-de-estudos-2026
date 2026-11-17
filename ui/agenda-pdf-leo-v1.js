@@ -673,6 +673,10 @@
     if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(card, anchor.nextSibling); else view.appendChild(card);
     return true;
   }
+  function agendaVisible() {
+    var view = document.getElementById('agendaView');
+    return !!view && !view.classList.contains('hidden');
+  }
   function ensure() {
     try {
       var existing = document.getElementById('bcLeoCard');
@@ -684,8 +688,14 @@
       }
     } catch (_) {}
   }
+  // O cartão só é montado quando a Agenda é aberta: na abertura da Central não custa nada.
   function start() {
-    ensure();
+    if (agendaVisible()) ensure();
+    // A Agenda pode abrir por vários caminhos (menu, rota, botão): observa só a classe desta seção.
+    try {
+      var view = document.getElementById('agendaView');
+      if (view && global.MutationObserver) new MutationObserver(function () { if (agendaVisible()) ensure(); }).observe(view, { attributes: true, attributeFilter: ['class'] });
+    } catch (_) {}
     document.addEventListener('click', function (event) {
       if (event.target && event.target.closest && event.target.closest('[data-central-agenda],#agendaView')) setTimeout(ensure, 0);
     }, true);
@@ -693,7 +703,6 @@
       if (event.target && event.target.closest && event.target.closest('#agendaEditor,#homeAgenda')) setTimeout(function () { if (ui.summary && !ui.busy) renderSummary(); }, 0);
     });
     global.addEventListener('storage', function (event) { if (event.key && event.key.indexOf(AGENDA_PREFIX) === 0 && ui.summary && !ui.busy) renderSummary(); });
-    setTimeout(ensure, 1200);
   }
 
   global.BCAgendaPdfLeo = {
