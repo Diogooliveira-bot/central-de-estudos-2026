@@ -9,7 +9,7 @@
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
     "@vercel/functions": "^3.9.11",
-    "nodemailer": "^10.1.4"
+    "nodemailer": "^10.5.0"
   },
   "scripts": {
     "questoes:check": "node tools/validate-questoes.mjs",
