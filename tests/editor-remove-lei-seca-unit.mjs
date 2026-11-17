@@ -24,7 +24,7 @@ async function setup(html,{role='admin',allow=true}={}){
 }
 
 function openLawPicker(app){
- app.selectLawItems(app);
+ app.d.querySelector('[data-action="remove-law"]').click();
  return app.d.querySelector('.bcpe-law-panel');
 }
 function selectLawItems(app,indices='all'){
