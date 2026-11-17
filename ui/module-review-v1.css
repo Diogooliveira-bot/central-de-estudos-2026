@@ -33,7 +33,7 @@
 .student-more-grid>.bc-module-review-menu-button small{
   font-size:.72rem;color:#597587;margin-top:4px;font-weight:400;
 }
-#appRoot #homeView .bc-focus-modules>.bc-review-card-wrap{
+html.bc-ui-v1 #appRoot #homeView .bc-focus-modules>.bc-review-card-wrap{
   grid-column:auto!important;min-width:0;display:flex;flex-direction:column;
   border-radius:12px;overflow:hidden;
   background:#fff;border:1px solid #c9dfe8;box-sizing:border-box;
