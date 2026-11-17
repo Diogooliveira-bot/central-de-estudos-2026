@@ -164,14 +164,8 @@
   // Nenhuma disciplina é escondida: a trilha escolhida só vem primeiro e recebe a etiqueta "Na sua trilha".
   function markTrail(sections) {
     const trail = trailIds();
-    const list = document.getElementById('subjects');
-    let legend = document.querySelector('.study-trail-legend');
-    if (activeId && list && !legend) {
-      legend = document.createElement('p');
-      legend.className = 'study-trail-legend';
-      legend.innerHTML = '<b>Barra verde</b> = disciplinas da sua trilha, no topo. Todas as outras continuam liberadas logo abaixo.';
-      list.parentNode.insertBefore(legend, list);
-    } else if (!activeId && legend) legend.remove();
+    // A explicação "Barra verde = disciplinas da sua trilha…" foi removida; limpa a que versões antigas deixaram.
+    document.querySelectorAll('.study-trail-legend').forEach((legend) => legend.remove());
     sections.forEach((section) => {
       section.hidden = false;
       section.classList.remove('study-objective-hidden');
