@@ -138,8 +138,11 @@ try{
  const moduleOptions=page.locator('.qc-pop .qc-opt');
  await moduleOptions.first().waitFor({state:'visible',timeout:10000});
  const modules=await moduleOptions.allTextContents();
- console.log('LED_MODULE_OPTIONS='+JSON.stringify(modules.slice(0,12)));
- await moduleOptions.first().click();
+ const counts=await page.locator('.qc-pop .qc-opt em').allTextContents();
+ const firstWithQuestions=counts.findIndex(value=>Number(String(value).replace(/[^0-9]/g,''))>0);
+ console.log('LED_MODULE_OPTIONS='+JSON.stringify({total:modules.length,available:counts.filter(value=>Number(String(value).replace(/[^0-9]/g,''))>0).length,first:modules.slice(0,5)}));
+ if(firstWithQuestions<0)throw Error('Lei em Dia: nenhum módulo possui questões liberadas no catálogo gratuito');
+ await moduleOptions.nth(firstWithQuestions).click();
  await page.getByRole('button',{name:/Começar a resolver/}).click();
  await page.getByRole('button',{name:/Certo/}).first().waitFor({timeout:10000});
  await page.getByRole('button',{name:/Certo/}).first().click();
