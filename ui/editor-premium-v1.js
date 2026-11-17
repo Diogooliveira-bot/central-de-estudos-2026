@@ -143,6 +143,8 @@ function isLawItem(node){
  if(!wrapper)return false;
  // O texto de artigos em um mesmo quadro pode ser editado individualmente.
  if(node.matches('p,li')){
+  const details=node.closest('details');
+  if(details&&isLawItem(details))return false;
   return /^(?:art(?:igo)?\.?\s*\d|§\s*\d|par[aá]grafo\s+[uú]nico|inciso\s+[ivxlcdm]+)/i.test((node.textContent||'').trim());
  }
  // A biblioteca da lei do Penal reúne artigos recolhíveis com resumo "Art. X".
@@ -189,7 +191,7 @@ function removeLawItems(state,items){
  const remaining=lawSections(state).map(item=>item.element);
  // Nunca apagar parágrafos de teoria para limpar um invólucro de Lei Seca.
  Array.from(wrappers).sort((a,b)=>b.querySelectorAll('*').length-a.querySelectorAll('*').length)
-  .reverse().forEach(function(wrapper){
+  .forEach(function(wrapper){
    if(!wrapper.isConnected||remaining.some(el=>wrapper.contains(el)))return;
    if(wrapper.querySelector('p,li,blockquote,details,aside,table'))return;
    if(wrapper.matches('.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]')){
