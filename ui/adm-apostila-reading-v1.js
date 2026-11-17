@@ -29,7 +29,7 @@ async function load(number,mode){
   const originalHtml=await decompress(g.ADM_APOSTILA_PACKED[key]);
   if(mode==='complete')return originalHtml;
   if(!g.ADM_SUBMITTED_REVIEW?.[number]){
-    await script('/content/adm/autor-20261110/adm-m'+String(number).padStart(2,'0')+'-submitted-review.js?v=20261110admautor1',()=>!!g.ADM_SUBMITTED_REVIEW?.[number]);
+    await script('/content/adm/autor-20261110/adm-m'+String(number).padStart(2,'0')+'-submitted-review.js?v=20261116revjur1',()=>!!g.ADM_SUBMITTED_REVIEW?.[number]);
   }
   const authored=await decompress(g.ADM_SUBMITTED_REVIEW[number]);
   const start=originalHtml.search(/<h2\b[^>]*>\s*5\s+Questões Internas[^<]*<\/h2>/i);

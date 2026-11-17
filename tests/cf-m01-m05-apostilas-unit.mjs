@@ -104,7 +104,7 @@ test('index e pacote offline usam os mesmos recursos versionados', () => {
   const offline = JSON.parse(read('central-offline-files-v66172.json')).files;
   const assets = [
     ...Array.from({ length:5 }, (_, index) => `/content/cf/m${String(index + 1).padStart(2, '0')}-native-data.js?v=${version}`),
-    ...Array.from({ length:15 }, (_, index) => `/content/cf/m${String(index + 1).padStart(2, '0')}-teoria-guiada-data.js?v=20261022cf-guided-release1`),
+    ...Array.from({ length:15 }, (_, index) => `/content/cf/m${String(index + 1).padStart(2, '0')}-teoria-guiada-data.js?v=20261117cfrevjur1`),
     '/content/cf/cf-teoria-guiada-lei-seca.js?v=20261023leiseca1',
     '/content/cf/cf-teoria-guiada-reader-v1.js?v=20261115responsive1',
     '/ui/cf-native-study-v2.js?v=20261115responsive1',
