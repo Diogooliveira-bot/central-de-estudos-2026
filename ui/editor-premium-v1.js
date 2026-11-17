@@ -1348,10 +1348,11 @@ async function publish(state,button){
  state.saving=true;button.disabled=true;button.textContent='Publicando...';
  try{
   const result=await api('/api/content-editor',{method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({id:state.id,label:state.label,html,expectedRevision:state.revision})});
+   body:JSON.stringify({id:state.id,label:state.label,html,expectedRevision:state.revision,moduleKey:window.BCModuleReview?.keyOf(state.overlay)||undefined})});
   state.revision=Number(result.revision||0);state.dirty=false;draftClear(state.id);draftClear(legacyContentId(state.overlay));
   applySnapshot(state.article,html);state.status.textContent='Publicado · revisão '+state.revision;
   notify('Capítulo publicado com sucesso.');
+  window.dispatchEvent(new CustomEvent('bc:module-published',{detail:{key:window.BCModuleReview?.keyOf(state.overlay)||''}}));
   if(state.onSelectionChange)document.removeEventListener('selectionchange',state.onSelectionChange);
   state.dialog.remove();document.body.classList.remove('bcpe-open');active=null;
  }catch(err){

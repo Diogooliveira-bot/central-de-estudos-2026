@@ -2,6 +2,7 @@ import { database, readJsonBody, requireSession, sameOriginRequest } from '../li
 import { requirePlanFeature } from '../lib/plan-access.js';
 import { handleContentImage } from '../lib/content-image-handler.js';
 import { contentEditorReadFeature } from '../lib/content-editor-access.js';
+import {ensureReviewTables,normalizeReviewKey,keyFromLabel} from '../lib/module-review.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -133,6 +134,9 @@ export default async function handler(req,res){
       const body=await readJsonBody(req);
       const contentId=String(body?.id||'').trim().slice(0,240);
       const label=String(body?.label||'').slice(0,240);
+      const declaredKey=String(body?.moduleKey||'').trim();
+      const moduleKey=normalizeReviewKey(declaredKey)||keyFromLabel(label);
+      if(declaredKey&&!normalizeReviewKey(declaredKey))return send(res,400,{error:'Identificador do módulo inválido'});
       let html=cleanHtml(body?.html||'');
       if(contentId.startsWith('orient:')){
         if(!ORIENTATION_ID.test(contentId))return send(res,400,{error:'Identificador de orientação inválido'});
@@ -155,7 +159,8 @@ export default async function handler(req,res){
       if(hasExpected&&(!Number.isSafeInteger(expected)||expected<0)){
         return send(res,400,{error:'Revisão esperada inválida'});
       }
-      // Publicação e histórico são gravados na MESMA transação SQL:
+      await ensureReviewTables(sql);
+      // Publicação, histórico e identificação do editor são gravados na MESMA transação SQL:
       // se o backup falhar, a publicação também falha.
       const rows=await sql`
         WITH published AS (
@@ -179,6 +184,26 @@ export default async function handler(req,res){
           ON CONFLICT(content_id,revision) DO UPDATE SET
             label=EXCLUDED.label,html=EXCLUDED.html
           RETURNING content_id,revision
+        ), marked AS (
+          INSERT INTO central_module_review_status(
+            module_key,reviewed,reviewed_by,reviewed_by_name,reviewed_at,
+            last_edit_by,last_edit_by_name,last_edit_at,last_content_id,last_revision,version,updated_at
+          )
+          SELECT ${moduleKey},FALSE,NULL,NULL,NULL,${auth.user.id},${auth.user.name},NOW(),
+                 content_id,revision,1,NOW() FROM published WHERE ${Boolean(moduleKey)}
+          ON CONFLICT(module_key) DO UPDATE SET
+            reviewed=FALSE,reviewed_by=NULL,reviewed_by_name=NULL,reviewed_at=NULL,
+            last_edit_by=EXCLUDED.last_edit_by,last_edit_by_name=EXCLUDED.last_edit_by_name,
+            last_edit_at=NOW(),last_content_id=EXCLUDED.last_content_id,last_revision=EXCLUDED.last_revision,
+            version=central_module_review_status.version+1,updated_at=NOW()
+          RETURNING module_key
+        ), tracked AS (
+          INSERT INTO central_module_review_events(
+            module_key,content_id,revision,action,actor_id,actor_name
+          )
+          SELECT ${moduleKey},content_id,revision,'publish',${auth.user.id},${auth.user.name}
+          FROM published WHERE ${Boolean(moduleKey)}
+          RETURNING event_id
         )
         SELECT published.revision,published.updated_at
         FROM published JOIN archived USING(content_id,revision)
@@ -198,7 +223,29 @@ export default async function handler(req,res){
           ON CONFLICT(content_id,revision) DO NOTHING
         `;
       }
-      await sql`DELETE FROM central_content_overrides WHERE content_id=${id}`;
+      const declaredKey=String(req.query?.moduleKey||'').trim();
+      const moduleKey=normalizeReviewKey(declaredKey)||keyFromLabel(current[0]?.label||'');
+      if(declaredKey&&!normalizeReviewKey(declaredKey))return send(res,400,{error:'Identificador de módulo inválido'});
+      await ensureReviewTables(sql);
+      await sql`
+        WITH removed AS (
+          DELETE FROM central_content_overrides WHERE content_id=${id}
+          RETURNING content_id,revision
+        ), marked AS (
+          INSERT INTO central_module_review_status(module_key,reviewed,version,updated_at)
+          SELECT ${moduleKey},FALSE,1,NOW() FROM removed WHERE ${Boolean(moduleKey)}
+          ON CONFLICT(module_key) DO UPDATE SET
+            reviewed=FALSE,reviewed_by=NULL,reviewed_by_name=NULL,reviewed_at=NULL,
+            version=central_module_review_status.version+1,updated_at=NOW()
+          RETURNING module_key
+        ), tracked AS (
+          INSERT INTO central_module_review_events(module_key,content_id,revision,action,actor_id,actor_name)
+          SELECT ${moduleKey},content_id,revision,'restore',${auth.user.id},${auth.user.name}
+          FROM removed WHERE ${Boolean(moduleKey)}
+          RETURNING event_id
+        )
+        SELECT content_id FROM removed
+      `;
       return send(res,200,{ok:true,id});
     }
     res.setHeader('Allow','GET, POST, DELETE');
