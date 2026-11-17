@@ -98,7 +98,30 @@ export default async function handler(req,res){
       const reader=await requirePlanFeature(req,contentEditorReadFeature(id),['admin','editor','aluno']);
       if(!reader.ok)return send(res,reader.status,{error:reader.error});
       if(!id)return send(res,400,{error:'ID do conteúdo não informado'});
-      const rows=await sql`SELECT content_id,label,html,revision,updated_at FROM central_content_overrides WHERE content_id=${id} LIMIT 1`;
+      let rows=await sql`SELECT content_id,label,html,revision,updated_at FROM central_content_overrides WHERE content_id=${id} LIMIT 1`;
+      // Importa automaticamente publicações feitas antes da adoção da chave estável.
+      // A transação SQL preserva a última versão e seu histórico; a chave antiga permanece como backup.
+      const legacyId=String(req.query?.legacyId||'').trim();
+      if(!rows.length&&legacyId!==id&&/^reader:[a-z0-9]{1,50}$/.test(id)&&/^reader:[a-z0-9]{1,50}$/.test(legacyId)){
+        await sql`
+          WITH migrated AS (
+            INSERT INTO central_content_overrides(content_id,label,html,revision,updated_at)
+            SELECT ${id},label,html,revision,updated_at
+            FROM central_content_overrides WHERE content_id=${legacyId}
+            ON CONFLICT(content_id) DO NOTHING
+            RETURNING content_id
+          ), migrated_history AS (
+            INSERT INTO central_content_override_history(content_id,revision,label,html,archived_at)
+            SELECT ${id},h.revision,h.label,h.html,h.archived_at
+            FROM central_content_override_history h
+            WHERE h.content_id=${legacyId} AND EXISTS(SELECT 1 FROM migrated)
+            ON CONFLICT(content_id,revision) DO NOTHING
+            RETURNING revision
+          )
+          SELECT content_id FROM migrated
+        `;
+        rows=await sql`SELECT content_id,label,html,revision,updated_at FROM central_content_overrides WHERE content_id=${id} LIMIT 1`;
+      }
       if(!rows.length)return send(res,200,{exists:false,id});
       const r=rows[0];
       return send(res,200,{exists:true,id:r.content_id,label:r.label||'',html:r.html,revision:Number(r.revision||1),updatedAt:r.updated_at});
@@ -132,40 +155,37 @@ export default async function handler(req,res){
       if(hasExpected&&(!Number.isSafeInteger(expected)||expected<0)){
         return send(res,400,{error:'Revisão esperada inválida'});
       }
-      let rows;
-      if(hasExpected){
-        rows=await sql`
+      // Publicação e histórico são gravados na MESMA transação SQL:
+      // se o backup falhar, a publicação também falha.
+      const rows=await sql`
+        WITH published AS (
           INSERT INTO central_content_overrides(content_id,label,html,revision,updated_at)
-          VALUES(${contentId},${label},${html},1,NOW())
+          SELECT ${contentId},${label},${html},1,NOW()
+          WHERE ${!hasExpected||expected===0}
+             OR EXISTS(
+               SELECT 1 FROM central_content_overrides
+               WHERE content_id=${contentId} AND revision=${expected}
+             )
           ON CONFLICT(content_id) DO UPDATE SET
             label=EXCLUDED.label,
             html=EXCLUDED.html,
             revision=central_content_overrides.revision+1,
             updated_at=NOW()
-          WHERE central_content_overrides.revision=${expected}
-          RETURNING revision,updated_at
-        `;
-        if(!rows.length)return send(res,409,{error:'Este conteúdo foi alterado em outra sessão. Seu rascunho não foi publicado.'});
-      }else{
-        rows=await sql`
-          INSERT INTO central_content_overrides(content_id,label,html,revision,updated_at)
-          VALUES(${contentId},${label},${html},1,NOW())
-          ON CONFLICT(content_id) DO UPDATE SET
-            label=EXCLUDED.label,
-            html=EXCLUDED.html,
-            revision=central_content_overrides.revision+1,
-            updated_at=NOW()
-          RETURNING revision,updated_at
-        `;
-      }
-      // Each published revision can be restored in a later controlled publication.
-      try{
-        await sql`
+          WHERE ${!hasExpected} OR central_content_overrides.revision=${expected}
+          RETURNING content_id,label,html,revision,updated_at
+        ), archived AS (
           INSERT INTO central_content_override_history(content_id,revision,label,html,archived_at)
-          VALUES(${contentId},${rows[0].revision},${label},${html},NOW())
-          ON CONFLICT(content_id,revision) DO NOTHING
-        `;
-      }catch(historyError){console.error('content editor history error',historyError)}
+          SELECT content_id,revision,label,html,NOW() FROM published WHERE TRUE
+          ON CONFLICT(content_id,revision) DO UPDATE SET
+            label=EXCLUDED.label,html=EXCLUDED.html
+          RETURNING content_id,revision
+        )
+        SELECT published.revision,published.updated_at
+        FROM published JOIN archived USING(content_id,revision)
+      `;
+      if(!rows.length)return send(res,hasExpected?409:500,{error:hasExpected
+        ?'Este conteúdo foi alterado em outra sessão. Seu rascunho não foi publicado.'
+        :'Não foi possível confirmar o salvamento e o histórico.'});
       return send(res,200,{ok:true,id:contentId,revision:Number(rows[0].revision),updatedAt:rows[0].updated_at});
     }
     if(req.method==='DELETE'){

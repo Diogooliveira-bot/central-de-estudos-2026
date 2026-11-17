@@ -112,3 +112,28 @@ test('não utiliza API legada execCommand',()=>{
  assert.match(editorSource,/expectedRevision/);
  assert.match(editorSource,/contenteditable/);
 });
+test('publicação usa ID estável quando o nome do assunto é atualizado',async()=>{
+ const app=await setup(),doc=app.win.document;
+ const overlay=doc.querySelector('.bc-native-reader-overlay');
+ const original=app.win.BCPremiumEditor.contentId(overlay);
+ const subtitle=overlay.querySelector('.bc-native-reader-title small');
+ subtitle.textContent='Módulo 12 — Normas Constitucionais e Princípios Fundamentais';
+ assert.equal(app.win.BCPremiumEditor.contentId(overlay),original);
+ overlay.querySelector('.bc-native-reader-title b').textContent='Constitucional';
+ assert.equal(app.win.BCPremiumEditor.contentId(overlay),original);
+ doc.querySelector('.bcpe-launch').click();await wait();
+ assert.ok(app.calls.some(call=>call.path.includes('legacyId=')),'deve buscar publicações antigas sem perder conteúdo');
+ app.cleanup();
+});
+test('a publicação só é confirmada quando conteúdo e histórico são gravados juntos',()=>{
+ const api=readFileSync(new URL('../api/content-editor.js',import.meta.url),'utf8');
+ const legacy=readFileSync(new URL('../ui/visual-editor-v1.js',import.meta.url),'utf8');
+ assert.match(api,/WITH published AS\s*\(/);
+ assert.match(api,/archived AS\s*\(/);
+ assert.match(api,/FROM published JOIN archived USING\(content_id,revision\)/);
+ assert.match(api,/WITH migrated AS\s*\(/);
+ assert.match(api,/migrated_history AS\s*\(/);
+ assert.doesNotMatch(api,/catch\(historyError\)/);
+ assert.match(legacy,/function stableIdentity\(o\)/);
+ assert.match(legacy,/legacyId=/);
+});
