@@ -47,7 +47,7 @@ function keyOf(overlay){
  var n=numberOf(head)||numberOf(sub);
  if(coded){
   var prefix=/(?:^|[\s|/•])(cf|adm|pen|penal|cpc|cpp|civ|civil|pt|rlm|info|inf)\s*(?:m|modulo)?\s*0*\d{1,2}/.exec(combined);
-  if(prefix)id=ALIASES[prefix[1]]||id;
+  if(prefix&&!id)id=ALIASES[prefix[1]]||id;
   n=Number(coded[1])||n;
  }
  // Ex.: Português apresenta título e modo, mas não repete M02 na janela.
