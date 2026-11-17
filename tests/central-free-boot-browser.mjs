@@ -138,10 +138,10 @@ try{
  const moduleOptions=page.locator('.qc-pop .qc-opt');
  await moduleOptions.first().waitFor({state:'visible',timeout:10000});
  const modules=await moduleOptions.allTextContents();
- const counts=await page.locator('.qc-pop .qc-opt em').allTextContents();
- const numericCounts=counts.map(value=>Number(String(value).replace(/[^0-9]/g,''))||0);
+ const moduleCountsText=await page.locator('.qc-pop .qc-opt em').allTextContents();
+ const numericCounts=moduleCountsText.map(value=>Number(String(value).replace(/[^0-9]/g,''))||0);
  const firstWithQuestions=numericCounts.indexOf(Math.max(...numericCounts));
- console.log('LED_MODULE_OPTIONS='+JSON.stringify({total:modules.length,available:counts.filter(value=>Number(String(value).replace(/[^0-9]/g,''))>0).length,first:modules.slice(0,5)}));
+ console.log('LED_MODULE_OPTIONS='+JSON.stringify({total:modules.length,available:moduleCountsText.filter(value=>Number(String(value).replace(/[^0-9]/g,''))>0).length,first:modules.slice(0,5)}));
  if(firstWithQuestions<0 || numericCounts[firstWithQuestions]<1)throw Error('Lei em Dia: nenhum módulo possui questões liberadas no catálogo gratuito');
  await moduleOptions.nth(firstWithQuestions).click();
  await page.getByRole('button',{name:/Começar a resolver/}).click();
