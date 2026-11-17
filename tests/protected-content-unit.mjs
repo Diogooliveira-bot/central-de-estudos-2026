@@ -32,7 +32,7 @@ test('protects premium static assets and preserves free Vade Mecum', async () =>
   assert.equal(protectedAsset('/content/ptra/m01-native-data.js'), null);
   const mainHtml = await readFile(new URL('../index.html', import.meta.url), 'utf8');
   assert.doesNotMatch(mainHtml, /https?:\/\/(?:www\.)?(?:tecconcursos|qconcursos)\.com/i);
-  assert.match(mainHtml, /Conhecer o Premium/);
+  assert.match(mainHtml, /BC_STUDENT_TEC_DISABLED=true/, 'O acesso TEC permanece removido da interface dos alunos');
 });
 
 test('free theory projection drops paid content and keeps the summary', () => {

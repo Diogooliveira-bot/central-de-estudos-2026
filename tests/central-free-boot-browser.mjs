@@ -132,13 +132,23 @@ try{
  await page.goto(base+'/tools/decorando.html',{waitUntil:'domcontentloaded'});
  await page.getByText('Selecione a disciplina').first().waitFor({timeout:15000});
  if(!page.url().includes('/tools/decorando.html'))throw Error('Gratuito foi desviado do Lei em Dia original');
- await page.getByText('Selecione a disciplina').first().click();
- await page.getByText(/Direito Administrativo/).first().click();
- await page.getByRole('button',{name:/Resolver questões/}).click();
+ await page.locator('.bc-discipline-step button.qc-select').click();
+ await page.locator('.qc-pop .qc-opt').filter({hasText:'Direito Administrativo'}).first().click();
+ await page.locator('.bc-slim-module-step button.qc-select').click();
+ const moduleOptions=page.locator('.qc-pop .qc-opt');
+ await moduleOptions.first().waitFor({state:'visible',timeout:10000});
+ const modules=await moduleOptions.allTextContents();
+ const moduleCountsText=await page.locator('.qc-pop .qc-opt em').allTextContents();
+ const numericCounts=moduleCountsText.map(value=>Number(String(value).replace(/[^0-9]/g,''))||0);
+ const firstWithQuestions=numericCounts.indexOf(Math.max(...numericCounts));
+ console.log('LED_MODULE_OPTIONS='+JSON.stringify({total:modules.length,available:moduleCountsText.filter(value=>Number(String(value).replace(/[^0-9]/g,''))>0).length,first:modules.slice(0,5)}));
+ if(firstWithQuestions<0 || numericCounts[firstWithQuestions]<1)throw Error('Lei em Dia: nenhum módulo possui questões liberadas no catálogo gratuito');
+ await moduleOptions.nth(firstWithQuestions).click();
+ await page.getByRole('button',{name:/Começar a resolver/}).click();
  await page.getByRole('button',{name:/Certo/}).first().waitFor({timeout:10000});
  await page.getByRole('button',{name:/Certo/}).first().click();
  for(let i=0;i<20&&!(await page.getByText('Limite diário atingido').count());i++){
-  await page.getByRole('button',{name:/Próximo/}).click({timeout:5000});await page.waitForTimeout(250);
+  await page.getByRole('button',{name:/Próxim[oa]/}).click({timeout:5000});await page.waitForTimeout(250);
  }
  await page.getByText('Limite diário atingido').waitFor({timeout:8000});
  console.log('FREE_LEI_EM_DIA_ORIGINAL_OK=limite de 20 aplicado');
