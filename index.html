@@ -1227,53 +1227,6 @@ window.centralBackupImport=function(inp){
 <script src="/penal-full-theory-data-03.js?v=20260919b"></script>
 <script src="/penal-full-theory-data-04.js?v=20260919b"></script>
 <script src="/penal-full-theory-ui-v1.js?v=20260919b"></script>
-<script id="tec-cadernos-module-v6654">
-(function(){
- 'use strict';
- const ordemGrupos=[
-  'Direito Administrativo','Direito Constitucional','Direito Civil','Direito Empresarial',
-  'Direito Processual Civil','Direito Penal','Direito Processual Penal',
-  'Direito Processual do Trabalho','Raciocínio Lógico','Matemática'
- ];
- const numero=new Intl.NumberFormat('pt-BR');
- function textoSeguro(valor){return String(valor??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]))}
- function normalizar(valor){return String(valor||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim()}
- function dados(){const d=window.TEC_CADERNOS_DATA;return d&&Array.isArray(d.cadernos)?d:{cadernos:[],pastaTec:''}}
- function urlCaderno(valor){const u=String(valor||'');return /^https:\/\/www\.tecconcursos\.com\.br\/questoes\/cadernos\/\d+$/.test(u)?u:''}
- function codigo(id){return String(id||'').toUpperCase().replace(/-(\d+)$/,(_,n)=>' '+n.padStart(2,'0')).replace('PROC-CIVIL','CPC').replace('PROC-TRAB','PROC-TRAB')}
- function gruposOrdenados(cadernos){
-  const mapa=new Map();
-  for(const caderno of cadernos){const nome=caderno.grupoNome||'Outros';if(!mapa.has(nome))mapa.set(nome,[]);mapa.get(nome).push(caderno)}
-  return [...mapa.entries()].sort((a,b)=>{const ia=ordemGrupos.indexOf(a[0]),ib=ordemGrupos.indexOf(b[0]);return (ia<0?999:ia)-(ib<0?999:ib)||a[0].localeCompare(b[0],'pt-BR')})
- }
- function preencherMaterias(){
-  const select=document.getElementById('tecMateria');if(!select||select.dataset.ready==='1')return;
-  select.innerHTML='<option value="">Todas as matérias</option>'+gruposOrdenados(dados().cadernos).map(([nome])=>`<option value="${textoSeguro(nome)}">${textoSeguro(nome)}</option>`).join('');
-  select.dataset.ready='1';
- }
- window.tecAbrirCaderno=function(url){if(window.BC_STUDENT_TEC_DISABLED)return false;const segura=urlCaderno(url);if(!segura)return false;if(typeof openExternalUrl==='function')openExternalUrl(segura);else window.open(segura,'_blank','noopener');return false};
- window.tecAbrirPastaGeral=function(){if(window.BC_STUDENT_TEC_DISABLED)return false;const url=String(dados().pastaTec||'');if(/^https:\/\/www\.tecconcursos\.com\.br\/questoes\/pastas\/\d+$/.test(url)){if(typeof openExternalUrl==='function')openExternalUrl(url);else window.open(url,'_blank','noopener')}return false};
- window.tecCadernosRender=function(){if(window.BC_STUDENT_TEC_DISABLED)return;
-  const data=dados(),host=document.getElementById('tecCadernosLista');if(!host)return;
-  if(data.locked||!window.TEC_CADERNOS_DATA){host.innerHTML='<div class="card tec-empty"><p>🔒 Este recurso é exclusivo do Base Completa Premium.</p><button type="button" class="btn primary" onclick="window.tecConhecerPremium()">Conhecer o Premium</button></div>';return}
-  preencherMaterias();
-  const busca=normalizar(document.getElementById('tecBusca')?.value),materia=document.getElementById('tecMateria')?.value||'';
-  const lista=data.cadernos.filter(c=>!materia||c.grupoNome===materia).filter(c=>!busca||normalizar(`${c.id} ${c.nome} ${c.grupoNome}`).includes(busca));
-  const grupos=gruposOrdenados(lista),totalQuestoes=data.cadernos.reduce((s,c)=>s+(Number(c.questoes)||0),0),materias=new Set(data.cadernos.map(c=>c.grupoNome)).size;
-  const totalEl=document.getElementById('tecTotalCadernos'),materiasEl=document.getElementById('tecTotalMaterias'),questoesEl=document.getElementById('tecTotalQuestoes');
-  if(totalEl)totalEl.textContent=numero.format(data.cadernos.length);if(materiasEl)materiasEl.textContent=numero.format(materias);if(questoesEl)questoesEl.textContent=numero.format(totalQuestoes);
-  if(!grupos.length){host.innerHTML='<div class="card tec-empty">Nenhum caderno encontrado para esta pesquisa.</div>';return}
-  const expandir=!!busca||!!materia;
-  host.innerHTML=grupos.map(([nome,cadernos],indice)=>`<details class="tec-group" ${(expandir||indice===0)?'open':''}><summary><span>${textoSeguro(nome)} <small>${cadernos.length} caderno${cadernos.length===1?'':'s'}</small></span></summary><div class="tec-list">${cadernos.map(c=>`<div class="tec-row"><span class="tec-code">${textoSeguro(codigo(c.id))}</span><span class="tec-name">${textoSeguro(c.nome)}</span><span class="tec-count" data-base="${numero.format(Number(c.questoes)||0)} questões">${numero.format(Number(c.questoes)||0)} questões${(window.tecResumoCaderno?tecResumoCaderno(c.id):'')}</span><button class="tec-open" type="button" onclick="return tecAbrirCaderno('${textoSeguro(c.url)}')">Abrir no TEC • internet ↗</button><button class="tec-reg-full" type="button" onclick="return tecRegCadernoInline('${textoSeguro(c.id)}',this)">＋ Adicionar questões</button></div><div class="tec-reg-slot" data-cid="${textoSeguro(c.id)}" id="trslot-${textoSeguro(c.id).replace(/[^a-zA-Z0-9]/g,'_')}"></div>`).join('')}</div></details>`).join('');
- };
- window.openTecCadernos=function(btn){if(window.BC_STUDENT_TEC_DISABLED)return false;
-  const view=typeof centralShowNativeView==='function'?centralShowNativeView('tecCadernosView','Cadernos TEC',btn):document.getElementById('tecCadernosView');
-  if(view){view.classList.remove('hidden');try{view.classList.add('central-view-visible')}catch(_){}window.tecCadernosRender()}
-  return false;
- };
- window.tecConhecerPremium=function(){window.alert('Este recurso é exclusivo do Base Completa Premium. Consulte a equipe da Base Completa para conhecer a assinatura.');return false};
-})();
-</script>
 <style id="discipline-window-standard-v39">
 /* =========================================================
    PADRÃO VISUAL DAS DISCIPLINAS — V6.6.39
