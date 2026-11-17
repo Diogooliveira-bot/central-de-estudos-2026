@@ -8,6 +8,7 @@ const wait=()=>new Promise(resolve=>setTimeout(resolve,35));
 async function setup(plan='free'){
  const html='<!doctype html><html><head></head><body><div class="subject">'+
    '<button id="premium">Estudar conteúdo</button><button id="free">Vade Mecum</button></div>'+
+   '<button data-student-primary-nav="filters" id="filters">Filtros QC</button>'+ 
    '<section class="qc-platform-sharing"><button class="qc-premium-cta" id="qc">Conhecer o Premium</button></section>'+
    '<section class="cpc-sharing-panel"><button data-cpc-premium-cta id="cpc">Conhecer o Premium</button></section>'+
    '<div class="ptn-review-card"><button class="ptn-btn primary" id="pt">Conhecer o Premium</button></div>'+
@@ -65,7 +66,7 @@ test('recursos gratuitos não são bloqueados e Premium não vê a oferta',async
 });
 test('avisos específicos QC, CPC e Português também oferecem compra',async()=>{
  const {w,close}=await setup('free');
- for(const id of ['qc','cpc','pt']){
+ for(const id of ['qc','cpc','pt','filters']){
    click(w,id);
    assert.equal(modal(w)?.querySelectorAll('a[href^="https://pay.hotmart.com/"]').length,2,id);
    click(w,id);
