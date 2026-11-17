@@ -11,6 +11,8 @@ on:
       - 'lib/lei-em-dia-questions-handler.js'
       - 'tools/decorando.html'
       - 'central-v119.html'
+      - 'index.html'
+      - 'tests/central-entry-syntax-unit.mjs'
       - '.github/workflows/central-free-boot-browser.yml'
   workflow_dispatch:
 jobs:
@@ -25,6 +27,7 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npx playwright install chromium
+      - run: node --test tests/central-entry-syntax-unit.mjs
       - run: node --check central-structural-v66119/runtime.js
       - run: node --check central-free-disciplines.js
       - run: npm run test:premium-protection
