@@ -16,6 +16,8 @@ async function setup(plan='free'){
  const dom=new JSDOM(html,{url:'https://app.basecompleta.com.br/central-v119.html',
     pretendToBeVisual:true,runScripts:'outside-only'});
  const w=dom.window;
+ // A observação real do DOM não é necessária neste teste e pode deixar RAFs ativos após close().
+ w.MutationObserver=class {observe(){} disconnect(){}};
  w.CentralDisciplineLoader={open(){return true},load(){return Promise.resolve()}};
  w.fetch=async(url)=>{
    if(String(url).startsWith('/api/plans?action=me'))return {ok:true,json:async()=>({plan,isStaff:plan==='staff'})};
