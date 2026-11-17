@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.3.16",
-    "jsdom": "^27.4.0",
+    "jsdom": "^31.0.1",
     "playwright": "^1.63.0"
   },
   "overrides": {
