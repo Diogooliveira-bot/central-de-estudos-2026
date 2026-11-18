@@ -105,7 +105,7 @@ function markFields(node){
  // SOMENTE no editor evita que o clique esconda o texto ou impeça a seleção.
  [node,...node.querySelectorAll('details')].forEach(function(detail){
   if(!detail.matches('details')||!(isLawSection(detail)||detail.closest('.bc-m01-lei-seca')))return;
-  detail.setAttribute('data-bcpe-law-was-open',detail.hasAttribute('open')?'1':'0');
+  if(!detail.hasAttribute('data-bcpe-law-was-open'))detail.setAttribute('data-bcpe-law-was-open',detail.hasAttribute('open')?'1':'0');
   detail.open=true;
  });
  const fieldTags='p,h1,h2,h3,h4,h5,h6,li,blockquote,figcaption,td,th,summary';
@@ -370,7 +370,7 @@ function editLawSections(state,addMode=false){
    if(anchor)anchor.before(details);else topic.append(details);
   }
   topic.querySelector(':scope > [data-bc-law-removed]')?.remove();
-  markFields(details);
+  markFields(details);refreshDragHandles(state);
   historyPush(state);queueDraft(state);close();
   notify('Lei Seca atualizada no rascunho. Clique em Publicar conteúdo para salvar para os alunos.');
  }
@@ -509,7 +509,9 @@ function serialize(state){
  blocks(state).forEach(function(box){
   const node=box.querySelector(':scope > .bcpe-node');if(!node)return;
   const cloned=node.cloneNode(true);
-  cloned.classList.remove('bcpe-node','bcpe-field-selected');
+  cloned.classList.remove('bcpe-node','bcpe-field-selected','bcpe-drag-target','bcpe-drop-before','bcpe-drop-after','bcpe-dragging');
+  cloned.querySelectorAll('.bcpe-drag-handle').forEach(el=>el.remove());
+  cloned.querySelectorAll('.bcpe-drag-target,.bcpe-drop-before,.bcpe-drop-after,.bcpe-dragging').forEach(el=>el.classList.remove('bcpe-drag-target','bcpe-drop-before','bcpe-drop-after','bcpe-dragging'));
   cloned.querySelectorAll('.bcpe-field-selected').forEach(el=>el.classList.remove('bcpe-field-selected'));
   cloned.querySelectorAll('[data-bcpe-edit]').forEach(el=>{el.removeAttribute('data-bcpe-edit');el.removeAttribute('contenteditable')});
   cloned.removeAttribute('contenteditable');cloned.removeAttribute('data-bcpe-edit');
@@ -531,6 +533,7 @@ function historyPush(state){
 }
 function renderSnapshot(state,html){
  state.workspace.replaceChildren(...parseNodes(html).map(block));
+ refreshDragHandles(state);
  select(state,blocks(state)[0]);state.dirty=true;queueDraft(state);
 }
 function fields(state){return Array.from(state.workspace.querySelectorAll('[data-bcpe-edit]'))}
@@ -585,13 +588,171 @@ function queueDraft(state){
  clearTimeout(editorTimer);
  editorTimer=setTimeout(function(){historyPush(state);draftWrite(state);state.status.textContent='Rascunho salvo neste navegador';updateWords(state)},650);
 }
+// Ferramentas de arrastar: os botões são temporários e NUNCA são publicados.
+function refreshDragHandles(state){
+ const area=state.workspace;if(!area)return;
+ area.querySelectorAll('.bcpe-drag-handle').forEach(el=>el.remove());
+ area.querySelectorAll('.bcpe-drag-target').forEach(el=>el.classList.remove('bcpe-drag-target'));
+ area.querySelectorAll('.bcpe-educational,details.bc-m01-lei-seca').forEach(function(node){
+  if(!node.closest('.bcpe-block')||node.closest('[data-bc-editor-preserve]'))return;
+  node.classList.add('bcpe-drag-target');
+  const handle=document.createElement('button');
+  handle.type='button';handle.draggable=true;
+  handle.className='bcpe-drag-handle';handle.textContent='⋮⋮';
+  handle.setAttribute('aria-label','Arrastar para mover '+(node.matches('details')?'Lei Seca':'card'));
+  handle.title='Segure e arraste para reposicionar este bloco';
+  handle.setAttribute('contenteditable','false');
+  node.append(handle);
+ });
+}
+function dragPlan(state,event,source){
+ const el=event.target&&event.target.closest?event.target:null;
+ if(!el||!state.workspace.contains(el)||source.contains(el))return null;
+ const dragTarget=el.closest('.bcpe-drag-target');
+ const fromRect=dragTarget||el.closest('.bcpe-block');
+ const rect=fromRect?.getBoundingClientRect();
+ const before=!!rect&&rect.height>0&&event.clientY<rect.top+rect.height/2;
+ if(dragTarget&&dragTarget!==source&&!source.contains(dragTarget)){
+  if(dragTarget.matches('.bcpe-node')){
+   const box=dragTarget.closest('.bcpe-block');
+   return box&&!source.contains(box)?{kind:'block',target:box,before}:null;
+  }
+  const host=dragTarget.closest('.bcpe-node');
+  if(host&&host!==dragTarget&&host.matches('section,div,article')&&!source.contains(host)){
+   return{kind:'inside',host,reference:dragTarget,before};
+  }
+ }
+ const field=el.closest('[data-bcpe-edit]');
+ if(field){
+  const host=field.closest('.bcpe-node');
+  if(host&&host!==field&&host.matches('section,div,article')&&!source.contains(host))
+   return{kind:'inside',host,reference:field,before};
+  const box=field.closest('.bcpe-block');
+  if(box&&!source.contains(box))return{kind:'block',target:box,before};
+ }
+ const host=el.closest('.bc-m01-topic.bcpe-node');
+ if(host&&!source.contains(host))return{kind:'inside',host,reference:null,before:false};
+ const box=el.closest('.bcpe-block');
+ if(box&&!source.contains(box))return{kind:'block',target:box,before};
+ return null;
+}
+function installDragReorder(state){
+ const area=state.workspace;
+ function clear(){
+  area.querySelectorAll('.bcpe-drop-before,.bcpe-drop-after,.bcpe-dragging').forEach(el=>
+   el.classList.remove('bcpe-drop-before','bcpe-drop-after','bcpe-dragging'));
+  state.dragSource=null;state.dragPlan=null;
+ }
+ area.addEventListener('dragstart',function(e){
+  const handle=e.target?.closest?.('.bcpe-drag-handle');
+  if(!handle){e.preventDefault();return}
+  const node=handle.parentElement;
+  if(!node||!node.matches('.bcpe-drag-target')){e.preventDefault();return}
+  clear();state.dragSource=node;
+  node.classList.add('bcpe-dragging');
+  if(e.dataTransfer){
+   e.dataTransfer.effectAllowed='move';
+   e.dataTransfer.setData('text/plain','basecompleta-editor-mover');
+  }
+ });
+ area.addEventListener('dragover',function(e){
+  if(!state.dragSource)return;
+  const plan=dragPlan(state,e,state.dragSource);
+  area.querySelectorAll('.bcpe-drop-before,.bcpe-drop-after').forEach(el=>
+   el.classList.remove('bcpe-drop-before','bcpe-drop-after'));
+  state.dragPlan=plan;
+  if(!plan)return;
+  e.preventDefault();
+  if(e.dataTransfer)e.dataTransfer.dropEffect='move';
+  const marker=plan.reference||plan.target||plan.host;
+  marker.classList.add(plan.before?'bcpe-drop-before':'bcpe-drop-after');
+ });
+ area.addEventListener('drop',function(e){
+  if(!state.dragSource){e.preventDefault();return}
+  e.preventDefault();
+  const source=state.dragSource,plan=dragPlan(state,e,source)||state.dragPlan;
+  if(!plan){clear();return}
+  if(plan.reference&&(plan.reference===source||source.contains(plan.reference))){clear();return}
+  const originalBlock=source.matches('.bcpe-node')&&source.parentElement?.matches('.bcpe-block')
+   ?source.parentElement:null;
+  if(plan.kind==='inside'){
+   if(source.contains(plan.host)){clear();return}
+   checkpoint(state);
+   if(originalBlock){source.classList.remove('bcpe-node');originalBlock.remove()}
+   if(plan.reference)placeInsideSection(plan.host,plan.reference,source,plan.before);
+   else plan.host.append(source);
+   select(state,plan.host.closest('.bcpe-block'));
+  }else{
+   if(!plan.target||!plan.target.isConnected){clear();return}
+   checkpoint(state);
+   const box=originalBlock||block(source);
+   plan.target[plan.before?'before':'after'](box);
+   select(state,box);
+  }
+  clear();refreshDragHandles(state);historyPush(state);queueDraft(state);
+  notify('Bloco reposicionado no rascunho. Publique para aplicar aos alunos.');
+ });
+ area.addEventListener('dragend',clear);
+}
 function add(state,node,after){
  const box=block(node),reference=after||state.selected;
  if(reference&&reference.parentElement===state.workspace)reference.insertAdjacentElement('afterend',box);
  else state.workspace.appendChild(box);
  select(state,box);queueDraft(state);
+ refreshDragHandles(state);
  const field=box.querySelector('[data-bcpe-edit]');if(field)placeCaret(field,false);
  return box;
+}
+// Insere logo após o texto clicado, mesmo quando o assunto é um bloco composto.
+function placeInsideSection(host,reference,node,before){
+ if(!host||!reference||!host.contains(reference))return false;
+ let direct=reference;
+ while(direct&&direct.parentElement!==host)direct=direct.parentElement;
+ if(!direct)return false;
+ if(direct!==reference&&direct.matches('.bc-apostila-prose')){
+  let paragraph=reference;
+  while(paragraph&&paragraph.parentElement!==direct)paragraph=paragraph.parentElement;
+  if(paragraph){
+   // Se o cursor estiver entre parágrafos de uma caixa, divide a caixa
+   // sem reescrever a teoria aprovada pelo professor.
+   const start=before?paragraph:paragraph.nextSibling;
+   const tail=direct.cloneNode(false);
+   for(let item=start;item;){
+    const next=item.nextSibling;tail.append(item);item=next;
+   }
+   direct.after(node);
+   if(tail.childNodes.length)node.after(tail);
+   if(!direct.childNodes.length)direct.remove();
+   return true;
+  }
+ }
+ direct[before?'before':'after'](node);
+ return true;
+}
+function insertionField(state){
+ const range=liveRange(state);
+ const candidate=range&&fieldOf(state,range.startContainer);
+ if(candidate&&candidate.isConnected)return candidate;
+ const field=state.currentField;
+ if(field&&field.isConnected&&state.workspace.contains(field))return field;
+ const saved=state.insertionField;
+ if(saved&&saved.isConnected&&state.workspace.contains(saved))return saved;
+ return null;
+}
+function addAtSelectedPoint(state,node){
+ const field=insertionField(state);
+ const host=field&&field.closest('.bcpe-node');
+ if(host&&host!==field&&host.closest('.bcpe-block')&&host.matches('section,article,div')&&!host.matches('[data-bc-editor-preserve]')){
+  if(placeInsideSection(host,field,node,false)){
+   markFields(node);refreshDragHandles(state);
+   select(state,host.closest('.bcpe-block'));queueDraft(state);
+   const focus=node.querySelector('[data-bcpe-edit]:not(h4)')||node.querySelector('[data-bcpe-edit]')||(node.matches('[data-bcpe-edit]')?node:null);
+   if(focus){state.currentField=focus;placeCaret(focus,false)}
+   return node;
+  }
+ }
+ const selected=field&&field.closest('.bcpe-block');
+ return add(state,node,selected&&selected.parentElement===state.workspace?selected:undefined);
 }
 function richNode(kind){
  const node=document.createElement(kind);node.textContent=kind.startsWith('h')?'Novo título':'Escreva seu texto aqui.';return node;
@@ -1524,12 +1685,12 @@ function makeToolbar(state){
    if(v==='law'){editLawSections(state,true);return}
    checkpoint(state);
    let box;
-   if(v==='table')box=add(state,tableNode());
-   else if(['atencao','decore','pegadinha','exemplo','resumo'].includes(v))box=add(state,cardNode(v));
-   else if(v==='ul'||v==='ol'){const node=document.createElement(v);node.innerHTML='<li>Novo item</li>';box=add(state,node)}
-   else box=add(state,richNode(v));
+   if(v==='table')box=addAtSelectedPoint(state,tableNode());
+   else if(['atencao','decore','pegadinha','exemplo','resumo'].includes(v))box=addAtSelectedPoint(state,cardNode(v));
+   else if(v==='ul'||v==='ol'){const node=document.createElement(v);node.innerHTML='<li>Novo item</li>';box=addAtSelectedPoint(state,node)}
+   else box=addAtSelectedPoint(state,richNode(v));
    // O texto de exemplo fica selecionado: basta digitar para substituí-lo.
-   const field=box&&Array.from(box.querySelectorAll('[data-bcpe-edit]')).find(f=>!/^H4$/.test(f.tagName))||box&&box.querySelector('[data-bcpe-edit]');
+   const field=box&&Array.from(box.querySelectorAll('[data-bcpe-edit]')).find(f=>!/^H4$/.test(f.tagName))||box&&(box.querySelector('[data-bcpe-edit]')||(box.matches('[data-bcpe-edit]')?box:null));
    if(field){const r=document.createRange();r.selectNodeContents(field);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);state.currentField=field;updateContext(state)}
   }
   if(t.matches('[data-align]')&&t.value){checkpoint(state);applyParagraphStyle(state,'textAlign',t.value)}
@@ -1580,6 +1741,7 @@ function makeDialog(state,html){
  const source=document.createElement('div');source.replaceChildren(...nodes);
  if(state.overlay.matches('.bc-guided-overlay')&&state.overlay.getAttribute('aria-label')==='Teoria guiada de Direito Constitucional, módulo 1')window.BcCfGuidedReader?.reconcileM01Dom?.(source,state.revision);
  workspace.replaceChildren(...Array.from(source.children).map(block));
+ refreshDragHandles(state);
  paper.append(title,workspace);scroll.appendChild(paper);
  const input=document.createElement('input');input.type='file';input.accept='image/png,image/jpeg,image/webp';input.hidden=true;state.input=input;
  input.addEventListener('change',function(){if(input.files&&input.files[0])uploadImage(state,input.files[0]);else state.replaceTarget=null;input.value=''});
@@ -1587,16 +1749,16 @@ function makeDialog(state,html){
  workspace.addEventListener('focusin',function(e){
   const box=e.target.closest('.bcpe-block');if(box)select(state,box);
   const field=e.target.closest('[data-bcpe-edit]');
-  if(field&&workspace.contains(field)){state.currentField=field;state.savedRange=null;updateContext(state)}
+  if(field&&workspace.contains(field)){state.currentField=field;state.insertionField=field;state.savedRange=null;updateContext(state)}
  });
  workspace.addEventListener('pointerdown',function(e){
   if(e.target.closest('.bcpe-block-head'))return;
   const box=e.target.closest('.bcpe-block');if(box)select(state,box);
   state.savedRange=null;
   const field=e.target.closest('[data-bcpe-edit]');
-  if(field&&workspace.contains(field)){state.currentField=field;updateContext(state)}
+  if(field&&workspace.contains(field)){state.currentField=field;state.insertionField=field;updateContext(state)}
  });
- workspace.addEventListener('dragstart',function(e){e.preventDefault()});
+ installDragReorder(state);
  workspace.addEventListener('click',function(e){
   const summary=e.target.closest('summary[data-bcpe-edit]');
   if(summary&&(isLawSection(summary.parentElement)||summary.closest('.bc-m01-lei-seca')))e.preventDefault();
@@ -1631,7 +1793,7 @@ function makeDialog(state,html){
    const field=fieldOf(state,range.startContainer);
    if(field&&field!==state.currentField){
     const box=field.closest('.bcpe-block');if(box&&box!==state.selected)select(state,box);
-    state.currentField=field;updateContext(state);
+    state.currentField=field;state.insertionField=field;updateContext(state);
    }
   }
   rememberSelection(state);updateFormatButtons(state);scheduleWords(state);

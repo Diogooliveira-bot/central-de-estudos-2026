@@ -261,3 +261,74 @@ test('Outras disciplinas não exibem inserção de Lei Seca do M1 Constitucional
  assert.equal(d.querySelector('.bcpe-toolbar [data-insert] option[value="law"]'),null);
  app.cleanup();
 });
+
+
+test('M1: inserir card após o parágrafo selecionado, dividindo a prosa sem mudar texto',async()=>{
+ const a=await setup('Constitucional','admin',null,1),d=a.win.document;
+ d.querySelector('.bc-m01-paper').insertAdjacentHTML('afterbegin',
+  '<section class="bc-m01-topic"><h2 id="bc-guided-title-1-4">Eficácia</h2>'+
+  '<div class="bc-apostila-prose"><p>Primeiro parágrafo.</p><p>Segundo parágrafo escolhido.</p><p>Terceiro parágrafo.</p></div>'+
+  '<details class="bc-m01-lei-seca"><summary>Ver Lei Seca — CF/88</summary><div class="bc-m01-lei-art"><p>Art. 1º.</p></div></details>'+
+  '</section>');
+ d.querySelector('.bcpe-launch').click();await wait();
+ const topic=d.querySelector('.bcpe-workspace .bc-m01-topic');
+ const chosen=topic.querySelectorAll('.bc-apostila-prose p')[1];
+ chosen.dispatchEvent(new a.win.MouseEvent('pointerdown',{bubbles:true}));
+ const select=d.querySelector('.bcpe-toolbar [data-insert]');
+ select.value='atencao';select.dispatchEvent(new a.win.Event('change',{bubbles:true}));
+ const direct=Array.from(topic.children);
+ const card=topic.querySelector(':scope > aside.bcpe-educational');
+ assert.ok(card,'card deve aparecer dentro do assunto, não após o capítulo');
+ assert.ok(direct.indexOf(card)>0);
+ assert.equal(direct[direct.indexOf(card)-1].textContent.includes('Segundo parágrafo escolhido.'),true);
+ assert.equal(direct[direct.indexOf(card)+1].textContent.includes('Terceiro parágrafo.'),true);
+ assert.equal(topic.querySelectorAll('.bc-apostila-prose p').length,3,'nenhum parágrafo pode ser apagado');
+ assert.ok(card.querySelector('.bcpe-drag-handle'),'card pode ser arrastado');
+ d.querySelector('[data-action="publish"]').click();await wait();
+ const payload=JSON.parse(a.calls.find(x=>x.options.method==='POST').options.body).html;
+ assert.match(payload,/Primeiro parágrafo/);
+ assert.match(payload,/Segundo parágrafo escolhido/);
+ assert.match(payload,/Terceiro parágrafo/);
+ assert.match(payload,/bcpe-kind-atencao/);
+ assert.doesNotMatch(payload,/bcpe-drag-target|bcpe-drag-handle|bcpe-drop-after/,'alças não devem ser publicadas');
+ a.cleanup();
+});
+
+test('M1: arrastar Lei Seca e cards pelo mouse reordena blocos sem alterar artigos',async()=>{
+ const a=await setup('Constitucional','admin',null,1),d=a.win.document;
+ d.querySelector('.bc-m01-paper').insertAdjacentHTML('afterbegin',
+  '<section class="bc-m01-topic"><h2 id="bc-guided-title-1-9">Fundamentos</h2>'+
+  '<p class="intro">Parágrafo de introdução.</p>'+
+  '<aside class="bcpe-educational bcpe-kind-decore"><h4>DECORE</h4><p>Texto do card.</p></aside>'+
+  '<p class="middle">Texto intermediário.</p>'+
+  '<details class="bc-m01-lei-seca"><summary>Ver lei seca — Art. 1º</summary><div class="bc-m01-lei-art"><p>Art. 1º Intacto.</p></div></details>'+
+  '</section>');
+ d.querySelector('.bcpe-launch').click();await wait();
+ const topic=d.querySelector('.bcpe-workspace .bc-m01-topic');
+ const law=topic.querySelector('details.bc-m01-lei-seca');
+ const card=topic.querySelector('aside.bcpe-educational');
+ function drag(source,target){
+  const handle=source.querySelector('.bcpe-drag-handle');
+  assert.ok(handle,'alça de arrastar ausente');
+  const transfer={setData(){},effectAllowed:'',dropEffect:''};
+  for(const [name,el] of [['dragstart',handle],['dragover',target],['drop',target]]){
+   const ev=new a.win.Event(name,{bubbles:true,cancelable:true});
+   Object.defineProperty(ev,'dataTransfer',{value:transfer});
+   el.dispatchEvent(ev);
+  }
+  handle.dispatchEvent(new a.win.Event('dragend',{bubbles:true}));
+ }
+ drag(law,topic.querySelector('p.intro'));
+ assert.equal(topic.children[2],law,'Lei Seca deve se mover após o parágrafo introdutório');
+ drag(card,topic.querySelector('p.middle'));
+ assert.equal(card.previousElementSibling?.className,'middle');
+ assert.equal(topic.querySelectorAll('details.bc-m01-lei-seca').length,1,'nunca duplicar Lei Seca');
+ assert.equal(topic.querySelectorAll('aside.bcpe-educational').length,1,'não duplicar card');
+ d.querySelector('[data-action="publish"]').click();await wait();
+ const payload=JSON.parse(a.calls.find(x=>x.options.method==='POST').options.body).html;
+ assert.match(payload,/Art\. 1º Intacto/);
+ assert.match(payload,/Texto do card/);
+ assert.ok(payload.indexOf('Parágrafo de introdução.')<payload.indexOf('Art. 1º Intacto'));
+ assert.doesNotMatch(payload,/bcpe-drag-handle|bcpe-drag-target|draggable="true"/);
+ a.cleanup();
+});
