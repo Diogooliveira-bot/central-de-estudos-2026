@@ -10,6 +10,7 @@ const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
 const context=vm.createContext({window:{}});
 const run=p=>new vm.Script(read(p),{filename:p}).runInContext(context);
 run('content/cf/cf-teoria-guiada-lei-seca.js');
+run('content/cf/cf-ec141-extras.js');
 run('ui/cf-apostila-reading-v1.js');
 for(let n=1;n<=15;n++)run('content/cf/m'+String(n).padStart(2,'0')+'-native-data.js');
 
@@ -92,4 +93,10 @@ test('CF completa: dispositivo constitucional aparece junto do parágrafo, sem l
  const n=2,full=e.render(context.window.BASE_NATIVE_CONTENT.cf.m02.complete,n);
  assert.match(full,/cf-apostila-law-inline/);
  assert.doesNotMatch(full,/Lei seca do módulo/);
+ const atual=e.render('1. DIREITOS SOCIAIS\n\nO art. 7º, XIII, disciplina a duração do trabalho.',3);
+ assert.match(atual,/40 \(quarenta\) horas semanais/);
+ assert.doesNotMatch(atual,/44 \(quarenta e quatro\) horas semanais/);
+ const novo=e.render('1. SAÚDE\n\nO art. 200 trata das competências do SUS.',14);
+ assert.match(novo,/Ao sistema único de saúde compete/);
+
 });
