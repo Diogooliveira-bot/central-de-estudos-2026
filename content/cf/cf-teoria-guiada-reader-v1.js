@@ -14,8 +14,25 @@ function save(n,i,on){const x=state(n);x[i]=on;try{localStorage.setItem(key(n),J
 function lawBox(n,index){
  const L=global.BC_CF_GUIDED_LAW&&global.BC_CF_GUIDED_LAW[n],items=L&&L[index];
  if(!Array.isArray(items)||!items.length)return '';
- const names=items.map(x=>x[0]),head=names.length===1?names[0]:names[0]+' e mais '+(names.length-1);
- return '<details class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+items.map(x=>'<div class="bc-m01-lei-art">'+(x[1]||[]).map(t=>'<p>'+esc(t)+'</p>').join('')+'</div>').join('')+'</details>';
+ // Trechos repetidos da mesma norma eram contados como "e mais", embora não fossem artigos distintos.
+ // Prefere-se a redação mais completa de cada dispositivo, sem perder a fonte original.
+ const unique=new Map();
+ items.forEach(function(item){
+  if(!Array.isArray(item)||!Array.isArray(item[1]))return;
+  const label=String(item[0]||'').trim(),paragraphs=item[1].filter(t=>typeof t==='string'&&t.trim());
+  if(!label||!paragraphs.length)return;
+  if(!unique.has(label)||unique.get(label).length<paragraphs.length)unique.set(label,paragraphs);
+ });
+ const entries=Array.from(unique,([label,paragraphs])=>({label,paragraphs}));
+ if(!entries.length)return '';
+ const head=entries[0].label+(entries.length>1?' e mais '+(entries.length-1):'');
+ const bodies=entries.map(function(entry){
+  const text=entry.paragraphs.map(t=>'<p>'+esc(t)+'</p>').join('');
+  return entries.length>1
+   ?'<details class="bc-m01-lei-item"><summary>'+esc(entry.label)+'</summary><div class="bc-m01-lei-art">'+text+'</div></details>'
+   :'<div class="bc-m01-lei-art">'+text+'</div>';
+ }).join('');
+ return '<details class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+bodies+'</details>';
 }
 
 /* A edição teórica de novembro/2026 substitui o leitor anterior de cartões.
@@ -121,7 +138,7 @@ function open(n){
       '.bc-m01-topic h2 span{font-size:0.75rem;letter-spacing:.04em;color:#67809d;vertical-align:middle;margin-right:5px;}',
       '.bc-m01-card{padding:17px 20px;margin:0 0 10px;border:1px solid #dce3eb;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(20,38,63,.02);}',
       '.bc-m01-card h3{margin:0 0 9px;font-size:0.6875rem;font-weight:800;text-transform:uppercase;letter-spacing:.075em;color:#385b80;}',
-      '.bc-m01-card p{margin:0;font-size:1rem;line-height:1.75;color:#27384e;}.bc-m01-lei-seca{margin:12px 0 0;border:1px dashed #d8c8a8;border-radius:10px;padding:8px 12px;background:rgba(255,255,255,.6);}.bc-m01-lei-seca summary{cursor:pointer;font-size:0.8125rem;font-weight:700;color:#7a5a24;}.bc-m01-lei-seca p{margin:8px 0 0;font-size:0.875rem;line-height:1.6;}.bc-m01-lei-seca .bc-m01-lei-art+.bc-m01-lei-art{margin-top:12px;}',
+      '.bc-m01-card p{margin:0;font-size:1rem;line-height:1.75;color:#27384e;}.bc-m01-lei-seca{margin:12px 0 0;border:1px dashed #d8c8a8;border-radius:10px;padding:8px 12px;background:rgba(255,255,255,.6);}.bc-m01-lei-seca summary{cursor:pointer;font-size:0.8125rem;font-weight:700;color:#7a5a24;}.bc-m01-lei-seca p{margin:8px 0 0;font-size:0.875rem;line-height:1.6;}.bc-m01-lei-seca .bc-m01-lei-art+.bc-m01-lei-art{margin-top:12px;}.bc-m01-lei-seca .bc-m01-lei-item{margin:9px 0;border:1px solid #dce8f1;border-radius:7px;padding:8px 10px;background:#f8fbfd}.bc-m01-lei-seca .bc-m01-lei-item>summary{font-size:.8125rem;color:#1d5278;font-weight:650}.bc-m01-lei-seca .bc-m01-lei-item .bc-m01-lei-art{padding:5px 0 2px}',
       '.bc-m01-card p+p{margin-top:10px;}',
       '.bc-m01-example{background:#edf8f2;border-left:4px solid #438b68;}',
       '.bc-m01-law{background:#fffaf0;border-left:4px solid #be9152;}',
