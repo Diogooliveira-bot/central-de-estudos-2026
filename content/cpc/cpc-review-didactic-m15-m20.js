@@ -456,7 +456,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Direitos difusos, coletivos e individuais homogêneos",
         [
           "Direitos difusos têm titulares indeterminados, ligados por circunstâncias de fato, e objeto indivisível. Direitos coletivos em sentido estrito pertencem a grupo, categoria ou classe ligada por relação jurídica-base, com objeto indivisível. Direitos individuais homogêneos são direitos individuais divisíveis reunidos por origem comum.",
-          "A classificação influencia legitimidade, extensão do julgamento e técnica de tutela coletiva."
+          "A classificação influencia legitimidade, extensão do julgamento e técnica de tutela coletiva. Pelo Código de Defesa do Consumidor, art. 81, parágrafo único, os interesses difusos têm titulares indeterminados ligados por circunstâncias de fato; os coletivos pertencem a grupo, categoria ou classe ligados entre si ou com a parte contrária por uma relação jurídica base; e os individuais homogêneos decorrem de origem comum."
         ],
         "Exemplo: poluição de rio pode afetar coletividade indeterminada; consumidores prejudicados pelo mesmo defeito podem ter pretensões individuais homogêneas."
       ],
