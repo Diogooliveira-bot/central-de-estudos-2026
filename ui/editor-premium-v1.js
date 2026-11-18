@@ -730,14 +730,15 @@ function placeInsideSection(host,reference,node,before){
  return true;
 }
 function insertionField(state){
- const range=liveRange(state);
- const candidate=range&&fieldOf(state,range.startContainer);
- if(candidate&&candidate.isConnected)return candidate;
- const field=state.currentField;
- if(field&&field.isConnected&&state.workspace.contains(field))return field;
+ // O foco do select no menu não deve resgatar um Range antigo, do início do documento.
+ // Preferir o campo indicado no clique/seleção mais recente do administrador.
  const saved=state.insertionField;
  if(saved&&saved.isConnected&&state.workspace.contains(saved))return saved;
- return null;
+ const field=state.currentField;
+ if(field&&field.isConnected&&state.workspace.contains(field))return field;
+ const range=liveRange(state);
+ const candidate=range&&fieldOf(state,range.startContainer);
+ return candidate&&candidate.isConnected?candidate:null;
 }
 function addAtSelectedPoint(state,node){
  const field=insertionField(state);
