@@ -1,6 +1,7 @@
 import { requireSession, readJsonBody, sameOriginRequest } from '../lib/auth.js';
 import { requirePlanFeature } from '../lib/plan-access.js';
 import { EXAM_TOPIC_IDS } from '../lib/exam-progress-topic-ids.js';
+import handleConcursos from '../lib/concursos-handler.js';
 
 function validObjectiveId(value) {
   const id = String(value || '');
@@ -181,6 +182,8 @@ async function handleExamRequestsAdmin(req, res, session, sql) {
 }
 
 export default async function handler(req, res) {
+  // Reutiliza esta função para manter o projeto dentro do limite de 12 funções do plano Hobby.
+  if (req.query?.resource === 'concursos') return handleConcursos(req, res);
   if (req.query?.resource === 'exam-progress') return handleExamProgress(req, res);
   if (req.method !== 'GET' && !sameOriginRequest(req)) return send(res, 403, { error:'Origem da requisição não permitida' });
   if (req.method !== 'GET' && req.method !== 'PUT') {
