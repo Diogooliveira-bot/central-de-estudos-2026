@@ -111,3 +111,25 @@ test('revisões oficiais editadas são gratuitas; teoria completa segue Premium'
    hash('/outra-rota|guided-review|Teoria guiada de Direito Civil, módulo 1')
  ])assert.equal(contentEditorReadFeature(candidate),'theory.complete',candidate);
 });
+
+test('título da lei seca na revisão CF é editável e publicado sem deixar o artigo aberto por padrão',async()=>{
+ const app=await setup('Constitucional'),doc=app.win.document;
+ const paper=doc.querySelector('.bc-m01-paper');
+ paper.insertAdjacentHTML('afterbegin','<section><details class="bc-m01-lei-seca"><summary>Ver lei seca — CF/88, art. 1º e mais 1</summary><details class="bc-m01-lei-item"><summary>CF/88, art. 1º</summary><p>Artigo</p></details></details></section>');
+ doc.querySelector('.bcpe-launch').click();await wait();
+ const workspace=doc.querySelector('.bcpe-workspace');
+ const summary=workspace.querySelector('.bc-m01-lei-seca > summary');
+ assert.equal(summary?.getAttribute('contenteditable'),'true');
+ assert.equal(summary.closest('details').open,true,'expandido apenas durante a edição');
+ const nested=workspace.querySelector('.bc-m01-lei-item > summary');
+ assert.equal(nested.getAttribute('contenteditable'),'true','subtítulo de lei seca editável');
+ summary.textContent='Ver lei seca — CF/88, art. 1º — Fundamentos';
+ summary.dispatchEvent(new app.win.Event('input',{bubbles:true}));
+ doc.querySelector('[data-action="publish"]').click();await wait();
+ const write=app.calls.find(c=>c.options.method==='POST');
+ assert.ok(write);
+ const published=JSON.parse(write.options.body).html;
+ assert.match(published,/Ver lei seca — CF\/88, art\. 1º — Fundamentos/);
+ assert.doesNotMatch(published,/data-bcpe-law-was-open|<details[^>]+open/);
+ app.cleanup();
+});
