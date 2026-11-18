@@ -36,6 +36,19 @@ test('GMF é prevista e deixa explícito que o conteúdo é referência de 2023'
   assert.ok(gmf.subjects.length >= 9);
 });
 
+test('TCE-CE fica inativo após verificação de fonte antiga; Receita e Banco Central mantêm cargos autorizados', () => {
+  const tce = CONCURSOS_2026_SEED.find((item) => item.id === 'tce-ce-monitoramento');
+  assert.equal(tce.active, false);
+  assert.equal(tce.vacancies, null);
+  assert.equal(tce.board, null);
+  assert.ok(tce.sources.every((source) => !source.url.includes('1911-edital-do-concurso')));
+  const receita = CONCURSOS_2026_SEED.find((item) => item.id === 'receita-federal-autorizado-2026');
+  const bacen = CONCURSOS_2026_SEED.find((item) => item.id === 'bacen-autorizado-2026');
+  assert.deepEqual(receita.cargos.map((cargo) => cargo.vacancies),[116,30]);
+  assert.deepEqual(bacen.cargos.map((cargo) => cargo.vacancies),[100,50,20]);
+  assert.equal(bacen.noticeNumber,null);
+});
+
 test('TJCE, ALECE e SEFAZ informam que as provas já foram realizadas', () => {
   for (const id of ['tjce-2026','alece-2026','sefaz-ce-2026']) {
     const item = CONCURSOS_2026_SEED.find((contest) => contest.id === id);
