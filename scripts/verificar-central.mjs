@@ -112,6 +112,9 @@ if (BASE) {
     const stale = [];
     for (const f of changed) {
       if (!baseVersions.has(f) || !refs.has(f)) continue;
+      // Se a única diferença do arquivo são números de versão (?v=) de OUTROS arquivos, o conteúdo dele não mudou.
+      const semVersao = (t) => t.replace(/\?v=[A-Za-z0-9_.\-]+/g, '?v=');
+      if (existsSync(f) && semVersao(read(f)) === semVersao(baseText(f))) continue;
       const nowVersions = new Set(refs.get(f).keys());
       const same = [...nowVersions].every((v) => baseVersions.get(f).has(v));
       if (same) stale.push(`${f} (versão ainda ${[...nowVersions].join('/')})`);
