@@ -332,3 +332,87 @@ test('M1: arrastar Lei Seca e cards pelo mouse reordena blocos sem alterar artig
  assert.doesNotMatch(payload,/bcpe-drag-handle|bcpe-drag-target|draggable="true"/);
  a.cleanup();
 });
+
+
+
+async function setupLawFull(subject='Constitucional',catalog=null){
+ const cf=subject==='Constitucional';
+ const view=cf
+  ?'<div class="cf-native-overlay"><div class="cf-native-shell"><header><b>Direito Constitucional</b><small>Módulo 1</small></header></div><div class="cf-native-reader"><aside></aside><article><p id="intro">Comentário do art. 1º.</p><p id="second">Segundo parágrafo preservado.</p></article></div></div>'
+  :'<div class="bc-native-reader-overlay"><div class="bc-native-reader-title"><b>Direito Civil</b><small>Módulo 1</small></div><div class="bc-native-reader-tools"></div><article class="bc-native-article"><p>Primeiro parágrafo do material.</p><p>Segundo parágrafo.</p></article></div>';
+ const dom=new JSDOM('<!doctype html><html><body>'+view+'</body></html>',{url:'https://example.test/central-v119.html',runScripts:'outside-only',pretendToBeVisual:true});
+ const win=dom.window,calls=[];
+ win.MutationObserver=class{observe(){}disconnect(){}};
+ win.confirm=()=>true;
+ win.BC_CF_GUIDED_LAW=catalog||undefined;
+ win.fetch=async(url,options={})=>{
+  calls.push({url:String(url),options});
+  if(String(url).startsWith('/api/auth'))return{ok:true,json:async()=>({authenticated:true,user:{role:'admin'}})};
+  if(options.method==='POST')return{ok:true,json:async()=>({ok:true,revision:30})};
+  return{ok:true,json:async()=>({exists:false})};
+ };
+ win.eval(premium);await wait();
+ const launch=win.document.querySelector('.bcpe-launch');
+ assert.ok(launch,'botão do Editor Premium ausente no conteúdo completo');
+ launch.click();await wait();
+ return {win,dom,calls,close(){win.close()}};
+}
+
+test('Conteúdo completo Constitucional: + Inserir inclui Lei Seca pronta do catálogo existente',async()=>{
+ const catalog={'1':{'1':[['CF/88, art. 2º',['Art. 2º São Poderes da União, independentes e harmônicos entre si, o Legislativo, o Executivo e o Judiciário.']]],
+  '9':[['CF/88, art. 1º',['Art. 1º A República Federativa do Brasil constitui-se em Estado Democrático de Direito.','I - a soberania;','II - a cidadania;']]]}};
+ const app=await setupLawFull('Constitucional',catalog),d=app.win.document;
+ const menu=d.querySelector('[data-insert]');
+ assert.ok(menu.querySelector('option[value="law"]'),'Lei Seca deve estar disponível no conteúdo completo');
+ const intro=d.querySelector('.bcpe-workspace #intro');
+ intro.dispatchEvent(new app.win.MouseEvent('pointerdown',{bubbles:true}));
+ menu.value='law';menu.dispatchEvent(new app.win.Event('change',{bubbles:true}));
+ const panel=d.querySelector('.bcpe-law-edit-panel');
+ assert.ok(panel,'deve abrir escolha de legislação pronta');
+ const presets=panel.querySelector('select[aria-label="Lei pronta para inserir"]');
+ assert.ok(presets);
+ assert.equal(presets.options.length,3,'duas leis cadastradas e opção manual');
+ assert.match(panel.querySelector('textarea').value,/Art. 1º A República Federativa/,'deve abrir a lei sugerida já preenchida');
+ assert.match(panel.querySelector('textarea').value,/II - a cidadania/,'preservar incisos sem resumir');
+ panel.querySelector('button.bcpe-primary').click();
+ assert.equal(d.querySelector('.bcpe-law-edit-panel'),null);
+ const root=d.querySelector('.bcpe-workspace');
+ const sections=Array.from(root.children);
+ const pos=sections.findIndex(b=>b.querySelector('details.bc-m01-lei-seca'));
+ assert.ok(pos>0,'Lei Seca deve ser inserida após o parágrafo selecionado');
+ assert.match(sections[pos-1].textContent,/Comentário do art. 1º/);
+ assert.match(sections[pos+1].textContent,/Segundo parágrafo preservado/);
+ const law=root.querySelector('details.bc-m01-lei-seca');
+ assert.equal(law.querySelectorAll('details').length,0,'não criar aba dentro de aba');
+ assert.equal(law.querySelectorAll('.bc-m01-lei-art p').length,3);
+ assert.ok(law.querySelector('.bcpe-drag-handle'),'a Lei Seca também deve permitir arrastar');
+ d.querySelector('[data-action="publish"]').click();await wait();
+ const saved=app.calls.find(c=>c.options.method==='POST');
+ assert.ok(saved);
+ const html=JSON.parse(saved.options.body).html;
+ assert.match(html,/CF\/88, art\. 1º/);
+ assert.match(html,/II - a cidadania/);
+ assert.doesNotMatch(html,/bcpe-drag-handle|bcpe-drag-target/,'não publicar controles');
+ app.close();
+});
+
+test('Conteúdo completo Civil: Lei Seca pode ser criada manualmente sem inventar legislação',async()=>{
+ const app=await setupLawFull('Civil'),d=app.win.document;
+ const menu=d.querySelector('[data-insert]');
+ assert.ok(menu.querySelector('option[value="law"]'));
+ menu.value='law';menu.dispatchEvent(new app.win.Event('change',{bubbles:true}));
+ const panel=d.querySelector('.bcpe-law-edit-panel');
+ assert.ok(panel);
+ assert.equal(panel.querySelector('select[aria-label="Lei pronta para inserir"]').disabled,true,'sem fonte local não criar lei fictícia');
+ assert.equal(panel.querySelector('textarea').value,'');
+ panel.querySelector('input[aria-label="Título da Lei Seca"]').value='Ver lei seca — artigo indicado';
+ panel.querySelector('input[aria-label="Identificação do dispositivo"]').value='Dispositivo informado pelo professor';
+ let area=panel.querySelector('textarea');area.value='Texto oficial fornecido pelo professor.\nParágrafo adicional.';
+ area.dispatchEvent(new app.win.Event('input',{bubbles:true}));
+ panel.querySelector('button.bcpe-primary').click();
+ const law=d.querySelector('.bcpe-workspace details.bc-m01-lei-seca');
+ assert.ok(law);
+ assert.equal(law.querySelectorAll('.bc-m01-lei-art p').length,2);
+ assert.match(law.textContent,/Texto oficial fornecido pelo professor/);
+ app.close();
+});
