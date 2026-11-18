@@ -97,7 +97,8 @@ test('CF M01: revisão 20 publicada mantém os textos e adiciona somente leis se
  assert.match(value,/Edição do professor mantida/,'teoria editada não pode ser perdida');
  assert.equal(wrap.querySelectorAll('.bc-m01-topic').length,2,'não restaurar tópicos removidos');
  assert.equal(wrap.querySelectorAll('#bc-guided-title-1-4 ~ .bc-m01-lei-seca .bc-m01-lei-item').length,3);
- assert.doesNotMatch(value,/duplicado/,'remove apenas o conteúdo legal antigo duplicado');
+ assert.match(value,/duplicado/,'preservar os trechos legais existentes mesmo quando repetidos');
+ assert.match(value,/Ver lei seca — CF\\/88, art\\. 1º e mais 2/,'preservar o título existente');
  assert.match(value,/CF\/88, art\. 103, § 2º/,'novo texto legal incluído');
  assert.equal(w.BcCfGuidedReader.reconcileM01Html(old,21),old,'não modificar publicações posteriores');
  w.close();
