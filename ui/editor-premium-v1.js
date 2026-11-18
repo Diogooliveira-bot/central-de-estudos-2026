@@ -1530,7 +1530,7 @@ async function open(overlay){
  let html=capture(article);
  try{
   const remote=await api('/api/content-editor?id='+encodeURIComponent(state.id)+'&legacyId='+encodeURIComponent(legacyContentId(overlay)));
-  if(remote.exists){html=remote.html;state.revision=Number(remote.revision||0)}
+  if(remote.exists){html=remote.html;state.revision=Number(remote.revision||0);if(overlay.matches('.bc-guided-overlay')&&overlay.getAttribute('aria-label')==='Teoria guiada de Direito Constitucional, módulo 1'&&window.BcCfGuidedReader?.reconcileM01Html)html=window.BcCfGuidedReader.reconcileM01Html(html,state.revision)}
  }catch(err){return notify('Não foi possível carregar a versão atual. Por segurança, a edição foi cancelada.')}
  const draft=draftRead(state.id)||draftRead(legacyContentId(overlay));
  if(draft&&draft.html&&draft.html!==html){
