@@ -24,30 +24,109 @@ function paragraph(s){
  const emphasis=/^(?:Erro comum|Pegadinha|Risco de erro|N[ãa]o confundir|Guarde o essencial|Qu[óo]runs)$/i.test(label);
  return '<p class="cf-apostila-note'+(emphasis?' cf-apostila-alert':'')+'"><strong>'+escape(label)+'.</strong> '+escape(body)+'</p>';
 }
-function lawList(n){
- const groups=g.BC_CF_GUIDED_LAW?.[String(n)]||g.BC_CF_GUIDED_LAW?.[n]||{};
- const unique=new Map();
- for(const values of Object.values(groups)){
-  if(!Array.isArray(values))continue;
-  for(const record of values){
-   if(!Array.isArray(record)||!Array.isArray(record[1]))continue;
-   const title=String(record[0]||'').trim(),lines=record[1].map(x=>String(x||'').trim()).filter(Boolean);
-   if(!title||!lines.length)continue;
-   const key=simple(title);
-   if(!unique.has(key)||lines.join('').length>unique.get(key).lines.join('').length)unique.set(key,{title,lines});
+/* Catálogo de dispositivos da própria CF/88, compartilhado entre M01–M15.
+ * Não injeta leis externas, não completa texto por inferência e não repete a lei no fim. */
+let _cfLawSource=null,_cfLawCatalog=null;
+function lawCatalog(){
+ const src=g.BC_CF_GUIDED_LAW||{};
+ if(_cfLawCatalog&&_cfLawSource===src)return _cfLawCatalog;
+ const catalog=new Map();
+ for(const module of Object.values(src)){
+  if(!module||typeof module!=='object')continue;
+  for(const group of Object.values(module)){
+   if(!Array.isArray(group))continue;
+   for(const row of group){
+    if(!Array.isArray(row)||!Array.isArray(row[1]))continue;
+    const label=String(row[0]||''),m=label.match(/^CF\/88,\s*art\.\s*(\d{1,4}(?:-[A-Z])?)/i);
+    if(!m)continue;
+    const key=m[1].toUpperCase(),lines=row[1].filter(t=>typeof t==='string'&&t.trim()&&!/^\s*(?:\[…\]|\[\.\.\.\]|…|\.\.\.)\s*$/.test(t));
+    if(!lines.length)continue;
+    // A versão mais extensa costuma reunir caput, parágrafos e incisos de uma mesma fonte.
+    const score=lines.join('').length;
+    const prev=catalog.get(key);
+    if(!prev||score>prev.score)catalog.set(key,{label:'CF/88, art. '+key+(Number(key)<=9?'º':''),lines,score});
+   }
   }
  }
- if(!unique.size)return '';
- return '<section class="cf-apostila-laws" aria-label="Lei seca do módulo"><h2>Lei seca do módulo</h2><p>Abra apenas os dispositivos que desejar consultar durante a leitura.</p>'+
- [...unique.values()].map(item=>'<details class="cf-apostila-law"><summary>'+escape(item.title)+'</summary><div class="cf-apostila-law-body">'+item.lines.map(line=>'<p>'+escape(line)+'</p>').join('')+'</div></details>').join('')+
- '</section>';
+ _cfLawSource=src;_cfLawCatalog=catalog;return catalog;
 }
+function isOtherLaw(text,before,end){
+ const prior=text.slice(Math.max(0,before-55),before);
+ const after=text.slice(end,end+70);
+ return /(?:\bLINDB|\bCPC|\bCPP|\bCTN|\bCLT|\bC[CP]\b|c[óo]digo (?:penal|civil|de processo|tribut[áa]rio)|\blei\s*(?:n[ºo°.]\s*)?\d[\d.\/-]*)\s*[,—–-]?\s*$/i.test(prior)||
+ /^\s*(?:da|do|de|na|no)\s+(?:LINDB|CPC|CPP|CTN|CLT|CP|CC|C[óo]digo|Lei\s*(?:n[ºo°.]\s*)?\d|Estatuto)\b/i.test(after);
+}
+function citedConstitution(text){
+ const found=[],re=/\barts?\.?\s*(\d{1,4}(?:\s*-\s*[A-Z])?)\s*[ºo°]?/gi;let m;
+ while((m=re.exec(text))){
+  if(isOtherLaw(text,m.index,re.lastIndex))continue;
+  const article=m[1].replace(/\s+/g,'').toUpperCase();
+  let after=text.slice(re.lastIndex,re.lastIndex+86).split(/\barts?\.?\s*\d/i)[0].split(/[.!?;:]/)[0];
+  const para=after.match(/§\s*(\d+)\s*[ºo°]?/i)?.[1]||'';
+  let tail=after.replace(/^\s*,?\s*(?:§\s*\d+\s*[ºo°]?\s*)?[,;]?\s*/,'');
+  const roman=tail.match(/^(?:incisos?\s+|inc\.\s*)?([IVXLCM]{1,8}(?:\s*(?:,|e|ou)\s*[IVXLCM]{1,8})*)\b/i);
+  let incs=roman?roman[1].split(/\s*(?:,|e|ou)\s*/i).filter(Boolean).map(v=>v.toUpperCase()):[];
+  if(!incs.length){
+   const before=text.slice(Math.max(0,m.index-40),m.index);
+   const backwards=before.match(/inciso\s+([IVXLCM]{1,8})\s+(?:do|no)\s*$/i);
+   if(backwards)incs=[backwards[1].toUpperCase()];
+  }
+  const range=after.match(/^\s*(?:a|ao|at[ée]|–|—)\s*(\d{1,4})\s*[ºo°]?/i);
+  const a=Number(article),b=range?Number(range[1]):a;
+  const articles=range&&Number.isInteger(a)&&Number.isInteger(b)&&b>a&&b-a<=4?Array.from({length:b-a+1},(_,i)=>String(a+i)):[article];
+  for(const ref of articles)found.push({article:ref,para,incs,caput:/\bcaput\b/i.test(after)});
+ }
+ return found;
+}
+function lawExcerpt(entry,ref){
+ const lines=entry.lines,number=ref.para,incisos=ref.incs;
+ const label=/^§\s*(\d+)\s*[ºo°]?/i;
+ let block=lines;
+ if(number){
+  const pos=lines.findIndex(line=>{const m=label.exec(line);return m&&m[1]===number});
+  if(pos<0)return [];
+  let end=pos+1;
+  while(end<lines.length&&!label.test(lines[end]))end++;
+  block=lines.slice(pos,end);
+ }else if(incisos.length){
+  const end=lines.findIndex(line=>label.test(line));
+  block=end<0?lines:lines.slice(0,end);
+ }
+ if(incisos.length){
+  const picked=incisos.map(inc=>block.find(line=>new RegExp('^'+inc+'\\s*[-–—]').test(line))).filter(Boolean);
+  if(!picked.length)return [];
+  return number?[block[0],...picked]:picked;
+ }
+ if(ref.caput)return lines[0]?[lines[0]]:[];
+ if(number)return block.length<=8?block:[block[0]];
+ // Um artigo longo (como o art. 5º) não deve despejar dezenas de incisos.
+ return block.length<=10?block:(block[0]?[block[0]]:[]);
+}
+function lawInline(text,seen){
+ const catalog=lawCatalog(),out=[];
+ for(const ref of citedConstitution(text)){
+  const key=[ref.article,ref.para,ref.incs.join(',')].join(':');
+  if(seen.has(key))continue;
+  const entry=catalog.get(ref.article);
+  if(!entry)continue;
+  const lines=lawExcerpt(entry,ref);
+  if(!lines.length)continue;
+  seen.add(key);
+  const suffix=(ref.para?', § '+ref.para+'º':'')+(ref.incs.length?', '+ref.incs.join(', '):'')+
+   (!ref.para&&!ref.incs.length&&lines.length===1&&entry.lines.length>1?' (caput)':'');
+  const title=entry.label+suffix;
+  out.push('<details class="cf-apostila-law cf-apostila-law-inline"'+(lines.length<=3?' open':'')+'><summary>'+escape(title)+'</summary><div class="cf-apostila-law-body">'+lines.map(line=>'<p>'+escape(line)+'</p>').join('')+'</div></details>');
+ }
+ return out.join('');
+}
+// API antiga preservada para chamadas legadas. A seção geral do final não é mais exibida.
+function lawList(){return '';}
 function render(raw,n){
  const lines=String(raw||'').replace(/\r/g,'').split('\n');
- let output='',buffer=[],rows=[],list=[],started=false,outline=false,seenParts=new Set();
+ let output='',buffer=[],rows=[],list=[],started=false,outline=false,seenParts=new Set(),seenLegal=new Set();
  const flushText=()=>{if(!buffer.length)return;const s=buffer.join(' ').replace(/\s+/g,' ').trim();buffer=[];if(!s)return;
   if(n>=8&&!started&&/^Esta apostila reescreve o texto original do m[óo]dulo CF M\d+/i.test(s)){started=true;return}
-  started=true;output+=paragraph(s);
+  started=true;output+=paragraph(s)+lawInline(s,seenLegal);
  };
  const flushList=()=>{if(!list.length)return;output+='<ul>'+list.map(s=>'<li>'+escape(s)+'</li>').join('')+'</ul>';list=[];};
  const flushRows=()=>{if(!rows.length)return;
@@ -75,16 +154,16 @@ function render(raw,n){
    flushText();const key=simple(s);if(seenParts.has(key))continue;seenParts.add(key);
   }
   const level=heading(s);
-  if(level){flushText();output+='<h'+level+'>'+escape(s)+'</h'+level+'>';continue;}
+  if(level){flushText();seenLegal.clear();output+='<h'+level+'>'+escape(s)+'</h'+level+'>';continue;}
   buffer.push(s);
  }
  flush();
- return '<div class="cf-apostila" data-cf-editorial-module="'+Number(n)+'">'+output+lawList(n)+'</div>';
+ return '<div class="cf-apostila" data-cf-editorial-module="'+Number(n)+'">'+output+'</div>';
 }
 function styles(){
  if(typeof document==='undefined'||document.getElementById('cf-apostila-reading-v1-style'))return;
- const link=document.createElement('link');link.id='cf-apostila-reading-v1-style';link.rel='stylesheet';link.href='/ui/cf-apostila-reading-v1.css?v=20261109cf15a';document.head.appendChild(link);
+ const link=document.createElement('link');link.id='cf-apostila-reading-v1-style';link.rel='stylesheet';link.href='/ui/cf-apostila-reading-v1.css?v=20261118cfleiinline1';document.head.appendChild(link);
 }
-g.CfApostilaReading=Object.freeze({render,styles,lawList});
+g.CfApostilaReading=Object.freeze({render,styles,lawList,citedConstitution,lawCatalog});
 styles();
 })(window);
