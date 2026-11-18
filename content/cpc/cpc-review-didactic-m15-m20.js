@@ -235,8 +235,8 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
       [
         "Por que a execução começa com citação",
         [
-          "No procedimento por quantia fundada em título extrajudicial, a petição inicial indica a obrigação e o título. Em regra, o executado é citado para pagar em três dias (art. 829). O pagamento tempestivo altera os efeitos econômicos, inclusive honorários nas condições do art. 827.",
-          "Se o devedor não é encontrado, a lei prevê mecanismos próprios como arresto de bens, sem dispensar o percurso legal para regularização da citação. A constrição não é um castigo: serve para reservar bens suficientes à satisfação do crédito."
+          "No procedimento por quantia fundada em título extrajudicial, a petição inicial indica a obrigação e o título. O executado é citado para pagar em três dias (art. 829). O juiz fixa honorários de dez por cento ao despachar a inicial; o pagamento integral nesse prazo os reduz pela metade (art. 827, caput e § 1º).",
+          "Se o oficial de justiça não encontra o executado, arresta-lhe bens suficientes para garantir a execução; aperfeiçoada a citação e vencido o prazo de pagamento, o arresto converte-se em penhora (art. 830, caput e § 3º). A constrição não é um castigo: serve para reservar bens suficientes à satisfação do crédito."
         ],
         "Exemplo: o credor apresenta título exigível; não havendo pagamento no prazo, o processo pode avançar para individualização de bens penhoráveis."
       ],
@@ -244,15 +244,15 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Penhora não é perda imediata do bem",
         [
           "A penhora individualiza patrimônio que ficará sujeito à execução, mas não transfere automaticamente a propriedade ao credor. O CPC estabelece ordem preferencial de penhora, destacando dinheiro, e protege bens e verbas considerados impenhoráveis nas hipóteses previstas.",
-          "As exceções e a jurisprudência não permitem generalizações como 'todo salário é sempre intocável' ou 'qualquer valor bancário pode ser penhorado'. A solução exige verificar natureza do crédito, proteção legal, circunstâncias e entendimento aplicável."
+          "Salários, proventos e pensões (art. 833, IV) e a poupança até o limite legal (art. 833, X) são impenhoráveis, mas não contra a penhora para pagamento de prestação alimentícia, independentemente de sua origem, nem quanto às importâncias excedentes a 50 salários-mínimos mensais (art. 833, § 2º). Indisponibilizados ativos financeiros, o executado tem 5 dias para comprovar a impenhorabilidade ou o excesso (art. 854, § 3º)."
         ],
         "Exemplo: quantia depositada em conta pode suscitar alegação de impenhorabilidade; a parte precisa apresentar fundamento e elementos no momento processual adequado."
       ],
       [
         "Avaliação, adjudicação e alienação",
         [
-          "Depois da constrição, a avaliação identifica o valor dos bens. A expropriação pode ocorrer por adjudicação, alienação por iniciativa particular ou leilão judicial, conforme disciplina legal. O objetivo é converter bem em satisfação, evitando tanto venda irregular quanto prejuízo injustificado.",
-          "A arrematação produz efeitos próprios nos marcos processuais previstos no CPC. Uma questão pode explorar a diferença entre oferecer lance, assinar o auto e expedir carta: são atos com consequências jurídicas distintas."
+          "Depois da constrição, a avaliação identifica o valor dos bens. A expropriação consiste em adjudicação, alienação ou apropriação de frutos e rendimentos de empresa ou de estabelecimentos e de outros bens (art. 825). A alienação é por iniciativa particular ou em leilão judicial (art. 879). O objetivo é converter bem em satisfação, evitando tanto venda irregular quanto prejuízo injustificado.",
+          "Assinado o auto pelo juiz, pelo arrematante e pelo leiloeiro, a arrematação é perfeita, acabada e irretratável (art. 903, caput), mas pode ser invalidada se realizada por preço vil ou com outro vício (art. 903, § 1º, I). Vil é o preço inferior ao mínimo do edital ou, sem mínimo, a 50% da avaliação (art. 891, parágrafo único)."
         ],
         "Exemplo: credor pode buscar adjudicação de bem penhorado, enquanto em outra situação a venda em leilão será o meio de obter dinheiro para pagar o débito."
       ],
@@ -260,7 +260,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Embargos à execução e impugnação são defesas diferentes",
         [
           "Nos títulos extrajudiciais, os embargos do executado têm prazo geral de quinze dias, podem ser opostos independentemente de penhora, depósito ou caução e permitem matérias próprias do art. 917. Não confundam embargos com a impugnação do cumprimento de sentença.",
-          "Os embargos não suspendem automaticamente a execução. O parcelamento previsto no art. 916 depende de requisitos, envolve reconhecimento do crédito e não se aplica ao cumprimento de sentença. A objeção de pré-executividade também possui limites: não comporta ampla produção probatória."
+          "Os embargos não têm efeito suspensivo; o juiz pode atribuí-lo, a requerimento, presentes os requisitos da tutela provisória e garantida a execução por penhora, depósito ou caução suficientes (art. 919, caput e § 1º). O parcelamento do art. 916 exige reconhecimento do crédito e depósito de trinta por cento do valor em execução, mais custas e honorários, com o restante em até 6 parcelas mensais; importa renúncia aos embargos (§ 6º) e não se aplica ao cumprimento de sentença (§ 7º)."
         ],
         "Exemplo: alegação demonstrável por prova documental já existente pode ser apreciada sem perícia extensa; a necessidade de fatos complexos pode exigir a via defensiva adequada."
       ],
@@ -268,15 +268,15 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Suspensão e prescrição intercorrente",
         [
           "Quando a execução não encontra bens ou devedor, a lei disciplina suspensão, arquivamento e prescrição intercorrente. O tema busca evitar execução eternamente paralisada, sem suprimir oportunidades de contraditório e causas que interfiram na contagem.",
-          "Decorar apenas 'um ano' é insuficiente: é necessário saber qual fato desencadeia a suspensão, como o prazo prescricional passa a correr e quando o juiz deve ouvir as partes antes de reconhecê-la. Observe o art. 921 e sua disciplina atual."
+          "Se o executado não possui bens penhoráveis, o juiz suspende a execução por um ano, durante o qual se suspende a prescrição (art. 921, III e § 1º). A prescrição intercorrente corre da ciência da primeira tentativa infrutífera, com suspensão por uma única vez (§ 4º). O prazo é o da pretensão (Código Civil, art. 206-A). O juiz só a reconhece de ofício depois de ouvir as partes em quinze dias (§ 5º)."
         ],
         "Exemplo: execução que permanece sem localização de bens exige acompanhamento dos marcos legais, não cobrança infinita sem movimentação válida."
       ]
     ],
     "remember": [
-      "Execução de quantia extrajudicial: citação para pagar, em regra, em 3 dias.",
+      "Execução de quantia extrajudicial: citação para pagar em 3 dias (art. 829).",
       "Penhora individualiza bens; expropriação realiza a satisfação patrimonial.",
-      "Impenhorabilidades do art. 833 exigem análise das hipóteses legais e jurisprudenciais.",
+      "Impenhorabilidades do art. 833 exigem análise das hipóteses e das exceções legais (§§ 1º e 2º).",
       "Embargos à execução têm prazo geral de 15 dias e não suspendem automaticamente.",
       "Art. 916: parcelamento legal da execução extrajudicial não vale para cumprimento de sentença."
     ],
@@ -292,7 +292,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "A execução por quantia começa dando chance de pagamento",
           [
-            "Na execução fundada em título extrajudicial de quantia certa, o executado é citado, em regra, para pagar em três dias. Essa etapa antecede diversos atos de constrição, respeitadas hipóteses legais.",
+            "Na execução fundada em título extrajudicial de quantia certa, o executado é citado para pagar em três dias. Essa etapa antecede diversos atos de constrição, respeitadas hipóteses legais.",
             "Se não há pagamento, a execução precisa localizar e individualizar bens para satisfação do crédito. O objetivo não é punir a pessoa por estar endividada, mas usar o patrimônio juridicamente responsável pelo cumprimento da obrigação."
           ],
           "Pergunta: na execução extrajudicial de quantia, o devedor é chamado apenas para oferecer defesa e nunca para pagar?",
@@ -301,7 +301,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "Penhora é afetação, não compra compulsória imediata",
           [
-            "Penhorar significa vincular bem ao processo executivo, sujeitando-o a atos posteriores para satisfação. Não equivale a entregar imediatamente a propriedade ao credor. Em seguida podem ocorrer avaliação e formas de expropriação, como adjudicação, alienação por iniciativa particular e leilão.",
+            "Penhorar significa vincular bem ao processo executivo, sujeitando-o a atos posteriores para satisfação. Não equivale a entregar imediatamente a propriedade ao credor. Em seguida podem ocorrer avaliação e expropriação (adjudicação, alienação ou apropriação de frutos e rendimentos, art. 825).",
             "O dinheiro tem posição preferencial na ordem legal, mas a execução deve respeitar impenhorabilidades e regras de substituição. É preciso saber qual bem está em jogo antes de afirmar que qualquer patrimônio pode ser atingido."
           ],
           "Pergunta: após a penhora o credor vira automaticamente proprietário do bem?",
@@ -310,8 +310,8 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "Alguns bens são protegidos — mas por quê?",
           [
-            "O CPC estabelece impenhorabilidades para proteger condições mínimas de vida, trabalho e situações legalmente definidas. Entretanto, há exceções e interpretações jurisprudenciais que exigem análise concreta.",
-            "Por isso, frases como 'salário nunca pode ser penhorado' ou 'qualquer depósito é sempre penhorável' podem estar erradas. Pergunte qual verba foi atingida, qual crédito está sendo cobrado, quais são as exceções e o entendimento aplicável."
+            "O CPC estabelece impenhorabilidades para proteger condições mínimas de vida, trabalho e situações legalmente definidas. Entretanto, há exceções legais (art. 833, §§ 1º e 2º) que exigem análise concreta.",
+            "Por isso, frases como 'salário nunca pode ser penhorado' ou 'qualquer depósito é sempre penhorável' podem estar erradas. Pergunte qual verba foi atingida, qual crédito está sendo cobrado e quais são as exceções legais."
           ],
           "Pergunta: basta a pessoa dizer que o bem é impenhorável, sem examinar a regra, para encerrar a execução?",
           "Não. O juiz precisa avaliar requisitos e prova pertinente."
@@ -320,7 +320,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
           "Como o devedor pode se defender?",
           [
             "Nos títulos extrajudiciais, os embargos à execução podem discutir matérias previstas no CPC, em prazo próprio e independentemente de garantia prévia para sua apresentação. Eles não suspendem automaticamente o procedimento.",
-            "Parcelamento legal do art. 916 exige condições específicas e não se estende ao cumprimento de sentença. A defesa não deve ser confundida com impugnação ao cumprimento de título judicial, nem com simples objeção de pré-executividade, que possui limites probatórios."
+            "Parcelamento legal do art. 916 exige condições específicas e não se estende ao cumprimento de sentença. A defesa não deve ser confundida com impugnação ao cumprimento de título judicial."
           ],
           "Pergunta: apresentar embargos significa necessariamente interromper todos os atos executivos?",
           "Não. A suspensão exige requisitos legais."
