@@ -340,29 +340,29 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
   },
   "18": {
     "title": "Procedimentos especiais: qual instrumento escolher",
-    "intro": "Os procedimentos especiais existem porque certos conflitos exigem um percurso próprio. Em prova, o caminho mais seguro não é decorar todos os artigos de uma vez, mas reconhecer o problema concreto e associá-lo ao instrumento adequado.",
+    "intro": "Os procedimentos especiais existem porque certos conflitos exigem um percurso próprio. O caminho mais seguro não é decorar todos os artigos de uma vez, mas reconhecer o problema concreto e associá-lo ao instrumento adequado.",
     "sections": [
       [
         "Consignação em pagamento: quero cumprir, mas há obstáculo",
         [
-          "A consignação permite ao devedor buscar a liberação da obrigação quando o pagamento não se realiza regularmente por circunstâncias juridicamente relevantes, como recusa indevida do credor ou dúvida sobre quem deve receber. A solução envolve depósito nas condições legais.",
-          "Em dinheiro, pode haver consignação extrajudicial com depósito bancário, comunicação e prazo para recusa. Se a via extrajudicial não resolve, a demanda judicial segue regras específicas de depósito e contraditório. Depósito insuficiente pode não extinguir integralmente a obrigação."
+          "A consignação permite ao devedor ou a terceiro buscar a liberação da obrigação nos casos previstos em lei (art. 539), como os do art. 335 do Código Civil, entre eles a recusa sem justa causa e a dúvida sobre quem deva receber. A solução envolve depósito nas condições legais.",
+          "Em dinheiro, pode haver consignação extrajudicial: depósito bancário, ciência do credor por carta e prazo de 10 dias para recusar; sem recusa, o devedor fica liberado. Havendo recusa por escrito, a ação pode ser proposta em até um mês; não proposta, o depósito fica sem efeito (art. 539, §§ 1º a 4º). Se a via extrajudicial não resolve, a demanda judicial segue regras específicas de depósito e contraditório. Depósito insuficiente pode não extinguir integralmente a obrigação."
         ],
         "Exemplo: duas pessoas afirmam ser credoras do mesmo aluguel. O devedor pode precisar consignar para pagar sem correr risco de pagamento à pessoa errada."
       ],
       [
         "Embargos de terceiro: proteger bem atingido",
         [
-          "Embargos de terceiro protegem possuidor ou titular de direito incompatível com a constrição quando não participa do processo que atingiu ou ameaça atingir o bem. A qualidade de terceiro, para essa finalidade, exige verificar as hipóteses legais, inclusive equiparações do art. 674.",
-          "É diferente dos embargos do próprio executado: aqui a controvérsia central é o direito de quem está fora da relação processual principal. O prazo muda conforme a constrição ocorre em processo de conhecimento ou execução e deve ser cuidadosamente identificado."
+          "Embargos de terceiro protegem possuidor ou titular de direito incompatível com a constrição quando não participa do processo que atingiu ou ameaça atingir o bem. A qualidade de terceiro, para essa finalidade, exige verificar as hipóteses legais, inclusive as do art. 674, § 2º.",
+          "É diferente dos embargos do próprio executado: aqui a controvérsia central é o direito de quem está fora da relação processual principal. No processo de conhecimento, os embargos cabem a qualquer tempo até o trânsito em julgado da sentença; no cumprimento de sentença e na execução, até 5 dias depois da adjudicação, da alienação por iniciativa particular ou da arrematação, mas sempre antes da assinatura da respectiva carta (art. 675)."
         ],
         "Exemplo: veículo pertencente a pessoa que não integra a execução é penhorado por dívida alheia. A defesa apropriada pode ser embargos de terceiro."
       ],
       [
         "Ação monitória: prova escrita sem força executiva",
         [
-          "A monitória é adequada quando o credor possui prova escrita capaz de sustentar a pretensão, mas não dispõe de título executivo. Serve, conforme o CPC, para exigir pagamento, entrega de coisa ou cumprimento de obrigação de fazer ou não fazer.",
-          "O mandado inicial oferece oportunidade de cumprimento ou apresentação de embargos monitórios. Ausentes cumprimento e embargos, pode formar-se título executivo judicial de pleno direito. Não confunda monitória com execução direta: a etapa de constituição do título importa."
+          "A monitória é adequada quando o credor possui prova escrita capaz de sustentar a pretensão, mas não dispõe de título executivo. Serve, conforme o art. 700, I a III, para exigir pagamento de quantia em dinheiro, entrega de coisa fungível ou infungível ou de bem móvel ou imóvel, ou cumprimento de obrigação de fazer ou de não fazer.",
+          "O mandado inicial oferece oportunidade de cumprimento ou apresentação de embargos monitórios. Sendo evidente o direito do autor, o mandado dá prazo de 15 dias para cumprir e pagar honorários de 5% do valor atribuído à causa (art. 701, caput); quem cumpre o mandado no prazo fica isento de custas processuais (§ 1º). No mesmo prazo, sem segurança do juízo, o réu pode opor embargos nos próprios autos (art. 702). Sem pagamento nem embargos, constitui-se de pleno direito o título executivo judicial (art. 701, § 2º). Não confunda monitória com execução direta: a etapa de constituição do título importa."
         ],
         "Exemplo: mensagem e documento escritos evidenciam determinada dívida, mas não preenchem os requisitos de título extrajudicial; pode haver espaço para monitória."
       ],
@@ -370,7 +370,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Restauração de autos: recuperar o processo",
         [
           "Se os autos desaparecem, a restauração busca reconstruir os elementos necessários à continuidade processual. Não reabre automaticamente o mérito já decidido nem permite mudar pedidos apenas porque os documentos originais se perderam.",
-          "A iniciativa pode ser tomada conforme a lei por quem tem legitimidade, inclusive o próprio juízo. Se os autos originais reaparecem, o sistema prevê retomada da tramitação neles e apensamento dos autos restaurados, preservando a história processual."
+          "A restauração pode ser promovida pelo juiz, de ofício, por qualquer das partes ou pelo Ministério Público, se for o caso (art. 712). Quem deu causa ao desaparecimento responde pelas custas e pelos honorários da restauração (art. 718). Se os autos originais reaparecem, o sistema prevê retomada da tramitação neles e apensamento dos autos restaurados, preservando a história processual."
         ],
         "Exemplo: depois de perda física de autos antigos, cópias de petições e decisões podem ser utilizadas para reconstituir o processo."
       ],
@@ -378,7 +378,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Use um mapa de escolha antes dos prazos",
         [
           "Consignação: devedor quer pagar e não consegue corretamente. Embargos de terceiro: patrimônio de quem não integra o processo foi atingido. Monitória: há prova escrita, mas falta título executivo. Restauração: os autos sumiram e precisam ser recompostos.",
-          "Depois de escolher o instituto, confira requisitos de legitimidade, documento essencial, prazo e efeito do pedido. Uma boa questão costuma trocar a posição da pessoa no processo para tornar um remédio impróprio."
+          "Depois de escolher o instituto, confira requisitos de legitimidade, documento essencial, prazo e efeito do pedido. Ignorar a posição da pessoa no processo torna o remédio impróprio."
         ],
         "Exemplo: quem é o executado não usa embargos de terceiro para discutir a própria penhora como se fosse pessoa estranha à execução."
       ]
@@ -388,11 +388,11 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
       "Embargos de terceiro protegem direito de quem não integra a relação processual principal.",
       "Monitória exige prova escrita sem eficácia de título executivo.",
       "Restauração recompõe autos desaparecidos; não revisa automaticamente o mérito.",
-      "Procedimento comum pode aplicar-se subsidiariamente aos especiais quando compatível."
+      "O procedimento comum aplica-se subsidiariamente aos demais procedimentos especiais e ao processo de execução (art. 318, parágrafo único)."
     ],
     "laws": [
       [
-        "CPC, arts. 539–549, 674–681, 700–702 e 712–718",
+        "CPC, arts. 318 (parágrafo único), 539–549, 674–681, 700–702 e 712–718",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
     ],
