@@ -48,6 +48,13 @@ function lawCatalog(){
    }
   }
  }
+ // Fontes atuais prevalecem sobre as transcrições antigas do catálogo didático.
+ const official=g.BC_CF_OFFICIAL_EXCERPTS||{};
+ for(const [key,lines] of Object.entries(official)){
+  if(!Array.isArray(lines)||!lines.length)continue;
+  const id=key.toUpperCase();
+  catalog.set(id,{label:'CF/88, art. '+id+(Number(id)<=9?'º':''),lines:lines.filter(x=>typeof x==='string'&&x.trim()),score:Infinity});
+ }
  _cfLawSource=src;_cfLawCatalog=catalog;return catalog;
 }
 function isOtherLaw(text,before,end){
