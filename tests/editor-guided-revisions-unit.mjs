@@ -10,7 +10,7 @@ const wait=(ms=55)=>new Promise(resolve=>setTimeout(resolve,ms));
 
 async function setup(subject='Civil',role='admin',remote=null,moduleNumber=3){
  const guided=subject!=='Penal';
- const label='Teoria guiada de Direito '+subject+', módulo '+moduleNumber+';'
+ const label='Teoria guiada de Direito '+subject+', módulo '+moduleNumber;
  const paper=guided?'<article class="bc-m01-paper bc-apostila-paper">':'<div class="bc-m01-paper">';
  const end=guided?'</article>':'</div>';
  const dom=new JSDOM('<!doctype html><html><body>'+
