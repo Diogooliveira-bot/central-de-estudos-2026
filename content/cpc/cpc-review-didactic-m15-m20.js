@@ -456,23 +456,23 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Direitos difusos, coletivos e individuais homogêneos",
         [
           "Direitos difusos têm titulares indeterminados, ligados por circunstâncias de fato, e objeto indivisível. Direitos coletivos em sentido estrito pertencem a grupo, categoria ou classe ligada por relação jurídica-base, com objeto indivisível. Direitos individuais homogêneos são direitos individuais divisíveis reunidos por origem comum.",
-          "A classificação influencia legitimidade, extensão do julgamento e técnica de tutela coletiva. Não é suficiente observar que muitas pessoas estão interessadas; é necessário identificar a natureza da relação e o objeto protegido."
+          "A classificação influencia legitimidade, extensão do julgamento e técnica de tutela coletiva."
         ],
         "Exemplo: poluição de rio pode afetar coletividade indeterminada; consumidores prejudicados pelo mesmo defeito podem ter pretensões individuais homogêneas."
       ],
       [
         "Ação popular e ação civil pública",
         [
-          "A ação popular é instrumento do cidadão para proteger, entre outros bens, patrimônio público, moralidade administrativa e meio ambiente nas hipóteses legais. A qualidade de cidadão é requisito central de legitimidade ativa; pessoa jurídica não se torna autora popular apenas por ter interesse coletivo.",
-          "A ação civil pública tem rol próprio de legitimados e integra microssistema de tutela coletiva com o CDC. Associações devem atender requisitos legais, com possibilidade de dispensa de requisito temporal nas situações previstas. O inquérito civil ajuda investigação, mas não é condição universal para ajuizar ACP."
+          "A ação popular é instrumento do cidadão para anular ato lesivo ao patrimônio público ou de entidade de que o Estado participe, à moralidade administrativa, ao meio ambiente e ao patrimônio histórico e cultural. A qualidade de cidadão é requisito central de legitimidade ativa; pessoa jurídica não tem legitimidade para propor ação popular (Súmula 365 do STF).",
+          "A ação civil pública tem rol próprio de legitimados e integra microssistema de tutela coletiva com o CDC. Estão legitimados o Ministério Público, a Defensoria Pública, a União, os Estados, o Distrito Federal, os Municípios, as autarquias, empresas públicas, fundações e sociedades de economia mista, e as associações constituídas há pelo menos 1 ano nos termos da lei civil e com finalidade institucional compatível (Lei nº 7.347/1985, art. 5º). O juiz pode dispensar o requisito da pré-constituição quando houver manifesto interesse social (art. 5º, § 4º). O inquérito civil não é condição para ajuizar a ACP."
         ],
         "Exemplo: cidadão que impugna ato lesivo à moralidade administrativa pode propor ação popular; Ministério Público pode ajuizar ACP em situação de dano coletivo."
       ],
       [
         "Mandado de segurança e mandado de injunção",
         [
-          "O mandado de segurança protege direito líquido e certo diante de ilegalidade ou abuso de poder, quando não cabe habeas corpus ou habeas data. Líquido e certo significa que a prova pertinente precisa estar pré-constituída; não é procedimento próprio para ampla instrução probatória.",
-          "O mandado de injunção responde a falta de norma regulamentadora que inviabilize exercício de direito, liberdade ou prerrogativa constitucional. Não se confunde com MS: no primeiro o problema essencial é a omissão normativa; no segundo, ato ou omissão ilegal que ameaça direito já demonstrável."
+          "O mandado de segurança protege direito líquido e certo diante de ilegalidade ou abuso de poder, quando não cabe habeas corpus ou habeas data. Líquido e certo significa que a prova pertinente precisa estar pré-constituída; não é procedimento próprio para ampla instrução probatória. O prazo para impetrar é de 120 dias, contados da ciência do ato impugnado (Lei nº 12.016/2009, art. 23). No MS coletivo, são legitimados o partido político com representação no Congresso Nacional e a organização sindical, a entidade de classe ou a associação legalmente constituída e em funcionamento há pelo menos 1 ano (art. 21).",
+          "O mandado de injunção é cabível quando a falta total ou parcial de norma regulamentadora torna inviável o exercício de direitos e liberdades constitucionais e de prerrogativas inerentes à nacionalidade, à soberania e à cidadania. Não se confunde com MS: no primeiro o problema essencial é a omissão normativa; no segundo, ato ou omissão ilegal que viola ou ameaça direito já demonstrável."
         ],
         "Exemplo: recusa administrativa comprovada de ato vinculado pode indicar MS; ausência de lei indispensável para exercer direito constitucional pode sugerir MI."
       ],
@@ -480,15 +480,15 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Habeas data e dados pessoais",
         [
           "Habeas data garante conhecimento, retificação ou anotação de informações relativas ao impetrante mantidas em registros ou bancos governamentais ou de caráter público. Trata-se de ação constitucional com finalidade específica, distinta de pedido genérico de documentos administrativos.",
-          "A resistência administrativa prévia é relevante segundo a disciplina legal e jurisprudencial. O candidato deve distinguir o acesso a dados da própria pessoa, o acesso a informação pública pela LAI e a tutela da liberdade de locomoção por habeas corpus."
+          "A petição inicial deve ser instruída com prova da recusa ou do decurso, sem decisão, de mais de 10 dias (acesso) ou de mais de 15 dias (retificação ou anotação), conforme a Lei nº 9.507/1997, art. 8º, parágrafo único; sem recusa, não cabe habeas data (Súmula 2 do STJ). É preciso distinguir o acesso a dados da própria pessoa, o acesso a informação pública pela LAI e a tutela da liberdade de locomoção por habeas corpus."
         ],
         "Exemplo: cidadão pede correção de registro pessoal em banco público e recebe recusa; a situação pode preencher os pressupostos do habeas data."
       ],
       [
         "Controle de constitucionalidade e remédios abstratos",
         [
-          "No controle incidental, a questão constitucional surge em processo concreto; o tribunal observa a reserva de plenário do art. 97 da Constituição nas hipóteses correspondentes. No controle concentrado, ações como ADI, ADC e ADPF possuem objetos e requisitos próprios.",
-          "ADI volta-se, em linhas gerais, à impugnação de lei ou ato normativo federal ou estadual perante a Constituição Federal; ADC exige discussão sobre constitucionalidade de lei federal e controvérsia judicial relevante; ADPF é subsidiária e protege preceitos fundamentais. A questão costuma trocar objeto, legitimidade e efeitos."
+          "No controle incidental, a questão constitucional surge em processo concreto; o tribunal observa a reserva de plenário do art. 97 da Constituição: só a maioria absoluta dos membros do tribunal ou do órgão especial declara a inconstitucionalidade. Acolhida a arguição, a questão vai ao plenário ou ao órgão especial, salvo pronunciamento anterior destes ou do plenário do STF (CPC, art. 949 e parágrafo único). A Súmula Vinculante 10 estende a reserva ao órgão fracionário que afasta a incidência da lei. No controle concentrado, ações como ADI, ADC e ADPF possuem objetos e requisitos próprios.",
+          "ADI e ADC têm os legitimados do art. 103 da CF. A ADI impugna lei ou ato normativo federal ou estadual; a ADC trata de lei ou ato normativo federal e exige controvérsia judicial relevante (Lei nº 9.868/1999, art. 14, III); a ADPF protege preceito fundamental, alcança também lei municipal e não cabe havendo outro meio eficaz de sanar a lesividade (Lei nº 9.882/1999, art. 4º, § 1º)."
         ],
         "Exemplo: lei municipal incompatível com preceito fundamental, nas condições legais, pode ser discutida por ADPF, não por ADC federal."
       ]
@@ -496,7 +496,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
     "remember": [
       "Difusos: indeterminados e indivisíveis; coletivos stricto sensu: grupo e relação-base; individuais homogêneos: origem comum.",
       "Ação popular exige cidadão; ACP possui legitimados próprios.",
-      "MS exige prova pré-constituída e observa prazo decadencial legal para impugnação repressiva.",
+      "MS exige prova pré-constituída e observa o prazo decadencial de 120 dias (Lei nº 12.016/2009, art. 23).",
       "MI enfrenta falta de norma regulamentadora; habeas data protege dados relativos ao impetrante.",
       "Reserva de plenário do art. 97 da CF é distinta do controle concentrado no STF."
     ],
@@ -538,7 +538,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
           "Quem pode defender o interesse coletivo?",
           [
             "Se existe lesão a patrimônio público, moralidade administrativa ou meio ambiente, a ação popular pode ser cabível por cidadão nos termos legais. Já a ação civil pública possui lista específica de legitimados, incluindo entidades e instituições autorizadas por lei.",
-            "Não basta qualquer pessoa chamar sua demanda de coletiva. A legitimidade e o objeto precisam corresponder ao instrumento. A ação popular não se confunde com a ACP, embora ambos possam proteger certos bens semelhantes."
+            "Não basta qualquer pessoa chamar sua demanda de coletiva. A legitimidade e o objeto precisam corresponder ao instrumento. A ação popular não se confunde com a ACP, embora ambas possam proteger certos bens semelhantes."
           ],
           "Pergunta: pessoa jurídica pode ajuizar ação popular apenas por ter interesse ambiental?",
           "Não. A ação popular tem legitimidade ativa própria ligada à condição de cidadão."
@@ -555,7 +555,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "E se o conflito envolve dados pessoais?",
           [
-            "Se uma pessoa precisa conhecer ou corrigir informações relativas a si em registros governamentais ou de caráter público, pode surgir hipótese de habeas data, observadas exigências legais de resistência administrativa.",
+            "Se uma pessoa precisa conhecer ou corrigir informações relativas a si em registros governamentais ou de caráter público, pode surgir hipótese de habeas data, desde que haja prova da recusa ou do silêncio da autoridade além do prazo legal.",
             "Isso não se confunde com toda solicitação de documento público nem com habeas corpus, destinado à liberdade de locomoção. O nome do remédio constitucional vem do bem que ele protege."
           ],
           "Pergunta: habeas data é ação genérica para pedir qualquer arquivo da administração?",
@@ -571,7 +571,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
           "Não. São instrumentos com finalidades e legitimidades específicas."
         ]
       ],
-      "conclusion": "Em questões constitucionais e coletivas, pergunte: qual direito está em risco, quem é seu titular, contra qual conduta e quem tem legitimidade para agir?"
+      "conclusion": "Em casos constitucionais e coletivos, pergunte: qual direito está em risco, quem é seu titular, contra qual conduta e quem tem legitimidade para agir?"
     }
   },
   "20": {
