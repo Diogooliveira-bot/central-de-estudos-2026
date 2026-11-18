@@ -36,32 +36,51 @@ function lawBox(n,index){
 }
 
 
-/* Completa somente a Lei Seca ausente em versões PUBLICADAS ANTIGAS do M01.
- * As alterações do professor em todos os outros blocos permanecem intactas.
- * Migração somente até a revisão 20; revisões novas não sofrem restauração automática. */
-function reconcileM01Html(html,revision){
- if(!(Number(revision)>0&&Number(revision)<=20)||typeof html!=='string'||!html.includes('bc-guided-title-1-'))return html;
- const wrapper=document.createElement('template');wrapper.innerHTML=html;
+/* Atualiza somente dispositivos AUSENTES do M01 legado (revisão 20 ou anterior).
+ * Recebe uma árvore DOM já higienizada pelos editores; não reinterpreta HTML
+ * recebido da rede e nunca reescreve títulos ou artigos publicados. */
+function lawBoxNode(n,index){
+ const data=global.BC_CF_GUIDED_LAW?.[n]?.[index];
+ if(!Array.isArray(data)||!data.length)return null;
+ const unique=new Map();
+ data.forEach(function(item){
+  if(!Array.isArray(item)||!Array.isArray(item[1]))return;
+  const label=String(item[0]||'').trim(),paras=item[1].filter(t=>typeof t==='string'&&t.trim());
+  if(label&&paras.length&&(!unique.has(label)||unique.get(label).length<paras.length))unique.set(label,paras);
+ });
+ const entries=Array.from(unique);
+ if(!entries.length)return null;
+ const details=document.createElement('details');
+ details.className='bc-m01-lei-seca';
+ const summary=document.createElement('summary');
+ summary.textContent='Ver lei seca — '+entries[0][0]+(entries.length>1?' e mais '+(entries.length-1):'');
+ details.append(summary);
+ entries.forEach(function(entry){
+  const parent=entries.length>1?document.createElement('details'):document.createElement('div');
+  if(entries.length>1){
+   parent.className='bc-m01-lei-item';
+   const sub=document.createElement('summary');sub.textContent=entry[0];parent.append(sub);
+  }
+  const body=document.createElement('div');body.className='bc-m01-lei-art';
+  entry[1].forEach(function(text){const p=document.createElement('p');p.textContent=text;body.append(p)});
+  parent.append(body);details.append(parent);
+ });
+ return details;
+}
+function reconcileM01Dom(root,revision){
+ if(!(Number(revision)>0&&Number(revision)<=20)||!root?.querySelectorAll)return false;
  let changed=false;
- wrapper.content.querySelectorAll('.bc-m01-topic').forEach(function(topic){
+ root.querySelectorAll('.bc-m01-topic').forEach(function(topic){
   const title=topic.querySelector('h2[id^="bc-guided-title-1-"]');
   const match=title?.id.match(/^bc-guided-title-1-(\d+)$/);
-  if(!match)return;
-  const index=Number(match[1]);
-  const source=lawBox(1,index);
-  if(!source)return; // Não restaura assuntos inteiros excluídos intencionalmente.
-  const template=document.createElement('template');template.innerHTML=source;
-  const replacement=template.content.firstElementChild;
-  if(!replacement)return;
-  // Nunca substituir ou apagar Lei Seca já publicada pelo administrador:
-  // títulos, parágrafos, itens excluídos e outros ajustes autorais são intocáveis.
-  const old=topic.querySelector(':scope > details.bc-m01-lei-seca');
-  if(old)return;
+  if(!match||topic.querySelector(':scope > details.bc-m01-lei-seca'))return;
+  const node=lawBoxNode(1,Number(match[1]));
+  if(!node)return;
   const point=topic.querySelector(':scope > .bc-apostila-alert');
-  if(point)point.before(replacement);else topic.appendChild(replacement);
+  if(point)point.before(node);else topic.appendChild(node);
   changed=true;
  });
- return changed?wrapper.innerHTML:html;
+ return changed;
 }
 
 /* A edição teórica de novembro/2026 substitui o leitor anterior de cartões.
@@ -190,5 +209,5 @@ function open(n){
   }
 
 css();
-global.BcCfGuidedReader=Object.freeze({open,close,reconcileM01Html,modules:Array.from({length:15},(_,i)=>i+1)});
+global.BcCfGuidedReader=Object.freeze({open,close,reconcileM01Dom,modules:Array.from({length:15},(_,i)=>i+1)});
 })(window);
