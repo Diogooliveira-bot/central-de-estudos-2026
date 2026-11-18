@@ -414,7 +414,7 @@
   async function load() {
     if (loaded || loading) return;
     loading = true;
-    await loadContestGoals();
+    if ((localStorage.getItem(KEY) || '').startsWith('exam-catalog-')) await loadContestGoals();
     const local = localObjective();
     if (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true) {
       activeId = local;
@@ -423,6 +423,7 @@
         const response = await fetch('/api/objective', { cache:'no-store' });
         if (!response.ok) throw new Error('Preferência indisponível');
         const result = await response.json();
+        if (String(result.objectiveId || '').startsWith('exam-catalog-') && !catalog.goals[result.objectiveId]) await loadContestGoals();
         const remote = catalog.goals[result.objectiveId] ? result.objectiveId : '';
         const validRemoteSubjects = Array.isArray(result.freeSubjectIds) &&
           result.freeSubjectIds.length > 0 &&

@@ -127,6 +127,7 @@ test('editais autorizados vêm do catálogo ativo, com seleção de cargo e sem 
   ]} : {objectiveId:null}});
   await settle(w);
   w.document.querySelector('[data-study-exams]').click();
+  await settle(w);
   const options = [...w.document.querySelectorAll('[data-study-exam]')];
   assert.equal(options.length,5);
   assert.doesNotMatch(w.document.querySelector('#studyObjectiveDialog').textContent,/TCE-CE/);
