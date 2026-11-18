@@ -27,6 +27,15 @@ test('GMF é prevista e deixa explícito que o conteúdo é referência de 2023'
   assert.ok(gmf.subjects.length >= 9);
 });
 
+test('TJCE, ALECE e SEFAZ informam que as provas já foram realizadas', () => {
+  for (const id of ['tjce-2026','alece-2026','sefaz-ce-2026']) {
+    const item = CONCURSOS_2026_SEED.find((contest) => contest.id === id);
+    assert.match(item.currentStage, /Provas realizadas/);
+    assert.ok(item.examDate, `${id} sem data de prova`);
+    assert.ok(item.currentStageDate, `${id} sem data de atualização da etapa`);
+  }
+});
+
 test('cobertura usa pesos e não confunde quantidade de módulos com percentual', () => {
   const result = coverage({subjects:[
     {coverage:'complete',weight:2},
@@ -43,12 +52,13 @@ test('normalização rejeita edição sem fonte oficial e preserva campos permit
     sources:[],cargos:[],subjects:[]
   }), /fonte oficial/);
   const item = normalizeContest({
-    id:'teste-2026',name:'Teste',organ:'Órgão',state:'CE',sphere:'Estadual',status:'previsto',year:2026,
+    id:'teste-2026',name:'Teste',organ:'Órgão',state:'CE',sphere:'Estadual',status:'previsto',year:2026,currentStage:'Provas realizadas',currentStageDate:'2026-11-18',
     sources:[{title:'Página oficial',url:'https://example.gov.br/edital'}],
     cargos:[{name:'Técnico',education:'Médio',vacancies:2}],
     subjects:[{name:'Português',centralId:'pt',coverage:'complete',topics:['Interpretação'],weight:2}]
   });
   assert.equal(item.cargos[0].vacancies,2);
   assert.equal(item.subjects[0].coverage,'complete');
+  assert.equal(item.currentStage,'Provas realizadas');
 });
 
