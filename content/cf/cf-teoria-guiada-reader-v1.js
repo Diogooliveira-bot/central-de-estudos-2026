@@ -36,7 +36,7 @@ function lawBox(n,index){
 }
 
 
-/* Atualiza apenas a Lei Seca de versões PUBLICADAS ANTIGAS do M01.
+/* Completa somente a Lei Seca ausente em versões PUBLICADAS ANTIGAS do M01.
  * As alterações do professor em todos os outros blocos permanecem intactas.
  * Migração somente até a revisão 20; revisões novas não sofrem restauração automática. */
 function reconcileM01Html(html,revision){
@@ -53,12 +53,12 @@ function reconcileM01Html(html,revision){
   const template=document.createElement('template');template.innerHTML=source;
   const replacement=template.content.firstElementChild;
   if(!replacement)return;
+  // Nunca substituir ou apagar Lei Seca já publicada pelo administrador:
+  // títulos, parágrafos, itens excluídos e outros ajustes autorais são intocáveis.
   const old=topic.querySelector(':scope > details.bc-m01-lei-seca');
-  if(old){old.replaceWith(replacement);}
-  else{
-   const point=topic.querySelector(':scope > .bc-apostila-alert');
-   if(point)point.before(replacement);else topic.appendChild(replacement);
-  }
+  if(old)return;
+  const point=topic.querySelector(':scope > .bc-apostila-alert');
+  if(point)point.before(replacement);else topic.appendChild(replacement);
   changed=true;
  });
  return changed?wrapper.innerHTML:html;
