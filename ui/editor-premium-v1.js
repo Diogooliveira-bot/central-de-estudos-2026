@@ -327,6 +327,17 @@ function editLawSections(state){
    let part;
    if(unchanged){
     part=row.original.cloneNode(true);
+    if(part.matches('details')){
+     // Quadros antigos possuíam uma segunda aba interna. Preservar os parágrafos
+     // e substituí-la por seção comum, mesmo quando o texto não foi reeditado.
+     const wrap=document.createElement('section');wrap.className='bc-m01-lei-item';
+     while(part.firstChild){
+      const child=part.firstChild;child.remove();
+      if(child.nodeType===1&&child.matches('summary'))continue;
+      wrap.append(child);
+     }
+     part=wrap;
+    }
     if(part.matches('.bc-m01-lei-art')){
      const wrap=document.createElement('section');wrap.className='bc-m01-lei-item';wrap.append(part);part=wrap;
     }
@@ -361,7 +372,7 @@ function editLawSections(state){
  picker.addEventListener('change',load);
  addArticle.addEventListener('click',function(){
   const row=addRow('','',null),textarea=row.querySelector('textarea');
-  textarea.focus();row.scrollIntoView({block:'nearest'});
+  textarea.focus();if(typeof row.scrollIntoView==='function')row.scrollIntoView({block:'nearest'});
  });
  save.addEventListener('click',apply);
  cancel.addEventListener('click',close);
