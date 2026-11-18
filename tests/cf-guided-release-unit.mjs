@@ -62,6 +62,7 @@ test('CF M01: dispositivos ausentes aparecem, repetidos são consolidados e grup
  const w=dom.window;
  w.eval(read('content/cf/m01-teoria-guiada-data.js'));
  w.eval(read('content/cf/cf-teoria-guiada-lei-seca.js'));
+ w.eval(read('content/cf/m01-lei-seca-patch.js'));
  w.eval(read('content/cf/cf-teoria-guiada-reader-v1.js'));
  assert.equal(w.BcCfGuidedReader.open(1),true);
  const topics=w.document.querySelectorAll('.bc-m01-topic');
@@ -87,6 +88,7 @@ test('CF M01: revisão 20 publicada mantém os textos e adiciona somente leis se
  const w=dom.window;
  w.eval(read('content/cf/m01-teoria-guiada-data.js'));
  w.eval(read('content/cf/cf-teoria-guiada-lei-seca.js'));
+ w.eval(read('content/cf/m01-lei-seca-patch.js'));
  w.eval(read('content/cf/cf-teoria-guiada-reader-v1.js'));
  const old='<section class="bc-m01-topic"><h2 id="bc-guided-title-1-4">Eficácia</h2><p>Edição do professor mantida.</p></section>'+
   '<section class="bc-m01-topic"><h2 id="bc-guided-title-1-9">Art. 1º</h2><details class="bc-m01-lei-seca"><summary>Ver lei seca — CF/88, art. 1º e mais 2</summary><p>duplicado</p></details></section>';
