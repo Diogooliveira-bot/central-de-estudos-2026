@@ -1387,7 +1387,10 @@ function makeDialog(state,html){
  // Um único documento editável permite selecionar vários parágrafos de uma vez, como no Word.
  workspace.setAttribute('contenteditable','true');workspace.setAttribute('spellcheck','true');workspace.setAttribute('lang','pt-BR');
  workspace.setAttribute('role','textbox');workspace.setAttribute('aria-multiline','true');workspace.setAttribute('aria-label','Texto do capítulo');
- workspace.replaceChildren(...parseNodes(html).map(block));
+ const nodes=parseNodes(html);
+ const source=document.createElement('div');source.replaceChildren(...nodes);
+ if(state.overlay.matches('.bc-guided-overlay')&&state.overlay.getAttribute('aria-label')==='Teoria guiada de Direito Constitucional, módulo 1')window.BcCfGuidedReader?.reconcileM01Dom?.(source,state.revision);
+ workspace.replaceChildren(...Array.from(source.children).map(block));
  paper.append(title,workspace);scroll.appendChild(paper);
  const input=document.createElement('input');input.type='file';input.accept='image/png,image/jpeg,image/webp';input.hidden=true;state.input=input;
  input.addEventListener('change',function(){if(input.files&&input.files[0])uploadImage(state,input.files[0]);else state.replaceTarget=null;input.value=''});
@@ -1530,7 +1533,7 @@ async function open(overlay){
  let html=capture(article);
  try{
   const remote=await api('/api/content-editor?id='+encodeURIComponent(state.id)+'&legacyId='+encodeURIComponent(legacyContentId(overlay)));
-  if(remote.exists){html=remote.html;state.revision=Number(remote.revision||0);if(overlay.matches('.bc-guided-overlay')&&overlay.getAttribute('aria-label')==='Teoria guiada de Direito Constitucional, módulo 1'&&window.BcCfGuidedReader?.reconcileM01Html)html=window.BcCfGuidedReader.reconcileM01Html(html,state.revision)}
+  if(remote.exists){html=remote.html;state.revision=Number(remote.revision||0)}
  }catch(err){return notify('Não foi possível carregar a versão atual. Por segurança, a edição foi cancelada.')}
  const draft=draftRead(state.id)||draftRead(legacyContentId(overlay));
  if(draft&&draft.html&&draft.html!==html){
