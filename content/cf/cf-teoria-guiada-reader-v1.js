@@ -78,7 +78,7 @@ function expandLegacyGroups(root){
   bodies.forEach(function(body,index){
    const sub=document.createElement('details');sub.className='bc-m01-lei-item';
    const title=document.createElement('summary');
-   const article=(body.textContent||'').match(/Art\\.?\\s*\\d+(?:-\\w+)?[ºo°]?/i);
+   const article=(body.textContent||'').match(/Art\.?\s*\d+(?:-\w+)?[ºo°]?/i);
    title.textContent=(article?article[0]:'Trecho de lei')+' · Parte '+(index+1);
    body.before(sub);sub.append(title,body);
   });
