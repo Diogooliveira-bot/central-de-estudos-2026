@@ -92,6 +92,8 @@ function normalizeContest(input, existing = null) {
     registrationEnd: cleanText(data.registrationEnd, 20) || null,
     examDate: cleanText(data.examDate, 20) || null,
     lastVerified: cleanText(data.lastVerified, 20) || new Date().toISOString().slice(0,10),
+    currentStage: cleanText(data.currentStage, 500) || null,
+    currentStageDate: cleanText(data.currentStageDate, 20) || null,
     featured: data.featured === true,
     active: data.active !== false,
     summary: cleanText(data.summary, 1200),
