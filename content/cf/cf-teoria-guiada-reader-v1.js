@@ -35,6 +35,35 @@ function lawBox(n,index){
  return '<details class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+bodies+'</details>';
 }
 
+
+/* Atualiza apenas a Lei Seca de versões PUBLICADAS ANTIGAS do M01.
+ * As alterações do professor em todos os outros blocos permanecem intactas.
+ * Migração somente até a revisão 20; revisões novas não sofrem restauração automática. */
+function reconcileM01Html(html,revision){
+ if(!(Number(revision)>0&&Number(revision)<=20)||typeof html!=='string'||!html.includes('bc-guided-title-1-'))return html;
+ const wrapper=document.createElement('template');wrapper.innerHTML=html;
+ let changed=false;
+ wrapper.content.querySelectorAll('.bc-m01-topic').forEach(function(topic){
+  const title=topic.querySelector('h2[id^="bc-guided-title-1-"]');
+  const match=title?.id.match(/^bc-guided-title-1-(\d+)$/);
+  if(!match)return;
+  const index=Number(match[1]);
+  const source=lawBox(1,index);
+  if(!source)return; // Não restaura assuntos inteiros excluídos intencionalmente.
+  const template=document.createElement('template');template.innerHTML=source;
+  const replacement=template.content.firstElementChild;
+  if(!replacement)return;
+  const old=topic.querySelector(':scope > details.bc-m01-lei-seca');
+  if(old){old.replaceWith(replacement);}
+  else{
+   const point=topic.querySelector(':scope > .bc-apostila-alert');
+   if(point)point.before(replacement);else topic.appendChild(replacement);
+  }
+  changed=true;
+ });
+ return changed?wrapper.innerHTML:html;
+}
+
 /* A edição teórica de novembro/2026 substitui o leitor anterior de cartões.
  * Texto fiel aos tópicos usados nas apostilas M01–M15; não toca em questões ou teoria integral. */
 function card(topic,index,n){
@@ -161,5 +190,5 @@ function open(n){
   }
 
 css();
-global.BcCfGuidedReader=Object.freeze({open,close,modules:Array.from({length:15},(_,i)=>i+1)});
+global.BcCfGuidedReader=Object.freeze({open,close,reconcileM01Html,modules:Array.from({length:15},(_,i)=>i+1)});
 })(window);
