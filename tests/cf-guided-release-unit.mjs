@@ -67,7 +67,7 @@ test('CF M01: dispositivos ausentes aparecem, repetidos são consolidados e grup
  const topics=w.document.querySelectorAll('.bc-m01-topic');
  assert.equal(topics.length,13);
  for(const [index,part] of [[1,'art. 242'],[3,'art. 5º, § 3º'],[4,'art. 103, § 2º'],[6,'LINDB']]){
-  const label=topics[index].querySelector('.bc-m01-lei-seca > summary')?.textContent||'';
+  const label=topics[index].querySelector('.bc-m01-lei-seca')?.textContent||'';
   assert.ok(label.includes(part),'falta a referência '+part+' no tópico '+index);
  }
  const group=topics[4].querySelector('.bc-m01-lei-seca');
