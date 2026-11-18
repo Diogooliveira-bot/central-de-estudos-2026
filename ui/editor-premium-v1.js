@@ -1500,7 +1500,8 @@ function makeToolbar(state){
  '<button class="bcpe-remove-law" data-action="edit-law" title="Editar título e artigos da Lei Seca em campos separados">Editar Lei Seca</button><button class="bcpe-remove-law" data-action="remove-law" title="Selecionar artigos ou quadros específicos para remover da Lei Seca">Remover trechos</button>'+ 
  '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
  if(!isAdmin){const imageOption=bar.querySelector('[data-insert] option[value="image"]');if(imageOption)imageOption.remove()}
- if(!(state.overlay.matches('.bc-guided-overlay')&&/Direito Constitucional/.test(state.overlay.getAttribute('aria-label')||''))){const b=bar.querySelector('[data-action="edit-law"]');if(b)b.remove()}
+ if(state.overlay.matches('.bc-guided-overlay')&&/Direito Constitucional/.test(state.overlay.getAttribute('aria-label')||'')){const oldButton=bar.querySelector('[data-action="remove-law"]');if(oldButton)oldButton.remove()}
+ else {const b=bar.querySelector('[data-action="edit-law"]');if(b)b.remove()}
  state.status=bar.querySelector('[data-status]');state.words=bar.querySelector('[data-words]');state.typeSelect=bar.querySelector('[data-style]');state.context=bar.querySelector('[data-context]');
  bar.addEventListener('pointerdown',function(e){
   rememberSelection(state);
