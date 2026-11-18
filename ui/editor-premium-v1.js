@@ -133,11 +133,11 @@ function markFields(node){
 }
 // Um clique remove somente seções identificadas como Lei Seca do módulo em edição.
 // Não remove citações legais espalhadas pela teoria ou capítulos de jurisprudência.
-const LAW_SELECTORS='.lei-seca,.penv-literal-law,.penv-law-group,.penv-law-library,.bc-native-callout.law,.layer.law,[data-bc-law-section],details';
-const LAW_WRAPPERS='.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]';
+const LAW_SELECTORS='.bc-m01-lei-seca,.lei-seca,.penv-literal-law,.penv-law-group,.penv-law-library,.bc-native-callout.law,.layer.law,[data-bc-law-section],details';
+const LAW_WRAPPERS='.bc-m01-lei-seca,.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]';
 function isLawSection(node){
  if(!node||node.nodeType!==1)return false;
- if(node.matches('.lei-seca,.penv-literal-law,.penv-law-group,.penv-law-library,.bc-native-callout.law,.layer.law,[data-bc-law-section]'))return true;
+ if(node.matches('.bc-m01-lei-seca,.lei-seca,.penv-literal-law,.penv-law-group,.penv-law-library,.bc-native-callout.law,.layer.law,[data-bc-law-section]'))return true;
  if(node.matches('details')){
   const heading=node.querySelector(':scope > summary');
   return /^(?:ver\s+)?lei\s+seca(?:\b|[\s:—–-])/i.test((heading?.textContent||'').trim());
@@ -201,7 +201,7 @@ function removeLawItems(state,items){
   .forEach(function(wrapper){
    if(!wrapper.isConnected||remaining.some(el=>el!==wrapper&&el.isConnected&&wrapper.contains(el)))return;
    if(wrapper.querySelector('p,li,blockquote,details,aside,table'))return;
-   if(wrapper.matches('.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]')){
+   if(wrapper.matches('.bc-m01-lei-seca,.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]')){
     const box=wrapper.closest('.bcpe-block');
     if(box&&wrapper===box.querySelector(':scope > .bcpe-node'))box.remove();
     else wrapper.remove();
@@ -320,12 +320,15 @@ function insertLawDialog(state){
   const field=insertionField(state);
   const topic=field?.closest('.bc-m01-topic');
   const existing=topic?.querySelector(':scope > details.bc-m01-lei-seca');
-  checkpoint(state);
   if(existing){
+   const duplicate=Array.from(existing.querySelectorAll('.bc-m01-lei-item-title'))
+    .some(el=>el.textContent.trim().toLowerCase()===ref.toLowerCase());
+   if(duplicate)return notify('Este artigo já está na Lei Seca do assunto. Edite o trecho existente para evitar duplicações.');
+   checkpoint(state);
    existing.append(node.querySelector('.bc-m01-lei-item'));
    markFields(existing);refreshDragHandles(state);
-   queueDraft(state);historyPush(state);
-  }else addAtSelectedPoint(state,node);
+   historyPush(state);queueDraft(state);
+  }else{checkpoint(state);addAtSelectedPoint(state,node)}
   close();
   notify('Lei Seca adicionada ao rascunho. Publique o conteúdo quando concluir.');
  });
