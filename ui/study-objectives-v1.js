@@ -24,6 +24,41 @@
   let loaded = false;
   let loading = false;
   let returnFocus = null;
+  let contestItems = null;
+  let currentStep = 'areas';
+
+  function examOptions() {
+    if (!contestItems) return Object.values(catalog.goals).filter((item) => item.type === 'exam').map((goal) => ({id:goal.id,name:goal.title,status:'publicado',cargo:goal.title,description:goal.description}));
+    return contestItems.flatMap((item) => (item.cargos?.length ? item.cargos : [{name:'Cargo a confirmar'}]).map((cargo, index) => ({
+      id: item.id === 'tjpb-2026' && index === 0 ? 'exam-tjpb-2026-analista-judiciaria' :
+        item.id === 'trt8-2026' && index === 0 ? 'exam-trt8-2026-analista-judiciaria' :
+        'exam-catalog-' + item.id + '-cargo-' + (index + 1),
+      name:item.name, status:item.status, cargo:cargo.name, description:item.summary, contest:item,
+      label:item.status === 'publicado' ? 'Edital publicado' : (item.sources || []).some((source) => source.type === 'autorizacao') ? 'Autorizado, sem edital' : 'Em monitoramento, sem novo edital',
+    })));
+  }
+  async function loadContestGoals() {
+    if (contestItems || global.__BASE_COMPLETA_PREVIEW_GUEST__ === true) return;
+    try {
+      const response = await fetch('/api/concursos', {cache:'no-store',credentials:'same-origin'});
+      if (!response.ok) return;
+      const result = await response.json();
+      if (!Array.isArray(result.items)) return;
+      contestItems = result.items.filter((item) => item.active !== false && !(item.id === 'tce-ce-monitoramento' && (item.sources || []).some((source) => source.url?.includes('/1911-edital-do-concurso-do-tce-ceara-'))));
+      for (const option of examOptions()) {
+        if (catalog.goals[option.id]) continue; // preserva as trilhas verticalizadas existentes
+        const contest = option.contest;
+        const subjects = (contest?.subjects || []).filter((item) => catalog.subjects[item.centralId]);
+        catalog.goals[option.id] = {
+          id:option.id, type:'exam', group:'Por edital', title:option.name + ' — ' + option.cargo,
+          shortLabel:option.name, description:option.status === 'publicado' ? 'Edital publicado; confira o programa por cargo na fonte oficial.' : 'Concurso previsto/autorizado; programa do novo edital ainda não publicado.',
+          subjectIds:[...new Set(subjects.map((item) => item.centralId))],
+          examSubjects:option.status === 'publicado' ? (contest?.subjects || []).map((item) => ({id:item.id,title:item.name,subjectId:catalog.subjects[item.centralId] ? item.centralId : null,status:item.centralId ? (item.coverage === 'complete' ? 'available' : 'partial') : 'preparation',note:item.centralId ? 'Cobertura inicial; confira os assuntos exigidos para o cargo no edital.' : 'Sem cobertura cadastrada.'})) : [],
+        };
+      }
+      if (currentStep === 'exams' && document.getElementById('studyObjectiveDialog')) renderChooser('exams');
+    } catch (_) { /* edital indisponível: os dois objetivos já existentes continuam acessíveis */ }
+  }
 
   const goal = () => catalog.goals[activeId] || null;
   const allSubjectIds = () => Object.keys(catalog.subjects);
@@ -194,6 +229,7 @@
     }
   }
   function renderChooser(step = 'areas', value = '') {
+    currentStep = step;
     let modal = document.getElementById('studyObjectiveDialog');
     if (!modal) {
       modal = document.createElement('div');
@@ -220,39 +256,32 @@
     let backStep = '';
     let backValue = '';
     if (step === 'areas') {
-      const exams = Object.values(catalog.goals).filter((item) => item.type === 'exam');
-      const asked = savedExamRequest();
       options =
-        // 1) Estudo livre sempre em primeiro lugar
-        '<button type="button" class="study-free-entry study-free-entry--first" data-study-free><span aria-hidden="true">✦</span><span><strong>Estudo livre</strong><small>Escolha as disciplinas que quer estudar primeiro. As outras continuam liberadas.</small></span><b aria-hidden="true">›</b></button>' +
-        // 2) Perfis padrão por área
-        '<section class="study-start-section" aria-labelledby="studyStartAreas"><h2 id="studyStartAreas">Perfis padrão <small>Escolha uma área e veja as disciplinas sugeridas</small></h2>' +
-        '<div class="study-area-grid">' + catalog.areas.map(card).join('') + '</div></section>' +
-        // 3) Edital específico + pedido de edital
-        '<section class="study-start-section" aria-labelledby="studyStartExams"><h2 id="studyStartExams">Edital específico <small>Concursos já cadastrados</small></h2>' +
-        '<div class="study-role-grid">' + exams.map((item) =>
-          '<button type="button" class="study-role-card" data-study-exam="' + escape(item.id) + '"><span><strong>' + escape(item.shortLabel || item.title) + '</strong><small>' +
-          escape(item.title) + '</small></span><b aria-hidden="true">›</b></button>').join('') + '</div>' +
-        '<form class="study-exam-request" data-study-exam-request novalidate><label for="studyExamRequestInput">Seu edital não está na lista?</label>' +
-        '<p>Escreva o concurso que você vai prestar e nós cadastramos. Enquanto isso, comece pelo Estudo livre ou por um perfil padrão: todas as disciplinas já estão liberadas.</p>' +
-        '<div class="study-exam-request-row"><input id="studyExamRequestInput" name="exam" type="text" maxlength="120" autocomplete="off" placeholder="Ex.: Polícia Civil de Minas Gerais 2027" value="' + escape(asked) + '">' +
-        '<button type="submit" class="study-primary-button">' + (asked ? 'Atualizar pedido' : 'Pedir este edital') + '</button></div>' +
-        '<p class="study-exam-request-status" data-study-exam-request-status role="status" aria-live="polite">' + (asked ? 'Pedido registrado: ' + escape(asked) + '.' : '') + '</p></form></section>';
+        '<div class="study-start-choices">' +
+        '<button type="button" class="study-start-choice" data-study-free><strong>Estudo livre</strong><small>Escolha suas disciplinas e comece agora.</small><b aria-hidden="true">›</b></button>' +
+        '<button type="button" class="study-start-choice" data-study-careers><strong>Por carreira</strong><small>Escolha uma área e um cargo.</small><b aria-hidden="true">›</b></button>' +
+        '<button type="button" class="study-start-choice" data-study-exams><strong>Por edital</strong><small>Escolha um concurso cadastrado e seu cargo.</small><b aria-hidden="true">›</b></button></div>';
+    } else if (step === 'careers') {
+      title = 'Escolha sua carreira';
+      intro = 'Selecione uma área e depois o cargo. Você pode mudar sua escolha quando quiser.';
+      badge = 'POR CARREIRA';
+      options = '<div class="study-area-grid">' + catalog.areas.map(card).join('') + '</div>';
+      backStep = 'areas';
     } else if (step === 'roles') {
       const area = catalog.areas.find((a) => a.id === value);
       if (!area) return renderChooser('areas');
       title = 'Qual cargo você pretende conquistar?';
       intro = area.title + ' — selecione seu cargo para ver uma sugestão inicial de disciplinas.';
-      badge = 'ETAPA 2 DE 3';
+      badge = 'POR CARREIRA';
       const roles = Object.values(catalog.goals).filter((item) => item.type === 'career' && item.area === area.id);
       options = '<div class="study-role-grid">' + roles.map(roleCard).join('') + '</div>';
-      backStep = 'areas';
+      backStep = 'careers';
     } else if (step === 'review') {
       const chosen = catalog.goals[value];
       if (!chosen || chosen.type !== 'career') return renderChooser('areas');
-      title = 'Sua primeira trilha de estudos';
+      title = 'Sua trilha de estudos';
       intro = chosen.title;
-      badge = 'ETAPA 3 DE 3';
+      badge = 'POR CARREIRA';
       options = '<div class="study-review"><p>Estas são as disciplinas <strong>já disponíveis</strong> na Base Completa que podem ajudar a começar:</p>' +
         '<div class="study-subject-chips">' + chosen.subjectIds.map((id) =>
           '<span>' + escape(catalog.subjects[id]?.name || id) + '</span>').join('') +
@@ -273,14 +302,19 @@
         '<button type="button" class="study-primary-button" data-study-save-free>Começar estudo livre</button></div>';
       backStep = 'areas';
     } else if (step === 'exams') {
-      title = 'Escolha um edital cadastrado';
-      intro = 'Veja os concursos já cadastrados. Alguns assuntos ainda estão em preparação.';
+      title = 'Escolha seu concurso e cargo';
+      intro = 'Veja a situação de cada concurso e escolha o cargo. Você pode trocar depois.';
       badge = 'ESTUDO POR EDITAL';
-      const exams = Object.values(catalog.goals).filter((item) => item.type === 'exam');
-      options = '<div class="study-role-grid">' + exams.map((item) =>
+      const asked = savedExamRequest();
+      options = '<div class="study-exam-list">' + examOptions().map((item) =>
         '<button type="button" class="study-role-card" data-study-exam="' + escape(item.id) + '"><span><strong>' +
-        escape(item.title) + '</strong><small>' + escape(item.description) + '</small></span><b aria-hidden="true">›</b></button>'
-      ).join('') + '</div>';
+        escape(item.name) + '</strong><small>' + escape(item.cargo) + ' · ' + escape(item.label || (item.status === 'publicado' ? 'Edital publicado' : 'Sem novo edital')) + '</small></span><b aria-hidden="true">›</b></button>'
+      ).join('') + '</div>' +
+        '<form class="study-exam-request" data-study-exam-request novalidate><label for="studyExamRequestInput">Seu concurso não está na lista?</label>' +
+        '<p>Peça o cadastro e, enquanto isso, estude livremente ou por carreira.</p>' +
+        '<div class="study-exam-request-row"><input id="studyExamRequestInput" name="exam" type="text" maxlength="120" autocomplete="off" placeholder="Ex.: Polícia Civil de Minas Gerais" value="' + escape(asked) + '">' +
+        '<button type="submit" class="study-primary-button">' + (asked ? 'Atualizar pedido' : 'Pedir concurso') + '</button></div>' +
+        '<p class="study-exam-request-status" data-study-exam-request-status role="status" aria-live="polite">' + (asked ? 'Pedido registrado: ' + escape(asked) + '.' : '') + '</p></form>';
       backStep = 'areas';
     }
     modal.innerHTML = '<section class="study-objective-dialog study-welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="studyObjectiveTitle">' +
@@ -300,7 +334,8 @@
     modal.querySelectorAll('[data-study-area]').forEach((button) => button.addEventListener('click', () => renderChooser('roles', button.dataset.studyArea)));
     modal.querySelectorAll('[data-study-role]').forEach((button) => button.addEventListener('click', () => renderChooser('review', button.dataset.studyRole)));
     modal.querySelector('[data-study-free]')?.addEventListener('click', () => renderChooser('free'));
-    modal.querySelector('[data-study-exams]')?.addEventListener('click', () => renderChooser('exams'));
+    modal.querySelector('[data-study-careers]')?.addEventListener('click', () => renderChooser('careers'));
+    modal.querySelector('[data-study-exams]')?.addEventListener('click', () => { renderChooser('exams');loadContestGoals(); });
     modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => input.addEventListener('change', () => { const e = modal.querySelector('.study-form-error'); if (e) e.hidden = true; }));
     modal.querySelector('[data-study-free-all]')?.addEventListener('click', () => modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => { input.checked = true; }));
     modal.querySelector('[data-study-free-none]')?.addEventListener('click', () => modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => { input.checked = false; }));
@@ -346,7 +381,7 @@
           method:'PUT', cache:'no-store', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify({ text }),
         });
         if (!response.ok) throw new Error('Falha HTTP ' + response.status);
-        status.textContent = 'Pedido registrado: ' + text + '. Vamos cadastrar este edital; até lá, estude pelo Estudo livre ou por um perfil padrão.';
+        status.textContent = 'Pedido registrado: ' + text + '. Até o cadastro, estude livremente ou por carreira.';
         saved = true;
       } catch (_) {
         status.textContent = 'Não foi possível enviar agora. Verifique a conexão e tente de novo.';
@@ -379,6 +414,7 @@
   async function load() {
     if (loaded || loading) return;
     loading = true;
+    await loadContestGoals();
     const local = localObjective();
     if (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true) {
       activeId = local;
