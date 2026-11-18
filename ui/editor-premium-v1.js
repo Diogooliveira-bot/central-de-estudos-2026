@@ -101,7 +101,14 @@ function draftWrite(state){
 }
 function draftClear(id){try{localStorage.removeItem(draftKey(id))}catch(_){}}
 function markFields(node){
- const fieldTags='p,h1,h2,h3,h4,h5,h6,li,blockquote,figcaption,td,th';
+ // Os resumos de Lei Seca também são títulos editáveis. Mantê-los abertos
+ // SOMENTE no editor evita que o clique esconda o texto ou impeça a seleção.
+ [node,...node.querySelectorAll('details')].forEach(function(detail){
+  if(!detail.matches('details')||!(isLawSection(detail)||detail.closest('.bc-m01-lei-seca')))return;
+  detail.setAttribute('data-bcpe-law-was-open',detail.hasAttribute('open')?'1':'0');
+  detail.open=true;
+ });
+ const fieldTags='p,h1,h2,h3,h4,h5,h6,li,blockquote,figcaption,td,th,summary';
  const tag=node.tagName.toLowerCase();
  const editableRoot=/^(p|h1|h2|h3|h4|h5|h6|blockquote|ul|ol|pre)$/.test(tag);
  if(editableRoot&&tag!=='ul'&&tag!=='ol'){
@@ -322,6 +329,11 @@ function serialize(state){
   cloned.querySelectorAll('.bcpe-field-selected').forEach(el=>el.classList.remove('bcpe-field-selected'));
   cloned.querySelectorAll('[data-bcpe-edit]').forEach(el=>{el.removeAttribute('data-bcpe-edit');el.removeAttribute('contenteditable')});
   cloned.removeAttribute('contenteditable');cloned.removeAttribute('data-bcpe-edit');
+  [cloned,...cloned.querySelectorAll('[data-bcpe-law-was-open]')].forEach(function(detail){
+   if(!detail.hasAttribute('data-bcpe-law-was-open'))return;
+   if(detail.getAttribute('data-bcpe-law-was-open')==='0')detail.removeAttribute('open');
+   detail.removeAttribute('data-bcpe-law-was-open');
+  });
   clean(cloned);
   doc.appendChild(cloned);
  });
@@ -1375,7 +1387,10 @@ function makeDialog(state,html){
  // Um único documento editável permite selecionar vários parágrafos de uma vez, como no Word.
  workspace.setAttribute('contenteditable','true');workspace.setAttribute('spellcheck','true');workspace.setAttribute('lang','pt-BR');
  workspace.setAttribute('role','textbox');workspace.setAttribute('aria-multiline','true');workspace.setAttribute('aria-label','Texto do capítulo');
- workspace.replaceChildren(...parseNodes(html).map(block));
+ const nodes=parseNodes(html);
+ const source=document.createElement('div');source.replaceChildren(...nodes);
+ if(state.overlay.matches('.bc-guided-overlay')&&state.overlay.getAttribute('aria-label')==='Teoria guiada de Direito Constitucional, módulo 1')window.BcCfGuidedReader?.reconcileM01Dom?.(source,state.revision);
+ workspace.replaceChildren(...Array.from(source.children).map(block));
  paper.append(title,workspace);scroll.appendChild(paper);
  const input=document.createElement('input');input.type='file';input.accept='image/png,image/jpeg,image/webp';input.hidden=true;state.input=input;
  input.addEventListener('change',function(){if(input.files&&input.files[0])uploadImage(state,input.files[0]);else state.replaceTarget=null;input.value=''});
@@ -1393,6 +1408,10 @@ function makeDialog(state,html){
   if(field&&workspace.contains(field)){state.currentField=field;updateContext(state)}
  });
  workspace.addEventListener('dragstart',function(e){e.preventDefault()});
+ workspace.addEventListener('click',function(e){
+  const summary=e.target.closest('summary[data-bcpe-edit]');
+  if(summary&&(isLawSection(summary.parentElement)||summary.closest('.bc-m01-lei-seca')))e.preventDefault();
+ });
  workspace.addEventListener('copy',function(e){copySelection(state,e,false)});
  workspace.addEventListener('cut',function(e){copySelection(state,e,true)});
  // Rede de segurança para teclados de celular, corretor e IME: nada escreve fora dos campos.

@@ -178,8 +178,9 @@
     "/ui/reading-appearance-v1.js?v=20261115responsive1",
     "/assets/base-completa-symbol.png",
     "/central-boot-ready.js?v=20261115responsive1",
-    "/content/cf/cf-teoria-guiada-lei-seca.js?v=20261023leiseca1",
-    "/content/cf/cf-teoria-guiada-reader-v1.js?v=20261115responsive1",
+    "/content/cf/cf-teoria-guiada-lei-seca.js?v=20261117m01lawfix2",
+    "/content/cf/m01-lei-seca-patch.js?v=20261118m01lawpatch1",
+    "/content/cf/cf-teoria-guiada-reader-v1.js?v=20261117m01lawfix2",
     "/ui/cf-native-study-v2.js?v=20261115responsive1",
     "/ui/lei-em-dia-v1.css?v=20261115responsive1",
     "/tools/decorando.html",
@@ -193,7 +194,7 @@
     "/ui/adm-native-layer.css?v=20261115responsive1",
     "/ui/native-reading-session.js?v=20261115responsive1",
     "/ui/cpp-native-study-v1.css?v=20261115responsive1",
-    "/ui/visual-editor-v1.js?v=20261117publish1",
+    "/ui/visual-editor-v1.js?v=20261118cfm01safe2",
     "/ui/visual-editor-v1.css?v=20261025tables1",
     "/ui/cpp-native-study-v1.js?v=20261113orient1",
     "/ui/module-links-lei-v1.css?v=20261115responsive1",
@@ -291,7 +292,7 @@
     "/central-module-catalog.js?v=20261115responsive1",
     "/ui/module-review-v1.js?v=20261117review2",
     "/ui/module-review-v1.css?v=20261117review2",
-    "/ui/editor-premium-v1.js?v=20261117-lawselect1",
+    "/ui/editor-premium-v1.js?v=20261117-lawtitles2",
     "/ui/editor-premium-v1.css?v=20261117-lawselect1"
   ]
 }

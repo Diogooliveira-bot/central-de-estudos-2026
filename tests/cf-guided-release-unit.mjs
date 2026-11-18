@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { JSDOM } from 'jsdom';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -54,4 +55,54 @@ test('CF: leitor de revisão é substituído sem botão de piloto, sem tocar nos
  assert.ok(reader.includes('bc-m01-checklist'));
  assert.ok(reader.includes('localStorage'));
  assert.ok(reader.includes('const MIN=1,MAX=15'));
+});
+
+test('CF M01: dispositivos ausentes aparecem, repetidos são consolidados e grupos abrem individualmente',()=>{
+ const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test',runScripts:'outside-only',pretendToBeVisual:true});
+ const w=dom.window;
+ w.eval(read('content/cf/m01-teoria-guiada-data.js'));
+ w.eval(read('content/cf/cf-teoria-guiada-lei-seca.js'));
+ w.eval(read('content/cf/m01-lei-seca-patch.js'));
+ w.eval(read('content/cf/cf-teoria-guiada-reader-v1.js'));
+ assert.equal(w.BcCfGuidedReader.open(1),true);
+ const topics=w.document.querySelectorAll('.bc-m01-topic');
+ assert.equal(topics.length,13);
+ for(const [index,part] of [[1,'art. 242'],[3,'art. 5º, § 3º'],[4,'art. 103, § 2º'],[6,'LINDB']]){
+  const label=topics[index].querySelector('.bc-m01-lei-seca')?.textContent||'';
+  assert.ok(label.includes(part),'falta a referência '+part+' no tópico '+index);
+ }
+ const group=topics[4].querySelector('.bc-m01-lei-seca');
+ assert.match(group.querySelector(':scope > summary').textContent,/e mais 2/);
+ const nested=group.querySelectorAll('details.bc-m01-lei-item');
+ assert.equal(nested.length,3,'cada lei adicional deve ter uma abertura própria');
+ group.open=true;nested[1].open=true;
+ assert.ok(nested[1].querySelectorAll('p').length>0,'item adicional deve abrir seu texto');
+ assert.doesNotMatch(topics[9].querySelector('.bc-m01-lei-seca > summary').textContent,/e mais/,'art. 1º duplicado');
+ assert.equal(topics[7].querySelector('.bc-m01-lei-seca'),null,'art. 60 indevido em mutação');
+ w.close();
+});
+
+
+test('CF M01: revisão 20 publicada mantém os textos e adiciona somente leis secas ausentes',()=>{
+ const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test',runScripts:'outside-only'});
+ const w=dom.window;
+ w.eval(read('content/cf/m01-teoria-guiada-data.js'));
+ w.eval(read('content/cf/cf-teoria-guiada-lei-seca.js'));
+ w.eval(read('content/cf/m01-lei-seca-patch.js'));
+ w.eval(read('content/cf/cf-teoria-guiada-reader-v1.js'));
+ const old='<section class="bc-m01-topic"><h2 id="bc-guided-title-1-4">Eficácia</h2><p>Edição do professor mantida.</p></section>'+
+  '<section class="bc-m01-topic"><h2 id="bc-guided-title-1-9">Art. 1º</h2><details class="bc-m01-lei-seca"><summary>Ver lei seca — CF/88, art. 1º e mais 2</summary><p>duplicado</p></details></section>';
+ const wrap=w.document.createElement('div');wrap.innerHTML=old;
+ assert.equal(w.BcCfGuidedReader.reconcileM01Dom(wrap,20),true);
+ const value=wrap.innerHTML;
+ assert.match(value,/Edição do professor mantida/,'teoria editada não pode ser perdida');
+ assert.equal(wrap.querySelectorAll('.bc-m01-topic').length,2,'não restaurar tópicos removidos');
+ assert.equal(wrap.querySelectorAll('#bc-guided-title-1-4 ~ .bc-m01-lei-seca .bc-m01-lei-item').length,3);
+ assert.match(value,/duplicado/,'preservar os trechos legais existentes mesmo quando repetidos');
+ assert.match(value,/Ver lei seca — CF\/88, art\. 1º e mais 2/,'preservar o título existente');
+ assert.match(value,/CF\/88, art\. 103, § 2º/,'novo texto legal incluído');
+ const future=w.document.createElement('div');future.innerHTML=old;
+ assert.equal(w.BcCfGuidedReader.reconcileM01Dom(future,21),false,'publicações posteriores não devem ser alteradas');
+ assert.equal(future.innerHTML,old);
+ w.close();
 });
