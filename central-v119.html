@@ -63,22 +63,22 @@
  entryUrl.searchParams.delete('central_source');
  var scripts=['ui/study-objectives-catalog-v1.js?v=20261114trilha1','ui/tablet-scale-v1.js?v=20261117tablet1','ui/orientation-defaults-v1.js?v=20261113orient2','ui/orientation-v1.js?v=20261115responsive1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','content/questoes/titulos.js?v=20261114info1','ui/external-question-filters-v1.js?v='+BUILD+'-min20-titles1'];
  function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
- // Remove <script src=...></script> vazios cujo src casa com o padrão, varrendo a marcação por posição
+ // Remove tags de script externo (sem corpo) cujo src casa com o padrão, varrendo a marcação por posição
  // (sem encadear regex de "limpeza", que pode deixar "<script" para trás). Só mexe no HTML da própria Central.
  function removeScripts(markup,pattern){
-  var before;
+  var before,OPEN='<scr'+'ipt',CLOSE='</scr'+'ipt>'; // partidos para não fechar o bloco de script da página
   do{
    before=markup;
    var lower=markup.toLowerCase(),out='',pos=0;
    while(true){
-    var start=lower.indexOf('<script',pos);
+    var start=lower.indexOf(OPEN,pos);
     if(start<0)break;
-    var openEnd=markup.indexOf('>',start),close=openEnd<0?-1:lower.indexOf('</script>',openEnd);
+    var openEnd=markup.indexOf('>',start),close=openEnd<0?-1:lower.indexOf(CLOSE,openEnd);
     if(openEnd<0||close<0)break;
     var open=markup.slice(start,openEnd+1),body=markup.slice(openEnd+1,close);
-    var drop=/^<script[\s>]/i.test(open)&&pattern.test(open)&&/^\s*$/.test(body);
-    out+=markup.slice(pos,drop?start:close+9);
-    pos=close+9;
+    var drop=/^<scr(?:ipt)[\s>]/i.test(open)&&pattern.test(open)&&/^\s*$/.test(body);
+    out+=markup.slice(pos,drop?start:close+CLOSE.length);
+    pos=close+CLOSE.length;
    }
    markup=out+markup.slice(pos);
   }while(markup!==before); // repete até estabilizar: remover um bloco não pode "montar" outro

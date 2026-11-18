@@ -37,3 +37,9 @@ test('remove só o que casa e não deixa <script> aninhado para trás', () => {
   assert.equal(removeScripts('sem scripts', pattern), 'sem scripts');
   assert.equal(removeScripts('<script src="/content/qc-notebook-catalog.js">', pattern), '<script src="/content/qc-notebook-catalog.js">', 'tag sem fechamento fica como está');
 });
+
+test('os <script> inline de central-v119.html continuam válidos (nenhum "fecha-script" solto dentro deles)', () => {
+  const blocks = [...boot.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)].map((m) => m[1]).filter((code) => code.trim());
+  assert.ok(blocks.length >= 1);
+  for (const code of blocks) assert.doesNotThrow(() => new Function(code), 'bloco inline com erro de sintaxe: ' + code.slice(0, 60));
+});
