@@ -9,7 +9,7 @@ var groups={
   'content/civil/civil-sharing-links.js?v=20261009civilsharing2',
   'ui/civil-native-study-v1.js?v=20261113orient1'
  ],
- cpc:['cpc-theory-module1-v66119.js?v=66119b2','content/cpc/cpc-sharing-links.js?v=20261010cpcsharing1','ui/cpc-sharing-links.js?v=20261115responsive1'],
+ cpc:['cpc-theory-module1-v66119.js?v=66119b2','content/cpc/cpc-sharing-links.js?v=20261010cpcsharing1','ui/cpc-sharing-links.js?v=20261118r1'],
  // Direito Administrativo: as apostilas atuais (Revisão e Teoria completa) vêm dos leitores nativos, módulo a módulo.
  // Os 39 arquivos legados (adm-mN-theory/content/runtime e o pacote M9–M20, ~1,7 MB) saíram do carregamento: medido em
  // 4 módulos (M1, M5, M13, M20), lista, página do módulo, Revisão e Teoria completa ficam idênticas sem eles.

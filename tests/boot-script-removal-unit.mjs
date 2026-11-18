@@ -28,7 +28,7 @@ test('mesmo resultado que a regex antiga em index.html real', () => {
 
 test('remove só o que casa e não deixa <script> aninhado para trás', () => {
   const pattern = /\bsrc=["']\/?content\/qc-notebook-catalog\.js[^"']*["']/i;
-  const alvo = '<script src="/content/qc-notebook-catalog.js?v=1"></script>';
+  const alvo = '<script src="/content/qc-notebook-catalog.js?v=20261118r1"></script>';
   assert.equal(removeScripts('a' + alvo + 'b', pattern), 'ab');
   assert.equal(removeScripts('<script src="/outro.js"></script>' + alvo, pattern), '<script src="/outro.js"></script>');
   assert.equal(removeScripts('<scr' + alvo + 'ipt src="/content/qc-notebook-catalog.js"></script>', pattern).includes('qc-notebook-catalog'), false);
