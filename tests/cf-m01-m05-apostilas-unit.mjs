@@ -106,6 +106,7 @@ test('index e pacote offline usam os mesmos recursos versionados', () => {
     ...Array.from({ length:5 }, (_, index) => `/content/cf/m${String(index + 1).padStart(2, '0')}-native-data.js?v=${version}`),
     ...Array.from({ length:15 }, (_, index) => `/content/cf/m${String(index + 1).padStart(2, '0')}-teoria-guiada-data.js?v=20261117cfrevjur1`),
     '/content/cf/cf-teoria-guiada-lei-seca.js?v=20261117m01lawfix2',
+    '/content/cf/m01-lei-seca-patch.js?v=20261118m01lawpatch1',
     '/content/cf/cf-teoria-guiada-reader-v1.js?v=20261117m01lawfix2',
     '/ui/cf-native-study-v2.js?v=20261115responsive1',
   ];
