@@ -60,7 +60,7 @@ test('CF: código da central adia o carregamento junto com a disciplina e manté
  const ui=read('ui/cf-native-study-v2.js');
  const guided=read('content/cf/cf-teoria-guiada-reader-v1.js');
  const css=read('ui/cf-apostila-reading-v1.css');
- assert.ok(index.includes('ui/cf-apostila-reading-v1.js?v=20261109cf15a'));
+ assert.ok(index.includes('ui/cf-apostila-reading-v1.js?v=20261118cfleiinline1'));
  assert.ok(central.includes("path==='ui/cf-apostila-reading-v1.js'"));
  assert.ok(ui.includes('g.CfApostilaReading.render(d.complete,n)'));
  assert.ok(ui.includes("stdMark(100)")&&ui.includes("completeRead:true"));
@@ -72,4 +72,24 @@ test('CF: código da central adia o carregamento junto com a disciplina e manté
  assert.ok(ui.includes('markSummaryRead(n){'));
  assert.ok(css.includes('.cf-apostila-law'));
  assert.ok(css.includes('.cf-m01')===false);
+});
+
+
+test('CF completa: dispositivo constitucional aparece junto do parágrafo, sem lei externa ou apêndice geral',()=>{
+ const e=context.window.CfApostilaReading;
+ const text='1. LEGALIDADE\n\nNo art. 5º, II, a Constituição limita a obrigação legal.\n\nO art. 60, § 4º, I, protege a forma federativa.\n\nA LINDB, art. 2º, trata da vigência das leis.';
+ const html=e.render(text,1);
+ assert.match(html,/cf-apostila-law-inline/);
+ assert.match(html,/ninguém será obrigado a fazer ou deixar de fazer/);
+ assert.match(html,/a forma federativa de Estado/);
+ assert.doesNotMatch(html,/homens e mulheres são iguais em direitos/);
+ assert.doesNotMatch(html,/Lei seca do módulo/);
+ assert.doesNotMatch(html,/lei revogada não se restaura/);
+ const first=html.indexOf('art. 5º, II, a Constituição limita');
+ const cite=html.indexOf('ninguém será obrigado');
+ const second=html.indexOf('O art. 60');
+ assert.ok(first>=0&&cite>first&&second>cite,'inciso deve vir ANTES do próximo assunto');
+ const n=2,full=e.render(context.window.BASE_NATIVE_CONTENT.cf.m02.complete,n);
+ assert.match(full,/cf-apostila-law-inline/);
+ assert.doesNotMatch(full,/Lei seca do módulo/);
 });
