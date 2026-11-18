@@ -7,7 +7,7 @@ function styles(){
  if(document.querySelector('link[data-adm-apostila-style]'))return;
  const link=document.createElement('link');
  link.rel='stylesheet';link.dataset.admApostilaStyle='1';
- link.href='/ui/adm-apostila-reading-v1.css?v=20261110admautor1';
+ link.href='/ui/adm-apostila-reading-v1.css?v=20261118r1';
  document.head.append(link);
 }
 async function decompress(base64){

@@ -5,8 +5,8 @@
 */
 var CACHE='central-v66119-fast3';
 var MAIN_CACHE_KEY='/__central_main_v66119_fast3';
-var VISUAL_CSS='/central-minimal-theme-v66119.css?v=66119h3';
-var VISUAL_JS='/central-minimal-ui-v66119.js?v=66119h3';
+var VISUAL_CSS='/central-minimal-theme-v66119.css?v=20261118r1';
+var VISUAL_JS='/central-minimal-ui-v66119.js?v=20261118r1';
 
 var SHELL=[
   './manifest.webmanifest',
@@ -61,7 +61,7 @@ function injectVisual(response){
 }
 
 var CIVIL_SCRIPTS=[
- 'civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=2','civil-theory-v66107.js?v=66107','civil-theory-module6-v66108.js?v=66108',
+ 'civil-decorando-index-v1.js?v=20261118r1','central-civil-progress-v2.js?v=2','civil-theory-v66107.js?v=66107','civil-theory-module6-v66108.js?v=66108',
  'civil-theory-module7-part1-v66109.js?v=66109','civil-theory-module7-part2-v66109.js?v=66109','civil-theory-module7-part3-v66109.js?v=66109','civil-theory-module7-runtime-v66109.js?v=66109',
  'civil-theory-module8-part1-v66110.js?v=66110','civil-theory-module8-part2-v66110.js?v=66110','civil-theory-module8-part3-v66110.js?v=66110','civil-theory-module8-part4-v66110.js?v=66110','civil-theory-module8-part5-v66110.js?v=66110','civil-theory-module8-runtime-v66110.js?v=66110',
  'civil-theory-module9-part1-v66111.js?v=66111','civil-theory-module9-part2-v66111.js?v=66111','civil-theory-module9-part3-v66111.js?v=66111','civil-theory-module9-part4-v66111.js?v=66111','civil-theory-module9-runtime-v66111.js?v=66111',
