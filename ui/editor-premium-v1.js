@@ -216,15 +216,15 @@ function removeLawItems(state,items){
 }
 // Editor estruturado: título e corpo da Lei Seca são campos independentes.
  // O administrador edita o rascunho, nunca diretamente o texto já publicado.
-function editLawSections(state){
+function editLawSections(state,addMode=false){
  const topics=Array.from(state.workspace.querySelectorAll('.bcpe-node.bc-m01-topic'));
- if(!topics.length)return notify('Abra a revisão de Direito Constitucional para editar a Lei Seca.');
+ if(!topics.length)return notify('Abra uma revisão com assuntos para adicionar ou editar a Lei Seca.');
  const backdrop=document.createElement('div');backdrop.className='bcpe-law-backdrop';
  const panel=document.createElement('section');panel.className='bcpe-law-panel bcpe-law-edit-panel';
- panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','Editar Lei Seca');
- const title=document.createElement('h2');title.textContent='Editar Lei Seca';
+ panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label',addMode?'Adicionar Lei Seca':'Editar Lei Seca');
+ const title=document.createElement('h2');title.textContent=addMode?'Adicionar Lei Seca':'Editar Lei Seca';
  const hint=document.createElement('p');
- hint.textContent='Edite o título e o texto separadamente. As alterações permanecem no rascunho até clicar em Publicar conteúdo.';
+ hint.textContent=addMode?'Escolha o assunto e insira o novo trecho. Se já houver Lei Seca, o trecho será acrescentado na mesma aba, sem duplicá-la.':'Edite o título e o texto separadamente. As alterações permanecem no rascunho até clicar em Publicar conteúdo.';
  const topicLabel=document.createElement('label');topicLabel.className='bcpe-law-input-label';
  topicLabel.textContent='Assunto do M1';
  const picker=document.createElement('select');picker.setAttribute('aria-label','Assunto que contém a lei seca');
@@ -311,12 +311,17 @@ function editLawSections(state){
    const body=part.matches('.bc-m01-lei-art')?part:part.querySelector('.bc-m01-lei-art');
    addRow(caption,lawText(body||part),part.cloneNode(true));
   });
+  if(addMode)addRow('','',null); // Insere novo artigo na mesma aba, nunca um novo <details>.
  }
  function apply(){
   const topic=getTopic(),titleText=name.value.trim();
   if(!titleText){name.focus();return notify('Informe o título da Lei Seca.')}
-  const rows=Array.from(entries.querySelectorAll('.bcpe-law-edit-row'));
-  if(!rows.length)return notify('Adicione um trecho ou use Excluir Lei Seca.');
+  const rows=Array.from(entries.querySelectorAll('.bcpe-law-edit-row')).filter(function(row){
+   const label=row.querySelector('input')?.value.trim()||'';
+   const text=row.querySelector('textarea')?.value.trim()||'';
+   return !!row.original||!!label||!!text;
+  });
+  if(!rows.length)return notify('Informe o artigo ou o texto da Lei Seca antes de aplicar.');
   checkpoint(state);
   const details=document.createElement('details');details.className='bc-m01-lei-seca';
   const summary=document.createElement('summary');summary.textContent=titleText;details.append(summary);
@@ -389,7 +394,9 @@ function editLawSections(state){
  picker.value=String(Math.max(0,topics.findIndex(x=>x===state.selected?.querySelector(':scope > .bcpe-node'))));
  load();
  document.addEventListener('keydown',escHandler);
- state.dialog.append(backdrop);name.focus();
+ state.dialog.append(backdrop);
+ if(addMode){const input=entries.querySelector('.bcpe-law-edit-row:last-child textarea');if(input)input.focus();else name.focus()}
+ else name.focus();
 }
 function removeLawSections(state){
  const targets=lawSections(state);
@@ -1495,11 +1502,12 @@ function makeToolbar(state){
  '<label class="bcpe-color">Cor <input type="color" data-color value="#17293e"></label><button data-action="color-again" title="Aplicar novamente a cor escolhida ao trecho selecionado">Aplicar cor</button>'+
  '<select data-align aria-label="Alinhamento"><option value="">Alinhar</option><option value="left">Esquerda</option><option value="center">Centro</option><option value="right">Direita</option><option value="justify">Justificado</option></select>'+
  '<select data-line aria-label="Espaçamento"><option value="">Linhas</option><option value="1.3">1,3</option><option value="1.5">1,5</option><option value="1.8">1,8</option><option value="2">2,0</option></select><span data-context aria-live="polite">Clique em um parágrafo para editar</span></div>'+
- '<div class="bcpe-row"><select data-insert><option value="">+ Inserir</option><option value="p">Parágrafo</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="ul">Lista</option><option value="ol">Lista numerada</option><option value="table">Tabela</option><option value="atencao">Card ATENÇÃO</option><option value="decore">Card DECORE</option><option value="pegadinha">Card PEGADINHA</option><option value="exemplo">Card EXEMPLO</option><option value="resumo">Card RESUMO</option><option value="image">Imagem</option></select>'+
+ '<div class="bcpe-row"><select data-insert><option value="">+ Inserir</option><option value="p">Parágrafo</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="ul">Lista</option><option value="ol">Lista numerada</option><option value="table">Tabela</option><option value="atencao">Card ATENÇÃO</option><option value="decore">Card DECORE</option><option value="pegadinha">Card PEGADINHA</option><option value="exemplo">Card EXEMPLO</option><option value="resumo">Card RESUMO</option><option value="image">Imagem</option><option value="law">Lei Seca</option></select>'+
  '<button data-action="paste">Colar capítulo</button><button data-action="undo" title="Desfazer (Ctrl+Z)">↶ Desfazer</button><button data-action="redo" title="Refazer (Ctrl+Y)">↷ Refazer</button><button data-action="spell" title="Revisar a ortografia do capítulo">Ortografia</button><button data-action="copy-all" title="Copiar todo o capítulo">Copiar tudo</button><button data-action="find" title="Buscar e substituir (Ctrl+F / Ctrl+H)">Buscar</button>'+
  '<button class="bcpe-remove-law" data-action="edit-law" title="Editar título e artigos da Lei Seca em campos separados">Editar Lei Seca</button><button class="bcpe-remove-law" data-action="remove-law" title="Selecionar artigos ou quadros específicos para remover da Lei Seca">Remover trechos</button>'+ 
  '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
  if(!isAdmin){const imageOption=bar.querySelector('[data-insert] option[value="image"]');if(imageOption)imageOption.remove()}
+ if(!(state.overlay.matches('.bc-guided-overlay')&&/Direito Constitucional/.test(state.overlay.getAttribute('aria-label')||''))){const lawOption=bar.querySelector('[data-insert] option[value="law"]');if(lawOption)lawOption.remove()}
  if(state.overlay.matches('.bc-guided-overlay')&&/Direito Constitucional/.test(state.overlay.getAttribute('aria-label')||'')){const oldButton=bar.querySelector('[data-action="remove-law"]');if(oldButton)oldButton.remove()}
  else {const b=bar.querySelector('[data-action="edit-law"]');if(b)b.remove()}
  state.status=bar.querySelector('[data-status]');state.words=bar.querySelector('[data-words]');state.typeSelect=bar.querySelector('[data-style]');state.context=bar.querySelector('[data-context]');
@@ -1513,6 +1521,7 @@ function makeToolbar(state){
   if(t.matches('[data-insert]')&&t.value){
    const v=t.value;t.value='';
    if(v==='image'){state.replaceTarget=null;state.input.click();return}
+   if(v==='law'){editLawSections(state,true);return}
    checkpoint(state);
    let box;
    if(v==='table')box=add(state,tableNode());
