@@ -576,28 +576,28 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
   },
   "20": {
     "title": "Processos nos tribunais, rescisória, IAC e IRDR",
-    "intro": "Nem toda controvérsia que chega a um tribunal é recurso comum. Algumas ações uniformizam entendimentos, outras definem competência, reconhecem decisão estrangeira ou desconstituem decisão estabilizada. Saber a finalidade de cada instrumento evita confusões graves em provas.",
+    "intro": "Nem toda controvérsia que chega a um tribunal é recurso comum. Algumas ações uniformizam entendimentos, outras definem competência, reconhecem decisão estrangeira ou desconstituem decisão estabilizada. Saber a finalidade de cada instrumento evita confusões graves.",
     "sections": [
       [
         "Incidente de assunção de competência e IRDR",
         [
-          "O IAC é ligado a questão de direito relevante, com grande repercussão social, sem repetição em múltiplos processos, ou à necessidade legal de prevenir ou compor divergência interna. Busca orientação qualificada mesmo quando não há repetição massiva de processos.",
-          "O IRDR exige efetiva repetição de processos sobre a mesma questão unicamente de direito, somada ao risco à isonomia e à segurança jurídica. Admitido, envolve disciplina de suspensão e formação de tese aplicável aos processos abrangidos. Não se confunda potencial relevância social com repetição efetiva."
+          "O IAC é ligado a questão de direito relevante, com grande repercussão social, sem repetição em múltiplos processos, ou, ainda, quando for conveniente prevenir ou compor divergência entre câmaras ou turmas do tribunal (art. 947, § 4º). Busca orientação qualificada mesmo sem repetição massiva de processos.",
+          "O IRDR exige efetiva repetição de processos sobre a mesma questão unicamente de direito, somada ao risco à isonomia e à segurança jurídica. Admitido, o relator suspende os processos pendentes, individuais ou coletivos, no Estado ou na região (art. 982, I); o incidente deve ser julgado em 1 ano (art. 980). A tese vale para os processos da área do tribunal e para os casos futuros (art. 985). Não se confunda potencial relevância social com repetição efetiva."
         ],
         "Exemplo: uma questão inédita de forte repercussão pode indicar IAC; centenas de processos com a mesma questão jurídica e decisões divergentes podem indicar IRDR."
       ],
       [
         "Arguição de inconstitucionalidade e conflito de competência",
         [
-          "Na arguição incidental em tribunal, a questão constitucional interfere no julgamento de caso concreto. A reserva de plenário impede que órgão fracionário declare inconstitucionalidade de lei, nas hipóteses pertinentes, sem observância do art. 97 da Constituição e da Súmula Vinculante 10.",
-          "Conflito de competência tem outra função: resolver divergência sobre qual órgão deve processar ou julgar causa. Não serve para rever automaticamente o mérito da ação; o tribunal indica o juízo competente e trata dos atos processuais conforme a lei."
+          "Na arguição incidental em tribunal, a questão constitucional interfere no julgamento de caso concreto. A reserva de plenário (CF, art. 97) impede que órgão fracionário declare a inconstitucionalidade de lei, ou afaste sua incidência, sem submeter a questão ao plenário ou ao órgão especial (Súmula Vinculante 10; CPC, arts. 948 e 949). Não há nova submissão se já houver pronunciamento destes ou do plenário do STF (art. 949, parágrafo único).",
+          "Conflito de competência tem outra função: resolver divergência sobre qual órgão deve processar ou julgar causa. Não serve para rever automaticamente o mérito da ação; o tribunal declara qual é o juízo competente e se pronuncia sobre a validade dos atos do juízo incompetente (art. 957)."
         ],
         "Exemplo: duas varas recusam competência sobre determinada causa. A questão a resolver é quem julga, não se o autor tem razão."
       ],
       [
         "Homologação de decisão estrangeira",
         [
-          "Uma decisão proferida fora do Brasil pode precisar de homologação para produzir efeitos no território brasileiro, observadas exceções legais. A competência constitucional do STJ e o procedimento do CPC não significam que o tribunal refará livremente o julgamento estrangeiro.",
+          "Uma decisão proferida fora do Brasil só tem eficácia no território brasileiro após a homologação, salvo lei ou tratado em sentido contrário (art. 961, caput); é o caso da sentença estrangeira de divórcio consensual, que independe de homologação pelo STJ (art. 961, § 5º). A competência constitucional do STJ e o procedimento do CPC não significam que o tribunal refará livremente o julgamento estrangeiro.",
           "O exame é predominantemente de requisitos de reconhecimento e compatibilidade jurídica, não de nova análise integral das provas do litígio decidido no exterior. Exequatur refere-se a cartas rogatórias no regime aplicável."
         ],
         "Exemplo: sentença estrangeira que condena ao pagamento pode exigir reconhecimento antes do cumprimento no Brasil, observados tratado e lei."
@@ -605,18 +605,18 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
       [
         "Ação rescisória desconstitui decisão transitada",
         [
-          "A ação rescisória é ação autônoma destinada a desconstituir decisão já estabilizada nas hipóteses taxativas do art. 966. Não é recurso tardio para qualquer decisão com a qual a parte discorde. O prazo geral é de dois anos, com regimes legais específicos em determinadas situações.",
-          "Há distinção entre o juízo rescindente, que afasta a decisão, e o juízo rescisório, que pode julgar novamente o mérito quando cabível. O ajuizamento não suspende automaticamente a eficácia da decisão rescindenda."
+          "A ação rescisória é ação autônoma destinada a desconstituir decisão de mérito transitada em julgado, nas hipóteses taxativas do art. 966, I a VIII (§ 2º: também decisão sem mérito que impeça nova propositura ou a admissibilidade do recurso). Não é recurso tardio para qualquer decisão com a qual a parte discorde. O direito à rescisão se extingue em 2 anos do trânsito em julgado da última decisão (art. 975); na prova nova, o prazo conta da descoberta, no máximo de 5 anos do trânsito (art. 975, § 2º).",
+          "Há distinção entre o juízo rescindente, que afasta a decisão, e o juízo rescisório, que pode julgar novamente o mérito quando cabível. A propositura não impede o cumprimento da decisão rescindenda, salvo tutela provisória (art. 969). Exige-se, em regra, depósito de 5% do valor da causa, convertido em multa se o pedido for declarado, por unanimidade, inadmissível ou improcedente (art. 968, II; dispensas no § 1º)."
         ],
         "Exemplo: prova nova que a parte não pôde utilizar antes pode, sob estritos requisitos legais, sustentar rescisória; mera discordância da valoração da prova não basta."
       ],
       [
         "Reclamação e precedentes qualificados",
         [
-          "A reclamação é instrumento autônomo para preservar competência de tribunal, garantir autoridade de decisões e assegurar observância de hipóteses legalmente previstas de precedentes qualificados. Seu cabimento não é geral nem substitui qualquer recurso disponível.",
-          "A Lei 15.484/2026 alterou o art. 988 e outros dispositivos do CPC, inclusive para disciplinar hipótese excepcional vinculada ao regime de relevância do recurso especial. É necessário conferir requisitos e limitações como esgotamento das instâncias nas hipóteses pertinentes e a impossibilidade de reclamação após trânsito em julgado da decisão reclamada."
+          "A reclamação é instrumento autônomo para preservar competência de tribunal, garantir autoridade de decisões e assegurar a observância de súmula vinculante, de decisão do STF em controle concentrado e de acórdão de IRDR ou de IAC (art. 988, III e IV). Seu cabimento não é geral nem substitui qualquer recurso disponível.",
+          "A Lei nº 15.484/2026, que regulamentou o filtro de relevância no recurso especial, acrescentou ao art. 988 o inciso V: reclamação, em casos excepcionais, para garantir a observância de acórdão do STJ proferido sob o regime de relevância; o § 4º passou a abranger essa hipótese. O § 5º do art. 988, que limita o cabimento da reclamação, também foi alterado pela lei; confira o texto vigente."
         ],
-        "Exemplo: para corrigir uma interpretação divergente qualquer, não basta invocar 'jurisprudência do STJ'; é preciso demonstrar hipótese concreta de cabimento da reclamação."
+        "Exemplo: decisão que contraria súmula vinculante ou acórdão de IRDR pode ensejar reclamação (art. 988, III e IV); mera divergência de interpretação fora dessas hipóteses não basta."
       ]
     ],
     "remember": [
@@ -651,7 +651,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "IAC e IRDR respondem a situações diferentes",
           [
-            "No incidente de assunção de competência, a questão de direito é relevante e tem grande repercussão social, sem repetição múltipla de processos, ou existe hipótese legal de prevenir/compor divergência interna. A preocupação central é formar orientação qualificada.",
+            "No incidente de assunção de competência, a questão de direito é relevante e tem grande repercussão social, sem repetição múltipla de processos, ou é conveniente prevenir ou compor divergência entre câmaras ou turmas do tribunal (art. 947, § 4º). A preocupação central é formar orientação qualificada.",
             "No incidente de resolução de demandas repetitivas, há efetiva repetição de processos sobre a mesma questão unicamente de direito, com risco à isonomia e segurança jurídica. A multiplicação de casos e a necessidade de solução uniforme fazem diferença."
           ],
           "Pergunta: basta risco abstrato de surgirem milhares de ações para preencher todos os pressupostos de IRDR?",
