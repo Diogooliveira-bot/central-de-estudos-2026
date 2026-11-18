@@ -95,3 +95,39 @@ test('CSS responsivo de tablet é isolado e chega depois do estilo geral',()=>{
   assert.ok(manifest.files.includes(p),p+' não incluído no pacote offline');
  }
 });
+
+
+test('login detecta tablet em retrato mesmo com viewport desktop, sem ampliar celular ou notebook',t=>{
+ const html=readFileSync('login.html','utf8');
+ const match=html.match(/<script id="bc-login-tablet-detect">([\s\S]*?)<\/script>/);
+ assert.ok(match,'faltou detecção independente da tela de login');
+ function loginDevice(width,height,touches){
+  const dom=new JSDOM('<!doctype html><html><head></head><body></body></html>',{url:'https://app.basecompleta.com.br/login.html',runScripts:'outside-only'});
+  t.after(()=>dom.window.close());
+  const w=dom.window;
+  Object.defineProperty(w.screen,'width',{configurable:true,value:width});
+  Object.defineProperty(w.screen,'height',{configurable:true,value:height});
+  Object.defineProperty(w.navigator,'maxTouchPoints',{configurable:true,value:touches});
+  w.matchMedia=()=>({matches:touches>=2});
+  w.eval(match[1]);return w.document.documentElement.classList.contains('bc-login-tablet');
+ }
+ assert.equal(loginDevice(800,1280,5),true,'tablet Samsung vertical');
+ assert.equal(loginDevice(1280,800,5),true,'tablet horizontal');
+ assert.equal(loginDevice(390,860,5),false,'celular em modo desktop');
+ assert.equal(loginDevice(1440,900,0),false,'computador com mouse');
+});
+
+test('login de tablet tem card, campos e textos maiores sem zoom nem alteração de autenticação',()=>{
+ const html=readFileSync('login.html','utf8');
+ const css=html.slice(html.indexOf('/* Legibilidade real no tablet'),html.indexOf('</style>',html.indexOf('/* Legibilidade real no tablet')));
+ assert.match(html,/<meta name="viewport" content="width=device-width,initial-scale=1">/);
+ assert.match(css,/html\.bc-login-tablet \.card/);
+ assert.match(css,/width:min\(680px,calc\(100vw - 48px\)\)/);
+ assert.match(css,/html\.bc-login-tablet input:not\(\[type="checkbox"\]\)\{min-height:56px;font-size:17px/);
+ assert.match(css,/html\.bc-login-tablet \.access-help/);
+ assert.match(css,/html\.bc-login-tablet \.logo/);
+ assert.doesNotMatch(css,/\bzoom\s*:|\btransform\s*:\s*scale/);
+ assert.match(html,/id="loginForm"/);
+ assert.match(html,/id="togglePassword"/);
+ assert.match(html,/action=login/);
+});
