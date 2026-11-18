@@ -198,3 +198,12 @@ body.bcpe-open{overflow:hidden!important}
 .bcpe-law-edit-panel .bcpe-law-foot{margin:2px 0 10px;line-height:1.5}
 .bcpe-law-panel button:focus-visible,.bcpe-law-panel input:focus-visible{outline:3px solid #68adca;outline-offset:2px}
 @media(max-width:620px){.bcpe-law-backdrop{padding:8px}.bcpe-law-panel{max-height:96vh;padding:17px 14px}.bcpe-law-actions button{flex:1 1 auto}}
+
+/* Lei Seca única: leitura dos quadros inseridos também no conteúdo completo. */
+.cf-native-overlay details.bc-m01-lei-seca,.bc-native-reader-overlay details.bc-m01-lei-seca{display:block;margin:14px 0;border:1px solid #d8e3ee;border-radius:10px;background:#f9fcff;padding:10px 14px;color:#243b54}
+.cf-native-overlay details.bc-m01-lei-seca>summary,.bc-native-reader-overlay details.bc-m01-lei-seca>summary{font-weight:700;color:#184d77;cursor:pointer;padding:2px 0}
+.cf-native-overlay details.bc-m01-lei-seca .bc-m01-lei-item,.bc-native-reader-overlay details.bc-m01-lei-seca .bc-m01-lei-item{border-top:1px solid #dfe9f1;margin-top:10px;padding-top:10px}
+.cf-native-overlay details.bc-m01-lei-seca h4.bc-m01-lei-item-title,.bc-native-reader-overlay details.bc-m01-lei-seca h4.bc-m01-lei-item-title{font-weight:700;font-size:.93rem;color:#20597c;margin:0 0 7px}
+.cf-native-overlay details.bc-m01-lei-seca .bc-m01-lei-art p,.bc-native-reader-overlay details.bc-m01-lei-seca .bc-m01-lei-art p{font-size:.92rem;line-height:1.7;margin:6px 0}
+.bcpe-law-edit-panel:has(select[aria-label="Lei pronta para inserir"]){overflow-y:auto;overscroll-behavior:contain}
+.bcpe-law-edit-panel:has(select[aria-label="Lei pronta para inserir"]) .bcpe-law-input-label textarea{min-height:150px;max-height:38vh;resize:vertical}

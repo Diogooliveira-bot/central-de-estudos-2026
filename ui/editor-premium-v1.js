@@ -133,11 +133,11 @@ function markFields(node){
 }
 // Um clique remove somente seções identificadas como Lei Seca do módulo em edição.
 // Não remove citações legais espalhadas pela teoria ou capítulos de jurisprudência.
-const LAW_SELECTORS='.lei-seca,.penv-literal-law,.penv-law-group,.penv-law-library,.bc-native-callout.law,.layer.law,[data-bc-law-section],details';
-const LAW_WRAPPERS='.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]';
+const LAW_SELECTORS='.bc-m01-lei-seca,.lei-seca,.penv-literal-law,.penv-law-group,.penv-law-library,.bc-native-callout.law,.layer.law,[data-bc-law-section],details';
+const LAW_WRAPPERS='.bc-m01-lei-seca,.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]';
 function isLawSection(node){
  if(!node||node.nodeType!==1)return false;
- if(node.matches('.lei-seca,.penv-literal-law,.penv-law-group,.penv-law-library,.bc-native-callout.law,.layer.law,[data-bc-law-section]'))return true;
+ if(node.matches('.bc-m01-lei-seca,.lei-seca,.penv-literal-law,.penv-law-group,.penv-law-library,.bc-native-callout.law,.layer.law,[data-bc-law-section]'))return true;
  if(node.matches('details')){
   const heading=node.querySelector(':scope > summary');
   return /^(?:ver\s+)?lei\s+seca(?:\b|[\s:—–-])/i.test((heading?.textContent||'').trim());
@@ -201,7 +201,7 @@ function removeLawItems(state,items){
   .forEach(function(wrapper){
    if(!wrapper.isConnected||remaining.some(el=>el!==wrapper&&el.isConnected&&wrapper.contains(el)))return;
    if(wrapper.querySelector('p,li,blockquote,details,aside,table'))return;
-   if(wrapper.matches('.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]')){
+   if(wrapper.matches('.bc-m01-lei-seca,.lei-seca,.penv-law-group,.penv-law-library,[data-bc-law-section]')){
     const box=wrapper.closest('.bcpe-block');
     if(box&&wrapper===box.querySelector(':scope > .bcpe-node'))box.remove();
     else wrapper.remove();
@@ -216,6 +216,127 @@ function removeLawItems(state,items){
 }
 // Editor estruturado: título e corpo da Lei Seca são campos independentes.
  // O administrador edita o rascunho, nunca diretamente o texto já publicado.
+// Biblioteca local: usa somente dispositivos já cadastrados no Vade Mecum da Central.
+// O editor nunca inventa redação legal e permite conferir/ajustar antes de aplicar.
+function lawPresets(state){
+ const isCf=state.overlay.matches('.cf-native-overlay')||/Direito Constitucional/i.test(state.label);
+ if(!isCf)return [];
+ const catalog=window.BC_CF_GUIDED_LAW;
+ if(!catalog||typeof catalog!=='object')return [];
+ const match=state.label.match(/m[oó]dulo\s*0*(\d+)/i)||state.id.match(/\|constitucional\|(\d+)\|/i);
+ const moduleNumber=match?Number(match[1]):1;
+ const module=catalog[String(moduleNumber)]||{};
+ const result=new Map();
+ Object.entries(module).sort((a,b)=>Number(a[0])-Number(b[0])).forEach(function(entry){
+  const topic=Number(entry[0]);
+  if(!Array.isArray(entry[1]))return;
+  entry[1].forEach(function(item){
+   if(!Array.isArray(item)||typeof item[0]!=='string'||!Array.isArray(item[1]))return;
+   const label=item[0].trim();
+   const paragraphs=item[1].filter(text=>typeof text==='string'&&text.trim());
+   if(!label||!paragraphs.length)return;
+   const existing=result.get(label);
+   if(!existing||paragraphs.length>existing.paragraphs.length)result.set(label,{label,paragraphs,topic});
+  });
+ });
+ return Array.from(result.values()).sort((a,b)=>a.topic-b.topic||a.label.localeCompare(b.label,'pt-BR',{numeric:true}));
+}
+function chooseLawPresetIndex(state,presets){
+ if(!presets.length)return -1;
+ const field=insertionField(state);
+ const host=field?.closest('.bcpe-node')||state.selected?.querySelector('.bcpe-node');
+ const point=(field?.textContent||'')+' '+(host?.querySelector('h2,h3')?.textContent||'');
+ const art=point.match(/\bart(?:igo)?\.?\s*(\d+[A-Za-z-]*)/i);
+ if(art){
+  const label=new RegExp('\\bart\\.?\\s*'+art[1]+'(?:\\D|$)','i');
+  const index=presets.findIndex(p=>label.test(p.label));
+  if(index>=0)return index;
+ }
+ return 0;
+}
+function createLawNode(title,reference,paragraphs){
+ const group=document.createElement('details');group.className='bc-m01-lei-seca';
+ const summary=document.createElement('summary');summary.textContent=title;group.append(summary);
+ const part=document.createElement('section');part.className='bc-m01-lei-item';
+ const heading=document.createElement('h4');heading.className='bc-m01-lei-item-title';heading.textContent=reference;
+ const body=document.createElement('div');body.className='bc-m01-lei-art';
+ paragraphs.forEach(function(text){const p=document.createElement('p');p.textContent=text;body.append(p)});
+ part.append(heading,body);group.append(part);
+ return group;
+}
+function insertLawDialog(state){
+ const presets=lawPresets(state);
+ const backdrop=document.createElement('div');backdrop.className='bcpe-law-backdrop';
+ const panel=document.createElement('section');panel.className='bcpe-law-panel bcpe-law-edit-panel';
+ panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');
+ panel.setAttribute('aria-label','Adicionar Lei Seca');
+ const title=document.createElement('h2');title.textContent='Adicionar Lei Seca';
+ const hint=document.createElement('p');
+ hint.textContent='Escolha um artigo cadastrado ou digite outro texto. Revise a redação antes de publicar para os alunos.';
+ const presetLabel=document.createElement('label');presetLabel.className='bcpe-law-input-label';
+ presetLabel.textContent='Lei pronta do catálogo (opcional)';
+ const select=document.createElement('select');select.setAttribute('aria-label','Lei pronta para inserir');
+ const manual=document.createElement('option');manual.value='';manual.textContent='Escrever manualmente';select.append(manual);
+ presets.forEach(function(p,i){const option=document.createElement('option');option.value=String(i);option.textContent=p.label;select.append(option)});
+ if(!presets.length){manual.textContent='Sem lei pronta para este módulo — escrever manualmente';select.disabled=true}
+ presetLabel.append(select);
+ function labeled(text,input){const label=document.createElement('label');label.className='bcpe-law-input-label';label.append(document.createTextNode(text),input);return label}
+ const name=document.createElement('input');name.type='text';name.maxLength=220;name.value='Ver lei seca';name.setAttribute('aria-label','Título da Lei Seca');
+ const reference=document.createElement('input');reference.type='text';reference.maxLength=180;reference.setAttribute('aria-label','Identificação do dispositivo');
+ const area=document.createElement('textarea');area.rows=10;area.setAttribute('aria-label','Texto da Lei Seca');
+ area.placeholder='Cole a redação oficial. Cada linha será preservada como um parágrafo.';
+ const source=document.createElement('small');source.className='bcpe-law-foot';
+ source.textContent=presets.length
+  ?'Textos recuperados do catálogo jurídico existente na Central, não verificados em tempo real. Confira a versão oficial antes de publicar.'
+  :'Cole o texto oficial da legislação. O sistema não cria nem completa dispositivos automaticamente.';
+ const actions=document.createElement('div');actions.className='bcpe-law-actions';
+ const cancel=document.createElement('button');cancel.type='button';cancel.textContent='Cancelar';
+ const apply=document.createElement('button');apply.type='button';apply.className='bcpe-primary';apply.textContent='Adicionar ao rascunho';
+ actions.append(cancel,apply);
+ panel.append(title,hint,presetLabel,labeled('Título do quadro',name),labeled('Identificação do artigo',reference),labeled('Texto completo (editável)',area),source,actions);
+ backdrop.append(panel);
+ const previous=document.activeElement;
+ function close(){
+  backdrop.remove();document.removeEventListener('keydown',onKey);
+  if(previous?.isConnected&&typeof previous.focus==='function')previous.focus();
+ }
+ function onKey(e){if(e.key==='Escape'&&backdrop.isConnected){e.preventDefault();e.stopPropagation();close()}}
+ function loadPreset(){
+  if(select.value===''){reference.value='';area.value='';name.value='Ver lei seca';return}
+  const item=presets[Number(select.value)];
+  if(!item)return;
+  reference.value=item.label;name.value='Ver lei seca — '+item.label;
+  area.value=item.paragraphs.join('\n');
+ }
+ select.addEventListener('change',loadPreset);
+ cancel.addEventListener('click',close);
+ apply.addEventListener('click',function(){
+  const titleText=name.value.trim(),ref=reference.value.trim(),text=area.value.trim();
+  if(!titleText)return notify('Informe o título da Lei Seca.');
+  if(!ref)return notify('Informe o artigo ou dispositivo.');
+  if(!text)return notify('Insira o texto da lei antes de aplicar.');
+  const paragraphs=area.value.split(/\r?\n/).filter(line=>line.trim());
+  const node=createLawNode(titleText,ref,paragraphs);
+  const field=insertionField(state);
+  const topic=field?.closest('.bc-m01-topic');
+  const existing=topic?.querySelector(':scope > details.bc-m01-lei-seca');
+  if(existing){
+   const duplicate=Array.from(existing.querySelectorAll('.bc-m01-lei-item-title'))
+    .some(el=>el.textContent.trim().toLowerCase()===ref.toLowerCase());
+   if(duplicate)return notify('Este artigo já está na Lei Seca do assunto. Edite o trecho existente para evitar duplicações.');
+   checkpoint(state);
+   existing.append(node.querySelector('.bc-m01-lei-item'));
+   markFields(existing);refreshDragHandles(state);
+   historyPush(state);queueDraft(state);
+  }else{checkpoint(state);addAtSelectedPoint(state,node)}
+  close();
+  notify('Lei Seca adicionada ao rascunho. Publique o conteúdo quando concluir.');
+ });
+ document.addEventListener('keydown',onKey);
+ state.dialog.append(backdrop);
+ if(presets.length){select.value=String(chooseLawPresetIndex(state,presets));loadPreset()}
+ else reference.focus();
+}
 function editLawSections(state,addMode=false){
  const topics=Array.from(state.workspace.querySelectorAll('.bcpe-node.bc-m01-topic'));
  if(!topics.length)return notify('Abra uma revisão com assuntos para adicionar ou editar a Lei Seca.');
@@ -1669,7 +1790,6 @@ function makeToolbar(state){
  '<button class="bcpe-remove-law" data-action="edit-law" title="Editar título e artigos da Lei Seca em campos separados">Editar Lei Seca</button><button class="bcpe-remove-law" data-action="remove-law" title="Selecionar artigos ou quadros específicos para remover da Lei Seca">Remover trechos</button>'+ 
  '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
  if(!isAdmin){const imageOption=bar.querySelector('[data-insert] option[value="image"]');if(imageOption)imageOption.remove()}
- if(!(state.overlay.matches('.bc-guided-overlay')&&/Direito Constitucional/.test(state.overlay.getAttribute('aria-label')||''))){const lawOption=bar.querySelector('[data-insert] option[value="law"]');if(lawOption)lawOption.remove()}
  if(state.overlay.matches('.bc-guided-overlay')&&/Direito Constitucional/.test(state.overlay.getAttribute('aria-label')||'')){const oldButton=bar.querySelector('[data-action="remove-law"]');if(oldButton)oldButton.remove()}
  else {const b=bar.querySelector('[data-action="edit-law"]');if(b)b.remove()}
  state.status=bar.querySelector('[data-status]');state.words=bar.querySelector('[data-words]');state.typeSelect=bar.querySelector('[data-style]');state.context=bar.querySelector('[data-context]');
@@ -1683,7 +1803,7 @@ function makeToolbar(state){
   if(t.matches('[data-insert]')&&t.value){
    const v=t.value;t.value='';
    if(v==='image'){state.replaceTarget=null;state.input.click();return}
-   if(v==='law'){editLawSections(state,true);return}
+   if(v==='law'){insertLawDialog(state);return}
    checkpoint(state);
    let box;
    if(v==='table')box=addAtSelectedPoint(state,tableNode());

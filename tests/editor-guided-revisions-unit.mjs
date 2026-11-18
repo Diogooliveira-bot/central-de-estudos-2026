@@ -209,37 +209,32 @@ test('Editor Premium M1: após excluir toda a lei seca pode recriar artigo e par
 });
 
 
-test('M1 Constitucional: + Inserir > Lei Seca cria quadro e acrescenta artigos sem segunda aba',async()=>{
+test('M1 Constitucional: + Inserir Lei Seca não cria outra aba dentro do assunto',async()=>{
  const app=await setup('Constitucional','admin',null,1),d=app.win.document;
  d.querySelector('.bc-m01-paper').insertAdjacentHTML('afterbegin',
   '<section class="bc-m01-topic"><h2 id="bc-guided-title-1-9">Art. 1º</h2>'+
   '<p>Teoria aprovada pelo professor.</p></section>');
  d.querySelector('.bcpe-launch').click();await wait();
- const select=d.querySelector('.bcpe-toolbar [data-insert]');
- assert.ok(select.querySelector('option[value="law"]'),'menu + Inserir inclui Lei Seca');
- select.value='law';select.dispatchEvent(new app.win.Event('change',{bubbles:true}));
- let modal=d.querySelector('.bcpe-law-edit-panel');
- assert.ok(modal,'deve abrir editor de Lei Seca');
- assert.match(modal.querySelector('h2').textContent,/Adicionar Lei Seca/);
- assert.equal(modal.querySelectorAll('.bcpe-law-edit-row').length,1);
- modal.querySelector('input[aria-label="Título da Lei Seca"]').value='Ver lei seca — CF/88, art. 1º';
- modal.querySelector('input[aria-label="Identificação do artigo"]').value='CF/88, art. 1º';
- let area=modal.querySelector('textarea[aria-label="Conteúdo da lei seca"]');
- area.value='Art. 1º Texto legal inicial.';area.dispatchEvent(new app.win.Event('input',{bubbles:true}));
- modal.querySelector('button.bcpe-primary').click();
+ const target=d.querySelector('.bcpe-workspace .bc-m01-topic p');
+ target.dispatchEvent(new app.win.MouseEvent('pointerdown',{bubbles:true}));
+ const menu=d.querySelector('.bcpe-toolbar [data-insert]');
+ assert.ok(menu.querySelector('option[value="law"]'));
+ function fill(ref,text){
+  menu.value='law';menu.dispatchEvent(new app.win.Event('change',{bubbles:true}));
+  const modal=d.querySelector('.bcpe-law-edit-panel');
+  assert.ok(modal);
+  modal.querySelector('input[aria-label="Título da Lei Seca"]').value='Ver lei seca — CF/88';
+  modal.querySelector('input[aria-label="Identificação do dispositivo"]').value=ref;
+  const area=modal.querySelector('textarea[aria-label="Texto da Lei Seca"]');
+  area.value=text;area.dispatchEvent(new app.win.Event('input',{bubbles:true}));
+  modal.querySelector('button.bcpe-primary').click();
+ }
+ fill('CF/88, art. 1º','Art. 1º Texto legal inicial.');
  const root=d.querySelector('.bcpe-workspace .bc-m01-topic');
  assert.equal(root.querySelectorAll('details.bc-m01-lei-seca').length,1);
  assert.equal(root.querySelectorAll('details details').length,0);
- select.value='law';select.dispatchEvent(new app.win.Event('change',{bubbles:true}));
- modal=d.querySelector('.bcpe-law-edit-panel');
- assert.ok(modal);
- assert.equal(modal.querySelectorAll('.bcpe-law-edit-row').length,2,'o novo artigo usa a mesma aba já existente');
- let rows=modal.querySelectorAll('.bcpe-law-edit-row');
- rows[1].querySelector('input').value='CF/88, art. 2º';
- area=rows[1].querySelector('textarea');
- area.value='Art. 2º Texto legal acrescentado.';area.dispatchEvent(new app.win.Event('input',{bubbles:true}));
- modal.querySelector('button.bcpe-primary').click();
- assert.equal(root.querySelectorAll('details.bc-m01-lei-seca').length,1,'não pode duplicar a aba');
+ fill('CF/88, art. 2º','Art. 2º Texto legal acrescentado.');
+ assert.equal(root.querySelectorAll('details.bc-m01-lei-seca').length,1,'deve reutilizar uma aba');
  assert.equal(root.querySelectorAll('details details').length,0);
  assert.equal(root.querySelectorAll('.bc-m01-lei-item').length,2);
  assert.match(root.textContent,/Teoria aprovada pelo professor/);
@@ -255,13 +250,18 @@ test('M1 Constitucional: + Inserir > Lei Seca cria quadro e acrescenta artigos s
  app.cleanup();
 });
 
-test('Outras disciplinas não exibem inserção de Lei Seca do M1 Constitucional',async()=>{
+test('Revisão Civil: + Inserir Lei Seca permite texto manual sem catálogo de Constitucional',async()=>{
  const app=await setup('Civil'),d=app.win.document;
  d.querySelector('.bcpe-launch').click();await wait();
- assert.equal(d.querySelector('.bcpe-toolbar [data-insert] option[value="law"]'),null);
+ const menu=d.querySelector('.bcpe-toolbar [data-insert]');
+ assert.ok(menu.querySelector('option[value="law"]'));
+ menu.value='law';menu.dispatchEvent(new app.win.Event('change',{bubbles:true}));
+ const modal=d.querySelector('.bcpe-law-edit-panel');
+ assert.ok(modal);
+ assert.equal(modal.querySelector('select[aria-label="Lei pronta para inserir"]').disabled,true);
+ modal.querySelector('button:not(.bcpe-primary)').click();
  app.cleanup();
 });
-
 
 test('M1: inserir card após o parágrafo selecionado, dividindo a prosa sem mudar texto',async()=>{
  const a=await setup('Constitucional','admin',null,1),d=a.win.document;
@@ -331,4 +331,88 @@ test('M1: arrastar Lei Seca e cards pelo mouse reordena blocos sem alterar artig
  assert.ok(payload.indexOf('Parágrafo de introdução.')<payload.indexOf('Art. 1º Intacto'));
  assert.doesNotMatch(payload,/bcpe-drag-handle|bcpe-drag-target|draggable="true"/);
  a.cleanup();
+});
+
+
+
+async function setupLawFull(subject='Constitucional',catalog=null){
+ const cf=subject==='Constitucional';
+ const view=cf
+  ?'<div class="cf-native-overlay"><div class="cf-native-shell"><header><b>Direito Constitucional</b><small>Módulo 1</small></header></div><div class="cf-native-reader"><aside></aside><article><p id="intro">Comentário do art. 1º.</p><p id="second">Segundo parágrafo preservado.</p></article></div></div>'
+  :'<div class="bc-native-reader-overlay"><div class="bc-native-reader-title"><b>Direito Civil</b><small>Módulo 1</small></div><div class="bc-native-reader-tools"></div><article class="bc-native-article"><p>Primeiro parágrafo do material.</p><p>Segundo parágrafo.</p></article></div>';
+ const dom=new JSDOM('<!doctype html><html><body>'+view+'</body></html>',{url:'https://example.test/central-v119.html',runScripts:'outside-only',pretendToBeVisual:true});
+ const win=dom.window,calls=[];
+ win.MutationObserver=class{observe(){}disconnect(){}};
+ win.confirm=()=>true;
+ win.BC_CF_GUIDED_LAW=catalog||undefined;
+ win.fetch=async(url,options={})=>{
+  calls.push({url:String(url),options});
+  if(String(url).startsWith('/api/auth'))return{ok:true,json:async()=>({authenticated:true,user:{role:'admin'}})};
+  if(options.method==='POST')return{ok:true,json:async()=>({ok:true,revision:30})};
+  return{ok:true,json:async()=>({exists:false})};
+ };
+ win.eval(premium);await wait();
+ const launch=win.document.querySelector('.bcpe-launch');
+ assert.ok(launch,'botão do Editor Premium ausente no conteúdo completo');
+ launch.click();await wait();
+ return {win,dom,calls,close(){win.close()}};
+}
+
+test('Conteúdo completo Constitucional: + Inserir inclui Lei Seca pronta do catálogo existente',async()=>{
+ const catalog={'1':{'1':[['CF/88, art. 2º',['Art. 2º São Poderes da União, independentes e harmônicos entre si, o Legislativo, o Executivo e o Judiciário.']]],
+  '9':[['CF/88, art. 1º',['Art. 1º A República Federativa do Brasil constitui-se em Estado Democrático de Direito.','I - a soberania;','II - a cidadania;']]]}};
+ const app=await setupLawFull('Constitucional',catalog),d=app.win.document;
+ const menu=d.querySelector('[data-insert]');
+ assert.ok(menu.querySelector('option[value="law"]'),'Lei Seca deve estar disponível no conteúdo completo');
+ const intro=d.querySelector('.bcpe-workspace #intro');
+ intro.dispatchEvent(new app.win.MouseEvent('pointerdown',{bubbles:true}));
+ menu.value='law';menu.dispatchEvent(new app.win.Event('change',{bubbles:true}));
+ const panel=d.querySelector('.bcpe-law-edit-panel');
+ assert.ok(panel,'deve abrir escolha de legislação pronta');
+ const presets=panel.querySelector('select[aria-label="Lei pronta para inserir"]');
+ assert.ok(presets);
+ assert.equal(presets.options.length,3,'duas leis cadastradas e opção manual');
+ assert.match(panel.querySelector('textarea').value,/Art. 1º A República Federativa/,'deve abrir a lei sugerida já preenchida');
+ assert.match(panel.querySelector('textarea').value,/II - a cidadania/,'preservar incisos sem resumir');
+ panel.querySelector('button.bcpe-primary').click();
+ assert.equal(d.querySelector('.bcpe-law-edit-panel'),null);
+ const root=d.querySelector('.bcpe-workspace');
+ const sections=Array.from(root.children);
+ const pos=sections.findIndex(b=>b.querySelector('details.bc-m01-lei-seca'));
+ assert.ok(pos>0,'Lei Seca deve ser inserida após o parágrafo selecionado');
+ assert.match(sections[pos-1].textContent,/Comentário do art. 1º/);
+ assert.match(sections[pos+1].textContent,/Segundo parágrafo preservado/);
+ const law=root.querySelector('details.bc-m01-lei-seca');
+ assert.equal(law.querySelectorAll('details').length,0,'não criar aba dentro de aba');
+ assert.equal(law.querySelectorAll('.bc-m01-lei-art p').length,3);
+ assert.ok(law.querySelector('.bcpe-drag-handle'),'a Lei Seca também deve permitir arrastar');
+ d.querySelector('[data-action="publish"]').click();await wait();
+ const saved=app.calls.find(c=>c.options.method==='POST');
+ assert.ok(saved);
+ const html=JSON.parse(saved.options.body).html;
+ assert.match(html,/CF\/88, art\. 1º/);
+ assert.match(html,/II - a cidadania/);
+ assert.doesNotMatch(html,/bcpe-drag-handle|bcpe-drag-target/,'não publicar controles');
+ app.close();
+});
+
+test('Conteúdo completo Civil: Lei Seca pode ser criada manualmente sem inventar legislação',async()=>{
+ const app=await setupLawFull('Civil'),d=app.win.document;
+ const menu=d.querySelector('[data-insert]');
+ assert.ok(menu.querySelector('option[value="law"]'));
+ menu.value='law';menu.dispatchEvent(new app.win.Event('change',{bubbles:true}));
+ const panel=d.querySelector('.bcpe-law-edit-panel');
+ assert.ok(panel);
+ assert.equal(panel.querySelector('select[aria-label="Lei pronta para inserir"]').disabled,true,'sem fonte local não criar lei fictícia');
+ assert.equal(panel.querySelector('textarea').value,'');
+ panel.querySelector('input[aria-label="Título da Lei Seca"]').value='Ver lei seca — artigo indicado';
+ panel.querySelector('input[aria-label="Identificação do dispositivo"]').value='Dispositivo informado pelo professor';
+ let area=panel.querySelector('textarea');area.value='Texto oficial fornecido pelo professor.\nParágrafo adicional.';
+ area.dispatchEvent(new app.win.Event('input',{bubbles:true}));
+ panel.querySelector('button.bcpe-primary').click();
+ const law=d.querySelector('.bcpe-workspace details.bc-m01-lei-seca');
+ assert.ok(law);
+ assert.equal(law.querySelectorAll('.bc-m01-lei-art p').length,2);
+ assert.match(law.textContent,/Texto oficial fornecido pelo professor/);
+ app.close();
 });
