@@ -121,40 +121,40 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
       [
         "Título judicial e extrajudicial não seguem o mesmo percurso",
         [
-          "O título executivo judicial, em regra, conduz ao cumprimento de sentença, estudado no M14. O título extrajudicial dá origem a processo de execução, como ocorre com determinados documentos previstos no art. 784. Em ambos os casos, a obrigação deve ser certa, líquida e exigível, observadas as regras legais.",
-          "Certeza identifica a obrigação; liquidez permite determinar seu conteúdo ou valor; exigibilidade indica que já pode ser cobrada. Uma obrigação sujeita a termo ainda não ocorrido pode não ser exigível, mesmo que esteja descrita com precisão."
+          "O título executivo judicial, em regra, conduz ao cumprimento de sentença, estudado no M14. O título extrajudicial dá origem a processo de execução, como ocorre com os documentos previstos no art. 784 ou em outra lei que lhes atribua força executiva (art. 784, XII). A Lei nº 14.711/2023 incluiu nesse rol o contrato de contragarantia (inciso XI-A). Em ambos os casos, a obrigação deve ser certa, líquida e exigível, observadas as regras legais.",
+          "Certeza identifica a obrigação; liquidez permite determinar seu conteúdo ou valor; exigibilidade indica que já pode ser cobrada. Obrigação sujeita a termo ou condição pendentes não é exigível; o exequente deve provar que se verificou a condição ou ocorreu o termo (art. 798, I, c)."
         ],
         "Exemplo: contrato que representa título extrajudicial pode permitir execução direta, mas somente se atender aos requisitos do Código."
       ],
       [
         "Efetividade e menor onerosidade",
         [
-          "A execução é realizada no interesse do exequente, mas não autoriza qualquer sacrifício do devedor. A regra da menor onerosidade do art. 805 deve ser combinada com a efetividade: havendo meios igualmente eficazes, privilegia-se o menos gravoso, cabendo ao executado indicar a alternativa quando sustenta excesso.",
-          "Medidas coercitivas procuram pressionar o cumprimento; medidas sub-rogatórias realizam o resultado independentemente da vontade do devedor. Medidas atípicas exigem fundamentação, proporcionalidade, contraditório e adequação ao caso, não funcionando como punição automática por inadimplência."
+          "A execução é realizada no interesse do exequente, mas não autoriza qualquer sacrifício do devedor. A regra da menor onerosidade do art. 805 deve ser combinada com a efetividade: havendo meios igualmente eficazes, privilegia-se o menos gravoso, cabendo ao executado, ao alegar medida mais gravosa, indicar meios mais eficazes e menos onerosos, sob pena de manutenção dos atos já determinados (art. 805, parágrafo único).",
+          "Medidas coercitivas procuram pressionar o cumprimento; medidas sub-rogatórias realizam o resultado independentemente da vontade do devedor. Medidas atípicas (art. 139, IV) exigem fundamentação, proporcionalidade, contraditório e adequação ao caso, não funcionando como punição automática por inadimplência."
         ],
         "Exemplo: se duas formas de penhora satisfazem o crédito com igual eficácia, pode fazer sentido escolher a que causa menor restrição ao executado."
       ],
       [
         "Responsabilidade patrimonial e fraude à execução",
         [
-          "Como regra, o devedor responde com seus bens presentes e futuros, respeitadas as limitações legais. Terceiros podem ter patrimônio atingido apenas nas hipóteses previstas na lei; a responsabilidade de sócios não decorre automaticamente da mera existência de dívida societária.",
-          "Fraude à execução é instituto próprio: determinados atos de disposição patrimonial tornam-se ineficazes perante o exequente quando presentes requisitos legais. Não confunda isso com nulidade absoluta da venda em qualquer relação jurídica."
+          "O devedor responde com todos os seus bens presentes e futuros, salvo as restrições legais (art. 789). Terceiros podem ter patrimônio atingido apenas nas hipóteses previstas na lei; a responsabilidade de sócios não decorre automaticamente da mera existência de dívida societária.",
+          "Fraude à execução é instituto próprio: nos casos do art. 792, a alienação em fraude à execução é ineficaz em relação ao exequente (§ 1º). Antes de declará-la, o juiz deve intimar o terceiro adquirente, que pode opor embargos de terceiro em 15 dias (§ 4º). Súmula 375 do STJ: \"O reconhecimento da fraude à execução depende do registro da penhora do bem alienado ou da prova de má-fé do terceiro adquirente.\" Não confunda isso com nulidade absoluta da venda em qualquer relação jurídica."
         ],
         "Exemplo: alienar bem durante demanda capaz de conduzir à insolvência pode levantar discussão sobre fraude à execução, mas a análise exige os requisitos específicos e proteção de terceiros."
       ],
       [
         "Obrigações de entregar, fazer e não fazer",
         [
-          "Nem toda execução é cobrança de dinheiro. Na entrega de coisa certa, a tutela pode conduzir à busca e apreensão de bem móvel ou à imissão na posse do imóvel. Obrigações de fazer podem ser fungíveis, quando terceiro pode executá-las, ou infungíveis, quando a prestação é personalíssima.",
-          "Na obrigação de não fazer, a finalidade costuma ser impedir ou desfazer conduta vedada. Multas coercitivas podem incentivar o cumprimento, mas precisam ser adequadas e não se confundem automaticamente com indenização."
+          "Nem toda execução é cobrança de dinheiro. Na entrega de coisa certa fundada em título extrajudicial, o executado é citado para satisfazer a obrigação em 15 dias; do mandado consta a ordem de busca e apreensão (bem móvel) ou de imissão na posse (bem imóvel), a ser cumprida se a obrigação não for satisfeita nesse prazo (art. 806, § 2º). Obrigações de fazer podem ser fungíveis, quando terceiro pode executá-las, ou infungíveis, quando a prestação é personalíssima.",
+          "Na obrigação de não fazer, a finalidade costuma ser impedir ou desfazer conduta vedada. Na execução extrajudicial de fazer ou não fazer, o juiz fixará multa por atraso ao despachar a inicial (art. 814). Multas coercitivas incentivam o cumprimento, mas precisam ser adequadas e não se confundem automaticamente com indenização."
         ],
         "Exemplo: retirada de obra irregular pode envolver desfazimento do ato; entrega de automóvel específico pede providência diferente de pagamento de quantia."
       ],
       [
         "Ritos especiais contra Fazenda e em alimentos",
         [
-          "A execução fundada em título extrajudicial contra a Fazenda Pública tem disciplina própria no art. 910, inclusive prazo específico para embargos e pagamento mediante o regime constitucional. O simples uso de título extrajudicial não impede execução contra ente público.",
-          "Alimentos executivos também possuem mecanismos especiais, inclusive coerção pessoal em hipóteses estritas. A Lei 15.479/2026 trouxe inovação com início de vigência futuro; em novembro de 2026 não se deve aplicar antecipadamente seu art. 529-A ou a alteração correlata do art. 913."
+          "A execução fundada em título extrajudicial contra a Fazenda Pública tem disciplina própria no art. 910, inclusive prazo de 30 dias para embargos e pagamento por precatório ou requisição de pequeno valor (art. 910, § 1º). Súmula 279 do STJ: \"É cabível execução por título extrajudicial contra a Fazenda Pública.\"",
+          "Na execução de alimentos fundada em título extrajudicial, o executado é citado para pagar em 3 dias, provar que pagou ou justificar a impossibilidade (art. 911), com coerção pessoal em hipóteses estritas. A Lei nº 15.479/2026 tem vigência futura (um ano após a publicação); em novembro de 2026 não se deve aplicar antecipadamente o art. 529-A que ela acrescenta ao CPC (transferência automática da prestação alimentícia) nem a alteração do art. 913."
         ],
         "Exemplo: cobrança de alimentos fundada em título extrajudicial não deve ser tratada como execução comum de cheque sem examinar o rito adequado."
       ]
@@ -200,7 +200,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "Que patrimônio pode responder?",
           [
-            "O devedor responde em regra com seus bens presentes e futuros, respeitadas limitações legais. A proteção de determinados bens e a responsabilidade excepcional de terceiros exigem regras próprias.",
+            "O devedor responde com todos os seus bens presentes e futuros, salvo as restrições legais (art. 789). A proteção de determinados bens e a responsabilidade excepcional de terceiros exigem regras próprias.",
             "Se ele vende patrimônio durante demanda, pode surgir discussão sobre fraude à execução, observados requisitos e proteção de terceiros. Isso não torna toda venda feita por devedor automaticamente nula. É preciso conectar o ato às condições legais."
           ],
           "Pergunta: dívida empresarial permite automaticamente penhorar qualquer bem particular dos sócios?",
@@ -219,7 +219,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
           "Por que existem regimes especiais?",
           [
             "Alimentos podem envolver meios coercitivos próprios em hipóteses estritas. A Fazenda Pública segue disciplina particular de pagamento, inclusive precatório ou requisição de pequeno valor quando aplicável. Essas regras mostram que não há uma execução única para qualquer devedor.",
-            "Em provas, raciocine nesta ordem: título → certeza, liquidez e exigibilidade → natureza da obrigação → sujeito executado → meio de satisfação e defesa cabível."
+            "Ao analisar um caso, raciocine nesta ordem: título → certeza, liquidez e exigibilidade → natureza da obrigação → sujeito executado → meio de satisfação e defesa cabível."
           ],
           "Pergunta: o mesmo rito é usado indistintamente para alimentos, Fazenda e dívida contratual comum?",
           "Não. O CPC prevê procedimentos específicos."
