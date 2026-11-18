@@ -1,12 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync, readdirSync } from 'node:fs';
 import { CONCURSOS_2026_SEED, RESEARCH_REJECTIONS } from '../lib/concursos-seed.js';
-import { coverage, normalizeContest } from '../api/concursos.js';
+import { coverage, normalizeContest } from '../lib/concursos-handler.js';
 
 test('pesquisa inicial possui 15 a 20 candidatos e catálogo não duplica ids', () => {
   const researched = CONCURSOS_2026_SEED.length + RESEARCH_REJECTIONS.length;
   assert.ok(researched >= 15 && researched <= 20, `foram pesquisados ${researched}`);
   assert.equal(new Set(CONCURSOS_2026_SEED.map((item) => item.id)).size, CONCURSOS_2026_SEED.length);
+});
+
+test('catálogo reutiliza função existente e respeita o limite Hobby da Vercel', () => {
+  const apiFiles = readdirSync(new URL('../api/', import.meta.url)).filter((name) => name.endsWith('.js'));
+  assert.ok(apiFiles.length <= 12, `foram encontradas ${apiFiles.length} funções`);
+  assert.ok(!apiFiles.includes('concursos.js'));
+  const config = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+  assert.ok(config.rewrites.some((rule) => rule.source === '/api/concursos' && rule.destination === '/api/objective?resource=concursos'));
 });
 
 test('todo concurso publicado tem edital e fonte oficial HTTPS', () => {

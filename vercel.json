@@ -8,6 +8,10 @@
   },
   "rewrites": [
     {
+      "source": "/api/concursos",
+      "destination": "/api/objective?resource=concursos"
+    },
+    {
       "source": "/api/study-communication",
       "destination": "/api/auth?bc_api=study-communication"
     },
