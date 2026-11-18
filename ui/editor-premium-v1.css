@@ -174,5 +174,16 @@ body.bcpe-open{overflow:hidden!important}
 .bcpe-law-actions .bcpe-law-danger{color:#fff;background:#a3432d;border-color:#a3432d}
 .bcpe-law-actions .bcpe-law-danger:hover{background:#883624}
 .bcpe-law-actions button:disabled{opacity:.5;cursor:not-allowed}
+.bcpe-law-edit-panel{width:min(780px,100%);max-height:94vh}
+.bcpe-law-input-label{display:flex;flex-direction:column;gap:6px;margin:8px 0 10px;color:#21425e;font-size:13px;font-weight:700}
+.bcpe-law-input-label input,.bcpe-law-input-label textarea,.bcpe-law-input-label select{width:100%;box-sizing:border-box;border:1px solid #b9d2e2;border-radius:9px;padding:10px 12px;background:#fff;color:#17314b;font:400 15px/1.55 system-ui,-apple-system,sans-serif}
+.bcpe-law-input-label textarea{min-height:125px;resize:vertical;white-space:pre-wrap}
+.bcpe-law-edit-entries{display:flex;flex-direction:column;gap:11px;min-height:95px;overflow-y:auto;overscroll-behavior:contain;padding:3px;margin:5px 0 12px;flex:1}
+.bcpe-law-edit-row{flex:0 0 auto;border:1px solid #dae6ee;background:#f8fbfd;border-radius:11px;padding:10px 13px}
+.bcpe-law-edit-row-actions,.bcpe-law-edit-tools{display:flex;flex-wrap:wrap;gap:9px;margin:8px 0 10px}
+.bcpe-law-edit-panel button{border:1px solid #b8d5e5;border-radius:8px;background:#eef7fc;color:#164d74;cursor:pointer;padding:9px 13px;font:650 13px system-ui,sans-serif}
+.bcpe-law-edit-panel .bcpe-primary{background:#124d77;border-color:#124d77;color:#fff}
+.bcpe-law-edit-panel .bcpe-law-danger{background:#fff4f2;color:#a3432d;border-color:#e1b5ac}
+.bcpe-law-edit-panel .bcpe-law-foot{margin:2px 0 10px;line-height:1.5}
 .bcpe-law-panel button:focus-visible,.bcpe-law-panel input:focus-visible{outline:3px solid #68adca;outline-offset:2px}
 @media(max-width:620px){.bcpe-law-backdrop{padding:8px}.bcpe-law-panel{max-height:96vh;padding:17px 14px}.bcpe-law-actions button{flex:1 1 auto}}

@@ -73,10 +73,11 @@ test('CF M01: dispositivos ausentes aparecem, repetidos são consolidados e grup
  }
  const group=topics[4].querySelector('.bc-m01-lei-seca');
  assert.match(group.querySelector(':scope > summary').textContent,/e mais 2/);
- const nested=group.querySelectorAll('details.bc-m01-lei-item');
- assert.equal(nested.length,3,'cada lei adicional deve ter uma abertura própria');
- group.open=true;nested[1].open=true;
- assert.ok(nested[1].querySelectorAll('p').length>0,'item adicional deve abrir seu texto');
+ const sections=group.querySelectorAll('section.bc-m01-lei-item');
+ assert.equal(sections.length,3,'cada artigo é uma seção visível na única aba');
+ assert.equal(group.querySelectorAll('details').length,0,'não criar abas aninhadas');
+ group.open=true;
+ assert.ok(sections[1].querySelectorAll('p').length>0,'conteúdo do artigo deve permanecer visível');
  assert.doesNotMatch(topics[9].querySelector('.bc-m01-lei-seca > summary').textContent,/e mais/,'art. 1º duplicado');
  assert.equal(topics[7].querySelector('.bc-m01-lei-seca'),null,'art. 60 indevido em mutação');
  w.close();
@@ -104,5 +105,29 @@ test('CF M01: revisão 20 publicada mantém os textos e adiciona somente leis se
  const future=w.document.createElement('div');future.innerHTML=old;
  assert.equal(w.BcCfGuidedReader.reconcileM01Dom(future,21),false,'publicações posteriores não devem ser alteradas');
  assert.equal(future.innerHTML,old);
+ w.close();
+});
+
+
+test('CF M01: publicação com lei seca aninhada e sem título é normalizada sem perder o texto',()=>{
+ const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test',runScripts:'outside-only'});
+ const w=dom.window;
+ w.eval(read('content/cf/m01-teoria-guiada-data.js'));
+ w.eval(read('content/cf/cf-teoria-guiada-lei-seca.js'));
+ w.eval(read('content/cf/m01-lei-seca-patch.js'));
+ w.eval(read('content/cf/cf-teoria-guiada-reader-v1.js'));
+ const root=w.document.createElement('article');
+ root.innerHTML='<section class="bc-m01-topic"><h2 id="bc-guided-title-1-9">Art. 1º</h2>'+
+  '<p>Texto autoral preservado.</p><details class="bc-m01-lei-seca">'+
+  '<details class="bc-m01-lei-item"><div class="bc-m01-lei-art"><p>Art. 1º Texto original.</p><p>I - Soberania.</p></div></details>'+
+  '</details></section>';
+ const originalParagraphs=Array.from(root.querySelectorAll('.bc-m01-lei-art p')).map(p=>p.textContent);
+ assert.equal(w.BcCfGuidedReader.reconcileM01Dom(root,21),true);
+ const group=root.querySelector('.bc-m01-lei-seca');
+ assert.ok(group.querySelector(':scope > summary'),'deve criar o título externo ausente');
+ assert.equal(group.querySelectorAll('details').length,0,'lei seca deve ter apenas uma aba');
+ assert.equal(group.querySelectorAll('section.bc-m01-lei-item').length,1);
+ assert.deepEqual(Array.from(root.querySelectorAll('.bc-m01-lei-art p')).map(p=>p.textContent),originalParagraphs);
+ assert.match(root.textContent,/Texto autoral preservado/);
  w.close();
 });
