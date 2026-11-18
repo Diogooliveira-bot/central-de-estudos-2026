@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { JSDOM } from 'jsdom';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -54,4 +55,28 @@ test('CF: leitor de revisão é substituído sem botão de piloto, sem tocar nos
  assert.ok(reader.includes('bc-m01-checklist'));
  assert.ok(reader.includes('localStorage'));
  assert.ok(reader.includes('const MIN=1,MAX=15'));
+});
+
+test('CF M01: dispositivos ausentes aparecem, repetidos são consolidados e grupos abrem individualmente',()=>{
+ const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test',runScripts:'outside-only',pretendToBeVisual:true});
+ const w=dom.window;
+ w.eval(read('content/cf/m01-teoria-guiada-data.js'));
+ w.eval(read('content/cf/cf-teoria-guiada-lei-seca.js'));
+ w.eval(read('content/cf/cf-teoria-guiada-reader-v1.js'));
+ assert.equal(w.BcCfGuidedReader.open(1),true);
+ const topics=w.document.querySelectorAll('.bc-m01-topic');
+ assert.equal(topics.length,13);
+ for(const [index,part] of [[1,'art. 242'],[3,'art. 5º, § 3º'],[4,'art. 103, § 2º'],[6,'LINDB']]){
+  const label=topics[index].querySelector('.bc-m01-lei-seca > summary')?.textContent||'';
+  assert.ok(label.includes(part),'falta a referência '+part+' no tópico '+index);
+ }
+ const group=topics[4].querySelector('.bc-m01-lei-seca');
+ assert.match(group.querySelector(':scope > summary').textContent,/e mais 2/);
+ const nested=group.querySelectorAll('details.bc-m01-lei-item');
+ assert.equal(nested.length,3,'cada lei adicional deve ter uma abertura própria');
+ group.open=true;nested[1].open=true;
+ assert.ok(nested[1].querySelectorAll('p').length>0,'item adicional deve abrir seu texto');
+ assert.doesNotMatch(topics[9].querySelector('.bc-m01-lei-seca > summary').textContent,/e mais/,'art. 1º duplicado');
+ assert.equal(topics[7].querySelector('.bc-m01-lei-seca'),null,'art. 60 indevido em mutação');
+ w.close();
 });
