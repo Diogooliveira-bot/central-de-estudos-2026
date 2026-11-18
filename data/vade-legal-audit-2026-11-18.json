@@ -1,0 +1,419 @@
+{
+  "generatedAt": "2026-11-18T00:00:00-03:00",
+  "scope": "Vade Mecum da Base Completa",
+  "summary": {
+    "lawsInventoried": 31,
+    "lawsVerified": 9,
+    "lawsPendingFullVerification": 22,
+    "articlesBefore": 5854,
+    "articlesAfter": 6407,
+    "correctedDevices": 56,
+    "addedArticlesAndDevices": 560
+  },
+  "laws": [
+    {
+      "id": "cc",
+      "name": "Código Civil",
+      "status": "inventory",
+      "articleCount": 2077,
+      "previousArticleCount": 2077,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "cf",
+      "name": "Constituição Federal",
+      "status": "verified",
+      "articleCount": 276,
+      "previousArticleCount": 276,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://legis.senado.leg.br/norma/44187742/publicacao/44190103",
+        "https://legis.senado.leg.br/norma/44184944/publicacao/44189027"
+      ],
+      "update": "EC 140/2026 e EC 141/2026"
+    },
+    {
+      "id": "cp",
+      "name": "Código Penal",
+      "status": "inventory",
+      "articleCount": 431,
+      "previousArticleCount": 431,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "cpc",
+      "name": "Código de Processo Civil",
+      "status": "inventory",
+      "articleCount": 1073,
+      "previousArticleCount": 1073,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "cpp",
+      "name": "Código de Processo Penal",
+      "status": "inventory",
+      "articleCount": 828,
+      "previousArticleCount": 828,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "dl200",
+      "name": "Organização da Administração Federal",
+      "status": "inventory",
+      "articleCount": 193,
+      "previousArticleCount": 193,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0200.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l11079",
+      "name": "Lei das Parcerias Público-Privadas",
+      "status": "inventory",
+      "articleCount": 33,
+      "previousArticleCount": 33,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l11079.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l12527",
+      "name": "Lei de Acesso à Informação",
+      "status": "inventory",
+      "articleCount": 47,
+      "previousArticleCount": 47,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l12846",
+      "name": "Lei Anticorrupção",
+      "status": "inventory",
+      "articleCount": 31,
+      "previousArticleCount": 31,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12846.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l13303",
+      "name": "Lei das Estatais",
+      "status": "inventory",
+      "articleCount": 98,
+      "previousArticleCount": 98,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13303.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l13460",
+      "name": "Lei dos Usuários de Serviços Públicos",
+      "status": "inventory",
+      "articleCount": 26,
+      "previousArticleCount": 26,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l14133",
+      "name": "Nova Lei de Licitações e Contratos",
+      "status": "inventory",
+      "articleCount": 208,
+      "previousArticleCount": 208,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l8112",
+      "name": "Estatuto dos Servidores Federais",
+      "status": "inventory",
+      "articleCount": 263,
+      "previousArticleCount": 263,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/leis/l8112cons.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l8429",
+      "name": "Lei de Improbidade Administrativa",
+      "status": "inventory",
+      "articleCount": 32,
+      "previousArticleCount": 32,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/leis/l8429.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l8987",
+      "name": "Lei de Concessões e Permissões",
+      "status": "inventory",
+      "articleCount": 52,
+      "previousArticleCount": 52,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/leis/l8987compilada.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l9784",
+      "name": "Lei do Processo Administrativo Federal",
+      "status": "inventory",
+      "articleCount": 80,
+      "previousArticleCount": 80,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/leis/l9784.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "lindb",
+      "name": "Lei de Introdução às Normas do Direito Brasileiro",
+      "status": "inventory",
+      "articleCount": 30,
+      "previousArticleCount": 30,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/decreto-lei/del4657compilado.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l13019",
+      "name": "Marco Regulatório das Organizações da Sociedade Civil",
+      "status": "verified",
+      "articleCount": 100,
+      "previousArticleCount": 14,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm"
+      ],
+      "update": "substituição do recorte por texto integral oficial"
+    },
+    {
+      "id": "l13709",
+      "name": "Lei Geral de Proteção de Dados",
+      "status": "verified",
+      "articleCount": 79,
+      "previousArticleCount": 13,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm"
+      ],
+      "update": "substituição do recorte por texto integral oficial"
+    },
+    {
+      "id": "l7960",
+      "name": "Lei da Prisão Temporária",
+      "status": "verified",
+      "articleCount": 7,
+      "previousArticleCount": 4,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://legis.senado.leg.br/norma/549836/publicacao/34619907"
+      ],
+      "update": "substituição do recorte por texto integral oficial"
+    },
+    {
+      "id": "l9099crim",
+      "name": "Lei dos Juizados Especiais",
+      "status": "verified",
+      "articleCount": 99,
+      "previousArticleCount": 8,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://legis.senado.leg.br/norma/550975/publicacao/34619631"
+      ],
+      "update": "substituição do recorte por texto integral oficial"
+    },
+    {
+      "id": "l10259",
+      "name": "Lei dos Juizados Especiais Federais",
+      "status": "verified",
+      "articleCount": 27,
+      "previousArticleCount": 3,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://legis.senado.leg.br/norma/552135/publicacao/34620788"
+      ],
+      "update": "substituição do recorte por texto integral oficial"
+    },
+    {
+      "id": "l7210",
+      "name": "Lei de Execução Penal",
+      "status": "verified",
+      "articleCount": 219,
+      "previousArticleCount": 6,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://legis.senado.leg.br/norma/549086/publicacao/34619809"
+      ],
+      "update": "substituição do recorte por texto integral oficial"
+    },
+    {
+      "id": "ce9826",
+      "name": "Estatuto dos Servidores Públicos do Ceará",
+      "status": "inventory",
+      "articleCount": 8,
+      "previousArticleCount": 8,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www2.al.ce.gov.br/legislativo/legislacao5/leis74/9826.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "ce_lc12",
+      "name": "SUPSEC — Previdência dos Servidores do Ceará",
+      "status": "inventory",
+      "articleCount": 2,
+      "previousArticleCount": 2,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www2.al.ce.gov.br/legislativo/ementario/lc12.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "ce_lc210",
+      "name": "Reforma da Previdência do Ceará",
+      "status": "inventory",
+      "articleCount": 3,
+      "previousArticleCount": 3,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www2.al.ce.gov.br/legislativo/ementario/lc210"
+      ],
+      "update": null
+    },
+    {
+      "id": "ce_lc184",
+      "name": "Cearaprev",
+      "status": "inventory",
+      "articleCount": 2,
+      "previousArticleCount": 2,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www2.al.ce.gov.br/legislativo/ementario/lc184.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "ce_lc185",
+      "name": "CE-Prevcom",
+      "status": "inventory",
+      "articleCount": 2,
+      "previousArticleCount": 2,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www2.al.ce.gov.br/legislativo/ementario/lc185.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "ce16397",
+      "name": "Lei de Organização Judiciária do Ceará",
+      "status": "inventory",
+      "articleCount": 7,
+      "previousArticleCount": 7,
+      "verifiedAt": null,
+      "inventoriedAt": "2026-11-18",
+      "sourceUrls": [
+        "https://www2.al.ce.gov.br/legislativo/legislacao5/leis2017/16397.htm"
+      ],
+      "update": null
+    },
+    {
+      "id": "l13869",
+      "name": "Lei de Abuso de Autoridade",
+      "status": "verified",
+      "articleCount": 46,
+      "previousArticleCount": 2,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13869compilado.htm"
+      ],
+      "update": "substituição do recorte por texto integral oficial"
+    },
+    {
+      "id": "l9613",
+      "name": "Lei de Lavagem de Dinheiro",
+      "status": "verified",
+      "articleCount": 28,
+      "previousArticleCount": 2,
+      "verifiedAt": "2026-11-18",
+      "inventoriedAt": null,
+      "sourceUrls": [
+        "https://legis.senado.leg.br/norma/551489/publicacao/34619710"
+      ],
+      "update": "substituição do recorte por texto integral oficial"
+    }
+  ]
+}
