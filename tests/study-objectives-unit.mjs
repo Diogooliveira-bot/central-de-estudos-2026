@@ -54,7 +54,7 @@ function setup(storage = makeStorage()) {
 }
 
 const settle = (window) => new Promise((resolve) => window.setTimeout(resolve, 25));
-function openArea(w,id){w.document.querySelector('[data-study-area="'+id+'"]').click()}
+function openArea(w,id){w.document.querySelector('[data-study-careers]')?.click();w.document.querySelector('[data-study-area="'+id+'"]').click()}
 function chooseRole(w,id){w.document.querySelector('[data-study-role="'+id+'"]').click();w.document.querySelector('[data-study-confirm="'+id+'"]').click()}
 function chooseFree(w,ids){w.document.querySelector('[data-study-free]').click();for(const id of ids)w.document.querySelector('input[name="studyFreeSubject"][value="'+id+'"]').checked=true;w.document.querySelector('[data-study-save-free]').click()}
 
@@ -68,17 +68,22 @@ test('catálogo TJPB possui dez blocos oficiais e sem links fictícios para prep
   dom.window.close();
 });
 
-test('boas-vindas: Estudo livre primeiro, perfis padrão, editais cadastrados e pedido de edital',async()=>{
+test('boas-vindas: três caminhos diretos, carreira e editais em telas separadas',async()=>{
   const storage=makeStorage({'central-v6:done:cf-m01':'1'});
   const {dom}=setup(storage),w=dom.window;
   await settle(w);
   assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Bem-vindo à Base Completa/);
-  assert.equal(w.document.querySelectorAll('[data-study-area]').length,9);
+  assert.equal(w.document.querySelectorAll('.study-start-choice').length,3);
   const free=w.document.querySelector('[data-study-free]');
   assert.ok(free);
-  assert.ok(free.compareDocumentPosition(w.document.querySelector('[data-study-area]')) & 4,'Estudo livre vem antes dos perfis padrão');
-  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,2,'editais cadastrados aparecem na primeira tela');
-  assert.ok(w.document.querySelector('[data-study-exam-request] input[name="exam"]'),'campo para pedir um edital');
+  assert.ok(free.compareDocumentPosition(w.document.querySelector('[data-study-careers]')) & 4,'Estudo livre vem primeiro');
+  assert.equal(w.document.querySelectorAll('[data-study-area],[data-study-exam]').length,0,'detalhes ficam no caminho escolhido');
+  w.document.querySelector('[data-study-exams]').click();
+  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,2,'objetivos antigos continuam na prévia sem API');
+  assert.ok(w.document.querySelector('[data-study-exam-request] input[name="exam"]'),'pedido de concurso permanece');
+  w.document.querySelector('[data-study-back]').click();
+  w.document.querySelector('[data-study-careers]').click();
+  assert.equal(w.document.querySelectorAll('[data-study-area]').length,9);
   assert.equal(w.document.querySelector('#studyObjectiveTopbar'),null);
   const settings=w.document.querySelector('#studySettingsObjective');
   assert.ok(settings);
@@ -91,6 +96,7 @@ test('boas-vindas: Estudo livre primeiro, perfis padrão, editais cadastrados e 
   assert.equal(w.document.querySelectorAll('#disciplineGrid .study-objective-card--pending').length,3);
   w.document.querySelector('#studySettingsObjective [data-settings-change-objective]').click();
   assert.ok(w.document.querySelector('#studyObjectiveDialog'));
+  w.document.querySelector('[data-study-careers]').click();
   openArea(w,'judiciaria');
   chooseRole(w,'career-tribunais-tecnico');
   await settle(w);
@@ -108,6 +114,29 @@ test('boas-vindas: Estudo livre primeiro, perfis padrão, editais cadastrados e 
   assert.equal(w.CentralStudyObjectives.questionDisciplineKeys(),null,'filtros e questões de todas as disciplinas ficam liberados');
   assert.equal(storage.getItem('central-v6:done:cf-m01'),'1');
   assert.equal(w.__fetchCalls,0);
+  dom.window.close();
+});
+
+test('editais autorizados vêm do catálogo ativo, com seleção de cargo e sem programa inventado', async () => {
+  const {dom} = setup(), w = dom.window;
+  w.__BASE_COMPLETA_PREVIEW_GUEST__ = false;
+  w.fetch = async (url) => ({ok:true,json:async () => String(url).includes('/api/concursos') ? {items:[
+    {id:'receita-federal-autorizado-2026',name:'Receita Federal',status:'previsto',active:true,cargos:[{name:'Analista-Tributário'},{name:'Auditor-Fiscal'}],subjects:[],sources:[{type:'autorizacao'}]},
+    {id:'bacen-autorizado-2026',name:'Banco Central',status:'previsto',active:true,cargos:[{name:'Auditor'},{name:'Técnico'},{name:'Procurador'}],subjects:[],sources:[{type:'autorizacao'}]},
+    {id:'tce-ce-monitoramento',name:'TCE-CE',status:'previsto',active:true,cargos:[{name:'Técnico'}],subjects:[],sources:[{url:'https://www.tce.ce.gov.br/imprensa/noticias/1911-edital-do-concurso-do-tce-ceara-sera-publicado-na-proxima-semana'}]},
+  ]} : {objectiveId:null}});
+  await settle(w);
+  w.document.querySelector('[data-study-exams]').click();
+  await settle(w);
+  const options = [...w.document.querySelectorAll('[data-study-exam]')];
+  assert.equal(options.length,5);
+  assert.doesNotMatch(w.document.querySelector('#studyObjectiveDialog').textContent,/TCE-CE/);
+  assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Autorizado, sem edital/);
+  options.find((option) => option.textContent.includes('Analista-Tributário')).click();
+  await settle(w);
+  assert.equal(w.CentralStudyObjectives.getActive(),'exam-catalog-receita-federal-autorizado-2026-cargo-1');
+  assert.equal(w.CentralStudyObjectives.catalog.goals[w.CentralStudyObjectives.getActive()].examSubjects.length,0);
+  assert.equal(w.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length,9,'as matérias da Central continuam acessíveis');
   dom.window.close();
 });
 
@@ -231,6 +260,7 @@ test('API do objetivo valida disciplinas, persiste JSONB e mantém dados ao muda
 
 test('pedido de edital: texto curto é recusado; prévia guarda local; conta envia PUT à API', async () => {
   const guest = setup(); const g = guest.dom.window; await settle(g);
+  g.document.querySelector('[data-study-exams]').click();
   const form = g.document.querySelector('[data-study-exam-request]');
   form.querySelector('input').value = 'ab';
   form.dispatchEvent(new g.Event('submit', { cancelable:true, bubbles:true })); await settle(g);
@@ -246,6 +276,7 @@ test('pedido de edital: texto curto é recusado; prévia guarda local; conta env
   const calls = [];
   w.fetch = async (url, opts = {}) => { calls.push({ url:String(url), method:opts.method || 'GET', body:opts.body }); return { ok:true, json:async () => ({ objectiveId:null, freeSubjectIds:null }) }; };
   await settle(w); w.CentralStudyObjectives.open(); await settle(w);
+  w.document.querySelector('[data-study-exams]').click();
   const f = w.document.querySelector('[data-study-exam-request]');
   f.querySelector('input').value = '  TRF 1ª Região <script> 2027 ';
   f.dispatchEvent(new w.Event('submit', { cancelable:true, bubbles:true })); await settle(w);

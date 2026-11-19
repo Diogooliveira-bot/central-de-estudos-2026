@@ -39,3 +39,11 @@ html[data-bc-reading-mode="night"] #cf-native-reader .cf-apostila h2,html[data-b
 .bc-m01-reader.cf-guided-editorial .bc-m01-paper{width:calc(100% - 20px);padding:19px 16px 60px}
 .bc-m01-reader.cf-guided-editorial .bc-m01-card p{font-size:0.9375rem!important;line-height:1.75!important}
 #cf-native-reader .cf-apostila .cf-apostila-law{padding-left:11px}#cf-native-reader .cf-apostila table{min-width:430px}}
+
+/* Lei seca constitucional contextual: ao lado do parágrafo, aberta nos incisos curtos. */
+#cf-native-reader .cf-apostila .cf-apostila-law-inline{margin:12px 0 23px;padding:2px 15px 4px;border-left:2px solid #92b6cc;background:#f8fbfd}
+#cf-native-reader .cf-apostila .cf-apostila-law-inline>summary{font-size:.85em;color:#285b7b;padding:10px 0}
+#cf-native-reader .cf-apostila .cf-apostila-law-inline .cf-apostila-law-body{padding:1px 0 10px;font-size:.93em}
+#cf-native-reader .cf-apostila .cf-apostila-law-inline .cf-apostila-law-body p:last-child{margin-bottom:0}
+html[data-bc-reading-mode="night"] #cf-native-reader .cf-apostila .cf-apostila-law-inline{background:rgba(255,255,255,.045)}
+@media(max-width:600px){#cf-native-reader .cf-apostila .cf-apostila-law-inline{padding:2px 11px 4px;margin:10px 0 20px}}
