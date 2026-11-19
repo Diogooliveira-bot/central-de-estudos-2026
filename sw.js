@@ -1,10 +1,10 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261117-law-selective-v1';
+var CACHE='central-20261119-cache-v1';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261117-law-selective-v1';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261119-cache-v1';
 var OFFLINE_READY='/central-offline-ready.json?v=20261022-online-first-recovery-v1';
 
 function publicPath(path){
@@ -264,6 +264,9 @@ self.addEventListener('fetch',function(event){
     // "no-cache": o navegador reaproveita o arquivo quando o servidor responde 304.
     var mode=request.cache==='no-store'||request.cache==='reload'?'no-store':'no-cache';
     var fromDevice=mode==='no-cache'&&versionedAsset(url);
+    // Arquivo com ?v= muda de endereço quando o conteúdo muda: o navegador pode reaproveitar a cópia dele
+    // (cabeçalho Cache-Control do vercel.json) em vez de perguntar ao servidor a cada abertura.
+    if(mode==='no-cache'&&versionedAsset(url))mode='default';
     event.respondWith((async function(){
       if(fromDevice){
         try{
