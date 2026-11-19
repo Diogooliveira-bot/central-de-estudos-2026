@@ -1,10 +1,16 @@
 from pathlib import Path
 from PIL import ImageFont
-import json, html, subprocess, uuid, base64
+import json, html, subprocess, uuid, base64, sys
 ROOT=Path(__file__).resolve().parents[1]
-BASE=ROOT/'artes/cf-m04'
+module=(sys.argv[1] if len(sys.argv)>1 else 'm04').lower()
+if module not in {'m04','m05'}:
+    raise SystemExit('Uso: generate-cf-m04-infographics.py [m04|m05]')
+module_label='M'+module[1:].zfill(2)
+BASE=ROOT/'artes'/('cf-'+module)
 DATA=json.loads((BASE/'data.json').read_text(encoding='utf-8'))
-ASSETS=BASE/'template-assets'
+# Recursos originais aprovados para as artes de CF: logo, mascote e ícones.
+# O M05 reutiliza esses mesmos elementos, sem redesenhá-los.
+ASSETS=ROOT/'artes/cf-m04'/'template-assets'
 OUT=BASE/'png'; SVG=BASE/'svg'
 OUT.mkdir(parents=True,exist_ok=True); SVG.mkdir(parents=True,exist_ok=True)
 REG='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
@@ -94,10 +100,10 @@ for idx,item in enumerate(DATA,1):
         out.append(f'<text x="432" y="{yy}" font-size="34px" font-family="DejaVu Sans, Arial" font-weight="700" fill="#07508a">✓</text>')
         svg,cnt,sz=text_block(482,yy,t,28,696,'#101820',False,32,'start',2)
         out.append(svg)
-    out.append(f'<text x="1200" y="1530" text-anchor="end" font-family="DejaVu Sans, Arial" font-size="12px" fill="#527089">BASE COMPLETA · REVISÃO GUIADA · CF M04 · C{n}</text>')
+    out.append(f'<text x="1200" y="1530" text-anchor="end" font-family="DejaVu Sans, Arial" font-size="12px" fill="#527089">BASE COMPLETA · REVISÃO GUIADA · CF {module_label} · C{n}</text>')
     out.append('</svg>')
-    svg_path=SVG/f'CF-M04-C{n}.svg'; png_path=OUT/f'CF-M04-C{n}.png'
+    svg_path=SVG/f'CF-{module_label}-C{n}.svg'; png_path=OUT/f'CF-{module_label}-C{n}.png'
     svg_path.write_text('\n'.join(out),encoding='utf-8')
     subprocess.run(['inkscape',str(svg_path),'--export-type=png',f'--export-filename={png_path}','--export-width=1229','--export-height=1536'],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
-print(f'Generated {len(DATA)} SVG/PNG pairs at 1229 x 1536.')
+print(f'Generated {len(DATA)} SVG/PNG pairs for CF {module_label} at 1229 x 1536.')
 

@@ -55,7 +55,8 @@ test('imagem é colocada ao final do capítulo M04 e não é adicionada aos outr
   assert.ok(html.endsWith('</figure></section>'));
  }
  assert.ok(!renderCard([titles[0],'texto'],0,3).includes('bc-review-infographic'));
- assert.ok(!renderCard([titles[0],'texto'],0,5).includes('bc-review-infographic'));
+ assert.ok(!renderCard([titles[0],'texto'],0,6).includes('bc-review-infographic'));
+ assert.ok(renderCard([titles[0],'texto'],0,5).includes('/assets/cf/revisao-guiada/m05/CF-M05-C01.webp'));
  assert.match(reader,/loading="lazy" decoding="async" width="1229" height="1536"/);
  assert.match(reader,/\.bc-review-infographic img\{display:block;width:100%;height:auto/);
 });
