@@ -295,5 +295,6 @@ test('administrador mantém painel de filtros e gerenciador na navegação', asy
  assert.ok(dom.window.document.querySelector('[data-bcq-module-panel="penal:M03"]'));
  assert.equal(dom.window.ExternalQuestionFilters.canManage,true);
  assert.equal(dom.window.document.documentElement.classList.contains('bcq-student-view'),false);
- dom.window.close();
+ // A atualização assíncrona pode continuar no próximo frame; manter DOM válido.
+ await settle(dom.window);
 });
