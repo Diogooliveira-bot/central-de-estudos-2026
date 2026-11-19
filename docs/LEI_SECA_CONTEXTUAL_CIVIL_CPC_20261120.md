@@ -30,3 +30,21 @@ logo abaixo dele aparece uma caixa recolhível **"Lei seca — CC, art. X"** (ou
 - Na teoria completa do CPC M06 (e possivelmente outros), alguns quadros aparecem como texto corrido (problema de
   formatação anterior a esta mudança; as tabelas já corrigidas foram as dos resumos).
 - Nada foi publicado: depende de "pode publicar" do proprietário.
+
+## Quadros da teoria completa do CPC M01–M08 (20/11/2026)
+
+Na teoria completa de Processo Civil M01 a M08 os quadros comparativos (vindos de PDF) apareciam como texto corrido,
+com as colunas embaralhadas. Foram reconstruídos **47 quadros** como tabelas de verdade (M01 6, M02 4, M03 2, M04 8,
+M05 10, M06 7, M07 7, M08 3). M09 a M20 não têm quadros (textos curtos).
+
+- O texto original (`BASE_NATIVE_CONTENT.cpc.mNN.complete`) **não foi alterado** (o teste que fixa o conteúdo continua passando).
+  Os quadros ficam em `content/cpc/cpc-complete-tables-v1.js`: cada item troca um trecho de linhas por uma tabela com as mesmas letras.
+- Cada quadro foi conferido por validador: nenhuma letra perdida, repetida ou acrescentada; mesmo número de células em todas as linhas.
+  Restos do PDF (cabeçalho repetido na quebra de página, marcadores "•" soltos, rodapé) não aparecem na tela;
+  quadros partidos pela quebra de página (M01, M07, M08) viraram uma tabela só.
+- Leitores `ui/cpc-*native-study-reader*.js` (os 20, com o mesmo código): reconhecem o marcador e desenham a tabela (`.cpc-comparison`).
+- O arquivo dos quadros é conteúdo completo: `lib/protected-content.js` o trata como `theory.complete` (não abre para quem só tem a versão gratuita).
+- Versões: leitores e arquivo `?v=20261120tabelas1` (index.html, central-v119.html, lista offline).
+- Testes: `tests/cpc-complete-tables-unit.mjs` (3 testes).
+- Verificado no navegador de teste a 430 px: M01, M02, M05, M06 e M08.
+- Observação: M03, M05 e M08 continuam recebendo do leitor um quadro comparativo próprio, por título (comportamento anterior, não alterado).
