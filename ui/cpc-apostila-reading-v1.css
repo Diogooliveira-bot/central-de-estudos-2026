@@ -86,3 +86,6 @@ html[data-bc-reading-mode="night"] :is(#cpcNativeReaderOverlay,#cpcM02NativeRead
 .cpc-apostila .cpc-reasoning-path .cpc-study-done.done{border-color:var(--cpc-line);color:var(--cpc-muted)}
 .cpc-apostila .cpc-reasoning-path .cpc-study-done:focus-visible,.cpc-apostila .cpc-reasoning-path .cpc-study-step>summary:focus-visible{outline:2px solid var(--cpc-blue);outline-offset:3px}
 @media(max-width:600px){.cpc-apostila .cpc-reasoning-path>h2{font-size:1.3em!important}.cpc-apostila .cpc-reasoning-path>.cpc-didactic-lead{font-size:1em}}
+
+/* Tabelas dos resumos no celular: cabem na tela, sem esconder colunas (19/11/2026). */
+@media(max-width:600px){.cpc-apostila .cpc-comparison table{min-width:0;font-size:.8em;line-height:1.5}.cpc-apostila .cpc-comparison th,.cpc-apostila .cpc-comparison td{padding:8px 6px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}.cpc-apostila .cpc-comparison th:first-child,.cpc-apostila .cpc-comparison td:first-child{width:32%}}

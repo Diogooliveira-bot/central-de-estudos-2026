@@ -1719,3 +1719,13 @@ Pendências (não aplicadas):
 - Conteúdo deixado de fora para o material completo (listado por módulo): jurisprudência, súmulas não essenciais, doutrina minoritária e detalhes procedimentais.
 - Os módulos de Administrativo e Constitucional já publicados seguiram a regra anterior (com jurisprudência); a proposta de enxugá-los segue em aberto.
 - A publicação em produção depende de autorização expressa do proprietário; a prévia sem login depende de autorização para ler a chave do ambiente Preview.
+
+## Processo Civil M01–M15 — correção das tabelas dos resumos (19/11/2026)
+
+As tabelas dos resumos de Processo Civil M01 a M15 vieram de PDF com as linhas e colunas misturadas (texto de cada célula embaralhado, linhas viradas em títulos e cabeçalhos colados no fim de parágrafos). Foram reconstruídas 29 tabelas como tabelas de verdade (classe `cpc-comparison`, a mesma já usada pelo leitor), sem alterar o conteúdo jurídico revisado:
+- M01 (2), M02 (1), M03 (2), M04 (2), M05 (3), M06 (1), M07 (1), M08 (1), M09 (2), M10 (2), M11 (2), M12 (2), M13 (3), M14 (2), M15 (3).
+- Também foram arrumados títulos quebrados em duas linhas (M02, M04), parágrafos cortados no meio da frase (M06, M10), três falsos títulos de M01 que eram linhas de tabela, rótulos colados ao texto ("Síntese dos conceitos", "Aspectos complementares...", "Base legal...", agora em negrito) e dois rótulos soltos sem conteúdo ("Leitura normativa e fontes", M09 e M10, removidos).
+- Na tabela do contraditório (M01), "fundamento novo decisivo" passou a "fundamento novo, ainda não debatido" (art. 10); na tabela do art. 15, "quando compatível" passou a "na ausência de normas próprias". Na tabela do M03, a terceira linha (reunião sem conexão) foi redigida com base no art. 55, § 3º.
+- O texto corrido (`raw`) e a lista de títulos (`heads`) foram regenerados a partir do HTML.
+- Estilo no celular (`ui/cpc-apostila-reading-v1.css`): as tabelas passaram a caber na tela (sem largura mínima, com hifenização), em vez de esconder a terceira coluna. Verificado em navegador de teste a 430 px e 360 px de largura. Versões atualizadas: `index.html` (`?v=20261119cpctabelas1`) e `ui/cpc-apostila-reading-v1.js` (CSS `?v=20261119tabelas1`).
+- Observação: nos módulos M03, M05 e M08 o leitor também injeta suas próprias tabelas comparativas (por título), e no M05 há sobreposição parcial com a tabela de litisconsórcio restaurada; não foi alterado.
