@@ -237,7 +237,8 @@ test('sem sessão verificada, arquivo versionado vem da rede',async()=>{
   const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('network',{status:200})});
   const response=await w.trigger('fetch',asset('/ui/app.js?v=1'));
   assert.equal(await response.text(),'network');
-  assert.equal(w.requests[0].options.cache,'no-cache');
+  // Arquivo com ?v= tem endereço novo a cada mudança: o navegador pode reaproveitar a cópia (Cache-Control do vercel.json).
+  assert.equal(w.requests[0].options.cache,'default');
 });
 
 test('conteúdo protegido nunca sai do cache e continua sem armazenamento',async()=>{
