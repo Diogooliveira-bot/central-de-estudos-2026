@@ -25,7 +25,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
       : file.includes('student-plan') ? '20261019-qc-catalog1'
         : file.includes('student-shell') ? '20261119adminonly1' : file.includes('auth-shell') ? '20261020studyobj1'
           : file.includes('student-dashboard') ? '20261105resume1'
-          : file.includes('external-question-filters') ? `${build}-min20-titles1` : file.includes('student-ux-core') ? '20261115responsive1' : '';
+          : file.includes('external-question-filters') ? '20261119adminonly1' : file.includes('student-ux-core') ? '20261115responsive1' : '';
     assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
   }
   assert.match(boot, /student-experience-v3\.css\?v='\+BUILD/);
