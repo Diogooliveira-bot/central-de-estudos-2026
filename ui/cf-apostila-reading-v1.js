@@ -121,10 +121,40 @@ function lawInline(text,seen){
   seen.add(key);
   const suffix=(ref.para?', § '+ref.para+'º':'')+(ref.incs.length?', '+ref.incs.join(', '):'')+
    (!ref.para&&!ref.incs.length&&lines.length===1&&entry.lines.length>1?' (caput)':'');
-  const title=entry.label+suffix;
-  out.push('<details class="cf-apostila-law cf-apostila-law-inline"'+(lines.length<=3?' open':'')+'><summary>'+escape(title)+'</summary><div class="cf-apostila-law-body">'+lines.map(line=>'<p>'+escape(line)+'</p>').join('')+'</div></details>');
+  const title='Lei seca — '+entry.label+suffix;
+  out.push('<details class="cf-apostila-law cf-apostila-law-inline" data-bc-cf-auto-law="1" data-bc-cf-ref="'+escape(key)+'"'+(lines.length<=3?' open':'')+'><summary>'+escape(title)+'</summary><div class="cf-apostila-law-body">'+lines.map(line=>'<p>'+escape(line)+'</p>').join('')+'</div></details>');
  }
  return out.join('');
+}
+/* A Central restaura HTML publicado do servidor depois da montagem inicial.
+ * Recoloca apenas as citações constitucionais ausentes no DOM, preservando todas
+ * as revisões e imagens do administrador, sem gravar conteúdo automaticamente. */
+function ensureInline(article){
+ if(!article||typeof article.querySelectorAll!=='function')return 0;
+ const root=article.querySelector('.cf-apostila')||article;
+ const list=Array.from(root.querySelectorAll('h2,h3,h4,p'));
+ const seen=new Set();let inserted=0;
+ for(const el of list){
+  if(/^H[234]$/.test(el.tagName)){seen.clear();continue;}
+  if(el.closest('.cf-apostila-law,.cf-apostila-laws,.bc-native-reader-tools,[data-bc-law-section]'))continue;
+  const refs=citedConstitution(el.textContent||'');
+  if(!refs.length)continue;
+  // Uma explicação pode citar dois dispositivos. Um trecho editado no
+  // Premium deve continuar fixo, e os demais continuam sendo completados.
+  let sibling=el.nextElementSibling,last=el,hasLegacy=false;
+  while(sibling?.matches?.('.cf-apostila-law-inline')){
+   const key=sibling.getAttribute?.('data-bc-cf-ref');
+   if(key)seen.add(key);
+   else hasLegacy=true;
+   last=sibling;sibling=sibling.nextElementSibling;
+  }
+  if(hasLegacy){for(const r of refs)seen.add([r.article,r.para,r.incs.join(',')].join(':'))}
+  const html=lawInline(el.textContent||'',seen);
+  if(!html)continue;
+  last.insertAdjacentHTML('afterend',html);
+  inserted+=(html.match(/class="cf-apostila-law cf-apostila-law-inline"/g)||[]).length;
+ }
+ return inserted;
 }
 // API antiga preservada para chamadas legadas. A seção geral do final não é mais exibida.
 function lawList(){return '';}
@@ -169,8 +199,8 @@ function render(raw,n){
 }
 function styles(){
  if(typeof document==='undefined'||document.getElementById('cf-apostila-reading-v1-style'))return;
- const link=document.createElement('link');link.id='cf-apostila-reading-v1-style';link.rel='stylesheet';link.href='/ui/cf-apostila-reading-v1.css?v=20261118cfleiinline1';document.head.appendChild(link);
+ const link=document.createElement('link');link.id='cf-apostila-reading-v1-style';link.rel='stylesheet';link.href='/ui/cf-apostila-reading-v1.css?v=20261119cfleisync1';document.head.appendChild(link);
 }
-g.CfApostilaReading=Object.freeze({render,styles,lawList,citedConstitution,lawCatalog});
+g.CfApostilaReading=Object.freeze({render,styles,lawList,citedConstitution,lawCatalog,ensureInline});
 styles();
 })(window);

@@ -89,6 +89,7 @@ function applySnapshot(article,html){
   if(live[i])slot.replaceWith(live[i]);else slot.remove();
  });
  article.replaceChildren(template.content);
+ if(article.closest('#cf-native-reader'))window.CfApostilaReading?.ensureInline?.(article);
 }
 function parseNodes(html){
  const template=document.createElement('template');template.innerHTML=html;clean(template.content);
@@ -336,6 +337,62 @@ function insertLawDialog(state){
  state.dialog.append(backdrop);
  if(presets.length){select.value=String(chooseLawPresetIndex(state,presets));loadPreset()}
  else reference.focus();
+}
+/* Editor direto do artigo, inciso e parágrafo constitucional no leitor completo. */
+function editConstitutionalLaw(state){
+ const laws=Array.from(state.workspace.querySelectorAll('details.cf-apostila-law-inline'));
+ if(!laws.length)return notify('Não há Lei Seca contextual neste módulo. Use Inserir > Lei Seca para acrescentar um trecho.');
+ const backdrop=document.createElement('div');backdrop.className='bcpe-law-backdrop';
+ const panel=document.createElement('section');panel.className='bcpe-law-panel bcpe-law-edit-panel';
+ panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');
+ panel.setAttribute('aria-label','Editar Lei Seca do Direito Constitucional');
+ const title=document.createElement('h2');title.textContent='Editar Lei Seca';
+ const hint=document.createElement('p');
+ hint.textContent='Selecione o dispositivo, ajuste o texto e aplique ao rascunho. Somente Publicar conteúdo envia as alterações aos alunos.';
+ const pickerLabel=document.createElement('label');pickerLabel.className='bcpe-law-input-label';pickerLabel.textContent='Artigo, parágrafo ou inciso';
+ const picker=document.createElement('select');picker.setAttribute('aria-label','Dispositivo constitucional para editar');
+ laws.forEach(function(law,i){const option=document.createElement('option');option.value=String(i);
+  option.textContent=(law.querySelector(':scope > summary')?.textContent||'Dispositivo '+(i+1)).trim().slice(0,130);
+  picker.append(option)});
+ pickerLabel.append(picker);
+ const titleLabel=document.createElement('label');titleLabel.className='bcpe-law-input-label';titleLabel.textContent='Título do dispositivo';
+ const name=document.createElement('input');name.type='text';name.maxLength=240;name.setAttribute('aria-label','Título do dispositivo');titleLabel.append(name);
+ const textLabel=document.createElement('label');textLabel.className='bcpe-law-input-label';textLabel.textContent='Redação da Lei Seca (um parágrafo por linha)';
+ const area=document.createElement('textarea');area.rows=10;area.setAttribute('aria-label','Redação da Lei Seca');textLabel.append(area);
+ const foot=document.createElement('small');foot.className='bcpe-law-foot';
+ foot.textContent='Confira a redação na Constituição vigente. O editor não cria textos legais automaticamente.';
+ const actions=document.createElement('div');actions.className='bcpe-law-actions';
+ const cancel=document.createElement('button');cancel.type='button';cancel.textContent='Cancelar';
+ const save=document.createElement('button');save.type='button';save.className='bcpe-primary';save.textContent='Aplicar ao rascunho';
+ actions.append(cancel,save);panel.append(title,hint,pickerLabel,titleLabel,textLabel,foot,actions);backdrop.append(panel);
+ const previous=document.activeElement;
+ function close(){backdrop.remove();document.removeEventListener('keydown',onKey);if(previous?.isConnected)previous.focus()}
+ function onKey(e){if(e.key==='Escape'&&backdrop.isConnected){e.stopPropagation();e.preventDefault();close()}}
+ function load(){
+  const law=laws[Number(picker.value)],body=law?.querySelector('.cf-apostila-law-body');
+  name.value=law?.querySelector(':scope > summary')?.textContent||'';
+  area.value=body?Array.from(body.querySelectorAll(':scope > p')).map(p=>p.textContent||'').join('\n'):'';
+ }
+ picker.addEventListener('change',load);cancel.addEventListener('click',close);
+ save.addEventListener('click',function(){
+  const law=laws[Number(picker.value)];
+  const header=name.value.trim(),lines=area.value.replace(/\r/g,'').split('\n').map(s=>s.trim()).filter(Boolean);
+  if(!law?.isConnected)return notify('O trecho foi alterado. Reabra o editor de Lei Seca.');
+  if(!header||!lines.length)return notify('Preencha o título e ao menos um parágrafo da Lei Seca.');
+  const body=law.querySelector('.cf-apostila-law-body'),summary=law.querySelector(':scope > summary');
+  if(!body||!summary)return notify('Estrutura da Lei Seca não reconhecida.');
+  checkpoint(state);summary.textContent=header;
+  body.replaceChildren(...lines.map(function(line){const p=document.createElement('p');p.textContent=line;return p}));
+  // O trecho editado é permanente; os demais continuam vindos da CF oficial.
+  law.removeAttribute('data-bc-cf-auto-law');law.removeAttribute('data-bc-cf-original');
+  law.setAttribute('data-bc-cf-editor-law','1');
+  markFields(law);queueDraft(state);updateWords(state);close();
+  notify('Lei Seca alterada no rascunho. Clique em Publicar conteúdo para salvar para os alunos.');
+ });
+ state.dialog.append(backdrop);document.addEventListener('keydown',onKey);
+ const focused=state.currentField?.closest?.('.cf-apostila-law-inline');
+ const current=focused?laws.indexOf(focused):-1;picker.value=String(Math.max(0,current));
+ load();picker.focus();
 }
 function editLawSections(state,addMode=false){
  const topics=Array.from(state.workspace.querySelectorAll('.bcpe-node.bc-m01-topic'));
@@ -625,7 +682,7 @@ function select(state,box){
  updateContext(state);
 
 }
-function serialize(state){
+function serialize(state,forPublish=false){
  const doc=document.createElement('div');
  blocks(state).forEach(function(box){
   const node=box.querySelector(':scope > .bcpe-node');if(!node)return;
@@ -642,6 +699,18 @@ function serialize(state){
    detail.removeAttribute('data-bcpe-law-was-open');
   });
   clean(cloned);
+  if(forPublish){
+   // Lei seca automática sem alterações continua dinâmica. O texto editado
+   // torna-se versão manual publicada e não é removido pelo editor visual.
+   [cloned,...cloned.querySelectorAll('[data-bc-cf-auto-law]')].forEach(function(law){
+    if(!law.hasAttribute('data-bc-cf-auto-law'))return;
+    const baseline=law.getAttribute('data-bc-cf-original');
+    law.removeAttribute('data-bc-cf-original');
+    if(baseline&&baseline===hash(law.innerHTML)){law.remove();return}
+    law.removeAttribute('data-bc-cf-auto-law');
+    law.setAttribute('data-bc-cf-editor-law','1');
+   });
+  }
   doc.appendChild(cloned);
  });
  return doc.innerHTML;
@@ -1791,7 +1860,7 @@ function makeToolbar(state){
  '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
  if(!isAdmin){const imageOption=bar.querySelector('[data-insert] option[value="image"]');if(imageOption)imageOption.remove()}
  if(state.overlay.matches('.bc-guided-overlay')&&/Direito Constitucional/.test(state.overlay.getAttribute('aria-label')||'')){const oldButton=bar.querySelector('[data-action="remove-law"]');if(oldButton)oldButton.remove()}
- else {const b=bar.querySelector('[data-action="edit-law"]');if(b)b.remove()}
+ else if(state.overlay.id!=='cf-native-reader') {const b=bar.querySelector('[data-action="edit-law"]');if(b)b.remove()}
  state.status=bar.querySelector('[data-status]');state.words=bar.querySelector('[data-words]');state.typeSelect=bar.querySelector('[data-style]');state.context=bar.querySelector('[data-context]');
  bar.addEventListener('pointerdown',function(e){
   rememberSelection(state);
@@ -1836,7 +1905,10 @@ function makeToolbar(state){
   if(action==='redo')undo(state,1);
   if(action==='paste')showPasteDialog(state);
   if(action==='remove-law')removeLawSections(state);
-  if(action==='edit-law')editLawSections(state);
+  if(action==='edit-law'){
+   if(state.overlay.id==='cf-native-reader')editConstitutionalLaw(state);
+   else editLawSections(state);
+  }
   if(action==='versions')await showVersions(state);
   if(action==='preview'){
    state.dialog.classList.toggle('bcpe-preview');
@@ -1860,6 +1932,13 @@ function makeDialog(state,html){
  workspace.setAttribute('role','textbox');workspace.setAttribute('aria-multiline','true');workspace.setAttribute('aria-label','Texto do capítulo');
  const nodes=parseNodes(html);
  const source=document.createElement('div');source.replaceChildren(...nodes);
+ if(state.overlay.id==='cf-native-reader'){
+  // Exibe no editor os dispositivos mesmo quando a revisão publicada é antiga.
+  window.CfApostilaReading?.ensureInline?.(source);
+  source.querySelectorAll('[data-bc-cf-auto-law]').forEach(function(law){
+   if(!law.hasAttribute('data-bc-cf-original'))law.setAttribute('data-bc-cf-original',hash(law.innerHTML));
+  });
+ }
  if(state.overlay.matches('.bc-guided-overlay')&&state.overlay.getAttribute('aria-label')==='Teoria guiada de Direito Constitucional, módulo 1')window.BcCfGuidedReader?.reconcileM01Dom?.(source,state.revision);
  workspace.replaceChildren(...Array.from(source.children).map(block));
  refreshDragHandles(state);
@@ -1981,7 +2060,7 @@ function close(state){
 async function publish(state,button){
  if(state.saving)return;
  clearTimeout(editorTimer);historyPush(state);draftWrite(state);
- const html=serialize(state);
+ const html=serialize(state,true);
  if(!html.trim())return notify('O capítulo não pode ficar vazio.');
  state.saving=true;button.disabled=true;button.textContent='Publicando...';
  try{
