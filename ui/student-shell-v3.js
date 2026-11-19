@@ -99,8 +99,9 @@
         ['law','Lei em Dia',() => global.openEmbeddedTool?.('decorando', {})],
         ['vade','Vade Mecum',() => global.openEmbeddedTool?.('vade', {})],
         ['edital','Edital',openEdital],
-        ['filters','Filtro de questões',(button) => global.ExternalQuestionFilters?.openPage(button,{tab:'disciplines'})],
       ];
+      // Filtros externos são ferramentas de curadoria somente dos administradores.
+      if (isAdmin()) actions.push(['filters','Filtros de questões',(button) => global.ExternalQuestionFilters?.openPage(button,{tab:'disciplines'})]);
       actions.forEach(([key,label,action]) => {
         const button = document.createElement('button');
         button.type = 'button';
@@ -114,6 +115,8 @@
         rail.appendChild(button);
       });
     }
+    // Uma barra reaproveitada nunca pode manter o atalho de outra sessão.
+    if (!isAdmin()) nav.querySelectorAll('[data-student-primary-nav="filters"]').forEach((button) => button.remove());
     if (!byId('studentMoreButton')) {
       const button = document.createElement('button');
       button.id = 'studentMoreButton';
