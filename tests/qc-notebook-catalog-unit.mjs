@@ -78,7 +78,8 @@ test('catálogo completo só aparece na seção administrativa e mantém os iten
 
   const student = setup('aluno');
   await settle(student.window);
-  assert.equal(student.window.document.querySelector('[data-bcq-qc-inventory]').hidden, true);
+  assert.equal(student.window.document.querySelector('[data-bcq-qc-inventory]'), null,'aluno não recebe o catálogo administrativo');
+  assert.equal(student.window.location.pathname,'/','URL de filtros não permanece acessível ao aluno');
   assert.equal(student.window.document.querySelectorAll('[data-bcq-module-panel] [data-status="unconfirmed"]').length, 0);
 });
 
