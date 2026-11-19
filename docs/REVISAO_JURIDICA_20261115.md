@@ -1741,3 +1741,466 @@ A pedido do proprietário, foram retiradas do Civil M14 (Direito de Família) as
 ## Direito Civil M14 — exceção dos 70 anos restaurada sem citar a decisão (19/11/2026)
 
 A pedido do proprietário, o tópico "Regime de bens após os 70 anos" voltou a trazer a possibilidade de afastar a separação obrigatória por escritura pública, agora como regra explicada e sem citar decisão judicial: o texto informa que o art. 1.641, II, não traz exceção e que o entendimento aplicado hoje admite que cônjuges e companheiros a afastem por manifestação expressa de vontade em escritura pública (art. 1.653 para a forma). Não há citação de tema, súmula ou tribunal no módulo. Versão do arquivo em `central-v119.html`: `?v=20261119civilm14semjuris3`.
+
+## Direito Penal M01–M17 e Processo Penal M01–M22 — revisão jurídica (20/11/2026)
+
+Mesma regra do Civil e do Processo Civil: cada módulo teve um revisor, um aprovador independente e a regra enxuta do proprietário (sem doutrina minoritária nem jurisprudência detalhada, salvo muito batida e importante). Texto só na branch de trabalho; nada publicado.
+
+**Direito Penal.** Além do texto, as 24 tabelas dos resumos (M02 a M17) estavam achatadas em texto corrido porque o leitor descartava o formato delas; os 16 leitores (`ui/native-study-reader-m02..m17.js`) passaram a reconhecer as tabelas e desenhá-las (no celular aparecem como cartões por linha, conferido a 430 px). Versões: leitores e `content/penal/leituras-*` em `?v=20261120penrev1` (`central-v119.html` e lista offline).
+
+**Processo Penal.** Texto em `content/cpp/leituras-*` (sem tabelas), versão `?v=20261120cpprev1`.
+
+
+### Direito Penal M01
+
+O módulo está juridicamente correto e didático. As referências constitucionais (art. 5º, XXXIX, XLV a XLIX) e o art. 1º do Código Penal estão certas, assim como os quatro vetores da insignificância usados pelo STF e a distinção entre interpretação,…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+
+Pendências (não aplicadas):
+- Opcional, sem edição: na seção 3.2, a expressão 'A Constituição veda, entre outras, penas...' lista exatamente as vedações do art. 5º, XLVII (perpétua, trabalhos…
+- Opcional, sem edição: a alternatividade como quarto critério do conflito aparente (mnemônico ESCA) segue a corrente que a inclui; parte da doutrina a trata como…
+
+### Direito Penal M02
+
+O módulo está juridicamente correto e enxuto. Conferi arts. 2º a 12 do CP, art. 5º, XL e art. 105, I, i da CF, arts. 2º e 4º da LCP e a Súmula 501 do STJ, e não encontrei erro de artigo, pena, prazo ou requisito. Propus apenas um ajuste de precisão: a…
+
+- **Precisao** (E1): A retroatividade da lei penal mais benéfica é obrigatória (garantia constitucional), não uma faculdade do juiz; 'pode' induz a erro em prova.
+- **Adicional** (A1): O texto original cita a súmula sem dizer a que leis ela se refere. O enunciado oficial é: 'É cabível a aplicação retroativa da Lei n. 11.343/2006, desde que o resultado…
+- **Adicional** (A2): Pelo mesmo fundamento de E1: a aplicação da lei mais benéfica, inclusive a intermediária, é obrigatória (CF, art. 5º, XL; CP, art. 2º, parágrafo único). 'Pode' sugere…
+
+Pendências (não aplicadas):
+- Trecho sobre lex tertia/Súmula 501 do STJ: o texto afirma a vedação de combinação de leis de forma ampla, mas a súmula trata da Lei 11.343/2006 x Lei 6.368/1976 e há…
+- Frase 'O aluno deve sempre perguntar...' (item 6.3): uso de 'sempre' é recomendação didática, não afirmação jurídica; mantida.
+
+### Direito Penal M03
+
+O módulo está juridicamente sólido e enxuto. Conferi os arts. 13 a 19 do CP (causalidade, omissão imprópria e garantidor, tentativa, desistência voluntária, arrependimento eficaz e posterior, crime impossível, dolo, culpa e preterdolo) e os percentuais de…
+
+- **Precisao** (E1): O art. 18, parágrafo único, do CP não admite exceção: salvo os casos expressos em lei, ninguém é punido por fato previsto como crime senão quando o pratica dolosamente.…
+
+Pendências (não aplicadas):
+- Item 5.2: a frase 'vontade dirigida à consumação' pode soar incompatível com a tentativa em dolo eventual (admitida pela doutrina majoritária). Não editei por ser tema…
+- Seção 2.3 (crime formal): a tabela diz que a consumação ocorre 'na etapa típica anterior ao resultado ulterior'. Está correto, mas é formulação abstrata; não editei por…
+
+### Direito Penal M04
+
+O módulo está juridicamente sólido: os arts. 23, 24 (incluindo o § 2º, redução de um a dois terços), 25 (caput e parágrafo único) e o excesso do art. 23, parágrafo único, estão descritos corretamente e sem afirmações absolutas indevidas. Há apenas duas…
+
+- **Precisao** (E1): A frase original sugere que a justificante poderia, em alguns casos, afastar a tipicidade. No modelo adotado (tipicidade como indício de ilicitude), a causa de…
+- **Precisao** (E2): Aproxima o texto da redação do parágrafo único do art. 25 (Lei nº 13.964/2019), que se refere a agente de segurança pública e a vítima mantida refém durante a prática de…
+- **Adicional** (A1): O § 1º diz apenas: 'Não pode alegar estado de necessidade quem tinha o dever legal de enfrentar o perigo.' A redação atual ('não pode invocar indistintamente'; 'não…
+
+Pendências (não aplicadas):
+- Art. 24, § 1º: o texto diz que quem tem dever legal de enfrentar o perigo 'não pode invocar indistintamente' o estado de necessidade e que isso 'não impõe agir quando a…
+- Projetos de lei em tramitação alteram ou pretendem alterar o art. 25 (por exemplo, PL 748/2024, PL 2.693/2024, PL 5.013/2026 e PL 2.877/2026). Nenhum foi confirmado como…
+
+### Direito Penal M05
+
+O módulo está juridicamente correto na quase totalidade: arts. 20, 21, 22, 26, 28, 73 e 74 do CP estão bem atribuídos, e as frações do art. 21 (um sexto a um terço) conferem. Há apenas um ponto de terminologia a corrigir no quadro comparativo: o erro de tipo…
+
+- **Correcao** (E1): No erro de tipo essencial, o dolo é excluído; se o erro era evitável, responde-se por crime culposo, desde que haja previsão legal. "Culpa eventual" não é o termo…
+- **Adicional** (A1): O art. 28, II, do CP afirma que a embriaguez voluntária ou culposa NÃO exclui a imputabilidade penal, sem ressalva. 'Automaticamente' sugere que, em alguns casos,…
+- **Adicional** (A2): Alinha o quadro ao art. 28, II, e à correção de A1; 'por si só' reforça a ideia de que poderia excluir.
+- **Adicional** (A3): Texto legal: §1º 'é isento de pena' (e não 'pode afastar'); §2º prevê redução de um a dois terços quando o agente não possuía a plena capacidade. Torna o 'regime…
+
+Pendências (não aplicadas):
+- Sem edição, apenas observação: na seção 02, "A embriaguez voluntária ou culposa também não a exclui automaticamente" poderia sugerir que às vezes exclui; o art. 28, II,…
+- Sem edição, apenas observação: o art. 22 do CP fala em "coação irresistível"; o módulo usa "coação moral irresistível", que é a leitura doutrinária majoritária (a coação…
+
+### Direito Penal M06
+
+O módulo está juridicamente correto e enxuto. Conferi o art. 29 (caput e §§ 1º e 2º), o art. 30 e o art. 31 do Código Penal: as frações (um sexto a um terço; aumento até metade), a regra da incomunicabilidade e a exigência de ao menos tentativa estão certas.…
+
+- **Precisao** (E1): 'Regime distinto' é vago e pode induzir a erro; a reincidência é circunstância pessoal (CP, art. 67) e não elementar, logo não se comunica ao partícipe ou coautor (art.…
+
+Pendências (não aplicadas):
+- Cooperação dolosamente distinta e participação de menor importância (art. 29, §§ 1º e 2º) conferidas em fontes secundárias (USP, TJDFT, Trilhante), sem divergência.
+- Na frase 'Na autoria incerta ... o tratamento probatório deve respeitar a presunção de inocência', não editei: está correta, embora genérica (a consequência usual é…
+
+### Direito Penal M07
+
+O texto é genérico e prudente, e os artigos citados (32, 33, 44, 59, 61 a 66, 63 e 64, 68, 69, 70, 71, 75 e 77) estão corretos. Não foram encontrados valores nem frações desatualizados, porque o texto evita números como o teto de 40 anos do art. 75 (Lei nº…
+
+- **Correcao** (E1): O art. 70, segunda parte, do CP diz que as penas aplicam-se cumulativamente (não é faculdade do juiz) se a ação ou omissão é dolosa e os crimes resultam de desígnios…
+- **Adicional** (A1): O módulo trata do art. 75 sem dizer o valor do limite. Esse número é o dado essencial e foi elevado de 30 para 40 anos pela Lei nº 13.964/2019 (vigência em 23/01/2020; o…
+- **Adicional** (A2): Dois furtos em datas separadas são crimes da mesma espécie, o caso típico de análise de continuidade delitiva. Apresentar só o concurso material pode induzir a erro e…
+
+Pendências (não aplicadas):
+- Art. 71, parágrafo único: confirmado por fontes secundárias (crimes dolosos, vítimas diferentes, violência ou grave ameaça à pessoa, aumento até o triplo, observados o…
+- Art. 75: o texto do módulo não cita o número do limite, o que evita desatualização após a Lei nº 13.964/2019 (40 anos, confirmado em Migalhas e Câmara dos Deputados). Se…
+
+### Direito Penal M08
+
+O módulo está juridicamente correto e bem enxuto: faixas do art. 109 (20, 16, 12, 8, 4 e 3 anos), art. 110 (aumento de um terço só na PPE), art. 111, art. 119, art. 10 e a decadência de seis meses conferem com a lei. Há duas correções pontuais: a frase vaga…
+
+- **Precisao** (E1): Troca a referência vaga e volátil ('ressalvas recentes') pela regra atual do art. 115 do CP, que desde julho de 2025 exclui a redução quando o crime envolve violência…
+- **Precisao** (E2): O perdão do ofendido é ato bilateral: sem aceitação do querelado não produz efeito. 'Em regra' sugere exceções que não existem.
+- **Adicional** (A1): A Lei nº 15.438/2026 (18/6/2026; publicada no DOU em 19/6/2026, vigência imediata) acrescentou parágrafo único ao art. 103 do CP, fixando 12 meses para a ofendida…
+
+Pendências (não aplicadas):
+- Frase 'O início da PPE requer atenção à jurisprudência atual do STF e à modulação dos precedentes': não está errada. O STF (ARE 848.107, Tema 788, Plenário, julho/2023)…
+- O módulo não menciona as causas suspensivas do art. 116, III e IV, do CP (Lei nº 13.964/2019: embargos de declaração e recursos aos Tribunais Superiores inadmissíveis;…
+
+### Direito Penal M09
+
+O módulo está juridicamente sólido e enxuto. Conferi feminicídio (art. 121-A), vicaricídio (art. 121-B, Lei nº 15.384/2026), alteração do art. 147-B (uso de tecnologia, Lei nº 15.123/2025), art. 154-A após a Lei nº 14.155/2021 e injúria racial na Lei nº…
+
+- **Precisao** (E1): A natureza incondicionada decorre da ADI 4424 (STF); o STJ a consolidou na Súmula 542. Atribuir apenas ao STJ é incompleto.
+- **Precisao** (E2): Só a injúria por raça, cor, etnia ou procedência nacional migrou para a Lei nº 7.716/1989 (art. 2º-A); as demais injúrias preconceituosas (religião, idoso, deficiência)…
+
+Pendências (não aplicadas):
+- Art. 121-B (vicaricídio): descrição do módulo confere com as fontes (descendente, ascendente, dependente, enteado ou pessoa sob guarda/responsabilidade direta; fim de…
+- Há notícia de uma Lei nº 15.438/2026 sobre prazo decadencial em violência doméstica; não foi possível verificar o texto, e não afeta o módulo (lesão doméstica é…
+
+### Direito Penal M10
+
+O módulo está juridicamente sólido e enxuto: artigos (155, 157, 158, 159, 163, 168, 168-A, 171, 171-A, 180, 181 a 183), Súmula 511/STJ e Súmula 610/STF estão corretos, e as referências a Lei nº 15.517/2026 (combustíveis) e às alterações de 2026 no estelionato…
+
+- **Precisao** (E1): O art. 157, caput, fala em reduzir a vítima à impossibilidade de resistência, por qualquer meio. 'Redução da possibilidade' é expressão imprecisa e poderia sugerir que…
+- **Precisao** (E2): Identifica a lei (padrão de citação 'Lei nº X/AAAA') em vez de referência vaga a 'alterações em 2026'. A lei tratou do estelionato, inclusive com revogação do § 5º do…
+- **Precisao** (E3): Evita afirmação absoluta ('sempre') sobre um roteiro didático de classificação, que é método de estudo e não regra legal.
+
+Pendências (não aplicadas):
+- Lei nº 15.397/2026 teria alterado também outros pontos (pena do furto simples, novos incisos do art. 157, § 2º, relativos a celulares/dispositivos eletrônicos, e criação…
+- Frase 'Em 2026 a Lei nº 15.517 trouxe alterações específicas relacionadas a subtrações de combustíveis, petróleo e derivados' confere com a Lei nº 15.517, de 22/09/2026…
+
+### Direito Penal M11
+
+O módulo está juridicamente sólido e bem hedgeado: as distinções entre falsidade material e ideológica, os artigos citados (289 a 296, 297, 298, 299, 304, 305, 307, 308, 311 e 311-A) e as ressalvas sobre potencialidade lesiva, consunção e uso do documento…
+
+- **Precisao** (E1): O núcleo do art. 311-A é utilizar ou divulgar, indevidamente, conteúdo sigiloso de certame, com a finalidade especial prevista no tipo; o verbo obter não consta do tipo.
+
+Pendências (não aplicadas):
+- Busca por leis recentes: não foi encontrada alteração dos arts. 289 a 311-A em 2025/2026. A Lei nº 15.397/2026 altera crimes patrimoniais (inclusive estelionato), mas o…
+- Sugestão (sem edição): o item 04 diz que o art. 304 se relaciona aos tipos de falsificação antecedente; está correto (arts. 297 a 302), e a ressalva sobre absorção está…
+
+### Direito Penal M12
+
+O módulo está juridicamente sólido e enxuto. Artigos citados (213, 215, 215-A, 216-A, 216-B, 217-A, 218, 218-A, 218-B, 218-C, 227 a 230) e os conceitos (subsidiariedade da importunação, vulnerabilidade etária absoluta, segredo de justiça) conferem com a…
+
+- **Precisao** (E1): A Lei nº 15.280/2025 alterou o caput do art. 218-C apenas quanto à pena (de 1 a 5 anos para 4 a 10 anos de reclusão e multa); dizer que a redação do tipo foi modificada…
+- **Adicional** (A1): O módulo não informa a natureza da ação penal, ponto básico e recorrente do tema. Desde a Lei nº 13.718/2018 o art. 225 do CP prevê ação penal pública incondicionada…
+- **Adicional** (A2): A Lei nº 15.353/2026 (8/03/2026) acrescentou o § 4º-A ao art. 217-A, declarando absoluta e insuscetível de relativização a presunção de vulnerabilidade da vítima menor…
+
+Pendências (não aplicadas):
+- A Lei nº 15.280/2025 também elevou as penas dos arts. 217-A, 218, 218-A e 218-B e revogou o § 1º do art. 218-B. O módulo não cita penas desses artigos nem o § 1º do…
+- Art. 213: o módulo resume a conduta como 'praticar ou permitir outro ato libidinoso' (o tipo diz 'praticar ou permitir que com ele se pratique outro ato libidinoso'). É…
+
+### Direito Penal M13
+
+O módulo está juridicamente sólido: os artigos citados (312, 313, 316, 317, 319, 327, 328 a 334-A, 339 a 342, 344, 347 a 349 e 359-A a 359-H) e as distinções entre os crimes estão corretos, sem afirmações absolutas indevidas e sem súmulas ou dados voláteis.…
+
+- **Correcao** (E1): “Assumir” e “inscrever” não são verbos nucleares: nos arts. 359-B e 359-C o verbo é ordenar ou autorizar (a assunção de obrigação e a inscrição em restos a pagar são o…
+- **Correcao** (E2): “Fato” é genérico; o art. 339 (redação da Lei nº 14.110/2020) exige imputação de crime, infração ético-disciplinar ou ato ímprobo.
+- **Precisao** (E3): O art. 334 também alcança o imposto devido pelo consumo da mercadoria; a expressão “nas condições legais” era vaga e não consta do tipo.
+- **Precisao** (E4): Alinha o vocabulário ao texto do art. 334, que não se limita a tributo de importação/exportação.
+
+Pendências (não aplicadas):
+- A OAB anunciou em 2025 ação no STF contra as expressões “infração ético-disciplinar” e “ato ímprobo” do art. 339; não foi confirmado andamento ou julgamento. Convém…
+- Nenhuma lei de 2025/2026 encontrada alterando arts. 312 a 333 do CP (Leis nº 15.397/2026 e 15.358/2026 tratam de patrimônio e domínio social estruturado); há apenas…
+
+### Direito Penal M14
+
+O módulo está juridicamente sólido e enxuto: art. 1º, §§ 1º e 2º, conceito de agente público (art. 2º), ação penal pública incondicionada (art. 3º), art. 22 (ingresso em domicílio), art. 319 do CP e a distinção entre abuso, prevaricação e falta administrativa…
+
+- **Precisao** (E1): O art. 4º, parágrafo único, condiciona a inabilitação (1 a 5 anos) e a perda do cargo/mandato/função à reincidência em crime de abuso de autoridade e à declaração…
+- **Adicional** (A1): Art. 3º, caput: ação penal pública incondicionada; § 1º: admite-se ação privada se a pública não for intentada no prazo legal, cabendo ao MP aditar a queixa, repudiá-la…
+- **Adicional** (A2): Art. 7º: as responsabilidades civil e administrativa são independentes da criminal, não se podendo mais questionar a existência ou a autoria do fato quando decididas no…
+
+Pendências (não aplicadas):
+- O item 03 cita 'arts. 9º a 21' de forma ampla; o intervalo é compatível com o texto da lei (art. 9º prisão manifestamente ilegal até o art. 21 presos de ambos os sexos…
+- PL nº 280/2026 (Senado) propõe novos tipos de abuso de autoridade, mas está em tramitação e não alterou a lei; nada a incluir no texto. Reconferir antes de publicar se…
+
+### Direito Penal M15
+
+O módulo está juridicamente sólido e prudente: a descrição do art. 1º, a ausência de rol fechado de crimes antecedentes, a autolavagem (com a distinção entre ato autônomo de ocultação e mero exaurimento) e o papel do COAF estão corretos. Não há afirmações…
+
+- **Precisao** (E1): Padrão do material: citar a lei pelo número e ano em vez de 'reforma de 2012'. A Lei nº 12.683/2012 suprimiu o rol de crimes antecedentes e passou a falar em 'infração…
+- **Correcao** (E2): A redação original sugeria que a condenação 'não definitiva' poderia ser exigida e usava expressão vaga ('em toda hipótese'; 'base probatória juridicamente suficiente').…
+- **Precisao** (E3): Os arts. 9º, 10 e 11 definem pessoas sujeitas, identificação/registros/políticas internas e comunicações; o art. 12 trata da responsabilidade administrativa (sanções),…
+- **Adicional** (A1): O texto sugere que a possibilidade de tentativa é incerta, mas a lei pune expressamente a tentativa no art. 1º, § 3º. Ajuste curto, sem acrescentar doutrina.
+
+Pendências (não aplicadas):
+- Lei nº 15.358/2026 (24/03/2026, marco legal de combate ao crime organizado) alterou a Lei nº 9.613/1998 (ao menos art. 2º, § 3º - competência Justiça Federal/Estadual;…
+- Lei nº 15.397/2026 (vigência 04/05/2026) tipificaria a cessão de conta (conta laranja) com reflexos na lavagem, segundo ConJur (2026-jun-09). Não verificado com 2 fontes…
+
+### Direito Penal M16
+
+O modulo esta, em geral, correto: a numeracao dos arts. 337-E a 337-P, a divisao entre tipos (337-E a 337-O) e multa (337-P) e a descricao de 337-E, 337-F, 337-H, 337-I, 337-K, 337-L, 337-M, 337-N e 337-O estao adequadas e sem afirmacoes absolutas. Ha duas…
+
+- **Precisao** (E1): A redação vaga omite o elemento típico central do art. 337-G: o patrocínio deve dar causa à instauração de licitação ou à celebração de contrato cuja invalidação vier a…
+- **Precisao** (E2): Dizer que o art. 321 tem 'estrutura mais ampla' é impreciso; o traço distintivo didático é o patrocínio por funcionário que se vale da qualidade de funcionário (art.…
+- **Correcao** (E3): O art. 337-J tutela o sigilo da proposta (devassá-lo ou dar a terceiro o ensejo de devassá-lo), e não genericamente o sigilo de informação relevante do procedimento.
+- **Precisao** (E4): Na tabela, o 'ponto decisivo' do art. 337-G é a invalidação decretada pelo Poder Judiciário; 'vínculo com contratação pública' é genérico e vale para todos os tipos do…
+- **Adicional** (A1): Art. 337-P: 'A pena de multa cominada aos crimes previstos neste Capítulo seguirá a metodologia de cálculo prevista neste Código e não poderá ser inferior a 2% (dois por…
+
+Pendências (não aplicadas):
+- Há divergência doutrinária sobre o art. 337-G ser crime próprio (funcionário público) ou comum; o texto proposto evita tomar posição.
+- Nenhum dado de pena aparece no módulo; não foi necessária correção de penas. Para referência: 337-E e 337-F, reclusão de 4 a 8 anos e multa; 337-J, detenção de 2 a 3…
+
+### Direito Penal M17
+
+O módulo está juridicamente correto e bem prudente na redação. Art. 5º, XLII, XLIII e XLIV da CF, art. 225, § 3º da CF e arts. 3º, 21, 22 e 24 da Lei nº 9.605/1998 estão descritos corretamente, e a superação da dupla imputação (STF e STJ) está bem apresentada…
+
+- **Enxugamento** (E1): Evita dado volátil ("recentes") em texto que será lido em datas diferentes; o sentido didático permanece.
+- **Precisao** (E2): O art. 317 do CP tem como núcleos solicitar, receber ou aceitar promessa de vantagem indevida; citar só "solicitar" deixa o conceito incompleto na lista de verbos…
+
+Pendências (não aplicadas):
+- Dupla imputação: afastada pelo STF (RE 548181/PR, 1ª Turma, 2013) e acompanhada pelo STJ (RMS 39.173/BA, 2015), conforme artigos e blogs jurídicos; o texto do módulo já…
+- Art. 24 da Lei nº 9.605/1998 usa "terá decretada sua liquidação forçada" (efeito obrigatório quando presente a hipótese legal); o texto do módulo diz "medida…
+
+### Processo Penal M01
+
+O módulo está correto e enxuto. O art. 3º-A, as ADIs 6.298, 6.299, 6.300 e 6.305 e o limite da competência do juiz das garantias (oferecimento da denúncia ou queixa, conforme o STF) estão certos. Só há uma melhoria de precisão: dizer quais são as exceções…
+
+- **Precisao** (E1): O texto cita exceções sem dizer quais; a frase curta nomeia as quatro principais, que o STF afastou do regime do juiz das garantias.
+- **Adicional** (A1): O texto original remete genericamente à jurisprudência do STF; a interpretação conforme ao art. 3º-A (Lei nº 13.964/2019) nas ADIs 6.298 etc. é o ponto mais batido e…
+
+Pendências (não aplicadas):
+- Algumas fontes secundárias ainda repetem 'recebimento da denúncia' (texto original do art. 3º-C); prevalece a interpretação do STF (oferecimento), que o módulo já adota.…
+- Não foi possível confirmar o teor exato da interpretação do STF sobre o art. 3º-A e a iniciativa probatória na instrução (art. 156); o módulo trata o ponto de forma…
+
+### Processo Penal M02
+
+O módulo está juridicamente sólido: arts. 1º, 2º e 3º do CPP, tempus regit actum, normas híbridas e Lei 9.099/1995 estão bem descritos. Há um único ajuste de precisão: a lei penal material mais favorável retroage de forma obrigatória (CF, art. 5º, XL), e não…
+
+- **Precisao** (E1): A retroatividade da lei penal benéfica é regra constitucional, não faculdade; 'podem' induz a erro e destoa do quadro final do módulo.
+- **Adicional** (A1): Padronização da citação ('Lei nº X/AAAA'). Conteúdo conferido: o art. 92 da Lei nº 9.099/1995 manda aplicar subsidiariamente o CPP e a LEP, e o art. 61 (Lei nº…
+
+Pendências (não aplicadas):
+- Não foi acrescentada a discussão sobre o marco temporal da retroatividade do art. 28-A (ANPP), por ser jurisprudência detalhada e ainda sujeita a divergência; fica para…
+- Marco temporal da retroatividade do ANPP (art. 28-A) é jurisprudência detalhada e ainda em evolução; corretamente fora do módulo.
+
+### Processo Penal M03
+
+O módulo está juridicamente sólido e prudente: prazos do art. 10, indiciamento (Lei 12.830/2013, art. 2º, § 6º), Súmula Vinculante 14 e arquivamento (art. 28 e ADIs do juiz das garantias) estão corretos e bem ressalvados. Só dois trechos estão vagos demais…
+
+- **Precisao** (E1): 'Limita a investigação' é vago; o art. 5º, § 4º, do CPP veda o início do inquérito sem a representação.
+- **Precisao** (E2): 'Relevante' é impreciso; o art. 5º, § 5º, exige requerimento de quem tenha qualidade para intentar a ação privada.
+
+Pendências (não aplicadas):
+- Texto exato da interpretação conforme do STF ao art. 28 (ADIs 6298, 6299, 6300 e 6305, proclamação em 24/08/2023) e a prorrogação do prazo para preso no art. 3º-B, § 2º…
+- STF (ADIs 6298 e outras, 24/08/2023): interpretação conforme ao art. 28 para o MP submeter a manifestação de arquivamento ao juiz, com controle de…
+
+### Processo Penal M04
+
+O módulo está correto em arts. 41, 395 (inépcia, falta de pressuposto/condição e falta de justa causa), 28-A (sem violência ou grave ameaça, pena mínima inferior a 4 anos, confissão) e na distinção renúncia x perdão. Apenas a expressão 'costuma ser' para o…
+
+- **Precisao** (E1): O prazo de seis meses a contar da ciência da autoria é regra legal (art. 38 CPP; art. 103 CP), com exceções especiais, e não mera tendência.
+- **Adicional** (A1): A Lei nº 15.438/2026, de 18/06/2026, sancionada sem vetos e em vigor desde a publicação (19/06/2026), ampliou de 6 para 12 meses a decadência do direito de queixa ou…
+
+Pendências (não aplicadas):
+- HC 185.913 (STF, concluído em 18/09/2024) confirmado como precedente sobre aplicação temporal do ANPP (Migalhas, ConJur); o módulo cita-o genericamente, sem edição.
+- Aplicação intertemporal da lei (fatos anteriores a 19/06/2026) é controvertida na doutrina; não foi incluída no módulo.
+
+### Processo Penal M05
+
+O módulo é genérico e didático, e não apresentou erro jurídico. Os conceitos de impedimento (vínculos objetivos) e suspeição (comprometimento da confiança na neutralidade), a titularidade da ação penal pelo MP, o papel do assistente de acusação, o direito ao…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+
+Pendências (não aplicadas):
+- Opcional para o material completo: art. 3º-A do CPP (Lei nº 13.964/2019, estrutura acusatória) e a decisão do STF nas ADIs 6298, 6299, 6300 e 6305 (agosto/2023) sobre o…
+- Opcional: art. 400-A e art. 474-A do CPP (Lei nº 14.245/2021) sobre dignidade da vítima e testemunhas na audiência; não inserido por ser conteúdo novo.
+
+### Processo Penal M06
+
+O módulo está juridicamente correto no essencial: art. 70 do CPP (consumação; último ato de execução na tentativa), art. 69 (critérios), arts. 72 e 73 (domicílio do réu e ação privada), competência territorial relativa e materia/pessoa/função absoluta. Foram…
+
+- **Precisao** (E1): Regra especial relevante e confirmada; o parágrafo já fala em regras especiais, e a frase apenas a exemplifica. Em pluralidade de vítimas aplica-se a prevenção (não…
+- **Precisao** (E2): A redação original podia levar a crer que o ex-agente sempre perde o foro; o STF (HC 232627 e Inq 4787, 2025, confirmado em embargos) mantém o foro após a saída do cargo…
+
+Pendências (não aplicadas):
+- O inteiro teor do acórdão do HC 232627 e dos embargos de declaração (2026) não foi lido; a tese foi extraída de notícias. Recomenda-se conferir a tese final antes de…
+- Base jurídica cita CF arts. 102, 105 e 109; poderia incluir art. 108 (TRFs) e art. 96, III (TJs), mas não é erro e a linha foi mantida.
+
+### Processo Penal M07
+
+O módulo está juridicamente correto no essencial: a lista de exceções do art. 95, os incidentes de falsidade e de insanidade mental, a restituição e as medidas assecuratórias estão bem descritos e com linguagem prudente. Há uma imprecisão: o quadro atribui ao…
+
+- **Precisao** (E1): Distinção central entre as três medidas, ausente do texto; sem ela o aluno confunde sequestro com hipoteca legal/arresto.
+- **Correcao** (E2): O sequestro atinge bens de origem ilícita; o ressarcimento com patrimônio lícito é objeto da hipoteca legal e do arresto.
+
+Pendências (não aplicadas):
+- BASE JURÍDICA cita 'arts. 92–154 e 118–144-A': não é erro, mas a segunda faixa já está contida na primeira (redundância); sugerida apenas simplificação futura, sem…
+- Verificado: art. 95 (cinco exceções), arts. 145-148 (falsidade), 149-154 (insanidade; suspensão do processo no art. 149, §2º), 118-124-A (Lei 13.964/2019 mexeu em arts.…
+
+### Processo Penal M08
+
+O módulo está correto e prudente: o art. 563 (nenhuma nulidade sem prejuízo), a preclusão das nulidades relativas e o aproveitamento dos atos estão bem tratados, e não há alteração legislativa recente nos arts. 563-573. O ponto a ajustar é a descrição da…
+
+- **Correcao** (E1): Reproduz fielmente o sentido do enunciado (falta de defesa = nulidade absoluta; deficiência só anula com prova de prejuízo).
+- **Precisao** (E2): Alinha o quadro ao texto da súmula e ao item 05, evitando a formulação vaga 'exame de prejuízo'.
+
+Pendências (não aplicadas):
+- Opcional (não editado para não acrescentar conteúdo): citar o art. 565 (parte não pode arguir nulidade a que deu causa ou para a qual concorreu) e o art. 572 (sanatória)…
+- A frase sobre nulidades absolutas e prejuízo é hedgeada ('conforme a situação') e coerente com a jurisprudência dominante; mantida.
+
+### Processo Penal M09
+
+O módulo está correto no essencial (art. 798 do CPP, art. 10 do CP, não aplicação dos dias úteis do CPC). Falta apenas dar precisão à prorrogação do vencimento e registrar a suspensão de prazos de 20 de dezembro a 20 de janeiro, que o CPP prevê desde a Lei nº…
+
+- **Precisao** (E1): Troca remissão vaga pela regra exata do § 3º e registra o art. 798-A, que flexibiliza a ideia de prazo contínuo sem interrupção.
+- **Precisao** (E2): Súmula central sobre termo inicial, em linha com o título da seção; texto da súmula conferido.
+- **Precisao** (E3): Retira o absoluto 'jamais' e diz exatamente o que não se deve confundir.
+
+Pendências (não aplicadas):
+- Seção 04: a expressão 'obstáculo relevante alheio à atuação da parte' é genérica; o art. 798, § 4º do CPP trata de impedimento do juiz, força maior ou obstáculo judicial…
+- Súmula 310 do STF (intimação na sexta-feira) combina com o exemplo inicial, mas há debate sobre o encaixe com a regra de exclusão do dia do começo; não incluída.
+
+### Processo Penal M10
+
+O módulo está juridicamente correto nas linhas gerais (art. 366, hora certa, art. 570). Os ajustes são de precisão: o art. 353 diz que o réu fora da jurisdição será citado por precatória, o art. 366 fala em constituir advogado, a hora certa leva à nomeação de…
+
+- **Precisao** (E1): O CPP usa linguagem imperativa: réu fora do território do juízo processante será citado mediante precatória.
+- **Precisao** (E2): A seção trata de cooperação e omitia a hipótese do exterior; frase curta com a regra do art. 368.
+- **Correcao** (E3): Texto legal: nem constituir advogado.
+- **Precisao** (E4): 'Automaticamente' sugere que a suspensão poderia incidir; a regra é a nomeação de defensor dativo e a continuidade do feito.
+- **Precisao** (E5): Troca frase genérica pela regra efetiva do art. 370; Defensoria decorre de sua lei orgânica (LC 80/1994).
+
+Pendências (não aplicadas):
+- Súmula 415 do STJ (suspensão da prescrição do art. 366 regulada pelo máximo da pena) e Tema 438 do STF sobre o prazo da suspensão têm tratamento controverso nas fontes;…
+- Exigência de decisão judicial expressa para suspender (STJ, 2025) é jurisprudência recente e detalhada; fica para o material completo.
+
+### Processo Penal M11
+
+O módulo é enxuto e juridicamente correto. Art. 381 (requisitos), art. 383 (emendatio), art. 384 (mutatio, com aditamento e defesa), art. 386 (fundamentos de absolvição), art. 387 (valor mínimo de reparação) e art. 68 do CP (dosimetria trifásica) estão bem…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+
+Pendências (não aplicadas):
+- A frase sobre reparação mínima do dano (observados requerimento, prova e contraditório) está compatível com a jurisprudência do STJ, mas o Tema 1.389 do STJ (exigência…
+- Não foi localizada lei de 2026 que altere os arts. 381-393 do CPP; Lei 15.487/2026 (crimes digitais/IA) altera o CPP, mas o conteúdo não foi confirmado quanto à sentença.
+
+### Processo Penal M12
+
+O módulo está correto e prudente. O art. 155 (exceção para provas cautelares, não repetíveis e antecipadas), o art. 157, o art. 158 e os arts. 158-A a 158-F (cadeia de custódia) estão bem referidos. A descrição do Tema Repetitivo 1.258 do STJ (julgado em…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+
+Pendências (não aplicadas):
+- Opcional (não editado, para manter enxuto): o art. 158 admite exame direto ou indireto e o art. 167 permite prova testemunhal supletiva quando desaparecem os vestígios;…
+- Lei 15.272/2025 (art. 310-A do CPP, coleta de material biológico com cadeia de custódia) existe, mas é tema periférico ao módulo; não incluída.
+
+### Processo Penal M13
+
+O módulo está juridicamente correto e enxuto. Confirmei que a Lei 15.272/2025 (arts. 310, §§ 5º e 6º, 312, §§ 3º e 4º, e 310-A do CPP) e a Lei 15.358/2026 (audiência de custódia por videoconferência como regra, art. 310) existem e foram descritas de forma…
+
+- **Precisao** (E1): A redação anterior era imprecisa ("nas condições da tese"); aproxima-se do texto literal da Súmula 145 do STF.
+- **Enxugamento** (E2): Frase de aviso genérico, sem conteúdo jurídico; a lei é recente e objeto de questionamento, então a remissão à regulamentação é dado volátil.
+- **Precisao** (E3): No quadro, "sinais indicativos" não consta do art. 302, IV; alinha ao texto legal.
+- **Adicional** (A1): Padronização da citação (Lei nº X/AAAA). Sem mudança de mérito.
+- **Adicional** (A2): Padronização da citação (Lei nº X/AAAA). Sem mudança de mérito.
+
+Pendências (não aplicadas):
+- Há ADI/pareceres (IAB) questionando partes da Lei 15.358/2026; módulo não afirma nada sobre isso. Acompanhar.
+- A BASE JURÍDICA cita arts. 282-310-A: o art. 310-A existe (Lei 15.272/2025), portanto está correto.
+
+### Processo Penal M14
+
+O módulo está correto nas linhas gerais (arts. 311-316, 319, Lei 7.960/1989, fiança policial no limite de quatro anos, não automaticidade da soltura após o prazo do art. 316). Proponho dois ajustes de precisão: o prazo de reavaliação do art. 316, parágrafo…
+
+- **Precisao** (E1): Indica o prazo legal do parágrafo único do art. 316, coerente com a tese de que o atraso não gera soltura automática, já descrita no módulo.
+- **Correcao** (E2): O limite do art. 322 é requisito legal, não mera regra geral; "em regra" sugere exceções inexistentes no texto (as demais hipóteses vão ao juiz).
+- **Adicional** (A1): Padronização da citação e frase sem sujeito completo ('Lei ... reforçou' sem artigo). Sem mudança de mérito; a lei inseriu o § 3º (critérios de periculosidade) e o § 4º…
+- **Adicional** (A2): Padronização da citação (Lei nº X/AAAA).
+
+Pendências (não aplicadas):
+- Frase sobre a 'leitura estrita' da jurisprudência do STF sobre a temporária (ADIs 3360 e 4109) foi mantida por ser genérica; não confirmei a formulação exata em segunda…
+- A Lei 15.272/2025 inseriu os §§ 3º e 4º no art. 312 (critérios de periculosidade e vedação de decretar preventiva apenas com base em gravidade abstrata); fontes divergem…
+
+### Processo Penal M15
+
+O módulo está correto no essencial: critérios de rito (4 anos), rejeição, resposta em 10 dias, absolvição sumária e ordem da audiência com interrogatório ao final. Há apenas ajustes de precisão: o texto do art. 395, II, uma lista de absolvição sumária que…
+
+- **Precisao** (E1): O art. 395, II, fala em pressuposto processual ou condição para o exercício da ação penal; 'requisito processual' não é a expressão legal.
+- **Correcao** (E2): 'Como' sugere rol exemplificativo, mas o art. 397 traz rol fechado (e o próprio quadro do módulo diz 'hipóteses taxativas').
+- **Precisao** (E3): O prazo de 10 dias para a resposta está no art. 396, caput; o art. 396-A trata do conteúdo da resposta.
+- **Adicional** (A1): Coerencia com E3: o prazo de dez dias esta no art. 396, caput; o art. 396-A trata do conteudo da resposta.
+
+Pendências (não aplicadas):
+- Possível nuance não incluída por ser jurisprudência detalhada: aplicação dos arts. 395 a 397 a procedimentos especiais (art. 394, par. 4) e ao Júri (divergência no STJ).
+- Observacao sem edicao: art. 394, par. 4, estende os arts. 395 a 398 a todos os procedimentos penais de primeiro grau; o modulo so diz que procedimentos especiais tem…
+
+### Processo Penal M16
+
+O módulo está juridicamente correto e bem genérico: princípios do art. 5º, XXXVIII, da CF, pronúncia (materialidade e indícios suficientes de autoria ou participação, art. 413), impronúncia, absolvição sumária, desclassificação, sete jurados e apelação do…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+- Sugestão do aprovador **não aplicada** (A1): A Lei nº 15.358/2026 (art. 38) alterou o art. 78, I, do CPP, confirmado em Senado, Câmara, legjur, ConJur e Migalhas. O módulo afirma o Júri como regra geral sem…
+
+Pendências (não aplicadas):
+- Lei 15.358/2026 (Lei Antifacção, março/2026) alterou o art. 78, I, do CPP para ressalvar da prevalência do Júri os homicídios (inclusive tentados) cometidos por membros…
+- Execução imediata da pena após condenação pelo Júri (art. 492, I, e, do CPP, Lei 13.964/2019, e entendimento do STF sobre soberania dos veredictos): não consta do…
+
+### Processo Penal M17
+
+Módulo genérico e sem erros jurídicos graves. A Súmula 542/STJ está correta (ação penal pública incondicionada na lesão corporal em violência doméstica contra a mulher). Há uma única imprecisão útil: a defesa prévia da Lei de Drogas é regra do art. 55 (dez…
+
+- **Precisao** (E1): A Lei 11.343/2006 prevê defesa prévia escrita em dez dias, antes do juízo de admissibilidade da denúncia; a expressão 'em hipóteses da lei' era vaga e sugeria cabimento…
+
+Pendências (não aplicadas):
+- Exemplo da seção 05 cita a mudança jurisprudencial do interrogatório ao final (STF, HC 127900, que estendeu o art. 400 do CPP aos ritos especiais, inclusive Lei de…
+- Considerar, no material completo, a Lei 14.550/2023 (medidas protetivas da Lei Maria da Penha independem de tipificação penal, de ação penal ou de inquérito): não…
+
+### Processo Penal M18
+
+Prazo de quinze dias e texto da Súmula 330/STJ estão corretos. Faltava o requisito central do art. 514: a notificação para resposta preliminar vale para crimes afiançáveis (os crimes funcionais típicos, arts. 312 a 326 do CP, são afiançáveis), e o rito se…
+
+- **Correcao** (E1): O art. 514 do CPP começa com 'Nos crimes afiançáveis'; a expressão 'hipóteses legais' omitia o requisito literal.
+- **Precisao** (E2): O rito dos arts. 513 a 518 é reservado, em regra, a crimes funcionais típicos; a frase original ficava vaga.
+
+Pendências (não aplicadas):
+- Jurisprudência de que o art. 514 não se aplica a quem já deixou o cargo (STF, RHC 137455; STJ) e de que a falta da defesa preliminar é nulidade relativa (exige protesto…
+- Seção 04 diz que a Súmula 330 'não significa que toda defesa prévia seja inútil': formulação aceitável, mantida.
+
+### Processo Penal M19
+
+O módulo está correto e enxuto: art. 579 (fungibilidade), art. 617 (reformatio in pejus) e a regra de prazos penais estão bem apresentados. Há uma única frase vaga e potencialmente enganosa sobre nulidades na reformatio in pejus, que foi trocada pela regra…
+
+- **Correcao** (E1): A frase original, genérica, sugeria que nulidades poderiam ser corrigidas em prejuízo do réu mesmo sem recurso da acusação, o que contraria a Súmula 160 do STF (texto: É…
+
+Pendências (não aplicadas):
+- A Súmula 160 tem aplicação discutida quanto a nulidades absolutas (incompetência); a edição se limita ao texto literal da súmula.
+- Art. 798-A do CPP (Lei 14.365/2022, suspensão de prazos no fim do ano) não foi confirmado de forma consistente; o módulo não o cita e não foi editado.
+
+### Processo Penal M20
+
+Prazos e artigos do módulo conferem (RESE: 5 dias, art. 586, razões art. 588; apelação art. 593; embargos de declaração art. 619; embargos infringentes art. 609, p. único; agravo em execução art. 197 da LEP). Foram propostos dois ajustes: citar de forma curta…
+
+- **Precisao** (E1): A lei regulamentou o art. 105, § 2º, da CF e exige a demonstração da relevância no recurso especial para recursos contra acórdãos publicados após a vigência; é mudança…
+- **Correcao** (E2): O módulo trata da carta testemunhável, disciplinada nos arts. 639 a 646 do CPP; a faixa original terminava no art. 638.
+
+Pendências (não aplicadas):
+- Sites oficiais não foram abertos; conferência por fontes secundárias.
+- Aplicação do filtro de relevância a recursos criminais (presunção do art. 105, § 3º, I, da CF) tem divergência doutrinária e regulamentação regimental do STJ; por isso o…
+
+### Processo Penal M21
+
+O módulo está juridicamente correto e enxuto. Conferidos: infração de menor potencial ofensivo (contravenções e crimes com pena máxima até dois anos, art. 61), termo circunstanciado e não lavratura de flagrante/fiança (art. 69, parágrafo único), efeito da…
+
+- **Adicional** (A1): O art. 41 da Lei nº 11.340/2006 afasta a Lei nº 9.099/1995 dos crimes praticados com violência doméstica e familiar contra a mulher, independentemente da pena prevista…
+
+Pendências (não aplicadas):
+- Opcional (não editado, para manter enxuto): o módulo diz apenas 'ressalvadas exclusões e regras especiais'; não menciona expressamente a exclusão em violência doméstica…
+- Nenhuma alteração de 2025-2026 nos arts. 61, 82 ou 89 da Lei nº 9.099/1995 encontrada nas buscas.
+
+### Processo Penal M22
+
+O módulo está em geral correto: HC (CF art. 5º, LXVIII; CPP arts. 647-667), legitimidade ampla sem advogado (art. 654), art. 648 como rol ilustrativo, MS residual frente a HC e habeas data (CF art. 5º, LXIX; Lei 12.016/2009). Uma única imprecisão: as…
+
+- **Precisao** (E1): O art. 621 do CPP fala em sentença contrária ao texto expresso da lei penal ou à evidência dos autos (I), depoimentos/exames/documentos falsos (II) e novas provas de…
+
+Pendências (não aplicadas):
+- Uma fonte secundária menciona que a Lei 14.836/2024 teria incluído o art. 647-A (HC de ofício por qualquer autoridade judicial); não confirmei com segunda fonte, por…
+- Parte da doutrina trata o art. 648 como taxativo; a corrente dominante o vê como exemplificativo, como o módulo diz (mantido).
+
+### Penal e Processo Penal — fechamento (20/11/2026)
+
+- Direito Penal M01–M17: ajustes em 16 módulos (M02 a M17, de 1 a 5 ajustes cada); só o M01 ficou sem alteração. As 24 tabelas dos resumos passaram a ser desenhadas como tabelas. Processo Penal M01–M22: ajustes em 18 módulos; M05, M11, M12 e M16 ficaram sem alteração.
+- No Penal M14, os dois acréscimos sugeridos pelo aprovador (ação penal privada subsidiária e coisa julgada do art. 8º da Lei nº 13.869/2019) foram reduzidos ao essencial para respeitar a regra enxuta: ficou só a regra do art. 3º, § 1º e a independência das instâncias (art. 7º).
+- Leis recentes citadas e confirmadas só em fontes secundárias (Senado, Câmara, Migalhas, Conjur, Jus), sem leitura do texto oficial: Lei nº 15.160/2025 (art. 115 do CP, violência sexual contra a mulher), Lei nº 15.438/2026 (prazo de 12 meses para representação/queixa em violência doméstica contra a mulher; art. 103 do CP e art. 38 do CPP), Lei nº 15.397/2026 (estelionato; art. 171), Lei nº 15.280/2025 (pena do art. 218-C), Lei nº 15.353/2026 (art. 217-A), Lei nº 15.272/2025 e Lei nº 15.358/2026 (CPP: prisões e audiência de custódia). Recomenda-se conferir o texto no Planalto antes de publicar.
+- Não aplicado por ser contestado ou detalhado demais: ressalva do art. 78, I, do CPP (Júri e organizações criminosas, Lei nº 15.358/2026, constitucionalidade debatida) e a aplicação do filtro de relevância (Lei nº 15.484/2026) ao recurso especial criminal; no M20 ficou redação neutra, sem número de lei.
+- Conteúdo deixado de fora para o material completo: jurisprudência detalhada, doutrina minoritária, tabela do art. 8º da Lei nº 13.869/2019 e demais temas listados nas pendências de cada módulo.
+- A publicação em produção depende de autorização expressa do proprietário.
