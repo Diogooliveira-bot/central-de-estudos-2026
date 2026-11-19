@@ -27,7 +27,7 @@ function filterData() {
   };
 }
 
-function setup({ role = 'aluno', overrides = [], failModuleMount = false } = {}) {
+function setup({ role = 'admin', overrides = [], failModuleMount = false } = {}) {
   const dom = new JSDOM(`<!doctype html><html><body>
     <div id="centralSidebar"><div class="nav"><button>Hoje</button><div class="label">Ferramentas</div></div></div>
     <div class="workspace"><section id="homeView" class="view"></section></div><span id="crumb"></span>
@@ -92,7 +92,7 @@ test('módulo, biblioteca e histórico usam o mesmo filtro e a mesma sessão', a
   assert.match(dom.window.document.querySelector('[data-bcq-panel="history"]').textContent, /20 respondidas/);
   assert.match(dom.window.document.querySelector('[data-bcq-panel="history"]').textContent, /75%/);
   assert.ok(dom.window.document.querySelector('[data-bcq-panel="history"] .bcq-evolution-svg'));
-  assert.equal(dom.window.document.querySelectorAll('[data-bcq-manage]').length, 0);
+  assert.equal(dom.window.ExternalQuestionFilters.canManage, true);
 });
 
 test('rodapé do módulo preserva o visual aprovado e não repete filtros', async () => {
@@ -269,4 +269,31 @@ test('API administrativa valida domínio, quantidade, status e revisão', () => 
   assert.match(validateFilterOverride({ ...valid, data: { ...valid.data, count: 0 } }), /Quantidade/);
   assert.match(validateFilterOverride({ ...valid, data: { ...valid.data, status: 'apagado' } }), /Status/);
   assert.match(validateFilterOverride({ ...valid, revision: -1 }), /Revisão/);
+});
+
+test('aluno gratuito e premium, editor e visitante não visualizam os filtros externos nem acessam a rota', async () => {
+ for (const role of ['aluno', 'editor', 'visitante']) {
+  const dom=setup({role});
+  await settle(dom.window);
+  const {document,location}=dom.window;
+  assert.equal(location.pathname,'/',role+' não pode permanecer na rota de filtros');
+  assert.equal(document.querySelector('#questionFiltersView'),null,role+' não recebe o catálogo');
+  assert.equal(document.querySelector('[data-bcq-module-panel]'),null,role+' não recebe painel QC');
+  assert.ok(document.documentElement.classList.contains('bcq-student-view'));
+  assert.equal(document.querySelector('[data-test-original]').getAttribute('data-bcq-original'),'1');
+  dom.window.ExternalQuestionFilters.openPage();
+  assert.equal(location.pathname,'/',role+' não pode abrir via chamada direta');
+  assert.equal(document.querySelector('#questionFiltersView'),null);
+  dom.window.close();
+ }
+});
+
+test('administrador mantém painel de filtros e gerenciador na navegação', async () => {
+ const dom=setup({role:'admin'});
+ await settle(dom.window);
+ assert.ok(dom.window.document.querySelector('#questionFiltersView:not(.hidden)'));
+ assert.ok(dom.window.document.querySelector('[data-bcq-module-panel="penal:M03"]'));
+ assert.equal(dom.window.ExternalQuestionFilters.canManage,true);
+ assert.equal(dom.window.document.documentElement.classList.contains('bcq-student-view'),false);
+ dom.window.close();
 });
