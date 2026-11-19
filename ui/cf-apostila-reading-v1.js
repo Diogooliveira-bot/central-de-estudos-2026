@@ -122,7 +122,7 @@ function lawInline(text,seen){
   const suffix=(ref.para?', § '+ref.para+'º':'')+(ref.incs.length?', '+ref.incs.join(', '):'')+
    (!ref.para&&!ref.incs.length&&lines.length===1&&entry.lines.length>1?' (caput)':'');
   const title='Lei seca — '+entry.label+suffix;
-  out.push('<details class="cf-apostila-law cf-apostila-law-inline" data-bc-cf-auto-law="1"'+(lines.length<=3?' open':'')+'><summary>'+escape(title)+'</summary><div class="cf-apostila-law-body">'+lines.map(line=>'<p>'+escape(line)+'</p>').join('')+'</div></details>');
+  out.push('<details class="cf-apostila-law cf-apostila-law-inline" data-bc-cf-auto-law="1" data-bc-cf-ref="'+escape(key)+'"'+(lines.length<=3?' open':'')+'><summary>'+escape(title)+'</summary><div class="cf-apostila-law-body">'+lines.map(line=>'<p>'+escape(line)+'</p>').join('')+'</div></details>');
  }
  return out.join('');
 }
@@ -139,14 +139,19 @@ function ensureInline(article){
   if(el.closest('.cf-apostila-law,.cf-apostila-laws,.bc-native-reader-tools,[data-bc-law-section]'))continue;
   const refs=citedConstitution(el.textContent||'');
   if(!refs.length)continue;
-  const existing=el.nextElementSibling;
-  if(existing?.matches?.('.cf-apostila-law-inline')){
-   for(const r of refs)seen.add([r.article,r.para,r.incs.join(',')].join(':'));
-   continue;
+  // Uma explicação pode citar dois dispositivos. Um trecho editado no
+  // Premium deve continuar fixo, e os demais continuam sendo completados.
+  let sibling=el.nextElementSibling,last=el,hasLegacy=false;
+  while(sibling?.matches?.('.cf-apostila-law-inline')){
+   const key=sibling.getAttribute?.('data-bc-cf-ref');
+   if(key)seen.add(key);
+   else hasLegacy=true;
+   last=sibling;sibling=sibling.nextElementSibling;
   }
+  if(hasLegacy){for(const r of refs)seen.add([r.article,r.para,r.incs.join(',')].join(':'))}
   const html=lawInline(el.textContent||'',seen);
   if(!html)continue;
-  el.insertAdjacentHTML('afterend',html);
+  last.insertAdjacentHTML('afterend',html);
   inserted+=(html.match(/class="cf-apostila-law cf-apostila-law-inline"/g)||[]).length;
  }
  return inserted;
