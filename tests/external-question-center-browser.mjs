@@ -21,7 +21,7 @@ const server = createServer(async (request, response) => {
   }
   if (url.pathname === '/api/external-question-filters') {
     response.writeHead(200, { 'Content-Type':'application/json' });
-    response.end(JSON.stringify({ canManage:false, overrides:[] }));
+    response.end(JSON.stringify({ canManage:true, overrides:[] }));
     return;
   }
   if (url.pathname.startsWith('/api/')) {
