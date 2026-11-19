@@ -4,7 +4,7 @@
  let pending=null;
  function styles(){
   if(document.getElementById('civil-visual-apostila-style'))return;
-  const link=document.createElement('link');link.id='civil-visual-apostila-style';link.rel='stylesheet';link.href='/ui/civil-visual-apostila-v1.css?v=20261107civil4';document.head.append(link);
+  const link=document.createElement('link');link.id='civil-visual-apostila-style';link.rel='stylesheet';link.href='/ui/civil-visual-apostila-v1.css?v=20261120leiseca1';document.head.append(link);
  }
  async function data(){
   if(!pending)pending=(async()=>{
@@ -14,5 +14,5 @@
   })().catch(error=>{pending=null;throw error;});
   return pending;
  }
- g.CivilVisualApostila={async html(n){styles();const all=await data();if(!all[n]?.html)throw new Error('Apostila de Civil não localizada');if(!g.CivilLawDisclosure)await import('/ui/civil-law-disclosure-v1.js?v=20261107civil4');const template=document.createElement('template');template.innerHTML=all[n].html;g.CivilLawDisclosure.enhance(template.content);return template.innerHTML;}};
+ g.CivilVisualApostila={async html(n){styles();const all=await data();if(!all[n]?.html)throw new Error('Apostila de Civil não localizada');if(!g.BCLawInline)await import('/ui/law-inline-v1.js?v=20261120leiseca1');if(!g.CivilLawDisclosure)await import('/ui/civil-law-disclosure-v1.js?v=20261120leiseca1');const template=document.createElement('template');template.innerHTML=all[n].html;g.CivilLawDisclosure.enhance(template.content);return template.innerHTML;}};
 })(window);
