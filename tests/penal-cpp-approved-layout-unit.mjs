@@ -169,6 +169,7 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
 test('runtime de filtros reutiliza painel aninhado e não duplica após atualizações',async()=>{
   const dom=new JSDOM('<!doctype html><div id="subjects"><section class="subject" data-id="penal"><section class="cf-module" data-cf="p1"><div class="cf-module-body"><div class="ds-module-footer"><div class="ds-notes adm-native-notes"></div></div></div></section></section></div><div class="workspace"></div>',{url:'https://study.test/',runScripts:'dangerously',pretendToBeVisual:true});
   const w=dom.window;
+  w.BASE_COMPLETA_USER={id:'admin-penal-test',role:'admin'};
   w.TEC_PENAL_CPP_LINKS={records:[{status:'VALIDADO_NA_CONTA_CRIADORA',discipline:'penal',module:'M01',id:'101897431',quantity:55,url:'https://www.tecconcursos.com.br/questoes/cadernos/101897431',title:'CP 01 - Conceitos, princípios e lei penal'}]};
   w.QC_CENTRAL_SHARING_LINKS={items:[{discipline:'Direito Penal',disciplineKey:'penal',code:'M01',title:'Princípios penais',id:'15299001',quantity:55,status:'VALIDADO',public:true,link:'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15299001'}]};
   w.requestAnimationFrame=callback=>callback();
@@ -190,6 +191,7 @@ test('runtime de filtros reutiliza painel aninhado e não duplica após atualiza
 test('Processo Penal monta somente QC logo após a Lei em Dia do módulo',async()=>{
   const dom=new JSDOM('<!doctype html><div id="subjects"><section class="subject" data-id="cpp"><div class="subject-body"><article class="topic-item" data-cpp-native-module="1"><div class="topic-detail"><div class="detail-panel"><section class="adm-native-zone"><div class="adm-native-material-grid"><article data-kind="summary"></article><article data-kind="complete"></article><article data-kind="lei-em-dia"></article><section class="cpp-native-links" data-cpp-links-slot="1" data-bcq-module-slot="1"><div class="cpp-native-links-head"></div><section class="cpp-native-tec-panel" data-cpp-tec-panel="1"></section></section></div></section><section class="adm-native-notes"></section></div></div></article></div></section></div>',{url:'https://study.test/',runScripts:'dangerously',pretendToBeVisual:true});
   const w=dom.window;
+  w.BASE_COMPLETA_USER={id:'admin-cpp-test',role:'admin'};
   w.TEC_PENAL_CPP_LINKS={records:[{status:'VALIDADO_NA_CONTA_CRIADORA',discipline:'cpp',module:'M01',id:'105849897',quantity:10,url:'https://www.tecconcursos.com.br/questoes/cadernos/105849897',title:'Introdução ao Direito Processual Penal'}]};
   w.QC_CENTRAL_SHARING_LINKS={items:[{discipline:'Direito Processual Penal',disciplineKey:'processual-penal',code:'M01',title:'Introdução ao Direito Processual Penal',id:'15299002',quantity:27,status:'VALIDADO',public:true,link:'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15299002'}]};
   w.requestAnimationFrame=callback=>callback();

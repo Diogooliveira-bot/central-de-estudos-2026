@@ -16,6 +16,7 @@ function setup() {
     <section id="subjects"><article class="subject" data-id="penal"><div class="cf-module open" data-cf="p3"><div class="cf-module-body"><section class="qc-platform-sharing"></section><article class="bc-native-metric-card"><div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>64%</b></div></div><strong data-native-metric-detail="external">Histórico legado preservado</strong><span data-native-metric-meta="external">Registro anterior</span></article></div></div></article></section>
   </body></html>`, { url: 'https://preview.example.test/central-v119.html', runScripts: 'outside-only', pretendToBeVisual: true });
   const { window } = dom;
+  window.BASE_COMPLETA_USER = { id: 'admin-unit-test', role: 'admin' };
   window.confirm = () => true;
   window.scrollTo = () => {};
   window.QC_CENTRAL_SHARING_LINKS = { items: [{

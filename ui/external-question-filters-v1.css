@@ -77,3 +77,23 @@
 /* Central de Questões simplificada: só a aba Disciplinas; o detalhe de um filtro volta para ela. */
 .bcq-center-tabs[hidden]{display:none!important}
 .bcq-back-link{margin:0 0 12px;padding:8px 12px;border:1px solid var(--line,#d9e5ec);border-radius:9px;background:transparent;color:var(--text,#172033);font:600 0.8125rem/1.2 inherit;cursor:pointer}
+
+/* Filtros QC/TEC reservados aos administradores. Os cards internos de questões permanecem disponíveis. */
+html.bcq-student-view #questionFiltersView,
+html.bcq-student-view [data-bcq-module-panel],
+html.bcq-student-view [data-bc-module-links],
+html.bcq-student-view #centralSidebar [data-student-primary-nav="filters"],
+html.bcq-student-view .qc-platform-sharing,
+html.bcq-student-view .cpc-sharing-panel,
+html.bcq-student-view .tec-validated-panel,
+html.bcq-student-view .tec-context-panel,
+html.bcq-student-view .adm-native-sharing,
+html.bcq-student-view .adm-native-tec-filter,
+html.bcq-student-view .cpp-native-tec-panel,
+html.bcq-student-view .civil-native-sharing,
+html.bcq-student-view .cv-sharing,
+html.bcq-student-view .cv-tec-panel,
+html.bcq-student-view .adm-native-external-entry,
+html.bcq-student-view .csp-tec-panel {
+ display:none!important;
+}

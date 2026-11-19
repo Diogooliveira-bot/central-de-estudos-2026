@@ -11,7 +11,7 @@ const server = createServer(async (request, response) => {
   const url = new URL(request.url, 'http://localhost');
   if (url.pathname === '/api/auth') {
     response.writeHead(200, { 'Content-Type':'application/json' });
-    response.end(JSON.stringify({ authenticated:true, user:{ id:'central-questoes-browser', name:'Aluno teste', role:'aluno' } }));
+    response.end(JSON.stringify({ authenticated:true, user:{ id:'central-questoes-browser', name:'Administrador teste', role:'admin' } }));
     return;
   }
   if (url.pathname === '/api/sync') {
@@ -21,7 +21,7 @@ const server = createServer(async (request, response) => {
   }
   if (url.pathname === '/api/external-question-filters') {
     response.writeHead(200, { 'Content-Type':'application/json' });
-    response.end(JSON.stringify({ canManage:false, overrides:[] }));
+    response.end(JSON.stringify({ canManage:true, overrides:[] }));
     return;
   }
   if (url.pathname.startsWith('/api/')) {

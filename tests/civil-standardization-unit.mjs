@@ -11,6 +11,8 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros oficiais sem links antigos', async () => {
   const dom = new JSDOM('<!doctype html><html class="bc-ui-v1"><body><div id="centralSidebar"><div class="nav"><button>Hoje</button><div class="label">Ferramentas</div></div></div><div class="workspace"><section id="homeView" class="view"></section></div><span id="crumb"></span><section id="studentMorePanel"><div class="student-more-grid"></div></section><main id="subjects"><section class="subject" data-id="civil"><div class="subject-body"></div></section></main></body></html>', { url: 'https://central.test/central-v119.html', runScripts: 'outside-only', pretendToBeVisual: true });
   const { window } = dom;
+  // Verifica a hierarquia editorial dos filtros na visualização administrativa.
+  window.BASE_COMPLETA_USER = { id: 'admin-civil-test', role: 'admin' };
   window.eval(read('content/qc-sharing-links.js'));
   window.eval(read('content/civil/civil-native-index.js'));
   window.eval(read('content/civil/civil-sharing-links.js'));
