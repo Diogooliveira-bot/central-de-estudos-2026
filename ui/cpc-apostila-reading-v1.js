@@ -114,7 +114,7 @@ async function didactic(n){
  if(!didacticPending.has(group)){
   const task=new Promise((resolve,reject)=>{
    const script=document.createElement('script');
-   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261110cpcraciocinio1';
+   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261118cpcrevjur1';
    script.onload=()=>{script.remove();resolve();};
    script.onerror=()=>{script.remove();reject(new Error('Não foi possível carregar a revisão didática do CPC'));};
    document.head.append(script);

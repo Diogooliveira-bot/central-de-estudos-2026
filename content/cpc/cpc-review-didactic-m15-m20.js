@@ -121,40 +121,40 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
       [
         "Título judicial e extrajudicial não seguem o mesmo percurso",
         [
-          "O título executivo judicial, em regra, conduz ao cumprimento de sentença, estudado no M14. O título extrajudicial dá origem a processo de execução, como ocorre com determinados documentos previstos no art. 784. Em ambos os casos, a obrigação deve ser certa, líquida e exigível, observadas as regras legais.",
-          "Certeza identifica a obrigação; liquidez permite determinar seu conteúdo ou valor; exigibilidade indica que já pode ser cobrada. Uma obrigação sujeita a termo ainda não ocorrido pode não ser exigível, mesmo que esteja descrita com precisão."
+          "O título executivo judicial, em regra, conduz ao cumprimento de sentença, estudado no M14. O título extrajudicial dá origem a processo de execução, como ocorre com os documentos previstos no art. 784 ou em outra lei que lhes atribua força executiva (art. 784, XII). A Lei nº 14.711/2023 incluiu nesse rol o contrato de contragarantia (inciso XI-A). Em ambos os casos, a obrigação deve ser certa, líquida e exigível, observadas as regras legais.",
+          "Certeza identifica a obrigação; liquidez permite determinar seu conteúdo ou valor; exigibilidade indica que já pode ser cobrada. Obrigação sujeita a termo ou condição pendentes não é exigível; o exequente deve provar que se verificou a condição ou ocorreu o termo (art. 798, I, c)."
         ],
         "Exemplo: contrato que representa título extrajudicial pode permitir execução direta, mas somente se atender aos requisitos do Código."
       ],
       [
         "Efetividade e menor onerosidade",
         [
-          "A execução é realizada no interesse do exequente, mas não autoriza qualquer sacrifício do devedor. A regra da menor onerosidade do art. 805 deve ser combinada com a efetividade: havendo meios igualmente eficazes, privilegia-se o menos gravoso, cabendo ao executado indicar a alternativa quando sustenta excesso.",
-          "Medidas coercitivas procuram pressionar o cumprimento; medidas sub-rogatórias realizam o resultado independentemente da vontade do devedor. Medidas atípicas exigem fundamentação, proporcionalidade, contraditório e adequação ao caso, não funcionando como punição automática por inadimplência."
+          "A execução é realizada no interesse do exequente, mas não autoriza qualquer sacrifício do devedor. A regra da menor onerosidade do art. 805 deve ser combinada com a efetividade: havendo meios igualmente eficazes, privilegia-se o menos gravoso, cabendo ao executado, ao alegar medida mais gravosa, indicar meios mais eficazes e menos onerosos, sob pena de manutenção dos atos já determinados (art. 805, parágrafo único).",
+          "Medidas coercitivas procuram pressionar o cumprimento; medidas sub-rogatórias realizam o resultado independentemente da vontade do devedor. Medidas atípicas (art. 139, IV) exigem fundamentação, proporcionalidade, contraditório e adequação ao caso, não funcionando como punição automática por inadimplência."
         ],
         "Exemplo: se duas formas de penhora satisfazem o crédito com igual eficácia, pode fazer sentido escolher a que causa menor restrição ao executado."
       ],
       [
         "Responsabilidade patrimonial e fraude à execução",
         [
-          "Como regra, o devedor responde com seus bens presentes e futuros, respeitadas as limitações legais. Terceiros podem ter patrimônio atingido apenas nas hipóteses previstas na lei; a responsabilidade de sócios não decorre automaticamente da mera existência de dívida societária.",
-          "Fraude à execução é instituto próprio: determinados atos de disposição patrimonial tornam-se ineficazes perante o exequente quando presentes requisitos legais. Não confunda isso com nulidade absoluta da venda em qualquer relação jurídica."
+          "O devedor responde com todos os seus bens presentes e futuros, salvo as restrições legais (art. 789). Terceiros podem ter patrimônio atingido apenas nas hipóteses previstas na lei; a responsabilidade de sócios não decorre automaticamente da mera existência de dívida societária.",
+          "Fraude à execução é instituto próprio: nos casos do art. 792, a alienação em fraude à execução é ineficaz em relação ao exequente (§ 1º). Antes de declará-la, o juiz deve intimar o terceiro adquirente, que pode opor embargos de terceiro em 15 dias (§ 4º). Súmula 375 do STJ: \"O reconhecimento da fraude à execução depende do registro da penhora do bem alienado ou da prova de má-fé do terceiro adquirente.\" Não confunda isso com nulidade absoluta da venda em qualquer relação jurídica."
         ],
         "Exemplo: alienar bem durante demanda capaz de conduzir à insolvência pode levantar discussão sobre fraude à execução, mas a análise exige os requisitos específicos e proteção de terceiros."
       ],
       [
         "Obrigações de entregar, fazer e não fazer",
         [
-          "Nem toda execução é cobrança de dinheiro. Na entrega de coisa certa, a tutela pode conduzir à busca e apreensão de bem móvel ou à imissão na posse do imóvel. Obrigações de fazer podem ser fungíveis, quando terceiro pode executá-las, ou infungíveis, quando a prestação é personalíssima.",
-          "Na obrigação de não fazer, a finalidade costuma ser impedir ou desfazer conduta vedada. Multas coercitivas podem incentivar o cumprimento, mas precisam ser adequadas e não se confundem automaticamente com indenização."
+          "Nem toda execução é cobrança de dinheiro. Na entrega de coisa certa fundada em título extrajudicial, o executado é citado para satisfazer a obrigação em 15 dias; do mandado consta a ordem de busca e apreensão (bem móvel) ou de imissão na posse (bem imóvel), a ser cumprida se a obrigação não for satisfeita nesse prazo (art. 806, § 2º). Obrigações de fazer podem ser fungíveis, quando terceiro pode executá-las, ou infungíveis, quando a prestação é personalíssima.",
+          "Na obrigação de não fazer, a finalidade costuma ser impedir ou desfazer conduta vedada. Na execução extrajudicial de fazer ou não fazer, o juiz fixará multa por atraso ao despachar a inicial (art. 814). Multas coercitivas incentivam o cumprimento, mas precisam ser adequadas e não se confundem automaticamente com indenização."
         ],
         "Exemplo: retirada de obra irregular pode envolver desfazimento do ato; entrega de automóvel específico pede providência diferente de pagamento de quantia."
       ],
       [
         "Ritos especiais contra Fazenda e em alimentos",
         [
-          "A execução fundada em título extrajudicial contra a Fazenda Pública tem disciplina própria no art. 910, inclusive prazo específico para embargos e pagamento mediante o regime constitucional. O simples uso de título extrajudicial não impede execução contra ente público.",
-          "Alimentos executivos também possuem mecanismos especiais, inclusive coerção pessoal em hipóteses estritas. A Lei 15.479/2026 trouxe inovação com início de vigência futuro; em novembro de 2026 não se deve aplicar antecipadamente seu art. 529-A ou a alteração correlata do art. 913."
+          "A execução fundada em título extrajudicial contra a Fazenda Pública tem disciplina própria no art. 910, inclusive prazo de 30 dias para embargos e pagamento por precatório ou requisição de pequeno valor (art. 910, § 1º). Súmula 279 do STJ: \"É cabível execução por título extrajudicial contra a Fazenda Pública.\"",
+          "Na execução de alimentos fundada em título extrajudicial, o executado é citado para pagar em 3 dias, provar que pagou ou justificar a impossibilidade (art. 911), com coerção pessoal em hipóteses estritas. A Lei nº 15.479/2026 tem vigência futura (um ano após a publicação); em novembro de 2026 não se deve aplicar antecipadamente o art. 529-A que ela acrescenta ao CPC (transferência automática da prestação alimentícia) nem a alteração do art. 913."
         ],
         "Exemplo: cobrança de alimentos fundada em título extrajudicial não deve ser tratada como execução comum de cheque sem examinar o rito adequado."
       ]
@@ -200,7 +200,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "Que patrimônio pode responder?",
           [
-            "O devedor responde em regra com seus bens presentes e futuros, respeitadas limitações legais. A proteção de determinados bens e a responsabilidade excepcional de terceiros exigem regras próprias.",
+            "O devedor responde com todos os seus bens presentes e futuros, salvo as restrições legais (art. 789). A proteção de determinados bens e a responsabilidade excepcional de terceiros exigem regras próprias.",
             "Se ele vende patrimônio durante demanda, pode surgir discussão sobre fraude à execução, observados requisitos e proteção de terceiros. Isso não torna toda venda feita por devedor automaticamente nula. É preciso conectar o ato às condições legais."
           ],
           "Pergunta: dívida empresarial permite automaticamente penhorar qualquer bem particular dos sócios?",
@@ -219,7 +219,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
           "Por que existem regimes especiais?",
           [
             "Alimentos podem envolver meios coercitivos próprios em hipóteses estritas. A Fazenda Pública segue disciplina particular de pagamento, inclusive precatório ou requisição de pequeno valor quando aplicável. Essas regras mostram que não há uma execução única para qualquer devedor.",
-            "Em provas, raciocine nesta ordem: título → certeza, liquidez e exigibilidade → natureza da obrigação → sujeito executado → meio de satisfação e defesa cabível."
+            "Ao analisar um caso, raciocine nesta ordem: título → certeza, liquidez e exigibilidade → natureza da obrigação → sujeito executado → meio de satisfação e defesa cabível."
           ],
           "Pergunta: o mesmo rito é usado indistintamente para alimentos, Fazenda e dívida contratual comum?",
           "Não. O CPC prevê procedimentos específicos."
@@ -235,8 +235,8 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
       [
         "Por que a execução começa com citação",
         [
-          "No procedimento por quantia fundada em título extrajudicial, a petição inicial indica a obrigação e o título. Em regra, o executado é citado para pagar em três dias (art. 829). O pagamento tempestivo altera os efeitos econômicos, inclusive honorários nas condições do art. 827.",
-          "Se o devedor não é encontrado, a lei prevê mecanismos próprios como arresto de bens, sem dispensar o percurso legal para regularização da citação. A constrição não é um castigo: serve para reservar bens suficientes à satisfação do crédito."
+          "No procedimento por quantia fundada em título extrajudicial, a petição inicial indica a obrigação e o título. O executado é citado para pagar em três dias (art. 829). O juiz fixa honorários de dez por cento ao despachar a inicial; o pagamento integral nesse prazo os reduz pela metade (art. 827, caput e § 1º).",
+          "Se o oficial de justiça não encontra o executado, arresta-lhe bens suficientes para garantir a execução; aperfeiçoada a citação e vencido o prazo de pagamento, o arresto converte-se em penhora (art. 830, caput e § 3º). A constrição não é um castigo: serve para reservar bens suficientes à satisfação do crédito."
         ],
         "Exemplo: o credor apresenta título exigível; não havendo pagamento no prazo, o processo pode avançar para individualização de bens penhoráveis."
       ],
@@ -244,15 +244,15 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Penhora não é perda imediata do bem",
         [
           "A penhora individualiza patrimônio que ficará sujeito à execução, mas não transfere automaticamente a propriedade ao credor. O CPC estabelece ordem preferencial de penhora, destacando dinheiro, e protege bens e verbas considerados impenhoráveis nas hipóteses previstas.",
-          "As exceções e a jurisprudência não permitem generalizações como 'todo salário é sempre intocável' ou 'qualquer valor bancário pode ser penhorado'. A solução exige verificar natureza do crédito, proteção legal, circunstâncias e entendimento aplicável."
+          "Salários, proventos e pensões (art. 833, IV) e a poupança até o limite legal (art. 833, X) são impenhoráveis, mas não contra a penhora para pagamento de prestação alimentícia, independentemente de sua origem, nem quanto às importâncias excedentes a 50 salários-mínimos mensais (art. 833, § 2º). Indisponibilizados ativos financeiros, o executado tem 5 dias para comprovar a impenhorabilidade ou o excesso (art. 854, § 3º)."
         ],
         "Exemplo: quantia depositada em conta pode suscitar alegação de impenhorabilidade; a parte precisa apresentar fundamento e elementos no momento processual adequado."
       ],
       [
         "Avaliação, adjudicação e alienação",
         [
-          "Depois da constrição, a avaliação identifica o valor dos bens. A expropriação pode ocorrer por adjudicação, alienação por iniciativa particular ou leilão judicial, conforme disciplina legal. O objetivo é converter bem em satisfação, evitando tanto venda irregular quanto prejuízo injustificado.",
-          "A arrematação produz efeitos próprios nos marcos processuais previstos no CPC. Uma questão pode explorar a diferença entre oferecer lance, assinar o auto e expedir carta: são atos com consequências jurídicas distintas."
+          "Depois da constrição, a avaliação identifica o valor dos bens. A expropriação consiste em adjudicação, alienação ou apropriação de frutos e rendimentos de empresa ou de estabelecimentos e de outros bens (art. 825). A alienação é por iniciativa particular ou em leilão judicial (art. 879). O objetivo é converter bem em satisfação, evitando tanto venda irregular quanto prejuízo injustificado.",
+          "Assinado o auto pelo juiz, pelo arrematante e pelo leiloeiro, a arrematação é perfeita, acabada e irretratável (art. 903, caput), mas pode ser invalidada se realizada por preço vil ou com outro vício (art. 903, § 1º, I). Vil é o preço inferior ao mínimo do edital ou, sem mínimo, a 50% da avaliação (art. 891, parágrafo único)."
         ],
         "Exemplo: credor pode buscar adjudicação de bem penhorado, enquanto em outra situação a venda em leilão será o meio de obter dinheiro para pagar o débito."
       ],
@@ -260,7 +260,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Embargos à execução e impugnação são defesas diferentes",
         [
           "Nos títulos extrajudiciais, os embargos do executado têm prazo geral de quinze dias, podem ser opostos independentemente de penhora, depósito ou caução e permitem matérias próprias do art. 917. Não confundam embargos com a impugnação do cumprimento de sentença.",
-          "Os embargos não suspendem automaticamente a execução. O parcelamento previsto no art. 916 depende de requisitos, envolve reconhecimento do crédito e não se aplica ao cumprimento de sentença. A objeção de pré-executividade também possui limites: não comporta ampla produção probatória."
+          "Os embargos não têm efeito suspensivo; o juiz pode atribuí-lo, a requerimento, presentes os requisitos da tutela provisória e garantida a execução por penhora, depósito ou caução suficientes (art. 919, caput e § 1º). O parcelamento do art. 916 exige reconhecimento do crédito e depósito de trinta por cento do valor em execução, mais custas e honorários, com o restante em até 6 parcelas mensais; importa renúncia aos embargos (§ 6º) e não se aplica ao cumprimento de sentença (§ 7º)."
         ],
         "Exemplo: alegação demonstrável por prova documental já existente pode ser apreciada sem perícia extensa; a necessidade de fatos complexos pode exigir a via defensiva adequada."
       ],
@@ -268,15 +268,15 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Suspensão e prescrição intercorrente",
         [
           "Quando a execução não encontra bens ou devedor, a lei disciplina suspensão, arquivamento e prescrição intercorrente. O tema busca evitar execução eternamente paralisada, sem suprimir oportunidades de contraditório e causas que interfiram na contagem.",
-          "Decorar apenas 'um ano' é insuficiente: é necessário saber qual fato desencadeia a suspensão, como o prazo prescricional passa a correr e quando o juiz deve ouvir as partes antes de reconhecê-la. Observe o art. 921 e sua disciplina atual."
+          "Se o executado não possui bens penhoráveis, o juiz suspende a execução por um ano, durante o qual se suspende a prescrição (art. 921, III e § 1º). A prescrição intercorrente corre da ciência da primeira tentativa infrutífera, com suspensão por uma única vez (§ 4º). O prazo é o da pretensão (Código Civil, art. 206-A). O juiz só a reconhece de ofício depois de ouvir as partes em quinze dias (§ 5º)."
         ],
         "Exemplo: execução que permanece sem localização de bens exige acompanhamento dos marcos legais, não cobrança infinita sem movimentação válida."
       ]
     ],
     "remember": [
-      "Execução de quantia extrajudicial: citação para pagar, em regra, em 3 dias.",
+      "Execução de quantia extrajudicial: citação para pagar em 3 dias (art. 829).",
       "Penhora individualiza bens; expropriação realiza a satisfação patrimonial.",
-      "Impenhorabilidades do art. 833 exigem análise das hipóteses legais e jurisprudenciais.",
+      "Impenhorabilidades do art. 833 exigem análise das hipóteses e das exceções legais (§§ 1º e 2º).",
       "Embargos à execução têm prazo geral de 15 dias e não suspendem automaticamente.",
       "Art. 916: parcelamento legal da execução extrajudicial não vale para cumprimento de sentença."
     ],
@@ -292,7 +292,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "A execução por quantia começa dando chance de pagamento",
           [
-            "Na execução fundada em título extrajudicial de quantia certa, o executado é citado, em regra, para pagar em três dias. Essa etapa antecede diversos atos de constrição, respeitadas hipóteses legais.",
+            "Na execução fundada em título extrajudicial de quantia certa, o executado é citado para pagar em três dias. Essa etapa antecede diversos atos de constrição, respeitadas hipóteses legais.",
             "Se não há pagamento, a execução precisa localizar e individualizar bens para satisfação do crédito. O objetivo não é punir a pessoa por estar endividada, mas usar o patrimônio juridicamente responsável pelo cumprimento da obrigação."
           ],
           "Pergunta: na execução extrajudicial de quantia, o devedor é chamado apenas para oferecer defesa e nunca para pagar?",
@@ -301,7 +301,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "Penhora é afetação, não compra compulsória imediata",
           [
-            "Penhorar significa vincular bem ao processo executivo, sujeitando-o a atos posteriores para satisfação. Não equivale a entregar imediatamente a propriedade ao credor. Em seguida podem ocorrer avaliação e formas de expropriação, como adjudicação, alienação por iniciativa particular e leilão.",
+            "Penhorar significa vincular bem ao processo executivo, sujeitando-o a atos posteriores para satisfação. Não equivale a entregar imediatamente a propriedade ao credor. Em seguida podem ocorrer avaliação e expropriação (adjudicação, alienação ou apropriação de frutos e rendimentos, art. 825).",
             "O dinheiro tem posição preferencial na ordem legal, mas a execução deve respeitar impenhorabilidades e regras de substituição. É preciso saber qual bem está em jogo antes de afirmar que qualquer patrimônio pode ser atingido."
           ],
           "Pergunta: após a penhora o credor vira automaticamente proprietário do bem?",
@@ -310,8 +310,8 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "Alguns bens são protegidos — mas por quê?",
           [
-            "O CPC estabelece impenhorabilidades para proteger condições mínimas de vida, trabalho e situações legalmente definidas. Entretanto, há exceções e interpretações jurisprudenciais que exigem análise concreta.",
-            "Por isso, frases como 'salário nunca pode ser penhorado' ou 'qualquer depósito é sempre penhorável' podem estar erradas. Pergunte qual verba foi atingida, qual crédito está sendo cobrado, quais são as exceções e o entendimento aplicável."
+            "O CPC estabelece impenhorabilidades para proteger condições mínimas de vida, trabalho e situações legalmente definidas. Entretanto, há exceções legais (art. 833, §§ 1º e 2º) que exigem análise concreta.",
+            "Por isso, frases como 'salário nunca pode ser penhorado' ou 'qualquer depósito é sempre penhorável' podem estar erradas. Pergunte qual verba foi atingida, qual crédito está sendo cobrado e quais são as exceções legais."
           ],
           "Pergunta: basta a pessoa dizer que o bem é impenhorável, sem examinar a regra, para encerrar a execução?",
           "Não. O juiz precisa avaliar requisitos e prova pertinente."
@@ -320,7 +320,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
           "Como o devedor pode se defender?",
           [
             "Nos títulos extrajudiciais, os embargos à execução podem discutir matérias previstas no CPC, em prazo próprio e independentemente de garantia prévia para sua apresentação. Eles não suspendem automaticamente o procedimento.",
-            "Parcelamento legal do art. 916 exige condições específicas e não se estende ao cumprimento de sentença. A defesa não deve ser confundida com impugnação ao cumprimento de título judicial, nem com simples objeção de pré-executividade, que possui limites probatórios."
+            "Parcelamento legal do art. 916 exige condições específicas e não se estende ao cumprimento de sentença. A defesa não deve ser confundida com impugnação ao cumprimento de título judicial."
           ],
           "Pergunta: apresentar embargos significa necessariamente interromper todos os atos executivos?",
           "Não. A suspensão exige requisitos legais."
@@ -340,29 +340,29 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
   },
   "18": {
     "title": "Procedimentos especiais: qual instrumento escolher",
-    "intro": "Os procedimentos especiais existem porque certos conflitos exigem um percurso próprio. Em prova, o caminho mais seguro não é decorar todos os artigos de uma vez, mas reconhecer o problema concreto e associá-lo ao instrumento adequado.",
+    "intro": "Os procedimentos especiais existem porque certos conflitos exigem um percurso próprio. O caminho mais seguro não é decorar todos os artigos de uma vez, mas reconhecer o problema concreto e associá-lo ao instrumento adequado.",
     "sections": [
       [
         "Consignação em pagamento: quero cumprir, mas há obstáculo",
         [
-          "A consignação permite ao devedor buscar a liberação da obrigação quando o pagamento não se realiza regularmente por circunstâncias juridicamente relevantes, como recusa indevida do credor ou dúvida sobre quem deve receber. A solução envolve depósito nas condições legais.",
-          "Em dinheiro, pode haver consignação extrajudicial com depósito bancário, comunicação e prazo para recusa. Se a via extrajudicial não resolve, a demanda judicial segue regras específicas de depósito e contraditório. Depósito insuficiente pode não extinguir integralmente a obrigação."
+          "A consignação permite ao devedor ou a terceiro buscar a liberação da obrigação nos casos previstos em lei (art. 539), como os do art. 335 do Código Civil, entre eles a recusa sem justa causa e a dúvida sobre quem deva receber. A solução envolve depósito nas condições legais.",
+          "Em dinheiro, pode haver consignação extrajudicial: depósito bancário, ciência do credor por carta e prazo de 10 dias para recusar; sem recusa, o devedor fica liberado. Havendo recusa por escrito, a ação pode ser proposta em até um mês; não proposta, o depósito fica sem efeito (art. 539, §§ 1º a 4º). Se a via extrajudicial não resolve, a demanda judicial segue regras específicas de depósito e contraditório. Depósito insuficiente pode não extinguir integralmente a obrigação."
         ],
         "Exemplo: duas pessoas afirmam ser credoras do mesmo aluguel. O devedor pode precisar consignar para pagar sem correr risco de pagamento à pessoa errada."
       ],
       [
         "Embargos de terceiro: proteger bem atingido",
         [
-          "Embargos de terceiro protegem possuidor ou titular de direito incompatível com a constrição quando não participa do processo que atingiu ou ameaça atingir o bem. A qualidade de terceiro, para essa finalidade, exige verificar as hipóteses legais, inclusive equiparações do art. 674.",
-          "É diferente dos embargos do próprio executado: aqui a controvérsia central é o direito de quem está fora da relação processual principal. O prazo muda conforme a constrição ocorre em processo de conhecimento ou execução e deve ser cuidadosamente identificado."
+          "Embargos de terceiro protegem possuidor ou titular de direito incompatível com a constrição quando não participa do processo que atingiu ou ameaça atingir o bem. A qualidade de terceiro, para essa finalidade, exige verificar as hipóteses legais, inclusive as do art. 674, § 2º.",
+          "É diferente dos embargos do próprio executado: aqui a controvérsia central é o direito de quem está fora da relação processual principal. No processo de conhecimento, os embargos cabem a qualquer tempo até o trânsito em julgado da sentença; no cumprimento de sentença e na execução, até 5 dias depois da adjudicação, da alienação por iniciativa particular ou da arrematação, mas sempre antes da assinatura da respectiva carta (art. 675)."
         ],
         "Exemplo: veículo pertencente a pessoa que não integra a execução é penhorado por dívida alheia. A defesa apropriada pode ser embargos de terceiro."
       ],
       [
         "Ação monitória: prova escrita sem força executiva",
         [
-          "A monitória é adequada quando o credor possui prova escrita capaz de sustentar a pretensão, mas não dispõe de título executivo. Serve, conforme o CPC, para exigir pagamento, entrega de coisa ou cumprimento de obrigação de fazer ou não fazer.",
-          "O mandado inicial oferece oportunidade de cumprimento ou apresentação de embargos monitórios. Ausentes cumprimento e embargos, pode formar-se título executivo judicial de pleno direito. Não confunda monitória com execução direta: a etapa de constituição do título importa."
+          "A monitória é adequada quando o credor possui prova escrita capaz de sustentar a pretensão, mas não dispõe de título executivo. Serve, conforme o art. 700, I a III, para exigir pagamento de quantia em dinheiro, entrega de coisa fungível ou infungível ou de bem móvel ou imóvel, ou cumprimento de obrigação de fazer ou de não fazer.",
+          "O mandado inicial oferece oportunidade de cumprimento ou apresentação de embargos monitórios. Sendo evidente o direito do autor, o mandado dá prazo de 15 dias para cumprir e pagar honorários de 5% do valor atribuído à causa (art. 701, caput); quem cumpre o mandado no prazo fica isento de custas processuais (§ 1º). No mesmo prazo, sem segurança do juízo, o réu pode opor embargos nos próprios autos (art. 702). Sem pagamento nem embargos, constitui-se de pleno direito o título executivo judicial (art. 701, § 2º). Não confunda monitória com execução direta: a etapa de constituição do título importa."
         ],
         "Exemplo: mensagem e documento escritos evidenciam determinada dívida, mas não preenchem os requisitos de título extrajudicial; pode haver espaço para monitória."
       ],
@@ -370,7 +370,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Restauração de autos: recuperar o processo",
         [
           "Se os autos desaparecem, a restauração busca reconstruir os elementos necessários à continuidade processual. Não reabre automaticamente o mérito já decidido nem permite mudar pedidos apenas porque os documentos originais se perderam.",
-          "A iniciativa pode ser tomada conforme a lei por quem tem legitimidade, inclusive o próprio juízo. Se os autos originais reaparecem, o sistema prevê retomada da tramitação neles e apensamento dos autos restaurados, preservando a história processual."
+          "A restauração pode ser promovida pelo juiz, de ofício, por qualquer das partes ou pelo Ministério Público, se for o caso (art. 712). Quem deu causa ao desaparecimento responde pelas custas e pelos honorários da restauração (art. 718). Se os autos originais reaparecem, o sistema prevê retomada da tramitação neles e apensamento dos autos restaurados, preservando a história processual."
         ],
         "Exemplo: depois de perda física de autos antigos, cópias de petições e decisões podem ser utilizadas para reconstituir o processo."
       ],
@@ -378,7 +378,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Use um mapa de escolha antes dos prazos",
         [
           "Consignação: devedor quer pagar e não consegue corretamente. Embargos de terceiro: patrimônio de quem não integra o processo foi atingido. Monitória: há prova escrita, mas falta título executivo. Restauração: os autos sumiram e precisam ser recompostos.",
-          "Depois de escolher o instituto, confira requisitos de legitimidade, documento essencial, prazo e efeito do pedido. Uma boa questão costuma trocar a posição da pessoa no processo para tornar um remédio impróprio."
+          "Depois de escolher o instituto, confira requisitos de legitimidade, documento essencial, prazo e efeito do pedido. Ignorar a posição da pessoa no processo torna o remédio impróprio."
         ],
         "Exemplo: quem é o executado não usa embargos de terceiro para discutir a própria penhora como se fosse pessoa estranha à execução."
       ]
@@ -388,11 +388,11 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
       "Embargos de terceiro protegem direito de quem não integra a relação processual principal.",
       "Monitória exige prova escrita sem eficácia de título executivo.",
       "Restauração recompõe autos desaparecidos; não revisa automaticamente o mérito.",
-      "Procedimento comum pode aplicar-se subsidiariamente aos especiais quando compatível."
+      "O procedimento comum aplica-se subsidiariamente aos demais procedimentos especiais e ao processo de execução (art. 318, parágrafo único)."
     ],
     "laws": [
       [
-        "CPC, arts. 539–549, 674–681, 700–702 e 712–718",
+        "CPC, arts. 318 (parágrafo único), 539–549, 674–681, 700–702 e 712–718",
         "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
       ]
     ],
@@ -456,23 +456,23 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Direitos difusos, coletivos e individuais homogêneos",
         [
           "Direitos difusos têm titulares indeterminados, ligados por circunstâncias de fato, e objeto indivisível. Direitos coletivos em sentido estrito pertencem a grupo, categoria ou classe ligada por relação jurídica-base, com objeto indivisível. Direitos individuais homogêneos são direitos individuais divisíveis reunidos por origem comum.",
-          "A classificação influencia legitimidade, extensão do julgamento e técnica de tutela coletiva. Não é suficiente observar que muitas pessoas estão interessadas; é necessário identificar a natureza da relação e o objeto protegido."
+          "A classificação influencia legitimidade, extensão do julgamento e técnica de tutela coletiva. Pelo Código de Defesa do Consumidor, art. 81, parágrafo único, os interesses difusos têm titulares indeterminados ligados por circunstâncias de fato; os coletivos pertencem a grupo, categoria ou classe ligados entre si ou com a parte contrária por uma relação jurídica base; e os individuais homogêneos decorrem de origem comum."
         ],
         "Exemplo: poluição de rio pode afetar coletividade indeterminada; consumidores prejudicados pelo mesmo defeito podem ter pretensões individuais homogêneas."
       ],
       [
         "Ação popular e ação civil pública",
         [
-          "A ação popular é instrumento do cidadão para proteger, entre outros bens, patrimônio público, moralidade administrativa e meio ambiente nas hipóteses legais. A qualidade de cidadão é requisito central de legitimidade ativa; pessoa jurídica não se torna autora popular apenas por ter interesse coletivo.",
-          "A ação civil pública tem rol próprio de legitimados e integra microssistema de tutela coletiva com o CDC. Associações devem atender requisitos legais, com possibilidade de dispensa de requisito temporal nas situações previstas. O inquérito civil ajuda investigação, mas não é condição universal para ajuizar ACP."
+          "A ação popular é instrumento do cidadão para anular ato lesivo ao patrimônio público ou de entidade de que o Estado participe, à moralidade administrativa, ao meio ambiente e ao patrimônio histórico e cultural. A qualidade de cidadão é requisito central de legitimidade ativa; pessoa jurídica não tem legitimidade para propor ação popular (Súmula 365 do STF).",
+          "A ação civil pública tem rol próprio de legitimados e integra microssistema de tutela coletiva com o CDC. Estão legitimados o Ministério Público, a Defensoria Pública, a União, os Estados, o Distrito Federal, os Municípios, as autarquias, empresas públicas, fundações e sociedades de economia mista, e as associações constituídas há pelo menos 1 ano nos termos da lei civil e com finalidade institucional compatível (Lei nº 7.347/1985, art. 5º). O juiz pode dispensar o requisito da pré-constituição quando houver manifesto interesse social (art. 5º, § 4º). O inquérito civil não é condição para ajuizar a ACP."
         ],
         "Exemplo: cidadão que impugna ato lesivo à moralidade administrativa pode propor ação popular; Ministério Público pode ajuizar ACP em situação de dano coletivo."
       ],
       [
         "Mandado de segurança e mandado de injunção",
         [
-          "O mandado de segurança protege direito líquido e certo diante de ilegalidade ou abuso de poder, quando não cabe habeas corpus ou habeas data. Líquido e certo significa que a prova pertinente precisa estar pré-constituída; não é procedimento próprio para ampla instrução probatória.",
-          "O mandado de injunção responde a falta de norma regulamentadora que inviabilize exercício de direito, liberdade ou prerrogativa constitucional. Não se confunde com MS: no primeiro o problema essencial é a omissão normativa; no segundo, ato ou omissão ilegal que ameaça direito já demonstrável."
+          "O mandado de segurança protege direito líquido e certo diante de ilegalidade ou abuso de poder, quando não cabe habeas corpus ou habeas data. Líquido e certo significa que a prova pertinente precisa estar pré-constituída; não é procedimento próprio para ampla instrução probatória. O prazo para impetrar é de 120 dias, contados da ciência do ato impugnado (Lei nº 12.016/2009, art. 23). No MS coletivo, são legitimados o partido político com representação no Congresso Nacional e a organização sindical, a entidade de classe ou a associação legalmente constituída e em funcionamento há pelo menos 1 ano (art. 21).",
+          "O mandado de injunção é cabível quando a falta total ou parcial de norma regulamentadora torna inviável o exercício de direitos e liberdades constitucionais e de prerrogativas inerentes à nacionalidade, à soberania e à cidadania. Não se confunde com MS: no primeiro o problema essencial é a omissão normativa; no segundo, ato ou omissão ilegal que viola ou ameaça direito já demonstrável."
         ],
         "Exemplo: recusa administrativa comprovada de ato vinculado pode indicar MS; ausência de lei indispensável para exercer direito constitucional pode sugerir MI."
       ],
@@ -480,15 +480,15 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         "Habeas data e dados pessoais",
         [
           "Habeas data garante conhecimento, retificação ou anotação de informações relativas ao impetrante mantidas em registros ou bancos governamentais ou de caráter público. Trata-se de ação constitucional com finalidade específica, distinta de pedido genérico de documentos administrativos.",
-          "A resistência administrativa prévia é relevante segundo a disciplina legal e jurisprudencial. O candidato deve distinguir o acesso a dados da própria pessoa, o acesso a informação pública pela LAI e a tutela da liberdade de locomoção por habeas corpus."
+          "A petição inicial deve ser instruída com prova da recusa ou do decurso, sem decisão, de mais de 10 dias (acesso) ou de mais de 15 dias (retificação ou anotação), conforme a Lei nº 9.507/1997, art. 8º, parágrafo único; sem recusa, não cabe habeas data (Súmula 2 do STJ). É preciso distinguir o acesso a dados da própria pessoa, o acesso a informação pública pela LAI e a tutela da liberdade de locomoção por habeas corpus."
         ],
         "Exemplo: cidadão pede correção de registro pessoal em banco público e recebe recusa; a situação pode preencher os pressupostos do habeas data."
       ],
       [
         "Controle de constitucionalidade e remédios abstratos",
         [
-          "No controle incidental, a questão constitucional surge em processo concreto; o tribunal observa a reserva de plenário do art. 97 da Constituição nas hipóteses correspondentes. No controle concentrado, ações como ADI, ADC e ADPF possuem objetos e requisitos próprios.",
-          "ADI volta-se, em linhas gerais, à impugnação de lei ou ato normativo federal ou estadual perante a Constituição Federal; ADC exige discussão sobre constitucionalidade de lei federal e controvérsia judicial relevante; ADPF é subsidiária e protege preceitos fundamentais. A questão costuma trocar objeto, legitimidade e efeitos."
+          "No controle incidental, a questão constitucional surge em processo concreto; o tribunal observa a reserva de plenário do art. 97 da Constituição: só a maioria absoluta dos membros do tribunal ou do órgão especial declara a inconstitucionalidade. Acolhida a arguição, a questão vai ao plenário ou ao órgão especial, salvo pronunciamento anterior destes ou do plenário do STF (CPC, art. 949 e parágrafo único). A Súmula Vinculante 10 estende a reserva ao órgão fracionário que afasta a incidência da lei. No controle concentrado, ações como ADI, ADC e ADPF possuem objetos e requisitos próprios.",
+          "ADI e ADC têm os legitimados do art. 103 da CF. A ADI impugna lei ou ato normativo federal ou estadual; a ADC trata de lei ou ato normativo federal e exige controvérsia judicial relevante (Lei nº 9.868/1999, art. 14, III); a ADPF protege preceito fundamental, alcança também lei municipal e não cabe havendo outro meio eficaz de sanar a lesividade (Lei nº 9.882/1999, art. 4º, § 1º)."
         ],
         "Exemplo: lei municipal incompatível com preceito fundamental, nas condições legais, pode ser discutida por ADPF, não por ADC federal."
       ]
@@ -496,7 +496,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
     "remember": [
       "Difusos: indeterminados e indivisíveis; coletivos stricto sensu: grupo e relação-base; individuais homogêneos: origem comum.",
       "Ação popular exige cidadão; ACP possui legitimados próprios.",
-      "MS exige prova pré-constituída e observa prazo decadencial legal para impugnação repressiva.",
+      "MS exige prova pré-constituída e observa o prazo decadencial de 120 dias (Lei nº 12.016/2009, art. 23).",
       "MI enfrenta falta de norma regulamentadora; habeas data protege dados relativos ao impetrante.",
       "Reserva de plenário do art. 97 da CF é distinta do controle concentrado no STF."
     ],
@@ -538,7 +538,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
           "Quem pode defender o interesse coletivo?",
           [
             "Se existe lesão a patrimônio público, moralidade administrativa ou meio ambiente, a ação popular pode ser cabível por cidadão nos termos legais. Já a ação civil pública possui lista específica de legitimados, incluindo entidades e instituições autorizadas por lei.",
-            "Não basta qualquer pessoa chamar sua demanda de coletiva. A legitimidade e o objeto precisam corresponder ao instrumento. A ação popular não se confunde com a ACP, embora ambos possam proteger certos bens semelhantes."
+            "Não basta qualquer pessoa chamar sua demanda de coletiva. A legitimidade e o objeto precisam corresponder ao instrumento. A ação popular não se confunde com a ACP, embora ambas possam proteger certos bens semelhantes."
           ],
           "Pergunta: pessoa jurídica pode ajuizar ação popular apenas por ter interesse ambiental?",
           "Não. A ação popular tem legitimidade ativa própria ligada à condição de cidadão."
@@ -555,7 +555,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "E se o conflito envolve dados pessoais?",
           [
-            "Se uma pessoa precisa conhecer ou corrigir informações relativas a si em registros governamentais ou de caráter público, pode surgir hipótese de habeas data, observadas exigências legais de resistência administrativa.",
+            "Se uma pessoa precisa conhecer ou corrigir informações relativas a si em registros governamentais ou de caráter público, pode surgir hipótese de habeas data, desde que haja prova da recusa ou do silêncio da autoridade além do prazo legal.",
             "Isso não se confunde com toda solicitação de documento público nem com habeas corpus, destinado à liberdade de locomoção. O nome do remédio constitucional vem do bem que ele protege."
           ],
           "Pergunta: habeas data é ação genérica para pedir qualquer arquivo da administração?",
@@ -571,33 +571,33 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
           "Não. São instrumentos com finalidades e legitimidades específicas."
         ]
       ],
-      "conclusion": "Em questões constitucionais e coletivas, pergunte: qual direito está em risco, quem é seu titular, contra qual conduta e quem tem legitimidade para agir?"
+      "conclusion": "Em casos constitucionais e coletivos, pergunte: qual direito está em risco, quem é seu titular, contra qual conduta e quem tem legitimidade para agir?"
     }
   },
   "20": {
     "title": "Processos nos tribunais, rescisória, IAC e IRDR",
-    "intro": "Nem toda controvérsia que chega a um tribunal é recurso comum. Algumas ações uniformizam entendimentos, outras definem competência, reconhecem decisão estrangeira ou desconstituem decisão estabilizada. Saber a finalidade de cada instrumento evita confusões graves em provas.",
+    "intro": "Nem toda controvérsia que chega a um tribunal é recurso comum. Algumas ações uniformizam entendimentos, outras definem competência, reconhecem decisão estrangeira ou desconstituem decisão estabilizada. Saber a finalidade de cada instrumento evita confusões graves.",
     "sections": [
       [
         "Incidente de assunção de competência e IRDR",
         [
-          "O IAC é ligado a questão de direito relevante, com grande repercussão social, sem repetição em múltiplos processos, ou à necessidade legal de prevenir ou compor divergência interna. Busca orientação qualificada mesmo quando não há repetição massiva de processos.",
-          "O IRDR exige efetiva repetição de processos sobre a mesma questão unicamente de direito, somada ao risco à isonomia e à segurança jurídica. Admitido, envolve disciplina de suspensão e formação de tese aplicável aos processos abrangidos. Não se confunda potencial relevância social com repetição efetiva."
+          "O IAC é ligado a questão de direito relevante, com grande repercussão social, sem repetição em múltiplos processos, ou, ainda, quando for conveniente prevenir ou compor divergência entre câmaras ou turmas do tribunal (art. 947, § 4º). Busca orientação qualificada mesmo sem repetição massiva de processos.",
+          "O IRDR exige efetiva repetição de processos sobre a mesma questão unicamente de direito, somada ao risco à isonomia e à segurança jurídica. Admitido, o relator suspende os processos pendentes, individuais ou coletivos, no Estado ou na região (art. 982, I); o incidente deve ser julgado em 1 ano (art. 980). A tese vale para os processos da área do tribunal e para os casos futuros (art. 985). Não se confunda potencial relevância social com repetição efetiva."
         ],
         "Exemplo: uma questão inédita de forte repercussão pode indicar IAC; centenas de processos com a mesma questão jurídica e decisões divergentes podem indicar IRDR."
       ],
       [
         "Arguição de inconstitucionalidade e conflito de competência",
         [
-          "Na arguição incidental em tribunal, a questão constitucional interfere no julgamento de caso concreto. A reserva de plenário impede que órgão fracionário declare inconstitucionalidade de lei, nas hipóteses pertinentes, sem observância do art. 97 da Constituição e da Súmula Vinculante 10.",
-          "Conflito de competência tem outra função: resolver divergência sobre qual órgão deve processar ou julgar causa. Não serve para rever automaticamente o mérito da ação; o tribunal indica o juízo competente e trata dos atos processuais conforme a lei."
+          "Na arguição incidental em tribunal, a questão constitucional interfere no julgamento de caso concreto. A reserva de plenário (CF, art. 97) impede que órgão fracionário declare a inconstitucionalidade de lei, ou afaste sua incidência, sem submeter a questão ao plenário ou ao órgão especial (Súmula Vinculante 10; CPC, arts. 948 e 949). Não há nova submissão se já houver pronunciamento destes ou do plenário do STF (art. 949, parágrafo único).",
+          "Conflito de competência tem outra função: resolver divergência sobre qual órgão deve processar ou julgar causa. Não serve para rever automaticamente o mérito da ação; o tribunal declara qual é o juízo competente e se pronuncia sobre a validade dos atos do juízo incompetente (art. 957)."
         ],
         "Exemplo: duas varas recusam competência sobre determinada causa. A questão a resolver é quem julga, não se o autor tem razão."
       ],
       [
         "Homologação de decisão estrangeira",
         [
-          "Uma decisão proferida fora do Brasil pode precisar de homologação para produzir efeitos no território brasileiro, observadas exceções legais. A competência constitucional do STJ e o procedimento do CPC não significam que o tribunal refará livremente o julgamento estrangeiro.",
+          "Uma decisão proferida fora do Brasil só tem eficácia no território brasileiro após a homologação, salvo lei ou tratado em sentido contrário (art. 961, caput); é o caso da sentença estrangeira de divórcio consensual, que independe de homologação pelo STJ (art. 961, § 5º). A competência constitucional do STJ e o procedimento do CPC não significam que o tribunal refará livremente o julgamento estrangeiro.",
           "O exame é predominantemente de requisitos de reconhecimento e compatibilidade jurídica, não de nova análise integral das provas do litígio decidido no exterior. Exequatur refere-se a cartas rogatórias no regime aplicável."
         ],
         "Exemplo: sentença estrangeira que condena ao pagamento pode exigir reconhecimento antes do cumprimento no Brasil, observados tratado e lei."
@@ -605,18 +605,18 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
       [
         "Ação rescisória desconstitui decisão transitada",
         [
-          "A ação rescisória é ação autônoma destinada a desconstituir decisão já estabilizada nas hipóteses taxativas do art. 966. Não é recurso tardio para qualquer decisão com a qual a parte discorde. O prazo geral é de dois anos, com regimes legais específicos em determinadas situações.",
-          "Há distinção entre o juízo rescindente, que afasta a decisão, e o juízo rescisório, que pode julgar novamente o mérito quando cabível. O ajuizamento não suspende automaticamente a eficácia da decisão rescindenda."
+          "A ação rescisória é ação autônoma destinada a desconstituir decisão de mérito transitada em julgado, nas hipóteses taxativas do art. 966, I a VIII (§ 2º: também decisão sem mérito que impeça nova propositura ou a admissibilidade do recurso). Não é recurso tardio para qualquer decisão com a qual a parte discorde. O direito à rescisão se extingue em 2 anos do trânsito em julgado da última decisão (art. 975); na prova nova, o prazo conta da descoberta, no máximo de 5 anos do trânsito (art. 975, § 2º).",
+          "Há distinção entre o juízo rescindente, que afasta a decisão, e o juízo rescisório, que pode julgar novamente o mérito quando cabível. A propositura não impede o cumprimento da decisão rescindenda, salvo tutela provisória (art. 969). Exige-se, em regra, depósito de 5% do valor da causa, convertido em multa se o pedido for declarado, por unanimidade, inadmissível ou improcedente (art. 968, II; dispensas no § 1º)."
         ],
         "Exemplo: prova nova que a parte não pôde utilizar antes pode, sob estritos requisitos legais, sustentar rescisória; mera discordância da valoração da prova não basta."
       ],
       [
         "Reclamação e precedentes qualificados",
         [
-          "A reclamação é instrumento autônomo para preservar competência de tribunal, garantir autoridade de decisões e assegurar observância de hipóteses legalmente previstas de precedentes qualificados. Seu cabimento não é geral nem substitui qualquer recurso disponível.",
-          "A Lei 15.484/2026 alterou o art. 988 e outros dispositivos do CPC, inclusive para disciplinar hipótese excepcional vinculada ao regime de relevância do recurso especial. É necessário conferir requisitos e limitações como esgotamento das instâncias nas hipóteses pertinentes e a impossibilidade de reclamação após trânsito em julgado da decisão reclamada."
+          "A reclamação é instrumento autônomo para preservar competência de tribunal, garantir autoridade de decisões e assegurar a observância de súmula vinculante, de decisão do STF em controle concentrado e de acórdão de IRDR ou de IAC (art. 988, III e IV). Seu cabimento não é geral nem substitui qualquer recurso disponível.",
+          "A Lei nº 15.484/2026, que regulamentou o filtro de relevância no recurso especial, acrescentou ao art. 988 o inciso V: reclamação, em casos excepcionais, para garantir a observância de acórdão do STJ proferido sob o regime de relevância; o § 4º passou a abranger essa hipótese. O § 5º do art. 988, que limita o cabimento da reclamação, também foi alterado pela lei; confira o texto vigente."
         ],
-        "Exemplo: para corrigir uma interpretação divergente qualquer, não basta invocar 'jurisprudência do STJ'; é preciso demonstrar hipótese concreta de cabimento da reclamação."
+        "Exemplo: decisão que contraria súmula vinculante ou acórdão de IRDR pode ensejar reclamação (art. 988, III e IV); mera divergência de interpretação fora dessas hipóteses não basta."
       ]
     ],
     "remember": [
@@ -651,7 +651,7 @@ window.CPC_DIDACTIC_REVIEW=Object.assign(window.CPC_DIDACTIC_REVIEW||{}, {
         [
           "IAC e IRDR respondem a situações diferentes",
           [
-            "No incidente de assunção de competência, a questão de direito é relevante e tem grande repercussão social, sem repetição múltipla de processos, ou existe hipótese legal de prevenir/compor divergência interna. A preocupação central é formar orientação qualificada.",
+            "No incidente de assunção de competência, a questão de direito é relevante e tem grande repercussão social, sem repetição múltipla de processos, ou é conveniente prevenir ou compor divergência entre câmaras ou turmas do tribunal (art. 947, § 4º). A preocupação central é formar orientação qualificada.",
             "No incidente de resolução de demandas repetitivas, há efetiva repetição de processos sobre a mesma questão unicamente de direito, com risco à isonomia e segurança jurídica. A multiplicação de casos e a necessidade de solução uniforme fazem diferença."
           ],
           "Pergunta: basta risco abstrato de surgirem milhares de ações para preencher todos os pressupostos de IRDR?",
