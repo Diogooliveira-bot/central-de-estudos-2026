@@ -207,3 +207,24 @@ body.bcpe-open{overflow:hidden!important}
 .cf-native-overlay details.bc-m01-lei-seca .bc-m01-lei-art p,.bc-native-reader-overlay details.bc-m01-lei-seca .bc-m01-lei-art p{font-size:.92rem;line-height:1.7;margin:6px 0}
 .bcpe-law-edit-panel:has(select[aria-label="Lei pronta para inserir"]){overflow-y:auto;overscroll-behavior:contain}
 .bcpe-law-edit-panel:has(select[aria-label="Lei pronta para inserir"]) .bcpe-law-input-label textarea{min-height:150px;max-height:38vh;resize:vertical}
+
+/* CF M01–M15: trechos constitucionais editáveis no Editor Premium. */
+.bcpe-workspace details.cf-apostila-law-inline{
+ display:block;margin:15px 0;padding:11px 15px;border:1px solid #dae7ef;
+ border-left:3px solid #8aafc8;border-radius:8px;background:#f8fbfd;color:#243b53;
+}
+.bcpe-workspace details.cf-apostila-law-inline>summary{
+ display:list-item;cursor:text;font-weight:700;color:#1e5073;margin-bottom:8px;
+}
+.bcpe-workspace .cf-apostila-law-body p{
+ font:inherit;line-height:1.75;margin:8px 0;padding:4px 1px;
+}
+.bcpe-law-edit-panel select[aria-label="Dispositivo constitucional para editar"]{
+ max-width:100%;font-size:14px;
+}
+.bcpe-law-edit-panel:has(select[aria-label="Dispositivo constitucional para editar"]){
+ overflow-y:auto;overscroll-behavior:contain;
+}
+.bcpe-law-edit-panel:has(select[aria-label="Dispositivo constitucional para editar"]) .bcpe-law-input-label textarea{
+ min-height:180px;max-height:40vh;
+}

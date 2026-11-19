@@ -61,7 +61,7 @@ test('CF: código da central adia o carregamento junto com a disciplina e manté
  const ui=read('ui/cf-native-study-v2.js');
  const guided=read('content/cf/cf-teoria-guiada-reader-v1.js');
  const css=read('ui/cf-apostila-reading-v1.css');
- assert.ok(index.includes('ui/cf-apostila-reading-v1.js?v=20261119cfleisync1'));
+ assert.ok(index.includes('ui/cf-apostila-reading-v1.js?v=20261119cfpremiumlaw2'));
  assert.ok(central.includes("path==='ui/cf-apostila-reading-v1.js'"));
  assert.ok(ui.includes('g.CfApostilaReading.render(d.complete,n)'));
  assert.ok(ui.includes("stdMark(100)")&&ui.includes("completeRead:true"));
