@@ -1,0 +1,366 @@
+[
+  {
+    "title": "Federação: soberania e autonomia",
+    "central": "A República Federativa do Brasil é soberana. União, Estados, DF e Municípios são autônomos, mas nenhum pode romper o vínculo federativo.",
+    "cards": [
+      [
+        "Soberania",
+        "A soberania pertence à República Federativa do Brasil, considerada como Estado."
+      ],
+      [
+        "Autonomia",
+        "Os quatro entes se organizam e exercem suas competências nos limites da Constituição."
+      ],
+      [
+        "Art. 18",
+        "A Federação é indissolúvel; União, Estados, DF e Municípios são autônomos."
+      ],
+      [
+        "Pegadinha de prova",
+        "Autonomia não é soberania. Ente federado não tem direito de secessão."
+      ]
+    ],
+    "tips": [
+      "RFB = soberana; quatro entes = autônomos.",
+      "A forma federativa é cláusula pétrea (art. 60, § 4º, I)."
+    ]
+  },
+  {
+    "title": "Quem integra o Estado brasileiro: art. 18",
+    "central": "A organização político-administrativa compreende União, Estados, Distrito Federal e Municípios, todos autônomos. Brasília é a Capital Federal.",
+    "cards": [
+      [
+        "Quatro entes",
+        "União, Estados, Distrito Federal e Municípios."
+      ],
+      [
+        "Territórios",
+        "Integram a União e não são entes federados autônomos."
+      ],
+      [
+        "Art. 18, § 2º",
+        "Territórios podem ser criados, transformados ou reintegrados por lei complementar federal."
+      ],
+      [
+        "Pegadinha de prova",
+        "Território Federal não é o quinto ente da Federação."
+      ]
+    ],
+    "tips": [
+      "Não troque o DF por Território na lista dos entes.",
+      "Brasília é a Capital Federal (art. 18, § 1º)."
+    ]
+  },
+  {
+    "title": "União: competências e bens",
+    "central": "A Constituição distingue bens da União, tarefas administrativas federais e competências para legislar. Um bem federal não torna toda atividade sobre ele exclusiva da União.",
+    "cards": [
+      [
+        "Art. 20 — bens",
+        "Define os bens pertencentes à União."
+      ],
+      [
+        "Art. 21 — tarefas",
+        "Reúne competências materiais, como prestar, manter ou explorar serviços."
+      ],
+      [
+        "Art. 22 — leis",
+        "Lista matérias de competência legislativa privativa da União."
+      ],
+      [
+        "Pegadinha de prova",
+        "Domínio de um bem não significa competência legislativa exclusiva sobre tudo a ele ligado."
+      ]
+    ],
+    "tips": [
+      "Art. 20 = bens; art. 21 = tarefas.",
+      "Art. 22 = legislação privativa da União."
+    ]
+  },
+  {
+    "title": "Estados: Constituição própria e competência residual",
+    "central": "Os Estados se organizam por suas Constituições, respeitando a Constituição Federal. Exercem competências remanescentes, salvo as que lhes forem vedadas.",
+    "cards": [
+      [
+        "Auto-organização",
+        "Estados elaboram suas Constituições e leis dentro dos limites federais."
+      ],
+      [
+        "Art. 25, § 1º",
+        "São reservadas aos Estados as competências não vedadas pela Constituição."
+      ],
+      [
+        "Gás canalizado",
+        "Serviços locais de gás canalizado cabem aos Estados, na forma da lei."
+      ],
+      [
+        "Pegadinha de prova",
+        "Competência residual não autoriza contrariar normas gerais federais válidas."
+      ]
+    ],
+    "tips": [
+      "Estado = auto-organização + competência residual.",
+      "Regiões metropolitanas dependem de lei complementar estadual."
+    ]
+  },
+  {
+    "title": "Distrito Federal: competências acumuladas e limites",
+    "central": "O DF é regido por Lei Orgânica, reúne em regra competências legislativas estaduais e municipais e não pode ser dividido em Municípios.",
+    "cards": [
+      [
+        "Lei Orgânica",
+        "O DF se rege por Lei Orgânica aprovada pela Câmara Legislativa."
+      ],
+      [
+        "Competências",
+        "Acumula, em regra, competências legislativas estaduais e municipais."
+      ],
+      [
+        "Art. 32",
+        "É vedada a divisão do Distrito Federal em Municípios."
+      ],
+      [
+        "Pegadinha de prova",
+        "O DF não é Estado nem Município e não pode criar Municípios internos."
+      ]
+    ],
+    "tips": [
+      "Lei Orgânica: 2 turnos, intervalo de 10 dias e 2/3.",
+      "A União organiza e mantém serviços específicos do DF."
+    ]
+  },
+  {
+    "title": "Municípios: interesse local e Lei Orgânica",
+    "central": "Municípios são entes autônomos. Legislam sobre interesse local e suplementam normas federais e estaduais no que couber.",
+    "cards": [
+      [
+        "Art. 29",
+        "Lei Orgânica: 2 turnos, mínimo de 10 dias entre eles e aprovação por 2/3."
+      ],
+      [
+        "Art. 30, I e II",
+        "Municípios legislam sobre interesse local e suplementam normas quando couber."
+      ],
+      [
+        "EC 139/2026",
+        "Onde houver, veda extinguir, criar ou instalar Tribunais ou Conselhos de Contas dos Municípios."
+      ],
+      [
+        "Pegadinha de prova",
+        "Municípios não estão no art. 24; sua competência suplementar vem do art. 30, II."
+      ]
+    ],
+    "tips": [
+      "Interesse local + suplementação no que couber.",
+      "SV 38: Município fixa horário de comércio."
+    ]
+  },
+  {
+    "title": "Criação e alteração de Estados e Municípios",
+    "central": "A mudança dos entes federativos exige etapas constitucionais próprias. Plebiscito, sozinho, não cria nem altera automaticamente um ente.",
+    "cards": [
+      [
+        "Estados — art. 18, § 3º",
+        "Plebiscito da população interessada e aprovação do Congresso por lei complementar."
+      ],
+      [
+        "Municípios — § 4º",
+        "Lei estadual, período legal, estudos de viabilidade e consulta plebiscitária."
+      ],
+      [
+        "ADI 2650",
+        "Na divisão de um Estado, consulta deve abranger toda a população do Estado envolvido."
+      ],
+      [
+        "Pegadinha de prova",
+        "Plebiscito favorável não cria automaticamente novo Estado ou Município."
+      ]
+    ],
+    "tips": [
+      "Estados: plebiscito + lei complementar federal.",
+        "LC 230/2026: 15 anos para transferir área entre municípios limítrofes; não cria Município."
+    ]
+  },
+  {
+    "title": "Vedações federativas e bens dos Estados",
+    "central": "O art. 19 impõe vedações aos entes federativos. Os arts. 20 e 26 tratam, respectivamente, de bens da União e dos Estados.",
+    "cards": [
+      [
+        "Art. 19, I",
+        "Estado não estabelece cultos; admite colaboração de interesse público, na forma da lei."
+      ],
+      [
+        "Outras vedações",
+        "Não recusar fé a documento público nem criar preferências entre entes."
+      ],
+      [
+        "Bens",
+        "Art. 20: União. Art. 26: bens dos Estados, conforme o texto constitucional."
+      ],
+      [
+        "Pegadinha de prova",
+        "Estado laico não proíbe toda colaboração de interesse público com religiões."
+      ]
+    ],
+    "tips": [
+      "Art. 19: religião, fé pública e igualdade federativa.",
+        "Tema 1086/STF: símbolo cultural não viola laicidade, impessoalidade ou não discriminação."
+    ]
+  },
+  {
+    "title": "Competência material exclusiva da União: art. 21",
+    "central": "Competência material trata de executar atividades e organizar serviços. O art. 21 concentra tarefas atribuídas à União.",
+    "cards": [
+      [
+        "O que é",
+        "Atuação administrativa: executar, prestar, manter ou organizar."
+      ],
+      [
+        "Exemplos",
+        "Relações exteriores, emissão de moeda e serviço postal."
+      ],
+      [
+        "Art. 21",
+        "Enumera competências materiais federais e seus regimes constitucionais."
+      ],
+      [
+        "Pegadinha de prova",
+        "O art. 21 trata sobretudo de tarefas; não confundir com competência para legislar."
+      ]
+    ],
+    "tips": [
+      "Art. 21 = União faz.",
+      "Art. 22 = União legisla."
+    ]
+  },
+  {
+    "title": "Competência legislativa privativa da União: art. 22",
+    "central": "O art. 22 lista matérias cuja legislação compete privativamente à União. Lei complementar federal pode autorizar Estados a tratar de questões específicas.",
+    "cards": [
+      [
+        "Matérias",
+        "Direito Civil, Penal, Processual, Eleitoral, do Trabalho e outras do art. 22."
+      ],
+      [
+        "Delegação",
+        "Somente lei complementar federal pode autorizar Estados em questões específicas."
+      ],
+      [
+        "Limite",
+        "A autorização específica não entrega toda a matéria ao Estado."
+      ],
+      [
+        "Pegadinha de prova",
+        "O art. 22 exige lei complementar; lei ordinária não basta para a autorização."
+      ]
+    ],
+    "tips": [
+      "Art. 22 = União legisla.",
+      "Delegação estadual: questão específica + lei complementar federal."
+    ]
+  },
+  {
+    "title": "Competência material comum: art. 23",
+    "central": "Na competência comum, União, Estados, DF e Municípios cooperam em tarefas administrativas previstas na Constituição.",
+    "cards": [
+      [
+        "Quatro entes",
+        "A competência material comum alcança União, Estados, DF e Municípios."
+      ],
+      [
+        "Exemplos",
+        "Saúde, assistência pública, meio ambiente e patrimônio cultural."
+      ],
+      [
+        "Cooperação",
+        "Leis complementares devem fixar normas de cooperação federativa."
+      ],
+      [
+        "Pegadinha de prova",
+        "Competência comum é material; não confunda com competência legislativa concorrente."
+      ]
+    ],
+    "tips": [
+      "Art. 23 = todos atuam e cooperam.",
+      "Material comum não é legislação concorrente."
+    ]
+  },
+  {
+    "title": "Competência legislativa concorrente: art. 24",
+    "central": "A União edita normas gerais; Estados e DF suplementam. Sem norma geral federal, Estados podem legislar plenamente para suas peculiaridades.",
+    "cards": [
+      [
+        "Regra geral",
+        "União edita normas gerais; Estados e DF suplementam."
+      ],
+      [
+        "Sem lei federal",
+        "Estados exercem competência plena para atender peculiaridades."
+      ],
+      [
+        "Lei federal posterior",
+        "Suspende a eficácia da lei estadual apenas no ponto incompatível."
+      ],
+      [
+        "Pegadinha de prova",
+        "A lei federal não revoga toda a lei estadual; suspende a eficácia no conflito."
+      ]
+    ],
+    "tips": [
+      "Art. 24: União geral; Estados/DF suplementam.",
+      "Município suplementa pelo art. 30, II, quando couber."
+    ]
+  },
+  {
+    "title": "Quando há intervenção: excepcionalidade",
+    "central": "Intervenção é medida excepcional que restringe temporariamente a autonomia nas hipóteses previstas nos arts. 34 e 35 da Constituição.",
+    "cards": [
+      [
+        "Regra",
+        "Cada ente exerce sua autonomia; intervenção é excepcional."
+      ],
+      [
+        "Federal",
+        "União pode intervir nos Estados e no Distrito Federal nas hipóteses do art. 34."
+      ],
+      [
+        "Estadual",
+        "Estado pode intervir em seus Municípios nas hipóteses do art. 35."
+      ],
+      [
+        "Pegadinha de prova",
+        "Conflito político ou conveniência não cria hipótese de intervenção."
+      ]
+    ],
+    "tips": [
+      "Regra: não intervenção; exceções são constitucionais.",
+      "Durante intervenção federal, não se emenda a Constituição (art. 60, § 1º)."
+    ]
+  },
+  {
+    "title": "Intervenção federal, estadual e procedimentos",
+    "central": "A intervenção exige hipótese e procedimento constitucionais. O decreto deve indicar alcance e duração, e passa pelos controles previstos no art. 36.",
+    "cards": [
+      [
+        "Iniciativa",
+        "O art. 36 prevê solicitação, requisição ou representação, conforme a hipótese."
+      ],
+      [
+        "Decreto",
+        "Indica amplitude, prazo e condições; pode nomear interventor."
+      ],
+      [
+        "Controle",
+        "Em regra, vai ao Congresso ou Assembleia em 24 horas."
+      ],
+      [
+        "Pegadinha de prova",
+        "Em hipóteses dos arts. 34, VI e VII, e 35, IV, a apreciação é dispensada se bastar suspender o ato."
+      ]
+    ],
+    "tips": [
+      "Identifique hipótese, autoridade, decreto e controle.",
+      "Há casos constitucionais em que não se exige apreciação legislativa."
+    ]
+  }
+]
