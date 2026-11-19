@@ -22,13 +22,19 @@ A legislação original da Revisão Guiada não foi editada; a atualização inc
 - Logomarca, personagem e ícones conferidos visualmente.
 - Ortografia, títulos, margens, legibilidade e encaixe de texto conferidos visualmente.
 - Migração executada contra cópia de teste do HTML real do M3: atualização para revisão 6, 12 figuras encontradas e um registro de histórico criado.
-- `npm test`: 451 aprovados, 0 falhas, 1 ignorado.
+- `npm test`: 452 testes executados, 451 aprovados, 0 falhas, 1 ignorado.
 - Teste dedicado de M3: 3 aprovados, 0 falhas.
 
 ## Integração e publicação
 
 A migração `migrations/cf-m03-guided-infographics-20261118.sql` altera somente `reader:19pwkh3`, condicionado à revisão 5 sem figuras e à existência dos 12 capítulos. Cada arte é inserida no fechamento do capítulo correspondente, imediatamente antes do capítulo seguinte; a arte 12 é inserida antes da síntese final. Os outros módulos e os textos/questões do M3 não são atualizados.
 
-Status da publicação será registrado após a implantação dos arquivos estáticos e a aplicação da migração na branch principal do Neon.
+Publicação concluída em 18/11/2026:
+
+- Código e imagens estáticas enviados à branch `main` do repositório; commit de produção `f5ad4d6b62a99ac20e8edad881e9f31d8df09215`.
+- Deploy da Vercel concluído com status `READY` no ambiente de produção.
+- Migração aplicada na branch de produção do Neon. `reader:19pwkh3` passou da revisão 5 para a 6 e recebeu 12 figuras; a revisão anterior foi preservada no histórico.
+- Conferência pós-publicação: 12 seções de capítulo e 12 artes no conteúdo do M3. Os arquivos estão sob autenticação da Central e são carregados na sessão dos alunos.
+- Nenhum outro módulo foi alterado pela migração.
 
 ![Prévia das 12 artes CF M03](../artes/cf-m03/previa-contato.png)
