@@ -1,5 +1,5 @@
 {
-  "build": "20261117-law-selective-v1",
+  "build": "20261119-cache-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -228,8 +228,8 @@
     "/ui/tablet-scale-v1.js?v=20261117tablet1",
     "/ui/orientation-defaults-v1.js?v=20261113orient2",
     "/ui/orientation-v1.js?v=20261115responsive1",
-    "/ui/study-objectives-v1.js?v=20261117trilha2",
-    "/ui/study-objectives-v1.css?v=20261115responsive1",
+    "/ui/study-objectives-v1.js?v=20261119r1",
+    "/ui/study-objectives-v1.css?v=20261119r1",
     "/content/tjpb-2026-verticalized.js?v=20261020exam1",
     "/content/trt8-2026-verticalized.js?v=20261021multiexam2",
     "/ui/exam-verticalized-v1.js?v=20261023-remove-labor-disciplines-v1",

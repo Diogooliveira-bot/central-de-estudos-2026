@@ -124,7 +124,71 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400, immutable"
+          "value": "public, max-age=604800, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/ui/(.*).js",
+      "has": [
+        {
+          "type": "query",
+          "key": "v",
+          "value": ".+"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/fixes/(.*).js",
+      "has": [
+        {
+          "type": "query",
+          "key": "v",
+          "value": ".+"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "has": [
+        {
+          "type": "query",
+          "key": "v",
+          "value": ".+"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/central-structural-v66119/runtime.js",
+      "has": [
+        {
+          "type": "query",
+          "key": "v",
+          "value": ".+"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
         }
       ]
     },

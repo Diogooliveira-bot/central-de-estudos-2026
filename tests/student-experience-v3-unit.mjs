@@ -26,7 +26,8 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
         : file.includes('student-shell') ? '20261119adminonly1' : file.includes('auth-shell') ? '20261020studyobj1'
           : file.includes('student-dashboard') ? '20261105resume1'
           : file.includes('external-question-filters') ? '20261119adminonly1' : file.includes('student-ux-core') ? '20261115responsive1' : '';
-    assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
+    // A versão muda a cada atualização (npm run nova-versao): exige o arquivo no pacote offline, com ?v=, sem fixar qual.
+    assert.ok(offline.includes(`/${file}?v=`), `${file} deve estar no manifesto offline`);
   }
   assert.match(boot, /student-experience-v3\.css\?v='\+BUILD/);
   assert.ok(JSON.parse(offline).files.some(file => /^\/ui\/student-experience-v3\.css\?v=/.test(file)));
