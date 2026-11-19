@@ -37,7 +37,9 @@ Os resumos foram comparados com os tópicos do M4. Conferidos os dispositivos co
 
 - Teste unitário focal: 3 verificações aprovadas (14 capítulos e títulos; dimensões e WebP; associação da arte ao capítulo apenas no M4).
 - Sintaxe do leitor JavaScript: aprovada.
-- Publicação de produção: pendente até concluir o preview da Vercel e confirmar o deploy de produção.
+- Preview da Vercel: READY para o commit da branch de trabalho.
+- Verificação interativa do leitor no preview: limitada pela ausência de `BC_PREVIEW_GUEST_TOKEN` configurado para esta branch; o ambiente exige autenticação e não foi possível abrir o módulo sem o acesso de demonstração.
+- Publicação de produção: pendente até o deploy em `main` ser confirmado.
 
 ## Fontes oficiais
 
