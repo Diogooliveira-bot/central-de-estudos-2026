@@ -100,3 +100,37 @@ test('CF completa: dispositivo constitucional aparece junto do parágrafo, sem l
  assert.match(novo,/Ao sistema único de saúde compete/);
 
 });
+
+
+test('CF: conteúdo salvo em nuvem recebe novamente lei seca contextual sem substituir texto do editor',()=>{
+ const reader=context.window.CfApostilaReading;
+ const captured=[];
+ function paragraph(text){
+  return {tagName:'P',textContent:text,nextElementSibling:null,
+   closest(){return null},
+   insertAdjacentHTML(position,html){
+    assert.equal(position,'afterend');
+    captured.push(html);
+    this.nextElementSibling={matches(selector){return selector==='.cf-apostila-law-inline'}};
+   }};
+ }
+ const heading={tagName:'H2',textContent:'Direitos fundamentais'};
+ const p1=paragraph('O art. 5º, II, trata da legalidade constitucional.');
+ const p2=paragraph('O art. 60, § 4º, I, protege a forma federativa.');
+ const p3=paragraph('A LINDB, art. 2º, § 3º, estabelece uma regra de vigência.');
+ const untouched='Texto publicado pelo administrador e mantido na página';
+ const p4=paragraph(untouched);
+ const article={querySelector(){return null},querySelectorAll(){return [heading,p1,p2,p3,p4]}};
+ assert.equal(reader.ensureInline(article),2);
+ assert.equal(captured.length,2);
+ assert.match(captured[0],/ninguém será obrigado a fazer ou deixar de fazer alguma coisa/);
+ assert.match(captured[1],/a forma federativa de Estado/);
+ assert.ok(captured.every(s=>s.includes('data-bc-cf-auto-law="1"')));
+ assert.equal(reader.ensureInline(article),0,'nenhum dispositivo deve ser duplicado');
+ assert.equal(p4.textContent,untouched,'as edições do administrador não podem mudar');
+ const editor=read('ui/visual-editor-v1.js');
+ assert.match(editor,/article\.replaceChildren\(frag\);if\(article\.closest\('#cf-native-reader'\)\)window\.CfApostilaReading\?\.ensureInline\?\.\(article\)/);
+ assert.match(editor,/clone\.querySelectorAll\('\[data-bc-cf-auto-law\]'\)/,'não persistir excertos automáticos como edição manual');
+ const central=read('central-v119.html');
+ assert.match(central,/visual-editor-v1\.js\?v=20261119cfleisync1/);
+});
