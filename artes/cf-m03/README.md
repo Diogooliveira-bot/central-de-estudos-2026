@@ -23,9 +23,11 @@ O script gera os SVGs de trabalho e os PNGs finais. O texto de cada arte vem de 
 
 ## Precisão jurídica
 
-Os resumos foram conferidos com a Constituição Federal e a Emenda Constitucional nº 141, de 16 de outubro de 2026. A arte do capítulo 2 registra a fase de transição prevista para começar em 16 de dezembro de 2026; não altera a redação original da Revisão Guiada.
+Os resumos foram conferidos com a Constituição Federal, a Emenda Constitucional nº 141/2026 e a liminar do STF de 12/11/2026, sujeita a referendo do Plenário. A arte do capítulo 2 registra as datas da transição constitucional e a decisão provisória sobre a distribuição das 42 horas na falta de ACT/CCT; não altera a redação original da Revisão Guiada.
 
 Fontes oficiais:
 
 - [Constituição Federal — Portal da Legislação](https://www4.planalto.gov.br/legislacao/legis-federal/constituicao)
 - [Resenha diária da legislação — outubro de 2026](https://www4.planalto.gov.br/legislacao/legislacao/portal-legis/resenha-diaria/outubro-resenha-diaria.html)
+- [Emenda Constitucional nº 141/2026 — publicação original](https://www2.camara.leg.br/legin/fed/emecon/2026/emendaconstitucional-141-16-outubro-2026-800062-publicacaooriginal-181622-pl.html)
+- [Liminar do STF sobre a transição](https://noticias.stf.jus.br/postsnoticias/stf-mantem-regra-de-transicao-para-implementacao-da-jornada-5x2/)
