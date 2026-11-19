@@ -89,6 +89,7 @@ function applySnapshot(article,html){
   if(live[i])slot.replaceWith(live[i]);else slot.remove();
  });
  article.replaceChildren(template.content);
+ if(article.closest('#cf-native-reader'))window.CfApostilaReading?.ensureInline?.(article);
 }
 function parseNodes(html){
  const template=document.createElement('template');template.innerHTML=html;clean(template.content);
@@ -625,7 +626,7 @@ function select(state,box){
  updateContext(state);
 
 }
-function serialize(state){
+function serialize(state,forPublish=false){
  const doc=document.createElement('div');
  blocks(state).forEach(function(box){
   const node=box.querySelector(':scope > .bcpe-node');if(!node)return;
@@ -642,6 +643,18 @@ function serialize(state){
    detail.removeAttribute('data-bcpe-law-was-open');
   });
   clean(cloned);
+  if(forPublish){
+   // Lei seca automática sem alterações continua dinâmica. O texto editado
+   // torna-se versão manual publicada e não é removido pelo editor visual.
+   [cloned,...cloned.querySelectorAll('[data-bc-cf-auto-law]')].forEach(function(law){
+    if(!law.hasAttribute('data-bc-cf-auto-law'))return;
+    const baseline=law.getAttribute('data-bc-cf-original');
+    law.removeAttribute('data-bc-cf-original');
+    if(baseline&&baseline===hash(law.innerHTML)){law.remove();return}
+    law.removeAttribute('data-bc-cf-auto-law');
+    law.setAttribute('data-bc-cf-editor-law','1');
+   });
+  }
   doc.appendChild(cloned);
  });
  return doc.innerHTML;
@@ -1791,7 +1804,7 @@ function makeToolbar(state){
  '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
  if(!isAdmin){const imageOption=bar.querySelector('[data-insert] option[value="image"]');if(imageOption)imageOption.remove()}
  if(state.overlay.matches('.bc-guided-overlay')&&/Direito Constitucional/.test(state.overlay.getAttribute('aria-label')||'')){const oldButton=bar.querySelector('[data-action="remove-law"]');if(oldButton)oldButton.remove()}
- else {const b=bar.querySelector('[data-action="edit-law"]');if(b)b.remove()}
+ else if(state.overlay.id!=='cf-native-reader') {const b=bar.querySelector('[data-action="edit-law"]');if(b)b.remove()}
  state.status=bar.querySelector('[data-status]');state.words=bar.querySelector('[data-words]');state.typeSelect=bar.querySelector('[data-style]');state.context=bar.querySelector('[data-context]');
  bar.addEventListener('pointerdown',function(e){
   rememberSelection(state);
@@ -1836,7 +1849,10 @@ function makeToolbar(state){
   if(action==='redo')undo(state,1);
   if(action==='paste')showPasteDialog(state);
   if(action==='remove-law')removeLawSections(state);
-  if(action==='edit-law')editLawSections(state);
+  if(action==='edit-law'){
+   if(state.overlay.id==='cf-native-reader')editConstitutionalLaw(state);
+   else editLawSections(state);
+  }
   if(action==='versions')await showVersions(state);
   if(action==='preview'){
    state.dialog.classList.toggle('bcpe-preview');
@@ -1860,6 +1876,13 @@ function makeDialog(state,html){
  workspace.setAttribute('role','textbox');workspace.setAttribute('aria-multiline','true');workspace.setAttribute('aria-label','Texto do capítulo');
  const nodes=parseNodes(html);
  const source=document.createElement('div');source.replaceChildren(...nodes);
+ if(state.overlay.id==='cf-native-reader'){
+  // Exibe no editor os dispositivos mesmo quando a revisão publicada é antiga.
+  window.CfApostilaReading?.ensureInline?.(source);
+  source.querySelectorAll('[data-bc-cf-auto-law]').forEach(function(law){
+   if(!law.hasAttribute('data-bc-cf-original'))law.setAttribute('data-bc-cf-original',hash(law.innerHTML));
+  });
+ }
  if(state.overlay.matches('.bc-guided-overlay')&&state.overlay.getAttribute('aria-label')==='Teoria guiada de Direito Constitucional, módulo 1')window.BcCfGuidedReader?.reconcileM01Dom?.(source,state.revision);
  workspace.replaceChildren(...Array.from(source.children).map(block));
  refreshDragHandles(state);
@@ -1981,7 +2004,7 @@ function close(state){
 async function publish(state,button){
  if(state.saving)return;
  clearTimeout(editorTimer);historyPush(state);draftWrite(state);
- const html=serialize(state);
+ const html=serialize(state,true);
  if(!html.trim())return notify('O capítulo não pode ficar vazio.');
  state.saving=true;button.disabled=true;button.textContent='Publicando...';
  try{
