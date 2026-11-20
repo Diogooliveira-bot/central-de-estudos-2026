@@ -34,8 +34,12 @@ Fontes oficiais consultadas:
 
 ## Integração
 
-O leitor da Revisão Guiada já constrói a arte no final do capítulo correspondente para os módulos 4 a 13. A alteração prevista amplia a mesma regra ao M14, usando os WebPs em `/assets/cf/revisao-guiada/m14/`, com carregamento preguiçoso e dimensões declaradas. Nenhum texto original, questão ou outro módulo deve ser alterado.
+O leitor da Revisão Guiada foi ajustado para acrescentar cada WebP ao final do capítulo correspondente no M14. As imagens usam `/assets/cf/revisao-guiada/m14/`, com carregamento preguiçoso, decodificação assíncrona e dimensões declaradas. A referência de cache foi atualizada também no arquivo offline. Os textos originais, questões e dados de outros módulos não foram modificados.
 
-## Publicação
+## Testes e publicação
 
-A publicação será registrada após a validação do commit e do deploy de produção.
+Os testes focados de M12, M13 e M14 passaram: 11 aprovados, 0 falhas. As 14 PNGs e 14 WebPs foram verificadas em 1229 × 1536 px, sem duplicidade.
+
+A suíte geral tem três falhas que foram reproduzidas na `main`: validação de cache de `cf-weeks-001.js`, referência de bancos removidos e primeira linha de `index.html`. O verificador da Central passou sintaxe, recursos, cache e ausência de segredos, mas bloqueou a publicação porque `index.html` já contém texto “truncated output” antes do doctype. Essa falha está fora do escopo exclusivo do M14.
+
+**Status:** alterações preparadas no PR #373 e prévia criada; produção não publicada devido ao bloqueio preexistente do verificador. Não alterei o conteúdo global da página para contornar essa falha.
