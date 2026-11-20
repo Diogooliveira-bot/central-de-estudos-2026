@@ -75,11 +75,8 @@ function ptMaster(){
    review?'Recupere os conteúdos estudados com perguntas e respostas comentadas.':'Retome os pontos essenciais e faça recuperação ativa.',
    ['Resumo','Revisão ativa'],review?'Revisar conteúdos':'Revisar conteúdo','review',
    review?'Praticar revisão final':'Resolver 5 questões',review?'cumulative-review':'active');
-  const apostila=review?'':card(m.id,'pdf','PDF','Apostila teórica (PDF)',
-   'Síntese didática com exemplos e checklist, para ler ou baixar.',
-   ['PDF','Revisão'],'Abrir apostila','pdf','','');
   const content='<div class="pt-cf-module-inside">'+reading+oriented+
-   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">' +full+summary+apostila+'</section></div>';
+   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">' +full+summary+'</section></div>';
   return '<section class="cf-module pt-cf-module '+(open?'open':'')+'" data-pt-current="'+esc(m.id)+'">'+
    '<button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')" aria-expanded="'+(open?'true':'false')+'">'+
     '<span class="cf-module-no">'+(review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span>'+
