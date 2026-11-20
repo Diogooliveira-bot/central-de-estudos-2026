@@ -32,6 +32,14 @@ def text_block(x,y,text,size,width,color=BODY,bold=False,leading=None,align='sta
 def img(x,y,w,h,name):
     data=base64.b64encode((ASSETS/name).read_bytes()).decode('ascii')
     return f'<image x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="xMidYMid meet" xlink:href="data:image/png;base64,{data}" />'
+def card_marker(x,y,label):
+    # Marcadores neutros: evitam associar uma figura que não corresponde ao tema do quadro.
+    # A área é a mesma dos ícones anteriores, preservando a grade e o alinhamento.
+    return ''.join([
+        f'<circle cx="{x+86}" cy="{y+108}" r="55" fill="#eaf8fd" stroke="{NAVY}" stroke-width="6"/>',
+        f'<circle cx="{x+86}" cy="{y+108}" r="43" fill="{NAVY}"/>',
+        f'<text x="{x+86}" y="{y+125}" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="52px" font-weight="700" fill="#fff">{label}</text>'
+    ])
 
 for idx,item in enumerate(DATA,1):
     n=f'{idx:02d}'; out=['<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1229" height="1536" viewBox="0 0 1229 1536">','<rect width="1229" height="1536" fill="#fff"/>',img(160,0,910,172,'logo.png'),img(0,228,355,580,'mascote.png')]
@@ -40,9 +48,9 @@ for idx,item in enumerate(DATA,1):
     while len(title_lines)>2: title_size-=1; title_lines=lines(item['title'],title_size,805,True)
     out.append(text_block(763,379 if len(title_lines)==1 else 372,item['title'],title_size,805,'#071a3b',True,int(title_size*1.05),'middle',2)[0])
     out += ['<rect x="380" y="475" width="676" height="262" rx="34" fill="#fff" stroke="#0b477f" stroke-width="4"/>','<rect x="489" y="435" width="454" height="68" rx="34" fill="#a9def4"/>','<g transform="translate(517 447)" fill="none" stroke="#073f78" stroke-width="4" stroke-linejoin="round"><path d="M2 4c10-4 18-3 25 2v35c-7-5-15-6-25-2zM52 4c-10-4-18-3-25 2v35c7-5 15-6 25-2z"/><path d="M8 12h12M8 19h12M34 12h12M34 19h12" stroke-linecap="round"/></g>','<text x="748" y="480" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="40px" font-weight="700" fill="#073f78">Ponto central</text>',text_block(423,526,item['central'],30,590,BODY,False,36,'start',6)[0],'<path d="M618 736v62" stroke="#0b477f" stroke-width="5"/>']
-    cards=[(28,805,'icon1.png'),(623,805,'icon2.png'),(28,1048,'icon3.png'),(623,1048,'icon4.png')]
-    for c,(x,y,icon) in enumerate(cards):
-        out += [f'<rect x="{x}" y="{y}" width="578" height="220" rx="27" fill="#fbfeff" stroke="{CYAN}" stroke-width="3"/>',f'<path d="M{x+171} {y+24}v172" stroke="{CYAN}" stroke-width="4"/>',img(x+18,y+35,137,147,icon)]
+    cards=[(28,805,'1'),(623,805,'2'),(28,1048,'3'),(623,1048,'!')]
+    for c,(x,y,marker) in enumerate(cards):
+        out += [f'<rect x="{x}" y="{y}" width="578" height="220" rx="27" fill="#fbfeff" stroke="{CYAN}" stroke-width="3"/>',f'<path d="M{x+171} {y+24}v172" stroke="{CYAN}" stroke-width="4"/>',card_marker(x+18,y+35,marker)]
         hx=x+194; maxw=356; title=item['cards'][c][0]; hs=27; hl=lines(title,hs,maxw-22,True)
         while len(hl)>1 and hs>22: hs-=1; hl=lines(title,hs,maxw-22,True)
         font=ImageFont.truetype(BOLD,hs)
