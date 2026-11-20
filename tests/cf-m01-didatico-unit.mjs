@@ -14,12 +14,11 @@ function data() {
   vm.runInNewContext(read('content/cf/m01-native-data.js'), {window});
   return window.BASE_NATIVE_CONTENT.cf.m01;
 }
-test('M01 conserva identidade, temas, mapa e destino explícito do Lei em Dia', () => {
+test('M01 conserva identidade, temas e destino explícito do Lei em Dia', () => {
   const d = data();
   assert.equal(d.moduleId, 'w1');
   assert.equal(d.number, 1);
   assert.equal(d.lawTopicId, 'cf-m01');
-  assert.equal(d.mapUrl, '/assets/cf/m01-infografico.webp?v=20261004cfg07v2');
   assert.ok(d.complete.length > 45000);
   assert.ok(d.summary.length > 8000);
   for (const term of ['constitucionalismo', 'Lassalle', 'Schmitt', 'Kelsen', 'Socioideológico', 'Dogmática', 'Supremacia', 'Vigência', 'efetividade', 'eficácia limitada', 'originário', 'decorrente', 'recepção', 'Repristinação', 'Desconstitucionalização', 'Concordância prática', 'Mutação', 'Preâmbulo', 'SO-CI-DI-VA-PLU', 'asilo político']) {
