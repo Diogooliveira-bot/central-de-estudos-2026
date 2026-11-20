@@ -38,69 +38,72 @@ def fit_size(text,max_width,base,min_size=28,weight='bold'):
     for size in range(base,min_size-1,-1):
         if ImageFont.truetype(FBOLD if weight=='bold' else FREG,size).getlength(text)<=max_width:return size
     return min_size
-def icon(which,x,y):
-    mark='!' if which==4 else str(which)
-    fs=66 if which==4 else 72
-    return (f'<g transform="translate({x} {y})"><circle cx="55" cy="73" r="56" fill="{NAVY}"/>'
-            f'<circle cx="55" cy="73" r="48" fill="none" stroke="#fff" stroke-width="4"/>'
-            f'<circle cx="55" cy="73" r="41" fill="none" stroke="#fff" stroke-width="3"/>'
-            f'<text x="55" y="{96 if which==4 else 98}" text-anchor="middle" font-family="Liberation Sans, Arial, sans-serif" font-size="{fs}" font-weight="700" fill="#fff">{mark}</text></g>')
+def badge(i,x,y):
+    mark='!' if i==4 else str(i)
+    return (f'<g transform="translate({x} {y})"><circle cx="40" cy="40" r="40" fill="url(#navy)"/><circle cx="40" cy="40" r="34" fill="none" stroke="#7fd6f0" stroke-width="2.5"/>'
+            f'<text x="40" y="{54 if i<4 else 53}" text-anchor="middle" font-family="Liberation Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#fff">{mark}</text></g>')
 def build(item):
-    svg=['''<svg xmlns="http://www.w3.org/2000/svg" width="1229" height="1536" viewBox="0 0 1229 1536">
+    s=[f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1229" height="1536" viewBox="0 0 1229 1536">
 <defs>
-<linearGradient id="navy" x1="0" x2="1"><stop stop-color="#005399"/><stop offset=".6" stop-color="#073d78"/><stop offset="1" stop-color="#00569d"/></linearGradient>
-<linearGradient id="cyan" x1="0" x2="1"><stop stop-color="#0bc9df"/><stop offset="1" stop-color="#00b8d7"/></linearGradient>
-<linearGradient id="pale" x1="0" x2="1"><stop stop-color="#c2e7fb"/><stop offset="1" stop-color="#c8edff"/></linearGradient>
-<linearGradient id="center" x1="0" x2="1"><stop stop-color="#d0edfa"/><stop offset="1" stop-color="#92d4f0"/></linearGradient>
-<linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#f4fcff"/></linearGradient>
-<linearGradient id="tip" x1="0" x2="1"><stop stop-color="#e5f9ff"/><stop offset="1" stop-color="#c6efff"/></linearGradient>
-<filter id="shadow" x="-.1" y="-.1" width="1.2" height="1.3"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#00254b" flood-opacity=".25"/></filter>
+<linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a5fa8"/><stop offset="1" stop-color="#062f5e"/></linearGradient>
+<linearGradient id="band" x1="0" x2="1"><stop stop-color="#0a5fa8"/><stop offset=".55" stop-color="#073d78"/><stop offset="1" stop-color="#05305f"/></linearGradient>
+<linearGradient id="pale" x1="0" x2="1"><stop stop-color="#dff2fd"/><stop offset="1" stop-color="#cdeafa"/></linearGradient>
+<linearGradient id="tip" x1="0" x2="1"><stop stop-color="#eef9ff"/><stop offset="1" stop-color="#d3f0fc"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#f1f8fd"/></linearGradient>
+<filter id="sh" x="-.05" y="-.05" width="1.1" height="1.2"><feGaussianBlur in="SourceAlpha" stdDeviation="5"/><feOffset dy="5" result="b"/><feFlood flood-color="#06335f" flood-opacity=".16"/><feComposite in2="b" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs><rect width="1229" height="1536" fill="#fff"/>''']
-    svg.append(f'<image x="160" y="0" width="910" height="172" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{logo}"/>')
-    svg.append(f'<image x="0" y="228" width="355" height="580" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{mascote}"/>')
-    svg.append('<rect x="261" y="176" width="836" height="105" rx="52" fill="#07508a"/>')
-    svg.append(text_svg('Constituição Federal',679,247,66,'bold','#fff',780,line_height=70,align='middle')[0])
-    svg.append('<rect x="447" y="266" width="449" height="80" rx="40" fill="url(#cyan)"/>')
-    svg.append(text_svg(f'Capítulo {item["chapter"]}',671.5,322,51,'bold','#041d3a',420,line_height=53,align='middle')[0])
-    svg.append('<rect x="341" y="352" width="845" height="70" rx="35" fill="url(#pale)"/>')
-    size=fit_size(item['title'],805,36,27)
-    svg.append(text_svg(item['title'],763.5,397,size,'bold',DARK,805,line_height=size*1.04,align='middle')[0])
-    svg.append('<rect x="380" y="475" width="676" height="262" rx="34" fill="#fff" stroke="#0b477f" stroke-width="4"/>')
-    # The label overlaps the top edge of the central box in the original template.
-    svg.append('<rect x="489" y="435" width="454" height="68" rx="34" fill="url(#center)"/>')
-    svg.append('<g transform="translate(540 445)" fill="none" stroke="#063c78" stroke-width="4" stroke-linejoin="round"><path d="M4 8c11-5 19-4 26 1v34c-7-5-15-6-26-1zM56 8c-11-5-19-4-26 1v34c7-5 15-6 26-1z"/><path d="M11 15h12M11 22h12M37 15h12M37 22h12" stroke-width="3" stroke-linecap="round"/></g>')
-    svg.append(text_svg('Ponto central',742,482,42,'bold','#062b5c',275,line_height=44,align='middle')[0])
-    central,cl=text_svg(item['central'],416,550,31,'normal','#090d14',604,35.96,max_lines=5)
-    svg.append(central)
-    svg.append('<rect x="616" y="728" width="5" height="71" rx="3" fill="#0b477f"/>')
-    positions=[(28,805),(623,805),(28,1048),(623,1048)]
-    for i,(card,(x,y)) in enumerate(zip(item['cards'],positions),1):
-        heading,body=card
-        svg.append(f'<rect x="{x}" y="{y}" width="578" height="220" rx="29" fill="url(#card)" stroke="#19afe0" stroke-width="3"/>')
-        ix=x+17; svg.append(f'<path d="M{ix+151} {y+20}v180" stroke="#1eb6e2" stroke-width="4"/>')
-        svg.append(icon(i, x+25,y+37))
-        tx=x+183; tw=578-183-20
-        hs=fit_size(heading,tw-12,29,23)
-        hwidth=ImageFont.truetype(FBOLD,hs).getlength(heading)+26
-        svg.append(f'<rect x="{tx}" y="{y+18}" width="{min(hwidth,tw)}" height="{hs+9}" rx="20" fill="#ffd442"/>')
-        svg.append(text_svg(heading,tx+13,y+18+hs+1,hs,'bold','#12110e',tw-16,line_height=hs*1.03)[0])
-        body_svg,lines=text_svg(body,tx,y+18+hs+1+9+25,24,'normal','#111419',tw,line_height=28,max_lines=5)
-        svg.append(body_svg)
-    svg.append('<rect x="19" y="1308" width="1191" height="211" rx="48" fill="url(#tip)"/>')
-    svg.append('<path d="M19 1356a48 48 0 0 1 48-48h314v211H67a48 48 0 0 1-48-48z" fill="url(#navy)"/>')
-    # lightbulb icon
-    svg.append('<g transform="translate(68 1379)" fill="none" stroke="#ffd829" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4a19 19 0 0 0-11 34c3 3 5 7 5 11h20c0-4 2-8 5-11A19 19 0 0 0 17 4z"/><path d="M12 54h20M15 61h14"/><path d="M17 14v12M17 33v1" stroke="#fff" stroke-width="4"/></g>')
-    svg.append(text_svg('Dica de',247,1406,41,'bold','#fff',170,line_height=42,align='middle')[0])
-    svg.append(text_svg('Prova',247,1454,41,'bold','#fff',170,line_height=42,align='middle')[0])
-    svg.append('<path d="M381 1331v165" stroke="#073f76" stroke-width="4"/>')
+    s.append(f'<image x="160" y="0" width="910" height="172" preserveAspectRatio="xMidYMid meet" xlink:href="data:image/png;base64,{logo}"/>')
+    s.append('<rect x="60" y="174" width="1109" height="4" rx="2" fill="#16b5d9" opacity=".55"/>')
+    s.append(f'<image x="0" y="228" width="355" height="580" preserveAspectRatio="xMidYMid meet" xlink:href="data:image/png;base64,{mascote}"/>')
+    s.append('<rect x="262" y="222" width="88" height="58" fill="#fff"/><rect x="318" y="752" width="36" height="58" fill="#fff"/>')
+    s.append('<rect x="0" y="799" width="355" height="14" fill="#fff"/>')
+    # banner
+    s.append('<rect x="352" y="204" width="837" height="150" rx="40" fill="url(#band)" filter="url(#sh)"/>')
+    s.append('<rect x="352" y="204" width="14" height="150" rx="7" fill="#ffd442"/>')
+    s.append(text_svg('Constituição Federal',778,276,62,'bold','#ffffff',780,line_height=66,align='middle')[0])
+    s.append(text_svg(f'Capítulo {item["chapter"]}',778,330,42,'bold','#62dff5',400,line_height=44,align='middle')[0])
+    # title pill
+    s.append('<rect x="352" y="376" width="837" height="76" rx="38" fill="url(#pale)" stroke="#9fd5f0" stroke-width="2"/>')
+    size=fit_size(item['title'],790,38,27)
+    s.append(text_svg(item['title'],770.5,376+38+size*0.35,size,'bold','#081a32',790,line_height=size*1.04,align='middle')[0])
+    # central
+    s.append('<rect x="380" y="486" width="809" height="262" rx="30" fill="#fff" stroke="#c4e3f4" stroke-width="2" filter="url(#sh)"/>')
+    s.append('<rect x="380" y="486" width="12" height="262" rx="6" fill="#16b5d9"/>')
+    s.append('<g transform="translate(424 508)" fill="none" stroke="#0a5fa8" stroke-width="4" stroke-linejoin="round"><path d="M4 8c11-5 19-4 26 1v34c-7-5-15-6-26-1zM56 8c-11-5-19-4-26 1v34c7-5 15-6 26-1z"/><path d="M11 15h12M11 22h12M37 15h12M37 22h12" stroke-width="3" stroke-linecap="round"/></g>')
+    s.append(text_svg('Ponto central',500,548,40,'bold','#0a5fa8',300,line_height=42)[0])
+    s.append('<rect x="424" y="574" width="737" height="3" rx="1.5" fill="#d7ecf8"/>')
+    for cs in (33,31,29,28):
+        f=ImageFont.truetype(FREG,cs)
+        if len(wrap(item['central'],f,737))<=(3 if cs>=29 else 4):break
+    s.append(text_svg(item['central'],424,622,cs,'normal','#0e1620',737,cs*1.14,max_lines=4)[0])
+    pos=[(28,790+30),(623,790+30),(28,1033+30),(623,1033+30)]
+    pos=[(28,820),(623,820),(28,1054),(623,1054)]
+    for i,(card,(x,y)) in enumerate(zip(item['cards'],pos),1):
+        h,b=card
+        s.append(f'<rect x="{x}" y="{y}" width="578" height="214" rx="28" fill="#fff" stroke="#c4e3f4" stroke-width="2" filter="url(#sh)"/>')
+        s.append(f'<rect x="{x}" y="{y+26}" width="8" height="162" rx="4" fill="#16b5d9"/>')
+        s.append(badge(i,x+30,y+30))
+        tx=x+134;tw=578-134-26
+        hs=fit_size(h,tw,30,23)
+        s.append(text_svg(h,tx,y+50,hs,'bold','#073d78',tw,line_height=hs*1.05)[0])
+        w=min(ImageFont.truetype(FBOLD,hs).getlength(h),tw)
+        s.append(f'<rect x="{tx}" y="{y+62}" width="{min(w,tw)}" height="5" rx="2.5" fill="#ffd442"/>')
+        for bs in (25,24,23,22):
+            if len(wrap(b,ImageFont.truetype(FREG,bs),tw))<=(4 if bs>22 else 5):break
+        s.append(text_svg(b,tx,y+98,bs,'normal','#16202c',tw,line_height=bs*1.17,max_lines=5)[0])
+    # tip
+    s.append('<rect x="19" y="1304" width="1191" height="206" rx="44" fill="url(#tip)" stroke="#bfe5f6" stroke-width="2" filter="url(#sh)"/>')
+    s.append('<path d="M19 1348a44 44 0 0 1 44-44h318v206H63a44 44 0 0 1-44-44z" fill="url(#navy)"/>')
+    s.append('<circle cx="104" cy="1407" r="46" fill="#ffffff" fill-opacity=".10" stroke="#ffd829" stroke-width="3.5"/><g transform="translate(69 1370) scale(.7)"><path d="M50 8C30 8 16 23 16 41c0 12 6 19 13 26 4 4 5 8 5 13h32c0-5 1-9 5-13 7-7 13-14 13-26C84 23 70 8 50 8z" fill="#ffd829"/><path d="M27 40a23 23 0 0 1 12-19" fill="none" stroke="#fff6bf" stroke-width="5" stroke-linecap="round"/><rect x="34" y="83" width="32" height="6" rx="3" fill="#e3ebf3"/><rect x="34" y="91" width="32" height="6" rx="3" fill="#cfd9e4"/><path d="M41 99h18a2 2 0 0 1 2 2 6 6 0 0 1-6 5H45a6 6 0 0 1-6-5 2 2 0 0 1 2-2z" fill="#b6c4d2"/></g>')
+    s.append(text_svg('Dica de',247,1403,41,'bold','#fff',170,line_height=42,align='middle')[0])
+    s.append(text_svg('Prova',247,1451,41,'bold','#fff',170,line_height=42,align='middle')[0])
     for j,t in enumerate(item['tips']):
-        y=1371+j*70
-        svg.append(text_svg('✓',417,y,36,'bold','#07508a',34,line_height=38)[0])
-        row,lines=text_svg(t,465,y-2,27,'bold','#111820',708,line_height=30.5,max_lines=2)
-        svg.append(row)
-    svg.append(text_svg('BASE COMPLETA · REVISÃO GUIADA · CF M07',1200,1520,12,'normal','#527089',500,line_height=14,align='end')[0])
-    svg.append('</svg>')
-    return ''.join(svg)
+        y=1371+j*72
+        s.append(f'<circle cx="434" cy="{y-10}" r="17" fill="#16b5d9"/><path d="M425 {y-10}l7 7 12-14" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>')
+        s.append(text_svg(t,472,y-2,27,'bold','#0e1620',700,line_height=30.5,max_lines=2)[0])
+    s.append(text_svg('BASE COMPLETA · REVISÃO GUIADA · CF M07',1200,1526,13,'normal','#527089',500,line_height=14,align='end')[0])
+    s.append('</svg>')
+    return ''.join(s)
 def main():
     for item in DATA['chapters']:
         stem=f'CF-M07-C{item["chapter"]:02d}'
