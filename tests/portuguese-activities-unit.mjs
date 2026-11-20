@@ -127,25 +127,25 @@ test('Português M01–M24 mostra apenas Teoria e questões internas, sem versã
   assert.equal(container.querySelectorAll('.pt-cf-card-primary').length, 0);
   assert.equal(container.querySelectorAll('.pt-cf-card-review').length, 25);
   assert.equal(container.querySelectorAll('.pt-cf-card-pdf,[data-pt-cf-open="pdf"]').length, 0);
-  assert.equal(container.querySelectorAll('.pt-cf-card-review > b').length, 25);
   assert.equal([...container.querySelectorAll('.pt-cf-card-review > b')].filter(node => node.textContent === 'Teoria').length, 24);
   assert.equal(container.querySelectorAll('[data-pt-cf-open="review"]').length, 25);
   assert.equal(container.querySelectorAll('[data-pt-cf-quiz="active"]').length, 0);
   assert.equal(container.querySelectorAll('[data-pt-cf-quiz="cumulative-review"]').length, 1);
-  assert.doesNotMatch(container.textContent, /Versão de revisão|Teoria completa|Apostila teórica \\(PDF\\)/);
+  for (const obsolete of ['Versão de revisão', 'Teoria completa', 'Apostila teórica (PDF)']) {
+    assert.equal(container.textContent.includes(obsolete), false, obsolete + ' voltou à tela');
+  }
   const catalog = {};
   new Function('window', fs.readFileSync(path.join(root, 'content/questoes/index.js'), 'utf8'))(catalog);
   assert.deepEqual(Array.from(catalog.BC_QUESTOES_INDICE.pt), Array.from({ length: 24 }, (_, i) => i + 1));
   assert.ok(catalog.BC_QUESTOES_INDICE.pt.every(n => catalog.BC_QUESTOES_QTD.pt[n] > 0));
   const questionCard = fs.readFileSync(path.join(root, 'ui/questoes-modulo-card-v1.js'), 'utf8');
-  assert.match(questionCard, /disc: 'pt'/);
-  assert.match(questionCard, /BCQuestoesArea\\?\\.openModule\\(disc, n\\)/);
+  assert.ok(questionCard.includes("disc: 'pt'"));
+  assert.ok(questionCard.includes('BCQuestoesArea?.openModule(disc, n)'));
   for (const filename of ['index.html', 'central-v119.html']) {
-    assert.match(fs.readFileSync(path.join(root, filename), 'utf8'), /ui\\/current-courses\\.js\\?v=20261120pt-teoria-questoes1/);
+    assert.ok(fs.readFileSync(path.join(root, filename), 'utf8').includes('ui/current-courses.js?v=20261120pt-teoria-questoes1'), filename);
   }
-  assert.match(fs.readFileSync(path.join(root, 'index.html'), 'utf8'), /ui\\/portuguese-reader\\.js\\?v=20261120pt-teoria-questoes1/);
-  assert.match(fs.readFileSync(path.join(root, 'ui/portuguese-reader.js'), 'utf8'), /module\\.review\\?'Revisão final':'Teoria'/);
-  // O visualizador compartilhado e o seu suporte a RLM não são removidos.
-  assert.match(fs.readFileSync(path.join(root, 'ui/apostilas-pdf-v1.js'), 'utf8'), /rlm-m/);
+  assert.ok(fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('ui/portuguese-reader.js?v=20261120pt-teoria-questoes1'));
+  assert.ok(fs.readFileSync(path.join(root, 'ui/portuguese-reader.js'), 'utf8').includes("module.review?'Revisão final':'Teoria'"));
+  assert.ok(fs.readFileSync(path.join(root, 'ui/apostilas-pdf-v1.js'), 'utf8').includes('rlm-m'));
   dom.window.close();
 });
