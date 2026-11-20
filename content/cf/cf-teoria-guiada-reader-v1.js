@@ -135,7 +135,7 @@ function card(topic,index,n){
  const example=topic[2]?'<p class="bc-apostila-example"><strong>Exemplo prático.</strong> '+esc(topic[2])+'</p>':'';
  const law=topic[3]?'<p class="bc-apostila-law"><strong>Norma / ponto-chave.</strong> '+esc(topic[3])+'</p>':'';
  const warning=topic[5]&&(index%4===1||index%4===2)?'<p class="bc-apostila-alert"><strong>Atenção.</strong> '+esc(topic[5])+'</p>':'';
-  const infographic=(n>=4&&n<=12)?'<figure class="bc-review-infographic" data-bc-chapter="'+(index+1)+'"><img src="/assets/cf/revisao-guiada/m'+String(n).padStart(2,'0')+'/CF-M'+String(n).padStart(2,'0')+'-C'+num+'.webp" alt="Revisão visual do capítulo '+(index+1)+': '+esc(topic[0])+'" loading="lazy" decoding="async" width="1229" height="1536"><figcaption>Resumo visual — capítulo '+(index+1)+'</figcaption></figure>':'';
+  const infographic=(n>=4&&n<=13)?'<figure class="bc-review-infographic" data-bc-chapter="'+(index+1)+'"><img src="/assets/cf/revisao-guiada/m'+String(n).padStart(2,'0')+'/CF-M'+String(n).padStart(2,'0')+'-C'+num+'.webp" alt="Revisão visual do capítulo '+(index+1)+': '+esc(topic[0])+'" loading="lazy" decoding="async" width="1229" height="1536"><figcaption>Resumo visual — capítulo '+(index+1)+'</figcaption></figure>':'';
  return '<section class="bc-m01-topic bc-apostila-topic" aria-labelledby="bc-guided-title-'+n+'-'+index+'"><h2 id="bc-guided-title-'+n+'-'+index+'"><span>'+num+'</span> '+name+'</h2>'+explain+example+law+lawBox(n,index)+warning+infographic+'</section>';
 }
 function apostilaInicio(d,n){
