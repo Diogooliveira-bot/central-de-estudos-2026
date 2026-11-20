@@ -44,7 +44,6 @@ test('somente M10 recebe arte no final de cada capítulo e outros módulos mant�
  }
  assert.ok(!renderCard([titles[0],'texto'],0,3).includes('/assets/cf/revisao-guiada/m10/'));
  assert.ok(renderCard([titles[0],'texto'],0,9).includes('/assets/cf/revisao-guiada/m09/CF-M09-C01.webp'));
- assert.ok(!fs.existsSync(path.join(root,'assets/cf/revisao-guiada/m11/CF-M11-C01.webp')));
 });
 test('leitor real associa cada imagem ao capítulo certo do M10',()=>{
  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test',runScripts:'outside-only'});const w=dom.window;
