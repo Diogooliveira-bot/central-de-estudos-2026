@@ -38,7 +38,7 @@ test('CF M01: capítulos, subcapítulos e legislação permanecem acessíveis',(
  assert.match(html,/<h2>1\. PARA QUE EXISTE UMA CONSTITUIÇÃO<\/h2>/);
  assert.match(html,/<h3>1\.1\. O PROBLEMA VEM ANTES DO CONCEITO<\/h3>/);
  assert.match(html,/Constitucionalismo é o movimento/);
- assert.match(html,/class="cf-apostila-law"/);
+ assert.match(html,/class="cf-apostila-law(?:\s|")/);
  assert.ok(d.questions?.complete?.length===10);
  assert.ok(d.questions?.summary?.length===5);
 });
