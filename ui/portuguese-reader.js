@@ -126,7 +126,7 @@ async function open(id,mode='complete'){
  close();
  visualStyle();
  const overlay=document.createElement('div');overlay.id=ID;overlay.className='bc-native-reader-overlay pt-native-reader';
- overlay.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true" aria-label="'+esc(module.title)+'"><header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>Português • '+esc(module.title)+'</b><small>'+(practiceMode?esc(practiceMode.title):mode==='review'?'Revisão e exercícios':'Conteúdo completo')+'</small></div><button type="button" class="bc-native-reader-close" aria-label="Fechar conteúdo">×</button></header><div class="pt-native-loading" role="status">Carregando conteúdo…</div></section>';
+ overlay.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true" aria-label="'+esc(module.title)+'"><header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>Português • '+esc(module.title)+'</b><small>'+(practiceMode?esc(practiceMode.title):mode==='review'?(module.review?'Revisão final':'Teoria'):'Conteúdo completo')+'</small></div><button type="button" class="bc-native-reader-close" aria-label="Fechar conteúdo">×</button></header><div class="pt-native-loading" role="status">Carregando conteúdo…</div></section>';
  document.body.appendChild(overlay);overlay.querySelector('.bc-native-reader-close').onclick=close;
  overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
  try{
