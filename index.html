@@ -356,7 +356,1109 @@ aside{background:var(--side);border-color:var(--line)}
 .btn{background:var(--panel2);border-color:var(--line2);color:var(--text)}
 .btn:hover{background:var(--surface-hover)}
 .btn.primary{background:var(--purple2);border-color:var(--purple);color:#fff}
-.field input,.field textarea,.field select{background:var(--input);border-color:var(--l…21607 tokens truncated…m:translateY(-50%);font-size:0.625rem;font-weight:700;background:rgba(255,255,255,.16);border-radius:999px;padding:2px 8px;letter-spacing:.03em}
+.field input,.field textarea,.field select{background:var(--input);border-color:var(--line2);color:var(--text)}
+.subject,.cf-module{background:var(--soft);border-color:var(--line)}
+.subject-head,.cf-module-head{color:var(--text)}
+.subject-head:hover,.cf-module-head:hover{background:var(--surface-hover)}
+.topic-row:hover{background:var(--surface-hover)}
+.topic-title,.cf-module-title{color:var(--text)}
+.sum,.note-item,.tips,.detail-panel,
+.cf-step,.cf-syllabus,.cf-theory,.cf-resource-box,.cf-question,.cf-error-panel,
+.cf-result-grid div,.cf-metric{
+ background:var(--panel)!important;border-color:var(--line)!important;color:var(--text);
+}
+.cf-session-head{
+ background:var(--panel2)!important;border-color:var(--line)!important;color:var(--text);
+}
+.cf-option,.cf-strike,.cf-btn{
+ background:var(--panel2);border-color:var(--line2);color:var(--text);
+}
+.cf-option:hover,.cf-btn:hover{background:var(--surface-hover)}
+.cf-theory-text,.cf-advanced div{color:var(--muted)}
+.cf-notes{
+ background:var(--input)!important;color:var(--text)!important;border-color:var(--line2)!important;
+}
+.module-frame{background:var(--bg)}
+/* Os estados semânticos permanecem iguais em ambos os temas. */
+.btn.green,.cf-feedback.good,.anki-duo-feedback.good{color:#bff5da}
+.btn.red,.cf-feedback.bad,.anki-duo-feedback.bad{color:#ffcbd0}
+
+/* Anki segue o mesmo fundo, cards, bordas e tipografia da Central. */
+#ankiView{background:var(--bg)!important;color:var(--text)}
+.anki-duo-shell{color:var(--text)!important}
+.anki-duo-header{border-color:var(--line)!important}
+.anki-duo-brand,.anki-duo-icon,.anki-duo-deckbutton{color:var(--text)!important}
+.anki-duo-home h1,.anki-duo-heading h1,.anki-duo-overview h1,.anki-duo-content{color:var(--text)!important}
+.anki-duo-eyebrow,.anki-duo-subtitle,.anki-duo-hint,.anki-duo-studytop,.anki-duo-tags,
+.anki-duo-form label,.anki-duo-row p,.anki-duo-stat small,.anki-duo-history summary,
+.anki-duo-history-row,.anki-duo-editor-summary,.anki-duo-editor-note{color:var(--muted)!important}
+.anki-duo-btn,.anki-duo-icon,.anki-duo-choice,.anki-duo-table,.anki-duo-table-head,
+.anki-duo-overview-counts div,.anki-duo-custom,.anki-duo-card,.anki-duo-resultgrid div,
+.anki-duo-stat,.anki-duo-row,.anki-duo-settings-item,.anki-duo-history,.anki-duo-editor-history,
+.anki-duo-cardtool{
+ background:var(--panel)!important;border-color:var(--line)!important;color:var(--text)!important;
+}
+.anki-duo-table-head,.anki-duo-cardtool,.anki-duo-choice{background:var(--panel2)!important}
+.anki-duo-table-row{border-color:var(--line)!important;color:var(--text)!important}
+.anki-duo-table-row:hover{background:var(--surface-hover)!important}
+.anki-duo-custom select,.anki-duo-form select,.anki-duo-form input,.anki-duo-form textarea,
+.anki-duo-browser-tools input,.anki-duo-browser-tools select{
+ background:var(--input)!important;color:var(--text)!important;border-color:var(--line2)!important;
+}
+.anki-duo-card{background:var(--panel)!important}
+.anki-duo-btn.primary,.anki-duo-choice.active{background:var(--purple2)!important;border-color:var(--purple)!important;color:#fff!important}
+.anki-duo-mark{background:var(--purple)!important}
+.anki-duo-progress span{background:linear-gradient(90deg,var(--purple2),var(--purple))!important}
+
+/* Configurações globais */
+.central-settings-backdrop{
+ position:fixed;inset:0;z-index:9999;background:rgba(3,8,18,.64);display:grid;place-items:center;padding:18px;
+}
+.central-settings{
+ width:min(470px,100%);background:var(--panel);border:1px solid var(--line2);border-radius:14px;
+ box-shadow:0 22px 70px rgba(0,0,0,.32);overflow:hidden;color:var(--text)
+}
+.central-settings-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 16px;border-bottom:1px solid var(--line)}
+.central-settings-head h2{font-size:0.9375rem;margin:0}.central-settings-head p{font-size:0.625rem;color:var(--muted);margin:3px 0 0}
+.central-settings-close{border:0;background:transparent;color:var(--muted);font-size:1.25rem;padding:4px 7px}
+.central-settings-body{padding:16px}
+.central-setting-label{display:block;font-size:0.625rem;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.central-theme-options{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.central-theme-option{
+ border:1px solid var(--line2);background:var(--panel2);color:var(--text);border-radius:9px;
+ padding:12px 8px;text-align:center;font-size:0.625rem;font-weight:750
+}
+.central-theme-option span{display:block;font-size:1.125rem;margin-bottom:5px}
+.central-theme-option.active{background:rgba(116,93,244,.13);border-color:var(--purple);color:var(--text)}
+.central-settings-note{margin-top:13px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:0.5625rem;line-height:1.55}
+.central-settings-footer{padding:0 16px 16px;display:flex;justify-content:flex-end}
+.central-settings-footer button{border:1px solid var(--purple);background:var(--purple2);color:#fff;border-radius:8px;padding:8px 13px;font-size:0.625rem;font-weight:800}
+.nav-settings{margin-top:7px;border-top:1px solid var(--line);padding-top:7px!important}
+@media(max-width:680px){
+ .central-theme-options{grid-template-columns:repeat(2,1fr)}
+ .top-actions .settings-text{display:none}
+}
+
+
+/* =========================================================
+   V6.6.8 — DIREITO CIVIL / CURSO EM 16 MÓDULOS
+   ========================================================= */
+.civil-master{display:grid;gap:9px}
+.civil-master-intro{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:12px 13px;border:1px solid var(--line);border-radius:9px;background:var(--panel)}
+.civil-master-intro h3{margin:2px 0 5px;font-size:0.875rem}.civil-master-intro p{margin:0;color:var(--muted);font-size:0.625rem;line-height:1.55;max-width:760px}
+.civil-target{flex:0 0 auto;border:1px solid var(--line2);background:var(--panel2);border-radius:8px;padding:8px 10px;text-align:right}
+.civil-target span{display:block;color:var(--muted);font-size:0.5rem;text-transform:uppercase;letter-spacing:.07em}.civil-target b{font-size:0.625rem}
+.civil-module{border:1px solid var(--line);border-radius:9px;background:var(--panel);overflow:hidden}
+.civil-module.open{border-color:#485d7b}
+.civil-module-head{width:100%;border:0;background:transparent;color:var(--text);display:grid;grid-template-columns:52px minmax(0,1fr) auto 22px;gap:10px;align-items:center;padding:11px 12px;text-align:left}
+.civil-module-head:hover{background:var(--surface-hover)}.civil-module-num{font-size:0.5625rem;color:#94a8c4;font-weight:850;text-transform:uppercase}
+.civil-module-title b{display:block;font-size:0.6875rem}.civil-module-title small{display:block;color:var(--muted);font-size:0.5625rem;margin-top:3px;line-height:1.35}
+.civil-module-state{display:flex;align-items:center;gap:7px}.civil-module-state span{font-size:0.5625rem;color:var(--muted)}.civil-pct{font-size:0.6875rem;font-weight:900;color:#8b7cff}
+.civil-planned{font-size:0.5rem;padding:4px 7px;border:1px solid #66501b;border-radius:5px;color:#f7cb62;background:#342408}
+.civil-module-body{display:none;border-top:1px solid var(--line);padding:11px}.civil-module.open .civil-module-body{display:block}
+.civil-overall{height:6px;background:var(--panel2);border-radius:999px;overflow:hidden;margin-bottom:11px}.civil-overall span{display:block;height:100%;background:linear-gradient(90deg,#6f5fff,#9c67ff)}
+.civil-scope-note{border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:10px;margin-bottom:10px;font-size:0.5625rem;color:var(--muted);line-height:1.5}.civil-scope-note b{color:var(--text)}
+.civil-steps{display:grid;gap:7px}
+.civil-step{border:1px solid var(--line);border-radius:8px;background:var(--soft);overflow:hidden}
+.civil-step-head{width:100%;border:0;background:transparent;color:var(--text);display:grid;grid-template-columns:29px minmax(0,1fr) auto 20px;align-items:center;gap:9px;text-align:left;padding:9px 10px}
+.civil-step-head:hover{background:var(--surface-hover)}.civil-step-n{width:25px;height:25px;border-radius:7px;display:grid;place-items:center;background:var(--panel2);border:1px solid var(--line2);font-size:0.5625rem;font-weight:900}
+.civil-step-title b{font-size:0.625rem;display:block}.civil-step-title small{display:block;font-size:0.5rem;color:var(--muted);margin-top:2px}.civil-step-status{font-size:0.5rem;color:var(--muted);white-space:nowrap}
+.civil-step.done .civil-step-n{background:#0b2c20;border-color:#1b6b49;color:#8ff1c0}.civil-step.done .civil-step-status{color:#5de39e}
+.civil-step-body{display:none;padding:11px;border-top:1px solid var(--line);background:var(--panel)}.civil-step.open .civil-step-body{display:block}
+.civil-stage-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:9px}
+.civil-stage-toolbar p{margin:0;color:var(--muted);font-size:0.5625rem;line-height:1.45}.civil-stage-actions{display:flex;gap:6px;flex-wrap:wrap}
+.civil-btn{border:1px solid var(--line2);background:var(--panel2);color:var(--text);border-radius:7px;padding:7px 9px;font-size:0.5625rem;font-weight:750}.civil-btn:hover{background:var(--surface-hover)}
+.civil-btn.primary{background:var(--purple2);border-color:var(--purple);color:#fff}.civil-btn.success{border-color:#1f7651;background:#0b2b20;color:#aaf2cb}.civil-btn:disabled{opacity:.45;cursor:not-allowed}
+.civil-qcard{border:1px solid var(--line);border-radius:9px;background:var(--soft);padding:12px}
+.civil-qmeta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:9px}.civil-chip{font-size:0.46875rem;padding:3px 6px;border-radius:999px;border:1px solid var(--line2);background:var(--panel2);color:var(--muted);font-weight:800}
+.civil-chip.real{color:#95c0ff;border-color:#315684;background:#102540}.civil-chip.authorial{color:#d8b4fe;border-color:#664485;background:#271939}.civil-chip.role{color:#b7ebce;border-color:#315e4b;background:#10261e}
+.civil-qsource{font-size:0.5rem;color:var(--muted);margin-left:auto}.civil-qcard h4{font-size:0.6875rem;line-height:1.55;margin:0 0 10px}
+.civil-options{display:grid;gap:6px}.civil-option{width:100%;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;text-align:left;align-items:start;border:1px solid var(--line2);background:var(--panel);color:var(--text);border-radius:8px;padding:8px}
+.civil-option:hover:not(:disabled){background:var(--surface-hover)}.civil-option.selected{border-color:#7565ff;background:rgba(116,93,244,.12)}.civil-option.correct{border-color:#23815a;background:#0c291f}.civil-option.wrong{border-color:#9a3d49;background:#2d151b}
+.civil-letter{width:21px;height:21px;border-radius:6px;display:grid;place-items:center;background:var(--panel2);border:1px solid var(--line2);font-size:0.5rem;font-weight:900}
+.civil-option span:last-child{font-size:0.5625rem;line-height:1.45}.civil-submit-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.civil-qnav{display:flex;align-items:center;gap:6px}.civil-qnav span{font-size:0.5rem;color:var(--muted);min-width:58px;text-align:center}
+.civil-feedback{margin-top:10px;border-radius:8px;border:1px solid var(--line);padding:10px;font-size:0.5625rem;line-height:1.55}.civil-feedback.good{border-color:#237652;background:#0b281e}.civil-feedback.bad{border-color:#8b3540;background:#2b151a}
+.civil-feedback b{display:block;margin-bottom:4px}.civil-feedback .basis{display:block;margin-top:6px;color:#93a7c2;font-size:0.5rem}
+.civil-source-link{color:#8fb4ff;text-decoration:none;font-size:0.5rem}.civil-source-link:hover{text-decoration:underline}
+.civil-theory{display:grid;gap:10px}.civil-theory section{border:1px solid var(--line);border-radius:8px;background:var(--soft);padding:11px}
+.civil-theory h4{font-size:0.6875rem;margin:0 0 7px}.civil-theory p,.civil-theory li{font-size:0.5625rem;line-height:1.62;color:var(--muted)}.civil-theory p{margin:5px 0}.civil-theory ul,.civil-theory ol{margin:5px 0;padding-left:18px}
+.civil-theory strong{color:var(--text)}.civil-law-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:9px 0}.civil-law-card{border:1px solid var(--line);background:var(--soft);border-radius:8px;padding:9px}
+.civil-law-card b{display:block;font-size:0.625rem}.civil-law-card span{display:block;color:var(--muted);font-size:0.5rem;margin-top:3px;line-height:1.4}
+.civil-compare{width:100%;border-collapse:collapse;margin-top:7px;font-size:0.53125rem}.civil-compare th,.civil-compare td{border:1px solid var(--line);padding:7px;vertical-align:top;text-align:left}.civil-compare th{background:var(--panel2);color:var(--text)}.civil-compare td{color:var(--muted)}
+.civil-alert{border-left:3px solid #d3ad34;background:#2b240f;padding:8px 9px;border-radius:5px;color:#e8d789;font-size:0.53125rem;line-height:1.5;margin-top:7px}
+.civil-juris{border-left:3px solid #7867ff!important}.civil-manual-done{display:flex;align-items:center;gap:8px;margin-top:10px;border-top:1px solid var(--line);padding-top:9px;color:var(--muted);font-size:0.5625rem}.civil-manual-done input{width:16px;height:16px;accent-color:var(--green)}
+.civil-error-list{display:grid;gap:6px}.civil-error-row{display:flex;justify-content:space-between;gap:8px;align-items:center;border:1px solid var(--line);background:var(--soft);border-radius:7px;padding:8px}.civil-error-row div{min-width:0}.civil-error-row b{display:block;font-size:0.5625rem}.civil-error-row small{display:block;color:var(--muted);font-size:0.5rem;margin-top:2px}
+.civil-anki-note{font-size:0.5625rem;color:var(--muted);line-height:1.55}.civil-anki-note b{color:var(--text)}
+@media(max-width:760px){
+ .civil-master-intro{display:block}.civil-target{margin-top:8px;text-align:left}.civil-module-head{grid-template-columns:45px 1fr 20px}.civil-module-state{display:none}
+ .civil-step-head{grid-template-columns:28px 1fr 18px}.civil-step-status{display:none}.civil-law-grid{grid-template-columns:1fr}.civil-qsource{width:100%;margin-left:0}
+}
+
+
+.mobile-menu-btn,.mobile-sidebar-backdrop{display:none}
+@media(max-width:680px){
+ .mobile-menu-btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:var(--panel2);color:var(--text);border-radius:8px;padding:7px 9px;font-weight:800}
+ .app aside.mobile-open{display:block!important;position:fixed;left:0;top:0;bottom:0;width:min(286px,86vw);height:100dvh;z-index:1001;overflow:auto;box-shadow:18px 0 40px rgba(0,0,0,.42)}
+ .mobile-sidebar-backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000}
+ .topbar .crumb{display:none}
+ .topbar .settings-text{display:none}
+ .top-actions{display:flex;gap:5px}
+ .top-actions button{padding:7px 8px}
+}
+
+
+.civil-scope-badge{display:inline-flex;align-items:center;padding:3px 7px;border-radius:999px;font-size:0.625rem;font-weight:900;letter-spacing:.04em;margin-right:7px;border:1px solid var(--line2);vertical-align:1px}
+.civil-scope-badge.edital{background:color-mix(in srgb,var(--good) 14%,transparent);color:var(--good)}
+.civil-scope-badge.mix{background:color-mix(in srgb,var(--warn) 14%,transparent);color:var(--warn)}
+.civil-edital-coverage{margin:10px 0 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:12px 14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.civil-edital-coverage .coverage-number{font-size:1.75rem;font-weight:950;line-height:1}
+.civil-edital-coverage .coverage-text{flex:1;min-width:230px}
+.civil-edital-coverage .coverage-text b{display:block;margin-bottom:3px}
+.civil-edital-coverage .coverage-legend{display:flex;gap:6px;flex-wrap:wrap}
+.civil-complement{margin-top:12px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--panel2)}
+.civil-complement>summary{cursor:pointer}
+
+
+.cpc-coverage-warning{margin:12px 0 4px;padding:13px 15px;border:1px solid rgba(245,158,11,.48);border-left:5px solid #f59e0b;border-radius:12px;background:rgba(245,158,11,.10);color:inherit}
+.cpc-coverage-warning p{margin:5px 0;line-height:1.5}.cpc-warning-title{font-weight:900;color:#f59e0b;letter-spacing:.01em}
+.cpc-law-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0 8px}.cpc-law-heading span{font-size:.78rem;opacity:.72}
+.cpc-law-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:8px 0 14px}
+.cpc-law-card{padding:12px;border:1px solid rgba(56,189,248,.26);border-radius:12px;background:rgba(56,189,248,.07)}
+.cpc-law-card h4{margin:3px 0 6px;font-size:.98rem}.cpc-law-card strong{display:block;color:#38bdf8;font-size:.86rem;line-height:1.4}
+.cpc-law-card ul{margin:8px 0 0;padding-left:18px}.cpc-law-card li{margin:4px 0;line-height:1.35}.cpc-law-kicker{font-size:.68rem;font-weight:900;letter-spacing:.11em;opacity:.65}
+@media(max-width:760px){.cpc-law-grid{grid-template-columns:1fr}.cpc-law-heading{align-items:flex-start;flex-direction:column}}
+
+</style>
+
+<style id="tec-cadernos-style-v6654">
+.tec-shell{max-width:1180px;margin:0 auto}.tec-hero-actions{display:flex;gap:8px;flex-wrap:wrap}
+.tec-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.tec-summary .card{padding:14px}.tec-summary small{display:block;color:var(--muted);font-size:0.625rem;text-transform:uppercase;letter-spacing:.05em}.tec-summary b{display:block;font-size:1.375rem;margin-top:5px}
+.tec-toolbar{display:grid;grid-template-columns:minmax(220px,1fr) minmax(190px,280px);gap:10px;padding:13px;margin-bottom:14px}
+.tec-toolbar input,.tec-toolbar select{width:100%;border:1px solid var(--line2);border-radius:9px;background:var(--panel2);color:var(--text);padding:11px 12px;font:inherit;outline:none}
+.tec-toolbar input:focus,.tec-toolbar select:focus{border-color:var(--accent)}
+.tec-groups{display:grid;gap:10px}.tec-group{border:1px solid var(--line);border-radius:11px;background:var(--panel);overflow:hidden}
+.tec-group>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 15px;cursor:pointer;font-weight:850}.tec-group>summary::-webkit-details-marker{display:none}
+.tec-group>summary span{display:flex;align-items:center;gap:9px}.tec-group>summary small{color:var(--muted);font-weight:700}.tec-group>summary:after{content:'›';font-size:1.375rem;color:var(--muted);transition:transform .15s}.tec-group[open]>summary:after{transform:rotate(90deg)}
+.tec-list{border-top:1px solid var(--line);display:grid}.tec-row{display:grid;grid-template-columns:74px minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--line)}.tec-row:last-child{border-bottom:0}
+.tec-code{font-size:0.625rem;font-weight:900;letter-spacing:.04em;color:var(--accent);white-space:nowrap}.tec-name{font-size:0.6875rem;line-height:1.42}.tec-count{font-size:0.625rem;color:var(--muted);white-space:nowrap}
+.tec-open{border:1px solid var(--line2);border-radius:8px;background:var(--panel2);color:var(--text);padding:8px 10px;font-size:0.625rem;font-weight:850;cursor:pointer;white-space:nowrap}.tec-open:hover{border-color:var(--accent);color:var(--accent)}
+.tec-empty{padding:28px;text-align:center;color:var(--muted)}
+@media(max-width:760px){.tec-summary{grid-template-columns:1fr 1fr}.tec-summary .card:last-child{grid-column:1/-1}.tec-toolbar{grid-template-columns:1fr}.tec-row{grid-template-columns:62px minmax(0,1fr) auto}.tec-count{grid-column:2}.tec-open{grid-column:3;grid-row:1/3}.tec-name{font-size:0.625rem}}
+</style>
+<style id="rlm-window-size-fix-v39">
+/* Correção Android: torna a altura do iframe definida, sem depender de porcentagem em flexbox. */
+.workspace{
+ height:calc(100vh - 62px);
+ height:calc(100dvh - 62px);
+}
+.workspace>.module-view{
+ width:100%;height:100%!important;min-height:0!important;padding:0!important;overflow:hidden!important;
+}
+.workspace>.module-view>.module-frame{
+ display:block;width:100%!important;height:calc(100vh - 62px)!important;height:calc(100dvh - 62px)!important;
+ min-height:calc(100vh - 62px);min-height:calc(100dvh - 62px);border:0;
+}
+@media(max-width:680px){
+ html,body,.app,.shell{width:100%;height:100vh;height:100dvh;overflow:hidden}
+ .shell{min-height:100vh;min-height:100dvh}
+ .topbar{height:62px;flex:0 0 62px}
+ .workspace{height:calc(100vh - 62px);height:calc(100dvh - 62px);min-height:0;overflow:hidden}
+ .workspace>.module-view{height:100%!important;min-height:0!important;padding:0!important}
+ .workspace>.module-view>.module-frame{
+  height:calc(100vh - 62px)!important;height:calc(100dvh - 62px)!important;
+  min-height:calc(100vh - 62px)!important;min-height:calc(100dvh - 62px)!important;
+ }
+}
+</style>
+<style id="anki-tablet-layout-fix-v41">
+/*
+  Correção estrutural para tablets Android (inclusive a faixa de 681–760 px):
+  a página inteira não pode crescer nem rolar por trás das telas internas.
+  O Anki é ancorado diretamente à área útil da Central e passa a ter sua
+  própria rolagem, começando sempre em top:0.
+*/
+html,body{
+ width:100%;height:100%;overflow:hidden!important;
+}
+.app{
+ height:100vh;height:100dvh;min-height:0;overflow:hidden;
+}
+.shell{
+ height:100%;min-height:0;overflow:hidden;
+}
+.workspace{
+ position:relative;min-height:0;overflow:hidden;
+}
+#ankiView:not(.hidden){
+ display:block!important;
+ position:absolute!important;
+ inset:0!important;
+ z-index:3;
+ width:100%!important;
+ height:100%!important;
+ min-height:0!important;
+ margin:0!important;
+ padding:0!important;
+ overflow-x:hidden!important;
+ overflow-y:auto!important;
+ overscroll-behavior:contain;
+ transform:none!important;
+ background:var(--bg)!important;
+}
+#ankiIntegrated{
+ display:block!important;
+ position:relative!important;
+ inset:auto!important;
+ width:100%!important;
+ min-height:100%!important;
+ margin:0!important;
+ padding:0!important;
+ transform:none!important;
+}
+.anki-duo-shell{
+ display:flow-root!important;
+ position:relative!important;
+ inset:auto!important;
+ width:100%!important;
+ min-height:100%!important;
+ margin:0!important;
+ transform:none!important;
+}
+.anki-duo-header{
+ position:sticky!important;
+ top:0!important;
+ z-index:5;
+ margin:0!important;
+ background:var(--bg)!important;
+}
+.anki-duo-overview{
+ position:relative!important;
+ inset:auto!important;
+ margin:24px auto 32px!important;
+ padding:0 12px;
+ transform:none!important;
+}
+.central-version-v41{
+ font-size:0.5625rem;font-weight:850;letter-spacing:.04em;color:var(--muted);
+ border:1px solid var(--line);border-radius:999px;padding:3px 6px;white-space:nowrap;
+}
+@media(min-width:681px) and (max-width:1050px){
+ #ankiView:not(.hidden){top:0!important;bottom:0!important;}
+ .anki-duo-overview{margin-top:20px!important;}
+ .topbar .settings-text{display:none;}
+}
+</style>
+
+<style id="navigation-hardening-v6645">
+#centralSidebar .nav button{pointer-events:auto!important;touch-action:manipulation;position:relative;z-index:2}
+.anki-parent-return{position:sticky;top:0;z-index:30;height:44px;display:flex;align-items:center;padding:0 12px;background:var(--bg);border-bottom:1px solid var(--line)}
+.anki-parent-return button{border:1px solid var(--line2);background:var(--panel2);color:var(--text);border-radius:8px;padding:7px 11px;font-weight:850;touch-action:manipulation}
+#ankiView:not(.hidden) #ankiIntegrated{min-height:calc(100% - 44px)!important}
+#ankiView:not(.hidden) .anki-duo-header{top:44px!important}
+</style>
+<script>try{history.scrollRestoration='manual'}catch(e){};window.addEventListener('pageshow',()=>{scrollTo(0,0)});</script>
+<script id="central-runtime-guard-v6650">
+window.addEventListener('error',function(e){try{window.__CENTRAL_LAST_RUNTIME_ERROR__=String(e.message||e.error||'Erro desconhecido')}catch(_){}});
+window.addEventListener('unhandledrejection',function(e){try{window.__CENTRAL_LAST_RUNTIME_ERROR__=String(e.reason?.message||e.reason||'Promessa rejeitada')}catch(_){}});
+</script>
+<style id="central-agenda-standalone-style-v6661">.agenda-standalone-status{min-height:20px;margin:10px 0 2px;color:var(--muted);font-size:0.6875rem}
+.agenda-standalone-status.success{color:#6ee7a8}.agenda-standalone-status.warning{color:#facc15}.agenda-standalone-status.error{color:#fca5a5}
+.agenda-edit-row.done>span:nth-child(2){text-decoration:line-through;opacity:.64}.agenda-empty{padding:12px 0}
+#agendaView.central-agenda-visible:not(.hidden){
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:4!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  margin:0!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  background:var(--bg)!important;
+  visibility:visible!important;
+  opacity:1!important;
+  transform:none!important;
+}
+@media(max-width:680px){
+  #agendaView.central-agenda-visible:not(.hidden){
+    position:fixed!important;
+    top:62px!important;
+    right:0!important;
+    bottom:0!important;
+    left:0!important;
+    width:auto!important;
+    height:auto!important;
+    padding:14px!important;
+  }
+  #agendaView .form-grid{grid-template-columns:1fr}
+  #agendaView .action-row{justify-content:stretch}
+  #agendaView .action-row button{width:100%;min-height:46px}
+  #agendaView .agenda-edit-row{grid-template-columns:54px minmax(0,1fr) 34px 34px;gap:7px}
+}
+</style>
+<style id="central-view-guard-v6663">
+/* v6.6.72 - Guarda anti-altura-zero para todas as telas nativas.
+   No Android (content:// e barras dinamicas do Chrome), o workspace com
+   height:calc(100dvh - 62px) pode calcular 0 e cortar o conteudo. */
+/* vale em QUALQUER largura: o workspace pode colapsar (100dvh=0) no Android content:// */
+ .view.central-view-visible:not(.hidden){
+  display:block!important;
+  position:fixed!important;
+  top:62px!important;right:0!important;bottom:0!important;left:0!important;
+  width:auto!important;height:auto!important;min-height:0!important;
+  margin:0!important;padding:14px!important;
+  overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  background:var(--bg)!important;visibility:visible!important;opacity:1!important;transform:none!important;z-index:4!important;
+ }
+@media(min-width:681px){
+ .app:not(.sidebar-collapsed) .view.central-view-visible:not(.hidden){left:250px!important;padding:26px!important}
+ .app.sidebar-collapsed .view.central-view-visible:not(.hidden){left:88px!important;padding:26px!important}
+}
+</style>
+<style id="central-nav-back-v6668">
+.central-view-back{position:fixed;top:66px;left:10px;z-index:1200;display:inline-flex;align-items:center;gap:6px;background:rgba(12,22,39,.92);color:#e7eefb;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:8px 14px;font:700 0.78125rem system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.3);cursor:pointer;text-decoration:none}
+.central-view-back:active{transform:scale(.96)}
+@media(min-width:681px){.central-view-back{left:262px}}
+@media(max-width:680px){.central-view-back{top:60px;left:8px;padding:7px 12px}}
+.mp-qbtn{flex:0 0 auto;background:#eef1f8;border:1px solid #d8e0f0;color:#1b2a52;border-radius:999px;padding:3px 9px;font:700 0.6875rem system-ui,sans-serif;cursor:pointer}
+.mp-qbtn:hover{background:#e2e8f5}
+.mp-qcount{flex:0 0 auto;font:700 0.625rem system-ui,sans-serif;color:#8a6d1a;background:#fdf3dd;border:1px solid #e6d190;border-radius:999px;padding:2px 7px}
+#tecVisaoGeral .tv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:10px}
+#tecVisaoGeral .tv-chip{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:8px 10px;font-size:0.75rem}
+#tecVisaoGeral .tv-chip b{display:block;font-size:0.78125rem;margin-bottom:2px}
+#tecVisaoGeral .tv-pct{font-weight:800}
+</style>
+<style id="central-tec-inline-style-v6669">
+.tec-reg-full{grid-column:1/-1;width:100%;margin-top:8px;background:#152a4d;border:1px solid rgba(255,255,255,.16);color:#dfe9fb;border-radius:10px;padding:10px 12px;font:700 0.8125rem system-ui,sans-serif;cursor:pointer;text-align:center}
+.tec-reg-full:active{transform:scale(.985)}
+.tec-reg-full.registrado{border-color:rgba(63,202,124,.45);color:#9fe6bf}
+.tec-row{flex-wrap:wrap}
+.tec-reg-slot{display:none;width:100%;margin-top:8px;border-top:1px dashed rgba(255,255,255,.12);padding-top:8px}
+.tec-reg-slot.open{display:block}
+.tec-reg-slot .trf{display:flex;gap:6px;flex-wrap:wrap;align-items:end}
+.tec-reg-slot label{display:flex;flex-direction:column;gap:3px;font-size:0.6875rem;color:#aebdd8}
+.tec-reg-slot input{background:#0b1526;border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e7eefb;padding:7px 9px;font-size:0.8125rem;width:110px}
+.tec-reg-slot .tr-save{background:#2f66d0;border:0;color:#fff;border-radius:8px;padding:8px 14px;font:700 0.78125rem system-ui,sans-serif;cursor:pointer}
+.tec-reg-slot .trl{margin-top:7px;display:flex;flex-direction:column;gap:4px}
+.tec-reg-slot .trl>div{display:flex;align-items:center;gap:8px;font-size:0.75rem;color:#c7d4ea;flex-wrap:wrap}
+.tec-reg-slot .trl .del{background:transparent;border:0;color:#e08a7a;cursor:pointer;font-size:0.75rem;padding:2px 4px}
+</style>
+<style id="central-backup-css-v6674">
+.central-backup-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.central-btn-sec{padding:10px 8px;border:1px solid var(--line);border-radius:9px;background:var(--panel2);color:var(--text);font-weight:700;font-size:0.75rem}
+.central-btn-sec:hover{background:var(--surface-hover)}
+.central-backup-status{margin-top:9px;border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:9px 10px;color:var(--muted);font-size:0.6875rem;line-height:1.45}
+.central-backup-status.ok{border-color:rgba(19,189,107,.38);color:#9fe5be}
+.central-backup-status.warn{border-color:rgba(245,158,11,.42);color:#f2ce87}
+.central-backup-status.err{border-color:rgba(239,68,68,.42);color:#f0a2a2}
+.central-backup-history{margin-top:9px;display:grid;gap:7px}
+.central-backup-item{border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:9px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
+.central-backup-item b{display:block;font-size:0.6875rem}.central-backup-item small{display:block;color:var(--muted);font-size:0.5625rem;margin-top:2px}
+.central-backup-item-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.central-backup-item-actions button{border:1px solid var(--line2);background:var(--panel);color:var(--text);border-radius:7px;padding:6px 7px;font-size:0.5625rem;font-weight:700}
+@media(max-width:560px){.central-backup-row{grid-template-columns:1fr}.central-backup-item{grid-template-columns:1fr}.central-backup-item-actions{justify-content:flex-start}}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/assets/base-completa-symbol.webp?v=20261006icon2">
+<script id="central-pwa-v6673">
+(function(){
+'use strict';
+var deferred=null;
+
+function isInstalled(){
+  return window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+}
+function installButton(){
+  return document.getElementById('centralPwaInstall');
+}
+function syncInstallButton(){
+  var b=installButton();
+  if(!b)return;
+  b.classList.remove('hidden');
+  if(isInstalled()){
+    b.disabled=true;
+    b.textContent='✓ Aplicativo instalado';
+    b.title='A BASE COMPLETA já está instalada neste dispositivo';
+  }else{
+    b.disabled=false;
+    b.textContent='📱 Instalar como aplicativo';
+    b.title='Instalar a BASE COMPLETA no dispositivo';
+  }
+}
+function fallbackInstructions(){
+  var ua=navigator.userAgent||'';
+  if(/iPad|iPhone|iPod/.test(ua)){
+    alert('Para instalar a BASE COMPLETA no iPhone/iPad: abra no Safari, toque em Compartilhar e escolha “Adicionar à Tela de Início”.');
+    return;
+  }
+  if(/Android/i.test(ua)){
+    alert('Para instalar a BASE COMPLETA no Android: abra esta página no Google Chrome, toque no menu ⋮ e escolha “Instalar app” ou “Adicionar à tela inicial”.');
+    return;
+  }
+  alert('Para instalar a BASE COMPLETA, abra o menu do navegador e escolha “Instalar aplicativo” ou “Adicionar à tela inicial”.');
+}
+
+if('serviceWorker' in navigator&&(location.protocol==='https:'||/localhost|127\.0\.0\.1/.test(location.hostname))){
+  navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).then(function(){
+    return navigator.serviceWorker.ready;
+  }).then(function(reg){
+    if(window.CentralDisciplineLoader)CentralDisciplineLoader.prepareOffline(reg);
+    else if(navigator.onLine&&reg.active)reg.active.postMessage({type:'PREPARE_OFFLINE'});
+  }).catch(function(){});
+}
+
+window.addEventListener('beforeinstallprompt',function(e){
+  e.preventDefault();
+  deferred=e;
+  syncInstallButton();
+});
+
+window.addEventListener('appinstalled',function(){
+  deferred=null;
+  syncInstallButton();
+});
+
+window.centralPwaInstall=async function(){
+  if(isInstalled()){syncInstallButton();return;}
+  if(deferred){
+    var promptEvent=deferred;
+    deferred=null;
+    try{
+      promptEvent.prompt();
+      await promptEvent.userChoice;
+    }catch(_){}
+    syncInstallButton();
+    return;
+  }
+  fallbackInstructions();
+};
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',syncInstallButton,{once:true});
+}else syncInstallButton();
+setTimeout(syncInstallButton,600);
+setTimeout(syncInstallButton,1800);
+})();
+</script>
+<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20261118r1">\n<style id="bc-hide-backup-controls">
+/* Dados e progresso permanecem salvos; esta mudança remove somente os controles visuais. */
+.central-settings-body>.central-setting-label:has(+.central-backup-row),
+.central-settings-body>.central-backup-row,
+#centralBackupStatus,#centralBackupHistoryList,
+.central-settings-body>.central-backup-row~.central-settings-note{display:none!important}
+</style>
+<link rel="stylesheet" href="/base-completa-home-v3.css?v=20261001v5">
+<link rel="stylesheet" href="/ui/universal-reader-v1.css?v=20261115responsive1">\n<link rel="stylesheet" href="/ui/portuguese-cf-standard.css?v=20261115responsive1">
+</head>
+<body>
+
+<script id="central-native-router-v6652">
+(function(){
+'use strict';
+var VIEW_IDS=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','leiSecaView','vadeMecumView','moduleView'];
+var SUBJECTS_STATIC=[['pt','Português','24 módulos • Português Autodidata'],['cf','Direito Constitucional','curso integrado por módulos'],['adm','Direito Administrativo','tópicos do edital'],['civil','Direito Civil','curso integrado por módulos'],['cpc','Direito Processual Civil','curso integrado por módulos'],['penal','Direito Penal','curso integrado por módulos'],['cpp','Direito Processual Penal','tópicos do edital'],['rlm','Raciocínio Lógico-Matemático','9 módulos • cálculo rápido • questões de concursos']];
+function el(id){return document.getElementById(id)}
+function esc(v){return String(v==null?'':v).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
+function setActive(btn){try{document.querySelectorAll('#centralSidebar .nav button').forEach(function(b){b.classList.remove('active')});if(btn)btn.classList.add('active')}catch(e){}}
+function removeBlockingOverlay(){try{var o=el('centralDirectLaunch');if(o)o.remove()}catch(e){}}
+function show(id,label,btn){removeBlockingOverlay();VIEW_IDS.forEach(function(v){var n=el(v);if(n)n.classList.add('hidden')});var target=el(id);if(!target)return false;target.classList.remove('hidden');try{target.classList.add('central-view-visible')}catch(_){ }var c=el('crumb');if(c)c.textContent=label||'';setActive(btn);try{if(typeof window.closeMobileSidebar==='function')window.closeMobileSidebar()}catch(e){}try{window.scrollTo(0,0)}catch(e){}try{target.scrollTop=0}catch(e){}try{window.centralUpdateViewRoute&&window.centralUpdateViewRoute(id)}catch(e){}return true}
+function ensureDisciplineGrid(){var host=el('disciplineGrid');if(!host||host.children.length)return;host.innerHTML=SUBJECTS_STATIC.map(function(s){return `<button type="button" class="disc-card" data-id="${s[0]}" onclick="return centralHardSubject('${s[0]}')"><b>${esc(s[1])}</b><small>${esc(s[2])}</small><span class="disc-meta">Abrir disciplina</span></button>`}).join('')}
+function localISODate(){var d=new Date(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return d.getFullYear()+'-'+m+'-'+day}
+function ensureAgenda(){var date=el('agendaDate');if(date&&!date.value)date.value=localISODate();var sel=el('agendaDisc');if(sel&&!sel.options.length)sel.innerHTML=SUBJECTS_STATIC.map(function(s){return '<option value="'+s[0]+'">'+esc(s[1])+'</option>'}).join('');var host=el('agendaEditor');if(host&&!host.innerHTML.trim())host.innerHTML='<div class="muted small">Nenhuma tarefa neste dia.</div>';try{if(typeof window.renderAgendaEditor==='function')window.renderAgendaEditor()}catch(e){}}
+window.centralHardOpen=function(which,btn){if(which==='agenda'){if(show('agendaView','Agenda',btn)){ensureAgenda();return false}}if(which==='disciplines'){if(show('disciplinesView','Disciplinas',btn)){ensureDisciplineGrid();try{if(typeof window.renderDisciplineGrid==='function')window.renderDisciplineGrid()}catch(e){}return false}}return false};
+window.centralHardSubject=function(id){try{if(typeof window.jumpSubject==='function')return window.jumpSubject(id);show('homeView','Início',document.querySelector('#centralSidebar .nav button'));var target=document.querySelector('.subject[data-id="'+String(id).replace(/\"/g,'')+'"]');if(target){target.classList.remove('collapsed');try{target.scrollIntoView({block:'start'})}catch(e){target.scrollIntoView()}}}catch(e){}return false};
+document.addEventListener('click',function(ev){var b=ev.target&&ev.target.closest?ev.target.closest('[data-central-native]'):null;if(!b)return;var a=b.getAttribute('data-central-native');if(a==='agenda'||a==='disciplines'){ev.preventDefault();ev.stopPropagation();window.centralHardOpen(a,b)}},true);
+setTimeout(function(){
+ try{
+  var ids=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','leiSecaView','vadeMecumView','moduleView'];
+  var any=false;
+  for(var i=0;i<ids.length;i++){var n=el(ids[i]);if(n&&!n.classList.contains('hidden')){any=true;n.classList.add('central-view-visible');break}}
+  if(!any){var h=el('homeView');if(h){h.classList.remove('hidden');h.classList.add('central-view-visible')}}
+  var hv=el('homeView');if(hv)hv.classList.add('central-view-visible');
+ }catch(e){}
+},300);
+})();
+</script>
+
+<div class="app" id="appRoot">
+
+<aside id="centralSidebar">
+ <div class="brand">
+  <div class="brand-main">
+   <div class="brand-icon brand-stack">📚</div>
+   <div class="brand-copy"><b>Central de Estudos</b><small>v6.6.75 • Plano de 6 meses</small></div>
+  </div>
+  <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebarCollapse()" title="Expandir ou recolher menu" aria-label="Expandir ou recolher menu">
+   <span class="sidebar-toggle-open">«</span><span class="sidebar-toggle-close">»</span>
+  </button>
+ </div>
+ <div class="nav">
+  <button type="button" class="active" data-i="⌂" onclick="return centralSidebarAction('home',this)">
+   <span class="nav-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></svg>
+   </span>
+   <span class="nav-text">Início</span>
+  </button>
+  <button type="button" data-i="◷" data-central-agenda="true" onclick="return CentralAgenda.open(this)">
+   <span class="nav-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v13a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a2 2 0 0 1 2-2h2zm12 8H5v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM7 13h4v4H7z"/></svg>
+   </span>
+   <span class="nav-text">Agenda</span>
+  </button>
+  <button type="button" data-i="▤" data-central-native="disciplines" onclick="return centralHardOpen('disciplines',this)">
+   <span class="nav-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm13 0v4h4"/><path d="M8 11h8M8 15h8M8 19h6"/></svg>
+   </span>
+   <span class="nav-text">Disciplinas</span>
+  </button>
+  <div class="label">Ferramentas já criadas</div>
+  
+
+  
+
+  <button type="button" data-i="CE" onclick="return openEmbeddedTool('decorando',{},this)">
+   <span class="nav-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 16.2 5.8 12.5l1.4-1.4 2.3 2.3 7-7 1.4 1.4z"/></svg>
+   </span>
+   <span class="nav-text">Lei em Dia</span>
+  </button>
+  <button type="button" data-i="§" onclick="return openEmbeddedTool('vade',{},this)">
+   <span class="nav-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h9a3 3 0 0 1 3 3v11.5a1.5 1.5 0 0 1-2.4 1.2L15 18l-2.6 1.7a1.5 1.5 0 0 1-2.4-1.2V7a3 3 0 0 0-3-3c.4 0 .7 0 1 0z"/><path d="M7 4a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h8"/></svg>
+   </span>
+   <span class="nav-text">Vade Mecum</span>
+  </button>
+  <button type="button" data-i="↗" onclick="return centralSidebarAction('performance',this)">
+   <span class="nav-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18h3V9H5zm5 0h3V5h-3zm5 0h3v-7h-3z"/></svg>
+   </span>
+   <span class="nav-text">Desempenho</span>
+  </button>
+  <button type="button" class="nav-settings" data-i="⚙" onclick="return centralSidebarAction('settings',this)">
+   <span class="nav-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 8.6 1 .2.6-1 .9-1.6 2.1 1.2-.6 1-.6 1 .8.8 1.1-.2 1.8-.3.6 2.4-1.1.3-1.1.3-.2 1 .2 1.1.3 1.7-2.4.6-.4-1.1-.3-1.1h-1.1l-.8.8.2 1.1.3 1.8-2.4.6-.3-1.1-.3-1.1-1-.2-1 .6-1.6.9-1.2-2.1 1-.6 1-.6v-1.1l-.8-.8-1.1.2-1.8.3-.6-2.4 1.1-.3 1.1-.3.2-1-.6-1-.9-1.6 2.1-1.2.6 1 1 .6z"/><circle cx="12" cy="12" r="2.4"/></svg>
+   </span>
+   <span class="nav-text">Configurações</span>
+  </button>
+ </div>
+</aside>
+<div id="mobileSidebarBackdrop" class="mobile-sidebar-backdrop" onclick="closeMobileSidebar()" aria-hidden="true"></div>
+
+<div class="shell">
+ <div class="topbar"><button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileSidebar()" aria-label="Abrir menu" aria-expanded="false">☰</button><b>Central de Estudos</b><span class="central-version-v41">v6.6.74</span><span class="crumb" id="crumb">Início</span><div class="top-actions"><button onclick="openCentralSettings()" title="Configurações">⚙ <span class="settings-text">Configurações</span></button><button onclick="openHome()">⌂ Início</button></div></div>
+ <div class="workspace">
+
+  <section class="view" id="homeView">
+   <div class="hero">
+    <div><h1>Meu estudo</h1><p id="today"></p></div>
+    <button class="btn primary" onclick="return CentralAgenda.open(this)">Abrir agenda simples</button>
+   </div>
+   <div class="home-grid">
+    <div>
+     <div class="card home-today-card"><div class="card-head"><div><h2>Hoje na agenda</h2><small id="homeTodayLabel" class="muted">Carregando...</small></div><button class="btn sm" onclick="return CentralAgenda.open(this)">Editar</button></div><div class="agenda" id="homeAgenda"></div></div>
+     <div class="schedule-intro" id="disciplinasHome"><div class="eyebrow">Disciplinas</div><h2>Escolha o que estudar agora</h2><p>Visão simples das matérias da Central, com módulos, progresso e acesso direto aos tópicos.</p></div>
+     <div class="subjects" id="subjects"></div>
+    </div>
+    <div class="side-col">
+     <div class="card"><div class="card-head"><h3>Progresso do dia</h3></div><div class="progress-box"><div class="big" id="dayCount">0 de 0</div><div class="muted small">tarefas concluídas hoje</div><div class="progress-line"><span id="dayBar"></span></div><div class="muted small" id="dayPct">0%</div></div></div>
+     <div class="card"><div class="card-head"><h3>Pendências de hoje</h3></div><div class="quick home-pending" id="homePending"><div class="muted small">Carregando pendências...</div></div></div>
+     <div class="card"><div class="card-head"><h3>Lei em Dia</h3></div><div class="quick"><button type="button" onclick="return openEmbeddedTool('decorando',{},this)"><span><b>Lei seca</b><small>Abra o Lei em Dia sem sair da Central.</small></span><span>↗</span></button><button type="button" onclick="return openEmbeddedTool('vade',{},this)"><span><b>Vade Mecum</b><small>Consulta rápida para conferir artigos.</small></span><span>↗</span></button></div></div>
+     <div class="card"><div class="card-head"><h3>Continuar de onde parei</h3></div><div class="progress-box" id="continueBox"></div></div></div>
+    </div>
+   </div>
+  </section>
+
+  <section class="view hidden" id="disciplinesView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><div class="hero"><div><h1>Disciplinas</h1><p>Escolha uma disciplina para abrir seus módulos e continuar o estudo.</p></div></div><div class="discipline-grid" id="disciplineGrid"><button type="button" class="disc-card" data-id="pt" onclick="return centralHardSubject('pt')"><b>Português</b><small>24 módulos • Português Autodidata</small><span class="disc-meta">Abrir disciplina</span></button>
+<button type="button" class="disc-card" data-id="cf" onclick="return centralHardSubject('cf')"><b>Direito Constitucional</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
+<button type="button" class="disc-card" data-id="adm" onclick="return centralHardSubject('adm')"><b>Direito Administrativo</b><small>tópicos do edital</small><span class="disc-meta">Abrir disciplina</span></button>
+<button type="button" class="disc-card" data-id="civil" onclick="return centralHardSubject('civil')"><b>Direito Civil</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
+<button type="button" class="disc-card" data-id="cpc" onclick="return centralHardSubject('cpc')"><b>Direito Processual Civil</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
+<button type="button" class="disc-card" data-id="penal" onclick="return centralHardSubject('penal')"><b>Direito Penal</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
+<button type="button" class="disc-card" data-id="cpp" onclick="return centralHardSubject('cpp')"><b>Direito Processual Penal</b><small>tópicos do edital</small><span class="disc-meta">Abrir disciplina</span></button>
+<button type="button" class="disc-card" data-id="rlm" onclick="return centralHardSubject('rlm')"><b>Raciocínio Lógico-Matemático</b><small>9 módulos • cálculo rápido • questões de concursos</small><span class="disc-meta">Abrir disciplina</span></button></div><div class="card" style="padding:0;overflow:hidden;margin-top:14px"><div id="mapaEstudosDisc"></div></div>
+  </section>
+
+  <section class="view hidden" id="agendaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button>
+   <div class="hero"><div><h1>Agenda</h1><p>Checklist editável por dia.</p></div></div>
+   <div class="card" style="padding:16px">
+    <div class="form-grid">
+     <div class="field"><label>Data</label><input id="agendaDate" type="date"></div>
+     <div class="field"><label>Horário</label><input id="agendaTime" type="time"></div>
+     <div class="field"><label>Disciplina</label><select id="agendaDisc"><option value="pt">Português</option><option value="cf">Direito Constitucional</option><option value="adm">Direito Administrativo</option><option value="civil">Direito Civil</option><option value="cpc">Direito Processual Civil</option><option value="penal">Direito Penal</option><option value="cpp">Direito Processual Penal</option><option value="rlm">Raciocínio Lógico-Matemático</option></select></div>
+     <div class="field"><label>Tarefa</label><input id="agendaTask" placeholder="Ex.: Módulo 4 + 20 questões"></div>
+    </div>
+    <div class="action-row"><button id="agendaAddButton" type="button" class="btn primary">Adicionar</button></div><div id="agendaStandaloneStatus" class="agenda-standalone-status" aria-live="polite"></div>
+    <div class="agenda-editor" id="agendaEditor"><div class="muted small">Nenhuma tarefa neste dia.</div></div>
+   </div>
+  </section>
+
+  <section class="view hidden" id="performanceView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><div class="hero"><div><h1>Desempenho</h1><p>Resultados registrados nos tópicos desta Central, sem substituir as estatísticas próprias dos módulos existentes.</p></div></div><div class="card" style="padding:16px"><div class="summary" style="grid-template-columns:repeat(4,1fr)"><div class="sum"><small>Sessões</small><b id="gpSessions">0</b></div><div class="sum"><small>Questões</small><b id="gpQ">0</b></div><div class="sum"><small>Acertos</small><b id="gpC">0</b></div><div class="sum"><small>Aproveitamento</small><b id="gpA">—</b></div></div><div id="perfBySubject" style="margin-top:15px"></div></div><div class="card" style="padding:0;overflow:hidden"><div id="mapaEstudos"></div></div></section>
+
+  <section class="view hidden" id="tecCadernosView" aria-hidden="true" inert hidden></section>
+
+  <section class="view module-view hidden" id="leiSecaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><iframe id="leiSecaFrame" class="module-frame" title="Lei em Dia"></iframe></section>
+
+  <section class="view module-view hidden" id="vadeMecumView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><iframe id="vadeMecumFrame" class="module-frame" title="Vade Mecum"></iframe></section>
+
+  <section class="view module-view hidden" id="moduleView">
+   <button type="button" class="central-embedded-back" onclick="openHome()" aria-label="Voltar à Central">← Central</button>
+   <iframe id="moduleFrame" class="module-frame" title="Ferramenta integrada" onload="try{moduleFrameLoaded()}catch(_){}"></iframe></iframe>
+  </section>
+ </div>
+</div>
+</div>
+<div id="centralSettingsBackdrop" class="central-settings-backdrop hidden" onclick="if(event.target===this)closeCentralSettings()">
+ <section class="central-settings" role="dialog" aria-modal="true" aria-labelledby="centralSettingsTitle">
+  <div class="central-settings-head">
+   <div><h2 id="centralSettingsTitle">Configurações</h2><p>Aparência da Central de Estudos</p></div>
+   <button class="central-settings-close" onclick="closeCentralSettings()" aria-label="Fechar">×</button>
+  </div>
+  <div class="central-settings-body">
+   <div class="central-appearance-heading">
+    <h3>Aparência da Central</h3>
+    <p>Escolha um visual para todas as telas. A preferência fica salva somente neste dispositivo.</p>
+   </div>
+   <div class="central-theme-options" role="group" aria-label="Temas visuais da Central">
+    <article class="central-theme-card" data-theme-card="paper-yellow">
+     <div class="central-theme-card-head"><span class="central-theme-name">Papel amarelado</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#F4ECDD"></i><i style="--swatch:#FFF9ED"></i><i style="--swatch:#D8CAB3"></i><i style="--swatch:#0F8B8D"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="paper-yellow" onclick="setCentralTheme('paper-yellow')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="paper-white">
+     <div class="central-theme-card-head"><span class="central-theme-name">Papel branco premium</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#F8F7F3"></i><i style="--swatch:#FFFFFF"></i><i style="--swatch:#DDD8CE"></i><i style="--swatch:#0E8583"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="paper-white" onclick="setCentralTheme('paper-white')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="sage-study">
+     <div class="central-theme-card-head"><span class="central-theme-name">Verde sálvia estudo</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#EAF0E9"></i><i style="--swatch:#F5F9F4"></i><i style="--swatch:#C8D5CA"></i><i style="--swatch:#176F6B"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="sage-study" onclick="setCentralTheme('sage-study')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="editorial-gray">
+     <div class="central-theme-card-head"><span class="central-theme-name">Cinza editorial</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#EFF0EF"></i><i style="--swatch:#FFFFFF"></i><i style="--swatch:#D1D4D2"></i><i style="--swatch:#167E82"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="editorial-gray" onclick="setCentralTheme('editorial-gray')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="legal-mist">
+     <div class="central-theme-card-head"><span class="central-theme-name">Azul névoa jurídico</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#EAF0F5"></i><i style="--swatch:#FAFCFE"></i><i style="--swatch:#C7D4DE"></i><i style="--swatch:#0F8087"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="legal-mist" onclick="setCentralTheme('legal-mist')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="dark-premium">
+     <div class="central-theme-card-head"><span class="central-theme-name">Escuro premium</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#071820"></i><i style="--swatch:#0E2833"></i><i style="--swatch:#294753"></i><i style="--swatch:#31C9C0"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="dark-premium" onclick="setCentralTheme('dark-premium')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="oled-black">
+     <div class="central-theme-card-head"><span class="central-theme-name">OLED preto</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#000000"></i><i style="--swatch:#090E11"></i><i style="--swatch:#242D31"></i><i style="--swatch:#2AD0C5"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="oled-black" onclick="setCentralTheme('oled-black')">Aplicar tema</button>
+    </article>
+   </div>
+   <div class="central-settings-note">O tema é aplicado à tela inicial, agenda, disciplinas, módulos, questões, anotações, Vade Mecum, Lei em Dia, editor, menus, modais, tabelas e progresso. Nenhum conteúdo ou avanço é alterado.</div>
+
+   <span class="central-setting-label">Minha conta</span>
+   <div class="central-account-row" style="display:flex;flex-wrap:wrap;gap:8px">
+    <a class="central-btn-sec" href="/preferencias-contato.html">✉ Preferências de contato</a>
+    <button type="button" class="central-btn-sec" data-account-delete>🗑 Excluir minha conta</button>
+   </div>
+   <div class="central-settings-note">Escolha se deseja receber novidades e ofertas por e-mail ou WhatsApp. Os e-mails essenciais de segurança e assinatura continuam sendo enviados.</div>
+
+   <span class="central-setting-label">Backup geral</span>
+   <div class="central-backup-row">
+    <button class="central-btn-sec" onclick="centralBackupExport()">⬇ Baixar backup geral</button>
+    <button class="central-btn-sec" onclick="centralBackupSaveOnline()">☁ Salvar cópia online</button>
+    <button class="central-btn-sec" onclick="centralBackupHistory()">🗂 Histórico online</button>
+    <button class="central-btn-sec" onclick="document.getElementById('centralBackupImport').click()">⬆ Restaurar arquivo</button>
+    <input type="file" id="centralBackupImport" accept="application/json,.json" style="display:none" onchange="centralBackupImport(this)">
+   </div>
+   <div id="centralBackupStatus" class="central-backup-status">O backup por arquivo funciona mesmo sem banco online. Quando o site estiver no Vercel com o banco configurado, você também poderá guardar snapshots gerais no servidor.</div>
+   <div id="centralBackupHistoryList" class="central-backup-history hidden"></div>
+   <button class="central-btn-sec" id="centralPwaInstall" type="button" onclick="centralPwaInstall()" style="margin-top:8px;width:100%">📱 Instalar como aplicativo</button>
+   <div class="central-settings-note"><b>Backup geral:</b> inclui os dados da Central — progresso, Português nativo, agenda, resultados de questões já registrados, Vade Mecum, Lei Seca, RLM e preferências.</div>
+   <div class="central-settings-note" style="margin-top:7px"><b>Segurança do backup online:</b> configure no Vercel as variáveis <code>DATABASE_URL</code> e <code>BACKUP_SECRET</code>. A chave é solicitada somente quando você usa o histórico online e fica apenas na sessão atual do navegador.</div>
+  <script id="central-backup-geral-v6674">
+(function(){
+'use strict';
+var SECRET_SESSION_KEY='central-backup:session-secret';
+var OMIT_KEYS={'__central_folder_probe__':1,'__central_storage_probe__':1};
+function isPortugueseDataKey(k){
+ k=String(k||'');
+ return /^central-v6:pt(?::|-)/.test(k)||/^dominio_portugues/i.test(k);
+}
+function setStatus(msg,type){
+ var el=document.getElementById('centralBackupStatus');if(!el)return;
+ el.className='central-backup-status'+(type?' '+type:'');el.textContent=msg;
+}
+function coletar(){
+ var o={};
+ try{
+  for(var i=0;i<localStorage.length;i++){
+   var k=localStorage.key(i);
+   if(k&&!OMIT_KEYS[k]&&!isPortugueseDataKey(k))o[k]=localStorage.getItem(k);
+  }
+ }catch(e){}
+ return o;
+}
+function versaoAtual(){return (document.body.textContent.match(/v6\.[0-9]+\.[0-9]+/)||[''])[0]}
+function payloadAtual(origem){return {formato:'central-backup-v2',app:'Central de Estudos',versao:versaoAtual(),exportadoEm:new Date().toISOString(),origem:origem||'arquivo-local',dados:coletar()}}
+function baixarObjeto(obj,nome){
+ var blob=new Blob([JSON.stringify(obj)],{type:'application/json'});
+ var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=nome;
+ document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},4000);
+}
+function aplicarBackup(p){
+ var d=p&&p.dados?p.dados:p;
+ if(!d||typeof d!=='object'||Array.isArray(d))throw new Error('estrutura de dados não reconhecida');
+ var keys=Object.keys(d),n=0,remove=[];
+ if(!keys.length&&!confirm('Este backup está vazio. Deseja continuar?'))return 0;
+ for(var i=0;i<localStorage.length;i++){
+  var current=localStorage.key(i);
+  if(current&&!OMIT_KEYS[current]&&!isPortugueseDataKey(current))remove.push(current);
+ }
+ remove.forEach(function(k){localStorage.removeItem(k)});
+ keys.forEach(function(k){
+  if(k&&!OMIT_KEYS[k]&&!isPortugueseDataKey(k)){localStorage.setItem(k,String(d[k]));n++}
+ });
+ return n;
+}
+function segredo(){
+ var v='';try{v=sessionStorage.getItem(SECRET_SESSION_KEY)||''}catch(_){}
+ if(!v){v=prompt('Digite a chave de backup definida no Vercel (BACKUP_SECRET):')||'';v=v.trim();if(v){try{sessionStorage.setItem(SECRET_SESSION_KEY,v)}catch(_){}}}
+ if(!v)throw new Error('chave de backup não informada');
+ return v;
+}
+async function api(path,opt){
+ opt=opt||{};opt.headers=Object.assign({'X-Backup-Key':segredo()},opt.headers||{});
+ var r=await fetch(path,opt);
+ var text=await r.text(),j=null;try{j=text?JSON.parse(text):{}}catch(_){j={error:text||('HTTP '+r.status)}}
+ if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j;
+}
+function tamanhoAprox(obj){try{return new Blob([JSON.stringify(obj)]).size}catch(_){return 0}}
+function fmtBytes(n){n=Number(n)||0;if(n<1024)return n+' B';if(n<1048576)return (n/1024).toFixed(1)+' KB';return (n/1048576).toFixed(1)+' MB'}
+function fmtData(v){try{return new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(new Date(v))}catch(_){return v||''}}
+window.centralBackupExport=function(){
+ try{var p=payloadAtual('arquivo-local');baixarObjeto(p,'backup-central-'+new Date().toISOString().slice(0,10)+'.json');setStatus('Backup geral baixado ('+Object.keys(p.dados).length+' blocos, '+fmtBytes(tamanhoAprox(p))+').','ok')}
+ catch(e){setStatus('Não consegui exportar: '+e.message,'err')}
+};
+window.centralBackupSaveOnline=async function(){
+ try{
+  var p=payloadAtual('snapshot-online'),bytes=tamanhoAprox(p);
+  setStatus('Salvando snapshot geral no banco online...','warn');
+  var resp=await api('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',backup:p})});
+  setStatus('Backup online salvo com sucesso. ID '+resp.id+' • '+fmtBytes(bytes)+'.','ok');
+  var list=document.getElementById('centralBackupHistoryList');if(list&&!list.classList.contains('hidden'))centralBackupHistory();
+ }catch(e){setStatus('Backup online indisponível: '+e.message+'. O botão “Baixar backup geral” continua funcionando normalmente.','err')}
+};
+window.centralBackupHistory=async function(){
+ var host=document.getElementById('centralBackupHistoryList');if(!host)return;
+ try{
+  setStatus('Consultando histórico de backups...','warn');
+  var resp=await api('/api/backups');var items=resp.backups||[];
+  host.classList.remove('hidden');
+  if(!items.length)host.innerHTML='<div class="central-backup-status">Nenhum snapshot online salvo ainda.</div>';
+  else {
+    host.replaceChildren();
+    items.forEach(function(x){
+      var id=Number(x.id);
+      if(!Number.isSafeInteger(id)||id<=0)return;
+      var row=document.createElement('div');row.className='central-backup-item';
+      var info=document.createElement('div');
+      var title=document.createElement('b');title.textContent='Backup #'+id+' · '+fmtData(x.createdAt);
+      var details=document.createElement('small');
+      details.textContent=String(x.version||'versão não informada')+' · '+fmtBytes(x.bytes||0)+(x.note?' · '+String(x.note):'');
+      info.append(title,details);
+      var buttons=document.createElement('div');buttons.className='central-backup-item-actions';
+      [['Baixar','centralBackupDownloadOnline'],['Restaurar','centralBackupRestoreOnline'],['Excluir','centralBackupDeleteOnline']].forEach(function(action){
+        var button=document.createElement('button');button.type='button';button.textContent=action[0];
+        button.addEventListener('click',function(){if(typeof window[action[1]]==='function')window[action[1]](id)});
+        buttons.appendChild(button);
+      });
+      row.append(info,buttons);host.appendChild(row);
+    });
+  }
+  setStatus(items.length+' backup(s) online encontrado(s).','ok');
+ }catch(e){host.classList.add('hidden');setStatus('Não consegui abrir o histórico online: '+e.message,'err')}
+};
+window.centralBackupDownloadOnline=async function(id){
+ try{setStatus('Baixando backup #'+id+'...','warn');var r=await api('/api/backups?id='+encodeURIComponent(id));baixarObjeto(r.backup,'backup-central-online-'+id+'.json');setStatus('Backup #'+id+' baixado.','ok')}
+ catch(e){setStatus('Falha ao baixar backup #'+id+': '+e.message,'err')}
+};
+window.centralBackupRestoreOnline=async function(id){
+ if(!confirm('Restaurar o backup online #'+id+'? O estado atual deste aparelho será substituído.'))return;
+ try{setStatus('Restaurando backup #'+id+'...','warn');var r=await api('/api/backups?id='+encodeURIComponent(id));var n=aplicarBackup(r.backup);alert('Backup restaurado: '+n+' blocos. A página será recarregada.');location.reload()}
+ catch(e){setStatus('Falha ao restaurar backup #'+id+': '+e.message,'err')}
+};
+window.centralBackupDeleteOnline=async function(id){
+ if(!confirm('Excluir definitivamente o backup online #'+id+'?'))return;
+ try{await api('/api/backups?id='+encodeURIComponent(id),{method:'DELETE'});setStatus('Backup #'+id+' excluído do histórico online.','ok');centralBackupHistory()}
+ catch(e){setStatus('Falha ao excluir backup #'+id+': '+e.message,'err')}
+};
+window.centralBackupImport=function(inp){
+ var f=inp.files&&inp.files[0];if(!f)return;
+ var r=new FileReader();
+ r.onload=function(){
+  try{
+   var p=JSON.parse(r.result);
+   if(!confirm('Restaurar este backup geral? O estado atual deste aparelho será substituído.')){inp.value='';return}
+   var n=aplicarBackup(p);alert('Backup restaurado: '+n+' blocos. A página será recarregada.');location.reload();
+  }catch(e){setStatus('Arquivo de backup inválido: '+e.message,'err')}
+ };
+ r.readAsText(f);inp.value='';
+};
+})();
+  </script>
+<script src="/central-structural-v66119/cf-weeks-000-init.js?v=66119s2"></script>
+<script src="/central-structural-v66119/cf-audit-integration-v20260919.js?v=20260919"></script>
+<script src="/central-structural-v66119/cf-weeks-001.js?v=20261118r1"></script>
+<script src="/central-structural-v66119/cf-weeks-002.js?v=20261118r1"></script>
+<script src="/central-structural-v66119/cf-weeks-003.js?v=20261118r1"></script>
+<script src="/central-structural-v66119/cf-questions-000-init.js?v=66119s2"></script>
+<script src="/central-structural-v66119/civil-course-000-init.js?v=66119s2"></script>
+<script src="/central-structural-v66119/civil-course-006-final.js?v=66119s3"></script>
+<script src="/central-structural-v66119/penal-questions-000-init.js?v=66119s2"></script>
+<script src="/central-structural-v66119/cpc-questions-000-init.js?v=66119s2"></script>
+<script src="/content/cpc/cpc-fixation-questions-v1.js?v=20261010auditfix1"></script>
+<script src="/content/cpc/cpc-fixation-questions-m01-m06-v1.js?v=20261031fix1"></script>
+<script src="/central-structural-v66119/runtime.js?v=20261118r1"></script>
+<script src="/portugues-site.js?v=20261023ptorg1"></script>
+<script src="/ui/portuguese-activities-v1.js?v=20261118r1"></script>
+<script src="/ui/portuguese-reader.js?v=20261118r1"></script>
+<script src="/ui/apostilas-pdf-v1.js?v=20261118r1"></script>
+<script src="/ui/current-courses.js?v=20261112nographic1"></script>
+<script src="/central-reading-font-v66126.js?v=20261118r1"></script>
+<script src="/penal-full-theory-data-01.js?v=20260919b"></script>
+<script src="/penal-full-theory-data-02.js?v=20260919b"></script>
+<script src="/penal-full-theory-data-03.js?v=20260919b"></script>
+<script src="/penal-full-theory-data-04.js?v=20260919b"></script>
+<script src="/penal-full-theory-ui-v1.js?v=20260919b"></script>
+<style id="discipline-window-standard-v39">
+/* =========================================================
+   PADRÃO VISUAL DAS DISCIPLINAS — V6.6.39
+   Somente apresentação: conteúdo, questões e progresso preservados.
+   ========================================================= */
+:root{
+ --discipline-radius:14px;
+ --discipline-radius-sm:11px;
+ --discipline-good-bg:rgba(19,189,107,.11);
+ --discipline-bad-bg:rgba(239,68,68,.11);
+ --discipline-warn-bg:rgba(245,158,11,.11);
+}
+#subjects{width:min(100%,1240px);margin-inline:auto;gap:12px}
+.discipline-grid{width:min(100%,1240px);margin-inline:auto;gap:12px}
+.disc-card{
+ --discipline-accent:#7c5cff;min-height:126px;padding:17px;border-radius:var(--discipline-radius);border:1px solid var(--line);
+ border-left:4px solid var(--discipline-accent);background:var(--panel);color:var(--text);text-align:left;
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.07);
+}
+.disc-card[data-id="pt"]{--discipline-accent:#8b7cff}.disc-card[data-id="cf"]{--discipline-accent:#5b8cff}
+.disc-card[data-id="adm"]{--discipline-accent:#38bda9}.disc-card[data-id="civil"]{--discipline-accent:#24c77a}
+.disc-card[data-id="cpc"]{--discipline-accent:#38bdf8}.disc-card[data-id="penal"]{--discipline-accent:#ef6b76}
+.disc-card[data-id="cpp"]{--discipline-accent:#f59e42}.disc-card[data-id="rlm"]{--discipline-accent:#e7b83f}
+.disc-card:hover{background:var(--surface-hover);border-color:var(--discipline-accent);transform:translateY(-1px)}
+.disc-card b{font-size:0.9375rem}.disc-card small{font-size:0.75rem;line-height:1.5}.disc-meta{font-size:0.75rem;color:var(--discipline-accent);font-weight:800}
+.subject{
+ --discipline-accent:#7c5cff;
+ --discipline-accent-soft:rgba(124,92,255,.12);
+ position:relative;background:var(--panel);border-color:var(--line);border-radius:var(--discipline-radius);
+ box-shadow:0 8px 24px rgba(0,0,0,.08);isolation:isolate;
+}
+
+.subject[data-id="cf"]{--discipline-accent:#5b8cff;--discipline-accent-soft:rgba(91,140,255,.12)}
+.subject[data-id="adm"]{--discipline-accent:#38bda9;--discipline-accent-soft:rgba(56,189,169,.12)}
+.subject[data-id="civil"]{--discipline-accent:#24c77a;--discipline-accent-soft:rgba(36,199,122,.12)}
+.subject[data-id="cpc"]{--discipline-accent:#38bdf8;--discipline-accent-soft:rgba(56,189,248,.12)}
+.subject[data-id="penal"]{--discipline-accent:#ef6b76;--discipline-accent-soft:rgba(239,107,118,.12)}
+.subject[data-id="cpp"]{--discipline-accent:#f59e42;--discipline-accent-soft:rgba(245,158,66,.12)}
+.subject[data-id="rlm"]{--discipline-accent:#e7b83f;--discipline-accent-soft:rgba(231,184,63,.13)}
+.subject.open{border-color:var(--discipline-accent);box-shadow:0 12px 34px rgba(0,0,0,.12)}
+.subject-head{
+ min-height:64px;padding:13px 16px 13px 14px;grid-template-columns:minmax(0,1fr) auto 68px 32px;gap:12px;
+ border-left:4px solid var(--discipline-accent);background:linear-gradient(90deg,var(--discipline-accent-soft),transparent 38%);
+}
+.subject-head:hover{background:linear-gradient(90deg,var(--discipline-accent-soft),var(--surface-hover) 58%)}
+.subject-name{font-size:0.875rem;line-height:1.35}.subject-count{font-size:0.75rem}.subject-pct{font-size:0.875rem;color:var(--discipline-accent)}
+.subject-head .chev{width:32px;height:32px;display:grid;place-items:center;font-size:1.125rem}
+.subject-body{padding:0 16px 18px;background:var(--panel)}
+.subject-body>*{min-width:0}
+.subject-bar{height:6px;background:var(--panel2);margin:0 0 16px}
+.subject .subject-bar span{background:linear-gradient(90deg,var(--discipline-accent),var(--purple))!important}
+.subject-body button,.subject-body a.chip{min-height:44px}
+.subject-body button:focus-visible,.subject-body a:focus-visible,.subject-body input:focus-visible,
+.subject-body textarea:focus-visible,.subject-body select:focus-visible{
+ outline:3px solid var(--discipline-accent-soft);outline-offset:2px;border-color:var(--discipline-accent)!important;
+}
+.subject-body img,.subject-body video,.subject-body canvas{max-width:100%;height:auto}
+.subject-body p,.subject-body li,.subject-body span,.subject-body b,.subject-body small{overflow-wrap:anywhere}
+
+/* Lista genérica: Administrativo, Processo Penal e atalhos do RLM. */
+.topic-header,.topic-row{grid-template-columns:32px minmax(0,1fr) 124px 90px 44px;gap:10px}
+.topic-header{min-height:40px;padding:8px 10px;font-size:0.625rem;text-transform:uppercase;letter-spacing:.06em}
+.topic-item{border-color:var(--line);padding:3px 0}
+.topic-row{min-height:58px;padding:7px 10px;border-radius:var(--discipline-radius-sm);font-size:0.8125rem}
+.topic-row input{width:20px;height:20px}.topic-title{font-size:0.8125rem;line-height:1.4}.topic-origin{font-size:0.6875rem;line-height:1.35}
+.type{font-size:0.625rem;padding:5px 8px;border-radius:999px;background:var(--discipline-accent-soft);border-color:var(--discipline-accent);color:var(--text)}
+.open-topic{width:44px;height:44px;display:grid;place-items:center;border-radius:10px;color:var(--muted)}
+.open-topic:hover{background:var(--surface-hover);color:var(--text)}
+.topic-detail{padding:0 8px 16px 52px}
+.detail-panel{padding:16px;border:1px solid var(--line);border-radius:var(--discipline-radius);background:var(--soft);box-shadow:none}
+.prestudy,.tips,.resource,.notes{border-radius:var(--discipline-radius-sm)}
+.pre-title{font-size:0.6875rem;padding:10px 12px}.pre-row{min-height:48px;font-size:0.75rem;padding:10px 12px}
+.inline-tools{min-height:50px;gap:8px 16px}.inline-tools button{padding:8px 4px}
+.tips{padding:14px}.tips-title{font-size:0.8125rem}.tips li{font-size:0.75rem}
+.resource-label,.history-label{font-size:0.625rem}.chip{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;font-size:0.75rem;border-radius:9px}
+.perf-form{gap:10px}.field label{font-size:0.6875rem}.field input,.field textarea,.field select{min-height:44px;font-size:0.8125rem;border-radius:10px}
+.hist{min-height:44px;font-size:0.6875rem}.note-item{padding:12px;font-size:0.75rem}
+
+/* Barras de ação e cartões de resumo comuns. */
+.cf-master-tools{gap:8px;margin-bottom:14px}
+.cf-master-tools button,.cf-btn,.civil-btn{
+ min-height:44px;padding:9px 13px;border-radius:10px;font-size:0.75rem;font-weight:780;
+}
+.cf-master-tools button{background:var(--panel2);border:1px solid var(--line2);color:var(--text)}
+.cf-master-tools button:hover{background:var(--surface-hover)}
+.cf-metrics{gap:10px;margin-bottom:14px}
+.cf-metric{min-height:78px;padding:13px;border-radius:var(--discipline-radius-sm)}
+.cf-metric small{font-size:0.6875rem}.cf-metric b{font-size:1.3125rem}
+.cf-session,.cf-error-panel{border-radius:var(--discipline-radius);margin-bottom:14px}
+.cf-session-head{min-height:54px;padding:10px 14px}.cf-session-head b{font-size:0.8125rem}
+.cf-session-body{padding:14px}
+
+/* Constitucional, Penal e Processo Civil usam o mesmo fluxo guiado. */
+.cf-modules{gap:10px}.cf-module{border-radius:var(--discipline-radius);background:var(--soft)}
+.cf-module-head{min-height:64px;grid-template-columns:94px minmax(0,1fr) 190px 32px;padding:11px 13px}
+.cf-module-no{font-size:0.6875rem}.cf-module-title{font-size:0.875rem}.cf-module-stat{font-size:0.625rem}.cf-module-bar{height:6px}
+.cf-module-body{padding:0 13px 14px}.cf-subtitle{font-size:0.75rem;line-height:1.55}
+.cf-syllabus{padding:12px;border-radius:var(--discipline-radius-sm)}.cf-syllabus summary{font-size:0.75rem}.cf-micro{font-size:0.625rem;padding:5px 8px}
+.cf-steps{gap:9px}.cf-step{border-radius:var(--discipline-radius-sm)}.cf-step-head{min-height:58px;padding:11px 12px}
+.cf-step-no{width:30px;height:30px;font-size:0.625rem}.cf-step-copy b{font-size:0.8125rem}.cf-step-copy small{font-size:0.6875rem}
+.cf-step-body{padding:0 12px 12px}.cf-reading,.cf-advanced{padding:13px;border-radius:10px}
+.cf-reading strong,.cf-reading li,.cf-advanced b,.cf-advanced div{font-size:0.75rem}.cf-reading li{line-height:1.6}
+.cf-theory{border-radius:10px}.cf-theory summary{min-height:44px;padding:11px 12px;font-size:0.75rem;display:flex;align-items:center}
+.cf-theory-text{padding:0 12px 13px;font-size:0.78125rem;line-height:1.68}
+.cf-actions{gap:8px;margin-top:10px}.cf-resource-grid{gap:10px}.cf-resource-box{padding:12px;border-radius:10px}.cf-resource-box h4{font-size:0.6875rem}
+.cf-notes{min-height:96px;padding:11px;font-size:0.8125rem;border-radius:10px}
+.cf-qtop{font-size:0.6875rem}.cf-qbar{height:6px}.cf-question{padding:14px;border-radius:var(--discipline-radius)}
+.cf-qmeta{gap:6px}.cf-chip{font-size:0.625rem;padding:4px 7px}.cf-question h3{font-size:0.875rem;line-height:1.6}
+.cf-options{gap:8px}.cf-option-row{grid-template-columns:minmax(0,1fr) 44px;gap:7px}
+.cf-option{min-height:54px;grid-template-columns:30px minmax(0,1fr);padding:10px 12px;border-radius:10px;font-size:0.8125rem;line-height:1.5}
+.cf-letter{width:26px;height:26px;font-size:0.625rem}.cf-strike{width:44px;min-height:44px;border-radius:9px}
+.cf-feedback{padding:12px;font-size:0.75rem;border-radius:10px}.cf-source{font-size:0.625rem}.cf-coverage{font-size:0.6875rem}
+.cf-result-grid{gap:9px}.cf-result-grid div{min-height:72px;padding:11px;border-radius:10px}.cf-result-grid small{font-size:0.625rem}
+.cf-option.correct,.civil-option.correct{background:var(--discipline-good-bg)}
+.cf-option.wrong,.civil-option.wrong{background:var(--discipline-bad-bg)}
+.cf-feedback.good,.civil-feedback.good{background:var(--discipline-good-bg)}
+.cf-feedback.bad,.civil-feedback.bad{background:var(--discipline-bad-bg)}
+
+/* Civil reconstruído para Analista. */
+.civil-master{gap:10px}.civil-master-intro{padding:17px;border-radius:var(--discipline-radius);background:var(--soft)}
+.civil-master-intro h3{font-size:1.0625rem}.civil-master-intro p{font-size:0.78125rem;line-height:1.65}
+.civil-a-meta{gap:7px}.civil-a-chip{font-size:0.65625rem;padding:5px 8px}.civil-target{padding:10px 12px;border-radius:10px}
+.civil-target span{font-size:0.5625rem}.civil-target b{font-size:0.75rem}.civil-overall{height:7px;margin-bottom:13px}
+.civil-module{border-radius:var(--discipline-radius);background:var(--soft)}
+.civil-module-head{min-height:66px;grid-template-columns:86px minmax(0,1fr) minmax(150px,auto) 32px;padding:11px 13px}
+.civil-module-num{font-size:0.6875rem}.civil-module-title b{font-size:0.875rem}.civil-module-title small{font-size:0.6875rem;line-height:1.45}
+.civil-module-state span{font-size:0.625rem}.civil-pct{font-size:0.75rem}.civil-module-body{padding:14px}
+.civil-scope-note{padding:12px;font-size:0.71875rem;border-radius:10px}.civil-a-section{margin-top:15px}
+.civil-a-section>h4{font-size:0.6875rem;margin-bottom:9px}.civil-a-grid{gap:10px}.civil-a-card{padding:13px;border-radius:var(--discipline-radius-sm)}
+.civil-a-card b{font-size:0.8125rem}.civil-a-card p{font-size:0.75rem;line-height:1.65}.civil-a-basis{font-size:0.65625rem}
+.civil-a-list{font-size:0.75rem;line-height:1.65}.civil-a-list li{margin-bottom:5px}.civil-a-actions{gap:8px;margin-top:15px;padding-top:13px}
+.civil-scope-badge{font-size:0.625rem}.civil-edital-coverage{border-radius:var(--discipline-radius)}
+.civil-qcard{padding:14px;border-radius:var(--discipline-radius)}.civil-qcard h4{font-size:0.875rem}
+.civil-chip{font-size:0.59375rem}.civil-qsource{font-size:0.625rem}.civil-option{min-height:54px;font-size:0.8125rem;padding:10px 12px}
+.civil-letter{width:26px;height:26px;font-size:0.625rem}.civil-feedback{font-size:0.75rem}.civil-feedback .basis{font-size:0.625rem}
+.civil-theory p,.civil-theory li{font-size:0.75rem}.civil-theory h4{font-size:0.8125rem}.civil-law-card b{font-size:0.75rem}.civil-law-card span{font-size:0.65625rem}
+.civil-error-row{min-height:54px;padding:10px}.civil-error-row b{font-size:0.75rem}.civil-error-row small{font-size:0.625rem}
+.civil-compare{font-size:0.6875rem}.civil-compare th,.civil-compare td{padding:9px}
+
+/* Avisos e leitura esquematizada de Processo Civil. */
+.cpc-coverage-warning{padding:14px 16px;border-radius:var(--discipline-radius);background:var(--discipline-warn-bg)}
+.cpc-coverage-warning p{font-size:0.75rem}.cpc-law-grid{gap:10px}.cpc-law-card{padding:14px;border-radius:var(--discipline-radius)}
+.cpc-law-card h4{font-size:0.875rem}.cpc-law-card strong{font-size:0.75rem}.cpc-law-card li{font-size:0.75rem}
+
+@media(max-width:900px){
+ .cf-module-head{grid-template-columns:82px minmax(0,1fr) 150px 32px}
+ .civil-module-head{grid-template-columns:76px minmax(0,1fr) 130px 32px}
+ .civil-a-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+ .view:not(.module-view){padding:12px 10px calc(20px + env(safe-area-inset-bottom))}
+ .discipline-grid{grid-template-columns:1fr}.disc-card{min-height:106px;padding:14px}.disc-card:hover{transform:none}
+ #subjects{gap:10px}.subject{border-radius:13px}
+ .subject-head{min-height:60px;grid-template-columns:minmax(0,1fr) 58px 32px;padding:10px 11px 10px 10px;gap:8px}
+ .subject-count{display:none}.subject-name{font-size:0.8125rem}.subject-pct{font-size:0.8125rem}
+ .subject-body{padding:0 10px 14px}.subject-bar{margin-bottom:12px}
+ .topic-header{display:none}.topic-item{padding:2px 0}
+ .topic-row{grid-template-columns:28px minmax(0,1fr) auto 44px;grid-template-areas:"check title type open" "check origin origin open";gap:4px 8px;min-height:66px;padding:8px 4px}
+ .topic-row>input{grid-area:check}.topic-title{grid-area:title}.topic-origin{grid-area:origin}.topic-row>.type{grid-area:type}.open-topic{grid-area:open}
+ .topic-title{font-size:0.78125rem}.topic-origin{font-size:0.65625rem}.type{font-size:0.5625rem;padding:4px 6px}
+ .topic-detail{padding:0 0 14px}.detail-panel{padding:12px}
+ .perf-form{grid-template-columns:1fr 1fr}.perf-form .btn{grid-column:1/-1}
+ .cf-master-tools button{flex:1 1 145px}
+ .cf-metrics{grid-template-columns:1fr 1fr;gap:8px}
+ .cf-metric{min-height:72px;padding:11px}.cf-metric b{font-size:1.1875rem}
+ .cf-session-body{padding:11px}
+ .cf-module-head{grid-template-columns:70px minmax(0,1fr) 32px;padding:10px 9px}.cf-module-stat{display:none}
+ .cf-module-no{font-size:0.59375rem}.cf-module-title{font-size:0.78125rem}.cf-module-body{padding:0 9px 11px}
+ .cf-step-head{padding:10px}.cf-step-body{padding:0 10px 10px}.cf-resource-grid{grid-template-columns:1fr}
+ .cf-actions>*{flex:1 1 135px}.cf-question{padding:11px}.cf-question h3{font-size:0.8125rem}
+ .cf-qtop{display:grid;grid-template-columns:1fr auto}.cf-result-grid{grid-template-columns:1fr}
+ .civil-master-intro{display:block;padding:14px}.civil-target{margin-top:10px;text-align:left;width:100%}
+ .civil-module-head{grid-template-columns:70px minmax(0,1fr) 32px;padding:10px 9px}.civil-module-state{display:none}
+ .civil-module-num{font-size:0.59375rem}.civil-module-title b{font-size:0.78125rem}.civil-module-title small{font-size:0.65625rem}
+ .civil-module-body{padding:10px}.civil-a-grid,.civil-law-grid,.cpc-law-grid{grid-template-columns:1fr}
+ .civil-a-scope{columns:1}.civil-a-actions>*{flex:1 1 145px}.civil-a-reviewed{margin-left:0}
+ .civil-compare{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .cpc-law-heading{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:420px){
+ .cf-master-tools button{flex-basis:100%}
+ .cf-actions>*,.civil-a-actions>*{flex-basis:100%}
+ .topic-row{grid-template-columns:26px minmax(0,1fr) 44px;grid-template-areas:"check title open" "check origin open" "check type open"}
+ .cf-option{grid-template-columns:28px minmax(0,1fr);padding-inline:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .subject,.subject-head,.chev,.cf-module,.civil-module{transition:none!important;scroll-behavior:auto!important}
+}
+
+</style>
+
+<style id="central-embedded-tools-style">
+#moduleView{position:relative}
+.central-embedded-back{position:absolute;z-index:2147483000;top:10px;left:10px;border:1px solid rgba(255,255,255,.2);background:rgba(12,22,39,.94);color:#fff;border-radius:10px;padding:9px 12px;font:800 0.75rem/1 Arial,sans-serif;box-shadow:0 5px 18px rgba(0,0,0,.24);cursor:pointer;backdrop-filter:blur(8px)}
+@media(max-width:680px){.central-embedded-back{top:7px;left:7px;padding:8px 10px;font-size:0.6875rem}}
+.central-tool-status{position:absolute;z-index:2147482999;inset:0;display:none;align-items:center;justify-content:center;padding:24px;background:#08111f;color:#dce8f8;font:700 0.875rem/1.45 Arial,sans-serif;text-align:center}
+.central-tool-status.show{display:flex}.central-tool-status .box{max-width:620px;border:1px solid #334155;border-radius:14px;padding:18px;background:#101b2d;box-shadow:0 8px 30px rgba(0,0,0,.28)}.central-tool-status small{display:block;margin-top:8px;color:#93a4bb;font-weight:500}
+<style id="central-mapa-estudos-style">
+#mapaEstudos .mp-wrap,#mapaEstudosDisc .mp-wrap{background:var(--creme,#f7f3ea);color:#26251f;padding:22px 16px 18px;font-family:Georgia,'Times New Roman',serif}
+#mapaEstudos .mp-head,#mapaEstudosDisc .mp-head{text-align:center;margin-bottom:16px}
+#mapaEstudos .mp-head h2,#mapaEstudosDisc .mp-head h2{font-size:1.5rem;color:#1b2a52;margin:2px 0}
+#mapaEstudos .mp-head .mp-line,#mapaEstudosDisc .mp-head .mp-line{flex:0 0 70px;height:1px;background:linear-gradient(90deg,transparent,#c9a227)}
+#mapaEstudos .mp-head .mp-line.r,#mapaEstudosDisc .mp-head .mp-line.r{background:linear-gradient(270deg,transparent,#c9a227)}
+#mapaEstudos .mp-grid,#mapaEstudosDisc .mp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:1060px;margin:0 auto}
+@media(max-width:820px){#mapaEstudos .mp-grid,#mapaEstudosDisc .mp-grid{grid-template-columns:1fr}}
+#mapaEstudos .mp-card,#mapaEstudosDisc .mp-card{position:relative;background:#fff;border:1px solid #e6dfcf;border-radius:14px;box-shadow:0 6px 18px rgba(27,42,82,.08);overflow:hidden}
+#mapaEstudos .mp-hex,#mapaEstudosDisc .mp-hex{position:absolute;top:8px;left:10px;width:44px;height:48px;display:grid;place-items:center;color:#fff;font-size:1.25rem;font-weight:700;z-index:2;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:#1b2a52}
+#mapaEstudos .mp-card.teal .mp-hex,#mapaEstudosDisc .mp-card.teal .mp-hex{background:#2a7f77}
+#mapaEstudos .mp-bar,#mapaEstudosDisc .mp-bar{margin-left:0;padding:11px 46px 13px 64px;background:#1b2a52;color:#fff;font-size:0.90625rem;line-height:1.25;cursor:pointer;position:relative;user-select:none}
+#mapaEstudos .mp-bar small,#mapaEstudosDisc .mp-bar small{display:block;font-size:0.65625rem;opacity:.82;letter-spacing:.05em}
+#mapaEstudos .mp-card.teal .mp-bar,#mapaEstudosDisc .mp-card.teal .mp-bar{background:#2a7f77}
+#mapaEstudos .mp-chev,#mapaEstudosDisc .mp-chev{position:absolute;right:12px;top:12px;font-size:0.75rem;opacity:.85;transition:transform .18s}
+#mapaEstudos .mp-card.collapsed .mp-chev,#mapaEstudosDisc .mp-card.collapsed .mp-chev{transform:rotate(-90deg)}
+#mapaEstudos .mp-card.collapsed .mp-body,#mapaEstudosDisc .mp-card.collapsed .mp-body{display:none}
+#mapaEstudos .mp-prog,#mapaEstudosDisc .mp-prog{position:absolute;left:0;bottom:0;height:4px;background:#e3c96b;width:0%;transition:width .3s}
+#mapaEstudos .mp-card.teal .mp-prog,#mapaEstudosDisc .mp-card.teal .mp-prog{background:#bfe3dd}
+#mapaEstudos .mp-badge,#mapaEstudosDisc .mp-badge{position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:0.625rem;font-weight:700;background:rgba(255,255,255,.16);border-radius:999px;padding:2px 8px;letter-spacing:.03em}
 #mapaEstudos .mp-body,#mapaEstudosDisc .mp-body{display:flex;gap:10px;padding:12px 12px 12px 8px}
 #mapaEstudos .mp-ico,#mapaEstudosDisc .mp-ico{flex:0 0 40px;font-size:1.875rem;text-align:center;line-height:1.15;filter:saturate(.85)}
 #mapaEstudos .mp-list,#mapaEstudosDisc .mp-list{flex:1;min-width:0}
