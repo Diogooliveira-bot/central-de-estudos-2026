@@ -12,3 +12,13 @@ for (const file of ['index.html', 'central-v119.html', 'login.html']) {
     assert.doesNotMatch(text, /^Total output lines: \d+/m);
   });
 }
+
+test('index.html preserva a estrutura da Central e não contém saída truncada', () => {
+  const html = readFileSync('index.html', 'utf8');
+  for (const required of [
+    /<head\b/i, /<\/head>/i, /<body\b/i, /<\/body>/i,
+    /id="appRoot"/, /id="homeView"/, /id="centralSidebar"/
+  ]) assert.match(html, required, 'estrutura principal deve permanecer no HTML');
+  assert.doesNotMatch(html, /tokens truncated|Warning: truncated output|Total output lines:/i);
+  assert.ok((html.match(/<script\b/gi) || []).length > 90, 'scripts da estrutura devem existir');
+});

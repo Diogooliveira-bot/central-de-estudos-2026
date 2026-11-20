@@ -1,0 +1,498 @@
+{
+  "module": 11,
+  "module_title": "Funções Essenciais à Justiça",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "As funções essenciais à Justiça: quem defende quem?",
+      "review": "O Judiciário decide conflitos, mas existem outras instituições importantes para que a Justiça funcione.\n\nMinistério Público (MP) protege a ordem jurídica, a democracia e interesses previstos na Constituição. Advocacia Pública representa o governo em processos e presta consultoria jurídica. Advogados particulares defendem seus clientes. Defensoria Pública atende pessoas que precisam de assistência jurídica gratuita.\n\nPara saber quem atua em uma questão, pergunte: quem está sendo defendido e qual interesse precisa de proteção?",
+      "example": "Uma pessoa sem recursos precisa de orientação jurídica: pode procurar a Defensoria. Se a União precisa ser defendida em juízo, atua a Advocacia-Geral da União.",
+      "constitutional_reference": "Arts. 127 a 135 da Constituição: Ministério Público, Advocacia Pública, Advocacia e Defensoria Pública.",
+      "exam_trap": "Essas funções são essenciais à Justiça, mas não se tornam órgãos do Poder Judiciário por isso. Cada instituição possui funções próprias.",
+      "memorization": [
+        "MP não é advogado do governo; essa representação cabe à Advocacia Pública.",
+        "MP = interesse público qualificado; Advocacia Pública = ente; Defensoria = necessitados."
+      ],
+      "central": "As quatro instituições têm funções diferentes: proteger interesses públicos, representar o Estado, defender clientes e prestar assistência jurídica a quem precisa.",
+      "cards": [
+        [
+          "Ministério Público",
+          "Defende a ordem jurídica, o regime democrático e interesses sociais e individuais indisponíveis."
+        ],
+        [
+          "Advocacia Pública",
+          "Representa juridicamente a União, os Estados e o Distrito Federal, conforme cada atribuição."
+        ],
+        [
+          "Advocacia privada",
+          "O advogado presta defesa técnica aos seus clientes, dentro dos limites da lei."
+        ],
+        [
+          "Pegadinha de prova",
+          "Função essencial à Justiça não transforma a instituição em órgão do Poder Judiciário."
+        ]
+      ],
+      "tips": [
+        "MP protege interesses indisponíveis; AGU e procuradorias representam entes públicos.",
+        "Defensoria orienta e defende integralmente os necessitados."
+      ],
+      "icons": [
+        "people",
+        "court",
+        "federal-entity",
+        "exceptions"
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Ministério Público: missão e princípios",
+      "review": "O Ministério Público (MP) é uma instituição permanente que defende a ordem jurídica, a democracia e interesses sociais e individuais indisponíveis.\n\nSeus três princípios principais são: unidade (os membros integram a mesma instituição em seu âmbito); indivisibilidade (um membro pode ser substituído por outro conforme as regras); independência funcional (cada membro atua com liberdade jurídica dentro da Constituição).",
+      "example": "Uma promotora deixa um caso. Outro membro pode continuar a atuação institucional, respeitando as regras de atribuição.",
+      "constitutional_reference": "Art. 127, caput e § 1º: missão e princípios de unidade, indivisibilidade e independência funcional.",
+      "exam_trap": "Independência funcional não elimina regras administrativas nem significa que todos os Ministérios Públicos brasileiros formem uma só instituição subordinada ao Procurador-Geral da República.",
+      "memorization": [
+        "Independência funcional não significa ausência de fiscalização ou controle administrativo.",
+        "MP: unidade + indivisibilidade + independência funcional."
+      ],
+      "central": "O Ministério Público é permanente e protege a ordem jurídica, a democracia e interesses que não podem ser livremente renunciados.",
+      "cards": [
+        [
+          "Missão constitucional",
+          "Defender a ordem jurídica, o regime democrático e interesses sociais e individuais indisponíveis."
+        ],
+        [
+          "Unidade",
+          "Os membros atuam como parte da mesma instituição dentro de cada Ministério Público."
+        ],
+        [
+          "Indivisibilidade",
+          "Um membro pode substituir outro na atuação institucional, conforme as regras."
+        ],
+        [
+          "Pegadinha de prova",
+          "Os MPs dos Estados e os ramos do MPU não formam uma única instituição nacional subordinada ao PGR."
+        ]
+      ],
+      "tips": [
+        "Art. 127: instituição permanente e essencial à função jurisdicional.",
+        "Princípios: unidade, indivisibilidade e independência funcional."
+      ],
+      "icons": [
+        "federal-law",
+        "split-courts",
+        "court-levels",
+        "no-appeal"
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Autonomia do MP e proposta orçamentária",
+      "review": "O MP precisa atuar sem depender de ordens políticas de governantes. Por isso, a Constituição garante autonomia funcional e administrativa.\n\nO MP também prepara sua proposta de orçamento, respeitando os limites previstos na Lei de Diretrizes Orçamentárias (LDO) e as regras orçamentárias gerais.",
+      "example": "O MP apresenta orçamento acima do limite previsto na LDO. A proposta pode precisar de ajuste segundo o procedimento constitucional; isso não elimina sua autonomia.",
+      "constitutional_reference": "Art. 127, §§ 2º a 6º: autonomia funcional/administrativa e regras para proposta orçamentária.",
+      "exam_trap": "O MP pode propor ao Legislativo a criação e extinção de cargos e serviços auxiliares nas condições constitucionais. Ter autonomia não autoriza gasto sem controle.",
+      "memorization": [
+        "Autonomia não é poder gastar valores ilimitados.",
+        "MP tem autonomia, mas respeita orçamento e Constituição."
+      ],
+      "central": "O MP tem autonomia funcional e administrativa, mas deve elaborar e executar seu orçamento dentro das regras constitucionais e da LDO.",
+      "cards": [
+        [
+          "Autonomia funcional",
+          "Protege a atuação institucional contra ordens indevidas, sem afastar a Constituição e a lei."
+        ],
+        [
+          "Autonomia administrativa",
+          "Permite organizar seus serviços e propor medidas previstas na Constituição."
+        ],
+        [
+          "Proposta de orçamento",
+          "O MP elabora sua proposta nos limites estabelecidos pela Lei de Diretrizes Orçamentárias."
+        ],
+        [
+          "Pegadinha de prova",
+          "Autonomia não significa orçamento ilimitado nem dispensa controle das regras orçamentárias."
+        ]
+      ],
+      "tips": [
+        "Art. 127, §§ 2º a 6º: autonomia e proposta orçamentária.",
+        "Autonomia institucional convive com limites da LDO e da Constituição."
+      ],
+      "icons": [
+        "budget",
+        "government-act",
+        "calendar-law",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "Estrutura: MPU, Ministérios Públicos estaduais e MP de Contas",
+      "review": "O Ministério Público brasileiro é formado pelo Ministério Público da União (MPU) e pelos Ministérios Públicos dos Estados.\n\nO MPU tem quatro ramos: Ministério Público Federal, do Trabalho, Militar e do Distrito Federal e Territórios (MPDFT).\n\nApesar do nome, o MPDFT pertence ao MPU, não aos Ministérios Públicos estaduais. O Ministério Público de Contas atua no sistema de controle externo e segue disciplina própria.",
+      "example": "Uma questão classifica o MPDFT como Ministério Público estadual. Está errada: ele é ramo do MPU.",
+      "constitutional_reference": "Arts. 128, I e II, e 130: estrutura do MP; aplicação de direitos, vedações e forma de investidura ao MP de Contas.",
+      "exam_trap": "O MP Eleitoral não aparece como quinto ramo do MPU no art. 128. A atividade eleitoral é exercida por membros das estruturas existentes segundo a legislação.",
+      "memorization": [
+        "Não confunda MPDFT, MP estadual e Ministério Público de Contas.",
+        "MPU = Federal + Trabalho + Militar + DF/Territórios."
+      ],
+      "central": "O Ministério Público brasileiro reúne o MPU e os Ministérios Públicos estaduais; o MPDFT pertence ao MPU.",
+      "cards": [
+        [
+          "MPU",
+          "É formado pelo MPF, MPT, MPM e Ministério Público do Distrito Federal e Territórios."
+        ],
+        [
+          "MPs estaduais",
+          "Cada Estado possui seu Ministério Público, com organização própria nos termos da Constituição."
+        ],
+        [
+          "MP de Contas",
+          "Atua junto ao Tribunal de Contas; a Constituição estende a seus membros direitos, vedações e forma de investidura do MP."
+        ],
+        [
+          "Pegadinha de prova",
+          "O MPDFT integra o MPU. O MP Eleitoral não é um quinto ramo constitucional do art. 128."
+        ]
+      ],
+      "tips": [
+        "Art. 128: MPU + Ministérios Públicos dos Estados.",
+        "MPU = Federal, Trabalho, Militar e DF/Territórios."
+      ],
+      "icons": [
+        "federal-map",
+        "state-map",
+        "federal-court",
+        "number-trap"
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "PGR e procuradores-gerais estaduais: indicação e mandato",
+      "review": "O Procurador-Geral da República (PGR) chefia o Ministério Público da União. É escolhido pelo Presidente entre integrantes da carreira com mais de 35 anos, precisa de aprovação da maioria absoluta do Senado e tem mandato de dois anos, com possibilidade de recondução.\n\nNos Ministérios Públicos dos Estados, a escolha do Procurador-Geral de Justiça (PGJ) envolve lista tríplice de integrantes da carreira, escolha do chefe do Executivo e mandato de dois anos, com uma recondução.",
+      "example": "Uma questão diz que o Presidente só pode indicar PGR entre três nomes de uma lista constitucional obrigatória. Isso confunde a regra do PGR com a dos PGJs.",
+      "constitutional_reference": "Art. 128, §§ 1º a 4º: PGR e PGJs, formas de nomeação, prazos e destituição.",
+      "exam_trap": "A recondução do PGR exige nova aprovação do Senado, conforme legislação aplicável, e não segue necessariamente o limite estadual. A destituição do PGR depende de autorização da maioria absoluta do Senado; a dos PGJs segue o controle do Legislativo respectivo.",
+      "memorization": [
+        "PGR não depende de lista tríplice constitucional; procuradores-gerais estaduais dependem.",
+        "PGR = Presidente + Senado; PGJ estadual = lista tríplice + governador."
+      ],
+      "central": "PGR e PGJ têm formas de escolha diferentes: o PGR é indicado pelo Presidente e aprovado pelo Senado; o PGJ estadual parte de lista tríplice.",
+      "cards": [
+        [
+          "PGR",
+          "É escolhido pelo Presidente entre integrantes da carreira com mais de 35 anos e depende de aprovação da maioria absoluta do Senado."
+        ],
+        [
+          "Mandato do PGR",
+          "Dura dois anos e admite recondução, mediante novo procedimento constitucional."
+        ],
+        [
+          "PGJ estadual",
+          "É escolhido pelo chefe do Executivo a partir de lista tríplice de integrantes da carreira, para mandato de dois anos."
+        ],
+        [
+          "Pegadinha de prova",
+          "A Constituição não exige lista tríplice para o PGR; para o PGJ estadual, a lista é prevista."
+        ]
+      ],
+      "tips": [
+        "PGR: Presidente indica + Senado aprova por maioria absoluta.",
+        "PGJ estadual: lista tríplice + chefe do Executivo; uma recondução."
+      ],
+      "icons": [
+        "age",
+        "senate",
+        "calendar-law",
+        "presumed"
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "Art. 129: ação penal pública e ação civil pública",
+      "review": "O MP possui várias funções previstas no art. 129, mas elas não são todas exclusivas.\n\nA ação penal pública, que busca responsabilização por crimes nos casos da lei, é promovida privativamente pelo MP. Já a ação civil pública serve para proteger interesses coletivos e pode ser proposta por outros legitimados além do MP.\n\nO MP também fiscaliza a atividade policial e pode requisitar diligências nas condições legais.",
+      "example": "Uma associação autorizada pela lei pode propor ação civil pública. Já a ação penal pública cabe, em regra, ao MP; há ação privada subsidiária se o MP não agir no prazo legal.",
+      "constitutional_reference": "Art. 129, I e III: ação penal pública privativa; inquérito civil e ação civil pública para proteção de interesses constitucionalmente previstos.",
+      "exam_trap": "O STF admite investigação criminal realizada pelo MP, respeitados prazo razoável e direitos do investigado. A ação penal pública privativa e a ação civil pública não exclusiva têm finalidades diferentes.",
+      "memorization": [
+        "Não trate toda ação civil pública como monopólio do MP.",
+        "Ação penal pública = MP; ação civil pública = MP e outros legitimados."
+      ],
+      "central": "A ação penal pública é promovida privativamente pelo MP; a ação civil pública também pode ser proposta por outros legitimados previstos em lei.",
+      "cards": [
+        [
+          "Ação penal pública",
+          "É função privativa do Ministério Público, conforme a Constituição e a legislação."
+        ],
+        [
+          "Ação civil pública",
+          "O MP pode propô-la para proteger interesses coletivos, mas não possui exclusividade."
+        ],
+        [
+          "Outras funções",
+          "O MP também exerce controle externo da atividade policial e pode requisitar diligências nos termos legais."
+        ],
+        [
+          "Pegadinha de prova",
+          "Não confunda a ação penal pública, privativa do MP, com a ação civil pública, que tem outros legitimados."
+        ]
+      ],
+      "tips": [
+        "Art. 129, I: promoção privativa da ação penal pública.",
+        "Art. 129, III: inquérito civil e ação civil pública; não são monopólio do MP."
+      ],
+      "icons": [
+        "court",
+        "federal-law",
+        "clipboard",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Garantias, ingresso e vedações dos membros do MP",
+      "review": "Para ingressar no MP, o candidato participa de concurso público de provas e títulos, com OAB e exigência de três anos de atividade jurídica.\n\nDepois de entrar, o membro pode adquirir vitaliciedade após dois anos de exercício. Também possui inamovibilidade e irredutibilidade de subsídio, nos termos constitucionais.\n\nEssas garantias ajudam a evitar pressões políticas, mas não permitem descumprir a lei.",
+      "example": "Um promotor adquire vitaliciedade após dois anos de exercício, cumpridas as regras. Não é a estabilidade comum de três anos de servidor efetivo.",
+      "constitutional_reference": "Art. 128, § 5º, e art. 129, § 3º: garantias, vedações e requisitos de ingresso.",
+      "exam_trap": "Após a vitaliciedade, a perda do cargo exige sentença judicial transitada em julgado. Há vedações como advocacia privada, atuação político-partidária e certas outras funções públicas, com exceção para magistério.",
+      "memorization": [
+        "Três anos de atividade jurídica são exigência para ingressar; dois anos de exercício são prazo ligado à vitaliciedade.",
+        "MP: concurso + 3 anos de atividade jurídica; vitaliciedade após 2 anos."
+      ],
+      "central": "O ingresso no MP exige concurso e três anos de atividade jurídica; a vitaliciedade é adquirida após dois anos de exercício.",
+      "cards": [
+        [
+          "Ingresso na carreira",
+          "Concurso de provas e títulos, participação da OAB e mínimo de três anos de atividade jurídica."
+        ],
+        [
+          "Garantias",
+          "Vitaliciedade após dois anos, inamovibilidade e irredutibilidade de subsídio, nos termos constitucionais."
+        ],
+        [
+          "Vedações",
+          "Há proibições como advocacia e atividade político-partidária, além de outras previstas na Constituição."
+        ],
+        [
+          "Pegadinha de prova",
+          "Três anos de atividade jurídica são requisito de ingresso; dois anos se relacionam à vitaliciedade."
+        ]
+      ],
+      "tips": [
+        "Art. 129, § 3º: concurso + três anos de atividade jurídica.",
+        "Art. 128, § 5º: vitaliciedade após dois anos de exercício."
+      ],
+      "icons": [
+        "age",
+        "court",
+        "contract",
+        "exceptions"
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "CNMP: fiscalização do próprio Ministério Público",
+      "review": "O Conselho Nacional do Ministério Público (CNMP) fiscaliza o próprio MP em assuntos administrativos, financeiros e disciplinares.\n\nEle não integra o Judiciário e não julga recursos de decisões judiciais. Tem 14 integrantes e é presidido pelo Procurador-Geral da República.",
+      "example": "Um cidadão reclama da conduta administrativa de um membro do MP. A questão pode envolver o CNMP, não um recurso contra sentença.",
+      "constitutional_reference": "Art. 130-A: CNMP com 14 membros; controle administrativo, financeiro e disciplinar do MP.",
+      "exam_trap": "O CNMP recebe reclamações e examina a legalidade de determinados atos administrativos, além de atuar em questões disciplinares conforme a Constituição.",
+      "memorization": [
+        "O CNMP não é segunda instância de um processo judicial.",
+        "CNMP = fiscalização administrativa e disciplinar do MP."
+      ],
+      "central": "O CNMP controla aspectos administrativos, financeiros e disciplinares do Ministério Público; não julga recursos judiciais.",
+      "cards": [
+        [
+          "Composição",
+          "O Conselho Nacional do Ministério Público tem 14 membros e é presidido pelo PGR."
+        ],
+        [
+          "Controle",
+          "Fiscaliza a atuação administrativa e financeira do MP e o cumprimento dos deveres funcionais."
+        ],
+        [
+          "Natureza",
+          "É órgão de controle do MP, não tribunal nem órgão do Poder Judiciário."
+        ],
+        [
+          "Pegadinha de prova",
+          "O CNMP não funciona como instância recursal contra sentenças ou decisões judiciais."
+        ]
+      ],
+      "tips": [
+        "Art. 130-A: 14 integrantes; presidência do PGR.",
+        "CNMP controla o MP; não exerce jurisdição."
+      ],
+      "icons": [
+        "council",
+        "budget",
+        "admin-not-appeal",
+        "no-appeal"
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "Advocacia-Geral da União e sua chefia",
+      "review": "A Advocacia-Geral da União (AGU) representa a União dentro e fora dos tribunais. Também presta consultoria e assessoramento jurídico ao Poder Executivo federal.\n\nIsso é diferente da função do MP: a AGU atua na representação jurídica do ente público.",
+      "example": "Um órgão federal precisa se defender em juízo. Em regra, a representação da União cabe à Advocacia Pública, não ao MP.",
+      "constitutional_reference": "Art. 131: AGU e atribuições; Advogado-Geral da União nomeado livremente pelo Presidente dentre cidadãos maiores de 35 anos, com notável saber jurídico e reputação ilibada.",
+      "exam_trap": "Na ADI, o Advogado-Geral da União tem função constitucional de defender o ato questionado, com exceções reconhecidas pelo STF. A Procuradoria-Geral da Fazenda Nacional atua na representação da União em execução de dívida ativa tributária, nos termos da lei.",
+      "memorization": [
+        "A consultoria constitucional da AGU não significa assessoramento indistinto a todos os Poderes.",
+        "AGU = representação da União; consultoria ao Executivo federal."
+      ],
+      "central": "A AGU representa a União judicial e extrajudicialmente e presta consultoria e assessoramento jurídico ao Poder Executivo federal.",
+      "cards": [
+        [
+          "Representação da União",
+          "A AGU representa a União em juízo e fora dele, diretamente ou por órgão vinculado."
+        ],
+        [
+          "Consultoria jurídica",
+          "A Constituição prevê consultoria e assessoramento jurídico para o Poder Executivo."
+        ],
+        [
+          "Chefia da AGU",
+          "O Advogado-Geral é nomeado livremente pelo Presidente, observados os requisitos constitucionais."
+        ],
+        [
+          "Pegadinha de prova",
+          "A AGU representa a União; não é órgão de representação do Ministério Público nem de todos os Poderes."
+        ]
+      ],
+      "tips": [
+        "Art. 131: representação judicial e extrajudicial da União.",
+        "Consultoria e assessoramento jurídico constitucionais são do Poder Executivo."
+      ],
+      "icons": [
+        "federal-entity",
+        "federal-law",
+        "court-levels",
+        "presumed"
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "Procuradores de Estados e Distrito Federal",
+      "review": "Estados e Distrito Federal possuem suas próprias procuradorias, responsáveis por defender juridicamente o ente público e prestar consultoria nas situações previstas.\n\nPara ingressar na carreira, é necessário concurso público de provas e títulos, com participação da OAB em todas as fases.",
+      "example": "Uma ação é proposta contra um Estado. Quem representa o Estado é sua procuradoria, não a AGU.",
+      "constitutional_reference": "Art. 132: procuradores estaduais e distritais, carreiras e atribuições.",
+      "exam_trap": "Os procuradores estaduais podem adquirir estabilidade depois de três anos de efetivo exercício e avaliação de desempenho, conforme a Constituição. Isso é diferente da vitaliciedade dos membros do MP.",
+      "memorization": [
+        "Procurador estadual não possui vitaliciedade apenas por exercer função jurídica.",
+        "Procuradoria estadual/DF = representação e consultoria do ente."
+      ],
+      "central": "Procuradores dos Estados e do DF representam e prestam consultoria jurídica às suas unidades; ingressam por concurso com participação da OAB em todas as fases.",
+      "cards": [
+        [
+          "Representação",
+          "As procuradorias defendem judicial e extrajudicialmente o Estado ou o Distrito Federal."
+        ],
+        [
+          "Consultoria",
+          "Os procuradores prestam consultoria jurídica às respectivas unidades federadas."
+        ],
+        [
+          "Ingresso",
+          "A carreira começa por concurso público de provas e títulos, com participação da OAB em todas as fases."
+        ],
+        [
+          "Pegadinha de prova",
+          "Procurador estadual pode adquirir estabilidade após três anos; não possui a vitaliciedade dos membros do MP."
+        ]
+      ],
+      "tips": [
+        "Art. 132: representação e consultoria jurídica dos Estados e do DF.",
+        "A Constituição prevê estabilidade após três anos, conforme avaliação de desempenho."
+      ],
+      "icons": [
+        "state-court",
+        "constitution",
+        "federal-entity",
+        "number-trap"
+      ]
+    },
+    {
+      "chapter": 11,
+      "title": "Advocacia privada: indispensabilidade e limites",
+      "review": "A advocacia privada permite que pessoas e organizações defendam seus direitos com auxílio profissional. A Constituição diz que o advogado é indispensável à administração da Justiça e protege os atos praticados no exercício legítimo da profissão.\n\nEssa proteção não é liberdade para cometer abusos ou agir fora da lei.",
+      "example": "Um advogado faz manifestação legítima na defesa do cliente. A atuação profissional recebe proteção legal; uma conduta ilícita particular não fica imune por causa da profissão.",
+      "constitutional_reference": "Art. 133: indispensabilidade do advogado e inviolabilidade nos limites da lei.",
+      "exam_trap": "Há exceções legais à necessidade de advogado em certos procedimentos, como habeas corpus e algumas causas de pequeno valor nos Juizados Especiais Cíveis. Segundo a Súmula Vinculante 5, falta de defesa por advogado no processo administrativo disciplinar não viola, por si só, a Constituição.",
+      "memorization": [
+        "Indispensabilidade não significa que nunca exista hipótese legal de atuação sem advogado.",
+        "Advogado = defesa técnica, com proteção e limites."
+      ],
+      "central": "A Constituição reconhece a indispensabilidade do advogado e protege sua atuação profissional nos limites da lei.",
+      "cards": [
+        [
+          "Papel do advogado",
+          "O advogado exerce defesa técnica e contribui para a administração da Justiça."
+        ],
+        [
+          "Inviolabilidade",
+          "A proteção alcança atos e manifestações profissionais nos limites estabelecidos pela lei."
+        ],
+        [
+          "Exceções legais",
+          "Existem procedimentos em que a lei permite atuação sem advogado, conforme cada hipótese."
+        ],
+        [
+          "Pegadinha de prova",
+          "Indispensabilidade não significa exigência de advogado em absolutamente todo procedimento; inviolabilidade também não é absoluta."
+        ]
+      ],
+      "tips": [
+        "Art. 133: advogado indispensável à administração da Justiça.",
+        "A inviolabilidade profissional é expressamente limitada pela lei."
+      ],
+      "icons": [
+        "people",
+        "federal-law",
+        "exceptions",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 12,
+      "title": "Defensoria Pública: assistência integral e gratuita",
+      "review": "A Defensoria Pública oferece orientação jurídica e defesa gratuita a pessoas necessitadas, tanto em processos judiciais quanto fora deles.\n\nEla também pode proteger interesses coletivos e promover direitos humanos. É uma instituição permanente, com autonomia funcional e administrativa e princípios como unidade, indivisibilidade e independência funcional.",
+      "example": "Uma comunidade vulnerável enfrenta problema que atinge várias famílias. A Defensoria pode atuar coletivamente dentro de suas atribuições.",
+      "constitutional_reference": "Art. 134: missão, princípios e autonomia da Defensoria Pública; art. 135: remuneração por subsídio das carreiras.",
+      "exam_trap": "O STF reconheceu a legitimidade da Defensoria para propor ação civil pública. Defensores possuem inamovibilidade e não podem exercer advocacia fora das atribuições. A Constituição não lhes confere a vitaliciedade prevista para membros do MP.",
+      "memorization": [
+        "Defensoria não é apenas órgão para ajuizar ações individuais; também orienta e atua fora do processo.",
+        "Defensoria = orientação e defesa integral gratuita dos necessitados."
+      ],
+      "central": "A Defensoria oferece orientação jurídica e defesa integral e gratuita aos necessitados, em processos e fora deles, inclusive na proteção coletiva.",
+      "cards": [
+        [
+          "Assistência integral",
+          "Orienta juridicamente e defende os necessitados nas esferas judicial e extrajudicial."
+        ],
+        [
+          "Direitos humanos",
+          "A promoção dos direitos humanos integra sua missão constitucional."
+        ],
+        [
+          "Atuação coletiva",
+          "A Defensoria pode proteger direitos individuais e coletivos dentro de suas atribuições."
+        ],
+        [
+          "Pegadinha de prova",
+          "A Defensoria não atua apenas em ações individuais nem somente dentro do processo judicial."
+        ]
+      ],
+      "tips": [
+        "Art. 134: orientação jurídica e defesa integral e gratuita dos necessitados.",
+        "A atuação pode ser judicial, extrajudicial, individual e coletiva."
+      ],
+      "icons": [
+        "people",
+        "federal-law",
+        "clipboard",
+        "court"
+      ]
+    }
+  ]
+}

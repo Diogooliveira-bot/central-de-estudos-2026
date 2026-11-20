@@ -1,0 +1,566 @@
+{
+  "module": 7,
+  "module_title": "Processo Legislativo, Fiscalização e Finanças Públicas",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Processo legislativo e espécies do art. 59",
+      "review": "O processo legislativo é o caminho para criar normas previstas na Constituição. O art. 59 apresenta sete tipos: emenda constitucional, lei complementar, lei ordinária, lei delegada, medida provisória, decreto legislativo e resolução.\n\nCada tipo possui finalidade e regras próprias. Não basta chamar algo de lei: é preciso verificar qual norma a Constituição exige.",
+      "example": "Um ministério publica uma portaria. Ela pode trazer regras, mas não é uma das sete espécies do art. 59.",
+      "constitutional_reference": "Art. 59: EC, LC, LO, lei delegada, MP, decreto legislativo e resolução.",
+      "exam_trap": "Lei complementar não é superior à ordinária em todas as situações. A Constituição reserva certos assuntos à lei complementar e exige mais votos para aprová-la.",
+      "memorization": [
+        "Portaria e outros atos administrativos não são uma oitava espécie do art. 59.",
+        "Art. 59 = sete espécies."
+      ],
+      "central": "O art. 59 lista sete espécies normativas. Cada uma tem função e procedimento próprios.",
+      "cards": [
+        [
+          "O caminho das normas",
+          "A Constituição organiza como cada espécie normativa é proposta, debatida, aprovada e publicada."
+        ],
+        [
+          "Art. 59",
+          "São sete: emenda, lei complementar, lei ordinária, lei delegada, medida provisória, decreto legislativo e resolução."
+        ],
+        [
+          "Cuidado com a lista",
+          "Portaria é ato administrativo, não uma oitava espécie do art. 59."
+        ],
+        [
+          "Pegadinha de prova",
+          "Lei complementar não é sempre superior à ordinária. A Constituição reserva matérias e exige maioria absoluta."
+        ]
+      ],
+      "tips": [
+        "Art. 59 reúne sete espécies.",
+        "Confira a matéria e o rito exigido."
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Emenda constitucional: iniciativa, quórum e limites",
+      "review": "Emenda constitucional altera a própria Constituição e, por isso, exige aprovação mais difícil que uma lei comum.\n\nPodem propor uma PEC: ao menos um terço dos Deputados ou Senadores, o Presidente da República ou mais da metade das Assembleias Legislativas, com maioria relativa de seus membros.\n\nSão necessários dois turnos na Câmara e no Senado, com três quintos dos votos dos membros em cada turno.",
+      "example": "Uma PEC obtém maioria simples nas duas Casas. Não é suficiente: precisa de três quintos em dois turnos em cada Casa.",
+      "constitutional_reference": "Art. 60: 3/5 dos membros em dois turnos em cada Casa; promulgam as Mesas da Câmara e do Senado, sem sanção.",
+      "exam_trap": "As cláusulas pétreas protegem Federação, voto direto, secreto, universal e periódico, separação dos Poderes e direitos e garantias individuais. Não se emenda a Constituição durante intervenção federal, estado de defesa ou de sítio; também não há iniciativa popular de PEC federal.",
+      "memorization": [
+        "PEC não vai ao Presidente para sanção; três quintos não é maioria absoluta.",
+        "PEC: dois turnos e 3/5 em cada Casa."
+      ],
+      "central": "A PEC altera a Constituição e exige iniciativa legitimada, dois turnos e 3/5 em cada Casa.",
+      "cards": [
+        [
+          "Quem pode propor",
+          "PEC pode ser apresentada por 1/3 dos membros de qualquer Casa, pelo Presidente ou por mais da metade das Assembleias, cada uma por maioria relativa."
+        ],
+        [
+          "Aprovação",
+          "São dois turnos na Câmara e no Senado, com 3/5 dos membros em cada turno."
+        ],
+        [
+          "Limites",
+          "Não se emenda durante intervenção federal, estado de defesa ou estado de sítio. Cláusulas pétreas não podem ser abolidas."
+        ],
+        [
+          "Pegadinha de prova",
+          "PEC aprovada é promulgada pelas Mesas da Câmara e do Senado; não vai ao Presidente para sanção."
+        ]
+      ],
+      "tips": [
+        "PEC: 2 turnos e 3/5 em cada Casa.",
+        "Cláusulas pétreas limitam a proposta."
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Lei ordinária e lei complementar",
+      "review": "Lei ordinária é usada para assuntos que a Constituição não reservou a outro tipo de norma. Lei complementar é exigida quando a Constituição pede expressamente.\n\nLei complementar precisa de maioria absoluta; a ordinária segue, em geral, a votação comum, respeitado o quórum de presença.",
+      "example": "Se a Constituição exige lei complementar, uma lei ordinária não pode substituí-la, mesmo que receba muitos votos.",
+      "constitutional_reference": "Arts. 47 e 69: lei complementar aprovada por maioria absoluta; lei ordinária segue a regra geral, salvo disposição diversa.",
+      "exam_trap": "A distinção depende da matéria reservada e do procedimento. O nome 'complementar' não torna toda lei complementar superior a toda lei ordinária.",
+      "memorization": [
+        "Lei complementar não possui hierarquia geral superior à ordinária.",
+        "LC: reserva constitucional e maioria absoluta."
+      ],
+      "central": "Lei complementar é exigida quando a Constituição reserva a matéria; sua aprovação pede maioria absoluta.",
+      "cards": [
+        [
+          "Quando usar LC",
+          "A lei complementar só é exigida quando a própria Constituição reserva o assunto a esse tipo de lei."
+        ],
+        [
+          "Quórum da LC",
+          "A aprovação exige maioria absoluta dos membros da Casa (art. 69)."
+        ],
+        [
+          "Lei ordinária",
+          "Aplica-se em regra às matérias sem reserva constitucional, com quórum geral do art. 47."
+        ],
+        [
+          "Pegadinha de prova",
+          "A diferença decorre da matéria reservada e do quórum. LC não tem superioridade geral sobre LO."
+        ]
+      ],
+      "tips": [
+        "LC: matéria reservada + maioria absoluta.",
+        "LO: regra geral, salvo exigência constitucional."
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "Iniciativa legislativa e vício formal",
+      "review": "Iniciativa é apresentar o projeto que começa a tramitação. Em alguns assuntos, qualquer legitimado previsto pode propor; em outros, a Constituição reserva a apresentação a uma autoridade específica.\n\nQuando o projeto nasce de pessoa sem essa autorização, existe vício formal de iniciativa. A sanção posterior não corrige o problema.",
+      "example": "Um parlamentar apresenta projeto de iniciativa exclusiva do Presidente. Mesmo sancionado depois, o defeito de origem permanece.",
+      "constitutional_reference": "Art. 61: iniciativa legislativa geral e privativa, além das hipóteses constitucionais de participação popular. O art. 61, § 1º, lista as matérias de iniciativa privativa do Presidente da República. Lei de iniciativa parlamentar que cria despesa, mas não trata da estrutura ou das atribuições de órgãos do Executivo nem do regime jurídico de servidores, não usurpa a iniciativa privativa do Chefe do Poder Executivo, parâmetro aplicável por simetria a Governadores e Prefeitos (STF, Tema 917, ARE 878.911, 2016).",
+      "exam_trap": "A iniciativa popular de projeto de lei federal tem exigências específicas de assinaturas e distribuição; isso não equivale a poder propor PEC federal diretamente.",
+      "memorization": [
+        "A sanção do Presidente não conserta projeto iniciado por quem não podia fazê-lo.",
+        "Iniciativa = quem tem poder para propor."
+      ],
+      "central": "A iniciativa define quem pode apresentar o projeto. Algumas matérias têm legitimado privativo.",
+      "cards": [
+        [
+          "Iniciativa",
+          "Iniciativa é o poder de apresentar um projeto. A Constituição prevê legitimados gerais e matérias de iniciativa privativa."
+        ],
+        [
+          "Art. 61",
+          "O § 1º reserva certas matérias ao Presidente; projeto iniciado por autoridade incompetente pode ter vício formal."
+        ],
+        [
+          "Tema 917 do STF",
+          "Lei parlamentar que cria despesa não invade, por si só, iniciativa do Executivo, salvo matérias reservadas como estrutura de órgãos e servidores."
+        ],
+        [
+          "Pegadinha de prova",
+          "A sanção não corrige vício de iniciativa. Iniciativa popular de lei não significa iniciativa popular de PEC."
+        ]
+      ],
+      "tips": [
+        "Iniciativa = quem pode propor.",
+        "Verifique a matéria reservada antes de concluir."
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "Casa iniciadora, revisora e emendas",
+      "review": "Em muitos projetos, a Câmara e o Senado precisam participar. A primeira é a Casa iniciadora; a outra é a revisora.\n\nA revisora pode aprovar, rejeitar ou alterar o projeto. Se fizer alterações, elas voltam para a iniciadora, conforme o procedimento constitucional.",
+      "example": "A Câmara aprova um projeto, mas o Senado modifica alguns artigos. A Câmara deverá examinar as mudanças.",
+      "constitutional_reference": "Art. 65: revisão em regra em um turno; projeto rejeitado arquiva-se; emendas retornam à Casa iniciadora. Projetos do Presidente, do STF e dos Tribunais Superiores começam na Câmara dos Deputados (art. 64, caput). Projeto rejeitado só pode voltar na mesma sessão legislativa por proposta da maioria absoluta dos membros de qualquer das Casas (art. 67).",
+      "exam_trap": "Alguns tipos de norma, como PEC e MP, possuem ritos próprios. Verifique a espécie antes de aplicar automaticamente a regra comum.",
+      "memorization": [
+        "Se a Casa revisora alterar o texto, não se deve ignorar o retorno das emendas.",
+        "Revisora altera? Emendas voltam à iniciadora."
+      ],
+      "central": "Em muitos projetos, uma Casa inicia e a outra revisa; emendas da revisora voltam à iniciadora.",
+      "cards": [
+        [
+          "Duas Casas",
+          "Em muitos projetos, uma Casa inicia e a outra revisa; a Constituição disciplina a tramitação entre elas."
+        ],
+        [
+          "Casa revisora",
+          "Pode aprovar, rejeitar ou emendar. Se alterar o texto, as emendas voltam à iniciadora (art. 65)."
+        ],
+        [
+          "Tramitação",
+          "Projetos do Presidente, STF e Tribunais Superiores começam na Câmara (art. 64)."
+        ],
+        [
+          "Pegadinha de prova",
+          "PEC e medida provisória têm ritos próprios. Não aplique automaticamente a regra do projeto de lei comum."
+        ]
+      ],
+      "tips": [
+        "Emenda da revisora volta à iniciadora.",
+        "Projeto rejeitado tem regra do art. 67."
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "Sanção, veto, promulgação e publicação",
+      "review": "Depois de aprovado um projeto sujeito ao Presidente, ele pode sancionar (concordar) ou vetar (rejeitar). O veto pode ser jurídico, por inconstitucionalidade, ou político, por contrariar o interesse público.\n\nO silêncio durante quinze dias úteis é sanção tácita. Promulgação confirma a lei; publicação faz sua divulgação oficial.",
+      "example": "O Presidente não pode vetar apenas uma palavra para mudar o sentido de uma lei: o veto parcial deve alcançar unidade completa admitida pela Constituição.",
+      "constitutional_reference": "Art. 66: sanção expressa/tácita (15 dias úteis); veto motivado; veto parcial sobre artigo, parágrafo, inciso ou alínea completos.",
+      "exam_trap": "Os motivos do veto são informados ao Presidente do Senado em 48 horas. O Congresso aprecia o veto em sessão conjunta em até 30 dias do recebimento; sua rejeição exige maioria absoluta dos Deputados e dos Senadores.",
+      "memorization": [
+        "Veto jurídico é por inconstitucionalidade; político é por interesse público.",
+        "Sanção = concordar; veto = rejeitar; promulgação = confirmar; publicação = divulgar."
+      ],
+      "central": "Projeto sujeito ao Presidente pode ser sancionado ou vetado. Promulgação e publicação têm funções distintas.",
+      "cards": [
+        [
+          "Sanção e veto",
+          "Projeto sujeito à apreciação presidencial pode ser sancionado ou vetado. Sanção pode ser expressa ou tácita."
+        ],
+        [
+          "Prazos do art. 66",
+          "O Presidente tem 15 dias úteis para se manifestar. O silêncio importa sanção; o veto deve ser comunicado em 48 horas."
+        ],
+        [
+          "Veto",
+          "Pode ser jurídico ou político; veto parcial abrange texto integral de artigo, parágrafo, inciso ou alínea."
+        ],
+        [
+          "Pegadinha de prova",
+          "O Congresso aprecia o veto em sessão conjunta em até 30 dias; rejeitá-lo exige maioria absoluta de Deputados e Senadores."
+        ]
+      ],
+      "tips": [
+        "Sanção = concordância; veto = rejeição.",
+        "Promulgação confirma; publicação divulga."
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Medida provisória: relevância, urgência e prazos",
+      "review": "Medida provisória (MP) é um ato com força de lei que o Presidente edita em caso de relevância e urgência. Ela começa a produzir efeitos, mas precisa passar pelo Congresso.\n\nVigora inicialmente por 60 dias, podendo ser prorrogada uma vez por mais 60. Após 45 dias sem apreciação, entra em regime de urgência na Casa correspondente.",
+      "example": "O Presidente tenta mudar o Código Penal por MP alegando urgência. É proibido, pois medidas provisórias não podem tratar de Direito Penal.",
+      "constitutional_reference": "Art. 62: MP = relevância e urgência; 60 + 60 dias; urgência após 45 dias; matérias vedadas nos parágrafos.",
+      "exam_trap": "Os prazos ficam suspensos no recesso do Congresso. MP tributária pode seguir regras especiais. Se não for convertida em lei, perde eficácia desde a edição; há regras para as situações criadas enquanto vigorou.",
+      "memorization": [
+        "Urgência não afasta a proibição de MP sobre Direito Penal, Processo Penal ou Processo Civil.",
+        "MP = relevância + urgência; prazo 60 + 60 dias."
+      ],
+      "central": "A medida provisória exige relevância e urgência, produz efeitos imediatos e passa pelo Congresso.",
+      "cards": [
+        [
+          "Requisitos e prazo",
+          "O Presidente edita MP em caso de relevância e urgência. Ela produz efeitos desde a edição, mas depende de apreciação do Congresso."
+        ],
+        [
+          "Prazo",
+          "Vigora por 60 dias, prorrogáveis uma vez por igual período; após 45 dias sem votação, há urgência na Casa."
+        ],
+        [
+          "Matérias vedadas",
+          "A Constituição proíbe MP sobre matérias como direito penal, processo penal e processo civil, além de outras do art. 62."
+        ],
+        [
+          "Pegadinha de prova",
+          "Urgência não afasta as vedações. O prazo fica suspenso durante o recesso parlamentar."
+        ]
+      ],
+      "tips": [
+        "MP: relevância + urgência.",
+        "Prazo: 60 + 60 dias; urgência após 45."
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "Lei delegada, decreto legislativo e resolução",
+      "review": "Lei delegada é elaborada pelo Presidente depois de autorização do Congresso, com assunto e limites definidos.\n\nDecreto legislativo costuma tratar de competências exclusivas do Congresso. Resolução é usada para questões internas e outras hipóteses da Constituição.\n\nDecretos legislativos e resoluções não recebem sanção presidencial.",
+      "example": "O Congresso delega ao Presidente assunto específico. Ele não pode ir além da autorização nem tratar de matéria proibida pelo art. 68.",
+      "constitutional_reference": "Art. 68: lei delegada; art. 59: decretos legislativos e resoluções entre espécies normativas. Se a resolução de delegação determinar que o projeto de lei delegada seja apreciado pelo Congresso, a votação é única, vedada qualquer emenda (art. 68, § 3º).",
+      "exam_trap": "A delegação ocorre por resolução do Congresso. A Constituição proíbe delegar certos assuntos, como aqueles reservados a lei complementar.",
+      "memorization": [
+        "Lei delegada e MP não são a mesma coisa: a primeira depende de autorização; a segunda, de relevância e urgência.",
+        "Delegada = autorização; decreto legislativo e resolução = regras próprias."
+      ],
+      "central": "Lei delegada depende de autorização; decreto legislativo e resolução têm ritos sem sanção presidencial.",
+      "cards": [
+        [
+          "Lei delegada",
+          "O Congresso autoriza o Presidente por resolução, delimitando o conteúdo e os termos da delegação (art. 68)."
+        ],
+        [
+          "Decreto legislativo",
+          "Instrumento do Congresso para matérias de sua competência exclusiva; não passa por sanção presidencial."
+        ],
+        [
+          "Resolução",
+          "Usada em competências previstas na Constituição e em assuntos internos das Casas ou do Congresso."
+        ],
+        [
+          "Pegadinha de prova",
+          "Se houver apreciação congressual da lei delegada, a votação é única e sem emendas. Há matérias que não podem ser delegadas."
+        ]
+      ],
+      "tips": [
+        "Lei delegada depende de autorização.",
+        "Decreto legislativo e resolução dispensam sanção."
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "Fiscalização e controle externo",
+      "review": "Fiscalização é conferir se os recursos e bens públicos estão sendo usados corretamente.\n\nO controle externo não examina apenas notas fiscais. Também verifica legitimidade, custo, utilidade e resultados da despesa pública.\n\nNa União, o Congresso exerce esse controle com auxílio do Tribunal de Contas da União (TCU).",
+      "example": "Uma compra tem documentos corretos, mas preço muito acima do mercado. O controle pode questionar se o gasto foi econômico.",
+      "constitutional_reference": "Art. 70: fiscalização contábil, financeira, orçamentária, operacional e patrimonial, segundo legalidade, legitimidade e economicidade.",
+      "exam_trap": "O TCU auxilia o Congresso, mas possui competências constitucionais próprias e não é subordinado hierarquicamente a ele.",
+      "memorization": [
+        "Controle externo não é só conferir documentos.",
+        "Controle externo = legalidade, legitimidade, custo e resultados."
+      ],
+      "central": "O controle externo verifica legalidade, legitimidade, economicidade e resultados da gestão pública.",
+      "cards": [
+        [
+          "O que se fiscaliza",
+          "A fiscalização alcança aspectos contábeis, financeiros, orçamentários, operacionais e patrimoniais (art. 70)."
+        ],
+        [
+          "Critérios",
+          "Examina legalidade, legitimidade, economicidade, aplicação de recursos e renúncia de receitas."
+        ],
+        [
+          "Controle externo",
+          "No plano federal, o Congresso exerce o controle externo com auxílio do TCU."
+        ],
+        [
+          "Pegadinha de prova",
+          "O TCU auxilia o Congresso, mas tem competências constitucionais próprias e não é subordinado a ele."
+        ]
+      ],
+      "tips": [
+        "Art. 70: cinco dimensões de fiscalização.",
+        "Controle também avalia resultados e custo."
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "TCU: parecer presidencial e julgamento de responsáveis",
+      "review": "O TCU tem funções diferentes conforme as contas analisadas.\n\nNas contas anuais do Presidente, o TCU emite parecer prévio; quem as julga é o Congresso. Já as contas de administradores e responsáveis por bens públicos podem ser julgadas pelo TCU.",
+      "example": "O TCU analisa contas presidenciais e emite parecer em 60 dias. O julgamento é do Congresso.",
+      "constitutional_reference": "Arts. 49, IX, e 71, I–II: Congresso julga contas presidenciais; TCU julga contas dos responsáveis.",
+      "exam_trap": "As contas de governo do Prefeito são julgadas pela Câmara Municipal, com parecer do Tribunal de Contas; afastar o parecer exige dois terços dos vereadores. Para contas de gestão do Prefeito como ordenador de despesas, o material registra decisão do STF que atribui julgamento ao Tribunal de Contas.",
+      "memorization": [
+        "Parecer sobre contas do Presidente não significa julgamento pelo TCU.",
+        "Presidente: TCU opina, Congresso julga."
+      ],
+      "central": "O Congresso julga as contas anuais do Presidente após parecer prévio do TCU; o Tribunal julga responsáveis.",
+      "cards": [
+        [
+          "Contas do Presidente",
+          "Nas contas anuais do Presidente, o TCU emite parecer prévio; o Congresso Nacional realiza o julgamento."
+        ],
+        [
+          "Contas de responsáveis",
+          "O TCU julga contas de administradores e de quem gerencia recursos públicos, conforme art. 71, II."
+        ],
+        [
+          "Prefeito",
+          "Contas de governo são julgadas pela Câmara, com parecer do Tribunal de Contas; para afastar o parecer, exige-se 2/3 dos vereadores."
+        ],
+        [
+          "Pegadinha de prova",
+          "Parecer do TCU não equivale a julgamento das contas presidenciais pelo Tribunal."
+        ]
+      ],
+      "tips": [
+        "Presidente: TCU opina; Congresso julga.",
+        "Diferencie contas de governo e de gestão."
+      ]
+    },
+    {
+      "chapter": 11,
+      "title": "Registro de pessoal e prazo do Tema 445",
+      "review": "O TCU verifica a legalidade de certas admissões de servidores e de concessões iniciais de aposentadoria, reforma e pensão. Esse exame é chamado registro.\n\nHá exceções: nomeações para cargo em comissão não seguem a mesma exigência.\n\nO STF (Tema 445) estabeleceu prazo de cinco anos para examinar certos atos iniciais, contado da chegada do processo ao Tribunal de Contas.",
+      "example": "A aposentadoria chega ao TCU. Os cinco anos do Tema 445 contam da chegada do processo, não do início da carreira.",
+      "constitutional_reference": "Art. 71, III: controle de legalidade para fins de registro. STF, Tema 445: cinco anos desde a chegada do processo à Corte de Contas.",
+      "exam_trap": "A Súmula Vinculante 3 trata de defesa e contraditório em decisões do TCU que possam anular benefícios, com exceção para o exame inicial de aposentadoria, reforma e pensão. Não use o prazo do Tema 445 em toda fiscalização.",
+      "memorization": [
+        "Cargo em comissão é exceção ao registro de admissão.",
+        "Registro de pessoal: exceções; Tema 445 = 5 anos."
+      ],
+      "central": "O TCU registra certos atos de pessoal e observa o prazo de cinco anos do Tema 445 nos casos abrangidos.",
+      "cards": [
+        [
+          "Registro",
+          "O TCU aprecia, para fins de registro, a legalidade de admissões e concessões iniciais de aposentadoria, reforma e pensão (art. 71, III)."
+        ],
+        [
+          "Exceção",
+          "Nomeações para cargo em comissão não seguem o mesmo registro de admissão."
+        ],
+        [
+          "Tema 445 do STF",
+          "O Tribunal de Contas tem cinco anos, contados da chegada do processo, para julgar a legalidade do ato inicial abrangido pelo tema."
+        ],
+        [
+          "Pegadinha de prova",
+          "O prazo do Tema 445 não se aplica a toda fiscalização nem a todo ato do TCU."
+        ]
+      ],
+      "tips": [
+        "Tema 445: 5 anos da chegada do processo.",
+        "Cargo em comissão é exceção ao registro."
+      ]
+    },
+    {
+      "chapter": 12,
+      "title": "Controle interno e dever de comunicar irregularidades",
+      "review": "Controle interno é a fiscalização que os próprios Poderes fazem sobre seus atos. Executivo, Legislativo e Judiciário devem acompanhar metas, despesas, legalidade e resultados.\n\nSe o controle interno descobre uma irregularidade, deve comunicá-la ao TCU nas hipóteses constitucionais. Esconder o problema pode gerar responsabilidade.",
+      "example": "A auditoria interna encontra desvio de recursos e decide não comunicar. Essa omissão pode gerar responsabilização.",
+      "constitutional_reference": "Art. 74: sistemas integrados de controle interno e dever de ciência de irregularidades ao TCU.",
+      "exam_trap": "Cidadãos, partidos políticos, associações e sindicatos também podem denunciar irregularidades ao TCU, na forma da lei.",
+      "memorization": [
+        "Controle interno não é só do Executivo.",
+        "Interno = cada Poder fiscaliza; externo = Congresso e TCU."
+      ],
+      "central": "Os três Poderes mantêm controle interno e devem comunicar irregularidades nas hipóteses constitucionais.",
+      "cards": [
+        [
+          "Cada Poder fiscaliza",
+          "Executivo, Legislativo e Judiciário mantêm sistemas integrados de controle interno para avaliar metas, legalidade e resultados (art. 74)."
+        ],
+        [
+          "Dever de comunicar",
+          "Ao identificar irregularidade ou ilegalidade, o responsável pelo controle interno deve dar ciência ao TCU."
+        ],
+        [
+          "Denúncia",
+          "Cidadãos, partidos políticos, associações e sindicatos podem denunciar irregularidades ao Tribunal de Contas, na forma da lei."
+        ],
+        [
+          "Pegadinha de prova",
+          "Controle interno não é exclusivo do Executivo; cada Poder mantém seu sistema."
+        ]
+      ],
+      "tips": [
+        "Interno: cada Poder acompanha seus atos.",
+        "Externo: Congresso com auxílio do TCU."
+      ]
+    },
+    {
+      "chapter": 13,
+      "title": "Tribunais de Contas e EC 139/2026",
+      "review": "Tribunais de Contas fiscalizam a gestão dos recursos públicos. A EC 139/2026 reforçou sua proteção e os qualificou como instituições permanentes e essenciais.\n\nA emenda também alterou o art. 31, § 1º, vedando a extinção, criação ou instalação de Tribunais ou Conselhos de Contas dos Municípios, onde houver.",
+      "example": "Uma prova usa a redação antiga do art. 31 e permite criar Tribunal de Contas dos Municípios. O texto atualizado exige atenção à EC 139/2026.",
+      "constitutional_reference": "Arts. 31, § 1º, e 75, conforme EC 139/2026: Tribunais de Contas permanentes e essenciais; vedação constitucional expressa à extinção, criação ou instalação de Tribunais e Conselhos de Contas dos Municípios (art. 31, § 1º).",
+      "exam_trap": "Tribunais estaduais seguem, no que couber, normas constitucionais do TCU. O art. 75 deve ser lido na redação constitucional atual.",
+      "memorization": [
+        "Tribunal de Contas não é órgão subordinado ao Executivo nem pode ser criado livremente.",
+        "EC 139/2026 = proteção aos Tribunais de Contas."
+      ],
+      "central": "A EC 139/2026 reconhece Tribunais de Contas como permanentes e essenciais e atualiza os arts. 31 e 75.",
+      "cards": [
+        [
+          "EC 139/2026",
+          "A emenda tornou os Tribunais de Contas instituições permanentes e essenciais ao exercício do controle externo (art. 75)."
+        ],
+        [
+          "Art. 31, § 1º",
+          "Onde houver, ficam protegidos os Tribunais de Contas dos Estados ou do Município e os Conselhos ou Tribunais de Contas dos Municípios."
+        ],
+        [
+          "Aplicação",
+          "As normas da seção do TCU aplicam-se, no que couber, aos tribunais estaduais, do DF e dos municípios."
+        ],
+        [
+          "Pegadinha de prova",
+          "A Constituição veda extinção, criação ou instalação dos Tribunais e Conselhos mencionados no texto atual."
+        ]
+      ],
+      "tips": [
+        "EC 139/2026 alterou arts. 31 e 75.",
+        "Leia a redação vigente sobre Tribunais de Contas."
+      ]
+    },
+    {
+      "chapter": 14,
+      "title": "PPA, LDO e LOA: planejamento orçamentário",
+      "review": "O orçamento público organiza como o governo planeja arrecadar e gastar dinheiro.\n\nPPA é o Plano Plurianual: reúne objetivos de médio prazo. LDO é a Lei de Diretrizes Orçamentárias: apresenta prioridades e orienta o orçamento. LOA é a Lei Orçamentária Anual: estima receitas e fixa despesas do ano.\n\nPense na ordem: planejar, orientar e organizar o gasto anual.",
+      "example": "Um programa aparece no PPA, mas para ser executado naquele ano precisa respeitar também as leis orçamentárias aplicáveis.",
+      "constitutional_reference": "Art. 165: PPA, LDO e LOA. Art. 166: apreciação orçamentária e emendas.",
+      "exam_trap": "Emendas aos projetos orçamentários precisam cumprir regras de compatibilidade com PPA e LDO e, conforme o caso, indicar recursos.",
+      "memorization": [
+        "PPA não é o orçamento anual; LOA não substitui o planejamento de médio prazo.",
+        "PPA planeja; LDO orienta; LOA organiza o ano."
+      ],
+      "central": "PPA planeja metas; LDO orienta prioridades; LOA estima receitas e fixa despesas anuais.",
+      "cards": [
+        [
+          "PPA",
+          "Plano Plurianual define diretrizes, objetivos e metas de médio prazo do governo."
+        ],
+        [
+          "LDO",
+          "Lei de Diretrizes Orçamentárias orienta a elaboração da lei orçamentária anual e estabelece prioridades."
+        ],
+        [
+          "LOA",
+          "Lei Orçamentária Anual estima receitas e fixa despesas para o exercício financeiro."
+        ],
+        [
+          "Pegadinha de prova",
+          "PPA, LDO e LOA têm funções distintas; a LOA não substitui o planejamento plurianual."
+        ]
+      ],
+      "tips": [
+        "PPA planeja.",
+        "LDO orienta; LOA estima receitas e fixa despesas."
+      ]
+    },
+    {
+      "chapter": 15,
+      "title": "Emendas orçamentárias, vedações e duodécimos",
+      "review": "A Constituição limita alterações no orçamento e impede gastos sem autorização. Emendas parlamentares têm requisitos de valor, finalidade e execução.\n\nO art. 167 apresenta vedações orçamentárias. O art. 168 trata dos duodécimos, que são repasses periódicos destinados a manter a autonomia financeira de Poderes e instituições.",
+      "example": "O Executivo deixa de transferir parcela prevista para o Judiciário. Isso pode atingir sua autonomia financeira.",
+      "constitutional_reference": "Arts. 166–168: limite constitucional das emendas individuais e suas destinações; vedações orçamentárias; duodécimos até o dia 20 de cada mês.",
+      "exam_trap": "Emendas individuais possuem limites calculados segundo regras constitucionais relacionadas à receita corrente líquida, além de destinação de parte para ações e serviços públicos de saúde.",
+      "memorization": [
+        "Duodécimos não são valores facultativos que o Executivo pode reter como quiser.",
+        "Art. 167 = proibições; art. 168 = duodécimos."
+      ],
+      "central": "A Constituição limita emendas e despesas e garante repasses mensais aos Poderes e instituições.",
+      "cards": [
+        [
+          "Emendas e limites",
+          "Emendas ao orçamento devem observar requisitos constitucionais, inclusive compatibilidade com PPA e LDO e indicação de recursos, quando exigida."
+        ],
+        [
+          "Art. 167",
+          "Reúne vedações orçamentárias, como iniciar programa sem previsão ou realizar despesa acima dos créditos autorizados."
+        ],
+        [
+          "Duodécimos",
+          "Poderes e instituições recebem recursos financeiros em parcelas mensais até o dia 20 (art. 168)."
+        ],
+        [
+          "Pegadinha de prova",
+          "O Executivo não pode reter duodécimos como quiser; emendas também seguem limites e destinações constitucionais."
+        ]
+      ],
+      "tips": [
+        "Art. 167: vedações.",
+        "Art. 168: repasses até o dia 20."
+      ]
+    },
+    {
+      "chapter": 16,
+      "title": "Finanças públicas e Banco Central: arts. 163 e 164",
+      "review": "Finanças públicas abrangem dívidas, garantias, recursos, moeda e funcionamento de instituições financeiras públicas, além do orçamento.\n\nO art. 163 exige lei complementar para regras gerais desses assuntos. O art. 164 disciplina a emissão de moeda e a relação do Banco Central com o Tesouro.\n\nO Banco Central não pode emprestar diretamente ou indiretamente ao Tesouro, mas pode comprar e vender seus títulos para regular a moeda e os juros nas condições constitucionais.",
+      "example": "O Tesouro pede um empréstimo ao Banco Central. O art. 164, § 1º, proíbe essa operação.",
+      "constitutional_reference": "Art. 163: normas gerais de finanças públicas por LC. Art. 164: emissão de moeda pela União exercida exclusivamente pelo Banco Central e vedações de empréstimo direto ao Tesouro.",
+      "exam_trap": "Também existem regras sobre disponibilidades de caixa e administração financeira. O art. 163 não substitui as leis orçamentárias dos arts. 165 a 169.",
+      "memorization": [
+        "Art. 163 não trata apenas da LOA; finanças públicas é tema mais amplo.",
+        "163 = normas financeiras; 164 = Banco Central e moeda."
+      ],
+      "central": "Finanças públicas têm normas gerais no art. 163; o art. 164 disciplina moeda e Banco Central.",
+      "cards": [
+        [
+          "Finanças públicas",
+          "O art. 163 prevê lei complementar para normas gerais sobre finanças públicas, dívida, garantias e outros temas."
+        ],
+        [
+          "Banco Central",
+          "A emissão de moeda cabe exclusivamente ao Banco Central (art. 164)."
+        ],
+        [
+          "Relação com o Tesouro",
+          "O Banco Central não pode conceder empréstimo, direto ou indireto, ao Tesouro Nacional."
+        ],
+        [
+          "Pegadinha de prova",
+          "O art. 163 trata de finanças públicas em geral, não apenas da LOA; o art. 164 traz regras monetárias."
+        ]
+      ],
+      "tips": [
+        "Art. 163: normas gerais por LC.",
+        "Art. 164: emissão de moeda e Banco Central."
+      ]
+    }
+  ]
+}
