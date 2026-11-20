@@ -63,7 +63,7 @@ test('cada imagem M05 é inserida no final do capítulo correspondente e não em
   assert.ok(html.endsWith('</figure></section>'));
  }
  assert.ok(!renderCard([titles[0],'texto'],0,4).includes('/m05/'));
- assert.ok(!renderCard([titles[0],'texto'],0,6).includes('bc-review-infographic'));
+ assert.ok(renderCard(['Imunidade material parlamentar','texto'],0,6).includes('/assets/cf/revisao-guiada/m06/CF-M06-C01.webp'));
  assert.match(reader,/loading="lazy" decoding="async" width="1229" height="1536"/);
 });
 

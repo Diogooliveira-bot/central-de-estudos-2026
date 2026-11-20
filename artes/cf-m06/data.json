@@ -1,0 +1,74 @@
+[
+  {
+    "title": "O que é Congresso Nacional e bicameralismo",
+    "central": "No plano federal, o Poder Legislativo é exercido pelo Congresso Nacional, formado pela Câmara dos Deputados e pelo Senado Federal. Esse modelo de duas Casas é o bicameralismo.",
+    "cards": [["Art. 44", "O Congresso Nacional compõe-se da Câmara dos Deputados e do Senado Federal."], ["Duas Casas", "A Câmara representa o povo; o Senado representa os Estados e o Distrito Federal."], ["Tramitação", "Em regra, uma Casa inicia e a outra revisa o projeto de lei."], ["Pegadinha de prova", "Sessão conjunta não transforma Câmara e Senado em uma única Casa nem cria hierarquia entre elas."]],
+    "tips": ["Congresso = Câmara + Senado.", "Câmara representa o povo; Senado representa Estados e DF."]
+  },
+  {
+    "title": "Câmara dos Deputados: composição e eleição",
+    "central": "A Câmara dos Deputados representa a população. Seus membros são eleitos pelo sistema proporcional para mandato de quatro anos, respeitados os limites constitucionais de representação.",
+    "cards": [["Representação", "A Câmara representa o povo; por isso a distribuição de vagas considera a população."], ["Sistema proporcional", "A eleição segue regras proporcionais, e não apenas a votação individual mais alta."], ["Art. 45", "Cada Estado e o DF têm de 8 a 70 Deputados; cada Território elege 4."], ["Pegadinha de prova", "A Câmara não representa igualmente os Estados: essa é a lógica do Senado."]],
+    "tips": ["Câmara: povo + sistema proporcional + mandato de 4 anos.", "Limites: mínimo de 8 e máximo de 70 por Estado e DF."]
+  },
+  {
+    "title": "Senado Federal: composição, eleição e renovação",
+    "central": "O Senado representa os Estados e o Distrito Federal. Cada unidade elege três Senadores pelo sistema majoritário, para mandato de oito anos, com renovação alternada de um e dois terços.",
+    "cards": [["Composição", "Cada Estado e o Distrito Federal elegem três Senadores, independentemente da população."], ["Eleição", "O sistema é majoritário e cada Senador é eleito com dois suplentes."], ["Renovação", "A cada quatro anos renova-se, alternadamente, um terço e dois terços do Senado."], ["Pegadinha de prova", "A eleição ocorre a cada quatro anos, mas o mandato individual do Senador é de oito anos."]],
+    "tips": ["Senado: 3 por Estado/DF, majoritário, mandato de 8 anos.", "Renovação alternada: 1/3 e 2/3."]
+  },
+  {
+    "title": "Como funciona o quórum de deliberação",
+    "central": "Na regra geral do art. 47, as deliberações de cada Casa e de suas comissões são tomadas por maioria dos votos, desde que esteja presente a maioria absoluta de seus membros.",
+    "cards": [["Presença", "Primeiro, exige-se a presença de maioria absoluta dos membros da Casa ou comissão."], ["Aprovação", "Alcançado o quórum de presença, a regra geral é maioria dos votos."], ["Regra especial", "A Constituição pode exigir quórum diverso, como maioria absoluta ou três quintos."], ["Pegadinha de prova", "Maioria absoluta é calculada sobre o total de membros, não apenas sobre os presentes."]],
+    "tips": ["Art. 47: maioria absoluta presente + maioria dos votos.", "Antes de calcular, verifique se há quórum constitucional especial."]
+  },
+  {
+    "title": "Competências do Congresso: arts. 48 e 49",
+    "central": "Os arts. 48 e 49 distinguem matérias legislativas do Congresso e competências exclusivas de controle e decisão. A chave é saber quando há participação presidencial e quando não há.",
+    "cards": [["Art. 48", "Reúne matérias sobre as quais o Congresso dispõe, com sanção do Presidente quando exigida."], ["Art. 49", "Traz competências exclusivas do Congresso, em regra exercidas sem sanção presidencial."], ["Exemplo", "Julgar anualmente as contas do Presidente é competência exclusiva do Congresso."], ["Pegadinha de prova", "Não atribua uma competência exclusiva do Congresso apenas à Câmara ou apenas ao Senado."]],
+    "tips": ["Art. 48: matéria legislativa; art. 49: competência exclusiva.", "Competência exclusiva do Congresso, em regra, não depende de sanção presidencial."]
+  },
+  {
+    "title": "Câmara autoriza e Senado julga: arts. 51 e 52",
+    "central": "Câmara e Senado exercem funções diferentes. Em hipóteses constitucionais, a Câmara autoriza a instauração do processo; nos crimes de responsabilidade, o Senado realiza o julgamento.",
+    "cards": [["Câmara", "Autoriza, por dois terços de seus membros, a instauração de processo nas hipóteses do art. 51, I."], ["Senado", "Processa e julga o Presidente e outras autoridades nos crimes de responsabilidade."], ["Condenação", "No impeachment, a condenação exige dois terços dos votos do Senado."], ["Pegadinha de prova", "Autorizar não é julgar: a Câmara não substitui o Senado no julgamento político-jurídico."]],
+    "tips": ["Art. 51: Câmara autoriza; art. 52: Senado julga crimes de responsabilidade.", "Não confunda crime de responsabilidade com crime comum."]
+  },
+  {
+    "title": "Sessões legislativas e reuniões do Congresso",
+    "central": "Legislatura, sessão legislativa e sessão conjunta não são sinônimos. A legislatura dura quatro anos; a sessão legislativa é anual; a sessão conjunta reúne as duas Casas para finalidade constitucional.",
+    "cards": [["Legislatura", "É o período de quatro anos ligado ao mandato dos Deputados Federais."], ["Sessão anual", "Em regra, vai de 2 de fevereiro a 17 de julho e de 1º de agosto a 22 de dezembro."], ["Sessão conjunta", "Deputados e Senadores reúnem-se sem perder a condição de membros de Casas distintas."], ["Pegadinha de prova", "Mesa tem mandato de dois anos; não confunda com legislatura ou sessão legislativa."]],
+    "tips": ["Legislatura = 4 anos; sessão legislativa = período anual.", "Sessão conjunta não elimina o bicameralismo."]
+  },
+  {
+    "title": "Comissões parlamentares e CPI",
+    "central": "A CPI investiga fato determinado por prazo certo. Sua criação depende de requerimento de um terço dos membros da Casa e suas conclusões podem ser encaminhadas ao Ministério Público.",
+    "cards": [["Três requisitos", "Requerimento de 1/3 dos membros, fato determinado e prazo certo."], ["Direito da minoria", "Atendidos os requisitos constitucionais, a CPI não depende de escolha política da maioria."], ["Limites", "A CPI investiga; não condena pessoas nem decreta medidas reservadas exclusivamente ao Judiciário."], ["Pegadinha de prova", "Poderes investigatórios próprios de autoridades judiciais não permitem interceptação telefônica ou busca domiciliar pela CPI."]],
+    "tips": ["Art. 58, § 3º: 1/3 + fato determinado + prazo certo.", "CPI investiga e pode encaminhar conclusões ao Ministério Público."]
+  },
+  {
+    "title": "Imunidade material parlamentar",
+    "central": "Deputados e Senadores são invioláveis civil e penalmente por suas opiniões, palavras e votos. A proteção preserva a liberdade do mandato e exige atenção ao contexto da manifestação.",
+    "cards": [["Art. 53, caput", "A inviolabilidade alcança opiniões, palavras e votos de Deputados e Senadores."], ["Finalidade", "Protege a atuação parlamentar e o debate público próprio do mandato."], ["Fora do Parlamento", "A ligação entre a manifestação e o exercício do mandato é especialmente relevante."], ["Pegadinha de prova", "Imunidade material não é licença automática para ofensa puramente privada e sem vínculo funcional."]],
+    "tips": ["Imunidade material: opiniões, palavras e votos.", "Analise sempre o contexto e o vínculo com a atividade parlamentar."]
+  },
+  {
+    "title": "Imunidade formal: prisão e processo",
+    "central": "Desde a diplomação, Deputados e Senadores somente podem ser presos em flagrante de crime inafiançável. A Constituição ainda prevê regras próprias para comunicação à Casa e sustação de processo.",
+    "cards": [["Prisão", "A regra é: desde a diplomação, prisão apenas em flagrante de crime inafiançável."], ["Comunicação", "Nessa hipótese, os autos são remetidos em 24 horas à Casa respectiva, que decide sobre a prisão."], ["Sustação", "Há disciplina constitucional própria para sustar processo por infração posterior à diplomação."], ["Pegadinha de prova", "A Casa decide sobre a prisão; ela não substitui o julgamento criminal pelo Poder Judiciário."]],
+    "tips": ["Art. 53, § 2º: flagrante de crime inafiançável.", "Não confunda imunidade material com regras de prisão e processo."]
+  },
+  {
+    "title": "Incompatibilidades parlamentares: art. 54",
+    "central": "O art. 54 impõe incompatibilidades para prevenir conflitos de interesse. Algumas vedações começam na diplomação; outras, apenas na posse. Por isso, o momento do fato é decisivo.",
+    "cards": [["Diplomação", "Desde a diplomação, há vedações como certos contratos com entidades públicas, salvo cláusulas uniformes."], ["Posse", "Desde a posse, aplicam-se outras proibições, como patrocinar causa contra certas entidades públicas."], ["Finalidade", "As vedações preservam independência e evitam uso privado do mandato."], ["Pegadinha de prova", "Nem todas as incompatibilidades surgem na posse: o art. 54 separa os dois momentos."]],
+    "tips": ["Art. 54: identifique a conduta e o marco temporal.", "Diplomação e posse são momentos constitucionais diferentes."]
+  },
+  {
+    "title": "Perda, manutenção e licença do mandato",
+    "central": "Os arts. 55 e 56 diferenciam hipóteses de perda, declaração pela Mesa e decisão da Casa, além de prever afastamentos que não causam perda do mandato.",
+    "cards": [["Decisão da Casa", "Nos incisos I, II e VI do art. 55, a perda é decidida pela Casa, assegurada ampla defesa."], ["Declaração da Mesa", "Nos incisos III, IV e V, a Mesa declara a perda, conforme o procedimento constitucional."], ["Licenças", "O art. 56 prevê hipóteses de investidura e licença sem perda do mandato."], ["Pegadinha de prova", "Nem toda perda de mandato é automática nem toda hipótese é decidida pelo Plenário."]],
+    "tips": ["Art. 55: diferencie decisão da Casa e declaração da Mesa.", "Licença para interesse particular: sem remuneração e até 120 dias por sessão legislativa."]
+  }
+]
