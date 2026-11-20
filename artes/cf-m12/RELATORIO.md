@@ -26,7 +26,7 @@
 ## Produção e integração
 
 - Artes PNG geradas: 13, com 1229 × 1536 px.
-- Versões otimizadas para a aplicação: 13 WebP.
+- Versões otimizadas e integradas à aplicação: 13 WebP, uma no fim de cada capítulo.
 - Pictogramas: quatro por arte; vetoriais e específicos ao conteúdo de cada quadro, incluindo alertas relevantes para as pegadinhas.
 - Logo e personagem: arquivos originais do template de referência da Central, sem redesenho.
 - Integração: o leitor acrescenta a arte depois do conteúdo de cada capítulo apenas no M12; as dimensões responsivas e carregamento lazy/async permanecem ativos.
@@ -45,6 +45,7 @@ Fontes oficiais consultadas:
 
 ## Testes e publicação
 
-- Teste unitário M12: 4 verificações aprovadas, 0 falhas (correspondência de títulos, existência/formato/dimensões das 13 imagens, associação ao capítulo no leitor e presença dos pictogramas no renderer).
+- Teste unitário M12: 4 verificações aprovadas, 0 falhas (correspondência de títulos, existência/formato/dimensões das 13 imagens, associação ao capítulo no leitor e presença dos pictogramas no renderer). As quatro verificações também passaram no CI depois da correção do envio dos PNGs.
 - Revisão visual: amostra individual e prancha de todas as artes conferidas; sem cortes identificados, com texto contido nos quadros.
-- Status da publicação: aguardando implantação do commit M12.
+- Status da publicação: implantada em produção no domínio `app.basecompleta.com.br`; deployment Vercel em estado `READY`, a partir do commit `3bd35a199b6f8067cfed78c34a0bab996c7b13d9`.
+- Pendências do M12: nenhuma. O check de análise JavaScript/CodeQL, o check de autenticação, o check de navegação PWA e os quatro testes específicos do M12 passaram. A suíte geral ainda tem três falhas em testes de orientação, carregamento legado e cabeçalho do `index.html`; o check de segurança tem uma falha no teste de exclusão em cascata. As mesmas falhas aparecem no commit anterior à tarefa, sem alteração em arquivos dessas áreas.
