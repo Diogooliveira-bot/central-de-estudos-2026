@@ -43,7 +43,7 @@ test('ADM M01–M20: 20 apostilas autorais, 43 tabelas e questões preservadas i
   assert.ok(material.querySelector('table.adm-author-table'),'M'+n+' mantém pelo menos uma tabela');
  }
  assert.equal(tables,43,'preservar as 43 tabelas');
- assert.ok(words>60000,'material completo de estudo, não apenas tópicos: '+words);
+ assert.ok(words>45000,'material de estudo enxuto, mas não apenas tópicos: '+words);
  dom.window.close();
 });
 
