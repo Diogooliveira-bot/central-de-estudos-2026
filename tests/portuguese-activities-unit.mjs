@@ -129,7 +129,7 @@ test('Português M01–M24 mantém teoria, revisão e exercícios sem o card de 
   assert.equal(container.querySelectorAll('.pt-cf-card-pdf,[data-pt-cf-open="pdf"]').length, 0);
   assert.equal(container.querySelectorAll('[data-pt-cf-quiz]').length, 50);
   for (const filename of ['index.html', 'central-v119.html']) {
-    assert.match(fs.readFileSync(path.join(root, filename), 'utf8'), /ui\\/current-courses\\.js\\?v=20261120pt-sem-pdf1/);
+    assert.match(fs.readFileSync(path.join(root, filename), 'utf8'), /ui\/current-courses\.js\?v=20261120pt-sem-pdf1/);
   }
   // O visualizador compartilhado continua disponível para outros conteúdos.
   assert.match(fs.readFileSync(path.join(root, 'ui/apostilas-pdf-v1.js'), 'utf8'), /rlm-m/);
