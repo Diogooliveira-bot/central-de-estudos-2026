@@ -106,3 +106,32 @@ test('numeração visual é sequencial mesmo após filtrar questões sem alterna
     dom.window.close();
   }
 });
+
+test('Português M01–M24 mantém teoria, revisão e exercícios sem o card de PDF', () => {
+  const dom = new JSDOM('<!doctype html><html><body></body></html>', {
+    url: 'https://base-completa.test/', runScripts: 'outside-only'
+  });
+  const w = dom.window;
+  w.CentralDisciplineLoader = {};
+  w.CentralPortugueseCourse = {
+    modules: Array.from({ length: 24 }, (_, index) => {
+      const num = String(index + 1).padStart(2, '0');
+      return { id: 'm' + num, num, title: 'Módulo ' + num };
+    }),
+    review: { id: 'review', title: 'Revisão final', review: true }
+  };
+  w.eval(fs.readFileSync(path.join(root, 'ui/current-courses.js'), 'utf8'));
+  const container = w.document.createElement('div');
+  container.innerHTML = w.renderPortugueseMaster();
+  assert.equal(container.querySelectorAll('.pt-cf-module').length, 25);
+  assert.equal(container.querySelectorAll('.pt-cf-card-primary').length, 25);
+  assert.equal(container.querySelectorAll('.pt-cf-card-review').length, 25);
+  assert.equal(container.querySelectorAll('.pt-cf-card-pdf,[data-pt-cf-open="pdf"]').length, 0);
+  assert.equal(container.querySelectorAll('[data-pt-cf-quiz]').length, 50);
+  for (const filename of ['index.html', 'central-v119.html']) {
+    assert.match(fs.readFileSync(path.join(root, filename), 'utf8'), /ui\\/current-courses\\.js\\?v=20261120pt-sem-pdf1/);
+  }
+  // O visualizador compartilhado continua disponível para outros conteúdos.
+  assert.match(fs.readFileSync(path.join(root, 'ui/apostilas-pdf-v1.js'), 'utf8'), /rlm-m/);
+  dom.window.close();
+});
