@@ -1,0 +1,391 @@
+{
+  "module": 9,
+  "module_title": "Poder Judiciário I: disposições gerais e STF",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Estrutura do Judiciário e seus órgãos",
+      "review": "O Poder Judiciário tem vários órgãos, e cada um julga determinados assuntos. O art. 92 mostra essa organização.\n\nO Supremo Tribunal Federal (STF) é o principal guardião da Constituição. O Superior Tribunal de Justiça (STJ) atua especialmente na interpretação da lei federal. TST, TSE e STM são os tribunais superiores das áreas trabalhista, eleitoral e militar.\n\nTambém existem tribunais e juízes federais, estaduais e especializados. O Conselho Nacional de Justiça (CNJ) faz controle administrativo e disciplinar, não julga recursos como um tribunal.",
+      "example": "Uma reclamação trabalhista comum começa na Justiça do Trabalho, conforme suas regras. Não vai direto ao STF só porque envolve direitos.",
+      "constitutional_reference": "Art. 92: órgãos do Poder Judiciário. STF, CNJ e Tribunais Superiores têm sede na Capital Federal.",
+      "exam_trap": "STF e tribunais superiores atuam nacionalmente, mas cada um tem atribuições próprias. O STF não é classificado pelo art. 92 como um dos 'Tribunais Superiores'. O CNJ tem 15 integrantes, mandato de dois anos e uma recondução.",
+      "memorization": [
+        "CNJ fiscaliza a administração da Justiça; não funciona como tribunal de recursos.",
+        "STF = Constituição; STJ = lei federal; CNJ = controle administrativo."
+      ],
+      "central": "O Judiciário é organizado em órgãos com funções diferentes. O STF guarda a Constituição; o CNJ fiscaliza a administração da Justiça.",
+      "cards": [
+        [
+          "Órgãos do Judiciário",
+          "A Constituição organiza STF, STJ, tribunais e juízes no art. 92."
+        ],
+        [
+          "Funções próprias",
+          "STF: Constituição. STJ: lei federal. TST, TSE e STM: áreas especializadas."
+        ],
+        [
+          "Papel do CNJ",
+          "Controla a administração e a disciplina; não julga recursos como um tribunal."
+        ],
+        [
+          "Pegadinha",
+          "O STF não aparece no art. 92 como um dos “Tribunais Superiores”."
+        ]
+      ],
+      "tips": [
+        "Arts. 92 e 103-B: órgãos e papel do CNJ.",
+        "CNJ controla; não funciona como instância recursal."
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Autonomia dos tribunais e organização administrativa",
+      "review": "Os tribunais precisam de autonomia para organizar seu trabalho sem interferência indevida de outros Poderes.\n\nPodem escolher sua direção, organizar secretarias, elaborar regimentos e praticar os atos administrativos autorizados pela Constituição.\n\nTambém fazem propostas de orçamento, mas precisam seguir limites constitucionais e as regras das leis orçamentárias.",
+      "example": "Um tribunal pode organizar o funcionamento da secretaria, mas não pode criar qualquer cargo ou despesa por simples decisão interna.",
+      "constitutional_reference": "Arts. 96 e 99: competências privativas dos tribunais e autonomia administrativa/financeira.",
+      "exam_trap": "A autonomia administrativa e financeira existe dentro da lei. A proposta orçamentária deve seguir os limites da LDO e os procedimentos da Constituição.",
+      "memorization": [
+        "Autonomia não é liberdade ilimitada para criar cargos ou gastar dinheiro.",
+        "Tribunais se organizam, mas respeitam lei e orçamento."
+      ],
+      "central": "Tribunais têm autonomia administrativa e financeira para organizar a Justiça, dentro das regras constitucionais, legais e orçamentárias.",
+      "cards": [
+        [
+          "Autogoverno",
+          "Os tribunais elegem seus órgãos diretivos e organizam suas secretarias."
+        ],
+        [
+          "Regimentos",
+          "Podem elaborar seus regimentos, respeitando as normas processuais."
+        ],
+        [
+          "Orçamento",
+          "A proposta deve seguir os limites da LDO e o processo previsto na Constituição."
+        ],
+        [
+          "Pegadinha",
+          "Autonomia não permite criar cargos ou despesas sem base legal."
+        ]
+      ],
+      "tips": [
+        "Arts. 96 e 99: autonomia e competências dos tribunais.",
+        "Autonomia existe dentro da Constituição, da lei e do orçamento."
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Ingresso e promoção na magistratura",
+      "review": "Para entrar na carreira de juiz, a regra é concurso público de provas e títulos para juiz substituto.\n\nA Constituição exige três anos de atividade jurídica e prevê participação da Ordem dos Advogados do Brasil (OAB) em todas as fases do concurso.\n\nDepois de ingressar, o juiz pode ser promovido conforme regras que alternam antiguidade e merecimento.",
+      "example": "Uma pessoa termina a faculdade de Direito e quer tomar posse imediatamente como juiz. O diploma sozinho não supre o requisito de três anos de atividade jurídica.",
+      "constitutional_reference": "Art. 93: Estatuto da Magistratura por lei complementar de iniciativa do STF (até sua edição, vale a LC nº 35/1979, a LOMAN); concurso com três anos de atividade jurídica.",
+      "exam_trap": "Quando a regra exige considerar o juiz mais antigo, sua recusa depende do procedimento constitucional, com voto fundamentado de dois terços do tribunal e ampla defesa.",
+      "memorization": [
+        "Três anos de atividade jurídica para ingressar não são o mesmo que dois anos para vitaliciedade no primeiro grau.",
+        "Ingresso: concurso + OAB + 3 anos de atividade jurídica."
+      ],
+      "central": "O ingresso na magistratura começa por concurso de provas e títulos e exige três anos de atividade jurídica.",
+      "cards": [
+        [
+          "Concurso público",
+          "O ingresso ocorre no cargo inicial de juiz substituto, por provas e títulos."
+        ],
+        [
+          "Três anos",
+          "É preciso comprovar três anos de atividade jurídica."
+        ],
+        [
+          "Participação da OAB",
+          "A OAB participa de todas as fases do concurso."
+        ],
+        [
+          "Pegadinha",
+          "Os três anos para ingresso não são os dois anos para vitaliciedade inicial."
+        ]
+      ],
+      "tips": [
+        "Art. 93: concurso + OAB + 3 anos de atividade jurídica.",
+        "Promoção alterna antiguidade e merecimento, conforme a Constituição."
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "Vitaliciedade, inamovibilidade e irredutibilidade",
+      "review": "A Constituição dá três garantias importantes aos juízes para que possam decidir sem pressão.\n\nVitaliciedade: proteção especial contra perda do cargo; no primeiro grau, é adquirida após dois anos de exercício. Inamovibilidade: impede remoção arbitrária de um juiz. Irredutibilidade de subsídio: protege a remuneração dentro dos limites constitucionais.\n\nEssas garantias não significam ausência de fiscalização ou punição quando a Constituição permitir.",
+      "example": "Uma autoridade não pode mandar transferir um juiz de cidade apenas porque não gostou da decisão judicial.",
+      "constitutional_reference": "Art. 95: vitaliciedade, inamovibilidade e irredutibilidade, com regras e exceções constitucionais.",
+      "exam_trap": "A remoção por interesse público segue regras e exige decisão por maioria absoluta do tribunal ou do CNJ, com defesa. Depois de adquirida a vitaliciedade, a perda do cargo depende de sentença judicial definitiva. Há vedações, como atividade político-partidária.",
+      "memorization": [
+        "Vitaliciedade do juiz de primeiro grau surge após dois anos, não três.",
+        "Garantias: vitaliciedade, inamovibilidade e irredutibilidade."
+      ],
+      "central": "Vitaliciedade, inamovibilidade e irredutibilidade protegem a independência judicial, mas não afastam controles e exceções constitucionais.",
+      "cards": [
+        [
+          "Vitaliciedade",
+          "No primeiro grau, é adquirida após dois anos de exercício."
+        ],
+        [
+          "Inamovibilidade",
+          "Protege contra remoção arbitrária; há remoção por interesse público nos termos constitucionais."
+        ],
+        [
+          "Irredutibilidade",
+          "Protege o subsídio, respeitados os limites constitucionais."
+        ],
+        [
+          "Pegadinha",
+          "Vitaliciedade não impede punição; após adquirida, a perda do cargo exige sentença judicial definitiva."
+        ]
+      ],
+      "tips": [
+        "Art. 95: três garantias e vedações dos juízes.",
+        "No primeiro grau, vitaliciedade após 2 anos — não 3."
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "Publicidade, fundamentação e atividade ininterrupta",
+      "review": "A Justiça deve funcionar de maneira transparente. Por isso, decisões judiciais precisam ser fundamentadas: o juiz deve explicar por que decidiu daquela forma.\n\nA publicidade permite que a sociedade acompanhe os atos da Justiça. Em certas situações, a lei restringe o acesso para proteger intimidade e outros interesses legítimos.\n\nA atividade da Justiça deve ser contínua, conforme a Constituição.",
+      "example": "Uma sentença diz apenas 'pedido negado', sem justificar a conclusão quando a motivação é exigida. Isso pode violar a Constituição.",
+      "constitutional_reference": "Art. 93, IX: publicidade dos julgamentos e fundamentação das decisões, sob pena de nulidade; art. 93, XII: atividade jurisdicional ininterrupta, sem férias coletivas nos juízos e tribunais de segundo grau.",
+      "exam_trap": "Decisões administrativas dos tribunais devem ser motivadas e tomadas em sessão pública. Para decisões disciplinares há exigências próprias, incluindo maioria absoluta dos membros do tribunal.",
+      "memorization": [
+        "Publicidade não significa expor informação privada protegida. Fundamentar não é opcional.",
+        "Justiça: decisões públicas e fundamentadas, respeitadas exceções."
+      ],
+      "central": "Decisões judiciais devem ser fundamentadas e, em regra, públicas. A atividade jurisdicional não pode parar nos termos da Constituição.",
+      "cards": [
+        [
+          "Fundamentação",
+          "O juiz deve explicar as razões da decisão; a Constituição prevê nulidade se faltar motivação."
+        ],
+        [
+          "Publicidade",
+          "Julgamentos são públicos, com restrições legais para proteger intimidade e interesse social."
+        ],
+        [
+          "Justiça contínua",
+          "A Constituição veda férias coletivas nos juízos e tribunais de segundo grau."
+        ],
+        [
+          "Pegadinha",
+          "Publicidade não elimina hipóteses legais de restrição de acesso."
+        ]
+      ],
+      "tips": [
+        "Art. 93, IX: publicidade e fundamentação das decisões.",
+        "Art. 93, XII: atividade jurisdicional ininterrupta."
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "Quinto constitucional e órgão especial",
+      "review": "O quinto constitucional reserva parte das vagas de determinados tribunais para profissionais da advocacia e do Ministério Público.\n\nA escolha ocorre em etapas: a classe indica seis nomes, o tribunal reduz para três e a autoridade do Executivo faz a escolha final, respeitando os requisitos.\n\nTribunais com mais de 25 julgadores podem criar um órgão especial para exercer funções previstas na Constituição.",
+      "example": "Um advogado com a experiência exigida pode integrar um tribunal pelo quinto constitucional, sem passar pelo concurso comum para juiz substituto.",
+      "constitutional_reference": "Art. 94: quinto constitucional, listas 6 → 3 → escolha em 20 dias. Art. 93, XI: órgão especial de 11 a 25 membros nos tribunais com mais de 25 julgadores.",
+      "exam_trap": "Para o quinto, exige-se mais de dez anos de carreira para membros do Ministério Público ou de atividade profissional para advogados, além dos outros requisitos. O órgão especial tem regras próprias de composição.",
+      "memorization": [
+        "Quinto constitucional não significa eleição direta de advogados ou promotores para tribunal.",
+        "Quinto = 1/5 de certas vagas; lista de seis → três → escolha final."
+      ],
+      "central": "O quinto constitucional reserva uma fração de vagas de certos tribunais à advocacia e ao Ministério Público; órgãos especiais podem auxiliar tribunais maiores.",
+      "cards": [
+        [
+          "Quinto constitucional",
+          "Um quinto das vagas previstas é destinado a advogados e membros do Ministério Público."
+        ],
+        [
+          "Lista em etapas",
+          "A classe indica 6 nomes; o tribunal reduz a 3; a autoridade escolhe em 20 dias."
+        ],
+        [
+          "Órgão especial",
+          "Tribunal com mais de 25 julgadores pode ter órgão especial de 11 a 25 membros."
+        ],
+        [
+          "Pegadinha",
+          "O quinto não é eleição direta: há lista, escolha do tribunal e nomeação final."
+        ]
+      ],
+      "tips": [
+        "Arts. 94 e 93, XI: quinto e órgão especial.",
+        "Sequência do quinto: 6 → 3 → escolha final."
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Reserva de plenário no controle de constitucionalidade",
+      "review": "Quando um tribunal pretende declarar uma lei inconstitucional, deve respeitar a regra chamada reserva de plenário.\n\nEm geral, essa declaração exige voto da maioria absoluta dos membros do tribunal ou de seu órgão especial. Uma turma ou câmara não pode ignorar essa exigência apenas usando outras palavras.",
+      "example": "Uma turma de tribunal afasta uma lei porque a considera contrária à Constituição, sem seguir a reserva de plenário. Isso pode violar o art. 97.",
+      "constitutional_reference": "Art. 97: declaração de inconstitucionalidade por maioria absoluta dos membros do tribunal ou órgão especial.",
+      "exam_trap": "A Súmula Vinculante 10 também alcança o afastamento da aplicação de lei por fundamento constitucional, mesmo sem usar a expressão 'declaro inconstitucional'. Há exceção quando o plenário ou órgão especial já decidiu a questão, conforme o CPC. A regra não se aplica ao juiz de primeiro grau.",
+      "memorization": [
+        "Não confunda reserva de plenário com o quórum de dois terços para súmula vinculante.",
+        "Reserva de plenário = maioria absoluta do tribunal ou órgão especial."
+      ],
+      "central": "A declaração de inconstitucionalidade em tribunal costuma exigir maioria absoluta do plenário ou do órgão especial.",
+      "cards": [
+        [
+          "Regra do art. 97",
+          "A maioria absoluta dos membros do tribunal ou do órgão especial declara a inconstitucionalidade."
+        ],
+        [
+          "Turma ou câmara",
+          "Órgão fracionário não pode afastar lei por fundamento constitucional sem observar a regra."
+        ],
+        [
+          "Súmula Vinculante 10",
+          "A regra alcança afastar a lei sem declarar expressamente que ela é inconstitucional."
+        ],
+        [
+          "Pegadinha",
+          "A reserva de plenário não se aplica ao juiz de primeiro grau."
+        ]
+      ],
+      "tips": [
+        "Art. 97: maioria absoluta — não dois terços.",
+        "Súmula Vinculante 10 também alcança afastamento disfarçado da lei."
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "Precatórios, RPV e EC 136/2025",
+      "review": "Quando o Poder Público deve pagar uma dívida reconhecida judicialmente, existem formas constitucionais de pagamento.\n\nPrecatório é o procedimento usado, em geral, para dívidas de maior valor, com ordem de pagamento e previsão orçamentária. RPV significa requisição de pequeno valor e tem procedimento diferente.\n\nCréditos de natureza alimentar possuem prioridade, e algumas pessoas, como idosos, pessoas com deficiência ou doença grave, podem ter preferência especial nos limites da Constituição.",
+      "example": "Uma condenação de pequeno valor contra o poder público pode ser paga por RPV, sem usar a fila comum dos precatórios.",
+      "constitutional_reference": "Art. 100, na redação da EC 136/2025: apresentação até 1º de fevereiro para inclusão orçamentária prevista no § 5º; RPV fora do regime geral de precatórios.",
+      "exam_trap": "A EC 136/2025 alterou regras de precatórios. A preferência especial pode alcançar até três vezes o valor da RPV, ficando o saldo na ordem do precatório, conforme o caso.",
+      "memorization": [
+        "Não use automaticamente prazos antigos: o material registra mudanças trazidas pela EC 136/2025.",
+        "Precatório = dívida judicial com fila; RPV = pequeno valor."
+      ],
+      "central": "Precatório e RPV são formas distintas de pagamento de dívidas judiciais do Poder Público, conforme o art. 100 atualizado pela EC 136/2025.",
+      "cards": [
+        [
+          "Precatório",
+          "Regra geral para dívidas judiciais maiores, com ordem de pagamento e previsão orçamentária."
+        ],
+        [
+          "RPV",
+          "Requisição de pequeno valor segue procedimento próprio e fica fora da fila geral de precatórios."
+        ],
+        [
+          "Preferências",
+          "Créditos alimentares têm prioridade; há preferência especial nos limites constitucionais."
+        ],
+        [
+          "Pegadinha",
+          "A EC 136/2025 alterou o art. 100; não use automaticamente prazos antigos."
+        ]
+      ],
+      "tips": [
+        "Art. 100: precatório e RPV têm regimes diferentes.",
+        "A EC 136/2025 atualizou regras de precatórios."
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "Composição e indicação de ministros do STF",
+      "review": "O STF possui exatamente onze ministros.\n\nPara ser ministro, é preciso ser brasileiro nato, ter mais de 35 e menos de 70 anos, notável saber jurídico e reputação ilibada.\n\nO Presidente da República indica o nome, o Senado precisa aprovar por maioria absoluta e, depois, ocorre a nomeação. Não é um cargo preenchido por concurso.",
+      "example": "O Presidente indica uma pessoa ao STF. A indicação não é suficiente: o Senado ainda precisa aprovar.",
+      "constitutional_reference": "Arts. 12, § 3º, e 101: 11 ministros; nato; >35 e <70; aprovação do Senado por maioria absoluta.",
+      "exam_trap": "A exigência de idade tem redação específica: 'mais de 35' e 'menos de 70'. A escolha envolve mais de um Poder para compor o Tribunal.",
+      "memorization": [
+        "A Constituição diz onze ministros, não 'no mínimo onze'.",
+        "STF: 11 ministros; indicação presidencial + aprovação do Senado."
+      ],
+      "central": "O STF tem onze ministros. A nomeação depende de requisitos constitucionais, indicação do Presidente e aprovação do Senado.",
+      "cards": [
+        [
+          "Composição",
+          "O STF é composto por exatamente onze ministros."
+        ],
+        [
+          "Requisitos",
+          "Brasileiro nato, mais de 35 e menos de 70 anos, saber jurídico notável e reputação ilibada."
+        ],
+        [
+          "Nomeação",
+          "O Presidente indica; o Senado aprova por maioria absoluta; depois ocorre a nomeação."
+        ],
+        [
+          "Pegadinha",
+          "A Constituição diz onze ministros — não “no mínimo onze”; não há concurso."
+        ]
+      ],
+      "tips": [
+        "Arts. 12, § 3º, e 101: requisitos e composição do STF.",
+        "Indicação presidencial não basta: o Senado aprova por maioria absoluta."
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "STF: competências originárias e recursos",
+      "review": "Alguns processos começam diretamente no STF; outros chegam por recurso.\n\nCompetência originária é quando a ação começa no STF porque a Constituição assim determina. Competência recursal é quando o Tribunal analisa uma decisão anterior.\n\nO recurso extraordinário (RE) é usado nas hipóteses constitucionais que envolvem questões de Constituição. Não é recurso para rediscutir livremente qualquer decisão.",
+      "example": "Uma decisão de tribunal contraria dispositivo constitucional. Dependendo dos requisitos, cabe recurso extraordinário ao STF.",
+      "constitutional_reference": "Art. 102, I: competências originárias; II: recurso ordinário; III: recurso extraordinário. Foro por prerrogativa de função (art. 102, I, b e c): segundo o STF (HC 232.627 e QO no Inq 4.787, 2025), subsiste após a saída do cargo, para crimes cometidos no exercício do cargo e em razão das funções, ainda que o inquérito ou a ação penal comece depois da saída.",
+      "exam_trap": "O art. 102, III, também abrange outras situações, como decisão que considera válida lei local contestada diante de lei federal. O RE exige repercussão geral, e o STF só a rejeita pelo quórum constitucional de dois terços.",
+      "memorization": [
+        "Não confunda recurso extraordinário ao STF com recurso especial ao STJ.",
+        "Originária = começa no STF; recursal = chega por recurso; RE = questão constitucional."
+      ],
+      "central": "O STF recebe processos originários e recursos. O recurso extraordinário protege a interpretação da Constituição nos casos previstos.",
+      "cards": [
+        [
+          "Competência originária",
+          "O processo começa diretamente no STF quando a Constituição atribui essa competência."
+        ],
+        [
+          "Competência recursal",
+          "O STF revisa decisões anteriores por recurso ordinário ou extraordinário, conforme o caso."
+        ],
+        [
+          "Recurso extraordinário",
+          "Cabe nas hipóteses do art. 102, III; exige repercussão geral."
+        ],
+        [
+          "Pegadinha",
+          "O foro pode persistir após a saída por crime cometido no cargo e em razão dele; a tese alcança cargos vitalícios."
+        ]
+      ],
+      "tips": [
+        "Art. 102: competência originária, recurso ordinário e extraordinário.",
+        "Após sair do cargo, foro só subsiste para crime funcional."
+      ]
+    },
+    {
+      "chapter": 11,
+      "title": "Súmula vinculante: função e quórum",
+      "review": "Súmula vinculante é um entendimento consolidado do STF que deve ser observado pelos demais órgãos do Judiciário e pela Administração Pública, nas condições da Constituição.\n\nEla surge após decisões repetidas sobre matéria constitucional, diante de controvérsia que gera insegurança jurídica e muitas ações semelhantes.\n\nPara aprovar, rever ou cancelar uma súmula vinculante, exige-se o quórum de dois terços do STF.",
+      "example": "Um órgão administrativo desrespeita súmula vinculante aplicável. Pode haver reclamação ao STF, observados os requisitos e, contra ato administrativo, esgotadas as vias administrativas.",
+      "constitutional_reference": "Art. 103-A: quórum de 2/3, efeito vinculante sobre outros órgãos do Judiciário e a Administração, possibilidade de reclamação.",
+      "exam_trap": "A súmula vinculante não é uma lei do Congresso e não impede o STF de mudar o próprio entendimento pelo procedimento adequado. Ela não vincula o Legislativo no exercício de sua função típica de legislar.",
+      "memorization": [
+        "Nem toda súmula do STF é vinculante. A vinculante exige regras e quórum próprios.",
+        "Súmula vinculante = STF, 2/3, obriga Judiciário e Administração."
+      ],
+      "central": "A súmula vinculante consolida entendimento constitucional do STF e vincula o Judiciário e a Administração Pública nos termos do art. 103-A.",
+      "cards": [
+        [
+          "Quando cabe",
+          "Decisões repetidas sobre tema constitucional e controvérsia com insegurança ou muitos processos."
+        ],
+        [
+          "Quórum",
+          "Aprovação, revisão ou cancelamento exige dois terços dos ministros do STF."
+        ],
+        [
+          "Efeito vinculante",
+          "Vincula os demais órgãos do Judiciário e a Administração Pública direta e indireta."
+        ],
+        [
+          "Pegadinha",
+          "Não é lei do Congresso e não vincula o Legislativo ao legislar."
+        ]
+      ],
+      "tips": [
+        "Art. 103-A: STF + 2/3 + decisões reiteradas.",
+        "Nem toda súmula do STF é vinculante."
+      ]
+    }
+  ]
+}
