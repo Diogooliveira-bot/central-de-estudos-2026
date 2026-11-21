@@ -29,7 +29,7 @@ async function openReader(n,kind){
   const d=await load(n);if(activeReader!==session)return;
   let html=kind==='summary'?d.summaryHtml:d.completeHtml;
   if(kind==='complete'){
-   if(!g.CivilVisualApostila)await import('/ui/civil-visual-apostila-v1.js?v=20261107civil4');
+   if(!g.CivilVisualApostila)await import('/ui/civil-visual-apostila-v1.js?v=20261120leiseca1');
    html=await g.CivilVisualApostila.html(n);
    if(activeReader!==session)return;
   }
@@ -38,7 +38,7 @@ async function openReader(n,kind){
   if(n===3&&kind!=='complete'){
    // Carregamento de segurança: não depender apenas do carregador de disciplina.
    if(!g.CivilBensApostila?.enhance){
-    await import('/ui/civil-bens-apostila-v1.js?v=20261011m03a2');
+    await import('/ui/civil-bens-apostila-v1.js?v=20261118r1');
    }
    if(activeReader!==session)return;
    if(!g.CivilBensApostila?.enhance)throw new Error('Formatador da apostila de Bens indisponível');

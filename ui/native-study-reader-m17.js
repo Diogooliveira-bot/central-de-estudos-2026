@@ -69,8 +69,26 @@ function looksTitle(line){
   if(/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9][A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\s:–—()/%ºª,.-]+$/.test(l)&&l.split(/\s+/).length<=12)return true;
   return false;
 }
+function bcPenTables(raw){
+  // Tabelas do resumo: linhas iniciadas por TAB (uma célula por linha), linhas da tabela separadas por linha em branco.
+  const src=String(raw||'').replace(/\r/g,'').split('\n'),out=[],tables=[];
+  const grp=k=>{const g=[];while(k<src.length&&/^\t\S/.test(src[k])){g.push(src[k].trim());k++}return g};
+  for(let i=0;i<src.length;){
+    if(/^\t\S/.test(src[i])){
+      const g=grp(i);
+      if(g.length>=2){
+        const rows=[g];let j=i+g.length;
+        while(src[j]===''&&/^\t\S/.test(src[j+1]||'')){const g2=grp(j+1);if(g2.length!==g.length)break;rows.push(g2);j+=1+g2.length}
+        if(rows.length>=2){out.push('','\u0001TBL'+tables.length+'\u0001','');tables.push(rows);i=j;continue}
+      }
+    }
+    out.push(src[i]);i++;
+  }
+  return {raw:out.join('\n'),tables};
+}
 function parse(raw,mode){
-  const lines=cleanLines(raw,mode);
+  const tabInfo=bcPenTables(raw);
+  const lines=cleanLines(tabInfo.raw,mode);
   const blocks=[];
   let para=[];
   const flush=()=>{if(para.length){blocks.push({type:'p',text:para.join(' ')});para=[]}};
@@ -103,6 +121,7 @@ function parse(raw,mode){
     para.push(line);
   }
   flush();
+  blocks.forEach((b,ix)=>{const m=b.type==='p'&&/^\u0001TBL(\d+)\u0001$/.exec(b.text);if(m)blocks[ix]={type:'table',rows:tabInfo.tables[+m[1]]}});
   const firstH=blocks.findIndex(b=>b.type==='h');
   if(firstH>2){
     const lead=blocks.slice(0,firstH).filter(b=>b.type==='p').map(b=>b.text).join(' ');
@@ -151,6 +170,7 @@ function buildHtml(data,mode){
     if(b.type==='lead')return '<p class="lead">'+esc(b.text)+'</p>';
     if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
     if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+    if(b.type==='table')return '<div class="bc-native-table-wrap bc-native-pen-table"><table><thead><tr>'+b.rows[0].map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+b.rows.slice(1).map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
     if(b.type==='callout')return '<aside class="bc-native-callout '+b.kind+'"><b>'+esc(b.label)+'</b><div>'+esc(b.text)+'</div></aside>';
     return '';
   }).join('');

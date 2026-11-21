@@ -1,0 +1,391 @@
+{
+  "module": 8,
+  "module_title": "Poder Executivo: atribuições e responsabilidade presidencial",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Presidencialismo: chefe de Estado e de Governo",
+      "review": "O Brasil adota o presidencialismo: o Presidente exerce duas funções importantes. Como chefe de Estado, representa o país em assuntos internacionais. Como chefe de Governo, dirige a Administração federal e coordena ministérios.\n\nEle não decide tudo sozinho: deve obedecer à Constituição e aos controles dos outros Poderes.",
+      "example": "Quando o Presidente mantém relações diplomáticas, atua como chefe de Estado. Quando coordena ministérios, atua como chefe de Governo.",
+      "constitutional_reference": "Art. 76: Executivo exercido pelo Presidente, auxiliado pelos Ministros.",
+      "exam_trap": "No presidencialismo, as duas funções pertencem à mesma pessoa. Isso não acaba com a separação dos Poderes nem com a fiscalização.",
+      "memorization": [
+        "Chefiar o Executivo não significa estar acima dos outros Poderes.",
+        "Presidente = chefe de Estado + chefe de Governo."
+      ],
+      "central": "No presidencialismo brasileiro, o Presidente reúne as funções de chefe de Estado e chefe de Governo, sempre sujeito à Constituição.",
+      "cards": [
+        [
+          "Chefe de Estado",
+          "Representa o Brasil nas relações com outros países e em atos internacionais."
+        ],
+        [
+          "Chefe de Governo",
+          "Dirige a Administração federal com o auxílio dos Ministros de Estado."
+        ],
+        [
+          "Art. 76 da Constituição",
+          "O Poder Executivo é exercido pelo Presidente, auxiliado pelos Ministros."
+        ],
+        [
+          "Pegadinha",
+          "Reunir as duas funções não coloca o Presidente acima dos outros Poderes."
+        ]
+      ],
+      "tips": [
+        "Presidente = chefe de Estado + chefe de Governo.",
+        "Separação dos Poderes e fiscalização continuam valendo."
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Eleição, posse e mandato presidencial",
+      "review": "Presidente e Vice são escolhidos juntos. Para vencer no primeiro turno, a chapa precisa da maioria absoluta dos votos válidos, sem contar brancos e nulos. Caso contrário, os dois mais votados disputam o segundo turno.\n\nO mandato é de quatro anos. Para os eleitos a partir de 2026, começa em 5 de janeiro do ano seguinte à eleição, conforme a EC 111/2021. A Constituição permite uma reeleição consecutiva.",
+      "example": "Um candidato pode vencer sem receber votos de mais da metade dos eleitores cadastrados, porque a conta considera apenas votos válidos.",
+      "constitutional_reference": "Arts. 77 e 82: eleição majoritária, dois turnos se necessário e início do mandato em 5 de janeiro para eleitos a partir de 2026, após a EC nº 111/2021.",
+      "exam_trap": "Presidente e Vice precisam ser brasileiros natos e ter pelo menos 35 anos, além de cumprir as demais condições. A posse é no Congresso; se não assumirem em dez dias da data fixada, salvo força maior, ocorre vacância.",
+      "memorization": [
+        "Votos brancos e nulos não entram no cálculo da maioria de votos válidos.",
+        "Mandato = 4 anos; primeiro turno = maioria dos votos válidos."
+      ],
+      "central": "Presidente e Vice são eleitos na mesma chapa. O mandato dura quatro anos; a eleição pode ter dois turnos.",
+      "cards": [
+        [
+          "Chapa única",
+          "Presidente e Vice são eleitos conjuntamente; votar em um significa votar na chapa."
+        ],
+        [
+          "Maioria dos votos",
+          "No primeiro turno, é preciso maioria absoluta dos votos válidos."
+        ],
+        [
+          "Mandato de 4 anos",
+          "Para eleitos a partir de 2026, começa em 5 de janeiro, conforme a EC 111/2021."
+        ],
+        [
+          "Pegadinha",
+          "Votos brancos e nulos não entram no cálculo da maioria dos votos válidos."
+        ]
+      ],
+      "tips": [
+        "Arts. 77 e 82: eleição e mandato presidencial.",
+        "A Constituição permite uma reeleição consecutiva."
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Impedimento, sucessão e linha de substituição",
+      "review": "Se o Presidente não pode trabalhar por motivo temporário, o Vice o substitui. Se o cargo de Presidente fica definitivamente vago, o Vice o sucede e passa a ocupar a Presidência.\n\nSe Presidente e Vice estiverem impedidos, a substituição provisória segue esta ordem: Presidente da Câmara, Presidente do Senado e Presidente do STF.",
+      "example": "O Presidente tira uma licença temporária e o Vice assume. Isso é substituição, não sucessão definitiva.",
+      "constitutional_reference": "Arts. 79 e 80: Vice substitui no impedimento e sucede na vacância; linha Câmara → Senado → STF.",
+      "exam_trap": "As autoridades da linha de substituição do art. 80 exercem o cargo temporariamente. O material também registra orientação do STF sobre impedimento de réu em ação penal perante a Corte para substituir o Presidente (ADPF 402).",
+      "memorization": [
+        "Impedimento é temporário; vacância é definitiva. Substituição não é sucessão.",
+        "Vice substitui no impedimento e sucede na vacância."
+      ],
+      "central": "Impedimento é temporário; vacância é definitiva. O Vice substitui o Presidente no primeiro caso e o sucede no segundo.",
+      "cards": [
+        [
+          "Impedimento",
+          "O Vice assume temporariamente quando o Presidente não pode exercer o cargo."
+        ],
+        [
+          "Vacância",
+          "Se o cargo fica definitivamente vago, o Vice assume a Presidência."
+        ],
+        [
+          "Linha seguinte",
+          "Sem Presidente e Vice: Câmara → Senado → STF, nesta ordem."
+        ],
+        [
+          "Pegadinha",
+          "Substituir é temporário; suceder é ocupar definitivamente a vaga."
+        ]
+      ],
+      "tips": [
+        "Arts. 79 e 80: substituição, sucessão e ordem.",
+        "Câmara → Senado → STF é exercício temporário."
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "Dupla vacância e eleições do art. 81",
+      "review": "Dupla vacância ocorre quando os cargos de Presidente e Vice ficam definitivamente vagos.\n\nSe a última vaga surgir nos dois primeiros anos do mandato, a eleição é direta, pelo povo, em 90 dias. Se ocorrer nos dois últimos anos, o Congresso elege Presidente e Vice em 30 dias, conforme a lei.\n\nOs eleitos não começam novo mandato completo: apenas terminam o período que restava.",
+      "example": "Presidente e Vice deixam os cargos no terceiro ano. O Congresso escolhe os substitutos em 30 dias, para concluir o mandato em andamento.",
+      "constitutional_reference": "Art. 81: 90 dias direta na primeira metade; 30 dias Congresso na segunda metade.",
+      "exam_trap": "O prazo começa na abertura da última vaga, e não necessariamente na primeira.",
+      "memorization": [
+        "Eleição após dupla vacância não significa mais quatro anos de mandato.",
+        "Primeiros 2 anos: povo em 90 dias; últimos 2: Congresso em 30."
+      ],
+      "central": "Se Presidente e Vice deixam definitivamente os cargos, há dupla vacância. A eleição depende do momento da última vaga.",
+      "cards": [
+        [
+          "Primeiros 2 anos",
+          "A eleição é direta, pelo voto popular, em até 90 dias."
+        ],
+        [
+          "Últimos 2 anos",
+          "O Congresso Nacional escolhe os dois em até 30 dias."
+        ],
+        [
+          "Só completa o período",
+          "Os eleitos concluem o mandato que já estava em curso."
+        ],
+        [
+          "Pegadinha",
+          "O prazo conta da abertura da última vaga, não necessariamente da primeira."
+        ]
+      ],
+      "tips": [
+        "Art. 81: povo em 90 dias ou Congresso em 30.",
+        "A eleição não inaugura novo mandato de quatro anos."
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "Licença para ausência do país",
+      "review": "O Presidente e o Vice podem viajar ao exterior. A Constituição exige licença do Congresso quando a ausência do país for superior a 15 dias.\n\nSem essa licença, ausentar-se por período maior pode levar à perda do cargo, conforme a regra constitucional.",
+      "example": "Uma viagem oficial de dez dias não exige, só pela duração, a licença destinada a ausências superiores a quinze dias.",
+      "constitutional_reference": "Art. 83: ausência superior a 15 dias exige licença do Congresso.",
+      "exam_trap": "Essa regra protege a continuidade institucional e está ligada à competência do Congresso prevista no art. 49, III.",
+      "memorization": [
+        "Mais de 15 dias não é igual a exatamente 15 dias.",
+        "Ausência superior a 15 dias: licença do Congresso."
+      ],
+      "central": "Presidente e Vice precisam de licença do Congresso para se ausentar do Brasil por mais de quinze dias.",
+      "cards": [
+        [
+          "Regra constitucional",
+          "A licença é exigida quando a ausência superar quinze dias."
+        ],
+        [
+          "Quem concede",
+          "A autorização cabe ao Congresso Nacional."
+        ],
+        [
+          "Consequência",
+          "A ausência além do limite sem licença pode levar à perda do cargo."
+        ],
+        [
+          "Pegadinha",
+          "A regra fala em período superior a 15 dias: exatamente 15 não supera o limite."
+        ]
+      ],
+      "tips": [
+        "Art. 83: ausência superior a 15 dias.",
+        "A licença vem do Congresso Nacional."
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "Atribuições presidenciais e decreto autônomo",
+      "review": "O art. 84 reúne atribuições do Presidente: nomeações, direção do governo federal, sanção e veto, relações internacionais e outras decisões.\n\nDecreto regulamentar explica como executar uma lei. Decreto autônomo só pode tratar de assuntos autorizados diretamente pela Constituição, como certos ajustes da organização administrativa sem aumento de despesa nem criação ou extinção de órgãos, ou extinção de cargos e funções vagos.",
+      "example": "O Presidente pode extinguir um cargo vago por decreto autônomo nas condições constitucionais, mas não pode extinguir um ministério por simples decreto.",
+      "constitutional_reference": "Art. 84, especialmente inciso VI: decreto autônomo com hipóteses específicas.",
+      "exam_trap": "O Congresso pode sustar atos do Executivo que ultrapassem o poder de regulamentar, conforme o art. 49, V.",
+      "memorization": [
+        "Decreto autônomo não é autorização para substituir leis sobre qualquer tema.",
+        "Regulamentar = executar lei; autônomo = hipóteses restritas."
+      ],
+      "central": "O Presidente exerce as competências do art. 84. O decreto autônomo só cabe nas hipóteses restritas previstas na Constituição.",
+      "cards": [
+        [
+          "Decreto regulamentar",
+          "Detalha como uma lei será executada; não pode ultrapassar seus limites."
+        ],
+        [
+          "Decreto autônomo",
+          "Pode tratar de organização administrativa nos limites do art. 84, VI."
+        ],
+        [
+          "Hipóteses do inciso VI",
+          "Sem aumento de despesa nem criação ou extinção de órgãos; ou extinção de cargos vagos."
+        ],
+        [
+          "Pegadinha",
+          "Não se pode extinguir ministério por decreto autônomo: criação e extinção de ministérios exigem lei."
+        ]
+      ],
+      "tips": [
+        "Art. 84, VI: organização administrativa em hipóteses específicas.",
+        "Regulamentar executa a lei; decreto autônomo tem limites próprios."
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Delegação presidencial: VI, XII e XXV",
+      "review": "Nem todas as funções presidenciais podem ser transferidas a outra autoridade. Mas o art. 84, parágrafo único, permite delegar atribuições específicas dos incisos VI, XII e da primeira parte do XXV.\n\nA delegação pode ser feita, dentro dos limites definidos, a Ministros de Estado, ao Procurador-Geral da República (PGR) ou ao Advogado-Geral da União (AGU).",
+      "example": "Um Ministro não pode receber qualquer atribuição presidencial apenas porque integra o Executivo. A função precisa estar na lista delegável.",
+      "constitutional_reference": "Art. 84, parágrafo único: VI, XII e XXV (primeira parte); Ministros, PGR e AGU.",
+      "exam_trap": "Delegar significa autorizar outra autoridade a praticar determinado ato dentro dos limites expressamente definidos. A lista constitucional é restrita.",
+      "memorization": [
+        "Competência privativa pode admitir delegação, mas não em todos os casos.",
+        "Delegáveis: art. 84, VI, XII e primeira parte do XXV."
+      ],
+      "central": "A Constituição permite delegar somente três atribuições específicas do art. 84, e apenas às autoridades nela indicadas.",
+      "cards": [
+        [
+          "Inciso VI",
+          "Organização e funcionamento da Administração nas condições constitucionais."
+        ],
+        [
+          "Inciso XII",
+          "Conceder indulto e comutar penas, com audiência dos órgãos instituídos em lei."
+        ],
+        [
+          "Inciso XXV",
+          "Somente a primeira parte: prover cargos públicos federais, na forma da lei."
+        ],
+        [
+          "Pegadinha",
+          "A lista é fechada: não se delega toda competência presidencial nem a segunda parte do XXV."
+        ]
+      ],
+      "tips": [
+        "Delegáveis: art. 84, VI, XII e primeira parte do XXV.",
+        "Destinatários: Ministros, PGR ou AGU, dentro dos limites da delegação."
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "Responsabilidade do Presidente: crime comum e responsabilidade",
+      "review": "A Constituição diferencia crimes comuns de crimes de responsabilidade do Presidente.\n\nA Câmara dos Deputados autoriza a instauração por dois terços dos membros. Crime comum é julgado pelo STF. Crime de responsabilidade é julgado pelo Senado, que decide também se instaura o processo por maioria simples; a condenação exige dois terços e gera as consequências previstas no art. 52.\n\nA autorização da Câmara não é julgamento definitivo. O início do afastamento também depende da espécie de infração e do marco processual.",
+      "example": "Se o Presidente é acusado de crime comum, não será julgado pelo Senado: o julgamento compete ao STF.",
+      "constitutional_reference": "Arts. 85–86: crimes de responsabilidade e regimes de julgamento; Câmara admite a acusação (autoriza a instauração) por 2/3 (arts. 51, I, e 86, caput).",
+      "exam_trap": "Crimes de responsabilidade envolvem infrações político-jurídicas relacionadas à Constituição, como atentados à probidade administrativa. Sua definição e seu processo seguem lei especial de competência da União, conforme o art. 85 e a Súmula Vinculante 46.",
+      "memorization": [
+        "Câmara autoriza; quem julga depende do tipo de infração.",
+        "Crime comum: STF; responsabilidade: Senado."
+      ],
+      "central": "A Câmara autoriza a instauração por dois terços. O órgão julgador depende da acusação: STF ou Senado.",
+      "cards": [
+        [
+          "Câmara autoriza",
+          "A admissão da acusação exige voto de 2/3 dos Deputados."
+        ],
+        [
+          "Crime comum",
+          "Após a autorização, o julgamento compete ao Supremo Tribunal Federal."
+        ],
+        [
+          "Crime de responsabilidade",
+          "O Senado faz o juízo inicial de instauração por maioria simples; condenação exige 2/3."
+        ],
+        [
+          "Pegadinha",
+          "A Câmara autoriza, mas não realiza o julgamento final do Presidente."
+        ]
+      ],
+      "tips": [
+        "Crime comum: STF; crime de responsabilidade: Senado.",
+        "ADPF 378: Senado decide a instauração por maioria simples."
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "Afastamento, 180 dias e imunidades",
+      "review": "Durante certos processos, o Presidente pode ser afastado temporariamente. Se o julgamento não terminar em 180 dias, o afastamento cessa, mas o processo continua.\n\nA Constituição também protege o Presidente contra prisão por infrações comuns antes de sentença condenatória e limita, durante o mandato, a responsabilização por atos sem relação com o exercício do cargo.",
+      "example": "Passam 180 dias sem julgamento final. O Presidente reassume, mas o caso não é arquivado automaticamente.",
+      "constitutional_reference": "Art. 86, §§ 1º a 4º: afastamento, prazo, prisão e responsabilidade durante mandato.",
+      "exam_trap": "As proteções previstas no art. 86 têm limites e não impedem, em toda hipótese, a investigação de fatos. É preciso distinguir responsabilidade por atos ligados ao mandato de atos estranhos às funções.",
+      "memorization": [
+        "Fim do afastamento não significa absolvição nem fim do processo.",
+        "180 dias sem julgamento: cessa afastamento, processo segue."
+      ],
+      "central": "No processo por crime comum ou de responsabilidade, o afastamento e as imunidades seguem limites diferentes previstos no art. 86.",
+      "cards": [
+        [
+          "Crime comum",
+          "O afastamento ocorre se o STF receber a denúncia ou queixa-crime."
+        ],
+        [
+          "Crime de responsabilidade",
+          "O afastamento começa após o Senado instaurar o processo."
+        ],
+        [
+          "Prazo de 180 dias",
+          "Se o julgamento não terminar, cessa o afastamento; o processo continua."
+        ],
+        [
+          "Pegadinha",
+          "Cessar o afastamento não significa absolvição nem encerramento do processo."
+        ]
+      ],
+      "tips": [
+        "Art. 86, § 2º: 180 dias sem julgamento, cessa o afastamento.",
+        "Antes de condenação, não há prisão por infração comum."
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "Ministros de Estado e suas atribuições",
+      "review": "Ministros de Estado auxiliam o Presidente na direção da Administração federal. Coordenam áreas, acompanham serviços, referendam atos e expedem instruções dentro de suas competências.\n\nEm regra, precisam ser brasileiros maiores de 21 anos no exercício dos direitos políticos. Não é exigido que todos sejam brasileiros natos.\n\nCriar ou extinguir ministérios e órgãos da Administração exige lei, como determina o art. 88.",
+      "example": "O Ministro da Defesa deve ser brasileiro nato; isso é uma exceção à regra geral para os demais ministros.",
+      "constitutional_reference": "Art. 87: brasileiros maiores de 21 anos, no exercício dos direitos políticos; atribuições ministeriais.",
+      "exam_trap": "As instruções ministeriais devem respeitar a Constituição e as leis. Ministro não pode criar obrigações sem fundamento jurídico apenas por meio de instrução.",
+      "memorization": [
+        "Nem todo Ministro precisa ser nato. O cargo da Defesa é exceção importante.",
+        "Ministro: auxílio ao Presidente; maior de 21 anos, em regra brasileiro."
+      ],
+      "central": "Ministros auxiliam o Presidente na direção federal e respondem por atribuições próprias, dentro da Constituição e das leis.",
+      "cards": [
+        [
+          "Requisitos gerais",
+          "Brasileiro maior de 21 anos e no exercício dos direitos políticos."
+        ],
+        [
+          "Funções",
+          "Coordenam e supervisionam órgãos da sua área e referendam atos presidenciais."
+        ],
+        [
+          "Criação de ministérios",
+          "Criar ou extinguir Ministérios e órgãos depende de lei, conforme art. 88."
+        ],
+        [
+          "Pegadinha",
+          "A regra não exige que todo Ministro seja brasileiro nato; há exceções específicas na Constituição."
+        ]
+      ],
+      "tips": [
+        "Art. 87: requisitos e atribuições ministeriais.",
+        "Ministro auxilia o Presidente; não substitui a lei."
+      ]
+    },
+    {
+      "chapter": 11,
+      "title": "Conselhos da República e de Defesa Nacional",
+      "review": "Dois órgãos aconselham o Presidente em assuntos importantes: o Conselho da República e o Conselho de Defesa Nacional.\n\nO Conselho da República ajuda em temas ligados à estabilidade democrática, como intervenção e situações excepcionais. O Conselho de Defesa Nacional cuida especialmente de soberania, defesa do Estado e assuntos estratégicos.\n\nOs dois dão pareceres e orientações; não substituem a decisão presidencial.",
+      "example": "Uma questão pergunta qual conselho tem relação especial com a soberania nacional: é o Conselho de Defesa Nacional.",
+      "constitutional_reference": "Arts. 89 a 91: composição e funções consultivas dos dois conselhos.",
+      "exam_trap": "O Conselho da República reúne autoridades dos Poderes, líderes parlamentares, Ministro da Justiça e seis cidadãos brasileiros natos maiores de 35 anos, conforme o art. 89. O de Defesa Nacional reúne autoridades e ministros indicados no art. 91. Ambos opinam sobre intervenção, estado de defesa e de sítio; o Conselho de Defesa também trata de guerra e paz.",
+      "memorization": [
+        "Conselhos aconselham; não são tribunais nem Casas legislativas.",
+        "República = estabilidade democrática; Defesa Nacional = soberania e defesa."
+      ],
+      "central": "Os Conselhos da República e de Defesa Nacional aconselham o Presidente em temas constitucionais; seus pareceres não substituem a decisão.",
+      "cards": [
+        [
+          "Conselho da República",
+          "Opina sobre estabilidade das instituições democráticas e situações excepcionais."
+        ],
+        [
+          "Conselho de Defesa",
+          "Opina sobre soberania nacional, defesa do Estado e guerra e paz."
+        ],
+        [
+          "Órgãos consultivos",
+          "A composição e as competências estão nos arts. 89 a 91."
+        ],
+        [
+          "Pegadinha",
+          "Os Conselhos emitem pareceres: não são tribunais nem tomam a decisão no lugar do Presidente."
+        ]
+      ],
+      "tips": [
+        "República: instituições democráticas; Defesa: soberania e Estado.",
+        "Arts. 89 a 91: composição e funções consultivas."
+      ]
+    }
+  ]
+}

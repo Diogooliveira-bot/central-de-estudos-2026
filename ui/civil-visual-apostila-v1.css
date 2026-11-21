@@ -21,3 +21,10 @@ html[data-bc-reading-mode="night"] #civil-native-reader .cv-apostila{--navy:#c0d
 @media(max-width:600px){#civil-native-reader .cv-apostila .planes{grid-template-columns:1fr;gap:10px}#civil-native-reader .cv-apostila .planes>div+div{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}#civil-native-reader .cv-apostila .synthesis li{grid-template-columns:22px 1fr}#civil-native-reader .cv-apostila .synthesis li span{grid-column:2}#civil-native-reader .cv-apostila .law{padding-left:15px}#civil-native-reader .cv-apostila td,#civil-native-reader .cv-apostila th{padding:10px 8px}}
 
 #civil-native-reader .cv-apostila details.law>summary{cursor:pointer;color:var(--blue);font-size:0.8125rem;font-weight:650;padding:8px 0;letter-spacing:0;text-transform:none}#civil-native-reader .cv-apostila details.law>summary:focus-visible{outline:2px solid var(--blue);outline-offset:4px}#civil-native-reader .cv-apostila details.law[open]>summary{margin-bottom:16px}
+/* Lei seca ao lado da explicação (mesmo modelo do Direito Constitucional) */
+#civil-native-reader .cv-apostila details.law.law-inline{margin:.9em 0 1.5em;padding:2px 14px 4px 16px;border-left:2px solid #92b6cc;background:#f8fbfd;font-size:.92em;line-height:1.75}
+#civil-native-reader .cv-apostila details.law.law-inline>summary{font-size:.8125rem;color:#285b7b;padding:9px 0}
+#civil-native-reader .cv-apostila details.law.law-inline .law-article+.law-article{margin-top:14px;padding-top:12px;border-top:1px solid #dbe7ef}
+#civil-native-reader .cv-apostila details.law.law-inline .law-article p{margin:0 0 9px}
+#civil-native-reader .cv-apostila details.law.law-inline .law-article p:last-of-type{margin-bottom:4px}
+html[data-bc-reading-mode="night"] #civil-native-reader .cv-apostila details.law.law-inline{background:rgba(255,255,255,.045)}

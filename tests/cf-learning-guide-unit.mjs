@@ -39,8 +39,8 @@ test('interface mostra orientação curta e mantém ações de leitura e questõ
   }
   assert.ok(ui.includes('toggleLegacyReading'), 'Marcação de leitura preservada');
   assert.ok(ui.includes('Resolver 10 questões') && ui.includes('Resolver 5 questões'), 'Exercícios preservados');
-  for (const name of ['cf-weeks-001.js', 'cf-weeks-002.js', 'cf-weeks-003.js', 'cf-native-study-v2.js']) {
-    assert.ok(html.includes(`${name}?v=${name === 'cf-native-study-v2.js' ? '20261115responsive1' : '20261101cfguide1'}`), `Cache não renovado: ${name}`);
+  for (const asset of ['/ui/cf-native-study-v2.js', '/content/cf/m01-native-data.js']) {
+    assert.match(html, new RegExp(asset.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\?v=[A-Za-z0-9_.-]+'), `Cache não renovado (sem ?v=): ${asset}`);
   }
 });
 

@@ -24,3 +24,12 @@ Para tarefas de implementação: primeiro entenda o código existente, peça an�
 - Para interface ou fluxo real, solicitar testes de navegador com conta fictícia no ambiente correto; não afirmar que foram executados quando não foram.
 - Entregar síntese com arquivos alterados, testes executados/resultados, riscos, pendências e link de PR/Preview somente se existir.
 - Detalhes de uso dos agentes: `docs/CLAUDE_SUBAGENTES.md`.
+
+## Como trabalhar com o proprietário (preferência dele)
+- O proprietário não é técnico e quer **simplificar o trabalho dele**: o agente faz toda a parte lógica/técnica
+  (investigar, corrigir, testar, abrir PR, conferir deploy) e **facilita a vida dele**.
+- Explicar em **português simples**, sem jargão, em poucas frases; dizer o que mudou, o que foi testado e o que
+  falta **dele** (só o que realmente exigir a conta/permissão dele).
+- Não devolver tarefas técnicas ao proprietário nem pedir que ele repasse comandos a outros chats; resolver aqui.
+- Quando precisar de algo dele, pedir **uma coisa de cada vez**, com o passo a passo curto.
+- Publicar na `main`/produção **somente** com um "pode publicar/mesclar" explícito dele (isso não muda).

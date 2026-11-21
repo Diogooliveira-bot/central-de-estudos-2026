@@ -54,7 +54,7 @@ function ptMaster(){
    'Resolva a revisão cumulativa antes de consultar as respostas.',
    'Identifique os assuntos que ainda precisam de reforço.'
   ]:[
-   'Estude o assunto "'+m.title+'" por meio da teoria completa.',
+   'Estude o assunto "'+m.title+'" pela teoria e identifique os conceitos essenciais.',
    'Destaque regras, conceitos e exemplos que costumam aparecer em provas.',
    'Resolva os exercícios e use a revisão ativa para verificar o que aprendeu.'
   ];
@@ -66,20 +66,12 @@ function ptMaster(){
   const reading='<section class="pt-cf-reading" aria-label="Progresso de leitura do módulo">'+
    '<div class="pt-cf-reading-line"><div><b>Leitura</b><small>'+(done?'Módulo concluído.':'Marque a conclusão ao terminar o conteúdo.')+'</small></div>'+
    '<strong>'+pct+'%</strong></div><div class="pt-cf-progress-track" role="progressbar" aria-label="Conclusão de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'"><span style="width:'+pct+'%"></span></div></section>';
-  const full=card(m.id,'primary','📚',review?'Revisão cumulativa completa':'Teoria completa',
-   review?'Material integral de revisão dos 24 módulos, com índice e busca.':'Apostila integral do módulo, com índice, busca e ajuste de fonte.',
-   review?['Revisão final','Conteúdo integral']:['Apostila','Conteúdo completo'],
-   review?'Estudar revisão':'Estudar conteúdo','complete',
-   review?'Resolver questões cumulativas':'Resolver 10 questões',review?'cumulative':'exam');
-  const summary=card(m.id,'review','⚡',review?'Revisão ativa final':'Versão de revisão',
-   review?'Recupere os conteúdos estudados com perguntas e respostas comentadas.':'Retome os pontos essenciais e faça recuperação ativa.',
-   ['Resumo','Revisão ativa'],review?'Revisar conteúdos':'Revisar conteúdo','review',
-   review?'Praticar revisão final':'Resolver 5 questões',review?'cumulative-review':'active');
-  const apostila=review?'':card(m.id,'pdf','PDF','Apostila teórica (PDF)',
-   'Síntese didática com exemplos e checklist, para ler ou baixar.',
-   ['PDF','Revisão'],'Abrir apostila','pdf','','');
+  const summary=card(m.id,'review','📖',review?'Revisão final':'Teoria',
+   review?'Recupere os conteúdos estudados com perguntas e respostas comentadas.':'Estude os conceitos essenciais do assunto, com explicações e exemplos.',
+   review?['Revisão final','Pontos essenciais']:['Conteúdo essencial','Exemplos'],review?'Revisar conteúdos':'Estudar teoria','review',
+   review?'Praticar revisão final':'',review?'cumulative-review':'');
   const content='<div class="pt-cf-module-inside">'+reading+oriented+
-   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">' +full+summary+apostila+'</section></div>';
+   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">' +summary+'</section></div>';
   return '<section class="cf-module pt-cf-module '+(open?'open':'')+'" data-pt-current="'+esc(m.id)+'">'+
    '<button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')" aria-expanded="'+(open?'true':'false')+'">'+
     '<span class="cf-module-no">'+(review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span>'+
@@ -150,7 +142,7 @@ if(typeof global.renderDisciplineGrid==='function')global.renderDisciplineGrid()
  if(window.CentralDisciplineLoader||window.__cpcM07Autoload)return;window.__cpcM07Autoload=true;
  const files=[
   '/content/cpc/m07-native-data.js?v=20261018cpcjur1',
-  '/ui/cpc-m07-native-study-reader.js?v=20261105teorias1',
+  '/ui/cpc-m07-native-study-reader.js?v=20261118r1',
   '/cpc-study-m07-lite.js?v=20261003cpcm07v1'
  ];
  let i=0;function next(){if(i>=files.length)return;const s=document.createElement('script');s.src=files[i++];s.onload=next;document.head.appendChild(s)}next();

@@ -82,6 +82,34 @@
     global.alert('Não há edital verticalizado associado ao objetivo atual.');
     return false;
   }
+  // Cabeçalho do painel "Mais": quem está logado e o tamanho da letra atual (nada de dados novos; só o que a conta já informa).
+  function syncMoreProfile() {
+    const box = byId('studentMoreProfile');
+    if (!box) return;
+    const user = global.BASE_COMPLETA_USER || {};
+    const guest = global.__BASE_COMPLETA_PREVIEW_GUEST__ === true;
+    const name = guest ? 'Visitante de teste' : String(user.name || '').trim() || 'Minha conta';
+    const role = String(user.role || '');
+    const plan = String(user.plan || '').toLowerCase();
+    const chip = guest ? 'Modo de testes' : role === 'admin' ? 'Administração' : role === 'editor' ? 'Editor' : plan === 'premium' ? 'Premium' : plan === 'free' ? 'Gratuito' : '';
+    const initial = (name.match(/[A-Za-zÀ-ÿ]/) || ['•'])[0].toUpperCase();
+    const avatar = box.querySelector('.student-more-avatar');
+    const label = box.querySelector('.student-more-who b');
+    const sub = box.querySelector('.student-more-who small');
+    if (avatar && avatar.textContent !== initial) avatar.textContent = initial;
+    if (label && label.textContent !== name) label.textContent = name;
+    if (sub && sub.textContent !== chip) sub.textContent = chip;
+    if (sub) sub.hidden = !chip;
+    let current = 0;
+    try { current = Number(global.BCUiScale?.get?.() ?? 0); } catch (_) { current = 0; }
+    document.querySelectorAll('#studentMorePanel [data-student-scale]').forEach((button) => {
+      const active = Number(button.dataset.studentScale) === current;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    const scale = document.querySelector('#studentMorePanel .student-more-scale');
+    if (scale) scale.hidden = !global.BCUiScale;
+  }
   function ensureNavigation() {
     const nav = document.querySelector('#centralSidebar .nav');
     if (!nav) return;
@@ -99,8 +127,9 @@
         ['law','Lei em Dia',() => global.openEmbeddedTool?.('decorando', {})],
         ['vade','Vade Mecum',() => global.openEmbeddedTool?.('vade', {})],
         ['edital','Edital',openEdital],
-        ['filters','Filtro de questões',(button) => global.ExternalQuestionFilters?.openPage(button,{tab:'disciplines'})],
       ];
+      // Filtros externos são ferramentas de curadoria somente dos administradores.
+      if (isAdmin()) actions.push(['filters','Filtros de questões',(button) => global.ExternalQuestionFilters?.openPage(button,{tab:'disciplines'})]);
       actions.forEach(([key,label,action]) => {
         const button = document.createElement('button');
         button.type = 'button';
@@ -114,6 +143,8 @@
         rail.appendChild(button);
       });
     }
+    // Uma barra reaproveitada nunca pode manter o atalho de outra sessão.
+    if (!isAdmin()) nav.querySelectorAll('[data-student-primary-nav="filters"]').forEach((button) => button.remove());
     if (!byId('studentMoreButton')) {
       const button = document.createElement('button');
       button.id = 'studentMoreButton';
@@ -132,7 +163,7 @@
         panel.hidden = !open;
         document.documentElement.classList.toggle('student-more-open', open);
         button.setAttribute('aria-expanded', String(open));
-        if (open) panel.querySelector('button')?.focus({ preventScroll:true });
+        if (open) { syncMoreProfile(); panel.querySelector('button')?.focus({ preventScroll:true }); }
       });
       nav.appendChild(button);
     }
@@ -146,12 +177,24 @@
       panel.setAttribute('aria-label', 'Mais opções');
       panel.innerHTML = `
         <div class="student-more-head"><div><small>BASE COMPLETA</small><b>Mais opções</b></div><button type="button" data-student-close-more aria-label="Fechar">×</button></div>
+        <div class="student-more-profile" id="studentMoreProfile" aria-live="polite"><span class="student-more-avatar" aria-hidden="true"></span><span class="student-more-who"><b></b><small></small></span></div>
+        <div class="student-more-scale" role="group" aria-label="Tamanho da letra">
+          <span class="student-more-scale-label">Tamanho da letra</span>
+          <div class="student-more-scale-options">
+            <button type="button" data-student-scale="0">Auto</button>
+            <button type="button" data-student-scale="1">Normal</button>
+            <button type="button" data-student-scale="1.15">Maior</button>
+            <button type="button" data-student-scale="1.3">Muito maior</button>
+          </div>
+        </div>
         <div class="student-more-grid">
-          <button type="button" data-student-more-action="settings"><span aria-hidden="true">⚙</span><span><b>Configurações</b><small>Aparência e dados</small></span></button>
+          <button type="button" data-student-more-action="settings"><span aria-hidden="true">⚙</span><span><b>Configurações</b><small>Tema, conta e dados</small></span></button>
           <button type="button" data-student-more-action="logout"><span aria-hidden="true">⇥</span><span><b>Sair da conta</b><small>Encerrar esta sessão</small></span></button>
         </div>
         <div id="studentConnectionStatus" class="student-connection-status" role="status"></div>`;
       panel.addEventListener('click', (event) => {
+        const scaleButton = event.target.closest('[data-student-scale]');
+        if (scaleButton) { global.BCUiScale?.set(Number(scaleButton.dataset.studentScale)); syncMoreProfile(); return; }
         const action = event.target.closest('[data-student-more-action]')?.dataset.studentMoreAction;
         if (action) runMoreAction(action);
         if (event.target.closest('[data-student-close-more]')) closeMore(true);
@@ -159,6 +202,7 @@
       document.body.appendChild(panel);
     }
     ensureAdminEntry();
+    syncMoreProfile();
   }
   function ensureSkipLink() {
     if (!byId('studentSkipLink')) {

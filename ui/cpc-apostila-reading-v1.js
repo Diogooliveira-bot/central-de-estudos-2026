@@ -84,14 +84,39 @@ function enhance(article,n,mode,registry){
   const anchor=d.createElement('span');anchor.className='cpc-law-anchor';anchor.dataset.legacyKeys=JSON.stringify(keys);legacy.replaceWith(anchor);
  }
  const baseline=article.cloneNode(true);baseline.querySelectorAll('details.lei-seca').forEach(x=>x.remove());
- const blocks=[...article.children];let heading='',bucket=[],keys=new Set(),missing=[];const bodyBefore=norm(baseline.textContent);
+ const blocks=[...article.children];let heading='',bucket=[],keys=new Set(),missing=[],shown=new Set(),tail=null;const lib=mode==='complete'?g.BCLawInline:null;const bodyBefore=norm(baseline.textContent);
 
- function flush(){if(!bucket.length)return;const valid=[...keys].filter(k=>{if(registry[k])return true;missing.push({key:k,heading});return false;});if(valid.length){const law=d.createElement('details');law.className='cpc-law';law.setAttribute('aria-label','Lei seca relacionada à explicação');const summary=d.createElement('summary');summary.textContent='Lei seca · '+valid.length+(valid.length===1?' artigo':' artigos');law.append(summary);for(const key of valid){const entry=registry[key],item=d.createElement('div');item.className='cpc-law-article';item.dataset.lawKey=key;const label=d.createElement('p');label.className='cpc-law-label';label.textContent=entry.label;item.append(label);for(const text of entry.paragraphs){const p=d.createElement('p');p.textContent=text;item.append(p);}const link=d.createElement('a');link.href=entry.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Fonte oficial';item.append(link);law.append(item);}bucket.at(-1).after(law);}bucket=[];keys=new Set();}
+ function flush(){if(!bucket.length)return;const valid=[...keys].filter(k=>{if(shown.has(k))return false;if(registry[k])return true;missing.push({key:k,heading});return false;});if(valid.length){const law=d.createElement('details');law.className='cpc-law';law.setAttribute('aria-label','Lei seca relacionada à explicação');const summary=d.createElement('summary');summary.textContent='Lei seca · '+valid.length+(valid.length===1?' artigo':' artigos');law.append(summary);for(const key of valid){const entry=registry[key],item=d.createElement('div');item.className='cpc-law-article';item.dataset.lawKey=key;const label=d.createElement('p');label.className='cpc-law-label';label.textContent=entry.label;item.append(label);for(const text of entry.paragraphs){const p=d.createElement('p');p.textContent=text;item.append(p);}const link=d.createElement('a');link.href=entry.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Fonte oficial';item.append(link);law.append(item);}(tail||bucket.at(-1)).after(law);}bucket=[];keys=new Set();shown=new Set();}
  for(const block of blocks){
   if(/^H[234]$/.test(block.tagName)){flush();heading=norm(block.textContent).toUpperCase();}
+  tail=null;
   bucket.push(block);
   const elements=block.matches('p,li,td,th,h2,h3,h4')?[block]:[...block.querySelectorAll('p,li,td,th')].filter(x=>!x.querySelector('p,li,table'));
-  for(const el of elements)for(const k of references(norm(el.textContent),heading,n,registry))keys.add(k);
+  if(lib&&!block.matches('h2,h3,h4,.cpc-law-anchor,details')){
+   // Lei seca ao lado da explicação: o artigo citado aparece logo abaixo do parágrafo, como no Direito Constitucional.
+   const cap=block.matches('p')?3:4,got=[],seen=new Set();
+   for(const el of elements){
+    const text=norm(el.textContent),specs=new Map();
+    for(const r of lib.scan(text))if(!specs.has(r.article))specs.set(r.article,r);
+    for(const k of references(text,heading,n,registry)){
+     const entry=registry[k];
+     if(!entry||shown.has(k)||seen.has(k)||got.length>=cap){keys.add(k);continue;}
+     const ref=specs.get(k.slice(k.indexOf(':')+1))||{para:'',incs:[],caput:false},lines=lib.excerpt(entry.paragraphs,ref);
+     if(!lines.length){keys.add(k);continue;}
+     seen.add(k);got.push({key:k,entry,lines,title:entry.label.replace(/\s*·\s*/,', ').replace(/\bArt\./,'art.')+(ref.para?', § '+ref.para+'º':'')+(ref.incs&&ref.incs.length?', '+ref.incs.join(', '):'')});
+    }
+   }
+   if(got.length){
+    const law=d.createElement('details');law.className='cpc-law cpc-law-inline';law.setAttribute('aria-label','Lei seca relacionada à explicação');law.dataset.lawInline=got.map(x=>x.key).join(' ');
+    const summary=d.createElement('summary');summary.textContent='Lei seca — '+got.map(x=>x.title).join('; ');law.append(summary);let total=0;
+    for(const x of got){const item=d.createElement('div');item.className='cpc-law-article';item.dataset.lawKey=x.key;
+     if(got.length>1){const label=d.createElement('p');label.className='cpc-law-label';label.textContent=x.entry.label;item.append(label);}
+     for(const text of x.lines){const p=d.createElement('p');p.textContent=text;item.append(p);total++;}
+     const link=d.createElement('a');link.href=x.entry.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Fonte oficial';item.append(link);law.append(item);shown.add(x.key);}
+    if(total<=3)law.open=true;
+    block.after(law);tail=law;
+   }
+  }else for(const el of elements)for(const k of references(norm(el.textContent),heading,n,registry))keys.add(k);
   const anchors=block.matches('.cpc-law-anchor')?[block]:[...block.querySelectorAll('.cpc-law-anchor')];for(const anchor of anchors)for(const key of JSON.parse(anchor.dataset.legacyKeys))keys.add(key);
   const index=Number(heading.match(/^(\d+)\./)?.[1]);if(n===19&&mode==='complete')for(const key of special19[index]||[])keys.add(key);
  }
@@ -114,7 +139,7 @@ async function didactic(n){
  if(!didacticPending.has(group)){
   const task=new Promise((resolve,reject)=>{
    const script=document.createElement('script');
-   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261110cpcraciocinio1';
+   script.src='/content/cpc/cpc-review-didactic-'+group+'.js?v=20261118cpcrevjur1';
    script.onload=()=>{script.remove();resolve();};
    script.onerror=()=>{script.remove();reject(new Error('Não foi possível carregar a revisão didática do CPC'));};
    document.head.append(script);
@@ -188,8 +213,8 @@ function insertDidactic(host,n,data){
 }
 let pending;
 async function laws(){if(!pending)pending=(async()=>{if(!g.CPC_READING_LAWS_B64)await import('/content/cpc/cpc-reading-laws-v1.js?v=20261107cpc2');const bytes=Uint8Array.from(atob(g.CPC_READING_LAWS_B64),c=>c.charCodeAt(0));return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());})().catch(e=>{pending=null;throw e});return pending;}
-function styles(){if(document.getElementById('cpc-apostila-style'))return;const link=document.createElement('link');link.id='cpc-apostila-style';link.rel='stylesheet';link.href='/ui/cpc-apostila-reading-v1.css?v=20261110cpcraciocinio1';document.head.append(link);}
-g.CpcApostilaReading=Object.freeze({references,enhance,routes,lawNames,async transform(html,n,mode){styles();const registry=await laws(),review=mode==='summary'?await didactic(n):null,template=document.createElement('template');template.innerHTML=html;const host=document.createElement('article');host.append(template.content);enhance(host,n,mode,registry);if(review)insertDidactic(host,n,review);return '<div class="cpc-apostila" data-cpc-apostila="'+mode+'">'+host.innerHTML+'</div>';}});
+function styles(){if(document.getElementById('cpc-apostila-style'))return;const link=document.createElement('link');link.id='cpc-apostila-style';link.rel='stylesheet';link.href='/ui/cpc-apostila-reading-v1.css?v=20261120leiseca1';document.head.append(link);}
+g.CpcApostilaReading=Object.freeze({references,enhance,routes,lawNames,async transform(html,n,mode){styles();if(mode==='complete'&&!g.BCLawInline){try{await import('/ui/law-inline-v1.js?v=20261120leiseca1');}catch(e){}}const registry=await laws(),review=mode==='summary'?await didactic(n):null,template=document.createElement('template');template.innerHTML=html;const host=document.createElement('article');host.append(template.content);enhance(host,n,mode,registry);if(review)insertDidactic(host,n,review);return '<div class="cpc-apostila" data-cpc-apostila="'+mode+'">'+host.innerHTML+'</div>';}});
 
 // O cabeçalho dos leitores calcula a duração antes da transformação editorial.
 // Atualizamos apenas o número exibido, sem tocar na progressão salva.

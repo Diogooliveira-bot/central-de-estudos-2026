@@ -1,0 +1,128 @@
+[
+  {
+    "central": "Organização administrativa distribui tarefas entre entes, órgãos e entidades, cada qual com personalidade, competências e vínculos próprios.",
+    "cards": [
+      ["Estado, governo e Administração", "O Estado organiza o poder; o governo define a direção política; a Administração executa atividades públicas."],
+      ["Ente político", "União, Estados, DF e Municípios têm autonomia política prevista na Constituição."],
+      ["Órgão e entidade", "Órgão é unidade interna sem personalidade própria; entidade é pessoa jurídica administrativa."],
+      ["Pegadinha de prova", "Ministério e secretaria são órgãos. Autarquia e empresa pública são entidades da Indireta."]
+    ],
+    "tips": [
+      "Pergunte: é ente político, órgão interno ou entidade com personalidade própria?",
+      "Administração Pública também existe nos Poderes Legislativo e Judiciário."
+    ],
+    "icons": ["people", "federal-map", "dashboard", "inss-trap"]
+  },
+  {
+    "central": "Administração Direta atua por órgãos das pessoas políticas; órgãos distribuem competências, mas não viram pessoas jurídicas independentes.",
+    "cards": [
+      ["Administração Direta", "Reúne os órgãos da União, dos Estados, do DF e dos Municípios."],
+      ["Órgão público", "Centro de competências com agentes e tarefas; não possui personalidade jurídica própria."],
+      ["Teoria do órgão", "O ato do agente, quando atua nessa função, é atribuído à pessoa jurídica do órgão."],
+      ["Pegadinha de prova", "Nome, chefia e orçamento não transformam uma secretaria em entidade administrativa."]
+    ],
+    "tips": [
+      "Órgão: criação por lei. Decreto reorganiza sem gasto maior ou novo órgão (CF, art. 84, VI, a).",
+      "Pode haver órgãos simples ou compostos e decisões singulares ou colegiadas."
+    ],
+    "icons": ["federal-map", "dashboard", "government-act", "number-trap"]
+  },
+  {
+    "central": "Desconcentração reparte tarefas dentro da mesma pessoa; descentralização atribui a atividade a pessoa jurídica diferente.",
+    "cards": [
+      ["Desconcentração", "Cria ou organiza órgãos internos. A pessoa jurídica continua a mesma."],
+      ["Descentralização", "Envolve outra pessoa: entidade da Indireta ou particular que executa serviço delegado."],
+      ["Outorga e delegação", "Outorga atribui atividade à entidade. Delegação transfere a execução, sem a titularidade."],
+      ["Pegadinha de prova", "Entre órgãos pode haver hierarquia; entre ente e autarquia há vinculação e controle legal."]
+    ],
+    "tips": [
+      "Desconcentração: mesma pessoa. Descentralização: pessoa jurídica diferente.",
+      "Concessão delega a execução; a titularidade do serviço permanece com o poder público."
+    ],
+    "icons": ["split-courts", "federal-entity", "contract", "appeal-trap"]
+  },
+  {
+    "central": "A Administração Indireta reúne entidades com personalidade própria, criadas ou autorizadas por lei para finalidades administrativas.",
+    "cards": [
+      ["Quatro entidades", "Autarquias, fundações públicas, empresas públicas e sociedades de economia mista."],
+      ["Personalidade própria", "Cada entidade tem direitos e obrigações em seu nome e atua nos limites legais."],
+      ["Não é ente federativo", "Entidade administrativa não tem autonomia política como União, Estado, DF ou Município."],
+      ["Pegadinha de prova", "Indireta não quer dizer apenas privada: há entidades de direito público e de direito privado."]
+    ],
+    "tips": [
+      "CF, art. 37, XIX: a lei cria autarquia e autoriza a instituição das demais entidades.",
+      "Vinculação e supervisão finalística não equivalem à hierarquia ministerial."
+    ],
+    "icons": ["state-map", "federal-entity", "federal-map", "inss-trap"]
+  },
+  {
+    "central": "Autarquia é pessoa de direito público criada por lei; fundação pública pode ter natureza pública ou privada.",
+    "cards": [
+      ["Autarquia", "Pessoa jurídica de direito público, criada diretamente por lei específica para atividade administrativa."],
+      ["Fundação pública", "Organizada para uma finalidade coletiva; pode ser de direito público ou de direito privado."],
+      ["Regimes distintos", "A lei cria a fundação de direito público; autoriza a de direito privado, que exige constituição."],
+      ["Pegadinha de prova", "Antes de aplicar o regime de uma fundação, identifique se ela é pública ou privada."]
+    ],
+    "tips": [
+      "Autarquia nasce com a lei específica que a cria (CF, art. 37, XIX).",
+      "Autonomia administrativa não significa autonomia política nem subordinação hierárquica."
+    ],
+    "icons": ["federal-entity", "constitution", "federal-law", "single-actor-trap"]
+  },
+  {
+    "central": "Empresa pública e sociedade de economia mista são pessoas de direito privado, mas diferem no capital e na forma societária.",
+    "cards": [
+      ["Empresa pública", "Capital integralmente público; pode adotar diferentes formas jurídicas admitidas."],
+      ["Sociedade de economia mista", "Capital público e privado; deve ser sociedade anônima, sob controle público."],
+      ["Criação", "A lei específica autoriza a instituição; a personalidade surge após constituição e registro."],
+      ["Pegadinha de prova", "A forma de S.A. é obrigatória para a SEM, mas não para a empresa pública."]
+    ],
+    "tips": [
+      "CF, art. 37, XIX; Lei 13.303/2016: memorize capital e forma societária.",
+      "Empregado público ingressa por concurso; não tem estabilidade do art. 41 apenas por isso."
+    ],
+    "icons": ["capital", "capital", "contract", "statute-trap"]
+  },
+  {
+    "central": "Conselhos profissionais fiscalizam profissões e, em regra, têm natureza autárquica; a OAB recebe tratamento singular.",
+    "cards": [
+      ["Conselhos profissionais", "Registram e fiscalizam o exercício profissional, nos limites da lei."],
+      ["Natureza em regra", "São autarquias corporativas e exercem poder de polícia profissional."],
+      ["OAB", "Não integra a Administração Indireta e tem regime jurídico próprio reconhecido pelo STF."],
+      ["Pegadinha de prova", "Conselho de fiscalização não é simples associação; a OAB é a exceção de regime."]
+    ],
+    "tips": [
+      "Conselho fiscaliza e registra; sindicato ou associação representa interesses da categoria.",
+      "Não generalize para a OAB a classificação dos demais conselhos profissionais."
+    ],
+    "icons": ["council", "federal-entity", "constitution", "exceptions"]
+  },
+  {
+    "central": "Agência reguladora é autarquia em regime especial; agência executiva é uma qualificação dada a autarquia ou fundação.",
+    "cards": [
+      ["Reguladora", "Autarquia criada por lei para regular e fiscalizar setor específico, como energia ou vigilância sanitária."],
+      ["Regime especial", "Tem autonomia prevista em lei, com dirigentes e decisões sujeitos a controles jurídicos."],
+      ["Executiva", "Qualificação de autarquia ou fundação com plano estratégico e contrato de gestão; não é nova entidade."],
+      ["Pegadinha de prova", "Agência reguladora é entidade. Agência executiva é qualificação, não espécie nova."]
+    ],
+    "tips": [
+      "Lei 13.848/2019 trata da gestão e do processo decisório das agências reguladoras federais.",
+      "Autonomia técnica não significa agir sem Constituição, lei ou mecanismos de controle."
+    ],
+    "icons": ["dashboard", "budget", "contract", "number-trap"]
+  },
+  {
+    "central": "Um mesmo serviço pode ser organizado em órgão, autarquia ou por delegação; a escolha muda a estrutura e a personalidade envolvida.",
+    "cards": [
+      ["Novo departamento", "Unidade dentro da secretaria: desconcentração, sem criar outra pessoa jurídica."],
+      ["Nova autarquia", "Lei cria entidade da Indireta com personalidade própria: descentralização por serviço."],
+      ["Serviço delegado", "Particular executa o serviço pelo instrumento adequado; não vira órgão ou autarquia."],
+      ["Pegadinha de prova", "Distribuir tarefas não afasta legalidade, finalidade pública, transparência e controle."]
+    ],
+    "tips": [
+      "No caso concreto, identifique quem continua titular e quem apenas executa a atividade.",
+      "A natureza jurídica depende da estrutura criada e das regras que a autorizam."
+    ],
+    "icons": ["dashboard", "federal-entity", "contract", "statute-trap"]
+  }
+]

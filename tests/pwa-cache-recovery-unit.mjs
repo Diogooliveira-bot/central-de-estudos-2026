@@ -237,7 +237,8 @@ test('sem sessão verificada, arquivo versionado vem da rede',async()=>{
   const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('network',{status:200})});
   const response=await w.trigger('fetch',asset('/ui/app.js?v=1'));
   assert.equal(await response.text(),'network');
-  assert.equal(w.requests[0].options.cache,'no-cache');
+  // Arquivo com ?v= tem endereço novo a cada mudança: o navegador pode reaproveitar a cópia (Cache-Control do vercel.json).
+  assert.equal(w.requests[0].options.cache,'default');
 });
 
 test('conteúdo protegido nunca sai do cache e continua sem armazenamento',async()=>{
@@ -278,7 +279,7 @@ test('a Central pede autorização, estrutura e estado local ao mesmo tempo',()=
 });
 
 test('resposta marcada "private" pelo servidor não é guardada nem servida do aparelho',async()=>{
-  const url=origin+'/ui/cpc-sharing-links.js?v=1';
+  const url=origin+'/ui/cpc-sharing-links.js?v=20261118r1';
   const puts=[];
   const store={
     async match(key){
@@ -290,7 +291,7 @@ test('resposta marcada "private" pelo servidor não é guardada nem servida do a
     async put(request){puts.push(request)},async delete(){return true}
   };
   const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('premium online',{status:200,headers:{'Cache-Control':'private, no-store, max-age=0'}})});
-  const response=await w.trigger('fetch',asset('/ui/cpc-sharing-links.js?v=1'));
+  const response=await w.trigger('fetch',asset('/ui/cpc-sharing-links.js?v=20261118r1'));
   assert.equal(await response.text(),'premium online');
   await Promise.all(w.background);
   assert.deepEqual(puts,[]);

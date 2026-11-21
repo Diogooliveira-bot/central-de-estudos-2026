@@ -1,0 +1,374 @@
+[
+  {
+    "central": "O CNJ integra o Judiciário para controlar a administração, as finanças e a disciplina; não funciona como tribunal de recurso.",
+    "cards": [
+      [
+        "Quem compõe",
+        "São 15 membros, com mandato de dois anos e uma recondução. O Presidente do STF preside o Conselho."
+      ],
+      [
+        "O que fiscaliza",
+        "Acompanha a gestão e os deveres funcionais de integrantes do Judiciário, conforme a Constituição."
+      ],
+      [
+        "Atuação disciplinar",
+        "Pode receber reclamações e rever processo disciplinar julgado há menos de um ano."
+      ],
+      [
+        "Pegadinha de prova",
+        "O CNJ não muda sentença nem acórdão. Controle administrativo não é revisão judicial."
+      ]
+    ],
+    "tips": [
+      "Art. 103-B: 15 membros; mandato de 2 anos; uma recondução.",
+      "CNJ fiscaliza e disciplina; não julga recursos."
+    ],
+    "icons": [
+      "people",
+      "dashboard",
+      "clipboard",
+      "no-appeal"
+    ]
+  },
+  {
+    "central": "O STJ uniformiza a interpretação da legislação federal infraconstitucional e tem composição mínima de 33 ministros.",
+    "cards": [
+      [
+        "Composição",
+        "A Constituição fixa no mínimo 33 Ministros; o número não é um limite exato."
+      ],
+      [
+        "Requisitos",
+        "Mais de 35 e menos de 70 anos, notável saber jurídico e reputação ilibada."
+      ],
+      [
+        "Indicação",
+        "O Presidente da República nomeia após aprovação pela maioria absoluta do Senado."
+      ],
+      [
+        "Pegadinha de prova",
+        "Não confunda STJ com STF: o STJ trata principalmente de lei federal; o STF, de matéria constitucional."
+      ]
+    ],
+    "tips": [
+      "Art. 104: no mínimo 33 Ministros.",
+      "Nomeação presidencial exige aprovação do Senado por maioria absoluta."
+    ],
+    "icons": [
+      "court",
+      "age",
+      "senate",
+      "federal-law"
+    ]
+  },
+  {
+    "central": "O recurso especial leva ao STJ algumas questões sobre tratado ou lei federal, dentro das hipóteses do art. 105, III.",
+    "cards": [
+      [
+        "Contrariedade",
+        "Cabe na hipótese de decisão que contrariar tratado ou lei federal, ou negar-lhes vigência."
+      ],
+      [
+        "Ato de governo local",
+        "Pode caber se a decisão julgar válido ato local contestado diante de lei federal."
+      ],
+      [
+        "Divergência",
+        "Também pode caber quando tribunais derem interpretações diferentes à mesma lei federal."
+      ],
+      [
+        "Pegadinha de prova",
+        "A alínea b fala em ato de governo local. Lei local em face de lei federal é hipótese de recurso extraordinário."
+      ]
+    ],
+    "tips": [
+      "Art. 105, III: alíneas a, b e c.",
+      "REsp: ato de governo local; RE: lei local em face de lei federal."
+    ],
+    "icons": [
+      "treaty",
+      "government-act",
+      "split-courts",
+      "appeal-trap"
+    ]
+  },
+  {
+    "central": "A relevância é filtro constitucional do recurso especial. A Lei 15.484/2026 regulamentou como o requisito é demonstrado e examinado.",
+    "cards": [
+      [
+        "Demonstração",
+        "O recorrente deve explicar, em tópico específico e fundamentado, a relevância da questão federal."
+      ],
+      [
+        "Quórum",
+        "A ausência de relevância só impede o conhecimento com manifestação de dois terços do órgão julgador competente."
+      ],
+      [
+        "Presunção",
+        "A Constituição presume relevância em hipóteses do § 3º, como ações penais, improbidade e causas acima de 500 salários mínimos."
+      ],
+      [
+        "Pegadinha de prova",
+        "Não basta dizer que todo REsp precisa provar relevância sem observar as hipóteses de presunção e a regra de vigência."
+      ]
+    ],
+    "tips": [
+      "Base: art. 105, §§ 2º e 3º; EC 125/2022.",
+      "Lei 15.484/2026: requisito para acórdãos publicados após sua entrada em vigor."
+    ],
+    "icons": [
+      "magnifier",
+      "two-thirds",
+      "presumed",
+      "calendar-law"
+    ]
+  },
+  {
+    "central": "A Justiça do Trabalho tem estrutura própria: TST, TRTs e juízes do trabalho, com quantitativos definidos pela Constituição.",
+    "cards": [
+      [
+        "TST",
+        "O Tribunal Superior do Trabalho é composto por 27 Ministros."
+      ],
+      [
+        "TRTs",
+        "Cada Tribunal Regional do Trabalho tem, no mínimo, sete juízes."
+      ],
+      [
+        "Estrutura",
+        "A Justiça do Trabalho também conta com juízes do trabalho, que atuam no primeiro grau."
+      ],
+      [
+        "Pegadinha de prova",
+        "TST: 27 Ministros. TRT: mínimo de 7 juízes. Não troque esses números."
+      ]
+    ],
+    "tips": [
+      "Arts. 111 e 111-A: órgãos e composição do TST.",
+      "Art. 115: TRT com no mínimo 7 juízes."
+    ],
+    "icons": [
+      "work-court",
+      "27",
+      "regional-court",
+      "number-trap"
+    ]
+  },
+  {
+    "central": "A competência trabalhista depende da matéria atribuída pelo art. 114 e da relação jurídica discutida.",
+    "cards": [
+      [
+        "Relações de trabalho",
+        "A Justiça do Trabalho julga ações oriundas das relações de trabalho, conforme os limites constitucionais."
+      ],
+      [
+        "Temas previstos",
+        "O art. 114 também menciona greve, representação sindical e outras matérias específicas."
+      ],
+      [
+        "Indenização",
+        "Pode julgar indenização decorrente do trabalho, inclusive acidente do trabalho nas hipóteses aplicáveis."
+      ],
+      [
+        "Pegadinha de prova",
+        "Ação de servidor estatutário contra o Poder Público, em regra, não é da Justiça do Trabalho."
+      ]
+    ],
+    "tips": [
+      "Comece pelo art. 114 e identifique a relação jurídica.",
+      "Servidor estatutário: em regra, Justiça comum."
+    ],
+    "icons": [
+      "contract",
+      "strike",
+      "compensation",
+      "statute-trap"
+    ]
+  },
+  {
+    "central": "O CSJT supervisiona a gestão administrativa da Justiça do Trabalho de primeiro e segundo graus; não julga recursos.",
+    "cards": [
+      [
+        "O que significa",
+        "CSJT é o Conselho Superior da Justiça do Trabalho, que atua junto ao TST."
+      ],
+      [
+        "Supervisão",
+        "Acompanha gestão administrativa, orçamentária, financeira e patrimonial da Justiça do Trabalho."
+      ],
+      [
+        "Alcance",
+        "A supervisão constitucional alcança a Justiça do Trabalho de primeiro e segundo graus."
+      ],
+      [
+        "Pegadinha de prova",
+        "CSJT não substitui TRT ou TST no julgamento de processos; sua função é administrativa."
+      ]
+    ],
+    "tips": [
+      "Art. 111-A, § 2º, II: supervisão da Justiça do Trabalho.",
+      "CSJT administra e supervisiona; não é instância recursal."
+    ],
+    "icons": [
+      "council",
+      "budget",
+      "court-levels",
+      "admin-not-appeal"
+    ]
+  },
+  {
+    "central": "A Justiça Federal comum é formada por juízes federais e Tribunais Regionais Federais, organizados por regiões.",
+    "cards": [
+      [
+        "Dois níveis",
+        "Juízes federais atuam no primeiro grau; os TRFs exercem competência originária e recursal."
+      ],
+      [
+        "Composição do TRF",
+        "Cada TRF tem no mínimo sete juízes, observados os critérios constitucionais de composição."
+      ],
+      [
+        "Âmbito federal",
+        "A Constituição define quais causas cabem aos juízes federais, especialmente no art. 109."
+      ],
+      [
+        "Pegadinha de prova",
+        "A Justiça Federal não se confunde com o STJ: TRFs integram a estrutura da Justiça Federal; STJ é tribunal superior."
+      ]
+    ],
+    "tips": [
+      "Art. 106: TRFs e juízes federais.",
+      "Art. 107: TRF com no mínimo 7 juízes."
+    ],
+    "icons": [
+      "federal-court",
+      "seven",
+      "federal-map",
+      "court-hierarchy"
+    ]
+  },
+  {
+    "central": "O art. 108 trata dos TRFs; o art. 109, dos juízes federais. Em ambos, confira as exceções constitucionais.",
+    "cards": [
+      [
+        "TRF — art. 108",
+        "Prevê competências originárias do TRF e recursos contra decisões de juízes federais."
+      ],
+      [
+        "Juiz federal — art. 109",
+        "Lista matérias como causas com União, autarquia ou empresa pública federal, respeitadas as exceções."
+      ],
+      [
+        "Exceções",
+        "A Constituição ressalva, entre outras, causas de falência, acidente do trabalho e matérias trabalhista e eleitoral."
+      ],
+      [
+        "Pegadinha de prova",
+        "A presença de entidade federal não resolve tudo: verifique a natureza da causa e as exceções do art. 109."
+      ]
+    ],
+    "tips": [
+      "Art. 108 = TRF; art. 109 = juiz federal.",
+      "Acidente do trabalho contra o INSS é exceção à competência federal comum."
+    ],
+    "icons": [
+      "regional-appeal",
+      "federal-entity",
+      "exceptions",
+      "inss-trap"
+    ]
+  },
+  {
+    "central": "A Justiça Federal se organiza em seções judiciárias: uma em cada Estado e no Distrito Federal, com sede na capital.",
+    "cards": [
+      [
+        "Seção judiciária",
+        "Cada Estado e o DF constituem uma seção judiciária, cuja sede fica na capital."
+      ],
+      [
+        "Varas federais",
+        "A Justiça Federal pode instalar varas em outras cidades, conforme as regras aplicáveis."
+      ],
+      [
+        "Matéria e território",
+        "Competência material define qual Justiça julga; a territorial ajuda a localizar a unidade competente."
+      ],
+      [
+        "Pegadinha de prova",
+        "Uma ação federal não precisa tramitar em Brasília; a organização territorial prevê seções nos Estados e no DF."
+      ]
+    ],
+    "tips": [
+      "Art. 110: uma seção judiciária por Estado e pelo DF.",
+      "Sede na capital não impede varas federais em outras cidades."
+    ],
+    "icons": [
+      "state-map",
+      "capital",
+      "federal-venue",
+      "brazil-location"
+    ]
+  },
+  {
+    "central": "Os Estados organizam sua Justiça conforme os princípios constitucionais; o TJ também pode exercer controle estadual nos limites da CF.",
+    "cards": [
+      [
+        "Organização",
+        "A Constituição estadual e as leis de organização judiciária estruturam a Justiça estadual, respeitada a CF."
+      ],
+      [
+        "Tribunal de Justiça",
+        "O TJ integra a Justiça estadual e exerce competências previstas na Constituição."
+      ],
+      [
+        "Controle estadual",
+        "O art. 125 prevê controle de constitucionalidade de leis e atos diante da Constituição estadual."
+      ],
+      [
+        "Pegadinha de prova",
+        "A legitimação para propor ação de controle estadual não pode ser atribuída a um único órgão."
+      ]
+    ],
+    "tips": [
+      "Art. 125: Estados organizam sua Justiça observando a CF.",
+      "Controle estadual confronta norma com a Constituição do Estado."
+    ],
+    "icons": [
+      "state-court",
+      "constitution",
+      "state-review",
+      "single-actor-trap"
+    ]
+  },
+  {
+    "central": "A Constituição prevê Justiça Militar estadual e varas especializadas para conflitos fundiários, cada qual com competência delimitada.",
+    "cards": [
+      [
+        "Justiça Militar",
+        "Pode julgar militares estaduais nos crimes militares definidos em lei e ações judiciais contra atos disciplinares."
+      ],
+      [
+        "Exceção do júri",
+        "Crimes dolosos contra a vida de civil ficam com o Tribunal do Júri, na hipótese constitucional."
+      ],
+      [
+        "Conflitos agrários",
+        "O TJ proporá a criação de varas especializadas com competência exclusiva para questões agrárias."
+      ],
+      [
+        "Pegadinha de prova",
+        "Não conclua que todo crime de militar estadual vai à Justiça Militar; verifique a natureza do fato e as exceções."
+      ]
+    ],
+    "tips": [
+      "Art. 125, §§ 3º–5º: Justiça Militar estadual.",
+      "Art. 126: varas especializadas para questões agrárias."
+    ],
+    "icons": [
+      "military-court",
+      "jury",
+      "agrarian-court",
+      "military-trap"
+    ]
+  }
+]

@@ -18,6 +18,21 @@
   navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).catch(function(){});
 })();
 </script>
+<script id="bc-login-tablet-detect">
+(function(){
+  'use strict';
+  // O modo "versão para computador" usa viewport virtual maior que a tela real.
+  // Reconhecer o tablet pela dimensão física em CSS px, sem ampliar telefones.
+  try{
+    var touch=!!(navigator.maxTouchPoints>=2||
+      (window.matchMedia&&(matchMedia('(pointer: coarse)').matches||matchMedia('(any-pointer: coarse)').matches)));
+    var shortSide=Math.min(Number(screen.width)||0,Number(screen.height)||0);
+    var longSide=Math.max(Number(screen.width)||0,Number(screen.height)||0);
+    if(touch&&shortSide>=600&&shortSide<=1400&&longSide>=900)
+      document.documentElement.classList.add('bc-login-tablet');
+  }catch(_){/* Mantém o layout padrão quando os dados da tela não estiverem disponíveis. */}
+})();
+</script>
 <style>
 :root{--bg:#f4f0e7;--card:#fffdf8;--ink:#2f2b28;--muted:#7a716a;--line:#d8d0c5;--accent:#6d5b88;--accent2:#58466f;--danger:#9f3e3e;--ok:#2f7657}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 50% 0,#fffaf0 0,#f4f0e7 45%,#ebe5da 100%);color:var(--ink);font:500 15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px}
@@ -119,6 +134,34 @@ button:active{transform:translateY(1px)}
 #loginForm .password-field #togglePassword .eye-slash{display:none!important}
 #loginForm .password-field #togglePassword.is-visible .eye-slash{display:block!important}
 
+
+/* Legibilidade real no tablet, inclusive quando o navegador força modo desktop.
+   Não usa zoom ou transform: o layout da autenticação permanece íntegro. */
+@media (min-width:600px){
+ html.bc-login-tablet body{padding:24px}
+ html.bc-login-tablet .card{
+  width:min(680px,calc(100vw - 48px));
+  max-height:calc(100dvh - 48px);
+  padding:clamp(34px,4.2vw,52px);
+  border-radius:24px;
+ }
+ html.bc-login-tablet .logo{width:168px;height:112px;margin:2px auto 12px}
+ html.bc-login-tablet .eyebrow{font-size:13px;letter-spacing:.12em}
+ html.bc-login-tablet .title{font-size:clamp(38px,3.7vw,46px);line-height:1.12}
+ html.bc-login-tablet .brand-subtitle{font-size:17px}
+ html.bc-login-tablet .subtitle{font-size:16px;margin:19px 0 28px}
+ html.bc-login-tablet label{font-size:15px;margin:16px 0 8px}
+ html.bc-login-tablet input:not([type="checkbox"]){min-height:56px;font-size:17px;padding:14px 16px}
+ html.bc-login-tablet .remember{font-size:14px;gap:11px}
+ html.bc-login-tablet .remember input{width:21px;height:21px}
+ html.bc-login-tablet button:not(.password-toggle){min-height:58px;font-size:17px}
+ html.bc-login-tablet .access-help,
+ html.bc-login-tablet #publicSignupLink{font-size:15px;line-height:1.55}
+ html.bc-login-tablet .msg{font-size:14px}
+ html.bc-login-tablet #loginForm .password-field #togglePassword{
+  width:52px!important;height:52px!important;min-height:52px!important;max-width:52px!important
+ }
+}
 </style>
 </head>
 <body>

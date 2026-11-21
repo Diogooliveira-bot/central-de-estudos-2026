@@ -37,7 +37,7 @@ test('menu Mais não duplica atalhos da navegação inferior', async () => {
   assert.ok(win.document.querySelector('[data-student-primary-nav="law"]'));
   assert.ok(win.document.querySelector('[data-student-primary-nav="vade"]'));
   assert.ok(win.document.querySelector('[data-student-primary-nav="edital"]'));
-  assert.ok(win.document.querySelector('[data-student-primary-nav="filters"]'));
+  assert.equal(win.document.querySelector('[data-student-primary-nav="filters"]'),null,'aluno não deve ver o atalho de filtros externos');
   assert.equal(panel.querySelector('[data-student-more-action="subjects"]'), null);
   assert.equal(panel.querySelector('[data-student-more-action="home"]'), null);
   assert.equal(panel.querySelector('[data-bcq-more-nav]'), null);
@@ -50,6 +50,7 @@ test('menu Mais não duplica atalhos da navegação inferior', async () => {
 test('admin enxerga acesso administrativo único e estudante nunca recebe esse link', async () => {
   const { win, enhance } = await setup('admin');
   const grid = win.document.querySelector('.student-more-grid');
+  assert.ok(win.document.querySelector('[data-student-primary-nav="filters"]'),'admin mantém filtros');
   assert.equal(grid.querySelectorAll('[data-student-more-action="admin"]').length, 1);
   assert.match(grid.textContent, /Administração/);
   assert.match(grid.textContent, /Usuários, convites e acessos/);
@@ -59,6 +60,7 @@ test('admin enxerga acesso administrativo único e estudante nunca recebe esse l
   win.__BASE_COMPLETA_USER_ROLE__ = 'aluno';
   enhance();
   assert.equal(grid.querySelector('[data-student-more-action="admin"]'), null);
+  assert.equal(win.document.querySelector('[data-student-primary-nav="filters"]'),null,'troca de sessão remove filtro antigo');
   win.close();
 });
 
@@ -98,8 +100,8 @@ test('o visual desktop é compacto e o menu móvel continua responsivo', async (
 test('recursos editados estão no carregador e no manifesto offline', async () => {
   const boot = await read('central-v119.html');
   const offline = await read('central-offline-files-v66172.json');
-  assert.match(boot, /student-shell-v3\.js\?v=20261105nav1/);
-  assert.match(offline, /student-shell-v3\.js\?v=20261105nav1/);
+  assert.match(boot, /student-shell-v3\.js\?v=[A-Za-z0-9._-]+/);
+  assert.match(offline, /student-shell-v3\.js\?v=[A-Za-z0-9._-]+/);
 });
 
 

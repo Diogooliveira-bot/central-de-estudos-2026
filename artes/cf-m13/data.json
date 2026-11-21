@@ -1,0 +1,403 @@
+{
+  "module": 13,
+  "module_title": "Ordem Econômica e Financeira — princípios gerais da atividade econômica",
+  "source": "content/cf/m13-teoria-guiada-data.js",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Art. 170: trabalho humano, livre iniciativa e justiça social",
+      "central": "A ordem econômica combina liberdade para empreender com valorização do trabalho e compromisso com uma vida digna para todos.",
+      "cards": [
+        [
+          "Dois fundamentos",
+          "O art. 170 começa com a valorização do trabalho humano e a livre iniciativa. Um princípio não apaga o outro."
+        ],
+        [
+          "Finalidade constitucional",
+          "A atividade econômica deve contribuir para existência digna de todos, conforme a justiça social."
+        ],
+        [
+          "Aplicação conjunta",
+          "Os princípios do art. 170 orientam leis e políticas econômicas. A liberdade convive com proteção social."
+        ],
+        [
+          "Pegadinha de prova",
+          "Livre iniciativa não é liberdade sem limites: a Constituição também protege o trabalho e a dignidade."
+        ]
+      ],
+      "icons": [
+        "workers",
+        "open-hand",
+        "scales-work",
+        "unlimited-trap"
+      ],
+      "tips": [
+        "Fundamentos: trabalho humano + livre iniciativa.",
+        "Finalidade: existência digna, conforme a justiça social."
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Soberania, propriedade e função social",
+      "central": "A Constituição protege a propriedade privada e a soberania nacional, mas exige que a propriedade cumpra sua função social.",
+      "cards": [
+        [
+          "Soberania econômica",
+          "O art. 170, I, permite proteger interesses nacionais; não significa fechar a economia ou proibir automaticamente capital estrangeiro."
+        ],
+        [
+          "Propriedade privada",
+          "A propriedade é princípio da ordem econômica (art. 170, II) e direito fundamental (art. 5º, XXII)."
+        ],
+        [
+          "Função social",
+          "A propriedade deve atender à função social (arts. 170, III, e 5º, XXIII), respeitados os limites constitucionais e legais."
+        ],
+        [
+          "Pegadinha de prova",
+          "Ser dono não autoriza ignorar regras ambientais, urbanísticas ou sociais aplicáveis ao bem."
+        ]
+      ],
+      "icons": [
+        "national-shield",
+        "house-key",
+        "property-check",
+        "owner-limit"
+      ],
+      "tips": [
+        "Propriedade protegida não é propriedade sem deveres.",
+        "Art. 170: soberania, propriedade e função social são princípios distintos."
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Livre concorrência e defesa do consumidor",
+      "central": "A Constituição protege a disputa leal entre empresas e os direitos de quem consome produtos e serviços.",
+      "cards": [
+        [
+          "Concorrência livre",
+          "O art. 170, IV, protege a competição e permite combater práticas que eliminem concorrentes de forma abusiva."
+        ],
+        [
+          "Consumidor protegido",
+          "A defesa do consumidor é princípio da ordem econômica (art. 170, V) e direito fundamental (art. 5º, XXXII)."
+        ],
+        [
+          "Abuso de mercado",
+          "O art. 173, § 4º, manda reprimir abuso do poder econômico que busque dominar mercados ou eliminar a concorrência."
+        ],
+        [
+          "Pegadinha de prova",
+          "Livre iniciativa não protege combinação abusiva de preços nem bloqueios injustificados à concorrência."
+        ]
+      ],
+      "icons": [
+        "race-track",
+        "shopping-shield",
+        "market-balance",
+        "price-cartel"
+      ],
+      "tips": [
+        "Livre concorrência e defesa do consumidor aparecem juntas no art. 170.",
+        "Abuso do poder econômico é reprimido (art. 173, § 4º)."
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "Meio ambiente, desigualdades e emprego",
+      "central": "A atividade econômica também deve considerar impactos ambientais, desigualdades sociais e oportunidades de trabalho.",
+      "cards": [
+        [
+          "Proteção ambiental",
+          "O art. 170, VI, inclui a defesa do meio ambiente entre os princípios da ordem econômica."
+        ],
+        [
+          "Impacto ambiental",
+          "A Constituição admite tratamento diferente conforme o impacto ambiental de produtos, serviços e seus processos."
+        ],
+        [
+          "Objetivos sociais",
+          "O art. 170 prevê reduzir desigualdades regionais e sociais e buscar o pleno emprego."
+        ],
+        [
+          "Pegadinha de prova",
+          "Buscar empregos ou crescimento não autoriza, por si só, desrespeitar as regras ambientais."
+        ]
+      ],
+      "icons": [
+        "leaf-industry",
+        "eco-products",
+        "regional-growth",
+        "job-creation-limit"
+      ],
+      "tips": [
+        "Art. 170, VI a VIII: ambiente, desigualdades e pleno emprego.",
+        "Os objetivos econômicos devem ser harmonizados, não usados para apagar uns aos outros."
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "Tratamento favorecido e livre exercício econômico",
+      "central": "A Constituição favorece empresas de pequeno porte e garante liberdade econômica como regra, com exceções previstas em lei.",
+      "cards": [
+        [
+          "Pequenas empresas",
+          "O art. 170, IX, prevê tratamento favorecido às empresas de pequeno porte nas condições constitucionais."
+        ],
+        [
+          "Simplificação",
+          "O art. 179 orienta os entes a simplificar ou reduzir obrigações para microempresas e empresas de pequeno porte, por lei."
+        ],
+        [
+          "Liberdade como regra",
+          "O art. 170, parágrafo único, assegura o livre exercício de atividade econômica."
+        ],
+        [
+          "Pegadinha de prova",
+          "A liberdade não dispensa autorização quando uma lei válida exigir licença para a atividade."
+        ]
+      ],
+      "icons": [
+        "small-store",
+        "simplified-form",
+        "business-open",
+        "permit-check"
+      ],
+      "tips": [
+        "Livre exercício é a regra; autorização pode ser exigida nos casos previstos em lei.",
+        "Tratamento favorecido: arts. 170, IX, e 179."
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "Art. 173: atividade econômica direta pelo Estado",
+      "central": "O Estado pode atuar diretamente no mercado em hipóteses excepcionais previstas na Constituição, como segurança nacional ou relevante interesse coletivo definido em lei.",
+      "cards": [
+        [
+          "Atuação excepcional",
+          "O art. 173 admite exploração direta pelo Estado quando necessária à segurança nacional ou a relevante interesse coletivo, conforme definidos em lei."
+        ],
+        [
+          "Empresas estatais",
+          "A regra constitucional alcança empresa pública, sociedade de economia mista e subsidiárias que explorem atividade econômica."
+        ],
+        [
+          "Repressão a abusos",
+          "A lei deve reprimir abuso do poder econômico que vise dominar mercados, eliminar a concorrência ou aumentar lucros de forma arbitrária."
+        ],
+        [
+          "Pegadinha de prova",
+          "Não confunda Estado empresário (art. 173) com Estado regulador (art. 174). São formas diferentes de atuação."
+        ]
+      ],
+      "icons": [
+        "state-factory",
+        "state-enterprise",
+        "anti-monopoly",
+        "business-or-regulator"
+      ],
+      "tips": [
+        "Art. 173: atuação econômica estatal direta é excepcional.",
+        "Segurança nacional ou relevante interesse coletivo, definido em lei."
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Regime das estatais e privilégios fiscais",
+      "central": "Quando uma estatal explora atividade econômica, a Constituição estabelece regras para aproximar sua atuação da das empresas privadas.",
+      "cards": [
+        [
+          "Estatuto próprio",
+          "O art. 173, § 1º, prevê estatuto jurídico para empresas públicas e sociedades de economia mista que explorem atividade econômica."
+        ],
+        [
+          "Regime concorrencial",
+          "Quanto a direitos e deveres civis, comerciais, trabalhistas e tributários, aplica-se regime próprio das empresas privadas."
+        ],
+        [
+          "Privilégio fiscal",
+          "O art. 173, § 2º, veda privilégio fiscal que não seja estendido às empresas do setor privado."
+        ],
+        [
+          "Pegadinha de prova",
+          "A vedação mira privilégio exclusivo: benefício também disponível ao setor privado não é, só por isso, exclusivo da estatal."
+        ]
+      ],
+      "icons": [
+        "company-charter",
+        "private-rules",
+        "tax-parity",
+        "exclusive-tax-trap"
+      ],
+      "tips": [
+        "Estatal que atua no mercado deve observar a lógica concorrencial.",
+        "Art. 173, § 2º: sem privilégio fiscal exclusivo frente ao setor privado."
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "Art. 174: Estado regulador e planejamento",
+      "central": "O Estado regula a economia por fiscalização, incentivo e planejamento. O planejamento vincula o setor público e orienta o privado.",
+      "cards": [
+        [
+          "Três funções",
+          "O art. 174 atribui ao Estado fiscalização, incentivo e planejamento, na forma da lei."
+        ],
+        [
+          "Setor público",
+          "O planejamento é determinante para o setor público: orienta sua atuação nos limites constitucionais e legais."
+        ],
+        [
+          "Setor privado",
+          "Para o setor privado, o planejamento é indicativo: orienta, mas não se torna ordem obrigatória por si só."
+        ],
+        [
+          "Pegadinha de prova",
+          "A banca costuma inverter: planejamento é indicativo para o privado e determinante para o público."
+        ]
+      ],
+      "icons": [
+        "regulator-tools",
+        "public-plan",
+        "private-compass",
+        "planning-switch"
+      ],
+      "tips": [
+        "Art. 174: fiscalização + incentivo + planejamento.",
+        "Determinante no público; indicativo no privado."
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "Cooperativismo, associativismo e garimpagem",
+      "central": "A Constituição incentiva cooperativas e outras formas de associação, inclusive na organização da atividade garimpeira, conforme a lei.",
+      "cards": [
+        [
+          "Cooperativismo",
+          "O art. 174, § 2º, prevê apoio e estímulo ao cooperativismo e a outras formas de associativismo."
+        ],
+        [
+          "Ato cooperativo",
+          "A lei deve apoiar e estabelecer tratamento adequado ao ato cooperativo, conforme o art. 146, III, c, e art. 174, § 2º."
+        ],
+        [
+          "Garimpagem organizada",
+          "O art. 174, §§ 3º e 4º, favorece a atividade garimpeira em cooperativas, observada a proteção ambiental."
+        ],
+        [
+          "Pegadinha de prova",
+          "O incentivo à cooperativa não dispensa autorização, fiscalização ou cumprimento das regras ambientais e minerais."
+        ]
+      ],
+      "icons": [
+        "cooperative-circle",
+        "cooperative-law",
+        "miners-coop",
+        "license-still-needed"
+      ],
+      "tips": [
+        "Cooperativas e associativismo recebem estímulo constitucional.",
+        "Incentivo não elimina os requisitos legais da atividade."
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "Art. 175: prestação de serviços públicos",
+      "central": "O Poder Público deve assegurar a prestação de serviços públicos: diretamente ou por concessão ou permissão, conforme a lei.",
+      "cards": [
+        [
+          "Dever público",
+          "O art. 175 atribui ao Poder Público o dever de prestar serviços públicos na forma da lei."
+        ],
+        [
+          "Prestação delegada",
+          "A execução pode ser delegada por concessão ou permissão, com licitação, nos termos constitucionais."
+        ],
+        [
+          "Direitos dos usuários",
+          "A lei disciplina direitos dos usuários, política tarifária, fiscalização e dever de manter serviço adequado."
+        ],
+        [
+          "Pegadinha de prova",
+          "Delegar a execução não elimina o dever estatal de regular e fiscalizar o serviço público."
+        ]
+      ],
+      "icons": [
+        "public-service",
+        "service-contract",
+        "user-rights",
+        "delegation-limit"
+      ],
+      "tips": [
+        "Art. 175: prestação direta ou delegada.",
+        "Concessão e permissão exigem licitação; serviço deve ser adequado."
+      ]
+    },
+    {
+      "chapter": 11,
+      "title": "Recursos minerais e potenciais hidráulicos: art. 176",
+      "central": "Jazidas, recursos minerais e potenciais hidráulicos têm regime constitucional próprio e não se confundem com a propriedade do terreno.",
+      "cards": [
+        [
+          "Propriedade distinta",
+          "Pelo art. 176, jazidas, recursos minerais e potenciais de energia hidráulica são distintos da propriedade do solo."
+        ],
+        [
+          "Titularidade da União",
+          "Pertencem à União para fins de exploração ou aproveitamento, nos termos constitucionais."
+        ],
+        [
+          "Pesquisa e lavra",
+          "Regra: pesquisa e lavra dependem de autorização ou concessão da União. Exceção: energia renovável de capacidade reduzida."
+        ],
+        [
+          "Pegadinha de prova",
+          "Ser dono do terreno não dá, por si só, direito de pesquisar ou explorar os minerais nele encontrados."
+        ]
+      ],
+      "icons": [
+        "underground-layers",
+        "union-resources",
+        "mining-permit",
+        "land-owner-trap"
+      ],
+      "tips": [
+        "Art. 176: recursos do subsolo não se confundem com o solo.",
+        "O proprietário do solo pode participar dos resultados da lavra, na forma da lei."
+      ]
+    },
+    {
+      "chapter": 12,
+      "title": "Monopólios, microempresas, turismo e requisições estrangeiras",
+      "central": "A Constituição reúne regimes econômicos especiais: monopólios da União, estímulo a pequenos negócios e turismo e limites a requisições comerciais estrangeiras.",
+      "cards": [
+        [
+          "Monopólios da União",
+          "O art. 177 lista monopólios em setores estratégicos, como petróleo, gás natural e minerais nucleares."
+        ],
+        [
+          "Contratação permitida",
+          "A União pode contratar empresas estatais ou privadas para atividades dos incisos I a IV do art. 177, observada a lei."
+        ],
+        [
+          "Pequenos negócios e turismo",
+          "Arts. 179 e 180: tratamento favorecido a micro e pequenas empresas e incentivo ao turismo como fator de desenvolvimento."
+        ],
+        [
+          "Pegadinha de prova",
+          "O art. 181 trata de requisição estrangeira de informação comercial; ouro como ativo financeiro é assunto do art. 153, § 5º."
+        ]
+      ],
+      "icons": [
+        "union-monopoly",
+        "private-contract",
+        "small-business-tourism",
+        "foreign-request-trap"
+      ],
+      "tips": [
+        "Art. 177, § 1º: contratação alcança incisos I a IV; não generalize para o inciso V.",
+        "Art. 181: requisição comercial estrangeira exige autorização do Poder competente."
+      ]
+    }
+  ]
+}

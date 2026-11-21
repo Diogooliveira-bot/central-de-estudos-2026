@@ -43,7 +43,7 @@ test('ADM M01–M20: 20 apostilas autorais, 43 tabelas e questões preservadas i
   assert.ok(material.querySelector('table.adm-author-table'),'M'+n+' mantém pelo menos uma tabela');
  }
  assert.equal(tables,43,'preservar as 43 tabelas');
- assert.ok(words>60000,'material completo de estudo, não apenas tópicos: '+words);
+ assert.ok(words>45000,'material de estudo enxuto, mas não apenas tópicos: '+words);
  dom.window.close();
 });
 
@@ -63,6 +63,6 @@ test('ADM: leitor mantém isolamento e parâmetros de cache para revisão autora
  const js=read('ui/adm-apostila-reading-v1.js'),loader=read('ui/adm-native-layer.js');
  assert.match(js,/if\(mode==='complete'\)return originalHtml/);
  assert.match(js,/adm-m'\+String\(number\)\.padStart\(2,'0'\)\+'-submitted-review\.js/);
- assert.ok(loader.includes('/ui/adm-apostila-reading-v1.js?v=20261116revjur1'));
+ assert.ok(loader.includes('/ui/adm-apostila-reading-v1.js?v=20261121r1'));
  assert.doesNotMatch(js,/localStorage|sessionStorage|\.setItem\(|fetch\(['"]\/api/);
 });

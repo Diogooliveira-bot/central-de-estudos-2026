@@ -3,6 +3,13 @@
 
   if (global.ExternalQuestionFilters) return;
 
+  // A curadoria de filtros QC/TEC é área administrativa, não funcionalidade do aluno.
+  // A verificação real de acesso também acontece em /api/external-question-filters.
+  function isAdminView() {
+    const role = global.BASE_COMPLETA_USER?.role || global.__BASE_COMPLETA_USER_ROLE__;
+    return role === 'admin' && global.__BASE_COMPLETA_PREVIEW_GUEST__ !== true;
+  }
+
   const STORE_KEY = 'central-v6:external-filter-sessions:v1';
   const LEGACY_TEC_KEY = 'central-v6:tec:registros';
   const PLATFORM_LABEL = { qc: 'QConcursos', tec: 'TEC Concursos' };
@@ -679,6 +686,13 @@
   }
   function mountModules() {
     moduleTargets().forEach((element) => {
+      if (!isAdminView()) {
+        const body = moduleBody(element);
+        if (!body) return;
+        body.querySelectorAll('[data-bcq-module-panel]').forEach((panel) => panel.remove());
+        hideOriginalPanels(body);
+        return;
+      }
       const identity = identityFor(element);
       if (!identity) return;
       const allModuleFilters = filtersForModule(identity.disciplineKey, identity.module);
@@ -851,6 +865,13 @@
     }
   }
   function openPage(button, options = {}) {
+    if (!isAdminView()) {
+      // Uma URL antiga/bookmark não deve abrir a lista de filtros para estudantes.
+      if (global.location.pathname === ROUTE) global.history.replaceState({ centralQuestions: false }, '', '/');
+      document.getElementById('questionFiltersView')?.classList.add('hidden');
+      global.openHome?.();
+      return false;
+    }
     refreshRegistry(); injectPage();
     document.querySelectorAll('.view').forEach((view) => view.classList.add('hidden'));
     const page = document.getElementById('questionFiltersView');
@@ -1089,7 +1110,7 @@
 
   function filterByKey(key) { return visibleModuleFilters().find((filter) => filter.stableKey === key) || null; }
   function openModal(filter, session) {
-    if (!filter || !visibleModuleFilters().some((item) => item.stableKey === filter.stableKey) || ['trabalho','processual-trabalho'].includes(filter.disciplineKey)) return;
+    if (!isAdminView() || !filter || !visibleModuleFilters().some((item) => item.stableKey === filter.stableKey) || ['trabalho','processual-trabalho'].includes(filter.disciplineKey)) return;
     modalReturnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     injectModal(); modalFilter = filter; modalSession = session || null;
     const modal = document.getElementById('bcqSessionModal');
@@ -1189,6 +1210,7 @@
   }
 
   function onClick(event) {
+    if (!isAdminView()) return;
     const tab = event.target.closest('[data-bcq-tab]');
     if (tab) { switchTab(tab.dataset.bcqTab); return; }
     const goTab = event.target.closest('[data-bcq-go-tab]');
@@ -1231,6 +1253,14 @@
     }
   }
   function refreshAll() {
+    if (!isAdminView()) {
+      document.documentElement.classList.add('bcq-student-view');
+      document.querySelectorAll('[data-bcq-module-panel]').forEach((panel) => panel.remove());
+      document.getElementById('questionFiltersView')?.remove();
+      injectNavigation(); mountModules();
+      return;
+    }
+    document.documentElement.classList.remove('bcq-student-view');
     refreshRegistry(); injectNavigation(); injectPage(); injectAdminModal(); mountModules(); renderPage();
     if (selectedKey) renderDetail(filterByKey(selectedKey));
   }
@@ -1240,6 +1270,22 @@
     global.requestAnimationFrame(() => { scheduled = false; refreshAll(); });
   }
   function init() {
+    if (!isAdminView()) {
+      // Sem montagem, menu, histórico ou consulta de filtros para aluno/editor.
+      document.documentElement.classList.add('bcq-student-view');
+      injectNavigation(); mountModules();
+      if (global.location.pathname === ROUTE) global.history.replaceState({ centralQuestions: false }, '', '/');
+      // Novas disciplinas surgem de forma preguiçosa: retirar painéis antigos.
+      document.addEventListener('central:discipline-ready', scheduleRefresh);
+      new MutationObserver((records) => {
+        const newFilters = records.some((record) => Array.from(record.addedNodes).some((node) =>
+          node.nodeType === 1 && (node.matches?.('[data-bcq-module-panel],.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel') ||
+          node.querySelector?.('[data-bcq-module-panel],.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel'))));
+        if (newFilters) scheduleRefresh();
+      }).observe(document.documentElement, { childList: true, subtree: true });
+      return;
+    }
+    document.documentElement.classList.remove('bcq-student-view');
     ensureLegacyTecIds(); refreshRegistry(); injectNavigation(); injectPage(); injectModal(); injectAdminModal(); mountModules();
     document.addEventListener('click', (event) => {
       const target = event.target instanceof Element ? event.target : event.target?.parentElement;

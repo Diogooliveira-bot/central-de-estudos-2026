@@ -86,3 +86,11 @@ html[data-bc-reading-mode="night"] :is(#cpcNativeReaderOverlay,#cpcM02NativeRead
 .cpc-apostila .cpc-reasoning-path .cpc-study-done.done{border-color:var(--cpc-line);color:var(--cpc-muted)}
 .cpc-apostila .cpc-reasoning-path .cpc-study-done:focus-visible,.cpc-apostila .cpc-reasoning-path .cpc-study-step>summary:focus-visible{outline:2px solid var(--cpc-blue);outline-offset:3px}
 @media(max-width:600px){.cpc-apostila .cpc-reasoning-path>h2{font-size:1.3em!important}.cpc-apostila .cpc-reasoning-path>.cpc-didactic-lead{font-size:1em}}
+
+/* Tabelas dos resumos no celular: cabem na tela, sem esconder colunas (19/11/2026). */
+@media(max-width:600px){.cpc-apostila .cpc-comparison table{min-width:0;font-size:.8em;line-height:1.5}.cpc-apostila .cpc-comparison th,.cpc-apostila .cpc-comparison td{padding:8px 6px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}.cpc-apostila .cpc-comparison th:first-child,.cpc-apostila .cpc-comparison td:first-child{width:32%}}
+/* Lei seca ao lado da explicação (mesmo modelo do Direito Constitucional) */
+.cpc-apostila details.cpc-law.cpc-law-inline{margin:.9em 0 1.5em!important;padding:2px 14px 4px 16px!important;border-left:2px solid #92b6cc!important;background:#f8fbfd!important;font-size:.92em}
+.cpc-apostila details.cpc-law.cpc-law-inline>summary{font-size:.8125rem;color:#285b7b;padding:9px 0}
+.cpc-apostila details.cpc-law.cpc-law-inline .cpc-law-article+.cpc-law-article{margin-top:14px;padding-top:12px;border-top:1px solid #dbe7ef}
+html[data-bc-reading-mode="night"] .cpc-apostila details.cpc-law.cpc-law-inline{background:rgba(255,255,255,.045)!important}

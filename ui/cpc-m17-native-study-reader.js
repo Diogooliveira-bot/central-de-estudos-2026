@@ -73,7 +73,7 @@ function listRun(lines,i){
  for(let j=i;j<lines.length;j++){
    const l=lines[j];if(!l)break;if(/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(l))continue;
    const t=l.replace(/^[•●▪◦*-]\s+/,'');
-   if(t.length>160||headingInfo(t)||calloutType(t))break;
+   if(/^\u0001cpctab\d+\u0001$/.test(l))break;if(t.length>160||headingInfo(t)||calloutType(t))break;
    if(/;$/.test(t)){items.push(t);continue}
    if(items.length&&/[.]$/.test(t)){items.push(t);j++;return items.length>=3?{items,next:j}:null}
    break;
@@ -89,6 +89,7 @@ function parse(raw){
  for(let i=0;i<lines.length;i++){
    const line=lines[i];
    if(!line){flush();continue}
+   {const tm=/^\u0001cpctab(\d+)\u0001$/.exec(line);if(tm){flush();blocks.push({type:'table',index:Number(tm[1])});continue}}
    if(/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(line))continue;
    // Marcador grudado num título ("• 10. CONFLITO DE COMPETÊNCIA").
    if(/^(?:[•●▪◦]|\d{1,2}\.)\s+\d/.test(line)&&headingInfo(line.replace(/^(?:[•●▪◦]|\d{1,2}\.)\s+/,''))&&/^(?:[•●▪◦]|\d{1,2}\.\s+\d{1,2}\.\s)/.test(line)){lines[i]=line.replace(/^(?:[•●▪◦]|\d{1,2}\.)\s+/,'');i--;continue}
@@ -106,18 +107,35 @@ function parse(raw){
    const hi=headingInfo(line);
    if(hi){flush();blocks.push({type:'h',level:hi.level,text:hi.text});continue}
    const co=calloutType(line);
-   if(co){flush();const body=[];for(let j=i+1;j<lines.length;j++){const n=lines[j];if(!n){if(body.length)break;else continue}if(/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(n)){i=j;continue}if(headingInfo(n)||headingInfo(n.replace(/^[•●▪◦]\s+/,''))||calloutType(n))break;body.push(n);i=j}blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});continue}
+   if(co){flush();const body=[];for(let j=i+1;j<lines.length;j++){const n=lines[j];if(!n){if(body.length)break;else continue}if(/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(n)){i=j;continue}if(/^\u0001cpctab\d+\u0001$/.test(n))break;if(headingInfo(n)||headingInfo(n.replace(/^[•●▪◦]\s+/,''))||calloutType(n))break;body.push(n);i=j}blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});continue}
    if(isBullet(line)){flush();const items=[line.replace(/^[•●▪◦*-]\s+/,'')];while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,''));blocks.push({type:'ul',items});continue}
    para.push(line);
    if(width&&/[.!?]["”»)]?$/.test(line)&&line.length<width*0.8)flush();
  }
  flush(); return blocks;
 }
+/* Quadros reconstruídos da teoria completa (texto original intacto; ver content/cpc/cpc-complete-tables-v1.js). */
+function withTables(raw){
+ const src=source(),all=src&&global.BASE_CPC_COMPLETE_TABLES&&global.BASE_CPC_COMPLETE_TABLES['m'+String(src.number).padStart(2,'0')];
+ if(!all||!all.length||raw!==src.complete)return {raw,tables:[]};
+ const lines=String(raw).split(/\r?\n/),out=[],tables=[];let i=0;
+ for(const t of all){
+  while(i<t.from)out.push(lines[i++]);
+  if(t.lead)out.push(t.lead);
+  out.push('\u0001cpctab'+tables.length+'\u0001');tables.push(t);
+  if(t.trail)out.push(t.trail);
+  i=t.to+1;
+ }
+ while(i<lines.length)out.push(lines[i++]);
+ return {raw:out.join('\n'),tables};
+}
+function tableHtml(t){return '<div class="cpc-comparison"><table><thead><tr>'+t.header.map(x=>'<th scope="col">'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+t.rows.map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'}
 function build(raw){
- let h=0; const blocks=parse(raw);
+ let h=0; const info=withTables(raw),blocks=parse(info.raw);
  const body=blocks.map(b=>{
    if(b.type==='h'&&b.level===4)return '<h4>'+esc(b.text)+'</h4>';
    if(b.type==='h'){const id='cpcsec-'+(++h)+'-'+normKey(b.text).replace(/\s+/g,'-').slice(0,60);return '<h'+b.level+' id="'+id+'">'+esc(b.text)+'</h'+b.level+'>'}
+   if(b.type==='table')return tableHtml(info.tables[b.index]);
    if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
    if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
    if(b.type==='callout')return '<aside class="bc-native-callout '+b.kind+'"><b>'+esc(b.label)+'</b><div>'+esc(b.text)+'</div></aside>';
@@ -188,7 +206,7 @@ async function open(mode){
  close();
  const raw=mode==='summary'?data.summary:data.complete,parsed=(mode==='summary'&&data.summaryHtml)?buildFromHtml(data.summaryHtml,raw):build(raw),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
  const request=global.__CPC_VISUAL_REQUEST=(global.__CPC_VISUAL_REQUEST||0)+1;
- try{if(!global.CpcApostilaReading)await import('/ui/cpc-apostila-reading-v1.js?v=20261111cpcpdf1');parsed.body=await global.CpcApostilaReading.transform(parsed.body,17,mode);if(request!==global.__CPC_VISUAL_REQUEST)return;}catch(error){console.warn('[CPC apostila]',error);alert('Não foi possível preparar a leitura. Confira sua conexão e tente novamente.');return;}
+ try{if(!global.CpcApostilaReading)await import('/ui/cpc-apostila-reading-v1.js?v=20261120leiseca1');parsed.body=await global.CpcApostilaReading.transform(parsed.body,17,mode);if(request!==global.__CPC_VISUAL_REQUEST)return;}catch(error){console.warn('[CPC apostila]',error);alert('Não foi possível preparar a leitura. Confira sua conexão e tente novamente.');return;}
  const ov=document.createElement('div');ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true">'+
  '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M17 — '+esc(data.title)+'</b><small>'+label+' • leitura incorporada à Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-cpc-close>×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+

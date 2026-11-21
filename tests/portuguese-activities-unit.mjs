@@ -106,3 +106,46 @@ test('numeração visual é sequencial mesmo após filtrar questões sem alterna
     dom.window.close();
   }
 });
+
+test('Português M01–M24 mostra apenas Teoria e questões internas, sem versão completa ou PDF', () => {
+  const dom = new JSDOM('<!doctype html><html><body></body></html>', {
+    url: 'https://base-completa.test/', runScripts: 'outside-only'
+  });
+  const w = dom.window;
+  w.CentralDisciplineLoader = {};
+  w.CentralPortugueseCourse = {
+    modules: Array.from({ length: 24 }, (_, index) => {
+      const num = String(index + 1).padStart(2, '0');
+      return { id: 'm' + num, num, title: 'Módulo ' + num };
+    }),
+    review: { id: 'review', title: 'Revisão final', review: true }
+  };
+  w.eval(fs.readFileSync(path.join(root, 'ui/current-courses.js'), 'utf8'));
+  const container = w.document.createElement('div');
+  container.innerHTML = w.renderPortugueseMaster();
+  assert.equal(container.querySelectorAll('.pt-cf-module').length, 25);
+  assert.equal(container.querySelectorAll('.pt-cf-card-primary').length, 0);
+  assert.equal(container.querySelectorAll('.pt-cf-card-review').length, 25);
+  assert.equal(container.querySelectorAll('.pt-cf-card-pdf,[data-pt-cf-open="pdf"]').length, 0);
+  assert.equal([...container.querySelectorAll('.pt-cf-card-review > b')].filter(node => node.textContent === 'Teoria').length, 24);
+  assert.equal(container.querySelectorAll('[data-pt-cf-open="review"]').length, 25);
+  assert.equal(container.querySelectorAll('[data-pt-cf-quiz="active"]').length, 0);
+  assert.equal(container.querySelectorAll('[data-pt-cf-quiz="cumulative-review"]').length, 1);
+  for (const obsolete of ['Versão de revisão', 'Teoria completa', 'Apostila teórica (PDF)']) {
+    assert.equal(container.textContent.includes(obsolete), false, obsolete + ' voltou à tela');
+  }
+  const catalog = {};
+  new Function('window', fs.readFileSync(path.join(root, 'content/questoes/index.js'), 'utf8'))(catalog);
+  assert.deepEqual(Array.from(catalog.BC_QUESTOES_INDICE.pt), Array.from({ length: 24 }, (_, i) => i + 1));
+  assert.ok(catalog.BC_QUESTOES_INDICE.pt.every(n => catalog.BC_QUESTOES_QTD.pt[n] > 0));
+  const questionCard = fs.readFileSync(path.join(root, 'ui/questoes-modulo-card-v1.js'), 'utf8');
+  assert.ok(questionCard.includes("disc: 'pt'"));
+  assert.ok(questionCard.includes('BCQuestoesArea?.openModule(disc, n)'));
+  for (const filename of ['index.html', 'central-v119.html']) {
+    assert.ok(fs.readFileSync(path.join(root, filename), 'utf8').includes('ui/current-courses.js?v=20261121r2'), filename);
+  }
+  assert.ok(fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('ui/portuguese-reader.js?v=20261121r2'));
+  assert.ok(fs.readFileSync(path.join(root, 'ui/portuguese-reader.js'), 'utf8').includes("module.review?'Revisão final':'Teoria'"));
+  assert.ok(fs.readFileSync(path.join(root, 'ui/apostilas-pdf-v1.js'), 'utf8').includes('rlm-m'));
+  dom.window.close();
+});

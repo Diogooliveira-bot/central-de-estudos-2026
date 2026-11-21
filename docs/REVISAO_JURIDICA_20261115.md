@@ -748,3 +748,1459 @@ Pendências (não aplicadas):
 ## Constitucional — encerramento (17/11/2026)
 
 Os 15 módulos de Direito Constitucional foram revisados e aprovados por aprovador independente, com 175 edições dos revisores e os ajustes de cada aprovador. Pendências recorrentes para o proprietário: Tema 1.000 (nepotismo e cargos políticos, RE 1.133.118), cuja tese deve ser conferida depois do julgamento previsto para 18/11/2026; texto oficial das ECs nº 139, 140 e 141/2026 (os sites do Planalto e do STF não abriram neste ambiente); transição da EC nº 140/2026; ADIs 8.041 e 8.042 (implementação da jornada da EC nº 141/2026); arquivo da lei seca da Constituição (`cf-teoria-guiada-lei-seca.js`), gerado automaticamente, deve ser conferido quanto às ECs nº 138 a 141/2026; e o teste `tests/cf-m01-didatico-unit.mjs`, que já falhava antes da revisão.
+
+## Direito Civil e Processo Civil — regra de escopo (18/11/2026)
+
+Por orientação do proprietário, a versão de revisão de Civil e de Processo Civil fica **enxuta**: doutrina minoritária e jurisprudência (acórdãos, temas, teses de tribunais) ficam **fora**, para o material completo; só entram súmulas, súmulas vinculantes ou teses muito consolidadas e de altíssima importância. Erros, desatualizações legais e imprecisões continuam sendo corrigidos. O que foi deixado de fora fica registrado como pendência de cada módulo. Esta regra vale a partir de Civil M01; os módulos de Administrativo e Constitucional já publicados seguiram a regra anterior.
+
+### Civil M03 — Bens
+
+Veredito do aprovador: **APROVADO**. Módulo sólido e bem organizado pelos arts. 79 a 103. Os problemas encontrados foram pontuais: rendimentos tratados como se não fossem frutos, redação imprecisa de benfeitorias voluptuárias (art. 96, § 1º), materiais de construção (art. 84), art. 81 e 'patrimônio disponível'. Faltavam o art. 80, II (sucessão aberta), o art. 102 com a Súmula 340 do STF e a base legal das benfeitorias na posse. Nenhuma parte do PL 4/2025 (reforma do Código Civil) foi sancionada até novembro/2026 e o módulo não a trata como lei.
+
+- **Correção** (E1): Art. 92 define o acessório como o bem 'cuja existência supõe a do principal' (não fala em finalidade). O texto opunha 'produtos e rendimentos' como se rendimentos não fossem frutos, mas a doutrina majoritária classifica os rendimentos (aluguéis, juros) como frutos civis. _Fonte: CC, art. 92; doutrina majoritária (frutos naturais, industriais e civis)._
+- **Correção** (E2): O art. 95 não 'disciplina' frutos e produtos de modo geral; apenas admite que sejam objeto de negócio jurídico antes de separados. A classificação é construção doutrinária, não texto de lei. _Fonte: CC, arts. 92 e 95._
+- **Correção** (E3): O § 1º do art. 96 diz que as voluptuárias não aumentam o uso habitual 'ainda que o tornem mais agradável ou sejam de elevado valor'; 'elevem valor' sugere que o aumento de valor as descaracteriza ou define. _Fonte: CC, art. 96, § 1º._
+- **Correção** (E4): O art. 84 é literal: os materiais destinados a construção, enquanto não empregados, conservam a qualidade de móveis, e os provenientes de demolição a readquirem. 'Regras próprias' era vago e omitia a demolição. _Fonte: CC, art. 84; art. 79._
+- **Correção** (E5): A redação do art. 81, I, é 'removidas para outro local'; 'destinam a nova fixação' não consta da lei. O inciso II (materiais provisoriamente separados) estava omitido. _Fonte: CC, art. 81, I e II._
+- **Correção** (E6): A expressão 'patrimônio disponível' é glosa doutrinal; o art. 99, III, define dominicais como os que constituem o patrimônio das pessoas jurídicas de direito público, como objeto de direito pessoal ou real. _Fonte: CC, art. 99, III._
+- **Acréscimo** (E7): Precisa o rol do art. 80 e inclui o direito à sucessão aberta (inciso II), de alta incidência e ligado à herança como universalidade, tratada no tópico 6. _Fonte: CC, art. 80, I e II._
+- **Acréscimo** (E8): Cita o art. 97 (exceção ao conceito, já tratada no texto sem artigo) e concretiza o efeito da classificação na posse, que o texto só anunciava. _Fonte: CC, arts. 96, 97, 1.219 e 1.220._
+- **Acréscimo** (E9): O art. 102 é o dispositivo específico sobre usucapião (o texto citava apenas o intervalo 100 a 103). A Súmula 340 do STF, clássica, consolida a vedação inclusive para dominicais. _Fonte: CC, art. 102; CF, arts. 183, § 3º, e 191, parágrafo único; Súmula 340 do STF (texto confirmado no portal do STF)._
+- **Acréscimo** (E10): Fundamenta a advertência no texto legal. _Fonte: CC, art. 90, parágrafo único._
+- **Acréscimo** (E11): Corolário do art. 85 amplamente aceito pela doutrina. _Fonte: CC, art. 85; doutrina majoritária._
+- **Didática** (E12): Neutraliza a referência a frequência de esquecimento e liga a afirmação ao artigo; o art. 86 fala em 'bens móveis' destinados à alienação, não em 'coisas destinadas à venda'. _Fonte: CC, art. 86._
+
+Pendências (não aplicadas):
+- Bens de empresas públicas e sociedades de economia mista — O art. 98 as trata como particulares; a jurisprudência admite regime diferenciado (impenhorabilidade e usucapião quando afetados a serviço público). Fica para o material completo por ser jurisprudência.
+- Frutos na posse (art. 1.215: civis percebidos dia por dia) e benfeitorias na locação (Lei nº 8.245/1991, art. 35; Súmula 335 do STJ) — Omitidos para manter a versão enxuta e por limite de edições.
+- Alienação de bens públicos dominicais (Lei nº 14.133/2021, art. 76) e art. 99, parágrafo único — Conteúdo mais próximo do Direito Administrativo; omitido por limite de edições.
+- Reforma do Código Civil (PL 4/2025) — Em tramitação; a Comissão Temporária do Senado teve o prazo prorrogado (notícias de 2026 indicam dezembro/2026). Não sancionada, não tratada no módulo. Propostas sobre bens digitais e animais não são lei.
+- **Ajustes do aprovador (aplicados):** parágrafo sobre consumibilidade sem repetição ("a consumibilidade jurídica decorre da parte final do art. 86, que considera consumíveis também os bens móveis destinados à alienação"); art. 1.219 corrigido (a retenção é pelo valor das benfeitorias necessárias e úteis; as voluptuárias só podem ser levantadas se não forem pagas e sem detrimento da coisa); "em regra" nos imóveis infungíveis (leitura doutrinária majoritária); três divisões do Livro II com os artigos (79 a 91, 92 a 97 e 98 a 103). O aprovador confirmou a numeração dos arts. 93, 94, 97, 99, III, 102 e 103 e a Súmula 340 do STF (texto literal). O PL 4/2025 (reforma do Código Civil) segue em tramitação, sem sanção até novembro/2026.
+
+### Civil M02 — Pessoas jurídicas e domicílio
+
+Veredito do aprovador: **APROVADO**. Módulo sólido e didático, com poucos erros de fundo. As correções principais tratam de róis fechados apresentados como exemplos (art. 59, art. 62, parágrafo único, e art. 76), da conjunção do art. 50, § 1º, e de requisitos de alteração de fundação (arts. 63 e 67). Não há reforma do Código Civil (PL 4/2025) sancionada que afete o conteúdo. Seguindo a regra de versão enxuta, não foram acrescentadas jurisprudência nem doutrina minoritária.
+
+- **Correção** (E1): O art. 50, § 1º, liga as duas finalidades pela conjunção 'e', não por 'ou'. Acrescenta-se o parágrafo de cada conceito (art. 50, §§ 1º e 2º, redação da Lei nº 13.874/2019). _Fonte: CC, art. 50, §§ 1º e 2º (Lei nº 13.874/2019)_
+- **Correção** (E2): O texto atribuía ao regime civil uma regra sobre encerramento irregular que é jurisprudencial, não legal. Substituído por regras legais: § 4º (grupo econômico), § 3º (desconsideração inversa) e a exceção do CDC. _Fonte: CC, art. 50, §§ 3º e 4º; CDC, art. 28, § 5º_
+- **Acréscimo** (E3): Prazo decadencial de alto rendimento e requisitos do registro (art. 46) ausentes do módulo. _Fonte: CC, arts. 45, parágrafo único, e 46_
+- **Correção** (E4): O art. 59 traz apenas dois incisos, de competência privativa; o texto os apresentava como exemplos ('como'). Redação da Lei nº 11.127/2005. _Fonte: CC, art. 59, I e II, e parágrafo único (Lei nº 11.127/2005)_
+- **Correção** (E5): A forma é exigência legal, não praxe ('costuma'). _Fonte: CC, art. 62, caput_
+- **Correção** (E6): O texto tratava o rol como exemplificativo ('como ... e outras'), embora a lei use 'somente'. _Fonte: CC, art. 62, parágrafo único (Lei nº 13.151/2015)_
+- **Correção** (E7): Indica o destino legal literal dos bens insuficientes (art. 63) e especifica quórum e requisitos do art. 67, I a III, antes tratados de forma vaga. _Fonte: CC, arts. 63 e 67, I a III_
+- **Correção** (E8): A expressão 'fora das hipóteses legais' sugeria exceções que o art. 67, II, não prevê. _Fonte: CC, art. 67, II_
+- **Correção** (E9): O art. 73 não impõe circunstâncias adicionais. _Fonte: CC, art. 73_
+- **Correção** (E10): O rol do art. 76 é fechado; o texto o apresentava como exemplos ('como'). _Fonte: CC, art. 76 e parágrafo único_
+- **Didática** (E11): O CC chama de voluntário o domicílio escolhido; 'natural' designa, na doutrina, o domicílio de origem. Cita-se o artigo. _Fonte: CC, arts. 70 e 71_
+- **Acréscimo** (E12): Texto legal de alto rendimento sobre associações, encaixado no parágrafo dos direitos dos associados; reescreve a frase com a redação literal do art. 55. _Fonte: CC, arts. 53, parágrafo único, 55 e 56_
+
+Pendências (não aplicadas):
+- Encerramento irregular e desconsideração (art. 50) — A afirmação de que o encerramento irregular não basta no regime civil decorre da jurisprudência do STJ; foi removida do texto por regra de versão enxuta (sem jurisprudência) e fica para o material completo. Idem teoria m
+- Fundação: fiscalização no Distrito Federal (art. 66, § 1º) e rol do art. 62 — Há decisão do STF sobre o art. 66, § 1º (jurisprudência), deixada para o material completo; a lista completa dos incisos do art. 62, parágrafo único, não foi reproduzida por não ter sido confirmada em segunda fonte.
+- **Ajustes do aprovador (aplicados):** finalidades das fundações (art. 62, parágrafo único, incisos I a IX, com cultura e atividades religiosas; retirado o rótulo "rol fechado", porque a doutrina o trata como exemplificativo, mantido o "somente poderá constituir-se" literal); alteração do estatuto da fundação com prazo máximo de 45 dias para o Ministério Público e suprimento judicial, se o prazo findar ou se o MP denegar (art. 67, III, Lei nº 13.151/2015); art. 43 (regresso contra o causador do dano, se houver culpa ou dolo); art. 63 (bens insuficientes "para constituir a fundação"); art. 46 (o que o registro declara); arts. 45, 46 e 51 e 53 a 56 nas referências; art. 75 (domicílio dos entes públicos e das demais pessoas jurídicas). O aprovador confirmou a redação do art. 50, § 1º ("lesar credores e para a prática de atos ilícitos"). O PL 4/2025 segue na comissão temporária do Senado (checagem de 6/11/2026), sem sanção.
+
+### Civil M01 — Lei, pessoa natural e direitos da personalidade
+
+Veredito do aprovador: **APROVADO**. Material didático e em geral correto, já atualizado ao regime pós-Lei nº 13.146/2015 (incapacidade absoluta só para menores de 16 anos). Os erros encontrados foram pontuais: tradução imprecisa do art. 13 (diminuição permanente 'indevida'), leitura doutrinária do art. 11 apresentada como texto de lei e prazo legal não indicado no art. 7º, II. Faltavam regras legais de alto rendimento (art. 39 sobre o retorno do ausente, art. 56 da Lei nº 6.015/1973 após a Lei nº 14.382/2022, legitimados dos arts. 12 e 20). O PL 4/2025 (reforma do Código Civil) não foi sancionado até novembro/2026 e o módulo não o trata como lei.
+
+- **Correção** (E1): O texto falava em diminuição permanente 'indevida', termo que não consta do art. 13, e omitia a ressalva do transplante (parágrafo único) e a regra do art. 14, que o material já cita na faixa 'arts. 13 a 15'. _Fonte: CC, arts. 13 (caput e parágrafo único) e 14 (caput e parágrafo único)_
+- **Correção** (E2): O texto legal veda a limitação voluntária; 'irrestrita' era leitura doutrinária apresentada como se fosse a lei. A atribuição à doutrina foi explicitada. _Fonte: CC, art. 11 ('Com exceção dos casos previstos em lei, os direitos da personalidade são intransmissíveis e irrenunciáveis, não podendo o seu exercício sofrer lim_
+- **Acréscimo** (E3): O tópico trata do retorno do ausente (título e checklist), mas não trazia a regra do art. 39, que é a consequência central do reaparecimento após a sucessão definitiva. _Fonte: CC, art. 39, caput_
+- **Atualização** (E4): Substitui a paráfrase pela redação literal da súmula, que traz a ideia central (dispensa de prova do prejuízo). _Fonte: STJ, Súmula 403_
+- **Atualização** (E5): A frase era genérica. A Lei nº 14.382/2022 deu nova redação ao art. 56 da Lei de Registros Públicos e eliminou o prazo de um ano e a exigência de motivação para a alteração do prenome; o ponto é conteúdo legal de alto rendimento. _Fonte: Lei nº 6.015/1973, art. 56, caput e § 1º, redação da Lei nº 14.382/2022_
+- **Acréscimo** (E6): Complementa a lógica pós-Estatuto: sem a incapacidade por deficiência, os instrumentos de apoio são a curatela excepcional e a tomada de decisão apoiada. _Fonte: Lei nº 13.146/2015, arts. 84, § 3º, e 85; CC, art. 1.783-A_
+- **Correção** (E7): A frase original omitia o inciso V (economia própria), que também exige 16 anos completos, e não explicava a emancipação pelo casamento, que depende da idade núbil. _Fonte: CC, art. 5º, parágrafo único, I e V; arts. 1.517 e 1.520 (Lei nº 13.811/2019)_
+- **Didática** (E8): Reescrita em linguagem neutra e mais clara, sem referência a provas ou questões. _Fonte: CC, art. 2º_
+- **Acréscimo** (E9): Linguagem neutra e inclusão de exemplos de lei seca que mostram a proteção do nascituro sem apelo a jurisprudência. _Fonte: CC, arts. 2º, 542 e 1.798_
+- **Correção** (E10): O texto remetia ao 'prazo legal' sem indicá-lo; o inciso II do art. 7º fixa dois anos após o término da guerra. _Fonte: CC, art. 7º, II e parágrafo único_
+- **Acréscimo** (E11): Especifica os legitimados, que o texto apenas remetia à lei; há duas listas distintas (arts. 12 e 20) que costumam ser confundidas. _Fonte: CC, arts. 12, parágrafo único, e 20, parágrafo único_
+
+Pendências (não aplicadas):
+- Nascituro: jurisprudência (STJ, indenização DPVAT ao nascituro, REsp 1.415.727/SC, 2014) — Fora do escopo da versão enxuta (jurisprudência não sumulada); reservar ao material completo. Não confirmado em duas fontes nesta revisão.
+- Biografias não autorizadas (STF, ADI 4815, 2015) e direito ao esquecimento (STF, Tema 786, RE 1.010.606, 2021) — Jurisprudência do STF, deixada para o material completo conforme orientação do proprietário.
+- Alteração de prenome e gênero de pessoa transgênero (STF, ADI 4275 e RE 670.422, Tema 761, 2018) — O item 8.4 cita genericamente 'a jurisprudência do STF'; manter ou detalhar no material completo. Não editado por ser jurisprudência.
+- Responsabilidade dos pais por atos ilícitos do filho emancipado voluntariamente (STJ, REsp 122.573/PR, 1998) — Jurisprudência; reservar ao material completo.
+- Recusa de transfusão de sangue por Testemunhas de Jeová (STF, Tema 1.069) e art. 15 do CC — Tese do STF deixada para o material completo conforme orientação do proprietário. O art. 15 do CC (ninguém pode ser constrangido a submeter-se, com risco de vida, a tratamento médico ou intervenção cirúrgica) ficou fora 
+- Doação de órgãos post mortem: Lei nº 9.434/1997, art. 4º (autorização do cônjuge ou parente maior de idade até o segundo grau, redação da Lei nº 10.211/2001) e art. 15 do CC — Conteúdo legal confirmado, mas não incluído por causa do limite de 12 edições e do teto de crescimento do texto. Candidato prioritário para próxima revisão.
+- Registro (art. 9º) e averbação (art. 10) do CC — Lista de atos de registro (emancipação, ausência, morte presumida) e de averbação (nulidade/anulação do casamento, divórcio, filiação, adoção) seria acréscimo útil. O texto atual do art. 9º, III, ('interdição por incapac
+- Capacidade dos indígenas (art. 4º, parágrafo único) — Acréscimo legal curto, não incluído por teto de crescimento do texto.
+- Comoriência: caráter relativo da presunção (art. 8º) — Acréscimo opcional; não incluído por limite de edições.
+- **Ajustes do aprovador (aplicados):** limitação voluntária dos direitos da personalidade identificada como leitura doutrinária (Enunciado 4 da I Jornada de Direito Civil), em vez de frase truncada; retirada de cláusula vaga sobre jurisprudência do STF; art. 4º, parágrafo único (indígenas); art. 7º, II, na redação da lei; arts. 12 e 20 (legitimados); art. 15; reescrita do trecho sobre disposição de órgãos, com o art. 199, § 4º, da CF (veda toda comercialização). Nenhuma jurisprudência ou doutrina minoritária foi acrescentada.
+
+### Civil M04 — Negócio jurídico
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material didático e em geral fiel ao CC, com estrutura clara. Foram encontradas imprecisões pontuais: o art. 108 descrito como 'trinta salários mínimos' (a lei diz trinta vezes o maior salário mínimo vigente no País), dolo acidental descrito de forma vaga (art. 146 diz que não anula, só gera perdas e danos), regime do estado de perigo no art. 178 descrito de forma incorreta (aplica-se o art. 178, II) e nulidade descrita como convalescendo 'em regra' (art. 169 é categórico). Também foram incluídas a redação do art. 113 dada pela Lei nº 13.874/2019 e lacunas curtas de alto rendimento (arts. 109, 118, 119, 147, 148, 158, 159, 172, 177 e 179). Não há alteração legislativa posterior que afete o módulo; a reforma (PL 4/2025) segue em tramitação e não foi tratada como lei.
+
+- **Correção** (E1): O art. 108 fala em imóveis de valor superior a trinta vezes o maior salário mínimo vigente no País, 'não dispondo a lei em contrário'; a expressão 'trinta salários mínimos' é imprecisa. _Fonte: CC, art. 108_
+- **Acréscimo** (E2): Complementa o art. 108 com a exceção legal clássica e a regra do art. 109, ambas de texto literal de lei. _Fonte: CC, arts. 108 e 109; Lei nº 9.514/1997, art. 38_
+- **Atualização** (E3): A fonte genérica 'redação vigente' não identificava a lei; o §1º do art. 113 foi acrescentado pela Lei da Liberdade Econômica e lista incisos I a V (aqui citados parcialmente: I, II, III e IV). _Fonte: CC, art. 113, §1º, I a IV (Lei nº 13.874/2019); confirmado em Migalhas, Demarest e Grupo GEN_
+- **Correção** (E4): Aproxima a paráfrase da redação do art. 113, §2º, e indica o artigo. _Fonte: CC, art. 113, §2º (Lei nº 13.874/2019)_
+- **Didática** (E5): Linguagem neutra, sem referência a questões de prova. _Fonte: Regra editorial_
+- **Correção** (E6): A expressão 'consequências' era vaga; o art. 118 prevê que o representante responde pelos atos que excederem os poderes. _Fonte: CC, art. 118_
+- **Acréscimo** (E7): Completa o termo inicial do prazo do art. 119 e o prazo residual do art. 179 para anulabilidade sem prazo próprio, como é o caso do art. 117. _Fonte: CC, arts. 117, 119, parágrafo único, e 179_
+- **Correção** (E8): O art. 146 afirma que o dolo acidental só obriga a perdas e danos; 'sem necessariamente anular' sugeria possibilidade de anulação. _Fonte: CC, arts. 145 e 146_
+- **Correção** (E9): Aproxima a paráfrase do art. 147 (restrito a negócios bilaterais) e explicita o regime do art. 148. _Fonte: CC, arts. 147 e 148_
+- **Correção** (E10): O estado de perigo está expressamente no art. 178, II, e não em 'regime próprio'; indica-se o prazo de quatro anos. _Fonte: CC, art. 178, I e II_
+- **Acréscimo** (E11): A redação genérica ('requisitos legais próprios') não informava os requisitos centrais, que constam literalmente dos arts. 158 e 159. _Fonte: CC, arts. 158 e 159_
+- **Correção** (E12): O art. 169 é categórico; 'em regra' sugeria exceção que o texto legal não traz. Acrescentam-se os arts. 172 e 177, centrais no contraste entre nulidade e anulabilidade. _Fonte: CC, arts. 169, 172 e 177_
+
+Pendências (não aplicadas):
+- Art. 166 (rol de causas de nulidade) e art. 168 (legitimidade e pronúncia de ofício) — Lacuna de alto rendimento, mas o acréscimo ultrapassaria o limite de edições; sugerir inclusão no material completo.
+- Condições ilícitas, impossíveis e puramente potestativas (arts. 122 a 124) e encargo ilícito (art. 137) — Lacuna relevante no tópico sobre condição, termo e encargo; fora do limite de edições.
+- Hipóteses de erro substancial (art. 139), falso motivo (art. 140) e aproveitamento do negócio (art. 144) — Conteúdo de lei seca de alto rendimento, não incluído por limite de edições.
+- Cognoscibilidade do erro (art. 138: 'poderia ser percebido por pessoa de diligência normal') — O texto diz 'possibilidade de ser percebido nas condições do negócio', paráfrase aceitável; refinar no material completo.
+- Autocontrato: parágrafo único do art. 117 (subestabelecimento sem anuência do representado) — Acréscimo curto possível, fora do limite de edições.
+- Simulação: art. 167, §1º e §2º (hipóteses e ressalva a terceiros de boa-fé); conversão substancial (art. 170); invalidade parcial (art. 184) — Lacunas de lei seca; o caráter exemplificativo ou taxativo do rol do §1º é matéria doutrinária e não foi alterado sem fonte segura.
+- Súmulas 195 e 375 do STJ (fraude contra credores x fraude à execução) — Possível inclusão como súmulas clássicas, mas o tópico trata a distinção em nível conceitual; avaliar para o material completo.
+- Reserva mental conhecida pelo destinatário: consequência — A lei (art. 110) apenas afasta a subsistência da manifestação; a classificação (inexistência, nulidade ou ineficácia) é divergência doutrinária, não detalhada.
+- Conferência do art. 178 no texto oficial (planalto.gov.br) — O site oficial e um portal de referência não abriram; a redação do art. 178 usada (incisos I e II) foi conferida por fontes secundárias e pela redação conhecida do dispositivo.
+- **Ajustes do aprovador (aplicados):** retirada da frase sobre a Lei nº 9.514/1997, art. 38 (alcance controvertido); art. 113, § 1º, descrito como rol de cinco incisos (I a V), e não como lista aberta; art. 177 reescrito para evitar a leitura de que o negócio anulável só vale após sentença (a anulabilidade só tem efeito depois de julgada por sentença e não pode ser alegada de ofício); arts. 158 (transmissão gratuita de bens ou remissão de dívida) e 159 (contratos onerosos do devedor insolvente) na redação da lei; art. 138 (erro perceptível por pessoa de diligência normal). Art. 178 conferido em várias fontes: inciso I é coação (do dia em que cessar); inciso II reúne erro, dolo, fraude contra credores, estado de perigo e lesão (do dia da realização do negócio); inciso III, atos de incapazes. Uma fonte de internet que põe a coação no inciso II está errada. Pendência: conferir o art. 178 no Planalto, que não abre neste ambiente.
+
+### Civil M05 — Prescrição, decadência e prova
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Módulo majoritariamente correto, com paráfrases de artigos em geral fiéis (arts. 178, 189, 191, 192, 202, 207, 209 a 211, 214). Foram corrigidos: a paráfrase imprecisa do art. 207 (faltava o art. 208), a atribuição ao art. 211 de dever de alegar, e duas frases com dupla negação. Acrescentadas, de forma curta, lacunas de alto rendimento (arts. 179, 119, 206-A, 2.028, 193, 213, 227, 228 e 232; Súmula 301 do STJ).
+
+- **Correção** (E1): A frase original tinha dupla negação confusa; o texto agora afirma a regra (art. 198, I, só alcança os incapazes do art. 3º) e acrescenta a proteção do art. 195. _Fonte: CC, arts. 3º, 195 e 198, I_
+- **Correção** (E2): Paráfrase do art. 207 omitia o impedimento e a exceção expressa do art. 208 (arts. 195 e 198, I), de alto rendimento. _Fonte: CC, arts. 207 e 208_
+- **Correção** (E3): O art. 211 diz que a parte 'pode' alegar (não 'deve') e que o juiz não supre a alegação; a possibilidade de renúncia decorre, a contrario sensu, do art. 209 (nulidade só para a decadência legal). Frase sobre alternativas reescrita em linguagem neutra. _Fonte: CC, arts. 209 e 211_
+- **Acréscimo** (E4): Art. 119, parágrafo único: 180 dias a contar da conclusão do negócio ou da cessação da incapacidade. Art. 179 (regra supletiva de dois anos) é lacuna de alto rendimento sobre o tema. _Fonte: CC, arts. 119, parágrafo único, 178 e 179_
+- **Atualização** (E5): O Código Civil passou a prever expressamente a prescrição intercorrente com o prazo da pretensão (art. 206-A, Lei nº 14.195/2021). _Fonte: CC, art. 206-A; Lei nº 14.195/2021_
+- **Acréscimo** (E6): Frase genérica sobre jurisprudência (fora do escopo da versão enxuta) substituída pela regra de direito intertemporal do art. 2.028, clássica em prescrição. _Fonte: CC, art. 2.028_
+- **Acréscimo** (E7): Atualização pela Lei nº 13.146/2015 (art. 228, § 2º) e inclusão de súmula clássica sobre recusa a exame, com o art. 232 do CC. _Fonte: CC, arts. 228, § 2º, e 232; Lei nº 13.146/2015; Súmula 301/STJ_
+- **Atualização** (E8): Caput do art. 227 revogado pelo art. 1.072, II, do CPC de 2015; parágrafo único permanece. _Fonte: CC, art. 227, parágrafo único; Lei nº 13.105/2015, art. 1.072, II_
+- **Correção** (E9): Dupla negação reescrita de forma direta; acrescenta o limite de eficácia do art. 213. _Fonte: CC, arts. 213 e 214_
+- **Acréscimo** (E10): Contraste de alto rendimento: o art. 194 foi revogado (Lei nº 11.280/2006) e hoje a matéria está no CPC. _Fonte: CC, art. 193; Lei nº 13.105/2015, arts. 332, § 1º, e 487_
+- **Didática** (E11): Linguagem neutra. _Fonte: Regra do proprietário_
+- **Didática** (E12): Linguagem neutra. _Fonte: Regra do proprietário_
+
+Pendências (não aplicadas):
+- Prescrição intercorrente: detalhes de contagem — Início do prazo após suspensão de um ano (CPC, art. 921) e aplicação intertemporal da Lei nº 14.195/2021 envolvem jurisprudência; ficam para o material completo.
+- Teoria da actio nata e termo inicial (art. 189) — Teoria subjetiva e posições jurisprudenciais; fora do escopo da versão enxuta.
+- Prazo da reparação civil contratual (3 anos x 10 anos) — Divergência resolvida por jurisprudência; removida a referência genérica e deixada para o material completo.
+- Lei nº 14.010/2020, art. 3º — Impedimento e suspensão dos prazos prescricionais de 12/6/2020 a 30/10/2020 (regime transitório da pandemia); não incluído por ser norma transitória, a confirmar em fonte oficial se desejado.
+- Art. 200 e art. 199 (suspensão por fato apurado no juízo criminal; condição suspensiva, prazo não vencido, evicção) — Não detalhados no módulo; art. 200 tem aplicação condicionada pela jurisprudência.
+- União estável e art. 197, I — Extensão do impedimento ao companheiro é leitura doutrinária/jurisprudencial; confirmar antes de incluir.
+- Prazos especiais do art. 206 (§§ 1º a 5º) e Súmulas 150 do STF e 405 do STJ — Rol extenso; pode ser listado no material completo.
+- Arts. 215 a 225 (documentos), art. 219 e provas eletrônicas (Lei nº 14.063/2020) — Fora do limite de edições; tema para o material completo.
+- **Ajustes do aprovador (aplicados):** art. 195 (a ação contra assistentes e representantes é dos relativamente incapazes e das pessoas jurídicas, não dos absolutamente incapazes); decadência convencional separada da regra sobre renúncia (art. 209, que trata da decadência fixada em lei; art. 211, parte pode alegar em qualquer grau); art. 2.028 na redação da lei ("mais da metade do tempo estabelecido na lei revogada"); retirada da referência à "teoria da actio nata ... jurisprudência pertinente" (texto original; substituída pelo art. 189: o prazo começa quando nasce a pretensão, com a violação do direito); art. 213 na redação literal. **Ressalva:** a redação literal completa do art. 206-A (Lei nº 14.195/2021) não foi conferida no Planalto; o texto usa apenas a ideia confirmada (mesmo prazo da pretensão) e a expressão "e em legislação especial" não foi incluída. Pendência: conferir se a Lei nº 14.382/2022 alterou o art. 206-A.
+
+### Civil M06 — Obrigações
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto quanto aos artigos citados. Os principais problemas são regras apresentadas sem a exceção legal (assunção de dívida e art. 303; remissão, que depende de aceitação do devedor), a indicação imprecisa dos artigos alterados pela Lei nº 14.905/2024 e lacunas de alto rendimento em lei seca (perda sem culpa, indivisibilidade, lugar do pagamento, imputação, mora, cláusula penal, ordem das preferências). Nenhuma jurisprudência foi acrescentada.
+
+- **Acréscimo** (E1): O módulo não enuncia a regra central da perda da coisa certa antes da tradição. Texto do art. 234: perda sem culpa do devedor resolve a obrigação para ambas as partes; perda com culpa gera o equivalente mais perdas e danos. _Fonte: CC, art. 234_
+- **Acréscimo** (E2): Completa a consequência legal da recusa na obrigação de fazer personalíssima (prestação só por ele exequível). _Fonte: CC, arts. 247 e 249_
+- **Acréscimo** (E3): Regra clássica: a obrigação que se converte em perdas e danos perde a indivisibilidade. _Fonte: CC, art. 263_
+- **Correção** (E4): A regra do consentimento expresso estava sem a exceção legal do art. 303 e sem o efeito do silêncio do art. 299, parágrafo único. _Fonte: CC, arts. 299 e 303_
+- **Acréscimo** (E5): O texto fala de regra supletiva sem dizer qual é. Art. 327: efetua-se o pagamento no domicílio do devedor, salvo convenção diversa ou se o contrário resultar da lei, da natureza da obrigação ou das circunstâncias. _Fonte: CC, art. 327_
+- **Acréscimo** (E6): Precisa os requisitos do art. 352 (débitos líquidos e vencidos, mesmo credor) e inclui a regra supletiva de alto rendimento do art. 354. _Fonte: CC, arts. 352 e 354_
+- **Correção** (E7): O art. 385 exige a aceitação do devedor e ressalva direito de terceiro; a redação anterior sugeria ato unilateral do credor. _Fonte: CC, art. 385_
+- **Acréscimo** (E8): Indica o critério legal de cada hipótese, que o texto apenas insinuava. _Fonte: CC, arts. 397 e 398_
+- **Atualização** (E9): Substitui a paráfrase vaga pela redação legal, com os artigos corretos. O art. 406, § 1º, diz: taxa Selic, deduzido o índice de atualização do parágrafo único do art. 389 (IPCA). _Fonte: Lei nº 14.905/2024; CC, arts. 389, parágrafo único, e 406, §§ 1º e 2º_
+- **Correção** (E10): A referência original sugeria que todos os artigos de 402 a 406 foram alterados; os arts. 402, 403 e 405 não foram. Confirmado em mais de uma fonte (Câmara/Planalto via resumos de Migalhas, TozziniFreire, TJRJ e Machado Meyer). _Fonte: Lei nº 14.905/2024_
+- **Correção** (E11): A frase original era vaga ('pressupostos legais'). A lei exige convenção para a indenização suplementar e limita a pena ao valor da obrigação principal. _Fonte: CC, arts. 412, 413, 416, parágrafo único, e 420_
+- **Acréscimo** (E12): Inclui a regra de ordem das preferências, central no art. 961. _Fonte: CC, art. 961_
+
+Pendências (não aplicadas):
+- Art. 246 e limites do princípio de que o gênero não perece — A doutrina admite exceções para gênero limitado; ponto de aprofundamento deixado para o material completo.
+- Dar e restituir coisa certa (arts. 238 a 242) — Frase sobre repartição de risco ('restituir bem alheio') é ambígua; não detalhada para manter a versão enxuta. Regra: na restituição, a perda sem culpa é suportada pelo credor (art. 238).
+- Compensação: exceções do art. 373 e regras dos arts. 371 e 376 a 380 — Rol de exceções e efeitos para fiador/terceiros ficam para o material completo.
+- Novação: efeitos sobre acessórios, garantias e fiador (arts. 364 a 366) — Acréscimo deixado de fora pelo limite de edições; vale incluir no material completo.
+- Solidariedade: art. 275, parágrafo único, e arts. 277, 278, 280 e 283 — Não renúncia à solidariedade ao acionar um devedor, remissão parcial, juros de mora e regresso; limite de edições.
+- Seguro e sub-rogação (Súmula 188 do STF; CC, art. 786) — Súmula clássica, mas fora do limite de edições.
+- Súmula 54 do STJ (juros de mora desde o evento danoso na responsabilidade extracontratual) — Fora do limite de edições; art. 398 já foi incluído.
+- Juros e correção: vigência escalonada da Lei nº 14.905/2024, taxa legal mensal e tema repetitivo sobre aplicação da Selic — Dados voláteis e jurisprudência; não afirmados na versão de revisão. Recomenda-se conferir o texto consolidado no Planalto e a Resolução CMN nº 5.171/2024.
+- Texto literal do art. 395 após a Lei nº 14.905/2024 — Não foi possível abrir o texto consolidado do Planalto; o texto do módulo não reproduz o artigo, então nenhuma edição foi feita.
+- Rol do art. 335 (consignação) e consignação extrajudicial (CPC) — Não editado: a redação do módulo é genérica e correta; detalhamento ficaria para o material completo.
+- Preferências: arts. 964 e 965 e concurso especial (Lei nº 11.101/2005, art. 83; CTN, art. 186) — Regime concursal e tributário é especial; fica para o material completo.
+- **Ajustes do aprovador (aplicados):** a Lei nº 14.905/2024 alterou, neste módulo, os arts. 389, 395, 404, 406 e 418 do Código Civil (não os arts. 402, 403 e 405; a lei alterou também outros artigos fora do módulo, como o 591, o 772 e o 1.336, § 1º); art. 354 (imputação: juros antes do capital, salvo estipulação em contrário ou quitação do capital pelo credor); art. 327 (lugar do pagamento: em regra, o domicílio do devedor, com outras exceções além da convenção); retirada de repetição sobre o art. 413. Conferidos na redação literal: arts. 234, 247, 263, 299 e parágrafo único, 303, 327, 352, 354, 385, 397, 398, 406, §§ 1º e 2º, 412, 413, 416, 420 e 961. **Ressalva:** o Planalto não abriu neste ambiente; a conferência da Lei nº 14.905/2024 foi por buscas e trechos reproduzidos em mais de uma fonte.
+
+### Civil M09 — Responsabilidade civil
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto quanto aos artigos citados (186, 187, 188, 927, 944, 945 e súmulas 37, 227, 387, 54, 362 e 642). Os principais problemas eram a conflação das regras dos arts. 937 e 938, a restrição ao regresso do art. 934 descrita de forma vaga, referências vagas a jurisprudência e lacunas de lei seca de alto rendimento (arts. 928, 932, 942, 943, 950 e 951, prazo do art. 206 e art. 200). Nenhuma jurisprudência foi acrescentada, exceto a Súmula 54/STJ.
+
+- **Correção** (E1): A restrição ao regresso é específica: o art. 934 exclui o regresso quando o causador for descendente do pagador, absoluta ou relativamente incapaz; o texto original falava genericamente em relações parentais. O art. 928 (responsabilidade subsidiária e equitativa do incapaz) é… _Fonte: CC, arts. 928 e 934_
+- **Acréscimo** (E2): O art. 942, parágrafo único, torna solidariamente responsáveis com os autores os coautores e as pessoas designadas no art. 932. _Fonte: CC, arts. 928, 932-934 e 942, parágrafo único_
+- **Acréscimo** (E3): O título do tópico menciona estabelecimentos, mas o texto não os citava; os requisitos do art. 932, I a IV, seguem a redação legal (rol parcial: o inciso V trata de quem participou gratuitamente nos produtos do crime). _Fonte: CC, art. 932, I a IV_
+- **Correção** (E4): O texto original atribuía ao dono do edifício e ao habitante, de forma conjunta, a ruína e a queda de coisas; são regras distintas: art. 937 (dono, ruína por falta de reparos manifestos) e art. 938 (habitante, coisas caídas ou lançadas). As excludentes do art. 936 são culpa da… _Fonte: CC, arts. 936, 937 e 938_
+- **Correção** (E5): Retirada a referência vaga a jurisprudência (regra do material de revisão enxuto). A teoria não tem artigo próprio no CC; decorre da doutrina, apoiada nos arts. 402-403. _Fonte: CC, arts. 402, 403 e 944_
+- **Correção** (E6): A frase original era vaga; o art. 950, parágrafo único, dá ao prejudicado a opção pelo pagamento de uma só vez. O art. 951 é lacuna de alto rendimento (responsabilidade de profissionais de saúde), com a redação literal resumida. _Fonte: CC, arts. 950, parágrafo único, e 951_
+- **Correção** (E7): Retirada a referência vaga a jurisprudência específica e substituída por regra legal (art. 398: nas obrigações provenientes de ato ilícito, o devedor está em mora desde que o praticou) e pela Súmula 54/STJ, cuja redação é: os juros moratórios fluem a partir do evento danoso, em… _Fonte: CC, art. 398; Súmula 54/STJ_
+- **Acréscimo** (E8): O tópico leva no título a prescrição, mas o texto não trazia o prazo nem a regra do art. 200, ambos de lei seca e de alto rendimento. Art. 943 complementa a Súmula 642/STJ. _Fonte: CC, arts. 200, 206, § 3º, V, e 943_
+
+Pendências (não aplicadas):
+- Art. 931 (responsabilidade do empresário e das empresas pelos produtos em circulação) e art. 187 como ato ilícito 'ainda que exclusivamente moral' (art. 186) — Lacunas de lei seca no tópico 3 e no tópico 1; não coube no limite de edições e de crescimento do texto.
+- Teoria do dano direto e imediato (art. 403) e fortuito interno/externo (art. 393) — Tópico 6 apenas cita fato de terceiro e fortuito; sugere-se acrescentar o art. 393 e a leitura doutrinária majoritária do art. 403 no material completo.
+- Juros e correção após a Lei nº 14.905/2024 (arts. 389, parágrafo único, e 406: taxa legal baseada na Selic deduzido o índice de atualização monetária, IPCA como padrão) — As fontes encontradas são comentários de escritórios e blogs, com divergência sobre vigência e sobre a natureza da taxa legal; sem confirmação em fonte oficial, não foi editado. Súmula 362/STJ (correção do dano moral des
+- Redução do art. 944, parágrafo único, na responsabilidade objetiva (Enunciado 46 da I Jornada, alterado pelo Enunciado 380) — Não foi possível confirmar a redação atual dos enunciados; o parágrafo 9.4 do texto original (aplicação 'com cuidado') permanece, por ser genérico. Tratar no material completo.
+- Prescrição da responsabilidade contratual (prazo de 3 ou 10 anos) e consumo (CDC, art. 27: cinco anos) — Envolve jurisprudência e regime especial; deixado para o material completo.
+- Súmula 491/STF (morte de filho menor sem trabalho remunerado) e legitimidade para dano reflexo — Possível acréscimo no tópico 10; fora do limite de edições.
+- Jurisprudência sobre perda de chance — Retirada a referência vaga do texto; o conteúdo jurisprudencial fica para o material completo.
+- **Ajustes do aprovador (aplicados):** art. 932, IV, na redação da lei (estabelecimentos "onde se albergue por dinheiro, mesmo para fins de educação"; lista dos incisos I a IV); referência de fonte com o art. 951; prazo de três anos do art. 206, § 3º, V, indicado só para a reparação extracontratual (a contratual segue o prazo geral do art. 205); perda de chance descrita como construção doutrinária, sem artigo próprio no Código; art. 928 com a condição legal (responsáveis sem obrigação ou sem meios suficientes; indenização equitativa que não prive do necessário o incapaz ou quem dele dependa); art. 951 com "no exercício de atividade profissional". Súmula 54/STJ conferida na redação literal (única súmula acrescentada).
+
+### Civil M07 — Contratos em geral
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto, mas com várias paráfrases vagas ("depende do contrato e da lei") onde a lei traz regra literal de alto rendimento: prazos do vício redibitório, cláusula resolutiva expressa x tácita, modificação equitativa, pessoa a declarar e preliminar. Foram corrigidas imprecisões (proposta que "pode" obrigar, aceitação com modificação "substancial", denúncia que "poderá" ter eficácia postergada, tratativas atribuídas ao art. 422 e "revogação" na estipulação em favor de terceiro). Não há desatualização legal relevante; o PL 4/2025 não é tratado como lei.
+
+- **Correção** (E1): O art. 422 menciona apenas a conclusão e a execução do contrato. A aplicação às tratativas e à fase pós-contratual é leitura doutrinária (Enunciado 25 da I Jornada de Direito Civil do CJF), que o texto apresentava como se fosse da lei. _Fonte: CC, art. 422; Enunciado 25 do CJF._
+- **Correção** (E2): A regra do art. 427 é a obrigatoriedade, com exceções (o texto dizia que a proposta apenas "pode" obrigar). O art. 431 não exige modificação "substancial": qualquer adição, restrição ou modificação, ou a aceitação tardia, importa nova proposta, e o efeito é imperativo. _Fonte: CC, arts. 427 e 431._
+- **Correção** (E3): O texto falava em "revogação", termo que a lei não usa (o art. 438 trata de substituição do terceiro), e omitia a regra de responsabilidade do art. 439 e sua exceção para o cônjuge. _Fonte: CC, arts. 436, 438 e 439._
+- **Acréscimo** (E4): A frase original não informava os prazos do art. 445. _Fonte: CC, art. 445, caput e § 1º._
+- **Acréscimo** (E5): Substitui "prazos e efeitos previstos" pelo conteúdo dos arts. 467 a 470, I, em especial o prazo supletivo de cinco dias e a forma da aceitação (art. 468 e parágrafo único). _Fonte: CC, arts. 467 a 470, I._
+- **Acréscimo** (E6): A frase original era genérica. Traz o procedimento dos arts. 463 e 464 e a Súmula 239 do STJ, clássica e coerente com o exemplo do compromisso de compra e venda. _Fonte: CC, arts. 463 e 464; Súmula 239 do STJ._
+- **Correção** (E7): O texto apresentava como faculdade ("poderá") o que o parágrafo único do art. 473 impõe: a denúncia "só produzirá efeito" depois do prazo compatível. _Fonte: CC, art. 473, parágrafo único._
+- **Acréscimo** (E8): A frase original dizia que as formas de operar "são diferentes" sem dizer quais. Traz a regra literal do art. 474 e os arts. 476 e 477. _Fonte: CC, arts. 474, 476 e 477._
+- **Acréscimo** (E9): Substitui a descrição vaga pela redação dos arts. 478, 479 e 480, que correspondem ao intervalo de artigos citado no tópico. _Fonte: CC, arts. 478, 479 e 480._
+
+Pendências (não aplicadas):
+- Contratos de adesão e relações de consumo (CDC, arts. 46 a 54) — Fora do enxuto do módulo de Direito Civil; tratar no módulo de Direito do Consumidor.
+- Distrato: forma (art. 472) e Lei nº 13.786/2018 (distrato em incorporação imobiliária) — A leitura doutrinária sobre a "mesma forma exigida" (só quando a forma é legalmente obrigatória) e a lei especial ficam para o material completo.
+- Adimplemento substancial, Enunciado 361 do CJF e teoria da imprevisão x onerosidade excessiva do CDC (art. 6º, V) — Doutrina e jurisprudência; excluídas da revisão por regra do proprietário.
+- Adjudicação compulsória extrajudicial (Lei nº 6.015/1973, art. 216-B, incluído pela Lei nº 14.382/2022) — Não foi possível conferir a redação literal em fonte oficial nesta sessão (planalto.gov.br e câmara.leg.br inacessíveis); registrar para o material completo.
+- Vício redibitório x CDC (arts. 18 e 26) e evicção: parágrafo único do art. 456 revogado pelo CPC/2015, e evicção por ato administrativo — Não editados: confirmação em duas fontes não foi possível; deixar para o material completo.
+- Arts. 470, II, e 471 (pessoa nomeada insolvente ou incapaz) — Redação literal não confirmada com segurança em fonte oficial; apenas o art. 470, I, foi citado.
+- Lei nº 14.010/2020 (RJET), art. 7º, sobre fatos imprevisíveis — Regime transitório já encerrado e dispositivo cuja vigência não foi confirmada; não citado.
+- Art. 421, parágrafo único, e art. 421-A (Lei nº 13.874/2019): presunção de paridade e simetria, intervenção mínima — O texto atual já resume o art. 421-A sem erro; o acréscimo ficou fora pelo limite de 12 edições.
+- Contrato de adesão (arts. 423 e 424): redação literal (cláusulas ambíguas ou contraditórias; nulidade da renúncia antecipada a direito resultante da natureza do negócio) — Acréscimo deixado de fora pelo limite de crescimento do texto; o exemplo diz que a ambiguidade "tende a" ser interpretada a favor do aderente, mas o art. 423 é imperativo.
+- Evicção: arts. 447 (hasta pública), 448, 449 e 457 — Acréscimo deixado de fora pelo limite de crescimento; a frase atual sobre a palavra 'sentença' é vaga e pode ser substituída no material completo.
+- Contratos aleatórios: arts. 458 a 461 (emptio spei x emptio rei speratae; anulação como dolosa) — Acréscimo deixado de fora pelo limite de crescimento; o texto atual apenas menciona as modalidades.
+- Estipulação e promessa de fato de terceiro: detalhes dos arts. 436 a 440 — O art. 439, parágrafo único (cônjuge) e o art. 440 ficaram só citados; detalhar no material completo.
+- **Ajustes do aprovador (aplicados):** art. 445 e § 1º (prazos contados da entrega efetiva ou, se já havia posse, da alienação, reduzidos à metade; vício conhecido mais tarde conta-se da ciência, até 180 dias para móvel e 1 ano para imóvel); art. 464 na redação da lei (o juiz, a pedido do interessado, pode conferir caráter definitivo ao contrato preliminar, salvo se a natureza da obrigação se opuser); retirada de frase vaga, de feição jurisprudencial, no tópico de evicção; art. 476 ("nos contratos bilaterais") e art. 477 ("até que a outra parte cumpra ou dê garantia bastante"); "doutrina e jurisprudência" trocado por "doutrina" no tópico de boa-fé (a extensão da boa-fé às fases pré e pós-contratual é doutrinária, não está no art. 422). Súmula 239/STJ conferida na redação literal. PL 4/2025 segue na comissão temporária do Senado, com prazo prorrogado, sem sanção.
+
+### Civil M08 — Contratos em espécie
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto quanto à numeração dos artigos por espécie (481–853-A, 505–532, 533–537, 579–592, 593–626, 627–652, 653–692, 693–729, 730–756, 818–839). Os erros principais: afirmar que a Constituição afasta a prisão do depositário infiel (é a Súmula Vinculante 25), enfraquecer a nulidade do art. 734 no transporte, não refletir a nova redação do art. 591 (Lei nº 14.905/2024) e referências vagas a jurisprudência (fiança). Foram inseridas regras legais curtas de alto rendimento (arts. 544, 555, 559, 618, 725, 827-828, 535-536) e removida a linguagem de prova.
+
+- **Correção** (E1): O texto constitucional (art. 5º, LXVII) ainda menciona o depositário infiel; quem afasta a prisão é a Súmula Vinculante 25 do STF. Súmula vinculante clássica, citada na literalidade; o art. 652 do CC prevê a prisão e o dever de ressarcir. _Fonte: STF, Súmula Vinculante 25; CC, art. 652; CF, art. 5º, LXVII_
+- **Correção** (E2): A frase original condicionava a nulidade a cláusulas 'incompatíveis com a lei'; o art. 734 declara nula 'qualquer cláusula excludente da responsabilidade', com ressalva apenas para força maior quanto à responsabilidade do transportador. _Fonte: CC, art. 734_
+- **Atualização** (E3): A Lei nº 14.905/2024 deu nova redação ao art. 591 do CC: manteve a presunção de juros no mútuo econômico, retirou o limite à taxa e à capitalização anual e passou a remeter à taxa legal do art. 406 quando não houver taxa pactuada. O texto original, vago, não refletia a regra. _Fonte: CC, art. 591 (Lei nº 14.905/2024); Lei nº 14.905/2024 (texto publicado, conferido em Lex/Senado/Lefosse)_
+- **Correção** (E4): Linguagem neutra. Além disso, não há confirmação de regra transitória expressa na Lei nº 15.040/2024 (a aplicação aos contratos anteriores é debatida pela doutrina e por tribunais), então a referência a 'regras transitórias' foi retirada. _Fonte: Lei nº 15.040/2024, arts. 133 e 134 (revogação e vigência após um ano da publicação)_
+- **Correção** (E5): Linguagem neutra (retirada a referência a 'questão') e indicação do artigo que revoga os arts. 757 a 802 do CC. _Fonte: Lei nº 15.040/2024, art. 133_
+- **Acréscimo** (E6): Substitui frases vagas pela regra legal literal: art. 544 (adiantamento de herança), art. 555 (causas de revogação) e art. 559 (prazo de um ano). _Fonte: CC, arts. 544, 555 e 559_
+- **Correção** (E7): A frase original generalizava a Súmula 214 (que trata da fiança na locação) como 'jurisprudência'; foi trocada pela redação literal da súmula. O benefício de ordem vago foi substituído pela regra dos arts. 827 e 828 (rol legal de hipóteses em que não aproveita ao fiador). _Fonte: STJ, Súmula 214; CC, arts. 827 e 828_
+- **Correção** (E8): A frase original era imprecisa e omitia a regra legal expressa, de alto rendimento, sobre o direito à comissão mesmo havendo arrependimento das partes. _Fonte: CC, art. 725_
+- **Didática** (E9): Linguagem neutra: retirada de referência à frequência de cobrança. _Fonte: Regra de estilo do material_
+- **Correção** (E10): 'Arrependimento' descreve mal a retrovenda, que é cláusula de recompra pelo vendedor; foi indicado o prazo máximo legal (três anos de decadência) em vez da referência vaga a 'prazo máximo legal'. _Fonte: CC, art. 505_
+- **Acréscimo** (E11): Troca frase vaga pelas regras legais de risco e de proteção contra credores do consignatário. _Fonte: CC, arts. 535 e 536_
+- **Acréscimo** (E12): Lacuna de alto rendimento: responsabilidade do empreiteiro pela solidez e segurança da obra, com prazo de garantia e prazo decadencial. _Fonte: CC, art. 618, caput e parágrafo único_
+
+Pendências (não aplicadas):
+- Exatidão da data de vigência da Lei nº 15.040/2024 e direito intertemporal — A lei vigora após um ano da publicação (art. 134), mas fontes divergem entre 10 e 11/12/2025; não se afirmou data. Aplicação aos contratos anteriores é debatida (doutrina e tribunais); não confirmado texto oficial (plana
+- Venda entre ascendentes e descendentes e entre cônjuges (T1) — Acrescentar arts. 496 (anulável sem consentimento dos demais descendentes e do cônjuge, salvo separação obrigatória) e 499 (lícita entre cônjuges quanto a bens excluídos da comunhão) após conferir a redação atual do art.
+- Preempção (T2) — Prazos do art. 513, parágrafo único (180 dias móvel, 2 anos imóvel) e do art. 516 (3 dias e 60 dias, se sem prazo estipulado); riscos na reserva de domínio (art. 524); registro (art. 522). Ficaram para o material complet
+- Mútuo a menor (T6) e prazos do mútuo — Arts. 588 e 589 (mútuo a menor sem autorização) e art. 592 (prazos supletivos). Fora por limite de edições.
+- Prestação de serviço (T7) — Prazo máximo de quatro anos (art. 598), aviso prévio (art. 599) e serviço sem habilitação (art. 606).
+- Depósito (T8) — Gratuidade como regra (art. 628), proibição de uso da coisa (art. 640) e depósito irregular de fungíveis regido pelo mútuo (art. 645).
+- Mandato (T9) — Causas de cessação (art. 682), revogação notificada só ao mandatário (art. 686), mandato em causa própria (art. 685) e forma (art. 657). O texto atual está correto, mas genérico.
+- Agência e distribuição (T10) — Texto diz 'zona e condições determinadas'; o art. 710 fala em 'zona determinada', em caráter não eventual e sem dependência. Corrigir no material completo. A frase 'agente e comissário não atuam sempre em nome do mesmo s
+- Transporte (T11) — Súmula 187/STF (culpa de terceiro não elide a responsabilidade contratual do transportador de passageiros) e transporte gratuito por cortesia (art. 736): candidatos a acréscimo.
+- Fiança (T13) — Art. 835 (exoneração da fiança sem prazo) e art. 39 da Lei nº 8.245/1991 (extensão da garantia até a devolução do imóvel); relação com Súmula 214/STJ. Texto de T13 [4] ('pode ter ineficácia integral') poderia citar a Súm
+- Transação, jogo e aposta, compromisso (T14) — Arts. 841, 849 e 850 (transação), art. 814 (dívida de jogo como obrigação natural) e arts. 851 a 853 (compromisso) e Lei nº 9.307/1996. Texto atual correto mas genérico. Redação integral do art. 853-A não confirmada (fon
+- **Ajustes do aprovador (aplicados):** Súmula 214/STJ na redação literal ("O fiador na locação não responde por obrigações resultantes de aditamento ao qual não anuiu"); retrovenda com "prazo máximo de decadência de três anos" (art. 505); contrato estimatório conforme o art. 536 (penhora ou sequestro, enquanto não pago integralmente o preço); art. 734 mais próximo da lei (danos às pessoas transportadas e suas bagagens; nula qualquer cláusula excludente da responsabilidade); art. 591, caput e parágrafo único; art. 710 ("zona determinada"); comissário age em nome próprio, à conta do comitente (art. 693). Lei nº 15.040/2024: o art. 133 revoga os arts. 757 a 802 do Código Civil e o art. 134 fixa a vigência após um ano da publicação; as fontes divergem sobre a data exata (10 ou 11/12/2025), por isso o texto não afirma data. **Ressalva:** a redação do art. 591 (Lei nº 14.905/2024) foi conferida por várias fontes secundárias, não no texto oficial.
+
+### Civil M11 — Posse
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto nos conceitos e nos artigos citados (arts. 1.196 a 1.222). Os principais problemas eram paráfrases vagas (frutos na cessação da boa-fé, frutos civis, presunção de boa-fé), referência vaga a jurisprudência na partilha de direitos possessórios, a afirmação sobre propriedade em ação possessória sem base no art. 1.210, § 2º, e lacunas de lei seca (perda da posse, arts. 1.223 e 1.224; art. 1.222; mediação no litígio coletivo, CPC, art. 565). Nenhuma desatualização legal relevante encontrada nos arts. 1.196 a 1.224; a reforma do Código Civil (PL 4/2025) não é tratada como lei.
+
+- **Correção** (E1): A expressão 'conforme regra legal' era vaga; o art. 1.214, parágrafo único, manda restituir os frutos pendentes (deduzidas as despesas) e os colhidos com antecipação. O art. 1.216 fixa o termo inicial (desde que se constituiu de má-fé) e garante o direito às despesas de produção… _Fonte: CC, arts. 1.214, parágrafo único, e 1.216_
+- **Correção** (E2): Substitui paráfrase vaga pela regra literal do art. 1.215. _Fonte: CC, art. 1.215_
+- **Acréscimo** (E3): O módulo cobre os arts. 1.196 a 1.224, mas não tratava dos arts. 1.223 e 1.224, de alto rendimento; o título do tópico fala em perda. _Fonte: CC, arts. 1.223 e 1.224_
+- **Acréscimo** (E4): O art. 1.222 está na faixa citada (arts. 1.219 a 1.222), mas não era explicado. _Fonte: CC, art. 1.222_
+- **Correção** (E5): O texto original não tinha base legal. A regra literal é a do art. 1.210, § 2º, do CC, completada pelo art. 557 do CPC. _Fonte: CC, art. 1.210, § 2º; CPC, art. 557_
+- **Acréscimo** (E6): Fungibilidade das possessórias, regra de alto rendimento e coerente com o tópico (escolha da ação). _Fonte: CPC, art. 554_
+- **Correção** (E7): A lei não deixa dúvida: passado ano e dia, o procedimento é comum, mantido o caráter possessório. 'Pode mudar' era impreciso. _Fonte: CPC, art. 558, parágrafo único_
+- **Atualização** (E8): Atribui a regra à súmula (Súmula 619 do STJ: a ocupação indevida de bem público configura mera detenção, de natureza precária, insuscetível de retenção ou indenização por acessões e benfeitorias) e troca a referência vaga a 'procedimento, mediação' pela regra do art. 565 do CPC… _Fonte: STJ, Súmula 619; CPC, art. 565_
+- **Correção** (E9): Retira referência vaga à jurisprudência (regra do proprietário) e a troca por regra legal diretamente ligada ao tópico. _Fonte: CC, art. 102; CF, arts. 183, § 3º, e 191, parágrafo único_
+- **Acréscimo** (E10): Completa a lei seca de detenção com a presunção do parágrafo único do art. 1.198 (art. 1.208, segunda parte, fica como pendência). _Fonte: CC, art. 1.198, parágrafo único_
+- **Correção** (E11): A expressão 'circunstâncias contrárias' não corresponde ao texto do art. 1.201, parágrafo único ('salvo prova em contrário'). O art. 1.202 é complemento direto sobre a cessação da boa-fé. _Fonte: CC, arts. 1.201, parágrafo único, e 1.202_
+- **Correção** (E12): Constituto possessório e traditio brevi manu estão no parágrafo único do art. 1.267, que trata de coisas móveis. O exemplo do apartamento poderia levar a crer que a venda transfere a propriedade sem registro; a ressalva evita a confusão entre posse e domínio. _Fonte: CC, arts. 1.204, 1.245 e 1.267, parágrafo único_
+
+Pendências (não aplicadas):
+- Art. 1.203, art. 1.205 e art. 1.208, segunda parte (caráter da posse; aquisição por representante; atos violentos ou clandestinos) — Lacunas de lei seca no tópico de aquisição e interversão; não coube no limite de 12 edições.
+- Conceito de posse violenta, clandestina e precária (doutrina) e arts. 1.211 a 1.213 — Itens de lei seca/doutrina majoritária fora do limite de edições; incluir no material completo.
+- Súmula 487 do STF (posse disputada com base no domínio) e Súmula 335 do STJ (renúncia a benfeitorias e retenção em locação) — Clássicas, mas de aplicação controvertida ou fora do núcleo do módulo; avaliar para o material completo. Não incluídas por regra de enxugamento.
+- Requisitos da inicial e liminar nas possessórias (CPC, arts. 561 e 562) — Alto rendimento processual, mas fora do limite de edições.
+- Conferência do texto literal dos artigos — O texto do Planalto não pôde ser aberto (domínio bloqueado). As conferências foram feitas por fontes secundárias (modeloinicial, peticoesonline, legjur via busca) e pelo texto conhecido; recomenda-se uma última leitura d
+- **Ajustes do aprovador (aplicados):** art. 1.214, parágrafo único (a dedução das despesas de produção e custeio vale para os frutos pendentes; os colhidos com antecipação também devem ser restituídos); art. 1.198 (presume-se detentor quem se comporta como tal, até prova em contrário); art. 1.201, parágrafo único (presunção de boa-fé, salvo prova em contrário ou quando a lei expressamente não admitir a presunção); bases legais ampliadas (arts. 1.200 a 1.202; 1.217, 1.218, 1.223 e 1.224). Súmula 619/STJ conferida na redação literal. Os arts. 1.196 a 1.224 do Código Civil e os arts. 554 a 568 do CPC não foram alterados. **Pendência:** leitura final no Planalto dos arts. 1.210, § 2º, 1.224 e 1.198, parágrafo único (o Planalto não abre neste ambiente).
+
+### Civil M10 — Direito de empresa e nome empresarial
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O módulo está enxuto e, em geral, correto, mas várias afirmações vinham sem artigo ou de forma vaga (sociedade em comum, trespasse, gerente, sócio incapaz). Houve correções pontuais: a referência a jurisprudência vaga no empresário rural, a aplicação do Código às S.A. (só nos casos omissos, art. 1.089), a cisão fora do Código e a citação do aval (arts. 897-900, fora da faixa indicada). Foram acrescentados poucos pontos de alto rendimento com base em lei seca. Linguagem já neutra; nada atribuído ao PL 4/2025.
+
+- **Correção** (E1): Remove referência vaga a jurisprudência (regra do material enxuto) e troca pela regra legal: art. 970 assegura tratamento favorecido, diferenciado e simplificado ao empresário rural e ao pequeno empresário quanto à inscrição. _Fonte: CC, arts. 967, 970 e 971_
+- **Acréscimo** (E2): Substitui paráfrase imprecisa pela regra literal do art. 974, §§ 1º e 2º, e acrescenta o § 3º (sócio incapaz), de alto rendimento e sem previsão no módulo. _Fonte: CC, art. 974, §§ 1º a 3º; Lei nº 12.399/2011_
+- **Correção** (E3): Precisa o fundamento legal da exceção, antes sem artigo: art. 982, parágrafo único; vinculação ao registro no art. 1.150. _Fonte: CC, arts. 982, parágrafo único, e 1.150_
+- **Correção** (E4): Frase vaga sobre responsabilidade; substituída pela regra literal do art. 990 (solidária e ilimitada, com exclusão do benefício de ordem do art. 1.024 para quem contratou pela sociedade). _Fonte: CC, arts. 986 e 990_
+- **Atualização** (E5): Torna precisa a referência vaga à limitada unipessoal e registra a extinção da EIRELI. A revogação do art. 980-A é tratada como tácita por parte da doutrina e do DREI; por isso o texto cita apenas a transformação prevista no art. 41. _Fonte: CC, art. 1.052, §§ 1º e 2º; Lei nº 13.874/2019; Lei nº 14.195/2021, art. 41_
+- **Correção** (E6): A redação original ampliava a aplicação do Código; o art. 1.089 o aplica apenas nos casos omissos. _Fonte: CC, art. 1.089_
+- **Correção** (E7): Atribui artigos a fusão e incorporação e corrige a impressão de que a cisão estaria no Código (faixa arts. 1.033-1.122 citada no tópico). _Fonte: CC, arts. 1.113, 1.116 e 1.119; Lei nº 6.404/1976, art. 229_
+- **Correção** (E8): Explicita o prazo de um ano e o termo inicial do art. 1.146 e atribui o art. 1.147 à proibição de concorrência. _Fonte: CC, arts. 1.146 e 1.147_
+- **Acréscimo** (E9): Transforma indicação genérica em regra legal literal (arts. 1.174 e 1.178), núcleo do tema em prova. _Fonte: CC, arts. 1.174 e 1.178_
+- **Acréscimo** (E10): Acréscimo curto, baseado no art. 1.166 (âmbito territorial da proteção do nome). _Fonte: CC, art. 1.166; Lei nº 9.279/1996_
+- **Correção** (E11): O aval está nos arts. 897-900, fora da faixa 910-926 citada; o endosso está nos arts. 910-920 (arts. 921-926 tratam dos títulos nominativos). _Fonte: CC, arts. 897-900 e 910-920_
+- **Acréscimo** (E12): Aponta a principal diferença legal entre aval e fiança, em texto literal do art. 899, § 2º. _Fonte: CC, art. 899, § 2º_
+
+Pendências (não aplicadas):
+- Jurisprudência e doutrina minoritária (todo o módulo) — Não incluídas, conforme a regra do material enxuto: p.ex., empresário rural e inscrição (efeitos retroativos ou não), sociedade de profissionais intelectuais, holding familiar com sócio incapaz, desconsideração da person
+- Art. 1.033 (causas de dissolução) — Não editado: o inciso IV (falta de pluralidade de sócios por 180 dias) e o parágrafo único foram alterados ou revogados (fontes divergem entre Lei nº 13.874/2019 e Lei nº 14.195/2021) e o texto oficial não pôde ser consu
+- EIRELI (art. 980-A) e art. 44, VI — A Lei nº 14.195/2021, art. 41, transformou as EIRELI em limitadas unipessoais; a revogação dos dispositivos é tida como tácita (veto à revogação expressa) e há divergência doutrinária. O material não aborda a EIRELI; con
+- Quórum e administradores na limitada (arts. 1.061, 1.071 e 1.076) — Alterações da Lei nº 14.451/2022 não puderam ser confirmadas em duas fontes; não editado. Conferir antes de tratar deliberações da limitada.
+- Limitada: regência supletiva e demais pontos (arts. 1.053, 1.055, § 2º, 1.085) — Lacunas de alto rendimento (regência supletiva pela sociedade simples ou, se previsto, pela Lei das S.A.; vedação de integralização com serviços; exclusão de sócio) não incluídas por limite de edições.
+- Capacidade (arts. 973, 977 e 978; art. 5º, parágrafo único, V) — Impedimentos, sociedade entre cônjuges, outorga conjugal para imóveis da empresa e emancipação por economia própria não foram acrescentados por limite de edições.
+- Estabelecimento: art. 1.142, § 1º, e arts. 1.144, 1.145, 1.148 e 1.149 — O art. 1.142, § 1º, diz que o estabelecimento não se confunde com o local da atividade, físico ou virtual (redação da Lei nº 14.382/2022, confirmada só em fontes secundárias). Também ficam de fora a averbação e a publica
+- Nome empresarial (arts. 1.155 a 1.168) — Não abordados por limite de edições: equiparação da denominação de sociedade simples, associações e fundações (art. 1.155, parágrafo único), regras de firma e denominação por tipo (arts. 1.156 a 1.160), inalienabilidade 
+- Prepostos e escrituração — Responsabilidade do preposto (art. 1.177, parágrafo único) e o livro Diário (art. 1.180) e a dispensa do pequeno empresário (art. 1.179, § 2º) não incluídos por limite de edições.
+- Títulos de crédito (arts. 887 a 926) — Não incluídos: prevalência da lei especial (art. 903), exceções oponíveis ao portador (arts. 915 e 916), responsabilidade do endossante (art. 914 do Código x lei especial) e vedação ao aval parcial (art. 897, parágrafo ú
+- Acesso às fontes — planalto.gov.br e legjur.com não resolveram no ambiente; textos de artigos conferidos por pesquisa e memória do texto legal. Itens sem confirmação segura foram deixados como pendência.
+- **Ajustes do aprovador (aplicados):** art. 974, § 2º (os bens do empresário incapaz que não integravam a empresa ao tempo da sucessão ou da interdição ficam fora da responsabilidade); art. 1.166 e parágrafo único (a inscrição do empresário ou dos atos constitutivos assegura o uso exclusivo do nome nos limites do Estado, estendendo-se ao território nacional se registrado na forma da lei especial); art. 1.178 e parágrafo único (atos dos prepostos); cisão descrita como disciplinada na Lei nº 6.404/1976, art. 229. Lei nº 14.195/2021, art. 41, e Lei nº 13.874/2019 (art. 1.052, §§ 1º e 2º) confirmadas em várias fontes; o texto evita dizer que o art. 980-A foi revogado expressamente (houve veto à revogação expressa; o DREI e a doutrina falam em revogação tácita). **Pendência:** art. 1.033, IV (as fontes divergem sobre qual lei revogou o inciso), arts. 1.061, 1.071 e 1.076 (Lei nº 14.451/2022) e art. 1.142, § 1º (Lei nº 14.382/2022) ficaram sem edição por falta de confirmação em duas fontes.
+
+### Civil M12 — Propriedade, vizinhança e condomínios
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto quanto aos artigos citados. Os principais problemas eram frases vagas no lugar da regra legal (arrecadação do imóvel abandonado, interesse público na vizinhança, quórum de obras e de convenção, preferência na multipropriedade, pacto comissório), o critério da passagem forçada divergente do art. 1.285, § 1º, e a referência a notícia e decisões do STJ no tópico da Súmula 308. Atualização relevante: a Lei nº 14.405/2022 reduziu para dois terços o quórum de mudança de destinação (art. 1.351). A reforma do Código Civil (PL 4/2025) segue em tramitação e não foi tratada como lei.
+
+- **Correção** (E1): O texto era vago ('redução legal', 'possíveis variações') e usava 'usucapem' de forma incorreta. Incluídos os números de cada modalidade, conferidos com os arts. 1.238, 1.239, 1.240, 1.240-A e 1.242 do CC e com os arts. 183 e 191 da CF; vedação de usucapião de bens públicos… _Fonte: CC, arts. 1.238, 1.239, 1.240, 1.240-A, 1.242; CF, arts. 183, § 3º, e 191, parágrafo único; STF, Súmula 340_
+- **Correção** (E2): A frase original era confusa e embaralhava coisa perdida (descoberta) com coisa abandonada ou sem dono (ocupação). Reescrita com a regra literal dos arts. 1.233, 1.234 e 1.263. _Fonte: CC, arts. 1.233, 1.234 e 1.263_
+- **Correção** (E3): O texto original era vago ('pressupostos legais', 'etapas próprias'). Substituído pela redação do art. 1.276, inclusive o prazo de três anos, o ente beneficiado e a presunção absoluta do § 2º, que é ponto de alto rendimento. _Fonte: CC, art. 1.276, caput, §§ 1º e 2º_
+- **Correção** (E4): A referência a 'disciplina própria com eventual indenização' era imprecisa. O art. 1.278 afasta o direito de cessação e impõe indenização cabal. _Fonte: CC, art. 1.278_
+- **Correção** (E5): O critério legal do art. 1.285, § 1º, é o imóvel que 'mais natural e facilmente se prestar à passagem'; 'menor onerosidade' não é a expressão da lei. Indenização é 'cabal' (caput). _Fonte: CC, art. 1.285, caput e § 1º_
+- **Acréscimo** (E6): O exemplo não dava a distância legal nem o prazo da reação do vizinho, ambos de alto rendimento e literais nos arts. 1.301 e 1.302. _Fonte: CC, arts. 1.301 e 1.302_
+- **Acréscimo** (E7): Distingue obrigatoriedade interna (art. 1.333, caput) e oponibilidade a terceiros (parágrafo único), com a Súmula 260/STJ (texto: 'A convenção de condomínio aprovada, ainda que sem registro, é eficaz para regular as relações entre os condôminos'), clássica e consolidada.… _Fonte: CC, arts. 1.332 e 1.333; STJ, Súmula 260_
+- **Atualização** (E8): O texto remetia o aluno a 'verificar dispositivos atuais'. Incluídos os quóruns principais (1.341 e 1.343). Atualização relevante: desde a Lei nº 14.405/2022, a mudança de destinação do edifício ou da unidade exige dois terços (antes, unanimidade), no mesmo quórum da alteração… _Fonte: CC, arts. 1.341, 1.343, 1.351; Lei nº 14.405/2022_
+- **Correção** (E9): 'Previsão jurídica adequada' era vago; a lei exige previsão no instrumento de instituição ou na convenção. _Fonte: CC, art. 1.358-L, § 1º (Lei nº 13.777/2018)_
+- **Correção** (E10): A proibição não é 'como regra': o art. 1.365 declara nula a cláusula. A única exceção é a dação em pagamento posterior ao vencimento (parágrafo único). _Fonte: CC, art. 1.365_
+- **Correção** (E11): Regra do proprietário: sem jurisprudência além de súmula clássica. Retirada a referência vaga a decisões do STJ sobre aplicação analógica (pesquisa mostrou precedentes divergentes) e transcrita a redação literal da Súmula 308, com a distinção entre hipoteca e propriedade… _Fonte: STJ, Súmula 308; CC, art. 1.361; Lei nº 9.514/1997_
+- **Correção** (E12): Retirada a citação de notícia de tribunal (jurisprudência não confirmada e fora do escopo da versão de revisão); fonte reduzida à súmula e à lei. _Fonte: STJ, Súmula 308; CC; Lei nº 9.514/1997_
+
+Pendências (não aplicadas):
+- Título do tópico 14 (não editável) — O título afirma que a hipoteca 'não se estende automaticamente à fiduciária', o que é leitura jurisprudencial e não consta da Súmula 308. Sugere-se reescrever o título para 'Súmula 308/STJ: hipoteca da construtora e adqu
+- Condomínio geral (T9) — Acrescentar, por lei seca: divisão a qualquer tempo e indivisão convencional de até 5 anos, prorrogável (art. 1.320, caput e § 1º); maioria absoluta calculada pelo valor dos quinhões (art. 1.325); preferência na venda de
+- Lacunas de lei seca em outros tópicos — T0: atos emulativos (art. 1.228, § 2º) e desapropriação judicial (art. 1.228, §§ 4º e 5º). T1: art. 1.245, § 2º (adquirente é havido como dono até o cancelamento do registro por ação própria). T2: usucapião extrajudicial
+- Texto padrão 'resolver um caso de prova' (último parágrafo de cada tópico) — Fórmula repetida em todos os tópicos que menciona 'prova'; reescrever de forma neutra (por exemplo, 'resolver um caso prático') não coube no limite de edições.
+- Jurisprudência recente em condomínio (locação por plataformas) — Há notícia do STJ (2026) sobre aprovação do condomínio para locação de curta duração. Não incluída por ser jurisprudência fora da regra do proprietário; pode ir ao material completo.
+- Texto integral dos arts. 1.341 a 1.343 e 1.351 — Quóruns conferidos em fontes secundárias (Câmara, Senado Notícias, Conjur, Migalhas e sites especializados); o texto do Planalto não pôde ser aberto. Recomenda-se conferência final.
+- **Ajustes do aprovador (aplicados):** art. 1.365, parágrafo único (o devedor pode dar em pagamento "seu direito eventual à coisa"); art. 1.285, caput (o rumo da passagem é fixado judicialmente, se necessário); tópico sobre a Súmula 308/STJ reescrito só com base legal (a súmula trata de hipoteca firmada entre construtora e agente financeiro; propriedade fiduciária é garantia distinta, regida pelo art. 1.361 do Código Civil para móveis e pela Lei nº 9.514/1997, art. 22, para imóveis); retirada a expressão "solução jurisprudencial"; art. 1.240-A (imóvel urbano de até 250 m², ex-cônjuge ou ex-companheiro que abandonou o lar); art. 1.242, parágrafo único (cinco anos); art. 1.263 (a coisa sem dono pode ser adquirida por ocupação, se a lei não o proibir). Súmulas 260 e 308/STJ e 340/STF conferidas; Lei nº 14.405/2022 (art. 1.351: dois terços para alterar a convenção e mudar a destinação) confirmada em mais de uma fonte. **Pendências:** o título do tópico 14 não pode ser alterado e traz uma leitura jurisprudencial ("hipoteca não se estende automaticamente à fiduciária"); sugestão de título: "Súmula 308/STJ: hipoteca da construtora e adquirentes". A fórmula "resolver um caso de prova", que aparecia no último parágrafo de cada um dos 15 tópicos, foi trocada em lote por "aplicar o conteúdo a um caso concreto" (linguagem neutra).
+
+### Civil M13 — Outros direitos reais e garantias
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Módulo enxuto e, em geral, correto, mas com um erro de requisito na concessão de uso especial (renda não é requisito da MP 2.220/2001), redação de 'pode constituir' no art. 1.417, vagueza sobre o fim da superfície e um tópico (adjudicação compulsória) baseado em acórdão de 2025 e em atribuição ao STJ, retirados e substituídos por Súmula 239 e regra geral. Foram acrescentadas só lacunas curtas e de alto rendimento (Súmula 308, arts. 1.420, 1.423 e 1.475). Várias outras lacunas ficaram como pendência por limite de edições e por não ter sido possível abrir o Planalto.
+
+- **Correção** (E1): A MP 2.220/2001 não prevê requisito de renda para a concessão de uso especial para moradia; os requisitos são área (até 250 m²), tempo (cinco anos, sem oposição), data-limite da posse (22/12/2016, após a Lei nº 13.465/2017), destinação para moradia e ausência de outro imóvel… _Fonte: Medida Provisória nº 2.220/2001, art. 1º (redação da Lei nº 13.465/2017); CC, art. 1.225, XI_
+- **Correção** (E2): O art. 1.417 diz que, atendidos os requisitos (sem arrependimento, instrumento público ou particular, registro), o promitente comprador 'adquire' o direito real; o texto original usava 'pode constituir', o que sugeria faculdade, e omitia a forma do instrumento. _Fonte: CC, art. 1.417_
+- **Correção** (E3): Retira a referência a acórdão (REsp de 2025, não verificável e vedado no material de revisão) e a substitui pela súmula clássica sobre o tema, com redação literal conferida; a exigência de quitação fica atribuída à doutrina majoritária e com ressalva 'em regra'. _Fonte: Súmula 239 do STJ; CC, art. 1.418_
+- **Correção** (E4): Remove a atribuição a julgado do STJ (jurisprudência fora do escopo da revisão) e mantém a regra geral; também corrige 'quitou 80% do imóvel' para 'do preço'. _Fonte: CC, art. 1.418; leitura doutrinária majoritária_
+- **Correção** (E5): Retira a citação de acórdão e padroniza a citação das leis; o art. 216-B da Lei de Registros Públicos foi incluído pela Lei nº 14.382/2022 (adjudicação compulsória extrajudicial). _Fonte: Lei nº 6.015/1973, art. 216-B; Lei nº 14.382/2022; Súmula 239 do STJ_
+- **Correção** (E6): Elimina a referência a caso de jurisprudência e a formulação absoluta ('indispensável'); mantém a síntese conforme a leitura doutrinária majoritária. _Fonte: CC, art. 1.418; doutrina majoritária_
+- **Correção** (E7): A redação original era vaga ('regime contratual/legal') e não indicava a regra legal; o art. 1.375 prevê propriedade plena para o proprietário, independentemente de indenização, se as partes não estipularem o contrário. _Fonte: CC, art. 1.375_
+- **Correção** (E8): O art. 1.412 prevê expressamente o uso da coisa e a percepção dos frutos, limitados às necessidades do usuário e de sua família; o texto original omitia os frutos e usava 'utilidades', termo que não aparece no dispositivo. _Fonte: CC, art. 1.412_
+- **Acréscimo** (E9): O texto citava 'duração' sem dar a regra; o prazo máximo de retenção (quinze anos) é ponto clássico e está no art. 1.423 (disposição geral dos direitos de garantia), fora do intervalo citado no módulo. _Fonte: CC, art. 1.423_
+- **Acréscimo** (E10): Lacuna de alto rendimento: regra legal sobre a cláusula de inalienabilidade em hipoteca (art. 1.475 e parágrafo único) e a súmula clássica sobre hipoteca da construtora x adquirente (redação literal conferida). _Fonte: CC, art. 1.475 e parágrafo único; Súmula 308 do STJ_
+- **Acréscimo** (E11): Regra geral dos direitos reais de garantia ausente do módulo (capacidade e disponibilidade do bem), com redação do art. 1.420 conferida. _Fonte: CC, art. 1.420, caput_
+- **Correção** (E12): O advérbio 'automaticamente' sugere que a fração ideal poderia ser atribuída por ajuste; a lei dispõe que a instituição da laje não implica atribuição de fração ideal de terreno ao titular da laje. O número do parágrafo foi omitido de propósito porque as fontes consultadas… _Fonte: CC, art. 1.510-A (acrescentado pela Lei nº 13.465/2017)_
+
+Pendências (não aplicadas):
+- Direito real de uso (concessão de direito real de uso, art. 1.225, XII, do CC; Decreto-Lei nº 271/1967) — Não consta do módulo; é direito real listado no art. 1.225 e de interesse em concursos. Acrescentar exige conferir a redação atual do inciso XII (alterada pela Lei nº 14.620/2023), pois o Planalto não abriu.
+- Natureza do rol do art. 1.225 (tipicidade dos direitos reais) — A doutrina majoritária adota a tipicidade (só a lei cria direitos reais), mas há discussão sobre o rol do art. 1.225 ser exaustivo ou não frente a leis especiais; não foi apresentado como fechado nem aberto no texto e nã
+- Usufruto: registro para imóveis (art. 1.391), cessão do exercício a título gratuito ou oneroso (art. 1.393) e extinção (art. 1.410, inclusive pessoa jurídica por trinta anos) — Lacuna de alto rendimento, mas ficou de fora pelo limite de 12 edições e por não terem sido localizadas as redações literais em fonte oficial nesta sessão.
+- Servidão: extinção (arts. 1.387 a 1.389, inclusive não uso por dez anos), exigência de prédios de donos diversos (art. 1.378) e Súmula 415 do STF (servidão de trânsito aparente) — Acréscimos possíveis, não feitos por limite de edições e falta de confirmação literal em fonte oficial.
+- Penhor: espécies em que a coisa fica com o devedor (art. 1.431, parágrafo único: rural, industrial, mercantil e de veículos) e penhor legal (arts. 1.467 a 1.472) — O texto cita só penhor rural e industrial com 'como', o que não é erro, mas é incompleto; acréscimo não feito por limite de edições e falta de conferência literal.
+- Hipoteca e Lei nº 14.711/2023: alterações do Código Civil (ex.: hipoteca para mais de uma obrigação), exceções da execução extrajudicial (ex.: financiamento agropecuário), exigência de cláusula expres — As fontes consultadas só confirmaram o essencial (art. 9º trata da execução extrajudicial de crédito garantido por hipoteca, com cláusula expressa no título); prazos e etapas não foram verificados em texto oficial. Manti
+- Direito real de laje: preferência (art. 1.510-D), extinção pela ruína da construção-base (art. 1.510-E) e numeração dos parágrafos do art. 1.510-A — As fontes divergiram quanto à numeração dos parágrafos e à redação do inciso II do art. 1.510-E; sem acesso ao Planalto, nada foi acrescentado.
+- Adjudicação compulsória: requisitos do art. 216-B da Lei nº 6.015/1973 (inclusive necessidade de quitação do preço no procedimento extrajudicial) e Provimento CNJ nº 150/2023 — Não foi possível confirmar se o art. 216-B exige expressamente quitação do preço; por isso a exigência foi atribuída à doutrina majoritária, com ressalva 'em regra'. A jurisprudência sobre adimplemento substancial foi re
+- Superfície: diferenças entre o CC (prazo determinado) e o Estatuto da Cidade (prazo determinado ou indeterminado) e regras dos arts. 1.370 a 1.377 — Informação consta apenas de fontes secundárias nesta sessão; não acrescentada.
+- Acesso a fontes oficiais — planalto.gov.br, camara.leg.br, legjur e migalhas não abriram para leitura direta (WebFetch bloqueado); a conferência dos artigos e súmulas citados foi feita por buscas (WebSearch) em mais de uma fonte secundária. Recome
+- **Ajustes do aprovador (aplicados):** concessão de uso especial para moradia (MP nº 2.220/2001, art. 1º: concessão individual; posse como sua, por cinco anos, ininterruptamente e sem oposição, completados até 22/12/2016, de até 250 m² de imóvel público, usado para moradia sua ou de sua família, sem ser proprietário ou concessionário de outro imóvel urbano ou rural; a concessão coletiva do art. 2º é que exige população de baixa renda); adjudicação compulsória: "em regra, exige-se que o preço esteja integralmente pago" (sem atribuir a corrente doutrinária); art. 1.375 ("passa a ter a propriedade plena ... independentemente de indenização"); art. 1.423 (extingue-se decorridos quinze anos da data da constituição). Súmulas 239 e 308/STJ conferidas na redação literal. **Pendências:** a numeração do parágrafo do art. 1.510-A (direito de laje) diverge entre as fontes e o texto não a cita; o art. 216-B da Lei nº 6.015/1973 (adjudicação extrajudicial) só foi confirmado em fontes secundárias; Lei nº 14.711/2023 (execução extrajudicial) ficou de fora.
+
+### Civil M14 — Direito de família
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto nos conceitos, mas com várias remissões vagas ('jurisprudência', 'interpretação contextual', 'disciplina normativa') e algumas imprecisões legais: a nulidade do casamento tem hipótese única desde a Lei nº 13.146/2015, os arts. 1.620 a 1.629 do CC estão revogados (Lei nº 12.010/2009), a curatela é descrita de forma mais permissiva do que o art. 85 da Lei nº 13.146/2015 e a guarda compartilhada omite a divisão equilibrada do tempo (art. 1.583, § 2º). Foram acrescentadas regras legais curtas (união estável, bem de família, adoção, alteração de regime). A reforma do Código Civil (PL 4/2025) não é tratada como lei e não consta do texto.
+
+- **Correção** (E1): O art. 1.548 tinha dois incisos; o inciso I (enfermo mental sem discernimento) foi revogado pela Lei nº 13.146/2015, restando apenas o inciso II. O texto apresentava a nulidade como se houvesse várias hipóteses, e remetia a casamento 'com impedimento' sem o artigo. _Fonte: CC, art. 1.548, II; Lei nº 13.146/2015 (revogação do inciso I); pesquisa em Migalhas, Conjur e ARPEN-SP confirmando a revogação. Planalto inacessível na sessão._
+- **Correção** (E2): 'Podendo conduzir à nulidade' é impreciso: o art. 1.548, II declara nulo o casamento com infração a impedimento. E a consequência da inobservância de causa suspensiva está no art. 1.641, I (separação obrigatória), em vez do vago 'consequências legais'. _Fonte: CC, arts. 1.521, 1.523, 1.548, II e 1.641, I._
+- **Atualização** (E3): A Lei nº 12.010/2009 revogou os arts. 1.620 a 1.629 do CC; subsistem os arts. 1.618 (remete ao ECA a adoção de crianças e adolescentes) e 1.619 (adoção de maiores de 18 anos). A expressão 'no que remanesce aplicável' era vaga e mantinha artigos revogados no intervalo citado. _Fonte: Lei nº 12.010/2009 (revogação dos arts. 1.620 a 1.629 do CC); CC, arts. 1.618 e 1.619; ECA, arts. 39 e seguintes. Confirmado em legjur, admdireito e doutrina (S_
+- **Acréscimo** (E4): Troca a referência vaga a 'interpretação jurisprudencial contextual' pela regra legal (idade do adotante, diferença etária e efeito de desligamento, com a ressalva dos impedimentos matrimoniais), de alto rendimento. _Fonte: ECA (Lei nº 8.069/1990), arts. 41 e 42, caput e § 3º._
+- **Correção** (E5): O trecho era vago ('ou disciplina normativa aplicável') e podia sugerir alteração sem controle judicial. A regra do CC é a autorização judicial em pedido motivado de ambos os cônjuges. _Fonte: CC, art. 1.639, § 2º._
+- **Acréscimo** (E6): Retira a referência vaga a 'jurisprudência ... em contexto' e a substitui pela súmula clássica sobre a separação legal, com a nota de que o STJ condiciona a comunicação à prova do esforço comum. _Fonte: STF, Súmula 377; CC, arts. 1.641 e 1.687. Confirmado em Dizer o Direito, Migalhas e IRIB (exigência de esforço comum pelo STJ)._
+- **Correção** (E7): O advérbio 'automaticamente' sugere que a curatela pode alcançar esses direitos; a lei afirma que afeta 'tão somente' os atos patrimoniais e negociais e que sua definição 'não alcança' os direitos listados no § 1º (rol dado literalmente, sem os termos 'como'). _Fonte: Lei nº 13.146/2015, art. 85, caput e § 1º (texto confirmado na versão do Senado)._
+- **Acréscimo** (E8): Lacuna de alto rendimento: as regras sobre impedimentos e causas suspensivas na união estável estão no art. 1.723, §§ 1º e 2º, e o texto apenas dizia que demandavam 'exame individual'. _Fonte: CC, art. 1.723, §§ 1º e 2º._
+- **Acréscimo** (E9): A referência a 'dívidas específicas' era vaga. Indica-se a fonte legal das exceções com exemplos, anotando que o rol citado é parcial (o inciso I foi revogado pela Lei Complementar nº 150/2015 e há outras hipóteses, como a fiança locatícia). _Fonte: Lei nº 8.009/1990, art. 3º, III, IV e V; LC nº 150/2015 (revogação do inciso I)._
+- **Correção** (E10): Troca a referência vaga a 'jurisprudência do STF' pelo julgamento clássico que reconheceu a união homoafetiva como entidade familiar, que sustenta a afirmação do parágrafo seguinte. _Fonte: STF, ADI 4277 e ADPF 132, julgadas em 4 e 5 de maio de 2011 (STF Notícias)._
+- **Correção** (E11): Retira a referência vaga a 'condições reconhecidas pela jurisprudência' e usa a tese consolidada, que é a base da multiparentalidade, em vez de uma paráfrase imprecisa. _Fonte: STF, Tema 622 (RE 898.060/SC, 2016); IBDFAM, Dizer o Direito e Damásio (redação da tese)._
+- **Correção** (E12): A afirmação 'não exige divisão exata de tempo' omitia a regra legal de divisão equilibrada do tempo de convívio; a leitura de que não equivale a guarda alternada nem a divisão matemática é doutrinária e foi atribuída à doutrina. _Fonte: CC, art. 1.583, § 2º (redação da Lei nº 13.058/2014); Enunciados do CJF sobre guarda compartilhada._
+
+Pendências (não aplicadas):
+- Habilitação para o casamento após a Lei nº 14.382/2022 — Fontes indicam que a lei alterou a habilitação (principalmente nos arts. 67 a 69 da Lei nº 6.015/1973, tratada perante o oficial do registro civil), mas não foi possível confirmar a redação literal atual do art. 1.526 do
+- Divórcio: separação judicial (STF, Tema 1.053) e divórcio extrajudicial (CPC, art. 733) — Acréscimo de lacuna não incluído por limite de edições e por não ter sido possível conferir a redação literal do Tema 1.053 nesta sessão. O texto atual ('sem exigir culpa ou separação prévia') não está incorreto.
+- Presunções de paternidade (CC, art. 1.597), investigação de paternidade e Súmula 301/STJ — Lacuna de alto rendimento em Filiação (arts. 1.597 a 1.617), não incluída por limite de edições e de crescimento do texto.
+- Alimentos: Súmulas 309, 596 e 621 do STJ e arts. 1.696 e 1.697 — Reciprocidade e ordem dos obrigados (arts. 1.696 e 1.697) e súmulas clássicas ficam como acréscimo para o material completo; não incluídos por limite de edições.
+- Poder familiar: extinção (art. 1.635), suspensão e perda (arts. 1.637 e 1.638, com a Lei nº 13.715/2018) e ECA, art. 23 — Acréscimo possível; não incluído por limite de edições. O texto atual não está errado.
+- Parentesco por afinidade (art. 1.595, §§ 1º e 2º) — O texto diz apenas que a afinidade 'tem limites próprios'. A regra (limita-se aos ascendentes, descendentes e irmãos do cônjuge ou companheiro; na linha reta não se extingue com a dissolução) é de alto rendimento, mas nã
+- Regime de bens após 70 anos (Tema 1.236/STF) — A tese está correta (ARE 1.309.642, 1º/2/2024: afastamento por manifestação expressa em escritura pública). O trecho 'prova atual não pode tratar imposição como absolutamente incontornável' e o parágrafo 'É errado dizer 
+- Linguagem neutra no módulo — O último parágrafo de cada tópico ('Consigo explicar ... e resolver uma questão sem consultar a teoria') e expressões como 'Pegadinha'/'questão' aparecem em todos os tópicos de forma padronizada; a reescrita ultrapassa o
+- Outorga conjugal (CC, art. 1.647) e pacto antenupcial (arts. 1.653 e 1.657) — Lacuna de alto rendimento em regimes de bens; não incluída por limite de edições (a aplicação da outorga à separação obrigatória é controvertida).
+- Conversão da união estável em casamento (CC, art. 1.726; Lei nº 6.015/1973, art. 70-A, incluído pela Lei nº 14.382/2022) — Fontes indicam que a via extrajudicial passou a ser disciplinada na Lei de Registros Públicos, mantendo-se o art. 1.726 do CC com pedido ao juiz; não foi possível conferir o texto oficial. Não incluído.
+- Tomada de decisão apoiada (CC, art. 1.783-A) — O texto fala em 'escolher apoiadores'; a lei exige pelo menos duas pessoas idôneas, com vínculos e confiança. Acréscimo possível, não incluído por limite de edições. O exemplo do tópico (duas pessoas) é compatível com a 
+- Guarda compartilhada: exceção por declaração de desinteresse (CC, art. 1.584, § 2º) — A redação do § 2º (Lei nº 14.713/2023) prevê duas exceções à guarda compartilhada: declaração de um dos genitores de que não deseja a guarda e elementos que evidenciem probabilidade de risco de violência doméstica ou fam
+- Idade núbil e autorização (CC, arts. 1.517 e 1.519) — O texto diz 'ressalvadas hipóteses legais'. A regra (autorização de ambos os pais ou representantes legais; recusa injusta suprível pelo juiz, art. 1.519) é acréscimo possível; a redação literal não foi conferida. A Lei 
+- **Ajustes do aprovador (aplicados):** adoção na redação do ECA, art. 41, caput ("atribui a condição de filho ao adotado e o desliga de qualquer vínculo com pais e parentes, salvo os impedimentos matrimoniais"); curatela na redação da Lei nº 13.146/2015, art. 85 (atos relacionados aos direitos de natureza patrimonial e negocial); união estável (art. 1.723, § 1º: a ressalva é só para a pessoa casada separada de fato ou judicialmente, inciso VI do art. 1.521); tomada de decisão apoiada (art. 1.783-A: pelo menos duas pessoas idôneas de confiança); guarda compartilhada mais próxima da lei (art. 1.583, § 2º). O aprovador aceitou, por serem de altíssima importância, a Súmula 377/STF (redação literal conferida), a ADI 4277 e a ADPF 132 (união homoafetiva) e o Tema 622/STF (multiparentalidade, tese literal conferida); a observação sobre a prova do esforço comum, na Súmula 377, é entendimento uniformizado no STJ e pode ser cortada se o proprietário preferir rigor máximo na regra "sem jurisprudência". O fecho padronizado dos tópicos foi trocado em lote: "resolver uma questão" passou a "aplicar o conteúdo a um caso concreto". **Pendência:** o trecho do Tema 1.236 ("É errado dizer ...") ainda usa linguagem de prova.
+
+### Civil M15 — Direito das sucessões
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material em geral correto e prudente, mas muito genérico: muitos parágrafos trazem fórmulas vagas ('requisitos legais', 'prazos', 'alterações pertinentes'). Principais problemas: indignidade descrita sem a exigência de sentença, sem o prazo de quatro anos e sem a exclusão automática do art. 1.815-A (Lei nº 14.661/2023); representação do renunciante apresentada como possível; referências vagas a jurisprudência do STJ na habitação. Foram acrescidas regras legais de alto rendimento (art. 1.801, 1.822, 1.829, I, 1.847, 1.863, 1.952, 1.973 a 1.975) e a Súmula 149 do STF.
+
+- **Acréscimo** (E1): Lacuna de alto rendimento: impedimentos para ser nomeado herdeiro ou legatário no testamento. Também substitui pergunta retórica pouco clara. _Fonte: CC, arts. 1.798, 1.801 e 1.802._
+- **Atualização** (E2): Texto original era vago ('providência judicial ou efeitos legais especificados') e omitia o prazo de 4 anos e a exclusão automática do art. 1.815-A, de 2023. _Fonte: CC, arts. 1.814, 1.815 e 1.815-A; Lei nº 14.661/2023 (confirmada em Câmara, Senado e artigos de GEN/IBDFAM)._
+- **Correção** (E3): Troca fórmula vaga ('requisitos legais') pela regra literal do art. 1.822. _Fonte: CC, art. 1.822 e parágrafo único._
+- **Acréscimo** (E4): Súmula clássica e de altíssimo rendimento; substitui 'respeitados prazos' por regra concreta. _Fonte: CC, art. 1.824; Súmula 149 do STF._
+- **Acréscimo** (E5): Substitui remissão genérica pelas exceções literais do art. 1.829, I, e pela reserva da quarta parte do art. 1.832. _Fonte: CC, arts. 1.829, I, e 1.832._
+- **Acréscimo** (E6): Troca expressão vaga pelo critério legal de cálculo da legítima. _Fonte: CC, arts. 1.846 e 1.847._
+- **Correção** (E7): O texto original sugeria que haveria representação do renunciante em certos casos; a regra do art. 1.811 é categórica, e os filhos herdam por direito próprio. _Fonte: CC, art. 1.811._
+- **Acréscimo** (E8): Lacuna de alto rendimento: vedação do testamento conjuntivo. _Fonte: CC, art. 1.863._
+- **Correção** (E9): Troca referência vaga a 'limites' pelas regras literais do fideicomisso. _Fonte: CC, arts. 1.952 e 1.959._
+- **Acréscimo** (E10): Concretiza as hipóteses de rompimento, com a ressalva do art. 1.975. _Fonte: CC, arts. 1.973 a 1.975._
+- **Correção** (E11): Retira referência vaga a jurisprudência (regra do proprietário) e indica a base legal do direito do companheiro. _Fonte: Lei nº 9.278/1996, art. 7º, parágrafo único._
+- **Correção** (E12): Troca afirmação jurisprudencial por regra legal literal do art. 1.831. _Fonte: CC, art. 1.831._
+
+Pendências (não aplicadas):
+- Indignidade e deserdação (tópico 5) — Não coube no limite de edições: legitimidade do Ministério Público no inciso I do art. 1.814 (art. 1.815, §2º), efeitos pessoais da exclusão (art. 1.816), reabilitação (art. 1.818) e prazo de quatro anos para provar a ca
+- Representação (tópico 10) — Acrescentar que não há representação na linha ascendente (art. 1.852) e que, na colateral, só os filhos de irmãos representam, quando concorrem com irmãos do falecido (art. 1.853).
+- Aceitação e renúncia (tópico 4) — Acrescentar irrevogabilidade (art. 1.812), destino da parte do renunciante (art. 1.810), renúncia em prejuízo de credores (art. 1.813), atos que não importam aceitação (art. 1.805, §§1º e 2º) e art. 426 (herança de pesso
+- Cessão de direitos hereditários (tópico 2) — Acrescentar ineficácia da cessão sobre bem singular (art. 1.793, §2º), disposição de bem do acervo sem autorização judicial (§3º) e direito de preferência do coerdeiro com prazo de 180 dias (arts. 1.794 e 1.795); texto l
+- Testamento: formas e capacidade (tópicos 11 e 12) — Acrescentar número de testemunhas (arts. 1.864, 1.868 e 1.876), taxatividade dos testamentos especiais (art. 1.887), prazo de caducidade do marítimo e aeronáutico (art. 1.891) e atos de codicilo (art. 1.881); não editado
+- Dívidas e colação (tópico 15) — Acrescentar limite da responsabilidade do herdeiro às forças da herança (art. 1.792), art. 544 (doação a descendente como adiantamento), colação (arts. 2.002 a 2.004) e prazos do inventário no CPC (art. 611); fora do lim
+- Inventário extrajudicial e Resolução CNJ nº 571/2024 — A norma alterou a Resolução CNJ nº 35/2007 para admitir inventário extrajudicial com testamento e com interessado incapaz, sob requisitos. Os requisitos exatos não foram conferidos no texto oficial; não editado. Atenção 
+- Partilha (tópico 16) — Acrescentar anulação da partilha em um ano (CC, art. 2.027, parágrafo único; CPC, art. 657) e partilha amigável ou judicial (arts. 2.015 e 2.016). Texto original diz que habitação 'pode limitar alienação judicial', afirm
+- Tema 809/STF: modulação (tópico 8) — A tese foi modulada para processos judiciais sem trânsito em julgado da sentença de partilha (e, segundo a tese, partilhas extrajudiciais sem escritura pública); a parte da escritura pública não foi confirmada nas fontes
+- Fontes oficiais — planalto.gov.br e sites de legislação não puderam ser abertos pelo ambiente; os artigos foram conferidos por buscas em várias fontes secundárias, com redação conforme texto conhecido do Código Civil. Recomenda-se conferê
+- **Ajustes do aprovador (aplicados):** retirada de referências residuais à jurisprudência (Tema 498/STF nas referências; afirmação de origem jurisprudencial sobre alienação judicial no tópico do direito de habitação); art. 1.802 completo (nulas as disposições em favor de não legitimado, ainda que simuladas sob a forma de contrato oneroso ou feitas por interposta pessoa); art. 1.822 (até a declaração de vacância); art. 1.832 na fórmula literal (quinhão igual ao dos que sucederem por cabeça, não inferior à quarta parte se for ascendente dos herdeiros com que concorrer); art. 1.811 (único legítimo da classe; todos os outros da mesma classe); art. 1.975 (rompimento do testamento: segunda hipótese); art. 1.815-A (Lei nº 14.661/2023) nomeado no tópico de indignidade. Mantidos: Súmula 149/STF (redação literal conferida) e o Tema 809/STF (regime sucessório do companheiro igual ao do cônjuge). Fecho padronizado dos tópicos neutralizado em lote ("aplicar o conteúdo a um caso concreto"). **Pendências:** conferir no Planalto os arts. 1.801, 1.829, 1.832 e 1.975; inventário extrajudicial com testamento ou incapaz (Resolução CNJ nº 571/2024 x CPC, art. 610); PL 4/2025 em comissão temporária do Senado, com prazo prorrogado até 22/12/2026, sem sanção.
+
+### Processo Civil M01 — Normas fundamentais e aplicação das normas processuais
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material didático e, em geral, fiel ao CPC. Os principais problemas eram paráfrases que não batiam com a lei (arts. 6º, 7º, 8º, 10 e 15), atribuição de doutrina como se fosse lei (sistema de isolamento dos atos, compatibilidade no art. 15), uma frase vaga de origem jurisprudencial (prévio requerimento administrativo) e uma citação de entendimento do STJ sobre o art. 10, retirados por orientação do proprietário. A menção à Lei nº 15.484/2026 (art. 927, III-A) foi conferida e está correta. Acrescentou-se o essencial legal sobre o art. 12 (preferência após a Lei nº 13.256/2016 e exclusões do § 2º), o art. 487, parágrafo único, o art. 489, § 1º, e a equidade (art. 140, parágrafo único).
+
+- **Correção** (E1): A frase original era vaga e de origem jurisprudencial (regra do proprietário: retirar). Trocada por exceção constitucional expressa ao acesso imediato à jurisdição, de alto rendimento e de base literal. _Fonte: CF/1988, art. 217, § 1º (redação conferida em fontes secundárias: Jus.com.br, Migalhas, Admdireito)._
+- **Correção** (E2): O advérbio especialmente sugeria que a arbitragem alcança outros direitos; a lei fixa o objeto como direitos patrimoniais disponíveis, para pessoas capazes de contratar, e a administração pública direta e indireta também pode utilizá-la (art. 1º, § 1º, incluído pela Lei nº… _Fonte: Lei nº 9.307/1996, art. 1º, caput e § 1º (Senado, WIPO, Conjur)._
+- **Correção** (E3): A paráfrase omitia a expressão de mérito e o tempo razoável, elementos que integram a redação do art. 6º. _Fonte: CPC (Lei nº 13.105/2015), art. 6º._
+- **Correção** (E4): A lei fala em exercício de direitos e faculdades processuais (não em oportunidades) e atribui ao juiz o dever de zelar pelo efetivo contraditório, ponto relevante que faltava. _Fonte: CPC (Lei nº 13.105/2015), art. 7º._
+- **Correção** (E5): A norma se dirige ao juiz (não genericamente ao intérprete) e fala em resguardar e promover a dignidade da pessoa humana, e não apenas preservar. _Fonte: CPC (Lei nº 13.105/2015), art. 8º._
+- **Correção** (E6): O texto atribuía à lei o adjetivo decisivo, que não consta do art. 10 (é leitura doutrinária) e omitia a expressão em grau algum de jurisdição. Adotada a redação legal. _Fonte: CPC (Lei nº 13.105/2015), art. 10._
+- **Acréscimo** (E7): Retirada a referência jurisprudencial genérica (regra do proprietário) e substituída por aplicação expressa do contraditório prévio na lei, muito frequente em concursos. _Fonte: CPC (Lei nº 13.105/2015), art. 487, parágrafo único, e art. 332, § 1º._
+- **Acréscimo** (E8): Complemento legal curto e de alto rendimento ao dever de fundamentação (art. 11 do CPC e art. 93, IX, da CF). _Fonte: CPC (Lei nº 13.105/2015), art. 489, § 1º, I._
+- **Atualização** (E9): Dá o fundamento legal da natureza preferencial e substitui a referência vaga a circunstâncias por exemplos literais do § 2º (incisos I, V e IX). _Fonte: CPC, art. 12, caput (Lei nº 13.256/2016) e § 2º, I, V e IX._
+- **Acréscimo** (E10): Torna concreta a autorização legal genérica do texto: regra no art. 140, parágrafo único, e exemplo clássico no art. 723, parágrafo único (juiz não obrigado a observar legalidade estrita na jurisdição voluntária). _Fonte: CPC (Lei nº 13.105/2015), arts. 140, parágrafo único, e 723, parágrafo único._
+- **Correção** (E11): A expressão é construção doutrinária e não consta do art. 14; atribuída à doutrina. _Fonte: CPC, art. 14; doutrina majoritária._
+- **Correção** (E12): A paráfrase omitia o pressuposto legal (ausência de normas) e apresentava a compatibilidade como se fosse texto do art. 15, o que é construção doutrinária. _Fonte: CPC (Lei nº 13.105/2015), art. 15._
+
+Pendências (não aplicadas):
+- Art. 12, §§ 1º a 3º (lista de processos conclusos) — Redação literal do § 1º e do § 3º não pôde ser conferida no Planalto/Câmara (hosts bloqueados na sessão); mantido apenas o que foi confirmado em mais de uma fonte secundária (caput da Lei nº 13.256/2016 e § 2º, I, V e IX
+- Redação literal dos arts. 1º, 2º, 3º, 4º, 5º, 9º, 11, 13 e 14 — Planalto e Câmara inacessíveis; conferência feita por fontes secundárias (Migalhas, Jus.com.br, modeloinicial, WIPO) e sem divergência encontrada com o texto do material. Nenhuma edição necessária, mas vale uma conferênc
+- Lei nº 15.484/2026 (art. 927, III-A) — Existência, data (4/8/2026) e inciso III-A confirmados em Senado, Câmara (via busca) e análises; vigência em 3/9/2026 segundo consolidações. Como dado volátil e de recursos, o texto foi mantido sem alteração; recomenda-s
+- Conciliação x mediação (art. 165, §§ 2º e 3º: vínculo anterior entre as partes) — Texto do artigo não foi conferido online e o tema é retomado no M02; deixado fora para manter a revisão enxuta.
+- Art. 2º (exceções ao impulso oficial e à iniciativa da parte) e art. 3º, §§ 2º e 3º — Acréscimo de exemplos legais de atuação de ofício e do dever de estímulo à solução consensual ficou de fora por limite de edições; não há erro no texto atual.
+- Alcance do art. 10 sobre qualificação jurídica e questões de direito (iura novit curia) — Há divergência doutrinária e jurisprudencial (inclusive enunciados da ENFAM e acórdãos do STJ); retirada a citação do STJ por regra do proprietário. Tratar no material completo.
+- Tabela do art. 9º/10 e quadro dos arts. 13 a 15 — O texto de tabelas está desordenado no HTML (colunas colapsadas em parágrafos e títulos h2). Não editado porque títulos não podem ser alterados; sugerido reformatar fora desta revisão.
+- Lei nº 14.195/2021, 14.365/2022, 14.711/2023, 14.879/2024 e 15.109/2025 — Nenhuma altera os arts. 1º a 15 do CPC. A Lei nº 15.109/2025 acrescentou o § 3º ao art. 82 (custas em cobrança e execução de honorários), fora do escopo do M01.
+- **Ajustes do aprovador (aplicados):** retirada dos vestígios da leitura do STJ sobre o art. 10 (o texto ainda dizia "fundamento decisivo novo" e trazia uma frase sem atribuição sobre antecipar dispositivos legais; a lei diz "fundamento a respeito do qual não se tenha dado às partes oportunidade de se manifestar", em qualquer grau de jurisdição); arbitragem na redação da Lei nº 9.307/1996, art. 1º e § 1º (administração pública direta e indireta; direitos patrimoniais disponíveis); art. 723, parágrafo único (o juiz não é obrigado a observar critério de legalidade estrita; "equidade" é leitura doutrinária); distinção entre aplicação supletiva e subsidiária atribuída à doutrina; deveres de esclarecer e prevenir extraídos da cooperação pela doutrina. Lei nº 15.484/2026 (art. 927, III-A, CPC) confirmada (publicada em 4/8/2026, vigência em 3/9/2026). **Pendências:** as tabelas dos arts. 9º e 10 e dos arts. 13 a 15 estão com colunas embaralhadas dentro de títulos (problema de formatação do material original, sem edição porque os títulos não podem mudar; a linha do art. 10 ainda diz "novo decisivo" e a do art. 15 "quando compatível"); a redação literal do art. 12, §§ 1º e 3º, e dos arts. 1º a 5º, 9º, 11, 13 e 14 foi conferida só por fontes secundárias; o Planalto não abre neste ambiente.
+
+### Processo Civil M02 — Jurisdição, ação, demanda, processo e mérito
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O material é didático e, em geral, juridicamente seguro: as paráfrases de arts. 16 a 18, 21, 24, 28, 485, 486 e 487 conferem com a lei. Os problemas encontrados foram: um rol fechado apresentado como exemplificativo (art. 23), imprecisões nas hipóteses dos arts. 22 e 25 e na homologação, referência vaga à jurisprudência na teoria da asserção, e lacunas de alto rendimento (arguição da convenção de arbitragem, conhecimento de ofício dos pressupostos, renúncia versus desistência, requisitos do art. 503, § 1º, e vedação de revisão do mérito na delibação). Não encontrei lei posterior que altere os dispositivos tratados neste módulo, mas não consegui abrir o texto compilado do Planalto (ver pendências).
+
+- **Correção** (E1): A frase original era vaga. A regra legal é que a convenção de arbitragem é a exceção ao conhecimento de ofício das matérias do art. 337 e deve ser arguida em preliminar de contestação. _Fonte: CPC/2015 (Lei nº 13.105/2015), art. 337, X, § 5º e § 6º; art. 485, VII._
+- **Correção** (E2): Retirada de referência genérica à jurisprudência, sem fonte específica, conforme regra do proprietário para a versão enxuta. O conteúdo da teoria permanece. _Fonte: Regra editorial da versão de revisão._
+- **Acréscimo** (E3): O texto omitia que a cumulação do art. 327 é contra o mesmo réu e substitui a expressão vaga 'nuances' pela exceção legal expressa (pedidos do art. 326). _Fonte: CPC/2015, art. 327, caput, § 1º e § 3º; art. 326._
+- **Acréscimo** (E4): Lacuna de alto rendimento: base legal dos pressupostos e regra do conhecimento de ofício (que contrasta com a convenção de arbitragem, tratada em E1). _Fonte: CPC/2015, art. 485, IV e § 3º (incisos IV, V, VI e IX)._
+- **Correção** (E5): A afirmação original estava correta, mas sem base legal e sem a regra do art. 239 e a ressalva das hipóteses sem citação; o art. 312 fundamenta o momento da propositura. _Fonte: CPC/2015, arts. 239, 240 e 312._
+- **Acréscimo** (E6): O termo 'acordo' é impreciso (a lei fala em transação) e a lista omitia o reconhecimento da procedência do pedido. Acrescentada a distinção entre renúncia à pretensão e desistência da ação, de alto rendimento. _Fonte: CPC/2015, art. 487, II e III, a a c; art. 485, VIII._
+- **Acréscimo** (E7): O texto remetia a 'requisitos específicos' sem enunciá-los; os três requisitos do § 1º e a exceção do § 2º são conteúdo essencial. _Fonte: CPC/2015, art. 503, § 1º, I a III, e § 2º._
+- **Correção** (E8): A hipótese do inciso III não é 'eleição de foro brasileiro', e sim submissão expressa ou tácita à jurisdição nacional. As demais hipóteses foram especificadas; a de consumo corresponde ao caso da consumidora usado no módulo. _Fonte: CPC/2015, art. 22, I, II e III._
+- **Correção** (E9): O art. 23 tem três incisos (imóveis; sucessão; divórcio, separação e união estável). Apresentá-lo como 'entre outras hipóteses' sugeria rol exemplificativo, o que não confere com a lei. _Fonte: CPC/2015, art. 23, caput e I a III._
+- **Correção** (E10): A lei é literal: a cláusula de eleição de foro exclusivo estrangeiro deve ser arguida pelo réu na contestação. A expressão 'nas condições legais' era vaga. _Fonte: CPC/2015, art. 25, caput._
+- **Acréscimo** (E11): Regra básica de alto rendimento da cooperação internacional, ausente no material. _Fonte: CPC/2015, art. 26, § 1º e § 2º._
+- **Acréscimo** (E12): Acrescenta a vedação de revisão do mérito (juízo de delibação) e substitui a frase genérica pela regra legal do art. 961, caput, com a ressalva de lei ou tratado. _Fonte: CPC/2015, art. 36, § 2º; art. 961, caput._
+
+Pendências (não aplicadas):
+- Confirmação de alterações legislativas nos dispositivos do módulo (arts. 16 a 41, 239, 312, 317, 326-327, 337, 485-487, 503, 961) — O texto compilado do Planalto, da Câmara e de sites de legislação não pôde ser aberto neste ambiente; a confirmação foi feita por buscas em fontes secundárias. Não encontrei lei que altere esses artigos. Encontrei Lei nº
+- Lei nº 14.879/2024 (foro de eleição) e art. 25, § 2º — O art. 25, § 2º remete aos §§ 1º a 4º do art. 63, dispositivo que a Lei nº 14.879/2024 alterou (foro de eleição e pertinência com o domicílio das partes ou a obrigação). Não consegui confirmar a redação atual em duas fon
+- Tabela de instrumentos da cooperação internacional (auxílio direto, carta rogatória, homologação) — O texto da tabela está com colunas embaralhadas (por exemplo, 'Verificar autoridade central, tratado estrangeira sujeita à delibação. e natureza do pedido'). Parece problema de extração ou formatação; sugiro revisar a fo
+- Sentença estrangeira de divórcio consensual (art. 961, § 5º) e averbação direta (Provimento CNJ nº 53/2016) — O alcance prático (divórcio puro versus com partilha, guarda ou alimentos) é tratado por entendimento do STJ e normas do CNJ; excluído da versão enxuta. Fica para o material completo.
+- Jurisdição voluntária: art. 723, parágrafo único (juiz não obrigado a legalidade estrita) e arts. 719 a 770 — Texto do parágrafo único confirmado apenas por fontes secundárias, e seu alcance (equidade) é debatido na doutrina; não editado.
+- Arbitragem: Lei nº 9.307/1996, art. 1º, § 1º (administração pública) e art. 3º, § 1º do CPC — Acréscimos de baixo risco, mas fora do limite de 12 edições. O art. 3º, § 1º do CPC ('É permitida a arbitragem, na forma da lei') e a arbitragem com a administração pública podem entrar no material completo.
+- Dispositivos de alto rendimento não incluídos por limite de edições — Art. 2º do CPC (início por iniciativa da parte e impulso oficial), art. 18, parágrafo único (substituído como assistente litisconsorcial), art. 19 (ação meramente declaratória sobre relação jurídica ou autenticidade de d
+- Teoria da asserção e possibilidade jurídica do pedido — Mantido o texto doutrinário. A orientação jurisprudencial sobre a teoria da asserção foi retirada por regra do proprietário; pode voltar ao material completo com fonte específica.
+- **Ajustes do aprovador (aplicados):** art. 21 apresentado como rol fechado de três hipóteses (réu domiciliado no Brasil; obrigação a ser cumprida no Brasil; fato ocorrido ou ato praticado no Brasil), com o parágrafo único (agência, filial ou sucursal no Brasil); jurisdição voluntária sem a frase "debatida na doutrina" ("O CPC confere disciplina própria à jurisdição voluntária, arts. 719 a 770"); art. 327, § 3º, e "sem resolução do mérito" na redação da lei; retirada da frase "tende a ser resolvida no mérito" (leitura sem atribuição). O art. 22 (alimentos, relação de consumo, submissão expressa ou tácita) e o art. 23 (três hipóteses de competência exclusiva) foram conferidos. **Pendências:** a tabela dos instrumentos de cooperação internacional continua com colunas embaralhadas (formatação do material original); a Lei nº 14.879/2024 (foro de eleição, art. 63) fica para o M03; fora do limite de edições: arts. 2º, 18 (parágrafo único), 19, 24 (parágrafo único), 337, § 2º, e o divórcio consensual estrangeiro (art. 961, § 5º).
+
+### Processo Civil M03 — Competência
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O material está, em geral, correto e didático: as referências aos arts. 43, 46, 47 (§ 2º), 55, 56, 57, 58, 59, 63 (§§ 3º a 5º), 64, 65, 66 e 67 a 69 conferem com a lei, e a Lei nº 14.879/2024 foi bem incorporada. Os problemas encontrados foram: o rol de exceções do art. 45 apresentado de forma imprecisa ("certas ações de falência", sem insolvência civil); uma citação de jurisprudência do STJ com data (fora da regra da versão enxuta); uma frase vaga sobre o tribunal competente para o conflito; e lacunas de lei seca de alto rendimento (art. 46, §§ 3º e 4º; art. 47, § 1º; art. 54; art. 55, § 2º; art. 65, parágrafo único; art. 66, parágrafo único). Não foi localizada nenhuma lei de 2025 ou 2026 que altere os arts. 42 a 69 do CPC; a única alteração relevante nessa parte continua sendo a Lei nº 14.879/2024.
+
+- **Correção** (E1): O texto dizia "certas ações de falência", mas o art. 45, I, exclui todas as ações de recuperação judicial, falência, insolvência civil e acidente de trabalho (insolvência civil estava omitida), e o inciso II exclui as sujeitas à Justiça Eleitoral e à do Trabalho. Acrescentadas a… _Fonte: CPC, art. 45, caput, I, II e § 3º; Súmula 150 do STJ; Súmula 556 do STF_
+- **Acréscimo** (E2): Completa o art. 46 com os §§ 3º e 4º, de alto rendimento, e indica os parágrafos já tratados no texto. _Fonte: CPC, art. 46, §§ 1º a 4º_
+- **Correção** (E3): A expressão "em regra" e "opções legalmente delimitadas em certas hipóteses" era vaga; o art. 47, caput, não traz "em regra" e a exceção está no § 1º, que foi reproduzido conforme a lei. _Fonte: CPC, art. 47, caput e § 1º_
+- **Correção** (E4): Regra da versão enxuta: sem acórdãos ou datas de julgamento de tribunais. Substituída por regra legal verificada: vigência na data da publicação (Lei nº 14.879, de 4/6/2024, publicada no DOU de 5/6/2024) e art. 14 do CPC, sem afirmar tese sobre contratos anteriores, tema… _Fonte: Lei nº 14.879/2024 (vigência na data da publicação); CPC, art. 14_
+- **Acréscimo** (E5): Aproxima o texto da redação do art. 55, § 1º ("serão reunidos"), acrescenta o § 2º (conexão por determinação legal) e o art. 54, de alto rendimento. A segunda parte do art. 54 sobre a competência absoluta é leitura doutrinária majoritária e foi atribuída como tal. _Fonte: CPC, arts. 54 e 55, §§ 1º e 2º_
+- **Acréscimo** (E6): Acrescenta a legitimidade do Ministério Público para alegar incompetência relativa (art. 65, parágrafo único), omitida no texto. _Fonte: CPC, art. 65, caput e parágrafo único_
+- **Correção** (E7): A frase original era vaga. Substituída por regra constitucional (art. 105, I, d, e art. 108, I, e, da CF) e acrescentado o parágrafo único do art. 66, que impede a devolução sucessiva da causa entre juízos. _Fonte: CF, arts. 105, I, d, e 108, I, e; CPC, art. 66, parágrafo único_
+
+Pendências (não aplicadas):
+- Art. 340 do CPC (contestação protocolada no foro do domicílio do réu quando alegada incompetência) — Lacuna de alto rendimento e possível acréscimo no módulo; não incluído para respeitar o limite de crescimento do texto. A lei e a doutrina também discutem sua utilidade no processo eletrônico.
+- Súmulas 33 e 235 do STJ e nova regra de declinação de ofício (art. 63, §§ 3º e 5º) — A Súmula 33 (a incompetência relativa não pode ser declarada de ofício) tem exceções legais no art. 63; as súmulas não foram incluídas na versão enxuta. A literalidade das duas súmulas não foi conferida diretamente no si
+- Aplicação no tempo da Lei nº 14.879/2024 a contratos e ações anteriores — A citação de decisão do STJ foi retirada por ser jurisprudência; o tema é controvertido e fica para o material completo.
+- Art. 53 (foros especiais de família, alimentos, reparação de dano etc.) e arts. 48 a 52 — O texto só os cita de forma resumida; o detalhamento por inciso (inclusive a regra da Lei nº 13.894/2019 para violência doméstica) fica para o material completo.
+- Art. 63 e a natureza do foro de eleição como competência relativa; art. 62 (matéria, pessoa e função inderrogáveis por convenção) — O texto já trata do tema de forma correta; a referência expressa ao art. 62 poderia ser acrescentada no material completo.
+- Redação literal do art. 63, §§ 1º e 5º, conferida apenas em fontes secundárias — Os sites oficiais (planalto.gov.br e outros) não abriram neste ambiente. A conferência foi feita por resultados de busca de mais de uma fonte (comentários, legislação compilada), que coincidem com o texto do material; po
+- Alterações legislativas até novembro/2026 — Em buscas, não foi encontrada lei de 2025 ou 2026 que altere os arts. 42 a 69 do CPC. A Lei nº 15.109/2025 trata do art. 82 (custas de advogado em cobrança de honorários), fora do escopo deste módulo.
+- **Ajustes do aprovador (aplicados):** art. 14 do CPC citado por inteiro (a norma processual não retroage e se aplica imediatamente aos processos em curso, respeitados os atos já praticados), com a Lei nº 14.879/2024 publicada em 5/6/2024 e vigente na data da publicação; retirada de frase do texto original que tomava posição sobre a aplicação da lei nova a ações antigas (tema controvertido, para o material completo); retirada da afirmação atribuída à "doutrina majoritária" sobre a competência absoluta (o art. 54 só diz que a competência relativa pode modificar-se por conexão ou continência); art. 55, § 2º (aplica-se o disposto no caput, isto é, o conceito de conexão); art. 46, § 2º ("domicílio incerto ou desconhecido"); competência relativa prorrogada pelo silêncio (art. 65), ressalvada a declinação de ofício prevista no art. 63, §§ 3º e 5º; art. 45, I e II, descrito como hipóteses em que a remessa não se aplica. Súmula 556/STF conferida na redação literal; a Súmula 150/STJ foi apenas parafraseada. **Pendências:** art. 340 (contestação no foro do domicílio do réu), Súmulas 33 e 235/STJ, detalhamento dos arts. 48 a 53 e art. 62; aplicação da Lei nº 14.879/2024 a contratos e ações anteriores (tema controvertido); tabelas com colunas embaralhadas (formatação do material original).
+
+### Processo Civil M05 — Litisconsórcio e intervenção de terceiros
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material didático e, em geral, fiel ao CPC/2015 (arts. 113 a 138). Os principais problemas eram paráfrases imprecisas de artigos (arts. 120, 123, 129 e 131), o uso de "por exemplo" para róis legais (art. 125 e art. 122), a falta de pontos de alto rendimento (arts. 121, 126, 136, 137 e 138) e uma referência a "enunciado" no último bloco. Não foi encontrada, nas fontes consultadas, alteração posterior do CPC nos arts. 113 a 138; a conferência no texto consolidado oficial segue como pendência.
+
+- **Correção** (E1): O texto apresentava como exemplos (por exemplo) as hipóteses do art. 125, que são duas, descritas nos incisos I e II; o caput ainda prevê que a denunciação pode ser promovida por qualquer das partes. _Fonte: CPC, art. 125, caput, I e II (Lei nº 13.105/2015)_
+- **Correção** (E2): O parágrafo único do art. 129 não traz exceção ("em regra") e fixa a consequência: o denunciante vencedor arca com despesas e honorários do denunciado. A paráfrase anterior era vaga. _Fonte: CPC, art. 129, caput e parágrafo único_
+- **Acréscimo** (E3): Lacuna de alto rendimento: momento da denunciação por autor e por réu. _Fonte: CPC, art. 126_
+- **Correção** (E4): "Circunstâncias especiais" era expressão vaga; o parágrafo único do art. 131 define as hipóteses do prazo de dois meses. _Fonte: CPC, art. 131, caput e parágrafo único_
+- **Correção** (E5): O parágrafo único do art. 120 fala em "qualquer parte" (não só a parte adversa) e em decisão "sem suspensão do processo" (sem o advérbio "necessariamente"). Acrescentado o prazo e o efeito da ausência de impugnação do caput. _Fonte: CPC, art. 120, caput e parágrafo único_
+- **Correção** (E6): O art. 123 traz duas ressalvas (incisos I e II); o texto as descrevia como "situações como", sugerindo rol aberto, e a frase inicial era imprecisa. Reescrito com a regra e as duas exceções. _Fonte: CPC, art. 123, caput, I e II_
+- **Correção** (E7): Precisão: art. 121 (mesmos poderes e ônus) e substituição processual no caso de revelia/omissão (lacuna de alto rendimento). O art. 122 traz quatro atos, e não "por exemplo" três. _Fonte: CPC, arts. 121 e 122_
+- **Acréscimo** (E8): Lacuna de alto rendimento: recurso cabível e efeito do acolhimento (art. 137), ambos com texto expresso de lei. _Fonte: CPC, arts. 136, 137 e 1.015, IV_
+- **Acréscimo** (E9): Lacuna de alto rendimento: a decisão que solicita ou admite o amicus curiae é irrecorrível; prazo de 15 dias; definição dos poderes na decisão. _Fonte: CPC, art. 138, caput e § 2º_
+- **Correção** (E10): O "em regra" estava mal posicionado: a regra do art. 117 é a de litigantes distintos; a exceção é o unitário. Incluídas as omissões, que o texto legal menciona. _Fonte: CPC, art. 117_
+- **Atualização** (E11): Linguagem neutra (retirada a referência a "enunciado"); acréscimo curto sobre nomeação à autoria, com dispositivos que a substituíram. _Fonte: CPC, arts. 338 e 339; arts. 119 a 138_
+- **Acréscimo** (E12): O § 1º do art. 113 indica as fases em que a limitação é possível. _Fonte: CPC, art. 113, § 1º_
+
+Pendências (não aplicadas):
+- Alterações legislativas posteriores (Leis nº 13.256/2016, 14.195/2021, 14.365/2022, 14.711/2023, 14.879/2024, 15.109/2025) nos arts. 113 a 138 — Não foi identificada alteração nesses artigos, mas o texto consolidado do Planalto não pôde ser aberto neste ambiente (rede bloqueada); confirmação final contra o texto oficial.
+- Obrigatoriedade da denunciação no art. 125, I (evicção) — O texto diz que a denunciação não é condição obrigatória como regra geral (art. 125, § 1º). Parte da doutrina ainda trata o inciso I como obrigatório; por ser discussão doutrinária, foi mantida a redação legal e não foi 
+- Cabimento do incidente de desconsideração nos juizados especiais (art. 1.062) e recurso nesse rito — Há divergência entre doutrina e turmas recursais e não foi confirmada posição consolidada; fica para o material completo.
+- Irrecorribilidade da decisão que inadmite o amicus curiae — O art. 138 trata apenas da decisão que solicita ou admite; a extensão à decisão denegatória é jurisprudencial/doutrinária e foi deixada de fora.
+- Assistência litisconsorcial (art. 124), litisconsórcio necessário e unitário (arts. 114 a 116), IDPJ (arts. 133 a 135), chamamento (arts. 130 e 132) — Conferidos e considerados corretos; sem edição para manter o material enxuto. Tópicos como desconsideração e fraude de execução (art. 792, § 3º) ficam para o material completo.
+- **Ajustes do aprovador (aplicados):** art. 125 na redação literal dos dois incisos (I: ao alienante imediato, na ação em que terceiro reivindica a coisa; II: àquele obrigado por lei ou contrato a indenizar, em ação regressiva, o prejuízo de quem for vencido no processo), por qualquer das partes; art. 126 (o autor requer a denunciação juntamente com a citação do réu; o réu, no prazo para contestar); retirada de "como regra geral do CPC/2015" no art. 125, § 1º (vestígio de debate sobre a evicção; o art. 456 do Código Civil foi revogado pelo art. 1.072, II, do CPC); art. 138 (amicus curiae: pessoa natural ou jurídica, órgão ou entidade especializada, com representatividade adequada); art. 124 (o assistente é considerado litisconsorte da parte principal); arts. 134 e 1.062 (o incidente de desconsideração se aplica também nos juizados especiais); art. 113, § 2º, sem "integralmente". Incidente de desconsideração: agravo de instrumento (art. 1.015, IV), agravo interno se a decisão for do relator (art. 136, parágrafo único) e ineficácia da alienação em fraude de execução (art. 137). **Pendências:** conferir no Planalto se alguma lei posterior alterou os arts. 113 a 138 (nenhuma foi encontrada); irrecorribilidade da decisão que inadmite o amicus curiae (o art. 138 só trata da decisão que solicita ou admite); obrigatoriedade da denunciação no art. 125, I (discussão doutrinária); tabelas com colunas embaralhadas.
+
+### Processo Civil M04 — Partes, procuradores, despesas e gratuidade
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O módulo está, em geral, fiel à lei e didático (arts. 71, 72, 73, 75, 76, 98, 99, 103, 104, 108 e 112 conferem). Os problemas são pontuais: o rol de má-fé do art. 80 aparece como exemplo e incompleto, o rol de poderes especiais do art. 105 está incompleto, o ato atentatório do art. 77 omite o inciso VI e as regras do § 6º, e há referência vaga à jurisprudência sobre gratuidade da pessoa jurídica. Falta a atualização da Lei nº 15.109/2025 (art. 82, § 3º) e alguns pontos de alto rendimento (consequências do art. 76, suprimento do art. 74, art. 86, faixa do art. 85, § 2º, art. 109, § 1º, e art. 111, parágrafo único).
+
+- **Correção** (E1): O texto original citava apenas o dever do inciso IV como exemplo e remetia genericamente ao art. 77. O ato atentatório à dignidade da justiça do art. 77, § 2º, decorre da violação dos incisos IV e VI; a advertência está no § 1º; a multa é de até 20% do valor da causa; o § 6º… _Fonte: CPC (Lei nº 13.105/2015), art. 77, IV, VI, §§ 1º, 2º e 6º; conferido em mais de uma fonte secundária (comentários ao CPC e doutrina), pois o Planalto não abriu._
+- **Correção** (E2): O texto usava 'como' e listava só quatro condutas, dando a entender rol aberto e incompleto. O art. 80 traz sete incisos; passa-se a listá-los por inteiro. _Fonte: CPC, art. 80, I a VII._
+- **Correção** (E3): O art. 81 diz que o juiz 'condenará' o litigante de má-fé a pagar multa, indenizar e arcar com honorários e despesas; 'pode incluir' era impreciso. Acrescenta-se o percentual da multa, ponto de alto rendimento. _Fonte: CPC, art. 81, caput._
+- **Correção** (E4): Troca a referência vaga à 'jurisprudência aplicável' pela súmula clássica sobre o tema, com redação conferida junto ao texto oficial do STJ. A presunção do art. 99, § 3º, aplica-se só à pessoa natural, como o texto já dizia. _Fonte: Súmula 481 do STJ (Corte Especial, 28/6/2012); CPC, art. 99, § 3º._
+- **Atualização** (E5): Lei nº 15.109/2025 (publicada em 14/3/2025, vigência imediata) acrescentou o § 3º ao art. 82. O módulo trata dos arts. 82 a 84 e não registrava a novidade. A redação segue o texto do parágrafo, localizado em reprodução do Diário Oficial; sugere-se conferência final no Planalto. _Fonte: Lei nº 15.109/2025, que acrescenta o § 3º ao art. 82 do CPC (Câmara dos Deputados, Senado, Migalhas, Conjur, OAB-PR)._
+- **Acréscimo** (E6): Substitui a referência genérica a 'critérios e faixas' pela regra literal do § 2º e remete ao § 3º para a Fazenda Pública. _Fonte: CPC, art. 85, §§ 2º e 3º._
+- **Acréscimo** (E7): O texto original era vago ('observadas as regras legais'). Traz a regra do art. 86, caput e parágrafo único, e a vedação de compensação do art. 85, § 14. _Fonte: CPC, arts. 86 e 85, § 14._
+- **Acréscimo** (E8): Concretiza a remissão genérica a 'consequências previstas em lei', mantendo a ideia central do texto (regularizar antes de punir). O § 1º, III, prevê ainda a situação do terceiro, daí o 'por exemplo'. _Fonte: CPC, art. 76, caput, § 1º, I e II, e § 2º, I e II._
+- **Acréscimo** (E9): Completa o art. 74 com a consequência da falta de consentimento, ponto de alto rendimento. _Fonte: CPC, art. 74, caput e parágrafo único._
+- **Correção** (E10): O art. 105 traz rol específico que o texto apresentava como exemplificativo ('como') e incompleto: faltavam 'firmar compromisso' e 'assinar declaração de hipossuficiência econômica', este último de alto rendimento. _Fonte: CPC, art. 105, caput._
+- **Correção** (E11): A remissão genérica às 'condições do art. 109' é substituída pela regra literal dos §§ 1º e 2º. _Fonte: CPC, art. 109, §§ 1º e 2º._
+- **Acréscimo** (E12): Concretiza 'a regularização exigida em lei' com o prazo e a remissão do art. 111, parágrafo único. _Fonte: CPC, art. 111, caput e parágrafo único._
+
+Pendências (não aplicadas):
+- Redação literal do art. 82, § 3º (Lei nº 15.109/2025) — A fonte oficial (planalto.gov.br e Câmara) não pôde ser aberta por restrição de rede; a redação do parágrafo veio de reprodução do Diário Oficial citada em resultado de busca. A edição E5 foi redigida em paráfrase próxim
+- Art. 83 (caução do autor residente fora do Brasil) e art. 84 (rol de despesas) — O módulo cita os arts. 82 a 84, mas não trata da caução do art. 83 nem do rol do art. 84 (custas, indenização de viagem, remuneração do assistente técnico e diária de testemunha). Fica para o material completo ou para no
+- Representação dos entes públicos (art. 75, III) — O texto não diz que o Município é representado pelo prefeito ou procurador, apenas remete ao art. 75. Acréscimo deixado de fora por limite de edições; texto sugerido: 'o Município, por seu prefeito ou procurador'.
+- Exceções à capacidade postulatória (art. 103, parágrafo único; Lei nº 9.099/1995, art. 9º) — Seria útil indicar a postulação em causa própria com habilitação legal e a dispensa de advogado nas causas de até 20 salários mínimos nos Juizados Especiais. Deixado de fora por limite de edições; conferir texto oficial 
+- Impugnação e recurso na gratuidade (arts. 100, 101 e 1.015, V) — O módulo não cobre a impugnação (15 dias) nem o agravo de instrumento contra o indeferimento ou a revogação (apelação, se decidido na sentença). Lacuna de alto rendimento, fora do limite de edições.
+- Art. 98, caput: expressão 'sem prejuízo' no item 6.1 — A frase 'sem prejuízo nas condições previstas em lei' no item 6.1 não consta do art. 98, caput (resquício da Lei nº 1.060/1950), mas não foi alterada por limite de edições. Sugestão: 'na forma da lei'.
+- Dever do art. 77, VII (Lei nº 14.195/2021) e art. 77, V — O texto lista deveres 'entre outros', sem erro. O inciso VII (manter atualizados os dados cadastrais para citações e intimações), acrescido pela Lei nº 14.195/2021, não foi confirmado em fonte primária nesta sessão; por 
+- Honorários por equidade (art. 85, §§ 6º-A e 8º-A, Lei nº 14.365/2022) e jurisprudência correlata — Matéria de nível avançado e com divergência jurisprudencial; fica para o material completo, conforme a regra do proprietário para a versão enxuta.
+- Art. 81, § 2º e art. 85, § 14 (natureza alimentar) — Multa de até 10 salários mínimos quando o valor da causa for irrisório ou inestimável (art. 81, § 2º) e natureza alimentar dos honorários (art. 85, § 14, apenas citado em E7): acréscimos deixados de fora pelo limite de c
+- **Ajustes do aprovador (aplicados):** art. 77, § 2º, em forma fechada (o ato atentatório à dignidade da justiça decorre dos incisos IV e VI; o juiz "deve aplicar" multa de até 20% do valor da causa, conforme a gravidade); Súmula 481/STJ na redação literal (sem vírgulas: "pessoa jurídica com ou sem fins lucrativos que demonstrar sua impossibilidade de arcar com os encargos processuais"); art. 76, §§ 1º e 2º ("instância originária" e "em fase recursal no tribunal"); gratuidade sem o resquício da Lei nº 1.060/1950 ("sem prejuízo nas condições previstas em lei"; o art. 98 fala em insuficiência de recursos); art. 98, § 3º ("vencido o beneficiário", sem "em regra"). Lei nº 15.109/2025 (art. 82, § 3º) confirmada por fontes secundárias (Senado, Migalhas, Conjur); a redação literal do parágrafo deve ser conferida no Planalto. **Pendências:** arts. 83 e 84; art. 75, III; art. 103, parágrafo único, e Lei nº 9.099/1995, art. 9º; arts. 100, 101 e 1.015, V; art. 77, VII (Lei nº 14.195/2021); honorários por equidade (art. 85, §§ 6º-A e 8º-A, Lei nº 14.365/2022); tabelas com colunas embaralhadas.
+
+### Processo Civil M06 — Sujeitos do processo
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O material é didático e, no geral, fiel ao CPC (arts. 140, 141, 165, 166, 172, 176, 178, 180, 183 e 186 conferem). Os principais problemas eram paráfrases que não batiam com a lei no art. 139 (inclusive 'ordenar a produção de provas', que não consta do art. 139) e no art. 142, a descrição vaga do incidente de impedimento/suspeição (art. 146, §§ 1º a 3º) e do art. 148, a frase vaga sobre o prazo de 30 dias do art. 178 e a ausência das regras de responsabilidade dos arts. 184 e 187. Também havia um 'em regra' no art. 146, caput, que a lei não traz. Nenhuma lei posterior (Leis 13.256/2016, 14.195/2021, 14.365/2022, 14.711/2023, 14.879/2024, 15.109/2025, 15.484/2026) alterou os arts. 139 a 187; a única 'atualização' relevante é a declaração de inconstitucionalidade do art. 144, VIII (ADI 5.953), que o texto já registrava e foi apenas simplificada.
+
+- **Correção** (E1): O art. 139, III, fala em prevenir ou reprimir ato contrário à dignidade da justiça e em indeferir postulações meramente protelatórias; o texto dizia 'reprimir pedidos apenas protelatórios'. 'Ordenar a produção de provas' não está no art. 139 (o poder instrutório de ofício está… _Fonte: CPC, art. 139, I, II, III, V, VI e parágrafo único, IX (Lei nº 13.105/2015)_
+- **Correção** (E2): O texto original era vago ('providências previstas na lei'). O art. 142 determina decisão que impeça os objetivos das partes e a aplicação, de ofício, das penalidades da litigância de má-fé, e pressupõe conluio de autor e réu. _Fonte: CPC, art. 142 (Lei nº 13.105/2015)_
+- **Acréscimo** (E3): Substitui a expressão genérica 'observados os requisitos legais' pelo requisito literal do art. 143, parágrafo único (requerimento da parte e omissão por 10 dias), de alto rendimento. _Fonte: CPC, art. 143, I, II e parágrafo único (Lei nº 13.105/2015)_
+- **Atualização** (E4): Mantida a única referência a julgado, por se tratar de declaração de inconstitucionalidade em controle concentrado que altera o rol de impedimentos (hipótese de altíssima importância); retirada a frase vaga sobre 'consultar a jurisprudência' e a recomendação de memorização. A… _Fonte: CPC, art. 144, VIII; STF, ADI 5.953 (notícias do STF, Lex, Dizer o Direito)_
+- **Acréscimo** (E5): Lacuna de alto rendimento: o art. 966, II, prevê a rescisória contra decisão de mérito 'proferida por juiz impedido ou por juízo absolutamente incompetente'; a suspeição não está no inciso. O texto foi redigido só com a letra da lei, sem afirmar tese doutrinária sobre preclusão. _Fonte: CPC, art. 966, II (Lei nº 13.105/2015)_
+- **Correção** (E6): O art. 146, caput, fixa o prazo de 15 dias e a petição específica sem ressalva ('em regra' não consta). A nova redação segue a lei: petição dirigida ao juiz do processo, com indicação do fundamento e possibilidade de instruí-la com documentos e rol de testemunhas. _Fonte: CPC, art. 146, caput (Lei nº 13.105/2015)_
+- **Correção** (E7): O trecho original era vago ('procedimento legal', 'regra ... definida segundo o art. 146'). Substituído pela regra literal dos §§ 1º a 3º do art. 146, de alto rendimento. _Fonte: CPC, art. 146, §§ 1º, 2º e 3º (Lei nº 13.105/2015)_
+- **Correção** (E8): O texto indicava 'disciplina própria' e 'regime distinto' sem dizê-los. A nova redação traz o procedimento literal do art. 148, §§ 1º, 2º e 4º, e usa a expressão legal 'demais sujeitos imparciais do processo'. _Fonte: CPC, art. 148, I, II, III, §§ 1º, 2º e 4º (Lei nº 13.105/2015)_
+- **Didática** (E9): A frase original ('exige atenção ao prazo especial') era vaga e sugeria uma ressalva sem enunciá-la. Foi substituída pela regra literal do art. 178, caput. A questão de a dobra do art. 180 se somar ou não a esse prazo não foi afirmada por falta de confirmação em fonte confiável… _Fonte: CPC, art. 178, caput (Lei nº 13.105/2015)_
+- **Acréscimo** (E10): O título da seção cita os arts. 182 a 184, mas o art. 184 não era tratado. O texto do art. 184 segue o mesmo padrão dos arts. 143, 181 e 187. _Fonte: CPC, art. 184 (Lei nº 13.105/2015)_
+- **Acréscimo** (E11): O título da seção cita os arts. 185 a 187, mas o art. 187 não era tratado. _Fonte: CPC, art. 187 (Lei nº 13.105/2015)_
+- **Acréscimo** (E12): Completa o rol literal do art. 149 (faltavam partidor, distribuidor, contabilista e regulador de avarias) e explicita que o rol é exemplificativo ('além de outros cujas atribuições sejam determinadas pelas normas de organização judiciária'). _Fonte: CPC, art. 149 (Lei nº 13.105/2015)_
+
+Pendências (não aplicadas):
+- Dobra do prazo de 30 dias do art. 178 (MP como fiscal) e art. 180, § 2º — As fontes consultadas divergem sobre se o prazo de 30 dias do art. 178 é 'prazo próprio' (sem dobra) ou se é dobrado pelo art. 180; não foi encontrada fonte confiável conclusiva. O texto foi apenas simplificado (E9), sem
+- Art. 179, I (MP tem vista dos autos depois das partes e é intimado de todos os atos) e art. 279 (nulidade por falta de intimação do MP) — Lacuna de alto rendimento, mas o limite de 12 edições foi atingido. Sugestão: acrescentar na seção 5.1, com a redação literal dos dispositivos, em revisão posterior.
+- Art. 167, § 5º (conciliadores e mediadores judiciais inscritos na OAB ficam impedidos de exercer a advocacia nos juízos em que atuem) e art. 144, §§ 1º e 2º, art. 145, § 2º (suspeição ilegítima) — Complementos legais possíveis, não incluídos por limite de edições e de crescimento. Não confirmados nesta revisão com a redação literal em fonte oficial (o planalto.gov.br e a Câmara não puderam ser acessados); redigir 
+- Preclusão da arguição de impedimento depois do prazo de 15 dias — A doutrina diverge ou as fontes consultadas divergem (suspeição preclui; impedimento seria matéria de ordem pública). Não foi afirmado no texto; foi removido apenas o 'em regra' do art. 146, caput (E6) e acrescentada a r
+- Caráter taxativo ou exemplificativo do rol do art. 145 (suspeição) — A doutrina não é uniforme e não foi possível atribuir posição majoritária com segurança; o texto não afirma nem nega a taxatividade.
+- Referência 'STF, ADI 5.953 (art. 144, VIII)' no parágrafo final de base legal — Mantida porque o texto da seção 2.1 foi mantido com a ADI (E4). Se o proprietário preferir retirar toda jurisprudência da versão enxuta, retirar as duas menções juntas. A data exata do julgamento (21 ou 22/8/2023) diverg
+- Conferência de redação literal em fonte oficial — Os sites oficiais (planalto.gov.br, camara.leg.br, dizerodireito.com.br) não puderam ser abertos neste ambiente. A redação dos artigos foi confirmada por resumos de sites jurídicos (WebSearch) e pelo conhecimento do text
+- **Ajustes do aprovador (aplicados):** impedimento e suspeição podem ser arguidos (art. 146), e só na suspeição o juiz pode declarar-se suspeito por foro íntimo (art. 145, § 1º); retirada a expressão "embora ainda conste do texto do Código" sobre o art. 144, VIII (declarado inconstitucional pela ADI 5.953, julgada em agosto de 2023; o texto compilado oficial não foi conferido); art. 139 reescrito só com a regra legal (inciso IV, inclusive nas ações com prestação pecuniária; proporcionalidade do art. 8º e fundamentação do art. 11); "A parte argui o impedimento ou a suspeição"; art. 146 comum aos dois institutos; decisão de mérito "transitada em julgado" (art. 966). O aprovador manteve a menção à ADI 5.953 por ter alterado o rol legal de impedimentos (controle concentrado). Art. 178 (30 dias, contados da intimação, para o Ministério Público intervir como fiscal da ordem jurídica) e art. 149 (rol exemplificativo) conferidos. **Pendências:** dobra do art. 180 sobre o prazo do art. 178 (as fontes divergem; o texto não afirma nem nega); art. 179, I, art. 279 e art. 167, § 5º ficaram de fora; preclusão do impedimento e natureza do rol do art. 145 (doutrina); tabela da seção 2.1 com colunas embaralhadas.
+
+### Processo Civil M07 — Atos processuais, tempo, lugar e prazos
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O módulo é didático e, em geral, correto. Os principais problemas eram: segredo de justiça descrito por exemplos, embora o art. 189 traga incisos expressos; "em regra" onde o art. 218, § 3º, não admite exceção; "inclusive" no rol fechado do art. 212, § 2º (citações, intimações e penhoras); paráfrases incompletas dos arts. 203, §§ 1º e 4º, e 229; e remissões vagas (prazo do juiz, Fazenda/MP/Defensoria, suspensão). Não foi encontrada lei posterior que altere os arts. 188 a 235 (a Lei nº 15.484/2026 trata do filtro de relevância no recurso especial e do art. 927, fora do M07). Não há jurisprudência no texto original.
+
+- **Correção** (E1): O texto citava só dois exemplos ("como..."), dando ideia de rol aberto e omitindo hipóteses. Os incisos do art. 189 foram reproduzidos completos e na ordem. _Fonte: CPC, art. 189, caput e incisos I a IV (Lei nº 13.105/2015)._
+- **Correção** (E2): A definição legal de sentença combina conteúdo (arts. 485 e 487) e efeito (fim da fase cognitiva ou extinção da execução), com ressalva dos procedimentos especiais. A paráfrase anterior omitia o critério do conteúdo. _Fonte: CPC, art. 203, § 1º._
+- **Correção** (E3): A paráfrase truncava o § 4º: o ponto central é que os atos meramente ordinatórios independem de despacho e são praticados de ofício pelo servidor. _Fonte: CPC, art. 203, § 4º; art. 152, VI._
+- **Correção** (E4): "Certas diligências, inclusive..." sugeria rol aberto; o § 2º menciona somente citações, intimações e penhoras. Também foi incluída a dispensa de autorização judicial, que consta do texto legal. _Fonte: CPC, art. 212, § 2º; CF/1988, art. 5º, XI._
+- **Correção** (E5): Substitui negação genérica pela regra legal: o parágrafo único do art. 219 limita a contagem em dias úteis aos prazos processuais. A exclusão dos prazos de prescrição e decadência é a leitura majoritária. _Fonte: CPC, art. 219, parágrafo único; Código Civil, art. 132._
+- **Correção** (E6): O "como regra" não tem base: o § 3º não admite exceção. _Fonte: CPC, art. 218, §§ 2º e 3º._
+- **Acréscimo** (E7): O texto remetia a uma "disciplina legal" sem citá-la. A regra é o art. 224, § 1º, de alto rendimento em contagem de prazos. _Fonte: CPC, art. 224, § 1º._
+- **Acréscimo** (E8): Troca remissão genérica pela regra legal do art. 221, que é o complemento natural do art. 220. _Fonte: CPC, art. 221, caput e parágrafo único._
+- **Correção** (E9): Cita o dispositivo exato do afastamento no processo eletrônico e acrescenta a hipótese de cessação do § 1º, frequente em contagem de prazos. _Fonte: CPC, art. 229, caput e §§ 1º e 2º._
+- **Acréscimo** (E10): A frase original era vaga. Prazo em dobro e sua exceção constam de artigos expressos (arts. 180, § 2º; 183, § 2º; 186, § 4º). _Fonte: CPC, arts. 180, 183 e 186._
+- **Correção** (E11): O "em regra" e a ressalva genérica foram substituídos pela única exceção legal, que é a prorrogação do art. 227. Os prazos do art. 226 foram conferidos. _Fonte: CPC, arts. 226 e 227._
+
+Pendências (não aplicadas):
+- Conferência no texto compilado oficial (planalto.gov.br / Câmara) — Os sites oficiais não abriram neste ambiente (rede restrita). A redação dos arts. 189, 203, 212, 214, 218, 221, 224, 229 foi conferida por buscas em várias fontes secundárias, sem leitura direta do texto compilado. Recom
+- Leis posteriores (Leis nºs 13.256/2016, 14.195/2021, 14.365/2022, 14.711/2023, 14.879/2024, 15.109/2025 e 15.484/2026) — Nenhuma alteração localizada nos arts. 188 a 235. A Lei nº 15.484/2026 trata do filtro de relevância no recurso especial e do art. 927. Projetos em tramitação (por exemplo, sobre dias corridos em inventário e suspensão d
+- Art. 200 e declarações de vontade das partes — O parágrafo 3.2 cita o art. 200 só de forma ampla. Acrescentar o conteúdo literal (efeitos imediatos das declarações de vontade; desistência da ação depende de homologação, parágrafo único) ficaria acima do limite de edi
+- Prazos impróprios do juiz e consequências (arts. 226 a 235) — Natureza imprópria dos prazos do juiz, representação por excesso de prazo (art. 235) e prazos do serventuário (art. 228) ficam para o material completo; envolvem leitura doutrinária.
+- Art. 212, § 1º (conclusão após as 20 horas) e art. 215 (processos nas férias) — Omitidos por limite de crescimento do texto; são lacunas de baixo risco que podem entrar no material completo.
+- Art. 214 (férias forenses/feriados) e art. 218, § 2º (48 horas para comparecimento) — Omitidos por limite de crescimento do texto; podem entrar no material completo.
+- **Ajustes do aprovador (aplicados):** art. 200 (declarações de vontade das partes que constituem, modificam ou extinguem direitos processuais; o texto original atribuía ao artigo a frase "formular pedido, apresentar defesa e produzir manifestações", erro anterior à revisão); art. 218, § 1º (o juiz determinará o prazo em consideração à complexidade do ato, e não "poderá fixá-lo"); art. 224, § 1º (indisponibilidade da comunicação eletrônica: protraem-se os dias do começo e do vencimento do prazo; retirada a frase sobre comprovação, que vem de normas de tribunais); art. 223 sem "em regra" (a ressalva da justa causa está na frase seguinte); art. 189, § 1º (consulta aos autos e certidões restritas às partes e aos seus procuradores). **Pendências:** conferir o texto compilado no Planalto (os arts. 188 a 235 foram conferidos por fontes secundárias); art. 214 (férias forenses e feriados), art. 212, § 1º, art. 215, art. 218, § 2º, arts. 226 a 235 em detalhe e a contagem em dias úteis nos Juizados (Lei nº 9.099/1995, art. 12-A) ficaram de fora; tabela de pronunciamentos com colunas embaralhadas.
+
+### Processo Civil M09 — Tutela provisória
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material didático e, em geral, correto na estrutura (urgência x evidência, antecipada x cautelar, prazos de 15, 5 e 30 dias). Os problemas estavam em: atribuição ao STJ de entendimento divergente sobre a estabilização (retirado), róis legais descritos como exemplos (arts. 302 e 309), paráfrases truncadas dos incisos do art. 311, 'em regra' indevido no art. 310 e frases vagas sem fonte. Nenhuma lei posterior (inclusive as Leis nº 13.256/2016, 14.195/2021, 14.365/2022, 14.711/2023, 14.879/2024, 15.109/2025 e 15.484/2026) alterou os arts. 294 a 311; a Lei nº 15.484/2026 trata do filtro de relevância no recurso especial (art. 1.035-A).
+
+- **Correção** (E1): O texto dizia 'em regra' e 'é estudada', como se a evidência pudesse ter rito antecedente. O art. 294, parágrafo único, só prevê o caráter antecedente para a tutela provisória de urgência; o art. 311 não tem rito antecedente. _Fonte: CPC, arts. 294, parágrafo único, e 303 a 310_
+- **Correção** (E2): O art. 297 diz 'poderá determinar' (o texto dizia 'deve'). O art. 298 fala em 'conceder, negar, modificar ou revogar' e em motivar 'de modo claro e preciso'. Faltavam as referências aos artigos. _Fonte: CPC, arts. 297 e 298_
+- **Correção** (E3): Frase vaga e sem atribuição substituída pela regra legal (o § 3º só menciona a tutela de urgência de natureza antecipada) e pela leitura doutrinária majoritária, atribuída à doutrina. _Fonte: CPC, art. 300, § 3º; doutrina majoritária (cf. Enunciado 419 do FPPC)_
+- **Correção** (E4): O texto falava em 'situações' sem listá-las. O art. 302 contém quatro hipóteses taxativas; incluídas na ordem, conforme a redação legal. Também se troca 'sanção por dano processual' por 'reparação por dano processual', como na lei. _Fonte: CPC, art. 302, caput e incisos I a IV_
+- **Correção** (E5): Retirada a referência à jurisprudência do STJ (regra do proprietário: material de revisão enxuto, sem jurisprudência) e substituída por regra legal de alto rendimento: consequência da falta de aditamento e ausência de custas. _Fonte: CPC, art. 303, §§ 1º, I, 2º e 3º_
+- **Correção** (E6): O texto atribuía ao STJ entendimento de que a contestação impede a estabilização; a jurisprudência do STJ sobre o ponto é divergente entre Turmas e não é súmula nem tese consolidada. Retirada a jurisprudência e adotada a redação literal do art. 304, caput, §§ 1º e 3º. A… _Fonte: CPC, art. 304, caput, §§ 1º e 3º_
+- **Correção** (E7): O rol do art. 309 é fechado, mas o texto o apresentava como exemplificativo ('como') e omitia a extinção do processo principal sem resolução do mérito (inciso III) e a vedação de renovar o pedido (parágrafo único). Redação literal dos incisos, na ordem. _Fonte: CPC, art. 309, incisos I a III e parágrafo único_
+- **Correção** (E8): A ressalva do art. 310 não trata de impedir o pedido principal: ela afasta a regra de que o indeferimento não influi no julgamento do pedido principal. Redação ajustada à lei; retirado o 'em regra' e a expressão 'exceção relevante'. _Fonte: CPC, art. 310_
+- **Acréscimo** (E9): Lacuna de alto rendimento: efeito da ausência de contestação no rito cautelar antecedente e o procedimento após a contestação, com base na lei. _Fonte: CPC, arts. 306 e 307, caput e parágrafo único_
+- **Correção** (E10): Paráfrase truncada dos incisos do art. 311: faltavam 'manifesto', a referência a 'julgamento de casos repetitivos', a ordem de entrega sob multa e o requisito de petição inicial instruída (inciso IV). Incisos numerados e na ordem legal; o texto não indicava a numeração,… _Fonte: CPC, art. 311, incisos I a IV_
+- **Correção** (E11): Ancora a regra no dispositivo exato (art. 9º, parágrafo único, II, que ressalva os incisos II e III do art. 311) e reescreve em linguagem direta, sem a construção 'é incorreto dizer'. _Fonte: CPC, art. 9º, caput e parágrafo único, II; art. 311, parágrafo único_
+- **Correção** (E12): 'Situação jurisprudencial' é impreciso: o inciso II exige tese firmada em julgamento de casos repetitivos ou em súmula vinculante, e não jurisprudência em geral. _Fonte: CPC, art. 311, II_
+
+Pendências (não aplicadas):
+- Alcance do 'recurso' do art. 304 (contestação impede a estabilização?) — A jurisprudência do STJ sobre o ponto tem divergência entre Turmas; não há súmula nem tese consolidada. Fica para o material completo.
+- Intimação específica para aditar a inicial no rito do art. 303 e demais jurisprudência — Fora do escopo da revisão enxuta; o trecho do original foi retirado. Tratar no material completo.
+- Responsabilidade objetiva do art. 302 e natureza do 'dano processual' — Leitura doutrinária/jurisprudencial; não confirmada em fonte oficial nesta revisão, não editada.
+- Recurso cabível contra a decisão que concede a tutela antecipada antecedente (agravo de instrumento, art. 1.015, I) — Lacuna possível, mas depende de módulo de recursos; não acrescentada para não exceder o limite de crescimento.
+- Art. 308, §§ 2º a 4º (audiência do art. 334 após o pedido principal, sem nova citação) e art. 303, § 1º, II e III — Acréscimo possível; omitido por limite de crescimento do texto.
+- Conferência com o texto oficial do Planalto — planalto.gov.br não pôde ser acessado neste ambiente; redação literal conferida em sites jurídicos secundários (peticoesonline, easyjur, projuris, admdireito e outros). Recomenda-se conferência final no Planalto.
+- **Ajustes do aprovador (aplicados):** vedação do art. 300, § 3º, apresentada com a leitura da doutrina ("não é absoluta: pode ser flexibilizada, pela proporcionalidade, quando a negativa da medida também causaria dano irreversível"), sem citar enunciado de fórum de processualistas; art. 296 (a tutela pode, a qualquer tempo, ser modificada ou revogada; conserva a eficácia na pendência do processo, ainda que suspenso, salvo decisão judicial em contrário); art. 302, II ("em 5 dias"); art. 309, parágrafo único, na redação da lei (se por qualquer motivo cessar a eficácia da tutela cautelar, é vedado à parte renovar o pedido, salvo sob novo fundamento); "uma das quatro hipóteses do art. 311"; retirado o "em regra" da introdução. Rol do art. 302 (incisos I a IV), do art. 309 (incisos I a III) e do art. 311 (incisos I a IV) conferidos como completos e na ordem. **Pendências:** o quadro 1.1 ainda diz "precedente qualificado" (o art. 311, II, fala em casos repetitivos ou súmula vinculante; tabela com colunas embaralhadas, sem trecho contíguo para editar); art. 308, §§ 2º a 4º, e art. 303, § 1º, II e III, ficaram de fora; recurso cabível contra a tutela antecedente (art. 1.015, I); alcance do "recurso" do art. 304 (divergência entre Turmas do STJ, para o material completo).
+
+### Processo Civil M08 — Comunicação dos atos, citação, intimação e nulidades
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O material é didático e, em geral, correto, mas trazia imprecisões de lei seca: o art. 239 foi apresentado com "em regra" e rol aberto (a lei ressalva apenas o indeferimento da inicial e a improcedência liminar); o art. 240 estava incompleto; as formas de citação alternativas à eletrônica foram descritas como exemplos (o art. 246, § 1º-A, traz rol fechado); a recusa de carta (art. 267) e as proteções do art. 244 estavam sem os incisos; havia "em regra" no art. 276 (a lei não admite exceção) e "pode" onde a lei diz "considerará válido" (art. 277) e "consideram-se de nenhum efeito" (art. 281). A parte de Domicílio Judicial Eletrônico/DJEN confere com a Lei nº 14.195/2021 e com as Resoluções CNJ nº 455/2022 e nº 569/2024. Não foi localizada lei posterior (até nov/2026) que altere os arts. 236 a 283; a Lei nº 15.484/2026 trata do filtro de relevância no recurso especial (art. 1.035-A e correlatos), fora deste módulo.
+
+- **Correção** (E1): O art. 239, caput, não diz "em regra" e ressalva apenas duas hipóteses (indeferimento da petição inicial e improcedência liminar do pedido); a expressão "como" sugeria rol exemplificativo. _Fonte: CPC/2015 (Lei nº 13.105/2015), art. 239, caput._
+- **Acréscimo** (E2): A lei diz que o comparecimento "supre" (não "pode suprir"); acrescenta-se o termo inicial do prazo (§ 1º) e as consequências da rejeição da alegação de nulidade (§ 2º, I e II). _Fonte: CPC/2015, art. 239, §§ 1º e 2º._
+- **Correção** (E3): Reproduz o caput do art. 240 (inclusive "ainda quando ordenada por juízo incompetente" e a ressalva dos arts. 397 e 398 do Código Civil, em vez de "exceções legais" genéricas); a interrupção é operada pelo despacho (§ 1º), com o ônus de 10 dias do autor (§ 2º). _Fonte: CPC/2015, art. 240, caput e §§ 1º, 2º e 4º; Código Civil, arts. 397 e 398._
+- **Correção** (E4): O art. 246, § 1º-A, traz rol fechado de formas alternativas (incisos I a IV), mas o texto usava "como" (rol exemplificativo). Acrescentam-se o prazo de dois dias úteis do caput (Lei nº 14.195/2021) e os três incisos do edital (art. 256). _Fonte: CPC/2015, arts. 246 (caput e § 1º-A, redação da Lei nº 14.195/2021), 252 e 256._
+- **Acréscimo** (E5): Substitui paráfrase vaga ("por exemplo") pelo rol completo e na ordem do art. 244 (a exceção do perecimento do direito consta do caput) e pela regra do art. 245 (mentalmente incapaz ou impossibilitado). _Fonte: CPC/2015, arts. 244, I a IV, e 245, caput e §§ 4º e 5º._
+- **Correção** (E6): O texto remetia a "hipóteses taxadas" sem listá-las; o art. 267 traz três incisos e usa "recusará" (dever), limitada a carta precatória e arbitral. Note-se que a incompetência territorial não é hipótese de recusa. _Fonte: CPC/2015, art. 267, caput e I a III._
+- **Correção** (E7): Explicita a ordem legal dos meios (eletrônico como regra do art. 270; publicação subsidiária do art. 272, caput) em vez de lista sem hierarquia; reproduz o § 5º do art. 272 ("o seu desatendimento implicará nulidade"). _Fonte: CPC/2015, arts. 270 e 272 (caput e § 5º)._
+- **Correção** (E8): A lei não ressalva "em regra" (o § 1º-A diz que a ausência de confirmação "implicará" a citação pelas outras formas); substitui a referência vaga a "dever de justificar" pelos §§ 1º-B e 1º-C, acrescentados pela Lei nº 14.195/2021. _Fonte: CPC/2015, art. 246, §§ 1º-A, 1º-B e 1º-C (Lei nº 14.195/2021)._
+- **Correção** (E9): Art. 277: a lei diz "considerará válido" (dever), não "pode haver preservação". Art. 278: especifica as duas ressalvas do parágrafo único em vez de "exceções legais". Art. 276: a lei não admite exceção, logo "em regra" é incorreto. _Fonte: CPC/2015, arts. 276, 277 e 278, caput e parágrafo único._
+- **Correção** (E10): A paráfrase era vaga ("procedimento próprio") e atribuía a nulidade à ausência de "intervenção"; o art. 279 refere-se à falta de intimação do Ministério Público (caput) e condiciona a decretação à sua prévia intimação (§ 2º). _Fonte: CPC/2015, art. 279, caput e § 2º._
+- **Correção** (E11): O art. 281 diz que, anulado o ato, "consideram-se de nenhum efeito todos os subsequentes que dele dependam" (imperativo, não faculdade), e que a nulidade de uma parte do ato não prejudica as partes independentes. _Fonte: CPC/2015, art. 281._
+- **Acréscimo** (E12): Lacuna de alto rendimento: onde se alega o defeito da citação, conectando o módulo à contestação e ao cumprimento de sentença, com base exclusivamente em lei. _Fonte: CPC/2015, arts. 337, I, e 525, § 1º, I._
+
+Pendências (não aplicadas):
+- Verificação em fontes oficiais — Planalto e Câmara não puderam ser abertos nesta sessão (WebFetch bloqueado); a redação dos artigos foi conferida por pesquisas em mais de uma fonte secundária e pelo texto conhecido do CPC. Recomenda-se uma conferência f
+- Art. 238, parágrafo único (Lei nº 14.195/2021) — Confirmado (citação efetivada em até 45 dias a partir da propositura da ação), mas não incluído por limite de crescimento do texto; vale acrescentar na revisão seguinte, junto ao art. 240, § 2º.
+- Carta rogatória e carta de ordem (art. 237, I e II) — O texto descreve a rogatória apenas como instrumento envolvendo órgão estrangeiro e a carta de ordem "nas hipóteses legais". A redação literal do art. 237, II (rogatória para que órgão jurisdicional estrangeiro pratique 
+- Prazo de devolução da carta (art. 268) — O prazo legal de devolução ao juízo de origem (10 dias) e o regime de itinerância (art. 262) não foram conferidos literalmente; não incluído.
+- Regras do Domicílio Judicial Eletrônico para a Fazenda Pública — O texto traz dez dias corridos para ciência tácita da citação de pessoas jurídicas de direito público e remete ao art. 231, IX. As fontes consultadas confirmam o conteúdo (Resolução CNJ nº 569/2024, que alterou a Resoluç
+- Lacunas legais não incluídas por limite de espaço — Curador especial ao réu revel citado por edital ou com hora certa (art. 72, II); art. 240, § 4º (retroação à decadência) e § 3º (demora do serviço judiciário); art. 272, § 8º e § 9º (arguição da nulidade da intimação); i
+- Alterações legislativas posteriores — Não foi localizada lei até nov/2026 que altere os arts. 236 a 283, além da Lei nº 14.195/2021 (arts. 231, 238, 246 e 247). A Lei nº 15.484/2026 (filtro de relevância no recurso especial) altera outras partes do CPC. Não 
+- **Ajustes do aprovador (aplicados):** art. 246, § 1º-A (a regra de três dias úteis para confirmar o recebimento vale para a citação eletrônica em geral, e o § 1º do artigo impõe o cadastro também aos entes públicos); art. 276 enunciado com sua condição ("se a lei prescreve forma sob pena de nulidade, quem lhe deu causa não pode requerê-la"); art. 281 alinhado à lei (anulado o ato, consideram-se de nenhum efeito os subsequentes que dele dependam; a nulidade de uma parte do ato não prejudica as outras que dela sejam independentes); art. 252 ("após duas tentativas frustradas" antes da suspeita de ocultação do citando). Conferidos: arts. 239, 240, 244 (inclusive "companheiro" no inciso II), 245, 246 (caput e §§ 1º-A a 1º-C), 252, 256, 267, 270, 272 (§ 5º), 277 a 279, 281, 337, I, e 525, § 1º, I; o § 2º do art. 240 não foi alterado pela Lei nº 14.195/2021. **Pendências:** conferir no texto consolidado o art. 240, §§ 2º e 4º, o art. 246, §§ 1º-A a 1º-C, e o art. 272, § 8º; art. 238, parágrafo único (45 dias), art. 237, I e II, e prazo de devolução da carta (art. 268); regras do Domicílio Judicial Eletrônico para a Fazenda (Resoluções CNJ nº 455/2022 e nº 569/2024; dez dias corridos para a ciência tácita, com divergência entre as fontes na numeração) não editadas; tabelas com colunas embaralhadas.
+
+### Processo Civil M10 — Formação e suspensão do processo, petição inicial e audiência do art. 334
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material didático e, em geral, fiel ao CPC/2015. Os principais problemas eram: prazo de suspensão do art. 313, § 4º, apresentado com 'em regra' (a lei diz 'nunca'); róis fechados descritos como exemplos (pedido genérico do art. 324, § 1º; inépcia do art. 330, § 1º; incisos do art. 330 e do art. 332); atribuição imprecisa dentro do art. 322 (§ 1º e § 2º); cumulação de pedidos (art. 327) com a regra de conexão mal enunciada; 'pode levar' onde o art. 321, parágrafo único, diz 'indeferirá'. Nenhuma lei posterior (Leis 13.256/2016, 14.195/2021, 14.365/2022, 14.711/2023, 14.879/2024, 15.109/2025, 15.484/2026) altera os dispositivos tratados no módulo; a Lei nº 15.484/2026 trata do filtro de relevância no recurso especial (art. 1.035-A), fora do escopo.
+
+- **Correção** (E1): O art. 313, § 4º, não admite exceção ('nunca poderá exceder'); o 'em regra' do texto original era incorreto. _Fonte: CPC, art. 313, § 4º (Lei nº 13.105/2015)_
+- **Correção** (E2): A paráfrase 'tem filho' era imprecisa: o inciso IX trata de parto ou concessão de adoção e o inciso X, de nascimento ou concessão de adoção. Inclui a referência correta aos incisos e parágrafos (Lei nº 13.363/2016). _Fonte: CPC, art. 313, IX e X, §§ 6º e 7º (acrescidos pela Lei nº 13.363/2016)_
+- **Acréscimo** (E3): O texto original não dizia que a suspensão do art. 315 é faculdade do juiz ('pode determinar') e omitia os prazos legais de três meses e de um ano. _Fonte: CPC, art. 315, caput, §§ 1º e 2º_
+- **Correção** (E4): O art. 487 é rol fechado de três incisos; o texto apresentava apenas parte das hipóteses com 'como', sugerindo rol exemplificativo. _Fonte: CPC, art. 487, I, II e III, alíneas a a c_
+- **Correção** (E5): O art. 321, parágrafo único, usa o verbo no futuro imperativo ('indeferirá'); 'pode levar' enfraquecia a regra. _Fonte: CPC, art. 321, parágrafo único_
+- **Correção** (E6): O art. 324, § 1º, traz três hipóteses (incisos I a III); o texto as descrevia como 'por exemplo' e omitia as ações universais. _Fonte: CPC, art. 324, § 1º, I a III_
+- **Correção** (E7): O art. 322, § 1º, diz 'compreendem-se' (e não 'podem estar compreendidos') e a regra de interpretação está no § 2º; o texto atribuía tudo ao § 1º. _Fonte: CPC, art. 322, §§ 1º e 2º_
+- **Correção** (E8): O caput do art. 327 dispensa a conexão ('ainda que entre eles não haja conexão'); 'de modo absoluto' era impreciso. O texto também não identificava os três requisitos do § 1º nem a exceção do § 3º. _Fonte: CPC, art. 327, caput e §§ 1º a 3º_
+- **Correção** (E9): Os róis dos incisos do art. 330 e do § 1º são fechados e estavam descritos como exemplos ('problemas como', 'por exemplo'); o texto omitia o pedido indeterminado (§ 1º, II) e criava a condição inexistente 'situação não autorizada' para os pedidos incompatíveis. _Fonte: CPC, art. 330, I a IV e § 1º, I a IV_
+- **Correção** (E10): A paráfrase vaga foi substituída pelos quatro incisos do art. 332, na ordem legal, que formam rol fechado. _Fonte: CPC, art. 332, I a IV_
+- **Correção** (E11): O inciso II do § 4º trata da inadmissibilidade da autocomposição, e não da audiência ('ela'); o § 5º fixa o termo da antecedência (data da audiência). _Fonte: CPC, art. 334, § 4º, I e II, e § 5º_
+- **Acréscimo** (E12): A frase original era vaga ('em regra') e não indicava os efeitos do art. 240, citado no próprio parágrafo. Acréscimo de alto rendimento baseado em lei. _Fonte: CPC, art. 240, caput e § 1º; Código Civil, arts. 202, I, 397 e 398_
+
+Pendências (não aplicadas):
+- Redação literal dos artigos em fonte oficial — O site do Planalto e o da Câmara não puderam ser acessados na sessão (bloqueio de rede). A redação dos arts. 240, 313, 315, 322, 324, 327, 330 e 332 foi confirmada em trechos de sites secundários (comentários e repositór
+- Início do prazo de suspensão (art. 313, §§ 6º e 7º) — O termo inicial e os documentos exigidos para os incisos IX e X (30 e 8 dias) não foram descritos em detalhe porque as fontes consultadas divergem na redação (parto/nascimento/adoção e notificação ao cliente). Cabe confe
+- Rol do art. 313 incompleto — O texto não menciona o inciso VII (questão decorrente de acidentes e fatos da navegação de competência do Tribunal Marítimo) nem o inciso VIII (demais casos regulados no Código). Como o título fala em 'principais hipótes
+- Art. 314 (atos urgentes) — O texto diz 'não se praticam, como regra, atos processuais'; o art. 314 diz 'é vedado praticar qualquer ato processual'. Edição não feita por limite de 12 edições; ajuste de baixa prioridade.
+- 'Em regra' na extinção sem mérito (seção 3) — A frase 'Extinção sem mérito não equivale, em regra, a declaração de que o direito material pedido não existe' usa 'em regra' sem exceção legal clara; não editada por limite de edições.
+- Art. 319, §§ 1º a 3º — A seção 4.2 omite que o § 3º trata de situação em que a obtenção dos dados 'tornar impossível ou excessivamente oneroso' o acesso à justiça; paráfrase aceitável, não editada.
+- Art. 329 e reconvenção; art. 330, §§ 2º e 3º; art. 335 — Lacunas de rendimento fora do limite de edições: aplicação do art. 329 à reconvenção (parágrafo único); exigência de discriminar obrigações e valor incontroverso em ações sobre empréstimo, financiamento e alienação de be
+- **Ajustes do aprovador (aplicados):** art. 324, § 1º (pedido genérico "nas ações universais", sem "apenas", porque a lei diz "é lícito, porém, formular pedido genérico" nas três hipóteses dos incisos I a III); art. 313, IX e X (a comprovação documental e a notificação ao cliente exigidas pelos §§ 6º e 7º); art. 314 ("é vedado praticar atos processuais, podendo o juiz determinar atos urgentes"); retirado o "em regra" do trecho sobre admissibilidade (art. 330) e da frase sobre a extinção sem mérito; art. 315, § 1º ("não for proposta"); art. 334, § 8º (o não comparecimento injustificado é ato atentatório à dignidade da justiça, com multa de até 2% da vantagem econômica pretendida ou do valor da causa); art. 327, § 2º (se o autor empregar o procedimento comum). O art. 487, III, é inciso único, com as alíneas a (reconhecimento da procedência), b (transação) e c (renúncia à pretensão), e o texto trata isso corretamente. **Pendências:** conferir a redação literal no Planalto; art. 313, VII e VIII; art. 329 (na reconvenção); art. 330, §§ 2º e 3º; prazo e termos iniciais do art. 335; termo inicial e documentos exigidos nos incisos IX e X do art. 313 (as fontes divergem); tabelas com colunas embaralhadas.
+
+### Processo Civil M11 — Contestação, reconvenção, revelia e saneamento
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O módulo é didático e, em geral, correto, mas parafraseia de modo truncado róis legais fechados (art. 342, art. 341, art. 345, art. 355), usa 'em regra' e 'pode' onde a lei diz 'incumbe', 'presumem-se', 'decidirá', 'deverá' e 'tentará', e traz um exemplo com a parte errada (a loja, que é autora, aparece como revel). A referência ao art. 63 estava desatualizada pela Lei nº 14.879/2024. As edições citam os incisos completos e na ordem, sem acrescentar doutrina minoritária nem jurisprudência.
+
+- **Correção** (E1): A paráfrase original não indicava os três termos iniciais do art. 335 (incisos I a III), nem a ordem. O inciso II refere-se ao cancelamento apresentado pelo réu (art. 334, § 4º, I) e o III remete ao art. 231. _Fonte: CPC (Lei nº 13.105/2015), art. 335, I a III; art. 219. Conferido em fontes secundárias (comentários ao CPC), pois o Planalto não abriu._
+- **Correção** (E2): O art. 336 diz 'incumbe', sem 'em regra', e inclui a especificação das provas. O art. 342 é rol fechado de três incisos ('só é lícito'); o texto original o apresentava como exemplificativo ('como fato superveniente') e de forma truncada. _Fonte: CPC, art. 336 e art. 342, I a III._
+- **Atualização** (E3): A Lei nº 14.879/2024 deu nova redação ao § 1º do art. 63 (exigência de pertinência; há ressalva para pactuação consumerista favorável ao consumidor). _Fonte: CPC, art. 63, § 1º (Lei nº 14.879/2024). Conferido em Migalhas, Correio Braziliense, Mattos Filho, IBET e decisões do TJDFT; o Planalto não abriu._
+- **Correção** (E4): O art. 341 diz 'presumindo-se verdadeiras as não impugnadas', e não 'pode gerar'. As exceções são três incisos, que o texto original resumia como 'exceções legais'. _Fonte: CPC, art. 341, caput e I a III._
+- **Correção** (E5): Atribui a regra ao dispositivo correto (art. 343, § 6º). _Fonte: CPC, art. 343, § 6º._
+- **Correção** (E6): O art. 344 não usa 'em regra' nem 'admite': a lei diz 'presumir-se-ão'. O art. 345 traz quatro incisos, apresentados na lei como rol fechado; o texto original usava 'entre outros casos', trocava o inciso I por 'fatos comuns' (expressão que não está no texto legal) e parafraseava… _Fonte: CPC, arts. 344 e 345, I a IV._
+- **Correção** (E7): Nos exemplos do próprio módulo, a loja é autora da cobrança. Quem pode ser revel é a empresa compradora, que é a ré. _Fonte: CPC, art. 344 (revelia é situação do réu) e art. 345, IV; coerência com o exemplo do item 02 do módulo._
+- **Correção** (E8): A expressão 'requisitos legais ligados à revelia' era vaga. Os dois incisos do art. 355 passam a constar na ordem e de forma completa; a revelia sozinha não basta, pois é preciso haver o efeito do art. 344 e a ausência de requerimento de prova. _Fonte: CPC, art. 355, I e II._
+- **Correção** (E9): O art. 356 diz 'decidirá' (e não 'pode') e tem dois incisos: pedido ou parcela incontroversa e pedido ou parcela em condições de imediato julgamento. O texto original citava só o primeiro caso. _Fonte: CPC, art. 356, caput, I e II._
+- **Correção** (E10): Retira a ressalva vaga ('situações processualmente admitidas') e troca 'pode' por 'deverá', conforme o texto do § 3º. O § 1º diz que a decisão se torna estável após o prazo comum de 5 dias. _Fonte: CPC, art. 357, §§ 1º e 3º._
+- **Correção** (E11): O art. 359 não admite 'em regra': diz que o juiz 'tentará' a conciliação. A ordem das provas orais (art. 361) é de alto rendimento e está em lei seca. _Fonte: CPC, arts. 359 e 361._
+
+Pendências (não aplicadas):
+- Terminologia 'objeção' x 'defesa processual' no item 1.3 — O texto chama toda preliminar de 'objeção', embora convenção de arbitragem e incompetência relativa dependam de alegação (art. 337, § 5º). Ajuste de didática omitido para respeitar o limite de crescimento do texto.
+- Art. 231, IX, do CPC (Lei nº 14.195/2021): quinto dia útil seguinte à confirmação do recebimento da citação eletrônica — Confirmado em fontes secundárias, mas omitido do texto para respeitar o limite de crescimento; sugestão para o material completo.
+- Art. 63, §§ 3º, 4º e 5º, do CPC; art. 366 (sentença em audiência ou em 30 dias); art. 343, § 2º (prosseguimento da reconvenção) — Acréscimos de lei seca confirmados, omitidos para respeitar o limite de crescimento do texto.
+- Art. 340 do CPC (contestação protocolada no foro de domicílio do réu quando se alega incompetência) — Lacuna de alto rendimento, mas o acréscimo estouraria o limite de edições e de crescimento do texto. Sugestão para o material completo.
+- Art. 63, § 5º, do CPC (ajuizamento em juízo aleatório) e ADI 7805 contra os §§ 1º e 5º — O § 5º foi deixado fora da revisão para manter o texto enxuto. O andamento da ADI é dado volátil e não foi confirmado; por isso não foi citado. Eventual relação com a Súmula 33/STJ (incompetência relativa) fica para o ma
+- Art. 356, § 2º, do CPC (execução da parcela já decidida sem caução) — Há leituras divergentes sobre a relação com os arts. 520 e 521; matéria de doutrina e de enunciados, deixada fora da versão enxuta.
+- Resoluções do CNJ sobre contagem de prazo em citação eletrônica da Fazenda Pública (Res. 455/2022 e 569/2024) — Dado volátil e não confirmado no texto atual da resolução; o módulo cita apenas a regra legal do art. 231, IX.
+- Art. 343, §§ 3º a 5º (reconvenção contra terceiro, em litisconsórcio e contra substituto processual); art. 354, parágrafo único (decisão parcial terminativa, agravo de instrumento); arts. 347 a 349; a — Lacunas secundárias; omitidas para respeitar o limite de edições e de crescimento do texto.
+- Confirmação literal dos artigos no Planalto — O planalto.gov.br e outros sites (legjur, projuris) não abriram na rede do ambiente (WebFetch bloqueado). A redação dos artigos foi conferida por buscas em fontes secundárias (comentários, Migalhas, Conjur, TJDFT) e pelo
+- Leis recentes (Lei nº 15.479/2026 e Lei nº 15.484/2026) — Não alteram os arts. 334 a 368. A Lei nº 15.484/2026 trata da relevância no recurso especial (art. 1.035-A e art. 927). A Lei nº 15.479/2026 trata de pensão alimentícia. Nenhuma foi incluída no módulo. Não foi localizada
+- **Ajustes do aprovador (aplicados):** art. 335, I ("quando qualquer parte não comparecer ou, comparecendo, não houver autocomposição") e II (só na hipótese do art. 334, § 4º, I); art. 63, § 1º, com a ressalva final da lei ("ressalvada a pactuação consumerista favorável ao consumidor"); retirado do item 1.1 um exemplo que repetia o inciso I; art. 344 ("é relativa: não transforma... nem substitui"); art. 345, III; art. 337 (o juiz conhece de ofício as matérias, exceto a convenção de arbitragem e a incompetência relativa, § 5º); "com resolução de mérito" na sentença. Conferidos: arts. 336, 341 (I a III), 342 (I a III), 343, § 6º, 355, 356, 357, §§ 1º e 3º ("deverá o juiz designar audiência"), 359 e 361 (ordem das provas orais, "preferencialmente"). A atribuição ao § 1º do art. 63 está certa, sem confusão com o § 5º (juízo aleatório). **Pendências:** conferir no texto oficial o § 1º do art. 63 e o art. 345, III; art. 340; art. 63, §§ 3º a 5º; art. 366; art. 343, §§ 2º, 3º a 5º; art. 354, parágrafo único; arts. 347 a 349 e 364; art. 231, IX; ADI 7805 (art. 63), controvérsia sobre caução no art. 356, § 2º, e resoluções do CNJ nº 455/2022 e nº 569/2024 não citadas; tabelas com colunas embaralhadas.
+
+### Processo Civil M12 — Provas
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material didático e, em geral, correto na estrutura (meios de prova, ônus, produção antecipada, depoimento, documento, testemunha, perícia, inspeção). Os problemas estavam em: 'pode' no lugar de 'deve' (art. 370, parágrafo único; art. 464, § 1º; art. 480), 'em regra' onde a lei fixa o prazo (arts. 398, 401 e 465, § 1º), atribuição imprecisa dos §§ 3º e 4º do art. 373, hipóteses do art. 373, § 1º ligadas por 'e' em vez de 'ou', incisos do art. 381 e do art. 464, § 1º parafraseados de forma truncada, ideia errada de que a segunda perícia 'não anula' a primeira (o art. 480, § 3º diz que não a substitui) e lacunas de alto rendimento (arts. 391 a 393, 400, 403, 429, 455 e 459). Não foi localizada lei posterior que altere os arts. 369 a 484 (as Leis nº 13.256/2016, 14.195/2021, 14.365/2022, 14.711/2023, 14.879/2024, 15.109/2025 e 15.484/2026 tratam de outros dispositivos; a Lei nº 15.484/2026 aparece nas compilações alterando, entre outros, os arts. 932, 979, 988, 998 e 1.035-A).
+
+- **Correção** (E1): O texto dizia 'podendo indeferir', como faculdade. O parágrafo único do art. 370 diz que o juiz 'indeferirá, em decisão fundamentada, as diligências inúteis ou meramente protelatórias'. Além disso, o dever está no parágrafo único, não no caput. _Fonte: CPC, art. 370 e parágrafo único_
+- **Correção** (E2): O art. 375 usa o verbo 'aplicará' (não 'pode') e abrange as regras de experiência comum e as de experiência técnica, ressalvado o exame pericial. O art. 376 atribui expressamente à parte que alega o direito (municipal, estadual, estrangeiro ou consuetudinário) o ônus de provar… _Fonte: CPC, arts. 375 e 376_
+- **Correção** (E3): O texto ligava com 'e' a dificuldade de uma parte e a facilidade da outra, como se fossem requisitos cumulativos. O § 1º do art. 373 usa 'ou': as peculiaridades da causa podem se relacionar à impossibilidade ou excessiva dificuldade de cumprir o encargo OU à maior facilidade de… _Fonte: CPC, art. 373, § 1º_
+- **Correção** (E4): Os limites da convenção estão no § 3º, incisos I e II; o § 4º trata do momento (antes ou durante o processo), e não de limites. A vedação de prova impossível ou excessivamente difícil está no § 2º, que não era citado. _Fonte: CPC, art. 373, §§ 2º, 3º e 4º_
+- **Correção** (E5): Paráfrase truncada dos incisos do art. 381: faltavam 'fundado receio', 'impossível ou muito difícil', 'na pendência da ação' (I), 'autocomposição ou outro meio adequado de solução de conflito' (II) e 'ajuizamento de ação' (III). Redação ajustada ao texto legal e na ordem dos… _Fonte: CPC, art. 381, I a III_
+- **Acréscimo** (E6): O art. 385, § 1º, prevê a pena de confesso para a parte pessoalmente intimada e advertida que não comparece ou se recusa a depor; 'requisitos como' sugeria rol aberto e 'injustificada' não consta do § 1º. A referência genérica a 'força probatória e limites' foi trocada pelos… _Fonte: CPC, arts. 385, § 1º, 389, 391, 392 e 393_
+- **Correção** (E7): 'Em regra' era indevido: os arts. 398 e 401 fixam os prazos sem ressalva. Distinguiu-se intimação da parte e citação do terceiro. A frase vaga sobre 'consequências' foi trocada pela regra legal: presunção de veracidade contra a parte (art. 400, I e II) e, quanto ao terceiro,… _Fonte: CPC, arts. 398, 400, 401, 403 e 404_
+- **Acréscimo** (E8): A frase apenas remetia ao art. 429 sem dizer a regra. Acrescentou-se o conteúdo dos incisos I e II: quem arguir a falsidade prova a falsidade; na impugnação de autenticidade, o ônus é de quem produziu o documento. _Fonte: CPC, art. 429, I e II_
+- **Correção** (E9): O art. 455 diz 'cabe ao advogado' (sem 'normalmente'), com a intimação judicial nas hipóteses do § 4º. Quanto ao art. 459, a paráfrase omitia a inquirição direta pelas partes e as três hipóteses de indeferimento (perguntas indutivas, sem relação com os fatos, repetidas).… _Fonte: CPC, arts. 455, § 4º, e 459_
+- **Correção** (E10): 'Em regra' não consta do art. 465, § 1º, que fixa 15 dias contados da intimação do despacho de nomeação. O mesmo prazo vale para arguir impedimento ou suspeição do perito (inciso I), omitido no texto. _Fonte: CPC, art. 465, § 1º, I a III_
+- **Correção** (E11): O art. 464, § 1º, diz que o juiz 'indeferirá' (dever, não faculdade) e o inciso II fala em perícia 'desnecessária em vista de outras provas produzidas', e não em 'provas suficientes'. Incisos reproduzidos na ordem. _Fonte: CPC, art. 464, § 1º, I a III_
+- **Correção** (E12): O art. 480 diz que o juiz 'determinará' a nova perícia quando a matéria não estiver suficientemente esclarecida (não 'pode'). A referência a 'nulidade automática da primeira' era imprecisa: a regra legal é que a segunda perícia tem o mesmo objeto, corrige omissão ou inexatidão e… _Fonte: CPC, art. 480, caput e §§ 1º e 3º_
+
+Pendências (não aplicadas):
+- Art. 382, § 4º (sem defesa ou recurso na produção antecipada, salvo contra decisão que indeferir totalmente a prova) — Alto rendimento, mas o dispositivo é aplicado de forma mitigada pela jurisprudência do STJ; incluir a leitura literal sem o contexto seria impreciso e o contexto exige jurisprudência, que fica para o material completo.
+- Art. 381, § 3º (produção antecipada não previne a competência) e art. 382, § 2º (o juiz não se pronuncia sobre a ocorrência do fato nem sobre as consequências jurídicas) — Acréscimos de lei seca de bom rendimento deixados de fora para respeitar o limite de edições e de crescimento do texto; o material já diz, em outras palavras, que o juiz não decide o mérito.
+- Limites da prova testemunhal (arts. 443 a 445), incapacidade, impedimento e suspeição (art. 447), número máximo de testemunhas (art. 357, § 6º: até 10, no máximo 3 por fato) e substituição (art. 451) — Lacunas de alto rendimento, não incluídas por limite de edições e de crescimento do texto; o parágrafo atual só diz que há 'regras próprias'.
+- Prazos e deveres do perito e do laudo (arts. 465, § 2º, 473 e 477: entrega do laudo 20 dias antes da audiência, manifestação das partes em 15 dias) e assistentes técnicos de confiança da parte, não su — Acréscimos de lei seca deixados para o material completo por limite de edições; sem necessidade de correção do texto atual.
+- Conferência literal dos dispositivos — O texto oficial no planalto.gov.br e sites de comentário (ex.: projuris) não puderam ser acessados no ambiente; a redação dos arts. 370, 373, 375, 376, 381, 391 a 393, 398, 400, 401, 403, 429, 455, 459, 464 a 466 e 480 f
+- Alterações legislativas até nov/2026 — Em buscas em mais de uma fonte, não se localizou lei que altere os arts. 369 a 484 do CPC; as compilações consultadas indicam que a Lei nº 15.484/2026 altera outros dispositivos (arts. 932, 979, 988, 998, 1.035-A, entre 
+- Prova documental: valor probatório de documentos públicos e particulares (arts. 405 a 428) e juntada tardia (art. 435, parágrafo único) — Lacunas possíveis, mas as hipóteses do art. 435 já aparecem de forma resumida no texto; acréscimos não prioritários nesta revisão enxuta.
+- **Ajustes do aprovador (aplicados):** art. 403 com a condição e o prazo da lei (se o terceiro, sem justo motivo, recusar-se a exibir, o juiz ordena o depósito em cartório ou outro lugar designado, em 5 dias, e, descumprida a ordem, expede mandado de apreensão, sem prejuízo de multa e de responsabilidade por crime de desobediência); art. 465 (perito especializado no objeto da perícia; o § 1º diz que incumbe às partes arguir o impedimento ou a suspeição, indicar assistente técnico e apresentar quesitos, em 15 dias); art. 481 (inspeção de pessoas ou coisas para esclarecer fato que interesse à decisão da causa; o local é tratado no art. 483). Conferidos: art. 370, parágrafo único; art. 373, §§ 1º a 4º; art. 381, I a III; art. 398 (5 dias, para a parte intimada) e art. 401 (15 dias, para o terceiro citado); art. 429 (I: falsidade de documento ou preenchimento abusivo; II: impugnação da autenticidade, à parte que produziu o documento); arts. 455, § 4º, 459, 464, § 1º, 480. Não foi achada lei posterior que altere os arts. 369 a 484. **Pendências:** conferir no Planalto o art. 403 e o art. 429, I; art. 382, § 4º (interpretação mitigada pelo STJ; fica para o material completo); art. 381, § 3º, e art. 382, § 2º; arts. 443 a 445, 447 e 451, art. 357, § 6º (testemunhas); arts. 465, § 2º, 466, § 1º, 473 e 477 (perito e laudo); valor probatório dos documentos (arts. 405 a 428); tabelas com colunas embaralhadas.
+
+### Processo Civil M13 — Sentença, coisa julgada e liquidação
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O módulo está didático e bem organizado, mas apresentava paráfrases truncadas e róis fechados descritos como abertos (art. 494, art. 496, caput e § 4º), "em regra" sem respaldo no art. 503 e no art. 486, e "permite" onde o art. 493 impõe dever ao juiz. Havia ainda um parágrafo de jurisprudência recente (Tema 1081), que foi trocado pela regra legal do art. 496, § 3º. Foram acrescentadas só lacunas curtas e legais (art. 487, parágrafo único; art. 503, § 2º). Nenhuma lei posterior a 2015 alterou os dispositivos do módulo.
+
+- **Correção** (E1): O texto original dizia apenas que a hipótese tinha "disciplina própria", sem dizer qual. O art. 485, § 1º, aplica a intimação pessoal em 5 dias aos incisos II e III. _Fonte: CPC, art. 485, II e § 1º_
+- **Correção** (E2): Substitui a remissão vaga às "condições do art. 486" e o "em regra" pelos dispositivos literais: caput, § 1º (rol de vícios cuja correção é exigida) e § 3º (efeito exato da perempção: veda nova ação com o mesmo objeto, mas ressalva a defesa). _Fonte: CPC, art. 486, caput, §§ 1º e 3º_
+- **Acréscimo** (E3): Cita o inciso III literal ("reconhecimento da procedência do pedido") e acrescenta a regra do parágrafo único do art. 487 (vedação de decisão-surpresa sobre prescrição e decadência), de alto rendimento e ausente no texto. _Fonte: CPC, art. 487, I a III e parágrafo único; art. 332, § 1º_
+- **Correção** (E4): "Como regra" sugere exceção que a lei não prevê: o art. 489 diz que os três são elementos essenciais. _Fonte: CPC, art. 489, I a III_
+- **Correção** (E5): O art. 492 também veda decisão de natureza diversa da pedida (omitido). O art. 493 diz "caberá ao juiz tomá-lo em consideração", ou seja, é dever e não mera faculdade ("permite"); o texto também omitia a natureza do fato e a oitiva prévia das partes (parágrafo único). _Fonte: CPC, arts. 492 e 493 e parágrafo único_
+- **Correção** (E6): "Em situações legalmente previstas" era vago; o art. 499 traz as duas condições (requerimento do autor ou impossibilidade). A remissão genérica aos arts. 497 a 501 foi trocada por citações pontuais: a regra sobre multa do art. 500 é sobre a convivência com a indenização. _Fonte: CPC, arts. 497, caput, 499 e 500_
+- **Correção** (E7): O art. 494 traz dois incisos exaustivos; "como" e "hipóteses legais" davam a ideia de rol exemplificativo. _Fonte: CPC, art. 494, I e II_
+- **Correção** (E8): "Em especial" apresentava como aberto um rol que o art. 496 fecha em dois incisos, e o texto omitia a hipótese do inciso II e o efeito suspensivo previsto no caput ("não produzindo efeito senão depois de confirmada pelo tribunal"). _Fonte: CPC, art. 496, caput, I e II_
+- **Correção** (E9): A paráfrase ("certos precedentes obrigatórios", "como") era vaga e sugeria rol aberto. O § 4º tem quatro incisos fechados, agora transcritos na ordem legal. A Lei nº 15.484/2026 (relevância do recurso especial) alterou outros artigos do CPC e, segundo as fontes consultadas, não… _Fonte: CPC, art. 496, § 4º, I a IV_
+- **Correção** (E10): Pela regra do proprietário, a versão de revisão não traz jurisprudência (tema repetitivo) fora das súmulas clássicas; o tratamento do Tema 1081 fica para o material completo. No lugar, entra a redação literal do § 3º, que a tabela omite: o requisito "valor certo e líquido". _Fonte: CPC, art. 496, § 3º, caput_
+- **Correção** (E11): "Em regra" não consta do art. 503, caput. A paráfrase do § 1º omitia a ressalva da revelia (inciso II), restringia a competência (inciso III exige matéria e pessoa) e ignorava o § 2º. A frase sobre o art. 504 ("não são abrangidos simplesmente") foi substituída pelo texto dos… _Fonte: CPC, arts. 503, caput, § 1º, I a III, e § 2º; art. 504, I e II_
+
+Pendências (não aplicadas):
+- Tema 1081 do STJ (remessa necessária em demanda previdenciária de valor aferível por cálculo aritmético) — Retirado da revisão pela regra do proprietário (jurisprudência fica para o material completo). Para o material completo, conferir o acórdão publicado e a redação exata da tese, pois fontes secundárias divergem sobre o al
+- Lei nº 15.484/2026 (relevância no recurso especial) — As consolidações consultadas indicam alteração dos arts. 927, 932, 979, 988, 998, 1.030, 1.039 e 1.042 e acréscimo do art. 1.035-A; nenhum artigo do M13 (arts. 485 a 509). Não foi possível abrir o texto oficial (planalto
+- Verificação da literalidade dos artigos — Planalto, Câmara e demais sites oficiais não abriram no ambiente. A redação dos arts. 203, 485 a 489, 492 a 497, 499, 500 e 502 a 509 foi conferida por busca em fontes secundárias (consolidações do CPC, Migalhas, Conjur,
+- Desistência da ação (art. 485, VIII, §§ 4º e 5º) — Lacuna de alto rendimento não incluída por limite de crescimento: após a contestação a desistência exige consentimento do réu (§ 4º) e pode ser apresentada até a sentença (§ 5º). Incluir no material completo.
+- Art. 485 (rol) e hipóteses de extinção sem mérito — O parágrafo do art. 485 diz "por exemplo" para as hipóteses; o art. 485 tem dez incisos, o último remetendo a "demais casos prescritos neste Código". Não alterado, mas, no material completo, listar os incisos I a X na or
+- Art. 509 e art. 491 (liquidação e sentença líquida) — Lacunas deixadas para o material completo: regra do art. 491 (sentença define desde logo a extensão da obrigação), liquidação provisória (art. 512), parte líquida e ilíquida (art. 509, § 1º) e recurso cabível na liquidaç
+- Súmula 490 do STJ — Origem no CPC/1973 e leitura atual em disputa após o Tema 1081; não incluída na revisão.
+- **Ajustes do aprovador (aplicados):** art. 496 descrito como reexame obrigatório que o artigo impõe a duas sentenças (outras leis também preveem duplo grau obrigatório, como a Lei nº 12.016/2009, art. 14, § 1º, e a Lei nº 4.717/1965, art. 19); art. 503, § 1º, II, na redação literal ("não se aplicando no caso de revelia"); art. 494 ("ou por meio de embargos de declaração", porque os incisos I e II são alternativos); art. 486, § 3º (se o autor der causa, por três vezes, a sentença fundada em abandono); art. 487, II ("decide sobre prescrição ou decadência"); art. 509 ("sentença", na tabela); art. 503, § 2º; art. 489, § 1º, I e IV (motivação). Retirado o Tema 1081/STJ (jurisprudência) e mantida a Súmula 45/STJ. A Lei nº 15.484/2026 (de 4/8/2026, vigência em 3/9/2026) acrescenta o art. 1.035-A e altera os arts. 927, 932, 979, 988, 998, 1.030, 1.039 e 1.042, sem afetar os arts. 485 a 509; a Lei nº 15.479/2026 altera só os arts. 196, 529-A e 913. **Pendências:** desistência (art. 485, §§ 4º e 5º), art. 485 (rol completo e § 3º), arts. 491, 509, § 1º, 512 e 1.015, parágrafo único, ficaram para o material completo; a tabela de remessa necessária (art. 496, § 3º) e a de desistência estão com colunas embaralhadas; conferir o texto oficial do art. 496, § 4º, após a Lei nº 15.484/2026.
+
+### Processo Civil M14 — Cumprimento de sentença
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material didático e bem estruturado, com a ordem dos arts. 513 a 538 correta e a atualização sobre a Lei nº 15.479/2026 (art. 529-A, vigência diferida em um ano) confirmada em mais de uma fonte. Havia imprecisões de lei seca: rol do art. 515 descrito como 'exemplos', paráfrase errada dos requisitos do efeito suspensivo da impugnação (art. 525, § 6º), 'pode' onde a lei diz 'dependem de caução' e 'são devidos' (art. 520, IV e § 2º), rol do art. 525, § 1º truncado e apresentado como exemplificativo, rejeição liminar do § 5º descrita como facultativa, 'em regra' no prazo de 30 dias da Fazenda (art. 535) e rol do art. 538 como exemplos. Foram feitos poucos acréscimos de lei seca (citação nos títulos do art. 515, § 1º; prazo e regime da prisão civil; honorários contra a Fazenda no art. 85, § 7º).
+
+- **Correção** (E1): O texto original apresentava como 'exemplos' o rol legal do art. 515 e citava só três títulos. Rol completo, na ordem dos incisos I a IX. Acrescenta a regra do § 1º (citação, e não intimação, nos incisos VI a IX), de alto rendimento. _Fonte: CPC (Lei nº 13.105/2015), art. 515, incisos I a IX e § 1º_
+- **Correção** (E2): O art. 513, § 1º, não admite exceção para a obrigação de pagar quantia: o cumprimento, provisório ou definitivo, far-se-á a requerimento do exequente. O 'em regra' era impreciso. _Fonte: CPC, art. 513, § 1º_
+- **Correção** (E3): A definição original ('já não depende de recurso com efeito suspensivo na forma pertinente') era confusa e incorreta: o cumprimento definitivo pressupõe título não mais sujeito a recurso; o provisório é o da decisão impugnada por recurso sem efeito suspensivo, conforme o caput… _Fonte: CPC, arts. 520, caput, e 523, caput_
+- **Correção** (E4): A lei diz 'dependem de caução' (art. 520, IV), não 'pode ser exigida'; a dispensa está no art. 521. E o art. 520, § 2º, diz que multa e honorários 'são devidos' no cumprimento provisório, não que 'podem incidir'. _Fonte: CPC, art. 520, IV e § 2º; art. 521_
+- **Correção** (E5): O art. 219 manda computar somente os dias úteis na contagem de prazos em dias processuais; não há ressalva no CPC para esse prazo. O 'em regra' era impreciso. _Fonte: CPC, arts. 219 e 523, caput_
+- **Correção** (E6): O texto original usava 'matérias como', sugerindo rol aberto, e omitia a inexequibilidade do título e a cumulação indevida de execuções, além de reduzir a incompetência e o inciso VII. Reescrito com os incisos I a VII completos e na ordem, sem qualificar o rol como taxativo ou… _Fonte: CPC, art. 525, § 1º, I a VII_
+- **Correção** (E7): O art. 525, § 5º, diz que a impugnação 'será liminarmente rejeitada' se o excesso for o único fundamento (e não 'poderá'), e que, havendo outro fundamento, ela é processada sem exame do excesso. _Fonte: CPC, art. 525, §§ 4º e 5º_
+- **Correção** (E8): A paráfrase original ('relevância dos fundamentos e risco de dano grave de difícil ou incerta reparação') não corresponde ao art. 525, § 6º, que remete aos requisitos da tutela provisória e exige garantia por penhora, caução ou depósito suficientes. _Fonte: CPC, art. 525, § 6º_
+- **Acréscimo** (E9): Acrescenta o prazo da prisão e o regime (§§ 3º e 4º) e corrige a paráfrase do § 7º, que diz 'até as 3 prestações anteriores', e não 'as três prestações imediatamente anteriores'. _Fonte: CPC, art. 528, §§ 3º, 4º e 7º_
+- **Correção** (E10): O art. 535, caput, fixa o prazo de 30 dias sem exceção ('em regra' impreciso). Acrescenta a fonte da exclusão da multa (art. 534, § 2º) e a regra do art. 85, § 7º, de alto rendimento. _Fonte: CPC, arts. 534, § 2º, 535, caput, e 85, § 7º_
+- **Correção** (E11): 'Providências como' sugeria rol exemplificativo; o art. 538, caput, prevê duas medidas, conforme a coisa seja móvel ou imóvel, quando não cumprida a obrigação no prazo da sentença. _Fonte: CPC, art. 538, caput_
+
+Pendências (não aplicadas):
+- Natureza do rol do art. 525, § 1º (taxativo ou exemplificativo) — A leitura majoritária trata as matérias da impugnação como limitadas, mas não foi possível conferir a posição em fontes doutrinárias fiáveis nesta sessão; o texto foi reescrito apenas com a lei seca, sem qualificar o rol
+- Intimação do devedor (art. 513, §§ 2º a 4º) e competência (art. 516) — Lacunas de alto rendimento (formas de intimação; prazo de 1 ano do trânsito em julgado; opção de foro do art. 516, parágrafo único), mas a redação literal e a numeração dos incisos do § 2º não puderam ser confirmadas em 
+- Honorários contra a Fazenda em RPV (art. 85, § 7º e SV 17) — O art. 85, § 7º, fala em precatório; a extensão à RPV é controvertida em jurisprudência e fica para o material completo, conforme a regra do proprietário.
+- Cumprimento provisório: caução dispensada (art. 521) e responsabilidade objetiva do exequente (art. 520, I) — Os incisos do art. 521 (incluindo o inciso III revogado pela Lei nº 13.256/2016) foram citados apenas por remissão; detalhar fica para o material completo.
+- Multa coercitiva (art. 537): valor devido ao exequente, modificação da multa vincenda, cumprimento provisório, e protesto (art. 517) — Lacunas possíveis, deixadas de fora por limite de tamanho e para manter a versão enxuta; sem redação literal integralmente conferida nesta sessão.
+- Atualização legislativa (Lei nº 15.479/2026, art. 529-A) — Conferida em mais de uma fonte (IBDFAM, Migalhas, texto consolidado): Lei de 29/07/2026, publicada no DOU em 30/07/2026, com vigência um ano após a publicação. Texto mantido; revalidar após 30/07/2027. Lei nº 15.484/2026
+- Verificação de fontes — Planalto e outros sites de legislação não abriram no ambiente (rede restrita); a conferência literal foi feita por buscas em fontes secundárias (comentários e consolidações). Recomenda-se conferência final no texto ofici
+- **Ajustes do aprovador (aplicados):** art. 525, § 6º, voltou à redação fiel (efeito suspensivo exige requerimento do executado, juízo garantido por penhora, caução ou depósito suficientes, fundamentos relevantes e risco de grave dano de difícil ou incerta reparação; a versão anterior da revisão falava em "requisitos da tutela provisória", que o parágrafo não usa); art. 515, § 1º (nos incisos VI a IX, o devedor é citado para cumprir a sentença ou liquidá-la em 15 dias); art. 525, § 4º ("demonstrativo discriminado e atualizado de seu cálculo"); art. 520, I (o exequente se obriga a reparar os danos sofridos pelo executado se a sentença for reformada ou anulada). Conferidos: arts. 513, § 1º, 515 (I a IX), 520, 521, 219, 523, 525, § 1º, I a VII, § 5º, 528, §§ 3º, 4º e 7º (coincide com a Súmula 309/STJ), 534, § 2º, 535 e 538. A Lei nº 15.479/2026 (art. 529-A, transferência automática do montante da prestação alimentícia) foi sancionada em 29/7/2026 e publicada em 30/7/2026, com vigência um ano depois; o texto diz que ela ainda não vigora em novembro de 2026. **Pendências:** conferir o texto oficial dos arts. 515, 520, 525, 528, 534 e 538; intimação do devedor (art. 513, §§ 2º a 4º) e opção de foro (art. 516); honorários contra a Fazenda em RPV (art. 85, § 7º, e SV 17); caução dispensada (art. 521); multa coercitiva (art. 537) e protesto (art. 517); revalidar a vigência da Lei nº 15.479/2026 depois de 30/7/2027.
+
+### Processo Civil M15 — Recursos
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. O módulo é didático e, em geral, juridicamente correto, mas tinha atribuição de artigo errada (dias úteis atribuídos ao art. 1.003, § 5º), 'como regra' onde o art. 1.026 não admite exceção, rol fechado do art. 1.015 apresentado por exemplos, rol do art. 927 descrito de forma vaga ('outros pronunciamentos qualificados') e do art. 994 incompleto, além de apoio em jurisprudência (Tema 988) que não deve constar da versão enxuta. As edições substituem esses pontos pela lei seca e acrescentam apenas lacunas de alto rendimento (art. 1.012, § 1º; art. 1.022; art. 1.070; Súmulas 7 do STJ e 279 do STF). A parte sobre a Lei nº 15.484/2026 está coerente com as fontes consultadas e foi mantida sem novos dados voláteis.
+
+- **Correção** (E1): Retira a referência à taxatividade mitigada (jurisprudência, não incluída na versão enxuta) e a troca pela regra legal: o art. 1.015 e o art. 1.009, § 1º. _Fonte: CPC/2015, arts. 1.009, § 1º, e 1.015._
+- **Correção** (E2): O art. 1.003, § 5º, trata dos 15 dias e da exceção dos embargos; a contagem em dias úteis está no art. 219 (atribuição de artigo corrigida). Acrescenta o termo inicial (art. 1.003, caput), o art. 1.023 e a prerrogativa de prazo em dobro, que tem exceções legais (arts. 180, § 2º,… _Fonte: CPC/2015, arts. 180, 183, 186, 219, 1.003, caput e § 5º, e 1.023._
+- **Didática** (E3): A frase original era circular e sem atribuição. Passa a indicar os requisitos da doutrina majoritária e a atribuí-los à doutrina, sem apresentá-los como texto de lei. _Fonte: Doutrina majoritária sobre fungibilidade recursal (o CPC/2015 não traz regra geral expressa)._
+- **Acréscimo** (E4): Lacuna de alto rendimento: o texto citava as exceções ao efeito suspensivo da apelação sem enumerá-las. Incisos transcritos completos e na ordem; o rol do § 1º é aberto pela expressão 'além de outras hipóteses previstas em lei'. _Fonte: CPC/2015, art. 1.012, caput e § 1º, I a VI._
+- **Correção** (E5): Evita que um rol fechado pareça exemplificativo ('como as relativas a'). Indica que o rol é taxativo, com remissão a outros casos legais (inciso XIII) e vincula cada exemplo ao inciso correto. _Fonte: CPC/2015, art. 1.015, I, II, IV, XI, XII (vetado) e XIII._
+- **Correção** (E6): A versão enxuta não inclui jurisprudência (Tema 988 e taxatividade mitigada ficam para o material completo). O trecho é trocado pela regra legal e pelo prazo do agravo, que o módulo não informava. _Fonte: CPC/2015, arts. 1.009, § 1º, e 1.070._
+- **Correção** (E7): O art. 1.026, caput, não admite exceção ('em regra' removido): os embargos não têm efeito suspensivo e interrompem o prazo. Atribui preparo e prazo ao art. 1.023 e acrescenta o prazo de 15 dias do agravo interno (art. 1.070). _Fonte: CPC/2015, arts. 1.021, 1.023, caput, 1.026, caput, e 1.070._
+- **Correção** (E8): Rol fechado apresentado de forma parcial ('contempla ainda'). Passa a citar os nove recursos do art. 994, I a IX, na ordem legal. _Fonte: CPC/2015, art. 994, I a IX._
+- **Acréscimo** (E9): A frase vaga é trocada por duas súmulas clássicas e de altíssima importância, com redação literal, permitidas pela exceção do proprietário. _Fonte: Súmula 7 do STJ; Súmula 279 do STF._
+- **Atualização** (E10): A frase original era vaga ('precedentes qualificados', 'vias próprias'). Troca-se pela regra legal do art. 1.042, caput, já com a atualização da Lei nº 15.484/2026, que altera os arts. 1.030 e 1.042. A redação literal pós-lei não foi conferida no Planalto (inacessível); a… _Fonte: CPC/2015, arts. 1.021, 1.030 e 1.042 (com a Lei nº 13.256/2016 e a Lei nº 15.484/2026)._
+- **Correção** (E11): O rol do art. 927 é fechado e estava descrito como exemplificativo ('incluindo', 'outros pronunciamentos qualificados'). Os incisos são transcritos completos e na ordem, com o III-A acrescentado pela Lei nº 15.484/2026. _Fonte: CPC/2015, art. 927, I a V; Lei nº 15.484/2026 (inciso III-A)._
+- **Correção** (E12): Coerência com a retirada do Tema 988 (E6): o exemplo passa a seguir a regra legal. _Fonte: CPC/2015, arts. 1.009, § 1º, e 1.015._
+
+Pendências (não aplicadas):
+- Tema 988 do STJ (taxatividade mitigada do art. 1.015) — Retirado da versão enxuta por ser jurisprudência não sumulada. Deve constar do material completo, com a tese literal.
+- Tema 1059 do STJ (honorários recursais, art. 85, § 11) — Mantido por estar correto no texto original, mas é jurisprudência (repetitivo). O proprietário pode decidir movê-lo para o material completo; o texto legal do art. 85, § 11, bastaria na revisão. Os dois trechos que o cit
+- Redação literal da Lei nº 15.484/2026 (arts. 927, III-A, 932, 979, 988, 998, 1.030, 1.035-A, 1.039 e 1.042) — O Planalto, o Senado, o STJ e a Câmara não abriram neste ambiente (rede restrita). O texto do módulo (vigência em 3/9/2026, 30 dias após a publicação de 4/8/2026; quórum de 2/3; aplicação a acórdãos publicados após a vig
+- Redação literal da Lei nº 14.939/2024 (art. 1.003, § 6º) — Texto do módulo confere com a redação reproduzida em fontes secundárias (comprovação do feriado local na interposição; o tribunal determina a correção do vício formal ou pode desconsiderá-lo se a informação já constar do
+- Art. 995, parágrafo único, art. 1.012, §§ 3º e 4º, e art. 1.026, §§ 1º a 3º — Pedido de efeito suspensivo ao recurso, suspensão da eficácia da sentença na apelação e multa nos embargos protelatórios não foram acrescentados por limite de crescimento do texto (12%). Candidatos ao material completo.
+- Parágrafo único do art. 1.022 (decisão omissa) e prequestionamento (arts. 1.025; Súmulas 282 e 356 do STF) — Não acrescentados por limite de crescimento. As súmulas 282 e 356 do STF são clássicas e podem ser incluídas se houver espaço, após conferência literal.
+- Teoria da causa madura (art. 1.013, § 3º) e demais efeitos da apelação (art. 1.013) — Lacuna de alto rendimento não preenchida por limite de crescimento.
+- Presunção de repercussão geral (art. 1.035, § 3º) e hipóteses de relevância presumida (art. 105, § 3º, da CF) — Não acrescentados por limite de crescimento e porque a redação do art. 1.035-A, § 4º, não foi conferida no texto oficial.
+- Título 4.4 ('espécies menos frequentes') — O título faz referência à frequência de uso e deveria ser neutralizado, mas os títulos não podem ser alterados nesta revisão.
+- **Ajustes do aprovador (aplicados):** art. 1.015 descrito como enumeração em doze incisos em vigor (I a XI e XIII; o XII foi vetado), com o XIII remetendo a outros casos legais, e sem afirmar "rol taxativo" sem ressalva; retirado o Tema 1059 (jurisprudência de repetitivo) das duas passagens, que passaram a trazer só o art. 85, § 11 (o tribunal majora os honorários considerando o trabalho adicional em grau recursal); redundâncias cortadas no art. 927, III-A, e no prazo dos arts. 1.003, § 5º, e 1.023. Conferidos: arts. 219, 994 (I a IX), 1.003, caput e § 5º, 1.012, § 1º, I a VI, 1.022, 1.023, 1.026 (sem "em regra"), 1.070 (15 dias para qualquer agravo), 180, 183, 186 e 927 (I a V); Súmulas 7/STJ e 279/STF na redação literal. A Lei nº 15.484/2026 (art. 927, III-A; art. 1.035-A; quórum de 2/3; vigência em 3/9/2026) foi conferida por várias fontes secundárias, sem o texto oficial; uma das fontes reproduz o caput do art. 1.042 sem a relevância (conferir no texto oficial). **Pendências:** conferir no Planalto as Leis nº 15.484/2026 e nº 14.939/2024 e a regulamentação pelo STJ (dados voláteis); art. 995, parágrafo único; art. 1.012, §§ 3º e 4º; art. 1.026, §§ 1º a 3º; art. 1.022, parágrafo único; Súmulas 282 e 356/STF; art. 1.013, § 3º; art. 1.035, § 3º; art. 105, § 3º, da CF; Tema 988 fica para o material completo; o título 4.4 ("espécies menos frequentes") cita frequência, e os títulos não podem ser alterados.
+
+### Processo Civil M16 — Execução: títulos e obrigações
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto, mas muito genérico: quase nenhum artigo citado e expressões hedge ('pode', 'como regra') onde a lei tem regra expressa. Verificada a atualização: a Lei nº 15.479/2026 tem de fato vigência futura. Faltava o rol do art. 784 (com o inciso XI-A da Lei nº 14.711/2023), o art. 805, parágrafo único, o art. 792 e as Súmulas 375 e 279 do STJ. Foram feitas 12 edições cirúrgicas.
+
+- **Acréscimo** (E1): "Pode não ser exigível" é impreciso: termo ou condição pendentes tornam a obrigação inexigível; indica o ônus de prova do art. 798, I, c. _Fonte: CPC, art. 798, I, c_
+- **Acréscimo** (E2): Identifica o art. 784 como rol legal e atualiza com o inciso XI-A (contrato de contragarantia) da Lei nº 14.711/2023. _Fonte: CPC, art. 784, XII; Lei nº 14.711/2023, art. 8º (Conjur; Mattos Filho; STJ, AREsp 1.798.491 citado em Trilhante)_
+- **Correção** (E3): Torna literal o parágrafo único do art. 805, incluindo a consequência legal da omissão do executado e o requisito de meios mais eficazes e menos onerosos. _Fonte: CPC, art. 805, parágrafo único_
+- **Acréscimo** (E4): Ancora as medidas atípicas no art. 139, IV. _Fonte: CPC, art. 139, IV_
+- **Acréscimo** (E5): Torna literal o art. 789 ("como regra" não consta; a lei ressalva apenas as restrições legais). _Fonte: CPC, art. 789_
+- **Acréscimo** (E6): Concretiza o instituto com a lei seca (art. 792, §§ 1º e 4º) e inclui a Súmula 375/STJ, exceção permitida (súmula clássica). _Fonte: CPC, art. 792, §§ 1º e 4º; Súmula 375 do STJ_
+- **Correção** (E7): Dá o prazo e o mecanismo legais, antes vagos ("pode conduzir"). _Fonte: CPC, art. 806, caput e § 2º_
+- **Correção** (E8): O art. 814 usa "fixará" (dever) na execução extrajudicial de fazer e não fazer; o texto original dizia apenas que a multa "pode" incentivar, sem a regra legal. _Fonte: CPC, art. 814_
+- **Acréscimo** (E9): Substitui a referência genérica pelo prazo e pelo regime legais e inclui a súmula clássica sobre o tema. _Fonte: CPC, art. 910, caput e § 1º; Súmula 279 do STJ_
+- **Correção** (E10): Troca a frase genérica por o procedimento legal do art. 911. _Fonte: CPC, art. 911, caput_
+- **Atualização** (E11): Corrige a atribuição do art. 529-A (artigo do CPC acrescentado pela lei, não da lei), padroniza a citação ("Lei nº") e informa a vacatio de um ano. _Fonte: Lei nº 15.479/2026, art. 4º (publicada em 30/07/2026; Planalto, Migalhas, IBDFAM, Vade Mecum Previdenciário)_
+- **Didática** (E12): Linguagem neutra: remove referência a prova. _Fonte: —_
+
+Pendências (não aplicadas):
+- Medidas atípicas do art. 139, IV (ADI 5941/STF e jurisprudência do STJ) — Jurisprudência fica para o material completo, conforme regra do proprietário.
+- Art. 784, § 4º (assinatura eletrônica, Lei nº 14.620/2023) e § 1º; demais incisos do art. 784 — Fica de fora para manter o material enxuto e porque o texto consolidado completo não pôde ser conferido no Planalto. Sugere-se incluí-lo no material completo.
+- Posição exata do inciso XI-A no art. 784 e redação literal — Uma fonte o posiciona fora da ordem usual; o texto foi citado apenas pelo conteúdo (contrato de contragarantia), sem transcrever o inciso.
+- Data exata de início de vigência da Lei nº 15.479/2026 — Fontes divergem entre 30 e 31/07/2027; o texto diz apenas "um ano após a publicação". Acesso direto ao Planalto/Câmara não foi possível neste ambiente (host bloqueado); confirmar o art. 4º no texto oficial.
+- Súmula 375 do STJ após o CPC/2015 (Tema 243, doações em âmbito familiar) e prazo do art. 792, § 4º (natureza preclusiva) — Jurisprudência e debate doutrinário; fora do escopo da revisão enxuta.
+- Rótulo do campo laws 'Lei 15.479/2026 — vigência futura' — Sugere-se padronizar para 'Lei nº 15.479/2026'; não incluído por limite de 12 edições.
+- Execução por entrega de coisa incerta (arts. 811-813), fazer fungível/infungível (arts. 815-821), não fazer (arts. 822-823), atos atentatórios (art. 774) e impenhorabilidade (art. 833) — Lacunas possíveis; não incluídas para manter o texto enxuto e dentro do limite de crescimento.
+- Art. 798, I, c, art. 805 e art. 806 (redações conferidas em comentários) — Redações conferidas por conhecimento e comentários (peticoesonline, Migalhas); texto oficial do Planalto não acessível.
+- Arts. 795, § 4º (incidente de desconsideração), 805, parágrafo único (ônus de indicar meios), 806, § 2º, 910, § 2º e 911 (§§ 2º a 7º do art. 528) — Cortados para respeitar o limite de crescimento de 12% do material; sugere-se incluir no material completo.
+- Art. 786, parágrafo único (simples operação aritmética não retira a liquidez) — Fora por limite de espaço.
+- **Ajustes do aprovador (aplicados):** art. 806, § 2º (a ordem de busca e apreensão ou de imissão na posse só é cumprida se a obrigação não for satisfeita no prazo); art. 792, § 1º ("a alienação em fraude à execução é ineficaz em relação ao exequente"; a "oneração" consta do caput); retirado o "em regra" que sobrava no bloco da história (art. 789); art. 784 citado como rol que inclui "outra lei que lhes atribua força executiva" (inciso XII), com o contrato de contragarantia (inciso XI-A, Lei nº 14.711/2023) citado pelo conteúdo; art. 529-A (transferência automática da prestação alimentícia). O art. 806, § 1º, usa "poderá" para a multa; o art. 814 usa "fixará". Súmulas 375 e 279 do STJ conferidas na redação literal. A Lei nº 15.479/2026 foi sancionada em 29/7/2026 e publicada em 30/7/2026, com vigência um ano depois (art. 4º). **Pendências:** conferir no texto oficial o art. 784 inteiro, a posição do inciso XI-A e a data exata de vigência da Lei nº 15.479/2026 (as fontes divergem entre 30 e 31/7/2027); art. 784, §§ 1º e 4º (assinatura eletrônica, Lei nº 14.620/2023), art. 786, parágrafo único, art. 795, § 4º, art. 805, caput, art. 910, § 2º, art. 911, parágrafo único, art. 774 e art. 833 ficaram de fora; ADI 5941, Tema 243 e o prazo do art. 792, § 4º, ficam para o material completo; o rótulo "Lei 15.479/2026 — vigência futura" no campo "laws" ainda não usa "Lei nº".
+
+### Processo Civil M18 — Procedimentos especiais
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e sem erros graves, mas muito genérico: não traz nenhum prazo ou número de artigo dos procedimentos tratados. Havia uma imprecisão no art. 701, § 2º (o título judicial 'pode formar-se', quando a lei diz 'constituir-se-á de pleno direito'), uma frase sobre subsidiariedade do procedimento comum que não corresponde ao art. 318, parágrafo único, e linguagem de prova ('Em prova', 'boa questão'). Foram feitas 11 edições curtas, todas em lei seca, acrescentando os prazos e requisitos essenciais de consignação, embargos de terceiro, monitória e restauração de autos.
+
+- **Didática** (E1): Linguagem neutra: retira a referência a prova. _Fonte: Regra de revisão (linguagem neutra)_
+- **Correção** (E2): O art. 539 legitima 'o devedor ou terceiro' e remete aos 'casos previstos em lei'; o texto original sugeria rol aberto ('como') e omitia o terceiro. _Fonte: CPC, art. 539, caput; Código Civil, art. 335_
+- **Acréscimo** (E3): Substitui a descrição vaga pelos prazos legais da consignação extrajudicial. _Fonte: CPC, art. 539, §§ 1º a 4º_
+- **Correção** (E4): A lista de quem se considera terceiro está no § 2º do art. 674; 'equiparações' é termo impreciso. _Fonte: CPC, art. 674, § 2º_
+- **Acréscimo** (E5): Frase genérica trocada pelo regramento literal do art. 675. _Fonte: CPC, art. 675, caput_
+- **Acréscimo** (E6): Reproduz o rol do art. 700, I a III (incluindo bem imóvel). _Fonte: CPC, art. 700, caput, I a III_
+- **Correção** (E7): A lei não diz que o título 'pode' se formar: o art. 701, § 2º usa 'constituir-se-á de pleno direito'. Inclui os prazos e honorários do mandado e o prazo dos embargos. _Fonte: CPC, arts. 701, caput, §§ 1º e 2º, e 702, caput_
+- **Acréscimo** (E8): Substitui paráfrase vaga pelos legitimados do art. 712 e acrescenta a regra de responsabilidade do art. 718. _Fonte: CPC, arts. 712 e 718_
+- **Didática** (E9): Linguagem neutra: retira referência a questão e frequência de cobrança. _Fonte: Regra de revisão (linguagem neutra)_
+- **Correção** (E10): A lei diz 'aplica-se', sem o 'pode' e sem a condição 'quando compatível'; indica o artigo. _Fonte: CPC, art. 318, parágrafo único_
+- **Correção** (E11): Inclui o art. 318, parágrafo único, agora citado em 'remember'. _Fonte: CPC, art. 318, parágrafo único_
+
+Pendências (não aplicadas):
+- Redação literal dos arts. 539, 675, 701, 702, 712 e 718 em planalto.gov.br — O Planalto não abriu; conteúdo confirmado por múltiplas fontes secundárias (comentários e agregadores de legislação). Convém conferência final no texto oficial, em especial a numeração dos §§ do art. 539.
+- Detalhamento da consignação judicial (arts. 541 a 549: depósito em 5 dias, matérias de defesa do art. 544, complementação em 10 dias do art. 545) e dos embargos de terceiro (arts. 676 a 681: contestaç — Deixado fora para manter a revisão enxuta e o limite de crescimento; sugerido para o material completo.
+- Embargos monitórios (art. 702, §§ 2º a 11): excesso de cobrança com demonstrativo, efeito suspensivo, reconvenção, multas; monitória contra a Fazenda Pública (art. 700, § 6º; art. 701, § 4º) — Fora do escopo enxuto; indicados para o material completo.
+- Alterações legislativas posteriores (Leis nº 14.195/2021, 14.365/2022, 14.711/2023, 14.879/2024, 15.109/2025, 15.479/2026 e 15.484/2026) — Nenhuma alteração confirmada nos arts. 539-549, 674-681, 700-702 e 712-718 nesta pesquisa; sem confirmação, nada foi editado.
+- **Ajustes do aprovador (aplicados):** consignação (art. 539, §§ 1º a 4º: havendo recusa por escrito, a ação "pode ser proposta" em até um mês; não proposta, o depósito fica sem efeito, e não "deve ser proposta"); monitória (art. 701: honorários de 5% do "valor atribuído à causa"; quem cumpre o mandado no prazo fica isento de custas processuais, § 1º); art. 318, parágrafo único ("aos demais procedimentos especiais"); embargos de terceiro (art. 675: "mas sempre antes da assinatura da respectiva carta"); art. 674, § 2º; retirada a expressão "erro comum", sem base legal. Conferidos: art. 539 (caput: "devedor ou terceiro", "nos casos previstos em lei"), art. 700 (I a III), art. 702 (embargos nos próprios autos, sem segurança do juízo, no prazo do art. 701), art. 712 e art. 718. Não foi achada lei que altere os arts. 318, 539 a 549, 674 a 681, 700 a 702 e 712 a 718. **Pendências:** conferir no Planalto a numeração dos §§ 1º a 4º do art. 539 e os arts. 318, 675, 701, 702, 712 e 718; as súmulas do STJ sobre embargos de terceiro (84, 195, 303) e monitória (247, 299, 531) ficaram de fora por falta de conferência da redação literal; consignação judicial (arts. 541 a 549), embargos de terceiro (arts. 676 a 681), art. 702, §§ 2º a 11, e monitória contra a Fazenda Pública (art. 700, § 6º; art. 701, § 4º) ficaram de fora.
+
+### Processo Civil M17 — Execução por quantia: penhora e embargos
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto, mas muito genérico: quase nenhum artigo citado, com 'em regra' no prazo de 3 dias do art. 829, referências vagas à 'jurisprudência' nas impenhorabilidades, o rol de expropriação do art. 825 apresentado como exemplo e a frase 'Uma questão pode explorar' sobre a arrematação. Faltavam as regras legais de honorários (art. 827), de efeito suspensivo (art. 919, § 1º), de parcelamento (art. 916) e de prescrição intercorrente (art. 921). Foram feitas 12 edições cirúrgicas, todas conferidas com o texto compilado do CPC.
+
+- **Correção** (E1): O art. 829 fixa o prazo de 3 dias sem ressalva; "em regra" sugere exceção que o dispositivo não traz. A referência vaga ao art. 827 foi substituída pela regra literal (honorários de 10%, reduzidos à metade no pagamento integral em 3 dias). _Fonte: CPC, arts. 827, caput e § 1º, e 829_
+- **Correção** (E2): "Mecanismos próprios como arresto" é vago e sugere rol aberto; o art. 830 prevê o arresto e sua conversão em penhora após a citação e o prazo de pagamento. _Fonte: CPC, art. 830, caput e § 3º_
+- **Correção** (E3): Retira a referência vaga a "jurisprudência" e a "entendimento aplicável" e a substitui pela regra legal: impenhorabilidades do art. 833, IV e X, e exceção do § 2º; acrescenta o prazo e o ônus do executado no bloqueio de ativos financeiros (art. 854, § 3º), sem citar o valor da… _Fonte: CPC, arts. 833, IV, X e § 2º, e 854, § 3º_
+- **Correção** (E4): O art. 825 traz três formas de expropriação (rol legal); o texto omitia a apropriação de frutos e rendimentos e dava o rol como exemplificativo. O art. 879 traz as duas modalidades de alienação. _Fonte: CPC, arts. 825 e 879_
+- **Correção** (E5): Reescrita neutra (retira "Uma questão pode explorar") e troca a frase genérica pela regra do art. 903 e pelo conceito legal de preço vil. _Fonte: CPC, arts. 891, parágrafo único, e 903, caput e § 1º, I_
+- **Acréscimo** (E6): "Depende de requisitos" era vago; foram incluídos os requisitos do efeito suspensivo (art. 919, § 1º) e as condições e efeitos do parcelamento (art. 916, caput, §§ 6º e 7º). _Fonte: CPC, arts. 916, caput, §§ 6º e 7º, e 919, caput e § 1º_
+- **Acréscimo** (E7): O trecho original apenas mandava consultar o art. 921; foram incluídos o fato que suspende a execução, o termo inicial (§ 4º), o prazo da prescrição intercorrente e a oitiva prévia de 15 dias. _Fonte: CPC, art. 921, III e §§ 1º, 4º e 5º; Código Civil, art. 206-A_
+- **Correção** (E8): Coerência com a correção do art. 829, que não traz exceção ao prazo. _Fonte: CPC, art. 829_
+- **Correção** (E9): Retira a referência vaga a hipóteses jurisprudenciais; as exceções estão nos §§ 1º e 2º do art. 833. _Fonte: CPC, art. 833, §§ 1º e 2º_
+- **Correção** (E10): O art. 829 não traz exceção ao prazo de três dias. _Fonte: CPC, art. 829_
+- **Correção** (E11): "Como" sugeria rol aberto; o art. 825 enumera as formas de expropriação. _Fonte: CPC, arts. 825 e 879_
+- **Correção** (E12): Retira a referência vaga a interpretações jurisprudenciais e indica as exceções do texto legal. _Fonte: CPC, art. 833, §§ 1º e 2º_
+
+Pendências (não aplicadas):
+- Lei nº 15.479/2026 (art. 529-A e art. 913, parágrafo único do CPC) — Altera o CPC para a transferência automática da prestação alimentícia e remete ao art. 854; a vigência é futura (um ano após a publicação de 30/07/2026), e fontes divergem sobre o dia exato. Não afeta o texto vigente do 
+- Lei nº 14.711/2023 e o CPC — Não foi possível abrir o texto oficial. Confirmado apenas que acrescentou o inciso XI-A ao art. 784 e ao art. 835 (contragarantia de seguro-garantia). Demais dispositivos (arts. 799, 828, 903) não foram confirmados e não
+- Art. 206-A do Código Civil — Fontes divergem sobre a lei que o introduziu ou alterou (Lei nº 14.195/2021 ou Lei nº 14.382/2022); por isso a edição cita só o artigo, sem número de lei.
+- Jurisprudência de impenhorabilidade (salário em dívida não alimentar, poupança), objeção de pré-executividade, preço vil e prescrição intercorrente — Fica para o material completo, conforme a regra do proprietário; a Súmula 150 do STF ("Prescreve a execução no mesmo prazo de prescrição da ação") e a Súmula 393 do STJ (objeção de pré-executividade na execução fiscal) p
+- Lacunas não incluídas por limite de tamanho — Art. 835, § 1º (dinheiro prioritário; juiz pode alterar a ordem), art. 917, §§ 3º e 4º (excesso de execução: declarar o valor correto, sob pena de rejeição liminar), art. 915 (prazo de 15 dias contado na forma do art. 23
+- Campo laws — 'CPC, arts. 824–925' está correto para a execução por quantia (Livro II, Título II, Capítulo IV). Sugere-se, em versão futura, acrescentar a Lei nº 8.009/1990 (bem de família), que o texto não aborda.
+- **Ajustes do aprovador (aplicados):** art. 921, III e § 1º (se o executado não possui bens penhoráveis, o juiz suspende a execução por um ano, durante o qual se suspende a prescrição; a não localização do devedor aparece no § 2º, que trata do arquivamento); art. 825 ("adjudicação, alienação ou apropriação de frutos e rendimentos", como alternativas); retirada da objeção de pré-executividade (sem previsão no CPC; seção 4 e história), por ser construção jurisprudencial; resquício "e o entendimento aplicável" trocado por "quais são as exceções legais" (art. 833). Conferidos: arts. 827 (caput e § 1º), 829 (3 dias da citação, sem ressalva), 830 (caput e § 3º), 833 (IV, X e § 2º), 854, § 3º, 879, 891, parágrafo único, 903, 916, 919 e 921 (§§ 4º e 5º); art. 206-A do Código Civil. O valor da poupança impenhorável não foi citado: a Lei nº 15.252/2025 (art. 16, III, redução para 20 salários mínimos em crédito com juros reduzidos) só aparece em uma fonte (Conjur) e o texto compilado do CPC no repositório ainda mostra 40 salários mínimos. **Pendências:** confirmar a Lei nº 15.252/2025 no texto oficial; Lei nº 14.711/2023 (só o inciso XI-A dos arts. 784 e 835 foi confirmado); a Lei nº 15.479/2026 (art. 529-A e art. 913, parágrafo único) tem vigência futura; salário em dívida não alimentar, poupança, Súmula 393/STJ e Súmula 150/STF ficam para o material completo; art. 835, § 1º, art. 917, §§ 3º e 4º, art. 915, art. 880 e art. 921, §§ 4º-A e 7º ficaram de fora; sugestão de incluir a Lei nº 8.009/1990 no campo "laws".
+
+### Processo Civil M19 — Tutela coletiva, ações constitucionais e controle
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e conceitualmente correto no essencial, mas com várias remissões vagas ("requisitos legais", "situações previstas", "disciplina jurisprudencial", "hipóteses correspondentes") e róis apresentados de forma aberta (objeto da ação popular, prerrogativas do MI). Faltavam o prazo de 120 dias do MS, os legitimados do MS coletivo, da ACP e do controle concentrado, e as súmulas clássicas (STF 365, STJ 2, SV 10). As edições substituem o vago pela regra legal, sem acrescentar jurisprudência além dessas súmulas.
+
+- **Correção** (E1): O texto sugeria rol aberto ("entre outros bens"); o objeto da ação popular é o fixado no art. 5º, LXXIII, da CF (repetido no art. 1º da Lei nº 4.717/1965). _Fonte: CF, art. 5º, LXXIII; Lei nº 4.717/1965, art. 1º_
+- **Acréscimo** (E2): Súmula clássica, de altíssima importância; substitui a formulação genérica. _Fonte: Súmula 365 do STF; CF, art. 5º, LXXIII (cidadão)_
+- **Correção** (E3): Substitui referências vagas ("requisitos legais", "situações previstas") pelo rol do art. 5º da Lei nº 7.347/1985 e pela regra de dispensa do § 4º (competência do juiz); "não é condição universal" sugeria exceções que a lei não prevê. _Fonte: Lei nº 7.347/1985, art. 5º, II, III, IV, V e § 4º; art. 8º, § 1º_
+- **Atualização** (E4): Lacuna de alto rendimento: o módulo mencionava o prazo apenas como "prazo decadencial legal" e não tratava dos legitimados do MS coletivo. _Fonte: Lei nº 12.016/2009, arts. 21 e 23; CF, art. 5º, LXX_
+- **Correção** (E5): O objeto do MI é restrito: as prerrogativas são as inerentes à nacionalidade, soberania e cidadania (não qualquer prerrogativa constitucional); a lei também inclui a omissão parcial. _Fonte: CF, art. 5º, LXXI; Lei nº 13.300/2016, art. 2º_
+- **Correção** (E6): Retira a referência vaga a "disciplina jurisprudencial" e a menção ao "candidato"; indica a regra legal e a súmula clássica. _Fonte: Lei nº 9.507/1997, art. 8º, parágrafo único; Súmula 2 do STJ_
+- **Correção** (E7): "Nas hipóteses correspondentes" era vago; o art. 97 da CF e o art. 949 do CPC trazem a regra, e a SV 10 estende a cláusula a órgão fracionário que afasta a incidência da norma. _Fonte: CF, art. 97; CPC, art. 949; Súmula Vinculante 10_
+- **Correção** (E8): Remove "em linhas gerais" e a frase sobre "a questão costuma" (linguagem neutra); inclui legitimados (art. 103 da CF, comum a ADI e ADC desde a EC nº 45/2004), objeto de cada ação, requisito da ADC e subsidiariedade da ADPF. _Fonte: CF, arts. 102, I, a, e 103; Lei nº 9.868/1999, art. 14, III; Lei nº 9.882/1999, arts. 1º, parágrafo único, I, e 4º, § 1º_
+- **Correção** (E9): "Impugnação repressiva" era impreciso; o prazo é de 120 dias, contado da ciência do ato. _Fonte: Lei nº 12.016/2009, art. 23_
+- **Didática** (E10): Linguagem neutra (retira referência a "questões" de prova). _Fonte: —_
+- **Didática** (E11): Concordância: o sujeito são as duas ações (popular e civil pública). _Fonte: —_
+
+Pendências (não aplicadas):
+- Coisa julgada coletiva (CDC, art. 103) — Lacuna de alto rendimento (difusos e coletivos: erga omnes/ultra partes, salvo improcedência por insuficiência de provas; individuais homogêneos: erga omnes só se procedente). Deixada de fora por limite de crescimento do
+- Mandado de segurança: liminar (art. 7º, III), art. 22 (coisa julgada, § 1º e prazo de 30 dias), art. 5º (hipóteses de não cabimento), Súmulas 266 e 625 do STF — Fora do limite de crescimento. Em particular, a liminar do art. 7º, III e as vedações do § 2º do art. 7º e do § 2º do art. 22 exigem conferência das decisões do STF sobre sua constitucionalidade antes de qualquer texto; 
+- Ação popular: isenção de custas e ônus da sucumbência (CF, art. 5º, LXXIII), prescrição de 5 anos (Lei nº 4.717/1965, art. 21) — Não acrescentados por limite de crescimento.
+- Mandado de injunção: Lei nº 13.300/2016, art. 8º (prazo razoável) e art. 12 (legitimados do MI coletivo) — Não acrescentados por limite de crescimento; fontes consultadas confirmam o art. 8º, mas há discussão doutrinária sobre o art. 12, IV (Defensoria), a ser tratada no material completo.
+- Controle concentrado: eficácia contra todos e efeito vinculante (CF, art. 102, § 2º), modulação (Lei nº 9.868/1999, art. 27) e ADO (Lei nº 12.063/2009) — Não acrescentados por limite de crescimento.
+- Campo "laws" — Faltam Lei nº 9.507/1997, Lei nº 9.868/1999, Lei nº 9.882/1999, CDC (Lei nº 8.078/1990) e CPC, citados no texto. O link da Lei nº 7.347/1985 aponta para l7347orig.htm (texto original, não compilado); não foi possível abr
+- ACP: Lei nº 14.230/2021 e novas leis — A Lei nº 14.230/2021 altera a Lei nº 8.429/1992 (improbidade) e não a Lei nº 7.347/1985; busca por lei de 2026 alterando o art. 5º da LACP não encontrou resultado. Nenhuma alteração aplicada.
+- Súmula 2 do STJ e texto do art. 8º da Lei nº 9.507/1997 — Confirmados apenas por fontes secundárias (Trilhante, Câmara via busca); o texto foi paráfrase, não citação literal. O Planalto e o STF/STJ não puderam ser abertos neste ambiente.
+- **Ajustes do aprovador (aplicados):** reserva de plenário reescrita (a regra da maioria absoluta é do art. 97 da Constituição; o art. 949, II, do CPC manda submeter a questão ao plenário ou ao órgão especial, e o parágrafo único dispensa isso quando já há pronunciamento deles ou do plenário do STF; a Súmula Vinculante 10 em paráfrase, sem aspas); mandado de segurança (Lei nº 12.016/2009, art. 1º: "viola ou ameaça direito"); retirada de frase redundante da seção 1; habeas data (a inicial deve ser instruída com prova da recusa ou do decurso de mais de 10 dias para o acesso, ou de 15 dias para a retificação ou anotação, Lei nº 9.507/1997, art. 8º, parágrafo único); associação "legalmente constituída" (Lei nº 12.016/2009, art. 21; CF, art. 5º, LXX, b); história do habeas data com "prova da recusa ou do silêncio da autoridade além do prazo legal". Confirmados: ADPF contra lei municipal (Lei nº 9.882/1999, art. 1º, parágrafo único, I; o texto não menciona o direito pré-constitucional, por enxugamento), prazo de 120 dias do mandado de segurança (art. 23) e a Súmula 365/STF (conferida no portal do STF). Súmulas usadas: só a 365/STF, a 2/STJ (em paráfrase) e a Súmula Vinculante 10. Para manter o tamanho mínimo exigido pelo teste de cobertura, a seção de direitos difusos, coletivos e individuais homogêneos passou a trazer as definições do Código de Defesa do Consumidor, art. 81, parágrafo único. **Pendências:** recomendações R2 (finalidade institucional da associação, art. 5º, V) e R5 (patrimônio histórico e cultural na história da ação popular) não aplicadas, para conter o crescimento do texto; art. 21 da Lei nº 12.016/2009 (o partido só defende interesses de seus integrantes ou ligados à finalidade partidária); campo "laws" sem as Leis nº 9.507/1997, 9.868/1999 e 9.882/1999 e o CPC, e com o endereço da Lei nº 7.347/1985 apontando para a versão original; Lei nº 15.484/2026 (art. 988, reclamação) não tratada no módulo; coisa julgada coletiva (CDC, art. 103), liminar do mandado de segurança (art. 7º, III), art. 22 da Lei nº 12.016/2009, isenção de custas da ação popular e efeitos e modulação do controle concentrado ficaram de fora.
+
+### Processo Civil M20 — Processos nos tribunais, rescisória, IAC e IRDR
+
+Veredito do aprovador: **APROVADO_COM_AJUSTES**. Material enxuto e em geral correto, mas com paráfrases vagas que apagam a regra legal (IAC, IRDR, conflito de competência, homologação, reclamação). O principal erro foi tratar a prevenção ou composição de divergência como 'necessidade legal', quando o art. 947, § 4º, fala em conveniência. Foram detalhados o prazo e o objeto da rescisória (arts. 966, 968, 969 e 975), a arguição de inconstitucionalidade (arts. 948 e 949) e a atualização da reclamação pela Lei nº 15.484/2026, com ressalva sobre a redação do § 5º do art. 988, que não pôde ser conferida em fonte oficial.
+
+- **Correção** (E1): O § 4º do art. 947 diz 'quando ocorrer relevante questão de direito a respeito da qual seja conveniente a prevenção ou a composição de divergência entre câmaras ou turmas do tribunal'. O texto falava em 'necessidade legal', o que muda o sentido (a lei usa 'conveniente'). _Fonte: CPC, art. 947, caput e § 4º_
+- **Correção** (E2): Mesma imprecisão da seção 1 repetida no caso narrado: a lei fala em conveniência de prevenir ou compor divergência entre câmaras ou turmas, não em 'hipótese legal'. _Fonte: CPC, art. 947, § 4º_
+- **Acréscimo** (E3): Paráfrase vaga ('disciplina de suspensão') trocada pela regra legal: suspensão (art. 982, I), prazo de 1 ano (art. 980) e aplicação da tese (art. 985, I e II). _Fonte: CPC, arts. 980, 982, I, e 985_
+- **Acréscimo** (E4): Substitui a expressão vaga 'nas hipóteses pertinentes' pela regra legal do incidente (arts. 948 e 949) e acrescenta a dispensa do parágrafo único do art. 949, de alto rendimento. Conteúdo da SV 10: decisão que afasta a incidência da norma, no todo ou em parte, também viola a… _Fonte: CPC, arts. 948 e 949; CF, art. 97; Súmula Vinculante 10_
+- **Correção** (E5): Paráfrase vaga ('trata dos atos processuais conforme a lei') trocada pela redação do art. 957: 'declarará qual o juízo competente, pronunciando-se também sobre a validade dos atos do juízo incompetente'. _Fonte: CPC, art. 957_
+- **Correção** (E6): A regra é que a decisão estrangeira só tem eficácia após homologação ou exequatur; 'pode precisar' inverte a ideia. A exceção genérica ('exceções legais') passa a ter a regra do art. 961, caput, e a exceção do § 5º. _Fonte: CPC, art. 961, caput e § 5º_
+- **Correção** (E7): 'Decisão estabilizada' é imprecisão: o caput do art. 966 exige decisão de mérito transitada em julgado, com a ampliação do § 2º. 'Regimes legais específicos' substituído pelo prazo literal do art. 975 e pela regra do § 2º para prova nova. _Fonte: CPC, arts. 966, caput, I a VIII e § 2º, e 975, caput e § 2º_
+- **Acréscimo** (E8): Texto reescrito com a redação do art. 969 (inclui a ressalva da tutela provisória) e acréscimo do depósito prévio do art. 968, II, requisito de alto rendimento. _Fonte: CPC, arts. 968, II, e 969_
+- **Correção** (E9): Paráfrase truncada ('hipóteses legalmente previstas de precedentes qualificados') trocada pelos incisos III e IV do art. 988 (redação da Lei nº 13.256/2016). _Fonte: CPC, art. 988, III e IV_
+- **Atualização** (E10): Texto genérico ('hipótese excepcional', 'conferir requisitos') substituído pelo conteúdo da alteração: inciso V (casos excepcionais, acórdão em regime de relevância) e extensão do § 4º. Sobre o § 5º, mantidos apenas os limites já consolidados (trânsito em julgado; esgotamento… _Fonte: Lei nº 15.484/2026; CPC, art. 988, V e §§ 4º e 5º; Conjur (ago/2026) e Migalhas_
+- **Correção** (E11): Trecho vago sobre 'jurisprudência do STJ' substituído por exemplo apoiado no rol legal do art. 988. _Fonte: CPC, art. 988, III e IV_
+- **Didática** (E12): Linguagem neutra: retirada da referência a provas. _Fonte: —_
+
+Pendências (não aplicadas):
+- Redação literal do art. 988 após a Lei nº 15.484/2026 — Não foi possível abrir planalto.gov.br nem a Câmara. As fontes secundárias concordam quanto ao inciso V (casos excepcionais, acórdão em regime de relevância) e à extensão do § 4º, mas divergem na redação do § 5º (reporta
+- Vigência da Lei nº 15.484/2026 — Dado volátil; fontes reportam vacatio de 30 dias após a publicação de 4/8/2026. Não afirmado no texto.
+- Legitimados e processamento do IRDR/IAC (arts. 977, 979, 981, 982, §§ 3º e 4º, 987); recursos da rescisória e demais incisos do art. 966; arts. 926, 927, 937 e 942 — Fora do escopo enxuto do módulo; avaliar acréscimo ao material completo.
+- Requisitos de homologação (arts. 963 e 964) e laws 'CPC, arts. 947–993 e 966–975' — Rol do art. 963 e vedação do art. 964 não acrescentados por limite de edições; o item de leis tem sobreposição de faixas (947–993 já inclui 966–975), sem erro jurídico.
+- Frase da história: 'normalmente dois anos' e 'não suspende automaticamente todos os efeitos' — Imprecisões leves, cobertas pelas edições E7 e E8; não editadas por limite de 12 edições.
+- **Ajustes do aprovador (aplicados):** reclamação após a Lei nº 15.484/2026: o inciso V do art. 988 (reclamação, em casos excepcionais, para garantir a observância de acórdão proferido em recurso especial sob o regime de relevância) e a extensão do § 4º foram confirmados em várias fontes; o § 5º foi reescrito pela lei ("será liminarmente indeferida a reclamação"), e o texto passou a dizer apenas que o § 5º, que limita o cabimento da reclamação, também foi alterado, com remissão ao texto vigente (a vedação após o trânsito em julgado e o esgotamento das instâncias não puderam ser confirmados na nova redação); a lei "regulamentou" o filtro de relevância (que vem da Emenda Constitucional nº 125/2022), sem afirmar vigência ou regulamentação; art. 968, II ("exige-se, em regra, depósito de 5% do valor da causa", com as dispensas do § 1º para entes públicos, Ministério Público, Defensoria e beneficiários da gratuidade). Conferidos: art. 947, § 4º ("quando for conveniente"), arts. 948 e 949 (inclusive o parágrafo único), 957, 961 (caput e § 5º), 966 (I a VIII e § 2º), 969, 975 (caput e § 2º: dois anos; prova nova com máximo de cinco anos), 980, 982, I, 985, I e II, e 988, III e IV. **Pendências:** conferir no Planalto a redação do art. 988, §§ 4º e 5º, após a Lei nº 15.484/2026 e a definição de "casos excepcionais" do inciso V (fontes secundárias divergem entre "é inadmissível" e "liminarmente indeferida"); vigência e regulamentação da Lei nº 15.484/2026 (dados voláteis); arts. 963 e 964, legitimados e demais regras do IRDR e do IAC, arts. 926, 927, 937 e 942, e as súmulas 343/STF, 401/STJ e 734/STF ficaram de fora; a faixa sobreposta "arts. 947–993 e 966–975" no campo "laws" e dois detalhes menores da história da rescisória ("normalmente dois anos", "não suspende automaticamente todos os efeitos") não foram ajustados.
+
+## Direito Civil e Processo Civil — fechamento (18/11/2026)
+
+**Escopo cumprido.** Foram revisados 35 módulos da "Versão de revisão": Direito Civil M01 a M15 e Processo Civil M01 a M20. Cada módulo teve um revisor, que propôs até 12 edições com fundamento legal, e um aprovador independente, que conferiu cada edição contra a lei e pediu ajustes, todos aplicados. A regra do proprietário foi seguida: versão enxuta, sem doutrina minoritária e sem jurisprudência (acórdãos, temas e teses de tribunais, enunciados de fóruns de processualistas), mantendo apenas súmulas, súmulas vinculantes e decisões de controle concentrado de altíssima importância (por exemplo: Súmulas 150 e 556 do STF, 365 do STF, 2, 7, 214, 239, 279, 375, 481 e 619 do STJ; Súmula Vinculante 10; ADI 5.953; ADI 4277 e ADPF 132; Tema 622 do STF, no Civil M14). Erros, desatualizações e imprecisões continuaram sendo corrigidos, inclusive em citações de jurisprudência do texto original.
+
+**Verificações.** `npm test` (suíte oficial): 449 testes, 449 aprovados, 0 falhas. Testes de Civil: 24 aprovados (o teste "Civil module list shows number, title and progress..." é intermitente e já falhava na versão publicada, sem relação com o texto revisado). Testes de Processo Civil: 22 aprovados. Os códigos de versão dos arquivos carregados pelos alunos foram atualizados (Civil: `central-v119.html`, `?v=20261118civilrevjur1`; Processo Civil: `index.html` e `ui/cpc-apostila-reading-v1.js`, `?v=20261118cpcrevjur1`), para que o texto novo chegue aos alunos depois da publicação.
+
+**Pendências gerais (detalhadas em cada módulo).**
+- O Planalto e os sites oficiais não abrem neste ambiente; toda conferência foi feita por buscas em fontes secundárias concordantes (Senado, Câmara, STJ, STF, Conjur, Migalhas e comentários de legislação). Uma leitura final no texto compilado do Planalto é recomendada, em especial dos arts. 246, 520, 525, 988 e 1.042 do CPC (após a Lei nº 15.484/2026) e do art. 206-A do Código Civil.
+- Reforma do Código Civil (PL 4/2025): em novembro/2026 segue na comissão temporária do Senado, sem sanção; não foi tratada como lei.
+- Leis recentes com dados voláteis, sem afirmar data: Lei nº 15.040/2024 (seguro; vigência dia 10 ou 11/12/2025, fontes divergem), Lei nº 15.479/2026 (art. 529-A do CPC; vigência um ano após 30/7/2026) e Lei nº 15.484/2026 (relevância no recurso especial; art. 988 do CPC; regulamentação), Lei nº 15.252/2025 (limite da poupança impenhorável; não confirmada).
+- As tabelas dos resumos de Processo Civil M01 a M15 estão com colunas embaralhadas dentro de títulos (problema de formatação do material original, não corrigido porque os títulos não podem mudar nesta revisão).
+- Conteúdo deixado de fora para o material completo (listado por módulo): jurisprudência, súmulas não essenciais, doutrina minoritária e detalhes procedimentais.
+- Os módulos de Administrativo e Constitucional já publicados seguiram a regra anterior (com jurisprudência); a proposta de enxugá-los segue em aberto.
+- A publicação em produção depende de autorização expressa do proprietário; a prévia sem login depende de autorização para ler a chave do ambiente Preview.
+
+## Processo Civil M01–M15 — correção das tabelas dos resumos (19/11/2026)
+
+As tabelas dos resumos de Processo Civil M01 a M15 vieram de PDF com as linhas e colunas misturadas (texto de cada célula embaralhado, linhas viradas em títulos e cabeçalhos colados no fim de parágrafos). Foram reconstruídas 29 tabelas como tabelas de verdade (classe `cpc-comparison`, a mesma já usada pelo leitor), sem alterar o conteúdo jurídico revisado:
+- M01 (2), M02 (1), M03 (2), M04 (2), M05 (3), M06 (1), M07 (1), M08 (1), M09 (2), M10 (2), M11 (2), M12 (2), M13 (3), M14 (2), M15 (3).
+- Também foram arrumados títulos quebrados em duas linhas (M02, M04), parágrafos cortados no meio da frase (M06, M10), três falsos títulos de M01 que eram linhas de tabela, rótulos colados ao texto ("Síntese dos conceitos", "Aspectos complementares...", "Base legal...", agora em negrito) e dois rótulos soltos sem conteúdo ("Leitura normativa e fontes", M09 e M10, removidos).
+- Na tabela do contraditório (M01), "fundamento novo decisivo" passou a "fundamento novo, ainda não debatido" (art. 10); na tabela do art. 15, "quando compatível" passou a "na ausência de normas próprias". Na tabela do M03, a terceira linha (reunião sem conexão) foi redigida com base no art. 55, § 3º.
+- O texto corrido (`raw`) e a lista de títulos (`heads`) foram regenerados a partir do HTML.
+- Estilo no celular (`ui/cpc-apostila-reading-v1.css`): as tabelas passaram a caber na tela (sem largura mínima, com hifenização), em vez de esconder a terceira coluna. Verificado em navegador de teste a 430 px e 360 px de largura. Versões atualizadas: `index.html` (`?v=20261119cpctabelas1`) e `ui/cpc-apostila-reading-v1.js` (CSS `?v=20261119tabelas1`).
+- Observação: nos módulos M03, M05 e M08 o leitor também injeta suas próprias tabelas comparativas (por título), e no M05 há sobreposição parcial com a tabela de litisconsórcio restaurada; não foi alterado.
+
+## Direito Civil M14 — retirada das três decisões de jurisprudência (19/11/2026)
+
+A pedido do proprietário, foram retiradas do Civil M14 (Direito de Família) as três decisões que o aprovador havia mantido por serem clássicas: **ADI 4277 e ADPF 132** (união homoafetiva), **Tema 622 do STF** (multiparentalidade) e **Súmula 377 do STF** (com a observação do STJ sobre o esforço comum). No lugar entrou a regra de lei: art. 226 da Constituição (casamento, união estável e comunidade formada por qualquer dos pais e seus descendentes); art. 227, § 6º, da Constituição e arts. 1.596 e 1.593 do Código Civil (igualdade entre os filhos; parentesco natural ou civil); arts. 1.687 e 1.641 do Código Civil (separação convencional e obrigatória). Continuam no módulo, por fazerem parte do texto original e não terem sido tratadas neste pedido: Tema 1.236/STF (título do tópico, que não pode ser alterado), Súmulas 358 e 364 do STJ e Temas 809 e 498 do STF; o conteúdo retirado fica para o material completo. Versão do arquivo atualizada em `central-v119.html` (`?v=20261119civilm14semjuris1`).
+
+## Direito Civil M14 — retirada das demais citações de jurisprudência (19/11/2026)
+
+A pedido do proprietário, foram retiradas do Civil M14 (Direito de Família) as citações que restavam: **Tema 1.236/STF** (inclusive do título do tópico, que passou a "Regime de bens após os 70 anos", e do fecho do tópico), **Súmula 358/STJ**, **Súmula 364/STJ** e **Temas 809 e 498 do STF**. No tópico do regime de bens após os 70 anos, o texto passou a trazer só a regra da lei (art. 1.641, II: separação obrigatória de bens para a pessoa maior de 70 anos; art. 1.653: pacto antenupcial por escritura pública); a possibilidade de afastar essa regra por escritura pública, reconhecida pelo STF, ficou fora da versão de revisão e fica para o material completo. Na união estável, saiu a frase sobre a equiparação do regime sucessório do companheiro ao do cônjuge. Não há mais citação de decisão judicial no Civil M14. Versão do arquivo em `central-v119.html`: `?v=20261119civilm14semjuris2`. Administrativo e Constitucional permanecem como publicados (decisão do proprietário).
+
+## Direito Civil M14 — exceção dos 70 anos restaurada sem citar a decisão (19/11/2026)
+
+A pedido do proprietário, o tópico "Regime de bens após os 70 anos" voltou a trazer a possibilidade de afastar a separação obrigatória por escritura pública, agora como regra explicada e sem citar decisão judicial: o texto informa que o art. 1.641, II, não traz exceção e que o entendimento aplicado hoje admite que cônjuges e companheiros a afastem por manifestação expressa de vontade em escritura pública (art. 1.653 para a forma). Não há citação de tema, súmula ou tribunal no módulo. Versão do arquivo em `central-v119.html`: `?v=20261119civilm14semjuris3`.
+
+## Direito Penal M01–M17 e Processo Penal M01–M22 — revisão jurídica (20/11/2026)
+
+Mesma regra do Civil e do Processo Civil: cada módulo teve um revisor, um aprovador independente e a regra enxuta do proprietário (sem doutrina minoritária nem jurisprudência detalhada, salvo muito batida e importante). Texto só na branch de trabalho; nada publicado.
+
+**Direito Penal.** Além do texto, as 24 tabelas dos resumos (M02 a M17) estavam achatadas em texto corrido porque o leitor descartava o formato delas; os 16 leitores (`ui/native-study-reader-m02..m17.js`) passaram a reconhecer as tabelas e desenhá-las (no celular aparecem como cartões por linha, conferido a 430 px). Versões: leitores e `content/penal/leituras-*` em `?v=20261120penrev1` (`central-v119.html` e lista offline).
+
+**Processo Penal.** Texto em `content/cpp/leituras-*` (sem tabelas), versão `?v=20261120cpprev1`.
+
+
+### Direito Penal M01
+
+O módulo está juridicamente correto e didático. As referências constitucionais (art. 5º, XXXIX, XLV a XLIX) e o art. 1º do Código Penal estão certas, assim como os quatro vetores da insignificância usados pelo STF e a distinção entre interpretação,…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+
+Pendências (não aplicadas):
+- Opcional, sem edição: na seção 3.2, a expressão 'A Constituição veda, entre outras, penas...' lista exatamente as vedações do art. 5º, XLVII (perpétua, trabalhos…
+- Opcional, sem edição: a alternatividade como quarto critério do conflito aparente (mnemônico ESCA) segue a corrente que a inclui; parte da doutrina a trata como…
+
+### Direito Penal M02
+
+O módulo está juridicamente correto e enxuto. Conferi arts. 2º a 12 do CP, art. 5º, XL e art. 105, I, i da CF, arts. 2º e 4º da LCP e a Súmula 501 do STJ, e não encontrei erro de artigo, pena, prazo ou requisito. Propus apenas um ajuste de precisão: a…
+
+- **Precisao** (E1): A retroatividade da lei penal mais benéfica é obrigatória (garantia constitucional), não uma faculdade do juiz; 'pode' induz a erro em prova.
+- **Adicional** (A1): O texto original cita a súmula sem dizer a que leis ela se refere. O enunciado oficial é: 'É cabível a aplicação retroativa da Lei n. 11.343/2006, desde que o resultado…
+- **Adicional** (A2): Pelo mesmo fundamento de E1: a aplicação da lei mais benéfica, inclusive a intermediária, é obrigatória (CF, art. 5º, XL; CP, art. 2º, parágrafo único). 'Pode' sugere…
+
+Pendências (não aplicadas):
+- Trecho sobre lex tertia/Súmula 501 do STJ: o texto afirma a vedação de combinação de leis de forma ampla, mas a súmula trata da Lei 11.343/2006 x Lei 6.368/1976 e há…
+- Frase 'O aluno deve sempre perguntar...' (item 6.3): uso de 'sempre' é recomendação didática, não afirmação jurídica; mantida.
+
+### Direito Penal M03
+
+O módulo está juridicamente sólido e enxuto. Conferi os arts. 13 a 19 do CP (causalidade, omissão imprópria e garantidor, tentativa, desistência voluntária, arrependimento eficaz e posterior, crime impossível, dolo, culpa e preterdolo) e os percentuais de…
+
+- **Precisao** (E1): O art. 18, parágrafo único, do CP não admite exceção: salvo os casos expressos em lei, ninguém é punido por fato previsto como crime senão quando o pratica dolosamente.…
+
+Pendências (não aplicadas):
+- Item 5.2: a frase 'vontade dirigida à consumação' pode soar incompatível com a tentativa em dolo eventual (admitida pela doutrina majoritária). Não editei por ser tema…
+- Seção 2.3 (crime formal): a tabela diz que a consumação ocorre 'na etapa típica anterior ao resultado ulterior'. Está correto, mas é formulação abstrata; não editei por…
+
+### Direito Penal M04
+
+O módulo está juridicamente sólido: os arts. 23, 24 (incluindo o § 2º, redução de um a dois terços), 25 (caput e parágrafo único) e o excesso do art. 23, parágrafo único, estão descritos corretamente e sem afirmações absolutas indevidas. Há apenas duas…
+
+- **Precisao** (E1): A frase original sugere que a justificante poderia, em alguns casos, afastar a tipicidade. No modelo adotado (tipicidade como indício de ilicitude), a causa de…
+- **Precisao** (E2): Aproxima o texto da redação do parágrafo único do art. 25 (Lei nº 13.964/2019), que se refere a agente de segurança pública e a vítima mantida refém durante a prática de…
+- **Adicional** (A1): O § 1º diz apenas: 'Não pode alegar estado de necessidade quem tinha o dever legal de enfrentar o perigo.' A redação atual ('não pode invocar indistintamente'; 'não…
+
+Pendências (não aplicadas):
+- Art. 24, § 1º: o texto diz que quem tem dever legal de enfrentar o perigo 'não pode invocar indistintamente' o estado de necessidade e que isso 'não impõe agir quando a…
+- Projetos de lei em tramitação alteram ou pretendem alterar o art. 25 (por exemplo, PL 748/2024, PL 2.693/2024, PL 5.013/2026 e PL 2.877/2026). Nenhum foi confirmado como…
+
+### Direito Penal M05
+
+O módulo está juridicamente correto na quase totalidade: arts. 20, 21, 22, 26, 28, 73 e 74 do CP estão bem atribuídos, e as frações do art. 21 (um sexto a um terço) conferem. Há apenas um ponto de terminologia a corrigir no quadro comparativo: o erro de tipo…
+
+- **Correcao** (E1): No erro de tipo essencial, o dolo é excluído; se o erro era evitável, responde-se por crime culposo, desde que haja previsão legal. "Culpa eventual" não é o termo…
+- **Adicional** (A1): O art. 28, II, do CP afirma que a embriaguez voluntária ou culposa NÃO exclui a imputabilidade penal, sem ressalva. 'Automaticamente' sugere que, em alguns casos,…
+- **Adicional** (A2): Alinha o quadro ao art. 28, II, e à correção de A1; 'por si só' reforça a ideia de que poderia excluir.
+- **Adicional** (A3): Texto legal: §1º 'é isento de pena' (e não 'pode afastar'); §2º prevê redução de um a dois terços quando o agente não possuía a plena capacidade. Torna o 'regime…
+
+Pendências (não aplicadas):
+- Sem edição, apenas observação: na seção 02, "A embriaguez voluntária ou culposa também não a exclui automaticamente" poderia sugerir que às vezes exclui; o art. 28, II,…
+- Sem edição, apenas observação: o art. 22 do CP fala em "coação irresistível"; o módulo usa "coação moral irresistível", que é a leitura doutrinária majoritária (a coação…
+
+### Direito Penal M06
+
+O módulo está juridicamente correto e enxuto. Conferi o art. 29 (caput e §§ 1º e 2º), o art. 30 e o art. 31 do Código Penal: as frações (um sexto a um terço; aumento até metade), a regra da incomunicabilidade e a exigência de ao menos tentativa estão certas.…
+
+- **Precisao** (E1): 'Regime distinto' é vago e pode induzir a erro; a reincidência é circunstância pessoal (CP, art. 67) e não elementar, logo não se comunica ao partícipe ou coautor (art.…
+
+Pendências (não aplicadas):
+- Cooperação dolosamente distinta e participação de menor importância (art. 29, §§ 1º e 2º) conferidas em fontes secundárias (USP, TJDFT, Trilhante), sem divergência.
+- Na frase 'Na autoria incerta ... o tratamento probatório deve respeitar a presunção de inocência', não editei: está correta, embora genérica (a consequência usual é…
+
+### Direito Penal M07
+
+O texto é genérico e prudente, e os artigos citados (32, 33, 44, 59, 61 a 66, 63 e 64, 68, 69, 70, 71, 75 e 77) estão corretos. Não foram encontrados valores nem frações desatualizados, porque o texto evita números como o teto de 40 anos do art. 75 (Lei nº…
+
+- **Correcao** (E1): O art. 70, segunda parte, do CP diz que as penas aplicam-se cumulativamente (não é faculdade do juiz) se a ação ou omissão é dolosa e os crimes resultam de desígnios…
+- **Adicional** (A1): O módulo trata do art. 75 sem dizer o valor do limite. Esse número é o dado essencial e foi elevado de 30 para 40 anos pela Lei nº 13.964/2019 (vigência em 23/01/2020; o…
+- **Adicional** (A2): Dois furtos em datas separadas são crimes da mesma espécie, o caso típico de análise de continuidade delitiva. Apresentar só o concurso material pode induzir a erro e…
+
+Pendências (não aplicadas):
+- Art. 71, parágrafo único: confirmado por fontes secundárias (crimes dolosos, vítimas diferentes, violência ou grave ameaça à pessoa, aumento até o triplo, observados o…
+- Art. 75: o texto do módulo não cita o número do limite, o que evita desatualização após a Lei nº 13.964/2019 (40 anos, confirmado em Migalhas e Câmara dos Deputados). Se…
+
+### Direito Penal M08
+
+O módulo está juridicamente correto e bem enxuto: faixas do art. 109 (20, 16, 12, 8, 4 e 3 anos), art. 110 (aumento de um terço só na PPE), art. 111, art. 119, art. 10 e a decadência de seis meses conferem com a lei. Há duas correções pontuais: a frase vaga…
+
+- **Precisao** (E1): Troca a referência vaga e volátil ('ressalvas recentes') pela regra atual do art. 115 do CP, que desde julho de 2025 exclui a redução quando o crime envolve violência…
+- **Precisao** (E2): O perdão do ofendido é ato bilateral: sem aceitação do querelado não produz efeito. 'Em regra' sugere exceções que não existem.
+- **Adicional** (A1): A Lei nº 15.438/2026 (18/6/2026; publicada no DOU em 19/6/2026, vigência imediata) acrescentou parágrafo único ao art. 103 do CP, fixando 12 meses para a ofendida…
+
+Pendências (não aplicadas):
+- Frase 'O início da PPE requer atenção à jurisprudência atual do STF e à modulação dos precedentes': não está errada. O STF (ARE 848.107, Tema 788, Plenário, julho/2023)…
+- O módulo não menciona as causas suspensivas do art. 116, III e IV, do CP (Lei nº 13.964/2019: embargos de declaração e recursos aos Tribunais Superiores inadmissíveis;…
+
+### Direito Penal M09
+
+O módulo está juridicamente sólido e enxuto. Conferi feminicídio (art. 121-A), vicaricídio (art. 121-B, Lei nº 15.384/2026), alteração do art. 147-B (uso de tecnologia, Lei nº 15.123/2025), art. 154-A após a Lei nº 14.155/2021 e injúria racial na Lei nº…
+
+- **Precisao** (E1): A natureza incondicionada decorre da ADI 4424 (STF); o STJ a consolidou na Súmula 542. Atribuir apenas ao STJ é incompleto.
+- **Precisao** (E2): Só a injúria por raça, cor, etnia ou procedência nacional migrou para a Lei nº 7.716/1989 (art. 2º-A); as demais injúrias preconceituosas (religião, idoso, deficiência)…
+
+Pendências (não aplicadas):
+- Art. 121-B (vicaricídio): descrição do módulo confere com as fontes (descendente, ascendente, dependente, enteado ou pessoa sob guarda/responsabilidade direta; fim de…
+- Há notícia de uma Lei nº 15.438/2026 sobre prazo decadencial em violência doméstica; não foi possível verificar o texto, e não afeta o módulo (lesão doméstica é…
+
+### Direito Penal M10
+
+O módulo está juridicamente sólido e enxuto: artigos (155, 157, 158, 159, 163, 168, 168-A, 171, 171-A, 180, 181 a 183), Súmula 511/STJ e Súmula 610/STF estão corretos, e as referências a Lei nº 15.517/2026 (combustíveis) e às alterações de 2026 no estelionato…
+
+- **Precisao** (E1): O art. 157, caput, fala em reduzir a vítima à impossibilidade de resistência, por qualquer meio. 'Redução da possibilidade' é expressão imprecisa e poderia sugerir que…
+- **Precisao** (E2): Identifica a lei (padrão de citação 'Lei nº X/AAAA') em vez de referência vaga a 'alterações em 2026'. A lei tratou do estelionato, inclusive com revogação do § 5º do…
+- **Precisao** (E3): Evita afirmação absoluta ('sempre') sobre um roteiro didático de classificação, que é método de estudo e não regra legal.
+
+Pendências (não aplicadas):
+- Lei nº 15.397/2026 teria alterado também outros pontos (pena do furto simples, novos incisos do art. 157, § 2º, relativos a celulares/dispositivos eletrônicos, e criação…
+- Frase 'Em 2026 a Lei nº 15.517 trouxe alterações específicas relacionadas a subtrações de combustíveis, petróleo e derivados' confere com a Lei nº 15.517, de 22/09/2026…
+
+### Direito Penal M11
+
+O módulo está juridicamente sólido e bem hedgeado: as distinções entre falsidade material e ideológica, os artigos citados (289 a 296, 297, 298, 299, 304, 305, 307, 308, 311 e 311-A) e as ressalvas sobre potencialidade lesiva, consunção e uso do documento…
+
+- **Precisao** (E1): O núcleo do art. 311-A é utilizar ou divulgar, indevidamente, conteúdo sigiloso de certame, com a finalidade especial prevista no tipo; o verbo obter não consta do tipo.
+
+Pendências (não aplicadas):
+- Busca por leis recentes: não foi encontrada alteração dos arts. 289 a 311-A em 2025/2026. A Lei nº 15.397/2026 altera crimes patrimoniais (inclusive estelionato), mas o…
+- Sugestão (sem edição): o item 04 diz que o art. 304 se relaciona aos tipos de falsificação antecedente; está correto (arts. 297 a 302), e a ressalva sobre absorção está…
+
+### Direito Penal M12
+
+O módulo está juridicamente sólido e enxuto. Artigos citados (213, 215, 215-A, 216-A, 216-B, 217-A, 218, 218-A, 218-B, 218-C, 227 a 230) e os conceitos (subsidiariedade da importunação, vulnerabilidade etária absoluta, segredo de justiça) conferem com a…
+
+- **Precisao** (E1): A Lei nº 15.280/2025 alterou o caput do art. 218-C apenas quanto à pena (de 1 a 5 anos para 4 a 10 anos de reclusão e multa); dizer que a redação do tipo foi modificada…
+- **Adicional** (A1): O módulo não informa a natureza da ação penal, ponto básico e recorrente do tema. Desde a Lei nº 13.718/2018 o art. 225 do CP prevê ação penal pública incondicionada…
+- **Adicional** (A2): A Lei nº 15.353/2026 (8/03/2026) acrescentou o § 4º-A ao art. 217-A, declarando absoluta e insuscetível de relativização a presunção de vulnerabilidade da vítima menor…
+
+Pendências (não aplicadas):
+- A Lei nº 15.280/2025 também elevou as penas dos arts. 217-A, 218, 218-A e 218-B e revogou o § 1º do art. 218-B. O módulo não cita penas desses artigos nem o § 1º do…
+- Art. 213: o módulo resume a conduta como 'praticar ou permitir outro ato libidinoso' (o tipo diz 'praticar ou permitir que com ele se pratique outro ato libidinoso'). É…
+
+### Direito Penal M13
+
+O módulo está juridicamente sólido: os artigos citados (312, 313, 316, 317, 319, 327, 328 a 334-A, 339 a 342, 344, 347 a 349 e 359-A a 359-H) e as distinções entre os crimes estão corretos, sem afirmações absolutas indevidas e sem súmulas ou dados voláteis.…
+
+- **Correcao** (E1): “Assumir” e “inscrever” não são verbos nucleares: nos arts. 359-B e 359-C o verbo é ordenar ou autorizar (a assunção de obrigação e a inscrição em restos a pagar são o…
+- **Correcao** (E2): “Fato” é genérico; o art. 339 (redação da Lei nº 14.110/2020) exige imputação de crime, infração ético-disciplinar ou ato ímprobo.
+- **Precisao** (E3): O art. 334 também alcança o imposto devido pelo consumo da mercadoria; a expressão “nas condições legais” era vaga e não consta do tipo.
+- **Precisao** (E4): Alinha o vocabulário ao texto do art. 334, que não se limita a tributo de importação/exportação.
+
+Pendências (não aplicadas):
+- A OAB anunciou em 2025 ação no STF contra as expressões “infração ético-disciplinar” e “ato ímprobo” do art. 339; não foi confirmado andamento ou julgamento. Convém…
+- Nenhuma lei de 2025/2026 encontrada alterando arts. 312 a 333 do CP (Leis nº 15.397/2026 e 15.358/2026 tratam de patrimônio e domínio social estruturado); há apenas…
+
+### Direito Penal M14
+
+O módulo está juridicamente sólido e enxuto: art. 1º, §§ 1º e 2º, conceito de agente público (art. 2º), ação penal pública incondicionada (art. 3º), art. 22 (ingresso em domicílio), art. 319 do CP e a distinção entre abuso, prevaricação e falta administrativa…
+
+- **Precisao** (E1): O art. 4º, parágrafo único, condiciona a inabilitação (1 a 5 anos) e a perda do cargo/mandato/função à reincidência em crime de abuso de autoridade e à declaração…
+- **Adicional** (A1): Art. 3º, caput: ação penal pública incondicionada; § 1º: admite-se ação privada se a pública não for intentada no prazo legal, cabendo ao MP aditar a queixa, repudiá-la…
+- **Adicional** (A2): Art. 7º: as responsabilidades civil e administrativa são independentes da criminal, não se podendo mais questionar a existência ou a autoria do fato quando decididas no…
+
+Pendências (não aplicadas):
+- O item 03 cita 'arts. 9º a 21' de forma ampla; o intervalo é compatível com o texto da lei (art. 9º prisão manifestamente ilegal até o art. 21 presos de ambos os sexos…
+- PL nº 280/2026 (Senado) propõe novos tipos de abuso de autoridade, mas está em tramitação e não alterou a lei; nada a incluir no texto. Reconferir antes de publicar se…
+
+### Direito Penal M15
+
+O módulo está juridicamente sólido e prudente: a descrição do art. 1º, a ausência de rol fechado de crimes antecedentes, a autolavagem (com a distinção entre ato autônomo de ocultação e mero exaurimento) e o papel do COAF estão corretos. Não há afirmações…
+
+- **Precisao** (E1): Padrão do material: citar a lei pelo número e ano em vez de 'reforma de 2012'. A Lei nº 12.683/2012 suprimiu o rol de crimes antecedentes e passou a falar em 'infração…
+- **Correcao** (E2): A redação original sugeria que a condenação 'não definitiva' poderia ser exigida e usava expressão vaga ('em toda hipótese'; 'base probatória juridicamente suficiente').…
+- **Precisao** (E3): Os arts. 9º, 10 e 11 definem pessoas sujeitas, identificação/registros/políticas internas e comunicações; o art. 12 trata da responsabilidade administrativa (sanções),…
+- **Adicional** (A1): O texto sugere que a possibilidade de tentativa é incerta, mas a lei pune expressamente a tentativa no art. 1º, § 3º. Ajuste curto, sem acrescentar doutrina.
+
+Pendências (não aplicadas):
+- Lei nº 15.358/2026 (24/03/2026, marco legal de combate ao crime organizado) alterou a Lei nº 9.613/1998 (ao menos art. 2º, § 3º - competência Justiça Federal/Estadual;…
+- Lei nº 15.397/2026 (vigência 04/05/2026) tipificaria a cessão de conta (conta laranja) com reflexos na lavagem, segundo ConJur (2026-jun-09). Não verificado com 2 fontes…
+
+### Direito Penal M16
+
+O modulo esta, em geral, correto: a numeracao dos arts. 337-E a 337-P, a divisao entre tipos (337-E a 337-O) e multa (337-P) e a descricao de 337-E, 337-F, 337-H, 337-I, 337-K, 337-L, 337-M, 337-N e 337-O estao adequadas e sem afirmacoes absolutas. Ha duas…
+
+- **Precisao** (E1): A redação vaga omite o elemento típico central do art. 337-G: o patrocínio deve dar causa à instauração de licitação ou à celebração de contrato cuja invalidação vier a…
+- **Precisao** (E2): Dizer que o art. 321 tem 'estrutura mais ampla' é impreciso; o traço distintivo didático é o patrocínio por funcionário que se vale da qualidade de funcionário (art.…
+- **Correcao** (E3): O art. 337-J tutela o sigilo da proposta (devassá-lo ou dar a terceiro o ensejo de devassá-lo), e não genericamente o sigilo de informação relevante do procedimento.
+- **Precisao** (E4): Na tabela, o 'ponto decisivo' do art. 337-G é a invalidação decretada pelo Poder Judiciário; 'vínculo com contratação pública' é genérico e vale para todos os tipos do…
+- **Adicional** (A1): Art. 337-P: 'A pena de multa cominada aos crimes previstos neste Capítulo seguirá a metodologia de cálculo prevista neste Código e não poderá ser inferior a 2% (dois por…
+
+Pendências (não aplicadas):
+- Há divergência doutrinária sobre o art. 337-G ser crime próprio (funcionário público) ou comum; o texto proposto evita tomar posição.
+- Nenhum dado de pena aparece no módulo; não foi necessária correção de penas. Para referência: 337-E e 337-F, reclusão de 4 a 8 anos e multa; 337-J, detenção de 2 a 3…
+
+### Direito Penal M17
+
+O módulo está juridicamente correto e bem prudente na redação. Art. 5º, XLII, XLIII e XLIV da CF, art. 225, § 3º da CF e arts. 3º, 21, 22 e 24 da Lei nº 9.605/1998 estão descritos corretamente, e a superação da dupla imputação (STF e STJ) está bem apresentada…
+
+- **Enxugamento** (E1): Evita dado volátil ("recentes") em texto que será lido em datas diferentes; o sentido didático permanece.
+- **Precisao** (E2): O art. 317 do CP tem como núcleos solicitar, receber ou aceitar promessa de vantagem indevida; citar só "solicitar" deixa o conceito incompleto na lista de verbos…
+
+Pendências (não aplicadas):
+- Dupla imputação: afastada pelo STF (RE 548181/PR, 1ª Turma, 2013) e acompanhada pelo STJ (RMS 39.173/BA, 2015), conforme artigos e blogs jurídicos; o texto do módulo já…
+- Art. 24 da Lei nº 9.605/1998 usa "terá decretada sua liquidação forçada" (efeito obrigatório quando presente a hipótese legal); o texto do módulo diz "medida…
+
+### Processo Penal M01
+
+O módulo está correto e enxuto. O art. 3º-A, as ADIs 6.298, 6.299, 6.300 e 6.305 e o limite da competência do juiz das garantias (oferecimento da denúncia ou queixa, conforme o STF) estão certos. Só há uma melhoria de precisão: dizer quais são as exceções…
+
+- **Precisao** (E1): O texto cita exceções sem dizer quais; a frase curta nomeia as quatro principais, que o STF afastou do regime do juiz das garantias.
+- **Adicional** (A1): O texto original remete genericamente à jurisprudência do STF; a interpretação conforme ao art. 3º-A (Lei nº 13.964/2019) nas ADIs 6.298 etc. é o ponto mais batido e…
+
+Pendências (não aplicadas):
+- Algumas fontes secundárias ainda repetem 'recebimento da denúncia' (texto original do art. 3º-C); prevalece a interpretação do STF (oferecimento), que o módulo já adota.…
+- Não foi possível confirmar o teor exato da interpretação do STF sobre o art. 3º-A e a iniciativa probatória na instrução (art. 156); o módulo trata o ponto de forma…
+
+### Processo Penal M02
+
+O módulo está juridicamente sólido: arts. 1º, 2º e 3º do CPP, tempus regit actum, normas híbridas e Lei 9.099/1995 estão bem descritos. Há um único ajuste de precisão: a lei penal material mais favorável retroage de forma obrigatória (CF, art. 5º, XL), e não…
+
+- **Precisao** (E1): A retroatividade da lei penal benéfica é regra constitucional, não faculdade; 'podem' induz a erro e destoa do quadro final do módulo.
+- **Adicional** (A1): Padronização da citação ('Lei nº X/AAAA'). Conteúdo conferido: o art. 92 da Lei nº 9.099/1995 manda aplicar subsidiariamente o CPP e a LEP, e o art. 61 (Lei nº…
+
+Pendências (não aplicadas):
+- Não foi acrescentada a discussão sobre o marco temporal da retroatividade do art. 28-A (ANPP), por ser jurisprudência detalhada e ainda sujeita a divergência; fica para…
+- Marco temporal da retroatividade do ANPP (art. 28-A) é jurisprudência detalhada e ainda em evolução; corretamente fora do módulo.
+
+### Processo Penal M03
+
+O módulo está juridicamente sólido e prudente: prazos do art. 10, indiciamento (Lei 12.830/2013, art. 2º, § 6º), Súmula Vinculante 14 e arquivamento (art. 28 e ADIs do juiz das garantias) estão corretos e bem ressalvados. Só dois trechos estão vagos demais…
+
+- **Precisao** (E1): 'Limita a investigação' é vago; o art. 5º, § 4º, do CPP veda o início do inquérito sem a representação.
+- **Precisao** (E2): 'Relevante' é impreciso; o art. 5º, § 5º, exige requerimento de quem tenha qualidade para intentar a ação privada.
+
+Pendências (não aplicadas):
+- Texto exato da interpretação conforme do STF ao art. 28 (ADIs 6298, 6299, 6300 e 6305, proclamação em 24/08/2023) e a prorrogação do prazo para preso no art. 3º-B, § 2º…
+- STF (ADIs 6298 e outras, 24/08/2023): interpretação conforme ao art. 28 para o MP submeter a manifestação de arquivamento ao juiz, com controle de…
+
+### Processo Penal M04
+
+O módulo está correto em arts. 41, 395 (inépcia, falta de pressuposto/condição e falta de justa causa), 28-A (sem violência ou grave ameaça, pena mínima inferior a 4 anos, confissão) e na distinção renúncia x perdão. Apenas a expressão 'costuma ser' para o…
+
+- **Precisao** (E1): O prazo de seis meses a contar da ciência da autoria é regra legal (art. 38 CPP; art. 103 CP), com exceções especiais, e não mera tendência.
+- **Adicional** (A1): A Lei nº 15.438/2026, de 18/06/2026, sancionada sem vetos e em vigor desde a publicação (19/06/2026), ampliou de 6 para 12 meses a decadência do direito de queixa ou…
+
+Pendências (não aplicadas):
+- HC 185.913 (STF, concluído em 18/09/2024) confirmado como precedente sobre aplicação temporal do ANPP (Migalhas, ConJur); o módulo cita-o genericamente, sem edição.
+- Aplicação intertemporal da lei (fatos anteriores a 19/06/2026) é controvertida na doutrina; não foi incluída no módulo.
+
+### Processo Penal M05
+
+O módulo é genérico e didático, e não apresentou erro jurídico. Os conceitos de impedimento (vínculos objetivos) e suspeição (comprometimento da confiança na neutralidade), a titularidade da ação penal pelo MP, o papel do assistente de acusação, o direito ao…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+
+Pendências (não aplicadas):
+- Opcional para o material completo: art. 3º-A do CPP (Lei nº 13.964/2019, estrutura acusatória) e a decisão do STF nas ADIs 6298, 6299, 6300 e 6305 (agosto/2023) sobre o…
+- Opcional: art. 400-A e art. 474-A do CPP (Lei nº 14.245/2021) sobre dignidade da vítima e testemunhas na audiência; não inserido por ser conteúdo novo.
+
+### Processo Penal M06
+
+O módulo está juridicamente correto no essencial: art. 70 do CPP (consumação; último ato de execução na tentativa), art. 69 (critérios), arts. 72 e 73 (domicílio do réu e ação privada), competência territorial relativa e materia/pessoa/função absoluta. Foram…
+
+- **Precisao** (E1): Regra especial relevante e confirmada; o parágrafo já fala em regras especiais, e a frase apenas a exemplifica. Em pluralidade de vítimas aplica-se a prevenção (não…
+- **Precisao** (E2): A redação original podia levar a crer que o ex-agente sempre perde o foro; o STF (HC 232627 e Inq 4787, 2025, confirmado em embargos) mantém o foro após a saída do cargo…
+
+Pendências (não aplicadas):
+- O inteiro teor do acórdão do HC 232627 e dos embargos de declaração (2026) não foi lido; a tese foi extraída de notícias. Recomenda-se conferir a tese final antes de…
+- Base jurídica cita CF arts. 102, 105 e 109; poderia incluir art. 108 (TRFs) e art. 96, III (TJs), mas não é erro e a linha foi mantida.
+
+### Processo Penal M07
+
+O módulo está juridicamente correto no essencial: a lista de exceções do art. 95, os incidentes de falsidade e de insanidade mental, a restituição e as medidas assecuratórias estão bem descritos e com linguagem prudente. Há uma imprecisão: o quadro atribui ao…
+
+- **Precisao** (E1): Distinção central entre as três medidas, ausente do texto; sem ela o aluno confunde sequestro com hipoteca legal/arresto.
+- **Correcao** (E2): O sequestro atinge bens de origem ilícita; o ressarcimento com patrimônio lícito é objeto da hipoteca legal e do arresto.
+
+Pendências (não aplicadas):
+- BASE JURÍDICA cita 'arts. 92–154 e 118–144-A': não é erro, mas a segunda faixa já está contida na primeira (redundância); sugerida apenas simplificação futura, sem…
+- Verificado: art. 95 (cinco exceções), arts. 145-148 (falsidade), 149-154 (insanidade; suspensão do processo no art. 149, §2º), 118-124-A (Lei 13.964/2019 mexeu em arts.…
+
+### Processo Penal M08
+
+O módulo está correto e prudente: o art. 563 (nenhuma nulidade sem prejuízo), a preclusão das nulidades relativas e o aproveitamento dos atos estão bem tratados, e não há alteração legislativa recente nos arts. 563-573. O ponto a ajustar é a descrição da…
+
+- **Correcao** (E1): Reproduz fielmente o sentido do enunciado (falta de defesa = nulidade absoluta; deficiência só anula com prova de prejuízo).
+- **Precisao** (E2): Alinha o quadro ao texto da súmula e ao item 05, evitando a formulação vaga 'exame de prejuízo'.
+
+Pendências (não aplicadas):
+- Opcional (não editado para não acrescentar conteúdo): citar o art. 565 (parte não pode arguir nulidade a que deu causa ou para a qual concorreu) e o art. 572 (sanatória)…
+- A frase sobre nulidades absolutas e prejuízo é hedgeada ('conforme a situação') e coerente com a jurisprudência dominante; mantida.
+
+### Processo Penal M09
+
+O módulo está correto no essencial (art. 798 do CPP, art. 10 do CP, não aplicação dos dias úteis do CPC). Falta apenas dar precisão à prorrogação do vencimento e registrar a suspensão de prazos de 20 de dezembro a 20 de janeiro, que o CPP prevê desde a Lei nº…
+
+- **Precisao** (E1): Troca remissão vaga pela regra exata do § 3º e registra o art. 798-A, que flexibiliza a ideia de prazo contínuo sem interrupção.
+- **Precisao** (E2): Súmula central sobre termo inicial, em linha com o título da seção; texto da súmula conferido.
+- **Precisao** (E3): Retira o absoluto 'jamais' e diz exatamente o que não se deve confundir.
+
+Pendências (não aplicadas):
+- Seção 04: a expressão 'obstáculo relevante alheio à atuação da parte' é genérica; o art. 798, § 4º do CPP trata de impedimento do juiz, força maior ou obstáculo judicial…
+- Súmula 310 do STF (intimação na sexta-feira) combina com o exemplo inicial, mas há debate sobre o encaixe com a regra de exclusão do dia do começo; não incluída.
+
+### Processo Penal M10
+
+O módulo está juridicamente correto nas linhas gerais (art. 366, hora certa, art. 570). Os ajustes são de precisão: o art. 353 diz que o réu fora da jurisdição será citado por precatória, o art. 366 fala em constituir advogado, a hora certa leva à nomeação de…
+
+- **Precisao** (E1): O CPP usa linguagem imperativa: réu fora do território do juízo processante será citado mediante precatória.
+- **Precisao** (E2): A seção trata de cooperação e omitia a hipótese do exterior; frase curta com a regra do art. 368.
+- **Correcao** (E3): Texto legal: nem constituir advogado.
+- **Precisao** (E4): 'Automaticamente' sugere que a suspensão poderia incidir; a regra é a nomeação de defensor dativo e a continuidade do feito.
+- **Precisao** (E5): Troca frase genérica pela regra efetiva do art. 370; Defensoria decorre de sua lei orgânica (LC 80/1994).
+
+Pendências (não aplicadas):
+- Súmula 415 do STJ (suspensão da prescrição do art. 366 regulada pelo máximo da pena) e Tema 438 do STF sobre o prazo da suspensão têm tratamento controverso nas fontes;…
+- Exigência de decisão judicial expressa para suspender (STJ, 2025) é jurisprudência recente e detalhada; fica para o material completo.
+
+### Processo Penal M11
+
+O módulo é enxuto e juridicamente correto. Art. 381 (requisitos), art. 383 (emendatio), art. 384 (mutatio, com aditamento e defesa), art. 386 (fundamentos de absolvição), art. 387 (valor mínimo de reparação) e art. 68 do CP (dosimetria trifásica) estão bem…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+
+Pendências (não aplicadas):
+- A frase sobre reparação mínima do dano (observados requerimento, prova e contraditório) está compatível com a jurisprudência do STJ, mas o Tema 1.389 do STJ (exigência…
+- Não foi localizada lei de 2026 que altere os arts. 381-393 do CPP; Lei 15.487/2026 (crimes digitais/IA) altera o CPP, mas o conteúdo não foi confirmado quanto à sentença.
+
+### Processo Penal M12
+
+O módulo está correto e prudente. O art. 155 (exceção para provas cautelares, não repetíveis e antecipadas), o art. 157, o art. 158 e os arts. 158-A a 158-F (cadeia de custódia) estão bem referidos. A descrição do Tema Repetitivo 1.258 do STJ (julgado em…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+
+Pendências (não aplicadas):
+- Opcional (não editado, para manter enxuto): o art. 158 admite exame direto ou indireto e o art. 167 permite prova testemunhal supletiva quando desaparecem os vestígios;…
+- Lei 15.272/2025 (art. 310-A do CPP, coleta de material biológico com cadeia de custódia) existe, mas é tema periférico ao módulo; não incluída.
+
+### Processo Penal M13
+
+O módulo está juridicamente correto e enxuto. Confirmei que a Lei 15.272/2025 (arts. 310, §§ 5º e 6º, 312, §§ 3º e 4º, e 310-A do CPP) e a Lei 15.358/2026 (audiência de custódia por videoconferência como regra, art. 310) existem e foram descritas de forma…
+
+- **Precisao** (E1): A redação anterior era imprecisa ("nas condições da tese"); aproxima-se do texto literal da Súmula 145 do STF.
+- **Enxugamento** (E2): Frase de aviso genérico, sem conteúdo jurídico; a lei é recente e objeto de questionamento, então a remissão à regulamentação é dado volátil.
+- **Precisao** (E3): No quadro, "sinais indicativos" não consta do art. 302, IV; alinha ao texto legal.
+- **Adicional** (A1): Padronização da citação (Lei nº X/AAAA). Sem mudança de mérito.
+- **Adicional** (A2): Padronização da citação (Lei nº X/AAAA). Sem mudança de mérito.
+
+Pendências (não aplicadas):
+- Há ADI/pareceres (IAB) questionando partes da Lei 15.358/2026; módulo não afirma nada sobre isso. Acompanhar.
+- A BASE JURÍDICA cita arts. 282-310-A: o art. 310-A existe (Lei 15.272/2025), portanto está correto.
+
+### Processo Penal M14
+
+O módulo está correto nas linhas gerais (arts. 311-316, 319, Lei 7.960/1989, fiança policial no limite de quatro anos, não automaticidade da soltura após o prazo do art. 316). Proponho dois ajustes de precisão: o prazo de reavaliação do art. 316, parágrafo…
+
+- **Precisao** (E1): Indica o prazo legal do parágrafo único do art. 316, coerente com a tese de que o atraso não gera soltura automática, já descrita no módulo.
+- **Correcao** (E2): O limite do art. 322 é requisito legal, não mera regra geral; "em regra" sugere exceções inexistentes no texto (as demais hipóteses vão ao juiz).
+- **Adicional** (A1): Padronização da citação e frase sem sujeito completo ('Lei ... reforçou' sem artigo). Sem mudança de mérito; a lei inseriu o § 3º (critérios de periculosidade) e o § 4º…
+- **Adicional** (A2): Padronização da citação (Lei nº X/AAAA).
+
+Pendências (não aplicadas):
+- Frase sobre a 'leitura estrita' da jurisprudência do STF sobre a temporária (ADIs 3360 e 4109) foi mantida por ser genérica; não confirmei a formulação exata em segunda…
+- A Lei 15.272/2025 inseriu os §§ 3º e 4º no art. 312 (critérios de periculosidade e vedação de decretar preventiva apenas com base em gravidade abstrata); fontes divergem…
+
+### Processo Penal M15
+
+O módulo está correto no essencial: critérios de rito (4 anos), rejeição, resposta em 10 dias, absolvição sumária e ordem da audiência com interrogatório ao final. Há apenas ajustes de precisão: o texto do art. 395, II, uma lista de absolvição sumária que…
+
+- **Precisao** (E1): O art. 395, II, fala em pressuposto processual ou condição para o exercício da ação penal; 'requisito processual' não é a expressão legal.
+- **Correcao** (E2): 'Como' sugere rol exemplificativo, mas o art. 397 traz rol fechado (e o próprio quadro do módulo diz 'hipóteses taxativas').
+- **Precisao** (E3): O prazo de 10 dias para a resposta está no art. 396, caput; o art. 396-A trata do conteúdo da resposta.
+- **Adicional** (A1): Coerencia com E3: o prazo de dez dias esta no art. 396, caput; o art. 396-A trata do conteudo da resposta.
+
+Pendências (não aplicadas):
+- Possível nuance não incluída por ser jurisprudência detalhada: aplicação dos arts. 395 a 397 a procedimentos especiais (art. 394, par. 4) e ao Júri (divergência no STJ).
+- Observacao sem edicao: art. 394, par. 4, estende os arts. 395 a 398 a todos os procedimentos penais de primeiro grau; o modulo so diz que procedimentos especiais tem…
+
+### Processo Penal M16
+
+O módulo está juridicamente correto e bem genérico: princípios do art. 5º, XXXVIII, da CF, pronúncia (materialidade e indícios suficientes de autoria ou participação, art. 413), impronúncia, absolvição sumária, desclassificação, sete jurados e apelação do…
+
+- Sem alteração: revisor e aprovador não encontraram erro de alta confiança.
+- Sugestão do aprovador **não aplicada** (A1): A Lei nº 15.358/2026 (art. 38) alterou o art. 78, I, do CPP, confirmado em Senado, Câmara, legjur, ConJur e Migalhas. O módulo afirma o Júri como regra geral sem…
+
+Pendências (não aplicadas):
+- Lei 15.358/2026 (Lei Antifacção, março/2026) alterou o art. 78, I, do CPP para ressalvar da prevalência do Júri os homicídios (inclusive tentados) cometidos por membros…
+- Execução imediata da pena após condenação pelo Júri (art. 492, I, e, do CPP, Lei 13.964/2019, e entendimento do STF sobre soberania dos veredictos): não consta do…
+
+### Processo Penal M17
+
+Módulo genérico e sem erros jurídicos graves. A Súmula 542/STJ está correta (ação penal pública incondicionada na lesão corporal em violência doméstica contra a mulher). Há uma única imprecisão útil: a defesa prévia da Lei de Drogas é regra do art. 55 (dez…
+
+- **Precisao** (E1): A Lei 11.343/2006 prevê defesa prévia escrita em dez dias, antes do juízo de admissibilidade da denúncia; a expressão 'em hipóteses da lei' era vaga e sugeria cabimento…
+
+Pendências (não aplicadas):
+- Exemplo da seção 05 cita a mudança jurisprudencial do interrogatório ao final (STF, HC 127900, que estendeu o art. 400 do CPP aos ritos especiais, inclusive Lei de…
+- Considerar, no material completo, a Lei 14.550/2023 (medidas protetivas da Lei Maria da Penha independem de tipificação penal, de ação penal ou de inquérito): não…
+
+### Processo Penal M18
+
+Prazo de quinze dias e texto da Súmula 330/STJ estão corretos. Faltava o requisito central do art. 514: a notificação para resposta preliminar vale para crimes afiançáveis (os crimes funcionais típicos, arts. 312 a 326 do CP, são afiançáveis), e o rito se…
+
+- **Correcao** (E1): O art. 514 do CPP começa com 'Nos crimes afiançáveis'; a expressão 'hipóteses legais' omitia o requisito literal.
+- **Precisao** (E2): O rito dos arts. 513 a 518 é reservado, em regra, a crimes funcionais típicos; a frase original ficava vaga.
+
+Pendências (não aplicadas):
+- Jurisprudência de que o art. 514 não se aplica a quem já deixou o cargo (STF, RHC 137455; STJ) e de que a falta da defesa preliminar é nulidade relativa (exige protesto…
+- Seção 04 diz que a Súmula 330 'não significa que toda defesa prévia seja inútil': formulação aceitável, mantida.
+
+### Processo Penal M19
+
+O módulo está correto e enxuto: art. 579 (fungibilidade), art. 617 (reformatio in pejus) e a regra de prazos penais estão bem apresentados. Há uma única frase vaga e potencialmente enganosa sobre nulidades na reformatio in pejus, que foi trocada pela regra…
+
+- **Correcao** (E1): A frase original, genérica, sugeria que nulidades poderiam ser corrigidas em prejuízo do réu mesmo sem recurso da acusação, o que contraria a Súmula 160 do STF (texto: É…
+
+Pendências (não aplicadas):
+- A Súmula 160 tem aplicação discutida quanto a nulidades absolutas (incompetência); a edição se limita ao texto literal da súmula.
+- Art. 798-A do CPP (Lei 14.365/2022, suspensão de prazos no fim do ano) não foi confirmado de forma consistente; o módulo não o cita e não foi editado.
+
+### Processo Penal M20
+
+Prazos e artigos do módulo conferem (RESE: 5 dias, art. 586, razões art. 588; apelação art. 593; embargos de declaração art. 619; embargos infringentes art. 609, p. único; agravo em execução art. 197 da LEP). Foram propostos dois ajustes: citar de forma curta…
+
+- **Precisao** (E1): A lei regulamentou o art. 105, § 2º, da CF e exige a demonstração da relevância no recurso especial para recursos contra acórdãos publicados após a vigência; é mudança…
+- **Correcao** (E2): O módulo trata da carta testemunhável, disciplinada nos arts. 639 a 646 do CPP; a faixa original terminava no art. 638.
+
+Pendências (não aplicadas):
+- Sites oficiais não foram abertos; conferência por fontes secundárias.
+- Aplicação do filtro de relevância a recursos criminais (presunção do art. 105, § 3º, I, da CF) tem divergência doutrinária e regulamentação regimental do STJ; por isso o…
+
+### Processo Penal M21
+
+O módulo está juridicamente correto e enxuto. Conferidos: infração de menor potencial ofensivo (contravenções e crimes com pena máxima até dois anos, art. 61), termo circunstanciado e não lavratura de flagrante/fiança (art. 69, parágrafo único), efeito da…
+
+- **Adicional** (A1): O art. 41 da Lei nº 11.340/2006 afasta a Lei nº 9.099/1995 dos crimes praticados com violência doméstica e familiar contra a mulher, independentemente da pena prevista…
+
+Pendências (não aplicadas):
+- Opcional (não editado, para manter enxuto): o módulo diz apenas 'ressalvadas exclusões e regras especiais'; não menciona expressamente a exclusão em violência doméstica…
+- Nenhuma alteração de 2025-2026 nos arts. 61, 82 ou 89 da Lei nº 9.099/1995 encontrada nas buscas.
+
+### Processo Penal M22
+
+O módulo está em geral correto: HC (CF art. 5º, LXVIII; CPP arts. 647-667), legitimidade ampla sem advogado (art. 654), art. 648 como rol ilustrativo, MS residual frente a HC e habeas data (CF art. 5º, LXIX; Lei 12.016/2009). Uma única imprecisão: as…
+
+- **Precisao** (E1): O art. 621 do CPP fala em sentença contrária ao texto expresso da lei penal ou à evidência dos autos (I), depoimentos/exames/documentos falsos (II) e novas provas de…
+
+Pendências (não aplicadas):
+- Uma fonte secundária menciona que a Lei 14.836/2024 teria incluído o art. 647-A (HC de ofício por qualquer autoridade judicial); não confirmei com segunda fonte, por…
+- Parte da doutrina trata o art. 648 como taxativo; a corrente dominante o vê como exemplificativo, como o módulo diz (mantido).
+
+### Penal e Processo Penal — fechamento (20/11/2026)
+
+- Direito Penal M01–M17: ajustes em 16 módulos (M02 a M17, de 1 a 5 ajustes cada); só o M01 ficou sem alteração. As 24 tabelas dos resumos passaram a ser desenhadas como tabelas. Processo Penal M01–M22: ajustes em 18 módulos; M05, M11, M12 e M16 ficaram sem alteração.
+- No Penal M14, os dois acréscimos sugeridos pelo aprovador (ação penal privada subsidiária e coisa julgada do art. 8º da Lei nº 13.869/2019) foram reduzidos ao essencial para respeitar a regra enxuta: ficou só a regra do art. 3º, § 1º e a independência das instâncias (art. 7º).
+- Leis recentes citadas e confirmadas só em fontes secundárias (Senado, Câmara, Migalhas, Conjur, Jus), sem leitura do texto oficial: Lei nº 15.160/2025 (art. 115 do CP, violência sexual contra a mulher), Lei nº 15.438/2026 (prazo de 12 meses para representação/queixa em violência doméstica contra a mulher; art. 103 do CP e art. 38 do CPP), Lei nº 15.397/2026 (estelionato; art. 171), Lei nº 15.280/2025 (pena do art. 218-C), Lei nº 15.353/2026 (art. 217-A), Lei nº 15.272/2025 e Lei nº 15.358/2026 (CPP: prisões e audiência de custódia). Recomenda-se conferir o texto no Planalto antes de publicar.
+- Não aplicado por ser contestado ou detalhado demais: ressalva do art. 78, I, do CPP (Júri e organizações criminosas, Lei nº 15.358/2026, constitucionalidade debatida) e a aplicação do filtro de relevância (Lei nº 15.484/2026) ao recurso especial criminal; no M20 ficou redação neutra, sem número de lei.
+- Conteúdo deixado de fora para o material completo: jurisprudência detalhada, doutrina minoritária, tabela do art. 8º da Lei nº 13.869/2019 e demais temas listados nas pendências de cada módulo.
+- A publicação em produção depende de autorização expressa do proprietário.

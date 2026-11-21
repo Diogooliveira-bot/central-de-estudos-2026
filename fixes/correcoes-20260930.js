@@ -133,10 +133,13 @@ function normalizeStats(subject,stats){
 function installStatsWrapper(){
   if(window.subjStats&&window.subjStats.__bcCounts)return;
   if(typeof window.subjStats!=='function')return;
-  nativeSubjStats=window.subjStats;
+  // Guarda a função ANTERIOR neste fechamento. Antes era uma variável compartilhada: quando outro script (ex.: Informática)
+  // embrulhava subjStats depois e este arquivo embrulhava de novo, a variável passava a apontar para o embrulho de
+  // fora e as funções chamavam umas às outras em círculo (mais de 500 mil chamadas até estourar a pilha, e totais errados).
+  var native=window.subjStats;
   var wrapped=function(subject){
     var base=null;
-    try{base=nativeSubjStats(subject)}catch(_){base={done:0,total:(subject&&subject.topics||[]).length,pct:0}}
+    try{base=native(subject)}catch(_){base={done:0,total:(subject&&subject.topics||[]).length,pct:0}}
     return normalizeStats(subject,base);
   };
   wrapped.__bcCounts=true;
