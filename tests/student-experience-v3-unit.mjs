@@ -53,7 +53,8 @@ test('a home mantém todas as disciplinas e a camada não altera RLM', async () 
     read('ui/student-dashboard-v3.js'), read('ui/student-plan-v3.js'), read('ui/student-experience-v3.css'),
   ]);
   assert.match(runtime, /\{id:'pt',name:'Português'\},\.\.\.SUBJECTS/);
-  assert.match(index, /var ORDEM=\['pt','cf','adm','civil','cpc','penal','cpp','rlm'\]/);
+  assert.match(index, /var ORDEM=\['pt','cf','adm','civil','cpc','penal','cpp','rlm',/);
+  assert.match(index, /window\.GmfStudyObjective\?\.allowsSubject\(s\.id\)/);
   assert.match(dashboard, /if \(subject\.id === 'rlm'\) continue/);
   assert.match(plan, /subject\.open:not\(\[data-id="rlm"\]\)/);
   assert.match(styles, /subject:not\(\[data-id="rlm"\]\)/);
