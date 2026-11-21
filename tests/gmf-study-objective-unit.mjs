@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
+import {JSDOM} from 'jsdom';
 
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 
@@ -76,4 +77,48 @@ test('o banco de questões e o catálogo de concursos também seguem o objetivo'
  const catalog=read('ui/concursos-catalog-v1.js');
  assert.match(catalog,/data-contest-objective="gmf-fortaleza"/);
  assert.match(catalog,/global\.GmfStudyObjective\?\.choose/);
+});
+
+test('teste real da grade GMF: a grade antiga continua intacta e GMF tem seus 11 cartões', async()=>{
+ const dom=new JSDOM('<!doctype html><html><head></head><body><section id="disciplinesView"><div id="disciplineGrid"><button data-original="1">Disciplina original</button></div></section></body></html>',{url:'https://central.local/',runScripts:'outside-only',pretendToBeVisual:true});
+ const w=dom.window;
+ Object.defineProperty(w,'__BASE_COMPLETA_USER_ID__',{value:'student-001',configurable:true});
+ w.renderAll=()=>{};
+ w.renderDisciplineGrid=()=>{};
+ w.renderMapaEstudos=()=>{};
+ w.eval(read('ui/gmf-study-objective-v1.js'));
+ w.document.dispatchEvent(new w.Event('DOMContentLoaded'));
+ const old=w.document.getElementById('disciplineGrid');
+ assert.equal(old.children.length,1,'a grade nativa não pode ser substituída');
+ assert.equal(old.querySelector('[data-original="1"]')?.textContent,'Disciplina original');
+ const extra=w.document.getElementById('gmfGoalGrid');
+ assert.ok(extra,'a grade GMF deve existir como irmã da grade nativa');
+ assert.equal(extra.querySelectorAll('[data-study-open-subject]').length,11);
+ assert.equal(w.GmfStudyObjective.current(),'general');
+ w.GmfStudyObjective.choose('gmf-fortaleza');
+ assert.equal(w.document.documentElement.dataset.gmfStudyGoal,'gmf-fortaleza');
+ assert.equal(old.children.length,1,'escolha GMF não modifica a lista de cursos já existente');
+ assert.ok(extra.querySelector('[data-study-open-subject="fortaleza"]'));
+ assert.ok(extra.querySelector('[data-study-open-subject="dh"]'));
+ const css=w.document.getElementById('gmf-study-objective-css').textContent;
+ assert.match(css,/#disciplineGrid\{display:none!important\}/,'apenas ocultação visual em GMF');
+ assert.match(css,/#gmfGoalGrid\{display:none!important\}/,'ocultar grade GMF em estudo geral');
+ w.document.dispatchEvent(new w.CustomEvent('central:study-objective-changed',{detail:{objectiveId:'career-tribunais-analista'}}));
+ assert.equal(w.GmfStudyObjective.current(),'general');
+ w.document.dispatchEvent(new w.CustomEvent('central:study-objective-changed',{detail:{objectiveId:'exam-catalog-gmf-fortaleza-monitoramento-cargo-0'}}));
+ assert.equal(w.GmfStudyObjective.current(),'gmf-fortaleza');
+ dom.window.close();
+});
+
+test('a escolha de objetivo GMF não compartilha armazenamento entre duas contas',()=>{
+ const script=read('ui/gmf-study-objective-v1.js');
+ const keys=[];
+ for(const account of ['student-001','student-002']){
+  const d={readyState:'loading',documentElement:{dataset:{}},head:{appendChild(){}},createElement(){return {id:'',textContent:''}},getElementById(){return null},addEventListener(){},dispatchEvent(){}};
+  const storage=new Map();
+  const w={document:d,__BASE_COMPLETA_USER_ID__:account,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},renderAll(){},renderDisciplineGrid(){},renderMapaEstudos(){}};
+  new Function('window','CustomEvent','Event','console',script)(w,class{},class{},console);
+  keys.push(w.GmfStudyObjective.key);
+ }
+ assert.notEqual(keys[0],keys[1]);
 });
