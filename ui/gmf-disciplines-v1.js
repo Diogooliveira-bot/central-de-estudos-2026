@@ -47,10 +47,11 @@
         ? '<p class="gmf-attention"><b>Ponto de atenção:</b> ' + safe(module.attention) + '</p>' : '';
       const published = module.id === 'm01';
       const label = published ? 'Teoria, revisão e 10 questões disponíveis' : 'Roteiro de assuntos · conteúdo em preparação';
+      const courseId = escapeAttr(course.id);
       const buttons = published
-        ? '<div class="gmf-module-actions"><button type="button" onclick="return GmfReader.open(\'' + course.id + '\',\'review\')">Abrir revisão guiada</button>' +
-          '<button type="button" onclick="return GmfReader.open(\'' + course.id + '\',\'complete\')">Estudar teoria completa</button>' +
-          '<button type="button" onclick="window.BCQuestoesArea?.openModule(\'' + course.id + '\',1);return false">Resolver 10 questões autorais</button></div>'
+        ? '<div class="gmf-module-actions"><button type="button" data-gmf-action="review" data-gmf-course="' + courseId + '">Abrir revisão guiada</button>' +
+          '<button type="button" data-gmf-action="complete" data-gmf-course="' + courseId + '">Estudar teoria completa</button>' +
+          '<button type="button" data-gmf-action="questions" data-gmf-course="' + courseId + '">Resolver 10 questões autorais</button></div>'
         : '';
 
       return '<details class="gmf-module"><summary><span class="gmf-module-number">M' + number +
@@ -67,6 +68,18 @@
       '" target="_blank" rel="noopener noreferrer">Consultar edital oficial de 2023</a></div>' +
       '<div class="gmf-modules">' + cards + '</div></div>';
   }
+
+  // Event delegation: evita manipulação de JavaScript em atributos onclick.
+  document.addEventListener('click',event=>{
+    const button=event.target.closest?.('.gmf-module-actions button[data-gmf-action][data-gmf-course]');
+    if(!button)return;
+    event.preventDefault();
+    const id=button.dataset.gmfCourse;
+    const action=button.dataset.gmfAction;
+    if(!ids.has(id))return;
+    if(action==='review'||action==='complete')global.GmfReader?.open(id,action);
+    else if(action==='questions')global.BCQuestoesArea?.openModule(id,1);
+  });
 
   // A renderização da área Início é executada no runtime nativo por meio de GmfDisciplines.renderMaster.
   // Identifica os roteiros na grade sem apresentá-los como cursos publicados.
