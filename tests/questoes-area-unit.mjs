@@ -251,3 +251,91 @@ test('falhas do servidor viram mensagens claras (sessão expirada, sem conexão)
   assert.equal(dom.api.chamadas.responder, 0);
   dom.window.close();
 });
+
+// ---- acabamento visual e fluidez (20261121) ----
+const tecla = (w, key, extra = {}) => w.document.dispatchEvent(new w.KeyboardEvent('keydown', { key, bubbles: true, cancelable: true, ...extra }));
+
+test('faixa fixa: mapa das questões mostra acertou/errou e leva à questão (Foco e Rolagem)', async () => {
+  const dom = fixture(), w = dom.window, d = w.document;
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  const banco = w.BC_QUESTOES.adm[3];
+  assert.equal(d.querySelectorAll('.bcqa-strip .bcqa-dot').length, 10);
+  assert.equal(d.querySelectorAll('.bcqa-dot.ok, .bcqa-dot.err').length, 0);
+  d.querySelector('.bcqa-q[data-i="0"] [data-op="' + banco[0].answer + '"]').click();
+  d.querySelector('.bcqa-q[data-i="0"] [data-responder]').click(); await tick(30);
+  d.querySelector('.bcqa-q[data-i="1"] [data-op="' + ((banco[1].answer + 1) % 5) + '"]').click();
+  d.querySelector('.bcqa-q[data-i="1"] [data-responder]').click(); await tick(30);
+  assert.ok(d.querySelector('.bcqa-dot[data-goto="0"]').classList.contains('ok'));
+  assert.ok(d.querySelector('.bcqa-dot[data-goto="1"]').classList.contains('err'));
+  assert.match(d.querySelector('.bcqa-dot[data-goto="1"]').getAttribute('aria-label'), /Questão 2: errou/);
+  d.querySelector('[data-modo="foco"]').click();
+  d.querySelector('.bcqa-dot[data-goto="4"]').click();
+  assert.match(d.querySelector('.bcqa-meta').textContent, /QUESTÃO 05 DE 10/);
+  assert.equal(d.querySelector('.bcqa-dot.cur').dataset.goto, '4');
+  // ações raras ficam no menu "⋯" (não poluem o topo antes de responder)
+  assert.ok(d.querySelector('.bcqa-menu [data-erros]') && d.querySelector('.bcqa-menu [data-zerar]'));
+  dom.window.close();
+});
+
+test('teclado: A–E escolhem, Enter responde e avança, setas navegam em Foco; Esc volta', async () => {
+  const dom = fixture(), w = dom.window, d = w.document;
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  d.querySelector('[data-modo="foco"]').click();
+  tecla(w, 'c');
+  assert.ok(d.querySelector('.bcqa-q[data-i="0"] [data-op="2"]').classList.contains('selected'), 'tecla C escolhe a alternativa C');
+  tecla(w, 'Enter'); await tick(40);
+  assert.ok(d.querySelector('.bcqa-q[data-i="0"] .bcqa-feedback'), 'Enter responde');
+  assert.equal(d.querySelector('[data-prox]').disabled, false);
+  tecla(w, 'ArrowRight');
+  assert.match(d.querySelector('.bcqa-meta').textContent, /QUESTÃO 02 DE 10/, 'seta → avança');
+  tecla(w, 'ArrowLeft');
+  assert.match(d.querySelector('.bcqa-meta').textContent, /QUESTÃO 01 DE 10/, 'seta ← volta');
+  tecla(w, '4');
+  assert.equal(d.querySelectorAll('.bcqa-q[data-i="0"] .bcqa-option.selected').length, 0, 'questão já respondida ignora teclas');
+  tecla(w, 'c', { ctrlKey: true });
+  tecla(w, 'Escape');
+  assert.equal(d.querySelector('.bcqa-overlay'), null);
+  dom.window.close();
+});
+
+test('resultado: anel de acertos, "Para revisar" com base legal e botão para refazer só os erros', async () => {
+  const dom = fixture({ plan: 'premium' }), w = dom.window, d = w.document;
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  const banco = w.BC_QUESTOES.adm[3];
+  for (let i = 0; i < 10; i++) await responder(d, i, i < 7 ? banco[i].answer : (banco[i].answer + 1) % 5);
+  const res = d.querySelector('.bcqa-result');
+  assert.match(res.textContent, /Resultado: 7 de 10 \(70%\)/);
+  assert.ok(res.querySelector('.bcqa-ring'));
+  assert.equal(res.querySelectorAll('.bcqa-review [data-goto]').length, 3);
+  assert.match(res.querySelector('.bcqa-pills').textContent, /7 acertos/);
+  assert.ok(res.querySelector('[data-erros]'), 'refazer só os erros em destaque no resultado');
+  res.querySelector('[data-erros]').click();
+  assert.equal(d.querySelector('.bcqa-result'), null);
+  assert.equal(d.querySelectorAll('.bcqa-dot.err').length, 0);
+  dom.window.close();
+});
+
+test('cartão de correção separa veredito, comentário e base legal', async () => {
+  const dom = fixture(), w = dom.window, d = w.document;
+  w.BCQuestoesArea.openModule('adm', 3); await tick();
+  const banco = w.BC_QUESTOES.adm[3];
+  await responder(d, 0, (banco[0].answer + 1) % 5);
+  const fb = d.querySelector('.bcqa-q[data-i="0"] .bcqa-feedback');
+  assert.ok(fb.classList.contains('err'));
+  assert.match(fb.querySelector('.bcqa-fb-head').textContent, /Resposta incorreta · gabarito/);
+  assert.match(fb.querySelector('.bcqa-fb-label').textContent, /Comentário/);
+  assert.match(fb.querySelector('.bcqa-base').textContent, /^Base:/);
+  assert.ok(d.querySelector('.bcqa-q[data-i="0"] .bcqa-option.correct .bcqa-mark'), 'marca ✓ na correta');
+  assert.match(d.querySelector('.bcqa-q[data-i="0"] .bcqa-option.correct .bcqa-sr').textContent, /alternativa correta/);
+  dom.window.close();
+});
+
+test('carregamento mostra esqueleto e a falha oferece "Tentar de novo"', async () => {
+  const dom = fixture({ falhar: 'rede' }), w = dom.window, d = w.document;
+  const abrindo = w.BCQuestoesArea.openModule('adm', 3);
+  assert.ok(d.querySelector('.bcqa-skel'), 'esqueleto enquanto carrega');
+  await abrindo; await tick();
+  assert.match(d.querySelector('.bcqa-empty').textContent, /Sem conexão/);
+  assert.ok(d.querySelector('[data-retry]'));
+  dom.window.close();
+});

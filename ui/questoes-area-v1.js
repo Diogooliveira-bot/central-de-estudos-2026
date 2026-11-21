@@ -49,10 +49,37 @@
     const nav = document.querySelector('[data-bcqa-rail]');
     if (nav) { nav.classList.remove('active'); nav.removeAttribute('aria-current'); }
     marcados.forEach(b => { b.classList.add('active'); b.setAttribute('aria-current', 'page'); }); marcados = [];
-    document.removeEventListener('keydown', teclas);
+    document.removeEventListener('keydown', teclas); g.removeEventListener('resize', ajustarBase);
     if (lastFocus && lastFocus.isConnected) try { lastFocus.focus(); } catch (_) { /* ignora */ }
   }
-  function teclas(e) { if (e.key === 'Escape') { e.preventDefault(); voltar(); } }
+  const suave = () => (g.matchMedia && g.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
+  // Questão que recebe as teclas: em Foco, a da tela; em Rolagem, a primeira não respondida que está visível.
+  function questaoAtiva() {
+    if (!sess || !overlay) return null;
+    if (sess.mode === 'foco') return sess.items[sess.i] ? { q: sess.items[sess.i], i: sess.i } : null;
+    const corpo = overlay.querySelector('[data-bcqa-corpo]'), topo = corpo ? corpo.getBoundingClientRect().top + 90 : 0;
+    const secs = [...overlay.querySelectorAll('.bcqa-q')];
+    const visivel = secs.find(sec => { const q = sess.items[Number(sec.dataset.i)]; return q && !respondida(q) && sec.getBoundingClientRect().bottom > topo; }) || secs.find(sec => !respondida(sess.items[Number(sec.dataset.i)]));
+    return visivel ? { q: sess.items[Number(visivel.dataset.i)], i: Number(visivel.dataset.i) } : null;
+  }
+  // Atalhos (computador): A–E (ou 1–5) escolhem, Enter responde/avança, ← → navegam em Foco. Esc volta.
+  function teclas(e) {
+    if (e.key === 'Escape') { e.preventDefault(); voltar(); return; }
+    if (e.ctrlKey || e.metaKey || e.altKey || !view || view.tipo !== 'quiz' || !sess || !overlay) return;
+    const alvo = e.target; if (alvo && alvo.closest && alvo.closest('input,textarea,select,[contenteditable="true"]')) return;
+    const k = e.key.length === 1 ? e.key.toLowerCase() : e.key, ativa = questaoAtiva(); if (!ativa) return;
+    const { q, i } = ativa, sec = overlay.querySelector('.bcqa-q[data-i="' + i + '"]');
+    const idx = 'abcde'.indexOf(k) >= 0 && k.length === 1 ? 'abcde'.indexOf(k) : '12345'.indexOf(k) >= 0 && k.length === 1 ? '12345'.indexOf(k) : -1;
+    if (idx >= 0 && idx < q.options.length && !respondida(q)) { e.preventDefault(); sec && sec.querySelector('[data-op="' + idx + '"]')?.click(); return; }
+    if (e.key === 'Enter' && !(alvo && alvo.closest && alvo.closest('button,a,summary'))) {
+      const resp = sec && sec.querySelector('[data-responder]'), prox = overlay.querySelector('[data-prox]');
+      if (resp && !resp.disabled) { e.preventDefault(); resp.click(); } else if (sess.mode === 'foco' && prox && !prox.disabled) { e.preventDefault(); prox.click(); }
+      return;
+    }
+    if (sess.mode === 'foco' && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+      const b = overlay.querySelector(e.key === 'ArrowRight' ? '[data-prox]' : '[data-ant]'); if (b && !b.disabled) { e.preventDefault(); b.click(); }
+    }
+  }
   function garantirJanela() {
     if (overlay) return overlay;
     lastFocus = document.activeElement;
@@ -73,7 +100,16 @@
       nav.classList.add('active'); nav.setAttribute('aria-current', 'page');
     }
     document.addEventListener('keydown', teclas);
+    ajustarBase(); g.addEventListener('resize', ajustarBase);
     return overlay;
+  }
+  // No celular a barra de atalhos da Central fica embaixo da tela: a janela termina acima dela, senão os botões
+  // fixos (Anterior/Avançar) ficam escondidos atrás da barra.
+  function ajustarBase() {
+    if (!overlay) return;
+    const barra = document.querySelector('.student-nav-scroll'), r = barra && barra.getBoundingClientRect();
+    const embaixo = r && r.height > 0 && r.top > g.innerHeight / 2;
+    overlay.style.bottom = embaixo ? Math.max(0, Math.round(g.innerHeight - r.top)) + 'px' : '';
   }
   function pintar(titulo, sub, html, voltarVisivel) {
     const o = garantirJanela();
@@ -81,6 +117,7 @@
     o.querySelector('[data-bcqa-sub]').textContent = sub || '';
     o.querySelector('[data-bcqa-voltar]').hidden = !voltarVisivel;
     const corpo = o.querySelector('[data-bcqa-corpo]');
+    corpo.classList.remove('bcqa-quiz');
     corpo.innerHTML = html; corpo.scrollTop = 0;
     return corpo;
   }
@@ -129,10 +166,15 @@
     const B = bank(); if (!B) return false;
     fromModule = !!doModulo; view = { tipo: 'quiz', disc, n }; sess = null;
     const titulo = (titulos()[disc] || {})[n] || ('Módulo ' + nn(n));
-    pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<p class="bcqa-empty">Carregando as questões…</p>', true);
+    pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<div class="bcqa-skel" role="status" aria-label="Carregando as questões"><i class="w40"></i><i class="w90"></i><i class="w70"></i><u></u><u></u><u></u><u></u></div>', true);
     const items = await B.get(disc, n);
     if (!view || view.tipo !== 'quiz' || view.disc !== disc || view.n !== n) return false; // aluno já saiu
-    if (!items.length) { pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<p class="bcqa-empty">' + esc(B.erro ? B.erro().mensagem : 'As questões deste módulo ainda não estão disponíveis.') + '</p>', true); return false; }
+    if (!items.length) {
+      const falha = !!(B.erro && B.erro());
+      const corpoErro = pintar(titulo, B.nomes[disc] + ' · módulo ' + nn(n), '<div class="bcqa-empty">' + mascote('ideia') + '<p>' + esc(B.erro ? B.erro().mensagem : 'As questões deste módulo ainda não estão disponíveis.') + '</p>' + (falha ? '<button type="button" class="bcqa-btn bcqa-primary" data-retry>Tentar de novo</button>' : '') + '</div>', true);
+      corpoErro.querySelector('[data-retry]')?.addEventListener('click', () => abrirModulo(disc, n, fromModule));
+      return false;
+    }
     // Sempre começa do zero: a sessão não vem de aberturas anteriores.
     sess = { disc, n, titulo, items, mode: modoSalvo(), i: 0, sel: {}, ans: {}, res: {}, strike: {}, erro: {}, busy: {}, previa: lerHist().h };
     desenhar();
@@ -163,20 +205,22 @@
     const cont = [h.c ? h.c + (h.c === 1 ? ' acerto' : ' acertos') : '', h.e ? h.e + (h.e === 1 ? ' erro' : ' erros') : ''].filter(Boolean).join(' · ');
     return '<span class="bcqa-hist ' + (h.u === 'c' ? 'bcqa-hist-ok' : 'bcqa-hist-erro') + '">' + (h.u === 'c' ? '✓ Acertou da última vez' : '✕ Errou da última vez') + (cont ? ' · ' + cont : '') + '</span>';
   }
+  const ICONE_RISCO = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M8.5 7.2C9.3 5.9 10.5 5 12.3 5c2.1 0 3.6 1 3.6 2.6M8 16.4c.8 1.6 2.3 2.6 4.3 2.6 2.2 0 3.7-1.1 3.7-2.8"/></svg>';
   function cardQuestao(q, i) {
     const feita = respondida(q), r = feita ? sess.res[q.id] : null, escolha = feita ? sess.ans[q.id] : sess.sel[q.id], riscadas = sess.strike[q.id] || {}, bloqueada = semCota(q), ocupada = !!sess.busy[q.id];
     const ops = q.options.map((o, j) => {
       const st = feita ? (j === r.answer ? ' correct' : j === escolha ? ' wrong' : '') : (j === escolha ? ' selected' : '');
       const risc = riscadas[j] ? ' struck' : '';
-      return '<div class="bcqa-optrow"><button type="button" class="bcqa-option' + st + risc + '" data-op="' + j + '" ' + (feita ? 'disabled' : '') + ' role="radio" aria-checked="' + (j === escolha) + '"><b>' + LETRAS[j] + '</b><span>' + esc(o) + '</span></button>' +
-        (feita ? '' : '<button type="button" class="bcqa-strike' + (riscadas[j] ? ' on' : '') + '" data-strike="' + j + '" aria-pressed="' + !!riscadas[j] + '" aria-label="' + (riscadas[j] ? 'Desfazer risco da' : 'Riscar a') + ' alternativa ' + LETRAS[j] + '" title="Riscar alternativa">' + (riscadas[j] ? 'Desfazer' : 'Riscar') + '</button>') + '</div>';
+      const marca = feita ? (j === r.answer ? '<i class="bcqa-mark" aria-hidden="true">✓</i><span class="bcqa-sr"> (alternativa correta)</span>' : (j === escolha ? '<i class="bcqa-mark" aria-hidden="true">✕</i><span class="bcqa-sr"> (sua resposta, incorreta)</span>' : '')) : '';
+      return '<div class="bcqa-optrow"><button type="button" class="bcqa-option' + st + risc + '" data-op="' + j + '" ' + (feita ? 'disabled' : '') + ' role="radio" aria-checked="' + (j === escolha) + '"><b class="bcqa-letter">' + LETRAS[j] + '</b><span class="bcqa-txt">' + esc(o) + '</span>' + marca + '</button>' +
+        (feita ? '' : '<button type="button" class="bcqa-strike' + (riscadas[j] ? ' on' : '') + '" data-strike="' + j + '" aria-pressed="' + !!riscadas[j] + '" aria-label="' + (riscadas[j] ? 'Desfazer risco da' : 'Riscar a') + ' alternativa ' + LETRAS[j] + '" title="' + (riscadas[j] ? 'Desfazer o risco' : 'Riscar (descartar) esta alternativa') + '">' + ICONE_RISCO + '</button>') + '</div>';
     }).join('');
     const dica = bloqueada ? '<small class="bcqa-dica bcqa-dica-limite">Limite diário atingido: volte amanhã para responder esta questão.</small>'
       : (Number.isInteger(escolha) ? '' : '<small class="bcqa-dica">Selecione uma alternativa para responder.</small>');
     const erro = sess.erro[q.id] ? '<small class="bcqa-erro" role="alert">' + esc(sess.erro[q.id]) + '</small>' : '';
     const acao = feita ? '' : '<div class="bcqa-actions"><button type="button" class="bcqa-btn bcqa-primary" data-responder ' + (Number.isInteger(escolha) && !bloqueada && !ocupada ? '' : 'disabled') + '>' + (ocupada ? 'Corrigindo…' : 'Responder') + '</button>' + dica + erro + '</div>';
-    const fb = feita ? '<div class="bcqa-feedback" role="status"><strong>' + (r.correct ? '✓ Resposta correta' : '✕ Resposta incorreta · gabarito ' + LETRAS[r.answer]) + '</strong>' + esc(r.explanation) + (r.lawRef ? '<span class="bcqa-base">Base: ' + esc(r.lawRef) + '</span>' : '') + '</div>' : '';
-    return '<section class="bcqa-q" data-i="' + i + '"><p class="bcqa-meta">QUESTÃO ' + nn(i + 1) + ' DE ' + sess.items.length + '</p>' + histHtml(q) + '<h3>' + esc(q.q) + '</h3><div class="bcqa-options" role="radiogroup" aria-label="Alternativas">' + ops + '</div>' + acao + fb + '</section>';
+    const fb = feita ? '<div class="bcqa-feedback ' + (r.correct ? 'ok' : 'err') + (sess.novoFb === q.id ? ' bcqa-pop' : '') + '" role="status"><div class="bcqa-fb-head"><i aria-hidden="true">' + (r.correct ? '✓' : '✕') + '</i><strong>' + (r.correct ? 'Resposta correta' : 'Resposta incorreta · gabarito ' + LETRAS[r.answer]) + '</strong></div>' + (r.explanation ? '<p class="bcqa-fb-text"><span class="bcqa-fb-label">Comentário</span>' + esc(r.explanation) + '</p>' : '') + (r.lawRef ? '<span class="bcqa-base">Base: ' + esc(r.lawRef) + '</span>' : '') + '</div>' : '';
+    return '<section class="bcqa-q' + (sess.trocou ? ' bcqa-enter' : '') + '" data-i="' + i + '"><p class="bcqa-meta">QUESTÃO ' + nn(i + 1) + ' DE ' + sess.items.length + '</p>' + histHtml(q) + '<h3>' + esc(q.q) + '</h3><div class="bcqa-options" role="radiogroup" aria-label="Alternativas">' + ops + '</div>' + acao + fb + '</section>';
   }
   function mascote(pose) { return '<img class="bcqa-mascote" src="/assets/mascote/mascote-' + pose + '.webp" alt="" aria-hidden="true" width="40" height="96" loading="lazy" decoding="async">'; }
   function resultadoHtml(c) {
@@ -184,26 +228,49 @@
     const erros = c.r - c.a;
     const pct = Math.round(c.a / c.total * 100);
     const pose = pct >= 80 ? 'comemorando-2' : pct >= 50 ? 'joinha' : 'erros';
-    return '<div class="bcqa-result" role="status">' + mascote(pose) + '<div><b>Resultado: ' + c.a + ' de ' + c.total + ' (' + pct + '%)</b>' + (erros ? 'Revise os comentários das que errou e refaça só os erros.' : 'Sem erros neste módulo.') + '</div></div>';
+    const faixa = pct >= 80 ? 'Excelente desempenho!' : pct >= 50 ? 'Bom caminho, falta pouco.' : 'Vale reforçar este módulo.';
+    const rever = sess.items.map((q, i) => ({ q, i })).filter(x => respondida(x.q) && !sess.res[x.q.id].correct);
+    const lista = rever.length ? '<div class="bcqa-review"><b>Para revisar</b><ul>' + rever.map(x => '<li><button type="button" class="bcqa-chip" data-goto="' + x.i + '">Questão ' + nn(x.i + 1) + (sess.res[x.q.id].lawRef ? ' · ' + esc(sess.res[x.q.id].lawRef) : '') + '</button></li>').join('') + '</ul></div>' : '';
+    return '<div class="bcqa-result" role="status">' + mascote(pose) + '<div class="bcqa-result-main"><div class="bcqa-ring" style="--p:' + pct + '" aria-hidden="true"><span>' + pct + '%</span></div><div class="bcqa-result-copy"><b>Resultado: ' + c.a + ' de ' + c.total + ' (' + pct + '%)</b><span class="bcqa-result-sub">' + faixa + ' ' + (erros ? 'Revise os comentários das que errou e refaça só os erros.' : 'Sem erros neste módulo.') + '</span><span class="bcqa-pills"><i class="ok">✓ ' + c.a + ' ' + (c.a === 1 ? 'acerto' : 'acertos') + '</i><i class="err">✕ ' + erros + ' ' + (erros === 1 ? 'erro' : 'erros') + '</i></span></div></div>' + lista + (erros ? '<div class="bcqa-actions"><button type="button" class="bcqa-btn bcqa-primary" data-erros>Refazer só os erros</button></div>' : '') + '</div>';
+  }
+  // Faixa fixa no topo: modo, contagem, mapa de questões (acertou/errou/atual) e menu de ações.
+  function fitaHtml(c) {
+    const dots = sess.items.map((q, i) => {
+      const feita = respondida(q), ok = feita && sess.res[q.id].correct, atual = sess.mode === 'foco' && i === sess.i;
+      const rotulo = 'Questão ' + (i + 1) + ': ' + (feita ? (ok ? 'acertou' : 'errou') : 'não respondida');
+      return '<button type="button" class="bcqa-dot' + (feita ? (ok ? ' ok' : ' err') : (semCota(q) ? ' lock' : '')) + (atual ? ' cur' : '') + '" data-goto="' + i + '" aria-label="' + rotulo + '"' + (atual ? ' aria-current="step"' : '') + '>' + (i + 1) + '</button>';
+    }).join('');
+    const erros = c.r - c.a > 0;
+    const menu = erros || c.r ? '<details class="bcqa-menu"><summary class="bcqa-btn" aria-label="Mais ações" title="Mais ações">⋯</summary><div class="bcqa-menu-list">' + (erros ? '<button type="button" class="bcqa-btn" data-erros>Refazer só os erros</button>' : '') + (c.r ? '<button type="button" class="bcqa-btn" data-zerar>Recomeçar o módulo</button>' : '') + '</div></details>' : '';
+    const modos = '<div class="bcqa-modes" role="tablist" aria-label="Modo de resolução"><button type="button" role="tab" class="bcqa-mode' + (sess.mode === 'rolagem' ? ' on' : '') + '" aria-selected="' + (sess.mode === 'rolagem') + '" data-modo="rolagem">☰ Rolagem</button><button type="button" role="tab" class="bcqa-mode' + (sess.mode === 'foco' ? ' on' : '') + '" aria-selected="' + (sess.mode === 'foco') + '" data-modo="foco">◎ Foco</button></div>';
+    return '<div class="bcqa-strip"><div class="bcqa-strip-row">' + modos + '<span class="bcqa-count" data-stats>' + c.r + '/' + c.total + ' respondidas · ' + c.a + ' acertos</span>' + menu + '</div><div class="bcqa-dots" role="group" aria-label="Mapa das questões">' + dots + '</div></div><p class="bcqa-keys" aria-hidden="true">Atalhos: <kbd>A</kbd>–<kbd>E</kbd> escolher · <kbd>Enter</kbd> responder · <kbd>←</kbd> <kbd>→</kbd> navegar</p>';
   }
   function desenhar(manterRolagem) {
-    const B = bank(), c = contagem(), pct = Math.round(c.r / c.total * 100);
-    const barraModo = '<div class="bcqa-modes" role="tablist" aria-label="Modo de resolução"><button type="button" role="tab" class="bcqa-mode' + (sess.mode === 'rolagem' ? ' on' : '') + '" aria-selected="' + (sess.mode === 'rolagem') + '" data-modo="rolagem">☰ Rolagem</button><button type="button" role="tab" class="bcqa-mode' + (sess.mode === 'foco' ? ' on' : '') + '" aria-selected="' + (sess.mode === 'foco') + '" data-modo="foco">◎ Foco</button></div>';
-    const stats = '<div class="bcqa-stats"><span data-stats>' + c.r + '/' + c.total + ' respondidas · ' + c.a + ' acertos</span></div>' + barra(pct);
-    const botoes = '<div class="bcqa-actions">' + (c.r - c.a > 0 ? '<button type="button" class="bcqa-btn" data-erros>Refazer só os erros</button>' : '') + (c.r ? '<button type="button" class="bcqa-btn" data-zerar>Recomeçar o módulo</button>' : '') + '</div>';
+    const B = bank(), c = contagem();
     let lista;
     if (sess.mode === 'foco') {
       const q = sess.items[sess.i], ultima = sess.i === sess.items.length - 1;
-      lista = cardQuestao(q, sess.i) + '<div class="bcqa-nav"><button type="button" class="bcqa-btn" data-ant ' + (sess.i === 0 ? 'disabled' : '') + '>‹ Anterior</button><button type="button" class="bcqa-btn bcqa-primary" data-prox ' + (respondida(q) || semCota(q) ? '' : 'disabled') + '>' + (ultima ? 'Ver resultado' : 'Avançar ›') + '</button></div>' + '';
+      lista = cardQuestao(q, sess.i) + '<div class="bcqa-nav"><button type="button" class="bcqa-btn" data-ant ' + (sess.i === 0 ? 'disabled' : '') + '>‹ Anterior</button><button type="button" class="bcqa-btn bcqa-primary' + (respondida(q) ? ' bcqa-next-ready' : '') + '" data-prox ' + (respondida(q) || semCota(q) ? '' : 'disabled') + '>' + (ultima ? 'Ver resultado' : 'Avançar ›') + '</button></div>';
     } else lista = sess.items.map((q, i) => cardQuestao(q, i)).join('');
-    const corpo = pintar(sess.titulo, B.nomes[sess.disc] + ' · módulo ' + nn(sess.n), barraModo + stats + usoHtml() + resultadoHtml(c) + botoes + lista, true);
+    const corpo = pintar(sess.titulo, B.nomes[sess.disc] + ' · módulo ' + nn(sess.n), fitaHtml(c) + usoHtml() + resultadoHtml(c) + lista, true);
+    corpo.classList.add('bcqa-quiz');
+    const rolarFb = sess.novoFb; sess.novoFb = null; sess.trocou = false;
     ligar(corpo);
+    const fita = corpo.querySelector('.bcqa-strip'); if (fita) corpo.style.setProperty('--qa-strip-h', fita.offsetHeight + 'px');
+    const dots = corpo.querySelector('.bcqa-dots'), atual = dots && dots.querySelector('.cur');
+    if (atual) dots.scrollLeft = atual.offsetLeft - dots.clientWidth / 2 + atual.offsetWidth / 2;
+    if (rolarFb) { const fb = corpo.querySelector('.bcqa-q .bcqa-feedback.bcqa-pop'); if (fb) (g.requestAnimationFrame || g.setTimeout)(() => { try { fb.scrollIntoView({ block: 'start', behavior: suave() }); } catch (_) { /* ignora */ } }); }
     return corpo;
   }
   function rolar(corpo, y) { corpo.scrollTop = y; }
   function ligar(corpo) {
     const redesenhar = () => { const pos = overlay.querySelector('[data-bcqa-corpo]').scrollTop; rolar(desenhar(), pos); };
     corpo.querySelectorAll('[data-modo]').forEach(b => b.addEventListener('click', () => { if (sess.mode === b.dataset.modo) return; sess.mode = b.dataset.modo; salvarModo(sess.mode); desenhar(); }));
+    corpo.querySelectorAll('[data-goto]').forEach(b => b.addEventListener('click', () => {
+      const idx = Number(b.dataset.goto);
+      if (sess.mode === 'foco') { sess.i = idx; sess.trocou = true; desenhar(); }
+      else corpo.querySelector('.bcqa-q[data-i="' + idx + '"]')?.scrollIntoView({ block: 'start', behavior: suave() });
+    }));
     corpo.querySelectorAll('.bcqa-q').forEach(sec => {
       const i = Number(sec.dataset.i), q = sess.items[i];
       sec.querySelectorAll('[data-op]').forEach(b => b.addEventListener('click', () => {
@@ -225,22 +292,22 @@
         const r = await bank().answer(atual.disc, atual.n, q.id, j);
         if (sess !== atual) return;                       // aluno saiu ou recomeçou
         delete sess.busy[q.id];
-        if (r && r.ok) { sess.ans[q.id] = j; sess.res[q.id] = r; registrar(q.id, r.correct === true); }
+        if (r && r.ok) { sess.ans[q.id] = j; sess.res[q.id] = r; sess.novoFb = q.id; registrar(q.id, r.correct === true); }
         else if (r && r.status === 429) { sess.erro[q.id] = 'Você já usou as questões gratuitas de hoje. A cota volta à meia-noite (Brasília).'; }
         else sess.erro[q.id] = (r && r.mensagem) || 'Não foi possível corrigir agora. Tente de novo.';
         redesenhar();
       });
     });
-    corpo.querySelector('[data-ant]')?.addEventListener('click', () => { if (sess.i > 0) { sess.i--; desenhar(); } });
+    corpo.querySelector('[data-ant]')?.addEventListener('click', () => { if (sess.i > 0) { sess.i--; sess.trocou = true; desenhar(); } });
     corpo.querySelector('[data-prox]')?.addEventListener('click', () => {
-      if (sess.i < sess.items.length - 1) { sess.i++; desenhar(); }
+      if (sess.i < sess.items.length - 1) { sess.i++; sess.trocou = true; desenhar(); }
       else { const topo = desenhar(); topo.scrollTop = 0; }   // última: o resultado aparece no topo
     });
-    corpo.querySelector('[data-erros]')?.addEventListener('click', () => {
+    corpo.querySelectorAll('[data-erros]').forEach(b => b.addEventListener('click', () => {
       sess.items.forEach(q => { if (respondida(q) && !sess.res[q.id].correct) { delete sess.ans[q.id]; delete sess.res[q.id]; delete sess.sel[q.id]; } });
-      sess.previa = lerHist().h; sess.i = Math.max(0, sess.items.findIndex(q => !respondida(q))); desenhar();
-    });
-    corpo.querySelector('[data-zerar]')?.addEventListener('click', () => { sess.sel = {}; sess.ans = {}; sess.res = {}; sess.erro = {}; sess.strike = {}; sess.i = 0; sess.previa = lerHist().h; desenhar(); });
+      sess.previa = lerHist().h; sess.i = Math.max(0, sess.items.findIndex(q => !respondida(q))); sess.trocou = true; desenhar().scrollTop = 0;
+    }));
+    corpo.querySelectorAll('[data-zerar]').forEach(b => b.addEventListener('click', () => { sess.sel = {}; sess.ans = {}; sess.res = {}; sess.erro = {}; sess.strike = {}; sess.i = 0; sess.previa = lerHist().h; sess.trocou = true; desenhar().scrollTop = 0; }));
   }
 
   // ---- entradas: atalho do topo, menu lateral e menu "Mais" no celular ----
