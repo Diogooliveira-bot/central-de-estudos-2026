@@ -180,3 +180,11 @@ window.BC_QUESTOES_TITULOS={
   "15": "Amplitude, Desvio Médio, Variância e Desvio Padrão"
  }
 };
+
+// GMF — títulos dos módulos com questões revisadas (M01 inicial).
+Object.assign(window.BC_QUESTOES_TITULOS,{
+  atual: {'1':'Política e administração pública'},
+  fortaleza: {'1':'Localização e limites'},
+  legesp: {'1':'Estatuto Geral das Guardas Municipais — Lei 13.022/2014'},
+  dh: {'1':'Conceito de direitos humanos'}
+});
