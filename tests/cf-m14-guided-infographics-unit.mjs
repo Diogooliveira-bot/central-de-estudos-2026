@@ -31,5 +31,5 @@ test('all M14 PNGs and WebPs have valid headers and expected PNG dimensions',()=
 test('the shared CF reader enables M14 infographic output',()=>{
  const reader=path.join(root,'content/cf/cf-teoria-guiada-reader-v1.js');
  if(!fs.existsSync(reader))return;
- const text=fs.readFileSync(reader,'utf8'); assert.match(text,/n>=4\s*&&\s*n<=14/);
+ const text=fs.readFileSync(reader,'utf8'); assert.match(text,/n>=4\s*&&\s*n<=15/);
 });
