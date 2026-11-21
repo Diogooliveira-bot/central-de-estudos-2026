@@ -5,12 +5,20 @@
 (function(global){
  'use strict';
  if(global.GmfStudyObjective)return;
- const KEY='central-v6:study-objective-v1';
+ // Escopo por conta para não misturar preferências entre alunos.
+ const USER_ID=String(global.__BASE_COMPLETA_USER_ID__||'guest').trim().slice(0,120);
+ const KEY='central-v6:study-objective-v1:'+USER_ID;
  const DEFAULT='general';
  const GMF='gmf-fortaleza';
  const EXTRA=new Set(['atual','fortaleza','legesp','dh']);
  const GMF_IDS=new Set(['pt','rlm','info','cf','adm','penal','cpp','atual','fortaleza','legesp','dh']);
  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const LABELS={pt:'Português',rlm:'Raciocínio Lógico-Matemático',info:'Informática',cf:'Direito Constitucional',adm:'Direito Administrativo',penal:'Direito Penal',cpp:'Direito Processual Penal',atual:'Atualidades',fortaleza:'Conhecimentos sobre Fortaleza',legesp:'Legislação Extravagante',dh:'Direitos Humanos'};
+ function renderGmfGrid(){
+   const grid=global.document.getElementById('gmfGoalGrid');
+   if(!grid)return;
+   grid.innerHTML=[...GMF_IDS].map(id=>'<button type="button" class="disc-card gmf-goal-card" data-id="'+esc(id)+'" data-study-open-subject="'+esc(id)+'"><b>'+esc(LABELS[id])+'</b><small>'+(EXTRA.has(id)?'Matéria específica da GMF':'Matéria comum ao concurso')+'</small><span class="disc-meta">Abrir módulos</span></button>').join('');
+ }
  function current(){
    try{return global.localStorage?.getItem(KEY)===GMF?GMF:DEFAULT}catch(_){return DEFAULT}
  }
@@ -57,6 +65,23 @@
      grid.parentNode.insertBefore(wrap,grid);
      wrap.querySelector('select').addEventListener('change',event=>choose(event.target.value));
    }
+   // Não substitui cartões da Central: utiliza grade separada somente para a GMF.
+   let gmfGrid=global.document.getElementById('gmfGoalGrid');
+   if(!gmfGrid){
+     gmfGrid=global.document.createElement('div');
+     gmfGrid.id='gmfGoalGrid';gmfGrid.className='discipline-grid';
+     gmfGrid.setAttribute('aria-label','Disciplinas da Guarda Municipal de Fortaleza');
+     grid.parentNode.insertBefore(gmfGrid,grid.nextSibling);
+     gmfGrid.addEventListener('click',event=>{
+       const button=event.target.closest('[data-study-open-subject]');
+       if(!button)return;
+       event.preventDefault();
+       const id=button.dataset.studyOpenSubject;
+       if(global.BaseCompletaFocusNavigation?.chooseSubject){global.openHome?.();global.BaseCompletaFocusNavigation.chooseSubject(id)}
+       else global.jumpSubject?.(id);
+     });
+   }
+   renderGmfGrid();
    state();
  }
  function choose(value,{navigate=false}={}){
@@ -80,6 +105,8 @@
    'html:not([data-gmf-study-goal="gmf-fortaleza"]) .subject[data-id="atual"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .subject[data-id="fortaleza"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .subject[data-id="legesp"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .subject[data-id="dh"]{display:none!important}',
    'html:not([data-gmf-study-goal="gmf-fortaleza"]) .disc-card[data-id="atual"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .disc-card[data-id="fortaleza"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .disc-card[data-id="legesp"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .disc-card[data-id="dh"]{display:none!important}',
    'html:not([data-gmf-study-goal="gmf-fortaleza"]) .bcqa-card[data-disc="atual"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .bcqa-card[data-disc="fortaleza"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .bcqa-card[data-disc="legesp"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .bcqa-card[data-disc="dh"]{display:none!important}',
+   'html[data-gmf-study-goal="gmf-fortaleza"] #disciplineGrid{display:none!important}',
+   'html:not([data-gmf-study-goal="gmf-fortaleza"]) #gmfGoalGrid{display:none!important}',
    'html[data-gmf-study-goal="gmf-fortaleza"] .subject[data-id="civil"],html[data-gmf-study-goal="gmf-fortaleza"] .subject[data-id="cpc"],html[data-gmf-study-goal="gmf-fortaleza"] .disc-card[data-id="civil"],html[data-gmf-study-goal="gmf-fortaleza"] .disc-card[data-id="cpc"],html[data-gmf-study-goal="gmf-fortaleza"] .bcqa-card[data-disc="civil"],html[data-gmf-study-goal="gmf-fortaleza"] .bcqa-card[data-disc="cpc"]{display:none!important}',
    '.gmf-goal-chooser{margin:0 0 16px;padding:17px 19px;background:var(--panel,#fff);border:1px solid var(--line,#e1e7ed);border-radius:12px}',
    '.gmf-goal-control{display:flex;align-items:center;justify-content:space-between;gap:18px}',
@@ -91,6 +118,14 @@
  ].join('');
  global.document.head.appendChild(style);
  global.GmfStudyObjective=Object.freeze({installed:true,key:KEY,options:[DEFAULT,GMF],current,allowsSubject,choose,sync:state});
+ // A escolha do edital GMF no sistema existente de objetivos ativa as matérias contextuais.
+ global.document.addEventListener('central:study-objective-changed',event=>{
+   const objective=String(event.detail?.objectiveId||'');
+   if(!objective)return;
+   if(objective.startsWith('exam-catalog-gmf-fortaleza-monitoramento')){
+     if(current()!==GMF)choose(GMF);
+   }else if(current()===GMF){choose(DEFAULT)}
+ });
  state();
  if(global.document.readyState==='loading')global.document.addEventListener('DOMContentLoaded',install,{once:true});
  else install();
