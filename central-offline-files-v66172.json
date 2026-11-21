@@ -1,5 +1,5 @@
 {
-  "build": "20261119-cache-v1",
+  "build": "20261120-login-recovery-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -98,7 +98,7 @@
     "/adm-m8-runtime-v66149.js?v=66149a1",
     "/portugues.html",
     "/portugues-site.js?v=20261023ptorg1",
-    "/ui/current-courses.js?v=20261112nographic1",
+    "/ui/current-courses.js?v=20261121r1",
     "/ui/apostilas-pdf-v1.js?v=20261118r1",
     "/base-completa-home-v3.css?v=20261001v5",
     "/base-completa-home-v3.js?v=20261106nav1",
@@ -113,7 +113,7 @@
     "/ui/m17-header-fix.js?v=20261115responsive1",
     "/ui/study-navigation.css?v=20261115responsive1",
     "/ui/portuguese-activities-v1.js?v=20261118r1",
-    "/ui/portuguese-reader.js?v=20261118r1",
+    "/ui/portuguese-reader.js?v=20261121r1",
     "/ui/portuguese-reader.css?v=20261115responsive1",
     "/base-completa-visual-v1.js?v=20261115-responsive-v15",
     "/ui/cpc-native-study-reader.js?v=20261120tabelas1",
@@ -190,7 +190,7 @@
     "/assets/base-completa-symbol.webp",
     "/study-cycle-planner-v1.js",
     "/content/adm/adm-native-index.js?v=20261102admguide1",
-    "/ui/adm-native-layer.js?v=20261116revjur1",
+    "/ui/adm-native-layer.js?v=20261121r1",
     "/ui/adm-native-layer.css?v=20261115responsive1",
     "/ui/native-reading-session.js?v=20261115responsive1",
     "/ui/cpp-native-study-v1.css?v=20261115responsive1",
