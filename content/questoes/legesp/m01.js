@@ -1,4 +1,4 @@
-/* GMF Legislação Extravagante M01. Questões autorais; gabaritos exclusivos do servidor. */
+/* Questões autorais GMF legesp M01; gabaritos restritos ao servidor. */
 window.BC_QUESTOES=window.BC_QUESTOES||{};
 (window.BC_QUESTOES.legesp=window.BC_QUESTOES.legesp||{})[1]=[
   {
@@ -13,7 +13,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "Instituições estaduais descentralizadas que podem substituir as atribuições constitucionais da polícia civil."
     ],
     "answer": 0,
-    "explanation": "O art. 2º caracteriza as guardas como instituições de caráter civil, uniformizadas e armadas conforme previsto em lei, incumbidas da proteção municipal preventiva. As alternativas restantes trocam a natureza civil por militar ou estadual, atribuem investigação policial ou reduzem indevidamente suas funções apenas a prédios fechados.",
+    "explanation": "O artigo 2º caracteriza as guardas como instituições de caráter civil, uniformizadas e armadas conforme previsto em lei, incumbidas da proteção municipal preventiva. As alternativas restantes trocam a natureza civil por militar ou estadual, atribuem investigação policial ou reduzem indevidamente suas funções apenas a prédios fechados.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 2º"
   },
   {
@@ -28,7 +28,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "A administração do sistema penitenciário estadual e a execução de ordens judiciais criminais de rotina."
     ],
     "answer": 1,
-    "explanation": "O art. 4º identifica precisamente bens, serviços, logradouros públicos municipais e instalações do Município como objeto da competência geral. As demais opções extrapolam o texto ao incluir bens privados e estruturas de outros entes, confundir competência territorial com atribuição ou atribuir tarefas de polícia judiciária e penitenciária.",
+    "explanation": "O artigo 4º identifica precisamente bens, serviços, logradouros públicos municipais e instalações do Município como objeto da competência geral. As demais opções extrapolam o texto ao incluir bens privados e estruturas de outros entes, confundir competência territorial com atribuição ou atribuir tarefas de polícia judiciária e penitenciária.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 4º"
   },
   {
@@ -43,7 +43,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "A proteção de logradouros depende de autorização prévia da polícia judiciária para cada ronda municipal."
     ],
     "answer": 2,
-    "explanation": "O patrulhamento preventivo integra a lista de princípios mínimos do art. 3º, ao passo que a proteção de logradouros públicos municipais integra a competência geral do art. 4º. Confundir o fundamento orientador da atividade com o objeto da competência distorce a sistemática da lei; outras alternativas criam condicionantes ou exclusividades inexistentes.",
+    "explanation": "O patrulhamento preventivo integra a lista de princípios mínimos do artigo 3º, ao passo que a proteção de logradouros públicos municipais integra a competência geral do artigo 4º. Confundir o fundamento orientador da atividade com o objeto da competência distorce a sistemática da lei; outras alternativas criam condicionantes ou exclusividades inexistentes.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), arts. 3º e 4º"
   },
   {
@@ -58,7 +58,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "A participação municipal exige renúncia aos princípios de proteção dos direitos humanos durante a operação."
     ],
     "answer": 3,
-    "explanation": "O Estatuto contempla colaboração e atuação integrada com órgãos de segurança pública, respeitando as competências dos órgãos federais e estaduais. Cooperação não cria competência ilimitada, não elimina atuação preventiva nem afasta direitos humanos. A conclusão deve ser construída com base no rol do art. 5º e na repartição legal de atribuições.",
+    "explanation": "O Estatuto contempla colaboração e atuação integrada com órgãos de segurança pública, respeitando as competências dos órgãos federais e estaduais. Cooperação não cria competência ilimitada, não elimina atuação preventiva nem afasta direitos humanos. A conclusão deve ser construída com base no rol do artigo 5º e na repartição legal de atribuições.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 5º"
   },
   {
@@ -73,7 +73,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "A proteção dos direitos humanos, da cidadania e das liberdades públicas constitui princípio mínimo da atuação."
     ],
     "answer": 4,
-    "explanation": "O art. 3º inclui expressamente a proteção de direitos humanos fundamentais, o exercício da cidadania e as liberdades públicas. Uniforme, armamento conforme a lei e dever de segurança não autorizam afastar essas garantias. As demais proposições estabelecem exceções ou hierarquias incompatíveis com os princípios mínimos expressos do Estatuto.",
+    "explanation": "O artigo 3º inclui expressamente a proteção de direitos humanos fundamentais, o exercício da cidadania e as liberdades públicas. Uniforme, armamento conforme a lei e dever de segurança não autorizam afastar essas garantias. As demais proposições estabelecem exceções ou hierarquias incompatíveis com os princípios mínimos expressos do Estatuto.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 3º, inciso I"
   },
   {
@@ -88,7 +88,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "Cada município pode afastar unilateralmente qualquer regra federal sobre armas por regulamento próprio."
     ],
     "answer": 0,
-    "explanation": "A redação do art. 2º utiliza a expressão 'armadas conforme previsto em lei'. Ela vincula o armamento aos requisitos do ordenamento e não cria autorização irrestrita. A presença de armamento ou uniforme não altera a natureza civil da instituição, e regulamentos locais não afastam exigências federais incidentes.",
+    "explanation": "A redação do artigo 2º utiliza a expressão 'armadas conforme previsto em lei'. Ela vincula o armamento aos requisitos do ordenamento e não cria autorização irrestrita. A presença de armamento ou uniforme não altera a natureza civil da instituição, e regulamentos locais não afastam exigências federais incidentes.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 2º"
   },
   {
@@ -103,7 +103,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "Poder de licenciar qualquer empreendimento ambiental com substituição do órgão técnico competente."
     ],
     "answer": 1,
-    "explanation": "Entre as competências específicas do art. 5º está a proteção do patrimônio ecológico, histórico, cultural, arquitetônico e ambiental, inclusive por medidas educativas e preventivas. Isso não equivale a substituir órgãos de patrimônio, ambiente ou Justiça em licenciamento, tombamento ou imposição de penas criminais.",
+    "explanation": "Entre as competências específicas do artigo 5º está a proteção do patrimônio ecológico, histórico, cultural, arquitetônico e ambiental, inclusive por medidas educativas e preventivas. Isso não equivale a substituir órgãos de patrimônio, ambiente ou Justiça em licenciamento, tombamento ou imposição de penas criminais.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 5º, inciso VII"
   },
   {
@@ -118,7 +118,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "Proibição de qualquer atuação em trânsito, mesmo havendo competência legal ou convênio válido."
     ],
     "answer": 2,
-    "explanation": "O art. 5º, VI, permite exercer competências de trânsito que sejam conferidas, nas vias e logradouros municipais, segundo o Código de Trânsito Brasileiro ou mediante convênio cabível. O dispositivo exige fundamento jurídico; não contempla competência automática ilimitada nem proibição geral de atuação no trânsito.",
+    "explanation": "O artigo 5º, VI, permite exercer competências de trânsito que sejam conferidas, nas vias e logradouros municipais, segundo o Código de Trânsito Brasileiro ou mediante convênio cabível. O dispositivo exige fundamento jurídico; não contempla competência automática ilimitada nem proibição geral de atuação no trânsito.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 5º, inciso VI; Lei 9.503/1997 (Código de Trânsito Brasileiro)"
   },
   {
@@ -148,7 +148,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "A escolha dos meios deve considerar a necessidade e a proporcionalidade da intervenção no caso concreto."
     ],
     "answer": 4,
-    "explanation": "O art. 3º elenca o uso progressivo da força como princípio mínimo. Sua interpretação é incompatível com emprego indiscriminado ou desvinculado de necessidade, proporcionalidade e proteção da vida. As demais alternativas tratam o princípio como autorização de escalada automática ou isenção de avaliação da situação concreta.",
+    "explanation": "O artigo 3º elenca o uso progressivo da força como princípio mínimo. Sua interpretação é incompatível com emprego indiscriminado ou desvinculado de necessidade, proporcionalidade e proteção da vida. As demais alternativas tratam o princípio como autorização de escalada automática ou isenção de avaliação da situação concreta.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 3º, inciso V"
   }
 ];
