@@ -50,12 +50,13 @@ test('Cards de Português e RLM oferecem PDF sem substituir aulas, questões e p
   assert.match(pt, /type==='pdf'/);
   assert.match(pt, /BaseApostilasPdf\.open/);
   assert.match(pt, /CentralPortugueseReader\.open/);
-  assert.match(pt, /review\?'':card\(m\.id,'pdf'/);
+  // Português: o card de apostila PDF foi retirado de propósito (só Teoria e questões internas); o leitor continua disponível para outros usos.
+  assert.doesNotMatch(pt, /card\(m\.id,'pdf'/);
   assert.match(rlm, /stage==='pdf'/);
   assert.match(rlm, /BaseApostilasPdf\.open/);
   assert.match(rlm, /RlmNative\.open/);
   assert.match(rlm, /<strong>15<\/strong> apostilas/);
   assert.match(index, /\/ui\/apostilas-pdf-v1\.js/);
-  assert.match(index, /\/ui\/current-courses\.js\?v=20261112nographic1/);
+  assert.match(index, /\/ui\/current-courses\.js\?v=\d{8}[a-z0-9-]+/);
   assert.match(index, /\/ui\/rlm-native-v1\.js\?v=\d{8}[a-z0-9-]+/);
 });
