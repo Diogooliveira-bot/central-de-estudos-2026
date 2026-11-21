@@ -35,6 +35,7 @@ import handleHotmartWebhook from '../lib/hotmart-webhook.js';
 import handleHotmartClaim from '../lib/hotmart-claim-handler.js';
 import handlePremiumExpiryReminders from '../lib/premium-expiry-reminders.js';
 import handleStudyCommunication from '../lib/study-communication.js';
+import handleVadeAudit from '../lib/vade-audit.js';
 
 const PREVIEW_DEMO_BRANCH = 'feature/contato-relatorio-aluno-20261109';
 const PREVIEW_DEMO_ID = 'bc-preview-demo-20261109';
@@ -252,6 +253,7 @@ export default async function handler(req, res) {
     if (premiumApi === 'private-content') return await handlePrivateContent(req, res);
     if (premiumApi === 'lei-em-dia-questions') return await handleLeiEmDiaQuestions(req, res);
     if (premiumApi === 'questoes') return await handleQuestoes(req, res);
+    if (premiumApi === 'vade-audit') return await handleVadeAudit(req, res);
 
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
