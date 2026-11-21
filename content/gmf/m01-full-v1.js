@@ -40,7 +40,7 @@ window.GMF_M01_FULL={
       },
       {
         "title": "2. Limites territoriais: costa e municípios vizinhos",
-        "html": "<p>O memorial de limites do Ceará descreve o lado <strong>norte</strong> de Fortaleza junto ao <strong>Oceano Atlântico</strong>, entre as fozes dos rios Ceará e Pacoti. No entorno municipal aparecem <strong>Caucaia, Maracanaú, Pacatuba, Itaitinga, Eusébio e Aquiraz</strong>.</p><p>Não confunda “vizinho de Fortaleza” com “integrante da Região Metropolitana”: a região metropolitana abrange um conjunto mais amplo, e nem todo município metropolitano faz divisa direta com a capital.</p><p>Os limites são definidos por elementos naturais, pontos geográficos, vias e documentos legais; para uma dúvida cartográfica exata, consulte o mapa oficial e a legislação de limites.</p>"
+        "html": "<p>O memorial de limites do Ceará descreve o lado <strong>norte</strong> de Fortaleza junto ao <strong>Oceano Atlântico</strong>, entre as fozes dos rios Ceará e Pacoti. No entorno municipal aparecem <strong>Caucaia, Maracanaú, Itaitinga, Eusébio e Aquiraz</strong>.</p><p>Não confunda “vizinho de Fortaleza” com “integrante da Região Metropolitana”: a região metropolitana abrange um conjunto mais amplo, e nem todo município metropolitano faz divisa direta com a capital.</p><p>Os limites são definidos por elementos naturais, pontos geográficos, vias e documentos legais; para uma dúvida cartográfica exata, consulte o mapa oficial e a legislação de limites.</p>"
       },
       {
         "title": "3. Como ler a posição no mapa",
