@@ -7,7 +7,7 @@ function styles(){
  if(document.querySelector('link[data-adm-apostila-style]'))return;
  const link=document.createElement('link');
  link.rel='stylesheet';link.dataset.admApostilaStyle='1';
- link.href='/ui/adm-apostila-reading-v1.css?v=20261121admm02arts1';
+ link.href='/ui/adm-apostila-reading-v1.css?v=20261121admm03arts1';
  document.head.append(link);
 }
 async function decompress(base64){
@@ -16,15 +16,17 @@ async function decompress(base64){
 }
 function esc(value){return String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function addGuidedReviewArts(html,number){
- if(number!==2||html.includes('data-adm-review-art='))return html;
+ if(![2,3].includes(number)||html.includes('data-adm-review-art='))return html;
  const matches=[...html.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)];
  const chapters=matches.map((m,index)=>({index,start:m.index,end:m.index+m[0].length,title:m[1].replace(/<[^>]+>/g,'').trim()})).filter(x=>/^\d{2}\s+/.test(x.title));
- if(chapters.length!==9||chapters.some((x,i)=>!x.title.startsWith(String(i+1).padStart(2,'0')+' ')))throw new Error('A revisão guiada ADM M02 não contém os nove capítulos esperados.');
+ const expectedM03=['01 O que é um ato administrativo?','02 Os cinco elementos de validade','03 Motivo, motivação e teoria dos motivos determinantes','04 Atributos dos atos administrativos','05 Atos vinculados, discricionários e mérito','06 Principais classificações dos atos','07 Perfeição, validade, eficácia e efeitos','08 Anulação, revogação e convalidação','09 Um caso completo: da decisão à revisão'];
+ if(chapters.length!==9||chapters.some((x,i)=>!x.title.startsWith(String(i+1).padStart(2,'0')+' ')))throw new Error('A revisão guiada ADM M'+String(number).padStart(2,'0')+' não contém os nove capítulos esperados.');
+ if(number===3&&chapters.some((x,i)=>x.title!==expectedM03[i]))throw new Error('Os títulos da revisão guiada ADM M03 diferem do inventário validado; as artes não foram inseridas.');
  let result=html;
  for(let i=chapters.length-1;i>=0;i--){
   const chapter=chapters[i],next=matches.find(x=>x.index>chapter.start),end=next?next.index:result.length;
-  const n=String(i+1).padStart(2,'0'),title=chapter.title.replace(/^\d{2}\s+/,''),alt=`Arte de revisão: capítulo ${n} — ${title}`;
-  const figure=`<figure class="adm-guided-review-art" data-adm-review-art="02-${n}"><img src="/assets/adm/revisao-guiada/m02/ADM-M02-C${n}.webp" alt="${esc(alt)}" loading="lazy" decoding="async"><figcaption>Resumo visual · Capítulo ${n}: ${esc(title)}</figcaption></figure>`;
+  const n=String(i+1).padStart(2,'0'),mod=String(number).padStart(2,'0'),title=chapter.title.replace(/^\d{2}\s+/,''),alt=`Arte de revisão: capítulo ${n} — ${title}`;
+  const figure=`<figure class="adm-guided-review-art" data-adm-review-art="${mod}-${n}"><img src="/assets/adm/revisao-guiada/m${mod}/ADM-M${mod}-C${n}.webp" alt="${esc(alt)}" loading="lazy" decoding="async"><figcaption>Resumo visual · Capítulo ${n}: ${esc(title)}</figcaption></figure>`;
   result=result.slice(0,end)+figure+result.slice(end);
  }
  return result;

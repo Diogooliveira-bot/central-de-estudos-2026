@@ -1,5 +1,5 @@
 {
-  "build": "20261121-adm-m01-m02-arts-v1",
+  "build": "20261121-adm-m03-arts-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -70,8 +70,8 @@
     "/central-reading-font-v66126.js?v=20261118r1",
     "/central-structural-v66119/cf-final-audit-integration-20260920.js",
     "/civil-decorando-index-v1.js?v=20261118r1",
-    "/central-lazy-theory-v66119.js?v=20261121r1",
-    "/central-lazy-theory-v66119.js?v=20261121r1",
+    "/central-lazy-theory-v66119.js?v=20261121adm-m03-artes1",
+    "/central-lazy-theory-v66119.js?v=20261121adm-m03-artes1",
     "/cpc-m1-apostila-v66121.js?v=66122a1",
     "/central-reading-fullscreen-v66123.js?v=66140cpc1",
     "/cpc-flow-visual-v1.js?v=20260930civil1",
@@ -190,7 +190,7 @@
     "/assets/base-completa-symbol.webp",
     "/study-cycle-planner-v1.js",
     "/content/adm/adm-native-index.js?v=20261102admguide1",
-    "/ui/adm-native-layer.js?v=20261121adm-m01-m02-artes1",
+    "/ui/adm-native-layer.js?v=20261121adm-m03-artes1",
     "/ui/adm-native-layer.css?v=20261115responsive1",
     "/ui/native-reading-session.js?v=20261115responsive1",
     "/ui/cpp-native-study-v1.css?v=20261115responsive1",
@@ -262,8 +262,8 @@
     "/ui/cpc-apostila-reading-v1.css?v=20261120leiseca1",
     "/ui/law-inline-v1.js?v=20261120leiseca1",
     "/content/cpc/cpc-reading-laws-v1.js?v=20261107cpc2",
-    "/ui/adm-apostila-reading-v1.js?v=20261121r1",
-    "/ui/adm-apostila-reading-v1.css?v=20261121admm02arts1",
+    "/ui/adm-apostila-reading-v1.js?v=20261121admm03arts1",
+    "/ui/adm-apostila-reading-v1.css?v=20261121admm03arts1",
     "/content/adm/m01-apostila-summary.js?v=20261108adm1",
     "/content/adm/m02-apostila-summary.js?v=20261108adm1",
     "/content/adm/m03-apostila-summary.js?v=20261108adm1",
@@ -294,6 +294,15 @@
     "/ui/module-review-v1.js?v=20261117review2",
     "/ui/module-review-v1.css?v=20261117review2",
     "/ui/editor-premium-v1.js?v=20261119cfeditlaw1",
-    "/ui/editor-premium-v1.css?v=20261119cfeditlaw1"
+    "/ui/editor-premium-v1.css?v=20261119cfeditlaw1",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C01.webp",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C02.webp",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C03.webp",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C04.webp",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C05.webp",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C06.webp",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C07.webp",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C08.webp",
+    "/assets/adm/revisao-guiada/m03/ADM-M03-C09.webp"
   ]
 }
