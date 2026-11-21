@@ -17,7 +17,24 @@
  function renderGmfGrid(){
    const grid=global.document.getElementById('gmfGoalGrid');
    if(!grid)return;
-   grid.innerHTML=[...GMF_IDS].map(id=>'<button type="button" class="disc-card gmf-goal-card" data-id="'+esc(id)+'" data-study-open-subject="'+esc(id)+'"><b>'+esc(LABELS[id])+'</b><small>'+(EXTRA.has(id)?'Matéria específica da GMF':'Matéria comum ao concurso')+'</small><span class="disc-meta">Abrir módulos</span></button>').join('');
+   // Elementos construídos via DOM, sem interpretar marcação dinâmica como HTML.
+   grid.replaceChildren();
+   for(const id of GMF_IDS){
+     const button=global.document.createElement('button');
+     button.type='button';
+     button.className='disc-card gmf-goal-card';
+     button.dataset.id=id;
+     button.dataset.studyOpenSubject=id;
+     const title=global.document.createElement('b');
+     title.textContent=LABELS[id];
+     const detail=global.document.createElement('small');
+     detail.textContent=EXTRA.has(id)?'Matéria específica da GMF':'Matéria comum ao concurso';
+     const hint=global.document.createElement('span');
+     hint.className='disc-meta';
+     hint.textContent='Abrir módulos';
+     button.append(title,detail,hint);
+     grid.appendChild(button);
+   }
  }
  function current(){
    try{return global.localStorage?.getItem(KEY)===GMF?GMF:DEFAULT}catch(_){return DEFAULT}
@@ -77,6 +94,7 @@
        if(!button)return;
        event.preventDefault();
        const id=button.dataset.studyOpenSubject;
+       if(!GMF_IDS.has(id))return;
        if(global.BaseCompletaFocusNavigation?.chooseSubject){global.openHome?.();global.BaseCompletaFocusNavigation.chooseSubject(id)}
        else global.jumpSubject?.(id);
      });
