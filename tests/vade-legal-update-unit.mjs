@@ -82,7 +82,7 @@ test('interface mostra conferência e separa observações da lei seca', () => {
 });
 
 test('controle jurídico é restrito a administrador e mantém eventos imutáveis', () => {
-  const api = fs.readFileSync(new URL('../api/vade-audit.js', import.meta.url), 'utf8');
+  const api = fs.readFileSync(new URL('../lib/vade-audit.js', import.meta.url), 'utf8');
   const admin = fs.readFileSync(new URL('../vade-admin.html', import.meta.url), 'utf8');
   assert.match(api, /requireSession\(req, \['admin'\]\)/);
   assert.match(api, /central_vade_legal_events/);
