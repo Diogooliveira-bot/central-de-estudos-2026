@@ -66,6 +66,7 @@
    state();
    try{global.renderAll?.()}catch(error){console.warn('[Objetivo GMF] não foi possível atualizar a página inicial',error)}
    try{global.renderDisciplineGrid?.()}catch(error){console.warn('[Objetivo GMF] não foi possível atualizar as disciplinas',error)}
+   try{global.renderMapaEstudos?.()}catch(error){console.warn('[Objetivo GMF] não foi possível atualizar o mapa',error)}
    if(navigate){
      try{global.openDisciplines?.()}catch(_){}
    }
