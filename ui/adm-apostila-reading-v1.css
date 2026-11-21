@@ -91,3 +91,7 @@ html[data-bc-reading-mode="night"] #adm-native-reader .bc-native-article.adm-apo
 .adm-author-reading .adm-author-review-tip{margin:2rem 0 1rem;padding:0;border:0}
 .adm-author-reading .adm-author-review-tip h2{font-size:1.12rem}
 @media(max-width:640px){.adm-author-reading{font-size:.96rem}.adm-author-reading h1{font-size:1.4rem}.adm-author-reading h2{font-size:1.19rem}.adm-author-reading .adm-author-table-wrap{margin-right:-8px}}
+#adm-native-reader .bc-native-article.adm-apostila .adm-guided-review-art{max-width:780px;margin:28px auto 34px;padding:10px;background:#fff;border:1px solid #c7e8f5;border-radius:18px;box-shadow:0 10px 26px rgba(7,61,120,.08)}
+#adm-native-reader .bc-native-article.adm-apostila .adm-guided-review-art img{display:block;width:100%;height:auto;max-width:100%;border-radius:12px;object-fit:contain}
+#adm-native-reader .bc-native-article.adm-apostila .adm-guided-review-art figcaption{padding:9px 5px 3px;color:#45677e;text-align:center;font-size:.875rem;line-height:1.45}
+@media(max-width:640px){#adm-native-reader .bc-native-article.adm-apostila .adm-guided-review-art{margin:22px 0 28px;padding:6px;border-radius:12px}#adm-native-reader .bc-native-article.adm-apostila .adm-guided-review-art img{border-radius:8px}}

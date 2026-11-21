@@ -15,7 +15,7 @@ function sessionCount(uid){return sessions(uid).filter((_,i)=>sessionDone(uid,i+
 function itemKey(uid,index){return k(uid,'complete',`check-${index}`)}
 function moduleProgress(uid){return Math.round((progress(uid,'summary')+progress(uid,'complete'))/2)}
 function stats(){const uids=Object.keys(INDEX),vals=uids.map(moduleProgress),done=vals.filter(x=>x>=100).length,pct=Math.round(vals.reduce((a,b)=>a+b,0)/(vals.length||1));return {total:uids.length,done,pct,unit:'módulos'}}
-function loadData(uid){if(CONTENT[uid])return Promise.resolve(CONTENT[uid]);if(loaded[uid])return loaded[uid];const n=String(num(uid)).padStart(2,'0');loaded[uid]=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/content/adm/m'+n+'-native-data-lite.js?v=20261005adm1';script.onload=()=>{if(CONTENT[uid])resolve(CONTENT[uid]);else{loaded[uid]=null;reject(new Error('Conteúdo ADM M'+n+' não localizado'))}};script.onerror=()=>{loaded[uid]=null;reject(new Error('Falha ao carregar conteúdo ADM M'+n))};document.head.appendChild(script)});return loaded[uid]}
+function loadData(uid){if(CONTENT[uid])return Promise.resolve(CONTENT[uid]);if(loaded[uid])return loaded[uid];const n=String(num(uid)).padStart(2,'0');loaded[uid]=new Promise((resolve,reject)=>{const script=document.createElement('script');const dataVersion=uid==='adm-01-01-regime-juridico-e-principios'?'20261121adm-m01-artes1':'20261005adm1';script.src='/content/adm/m'+n+'-native-data-lite.js?v='+dataVersion;script.onload=()=>{if(CONTENT[uid])resolve(CONTENT[uid]);else{loaded[uid]=null;reject(new Error('Conteúdo ADM M'+n+' não localizado'))}};script.onerror=()=>{loaded[uid]=null;reject(new Error('Falha ao carregar conteúdo ADM M'+n))};document.head.appendChild(script)});return loaded[uid]}
 function loadApprovedComplete(uid){const n=num(uid);if(!n)return Promise.reject(new Error('Módulo ADM inválido'));if(g.ADM_APPROVED_COMPLETE?.[n])return Promise.resolve(g.ADM_APPROVED_COMPLETE[n]);if(approvedLoaded[n])return approvedLoaded[n];approvedLoaded[n]=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=`/content/adm/m${String(n).padStart(2,'0')}-approved-complete.js?v=20261025admtabelas1`;script.onload=()=>{if(g.ADM_APPROVED_COMPLETE?.[n])resolve(g.ADM_APPROVED_COMPLETE[n]);else{approvedLoaded[n]=null;reject(new Error('Apostila aprimorada M'+n+' não localizada'))}};script.onerror=()=>{approvedLoaded[n]=null;reject(new Error('Falha ao carregar apostila aprimorada M'+n))};document.head.appendChild(script)});return approvedLoaded[n]}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function escAttr(s){return esc(s).replace(/`/g,'&#96;')}
@@ -152,7 +152,7 @@ async function open(uid,kind,jump,sectionNumber){if(g.BCQuestionsRemoved)jump=fa
     if(!d.completeAppendHtml)throw new Error('Questões completas ADM não localizadas');
     content+=d.completeAppendHtml;
   }
-  if(!g.AdmApostilaReading)await import('/ui/adm-apostila-reading-v1.js?v=20261118r1');
+  if(!g.AdmApostilaReading)await import('/ui/adm-apostila-reading-v1.js?v=20261121r1');
   content=await g.AdmApostilaReading.load(num(uid),kind);
   if(active!==session)return;
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);

@@ -1,0 +1,26 @@
+name: Menu do topo no tablet
+on:
+  pull_request:
+    paths:
+      - 'ui/tablet-legibility-v1.css'
+      - 'ui/auto-scale-v1.css'
+      - 'ui/student-experience-v3.css'
+      - 'ui/home-topnav-v1.css'
+      - 'ui/student-shell-v3.js'
+      - 'tests/tablet-menu-browser.mjs'
+      - '.github/workflows/menu-tablet.yml'
+  workflow_dispatch:
+jobs:
+  menu-tablet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install chromium
+      # Conta e API fictícias; nenhum dado de aluno.
+      - run: node tests/tablet-menu-browser.mjs
