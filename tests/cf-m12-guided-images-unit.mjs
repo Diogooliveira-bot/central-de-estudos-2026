@@ -37,10 +37,10 @@ test('13 PNGs e WebPs têm formato, tamanho e dimensões esperados',()=>{
 });
 
 test('o leitor coloca a arte M12 no fim de cada capítulo, sem habilitá-la nos demais módulos',()=>{
-  assert.match(reader,/n>=4&&n<=14/);
+  assert.match(reader,/n>=4&&n<=15/);
   assert.match(reader,/CF-M'\+String\(n\)\.padStart\(2,'0'\)\+'-C'\+num\+'\.webp/);
   assert.match(reader,/\+lawBox\(n,index\)\+warning\+infographic\+'<\/section>'/);
-  assert.match(reader,/n<=14/);
+  assert.match(reader,/n<=15/);
 });
 
 test('os quatro pictogramas por capítulo têm desenho vetorial no renderer',()=>{

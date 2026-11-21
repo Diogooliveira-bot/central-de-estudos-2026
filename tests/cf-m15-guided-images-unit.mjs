@@ -37,7 +37,7 @@ test('13 PNGs e WebPs têm formato e dimensões corretos',()=>{
   }
 });
 
-test('cada arte M15 aparece no fim do capítulo correto e M14 continua sem mudança',()=>{
+test('cada arte M15 aparece no fim do capítulo correto e o M14 mantém a sua própria arte',()=>{
   const cardMatch=reader.match(/function card\(topic,index,n\)\{[\s\S]*?\n\}/);
   assert.ok(cardMatch,'renderer de capítulo existe');
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -48,7 +48,8 @@ test('cada arte M15 aparece no fim do capítulo correto e M14 continua sem mudan
     assert.ok(html.endsWith('</figure></section>'));
   }
   assert.ok(!renderCard(real.topics[0],0,14).includes('/assets/cf/revisao-guiada/m15/'));
-  assert.match(reader,/\|\|n===15/);
+  assert.ok(renderCard(real.topics[0],0,14).includes('/assets/cf/revisao-guiada/m14/'));
+  assert.match(reader,/n>=4&&n<=15/);
 });
 
 test('o leitor real insere cada imagem dentro do capítulo correspondente',()=>{
