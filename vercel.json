@@ -12,6 +12,10 @@
       "destination": "/api/objective?resource=concursos"
     },
     {
+      "source": "/api/vade-audit",
+      "destination": "/api/auth?bc_api=vade-audit"
+    },
+    {
       "source": "/api/study-communication",
       "destination": "/api/auth?bc_api=study-communication"
     },

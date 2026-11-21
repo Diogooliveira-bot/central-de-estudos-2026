@@ -94,6 +94,8 @@ const refs = new Map(); // caminho -> Map(versão -> onde)
   const current = boot && boot[1];
   const outros = [...builds.keys()].filter((b) => current && b !== current && /^20\d{6}-/.test(b));
   const swBuild = /BUILD\s*=\s*'([^']+)'/.exec(read('sw.js'));
+  const manifestBuild = (JSON.parse(read('central-offline-files-v66172.json')).build) || '';
+  if (current && manifestBuild !== current) erro('Versão geral do pacote offline diferente da abertura', `abertura=${current} · central-offline-files-v66172.json "build"=${manifestBuild}`, 'Troque o campo "build" do central-offline-files-v66172.json para a mesma versão geral (os testes do pacote offline e o cache dependem disso).');
   if (current && swBuild && swBuild[1] !== current) erro('Versão geral diferente entre a abertura e o service worker', `abertura=${current} · sw.js=${swBuild[1]}`, 'Troque a versão geral em todos os arquivos juntos (central-v119.html, sw.js, index.html e o pacote offline).');
   else ok.push(`Versão geral única: ${current || 'não encontrada'}`);
   if (outros.length && swBuild) atencao('Sobraram versões gerais antigas em arquivos', outros.slice(0, 6).map((b) => `${b} em ${[...builds.get(b)].join(', ')}`).join('\n  '), 'Se for resto da versão anterior, troque para a atual.');

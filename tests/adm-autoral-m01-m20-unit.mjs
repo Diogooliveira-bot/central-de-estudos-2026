@@ -63,6 +63,6 @@ test('ADM: leitor mantém isolamento e parâmetros de cache para revisão autora
  const js=read('ui/adm-apostila-reading-v1.js'),loader=read('ui/adm-native-layer.js');
  assert.match(js,/if\(mode==='complete'\)return originalHtml/);
  assert.match(js,/adm-m'\+String\(number\)\.padStart\(2,'0'\)\+'-submitted-review\.js/);
- assert.ok(loader.includes('/ui/adm-apostila-reading-v1.js?v=20261118r1'));
+ assert.match(loader,/\/ui\/adm-apostila-reading-v1\.js\?v=[A-Za-z0-9._-]+/);
  assert.doesNotMatch(js,/localStorage|sessionStorage|\.setItem\(|fetch\(['"]\/api/);
 });

@@ -20,6 +20,27 @@ test('40 approved views load through the real compressed reader, with literal la
   for(const law of d.querySelectorAll('details.law [data-law-key]'))assert.match(law.querySelector('p').textContent,/^Art\.?\s*\d/i);
   for(const h of d.querySelectorAll('h2,h3'))assert.doesNotMatch(h.textContent.trim(),/^(?:\d+\.\s*)?(Entenda primeiro|Regra jurídica|Como funciona na prática|O que levar para a prova|Como cai na prova|O que decorar)$/i);
   if(mode==='complete')assert.ok(d.querySelectorAll('[data-adm-session]').length>=5);
+  if(mode==='summary'&&n===2){
+   const review=d.querySelector('.adm-author-reading');
+   const headings=[...review.querySelectorAll('h2')];
+   const chapters=headings.filter(h=>/^0[1-9]\s/.test(h.textContent.trim()));
+   const arts=[...review.querySelectorAll('.adm-guided-review-art')];
+   assert.equal(chapters.length,9,'the source review contains nine numbered chapters');
+   assert.equal(arts.length,9,'each M02 chapter receives one art');
+   for(let i=0;i<9;i++){
+    assert.ok(chapters[i].compareDocumentPosition(arts[i])&w.Node.DOCUMENT_POSITION_FOLLOWING);
+    assert.match(arts[i].querySelector('img').getAttribute('src'),new RegExp(`ADM-M02-C${String(i+1).padStart(2,'0')}\\.webp$`));
+    const next=headings[headings.indexOf(chapters[i])+1];
+    if(next)assert.ok(arts[i].compareDocumentPosition(next)&w.Node.DOCUMENT_POSITION_FOLLOWING,'art must appear before the next chapter');
+    const stem=`ADM-M02-C${String(i+1).padStart(2,'0')}`;
+    const png=fs.readFileSync(new URL(`../artes/adm-m02/png/${stem}.png`,import.meta.url));
+    const webp=fs.readFileSync(new URL(`../assets/adm/revisao-guiada/m02/${stem}.webp`,import.meta.url));
+    assert.equal(png.subarray(0,8).toString('hex'),'89504e470d0a1a0a',`${stem} PNG is readable`);
+    assert.equal(png.readUInt32BE(16),1229,`${stem} PNG width`);assert.equal(png.readUInt32BE(20),1536,`${stem} PNG height`);
+    assert.equal(webp.subarray(8,12).toString(),'WEBP',`${stem} integration image is WebP`);
+    assert.ok(webp.length<220_000,`${stem} WebP stays optimized for delivery`);
+   }
+  }else if(mode==='summary')assert.equal(d.querySelectorAll('.adm-guided-review-art').length,0,'other modules remain unchanged');
   if(mode==='complete'){assert.ok(d.querySelectorAll('details.law').length>0);blocks+=d.querySelectorAll('details.law').length;}
  }
  assert.ok(blocks>150,'legislação recolhível das versões completas preservada');assert.equal(w.document.querySelectorAll('link[data-adm-apostila-style]').length,1);dom.window.close();

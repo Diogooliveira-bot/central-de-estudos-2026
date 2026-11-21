@@ -1,0 +1,25 @@
+name: Visual das questoes internas
+on:
+  pull_request:
+    paths:
+      - 'ui/questoes-area-v1.js'
+      - 'ui/questoes-area-v1.css'
+      - 'tests/questoes-visual-browser.mjs'
+      - 'tests/questoes-area-unit.mjs'
+      - '.github/workflows/questoes-visual.yml'
+  workflow_dispatch:
+jobs:
+  questoes-visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install chromium
+      - run: node --test tests/questoes-area-unit.mjs
+      # Conta e API fictícias; nenhum dado de aluno.
+      - run: node tests/questoes-visual-browser.mjs

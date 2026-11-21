@@ -440,3 +440,38 @@ html.student-experience-v3 .student-more-panel button:focus-visible {
   html.student-experience-v3 .student-more-grid {grid-template-columns:1fr!important;}
   html.student-experience-v3 .student-more-grid>button {grid-column:1/-1!important;}
 }
+
+/* Painel "Mais" (20261121): perfil, tamanho da letra com um toque e "Sair" separado. */
+html.student-experience-v3 .student-more-profile {
+  display:flex;align-items:center;gap:12px;margin:0 0 12px;padding:10px 12px;border:1px solid var(--student-line);border-radius:12px;background:var(--student-soft);
+}
+html.student-experience-v3 .student-more-avatar {
+  display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--student-brand-strong);color:#fff;font-size:1.125rem;font-weight:800;
+}
+html.student-experience-v3 .student-more-who {min-width:0;display:block;}
+html.student-experience-v3 .student-more-who b {display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:1rem;color:var(--student-ink);}
+html.student-experience-v3 .student-more-who small {
+  display:inline-block;margin-top:3px;padding:2px 9px;border-radius:999px;background:rgba(11,143,156,.14);color:var(--student-brand-strong);font-size:0.6875rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+}
+html.student-experience-v3 .student-more-who small[hidden] {display:none;}
+html.student-experience-v3 .student-more-scale {margin:0 0 12px;}
+html.student-experience-v3 .student-more-scale[hidden] {display:none;}
+html.student-experience-v3 .student-more-scale-label {display:block;margin:0 2px 6px;color:var(--student-muted);font-size:0.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;}
+html.student-experience-v3 .student-more-scale-options {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;border:1px solid var(--student-line);border-radius:12px;background:var(--student-soft);}
+html.student-experience-v3 .student-more-scale-options button {
+  min-height:44px;padding:6px 4px;border:0;border-radius:9px;background:transparent;color:var(--student-ink);font:inherit;font-size:0.8125rem;font-weight:700;cursor:pointer;
+}
+html.student-experience-v3 .student-more-scale-options button.active {background:var(--student-brand-strong);color:#fff;box-shadow:0 2px 6px rgba(8,113,124,.3);}
+html.student-experience-v3 .student-more-scale-options button:focus-visible {outline:3px solid var(--student-brand);outline-offset:1px;}
+html.student-experience-v3 .student-more-grid {grid-template-columns:1fr!important;}
+html.student-experience-v3 .student-more-grid>button {min-height:64px;grid-column:auto!important;}
+html.student-experience-v3 .student-more-grid>button:focus-visible {outline:3px solid var(--student-brand);outline-offset:1px;}
+html.student-experience-v3 .student-more-grid>[data-student-more-action="logout"] {
+  margin-top:4px;background:transparent!important;border-color:#e5c9c6!important;color:#8c3731!important;
+}
+html.student-experience-v3 .student-more-grid>[data-student-more-action="logout"]:hover {background:#fff0ef!important;border-color:#d9a8a3!important;}
+html.student-experience-v3 .student-more-grid>[data-student-more-action="logout"] small {color:#a0524b!important;}
+html.student-experience-v3 .student-more-grid>[data-student-more-action="logout"]>span:first-child {background:#8c3731!important;color:#fff!important;}
+@media (max-width:460px) {
+  html.student-experience-v3 .student-more-scale-options button {font-size:0.75rem;}
+}

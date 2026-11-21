@@ -100,8 +100,8 @@ test('o visual desktop é compacto e o menu móvel continua responsivo', async (
 test('recursos editados estão no carregador e no manifesto offline', async () => {
   const boot = await read('central-v119.html');
   const offline = await read('central-offline-files-v66172.json');
-  assert.match(boot, /student-shell-v3\.js\?v=20261119adminonly1/);
-  assert.match(offline, /student-shell-v3\.js\?v=20261119adminonly1/);
+  assert.match(boot, /student-shell-v3\.js\?v=[A-Za-z0-9._-]+/);
+  assert.match(offline, /student-shell-v3\.js\?v=[A-Za-z0-9._-]+/);
 });
 
 

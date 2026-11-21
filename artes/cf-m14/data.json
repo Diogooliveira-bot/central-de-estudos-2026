@@ -1,0 +1,156 @@
+[
+  {
+    "no": 1,
+    "title": "Ordem social: trabalho, bem-estar e justiça social",
+    "central": "A ordem social tem como base o primado do trabalho e busca bem-estar e justiça sociais.",
+    "example": "Política que amplia o acesso à saúde ajuda a realizar objetivos da ordem social.",
+    "rule": "Art. 193: base = primado do trabalho; objetivos = bem-estar e justiça sociais.",
+    "detail": "A seguridade social é um dos meios de concretizar a proteção social.",
+    "trap": "Não confunda o art. 193 com os fundamentos da ordem econômica do art. 170.",
+    "memory": "Ordem social: trabalho, bem-estar e justiça social.",
+    "check": "Identifico a base e os objetivos do art. 193."
+  },
+  {
+    "no": 2,
+    "title": "Seguridade social: três áreas que se complementam",
+    "central": "A seguridade reúne saúde, previdência e assistência social. Cada área tem requisitos de acesso diferentes.",
+    "example": "Quem não contribuiu ao INSS pode receber atendimento no SUS.",
+    "rule": "Art. 194: conjunto integrado de ações para assegurar saúde, previdência e assistência.",
+    "detail": "Saúde é universal; previdência é contributiva; assistência depende da necessidade.",
+    "trap": "Assistência social não é aposentadoria sem contribuição.",
+    "memory": "Seguridade = saúde + previdência + assistência.",
+    "check": "Diferencio os requisitos de cada área."
+  },
+  {
+    "no": 3,
+    "title": "Universalidade e proteção urbana/rural",
+    "central": "A seguridade busca cobertura ampla e proteção equivalente para as populações urbanas e rurais.",
+    "example": "A proteção social não pode excluir alguém só por morar no campo.",
+    "rule": "Art. 194, parágrafo único, I e II: universalidade e equivalência urbana/rural.",
+    "detail": "Universalidade não elimina os requisitos de cada benefício previdenciário.",
+    "trap": "Universalidade não garante qualquer benefício sem cumprir as regras.",
+    "memory": "Universalidade; equivalência entre campo e cidade.",
+    "check": "Reconheço esses objetivos do art. 194."
+  },
+  {
+    "no": 4,
+    "title": "Seletividade, irredutibilidade e equidade",
+    "central": "A seguridade combina seleção de prestações, distribuição protetiva, irredutibilidade e equidade no custeio.",
+    "example": "As prestações priorizam necessidades sociais e os custos consideram as diferenças entre contribuintes.",
+    "rule": "Art. 194, parágrafo único, III a V: seletividade, distributividade, irredutibilidade e equidade.",
+    "detail": "A proteção ao valor nominal e a preservação do poder de compra têm bases distintas.",
+    "trap": "Seletividade complementa a universalidade; não a elimina.",
+    "memory": "Seletividade distribui; equidade orienta o custeio.",
+    "check": "Separo irredutibilidade nominal de reajuste real."
+  },
+  {
+    "no": 5,
+    "title": "Diversidade de financiamento e gestão democrática",
+    "central": "A seguridade tem várias fontes de financiamento e gestão democrática com participação social.",
+    "example": "Conselhos reúnem representantes dos grupos previstos na Constituição.",
+    "rule": "Art. 194, parágrafo único, VI e VII: diversidade de financiamento e gestão democrática.",
+    "detail": "A gestão é descentralizada e quadripartite: quatro grupos participam dos colegiados.",
+    "trap": "A gestão não é feita apenas por decisões isoladas do Executivo.",
+    "memory": "Financiamento diverso; gestão quadripartite.",
+    "check": "Identifico os quatro grupos da gestão."
+  },
+  {
+    "no": 6,
+    "title": "Art. 195: como a sociedade financia a seguridade",
+    "central": "Toda a sociedade financia a seguridade, e a criação ou ampliação de benefício exige fonte de custeio total.",
+    "example": "Novo benefício sem indicação da fonte total de custeio pode contrariar a Constituição.",
+    "rule": "Art. 195, caput e § 5º: financiamento coletivo e fonte de custeio total.",
+    "detail": "Em regra, contribuições sociais respeitam noventena; há bases distintas de contribuição.",
+    "trap": "Previsão genérica no orçamento não substitui a fonte de custeio exigida.",
+    "memory": "Art. 195: custeio coletivo + fonte total.",
+    "check": "Aplico a contrapartida do § 5º."
+  },
+  {
+    "no": 7,
+    "title": "Saúde: direito de todos e dever do Estado",
+    "central": "Saúde é direito de todos e dever do Estado, com prevenção de riscos e acesso universal e igualitário.",
+    "example": "Atendimento no SUS não depende de emprego ou contribuição ao INSS.",
+    "rule": "Art. 196: políticas reduzem riscos e garantem acesso universal e igualitário.",
+    "detail": "O Poder Público regula e fiscaliza ações de saúde, ainda que prestadas por terceiros.",
+    "trap": "O dever estatal inclui prevenção e assistência; não apenas tratamento.",
+    "memory": "Saúde: direito de todos, dever do Estado.",
+    "check": "Explico por que o SUS não exige contribuição."
+  },
+  {
+    "no": 8,
+    "title": "SUS: rede, diretrizes e participação",
+    "central": "O SUS é uma rede regionalizada e hierarquizada, guiada por descentralização, integralidade e participação.",
+    "example": "Vacinação é preventiva; consultas e tratamentos também integram o atendimento.",
+    "rule": "Art. 198: direção única por esfera, integralidade e participação comunitária. EC 140/2026: atuação permanente de ACS e ACE.",
+    "detail": "Regionalização organiza a rede; a Constituição também fixa aplicações mínimas em saúde.",
+    "trap": "Priorizar prevenção não autoriza deixar de prestar ações assistenciais.",
+    "memory": "SUS: descentralização + integralidade + participação.",
+    "check": "Lembro a atualização da EC 140/2026."
+  },
+  {
+    "no": 9,
+    "title": "Atuação privada e complementaridade no SUS",
+    "central": "A iniciativa privada pode prestar serviços de saúde; sua participação no SUS é complementar e regulada.",
+    "example": "Hospital filantrópico pode atender pelo SUS por contrato ou convênio.",
+    "rule": "Art. 199, § 1º: participação complementar por contrato ou convênio; preferência a filantrópicas e sem fins lucrativos.",
+    "detail": "A assistência privada é livre, mas não se confunde com a rede pública.",
+    "trap": "A vedação a subvenções lucrativas não proíbe toda contratação complementar.",
+    "memory": "Participação privada no SUS é complementar.",
+    "check": "Distingo assistência privada de SUS."
+  },
+  {
+    "no": 10,
+    "title": "Agentes comunitários e de endemias: EC 140/2026",
+    "central": "A EC 140/2026 prevê regras específicas para ACS e ACE, inclusive atuação, vínculo e aposentadoria.",
+    "example": "A regra diferenciada de ACS e ACE não se aplica automaticamente a outras profissões da saúde.",
+    "rule": "EC 140/2026 altera os arts. 40, 198 e 201 e prevê transições próprias.",
+    "detail": "Regra permanente: 57 anos para mulheres, 60 para homens e 25 anos de contribuição e atividade.",
+    "trap": "Não estenda a aposentadoria especial a todo trabalhador da saúde.",
+    "memory": "EC 140: regras próprias para ACS e ACE.",
+    "check": "Sei quem está abrangido pela emenda."
+  },
+  {
+    "no": 11,
+    "title": "RGPS: previdência contributiva e filiação obrigatória",
+    "central": "O RGPS é contributivo e de filiação obrigatória para quem se enquadra nas regras legais.",
+    "example": "Estar filiado não dá direito automático a todo benefício: os requisitos específicos continuam valendo.",
+    "rule": "Art. 201: RGPS contributivo e obrigatório, com equilíbrio financeiro e atuarial.",
+    "detail": "Há regras constitucionais de cobertura e piso para benefício substitutivo do salário (§ 2º).",
+    "trap": "Filiação obrigatória não significa recebimento automático de benefício.",
+    "memory": "RGPS: contribuição + filiação obrigatória.",
+    "check": "Distingo filiação do direito ao benefício."
+  },
+  {
+    "no": 12,
+    "title": "Previdência complementar: autonomia e facultatividade",
+    "central": "A previdência complementar é facultativa e autônoma em relação ao RGPS.",
+    "example": "Uma pessoa pode contribuir ao RGPS e contratar proteção complementar adicional.",
+    "rule": "Art. 202: previdência privada complementar, facultativa e baseada em reservas.",
+    "detail": "Ela não substitui a filiação obrigatória ao RGPS quando exigida.",
+    "trap": "A adesão ao plano complementar não é obrigatória para todo trabalhador.",
+    "memory": "Complementar: facultativa, autônoma e adicional.",
+    "check": "Diferencio previdência complementar e RGPS."
+  },
+  {
+    "no": 13,
+    "title": "Assistência social e benefício de prestação continuada",
+    "central": "A assistência atende quem necessita, sem exigir contribuição prévia. O BPC depende dos requisitos legais.",
+    "example": "Quem nunca contribuiu pode ter BPC se comprovar os requisitos; isso não é aposentadoria.",
+    "rule": "Art. 203, V: um salário mínimo mensal à pessoa idosa ou com deficiência sem meios de manutenção, na forma da lei.",
+    "detail": "O critério econômico pode ser avaliado conforme a lei e a jurisprudência aplicável.",
+    "trap": "BPC não é aposentadoria, não é automático e não exige contribuição anterior.",
+    "memory": "Assistência: necessidade; BPC: requisitos legais.",
+    "check": "Não confundo BPC com aposentadoria."
+  },
+  {
+    "no": 14,
+    "title": "Organização democrática da assistência social",
+    "central": "A assistência social é organizada de forma descentralizada e com participação da população.",
+    "example": "Conselhos acompanham políticas e ajudam a fiscalizar serviços.",
+    "rule": "Art. 204: descentralização político-administrativa e participação popular.",
+    "detail": "A União coordena e define normas gerais; os demais entes executam conforme a lei.",
+    "trap": "Descentralização não significa ausência de coordenação nacional.",
+    "memory": "Assistência: descentralização + participação popular.",
+    "check": "Identifico as diretrizes do art. 204."
+  }
+]
