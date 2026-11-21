@@ -75,6 +75,22 @@
     };
   }
 
+  // Identifica os roteiros na grade sem apresentá-los como cursos publicados.
+  if (typeof global.renderDisciplineGrid === 'function') {
+    const originalGrid = global.renderDisciplineGrid;
+    global.renderDisciplineGrid = function () {
+      const result = originalGrid.apply(this, arguments);
+      for (const course of catalog.subjects) {
+        const card = document.querySelector('.disc-card[data-id="' + course.id + '"]');
+        const subtitle = card?.querySelector('small');
+        const meta = card?.querySelector('.disc-meta');
+        if (subtitle) subtitle.textContent = course.modules.length + ' módulos · roteiro do edital GMF/2023';
+        if (meta) meta.textContent = 'Estrutura inicial · teoria em preparação';
+      }
+      return result;
+    };
+  }
+
   // A agenda é inicializada antes do carregamento deste pacote.
   const agendaSelect = document.getElementById('agendaDisc');
   if (agendaSelect) {
