@@ -73,6 +73,7 @@ test('cadastro na interface não duplica disciplinas e não simula progresso', (
   const document = {
     getElementById(id) {return id === 'agendaDisc' ? select : null},
     querySelector() {return null},
+    addEventListener() {},
     head: {appendChild(node) {appended.push(node)}},
     createElement(tag) {return {tagName:tag,style:{},id:'',textContent:''}}
   };
