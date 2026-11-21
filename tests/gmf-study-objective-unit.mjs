@@ -66,7 +66,8 @@ test('a grade e a área inicial respeitam a seleção em vez de ocultar só visu
  const runtime=read('central-structural-v66119/runtime.js');
  const source=read('ui/gmf-disciplines-v1.js');
  const index=read('index.html');
- assert.match(runtime,/SUBJECTS\.filter\(s=>window\.GmfStudyObjective\?\.allowsSubject\(s\.id\)!==false\)/);
+ assert.match(runtime,/\$\('subjects'\)\.innerHTML=SUBJECTS\.map\(s=>/,'renderização original preservada');
+ assert.match(read('ui/gmf-study-objective-v1.js'),/html:not\(\[data-gmf-study-goal/,'disciplinas GMF escondidas no objetivo geral');
  assert.match(runtime,/window\.GmfDisciplines\?\.renderMaster\?\.\(s\.id\)/);
  assert.match(source,/renderMaster:\(id\)=>/);
  assert.match(index,/gmf-study-objective-v1\.js/);
