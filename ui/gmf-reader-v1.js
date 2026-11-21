@@ -9,7 +9,8 @@
   const current={dialog:null,active:null,id:'',mode:''};
   const loading={};
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const key=(id,mode,i)=>'central-v6:gmf:m01:'+id+':'+mode+':read:'+i;
+  const USER_ID=String(global.__BASE_COMPLETA_USER_ID__||'guest').trim().slice(0,120);
+  const key=(id,mode,i)=>'central-v6:gmf:m01:'+USER_ID+':'+id+':'+mode+':read:'+i;
   const saved=k=>{try{return global.localStorage.getItem(k)==='1'}catch(_){return false}};
   const save=(k,v)=>{try{global.localStorage.setItem(k,v?'1':'0')}catch(_){}};
   const chapters=(id,mode)=>((mode==='review'?global.GMF_M01_REVIEW:global.GMF_M01_FULL)||{})[id];
