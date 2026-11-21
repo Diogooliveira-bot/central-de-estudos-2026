@@ -14,7 +14,7 @@ var groups={
  // Os 39 arquivos legados (adm-mN-theory/content/runtime e o pacote M9–M20, ~1,7 MB) saíram do carregamento: medido em
  // 4 módulos (M1, M5, M13, M20), lista, página do módulo, Revisão e Teoria completa ficam idênticas sem eles.
  // O Plano Gratuito já abria o ADM sem esses arquivos (403 ignorado pelo carregador).
- adm:['content/adm/adm-native-index.js?v=20261102admguide1','content/adm/adm-sharing-links.js?v=20261008admsharing1','content/adm/adm-session-index.js?v=20261024admsessoes1','ui/adm-native-layer.js?v=20261116revjur1']
+ adm:['content/adm/adm-native-index.js?v=20261102admguide1','content/adm/adm-sharing-links.js?v=20261008admsharing1','content/adm/adm-session-index.js?v=20261024admsessoes1','ui/adm-native-layer.js?v=20261121adm-m01-artes1']
 };
 window.CentralTheoryFiles=groups;
 if(window.CentralDisciplineLoader){window.loadCentralTheoryGroup=function(id){return window.CentralDisciplineLoader.load(id)};return;}
