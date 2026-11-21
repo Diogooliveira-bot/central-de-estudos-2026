@@ -1,0 +1,99 @@
+/* Base Completa — visual profissional das apostilas (todas as disciplinas).
+ * Só aparência: não altera texto, ordem, ids nem progresso de leitura.
+ * Modo papel e modo noturno usam as variáveis abaixo (html[data-bc-reading-mode]). */
+:root{
+ --sk-navy:#0a3d78;--sk-blue:#0a5fa8;--sk-cyan:#16b5d9;--sk-yellow:#ffd442;
+ --sk-ink:#1a2634;--sk-muted:#5b6b7d;--sk-line:#cfe0ef;--sk-soft:#f1f7fc;--sk-chap-bg:#e8f3fc;--sk-chap-bg2:#f5fafe;
+ --sk-odd:#ffffff;--sk-th-a:#0a5fa8;--sk-th-b:#07508a;--sk-zebra:#f1f7fc;--sk-strong:#0a3d78;--sk-h3:#0a5fa8;
+ --sk-teoria-m:#0a5fa8;--sk-teoria-b:#f3f9fe;--sk-teoria-l:#cfe3f4;
+ --sk-decore-m:#c77d00;--sk-decore-b:#fff8e8;--sk-decore-l:#f2dcae;
+ --sk-exemplo-m:#0f8a7a;--sk-exemplo-b:#effaf8;--sk-exemplo-l:#c3e8e2;
+ --sk-caso-m:#6a4bb5;--sk-caso-b:#f6f2fd;--sk-caso-l:#dcd0f2;
+ --sk-comp-m:#07508a;--sk-comp-b:#eef4fb;--sk-comp-l:#c9dbee;
+ --sk-lei-m:#2f7d4f;--sk-lei-b:#f1faf4;--sk-lei-l:#c6e4d1;
+ --sk-peg-m:#c0392b;--sk-peg-b:#fff3f1;--sk-peg-l:#f3cbc5;
+ --sk-jur-m:#4b5d8f;--sk-jur-b:#f2f5fc;--sk-jur-l:#d2daee;
+}
+html[data-bc-reading-mode="night"]{
+ --sk-ink:#dde3ea;--sk-muted:#a9b4c0;--sk-line:#3a4756;--sk-soft:#2b3440;--sk-chap-bg:#2a3a4d;--sk-chap-bg2:#2b3440;
+ --sk-odd:#262f3b;--sk-th-a:#1d5d93;--sk-th-b:#164a77;--sk-zebra:#2d3744;--sk-strong:#9fd0ff;--sk-h3:#7cc0f0;
+ --sk-teoria-m:#3b82c4;--sk-teoria-b:#243242;--sk-teoria-l:#35506b;
+ --sk-decore-m:#d89a2b;--sk-decore-b:#3a3220;--sk-decore-l:#59482a;
+ --sk-exemplo-m:#2eb3a1;--sk-exemplo-b:#213b38;--sk-exemplo-l:#2d5a54;
+ --sk-caso-m:#9479d6;--sk-caso-b:#2f2a42;--sk-caso-l:#473f68;
+ --sk-comp-m:#4f93d0;--sk-comp-b:#232f3f;--sk-comp-l:#35506b;
+ --sk-lei-m:#4faa73;--sk-lei-b:#21352a;--sk-lei-l:#35573f;
+ --sk-peg-m:#e0685a;--sk-peg-b:#3b2623;--sk-peg-l:#5e3a35;
+ --sk-jur-m:#8097d4;--sk-jur-b:#262c40;--sk-jur-l:#3d4766;
+}
+/* S = qualquer apostila (resumo ou completa) de qualquer disciplina; os :not elevam a prioridade acima das regras antigas. */
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2){
+ font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;color:var(--sk-ink);line-height:1.75}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) :is(p,li,td,th,h1,h2,h3,h4,summary,blockquote,strong,b,em,span,div,a,label){
+ font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) :is(p,li,td){color:var(--sk-ink)!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) :is(p,li,td) :is(strong,b){color:var(--sk-strong)!important}
+/* Títulos */
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) h2:not(.sk-label){
+ margin:2.2em 0 .9em!important;padding:13px 18px!important;border-radius:14px;background:linear-gradient(90deg,var(--sk-chap-bg),var(--sk-chap-bg2))!important;
+ border-left:6px solid var(--sk-cyan)!important;color:var(--sk-strong)!important;font-size:1.28em!important;line-height:1.3!important;letter-spacing:0!important;text-transform:none!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) h3:not(.sk-label){
+ margin:1.7em 0 .6em!important;padding-left:12px!important;border-left:4px solid var(--sk-yellow)!important;color:var(--sk-h3)!important;font-size:1.08em!important;line-height:1.35!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) h4:not(.sk-label){
+ margin:1.4em 0 .5em!important;color:var(--sk-h3)!important;font-size:1em!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) h1{color:var(--sk-strong)!important;line-height:1.2!important}
+/* Capas (hero) */
+html body :is(.penv-hero,.bc-apostila-hero,.cppv-hero,.cpc-hero,.cf-apostila-hero):not(#sk1):not(#sk2){
+ margin:0 0 26px!important;padding:26px 24px!important;border-radius:20px!important;background:linear-gradient(135deg,#0a5fa8 0%,#073d78 60%,#05305f 100%)!important;position:relative;overflow:hidden}
+html body :is(.penv-hero,.bc-apostila-hero,.cppv-hero,.cpc-hero,.cf-apostila-hero):not(#sk1):not(#sk2)::after{content:"";position:absolute;right:-40px;top:-40px;width:170px;height:170px;border-radius:50%;background:rgba(22,181,217,.25);pointer-events:none}
+html body :is(.penv-hero,.bc-apostila-hero,.cppv-hero,.cpc-hero,.cf-apostila-hero):not(#sk1):not(#sk2) :is(h1,h2,p,div,span){color:#fff!important;position:relative;z-index:1;background:none!important;border:0!important;padding:0!important;margin-left:0!important}
+html body :is(.penv-hero,.bc-apostila-hero,.cppv-hero,.cpc-hero,.cf-apostila-hero):not(#sk1):not(#sk2) :is(.penv-eyebrow,.bc-apostila-overline){display:inline-block;padding:5px 12px!important;border-radius:999px;background:rgba(255,255,255,.16)!important;color:#bfeeff!important;font-size:.72em;font-weight:800;letter-spacing:.1em}
+html body :is(.penv-hero,.bc-apostila-hero,.cppv-hero,.cpc-hero,.cf-apostila-hero):not(#sk1):not(#sk2) h1{font-size:1.8em!important;margin:12px 0 6px!important}
+/* Tabelas */
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) .bc-table-scroll{margin:1.3em 0!important;border-radius:14px;overflow:auto;border:1px solid var(--sk-line)!important;box-shadow:0 2px 10px rgba(10,61,120,.07)}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) .bc-table-scroll table{margin:0!important;border-collapse:collapse;width:100%}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) .bc-table-scroll thead th{
+ background:linear-gradient(180deg,var(--sk-th-a),var(--sk-th-b))!important;color:#fff!important;font-size:.78em!important;letter-spacing:.05em;text-transform:uppercase;padding:11px 14px!important;border:0!important;text-align:left}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) .bc-table-scroll td{background:var(--sk-odd)!important;padding:11px 14px!important;border:0!important;border-top:1px solid var(--sk-line)!important;vertical-align:top}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) .bc-table-scroll tbody tr:nth-child(even) td{background:var(--sk-zebra)!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) .bc-table-scroll td:first-child{font-weight:700;color:var(--sk-strong)!important}
+/* Lei seca (todas as variações) */
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) details:is([class*="law"],[class*="lei"]){
+ margin:1.1em 0!important;border-radius:14px;border:1px solid var(--sk-lei-l)!important;border-left:6px solid var(--sk-lei-m)!important;background:var(--sk-lei-b)!important;padding:2px 16px!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) details:is([class*="law"],[class*="lei"])>summary{
+ padding:10px 0!important;font-weight:800!important;color:var(--sk-lei-m)!important;font-size:.9em!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) details:is([class*="law"],[class*="lei"]) :is(blockquote,.law-article,.cpc-law-article,.bc-m01-lei-art){background:none!important;border:0!important;padding-left:0!important}
+/* Quadros que já existem no HTML (callouts nativos) */
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) :is(aside.bc-native-callout,.cpc-prose-note,.cf-apostila-note,.bc-apostila-example,.bc-apostila-alert,.bc-apostila-law,.bc-bens-callout,.cpc-comparison){
+ margin:1.1em 0!important;padding:13px 18px!important;border-radius:14px;border:1px solid var(--sk-teoria-l)!important;border-left:6px solid var(--sk-teoria-m)!important;background:var(--sk-teoria-b)!important;box-shadow:0 2px 8px rgba(10,61,120,.06)}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) :is(aside.bc-native-callout.example,.bc-apostila-example){border-color:var(--sk-exemplo-l)!important;border-left-color:var(--sk-exemplo-m)!important;background:var(--sk-exemplo-b)!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) :is(aside.bc-native-callout.warn,aside.bc-native-callout.trap,.bc-apostila-alert,.cf-apostila-alert,.cf-apostila-note.cf-apostila-alert){border-color:var(--sk-peg-l)!important;border-left-color:var(--sk-peg-m)!important;background:var(--sk-peg-b)!important}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) :is(.bc-apostila-law,.cpc-comparison){border-color:var(--sk-comp-l)!important;border-left-color:var(--sk-comp-m)!important;background:var(--sk-comp-b)!important}
+/* Quadros criados a partir de rótulos (ui/apostila-skin-v1.js): cada elemento do quadro recebe a mesma cor, sem mexer na estrutura. */
+html body .sk-in:not(#sk1):not(#sk2){background:var(--c-b)!important;border-left:6px solid var(--c-m)!important;border-right:1px solid var(--c-l)!important;margin-top:0!important;margin-bottom:0!important;padding:.45em 18px!important;box-shadow:none;border-radius:0}
+html body .sk-in:not(#sk1):not(#sk2).sk-first{margin-top:1.4em!important;border-top:1px solid var(--c-l)!important;border-radius:14px 14px 0 0!important;padding-top:14px!important}
+html body .sk-in:not(#sk1):not(#sk2).sk-last{margin-bottom:1.4em!important;border-bottom:1px solid var(--c-l)!important;border-radius:0 0 14px 14px!important;padding-bottom:14px!important}
+html body .sk-in:not(#sk1):not(#sk2).sk-first.sk-last{border-radius:14px!important}
+html body .sk-in:not(#sk1):not(#sk2) :is(strong,b){color:var(--sk-strong)!important}
+html body .sk-in.sk-label:not(#sk1):not(#sk2){display:block!important;width:auto!important;margin-bottom:0!important;font-size:.74em!important;font-weight:800!important;letter-spacing:.06em!important;text-transform:uppercase!important;color:var(--c-m)!important;border-top:1px solid var(--c-l)!important;padding-bottom:6px!important;background:var(--c-b)!important}
+html body .sk-in.sk-label:not(#sk1):not(#sk2)::before{content:"";}
+html body .sk-in.sk-label:not(#sk1):not(#sk2){border-left:6px solid var(--c-m)!important}
+html body .sk-in .bc-table-scroll{margin:.3em 0 .6em!important}
+html body .sk-teoria{--c-m:var(--sk-teoria-m);--c-b:var(--sk-teoria-b);--c-l:var(--sk-teoria-l)}
+html body .sk-decore{--c-m:var(--sk-decore-m);--c-b:var(--sk-decore-b);--c-l:var(--sk-decore-l)}
+html body .sk-exemplo{--c-m:var(--sk-exemplo-m);--c-b:var(--sk-exemplo-b);--c-l:var(--sk-exemplo-l)}
+html body .sk-caso{--c-m:var(--sk-caso-m);--c-b:var(--sk-caso-b);--c-l:var(--sk-caso-l)}
+html body .sk-comp{--c-m:var(--sk-comp-m);--c-b:var(--sk-comp-b);--c-l:var(--sk-comp-l)}
+html body .sk-peg{--c-m:var(--sk-peg-m);--c-b:var(--sk-peg-b);--c-l:var(--sk-peg-l)}
+html body .sk-jur{--c-m:var(--sk-jur-m);--c-b:var(--sk-jur-b);--c-l:var(--sk-jur-l)}
+html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) hr{border:0!important;height:1px;background:linear-gradient(90deg,transparent,var(--sk-line),transparent)!important;margin:2em 0!important}
+/* Molduras antigas ao redor das tabelas: sem borda dupla. */
+html body :is(.adm-table-scroll,.cf-apostila-table-scroll,.bc-native-table-wrap,.cpc-table-scroll):not(#sk1):not(#sk2){border:0!important;padding:0!important;background:none!important;box-shadow:none!important;border-radius:0!important}
+/* Celular: as tabelas viram cartões; sem listras alternadas. */
+@media(max-width:700px){
+ html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) .bc-table-scroll tbody tr:nth-child(even) td{background:var(--sk-odd)!important}
+ html body :is(.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-teoria,.bc-native-article):not(#sk1):not(#sk2) h2:not(.sk-label){font-size:1.16em!important;padding:11px 14px!important}
+}
+/* Modo noturno: a folha da apostila acompanha o fundo escuro (antes ficava branca atrás do texto claro). */
+html[data-bc-reading-mode="night"] :is(.bc-native-article,.bc-universal-sheet,.bc-native-reader-body,.cpc-apostila,.cf-apostila,.bc-bens-flow,.bc-m01-paper,.bc-apostila-paper,.bc-apostila-teoria):not(#sk1):not(#sk2){background:var(--bc-reading-paper,#252525)!important;color:var(--sk-ink)!important}
+html[data-bc-reading-mode="night"] .bc-table-scroll{background:transparent}
