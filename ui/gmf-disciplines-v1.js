@@ -46,17 +46,18 @@
       const attention = module.attention
         ? '<p class="gmf-attention"><b>Ponto de atenção:</b> ' + safe(module.attention) + '</p>' : '';
       const published = module.id === 'm01';
-      const label = published ? 'Leitura e revisão disponíveis · questões em produção' : 'Roteiro de assuntos · conteúdo em preparação';
+      const label = published ? 'Teoria, revisão e 10 questões disponíveis' : 'Roteiro de assuntos · conteúdo em preparação';
       const buttons = published
         ? '<div class="gmf-module-actions"><button type="button" onclick="return GmfReader.open(\'' + course.id + '\',\'review\')">Abrir revisão guiada</button>' +
-          '<button type="button" onclick="return GmfReader.open(\'' + course.id + '\',\'complete\')">Estudar teoria completa</button></div>'
+          '<button type="button" onclick="return GmfReader.open(\'' + course.id + '\',\'complete\')">Estudar teoria completa</button>' +
+          '<button type="button" onclick="window.BCQuestoesArea?.openModule(\'' + course.id + '\',1);return false">Resolver 10 questões autorais</button></div>'
         : '';
 
       return '<details class="gmf-module"><summary><span class="gmf-module-number">M' + number +
         '</span><span class="gmf-module-heading"><b>' + safe(module.title) +
-        '</b><small>Roteiro de assuntos para estudar</small></span><span class="gmf-chevron" aria-hidden="true">⌄</span></summary>' +
+        '</b><small>' + label + '</small></span><span class="gmf-chevron" aria-hidden="true">⌄</span></summary>' +
         '<div class="gmf-module-body"><h4>O que estudar neste módulo</h4><ul>' + points + '</ul>' +
-        attention + buttons + '<p class="gmf-unreleased">'+(published?'As questões do M01 estão em preparação. A porcentagem de leitura não equivale à conclusão do módulo.':'Teoria completa, revisão guiada e questões: ainda não disponibilizadas. Este roteiro não conta como módulo concluído.')+'</p></div></details>';
+        attention + buttons + '<p class="gmf-unreleased">'+(published?'Os 10 exercícios autorais são corrigidos pelo sistema de questões, conforme as regras do plano. A leitura isolada não equivale à conclusão do módulo.':'Teoria completa, revisão guiada e questões: ainda não disponibilizadas. Este roteiro não conta como módulo concluído.')+'</p></div></details>';
     }).join('');
 
     return '<div class="gmf-course"><div class="gmf-course-intro"><b>' + safe(course.name) +
@@ -93,7 +94,7 @@
         const subtitle = card?.querySelector('small');
         const meta = card?.querySelector('.disc-meta');
         if (subtitle) subtitle.textContent = course.modules.length + ' módulos · roteiro do edital GMF/2023';
-        if (meta) meta.textContent = 'M01 com teoria e revisão · demais módulos em elaboração';
+        if (meta) meta.textContent = 'M01 com teoria, revisão e questões · demais módulos em elaboração';
       }
       return result;
     };
