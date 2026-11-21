@@ -36,7 +36,34 @@ try {
       assert.ok(x.w >= 60 && x.w < viewport.width / 2, `${nome}: ${x.k} com largura estranha (${Math.round(x.w)})`);
       assert.ok(x.h >= 44, `${nome}: ${x.k} pequeno para toque`);
     }
+    await page.evaluate(() => document.querySelectorAll('#studyObjectiveDialog,.study-objective-backdrop').forEach((e) => e.remove()));
+    // Painel "Mais": perfil, tamanho da letra com um toque, tudo dentro da tela e fecha com Esc.
+    await page.waitForSelector('#bcStudySupportMore', { state: 'attached', timeout: 8000 });
+    await page.click('#studentMoreButton');
+    await page.waitForSelector('#studentMorePanel:not([hidden])');
+    const painel = await page.evaluate(() => {
+      const r = document.querySelector('#studentMorePanel').getBoundingClientRect();
+      return {
+        l: r.left, r: r.right, t: r.top, b: r.bottom,
+        nome: document.querySelector('#studentMoreProfile b')?.textContent,
+        chip: document.querySelector('#studentMoreProfile small')?.textContent,
+        itens: [...document.querySelectorAll('#studentMorePanel .student-more-grid>button, #studentMorePanel [data-student-scale]')].map((e) => ({ t: e.textContent.trim().slice(0, 20), h: e.getBoundingClientRect().height })),
+        acoes: [...document.querySelectorAll('#studentMorePanel .student-more-grid>button')].map((e) => e.dataset.studentMoreAction || e.id),
+      };
+    });
+    assert.equal(painel.nome, 'Aluno Fictício', nome + ': nome no painel');
+    assert.equal(painel.chip, 'Premium', nome + ': plano no painel');
+    assert.ok(painel.l >= 0 && painel.r <= viewport.width && painel.t >= 0 && painel.b <= viewport.height, nome + ': painel dentro da tela');
+    for (const i of painel.itens) assert.ok(i.h >= 44, `${nome}: "${i.t}" pequeno para toque (${Math.round(i.h)})`);
+    for (const a of ['settings', 'bcStudyReportMore', 'bcStudySupportMore', 'logout']) assert.ok(painel.acoes.includes(a), `${nome}: falta ${a} no painel`);
+    assert.equal(painel.acoes.at(-1), 'logout', nome + ': "Sair" por último');
+    await page.click('[data-student-scale="1.15"]');
+    const escala = await page.evaluate(() => ({ attr: document.documentElement.getAttribute('data-bc-ui-scale'), ativo: document.querySelector('[data-student-scale].active')?.dataset.studentScale }));
+    assert.equal(escala.attr, '1.15', nome + ': tamanho da letra aplicado');
+    assert.equal(escala.ativo, '1.15', nome + ': botão ativo marcado');
+    await page.keyboard.press('Escape');
+    assert.equal(await page.evaluate(() => document.querySelector('#studentMorePanel').hidden), true, nome + ': Esc fecha o painel');
     await ctx.close();
   }
-  console.log('ok: menu do topo completo em tablet 1250/1000/834');
+  console.log('ok: menu do topo e painel Mais em tablet 1250/1000/834');
 } finally { await browser.close(); server.close(); }
