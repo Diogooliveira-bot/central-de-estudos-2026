@@ -37,7 +37,7 @@ test('PNGs e WebPs do M13 estão no formato e nas dimensões esperadas',()=>{
 });
 
 test('o leitor insere somente a arte M13 do capítulo correspondente',()=>{
-  assert.match(reader,/n>=4&&n<=13/);
+  assert.match(reader,/n>=4&&n<=14/);
   assert.match(reader,/CF-M'\+String\(n\)\.padStart\(2,'0'\)\+'-C'\+num\+'\.webp/);
   assert.match(reader,/\+lawBox\(n,index\)\+warning\+infographic\+'<\/section>'/);
 });
