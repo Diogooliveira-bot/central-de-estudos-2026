@@ -68,22 +68,7 @@
       '<div class="gmf-modules">' + cards + '</div></div>';
   }
 
-  // Mantém o mecanismo de abertura e a identidade visual nativos da Central.
-  // Substitui apenas o corpo dos quatro assuntos recém-criados.
-  if (typeof global.renderSubjects === 'function') {
-    const originalRenderSubjects = global.renderSubjects;
-    global.renderSubjects = function () {
-      const result = originalRenderSubjects.apply(this, arguments);
-      for (const course of catalog.subjects) {
-        const section = document.querySelector('.subject[data-id="' + course.id + '"]');
-        if (!section?.classList.contains('open')) continue;
-        const host = section.querySelector('.subject-body');
-        if (host) host.innerHTML = renderMaster(course);
-      }
-      return result;
-    };
-  }
-
+  // A renderização da área Início é executada no runtime nativo por meio de GmfDisciplines.renderMaster.
   // Identifica os roteiros na grade sem apresentá-los como cursos publicados.
   if (typeof global.renderDisciplineGrid === 'function') {
     const originalGrid = global.renderDisciplineGrid;
@@ -146,7 +131,8 @@
   ].join('');
   document.head.appendChild(style);
 
-  global.GmfDisciplines = Object.freeze({installed:true,subjectIds:Array.from(ids),moduleCount:catalog.subjects.reduce((sum,course)=>sum+course.modules.length,0)});
+  global.GmfDisciplines = Object.freeze({installed:true,subjectIds:Array.from(ids),moduleCount:catalog.subjects.reduce((sum,course)=>sum+course.modules.length,0),renderMaster:(id)=>{const course=catalog.subjects.find(s=>s.id===id);return course?renderMaster(course):''}});
+  global.GmfStudyObjective?.sync?.();
   try { global.renderAll?.(); global.renderDisciplineGrid?.(); } catch (error) {
     console.error('[GMF] Não foi possível atualizar a lista de disciplinas',error);
   }
