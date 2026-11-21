@@ -26,7 +26,7 @@ window.GMF_M01_REVIEW={
       },
       {
         "title": "Limites e vizinhança",
-        "html": "<p>Ao norte, o Oceano Atlântico. A delimitação do litoral inclui as fozes dos rios <strong>Ceará</strong> e <strong>Pacoti</strong>. Entre os municípios limítrofes estão Caucaia, Maracanaú, Pacatuba, Itaitinga, Eusébio e Aquiraz.</p><p><strong>Pegadinha:</strong> fazer parte da Região Metropolitana não é prova suficiente de divisa territorial.</p>"
+        "html": "<p>Ao norte, o Oceano Atlântico. A delimitação do litoral inclui as fozes dos rios <strong>Ceará</strong> e <strong>Pacoti</strong>. Entre os municípios limítrofes estão Caucaia, Maracanaú, Itaitinga, Eusébio e Aquiraz.</p><p><strong>Pegadinha:</strong> fazer parte da Região Metropolitana não é prova suficiente de divisa territorial.</p>"
       },
       {
         "title": "Recuperação ativa",
