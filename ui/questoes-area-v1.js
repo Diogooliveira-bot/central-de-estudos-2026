@@ -131,7 +131,7 @@
   function barra(pct) { return '<div class="bcqa-bar" aria-hidden="true"><i style="width:' + pct + '%"></i></div>'; }
   function abrirHub() {
     const B = bank(); fromModule = false; view = { tipo: 'hub' }; sess = null;
-    const cards = ORDEM.filter(d => B && B.modulos(d).length).map(d => {
+    const cards = ORDEM.filter(d => g.GmfStudyObjective?.allowsSubject(d)!==false && B && B.modulos(d).length).map(d => {
       const mods = B.modulos(d); let resp = 0;
       mods.forEach(n => { resp += resumoModulo(d, n).respondidas; });
       const total = mods.reduce((a, n) => a + qtdDe(d, n), 0), pct = total ? Math.round(resp / total * 100) : 0;
