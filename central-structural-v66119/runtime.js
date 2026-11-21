@@ -430,13 +430,13 @@ function openCppLast(id,kind){
 function openTopicFromLast(uid){const target=topicByUid(uid);if(target&&window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(target.s.id))return CentralDisciplineLoader.open(target.s.id,()=>openTopicFromLast(uid));openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
 
 function renderSubjects(){
- $('subjects').innerHTML=SUBJECTS.map(s=>{
+ $('subjects').innerHTML=SUBJECTS.filter(s=>window.GmfStudyObjective?.allowsSubject(s.id)!==false).map(s=>{
   const st=subjStats(s),ready=!window.CentralDisciplineLoader||CentralDisciplineLoader.isReady(s.id),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1'&&(ready||CentralDisciplineLoader.isLoading(s.id)||CentralDisciplineLoader.hasError(s.id)||window.CentralFreeReader?.isOpen?.(s.id));
   const unit=st.unit||((s.id==='pt'||s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas');
   return `<section class="subject ${!ready?'central-subject-pending':''} ${open?'open':''}" data-id="${s.id}">
    <button class="subject-head" onclick="toggleSubject('${s.id}')"><span class="subject-name">${esc(s.name)}</span><span class="subject-count">${st.done}/${st.total} ${unit}</span><span class="subject-pct ${st.pct===100?'done':''}">${st.pct}%</span><span class="chev">⌄</span></button>
    <div class="subject-body"><div class="subject-bar"><span style="width:${st.pct}%"></span></div>
-    ${!ready ? CentralDisciplineLoader.placeholder(s) : !open ? '' : s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : s.id==='rlm' ? (window.RlmNative?.renderMaster() || '<div class="bc-rlm-warn">Leitor de RLM carregando. Atualize a página se persistir.</div>') : `
+    ${!ready ? CentralDisciplineLoader.placeholder(s) : !open ? '' : s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : s.id==='rlm' ? (window.RlmNative?.renderMaster() || '<div class="bc-rlm-warn">Leitor de RLM carregando. Atualize a página se persistir.</div>') : window.GmfDisciplines?.renderMaster?.(s.id) || `
       <div class="topic-header"><div></div><div>Tópico real</div><div>Origem</div><div>Tipo</div><div></div></div>
       ${s.topics.map(t=>renderTopic(s,t)).join('')}
     `}
@@ -4989,7 +4989,7 @@ function disciplineOverviewStats(s){
 }
 function renderDisciplineGrid(){
  const host=$('disciplineGrid');if(!host)return;
- let list=[];try{list=Array.isArray(SUBJECTS)?SUBJECTS:[]}catch(e){console.warn('SUBJECTS indisponível',e)}
+ let list=[];try{list=Array.isArray(SUBJECTS)?SUBJECTS.filter(s=>window.GmfStudyObjective?.allowsSubject(s.id)!==false):[]}catch(e){console.warn('SUBJECTS indisponível',e)}
  if(!list.length){host.innerHTML='<div class="card" style="padding:18px"><b>Disciplinas</b><div class="muted small" style="margin-top:7px">O conteúdo ainda está terminando de carregar. Toque novamente em Disciplinas.</div></div>';return}
  host.innerHTML=list.map(s=>{
   try{
