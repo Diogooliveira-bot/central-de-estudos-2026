@@ -90,8 +90,8 @@ test('CSS responsivo de tablet é isolado e chega depois do estilo geral',()=>{
  assert.match(css,/bc-tablet-portrait/);
  assert.doesNotMatch(css,/\bzoom\s*:/);
  assert.ok(boot.indexOf('ui/tablet-scale-v1.js?v=20261117tablet1')>0);
- assert.ok(boot.indexOf('ui/tablet-legibility-v1.css?v=20261117tablet1')>boot.indexOf('ui/auto-scale-v1.css?v=20261115responsive1'));
- for(const p of ['/ui/tablet-scale-v1.js?v=20261117tablet1','/ui/tablet-legibility-v1.css?v=20261117tablet1']){
+ assert.ok(boot.indexOf('ui/tablet-legibility-v1.css?v=20261121r1')>boot.indexOf('ui/auto-scale-v1.css?v=20261115responsive1'));
+ for(const p of ['/ui/tablet-scale-v1.js?v=20261117tablet1','/ui/tablet-legibility-v1.css?v=20261121r1']){
   assert.ok(manifest.files.includes(p),p+' não incluído no pacote offline');
  }
 });

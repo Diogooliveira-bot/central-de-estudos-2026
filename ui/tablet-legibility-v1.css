@@ -106,24 +106,50 @@ html.bc-tablet-device.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeVie
     gap:.3rem!important;
     padding:.65rem 1.1rem!important;
   }
+  /* Tablet em pé: linha 1 = marca + "Mais"; linha 2 = ferramentas em colunas iguais, todas visíveis (sem rolagem lateral). */
   html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .brand {
-    flex:0 0 100%!important;
+    flex:1 1 0!important;
     min-width:0!important;
   }
   html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .nav {
-    flex:0 0 100%!important;
-    width:100%!important;
-    display:flex!important;
-    justify-content:space-between!important;
-    overflow:hidden!important;
+    display:contents!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .student-more-button {
+    order:2;
+    position:static!important;
+    transform:none!important;
+    flex:0 0 auto!important;
   }
   html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .student-nav-scroll {
-    display:flex!important;
-    flex:1 1 0!important;
-    min-width:0!important;
-    overflow-x:auto!important;
-    overscroll-behavior-x:contain;
+    order:3;
+    flex:0 0 100%!important;
+    width:100%!important;
+    display:grid!important;
+    grid-auto-flow:column;
+    grid-auto-columns:minmax(0,1fr);
+    overflow:visible!important;
     gap:.25rem!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .student-nav-scroll button[data-student-primary-nav] {
+    width:100%!important;
+    min-width:0!important;
+    flex-direction:column!important;
+    gap:.2rem!important;
+    padding:.4rem .15rem!important;
+    white-space:normal!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .student-nav-scroll .nav-icon {
+    width:28px!important;
+    height:28px!important;
+    flex:0 0 28px!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .student-nav-scroll .nav-icon svg {
+    width:26px!important;
+    height:26px!important;
+  }
+  html.bc-tablet-device.bc-tablet-portrait.student-experience-v3.bc-ui-v1.bc-topnav #centralSidebar .student-nav-scroll button[data-student-primary-nav]:is(.active,[aria-current="page"]) {
+    box-shadow:inset 0 -3px 0 #2fe1dc!important;
+    border-radius:10px 10px 0 0!important;
   }
 }
 /* Rótulos do menu sempre legíveis nos tablets, inclusive com viewport desktop. */
