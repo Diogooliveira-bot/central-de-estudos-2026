@@ -142,9 +142,9 @@ test('Português M01–M24 mostra apenas Teoria e questões internas, sem versã
   assert.ok(questionCard.includes("disc: 'pt'"));
   assert.ok(questionCard.includes('BCQuestoesArea?.openModule(disc, n)'));
   for (const filename of ['index.html', 'central-v119.html']) {
-    assert.ok(fs.readFileSync(path.join(root, filename), 'utf8').includes('ui/current-courses.js?v=20261121r1'), filename);
+    assert.ok(fs.readFileSync(path.join(root, filename), 'utf8').includes('ui/current-courses.js?v=20261121r2'), filename);
   }
-  assert.ok(fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('ui/portuguese-reader.js?v=20261121r1'));
+  assert.ok(fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes('ui/portuguese-reader.js?v=20261121r2'));
   assert.ok(fs.readFileSync(path.join(root, 'ui/portuguese-reader.js'), 'utf8').includes("module.review?'Revisão final':'Teoria'"));
   assert.ok(fs.readFileSync(path.join(root, 'ui/apostilas-pdf-v1.js'), 'utf8').includes('rlm-m'));
   dom.window.close();
