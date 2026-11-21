@@ -3,6 +3,7 @@
   'use strict';
   const catalog = global.GmfCourseCatalog;
   const subjects = typeof SUBJECTS !== 'undefined' ? SUBJECTS : null;
+  if (global.GmfDisciplines?.installed) return;
   if (!catalog || !subjects || !Array.isArray(catalog.subjects)) return;
 
   const ids = new Set(catalog.subjects.map(subject => subject.id));
@@ -44,11 +45,18 @@
       const points = module.focus.map(item => '<li>' + safe(item) + '</li>').join('');
       const attention = module.attention
         ? '<p class="gmf-attention"><b>Ponto de atenção:</b> ' + safe(module.attention) + '</p>' : '';
+      const published = module.id === 'm01';
+      const label = published ? 'Leitura e revisão disponíveis · questões em produção' : 'Roteiro de assuntos · conteúdo em preparação';
+      const buttons = published
+        ? '<div class="gmf-module-actions"><button type="button" onclick="return GmfReader.open(\'' + course.id + '\',\'review\')">Abrir revisão guiada</button>' +
+          '<button type="button" onclick="return GmfReader.open(\'' + course.id + '\',\'complete\')">Estudar teoria completa</button></div>'
+        : '';
+
       return '<details class="gmf-module"><summary><span class="gmf-module-number">M' + number +
         '</span><span class="gmf-module-heading"><b>' + safe(module.title) +
         '</b><small>Roteiro de assuntos para estudar</small></span><span class="gmf-chevron" aria-hidden="true">⌄</span></summary>' +
         '<div class="gmf-module-body"><h4>O que estudar neste módulo</h4><ul>' + points + '</ul>' +
-        attention + '<p class="gmf-unreleased">Teoria completa, revisão guiada e questões: ainda não disponibilizadas. Este roteiro não conta como módulo concluído.</p></div></details>';
+        attention + buttons + '<p class="gmf-unreleased">'+(published?'As questões do M01 estão em preparação. A porcentagem de leitura não equivale à conclusão do módulo.':'Teoria completa, revisão guiada e questões: ainda não disponibilizadas. Este roteiro não conta como módulo concluído.')+'</p></div></details>';
     }).join('');
 
     return '<div class="gmf-course"><div class="gmf-course-intro"><b>' + safe(course.name) +
@@ -85,7 +93,7 @@
         const subtitle = card?.querySelector('small');
         const meta = card?.querySelector('.disc-meta');
         if (subtitle) subtitle.textContent = course.modules.length + ' módulos · roteiro do edital GMF/2023';
-        if (meta) meta.textContent = 'Estrutura inicial · teoria em preparação';
+        if (meta) meta.textContent = 'M01 com teoria e revisão · demais módulos em elaboração';
       }
       return result;
     };
@@ -132,6 +140,7 @@
     '.gmf-module-body h4{font-size:13px;margin:0 0 7px}.gmf-module-body ul{padding-left:20px;margin:0 0 12px}',
     '.gmf-module-body li{margin:5px 0}.gmf-attention{margin:10px 0;padding:10px;border-left:3px solid var(--discipline-accent,#356a9e);background:var(--soft,#f8fafc)}',
     '.gmf-unreleased{font-size:12px;color:var(--muted,#6c7584);border-top:1px solid var(--line,#dce3ea);padding-top:12px;margin:15px 0 0}',
+    '.gmf-module-actions{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.gmf-module-actions button{font:600 13px system-ui;border:1px solid var(--line,#dce3ea);background:var(--soft,#f8fafc);color:var(--text,#263445);border-radius:8px;padding:11px 13px;cursor:pointer}.gmf-module-actions button:first-child{background:var(--discipline-accent,#356a9e);color:white;border-color:transparent}.gmf-module-actions button:focus-visible{outline:2px solid currentColor;outline-offset:2px}',
     '@media(max-width:600px){.gmf-module summary{padding:12px;gap:9px}.gmf-module-number{flex-basis:37px}.gmf-course-intro{padding:14px}.gmf-module-body{padding:13px}}'
   ].join('');
   document.head.appendChild(style);
