@@ -343,6 +343,7 @@ function key(uid,kind){return `central-v6:${kind}:${uid}`}
 function goalDone(uid){return localStorage.getItem(key(uid,'done'))==='1'}
 function setDone(uid,v){localStorage.setItem(key(uid,'done'),v?'1':'0')}
 function subjStats(s){
+ if(window.GmfDisciplines?.subjectIds?.includes(s.id))return {total:s.topics?.length||0,done:0,pct:0,unit:'módulos'};
  if(s.id==='rlm'&&window.RlmNative)return window.RlmNative.stats();
  const lightweight=window.CentralDisciplineLoader?.stats(s);if(lightweight)return lightweight;
  if(s.id==='pt'&&typeof window.ptNativeStats==='function')return window.ptNativeStats();
