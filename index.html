@@ -1230,7 +1230,7 @@ window.centralBackupImport=function(inp){
 <script src="/central-structural-v66119/cpc-questions-000-init.js?v=66119s2"></script>
 <script src="/content/cpc/cpc-fixation-questions-v1.js?v=20261010auditfix1"></script>
 <script src="/content/cpc/cpc-fixation-questions-m01-m06-v1.js?v=20261031fix1"></script>
-<script src="/central-structural-v66119/runtime.js?v=20261118r1"></script>
+<script src="/central-structural-v66119/runtime.js?v=20261121gmfobj2"></script>
 <script src="/portugues-site.js?v=20261023ptorg1"></script>
 <script src="/ui/portuguese-activities-v1.js?v=20261118r1"></script>
 <script src="/ui/portuguese-reader.js?v=20261121r2"></script>
@@ -1517,10 +1517,10 @@ window.mpToggleCard=function(btn){
  }catch(e){}
 };
 var IC={pt:'📖',cf:'🏛️',adm:'💼',civil:'👥',cpc:'⚖️',penal:'🔎',cpp:'🔍',rlm:'💡'};
-var ORDEM=['pt','cf','adm','civil','cpc','penal','cpp','rlm'];
+var ORDEM=['pt','cf','adm','civil','cpc','penal','cpp','rlm','info','atual','fortaleza','legesp','dh'];
 function renderMap(hostId){
  var host=document.getElementById(hostId);if(!host)return;
- var list=(typeof SUBJECTS!=='undefined'?SUBJECTS:[]).slice().sort(function(a,b){return ORDEM.indexOf(a.id)-ORDEM.indexOf(b.id)});
+ var list=(typeof SUBJECTS!=='undefined'?SUBJECTS:[]).filter(function(s){return window.GmfStudyObjective?.allowsSubject(s.id)!==false}).sort(function(a,b){return ORDEM.indexOf(a.id)-ORDEM.indexOf(b.id)});
  if(!list.length){host.innerHTML='';return}
  var totalBlocos=0,feitos=0;
  var cards=list.map(function(s,ci){
@@ -2087,5 +2087,11 @@ window.moduleFrameRetry=function(){
 <script src="/ui/rlm-native-v1.js?v=20261113orient1"></script>
 <script src="/ui/rlm-exam-v1.js?v=20261109etapas3"></script>
 <!-- /RLM NATIVA TJCE 2026 -->
+<!-- GMF — objetivo facultativo (edital de referência 2023) -->
+<script src="/ui/gmf-study-objective-v1.js?v=20261121goal1"></script>
+<script src="/content/gmf/course-catalog-v1.js?v=20261120gmf1"></script>
+<script src="/ui/gmf-disciplines-v1.js?v=20261120gmf1"></script>
+<script src="/ui/gmf-reader-v1.js?v=20261121gmfM01"></script>
+<!-- /GMF -->
 </body></html>
 

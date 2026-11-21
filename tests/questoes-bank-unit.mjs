@@ -7,11 +7,11 @@ import { fileURLToPath } from 'node:url';
 import { validarTudo, validarModulo, DISCIPLINAS, MODULOS } from '../tools/questoes-lib.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-test('banco de questões: 161 módulos, 10 questões cada, todas conferidas', () => {
+test('banco de questões: 161 módulos antigos e 4 pilotos GMF, 10 questões cada', () => {
   const { erros, indice, total } = validarTudo(root);
   assert.deepEqual(erros, []);
-  for (const d of Object.keys(DISCIPLINAS)) assert.equal(indice[d].length, MODULOS[d], `${d}: faltam módulos`);
-  assert.equal(total, 1610);
+  for (const d of Object.keys(DISCIPLINAS)) assert.equal(indice[d].length, ['atual','fortaleza','legesp','dh'].includes(d) ? 1 : MODULOS[d], `${d}: faltam módulos publicados`);
+  assert.equal(total, 1650);
 });
 
 test('índice do banco confere com os arquivos (rode "npm run questoes:index" se falhar)', () => {

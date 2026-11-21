@@ -9,7 +9,8 @@
   const VERSION = '20261113lim1';
   const NOMES = {
     adm: 'Direito Administrativo', cpc: 'Direito Processual Civil', pt: 'Português', penal: 'Direito Penal',
-    cpp: 'Direito Processual Penal', cf: 'Direito Constitucional', civil: 'Direito Civil', rlm: 'Raciocínio Lógico-Matemático', info: 'Informática'
+    cpp: 'Direito Processual Penal', cf: 'Direito Constitucional', civil: 'Direito Civil', rlm: 'Raciocínio Lógico-Matemático', info: 'Informática',
+    atual: 'Atualidades', fortaleza: 'Conhecimentos sobre Fortaleza', legesp: 'Legislação Extravagante', dh: 'Direitos Humanos'
   };
   const API = '/api/questoes';
   const modulosCache = {};          // 'adm:3' → [{id,q,options,origem}]
