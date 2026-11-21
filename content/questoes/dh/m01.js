@@ -1,4 +1,4 @@
-/* Questões autorais GMF Direitos Humanos M01; gabarito protegido no servidor. */
+/* Questões autorais GMF dh M01; gabaritos restritos ao servidor. */
 window.BC_QUESTOES=window.BC_QUESTOES||{};
 (window.BC_QUESTOES.dh=window.BC_QUESTOES.dh||{})[1]=[
   {
@@ -58,7 +58,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "A dignidade não se relaciona com direitos fundamentais por se tratar de tema apenas filosófico."
     ],
     "answer": 3,
-    "explanation": "O art. 1º, III, da Constituição Federal estabelece a dignidade da pessoa humana como um dos fundamentos da República. Sua função jurídica não se restringe a discurso político ou regra municipal, e ela orienta a compreensão das garantias fundamentais e da atuação estatal diante da pessoa.",
+    "explanation": "O artigo 1º, III, da Constituição Federal estabelece a dignidade da pessoa humana como um dos fundamentos da República. Sua função jurídica não se restringe a discurso político ou regra municipal, e ela orienta a compreensão das garantias fundamentais e da atuação estatal diante da pessoa.",
     "lawRef": "Constituição Federal de 1988 (Fundamentos da República), art. 1º, III"
   },
   {
@@ -79,7 +79,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   {
     "id": "dh-m01-autoral-06",
     "origem": "autoral-ia",
-    "q": "A Lei 13.022/2014, ao fixar princípios de atuação das guardas municipais, estabelece expressamente a proteção:",
+    "q": "A Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), ao fixar princípios de atuação das guardas municipais, estabelece expressamente a proteção:",
     "options": [
       "Dos direitos humanos fundamentais, da cidadania e das liberdades públicas.",
       "Apenas dos interesses patrimoniais da administração, sem referência a pessoas ou liberdades.",
@@ -88,7 +88,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       "Apenas do patrimônio cultural, excluindo o exercício da cidadania e a preservação da vida."
     ],
     "answer": 0,
-    "explanation": "O art. 3º, I, da Lei 13.022/2014 (Estatuto Geral das Guardas Municipais) menciona proteção dos direitos humanos fundamentais, exercício da cidadania e liberdades públicas. O Estatuto conecta as atribuições municipais à defesa da pessoa, não reduzindo o serviço ao patrimônio nem às normas internas.",
+    "explanation": "O artigo 3º, I, da Lei 13.022/2014 (Estatuto Geral das Guardas Municipais) menciona proteção dos direitos humanos fundamentais, exercício da cidadania e liberdades públicas. O Estatuto conecta as atribuições municipais à defesa da pessoa, não reduzindo o serviço ao patrimônio nem às normas internas.",
     "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 3º"
   },
   {
