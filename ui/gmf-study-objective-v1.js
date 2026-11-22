@@ -93,6 +93,7 @@
        const button=event.target.closest('[data-study-open-subject]');
        if(!button)return;
        event.preventDefault();
+       event.stopPropagation(); // Impede a navegação duplicada do listener geral.
        const id=button.dataset.studyOpenSubject;
        if(!GMF_IDS.has(id))return;
        if(global.BaseCompletaFocusNavigation?.chooseSubject){global.openHome?.();global.BaseCompletaFocusNavigation.chooseSubject(id)}
@@ -102,18 +103,23 @@
    renderGmfGrid();
    state();
  }
- function choose(value,{navigate=false}={}){
+ function choose(value,{navigate=false,fromStudyObjective=false}={}){
    const target=value===GMF?GMF:DEFAULT;
-   try{global.localStorage?.setItem(KEY,target)}catch(_){}
-   global.BaseCompletaFocusNavigation?.backToSubjects?.();
-   state();
-   try{global.renderAll?.()}catch(error){console.warn('[Objetivo GMF] não foi possível atualizar a página inicial',error)}
-   try{global.renderDisciplineGrid?.()}catch(error){console.warn('[Objetivo GMF] não foi possível atualizar as disciplinas',error)}
-   try{global.renderMapaEstudos?.()}catch(error){console.warn('[Objetivo GMF] não foi possível atualizar o mapa',error)}
-   if(navigate){
-     try{global.openDisciplines?.()}catch(_){}
+   const changed=current()!==target;
+   if(changed){
+     try{global.localStorage?.setItem(KEY,target)}catch(_){}
    }
-   global.document.dispatchEvent(new CustomEvent('central:study-objective-changed',{detail:{objective:target}}));
+   // O runtime já mantém as disciplinas nas grades e a troca de edital
+   // só precisa aplicar visibilidade e filtros. Reconstruir tudo a cada
+   // troca bloqueava a interface e concorria com o seletor principal.
+   state();
+   if(changed&&!fromStudyObjective){
+     global.BaseCompletaFocusNavigation?.backToSubjects?.();
+     global.document.dispatchEvent(new CustomEvent('central:study-objective-changed',{detail:{gmfGoal:target}}));
+   }
+   if(navigate){
+     try{global.openDisciplines?.()}catch(error){console.warn('[Objetivo GMF] Falha ao abrir disciplinas',error)}
+   }
    return target;
  }
  const style=global.document.createElement('style');
@@ -141,8 +147,8 @@
    const objective=String(event.detail?.objectiveId||'');
    if(!objective)return;
    if(objective.startsWith('exam-catalog-gmf-fortaleza-monitoramento')){
-     if(current()!==GMF)choose(GMF);
-   }else if(current()===GMF){choose(DEFAULT)}
+     if(current()!==GMF)choose(GMF,{fromStudyObjective:true});
+   }else if(current()===GMF){choose(DEFAULT,{fromStudyObjective:true})}
  });
  state();
  if(global.document.readyState==='loading')global.document.addEventListener('DOMContentLoaded',install,{once:true});
