@@ -61,6 +61,23 @@ test('Atualidades M02-M06: materiais separados e assets protegidos por modalidad
     assert.deepEqual(protectedAsset('/content/gmf/atual/'+module+'-review-v1.js'),{kind:'file',feature:'theory.summary'});
   }
 });
+test('Fortaleza M02-M09: teoria, revisão, fontes e política privada', () => {
+  for(let n=2;n<=9;n++){
+    const module='m'+String(n).padStart(2,'0');
+    const full=execFile('content/gmf/fortaleza/'+module+'-full-v1.js').GMF_MODULE_FULL;
+    const review=execFile('content/gmf/fortaleza/'+module+'-review-v1.js').GMF_MODULE_REVIEW;
+    assert.equal(full.subject,'fortaleza');assert.equal(full.module,module);
+    assert.equal(review.subject,'fortaleza');assert.equal(review.module,module);
+    assert.ok(full.chapters.length>=4);assert.ok(review.chapters.length>=3);
+    assert.ok(full.resources.length>=2);assert.ok(review.resources.length>=2);
+    for(const c of [...full.chapters,...review.chapters]){
+      assert.ok(c.html.length>=160);assert.match(c.html,/<p>/);
+      assert.doesNotMatch(c.html,/<script|onerror=|javascript:/i);
+    }
+    assert.deepEqual(protectedAsset('/content/gmf/fortaleza/'+module+'-full-v1.js'),{kind:'file',feature:'theory.complete'});
+    assert.deepEqual(protectedAsset('/content/gmf/fortaleza/'+module+'-review-v1.js'),{kind:'file',feature:'theory.summary'});
+  }
+});
 test('40 questões inéditas validadas pela rotina oficial e índices consistentes', () => {
   const index=execFile('content/questoes/index.js');
   const titles=execFile('content/questoes/titulos.js');
