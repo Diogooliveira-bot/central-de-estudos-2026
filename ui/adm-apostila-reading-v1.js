@@ -16,7 +16,7 @@ async function decompress(base64){
 }
 function esc(value){return String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function addGuidedReviewArts(html,number){
- const chapterCounts={2:9,3:9,4:9,5:9,6:10};
+ const chapterCounts={2:9,3:9,4:9,5:9,6:10,7:10};
  if(!chapterCounts[number]||html.includes('data-adm-review-art='))return html;
  const matches=[...html.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)];
  const chapters=matches.map((m,index)=>({index,start:m.index,end:m.index+m[0].length,title:m[1].replace(/<[^>]+>/g,'').trim()})).filter(x=>/^\d{2}\s+/.test(x.title));
@@ -24,11 +24,13 @@ function addGuidedReviewArts(html,number){
  const expectedM04=['01 A ideia de poder-dever e seus limites','02 Poder hierárquico: organizar e coordenar','03 Delegação, avocação e distribuição de competências','04 Poder disciplinar: apurar e responsabilizar','05 Poder regulamentar e poder normativo','06 Poder de polícia administrativa','07 Discricionariedade, vinculação e controle','08 Abuso de poder: excesso e desvio','09 Como identificar o poder em situações concretas'];
  const expectedM05=['01 Pessoas que atuam em nome do Estado','02 Espécies de agentes públicos','03 Cargo, emprego e função pública','04 Regimes jurídicos e concurso público','05 Da aprovação ao início do exercício','06 Provimento, movimentação e vacância','07 Estágio probatório e estabilidade','08 Direitos, deveres e responsabilidades','09 Acumulação de cargos e situações concretas'];
  const expectedM06=['01 Por que existe processo administrativo?','02 Princípios, direitos e deveres','03 Como o processo começa?','04 Quem pode conduzir e decidir?','05 Forma e comunicação dos atos','06 Instrução: apurar antes de decidir','07 Decisão: concluir e explicar','08 Quando a decisão precisa ser corrigida','09 Quando alguém discorda da decisão','10 Contagem de prazos e outras regras úteis'];
+ const expectedM07=['01 Por que a LINDB importa para a Administração?','02 Art. 20 — consequências práticas e motivação','03 Art. 21 — invalidação e regularização','04 Art. 22 — dificuldades reais da gestão pública','05 Arts. 23 e 24 — segurança diante de mudanças','06 Art. 26 — compromisso para resolver problemas','07 Art. 27 — compensações por efeitos injustos','08 Art. 28 — responsabilização por dolo ou erro grosseiro','09 Arts. 29 e 30 — participação e previsibilidade','10 Como o Decreto nº 9.830/2019 complementa a LINDB'];
  if(chapters.length!==chapterCounts[number]||chapters.some((x,i)=>!x.title.startsWith(String(i+1).padStart(2,'0')+' ')))throw new Error('A revisão guiada ADM M'+String(number).padStart(2,'0')+' não contém a quantidade de capítulos esperada.');
  if(number===3&&chapters.some((x,i)=>x.title!==expectedM03[i]))throw new Error('Os títulos da revisão guiada ADM M03 diferem do inventário validado; as artes não foram inseridas.');
  if(number===4&&(chapters.length!==expectedM04.length||chapters.some((x,i)=>x.title!==expectedM04[i])))throw new Error('Os títulos da revisão guiada ADM M04 diferem do inventário validado; as artes não foram inseridas.');
  if(number===5&&(chapters.length!==expectedM05.length||chapters.some((x,i)=>x.title!==expectedM05[i])))throw new Error('Os títulos da revisão guiada ADM M05 diferem do inventário validado; as artes não foram inseridas.');
  if(number===6&&chapters.some((x,i)=>x.title!==expectedM06[i]))throw new Error('Os títulos da revisão guiada ADM M06 diferem do inventário validado; as artes não foram inseridas.');
+ if(number===7&&chapters.some((x,i)=>x.title!==expectedM07[i]))throw new Error('Os títulos da revisão guiada ADM M07 diferem do inventário validado; as artes não foram inseridas.');
  let result=html;
  for(let i=chapters.length-1;i>=0;i--){
   const chapter=chapters[i],next=matches.find(x=>x.index>chapter.start),end=next?next.index:result.length;

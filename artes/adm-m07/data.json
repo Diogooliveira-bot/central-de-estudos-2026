@@ -1,0 +1,347 @@
+{
+  "module": 7,
+  "module_title": "Direito Administrativo",
+  "source": "content/adm/autor-20261110/adm-m07-submitted-review.js",
+  "chapters": [
+    {
+      "chapter": 1,
+      "source_id": "por-que-a-lindb-importa-para-a-administração",
+      "title": "Por que a LINDB importa para a Administração?",
+      "central": "A LINDB orienta decisões de Direito Público a considerar fatos, efeitos e segurança jurídica, sempre com fundamentação e respeito à lei.",
+      "cards": [
+        [
+          "Conceito",
+          "Os arts. 20 a 30 orientam a aplicação do Direito Público nas esferas administrativa, controladora e judicial."
+        ],
+        [
+          "Função",
+          "A decisão deve dialogar com a realidade do caso e explicar sua relação com as normas aplicáveis."
+        ],
+        [
+          "Limite",
+          "Considerar consequências não permite afastar a lei, os direitos dos administrados ou a competência legal."
+        ],
+        [
+          "Pegadinha de prova",
+          "A LINDB não troca a legalidade por uma escolha baseada apenas no resultado mais conveniente."
+        ]
+      ],
+      "tips": [
+        "Contexto e consequências entram na motivação.",
+        "A solução continua limitada pela lei e pelos direitos envolvidos."
+      ],
+      "icons": [
+        "federal-law",
+        "dashboard",
+        "constitution",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 2,
+      "source_id": "art.-20-consequências-práticas-e-motivação",
+      "title": "Art. 20 — consequências práticas e motivação",
+      "central": "Ao decidir com base em valores jurídicos abstratos, a autoridade deve considerar consequências práticas e justificar necessidade, adequação e alternativas.",
+      "cards": [
+        [
+          "Conceito",
+          "Art. 20: valores abstratos não bastam como único fundamento da decisão."
+        ],
+        [
+          "Regra jurídica",
+          "A motivação demonstra necessidade e adequação da medida, inclusive diante das alternativas possíveis."
+        ],
+        [
+          "Distinção",
+          "A análise considera efeitos práticos que o decisor diligente consegue antever a partir dos fatos."
+        ],
+        [
+          "Pegadinha de prova",
+          "Consequências não autorizam ignorar a lei nem exigem prever todo efeito remoto ou impossível de antecipar."
+        ]
+      ],
+      "tips": [
+        "Art. 20: consequência prática + motivação concreta.",
+        "Compare a medida adotada com alternativas juridicamente possíveis."
+      ],
+      "icons": [
+        "dashboard",
+        "clipboard",
+        "magnifier",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 3,
+      "source_id": "art.-21-invalidação-e-regularização",
+      "title": "Art. 21 — invalidação e regularização",
+      "central": "A decisão que invalida ato ou norma administrativa deve explicar seus efeitos e, quando cabível, indicar como regularizar a situação.",
+      "cards": [
+        [
+          "Conceito",
+          "Art. 21 exige que a invalidação exponha consequências jurídicas e administrativas."
+        ],
+        [
+          "Regra jurídica",
+          "Quando for o caso, a decisão aponta condições de regularização proporcionais e equânimes."
+        ],
+        [
+          "Distinção",
+          "A decisão pode evitar ônus ou perdas anormais ou excessivos, conforme as particularidades do caso."
+        ],
+        [
+          "Pegadinha de prova",
+          "A lei não exige modulação em toda invalidação nem transforma ato ilegal em válido."
+        ]
+      ],
+      "tips": [
+        "Art. 21: invalidação exige olhar para seus efeitos.",
+        "Regularização e modulação dependem do caso e da fundamentação."
+      ],
+      "icons": [
+        "government-act",
+        "federal-law",
+        "compensation",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 4,
+      "source_id": "art.-22-dificuldades-reais-da-gestão-pública",
+      "title": "Art. 22 — dificuldades reais da gestão pública",
+      "central": "A avaliação da gestão considera obstáculos reais e exigências da política pública, sem retirar os direitos dos administrados.",
+      "cards": [
+        [
+          "Conceito",
+          "Art. 22 manda considerar dificuldades reais do gestor e condições práticas da atuação."
+        ],
+        [
+          "Regra jurídica",
+          "Na sanção, avaliam-se gravidade, danos, agravantes, atenuantes e antecedentes."
+        ],
+        [
+          "Distinção",
+          "Contextualizar a conduta não equivale a dispensar deveres ou direitos dos usuários."
+        ],
+        [
+          "Pegadinha de prova",
+          "Dificuldade administrativa não cria imunidade automática nem afasta a análise dos requisitos legais."
+        ]
+      ],
+      "tips": [
+        "Art. 22: contexto real, sem apagar direitos.",
+        "Sanções exigem análise das circunstâncias previstas em lei."
+      ],
+      "icons": [
+        "dashboard",
+        "budget",
+        "people",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 5,
+      "source_id": "arts.-23-e-24-segurança-diante-de-mudanças",
+      "title": "Arts. 23 e 24 — segurança diante de mudanças",
+      "central": "O art. 23 cuida da adaptação a uma nova interpretação; o art. 24 protege situações constituídas conforme as orientações gerais da época.",
+      "cards": [
+        [
+          "Art. 23 · transição",
+          "Nova interpretação de norma indeterminada que imponha novo dever pode exigir transição, se indispensável."
+        ],
+        [
+          "Art. 24 · passado",
+          "A revisão de validade considera orientações gerais existentes quando o ato foi produzido."
+        ],
+        [
+          "Distinção",
+          "Art. 23 organiza adaptação futura; art. 24 impede invalidar situação plenamente constituída só por mudança posterior."
+        ],
+        [
+          "Pegadinha de prova",
+          "Transição e respeito à orientação da época são comandos distintos, ainda que ambos protejam segurança jurídica."
+        ]
+      ],
+      "tips": [
+        "Novo dever + interpretação nova → avalie transição (art. 23).",
+        "Ato passado → considere a orientação geral da época (art. 24)."
+      ],
+      "icons": [
+        "calendar-law",
+        "age",
+        "court-levels",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 6,
+      "source_id": "art.-26-compromisso-para-resolver-problemas",
+      "title": "Art. 26 — compromisso para resolver problemas",
+      "central": "A autoridade pode celebrar compromisso para resolver irregularidade, incerteza ou controvérsia no Direito Público, obedecendo às condições legais.",
+      "cards": [
+        [
+          "Conceito",
+          "Art. 26 permite compromisso com interessados para solucionar problema jurídico público."
+        ],
+        [
+          "Requisitos",
+          "Exige ouvir o órgão jurídico, realizar consulta pública quando cabível e justificar relevante interesse geral."
+        ],
+        [
+          "Efeitos",
+          "O acordo deve respeitar a lei, definir obrigações, prazo e sanções, e só produz efeitos após publicação oficial."
+        ],
+        [
+          "Pegadinha de prova",
+          "O compromisso não pode conceder dispensa permanente de dever ou direito reconhecido por orientação geral."
+        ]
+      ],
+      "tips": [
+        "Art. 26: diálogo com requisitos, motivação e publicação.",
+        "Consenso não pode afastar dever geral de forma permanente."
+      ],
+      "icons": [
+        "council",
+        "clipboard",
+        "government-act",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 7,
+      "source_id": "art.-27-compensações-por-efeitos-injustos",
+      "title": "Art. 27 — compensações por efeitos injustos",
+      "central": "O art. 27 permite compensar benefício indevido ou prejuízo anormal ou injusto ligado ao processo ou à conduta dos envolvidos.",
+      "cards": [
+        [
+          "Conceito",
+          "A decisão pode impor compensação nas hipóteses previstas no art. 27."
+        ],
+        [
+          "Garantias",
+          "A decisão precisa ser motivada; as partes são ouvidas sobre cabimento, forma e eventual valor."
+        ],
+        [
+          "Distinção",
+          "Compensação busca ajustar benefício ou prejuízo injusto; não é automaticamente uma sanção."
+        ],
+        [
+          "Pegadinha de prova",
+          "A compensação não é automática: depende de decisão fundamentada e participação prévia das partes."
+        ]
+      ],
+      "tips": [
+        "Art. 27: benefício indevido ou prejuízo anormal/injusto.",
+        "Ouvir as partes antes de definir forma e valor."
+      ],
+      "icons": [
+        "compensation",
+        "court",
+        "split-courts",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 8,
+      "source_id": "art.-28-responsabilização-por-dolo-ou-erro-grosseiro",
+      "title": "Art. 28 — responsabilização por dolo ou erro grosseiro",
+      "central": "O art. 28 prevê responsabilidade pessoal do agente por decisões ou opiniões técnicas em caso de dolo ou erro grosseiro.",
+      "cards": [
+        [
+          "Regra jurídica",
+          "Responsabilidade pessoal exige dolo ou erro grosseiro, conforme o art. 28."
+        ],
+        [
+          "Erro grosseiro",
+          "O Decreto 9.830/2019 o descreve como erro manifesto, evidente e inescusável, ligado a culpa grave."
+        ],
+        [
+          "Distinção",
+          "O simples nexo entre conduta e dano, sem dolo ou erro grosseiro comprovado, não basta por si só."
+        ],
+        [
+          "Pegadinha de prova",
+          "A regra não é imunidade geral: deveres funcionais e outras sanções legais continuam a ser analisados."
+        ]
+      ],
+      "tips": [
+        "Art. 28: dolo ou erro grosseiro, não mero resultado danoso.",
+        "Responsabilidade pessoal exige análise concreta dos requisitos."
+      ],
+      "icons": [
+        "clipboard",
+        "magnifier",
+        "split-courts",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 9,
+      "source_id": "arts.-29-e-30-participação-e-previsibilidade",
+      "title": "Arts. 29 e 30 — participação e previsibilidade",
+      "central": "O art. 29 trata de consulta pública antes de atos normativos; o art. 30 busca tornar a aplicação das normas mais estável e previsível.",
+      "cards": [
+        [
+          "Art. 29 · consulta",
+          "A consulta pública pode anteceder atos normativos; atos de mera organização interna ficam fora dessa previsão."
+        ],
+        [
+          "Participação",
+          "A consulta é preferencialmente eletrônica, e as manifestações devem ser consideradas na decisão."
+        ],
+        [
+          "Art. 30 · segurança",
+          "Regulamentos, súmulas administrativas e respostas a consultas ajudam a aumentar previsibilidade."
+        ],
+        [
+          "Pegadinha de prova",
+          "A consulta do art. 29 é facultativa em sua redação; instrumentos do art. 30 vinculam o órgão até revisão."
+        ]
+      ],
+      "tips": [
+        "Art. 29: participação antes de ato normativo.",
+        "Art. 30: instrumentos vinculantes até revisão."
+      ],
+      "icons": [
+        "council",
+        "dashboard",
+        "federal-law",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 10,
+      "source_id": "como-o-decreto-nº-9.8302019-complementa-a-lindb",
+      "title": "Como o Decreto nº 9.830/2019 complementa a LINDB",
+      "central": "O Decreto 9.830/2019 detalha a aplicação dos arts. 20 a 30 da LINDB; ele regulamenta a lei, sem substituir seus comandos.",
+      "cards": [
+        [
+          "Função",
+          "O decreto detalha os arts. 20 a 30 da LINDB no Executivo federal."
+        ],
+        [
+          "Aplicação",
+          "Pede contexto dos fatos e coerência entre normas, fatos e fundamentos."
+        ],
+        [
+          "Consulta pública",
+          "O art. 18 do decreto foi revogado em 2024; a previsão do art. 29 da LINDB permanece."
+        ],
+        [
+          "Pegadinha de prova",
+          "Não confunda artigo revogado do decreto com o art. 29 da LINDB, que continua vigente."
+        ]
+      ],
+      "tips": [
+        "Decreto 9.830/2019 regulamenta; LINDB continua sendo a lei-base.",
+        "Consulta pública: confira a fonte vigente — LINDB, art. 29."
+      ],
+      "icons": [
+        "federal-law",
+        "clipboard",
+        "calendar-law",
+        "statute-trap"
+      ]
+    }
+  ]
+}
