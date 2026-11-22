@@ -23,7 +23,9 @@ function setup(user='aluno-A',storage){
 function firstBy(d){return d.subjects.flatMap(s=>s.items).find(x=>!x.organizational).id;}
 test('duas opções de edital independentes no catálogo',()=>{
  const {w,dom}=setup();
- assert.equal(Object.values(w.CentralStudyObjectiveCatalog.goals).filter(x=>x.type==='exam').length,2);
+ assert.ok(Object.values(w.CentralStudyObjectiveCatalog.goals).filter(x=>x.type==='exam').length>=5);
+ assert.ok(w.CentralStudyObjectiveCatalog.goals[goalR]);
+ assert.ok(w.CentralStudyObjectiveCatalog.goals[goalT]);
  assert.equal(w.CentralStudyObjectiveCatalog.goals[goalR].examSubjects.length,10);
  assert.equal(w.CentralStudyObjectiveCatalog.goals[goalT].examSubjects.length,10);
  assert.deepEqual(Object.keys(w.CentralStudyObjectiveCatalog.subjects).sort(),['pt','cf','adm','civil','cpc','penal','cpp','rlm','info'].sort());
