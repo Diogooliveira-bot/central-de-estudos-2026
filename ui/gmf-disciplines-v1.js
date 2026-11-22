@@ -69,6 +69,21 @@
       '<div class="gmf-modules">' + cards + '</div></div>';
   }
 
+  // O leitor carrega sob demanda para não interferir nas telas das demais disciplinas.
+  let readerLoading=null;
+  function loadGmfReader(){
+    if(global.GmfCourseReaderV2)return Promise.resolve(global.GmfCourseReaderV2);
+    if(readerLoading)return readerLoading;
+    readerLoading=new Promise((resolve,reject)=>{
+      const script=document.createElement('script');
+      script.src='/ui/gmf-course-reader-v2.js?v=20261122gmfModuleReader1';
+      script.onload=()=>global.GmfCourseReaderV2?resolve(global.GmfCourseReaderV2):reject(new Error('Leitor GMF indisponível.'));
+      script.onerror=()=>reject(new Error('Não foi possível carregar o leitor GMF.'));
+      document.head.appendChild(script);
+    }).catch(error=>{readerLoading=null;throw error});
+    return readerLoading;
+  }
+
   // Event delegation: evita manipulação de JavaScript em atributos onclick.
   document.addEventListener('click',event=>{
     const button=event.target.closest?.('.gmf-module-actions button[data-gmf-action][data-gmf-course][data-gmf-module]');
@@ -78,7 +93,13 @@
     const action=button.dataset.gmfAction;
     const module=button.dataset.gmfModule;
     if(!ids.has(id)||!catalog.subjects.find(subject=>subject.id===id)?.modules.some(item=>item.id===module))return;
-    if(action==='review'||action==='complete')global.GmfCourseReader?.open(id,module,action);
+    if(action!=='review'&&action!=='complete')return;
+    const label=button.textContent;
+    button.disabled=true;
+    loadGmfReader().then(reader=>reader.open(id,module,action)).catch(error=>{
+      console.error('[GMF] Falha ao abrir módulo',error);
+      button.textContent='Não foi possível carregar · tentar novamente';
+    }).finally(()=>{button.disabled=false;if(button.isConnected&&button.textContent==='Não foi possível carregar · tentar novamente')return;if(button.isConnected)button.textContent=label});
   });
 
   // A renderização da área Início é executada no runtime nativo por meio de GmfDisciplines.renderMaster.
