@@ -52,6 +52,39 @@ test('remove questões antigas inseridas depois do primeiro carregamento',async(
  assert.equal(el.querySelector(':scope > .cpp-native-question'),null);
  dom.window.close();
 });
+
+test('revisão e completo não exibem exercícios embutidos, sem afetar o banco independente',async()=>{
+ const dom=fixture(),w=dom.window,d=w.document;
+ const article=d.createElement('article');
+ article.className='bc-native-article';
+ article.innerHTML='<h2>Teoria completa</h2><p>Explicação jurídica preservada.</p>'
+  +'<h2>10 Questões Internas</h2><p>Questão 1: teste antigo</p><p>Gabarito: A</p>'
+  +'<h2>Síntese da matéria</h2><p>Resumo final preservado.</p>'
+  +'<details class="question"><summary>Questão 2</summary>Enunciado antigo</details>'
+  +'<aside class="cf-native-callout question">Teste de compreensão antigo</aside>'
+  +'<aside class="cf-native-callout answer">Resposta comentada antiga</aside>'
+  +'<section data-bc-questoes-area><h3>Questões internas</h3><button class="adm-cf-quiz">Resolver no banco novo</button></section>';
+ d.body.append(article);
+ await delay(160);
+ assert.doesNotMatch(article.textContent,/Questão 1|Questão 2|Gabarito: A|Teste de compreensão antigo|Resposta comentada antiga|10 Questões Internas/);
+ assert.match(article.textContent,/Explicação jurídica preservada|Resumo final preservado/);
+ assert.match(article.textContent,/Resolver no banco novo/);
+ assert.ok(article.querySelector('[data-bc-questoes-area]'));
+ dom.window.close();
+});
+
+test('questões numeradas fora de um bloco são removidas, mas a explicação permanece',async()=>{
+ const dom=fixture(),w=dom.window,d=w.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<p>Conteúdo explicativo.</p><p>Questão 3: enunciado antigo</p>'
+  +'<ol><li>Alternativa A</li><li>Alternativa B</li></ol><p>Gabarito: B</p>'
+  +'<h2>Conceitos importantes</h2><p>Outro conceito preservado.</p>';
+ d.body.append(article);await delay(160);
+ assert.doesNotMatch(article.textContent,/Questão 3|Alternativa A|Gabarito: B/);
+ assert.match(article.textContent,/Conteúdo explicativo|Outro conceito preservado/);
+ dom.window.close();
+});
+
 test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei em Dia e do QC/TEC',()=>{
  const index=read('index.html'),boot=read('central-v119.html'),sw=read('sw.js');
  const man=JSON.parse(read('central-offline-files-v66172.json'));
@@ -59,7 +92,7 @@ test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei
  assert.match(index,/ui\/old-questions-removed-v1\.js\?v=20261115-responsive-v15/);
  assert.match(index,/ui\/old-questions-removed-v1\.css\?v=20261115-responsive-v15/);
  assert.match(man.build,/^20\d{6}-[a-z0-9-]+$/);
- assert(man.files.includes('/ui/old-questions-removed-v1.js?v=20261115-responsive-v15'));
+ assert(man.files.includes('/ui/old-questions-removed-v1.js?v=20261121-theory-clean-v1'));
  assert(boot.includes("var BUILD='"+man.build+"'"));
  assert(sw.includes("var CACHE='central-"+man.build+"'"));
  assert(sw.includes('central-offline-files-v66172.json?v='+man.build));
