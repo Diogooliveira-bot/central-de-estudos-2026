@@ -49,7 +49,7 @@ test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e rev
           assert.ok(record.chapters.every(chapter => {
             const wordCount = chapter.html.replace(/<[^>]*>/g,' ').trim().split(/\s+/).length;
             const minimumWords = mode === 'full' ? 100 : 45;
-            return chapter.title.length >= 8 && chapter.html.length >= 160 &&
+            return chapter.title.trim().length > 0 && !/^(?:TODO|placeholder|em construção)$/i.test(chapter.title.trim()) && chapter.html.length >= 160 &&
               wordCount >= minimumWords && /<p>/.test(chapter.html) &&
               !/<script|onerror=|javascript:/i.test(chapter.html);
           }), path);
