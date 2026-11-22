@@ -33,7 +33,7 @@ const results={environment:{root,network:'local gzip; Chromium CDP throttling; m
 const subjects=['cf','adm','civil','penal','cpc','cpp','pt','rlm','info'];
 const ready=p=>p.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',null,{timeout:120000});
 const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-const readingReady=p=>p.waitForFunction(()=>[...document.querySelectorAll('.bc-native-article,.cf-native-content,.bc-info-reader-content,.bc-m01-paper')].some(e=>e.getBoundingClientRect().height>0 && e.textContent.length>200),null,{timeout:30000});
+const readingReady=p=>p.waitForFunction(()=>[...document.querySelectorAll('.bc-native-article,.cf-native-content,.bc-info-reader-content,.bc-m01-paper,.pt-native-reader .bc-native-reader')].some(e=>e.getBoundingClientRect().height>0 && e.textContent.length>200),null,{timeout:30000});
 const closeReader=p=>p.locator('.bc-native-reader-close:visible,[data-bc-guided-close]:visible,[data-bc-info-close]:visible').first().click({timeout:5000});
 const timings=p=>p.evaluate(()=>({measures:performance.getEntriesByType('measure').filter(e=>e.name.startsWith('bc:')).map(e=>({name:e.name,ms:e.duration})),requests:performance.getEntriesByType('resource').length,transferBytes:performance.getEntriesByType('resource').reduce((sum,e)=>sum+e.transferSize,0)}));
 const measure=p=>p.evaluate(()=>{const selectors=['#homeView .home-grid','#studentMoreButton .nav-text','.subject-name','.bc-focus-module-copy strong','#centralSidebar .nav-text','.bc-ui-scale-options button','.bc-native-article','.bc-m01-paper','.bcqa-title b'];return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,viewport:document.querySelector('meta[name="viewport"]')?.content,elements:selectors.map(selector=>{const e=[...document.querySelectorAll(selector)].find(e=>e.getBoundingClientRect().width);if(!e)return {selector};const r=e.getBoundingClientRect();return {selector,font:getComputedStyle(e).fontSize,width:r.width,height:r.height};})};});
@@ -56,12 +56,12 @@ try{
      start=performance.now();await page.locator('#bcFocusModules .bc-focus-module-card').nth(id==='rlm'?1:0).click({timeout:15000});
      await page.waitForFunction(()=>window.BaseCompletaFocusNavigation.state.stage==='reading',null,{timeout:30000});
      const section=page.locator('#subjects > .subject[data-id="'+id+'"]');
-     const button=section.locator('button:visible').filter({hasText:/Revisar conteúdo/}).first();
+     const button=section.locator('button:visible').filter({hasText:id==='pt'?/Estudar teoria/:/Revisar conteúdo/}).first();
      await button.waitFor({timeout:15000});await button.click();
      await readingReady(page);await settle(page);
      const readingMs=performance.now()-start;
      await closeReader(page);
-     const fullStart=performance.now();await section.locator('button:visible').filter({hasText:/Estudar conteúdo/}).first().click();await readingReady(page);await settle(page);const fullReadingMs=performance.now()-fullStart;await closeReader(page);
+     let fullReadingMs=null;if(id!=='pt'){const fullStart=performance.now();await section.locator('button:visible').filter({hasText:/Estudar conteúdo/}).first().click();await readingReady(page);await settle(page);fullReadingMs=performance.now()-fullStart;await closeReader(page);}
      const timing=await timings(page);timing.cpuMs=delta(subjectCpu,await cpu(cdp));await page.evaluate(()=>{window.openHome();window.BaseCompletaFocusNavigation.backToSubjects();});
      start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:30000});await settle(page);
      const reopenMs=performance.now()-start;
