@@ -14,20 +14,50 @@ function getCatalog() {
   return context.window.GmfCourseCatalog;
 }
 
-test('quatro disciplinas e 30 módulos únicos; roteiro não se apresenta como curso completo', () => {
+test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e revisão', () => {
   const catalog = getCatalog();
   assert.equal(catalog.subjects.length, 4);
   assert.deepEqual(Array.from(catalog.subjects, item => item.id), ['atual', 'fortaleza', 'legesp', 'dh']);
   assert.deepEqual(Array.from(catalog.subjects, item => item.modules.length), [6, 9, 11, 4]);
   assert.equal(catalog.subjects.reduce((sum, item) => sum + item.modules.length, 0), 30);
-  assert.equal(catalog.theoryComplete, false);
+  assert.equal(catalog.theoryComplete, true);
   assert.equal(catalog.newNoticePublished, false);
+  assert.deepEqual(catalog.availableModules, {
+    atual:['m01','m02','m03','m04','m05','m06'],
+    fortaleza:['m01','m02','m03','m04','m05','m06','m07','m08','m09'],
+    legesp:['m01','m02','m03','m04','m05','m06','m07','m08','m09','m10','m11'],
+    dh:['m01','m02','m03','m04']
+  });
   for (const course of catalog.subjects) {
     assert.ok(course.reference.includes('2023'));
     assert.equal(new Set(course.modules.map(m => m.id)).size, course.modules.length);
     for (const module of course.modules) {
       assert.ok(module.title.length > 5);
       assert.ok(module.focus.length >= 2);
+      assert.ok(catalog.availableModules[course.id].includes(module.id), course.id + '/' + module.id);
+      if (module.id !== 'm01') {
+        for (const mode of ['full','review']) {
+          const path = 'content/gmf/' + course.id + '/' + module.id + '-' + mode + '-v1.js';
+          const context = {window:{}};
+          vm.runInNewContext(read(path), context, {timeout:1000});
+          const record = context.window[mode === 'full' ? 'GMF_MODULE_FULL' : 'GMF_MODULE_REVIEW'];
+          assert.equal(record.subject, course.id, path);
+          assert.equal(record.module, module.id, path);
+          assert.ok(record.chapters.length >= (mode === 'full' ? 4 : 3), path);
+          assert.ok(record.resources.length > 0, path);
+          assert.ok(record.resources.every(resource => /^https:\/\//.test(resource.url)), path);
+          assert.ok(record.chapters.every(chapter =>
+            chapter.title.length >= 8 && chapter.html.length >= 160 &&
+            /<p>/.test(chapter.html) && !/<script|onerror=|javascript:/i.test(chapter.html)), path);
+        }
+        const fullContext = {window:{}}, reviewContext = {window:{}};
+        vm.runInNewContext(read('content/gmf/' + course.id + '/' + module.id + '-full-v1.js'), fullContext);
+        vm.runInNewContext(read('content/gmf/' + course.id + '/' + module.id + '-review-v1.js'), reviewContext);
+        assert.notEqual(
+          fullContext.window.GMF_MODULE_FULL.chapters[0].html,
+          reviewContext.window.GMF_MODULE_REVIEW.chapters[0].html,
+          course.id + '/' + module.id + ' revisão deve ter redação própria');
+      }
     }
   }
 });
