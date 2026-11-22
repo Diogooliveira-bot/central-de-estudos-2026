@@ -17,6 +17,10 @@ test('40 approved views load through the real compressed reader, with literal la
   w.eval(read(bundle(n,mode)));if(mode==='summary')w.eval(read('content/adm/autor-20261110/adm-m'+String(n).padStart(2,'0')+'-submitted-review.js'));let html=await w.AdmApostilaReading.load(n,mode);w.document.body.innerHTML='<article>'+html+'</article>';let d=w.document;
   if(mode==='complete'){assert.ok(d.querySelector('.overview'));assert.ok(d.querySelector('.synthesis'));}else{assert.ok(d.querySelector('.adm-author-reading'));assert.ok(d.querySelector('.adm-author-reading table.adm-author-table'));}
   assert.equal(d.querySelectorAll('details.law[open]').length,0);
+  assert.equal(d.querySelectorAll('details.question').length,0,'questões de fixação devem ficar somente na área independente');
+  assert.doesNotMatch(d.body.textContent,/^5 Questões Internas|^10 Questões Internas/m,'a seção de questões não integra a leitura');
+  if(n===1&&mode==='complete')assert.equal(d.querySelectorAll('img,picture,figure,svg,canvas').length,0,'a versão completa ADM M01 não exibe imagens');
+
   for(const law of d.querySelectorAll('details.law [data-law-key]'))assert.match(law.querySelector('p').textContent,/^Art\.?\s*\d/i);
   for(const h of d.querySelectorAll('h2,h3'))assert.doesNotMatch(h.textContent.trim(),/^(?:\d+\.\s*)?(Entenda primeiro|Regra jurídica|Como funciona na prática|O que levar para a prova|Como cai na prova|O que decorar)$/i);
   if(mode==='complete')assert.ok(d.querySelectorAll('[data-adm-session]').length>=5);
