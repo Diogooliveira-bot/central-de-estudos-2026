@@ -1,4 +1,4 @@
-/* Catálogo curricular inicial da GMF — apenas roteiros de estudo, NÃO teoria completa. */
+/* Catálogo GMF — materiais completos e revisões guiadas baseados no edital histórico de 2023. */
 (function (global) {
   'use strict';
   global.GmfCourseCatalog = Object.freeze({
