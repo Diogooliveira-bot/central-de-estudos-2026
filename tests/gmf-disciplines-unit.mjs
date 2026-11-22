@@ -46,9 +46,13 @@ test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e rev
           assert.ok(record.chapters.length >= (mode === 'full' ? 4 : 3), path);
           assert.ok(record.resources.length > 0, path);
           assert.ok(record.resources.every(resource => /^https:\/\//.test(resource.url)), path);
-          assert.ok(record.chapters.every(chapter =>
-            chapter.title.length >= 8 && chapter.html.length >= 160 &&
-            /<p>/.test(chapter.html) && !/<script|onerror=|javascript:/i.test(chapter.html)), path);
+          assert.ok(record.chapters.every(chapter => {
+            const wordCount = chapter.html.replace(/<[^>]*>/g,' ').trim().split(/\\s+/).length;
+            const minimumWords = mode === 'full' ? 100 : 45;
+            return chapter.title.length >= 8 && chapter.html.length >= 160 &&
+              wordCount >= minimumWords && /<p>/.test(chapter.html) &&
+              !/<script|onerror=|javascript:/i.test(chapter.html);
+          }), path);
         }
         const fullContext = {window:{}}, reviewContext = {window:{}};
         vm.runInNewContext(read('content/gmf/' + course.id + '/' + module.id + '-full-v1.js'), fullContext);
