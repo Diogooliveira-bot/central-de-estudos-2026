@@ -1,0 +1,313 @@
+{
+  "module": 5,
+  "module_title": "Direito Administrativo",
+  "source": "content/adm/autor-20261110/adm-m05-submitted-review.js",
+  "chapters": [
+    {
+      "chapter": 1,
+      "source_id": "pessoas-que-atuam-em-nome-do-estado",
+      "title": "Pessoas que atuam em nome do Estado",
+      "central": "Agente público é quem exerce função estatal. O vínculo define as regras aplicáveis e não torna todos os agentes servidores efetivos.",
+      "cards": [
+        [
+          "Conceito",
+          "A expressão abrange quem exerce função pública, ainda que por tempo limitado ou sem remuneração."
+        ],
+        [
+          "Exemplos",
+          "Agentes políticos, servidores, empregados públicos, temporários e particulares colaboradores."
+        ],
+        [
+          "Distinção",
+          "Órgão é uma unidade administrativa; agente é a pessoa natural que exerce suas atribuições."
+        ],
+        [
+          "Pegadinha de prova",
+          "Exercer atividade pública não significa, por si só, ocupar cargo ou adquirir estabilidade."
+        ]
+      ],
+      "tips": [
+        "Identifique primeiro a pessoa e o vínculo que ela mantém com o Estado.",
+        "Agente público é gênero; servidor é uma categoria mais específica."
+      ],
+      "icons": [
+        "people",
+        "council",
+        "federal-entity",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 2,
+      "source_id": "espécies-de-agentes-públicos",
+      "title": "Espécies de agentes públicos",
+      "central": "As categorias de agentes públicos têm vínculos diferentes; o nome do local de trabalho não determina o regime.",
+      "cards": [
+        [
+          "Agentes políticos",
+          "Exercem mandato ou funções de direção política, como chefes do Executivo e parlamentares."
+        ],
+        [
+          "Vínculos civis",
+          "Servidor estatutário ocupa cargo; empregado público mantém vínculo predominantemente celetista."
+        ],
+        [
+          "Vínculos especiais",
+          "Temporários atendem necessidade prevista em lei; jurados e mesários colaboram sem vínculo permanente."
+        ],
+        [
+          "Pegadinha de prova",
+          "Nem todo trabalhador em órgão público é estatutário, e nem todo agente público ocupa cargo."
+        ]
+      ],
+      "tips": [
+        "Estatutário: cargo e estatuto. Empregado: emprego e CLT, com regras públicas.",
+        "Temporário não ocupa automaticamente cargo efetivo."
+      ],
+      "icons": [
+        "government-act",
+        "federal-law",
+        "contract",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 3,
+      "source_id": "cargo-emprego-e-função-pública",
+      "title": "Cargo, emprego e função pública",
+      "central": "Cargo é uma posição jurídica criada por lei; emprego é um posto contratual; função são as atribuições exercidas.",
+      "cards": [
+        [
+          "Cargo público",
+          "Conjunto legal de atribuições e responsabilidades, ocupado sob regime estatutário."
+        ],
+        [
+          "Emprego público",
+          "Posto de trabalho com vínculo contratual predominantemente regido pela CLT."
+        ],
+        [
+          "Função pública",
+          "Atividade exercida em nome do Estado; pode existir sem cargo efetivo, como no vínculo temporário."
+        ],
+        [
+          "Pegadinha de prova",
+          "Função de confiança é exclusiva de servidor efetivo; cargo em comissão admite nomeação nos limites legais."
+        ]
+      ],
+      "tips": [
+        "Cargo: posição jurídica. Emprego: vínculo contratual. Função: conjunto de atribuições.",
+        "Função de confiança e cargo em comissão não são sinônimos."
+      ],
+      "icons": [
+        "federal-entity",
+        "contract",
+        "clipboard",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 4,
+      "source_id": "regimes-jurídicos-e-concurso-público",
+      "title": "Regimes jurídicos e concurso público",
+      "central": "O regime jurídico depende do vínculo. A Constituição estabelece o concurso como regra para ingresso em cargo ou emprego público.",
+      "cards": [
+        [
+          "Estatutário",
+          "As regras do vínculo decorrem de estatuto legal; cada ente possui seu regime aplicável."
+        ],
+        [
+          "Celetista",
+          "O contrato segue predominantemente a CLT e também se submete a exigências constitucionais."
+        ],
+        [
+          "Concurso",
+          "Em regra, exige-se concurso para cargo ou emprego público; cargo em comissão é exceção constitucional."
+        ],
+        [
+          "Pegadinha de prova",
+          "Trabalhar para o Poder Público não torna a Lei 8.112/1990 aplicável a todos os agentes."
+        ]
+      ],
+      "tips": [
+        "CF, art. 37, II: concurso é a regra para cargo e emprego.",
+        "Confira o ente e o vínculo antes de aplicar um estatuto."
+      ],
+      "icons": [
+        "federal-law",
+        "contract",
+        "constitution",
+        "number-trap"
+      ]
+    },
+    {
+      "chapter": 5,
+      "source_id": "da-aprovação-ao-início-do-exercício",
+      "title": "Da aprovação ao início do exercício",
+      "central": "Aprovação, nomeação, posse e exercício são etapas distintas; cada uma produz um efeito próprio.",
+      "cards": [
+        [
+          "Concurso",
+          "Validade de até dois anos, prorrogável uma vez por igual período (CF, art. 37, III)."
+        ],
+        [
+          "Nomeação",
+          "Ato de provimento que designa a pessoa para cargo efetivo ou em comissão."
+        ],
+        [
+          "Posse e exercício",
+          "Na Lei 8.112/1990, posse ocorre em até 30 dias; exercício, em regra, em até 15 dias após a posse."
+        ],
+        [
+          "Pegadinha de prova",
+          "Aprovado não começa a trabalhar automaticamente: posse formaliza a investidura e exercício inicia as atribuições."
+        ]
+      ],
+      "tips": [
+        "Sequência: concurso → nomeação → posse → exercício.",
+        "Os prazos de 30 e 15 dias são da Lei 8.112/1990; verifique o regime aplicável."
+      ],
+      "icons": [
+        "clipboard",
+        "government-act",
+        "calendar-law",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 6,
+      "source_id": "provimento-movimentação-e-vacância",
+      "title": "Provimento, movimentação e vacância",
+      "central": "Provimento preenche o cargo; vacância o desocupa. Remoção desloca servidor; redistribuição desloca cargo.",
+      "cards": [
+        [
+          "Provimento",
+          "A Lei 8.112/1990 prevê nomeação e formas derivadas, como promoção, reversão e reintegração."
+        ],
+        [
+          "Vacância",
+          "Pode decorrer de exoneração, demissão, aposentadoria, falecimento e outras hipóteses legais."
+        ],
+        [
+          "Movimentação",
+          "Remoção desloca o servidor no mesmo quadro; redistribuição desloca o cargo efetivo."
+        ],
+        [
+          "Pegadinha de prova",
+          "Exoneração não é penalidade; demissão é sanção disciplinar aplicada nas hipóteses legais."
+        ]
+      ],
+      "tips": [
+        "Pergunte: o cargo foi preenchido, desocupado, ou houve movimentação?",
+        "Na remoção vai o servidor; na redistribuição vai o cargo."
+      ],
+      "icons": [
+        "federal-law",
+        "federal-entity",
+        "split-courts",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 7,
+      "source_id": "estágio-probatório-e-estabilidade",
+      "title": "Estágio probatório e estabilidade",
+      "central": "Efetividade descreve o cargo; estabilidade é garantia constitucional adquirida após requisitos específicos.",
+      "cards": [
+        [
+          "Requisitos",
+          "Cargo efetivo, concurso, três anos de exercício e avaliação especial de desempenho (CF, art. 41)."
+        ],
+        [
+          "Estágio probatório",
+          "Acompanha a aptidão e o desempenho; no Executivo federal, a regra atual prevê 36 meses."
+        ],
+        [
+          "Proteção",
+          "Servidor estável só perde o cargo nas hipóteses constitucionais e com as garantias aplicáveis."
+        ],
+        [
+          "Pegadinha de prova",
+          "A aprovação no concurso ou a posse em cargo efetivo não concede estabilidade imediata."
+        ]
+      ],
+      "tips": [
+        "Efetividade é característica do cargo; estabilidade é garantia do servidor.",
+        "CF, art. 41: três anos de efetivo exercício e avaliação especial."
+      ],
+      "icons": [
+        "age",
+        "calendar-law",
+        "admin-not-appeal",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 8,
+      "source_id": "direitos-deveres-e-responsabilidades",
+      "title": "Direitos, deveres e responsabilidades",
+      "central": "O agente pode ter direitos e deveres e responder em esferas diferentes, conforme o vínculo e os fatos.",
+      "cards": [
+        [
+          "Deveres",
+          "Na Lei 8.112/1990: zelo, observância das normas e recusa ao cumprimento de ordem manifestamente ilegal."
+        ],
+        [
+          "Esferas",
+          "Um fato pode gerar responsabilidade administrativa, civil e penal, observadas as regras legais."
+        ],
+        [
+          "Defesa",
+          "A aplicação de sanção exige competência, fundamento e respeito ao devido processo e à ampla defesa."
+        ],
+        [
+          "Pegadinha de prova",
+          "Absolvição criminal afasta a responsabilidade administrativa quando negar a existência do fato ou a autoria."
+        ]
+      ],
+      "tips": [
+        "Nem toda irregularidade administrativa é crime.",
+        "Lei 8.112/1990, arts. 125 e 126: independência e repercussão entre esferas."
+      ],
+      "icons": [
+        "clipboard",
+        "split-courts",
+        "court",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 9,
+      "source_id": "acumulação-de-cargos-e-situações-concretas",
+      "title": "Acumulação de cargos e situações concretas",
+      "central": "Acumular remuneração de cargos públicos é vedado como regra, mas a Constituição prevê exceções com horários compatíveis.",
+      "cards": [
+        [
+          "Regra",
+          "É vedada a acumulação remunerada, salvo as hipóteses expressas na Constituição."
+        ],
+        [
+          "Exceções",
+          "Dois cargos de professor; um de professor com outro cargo; ou dois cargos privativos de profissionais de saúde regulamentados."
+        ],
+        [
+          "Condição",
+          "A compatibilidade de horários deve ser observada e a acumulação precisa se enquadrar na exceção constitucional."
+        ],
+        [
+          "Pegadinha de prova",
+          "A exceção não autoriza qualquer combinação de cargos nem dispensa a compatibilidade de horários."
+        ]
+      ],
+      "tips": [
+        "CF, art. 37, XVI: memorize as três exceções e a compatibilidade de horários.",
+        "Professor pode acumular com cargo de qualquer natureza, na redação constitucional vigente."
+      ],
+      "icons": [
+        "two-thirds",
+        "council",
+        "calendar-law",
+        "statute-trap"
+      ]
+    }
+  ]
+}
