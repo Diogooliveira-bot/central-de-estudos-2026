@@ -7,15 +7,15 @@ import {JSDOM} from 'jsdom';
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 
 function makeApp(){
-  const store=new Map(),styles=[],dispatched=[];
+  const store=new Map(),styles=[],dispatched=[],listeners=new Map();
   const doc={
     readyState:'loading',
     documentElement:{dataset:{}},
     head:{appendChild(node){styles.push(node)}},
     createElement(tag){return {tagName:tag,id:'',textContent:''}},
     getElementById(){return null},
-    addEventListener(){},
-    dispatchEvent(event){dispatched.push(event)}
+    addEventListener(type,fn){const list=listeners.get(type)||[];list.push(fn);listeners.set(type,list)},
+    dispatchEvent(event){dispatched.push(event);for(const fn of listeners.get(event.type)||[])fn(event)}
   };
   const counts={render:0,grid:0,reset:0};
   const win={
@@ -47,9 +47,25 @@ test('selecionar GMF ativa somente as 11 disciplinas pertinentes e guarda a esco
  const permitted=['pt','rlm','info','cf','adm','penal','cpp','atual','fortaleza','legesp','dh'];
  for(const id of permitted)assert.equal(g.allowsSubject(id),true,id);
  for(const id of ['civil','cpc'])assert.equal(g.allowsSubject(id),false,id);
- assert.equal(counts.render,1);assert.equal(counts.grid,1);assert.equal(counts.reset,1);
+ assert.equal(counts.render,0);assert.equal(counts.grid,0);assert.equal(counts.reset,1);
  assert.equal(dispatched[0].type,'central:study-objective-changed');
 });
+test('trocar editais no seletor principal não reconstrói toda a Central nem dispara eventos em cadeia',()=>{
+ const {win,doc,counts,dispatched}=makeApp();
+ doc.dispatchEvent({type:'central:study-objective-changed',detail:{objectiveId:'exam-catalog-gmf-fortaleza-monitoramento-cargo-1'}});
+ assert.equal(win.GmfStudyObjective.current(),'gmf-fortaleza');
+ assert.equal(counts.render,0);
+ assert.equal(counts.grid,0);
+ assert.equal(counts.reset,0);
+ assert.equal(dispatched.length,1,'evento externo não pode ser reenviado');
+ doc.dispatchEvent({type:'central:study-objective-changed',detail:{objectiveId:'exam-trt8-2026-analista-judiciaria'}});
+ assert.equal(win.GmfStudyObjective.current(),'general');
+ assert.equal(counts.render,0);
+ assert.equal(counts.grid,0);
+ assert.equal(counts.reset,0);
+ assert.equal(dispatched.length,2);
+});
+
 test('trocar objetivo não apaga progresso e não aceita valores arbitrários',()=>{
  const {win,store}=makeApp(),g=win.GmfStudyObjective;
  store.set('central-v6:gmf:m01:dh:review:read:0','1');
@@ -101,6 +117,13 @@ test('teste real da grade GMF: a grade antiga continua intacta e GMF tem seus 11
  assert.equal(old.children.length,1,'escolha GMF não modifica a lista de cursos já existente');
  assert.ok(extra.querySelector('[data-study-open-subject="fortaleza"]'));
  assert.ok(extra.querySelector('[data-study-open-subject="dh"]'));
+ let opened=0, duplicate=0;
+ w.BaseCompletaFocusNavigation={chooseSubject(){opened++}};
+ w.openHome=()=>{};
+ w.document.addEventListener('click',()=>{duplicate++});
+ extra.querySelector('[data-study-open-subject="dh"]').click();
+ assert.equal(opened,1,'um clique abre a disciplina somente uma vez');
+ assert.equal(duplicate,0,'clique GMF não deve vazar ao navegador geral de disciplinas');
  const css=w.document.getElementById('gmf-study-objective-css').textContent;
  assert.match(css,/#disciplineGrid\{display:none!important\}/,'apenas ocultação visual em GMF');
  assert.match(css,/#gmfGoalGrid\{display:none!important\}/,'ocultar grade GMF em estudo geral');

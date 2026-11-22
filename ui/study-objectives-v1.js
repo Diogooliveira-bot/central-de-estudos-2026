@@ -155,7 +155,10 @@
     }
     // Acesso a tudo: as disciplinas fora da trilha continuam disponíveis, em seguida.
     const rest = allSubjectIds().filter((id) => !shown.has(id));
-    const count = (current.examSubjects?.length || selectedIds.length) + rest.length;
+    // Uma lista de examSubjects vazia é válida (edital em preparação).
+    // Usar `||` aqui somava selectedIds sem renderizá-los, causando
+    // discrepância permanente e laço infinito no MutationObserver da grade.
+    const count = (Array.isArray(current.examSubjects) ? current.examSubjects.length : selectedIds.length) + rest.length;
     html += rest.map((id) => objectiveCard(catalog.subjects[id], { subjectId:id, title:catalog.subjects[id].name })).join('');
     host.innerHTML = html;
     host.dataset.studyObjectiveSignature = signature;
