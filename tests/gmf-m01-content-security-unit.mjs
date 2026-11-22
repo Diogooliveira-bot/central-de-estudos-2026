@@ -76,7 +76,8 @@ test('Integração não oferece aula M02-MXX inexistente nem expõe material pre
   const reader=read('ui/gmf-reader-v1.js');
   const html=read('index.html');
   assert.match(client, /module\.id === 'm01'/);
-  assert.match(client, /BCQuestoesArea\?\.openModule/);
+  assert.doesNotMatch(client, /data-gmf-action="questions"|BCQuestoesArea\?\.openModule/);
+  assert.match(client, /Questões do módulo — Em preparação/);
   assert.match(reader,/\/api\/private-content\?asset=/);
   assert.doesNotMatch(reader,/\/content\/gmf\/m01-full-v1\.js\?v=/);
   assert.ok(html.includes('/ui/gmf-reader-v1.js?v=20261121gmfM01'));
