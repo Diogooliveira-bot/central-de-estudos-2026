@@ -146,7 +146,7 @@
     policial:['pt','rlm','cf','adm','penal','cpp','info'],
     educacao:['pt','rlm','cf','info'],
     saude:['pt','rlm','cf','info'],
-    bancario:['pt','rlm','info'],
+    bancaria:['pt','rlm','info'],
     transito:['pt','rlm','cf','adm','info'],
   };
   for (const area of visibleAreas) {
