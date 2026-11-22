@@ -110,7 +110,7 @@ test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei
  const index=read('index.html'),boot=read('central-v119.html'),sw=read('sw.js');
  const man=JSON.parse(read('central-offline-files-v66172.json'));
  const vercel=JSON.parse(read('vercel.json'));
- assert.match(index,/ui\/old-questions-removed-v1\.js\?v=20261115-responsive-v15/);
+ assert.match(index,/ui\/old-questions-removed-v1\.js\?v=20261121-theory-clean-v1/);
  assert.match(index,/ui\/old-questions-removed-v1\.css\?v=20261115-responsive-v15/);
  assert.match(man.build,/^20\d{6}-[a-z0-9-]+$/);
  assert(man.files.includes('/ui/old-questions-removed-v1.js?v=20261121-theory-clean-v1'));
