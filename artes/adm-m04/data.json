@@ -1,0 +1,313 @@
+{
+  "module": 4,
+  "module_title": "Direito Administrativo",
+  "source": "content/adm/autor-20261110/adm-m04-submitted-review.js",
+  "chapters": [
+    {
+      "chapter": 1,
+      "source_id": "a-ideia-de-poder-dever-e-seus-limites",
+      "title": "A ideia de poder-dever e seus limites",
+      "central": "A competência administrativa existe para cumprir uma finalidade pública: quando a lei impõe uma providência, o poder também é dever.",
+      "cards": [
+        [
+          "Poder-dever",
+          "A autoridade deve exercer a competência que a lei lhe atribui, conforme a finalidade pública."
+        ],
+        [
+          "Poder vinculado",
+          "A lei define os requisitos e a providência devida diante dos fatos."
+        ],
+        [
+          "Poder discricionário",
+          "A lei permite escolher entre opções legítimas, dentro de limites jurídicos."
+        ],
+        [
+          "Pegadinha de prova",
+          "Discricionariedade não significa liberdade para agir por preferência pessoal ou sem controle."
+        ]
+      ],
+      "tips": [
+        "Pergunte: a lei obriga a agir ou permite escolher?",
+        "Em qualquer hipótese, finalidade pública e limites legais permanecem."
+      ],
+      "icons": [
+        "government-act",
+        "federal-law",
+        "magnifier",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 2,
+      "source_id": "poder-hierárquico-organizar-e-coordenar",
+      "title": "Poder hierárquico: organizar e coordenar",
+      "central": "O poder hierárquico organiza órgãos e agentes subordinados dentro da estrutura administrativa.",
+      "cards": [
+        [
+          "Organização interna",
+          "Distribui funções, coordena atividades e orienta a atuação dos subordinados."
+        ],
+        [
+          "Fiscalização e revisão",
+          "Permite acompanhar e rever atos internos, conforme a lei."
+        ],
+        [
+          "Delegação e avocação",
+          "Podem distribuir o exercício de competências nos casos e limites legais."
+        ],
+        [
+          "Pegadinha de prova",
+          "Entre ministério e autarquia há vinculação e controle finalístico, não hierarquia geral."
+        ]
+      ],
+      "tips": [
+        "Hierarquia pressupõe subordinação dentro da mesma estrutura.",
+        "Controle finalístico depende da lei e não cria chefia hierárquica."
+      ],
+      "icons": [
+        "court-levels",
+        "dashboard",
+        "federal-law",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 3,
+      "source_id": "delegação-avocação-e-distribuição-de-competências",
+      "title": "Delegação, avocação e distribuição de competências",
+      "central": "Delegação transfere o exercício de parte da competência; avocação chama temporariamente para cima competência de subordinado.",
+      "cards": [
+        [
+          "Delegação",
+          "Pode ocorrer mesmo sem subordinação hierárquica, se a lei não impedir."
+        ],
+        [
+          "Não delegar",
+          "A Lei 9.784/1999 veda delegar atos normativos, recursos administrativos e competência exclusiva."
+        ],
+        [
+          "Avocação",
+          "É excepcional, temporária e exige motivos relevantes devidamente justificados."
+        ],
+        [
+          "Pegadinha de prova",
+          "A titularidade da competência não muda com a delegação; avocação exige hierarquia."
+        ]
+      ],
+      "tips": [
+        "Lei 9.784/1999, arts. 11 a 15: competência, delegação e avocação.",
+        "Delegação: pode haver sem hierarquia. Avocação: somente de órgão inferior."
+      ],
+      "icons": [
+        "split-courts",
+        "federal-law",
+        "age",
+        "appeal-trap"
+      ]
+    },
+    {
+      "chapter": 4,
+      "source_id": "poder-disciplinar-apurar-e-responsabilizar",
+      "title": "Poder disciplinar: apurar e responsabilizar",
+      "central": "O poder disciplinar permite apurar infrações e aplicar sanções a quem mantém vínculo especial com a Administração.",
+      "cards": [
+        [
+          "Quem pode alcançar",
+          "Servidores e particulares sujeitos a vínculo jurídico especial com o Poder Público."
+        ],
+        [
+          "Apuração",
+          "A Administração verifica os fatos e aplica a consequência prevista no regime jurídico."
+        ],
+        [
+          "Garantias",
+          "Processo, contraditório e ampla defesa devem ser respeitados quando cabíveis."
+        ],
+        [
+          "Pegadinha de prova",
+          "Poder disciplinar depende de vínculo especial; polícia administrativa pode atingir particulares em geral."
+        ]
+      ],
+      "tips": [
+        "Disciplina: vínculo especial. Polícia: limita atividade ou direito nos termos da lei.",
+        "Sanção administrativa exige competência, fundamento e devido processo."
+      ],
+      "icons": [
+        "clipboard",
+        "federal-law",
+        "court",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 5,
+      "source_id": "poder-regulamentar-e-poder-normativo",
+      "title": "Poder regulamentar e poder normativo",
+      "central": "O regulamento de execução detalha como cumprir a lei, sem criar obrigações além dos limites legais.",
+      "cards": [
+        [
+          "Fiel execução",
+          "O Presidente expede decretos e regulamentos para executar as leis (CF, art. 84, IV)."
+        ],
+        [
+          "Limites",
+          "A norma administrativa deve respeitar a lei e não pode contrariá-la ou substituí-la."
+        ],
+        [
+          "Decreto autônomo",
+          "O art. 84, VI, permite decreto sobre hipóteses específicas de organização administrativa federal."
+        ],
+        [
+          "Pegadinha de prova",
+          "Regulamento não é lei: em regra, não pode inovar livremente na ordem jurídica."
+        ]
+      ],
+      "tips": [
+        "Art. 84, IV: execução da lei. Art. 84, VI: hipóteses constitucionais delimitadas.",
+        "Congresso pode sustar atos normativos que exorbitem do poder regulamentar (CF, art. 49, V)."
+      ],
+      "icons": [
+        "federal-law",
+        "government-act",
+        "constitution",
+        "number-trap"
+      ]
+    },
+    {
+      "chapter": 6,
+      "source_id": "poder-de-polícia-administrativa",
+      "title": "Poder de polícia administrativa",
+      "central": "A Administração condiciona ou limita direitos e atividades privadas, nos termos da lei, para proteger interesses públicos.",
+      "cards": [
+        [
+          "Exemplos",
+          "Licença, fiscalização e sanção administrativa podem integrar a atuação de polícia."
+        ],
+        [
+          "Ciclo estudado",
+          "Ordem, consentimento, fiscalização e sanção são etapas tradicionais; nem todo caso percorre todas."
+        ],
+        [
+          "Atributos",
+          "Discricionariedade, autoexecutoriedade e coercibilidade não aparecem em todo ato."
+        ],
+        [
+          "Pegadinha de prova",
+          "Fiscalização administrativa não é investigação criminal: polícia administrativa difere da judiciária."
+        ]
+      ],
+      "tips": [
+        "CTN, art. 78: definição clássica de poder de polícia.",
+        "Identifique a finalidade e o fundamento legal da restrição imposta."
+      ],
+      "icons": [
+        "magnifier",
+        "federal-law",
+        "dashboard",
+        "jury"
+      ]
+    },
+    {
+      "chapter": 7,
+      "source_id": "discricionariedade-vinculação-e-controle",
+      "title": "Discricionariedade, vinculação e controle",
+      "central": "A escolha discricionária só existe dentro da margem permitida pela lei e continua sujeita ao controle de juridicidade.",
+      "cards": [
+        [
+          "Vinculação",
+          "Preenchidos os requisitos, a lei define a atuação administrativa."
+        ],
+        [
+          "Discricionariedade",
+          "A lei admite alternativas legítimas, avaliadas conforme conveniência e oportunidade."
+        ],
+        [
+          "Controle",
+          "Legalidade, finalidade, motivação, razoabilidade e proporcionalidade podem ser examinadas."
+        ],
+        [
+          "Pegadinha de prova",
+          "Controle judicial não autoriza substituir automaticamente uma escolha administrativa válida por outra."
+        ]
+      ],
+      "tips": [
+        "Mérito administrativo: conveniência e oportunidade dentro da lei.",
+        "Arbitrariedade é atuação fora dos limites jurídicos."
+      ],
+      "icons": [
+        "federal-law",
+        "magnifier",
+        "court",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 8,
+      "source_id": "abuso-de-poder-excesso-e-desvio",
+      "title": "Abuso de poder: excesso e desvio",
+      "central": "Há abuso quando o agente ultrapassa os limites da competência ou usa a competência para finalidade indevida.",
+      "cards": [
+        [
+          "Excesso de poder",
+          "O agente atua fora dos limites de sua competência."
+        ],
+        [
+          "Desvio de finalidade",
+          "O agente é competente, mas busca objetivo diferente do permitido."
+        ],
+        [
+          "Efeito jurídico",
+          "Excesso e desvio são formas de abuso e podem invalidar a atuação, conforme o caso."
+        ],
+        [
+          "Pegadinha de prova",
+          "Excesso atinge a competência; desvio atinge a finalidade do ato."
+        ]
+      ],
+      "tips": [
+        "Excesso: ultrapassa competência; desvio: finalidade imprópria.",
+        "Crime de abuso: Lei 13.869/2019 exige finalidade específica."
+      ],
+      "icons": [
+        "statute-trap",
+        "government-act",
+        "federal-law",
+        "number-trap"
+      ]
+    },
+    {
+      "chapter": 9,
+      "source_id": "como-identificar-o-poder-em-situações-concretas",
+      "title": "Como identificar o poder em situações concretas",
+      "central": "Leia a relação descrita no enunciado: estrutura interna, vínculo especial, norma geral ou restrição a atividade privada.",
+      "cards": [
+        [
+          "Estrutura interna",
+          "Distribuir tarefas, fiscalizar subordinados ou rever atos aponta para o poder hierárquico."
+        ],
+        [
+          "Vínculo especial",
+          "Apurar falta funcional ou contratual pode apontar para o poder disciplinar."
+        ],
+        [
+          "Regra ou restrição",
+          "Detalhar a execução da lei é regulamentar; licenciar e fiscalizar atividade privada é polícia."
+        ],
+        [
+          "Pegadinha de prova",
+          "Antes de marcar, confira quem age, sobre quem, com qual competência e finalidade."
+        ]
+      ],
+      "tips": [
+        "Hierárquico organiza; disciplinar sanciona vínculo especial.",
+        "Regulamentar detalha a lei; polícia condiciona atividades nos limites legais."
+      ],
+      "icons": [
+        "dashboard",
+        "clipboard",
+        "federal-law",
+        "magnifier"
+      ]
+    }
+  ]
+}

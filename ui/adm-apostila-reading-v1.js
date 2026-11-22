@@ -16,12 +16,14 @@ async function decompress(base64){
 }
 function esc(value){return String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function addGuidedReviewArts(html,number){
- if(![2,3].includes(number)||html.includes('data-adm-review-art='))return html;
+ if(![2,3,4].includes(number)||html.includes('data-adm-review-art='))return html;
  const matches=[...html.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)];
  const chapters=matches.map((m,index)=>({index,start:m.index,end:m.index+m[0].length,title:m[1].replace(/<[^>]+>/g,'').trim()})).filter(x=>/^\d{2}\s+/.test(x.title));
  const expectedM03=['01 O que é um ato administrativo?','02 Os cinco elementos de validade','03 Motivo, motivação e teoria dos motivos determinantes','04 Atributos dos atos administrativos','05 Atos vinculados, discricionários e mérito','06 Principais classificações dos atos','07 Perfeição, validade, eficácia e efeitos','08 Anulação, revogação e convalidação','09 Um caso completo: da decisão à revisão'];
+ const expectedM04=['01 A ideia de poder-dever e seus limites','02 Poder hierárquico: organizar e coordenar','03 Delegação, avocação e distribuição de competências','04 Poder disciplinar: apurar e responsabilizar','05 Poder regulamentar e poder normativo','06 Poder de polícia administrativa','07 Discricionariedade, vinculação e controle','08 Abuso de poder: excesso e desvio','09 Como identificar o poder em situações concretas'];
  if(chapters.length!==9||chapters.some((x,i)=>!x.title.startsWith(String(i+1).padStart(2,'0')+' ')))throw new Error('A revisão guiada ADM M'+String(number).padStart(2,'0')+' não contém os nove capítulos esperados.');
  if(number===3&&chapters.some((x,i)=>x.title!==expectedM03[i]))throw new Error('Os títulos da revisão guiada ADM M03 diferem do inventário validado; as artes não foram inseridas.');
+ if(number===4&&(chapters.length!==expectedM04.length||chapters.some((x,i)=>x.title!==expectedM04[i])))throw new Error('Os títulos da revisão guiada ADM M04 diferem do inventário validado; as artes não foram inseridas.');
  let result=html;
  for(let i=chapters.length-1;i>=0;i--){
   const chapter=chapters[i],next=matches.find(x=>x.index>chapter.start),end=next?next.index:result.length;
