@@ -43,4 +43,6 @@ O texto foi mantido curto e alinhado à Revisão Guiada. A conferência legal us
 
 ## Publicação
 
-Status a registrar após a sincronização do commit e a confirmação do deploy de produção da Vercel.
+- Publicado em produção pela Vercel no domínio [app.basecompleta.com.br](https://app.basecompleta.com.br).
+- Deploy: `dpl_C1q1Dsu49CxYQ7mcW2eUhPAXTwez` (READY), associado ao commit `646cd4aa7ad0acac62c5d1a2c90ab767597b82c6`.
+- Deploy de produção: https://central-de-estudos-qkjyuajz9-estudotd.vercel.app
