@@ -85,6 +85,27 @@ test('questões numeradas fora de um bloco são removidas, mas a explicação pe
  dom.window.close();
 });
 
+
+test('M01 ADM completo remove imagens mas preserva síntese; revisão permanece com artes',async()=>{
+ const dom=fixture(),w=dom.window,d=w.document;
+ const overlay=d.createElement('div');overlay.id='adm-native-reader';
+ overlay.innerHTML='<header><div class="bc-native-reader-title"><small>DIREITO ADMINISTRATIVO · MÓDULO 01 · COMPLETO</small></div></header>'
+  +'<article class="bc-native-article adm-apostila"><h2>10 Questões Internas</h2>'
+  +'<details class="question"><summary>Enunciado antigo</summary>Resposta</details>'
+  +'<section class="synthesis"><h2>Resumo final</h2><p>Explicação mantida.</p><img src="/arte.jpg"></section>'
+  +'<p>Teoria adicional.</p><img src="/ilustracao.png"></article>';
+ d.body.append(overlay);
+ const review=d.createElement('div');review.id='adm-review';
+ review.innerHTML='<article class="bc-native-article"><img src="/arte-revisao.jpg" alt="arte de revisão"><p>Revisão preservada.</p></article>';
+ d.body.append(review);
+ await delay(160);
+ assert.equal(overlay.querySelector('details.question'),null);
+ assert.match(overlay.textContent,/Resumo final|Explicação mantida|Teoria adicional/);
+ assert.equal(overlay.querySelectorAll('img').length,0,'nenhuma imagem no completo M01');
+ assert.equal(review.querySelectorAll('img').length,1,'arte da revisão permanece');
+ dom.window.close();
+});
+
 test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei em Dia e do QC/TEC',()=>{
  const index=read('index.html'),boot=read('central-v119.html'),sw=read('sw.js');
  const man=JSON.parse(read('central-offline-files-v66172.json'));
