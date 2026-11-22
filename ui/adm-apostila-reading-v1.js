@@ -31,26 +31,6 @@ function addGuidedReviewArts(html,number){
  }
  return result;
 }
-function cleanComplete(html,number){
- const host=document.createElement('div');host.innerHTML=html;
- // Exercícios ficam exclusivamente na área independente de Questões.
- host.querySelectorAll('details.question,section.question,.adm-quiz').forEach(el=>el.remove());
- host.querySelectorAll('h2,h3').forEach(h=>{
-  if(!/^(?:(?:5|10)\s+)?quest[oõ]es?\s+(?:internas?|de\s+fixa[çc][ãa]o)\b/i.test(h.textContent.trim()))return;
-  const level=Number(h.tagName.slice(1));let next=h.nextElementSibling;
-  while(next&&(!/^H[1-6]$/.test(next.tagName)||Number(next.tagName.slice(1))>level)){
-   const following=next.nextElementSibling;next.remove();next=following;
-  }
-  h.remove();
- });
- if(number===1){
-  // M01: retirar somente ilustrações da teoria COMPLETA, não da revisão.
-  host.querySelectorAll('figure,picture,img,svg,canvas').forEach(el=>{
-   if(!el.closest('figure,picture')||el.matches('figure,picture'))el.remove();
-  });
- }
- return host.innerHTML;
-}
 function script(src,verify){return new Promise((resolve,reject)=>{
  const tag=document.createElement('script');tag.src=src;
  tag.onload=()=>{tag.remove();verify()?resolve():reject(new Error('Apostila não localizada após carregamento: '+src))};
@@ -64,15 +44,17 @@ async function load(number,mode){
  const task=(async()=>{
   if(!g.ADM_APOSTILA_PACKED?.[key])await script('/content/adm/m'+String(number).padStart(2,'0')+'-apostila-'+mode+'.js?v=20261108adm1',()=>!!g.ADM_APOSTILA_PACKED?.[key]);
   const originalHtml=await decompress(g.ADM_APOSTILA_PACKED[key]);
-  if(mode==='complete')return cleanComplete(originalHtml,number);
+  if(mode==='complete')return originalHtml;
   if(!g.ADM_SUBMITTED_REVIEW?.[number]){
     await script('/content/adm/autor-20261110/adm-m'+String(number).padStart(2,'0')+'-submitted-review.js?v=20261116revjur1',()=>!!g.ADM_SUBMITTED_REVIEW?.[number]);
   }
   const authored=addGuidedReviewArts(await decompress(g.ADM_SUBMITTED_REVIEW[number]),number);
+  const start=originalHtml.search(/<h2\b[^>]*>\s*5\s+Questões Internas[^<]*<\/h2>/i);
+  if(start<0)throw new Error('Questões do M'+number+' não encontradas — atualização cancelada');
   const label=String(number).padStart(2,'0');
-  const header='<header class="adm-author-overview"><span>DIREITO ADMINISTRATIVO · MÓDULO '+label+'</span><h1>Revisão: apostila teórica</h1><p>Leia em sequência. Entenda o caso e a explicação antes de consultar tabelas e artigos.</p></header>';
-  const footer='<section class="adm-author-review-tip"><h2>Consolide a aprendizagem</h2><p>Explique o conceito com suas palavras e retome os exemplos mais importantes.</p></section>';
-  return '<section class="adm-author-reading">'+header+authored+footer+'</section>';
+  const header='<header class="adm-author-overview"><span>DIREITO ADMINISTRATIVO · MÓDULO '+label+'</span><h1>Revisão: apostila teórica</h1><p>Leia em sequência. Entenda o caso e a explicação antes de consultar tabelas, artigos e questões.</p></header>';
+  const footer='<section class="adm-author-review-tip"><h2>Consolide a aprendizagem</h2><p>Explique o conceito com suas palavras, retome o exemplo e só então responda às questões abaixo.</p></section>';
+  return '<section class="adm-author-reading">'+header+authored+footer+'</section>'+originalHtml.slice(start);
  })().catch(error=>{pending.delete(key);throw error;});
  pending.set(key,task);return task;
 }
