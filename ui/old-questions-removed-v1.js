@@ -53,6 +53,12 @@
   if(!root.isConnected||dentroDaNova(root))return;
   // Os blocos de testes de compreensão de CF e os exercícios em <details> não são teoria.
   root.querySelectorAll('details.question,section.question,.cf-native-callout.question,.cf-native-callout.answer,.bc-iq,.bc-iq-answer,.cpc-native-question').forEach(kill);
+  // Se o bloco inteiro é uma seção de questões, retirá-lo antes dos títulos evita caixas vazias.
+  root.querySelectorAll('section,article,details').forEach(el=>{
+   if(!el.isConnected||dentroDaNova(el))return;
+   const heading=el.querySelector(':scope > h2,:scope > h3,:scope > h4,:scope > summary');
+   if(heading&&practiceTitle.test(word(heading.textContent)))kill(el);
+  });
   // Remover a seção inteira evita deixar alternativas/gabaritos soltos no texto.
   root.querySelectorAll('h2,h3,h4,h5').forEach(h=>{
    if(!h.isConnected||dentroDaNova(h)||!practiceTitle.test(word(h.textContent)))return;
