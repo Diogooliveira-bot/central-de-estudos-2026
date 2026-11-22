@@ -197,5 +197,7 @@ test('Integração lista os 30 módulos e carrega teoria pela API privada', () =
   assert.match(reader,/CentralPlanAccess/);
   assert.match(reader,/localStorage/);
   assert.match(reader,/data-mark/);
-  assert.ok(html.includes('gmf-course-reader-v2.js'));
+  assert.match(client,/function loadGmfReader/);
+  assert.ok(client.includes('gmf-course-reader-v2.js'));
+  assert.ok(!html.includes('gmf-course-reader-v2.js'));
 });
