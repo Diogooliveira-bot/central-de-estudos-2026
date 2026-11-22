@@ -288,6 +288,23 @@ test('pedido de edital: texto curto é recusado; prévia guarda local; conta env
   account.dom.window.close();
 });
 
+test('edital previsto com examSubjects vazio preserva contagem da grade e não inicia loop de mutações', async () => {
+  const { dom } = setup(); const w = dom.window; await settle(w);
+  const id = 'exam-catalog-gmf-fortaleza-monitoramento-cargo-1';
+  w.CentralStudyObjectiveCatalog.goals[id] = {
+    id, type:'exam', subjectIds:['pt','cf','info'], examSubjects:[],
+  };
+  const grid = w.document.getElementById('disciplineGrid');
+  // Evita que uma regressão com laço infinito bloqueie o próprio executor de testes.
+  grid.__studyObjectiveGridObserver?.disconnect();
+  w.CentralStudyObjectives.setActive(id);
+  assert.equal(w.CentralStudyObjectives.getActive(), id);
+  assert.equal(grid.children.length, Object.keys(w.CentralStudyObjectiveCatalog.subjects).length);
+  assert.equal(Number(grid.dataset.studyObjectiveCount), grid.children.length,
+    'a assinatura da grade precisa refletir exatamente os cartões renderizados');
+  dom.window.close();
+});
+
 test('carreira e edital não escondem disciplinas e Informática entra nas trilhas', async () => {
   const { dom } = setup(); const w = dom.window; await settle(w);
   const c = w.CentralStudyObjectiveCatalog;
