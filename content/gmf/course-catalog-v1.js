@@ -6,7 +6,7 @@
   "referenceUrl": "https://fortaleza.ce.gov.br/images/0001/27_03_2023_GMF.pdf",
   "newNoticePublished": false,
   "theoryComplete": false,
-  "availableModules": {"atual":["m01","m02","m03","m04","m05","m06"],"fortaleza":["m01","m02","m03","m04","m05","m06","m07","m08","m09"],"legesp":["m01"],"dh":["m01"]},
+  "availableModules": {"atual":["m01","m02","m03","m04","m05","m06"],"fortaleza":["m01","m02","m03","m04","m05","m06","m07","m08","m09"],"legesp":["m01","m02","m03","m04","m05","m06","m07","m08","m09","m10","m11"],"dh":["m01"]},
   "subjects": [
     {
       "id": "atual",
