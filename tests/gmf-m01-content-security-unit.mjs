@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 import {protectedAsset} from '../lib/protected-content.js';
 import {validarModulo, DISCIPLINAS, MODULOS} from '../tools/questoes-lib.mjs';
-import {loadModule, projectStatement} from '../lib/questoes-handler.js';
+import {loadModule, projectStatement, GMF_QUESTIONS_ENABLED} from '../lib/questoes-handler.js';
 
 const root = new URL('../', import.meta.url);
 const read = name => readFileSync(new URL(name, root), 'utf8');
@@ -115,7 +115,7 @@ test('Direitos Humanos M02-M04: teoria completa, revisão própria e acesso prot
   assert.deepEqual(Array.from(catalog.availableModules.dh),['m01','m02','m03','m04']);
 });
 
-test('40 questões inéditas validadas pela rotina oficial e índices consistentes', () => {
+test('40 exercícios preliminares preservados, mas bloqueados pela API da GMF', () => {\n  assert.equal(GMF_QUESTIONS_ENABLED,false);\n  const handler=read('lib/questoes-handler.js');\n  assert.equal((handler.match(/GMF_DISCIPLINES\\.has\\(mod\\.disc\\) && !GMF_QUESTIONS_ENABLED/g)||[]).length,2);\n});\n\ntest('40 questões inéditas validadas pela rotina oficial e índices consistentes', () => {
   const index=execFile('content/questoes/index.js');
   const titles=execFile('content/questoes/titulos.js');
   const allIds=new Set();
