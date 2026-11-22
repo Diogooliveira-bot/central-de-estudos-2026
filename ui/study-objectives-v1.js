@@ -262,12 +262,12 @@
       options =
         '<div class="study-start-choices">' +
         '<button type="button" class="study-start-choice" data-study-free><strong>Estudo livre</strong><small>Escolha suas disciplinas e comece agora.</small><b aria-hidden="true">›</b></button>' +
-        '<button type="button" class="study-start-choice" data-study-careers><strong>Por carreira</strong><small>Escolha uma área e um cargo.</small><b aria-hidden="true">›</b></button>' +
-        '<button type="button" class="study-start-choice" data-study-exams><strong>Por edital</strong><small>Escolha um concurso cadastrado e seu cargo.</small><b aria-hidden="true">›</b></button></div>';
+        '<button type="button" class="study-start-choice" data-study-careers><strong>Por área</strong><small>Escolha uma das sete áreas, sem selecionar cargo.</small><b aria-hidden="true">›</b></button>' +
+        '<button type="button" class="study-start-choice" data-study-exams><strong>Por edital</strong><small>GMF, TJPA ou TJAL.</small><b aria-hidden="true">›</b></button></div>';
     } else if (step === 'careers') {
-      title = 'Escolha sua carreira';
-      intro = 'Selecione uma área e depois o cargo. Você pode mudar sua escolha quando quiser.';
-      badge = 'POR CARREIRA';
+      title = 'Escolha sua área';
+      intro = 'Selecione uma área para organizar seus estudos. Você pode mudar depois.';
+      badge = 'POR ÁREA';
       options = '<div class="study-area-grid">' + catalog.areas.map(card).join('') + '</div>';
       backStep = 'areas';
     } else if (step === 'roles') {
@@ -304,21 +304,18 @@
         '</div><p class="study-form-error" role="alert" hidden></p>' +
         '<button type="button" class="study-primary-button" data-study-save-free>Começar estudo livre</button></div>';
       backStep = 'areas';
-    } else if (step === 'exams') {
-      title = 'Escolha seu concurso e cargo';
-      intro = 'Veja a situação de cada concurso e escolha o cargo. Você pode trocar depois.';
-      badge = 'ESTUDO POR EDITAL';
-      const asked = savedExamRequest();
-      options = '<div class="study-exam-list">' + examOptions().map((item) =>
+    } else if (step === 'area-exams' || step === 'exams') {
+      const area = catalog.areas.find((item) => item.id === value);
+      const shortcuts = catalog.examShortcuts.filter((item) => step === 'exams' || item.area === area?.id);
+      if (step === 'area-exams' && !area) return renderChooser('careers');
+      title = step === 'area-exams' ? 'Escolha o edital' : 'Escolha seu edital';
+      intro = step === 'area-exams' ? area.title + ' — escolha uma das opções disponíveis.' : 'Por enquanto, somente estes três editais estão disponíveis.';
+      badge = 'POR EDITAL';
+      options = '<div class="study-exam-list">' + shortcuts.map((item) =>
         '<button type="button" class="study-role-card" data-study-exam="' + escape(item.id) + '"><span><strong>' +
-        escape(item.name) + '</strong><small>' + escape(item.cargo) + ' · ' + escape(item.label || (item.status === 'publicado' ? 'Edital publicado' : 'Sem novo edital')) + '</small></span><b aria-hidden="true">›</b></button>'
-      ).join('') + '</div>' +
-        '<form class="study-exam-request" data-study-exam-request novalidate><label for="studyExamRequestInput">Seu concurso não está na lista?</label>' +
-        '<p>Peça o cadastro e, enquanto isso, estude livremente ou por carreira.</p>' +
-        '<div class="study-exam-request-row"><input id="studyExamRequestInput" name="exam" type="text" maxlength="120" autocomplete="off" placeholder="Ex.: Polícia Civil de Minas Gerais" value="' + escape(asked) + '">' +
-        '<button type="submit" class="study-primary-button">' + (asked ? 'Atualizar pedido' : 'Pedir concurso') + '</button></div>' +
-        '<p class="study-exam-request-status" data-study-exam-request-status role="status" aria-live="polite">' + (asked ? 'Pedido registrado: ' + escape(asked) + '.' : '') + '</p></form>';
-      backStep = 'areas';
+        escape(item.title) + '</strong><small>' + escape(item.description) + '</small></span><b aria-hidden="true">›</b></button>'
+      ).join('') + '</div>';
+      backStep = step === 'area-exams' ? 'careers' : 'areas';
     }
     modal.innerHTML = '<section class="study-objective-dialog study-welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="studyObjectiveTitle">' +
       '<header class="study-welcome-brand"><img src="/assets/base-completa-symbol.webp" alt="" width="40" height="40"><div><b>BASE COMPLETA</b><small>CENTRAL DE ESTUDOS</small></div></header>' +
@@ -334,11 +331,16 @@
     modal.hidden = false;
     modal.querySelector('[data-study-back]')?.addEventListener('click', () => renderChooser(backStep, backValue));
     modal.querySelector('[data-study-close]')?.addEventListener('click', () => close(true));
-    modal.querySelectorAll('[data-study-area]').forEach((button) => button.addEventListener('click', () => renderChooser('roles', button.dataset.studyArea)));
+    modal.querySelectorAll('[data-study-area]').forEach((button) => button.addEventListener('click', () => {
+      const area = catalog.areas.find((item) => item.id === button.dataset.studyArea);
+      if (!area) return;
+      if (area.examIds?.length) renderChooser('area-exams', area.id);
+      else if (area.objectiveId) selectObjective(area.objectiveId);
+    }));
     modal.querySelectorAll('[data-study-role]').forEach((button) => button.addEventListener('click', () => renderChooser('review', button.dataset.studyRole)));
     modal.querySelector('[data-study-free]')?.addEventListener('click', () => renderChooser('free'));
     modal.querySelector('[data-study-careers]')?.addEventListener('click', () => renderChooser('careers'));
-    modal.querySelector('[data-study-exams]')?.addEventListener('click', () => { renderChooser('exams');loadContestGoals(); });
+    modal.querySelector('[data-study-exams]')?.addEventListener('click', () => renderChooser('exams'));
     modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => input.addEventListener('change', () => { const e = modal.querySelector('.study-form-error'); if (e) e.hidden = true; }));
     modal.querySelector('[data-study-free-all]')?.addEventListener('click', () => modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => { input.checked = true; }));
     modal.querySelector('[data-study-free-none]')?.addEventListener('click', () => modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => { input.checked = false; }));
