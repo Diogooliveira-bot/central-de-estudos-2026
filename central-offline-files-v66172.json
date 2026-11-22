@@ -1,5 +1,5 @@
 {
-  "build": "20261121-adm-m03-arts-v1",
+  "build": "20261121-theory-clean-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -286,7 +286,7 @@
     "/content/adm/m18-apostila-summary.js?v=20261108adm1",
     "/content/adm/m19-apostila-summary.js?v=20261108adm1",
     "/content/adm/m20-apostila-summary.js?v=20261108adm1",
-    "/ui/old-questions-removed-v1.js?v=20261115-responsive-v15",
+    "/ui/old-questions-removed-v1.js?v=20261121-theory-clean-v1",
     "/ui/old-questions-removed-v1.css?v=20261115-responsive-v15",
     "/ui/questoes-area-v1.css?v=20261121adm-m01-m02-artes1",
     "/ui/questoes-bank-v1.js?v=20261113lim1",
