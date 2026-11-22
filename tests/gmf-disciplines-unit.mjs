@@ -22,7 +22,7 @@ test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e rev
   assert.equal(catalog.subjects.reduce((sum, item) => sum + item.modules.length, 0), 30);
   assert.equal(catalog.theoryComplete, true);
   assert.equal(catalog.newNoticePublished, false);
-  assert.deepEqual(catalog.availableModules, {
+  assert.deepEqual(JSON.parse(JSON.stringify(catalog.availableModules)), {
     atual:['m01','m02','m03','m04','m05','m06'],
     fortaleza:['m01','m02','m03','m04','m05','m06','m07','m08','m09'],
     legesp:['m01','m02','m03','m04','m05','m06','m07','m08','m09','m10','m11'],
