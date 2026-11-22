@@ -47,7 +47,7 @@ test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e rev
           assert.ok(record.resources.length > 0, path);
           assert.ok(record.resources.every(resource => /^https:\/\//.test(resource.url)), path);
           assert.ok(record.chapters.every(chapter => {
-            const wordCount = chapter.html.replace(/<[^>]*>/g,' ').trim().split(/\\s+/).length;
+            const wordCount = chapter.html.replace(/<[^>]*>/g,' ').trim().split(/\s+/).length;
             const minimumWords = mode === 'full' ? 100 : 45;
             return chapter.title.length >= 8 && chapter.html.length >= 160 &&
               wordCount >= minimumWords && /<p>/.test(chapter.html) &&
