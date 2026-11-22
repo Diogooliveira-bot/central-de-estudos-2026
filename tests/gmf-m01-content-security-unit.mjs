@@ -95,6 +95,26 @@ test('Legislação Extravagante M02-M11: materiais e permissões protegidas', ()
     assert.deepEqual(protectedAsset('/content/gmf/legesp/'+module+'-review-v1.js'),{kind:'file',feature:'theory.summary'});
   }
 });
+test('Direitos Humanos M02-M04: teoria completa, revisão própria e acesso protegido', () => {
+  for(let n=2;n<=4;n++){
+    const module='m'+String(n).padStart(2,'0');
+    const full=execFile('content/gmf/dh/'+module+'-full-v1.js').GMF_MODULE_FULL;
+    const review=execFile('content/gmf/dh/'+module+'-review-v1.js').GMF_MODULE_REVIEW;
+    assert.equal(full.subject,'dh');assert.equal(full.module,module);
+    assert.equal(review.subject,'dh');assert.equal(review.module,module);
+    assert.ok(full.chapters.length>=4);assert.ok(review.chapters.length>=3);
+    assert.ok(full.resources.length>=1);assert.ok(review.resources.length>=1);
+    for(const c of [...full.chapters,...review.chapters]){
+      assert.ok(c.html.length>=160);assert.match(c.html,/<p>/);
+      assert.doesNotMatch(c.html,/<script|onerror=|javascript:/i);
+    }
+    assert.deepEqual(protectedAsset('/content/gmf/dh/'+module+'-full-v1.js'),{kind:'file',feature:'theory.complete'});
+    assert.deepEqual(protectedAsset('/content/gmf/dh/'+module+'-review-v1.js'),{kind:'file',feature:'theory.summary'});
+  }
+  const catalog=execFile('content/gmf/course-catalog-v1.js').GmfCourseCatalog;
+  assert.deepEqual(Array.from(catalog.availableModules.dh),['m01','m02','m03','m04']);
+});
+
 test('40 questões inéditas validadas pela rotina oficial e índices consistentes', () => {
   const index=execFile('content/questoes/index.js');
   const titles=execFile('content/questoes/titulos.js');
