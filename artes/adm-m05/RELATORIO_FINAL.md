@@ -44,4 +44,7 @@ Fontes oficiais:
 
 ## Publicação
 
-Pendente até a conclusão do push e da confirmação do deployment Vercel.
+- PR #393 mesclado na `main` em 22/11/2026.
+- Deployment de produção Vercel: `dpl_27XdNWLu1HVXudSSkk5UCXdHw8wq`, status **READY**, commit `6dea4dfcfeda32e1901fe6cddd88026c69f4e566`.
+- Alias de produção: [app.basecompleta.com.br](https://app.basecompleta.com.br).
+- A rota solicitada para uma imagem retornou a tela de autenticação; portanto, a inspeção autenticada da Central não foi afirmada. Os testes pelo código confirmam a restrição ao modo Revisão Guiada.
