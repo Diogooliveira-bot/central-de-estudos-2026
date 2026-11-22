@@ -1,0 +1,137 @@
+{
+  "module": 6,
+  "module_title": "Direito Administrativo",
+  "source": "content/adm/autor-20261110/adm-m06-submitted-review.js",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Por que existe processo administrativo?",
+      "central": "O processo organiza a apuração dos fatos e a decisão administrativa, protegendo o interesse público e os direitos de quem participa.",
+      "cards": [
+        ["Conceito", "É uma sequência organizada de atos que prepara uma decisão da Administração."],
+        ["Âmbito federal", "Rege a Administração federal direta e indireta e os Poderes da União ao exercer função administrativa."],
+        ["Também serve para", "Conceder direitos, analisar pedidos, fiscalizar atividades ou apurar irregularidades; não é sempre punição."],
+        ["Pegadinha de prova", "A lei federal não se aplica automaticamente a todo estado ou município: confira a norma própria do ente."]
+      ],
+      "tips": ["Processo administrativo não é processo judicial nem sinônimo de punição.", "Base geral: Lei 9.784/1999, art. 1º; observe o ente e a função exercida."],
+      "icons": ["clipboard", "federal-map", "government-act", "federal-venue"]
+    },
+    {
+      "chapter": 2,
+      "title": "Princípios, direitos e deveres",
+      "central": "Contraditório, ampla defesa, motivação e proporcionalidade limitam decisões arbitrárias e garantem participação efetiva.",
+      "cards": [
+        ["Princípios", "Art. 2º: legalidade, motivação, proporcionalidade, defesa, contraditório, segurança jurídica e eficiência, entre outros."],
+        ["Contraditório", "A pessoa deve conhecer os elementos relevantes e ter chance de se manifestar antes da decisão."],
+        ["Direitos e deveres", "Pode consultar autos e juntar documentos; deve agir com lealdade e dizer a verdade."],
+        ["Pegadinha de prova", "Advogado é facultativo em regra; só é obrigatório quando a lei exigir representação."]
+      ],
+      "tips": ["Arts. 2º a 4º: princípios, direitos do administrado e deveres.", "Ampla defesa não elimina o dever de cumprir prazos e colaborar."],
+      "icons": ["constitution", "people", "clipboard", "statute-trap"]
+    },
+    {
+      "chapter": 3,
+      "title": "Como o processo começa?",
+      "central": "A Administração pode iniciar o processo por iniciativa própria ou após pedido do interessado, e deve conduzi-lo até a decisão.",
+      "cards": [
+        ["Duas formas", "O processo começa de ofício ou a pedido do interessado (art. 5º)."],
+        ["Pedido escrito", "Em regra, indica órgão, interessado, endereço para comunicações, pedido e fundamentos, data e assinatura."],
+        ["Dever do órgão", "É vedada a recusa imotivada de documentos; o servidor orienta como corrigir falhas do requerimento."],
+        ["Pegadinha de prova", "A Administração impulsiona o processo de ofício; o interessado não precisa pedir cada providência."]
+      ],
+      "tips": ["Arts. 5º e 6º: início e requisitos do requerimento.", "A pessoa afetada pela decisão também pode ser interessada, mesmo sem iniciar o processo."],
+      "icons": ["government-act", "clipboard", "federal-law", "people"]
+    },
+    {
+      "chapter": 4,
+      "title": "Quem pode conduzir e decidir?",
+      "central": "A autoridade competente atua com imparcialidade; delegação e avocação são exceções com limites legais claros.",
+      "cards": [
+        ["Competência", "É irrenunciável e deve ser exercida pelo órgão a que a lei a atribuiu, salvo delegação ou avocação previstas."],
+        ["Delegação", "Transfere parte da competência, mesmo sem hierarquia; exceto atos normativos, recursos e matéria exclusiva."],
+        ["Avocação", "É temporária, excepcional e justificada; só alcança competência de órgão hierarquicamente inferior."],
+        ["Pegadinha de prova", "Impedimento decorre de situações objetivas; suspeição pode decorrer de amizade íntima ou inimizade notória."]
+      ],
+      "tips": ["Delegação: regra limitada; art. 13 traz matérias indelegáveis.", "Impedida, a autoridade comunica o fato e se abstém de atuar (art. 19)."],
+      "icons": ["federal-entity", "contract", "court-levels", "statute-trap"]
+    },
+    {
+      "chapter": 5,
+      "title": "Forma e comunicação dos atos",
+      "central": "A forma deve assegurar clareza e direitos, sem criar burocracia inútil; comunicações precisam permitir participação real.",
+      "cards": [
+        ["Forma simples", "Os atos não dependem de forma determinada, salvo quando a lei exigir; devem ser escritos em português e identificáveis."],
+        ["Prazo geral", "Sem prazo específico, atos do órgão e do interessado são praticados em 5 dias; pode haver dilatação justificada até o dobro."],
+        ["Intimação", "Informa finalidade, destinatário, data, local e fundamentos. Comparecimento: 3 dias úteis de antecedência."],
+        ["Pegadinha de prova", "A falta à intimação não significa confissão nem renúncia a direito; a Administração pode seguir instruindo."]
+      ],
+      "tips": ["Art. 24: 5 dias é regra subsidiária, não prazo universal.", "Art. 26, § 2º: antecedência de comparecimento é contada em dias úteis."],
+      "icons": ["clipboard", "calendar-law", "government-act", "statute-trap"]
+    },
+    {
+      "chapter": 6,
+      "title": "Instrução: apurar antes de decidir",
+      "central": "Na instrução, o órgão reúne provas e o interessado participa; a decisão deve se apoiar em elementos lícitos e pertinentes.",
+      "cards": [
+        ["Provas", "A Administração conduz a instrução de ofício; o interessado pode juntar documentos e pedir diligências ou perícias."],
+        ["Documentos públicos", "Se o interessado indicar dados que já estão na própria Administração, o órgão deve obtê-los de ofício."],
+        ["Limites", "Prova ilícita é vedada. Outras provas só podem ser recusadas com fundamento nas hipóteses legais."],
+        ["Pegadinha de prova", "Encerrada a instrução, há prazo de até 10 dias para manifestação final, salvo prazo diferente previsto em lei."]
+      ],
+      "tips": ["Arts. 29, 30 e 36 a 44: instrução, provas e manifestação.", "Após instruir, a Administração não pode ignorar argumento ou prova relevante."],
+      "icons": ["magnifier", "federal-entity", "statute-trap", "calendar-law"]
+    },
+    {
+      "chapter": 7,
+      "title": "Decisão: concluir e explicar",
+      "central": "A Administração deve decidir expressamente; concluída a instrução, o prazo geral é de 30 dias, prorrogável por mais 30 com motivação.",
+      "cards": [
+        ["Dever de decidir", "A Administração deve emitir decisão expressa em processos e pedidos de sua competência (art. 48)."],
+        ["Prazo", "Após a conclusão da instrução, há até 30 dias para decidir; a prorrogação por igual período deve ser expressamente motivada."],
+        ["Motivação", "Quando exigida, expõe fatos e fundamentos jurídicos de modo explícito, claro e coerente (art. 50)."],
+        ["Pegadinha de prova", "O prazo de 30 dias começa ao concluir a instrução, não na data do protocolo do pedido."]
+      ],
+      "tips": ["Arts. 48 a 50: decisão expressa, prazo e motivação.", "Silêncio não significa automaticamente deferimento ou indeferimento, salvo regra legal específica."],
+      "icons": ["government-act", "calendar-law", "federal-law", "number-trap"]
+    },
+    {
+      "chapter": 8,
+      "title": "Quando a decisão precisa ser corrigida",
+      "central": "Anular, revogar e convalidar são providências diferentes: dependem do defeito do ato e de seus efeitos.",
+      "cards": [
+        ["Anulação", "A Administração deve anular o ato ilegal. Para ato favorável, o direito de anular decai em 5 anos, salvo má-fé comprovada."],
+        ["Revogação", "Retira ato válido por conveniência ou oportunidade, quando cabível e respeitados os direitos adquiridos."],
+        ["Convalidação", "Pode sanar defeito corrigível se não houver lesão ao interesse público nem prejuízo a terceiros."],
+        ["Pegadinha de prova", "O prazo de 5 anos não vale para toda revisão: o art. 54 trata de atos com efeitos favoráveis."]
+      ],
+      "tips": ["Ilegalidade → anulação; mérito administrativo → revogação; defeito sanável → convalidação.", "Arts. 53 a 55: confira os requisitos antes de escolher a providência."],
+      "icons": ["magnifier", "government-act", "treaty", "number-trap"]
+    },
+    {
+      "chapter": 9,
+      "title": "Quando alguém discorda da decisão",
+      "central": "O recurso permite reexaminar legalidade e mérito; prazos e efeitos dependem da regra geral e de exceções legais.",
+      "cards": [
+        ["Prazo e envio", "Em regra, recorre-se em 10 dias. A autoridade que decidiu tem 5 dias para reconsiderar ou encaminhar à superior."],
+        ["Julgamento", "Após receber os autos, até 30 dias para decidir; prorroga por igual prazo com justificativa."],
+        ["Efeito", "Em regra, recurso não suspende a decisão; a autoridade pode conceder efeito suspensivo diante de risco relevante."],
+        ["Pegadinha de prova", "Revisão de sanção pode ocorrer a qualquer tempo por fatos novos e não pode agravar a sanção aplicada."]
+      ],
+      "tips": ["Arts. 56 e 59: 5 dias para reconsiderar; 10 dias para recorrer; 30 + 30 para decidir.", "Art. 62: demais interessados têm 5 dias úteis para se manifestar."],
+      "icons": ["regional-appeal", "calendar-law", "admin-not-appeal", "statute-trap"]
+    },
+    {
+      "chapter": 10,
+      "title": "Contagem de prazos e outras regras úteis",
+      "central": "Na Lei 9.784/1999, prazos em dias são contínuos; exclui-se o dia inicial e inclui-se o vencimento, com exceções expressas.",
+      "cards": [
+        ["Marco inicial", "A contagem começa na ciência oficial; exclui o dia do começo e inclui o dia do vencimento."],
+        ["Dias corridos", "Prazos em dias contam-se continuamente. Se o vencimento cair sem expediente, passa ao próximo dia útil."],
+        ["Meses e anos", "Contam-se de data a data; se faltar dia equivalente no mês final, considera-se o último dia do mês."],
+        ["Pegadinha de prova", "Só conte em dias úteis quando a lei disser isso, como na antecedência de intimação e em manifestações específicas."]
+      ],
+      "tips": ["Art. 66: exclui início, inclui vencimento; prazo em dias é contínuo.", "Art. 67: prazos não se suspendem, salvo força maior comprovada."],
+      "icons": ["calendar-law", "age", "number-trap", "statute-trap"]
+    }
+  ]
+}
