@@ -131,6 +131,55 @@
       subjectIds:role.subjectIds.slice(),
     };
   }
-  global.CentralStudyObjectiveCatalog = Object.freeze({ version:2, subjects, goals, areas });
+  // A navegação pública exibe somente sete áreas; os cargos anteriores
+  // permanecem no catálogo para preservar objetivos já salvos.
+  const visibleAreas = [
+    {id:'policial',title:'Policial',icon:'♜',description:'Segurança pública',objectiveId:'career-area-policial'},
+    {id:'guarda',title:'Guarda Municipal',icon:'⬡',description:'GMF — Fortaleza',examIds:['exam-catalog-gmf-fortaleza-monitoramento-cargo-1']},
+    {id:'educacao',title:'Educação',icon:'▦',description:'Área da educação',objectiveId:'career-area-educacao'},
+    {id:'saude',title:'Saúde',icon:'✚',description:'Área da saúde',objectiveId:'career-area-saude'},
+    {id:'bancaria',title:'Bancário',icon:'▣',description:'Área bancária',objectiveId:'career-area-bancario'},
+    {id:'judiciaria',title:'Tribunal',icon:'⚖',description:'TJPA e TJAL',examIds:['exam-tjpa-em-preparacao','exam-tjal-em-preparacao']},
+    {id:'transito',title:'Agente de Trânsito',icon:'◇',description:'Área de trânsito',objectiveId:'career-area-transito'},
+  ];
+  const areaSubjectIds = {
+    policial:['pt','rlm','cf','adm','penal','cpp','info'],
+    educacao:['pt','rlm','cf','info'],
+    saude:['pt','rlm','cf','info'],
+    bancario:['pt','rlm','info'],
+    transito:['pt','rlm','cf','adm','info'],
+  };
+  for (const area of visibleAreas) {
+    if (!area.objectiveId) continue;
+    goals[area.objectiveId] = {
+      id:area.objectiveId,type:'career',group:'Por área',area:area.id,
+      title:area.title,shortLabel:area.title,
+      description:'Área geral de estudos. Não representa edital ou cargo específico.',
+      subjectIds:areaSubjectIds[area.id].slice(),
+    };
+  }
+  const examShortcuts = [
+    {id:'exam-catalog-gmf-fortaleza-monitoramento-cargo-1',area:'guarda',
+      title:'Guarda Municipal de Fortaleza (GMF)',
+      description:'Referência: edital de 2023. Não confundir com novo edital publicado.',
+      subjectIds:['pt','rlm','info','cf','adm','penal','cpp']},
+    {id:'exam-tjpa-em-preparacao',area:'judiciaria',
+      title:'TJPA — Pará',description:'Edital para organização dos estudos: em preparação.',
+      subjectIds:[]},
+    {id:'exam-tjal-em-preparacao',area:'judiciaria',
+      title:'TJAL — Alagoas',description:'Edital para organização dos estudos: em preparação.',
+      subjectIds:[]},
+  ];
+  for (const exam of examShortcuts) {
+    // Nenhuma cobertura programática é inventada para TJPA/TJAL.
+    goals[exam.id] = {
+      id:exam.id,type:'exam',group:'Por edital',area:exam.area,
+      title:exam.title,shortLabel:exam.title,description:exam.description,
+      subjectIds:exam.subjectIds.slice(),examSubjects:[],
+    };
+  }
+  global.CentralStudyObjectiveCatalog = Object.freeze({
+    version:3, subjects,goals,areas:visibleAreas,examShortcuts,
+  });
 })(window);
 
