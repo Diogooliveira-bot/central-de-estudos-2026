@@ -44,9 +44,43 @@
    /^(?:quiz|exam|errors)$/.test(el.dataset.rlmKind||'');
  }
  function kill(el){if(el?.isConnected&&!dentroDaNova(el))el.remove()}
+ // Questões embutidas na teoria (completa e revisão): o banco externo tem isolamento próprio.
+ const theoryRoots='.bc-native-article,.pt-doc,.cf-native-reader article,.cv-reader-article,.adm-native-article,.cpp-native-article,.bc-rlm-article,.bc-info-reader-article,.pt-native-reader article';
+ const practiceTitle=/^(?:(?:\d{1,2})[.):-]?\s*)?(?:questoes(?:\s+(?:internas?|de\s+(?:fixacao|revisao|compreensao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao|compreensao)\b.*|testes?\s+de\s+compreensao\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
+ const standaloneQuestion=/^(?:questao|pergunta|item)\s*(?:n[ºo.]?\s*)?\d{1,3}\s*[:.)–-]/i;
+ const answerOrAlternative=/^(?:[a-e]\s*[).:-]|gabarito(?:\s+(?:oficial|comentado))?\s*[:–-]|resposta(?:\s+(?:correta|comentada))?\s*[:–-]|comentario(?:\s+da\s+questao)?\s*[:–-])/i;
+ function removeQuestionsFromTheory(root){
+  if(!root.isConnected||dentroDaNova(root))return;
+  // Os blocos de testes de compreensão de CF e os exercícios em <details> não são teoria.
+  root.querySelectorAll('details.question,section.question,.cf-native-callout.question,.cf-native-callout.answer,.bc-iq,.bc-iq-answer,.cpc-native-question').forEach(kill);
+  // Remover a seção inteira evita deixar alternativas/gabaritos soltos no texto.
+  root.querySelectorAll('h2,h3,h4,h5').forEach(h=>{
+   if(!h.isConnected||dentroDaNova(h)||!practiceTitle.test(word(h.textContent)))return;
+   const level=Number(h.tagName.slice(1));let next=h.nextElementSibling;
+   while(next){
+    if(/^H[1-6]$/.test(next.tagName)&&Number(next.tagName.slice(1))<=level)break;
+    if(next.matches('footer,[role="contentinfo"]'))break;
+    const after=next.nextElementSibling;kill(next);next=after;
+   }
+   kill(h);
+  });
+  // Algumas apostilas têm questões isoladas sem título de seção.
+  root.querySelectorAll('p,li').forEach(el=>{
+   if(!el.isConnected||dentroDaNova(el)||el.closest('blockquote,table,.cf-native-table'))return;
+   const t=word(el.textContent).slice(0,180);
+   if(!standaloneQuestion.test(t))return;
+   let next=el.nextElementSibling;
+   while(next&&/^(?:P|UL|OL|LI)$/.test(next.tagName)&&
+      ((next.tagName==='UL'||next.tagName==='OL')||answerOrAlternative.test(word(next.textContent).slice(0,160)))){
+    const after=next.nextElementSibling;kill(next);next=after;
+   }
+   kill(el);
+  });
+ }
  function removeSections(scope){
-  const roots=scope.querySelectorAll?.('.bc-native-article,.pt-doc,.cf-native-reader article,.cv-reader-article,.adm-native-article,.cpp-native-article,.bc-rlm-article')||[];
+  const roots=scope.querySelectorAll?.(theoryRoots)||[];
   roots.forEach(root=>{
+   removeQuestionsFromTheory(root);
    root.querySelectorAll('p,li,h3,h4').forEach(el=>{
     if(!el.isConnected||el.closest('blockquote,.cf-native-table,table'))return;
     const t=word(el.textContent).slice(0,160);
