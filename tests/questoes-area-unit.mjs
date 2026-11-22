@@ -32,7 +32,7 @@ const responder = async (d, i, j) => { d.querySelector('.bcqa-q[data-i="' + i + 
 test('área: hub → disciplina → módulo; selecionar e só então responder', async () => {
   const dom = fixture(), w = dom.window, d = w.document;
   w.BCQuestoesArea.openHub();
-  assert.equal(d.querySelectorAll('[data-bc-questoes-area] [data-disc]').length, 9);
+  assert.equal(d.querySelectorAll('[data-bc-questoes-area] [data-disc]').length, 13); // inclui 4 disciplinas GMF quando não há filtro de objetivo
   d.querySelector('[data-disc="adm"]').click();
   assert.equal(d.querySelectorAll('[data-mod]').length, 20);
   d.querySelector('[data-mod="3"]').click();
@@ -144,7 +144,7 @@ test('ligação na Central: scripts e estilos no bootstrap; banco atrás do logi
   }
   const arquivos = fs.readdirSync(path.join(root, 'content/questoes')).filter(d => fs.statSync(path.join(root, 'content/questoes', d)).isDirectory())
     .flatMap(d => fs.readdirSync(path.join(root, 'content/questoes', d)).map(f => `/content/questoes/${d}/${f}`));
-  assert.equal(arquivos.length, 161);
+  assert.equal(arquivos.length, 165); // 161 módulos originais + 4 pilotos GMF
   // Índice e títulos (sem gabarito) valem para todo aluno logado. Os arquivos de módulo trazem o GABARITO:
   // o Gratuito não os baixa (enunciados e correção saem de /api/questoes, que aplica o limite diário).
   for (const a of ['/content/questoes/index.js', '/content/questoes/titulos.js']) assert.equal(protectedAsset(a)?.feature, 'theory.summary', a);

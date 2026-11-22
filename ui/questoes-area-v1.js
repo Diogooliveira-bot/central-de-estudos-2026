@@ -15,7 +15,7 @@
   const STORE = 'central-v6:questoes:v2';   // histórico por questão (não guarda a sessão)
   const MODE_KEY = 'central-v6:questoes:modo';
   const LETRAS = 'ABCDE';
-  const ORDEM = ['adm', 'cf', 'civil', 'cpc', 'cpp', 'penal', 'pt', 'rlm', 'info'];
+  const ORDEM = ['adm', 'cf', 'civil', 'cpc', 'cpp', 'penal', 'pt', 'rlm', 'info', 'atual', 'fortaleza', 'legesp', 'dh'];
   const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const nn = n => String(Number(n)).padStart(2, '0');
   const bank = () => g.BCQuestoes;
@@ -131,7 +131,7 @@
   function barra(pct) { return '<div class="bcqa-bar" aria-hidden="true"><i style="width:' + pct + '%"></i></div>'; }
   function abrirHub() {
     const B = bank(); fromModule = false; view = { tipo: 'hub' }; sess = null;
-    const cards = ORDEM.filter(d => B && B.modulos(d).length).map(d => {
+    const cards = ORDEM.filter(d => g.GmfStudyObjective?.allowsSubject(d)!==false && B && B.modulos(d).length).map(d => {
       const mods = B.modulos(d); let resp = 0;
       mods.forEach(n => { resp += resumoModulo(d, n).respondidas; });
       const total = mods.reduce((a, n) => a + qtdDe(d, n), 0), pct = total ? Math.round(resp / total * 100) : 0;
