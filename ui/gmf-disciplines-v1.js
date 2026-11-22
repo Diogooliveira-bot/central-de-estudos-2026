@@ -46,19 +46,18 @@
       const attention = module.attention
         ? '<p class="gmf-attention"><b>Ponto de atenção:</b> ' + safe(module.attention) + '</p>' : '';
       const published = module.id === 'm01';
-      const label = published ? 'Teoria, revisão e 10 questões disponíveis' : 'Roteiro de assuntos · conteúdo em preparação';
+      const label = published ? 'Teoria e revisão disponíveis · questões em preparação' : 'Roteiro de assuntos · conteúdo em preparação';
       const courseId = escapeAttr(course.id);
       const buttons = published
         ? '<div class="gmf-module-actions"><button type="button" data-gmf-action="review" data-gmf-course="' + courseId + '">Abrir revisão guiada</button>' +
-          '<button type="button" data-gmf-action="complete" data-gmf-course="' + courseId + '">Estudar teoria completa</button>' +
-          '<button type="button" data-gmf-action="questions" data-gmf-course="' + courseId + '">Resolver 10 questões autorais</button></div>'
+          '<button type="button" data-gmf-action="complete" data-gmf-course="' + courseId + '">Estudar teoria completa</button></div>'
         : '';
 
       return '<details class="gmf-module"><summary><span class="gmf-module-number">M' + number +
         '</span><span class="gmf-module-heading"><b>' + safe(module.title) +
         '</b><small>' + label + '</small></span><span class="gmf-chevron" aria-hidden="true">⌄</span></summary>' +
         '<div class="gmf-module-body"><h4>O que estudar neste módulo</h4><ul>' + points + '</ul>' +
-        attention + buttons + '<p class="gmf-unreleased">'+(published?'Os 10 exercícios autorais são corrigidos pelo sistema de questões, conforme as regras do plano. A leitura isolada não equivale à conclusão do módulo.':'Teoria completa, revisão guiada e questões: ainda não disponibilizadas. Este roteiro não conta como módulo concluído.')+'</p></div></details>';
+        attention + buttons + '<p class="gmf-unreleased">'+(published?'Questões do módulo — Em preparação. Os exercícios preliminares não estão disponíveis nesta etapa. A leitura isolada não equivale à conclusão do módulo.':'Questões do módulo — Em preparação. Teoria completa e revisão guiada ainda não disponibilizadas. Este roteiro não conta como módulo concluído.')+'</p></div></details>';
     }).join('');
 
     return '<div class="gmf-course"><div class="gmf-course-intro"><b>' + safe(course.name) +
@@ -78,7 +77,6 @@
     const action=button.dataset.gmfAction;
     if(!ids.has(id))return;
     if(action==='review'||action==='complete')global.GmfReader?.open(id,action);
-    else if(action==='questions')global.BCQuestoesArea?.openModule(id,1);
   });
 
   // A renderização da área Início é executada no runtime nativo por meio de GmfDisciplines.renderMaster.
