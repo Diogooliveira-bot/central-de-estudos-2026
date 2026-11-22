@@ -43,6 +43,24 @@ test('M01: 4 teorias e 4 revisões com fontes e capítulos em todos os casos', (
   }
 });
 
+test('Atualidades M02-M06: materiais separados e assets protegidos por modalidade', () => {
+  const moduleIds=['m02','m03','m04','m05','m06'];
+  for(const module of moduleIds){
+    const full=execFile('content/gmf/atual/'+module+'-full-v1.js').GMF_MODULE_FULL;
+    const review=execFile('content/gmf/atual/'+module+'-review-v1.js').GMF_MODULE_REVIEW;
+    assert.equal(full.subject,'atual');assert.equal(full.module,module);
+    assert.equal(review.subject,'atual');assert.equal(review.module,module);
+    assert.ok(full.chapters.length>=4);assert.ok(review.chapters.length>=3);
+    assert.ok(full.resources.length>=3);assert.ok(review.resources.length>=3);
+    for(const chapter of [...full.chapters,...review.chapters]){
+      assert.ok(chapter.html.length>=160);
+      assert.match(chapter.html,/<p>/);
+      assert.doesNotMatch(chapter.html,/<script|onerror=|javascript:/i);
+    }
+    assert.deepEqual(protectedAsset('/content/gmf/atual/'+module+'-full-v1.js'),{kind:'file',feature:'theory.complete'});
+    assert.deepEqual(protectedAsset('/content/gmf/atual/'+module+'-review-v1.js'),{kind:'file',feature:'theory.summary'});
+  }
+});
 test('40 questões inéditas validadas pela rotina oficial e índices consistentes', () => {
   const index=execFile('content/questoes/index.js');
   const titles=execFile('content/questoes/titulos.js');
