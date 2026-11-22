@@ -143,14 +143,22 @@ test('API nunca entrega gabarito ou comentário na consulta pública', async () 
   assert.match(read('lib/questoes-handler.js'), /\{2,12\}/);
 });
 
-test('Integração não oferece aula M02-MXX inexistente nem expõe material premium pelo cliente', () => {
+test('Integração lista os 30 módulos e carrega teoria pela API privada', () => {
   const client=read('ui/gmf-disciplines-v1.js');
-  const reader=read('ui/gmf-reader-v1.js');
+  const reader=read('ui/gmf-course-reader-v2.js');
   const html=read('index.html');
-  assert.match(client, /module\.id === 'm01'/);
-  assert.doesNotMatch(client, /data-gmf-action="questions"|BCQuestoesArea\?\.openModule/);
-  assert.match(client, /Questões do módulo — Em preparação/);
-  assert.match(reader,/\/api\/private-content\?asset=/);
-  assert.doesNotMatch(reader,/\/content\/gmf\/m01-full-v1\.js\?v=/);
-  assert.ok(html.includes('/ui/gmf-reader-v1.js?v=20261121gmfM01'));
+  const catalog=execFile('content/gmf/course-catalog-v1.js').GmfCourseCatalog;
+  const counts={atual:6,fortaleza:9,legesp:11,dh:4};
+  for(const [id,count] of Object.entries(counts)){
+    assert.equal(catalog.subjects.find(x=>x.id===id).modules.length,count);
+    assert.equal(catalog.availableModules[id].length,count);
+  }
+  assert.match(client,/availableModules/);
+  assert.doesNotMatch(client,/data-gmf-action="questions"|BCQuestoesArea\\?\\.openModule/);
+  assert.match(client,/Questões do módulo — Em preparação/);
+  assert.match(reader,/\\/api\\/private-content\\?asset=/);
+  assert.match(reader,/CentralPlanAccess/);
+  assert.match(reader,/localStorage/);
+  assert.match(reader,/data-mark/);
+  assert.match(html,/gmf-course-reader-v2\\.js/);
 });
