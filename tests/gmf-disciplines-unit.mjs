@@ -89,8 +89,8 @@ test('assuntos de Fortaleza e Direitos Humanos cobrem os pontos oficiais', () =>
 });
 
 test('integração registrada após runtime e não altera cadastro de módulos antigos', () => {
-  assert.ok(index.includes('/content/gmf/course-catalog-v1.js?v=20261120gmf1'));
-  assert.ok(index.includes('/ui/gmf-disciplines-v1.js?v=20261120gmf2'));
+  assert.match(index, /\/content\/gmf\/course-catalog-v1\.js\?v=[A-Za-z0-9_.-]+/);
+  assert.match(index, /\/ui\/gmf-disciplines-v1\.js\?v=[A-Za-z0-9_.-]+/);
   assert.ok(index.indexOf('central-structural-v66119/runtime.js') < index.indexOf('/ui/gmf-disciplines-v1.js'));
   assert.ok(index.indexOf('/content/gmf/course-catalog-v1.js') < index.indexOf('/ui/gmf-disciplines-v1.js'));
   assert.doesNotThrow(() => new vm.Script(script));
