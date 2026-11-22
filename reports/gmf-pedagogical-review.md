@@ -120,3 +120,45 @@ M01–M04: 28 capítulos examinados (16 teoria, 12 revisão); 3 módulos aprovad
 
 ### Testes deste lote
 Não foram executados testes técnicos automatizados, integração, acesso autenticado ou navegação nesta execução. A correção textual de M03 foi serializada como objeto JavaScript com os mesmos campos e capítulos; isso não substitui execução dos scripts do projeto. Status técnico permanece PENDENTE até evidência de Actions/testes.
+
+
+## Conhecimentos sobre Fortaleza — M05–M09 (22/11/2026)
+
+Foram lidos os capítulos de teoria e revisão dos cinco módulos nesta rodada. A avaliação pedagógica considera explicação, exemplos, cobertura, precisão conceitual e utilidade para concursos. Fontes referidas nos próprios arquivos foram examinadas como referências cadastradas; não foi possível abrir e confirmar externamente cada publicação/ato nesta execução, portanto números de 2026 e status legais dependem de validação técnica por fonte externa na etapa de testes.
+
+### M05 — Economia e manifestações culturais
+Teoria (4): A economia de uma capital regional (395); Comércio, serviços e turismo (344); Manifestações culturais e identidade (350); Relação entre economia, cultura e território (340). Revisão (3): Economia e indicadores (98); Turismo e atividade de serviços (98); Cultura, patrimônio e território (140).
+**Parecer: APROVADO, sujeito à conferência externa dos dados mutáveis de 2026.** Teoria distingue PIB, renda, bem-estar, estimativas turísticas e valor cultural; contextualiza maracatu e a escala municipal/metropolitana. Exemplos e sínteses estão presentes. Revisão reforça conceitos e ressalvas de período, método e distribuição. Referências citadas incluem IBGE e Observatório do Turismo/Prefeitura, além de Decreto Municipal 13.769/2016. Os números de visitantes/gastos do primeiro semestre de 2026 foram mantidos como dado atribuído à fonte e ao intervalo, não generalizados como dado anual.
+
+### M06 — Pontos turísticos
+Teoria (4): Turismo, território e leitura de roteiros (312); Orla e espaços públicos (300); Patrimônio, mercados e equipamentos culturais (324); Acesso, turismo responsável e atualização (296). Revisão (3): Orla e natureza; Patrimônio, mercados e equipamentos; Acesso, atualização e turismo responsável.
+**Parecer inicial: CORRIGIDO; APROVADO após ajuste.** Teoria diferencia atrativo, espaço público, praia, equipamento cultural e patrimônio legal, e alerta que mobilidade, horários e balneabilidade variam. Revisão estava excessivamente esquemática. Acrescentei orientações aplicáveis para planejamento de roteiros, distinção entre ambiente costeiro e infraestrutura, turismo responsável, status patrimonial e leitura de estatísticas. Fontes operacionais indicadas: ETUFOR, canais dos equipamentos e boletins ambientais; precisam ser consultadas na data de uso.
+
+### M07 — Patrimônio cultural
+Teoria (4): O que é patrimônio cultural (414); Tombamento, registro e salvaguarda (396); Patrimônio, memória e participação (372); Conservação e questões de concurso (358). Revisão (3): Material e imaterial (87); Instrumentos e efeitos (95); Preservação e resolução de questões (122).
+**Parecer: APROVADO sem alteração.** Explica CF arts. 215–216, bens materiais/imateriais, tombamento, registro, salvaguarda e inventário, com comparação funcional e exemplo de Fortaleza. Distingue ato municipal de eventual reconhecimento federal e participação comunitária. Referências: Lei municipal 9.347/2008 e Decreto 13.769/2016; confirmação externa do texto e situação vigente não executada nesta rodada.
+
+### M08 — Clima, vegetação e ocupação geográfica
+Teoria (4): Posição geográfica e formas do relevo (327); Clima e regime de chuvas (342); Vegetação e ecossistemas costeiros (335); Urbanização e transformação do espaço (361). Revisão (3): Relevo e clima (95); Vegetação costeira (73); Urbanização: pontos de atenção (84).
+**Parecer inicial: CORRIGIDO; APROVADO após ajuste.** Teoria diferencia relevo, clima/tempo, manguezal/restinga/duna e perigo/exposição/vulnerabilidade, usando exemplos e registrando a data-base cartográfica 2016–2017. A revisão era telegráfica. Ampliei os três capítulos com distinções geomorfológicas, exemplo de identificação ambiental e aplicação do conceito de risco. Fontes indicadas incluem FUNCEME, Prefeitura/IDE-SEFIN; as camadas são corretamente tratadas como representações datadas, não diagnóstico em tempo real.
+
+### M09 — História da cidade
+Teoria (4): Antes e durante a ocupação colonial (325); Forte Schoonenborch e nome da cidade (319); Vila, capital e cidade (326); Expansão urbana e memória (366). Revisão (3): Marcos cronológicos (106); Como interpretar as datas (100); Memória e expansão (153).
+**Parecer: APROVADO sem alteração.** Texto evita a narrativa de território vazio antes da colonização, separa fortificação, origem do nome, vila, capital e cidade, e relaciona expansão a porto, algodão, ferrovia, migrações e desigualdades. Aborda campos de concentração de 1932 sem eufemismo e distingue abolição cearense de 1884 da nacional de 1888. Fontes citadas incluem Prefeitura, IBGE e acervo digital municipal. Datas históricas e enquadramentos são pedagogicamente contextualizados; conferência externa linha a linha permanece necessária antes de publicação.
+
+### Quadro do lote
+| Módulo | Teoria | Revisão | Parecer | Correção |
+|---|---:|---:|---|---|
+| M05 — Economia e manifestações culturais | 4 | 3 | APROVADO* | Nenhuma |
+| M06 — Pontos turísticos | 4 | 3 | APROVADO | Revisão guiada aprofundada |
+| M07 — Patrimônio cultural | 4 | 3 | APROVADO* | Nenhuma |
+| M08 — Clima, vegetação e ocupação geográfica | 4 | 3 | APROVADO | Revisão guiada aprofundada |
+| M09 — História da cidade | 4 | 3 | APROVADO* | Nenhuma |
+
+*Parecer pedagógico aprovado; confirmação externa de fontes/fatos específicos de 2026 e do estado vigente de atos não foi concluída nesta execução.
+
+M05–M09: 35 capítulos examinados (20 teoria, 15 revisão); 3 módulos aprovados sem alteração e 2 corrigidos e aprovados. Com M01–M04, Conhecimentos sobre Fortaleza tem parecer pedagógico para 9 módulos; a validação factual externa pendente não deve ser confundida com reprovação pedagógica.
+
+### Commits e testes
+Correções em commits: M06 revisão `22e5adb89383b57ae5daa991519e28db8275f4ad`; M08 revisão `bcb9c72f63bf9da689fd7bf8a781572856ec61e6`. O relatório registra pareceres, fontes citadas e limitações.
+Não foi possível executar testes locais: o workspace disponível não contém checkout do repositório. O status combinado de checks precisa ser consultado no SHA de conteúdo/relatório após os workflows terminarem; sem evidência, testes permanecem PENDENTES. Navegação autenticada, progresso, controle de plano e interface não foram testados nesta rodada. Nenhuma questão foi criada ou liberada.
