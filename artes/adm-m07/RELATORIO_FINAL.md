@@ -39,6 +39,8 @@ As dez imagens renderizadas foram conferidas em folha de contato e em resoluçã
 - Teste M07: 3 verificações aprovadas — ordem/títulos/imagens, isolamento do Conteúdo Completo e manifesto offline.
 - Regressão didática e do guia ADM: 6 verificações aprovadas.
 - Regressão do ADM (`npm run test:adm-didatico`): 16 testes aprovados; responsividade (`npm run test:responsive`): 20 testes aprovados. O teste M07 também confirma a regra CSS de largura fluida, altura proporcional e breakpoint para telas estreitas.
-- O teste abrangente `adm-apostila-reading-unit.mjs` tem uma falha em um recurso preexistente fora do M07: `assets/adm/revisao-guiada/m02/ADM-M02-C01.png` não possui assinatura PNG. Nenhum arquivo M02 foi alterado; as verificações M07 e de isolamento passaram.
-- Acesso autenticado à Central: não usado. As dez artes foram inspecionadas em prévia local; as regras de adaptação por largura foram verificadas nos testes, sem alegar uma sessão real em navegador autenticado.
-- Publicação de produção: pendente da consolidação e checagem de deployment no Vercel.
+- A suíte completa `npm test` passou na CI depois do alinhamento dos identificadores de build da página, do manifesto e do service worker. A integração controlada de lançamento, a atualização de conteúdo, a regressão didática ADM, CodeQL, segurança contínua e recuperação do cache offline também passaram.
+- `test:adm-autoral` continua apontando um recurso preexistente fora do M07: `assets/adm/revisao-guiada/m02/ADM-M02-C01.png` tem assinatura que não corresponde a PNG. Nenhum arquivo M02 foi alterado; a verificação focada do M07 passou.
+- Responsividade: 20 verificações locais aprovadas. Na comparação automatizada em navegador, as capturas visuais da versão anterior e da nova passaram; os dois trabalhos de comparação de desempenho ainda estavam em execução no registro consultado.
+- Acesso autenticado à Central: não usado. As dez artes foram inspecionadas em prévia local. Não alego teste em sessão autenticada.
+- Publicação: não ocorreu. A Vercel rejeitou a criação dos builds dos dois projetos com `build-rate-limit`; nenhum deployment M07 aparece para a branch. O PR #396 permanece aberto e a produção segue no estado anterior.
