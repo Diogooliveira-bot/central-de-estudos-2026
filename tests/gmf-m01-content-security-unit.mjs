@@ -154,11 +154,12 @@ test('Integração lista os 30 módulos e carrega teoria pela API privada', () =
     assert.equal(catalog.availableModules[id].length,count);
   }
   assert.match(client,/availableModules/);
-  assert.doesNotMatch(client,/data-gmf-action="questions"|BCQuestoesArea\\?\\.openModule/);
+  assert.ok(!client.includes('data-gmf-action="questions"'));
+  assert.ok(!client.includes('BCQuestoesArea?.openModule'));
   assert.match(client,/Questões do módulo — Em preparação/);
-  assert.match(reader,/\\/api\\/private-content\\?asset=/);
+  assert.ok(reader.includes('/api/private-content?asset='));
   assert.match(reader,/CentralPlanAccess/);
   assert.match(reader,/localStorage/);
   assert.match(reader,/data-mark/);
-  assert.match(html,/gmf-course-reader-v2\\.js/);
+  assert.ok(html.includes('gmf-course-reader-v2.js'));
 });
