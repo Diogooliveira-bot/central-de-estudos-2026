@@ -1,7 +1,7 @@
 /* Leitor por módulo GMF. Carrega os assets somente pela API privada. */
 (function(global){
  'use strict';
- if(global.GmfCourseReader)return;
+ if(global.GmfCourseReaderV2)return;
  const catalog=global.GmfCourseCatalog;
  if(!catalog?.subjects?.length)return;
  const subjects=new Map(catalog.subjects.map(s=>[s.id,s]));
@@ -115,5 +115,6 @@
   '@media(max-width:720px){.gmf-reader-overlay{padding:0}.gmf-reader-box{height:100dvh;width:100%;border-radius:0}.gmf-reader-top{grid-template-columns:1fr;gap:8px;padding:14px}.gmf-reader-top button{justify-self:start}.gmf-reader-grid{display:block}.gmf-reader-grid nav{position:static;display:flex;overflow:auto;gap:5px;padding:8px;border-right:0;border-bottom:1px solid var(--line,#e2e7ed)}.gmf-reader-grid nav>b{display:none}.gmf-reader-grid nav button{flex:0 0 auto;white-space:nowrap}.gmf-reader-grid main{padding:12px 16px 24px}.gmf-reader-chapter h2{font-size:17px}.gmf-reader-module-nav{padding:8px 12px}}'
  ].join('');
  global.document.head.appendChild(style);
- global.GmfCourseReader=Object.freeze({open,close});
+ global.GmfCourseReaderV2=Object.freeze({open,close});
+ global.GmfCourseReader=global.GmfCourseReaderV2;
 })(window);
