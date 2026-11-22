@@ -59,7 +59,8 @@
    const level=Number(h.tagName.slice(1));let next=h.nextElementSibling;
    while(next){
     if(/^H[1-6]$/.test(next.tagName)&&Number(next.tagName.slice(1))<=level)break;
-    if(next.matches('footer,[role="contentinfo"]'))break;
+    // O bloco de síntese e os checklists de leitura pertencem à teoria, não ao quiz.
+    if(next.matches('footer,[role="contentinfo"],.synthesis,.overview,.adm-session-reader-check,[data-adm-session],.adm-reading-check-list'))break;
     const after=next.nextElementSibling;kill(next);next=after;
    }
    kill(h);
@@ -95,6 +96,14 @@
    });
   });
  }
+ function removeAdmM1CompleteImages(){
+  const overlay=document.getElementById('adm-native-reader');
+  if(!overlay)return;
+  const label=overlay.querySelector('.bc-native-reader-title small')?.textContent||'';
+  // Restringe ao M01 completo: revisão guiada e outros módulos seguem inalterados.
+  if(!/M[ÓO]DULO\s*0?1\b/i.test(label)||!/\bCOMPLETO\b/i.test(label))return;
+  overlay.querySelectorAll('.bc-native-article figure,.bc-native-article picture,.bc-native-article img,.bc-native-article svg,.bc-native-article canvas').forEach(kill);
+ }
  function sweep(){
   if(!document.body)return;
   document.querySelectorAll(selector).forEach(kill);
@@ -104,6 +113,7 @@
    if(/quest[õo]es?\s+(?:resumidas|completas)|5\s*\+\s*10\s+quest[õo]es/i.test(el.textContent))el.textContent=el.textContent.replace(/[•·]?\s*(?:\d+\s+quest[õo]es?\s+resumidas\s*[•·]\s*\d+\s+quest[õo]es?\s+completas|5\s*\+\s*10\s+quest[õo]es)/gi,'').trim();
   });
   removeSections(document);
+  removeAdmM1CompleteImages();
  }
  let scheduled=false;
  function schedule(){
