@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 import {protectedAsset} from '../lib/protected-content.js';
 import {validarModulo, DISCIPLINAS, MODULOS} from '../tools/questoes-lib.mjs';
-import {loadModule, projectStatement, GMF_QUESTIONS_ENABLED} from '../lib/questoes-handler.js';
+import {loadModule, projectStatement, GMF_QUESTIONS_ENABLED, createQuestoesHandler} from '../lib/questoes-handler.js';
 
 const root = new URL('../', import.meta.url);
 const read = name => readFileSync(new URL(name, root), 'utf8');
@@ -119,6 +119,36 @@ test('40 exercícios preliminares preservados, mas bloqueados pela API da GMF', 
   assert.equal(GMF_QUESTIONS_ENABLED,false);
   const handler=read('lib/questoes-handler.js');
   assert.equal((handler.match(/GMF_DISCIPLINES\.has\(mod\.disc\) && !GMF_QUESTIONS_ENABLED/g)||[]).length,2);
+});
+
+test('API recusa chamadas diretas de leitura e resposta para as quatro disciplinas GMF', async () => {
+  const sql = async () => [{role:'admin',active:true}];
+  const handler = createQuestoesHandler({
+    requireSession: async () => ({ok:true,sql,user:{id:'test-admin',role:'admin',active:true}})
+  });
+  const call = async req => {
+    const res = {
+      statusCode:200, headers:{}, body:'',
+      setHeader(name,value){this.headers[name]=value},
+      end(body){this.body=String(body||'')}
+    };
+    await handler(req,res);
+    return {status:res.statusCode,body:JSON.parse(res.body)};
+  };
+  for (const disc of ids) {
+    const readResult = await call({
+      method:'GET',query:{action:'modulo',disc,n:'1'},headers:{}
+    });
+    assert.equal(readResult.status,404,disc);
+    assert.match(readResult.body.error,/em preparação/i);
+    const answerResult = await call({
+      method:'POST',query:{action:'responder'},
+      headers:{origin:'https://central.test',host:'central.test'},
+      body:{disc,n:1,id:'preliminary-'+disc,choice:0}
+    });
+    assert.equal(answerResult.status,404,disc);
+    assert.match(answerResult.body.error,/em preparação/i);
+  }
 });
 
 test('40 questões inéditas validadas pela rotina oficial e índices consistentes', () => {
