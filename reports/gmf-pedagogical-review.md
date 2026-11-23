@@ -343,3 +343,56 @@ Fontes oficiais: https://sapl.fortaleza.ce.leg.br/ta/2330/text ; https://sapl.fo
 **Parecer pedagógico: APROVADO sem alteração.**
 
 **Verificação técnica:** recuperei os arquivos pelo GitHub, fiz parse dos objetos JSON e confirmei 4 capítulos de teoria, 3 de revisão, HTML estruturado, títulos, contagens, exemplos/quadros/sínteses e referências. Não executei testes de runtime, Actions, leitor, acesso por plano ou APIs neste módulo; continuam **PENDENTES** para a validação geral. Nenhuma questão foi criada ou liberada.
+
+
+## Direitos Humanos — auditoria pedagógica M01–M04 (22/11/2026)
+
+### M01 — Conceito de direitos humanos
+
+**Capítulos examinados integralmente:** Conteúdo Completo do pacote M01 compartilhado: 4 capítulos: “O que são direitos humanos” (537 palavras); “Direitos humanos e direitos fundamentais” (488); “Marcos históricos e proteção internacional” (527); “Aplicação à Guarda Municipal” (600). Revisão Guiada: 3 capítulos: “Definição” (87); “Internacional x constitucional” (97); “Marcos e aplicação” (153). A contagem exclui HTML.
+
+**Cobertura/qualidade:** ensina dignidade, deveres estatais de respeitar/proteger/garantir, diferença entre direitos humanos e fundamentais, histórico de declarações e tratados, sistemas global/regional e aplicação dos princípios da Lei 13.022/2014 à Guarda. Tem exemplos contextualizados, quadros e sínteses. A revisão é mais curta e própria, com quadro de deveres e linha do tempo; serve à recuperação dos pontos essenciais.
+
+**Precisão/fonte:** conferi a DUDH na ONU (adoção em 10/12/1948), os Decretos 591/1992, 592/1992 e 678/1992, a CF/88, art. 5º, §§2º–3º, e art. 4º, II, a Lei 13.022/2014 e o entendimento do STF no RE 466.343/SV 25 sobre supralegalidade do rito ordinário. A DUDH foi corretamente diferenciada dos tratados. A explicação da Comissão e Corte Interamericanas corresponde aos arts. 33, 61–62 da Convenção Americana. Fontes: https://www.un.org/en/about-us/universal-declaration-of-human-rights ; https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0591.htm ; https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0592.htm ; https://www.planalto.gov.br/ccivil_03/decreto/d0678.htm ; https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm ; https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13022.htm ; https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=26&sumula=1268
+
+**Deficiência técnica concreta corrigida:** o prefixo dos dois arquivos de pacote M01 estava duplicado (inicializador global repetido), fazendo o script falhar ao ser executado e impedindo a criação dos objetos dos quatro módulos. Corrigi somente a inicialização global, sem alterar o texto didático de qualquer disciplina. Commits: Conteúdo Completo 21413b5ece5d38221e7d2beb07c347f8129396da; Revisão Guiada 85c69528099ed8a5e05a833a768734bfcb21475d.
+
+**Parecer pedagógico: APROVADO.** Correção estrutural compartilhada registrada como defeito técnico de M01; texto anteriormente aprovado foi preservado.
+
+### M02 — Características dos direitos humanos
+
+**Capítulos examinados integralmente:** Conteúdo Completo (4): “Universalidade e igualdade” (498 palavras); “Historicidade e expansão da proteção” (460); “Indivisibilidade, interdependência e complementaridade” (400); “Limites, garantias e não absolutismo” (510). Revisão Guiada (3): “Universalidade e historicidade” (89); “Interdependência” (58); “Limites e garantias” (116).
+
+**Cobertura/qualidade:** a teoria explica titulares, igualdade formal/material, historicidade, classificação por dimensões como recurso não hierárquico, conceitos distintos de indivisibilidade/interdependência/complementaridade e limites legítimos/proporcionalidade. O último capítulo diferencia direitos passíveis de restrição controlada das normas inderrogáveis e trata de emergência no art. 4º do PIDCP. Cada capítulo apresenta exemplo, quadro ou callout e síntese. A Revisão Guiada, embora enxuta, contém comparações, situações exemplificativas e advertências que sustentam revisão independente.
+
+**Fontes jurídicas verificadas:** DUDH/ONU; CF/88, art. 5º, III; PIDCP, promulgado pelo Decreto 592/1992 (art. 4º); Convenção Americana, Decreto 678/1992; Lei 13.022/2014, art. 3º. Os tratados de direitos humanos incorporados pelo rito ordinário foram descritos como supralegais conforme STF; não há afirmação de que todos os direitos possam ser suspensos em emergência. Fontes: https://www.un.org/en/about-us/universal-declaration-of-human-rights ; https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm ; https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0592.htm ; https://www.planalto.gov.br/ccivil_03/decreto/d0678.htm ; https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13022.htm ; https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=26&sumula=1268
+
+**Deficiências/correções:** nenhuma deficiência pedagógica ou jurídica comprovada; texto preservado. **Parecer: APROVADO sem alteração de conteúdo.**
+
+### M03 — Categorias de direitos humanos
+
+**Capítulos examinados integralmente:** Conteúdo Completo (4): “Direitos civis e políticos” (441 palavras); “Direitos econômicos, sociais e culturais” (427); “Direitos coletivos, difusos e de solidariedade” (452); “Como as categorias se cruzam” (445). Revisão Guiada (3): “Civis e políticos” (135); “Econômicos, sociais e culturais” (145); “Coletivos, difusos e solidariedade” (214).
+
+**Cobertura/qualidade:** explica direitos civis/políticos e direitos econômicos/sociais/culturais com obrigações positivas e negativas, PIDESC/progressividade e deveres imediatos; diferencia classificação doutrinária de terceira dimensão das categorias processuais do CDC art. 81; e aplica a coexistência a um caso de reunião pública e risco ambiental, com análise de titulares, normas, órgãos e competências. Há exemplos, quadros comparativos e sínteses. A revisão preserva os contrastes do CDC e os alertas sobre progressividade sem copiar a aula.
+
+**Fontes oficiais:** Decretos 592/1992 e 591/1992; CF; CDC, art. 81 (difusos, coletivos em sentido estrito e individuais homogêneos); Lei 13.022/2014. As categorias processuais foram descritas em conformidade com o texto legal; não são equiparadas às dimensões doutrinárias. Fontes: https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0592.htm ; https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0591.htm ; https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm ; https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm ; https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13022.htm
+
+**Deficiências/correções:** nenhuma lacuna relevante ou erro verificado; preservado integralmente. **Parecer: APROVADO sem alteração.**
+
+### M04 — Gerações ou dimensões dos direitos humanos
+
+**Capítulos examinados integralmente:** Conteúdo Completo (4): “Por que usar a classificação por dimensões” (301 palavras); “Primeira dimensão: liberdades e participação” (315); “Segunda dimensão: igualdade material e prestações” (360); “Terceira dimensão e classificações posteriores” (539). Revisão Guiada (3): “Primeira dimensão” (96); “Segunda e terceira dimensões” (151); “Pegadinhas, coexistência e atualização normativa” (224).
+
+**Cobertura/qualidade:** distingue classificação doutrinária de texto normativo, explica coexistência entre dimensões, deveres estatais e progressividade do PIDESC, trata classificações posteriores sem apresentá-las como consensuais e separa direitos coletivos de categorias do CDC. Traz exemplos, comparações e síntese. As normas de 2026 funcionam como aplicações atuais, sem serem chamadas de “nova dimensão”. Revisão é própria, organizada por dimensão e pegadinhas.
+
+**Atualizações confirmadas em fonte oficial:** Lei 15.413/2026 inseriu ECA, art. 11-A (acesso de crianças e adolescentes a programas de saúde mental no SUS, atendimento em níveis diferentes, formação e recursos terapêuticos para vulneráveis em tratamento); Lei 15.487/2026 alterou CP, CPP, ECA, Lei de Crimes Hediondos e Lei 12.850/2013 com medidas de enfrentamento à violência sexual contra crianças e adolescentes, incluindo ambiente digital e IA. A revisão limita-se a apontar a existência e matéria das leis, sem inventar requisitos específicos; o conteúdo é apresentado como atualização posterior ao edital GMF de 2023. Também conferi PIDCP/Decreto 592, PIDESC/Decreto 591, CF e ECA compilado. Fontes: https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15413.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15487.htm ; https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0591.htm ; https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0592.htm ; https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+
+**Deficiências/correções:** não identifiquei erro jurídico ou factual nem lacuna pedagógica que justificasse alterar os capítulos. Preservados.
+
+**Parecer pedagógico: APROVADO sem alteração de conteúdo.**
+
+### Resultado de Direitos Humanos e checagem estrutural
+
+**Resultado pedagógico:** M01–M04 aprovados; 28 capítulos lidos (16 de teoria e 12 de revisão). A contagem foi usada como indicador descritivo, não como regra de aprovação. Nenhum material didático de M02–M04 foi modificado.
+
+**Execução estrutural isolada:** após a correção dos dois inicializadores M01, executei cada arquivo JS recuperado da branch em um contexto JS isolado. Os pacotes M01 produziram as quatro chaves de disciplina, com DH M01 contendo 4 capítulos completos e 3 de revisão; M02–M04 inicializaram os objetos de Conteúdo Completo/Revisão Guiada, com 4/3 capítulos e recursos. Isso confirma inicialização dos assets no contexto isolado, não execução do teste Node do repositório, do leitor em navegador, de autenticação, planos, progresso, APIs ou segurança. Testes completos e Actions seguem **PENDENTES** para a validação final. Commits estruturais M01 listados acima. Nenhuma questão foi criada ou liberada.
