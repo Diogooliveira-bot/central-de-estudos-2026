@@ -412,3 +412,31 @@ Consulta do PR #394 e dos checks associados ao HEAD `16918129e177fc15059d172b3ff
 - **Decisão de publicação:** critérios essenciais não comprovados e há checks de Vercel com falha; PR permanece aberto, sem sincronização/merge à main e sem produção. Não declarar deployment nem validação visual concluídos.
 
 Próximo passo: resolver o limite de builds na Vercel, diagnosticar/corrigir o desencontro do pacote offline de ADM no fluxo apropriado sem sobrescrever conteúdo concorrente, aguardar/obter resultados finais de CodeQL e da suíte, e executar testes de leitor/acesso em ambiente autorizado. Só então reavaliar merge/publicação.
+
+## Correções técnicas e validação — 22/11/2026
+
+### Alterações no PR #394
+
+- Sincronizei a branch existente com a main em `eab56fc137a1e32322036cf411a07c443fa0835b`; o trabalho da GMF permaneceu sobre essa base. Na última conferência, main ainda apontava para esse commit.
+- No commit `60d875b9edc605e0bec6ff36679744addff73b2a`, corrigi a inicialização duplicada de `GMF_MODULE_REVIEW` nos arquivos Atualidades M05–M06 e Fortaleza M03, M06 e M08. A causa era código-fonte inválido dos cinco pacotes de revisão; não foi limitação do leitor nem do ambiente de teste. Corrigi também a versão de cache offline em `sw.js` e `central-v119.html` para coincidir com o manifesto atualizado na main.
+- O teste de Lei em Dia Administrativo esperava filtros avançados que a interface simplificada já oculta. Atualizei-o para validar a interface existente: seleção de módulo visível, manutenção da filtragem interna e acesso às ações de edição em Mais opções. Nenhuma funcionalidade ou conteúdo de Administrativo foi alterado.
+- Estabilizei dois testes de infraestrutura: o teste de Civil agora aguarda o evento real de DOMContentLoaded do JSDOM, em vez de dispará-lo manualmente em duplicidade; o teste SMTP de recuperação aguarda a indexação do Mailpit. Ambos alteram somente os harnesses de teste.
+- Commits subsequentes de teste: `92de11ed55ad4b1d155f6869709f37a7df1a9821`, `6ee12294b97a353b266a25144c2001370f9176da`, `2c67d40769c91a1c5da81cc99780cc260ca4dfd2`, `f3a173f9b30376fcbc7d98e143ee19ab228df43b` e `4f234369abacaebea23dd12519e8bd5db34da037`.
+
+### Resultados comprovados no commit `4f234369abacaebea23dd12519e8bd5db34da037`
+
+- **Suíte `npm test`:** 538 testes, 537 aprovados, 0 reprovados e 1 ignorado.
+- **Verificação de conteúdo:** passou; a divergência de versão do pacote offline foi resolvida.
+- **GMF:** os testes de disciplina, segurança do conteúdo, objetivo e bloqueio passaram. Em particular, os testes 226–227 confirmaram que os 40 exercícios preliminares permanecem preservados, mas bloqueados pela API, inclusive por chamada direta. Nenhuma questão nova foi criada ou liberada.
+- **Carregamento estrutural:** executei os pacotes JavaScript de M01 e os 52 arquivos de Conteúdo Completo/Revisão dos módulos M02–M11 (54 arquivos no total) em VM isolada; inicialização, chaves dos módulos, capítulos e verificações estruturais passaram. Isso não equivale a uma sessão autenticada no leitor de produção.
+- **Jornadas automatizadas:** integração de navegador da Central, leitor universal, diagnóstico de aluno gratuito e cenários de acesso terminaram com sucesso. A suíte simulada passou em desktop e celular; o comparativo visual atual também passou em vários tamanhos, incluindo celular, tablet e desktop.
+- **Regressão de outras disciplinas:** verificações da Central, cache PWA, Lei em Dia Administrativo, Civil, Processo Civil, Penal, Português/RLM e revisões CF/Penal passaram após estabilização dos respectivos testes.
+- **Segurança:** Segurança contínua e CodeQL (JavaScript) concluíram com sucesso; esses workflows não reportaram alerta crítico/alto novo.
+- **Desempenho:** o job do comparativo referente ao código atual concluiu com sucesso. O job de desempenho do baseline histórico permanecia em execução na última consulta; não o conto como aprovado nem como falha.
+
+### Limites de validação e publicação
+
+- **Vercel — Central:** o check `central-de-estudos` falhou com o destino de limite `build-rate-limit`. Não há deployment/preview correspondente ao HEAD atual; não tentei novos builds. O check da vitrine estática passou, mas não valida o leitor da Central.
+- **Experiência GMF no leitor publicado:** apesar das verificações automatizadas e estruturais, não foi possível fazer uma sessão visual real dos 30 módulos na prévia atual, pois a Vercel não produziu uma prévia atualizada para este HEAD. Não declaro validação de produção, teste de isolamento entre contas ao vivo, nem verificação visual dos módulos GMF em celular/tablet/desktop.
+- **Estado do PR:** segue aberto, sem merge. A branch contém a sincronização com a main verificada em `eab56fc...`. A publicação permanece bloqueada pela falta de prévia atual da Central, apesar dos checks técnicos bem-sucedidos.
+- **Conteúdo pedagógico:** não foi reescrito nesta correção técnica; os 30 pareceres anteriores foram preservados.
