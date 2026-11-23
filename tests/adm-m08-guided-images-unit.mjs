@@ -36,7 +36,7 @@ const expected=[
 
 test('ADM M08: 10 artes acompanham os capítulos reais da Revisão Guiada, na ordem',async()=>{
  const {html}=await load('summary');
- const chapters=[...html.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)].map(m=>({title:m[1].replace(/<[^>]+>/g,'').trim(),index:m.index})).filter(x=>/^\d{2}\s+/.test(x.title));
+ const chapters=[...html.matchAll(/<h2\b[^>]*>\s*(\d{2}\s+[^<]*?)\s*<\/h2>/gi)].map(m=>({title:m[1].trim(),index:m.index}));
  const figures=[...html.matchAll(/<figure[^>]+data-adm-review-art="([^"]+)"[^>]*>[\s\S]*?<\/figure>/g)].map(m=>({key:m[1],html:m[0],index:m.index}));
  assert.equal(chapters.length,10);assert.equal(figures.length,10);
  for(let i=0;i<10;i++){
@@ -57,7 +57,7 @@ test('ADM M08: Conteúdo Completo continua idêntico e sem imagens da revisão',
  const {html}=await load('complete');
  assert.doesNotMatch(html,/data-adm-review-art|ADM-M08-C\\d{2}\\.(?:webp|png)/);
  assert.equal(html,gunzipSync(Buffer.from(pack('complete'),'base64')).toString('utf8'));
- const numbered=[...html.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)].map(m=>m[1].replace(/<[^>]+>/g,'').trim()).filter(title=>/^\d{2}\s+/.test(title)&&!/^\d{2}\s+Questões Internas/i.test(title));
+ const numbered=[...html.matchAll(/<h2\b[^>]*>\s*(\d{2}\s+[^<]*?)\s*<\/h2>/gi)].map(m=>m[1].trim()).filter(title=>/^\d{2}\s+/.test(title)&&! /^\d{2}\s+Questões Internas/i.test(title));
  assert.equal(numbered.length,14,'as 14 sessões originais do Conteúdo Completo permanecem intactas');
 });
 
