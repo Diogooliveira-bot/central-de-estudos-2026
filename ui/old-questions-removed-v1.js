@@ -46,7 +46,7 @@
  function kill(el){if(el?.isConnected&&!dentroDaNova(el))el.remove()}
  // Questões embutidas na teoria (completa e revisão): o banco externo tem isolamento próprio.
  const theoryRoots='.bc-native-article,.pt-doc,.cf-native-reader article,.cv-reader-article,.adm-native-article,.cpp-native-article,.bc-rlm-article,.bc-info-reader-article,.bc-info-reader-content,.gmf-reader-prose,.pt-native-reader article';
- const practiceTitle=/^(?:(?:\d{1,2})[.):-]?\s*)?(?:questoes(?:\s+(?:internas?|de\s+(?:fixacao|revisao|compreensao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao|compreensao)\b.*|testes?\s+de\s+compreensao\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
+ const practiceTitle=/^(?:\d{1,2}[.):-]?\s*){0,2}(?:questoes(?:\s+(?:internas?(?:\s+de\s+fixacao)?|de\s+(?:fixacao|revisao|compreensao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao|compreensao)\b.*|testes?\s+de\s+compreensao\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
  const standaloneQuestion=/^(?:questao|pergunta|item)\s*(?:n[ºo.]?\s*)?\d{1,3}\s*[:.)–—-]/i;
  const answerOrAlternative=/^(?:[a-e]\s*[).:-]|gabarito(?:\s+(?:oficial|comentado))?\s*[:–-]|resposta(?:\s+(?:correta|comentada))?\s*[:–-]|comentario(?:\s+da\s+questao)?\s*[:–-])/i;
 
@@ -105,6 +105,24 @@
     const after=next.nextElementSibling;kill(next);next=after;
    }
    kill(h);
+  });
+
+  // Algumas apostilas aprovadas possuem baterias certo/errado como títulos
+  // enumerados, sem a palavra "Questão" (ADM M02/M04/M05). Preservar
+  // definições e listas da teoria; só retirar grupos de 3+ itens resolvidos.
+  const answeredStatement=/^\d{1,2}\.\s*[“"'(]?.{12,}?\b(?:certo|errado)\b(?:[.!;,)\s–—-]|$)/i;
+  const groups=new Map();
+  root.querySelectorAll('h3,h4,p').forEach(el=>{
+   if(!el.isConnected||dentroDaNova(el)||el.closest('blockquote,table'))return;
+   const t=word(el.textContent).slice(0,550);
+   if(!answeredStatement.test(t))return;
+   const group=groups.get(el.parentElement)||[];
+   group.push(el);groups.set(el.parentElement,group);
+  });
+  groups.forEach(nodes=>{if(nodes.length>=3)nodes.forEach(kill)});
+  root.querySelectorAll('p').forEach(el=>{
+   if(!el.isConnected||dentroDaNova(el))return;
+   if(/^etapa\s+\d+\s*[·.:\-–—]\s*fixacao do conteudo (?:completo|resumido)$/.test(word(el.textContent)))kill(el);
   });
   // Algumas apostilas têm questões isoladas sem título de seção.
   root.querySelectorAll('p,li').forEach(el=>{
