@@ -120,7 +120,7 @@
   });
   // Perguntas de fixação numeradas em um único parágrafo do leitor GMF.
   // Preserva o restante do capítulo e as perguntas explicativas fora de "Fixação:".
-  root.querySelectorAll('.gmf-reader-prose p').forEach(p=>{
+  (root.matches('.gmf-reader-prose')?root.querySelectorAll('p'):root.querySelectorAll('.gmf-reader-prose p')).forEach(p=>{
    if(!p.isConnected||dentroDaNova(p))return;
    if(/^fixacao\s*:\s*\(1\)\s+.{10,}/.test(word(p.textContent)))kill(p);
   });
