@@ -440,3 +440,6 @@ Próximo passo: resolver o limite de builds na Vercel, diagnosticar/corrigir o d
 - **Experiência GMF no leitor publicado:** apesar das verificações automatizadas e estruturais, não foi possível fazer uma sessão visual real dos 30 módulos na prévia atual, pois a Vercel não produziu uma prévia atualizada para este HEAD. Não declaro validação de produção, teste de isolamento entre contas ao vivo, nem verificação visual dos módulos GMF em celular/tablet/desktop.
 - **Estado do PR:** segue aberto, sem merge. A branch contém a sincronização com a main verificada em `eab56fc...`. A publicação permanece bloqueada pela falta de prévia atual da Central, apesar dos checks técnicos bem-sucedidos.
 - **Conteúdo pedagógico:** não foi reescrito nesta correção técnica; os 30 pareceres anteriores foram preservados.
+### Fechamento dos checks de desempenho
+
+- Após o registro acima, o workflow Responsiveness and performance comparison (run `45091677466`, commit de código `4f234369abacaebea23dd12519e8bd5db34da037`) concluiu com sucesso os quatro jobs da matriz: before/after em modo visual e before/after em modo de desempenho. Assim, o job baseline que estava pendente foi aprovado; não há falha nesse workflow.
