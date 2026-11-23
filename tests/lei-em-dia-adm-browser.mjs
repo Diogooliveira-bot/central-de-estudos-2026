@@ -59,7 +59,16 @@ try{
   assert.deepEqual(inventory.lawCounts,{"adm-lei-9784":69,"adm-lei-12527":52,"adm-lei-13709":43,"adm-lei-14133":67});
   await page.evaluate(()=>toggleTopic("adm-lei-9784"));
   assert.equal(await page.evaluate(()=>selectedActive().length),69);
-  await page.locator(".qc-status-options button").filter({hasText:"Não vistas"}).click();
+  assert.equal(await page.locator(".qc-status-options").count(),0,"A tela enxuta não expõe o seletor avançado de status.");
+  const targetModule=await page.evaluate(()=>{
+    const module=LAW_MODULE_LIST.find(m=>m.discipline==="adm"&&m.questionIds.some(id=>DATA.find(q=>q.id===id)?.topicId==="adm-lei-9784"));
+    return module?{id:module.id,title:module.title}:null;
+  });
+  assert.ok(targetModule,"Deve existir um módulo ADM vinculado à Lei 9.784/1999.");
+  await page.evaluate(()=>{ui.selectedTopics.clear();ui.statusFilter="unseen";ui.statusPicked=true;});
+  await page.locator(".bc-slim-module-step .qc-select").click();
+  await page.locator(".qc-pop .qc-opt").filter({hasText:targetModule.title}).click();
+  assert.equal(await page.evaluate(id=>ui.selectedModules.has(id),targetModule.id),true);
   await page.locator(".qc-go").click();
   await page.locator(".exercise-card").waitFor();
   const target=await page.evaluate(()=>({id:visible()[ui.articleIndex].id,answer:visible()[ui.articleIndex].question.answer}));
