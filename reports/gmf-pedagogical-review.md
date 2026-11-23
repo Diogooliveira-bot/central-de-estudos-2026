@@ -237,3 +237,19 @@ M03–M04: 14 capítulos examinados (8 de teoria, 6 de revisão), ambos aprovado
 
 **Testes/commit:** nenhuma alteração de conteúdo. O parecer foi incluído no relatório neste commit. Testes automatizados, leitor autenticado e execução da aplicação não foram rodados por falta de checkout local e de check de Actions verificado nesta etapa; ficam pendentes, sem declaração de aprovação técnica. Nenhuma questão foi criada ou liberada.
 
+
+
+### M06 — Código de Trânsito Brasileiro — Lei 9.503/1997
+
+**Capítulos examinados:** Conteúdo Completo (4): “Sistema Nacional de Trânsito” (412 palavras); “Regras de circulação e conduta” (453); “Infrações, penalidades e medidas administrativas” (459); “Crimes de trânsito e atuação municipal” (557). Revisão Guiada (3): “SNT e competências” (104); “Infração, penalidade, medida” (96); “Trânsito e concurso” (168).
+
+**Cobertura e qualidade:** apresenta o SNT e a distribuição de atribuições, regras de circulação, infração/autuação/penalidade/medida, processo e recursos administrativos, crimes de trânsito e competência municipal/atuação da Guarda. Explica exceções de circunscrição, convênio e limites em edificação privada de uso coletivo; distingue infração e crime e recusa ao teste e prova do art. 306. Tem exemplos, quadros e sínteses. A revisão converte o conteúdo em comparações e sequência de resolução, sem repetir a aula integralmente.
+
+**Fontes e atualização jurídica verificadas:** CTB compilado no Planalto; Lei 14.599/2023 (competência concorrente e privativa, integração municipal e limite de fiscalização em edificação privada de uso coletivo); Lei 15.153/2025 (uso de receita de multas para habilitação de baixa renda, transferência digital e exame toxicológico nas hipóteses incluídas, inclusive por promulgação de partes vetadas); Lei 15.428/2026 (habilitação, exames e renovação automática para inscritos no RNPC com exceção de exames de aptidão física e mental); Lei 15.503, de 14/09/2026, art. 143, §2º-A (categoria B para veículo elétrico ou híbrido de tração predominantemente elétrica até 4.250 kg, sujeito a critério adicional do CONTRAN); Lei 13.022/2014, art. 5º, VI; Constituição, arts. 23, 30 e 144. As afirmações normativas centrais foram confrontadas com texto compilado e atos oficiais; não encontrei dispositivo 2025/2026 citado como vigente sem fundamento. Fontes: https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14599.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15153.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15428.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15503.htm ; https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13022.htm ; https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+
+**Deficiências/correções:** não identifiquei erro normativo, confusão pedagógica ou lacuna relevante que justifique edição. A atualização de categoria B é apresentada sujeita à regulação do CONTRAN, sem transformá-la em autorização irrestrita.
+
+**Parecer pedagógico: APROVADO sem alteração.** O nível explicativo se alinha ao padrão das aulas de Direito, com distinções conceituais, aplicação em situação, quadro e síntese; Revisão Guiada mais concisa e voltada aos pontos de prova.
+
+**Testes/commit:** nenhuma alteração de conteúdo. Parecer registrado neste commit do relatório. Testes automatizados e navegação em execução não foram realizados: não há checkout local e ainda não consultei evidência de workflow para este lote. Situação técnica permanece PENDENTE. Nenhuma questão criada ou liberada.
+
