@@ -68,7 +68,8 @@
    const group=[title];
    let next=title.nextElementSibling;
    while(next){
-    if(/^H[1-6]$/.test(next.tagName)&&Number(next.tagName[1])<=level)break;
+    if(/^H[1-6]$/.test(next.tagName)&&(title.tagName==='P'||Number(next.tagName[1])<=level))break;
+    if(next.matches('.synthesis,.overview,[data-adm-session],.bc-info-reader-chapter,.gmf-reader-chapter'))break;
     if(next.matches(trailingUi)||dentroDaNova(next))break;
     group.push(next);next=next.nextElementSibling;
    }
@@ -119,7 +120,12 @@
    const group=groups.get(el.parentElement)||[];
    group.push(el);groups.set(el.parentElement,group);
   });
-  groups.forEach(nodes=>{if(nodes.length>=3)nodes.forEach(kill)});
+  groups.forEach(nodes=>{
+   let run=[];
+   const flush=()=>{if(run.length>=3)run.forEach(kill);run=[]};
+   nodes.forEach(el=>{if(run.length&&el.previousElementSibling!==run[run.length-1])flush();run.push(el)});
+   flush();
+  });
   root.querySelectorAll('p').forEach(el=>{
    if(!el.isConnected||dentroDaNova(el))return;
    if(/^etapa\s+\d+\s*[·.:\-–—]\s*fixacao do conteudo (?:completo|resumido)$/.test(word(el.textContent)))kill(el);
