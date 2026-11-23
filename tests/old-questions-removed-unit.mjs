@@ -261,6 +261,7 @@ test('materiais reais ADM M01-M20 não deixam seções internas de questões na 
   article.remove();
  }
  assert.deepEqual(issues,[],'Ainda há títulos de questões embutidos em apostilas ADM reais');
+ await delay(180); // encerra a varredura agendada antes de desmontar o JSDOM
  dom.window.close();
 });
 
@@ -285,5 +286,6 @@ test('CF M01 mantém checklist após reposicionar referências e M13-M15 removem
   }
   article.remove();
  }
+ await delay(180); // evita callback de MutationObserver após o encerramento da janela
  dom.window.close();
 });
