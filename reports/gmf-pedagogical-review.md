@@ -269,3 +269,26 @@ M03–M04: 14 capítulos examinados (8 de teoria, 6 de revisão), ambos aprovado
 
 **Testes/commit:** conteúdo não alterado; parecer registrado neste commit do relatório. Nenhum script automatizado ou navegação de runtime executados nesta sessão. Sem checkout local/check do Actions consultado, validação técnica fica PENDENTE. Nenhuma questão criada ou liberada.
 
+
+
+### M08 — Lei Maria da Penha — Lei 11.340/2006
+
+**Capítulos examinados integralmente:** Conteúdo Completo (4): “Objetivo e âmbito da lei” (510 palavras); “Formas de violência” (597); “Medidas protetivas de urgência” (847); “Rede de proteção e atendimento” (515). Revisão Guiada (3): “Âmbito” (184); “Seis formas — art. 7º” (253); “Proteção e atendimento” (258).
+
+**Avaliação inicial e correções necessárias:** a estrutura e a didática eram boas, mas a conferência da compilação atual revelou uma lacuna normativa concreta: o tratamento do art. 12-C não incluía a redação da Lei 15.411/2026, que passou a enumerar riscos à integridade física, sexual, psicológica, moral ou patrimonial como fundamento para afastamento imediato. A teoria e a revisão foram atualizadas para refletir a redação e os limites de autoridade/procedimento.
+
+A auditoria também identificou que a explicação das medidas protetivas precisava contemplar:
+
+- Lei 15.412/2026: art. 22, §4º (tutela específica/resultado equivalente) e §10 (medidas protetivas cíveis como título executivo judicial sem ação principal);
+- Lei 15.438/2026: art. 16-A, prazo decadencial de 12 meses nas hipóteses em que caibam queixa ou representação, sem alterar a natureza incondicionada de outros crimes;
+- Decreto 13.084/2026: Programa Alerta Mulher Segura; UPR voluntária, informada, complementar e sem transferir responsabilidade de segurança à vítima; alertas não são prova automática de descumprimento.
+
+Esses pontos foram inseridos na teoria e/ou na Revisão Guiada. Preservei a estrutura dos capítulos e as demais explicações satisfatórias.
+
+**Fontes oficiais consultadas nesta execução:** Lei 11.340/2006 compilada no Planalto; Leis 14.550/2023, 15.380/2026, 15.383/2026, 15.384/2026, 15.411/2026, 15.412/2026 e 15.438/2026; Decreto 13.084/2026; legislação federal consultada no Senado e Câmara para confirmação textual. As leis de 2026 mencionadas foram publicadas e já estavam vigentes na data-base 22/11/2026. Fontes: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14550.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15380.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15383.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15384.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15411.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15412.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15438.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d13084.htm
+
+**Resultado pedagógico:** CORRIGIDO E APROVADO. O Conteúdo Completo mantém progressão, exemplos, tabela de formas de violência e síntese; a Revisão Guiada resume conceitos, exceções e pegadinhas sem reproduzir a aula. A atualização sobre a Lei 15.411/2026 elimina uma desatualização factual; o art. 12-C é diferenciado do art. 12-D, e a exceção de atuação de autoridade policial não é atribuída automaticamente à Guarda Municipal.
+
+**Commits de conteúdo:** teoria 188a3f66a74ee34fa9d358168fe77c438aae1108; Revisão Guiada 76c2ea946d258902c78771f899190a305b9fba76. O relatório deste parecer é registrado em commit próprio.
+
+**Testes e limitações:** conferi via GitHub API que os dois arquivos continuam sendo objetos JavaScript serializáveis e que o módulo mantém 4 capítulos completos, 3 de revisão e as referências de atualização. Isso é checagem estrutural dos arquivos, não execução do leitor. O workspace não contém checkout local; não executei scripts, Actions, navegação autenticada, planos, progresso, segurança ou responsividade. Esses testes permanecem **PENDENTES**. Questões não foram criadas nem liberadas.
