@@ -185,3 +185,31 @@ test('bloco de questão em parágrafos sai até o gabarito, sem eliminar teoria 
  assert.match(article.textContent,/Regra teórica anterior|Teoria posterior intocada/);
  dom.window.close();
 });
+
+
+test('ADM remove seções 3. 10 Questões Internas e preserva sínteses',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<h2>Teoria completa</h2><p>Conteúdo essencial.</p>'
+ +'<h2>3. 10 QUESTÕES INTERNAS DE FIXAÇÃO — CONTEÚDO COMPLETO</h2>'
+ +'<p>Questão 1: pergunta para retirar.</p><p>A) errada</p><p>Gabarito: B.</p>'
+ +'<h2>Síntese final</h2><p>Conceito importante.</p>';
+ d.body.append(article);await delay(180);
+ assert.doesNotMatch(article.textContent,/10 QUESTÕES INTERNAS|pergunta para retirar|Gabarito: B/);
+ assert.match(article.textContent,/Conteúdo essencial|Síntese final|Conceito importante/);
+ dom.window.close();
+});
+
+test('baterias certo/errado em texto são removidas; quadros da teoria permanecem',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<h2>Comparação jurídica</h2><p>Definição importante.</p>'
+ +'<h3>1. “A autarquia possui personalidade.” CERTO — pessoa de direito público.</h3>'
+ +'<h3>2. “Toda fundação é entidade privada.” ERRADO — depende do tipo.</h3>'
+ +'<h3>3. “Todo órgão possui personalidade própria.” ERRADO — órgão integra a pessoa.</h3>'
+ +'<h3>Próximo assunto</h3><p>Explicação íntegra do tópico.</p>';
+ d.body.append(article);await delay(180);
+ assert.doesNotMatch(article.textContent,/A autarquia possui personalidade|Toda fundação é entidade privada|Todo órgão possui personalidade/);
+ assert.match(article.textContent,/Definição importante|Próximo assunto|Explicação íntegra/);
+ dom.window.close();
+});
