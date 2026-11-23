@@ -46,13 +46,13 @@
  function kill(el){if(el?.isConnected&&!dentroDaNova(el))el.remove()}
  // Questões embutidas na teoria (completa e revisão): o banco externo tem isolamento próprio.
  const theoryRoots='.bc-native-article,.pt-doc,.cf-native-reader article,.cv-reader-article,.adm-native-article,.cpp-native-article,.bc-rlm-article,.bc-info-reader-article,.bc-info-reader-content,.gmf-reader-prose,.pt-native-reader article';
- const practiceTitle=/^(?:\d{1,2}[.):-]?\s*){0,2}(?:questoes(?:\s+(?:internas?(?:\s+de\s+fixacao)?|de\s+(?:fixacao|revisao|compreensao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao|compreensao)\b.*|testes?\s+de\s+compreensao\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
+ const practiceTitle=/^(?:\d{1,2}[.):-]?\s*){0,2}(?:questoes(?:\s+(?:internas?(?:\s+de\s+fixacao)?|de\s+(?:fixacao|revisao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|(?:cinco|5)\s+questoes?\s+de\s+revisao\b.*|revisao\s+\d{1,2}\s+(?:facil|media|dificil)\b.*|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao)\b.*|teste\s+rapido\b.*|teste\s+final\s+autoral\b.*|julgue\s+certo\s+ou\s+errado\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
  const standaloneQuestion=/^(?:questao|pergunta|item)\s*(?:n[ºo.]?\s*)?\d{1,3}\s*[:.)–—-]/i;
  const answerOrAlternative=/^(?:[a-e]\s*[).:-]|gabarito(?:\s+(?:oficial|comentado))?\s*[:–-]|resposta(?:\s+(?:correta|comentada))?\s*[:–-]|comentario(?:\s+da\s+questao)?\s*[:–-])/i;
 
  // Referências são conteúdo editorial: deslocar os mesmos nós, na mesma ordem,
  // para o rodapé da seção/capítulo que os contém, sem recriar ou alterar o texto.
- const referenceTitle=/^(?:\d{1,2}\s*[.)–-]?\s*)?(?:referencias(?:\s+(?:bibliograficas|e fontes(?: de consulta)?|utilizadas))?|bibliografia(?:\s+consultada)?|fontes\s+(?:consultadas|de consulta|bibliograficas|oficiais))(?:\s*[:.])?$/i;
+ const referenceTitle=/^(?:\d{1,2}\s*[.)–-]?\s*)?(?:referencias(?:\s+(?:bibliograficas|e fontes(?: de consulta)?|e links oficiais|para conferencia|utilizadas))?|bibliografia(?:\s+consultada)?|fontes\s+(?:consultadas|de consulta|bibliograficas|oficiais))(?:\s*[:.])?$/i;
  const trailingUi='footer,[role="contentinfo"],.bc-info-reader-end,.gmf-reader-done,.bc-native-reader-end,.bc-native-completion,.adm-session-reader-check,.adm-reading-check-list';
  function moveReferencesToEnd(root){
   const titles=[...root.querySelectorAll('h2,h3,h4,h5,p')].filter(el=>{
@@ -84,11 +84,8 @@
   if(!root.isConnected||dentroDaNova(root))return;
   // Os blocos de testes de compreensão de CF e os exercícios em <details> não são teoria.
   root.querySelectorAll('details.question,section.question,.bc-iq,.bc-iq-answer,.cpc-native-question').forEach(kill);
-  // "Pegadinha", "Erro comum" e "Não confundir" são explicações, não questões.
-  root.querySelectorAll('.cf-native-callout.question,.cf-native-callout.answer').forEach(el=>{
-   const label=word(el.querySelector('strong')?.textContent||el.textContent);
-   if(/^(?:teste de compreensao|resposta comentada)\b/.test(label))kill(el);
-  });
+  // Testes de compreensão e respectivas respostas comentadas são recursos didáticos.
+  // Não confundir com baterias de exercícios e gabaritos antigos.
   // Se o bloco inteiro é uma seção de questões, retirá-lo antes dos títulos evita caixas vazias.
   root.querySelectorAll('section,article,details').forEach(el=>{
    if(!el.isConnected||dentroDaNova(el))return;
@@ -108,6 +105,25 @@
    kill(h);
   });
 
+
+  // Baterias antigas em parágrafos, sem título H2: ADM M04 e outros formatos legados.
+  // Remover somente quando o título indicar inequivocamente uma seção de exercícios.
+  root.querySelectorAll('p').forEach(p=>{
+   if(!p.isConnected||dentroDaNova(p))return;
+   const t=word(p.textContent);
+   if(!/^(?:conteudo\s+(?:completo|resumido)\s*[-–—:]\s*\d{1,2}\s+questoes|\d{1,2}\s*[.)-]?\s*(?:teste\s+rapido|julgue\s+certo\s+ou\s+errado)(?:\s*[-–—:].*)?)$/.test(t))return;
+   let next=p.nextElementSibling;
+   while(next&&!next.matches('h1,h2,h3,footer,.synthesis,.overview,.adm-reading-check-list,[data-adm-session]')&&!dentroDaNova(next)){
+    const after=next.nextElementSibling;kill(next);next=after;
+   }
+   kill(p);
+  });
+  // Perguntas de fixação numeradas em um único parágrafo do leitor GMF.
+  // Preserva o restante do capítulo e as perguntas explicativas fora de "Fixação:".
+  (root.matches('.gmf-reader-prose')?root.querySelectorAll('p'):root.querySelectorAll('.gmf-reader-prose p')).forEach(p=>{
+   if(!p.isConnected||dentroDaNova(p))return;
+   if(/^fixacao\s*:\s*\(1\)\s+.{10,}/.test(word(p.textContent)))kill(p);
+  });
 
   // Nos resumos, "REVISÃO ATIVA" pode aparecer como bateria de perguntas
   // numeradas em texto (inclusive renderizadas como <h2>), fora do quiz formal.

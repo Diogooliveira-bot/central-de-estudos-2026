@@ -108,7 +108,7 @@ test('index e pacote offline usam os mesmos recursos versionados', () => {
     '/content/cf/cf-teoria-guiada-lei-seca.js?v=20261117m01lawfix2',
     '/content/cf/m01-lei-seca-patch.js?v=20261118m01lawpatch1',
     '/content/cf/cf-teoria-guiada-reader-v1.js?v=20261120m14artes1',
-    '/ui/cf-native-study-v2.js?v=20261115responsive1',
+    '/ui/cf-native-study-v2.js?v=20261123-theory-clean-v2',
   ];
   for (const asset of assets) {
     assert.ok(html.includes(`src="${asset}"`), `index: ${asset}`);

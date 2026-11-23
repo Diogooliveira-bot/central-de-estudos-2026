@@ -1,5 +1,5 @@
 {
-  "build": "20261123-references-end-v1",
+  "build": "20261123-theory-clean-v2",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -181,7 +181,7 @@
     "/content/cf/cf-teoria-guiada-lei-seca.js?v=20261117m01lawfix2",
     "/content/cf/m01-lei-seca-patch.js?v=20261118m01lawpatch1",
     "/content/cf/cf-teoria-guiada-reader-v1.js?v=20261120m14artes1",
-    "/ui/cf-native-study-v2.js?v=20261115responsive1",
+    "/ui/cf-native-study-v2.js?v=20261123-theory-clean-v2",
     "/ui/lei-em-dia-v1.css?v=20261118r1",
     "/tools/decorando.html",
     "/ui/tool-header-v1.css?v=20261118r1",
@@ -295,7 +295,7 @@
     "/content/adm/m18-apostila-summary.js?v=20261108adm1",
     "/content/adm/m19-apostila-summary.js?v=20261108adm1",
     "/content/adm/m20-apostila-summary.js?v=20261108adm1",
-    "/ui/old-questions-removed-v1.js?v=20261123-references-end-v1",
+    "/ui/old-questions-removed-v1.js?v=20261123-theory-clean-v2",
     "/ui/old-questions-removed-v1.css?v=20261115-responsive-v15",
     "/ui/questoes-area-v1.css?v=20261121adm-m01-m02-artes1",
     "/ui/questoes-bank-v1.js?v=20261121gmfobj2",
