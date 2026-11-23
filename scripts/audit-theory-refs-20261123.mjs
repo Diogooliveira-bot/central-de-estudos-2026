@@ -30,7 +30,7 @@ function probe(label,html,scopeClass='bc-native-article'){
  return {label,beforeChars:beforeText.length,afterChars:afterText.length,beforeRefs,afterRefs:headings.length,beforeBad,afterBad:leftovers.length,markers:leftovers,fixation,refs:tails};
 }
 function unpack(path){const s=read(path);const m=s.match(/="([A-Za-z0-9+/=]+)";?\s*$/);if(!m)throw Error('Base64 ausente: '+path);return gunzipSync(Buffer.from(m[1],'base64')).toString('utf8')}
-const report={revision:'da8ead2e',scope:'sem Português; somente auditoria',adm:[],cf:[],gmf:[],info:[],packages:[],errors:[]};
+const report={revision:'da8ead2e',scope:'sem Português; somente auditoria',adm:[],cf:[],gmf:[],info:[],cpc:[],packages:[],errors:[]};
 for(let n=1;n<=20;n++){
  for(const mode of ['summary','complete']){
   try{const html=unpack('content/adm/m'+String(n).padStart(2,'0')+'-apostila-'+mode+'.js');report.adm.push(probe('ADM M'+String(n).padStart(2,'0')+' '+mode,html));}
@@ -58,6 +58,22 @@ for(let kind of ['full','review']){
   }
  }catch(e){report.errors.push({area:'GMF',kind,error:String(e)})}
 }
+/* CPC M02–M08: montar os leitores de produção em DOM simulado e aplicar limpeza. */
+win.CpcApostilaReading={transform:async html=>html};
+for(let n=2;n<=8;n++){
+ const id=String(n).padStart(2,'0');
+ try{
+  win.eval(read('content/cpc/m'+id+'-native-data.js'));
+  win.eval(read('ui/cpc-m'+id+'-native-study-reader.js'));
+  const api=win['CpcM'+id+'NativeReader'];
+  if(!api?.open)throw Error('Leitor não exportado');
+  await api.open('complete');
+  const article=win.document.querySelector('.bc-native-reader-overlay .bc-native-article');
+  if(!article)throw Error('Artigo não montado');
+  report.cpc.push(probe('CPC M'+id+' completo',article.innerHTML));
+  api.close();
+ }catch(e){report.errors.push({area:'CPC',n,error:String(e).slice(0,320)})}
+}
 for(let n=1;n<=13;n++){
  try{
   const s=read('content/informatica/m'+String(n).padStart(2,'0')+'.js');
@@ -82,7 +98,7 @@ for(const discipline of ['civil','cpp']){
 }
 mkdirSync('audits/teoria-20261123',{recursive:true});
 writeFileSync('audits/teoria-20261123/report.json',JSON.stringify(report,null,2));
-for(const area of ['adm','cf','gmf','info']){
+for(const area of ['adm','cf','gmf','info','cpc']){
  const rows=report[area];
  console.log('AUDIT_AREA '+area+' '+JSON.stringify({documents:rows.length,questionLeft:rows.filter(x=>x.afterBad||x.fixation.length).map(x=>({label:x.label,afterBad:x.afterBad,markers:x.markers.slice(0,4),fixation:x.fixation})).slice(0,45),referencesWithFollowing:rows.filter(x=>x.refs.some(r=>r.laterHeadings.length)).map(x=>({label:x.label,refs:x.refs})).slice(0,28)}));
 }
