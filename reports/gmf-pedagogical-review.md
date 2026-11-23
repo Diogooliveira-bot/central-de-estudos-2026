@@ -326,3 +326,20 @@ Fontes: https://sapl.fortaleza.ce.leg.br/ta/44/text ; https://sapl.fortaleza.ce.
 **Parecer pedagógico: APROVADO sem alteração.** O conteúdo tem cobertura efetiva e ressalvas contra a leitura de trechos históricos como direito vigente. Preservado integralmente.
 
 **Verificação técnica:** parse JSON dos dois objetos JS recuperados do GitHub; confirmei 4 capítulos completos, 3 de revisão, títulos, conteúdo HTML estruturado, exemplos/quadros/sínteses e sequência de recursos. Nenhum teste automatizado/runtime, navegação de planos ou API foi executado nesta etapa; esses itens continuam **PENDENTES** para validação geral. Nenhuma questão foi criada ou liberada.
+
+
+### M11 — Estatuto dos Servidores de Fortaleza — Lei Municipal 6.794/1990
+
+**Capítulos examinados integralmente:** Conteúdo Completo (4): “Regime jurídico e conceitos básicos” (519 palavras); “Direitos, vantagens e licenças” (527); “Deveres e conduta funcional” (510); “Responsabilização e estudo do texto” (616). Revisão Guiada (3): “Âmbito e cargo” (117); “Direitos e deveres” (146); “Responsabilização e atenção” (179). Contagem efetiva após remoção das tags HTML.
+
+**Cobertura e qualidade:** a teoria diferencia vínculos e formas de provimento; explica concurso, posse, exercício, estágio probatório e estabilidade; distingue vencimento, remuneração, vantagens e licenças; exemplifica deveres e proibições relacionados à atuação funcional; e desenvolve responsabilidades, penalidades, garantias processuais e hipóteses de abandono/inassiduidade. Os capítulos contêm quadros, exemplos contextualizados e sínteses. A Revisão Guiada concentra contrastes, requisitos e alertas de prova, com conteúdo próprio e menor extensão.
+
+**Conferência normativa municipal:** consultei a compilação oficial da Lei 6.794/1990 no SAPL/Câmara, que lista alterações até a LC 426/2025 e fixa texto vigente desde 06/05/2025. Conferi diretamente arts. 1º, 4º, 10, 16, 19, 75–82, 88, 169–182. Confirmei a definição de cargo, dever de cumprir ordens salvo quando manifestamente impraticáveis/abusivas/ilegais, jornada geral, hipóteses de licença-prêmio e revogação do art. 80 pela LC 298/2021, e conceitos de abandono (ausência deliberada sem justa causa por mais de 30 dias consecutivos) e inassiduidade habitual (60 dias interpolados em 12 meses). A LC 426, publicada em 06/05/2025, acrescentou art. 82, I, “f”: dois dias a cada seis meses por doação de sangue, sendo o primeiro o da doação e o segundo o subsequente. Também confrontei os arts. 173–174 sobre independência entre instâncias e efeito da absolvição que nega fato/autoria. O SAPL consultado não lista alteração estatutária posterior; projetos ainda não aprovados não foram tratados como lei. Conferi ainda CF arts. 37–41 no Planalto, em especial o requisito constitucional de estabilidade, evitando reproduzir como regra atual textos previdenciários históricos do Estatuto.
+
+Fontes oficiais: https://sapl.fortaleza.ce.leg.br/ta/2330/text ; https://sapl.fortaleza.ce.leg.br/ta/4561/text ; https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp298.htm ; https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+
+**Deficiências/correções:** nenhuma falha pedagógica, factual ou jurídica comprovada que justificasse alterar os arquivos. O módulo já alerta contra usar redações revogadas, contra presumir benefícios ou sanções automáticas e contra confundir instâncias ou vínculos. Conteúdo preservado integralmente.
+
+**Parecer pedagógico: APROVADO sem alteração.**
+
+**Verificação técnica:** recuperei os arquivos pelo GitHub, fiz parse dos objetos JSON e confirmei 4 capítulos de teoria, 3 de revisão, HTML estruturado, títulos, contagens, exemplos/quadros/sínteses e referências. Não executei testes de runtime, Actions, leitor, acesso por plano ou APIs neste módulo; continuam **PENDENTES** para a validação geral. Nenhuma questão foi criada ou liberada.
