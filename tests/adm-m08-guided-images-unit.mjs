@@ -57,7 +57,7 @@ test('ADM M08: Conteúdo Completo continua idêntico e sem imagens da revisão',
  const {html}=await load('complete');
  assert.doesNotMatch(html,/data-adm-review-art|ADM-M08-C\\d{2}\\.(?:webp|png)/);
  assert.equal(html,gunzipSync(Buffer.from(pack('complete'),'base64')).toString('utf8'));
- const numbered=[...html.matchAll(/<h2\\b[^>]*data-adm-session=/gi)];
+ const numbered=[...html.matchAll(/<h2\b[^>]*data-adm-session=/gi)];
  assert.equal(numbered.length,14,'as 14 sessões originais do Conteúdo Completo permanecem intactas');
 });
 
