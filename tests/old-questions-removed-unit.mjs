@@ -4,6 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {test} from 'node:test';
 import {JSDOM} from 'jsdom';
+import {runInNewContext} from 'node:vm';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>readFileSync(path.join(root,p),'utf8');
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
@@ -110,10 +111,10 @@ test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei
  const index=read('index.html'),boot=read('central-v119.html'),sw=read('sw.js');
  const man=JSON.parse(read('central-offline-files-v66172.json'));
  const vercel=JSON.parse(read('vercel.json'));
- assert.match(index,/ui\/old-questions-removed-v1\.js\?v=20261121-theory-clean-v1/);
+ assert.match(index,/ui\/old-questions-removed-v1\.js\?v=20261123-references-end-v1/);
  assert.match(index,/ui\/old-questions-removed-v1\.css\?v=20261115-responsive-v15/);
  assert.match(man.build,/^20\d{6}-[a-z0-9-]+$/);
- assert(man.files.includes('/ui/old-questions-removed-v1.js?v=20261121-theory-clean-v1'));
+ assert(man.files.includes('/ui/old-questions-removed-v1.js?v=20261123-references-end-v1'));
  assert(boot.includes("var BUILD='"+man.build+"'"));
  assert(sw.includes("var CACHE='central-"+man.build+"'"));
  assert(sw.includes('central-offline-files-v66172.json?v='+man.build));
@@ -121,4 +122,170 @@ test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei
   assert(!(vercel.redirects||[]).some(x=>x.source===route),'rota preservada: '+route);
  assert.match(read('ui/cf-native-study-v2.js'),/function openDecorando\(n\)\{const topic=/);
  assert.match(read('ui/cpp-native-study-v1.js'),/\+leiEmDia\(n\)\+linksSlot\(n\)\+/);
+});
+
+
+test('referências são deslocadas ao final sem editar ou perder nenhum trecho',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<h2>1. Introdução</h2><p id="teoria">Teoria intacta.</p>'
+  +'<h2 id="refs">12. REFERÊNCIAS E FONTES DE CONSULTA</h2>'
+  +'<p id="fonte1">[1] Constituição Federal, art. 5º.</p><p id="fonte2">[2] STF, jurisprudência.</p>'
+  +'<h2 id="sintese">13. Síntese final</h2><p id="resumo">Síntese intacta.</p>'
+  +'<footer id="fim">Finalizar leitura</footer>';
+ const before={ref:article.querySelector('#refs'),fonte1:article.querySelector('#fonte1'),fonte2:article.querySelector('#fonte2')};
+ d.body.appendChild(article);await delay(180);
+ const ids=[...article.children].map(el=>el.id).filter(Boolean);
+ assert.deepEqual(ids,['teoria','sintese','resumo','refs','fonte1','fonte2','fim']);
+ assert.strictEqual(article.querySelector('#refs'),before.ref);
+ assert.strictEqual(article.querySelector('#fonte1'),before.fonte1);
+ assert.strictEqual(article.querySelector('#fonte2'),before.fonte2);
+ assert.match(article.textContent,/Teoria intacta|Síntese intacta|Constituição Federal|jurisprudência/);
+ dom.window.BCQuestionsRemovedUI.sweep();
+ assert.deepEqual([...article.children].map(el=>el.id).filter(Boolean),ids,'nova varredura não deve deslocar novamente');
+ dom.window.close();
+});
+
+test('fontes do capítulo de Português também vão ao fim, sem mexer nos exemplos',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('div');article.className='pt-doc';
+ article.innerHTML='<h2>Concordância</h2><p>Exemplo didático mantido.</p><h3 id="bibliografia">Bibliografia</h3>'
+ +'<p id="obra">Obra de consulta.</p><h3 id="revisao">Revisão teórica</h3><p id="explicacao">Explicação preservada.</p>';
+ d.body.append(article);await delay(180);
+ assert.deepEqual([...article.children].map(e=>e.id).filter(Boolean),['revisao','explicacao','bibliografia','obra']);
+ assert.match(article.textContent,/Exemplo didático mantido|Explicação preservada|Obra de consulta/);
+ dom.window.close();
+});
+
+test('pegadinha e não confundir são teoria; teste de compreensão e resposta do quiz não são',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<p class="cf-native-callout question" id="pegadinha"><strong>Pegadinha.</strong> Atenção ao prazo.</p>'
+ +'<p class="cf-native-callout question" id="erro"><strong>Erro comum.</strong> Explicação necessária.</p>'
+ +'<p class="cf-native-callout answer" id="distinguir"><strong>Não confundir.</strong> Direitos distintos.</p>'
+ +'<p class="cf-native-callout question" id="teste"><strong>Teste de compreensão.</strong> Pergunta interna.</p>'
+ +'<p class="cf-native-callout answer" id="gabarito"><strong>Resposta comentada.</strong> Questão antiga.</p>';
+ d.body.append(article);await delay(180);
+ assert.ok(article.querySelector('#pegadinha'));
+ assert.ok(article.querySelector('#erro'));
+ assert.ok(article.querySelector('#distinguir'));
+ assert.equal(article.querySelector('#teste'),null);
+ assert.equal(article.querySelector('#gabarito'),null);
+ dom.window.close();
+});
+
+test('bloco de questão em parágrafos sai até o gabarito, sem eliminar teoria posterior',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<p>Regra teórica anterior.</p><p>Questão 7 — DIFÍCIL</p>'
+ +'<p>Enunciado do exercício.</p><p>A) alternativa um</p><p>B) alternativa dois</p>'
+ +'<p>Gabarito: B</p><p>Explicação: alternativa correta.</p>'
+ +'<h2>Próxima parte</h2><p>Teoria posterior intocada.</p>';
+ d.body.append(article);await delay(180);
+ assert.doesNotMatch(article.textContent,/Questão 7|Enunciado do exercício|alternativa um|Gabarito: B|alternativa correta/);
+ assert.match(article.textContent,/Regra teórica anterior|Teoria posterior intocada/);
+ dom.window.close();
+});
+
+
+test('ADM remove seções 3. 10 Questões Internas e preserva sínteses',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<h2>Teoria completa</h2><p>Conteúdo essencial.</p>'
+ +'<h2>3. 10 QUESTÕES INTERNAS DE FIXAÇÃO — CONTEÚDO COMPLETO</h2>'
+ +'<p>Questão 1: pergunta para retirar.</p><p>A) errada</p><p>Gabarito: B.</p>'
+ +'<h2>Síntese final</h2><p>Conceito importante.</p>';
+ d.body.append(article);await delay(180);
+ assert.doesNotMatch(article.textContent,/10 QUESTÕES INTERNAS|pergunta para retirar|Gabarito: B/);
+ assert.match(article.textContent,/Conteúdo essencial|Síntese final|Conceito importante/);
+ dom.window.close();
+});
+
+test('baterias certo/errado em texto são removidas; quadros da teoria permanecem',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<h2>Comparação jurídica</h2><p>Definição importante.</p>'
+ +'<h3>1. “A autarquia possui personalidade.” CERTO — pessoa de direito público.</h3>'
+ +'<h3>2. “Toda fundação é entidade privada.” ERRADO — depende do tipo.</h3>'
+ +'<h3>3. “Todo órgão possui personalidade própria.” ERRADO — órgão integra a pessoa.</h3>'
+ +'<h3>Próximo assunto</h3><p>Explicação íntegra do tópico.</p>';
+ d.body.append(article);await delay(180);
+ assert.doesNotMatch(article.textContent,/A autarquia possui personalidade|Toda fundação é entidade privada|Todo órgão possui personalidade/);
+ assert.match(article.textContent,/Definição importante|Próximo assunto|Explicação íntegra/);
+ dom.window.close();
+});
+
+
+test('CF remove revisão ativa que contém perguntas numeradas sem apagar pegadinhas e artigos',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<h2>PEGADINHAS DE PROVA</h2><p>Regra jurídica preservada.</p>'
+ +'<h2>REVISÃO ATIVA</h2>'
+ +'<h2>1. Quais são os fundamentos da ordem econômica?</h2>'
+ +'<h2>2. Como atua a fiscalização estatal?</h2>'
+ +'<h2>3. Qual é a regra constitucional da atividade econômica?</h2>';
+ d.body.append(article);await delay(180);
+ assert.doesNotMatch(article.textContent,/REVISÃO ATIVA|Quais são os fundamentos|Como atua a fiscalização|Qual é a regra constitucional/);
+ assert.match(article.textContent,/PEGADINHAS DE PROVA|Regra jurídica preservada/);
+ dom.window.close();
+});
+
+
+function jsContent(path,selector){
+ const win={};
+ runInNewContext(read(path),{window:win},{timeout:2500,filename:path});
+ return selector(win);
+}
+function escForTest(value){return String(value).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function cfReaderFixture(raw){
+ return String(raw||'').split(/\r?\n/).filter(line=>line.trim()).map(line=>{
+  const t=line.trim(),isHeading=/^\d+(?:\.\d+)*\.?\s+/.test(t)||
+   /^[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][A-ZÁÀÂÃÉÊÍÓÔÕÚÇ0-9 /—–:()º§.,-]{5,}$/.test(t);
+  return isHeading?'<h2>'+escForTest(t)+'</h2>':'<p>'+escForTest(t)+'</p>';
+ }).join('');
+}
+
+test('materiais reais ADM M01-M20 não deixam seções internas de questões na leitura',async()=>{
+ const dom=fixture(),w=dom.window,d=w.document,issues=[];
+ for(let n=1;n<=20;n++){
+  const nn=String(n).padStart(2,'0');
+  const html=jsContent('content/adm/m'+nn+'-approved-complete.js',win=>win.ADM_APPROVED_COMPLETE?.[n]);
+  assert.ok(html?.length>200,'apostila ADM M'+nn+' indisponível no fixture');
+  const article=d.createElement('article');article.className='bc-native-article';
+  article.innerHTML=html;d.body.append(article);
+  w.BCQuestionsRemovedUI.sweep();
+  const wrong=[...article.querySelectorAll('h2,h3,h4')].filter(h=>
+   /^(?:\d+\s*[.)-]\s*){0,2}(?:\d+\s+)?quest[oõ]es?\s+internas?\b/i.test(h.textContent.trim()));
+  if(wrong.length)issues.push('M'+nn+': '+wrong.map(h=>h.textContent.trim()).join(' / '));
+  assert.ok(article.querySelector('h1,h2,h3'), 'Teoria ADM M'+nn+' não pode desaparecer');
+  article.remove();
+ }
+ assert.deepEqual(issues,[],'Ainda há títulos de questões embutidos em apostilas ADM reais');
+ await delay(180); // encerra a varredura agendada antes de desmontar o JSDOM
+ dom.window.close();
+});
+
+test('CF M01 mantém checklist após reposicionar referências e M13-M15 removem perguntas de revisão ativa',async()=>{
+ const dom=fixture(),w=dom.window,d=w.document;
+ for(const n of [1,13,14,15]){
+  const nn=String(n).padStart(2,'0');
+  const content=jsContent('content/cf/m'+nn+'-native-data.js',win=>win.BASE_NATIVE_CONTENT?.cf?.['m'+nn]);
+  assert.ok(content?.summary?.length>100);
+  const mode=n===1?'complete':'summary',article=d.createElement('article');
+  article.className='bc-native-article';
+  article.innerHTML=cfReaderFixture(content[mode]);d.body.append(article);
+  w.BCQuestionsRemovedUI.sweep();
+  if(n===1){
+   const text=[...article.querySelectorAll('h2')].map(e=>e.textContent);
+   assert.ok(text.findIndex(s=>/REFERÊNCIAS E FONTES/.test(s))>text.findIndex(s=>/CHECKLIST DE DOMÍNIO/.test(s)),
+    'A referência do CF M01 deve ficar depois do checklist, sem alterá-lo');
+   assert.match(article.textContent,/CHECKLIST DE DOMÍNIO|Constituição da República/);
+  }else{
+   assert.doesNotMatch(article.textContent,/\bREVISÃO ATIVA\b/);
+   assert.match(article.textContent,/PEGADINHAS DE PROVA/);
+  }
+  article.remove();
+ }
+ await delay(180); // evita callback de MutationObserver após o encerramento da janela
+ dom.window.close();
 });

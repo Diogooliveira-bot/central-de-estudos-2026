@@ -56,12 +56,28 @@ try{
      start=performance.now();await page.locator('#bcFocusModules .bc-focus-module-card').nth(id==='rlm'?1:0).click({timeout:15000});
      await page.waitForFunction(()=>window.BaseCompletaFocusNavigation.state.stage==='reading',null,{timeout:30000});
      const section=page.locator('#subjects > .subject[data-id="'+id+'"]');
-     const button=section.locator('button:visible').filter({hasText:/Revisar conteúdo/}).first();
-     await button.waitFor({timeout:15000});await button.click();
-     await readingReady(page);await settle(page);
-     const readingMs=performance.now()-start;
-     await closeReader(page);
-     const fullStart=performance.now();await section.locator('button:visible').filter({hasText:/Estudar conteúdo/}).first().click();await readingReady(page);await settle(page);const fullReadingMs=performance.now()-fullStart;await closeReader(page);
+     let readingMs,fullReadingMs;
+     if(id==='pt'){
+      // Português usa abas nativas Teoria/Revisão, não o leitor modal padrão.
+      const review=section.locator('.ptn-tab').filter({hasText:/Revisão/}).first();
+      await review.waitFor({state:'visible',timeout:15000});await review.click();
+      await section.locator('[data-ptn-host] .ptn-review-grid').first().waitFor({state:'visible',timeout:15000});
+      await settle(page);readingMs=performance.now()-start;
+      const fullStart=performance.now();
+      await section.locator('.ptn-tab').filter({hasText:/^Teoria$/}).first().click();
+      await section.locator('[data-ptn-host] .ptn-session').first().waitFor({state:'visible',timeout:15000});
+      await settle(page);fullReadingMs=performance.now()-fullStart;
+     }else{
+      const button=section.locator('button:visible').filter({hasText:/Revisar conteúdo/}).first();
+      await button.waitFor({timeout:15000});await button.click();
+      await readingReady(page);await settle(page);
+      readingMs=performance.now()-start;
+      await closeReader(page);
+      const fullStart=performance.now();
+      await section.locator('button:visible').filter({hasText:/Estudar conteúdo/}).first().click();
+      await readingReady(page);await settle(page);fullReadingMs=performance.now()-fullStart;
+      await closeReader(page);
+     }
      const timing=await timings(page);timing.cpuMs=delta(subjectCpu,await cpu(cdp));await page.evaluate(()=>{window.openHome();window.BaseCompletaFocusNavigation.backToSubjects();});
      start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:30000});await settle(page);
      const reopenMs=performance.now()-start;
