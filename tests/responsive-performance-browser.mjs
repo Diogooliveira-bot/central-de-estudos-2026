@@ -90,7 +90,8 @@ try{
        return {stage:window.BaseCompletaFocusNavigation?.state?.stage,moduleKey:window.BaseCompletaFocusNavigation?.state?.moduleKey,
         subjectClass:pt?.className,ptModules:mods.map(el=>({id:el.dataset.ptnModule,classes:el.className,headText:el.querySelector('.cf-module-head')?.textContent?.slice(0,100),html:el.querySelector('[data-ptn-host]')?.innerHTML?.slice(0,300)})),
         tabs:pt?.querySelectorAll('.ptn-tab').length,ready:window.CentralDisciplineLoader?.isReady?.('pt'),rendered:!!window.renderPortugueseMaster,
-        errors:pt?.querySelector('.ptn-loading')?.textContent?.slice(0,200),focusHasModule:document.getElementById('homeView')?.classList.contains('bc-focus-has-module')};
+        errors:pt?.querySelector('.ptn-loading')?.textContent?.slice(0,200),focusHasModule:document.getElementById('homeView')?.classList.contains('bc-focus-has-module'),
+        subjectHTML:pt?.innerHTML?.slice(0,3200),counts:Object.fromEntries(['.ptn-master','.cf-module','.topic-item','.pt-module-card','.module','.cf-modules','.ptn-loading','.subject-body'].map(sel=>[sel,pt?.querySelectorAll(sel)?.length||0])),moduleTitle:document.getElementById('bcFocusModuleLabel')?.textContent};
       });
       console.log('PT_FOCUS_DIAGNOSTIC '+JSON.stringify(diag));
      }
