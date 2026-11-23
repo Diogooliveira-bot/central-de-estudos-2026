@@ -5,7 +5,7 @@ import {JSDOM} from 'jsdom';
 const read=p=>readFileSync(p,'utf8');
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
 const badQuestion=/^(?:\d{1,2}\s*[–—-]\s*(?:FACIL|MEDIO|DIFICIL)\b|(?:CONTEUDO\s+)?(?:COMPLETO|RESUMIDO)\s*[–—-]\s*10 QUESTOES\b|QUESTAO\s*(?:N[Oº.]*)?\s*\d+\b|GABARITO\s*:|FIXACAO\s*:\s*\(?1\)?\s|(?:10|5)\s+QUESTOES\s+INTERNAS\b)/i;
-const refHeading=/^(?:\d{1,2}\s*[.)–—-]?\s*)?(?:REFERENCIAS(?:\s+.*)?|BIBLIOGRAFIA(?:\s+.*)?|FONTES\s+(?:OFICIAIS|DE CONSULTA|CONSULTADAS))$/i;
+const refHeading=/^(?:\d{1,2}\s*[.)–—-]?\s*)?(?:REFERENCIAS(?:\s+(?:BIBLIOGRAFICAS|E FONTES(?: DE CONSULTA)?|E LINKS OFICIAIS|PARA CONFERENCIA|UTILIZADAS))?|BIBLIOGRAFIA(?:\s+CONSULTADA)?|FONTES\s+(?:OFICIAIS|DE CONSULTA|CONSULTADAS))$/i;
 const doc=new JSDOM('<!doctype html><html><head></head><body></body></html>',{url:'https://example.org',pretendToBeVisual:true,runScripts:'outside-only'});
 const win=doc.window;
 win.eval(read('ui/old-questions-removed-v1.js'));
@@ -20,7 +20,8 @@ function probe(label,html,scopeClass='bc-native-article'){
  const headings=[...el.querySelectorAll('h2,h3,h4,h5,p')].filter(h=>refHeading.test(norm(h.textContent)));
  const tails=headings.map(h=>{
    let cur=h.nextElementSibling,post=[];while(cur&&post.length<8){if(!cur.matches('footer,[role="contentinfo"],.adm-reading-check-list,.adm-session-reader-check,.gmf-reader-done,.bc-info-reader-end'))post.push(norm(cur.textContent).slice(0,90));cur=cur.nextElementSibling;}
-   return {title:norm(h.textContent).slice(0,72),following:post.slice(0,3)};
+   let next=h.nextElementSibling,laterHeadings=[];while(next){if(/^H[1-6]$/.test(next.tagName))laterHeadings.push(norm(next.textContent).slice(0,92));next=next.nextElementSibling;}
+   return {title:norm(h.textContent).slice(0,72),following:post.slice(0,3),laterHeadings:laterHeadings.slice(0,6)};
  });
  const leftovers=[...el.querySelectorAll('h2,h3,h4,h5,p,li')].filter(h=>badQuestion.test(norm(h.textContent))&&(!h.querySelector('h2,h3,h4,h5,p,li'))).map(h=>norm(h.textContent).slice(0,125)).slice(0,12);
  const fixation=[...el.querySelectorAll('p,li')].filter(e=>/^(?:FIXACAO\s*:\s*\(\d+\)|PERGUNTAS\s+DE\s+REVIS[AÃ]O\s*:)/i.test(norm(e.textContent))).map(x=>norm(x.textContent).slice(0,150)).slice(0,3);
@@ -76,15 +77,15 @@ for(const discipline of ['civil','cpp']){
   const payload=unpack('content/'+discipline+'/'+discipline+'-native-content-packed.js');
   let obj;try{obj=JSON.parse(payload)}catch(e){obj=null}
   const found=[];if(obj)visit(obj,discipline,found);
-  report.packages.push({discipline,decodedBytes:payload.length,isJson:!!obj,keys:obj&&typeof obj==='object'?Object.keys(obj).slice(0,20):[],snippets:!obj?payload.slice(0,120):null,blocks:found.length,questionBlocks:found.filter(x=>x.probe.afterBad||x.probe.fixation.length).slice(0,35).map(x=>({path:x.path,markers:x.probe.markers,fixation:x.probe.fixation})),outOfOrderRefs:found.filter(x=>x.probe.refs.some(r=>r.following.length)).slice(0,20).map(x=>({path:x.path,refs:x.probe.refs}))});
+  report.packages.push({discipline,decodedBytes:payload.length,isJson:!!obj,keys:obj&&typeof obj==='object'?Object.keys(obj).slice(0,20):[],snippets:!obj?payload.slice(0,120):null,blocks:found.length,questionBlocks:found.filter(x=>x.probe.afterBad||x.probe.fixation.length).slice(0,35).map(x=>({path:x.path,markers:x.probe.markers,fixation:x.probe.fixation})),outOfOrderRefs:found.filter(x=>x.probe.refs.some(r=>r.laterHeadings.length)).slice(0,20).map(x=>({path:x.path,refs:x.probe.refs}))});
  }catch(e){report.errors.push({area:discipline,error:String(e)})}
 }
 mkdirSync('audits/teoria-20261123',{recursive:true});
 writeFileSync('audits/teoria-20261123/report.json',JSON.stringify(report,null,2));
 for(const area of ['adm','cf','gmf','info']){
  const rows=report[area];
- console.log('AUDIT_AREA '+area+' '+JSON.stringify({documents:rows.length,questionLeft:rows.filter(x=>x.afterBad||x.fixation.length).map(x=>({label:x.label,afterBad:x.afterBad,markers:x.markers.slice(0,4),fixation:x.fixation})).slice(0,45),referencesWithFollowing:rows.filter(x=>x.refs.some(r=>r.following.length)).map(x=>({label:x.label,refs:x.refs})).slice(0,28)}));
+ console.log('AUDIT_AREA '+area+' '+JSON.stringify({documents:rows.length,questionLeft:rows.filter(x=>x.afterBad||x.fixation.length).map(x=>({label:x.label,afterBad:x.afterBad,markers:x.markers.slice(0,4),fixation:x.fixation})).slice(0,45),referencesWithFollowing:rows.filter(x=>x.refs.some(r=>r.laterHeadings.length)).map(x=>({label:x.label,refs:x.refs})).slice(0,28)}));
 }
 console.log('AUDIT_PACKAGES '+JSON.stringify(report.packages));
 console.log('AUDIT_ERRORS '+JSON.stringify(report.errors));
-doc.window.close();
+// Deixar os callbacks curtos de MutationObserver drenarem antes do encerramento do Node.
