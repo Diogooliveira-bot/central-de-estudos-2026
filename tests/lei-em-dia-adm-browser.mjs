@@ -53,7 +53,7 @@ try{
   assert.equal(inventory.questions,856);
   assert.equal(inventory.laws,28);
   assert.deepEqual(inventory.originCounts,{"real":309,"authorial":535,"unverified":12});
-  assert.ok((await page.locator(".qc-origin-options").textContent()).includes("Origem a confirmar"));
+  assert.equal(await page.locator(".qc-origin-options").count(),0,"A tela enxuta não exibe filtros avançados de origem; a filtragem interna continua coberta abaixo.");
   const unverifiedFiltered=await page.evaluate(()=>{ui.fOrigin="unverified";const result=selectedActive().length;ui.fOrigin="";return result});
   assert.equal(unverifiedFiltered,12);
   assert.deepEqual(inventory.lawCounts,{"adm-lei-9784":69,"adm-lei-12527":52,"adm-lei-13709":43,"adm-lei-14133":67});
