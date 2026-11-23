@@ -53,16 +53,30 @@ try{
   assert.equal(inventory.questions,856);
   assert.equal(inventory.laws,28);
   assert.deepEqual(inventory.originCounts,{"real":309,"authorial":535,"unverified":12});
-  assert.ok((await page.locator(".qc-origin-options").textContent()).includes("Origem a confirmar"));
+  // A interface enxuta da Lei em Dia tem seleção Disciplina → Módulo;
+  // os filtros legados continuam ativos na lógica, mas não são mais exibidos.
+  assert.equal(await page.locator(".qc-origin-options").count(),0);
+  assert.equal(await page.locator(".bc-slim-module-step").count(),1);
   const unverifiedFiltered=await page.evaluate(()=>{ui.fOrigin="unverified";const result=selectedActive().length;ui.fOrigin="";return result});
   assert.equal(unverifiedFiltered,12);
   assert.deepEqual(inventory.lawCounts,{"adm-lei-9784":69,"adm-lei-12527":52,"adm-lei-13709":43,"adm-lei-14133":67});
-  await page.evaluate(()=>toggleTopic("adm-lei-9784"));
-  assert.equal(await page.evaluate(()=>selectedActive().length),69);
-  await page.locator(".qc-status-options button").filter({hasText:"Não vistas"}).click();
+  const chosenModule=await page.evaluate(()=>{
+    const modules=disciplineModules();
+    return modules.find(m=>m.questionIds.some(id=>DATA.some(q=>q.id===id&&q.question?.statement&&typeof q.question.answer==="boolean")));
+  });
+  assert.ok(chosenModule?.id,"Precisa existir módulo ADM com questões de teste já carregadas");
+  await page.locator(".bc-slim-module-step .qc-select").click();
+  await page.locator(".qc-pop .qc-opt").filter({hasText:chosenModule.title}).first().click();
+  assert.equal(await page.evaluate(()=>ui.selectedModules.size),1);
+  assert.equal(await page.locator(".qc-go").isEnabled(),true);
   await page.locator(".qc-go").click();
   await page.locator(".exercise-card").waitFor();
-  const target=await page.evaluate(()=>({id:visible()[ui.articleIndex].id,answer:visible()[ui.articleIndex].question.answer}));
+  const target=await page.evaluate(()=>{
+    const items=visible(),idx=items.findIndex(q=>q.question?.statement&&typeof q.question.answer==="boolean");
+    if(idx<0)throw Error("Módulo selecionado sem pergunta local para teste");
+    ui.articleIndex=idx;render();
+    return {id:items[idx].id,answer:items[idx].question.answer};
+  });
   await page.locator(".main-answers button").filter({hasText:target.answer?"Certo":"Errado"}).click();
   await page.locator(".feedback").first().waitFor();
   assert.equal(await page.evaluate(id=>!!saved.answered[id],target.id),true);
@@ -94,6 +108,8 @@ try{
   const module=LAW_MODULE_LIST.find(m=>m.discipline==="adm"&&m.questionIds.length);
   centralOpenModule(module.id,"adm",true);
  });
+ const more=adminPage.locator(".bc-led-more-actions > summary");
+ if(await more.count())await more.first().click();
  await adminPage.locator(".admin-edit-button").first().click();
  await adminPage.locator("#admin-statement").fill("A Administração Pública observará o princípio da legalidade ao atuar.");
  await adminPage.locator("#admin-explanation").fill("Explicação corrigida durante o teste de interface.");
