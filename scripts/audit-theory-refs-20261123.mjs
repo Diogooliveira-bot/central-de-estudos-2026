@@ -26,10 +26,11 @@ function probe(label,html,scopeClass='bc-native-article'){
  const leftovers=[...el.querySelectorAll('h2,h3,h4,h5,p,li')].filter(h=>badQuestion.test(norm(h.textContent))&&(!h.querySelector('h2,h3,h4,h5,p,li'))).map(h=>norm(h.textContent).slice(0,125)).slice(0,12);
  const fixation=[...el.querySelectorAll('p,li')].filter(e=>/^(?:FIXACAO\s*:\s*\(\d+\)|PERGUNTAS\s+DE\s+REVIS[AÃ]O\s*:)/i.test(norm(e.textContent))).map(x=>norm(x.textContent).slice(0,150)).slice(0,3);
  const afterText=norm(el.textContent);
+ const looseQuizMarkers=[...el.querySelectorAll('h2,h3,h4,h5,p,li')].filter(e=>!e.querySelector('h2,h3,h4,h5,p,li')&&/^(?:(?:\d{1,2}\s+)?CINCO QUESTOES DE REVISAO|REVISAO\s+\d+\s+(?:FACIL|MEDIA|DIFICIL)|CERTO OU ERRADO\s*:|RESPOSTA COMENTADA[.:])/i.test(norm(e.textContent))).map(e=>norm(e.textContent).slice(0,135)).slice(0,20);
  const survivingAnswers=[...el.querySelectorAll('p,li')].filter(e=>/\bGABARITO\s*:/i.test(norm(e.textContent))).map(e=>norm(e.textContent).slice(0,155)).slice(0,12);
  const testSections=[...el.querySelectorAll('h2,h3,h4,h5,p')].filter(e=>/^(?:\d{1,2}[.)]\s*)?(?:JULGUE CERTO OU ERRADO|TESTE RAPIDO|TESTE FINAL AUTORAL|QUESTOES DE FIXACAO)/i.test(norm(e.textContent))).map(e=>norm(e.textContent).slice(0,130)).slice(0,10);
  el.remove();
- return {label,beforeChars:beforeText.length,afterChars:afterText.length,beforeRefs,afterRefs:headings.length,beforeBad,afterBad:leftovers.length,markers:leftovers,fixation,refs:tails,survivingAnswers,testSections};
+ return {label,beforeChars:beforeText.length,afterChars:afterText.length,beforeRefs,afterRefs:headings.length,beforeBad,afterBad:leftovers.length,markers:leftovers,fixation,refs:tails,survivingAnswers,testSections,looseQuizMarkers};
 }
 function unpack(path){const s=read(path);const m=s.match(/="([A-Za-z0-9+/=]+)";?\s*$/);if(!m)throw Error('Base64 ausente: '+path);return gunzipSync(Buffer.from(m[1],'base64')).toString('utf8')}
 const report={revision:'da8ead2e',scope:'sem Português; somente auditoria',adm:[],cf:[],gmf:[],info:[],cpc:[],packages:[],errors:[]};
@@ -102,7 +103,7 @@ mkdirSync('audits/teoria-20261123',{recursive:true});
 writeFileSync('audits/teoria-20261123/report.json',JSON.stringify(report,null,2));
 for(const area of ['adm','cf','gmf','info','cpc']){
  const rows=report[area];
- console.log('AUDIT_AREA '+area+' '+JSON.stringify({documents:rows.length,questionLeft:rows.filter(x=>x.afterBad||x.fixation.length||x.survivingAnswers.length||x.testSections.length).map(x=>({label:x.label,afterBad:x.afterBad,markers:x.markers.slice(0,4),fixation:x.fixation,survivingAnswers:x.survivingAnswers.slice(0,2),testSections:x.testSections.slice(0,4)})).slice(0,45),referencesWithFollowing:rows.filter(x=>x.refs.some(r=>r.laterHeadings.length)).map(x=>({label:x.label,refs:x.refs})).slice(0,28)}));
+ console.log('AUDIT_AREA '+area+' '+JSON.stringify({documents:rows.length,questionLeft:rows.filter(x=>x.afterBad||x.fixation.length||x.survivingAnswers.length||x.testSections.length||x.looseQuizMarkers.length).map(x=>({label:x.label,afterBad:x.afterBad,markers:x.markers.slice(0,4),fixation:x.fixation,survivingAnswers:x.survivingAnswers.slice(0,2),testSections:x.testSections.slice(0,4),looseQuizMarkers:x.looseQuizMarkers.slice(0,5)})).slice(0,45),referencesWithFollowing:rows.filter(x=>x.refs.some(r=>r.laterHeadings.length)).map(x=>({label:x.label,refs:x.refs})).slice(0,28)}));
 }
 console.log('AUDIT_PACKAGES '+JSON.stringify(report.packages));
 console.log('AUDIT_ERRORS '+JSON.stringify(report.errors));
