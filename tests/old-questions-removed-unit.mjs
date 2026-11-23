@@ -4,6 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {test} from 'node:test';
 import {JSDOM} from 'jsdom';
+import {runInNewContext} from 'node:vm';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>readFileSync(path.join(root,p),'utf8');
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
@@ -226,5 +227,63 @@ test('CF remove revisão ativa que contém perguntas numeradas sem apagar pegadi
  d.body.append(article);await delay(180);
  assert.doesNotMatch(article.textContent,/REVISÃO ATIVA|Quais são os fundamentos|Como atua a fiscalização|Qual é a regra constitucional/);
  assert.match(article.textContent,/PEGADINHAS DE PROVA|Regra jurídica preservada/);
+ dom.window.close();
+});
+
+
+function jsContent(path,selector){
+ const win={};
+ runInNewContext(read(path),{window:win},{timeout:2500,filename:path});
+ return selector(win);
+}
+function escForTest(value){return String(value).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function cfReaderFixture(raw){
+ return String(raw||'').split(/\r?\n/).filter(line=>line.trim()).map(line=>{
+  const t=line.trim(),isHeading=/^\d+(?:\.\d+)*\.?\s+/.test(t)||
+   /^[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][A-ZÁÀÂÃÉÊÍÓÔÕÚÇ0-9 /—–:()º§.,-]{5,}$/.test(t);
+  return isHeading?'<h2>'+escForTest(t)+'</h2>':'<p>'+escForTest(t)+'</p>';
+ }).join('');
+}
+
+test('materiais reais ADM M01-M20 não deixam seções internas de questões na leitura',async()=>{
+ const dom=fixture(),w=dom.window,d=w.document,issues=[];
+ for(let n=1;n<=20;n++){
+  const nn=String(n).padStart(2,'0');
+  const html=jsContent('content/adm/m'+nn+'-approved-complete.js',win=>win.ADM_APPROVED_COMPLETE?.[n]);
+  assert.ok(html?.length>200,'apostila ADM M'+nn+' indisponível no fixture');
+  const article=d.createElement('article');article.className='bc-native-article';
+  article.innerHTML=html;d.body.append(article);
+  w.BCQuestionsRemovedUI.sweep();
+  const wrong=[...article.querySelectorAll('h2,h3,h4')].filter(h=>
+   /^(?:\d+\s*[.)-]\s*){0,2}(?:\d+\s+)?quest[oõ]es?\s+internas?\b/i.test(h.textContent.trim()));
+  if(wrong.length)issues.push('M'+nn+': '+wrong.map(h=>h.textContent.trim()).join(' / '));
+  assert.ok(article.querySelector('h1,h2,h3'), 'Teoria ADM M'+nn+' não pode desaparecer');
+  article.remove();
+ }
+ assert.deepEqual(issues,[],'Ainda há títulos de questões embutidos em apostilas ADM reais');
+ dom.window.close();
+});
+
+test('CF M01 mantém checklist após reposicionar referências e M13-M15 removem perguntas de revisão ativa',async()=>{
+ const dom=fixture(),w=dom.window,d=w.document;
+ for(const n of [1,13,14,15]){
+  const nn=String(n).padStart(2,'0');
+  const content=jsContent('content/cf/m'+nn+'-native-data.js',win=>win.BASE_NATIVE_CONTENT?.cf?.['m'+nn]);
+  assert.ok(content?.summary?.length>100);
+  const mode=n===1?'complete':'summary',article=d.createElement('article');
+  article.className='bc-native-article';
+  article.innerHTML=cfReaderFixture(content[mode]);d.body.append(article);
+  w.BCQuestionsRemovedUI.sweep();
+  if(n===1){
+   const text=[...article.querySelectorAll('h2')].map(e=>e.textContent);
+   assert.ok(text.findIndex(s=>/REFERÊNCIAS E FONTES/.test(s))>text.findIndex(s=>/CHECKLIST DE DOMÍNIO/.test(s)),
+    'A referência do CF M01 deve ficar depois do checklist, sem alterá-lo');
+   assert.match(article.textContent,/CHECKLIST DE DOMÍNIO|Constituição da República/);
+  }else{
+   assert.doesNotMatch(article.textContent,/\bREVISÃO ATIVA\b/);
+   assert.match(article.textContent,/PEGADINHAS DE PROVA/);
+  }
+  article.remove();
+ }
  dom.window.close();
 });
