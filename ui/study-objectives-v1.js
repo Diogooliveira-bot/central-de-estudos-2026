@@ -53,7 +53,7 @@
           id:option.id, type:'exam', group:'Por edital', title:option.name + ' — ' + option.cargo,
           shortLabel:option.name, description:option.status === 'publicado' ? 'Edital publicado; confira o programa por cargo na fonte oficial.' : 'Concurso previsto/autorizado; programa do novo edital ainda não publicado.',
           subjectIds:[...new Set(subjects.map((item) => item.centralId))],
-          examSubjects:option.status === 'publicado' ? (contest?.subjects || []).map((item) => ({id:item.id,title:item.name,subjectId:catalog.subjects[item.centralId] ? item.centralId : null,status:item.centralId ? (item.coverage === 'complete' ? 'available' : 'partial') : 'preparation',note:item.centralId ? 'Cobertura inicial; confira os assuntos exigidos para o cargo no edital.' : 'Sem cobertura cadastrada.'})) : [],
+          examSubjects:option.status === 'publicado' ? (contest?.subjects || []).map((item) => ({id:item.id,title:item.name,subjectId:catalog.subjects[item.centralId] ? item.centralId : null,status:item.centralId ? (item.coverage === 'complete' ? 'available' : item.coverage === 'partial' ? 'partial' : 'preparation') : 'preparation',note:item.centralId ? 'Cobertura inicial; confira os assuntos exigidos para o cargo no edital.' : 'Sem cobertura cadastrada.'})) : [],
         };
       }
       if (currentStep === 'exams' && document.getElementById('studyObjectiveDialog')) renderChooser('exams');
