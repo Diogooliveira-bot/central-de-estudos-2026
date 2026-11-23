@@ -30,7 +30,7 @@ const browser=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePa
 const cpu=async cdp=>{const {metrics}=await cdp.send('Performance.getMetrics');return Object.fromEntries(metrics.filter(m=>['ScriptDuration','LayoutDuration','RecalcStyleDuration','TaskDuration'].includes(m.name)).map(m=>[m.name,m.value*1000]));};
 const delta=(a,b)=>Object.fromEntries(Object.keys(b).map(k=>[k,b[k]-(a[k]||0)]));
 const results={environment:{root,network:'local gzip; Chromium CDP throttling; mocked account/API; SW blocked'},runs:[],catalog:{},visual:[],failures:[]};
-const subjects=['cf','adm','civil','penal','cpc','cpp','pt','rlm','info'];
+const subjects=process.env.BC_PERF_SUBJECTS?process.env.BC_PERF_SUBJECTS.split(','):['cf','adm','civil','penal','cpc','cpp','pt','rlm','info'];
 const ready=p=>p.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',null,{timeout:120000});
 const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
 const readingReady=p=>p.waitForFunction(()=>[...document.querySelectorAll('.bc-native-article,.cf-native-content,.bc-info-reader-content,.bc-m01-paper')].some(e=>e.getBoundingClientRect().height>0 && e.textContent.length>200),null,{timeout:30000});
@@ -38,11 +38,11 @@ const closeReader=p=>p.locator('.bc-native-reader-close:visible,[data-bc-guided-
 const timings=p=>p.evaluate(()=>({measures:performance.getEntriesByType('measure').filter(e=>e.name.startsWith('bc:')).map(e=>({name:e.name,ms:e.duration})),requests:performance.getEntriesByType('resource').length,transferBytes:performance.getEntriesByType('resource').reduce((sum,e)=>sum+e.transferSize,0)}));
 const measure=p=>p.evaluate(()=>{const selectors=['#homeView .home-grid','#studentMoreButton .nav-text','.subject-name','.bc-focus-module-copy strong','#centralSidebar .nav-text','.bc-ui-scale-options button','.bc-native-article','.bc-m01-paper','.bcqa-title b'];return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,viewport:document.querySelector('meta[name="viewport"]')?.content,elements:selectors.map(selector=>{const e=[...document.querySelectorAll(selector)].find(e=>e.getBoundingClientRect().width);if(!e)return {selector};const r=e.getBoundingClientRect();return {selector,font:getComputedStyle(e).fontSize,width:r.width,height:r.height};})};});
 try{
- for(const slow of (process.env.BC_VISUAL_ONLY?[]:[false,true])){
+ for(const slow of (process.env.BC_VISUAL_ONLY?[]:process.env.BC_PERF_SMOKE?[false]:[false,true])){
   const context=await browser.newContext({viewport:{width:1366,height:768},serviceWorkers:'block'}),page=await context.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));const cdp=await context.newCDPSession(page);await cdp.send('Performance.enable');await page.addInitScript(()=>performance.setResourceTimingBufferSize(2000));
   if(slow){await cdp.send('Network.enable');await cdp.send('Network.emulateNetworkConditions',{offline:false,downloadThroughput:1600000/8,uploadThroughput:750000/8,latency:150});await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});}
-  for(const access of ['cold','warm']){
+  for(const access of (process.env.BC_PERF_SMOKE?['cold']:['cold','warm'])){
    let start=performance.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);await settle(page);
    const run={slow,access,bootMs:performance.now()-start,subjects:[],errors,bootTiming:await timings(page),bootCpuMs:await cpu(cdp)};results.runs.push(run);
    for(const id of subjects){
@@ -82,7 +82,19 @@ try{
      start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:30000});await settle(page);
      const reopenMs=performance.now()-start;
      run.subjects.push({id,modulesMs,readingMs,fullReadingMs,reopenMs,timing,count:results.catalog[id].length});console.log(JSON.stringify({slow,access,id,modulesMs,readingMs,fullReadingMs,reopenMs}));
-    }catch(e){results.failures.push({slow,access,id,error:e.message.slice(0,280)});run.subjects.push({id,modulesMs,error:e.message.slice(0,280)});console.log(JSON.stringify(run.subjects.at(-1)));await page.screenshot({path:out+'/'+(slow?'slow':'normal')+'-'+access+'-'+id+'-failure.png'});await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);}
+    }catch(e){
+     if(id==='pt'){
+      const diag=await page.evaluate(()=>{
+       const pt=document.querySelector('#subjects > .subject[data-id="pt"]');
+       const mods=[...(pt?.querySelectorAll('.cf-module[data-ptn-module]')||[])].slice(0,3);
+       return {stage:window.BaseCompletaFocusNavigation?.state?.stage,moduleKey:window.BaseCompletaFocusNavigation?.state?.moduleKey,
+        subjectClass:pt?.className,ptModules:mods.map(el=>({id:el.dataset.ptnModule,classes:el.className,headText:el.querySelector('.cf-module-head')?.textContent?.slice(0,100),html:el.querySelector('[data-ptn-host]')?.innerHTML?.slice(0,300)})),
+        tabs:pt?.querySelectorAll('.ptn-tab').length,ready:window.CentralDisciplineLoader?.isReady?.('pt'),rendered:!!window.renderPortugueseMaster,
+        errors:pt?.querySelector('.ptn-loading')?.textContent?.slice(0,200),focusHasModule:document.getElementById('homeView')?.classList.contains('bc-focus-has-module')};
+      });
+      console.log('PT_FOCUS_DIAGNOSTIC '+JSON.stringify(diag));
+     }
+     results.failures.push({slow,access,id,error:e.message.slice(0,280)});run.subjects.push({id,modulesMs,error:e.message.slice(0,280)});console.log(JSON.stringify(run.subjects.at(-1)));await page.screenshot({path:out+'/'+(slow?'slow':'normal')+'-'+access+'-'+id+'-failure.png'});await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);}
     await writeFile(out+'/results.json',JSON.stringify(results,null,2));
    }
   }
