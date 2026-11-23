@@ -108,6 +108,23 @@
    kill(h);
   });
 
+
+  // Nos resumos, "REVISÃO ATIVA" pode aparecer como bateria de perguntas
+  // numeradas em texto (inclusive renderizadas como <h2>), fora do quiz formal.
+  // Só limpar o grupo quando houver ao menos duas perguntas consecutivas;
+  // explicações e orientações da revisão permanecem intactas.
+  const reviewQuestionsTitle=/^(?:revisao ativa|perguntas de revisao|perguntas para revisar|autoavaliacao|teste de autoavaliacao)$/;
+  const numberedPrompt=/^\d{1,2}[.)]\s+.{4,}\?\s*$/;
+  root.querySelectorAll('h2,h3,h4,h5').forEach(h=>{
+   if(!h.isConnected||dentroDaNova(h)||!reviewQuestionsTitle.test(word(h.textContent)))return;
+   const items=[];let next=h.nextElementSibling;
+   while(next&&!dentroDaNova(next)&&/^(?:H[2-6]|P|LI|UL|OL)$/.test(next.tagName)){
+    const value=word(next.textContent);
+    if(!numberedPrompt.test(value))break;
+    items.push(next);next=next.nextElementSibling;
+   }
+   if(items.length>=2){items.forEach(kill);kill(h)}
+  });
   // Algumas apostilas aprovadas possuem baterias certo/errado como títulos
   // enumerados, sem a palavra "Questão" (ADM M02/M04/M05). Preservar
   // definições e listas da teoria; só retirar grupos de 3+ itens resolvidos.
