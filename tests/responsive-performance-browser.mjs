@@ -58,15 +58,22 @@ try{
      const section=page.locator('#subjects > .subject[data-id="'+id+'"]');
      let readingMs,fullReadingMs;
      if(id==='pt'){
-      // Português usa abas nativas Teoria/Revisão, não o leitor modal padrão.
-      const review=section.locator('.ptn-tab').filter({hasText:/Revisão/}).first();
-      await review.waitFor({state:'visible',timeout:15000});await review.click();
-      await section.locator('[data-ptn-host] .ptn-review-grid').first().waitFor({state:'visible',timeout:15000});
-      await settle(page);readingMs=performance.now()-start;
+      // Português atual: Curso Integrado de 24 módulos, leitor em modal.
+      // A aba .ptn-tab pertencia ao currículo legado de 17 módulos.
+      const current=section.locator('.cf-module.bc-focus-current-module[data-pt-current]').first();
+      await current.waitFor({state:'visible',timeout:15000});
+      const moduleId=await current.getAttribute('data-pt-current');
+      const study=current.locator('.pt-cf-button-open[data-pt-cf-open="review"]').first();
+      await study.waitFor({state:'visible',timeout:15000});
+      await study.click();
+      await page.locator('.pt-native-reader .bc-native-article').waitFor({state:'visible',timeout:30000});
+      await readingReady(page);await settle(page);readingMs=performance.now()-start;
+      await closeReader(page);
       const fullStart=performance.now();
-      await section.locator('.ptn-tab').filter({hasText:/^Teoria$/}).first().click();
-      await section.locator('[data-ptn-host] .ptn-session').first().waitFor({state:'visible',timeout:15000});
-      await settle(page);fullReadingMs=performance.now()-fullStart;
+      await page.evaluate(moduleId=>window.CentralPortugueseReader.open(moduleId,'complete'),moduleId);
+      await page.locator('.pt-native-reader .bc-native-article').waitFor({state:'visible',timeout:30000});
+      await readingReady(page);await settle(page);fullReadingMs=performance.now()-fullStart;
+      await closeReader(page);
      }else{
       const button=section.locator('button:visible').filter({hasText:/Revisar conteúdo/}).first();
       await button.waitFor({timeout:15000});await button.click();
@@ -91,8 +98,8 @@ try{
         subjectClass:pt?.className,ptModules:mods.map(el=>({id:el.dataset.ptnModule,classes:el.className,headText:el.querySelector('.cf-module-head')?.textContent?.slice(0,100),html:el.querySelector('[data-ptn-host]')?.innerHTML?.slice(0,300)})),
         tabs:pt?.querySelectorAll('.ptn-tab').length,ready:window.CentralDisciplineLoader?.isReady?.('pt'),rendered:!!window.renderPortugueseMaster,
         errors:pt?.querySelector('.ptn-loading')?.textContent?.slice(0,200),focusHasModule:document.getElementById('homeView')?.classList.contains('bc-focus-has-module'),
-        subjectHTML:pt?.innerHTML?.slice(0,3200),counts:Object.fromEntries(['.ptn-master','.cf-module','.topic-item','.pt-module-card','.module','.cf-modules','.ptn-loading','.subject-body'].map(sel=>[sel,pt?.querySelectorAll(sel)?.length||0])),moduleTitle:document.getElementById('bcFocusModuleLabel')?.textContent,
-        currentModule:pt?.querySelector('.bc-focus-current-module')?.outerHTML?.slice(0,13000),
+        subjectHTML:pt?.innerHTML?.slice(0,700),counts:Object.fromEntries(['.ptn-master','.cf-module','.topic-item','.pt-module-card','.module','.cf-modules','.ptn-loading','.subject-body'].map(sel=>[sel,pt?.querySelectorAll(sel)?.length||0])),moduleTitle:document.getElementById('bcFocusModuleLabel')?.textContent,
+        currentModule:pt?.querySelector('.bc-focus-current-module')?.outerHTML?.slice(0,1200),
         selectedButtons:[...(pt?.querySelector('.bc-focus-current-module')?.querySelectorAll('button')||[])].slice(0,30).map(el=>({text:el.textContent?.trim()?.slice(0,100),cls:el.className,on:el.getAttribute('onclick')}))};
       });
       console.log('PT_FOCUS_DIAGNOSTIC '+JSON.stringify(diag));
