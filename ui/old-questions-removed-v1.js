@@ -45,14 +45,49 @@
  }
  function kill(el){if(el?.isConnected&&!dentroDaNova(el))el.remove()}
  // Questões embutidas na teoria (completa e revisão): o banco externo tem isolamento próprio.
- const theoryRoots='.bc-native-article,.pt-doc,.cf-native-reader article,.cv-reader-article,.adm-native-article,.cpp-native-article,.bc-rlm-article,.bc-info-reader-article,.pt-native-reader article';
+ const theoryRoots='.bc-native-article,.pt-doc,.cf-native-reader article,.cv-reader-article,.adm-native-article,.cpp-native-article,.bc-rlm-article,.bc-info-reader-article,.bc-info-reader-content,.gmf-reader-prose,.pt-native-reader article';
  const practiceTitle=/^(?:(?:\d{1,2})[.):-]?\s*)?(?:questoes(?:\s+(?:internas?|de\s+(?:fixacao|revisao|compreensao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao|compreensao)\b.*|testes?\s+de\s+compreensao\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
  const standaloneQuestion=/^(?:questao|pergunta|item)\s*(?:n[ºo.]?\s*)?\d{1,3}\s*[:.)–-]/i;
  const answerOrAlternative=/^(?:[a-e]\s*[).:-]|gabarito(?:\s+(?:oficial|comentado))?\s*[:–-]|resposta(?:\s+(?:correta|comentada))?\s*[:–-]|comentario(?:\s+da\s+questao)?\s*[:–-])/i;
+
+ // Referências são conteúdo editorial: deslocar os mesmos nós, na mesma ordem,
+ // para o rodapé da seção/capítulo que os contém, sem recriar ou alterar o texto.
+ const referenceTitle=/^(?:\d{1,2}\s*[.)–-]?\s*)?(?:referencias(?:\s+(?:bibliograficas|e fontes(?: de consulta)?|utilizadas))?|bibliografia(?:\s+consultada)?|fontes\s+(?:consultadas|de consulta|bibliograficas|oficiais))(?:\s*[:.])?$/i;
+ const trailingUi='footer,[role="contentinfo"],.bc-info-reader-end,.gmf-reader-done,.bc-native-reader-end,.bc-native-completion,.adm-session-reader-check,.adm-reading-check-list';
+ function moveReferencesToEnd(root){
+  const titles=[...root.querySelectorAll('h2,h3,h4,h5,p')].filter(el=>{
+   if(!el.isConnected||dentroDaNova(el)||el.closest('blockquote,table,.bc-native-toc,[contenteditable]'))return false;
+   if(el.tagName==='P'&&(el.textContent.length>95||el.querySelector('a,table,img')))return false;
+   return referenceTitle.test(word(el.textContent));
+  });
+  titles.forEach(title=>{
+   if(!title.isConnected)return;
+   const parent=title.parentElement;
+   if(!parent||!root.contains(parent))return;
+   const level=/^H[2-5]$/.test(title.tagName)?Number(title.tagName[1]):2;
+   const group=[title];
+   let next=title.nextElementSibling;
+   while(next){
+    if(/^H[1-6]$/.test(next.tagName)&&Number(next.tagName[1])<=level)break;
+    if(next.matches(trailingUi)||dentroDaNova(next))break;
+    group.push(next);next=next.nextElementSibling;
+   }
+   let anchor=null,tail=parent.lastElementChild;
+   while(tail&&tail.matches(trailingUi)){anchor=tail;tail=tail.previousElementSibling}
+   const last=group[group.length-1];
+   if((anchor&&last.nextElementSibling===anchor)||(!anchor&&!last.nextElementSibling))return;
+   group.forEach(node=>parent.insertBefore(node,anchor));
+  });
+ }
  function removeQuestionsFromTheory(root){
   if(!root.isConnected||dentroDaNova(root))return;
   // Os blocos de testes de compreensão de CF e os exercícios em <details> não são teoria.
-  root.querySelectorAll('details.question,section.question,.cf-native-callout.question,.cf-native-callout.answer,.bc-iq,.bc-iq-answer,.cpc-native-question').forEach(kill);
+  root.querySelectorAll('details.question,section.question,.bc-iq,.bc-iq-answer,.cpc-native-question').forEach(kill);
+  // "Pegadinha", "Erro comum" e "Não confundir" são explicações, não questões.
+  root.querySelectorAll('.cf-native-callout.question,.cf-native-callout.answer').forEach(el=>{
+   const label=word(el.querySelector('strong')?.textContent||el.textContent);
+   if(/^(?:teste de compreensao|resposta comentada)\b/.test(label))kill(el);
+  });
   // Se o bloco inteiro é uma seção de questões, retirá-lo antes dos títulos evita caixas vazias.
   root.querySelectorAll('section,article,details').forEach(el=>{
    if(!el.isConnected||dentroDaNova(el))return;
@@ -76,10 +111,29 @@
    if(!el.isConnected||dentroDaNova(el)||el.closest('blockquote,table,.cf-native-table'))return;
    const t=word(el.textContent).slice(0,180);
    if(!standaloneQuestion.test(t))return;
-   let next=el.nextElementSibling;
-   while(next&&/^(?:P|UL|OL|LI)$/.test(next.tagName)&&
-      ((next.tagName==='UL'||next.tagName==='OL')||answerOrAlternative.test(word(next.textContent).slice(0,160)))){
-    const after=next.nextElementSibling;kill(next);next=after;
+   // Quando enunciado, alternativas e gabarito são parágrafos soltos, retirar
+   // a bateria inteira SOMENTE se houver um gabarito/resposta identificável.
+   const trail=[];let next=el.nextElementSibling,hasAnswer=false;
+   while(next&&trail.length<14&&/^(?:P|UL|OL|LI)$/.test(next.tagName)&&!dentroDaNova(next)){
+    const t=word(next.textContent).slice(0,220);
+    if(standaloneQuestion.test(t)||referenceTitle.test(t))break;
+    trail.push(next);
+    if(/^(?:gabarito(?:\s+(?:oficial|comentado))?|resposta(?:\s+(?:correta|comentada))?)\s*[:–-]/.test(t)){
+     hasAnswer=true;
+     const explanation=next.nextElementSibling;
+     if(explanation?.tagName==='P'&&/^(?:explicacao|justificativa|comentario)\s*[:–-]/.test(word(explanation.textContent)))
+      trail.push(explanation);
+     break;
+    }
+    next=next.nextElementSibling;
+   }
+   if(hasAnswer)trail.forEach(kill);
+   else{
+    next=el.nextElementSibling;
+    while(next&&/^(?:P|UL|OL|LI)$/.test(next.tagName)&&
+       ((next.tagName==='UL'||next.tagName==='OL')||answerOrAlternative.test(word(next.textContent).slice(0,160)))){
+     const after=next.nextElementSibling;kill(next);next=after;
+    }
    }
    kill(el);
   });
@@ -100,6 +154,7 @@
     const h=el.querySelector(':scope > h2,:scope > h3,:scope > h4,:scope > summary');
     if(h&&sectionTitles.test(word(h.textContent))&&!/(?:leitura|teoria|revisao da teoria)/.test(word(el.className)))kill(el);
    });
+   moveReferencesToEnd(root);
   });
  }
  function removeAdmM1CompleteImages(){
