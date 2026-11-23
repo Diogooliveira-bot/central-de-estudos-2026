@@ -9,9 +9,8 @@ const source=fs.readFileSync(sourcePath,'utf8');
 const packed=source.match(/ADM_SUBMITTED_REVIEW\[8\]="([^"]+)"/);
 if(!packed)throw new Error('Fonte real da Revisão Guiada ADM M08 não encontrada.');
 const html=gunzipSync(Buffer.from(packed[1],'base64')).toString('utf8');
-const headings=[...html.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)]
- .map(m=>m[1].replace(/<[^>]+>/g,'').trim())
- .filter(title=>/^\d{2}\s+/.test(title));
+const headings=[...html.matchAll(/<h2\b[^>]*>\s*(\d{2}\s+[^<]*?)\s*<\/h2>/gi)]
+ .map(m=>m[1].trim());
 const expected=[
  '01 Por que o Estado precisa ser controlado',
  '02 Formas de classificar o controle',
