@@ -60,12 +60,12 @@ test('ADM M06: Conteúdo Completo permanece sem imagens da Revisão Guiada',asyn
 
 test('ADM M06: manifesto offline e CSS mantêm carregamento responsivo das artes',()=>{
  const manifest=JSON.parse(read('central-offline-files-v66172.json'));
- assert.equal(manifest.build,'20261122-adm-m06-guided-art-v1');
+ assert.equal(manifest.build,'20261123-adm-m08-guided-art-v1');
  for(let i=1;i<=10;i++){
   const n=String(i).padStart(2,'0');
   assert.ok(manifest.files.includes(`/assets/adm/revisao-guiada/m06/ADM-M06-C${n}.webp`));
  }
- assert.ok(manifest.files.some(path=>path.includes('adm-apostila-reading-v1.js?v=20261122admm06arts1')));
+ assert.ok(manifest.files.some(path=>path.includes('adm-apostila-reading-v1.js?v=20261123admm08arts1')));
  const css=read('ui/adm-apostila-reading-v1.css');
  assert.match(css,/adm-guided-review-art img\{[^}]*width:100%;height:auto;max-width:100%/);
  assert.match(css,/@media\(max-width:640px\)[^{]*\{[^}]*adm-guided-review-art/);

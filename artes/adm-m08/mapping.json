@@ -1,0 +1,12 @@
+{
+  "source_review_didactic": "content/adm/adm-review-didactic-m06-m10.js",
+  "source_guided_review": "content/adm/autor-20261110/adm-m08-submitted-review.js",
+  "didactic_sections": [
+    {"title":"O que significa controle administrativo?","guided_chapters":[1,2]},
+    {"title":"Autotutela e controle por recurso","guided_chapters":[3]},
+    {"title":"Controle externo e Tribunais de Contas","guided_chapters":[5,6]},
+    {"title":"Controle interno e responsabilidade institucional","guided_chapters":[4]},
+    {"title":"Controle judicial e participação do cidadão","guided_chapters":[7,8]}
+  ],
+  "additional_integrative_guided_chapters": [9,10]
+}
