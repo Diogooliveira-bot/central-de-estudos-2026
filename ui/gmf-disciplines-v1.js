@@ -45,20 +45,20 @@
       const points = module.focus.map(item => '<li>' + safe(item) + '</li>').join('');
       const attention = module.attention
         ? '<p class="gmf-attention"><b>Ponto de atenção:</b> ' + safe(module.attention) + '</p>' : '';
-      const published = module.id === 'm01';
-      const label = published ? 'Teoria, revisão e 10 questões disponíveis' : 'Roteiro de assuntos · conteúdo em preparação';
+      const published = module.id === 'm01' || (catalog.availableModules?.[course.id] || []).includes(module.id);
+      const label = published ? 'Conteúdo completo e revisão disponíveis' : 'Roteiro de assuntos · conteúdo em preparação';
       const courseId = escapeAttr(course.id);
+      const moduleId = escapeAttr(module.id);
       const buttons = published
-        ? '<div class="gmf-module-actions"><button type="button" data-gmf-action="review" data-gmf-course="' + courseId + '">Abrir revisão guiada</button>' +
-          '<button type="button" data-gmf-action="complete" data-gmf-course="' + courseId + '">Estudar teoria completa</button>' +
-          '<button type="button" data-gmf-action="questions" data-gmf-course="' + courseId + '">Resolver 10 questões autorais</button></div>'
+        ? '<div class="gmf-module-actions"><button type="button" data-gmf-action="review" data-gmf-course="' + courseId + '" data-gmf-module="' + moduleId + '">Abrir revisão guiada</button>' +
+          '<button type="button" data-gmf-action="complete" data-gmf-course="' + courseId + '" data-gmf-module="' + moduleId + '">Estudar teoria completa</button></div>'
         : '';
 
       return '<details class="gmf-module"><summary><span class="gmf-module-number">M' + number +
         '</span><span class="gmf-module-heading"><b>' + safe(module.title) +
         '</b><small>' + label + '</small></span><span class="gmf-chevron" aria-hidden="true">⌄</span></summary>' +
         '<div class="gmf-module-body"><h4>O que estudar neste módulo</h4><ul>' + points + '</ul>' +
-        attention + buttons + '<p class="gmf-unreleased">'+(published?'Os 10 exercícios autorais são corrigidos pelo sistema de questões, conforme as regras do plano. A leitura isolada não equivale à conclusão do módulo.':'Teoria completa, revisão guiada e questões: ainda não disponibilizadas. Este roteiro não conta como módulo concluído.')+'</p></div></details>';
+        attention + buttons + '<p class="gmf-unreleased">'+(published?'Questões do módulo — Em preparação. Os exercícios preliminares não estão disponíveis nesta etapa. A leitura isolada não equivale à conclusão do módulo.':'Questões do módulo — Em preparação. Teoria completa e revisão guiada ainda não disponibilizadas. Este roteiro não conta como módulo concluído.')+'</p></div></details>';
     }).join('');
 
     return '<div class="gmf-course"><div class="gmf-course-intro"><b>' + safe(course.name) +
@@ -69,16 +69,37 @@
       '<div class="gmf-modules">' + cards + '</div></div>';
   }
 
+  // O leitor carrega sob demanda para não interferir nas telas das demais disciplinas.
+  let readerLoading=null;
+  function loadGmfReader(){
+    if(global.GmfCourseReaderV2)return Promise.resolve(global.GmfCourseReaderV2);
+    if(readerLoading)return readerLoading;
+    readerLoading=new Promise((resolve,reject)=>{
+      const script=document.createElement('script');
+      script.src='/ui/gmf-course-reader-v2.js?v=20261122gmfModuleReader1';
+      script.onload=()=>global.GmfCourseReaderV2?resolve(global.GmfCourseReaderV2):reject(new Error('Leitor GMF indisponível.'));
+      script.onerror=()=>reject(new Error('Não foi possível carregar o leitor GMF.'));
+      document.head.appendChild(script);
+    }).catch(error=>{readerLoading=null;throw error});
+    return readerLoading;
+  }
+
   // Event delegation: evita manipulação de JavaScript em atributos onclick.
   document.addEventListener('click',event=>{
-    const button=event.target.closest?.('.gmf-module-actions button[data-gmf-action][data-gmf-course]');
+    const button=event.target.closest?.('.gmf-module-actions button[data-gmf-action][data-gmf-course][data-gmf-module]');
     if(!button)return;
     event.preventDefault();
     const id=button.dataset.gmfCourse;
     const action=button.dataset.gmfAction;
-    if(!ids.has(id))return;
-    if(action==='review'||action==='complete')global.GmfReader?.open(id,action);
-    else if(action==='questions')global.BCQuestoesArea?.openModule(id,1);
+    const module=button.dataset.gmfModule;
+    if(!ids.has(id)||!catalog.subjects.find(subject=>subject.id===id)?.modules.some(item=>item.id===module))return;
+    if(action!=='review'&&action!=='complete')return;
+    const label=button.textContent;
+    button.disabled=true;
+    loadGmfReader().then(reader=>reader.open(id,module,action)).catch(error=>{
+      console.error('[GMF] Falha ao abrir módulo',error);
+      button.textContent='Não foi possível carregar · tentar novamente';
+    }).finally(()=>{button.disabled=false;if(button.isConnected&&button.textContent==='Não foi possível carregar · tentar novamente')return;if(button.isConnected)button.textContent=label});
   });
 
   // A renderização da área Início é executada no runtime nativo por meio de GmfDisciplines.renderMaster.
@@ -92,7 +113,7 @@
         const subtitle = card?.querySelector('small');
         const meta = card?.querySelector('.disc-meta');
         if (subtitle) subtitle.textContent = course.modules.length + ' módulos · roteiro do edital GMF/2023';
-        if (meta) meta.textContent = 'M01 com teoria, revisão e questões · demais módulos em elaboração';
+        if (meta) meta.textContent = (catalog.availableModules?.[course.id]||['m01']).length + ' módulos com teoria e revisão · questões em preparação';
       }
       return result;
     };

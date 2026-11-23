@@ -1,11 +1,12 @@
-/* Catálogo curricular inicial da GMF — apenas roteiros de estudo, NÃO teoria completa. */
+/* Catálogo GMF — materiais completos e revisões guiadas baseados no edital histórico de 2023. */
 (function (global) {
   'use strict';
   global.GmfCourseCatalog = Object.freeze({
   "referenceNotice": "Edital nº 01/2023 — SESEC/SEPOG, de 27/03/2023",
   "referenceUrl": "https://fortaleza.ce.gov.br/images/0001/27_03_2023_GMF.pdf",
   "newNoticePublished": false,
-  "theoryComplete": false,
+  "theoryComplete": true,
+  "availableModules": {"atual":["m01","m02","m03","m04","m05","m06"],"fortaleza":["m01","m02","m03","m04","m05","m06","m07","m08","m09"],"legesp":["m01","m02","m03","m04","m05","m06","m07","m08","m09","m10","m11"],"dh":["m01","m02","m03","m04"]},
   "subjects": [
     {
       "id": "atual",
