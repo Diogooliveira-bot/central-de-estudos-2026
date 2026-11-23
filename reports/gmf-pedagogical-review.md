@@ -221,3 +221,19 @@ M03–M04: 14 capítulos examinados (8 de teoria, 6 de revisão), ambos aprovado
 **Testes técnicos:** análise estática de leitura confirmou os objetos de cada modalidade, títulos, capítulos e recursos no GitHub. Nenhum script automatizado ou navegação autenticada foi executado: este workspace permanece sem checkout e esta rodada não teve evidência de execução de Actions. Leitor, progresso, controle de planos, APIs, segurança e responsividade continuam **PENDENTES** até execução real dos testes. Não foram criadas nem liberadas questões; a situação do bloqueio das 40 questões não foi alterada.
 
 **Próximo módulo pendente:** Legislação Extravagante M05.
+
+
+### M05 — Crimes ambientais — Lei 9.605/1998
+
+**Capítulos examinados:** Conteúdo Completo (4): “Proteção ambiental e responsabilidade” (448 palavras); “Crimes contra fauna e flora” (633); “Poluição, ordenamento e patrimônio” (510); “Sanções, fiscalização e prova” (505). Revisão Guiada (3): “Estrutura da lei” (119); “Responsabilidades” (114); “Fiscalização e pegadinhas” (173).
+
+**Cobertura e qualidade:** explica as três esferas de responsabilidade e responsabilidade da pessoa jurídica, organiza tipos por fauna/flora/poluição/ordenamento, diferencia autorização/licença e requisitos de cada tipo, trata sanções e registro/fiscalização. Inclui aplicação por exemplo, tabelas, sínteses e pontos de prova. A revisão é autônoma e comparativa, prioriza tipos e atualizações legislativas.
+
+**Conferência normativa em fontes oficiais:** Lei 9.605/1998 compilada no Planalto (arts. 3º, 6º, 29, 49, 54, 60, 65 e 67); Lei 15.299/2025 (art. 49, §2º, poda/corte após requerimento fundamentado por risco e ausência de resposta por até 45 dias); Lei 15.190/2025 e promulgação dos vetos parcialmente rejeitados (alterações dos arts. 60 e 67, com vigência já iniciada na data desta revisão); Constituição, art. 225, §3º. Confirmei a regra do art. 49, inclusive laudo e possibilidade de contratação de profissional habilitado, e a redação vigente dos arts. 60 e 67, incluindo dolo e conhecimento da desconformidade no art. 67 e revogação do parágrafo culposo. Fontes: https://www.planalto.gov.br/ccivil_03/leis/l9605.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15299.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15190.htm ; publicação de veto parcialmente rejeitado consultada na Câmara: https://www2.camara.leg.br/legin/fed/lei/2025/lei-15190-8-agosto-2025-797833-promulgacaodevetos-177254-pl.html
+
+**Deficiências/correções:** não identifiquei inexatidão legal comprovada, lacuna pedagógica ou inconsistência relevante entre modalidades. A exceção do art. 49 não é apresentada como licença geral, e o material distingue autos administrativos de responsabilidade criminal. Nenhuma correção de conteúdo necessária.
+
+**Parecer pedagógico: APROVADO sem alteração.** Comparado ao padrão didático das disciplinas de Direito, M05 mantém progressão explicativa, exemplo e quadro, com Revisão Guiada mais concisa e voltada à identificação/memorização.
+
+**Testes/commit:** nenhuma alteração de conteúdo. O parecer foi incluído no relatório neste commit. Testes automatizados, leitor autenticado e execução da aplicação não foram rodados por falta de checkout local e de check de Actions verificado nesta etapa; ficam pendentes, sem declaração de aprovação técnica. Nenhuma questão foi criada ou liberada.
+
