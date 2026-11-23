@@ -63,7 +63,7 @@ test('ADM M08: Conteúdo Completo continua idêntico e sem imagens da revisão',
 
 test('ADM M08: o manifesto offline inclui somente o conjunto de 10 WebP',()=>{
  const manifest=JSON.parse(read('central-offline-files-v66172.json'));
- assert.equal(manifest.build,'20261123-adm-m08-guided-art-v1');
+ assert.equal(manifest.build,'20261122-adm-m05-guided-art-v1');
  for(let i=1;i<=10;i++){
   const n=String(i).padStart(2,'0');
   assert.ok(manifest.files.includes(`/assets/adm/revisao-guiada/m08/ADM-M08-C${n}.webp`));
