@@ -253,3 +253,19 @@ M03–M04: 14 capítulos examinados (8 de teoria, 6 de revisão), ambos aprovado
 
 **Testes/commit:** nenhuma alteração de conteúdo. Parecer registrado neste commit do relatório. Testes automatizados e navegação em execução não foram realizados: não há checkout local e ainda não consultei evidência de workflow para este lote. Situação técnica permanece PENDENTE. Nenhuma questão criada ou liberada.
 
+
+
+### M07 — Estatuto do Desarmamento — Lei 10.826/2003
+
+**Capítulos examinados:** Conteúdo Completo (4): “Objetivos, registro e sistemas” (402 palavras); “Posse e porte: distinção jurídica” (405); “Crimes previstos no Estatuto” (507); “Controle institucional e atuação segura” (377). Revisão Guiada (3): “Registro, posse e porte” (126); “Regras e guardas” (129); “Crimes e cautelas” (223).
+
+**Cobertura e qualidade:** teoria explica SINARM/SIGMA, registro/posse/porte, regime de guardas municipais, tipos penais centrais, fiscalização e cautelas de segurança. Os exemplos ajudam a aplicar conceitos sem promover manuseio de arma. Quadros separam tipos e regimes. A Revisão Guiada concentra contrastes e condições legais para prova; não é cópia textual.
+
+**Conferência de vigência e precisão:** Lei 10.826/2003 compilada no Planalto; Decreto 11.615/2023 (regulamentação, sem assumir tabelas antigas como permanentes); Lei 15.358/2026 (inclusão do art. 21-A, aumento de 2/3 nos arts. 12, 14 e 16 quando presentes os nexos legais com crime/comércio ilícito de entorpecentes); Lei 13.022/2014, art. 5º, VI; STF, ADIs 5.538 e 5.948 e ADC 38 (inconstitucionalidade do critério populacional para porte de guardas, sem eliminação dos demais controles); STF, ADI 3.112 (inconstitucionalidade do art. 21 e dos parágrafos únicos dos arts. 14 e 15). Fontes oficiais: https://www.planalto.gov.br/ccivil_03/leis/2003/l10.826compilado.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11615.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15358.htm ; https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13022.htm ; https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=461415 ; https://portal.stf.jus.br/processos/listarProcessos.asp?classe=ADI&numeroProcesso=3112
+
+**Deficiências/correções:** não identifiquei deficiência comprovada ou erro jurídico que justifique alterar arquivos didáticos. O capítulo sobre porte de guardas distingue retirada do critério populacional de uma autorização sem requisitos; a causa de aumento do art. 21-A não é tratada como automática pela mera presença simultânea de arma e droga.
+
+**Parecer pedagógico: APROVADO sem alteração.** Progressão, exemplos, distinções e sínteses atendem ao padrão didático de Direito; revisão mais curta e direcionada.
+
+**Testes/commit:** conteúdo não alterado; parecer registrado neste commit do relatório. Nenhum script automatizado ou navegação de runtime executados nesta sessão. Sem checkout local/check do Actions consultado, validação técnica fica PENDENTE. Nenhuma questão criada ou liberada.
+
