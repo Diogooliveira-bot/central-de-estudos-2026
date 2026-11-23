@@ -162,3 +162,25 @@ M05–M09: 35 capítulos examinados (20 teoria, 15 revisão); 3 módulos aprovad
 ### Commits e testes
 Correções em commits: M06 revisão `22e5adb89383b57ae5daa991519e28db8275f4ad`; M08 revisão `bcb9c72f63bf9da689fd7bf8a781572856ec61e6`. O relatório registra pareceres, fontes citadas e limitações.
 Não foi possível executar testes locais: o workspace disponível não contém checkout do repositório. O status combinado de checks precisa ser consultado no SHA de conteúdo/relatório após os workflows terminarem; sem evidência, testes permanecem PENDENTES. Navegação autenticada, progresso, controle de plano e interface não foram testados nesta rodada. Nenhuma questão foi criada ou liberada.
+
+
+## Legislação Extravagante — M01–M02 (22/11/2026)
+
+### M01 — Estatuto Geral das Guardas Municipais
+**Capítulos examinados integralmente:** Conteúdo Completo 5 (O papel da Lei 13.022/2014; Princípios mínimos — art. 3º; Competência geral — art. 4º; Competências específicas — art. 5º; Como resolver questões com base na lei); Revisão Guiada 4 (Lei, natureza e função; Princípios mínimos; Competência geral x específica; Atenção à prova).
+**Deficiência encontrada:** faltava atualização posterior relevante sobre nomenclatura institucional.
+**Correção:** acrescentada tese do STF na ADPF 1.214 (2026), vedando substituir a denominação constitucional “Guardas Municipais” por “Polícia Municipal” ou similares. A revisão também distingue essa regra de nomenclatura da atuação de segurança urbana admitida no Tema 656.
+**Fontes oficiais conferidas:** Constituição Federal, art. 144, §8º (Planalto); Lei 13.022/2014 (texto atualizado da Câmara); ADPF 995, ADPF 1.214 e Tema 656 (STF). O STF registra ADPF 1.214 julgada em abril de 2026 e tese contra a substituição do nome institucional; Tema 656 permite ações de segurança urbana, inclusive policiamento ostensivo e comunitário, respeitadas atribuições, sem polícia judiciária e sob controle externo do MP.
+**Parecer pedagógico:** APROVADO após correção. Capítulos completos explicam princípios, competências e exemplos; a revisão compara artigos e traz pegadinhas. Commit M01: `98eafc804baa220f24e7b6b2e7b5ef873cda7f67` (teoria) e `64b32cf8f113e9caab1482469400d1378de93449` (revisão).
+
+### M02 — Lei de Drogas (Lei 11.343/2006)
+**Capítulos examinados integralmente:** Conteúdo Completo 4 (Finalidade e estrutura; Usuário: art. 28 e medidas legais; Tráfico e condutas equiparadas; Procedimento, prova e abordagem responsável); Revisão Guiada 3 (Lei e Sisnad; Art. 28 e art. 33; Atualização e armadilhas).
+**Verificação jurídica oficial:** Planalto confirma Lei 11.343/2006 e inclusão do art. 40-A pela Lei 15.358, de 24/03/2026, em vigor na publicação. Conferi o dispositivo: dobra de penas dos arts. 33–37 depende dos elementos contextuais do caput; parágrafo único traz regra separada de concurso material em emprego de arma de fogo. STF Tema 506 mantém a referência de 40 g ou seis plantas-fêmeas para cannabis como presunção relativa de uso pessoal e afasta efeitos penais do art. 28 para cannabis. ADIs 7.952, 7.956, 7.957 e 7.958 questionam dispositivos da Lei 15.358; a página oficial consultada registra audiência pública, sem decisão cautelar que suspenda a norma localizada nesta consulta.
+**Parecer pedagógico:** APROVADO sem alteração. Teoria explica Sisnad, critérios do art. 28, distinções do art. 33, tráfico privilegiado, procedimento e a atualização de 2026 com ressalvas; revisão é concisa, mas contempla distinções e armadilhas jurídicas centrais. Fontes: Planalto (Leis 11.343 e 15.358), STF (Tema 506 e ADIs 7.952–7.958).
+**Commits:** M02 sem alteração de conteúdo; parecer registrado neste commit. Nenhuma questão criada ou liberada.
+
+### Situação deste lote
+Dois módulos analisados: 9 capítulos de teoria e 7 de revisão, total 16. M01 corrigido e aprovado; M02 aprovado sem alteração. Próximo módulo pendente: Legislação Extravagante M03.
+
+### Verificações técnicas e limites
+A fonte judicial foi consultada diretamente no STF e o texto legal compilado no Planalto. Não há checkout local disponível nesta sessão; os testes de código não foram executados. Checks da branch precisam ser consultados no commit após workflows, não se presume sucesso por ausência de resultado. Leitor, progresso, autenticação e segurança em runtime seguem pendentes.
