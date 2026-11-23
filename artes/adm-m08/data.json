@@ -1,0 +1,337 @@
+{
+  "module": 8,
+  "module_title": "Direito Administrativo",
+  "source": "content/adm/autor-20261110/adm-m08-submitted-review.js",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Por que o Estado precisa ser controlado",
+      "central": "O controle fiscaliza se o poder público respeita o Direito e usa corretamente os recursos e competências que recebeu.",
+      "cards": [
+        [
+          "Finalidade",
+          "Prevenir falhas, corrigir ilegalidades e permitir responsabilização, respeitando as competências de cada órgão."
+        ],
+        [
+          "O que se examina",
+          "Legalidade, legitimidade, economicidade e resultados da gestão pública."
+        ],
+        [
+          "Base constitucional",
+          "A fiscalização é contábil, financeira, orçamentária, operacional e patrimonial (CF, art. 70)."
+        ],
+        [
+          "Pegadinha de prova",
+          "Prestar contas também é dever de quem, mesmo sendo particular, administra recursos públicos (art. 70, parágrafo único)."
+        ]
+      ],
+      "tips": [
+        "Pergunte o que está sendo fiscalizado e qual órgão tem competência para agir.",
+        "Controle busca legalidade e bons resultados; não significa impedir a Administração de atuar."
+      ],
+      "icons": [
+        "dashboard",
+        "magnifier",
+        "federal-law",
+        "people"
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Formas de classificar o controle",
+      "central": "Classifique cada controle por critérios diferentes: quem atua, quando atua, o que examina e qual resultado busca.",
+      "cards": [
+        [
+          "Quem controla?",
+          "Administrativo, legislativo ou judicial: a classificação indica a natureza de quem fiscaliza."
+        ],
+        [
+          "Dentro ou fora?",
+          "Interno ocorre dentro da estrutura controlada; externo vem de estrutura distinta, nos limites legais."
+        ],
+        [
+          "Em que momento?",
+          "Prévio: antes. Concomitante: durante. Posterior: depois da atuação ou do gasto."
+        ],
+        [
+          "Pegadinha de prova",
+          "Os critérios podem se cruzar. Uma auditoria interna pode ser concomitante e examinar legalidade e resultados."
+        ]
+      ],
+      "tips": [
+        "Antes, durante e depois descrevem o momento do controle.",
+        "Interno e externo identificam a estrutura responsável; não são sinônimos de judicial e administrativo."
+      ],
+      "icons": [
+        "council",
+        "split-courts",
+        "calendar-law",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Controle administrativo e autotutela",
+      "central": "A Administração pode rever a própria atuação, mas deve distinguir ilegalidade, mudança de conveniência e defeito corrigível.",
+      "cards": [
+        [
+          "Autotutela",
+          "A Administração fiscaliza e revê seus próprios atos, respeitando direitos, processo devido e segurança jurídica."
+        ],
+        [
+          "Anular × revogar",
+          "Anular: vício de legalidade. Revogar: ato válido que pode ser retirado por conveniência ou oportunidade (Lei 9.784, art. 53)."
+        ],
+        [
+          "Convalidar",
+          "Defeito sanável pode ser corrigido se a lei permitir e não houver lesão ao interesse público nem prejuízo a terceiros (art. 55)."
+        ],
+        [
+          "Pegadinha de prova",
+          "Hierarquia envolve subordinação. Supervisão finalística decorre da lei e da vinculação; recurso impróprio exige previsão legal."
+        ]
+      ],
+      "tips": [
+        "Lei 9.784/1999, âmbito federal, arts. 53 a 55: anulação, decadência e convalidação.",
+        "A Administração revisa atos; o interessado também pode recorrer nos termos legais."
+      ],
+      "icons": [
+        "government-act",
+        "magnifier",
+        "treaty",
+        "court-levels"
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "Controle interno em cada Poder",
+      "central": "Na União, os três Poderes mantêm sistemas integrados de controle interno para avaliar a gestão, verificar a legalidade e apoiar o controle externo.",
+      "cards": [
+        [
+          "Quem mantém?",
+          "Legislativo, Executivo e Judiciário federais mantêm sistemas integrados de controle interno (CF, art. 74)."
+        ],
+        [
+          "Para que serve?",
+          "Avalia metas e resultados, comprova legalidade da gestão e fiscaliza recursos públicos."
+        ],
+        [
+          "Dever de comunicar",
+          "Ao saber de irregularidade ou ilegalidade, o responsável deve dar ciência ao TCU (art. 74, § 1º)."
+        ],
+        [
+          "Pegadinha de prova",
+          "Omissão pode gerar responsabilidade solidária. A CGU atua só no Executivo federal."
+        ]
+      ],
+      "tips": [
+        "CF, art. 74: sistema integrado de controle interno nos três Poderes da União.",
+        "Controle interno também apoia o controle externo; as funções se complementam."
+      ],
+      "icons": [
+        "federal-entity",
+        "dashboard",
+        "regional-appeal",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "Controle externo e Poder Legislativo",
+      "central": "No plano federal, o Congresso exerce o controle externo com auxílio do TCU e também usa instrumentos de fiscalização política.",
+      "cards": [
+        [
+          "Congresso e TCU",
+          "O controle externo da União fica a cargo do Congresso Nacional, com auxílio do TCU (CF, arts. 70 e 71)."
+        ],
+        [
+          "Contas presidenciais",
+          "O TCU emite parecer prévio sobre as contas anuais do Presidente; o Congresso as julga (arts. 71, I, e 49, IX)."
+        ],
+        [
+          "Contas do prefeito",
+          "Para fins eleitorais, a Câmara aprecia as duas contas com auxílio do Tribunal de Contas. O parecer se supera por 2/3 (Tema 835/STF)."
+        ],
+        [
+          "Pegadinha de prova",
+          "O Tribunal de Contas pode imputar débito e multa nos casos legais. Isso não equivale ao julgamento eleitoral das contas do prefeito."
+        ]
+      ],
+      "tips": [
+        "Presidente: parecer prévio do TCU; julgamento anual pelo Congresso.",
+        "Tema 835: contas do prefeito para fins eleitorais; parecer e sanção são funções distintas."
+      ],
+      "icons": [
+        "senate",
+        "federal-law",
+        "state-court",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "Tribunais de Contas: função e competências",
+      "central": "Tribunais de Contas exercem competências constitucionais próprias de controle externo e não integram o Poder Judiciário.",
+      "cards": [
+        [
+          "Competências do TCU",
+          "Aprecia contas do Presidente, julga contas de administradores, audita órgãos e fiscaliza recursos federais (CF, art. 71)."
+        ],
+        [
+          "Atos e sanções",
+          "Pode apreciar admissões e benefícios para registro, aplicar sanções legais e fixar prazo para corrigir ilegalidades."
+        ],
+        [
+          "Contratos",
+          "Sustação: Congresso age primeiro; após 90 dias sem providência, o TCU decide (art. 71, §§ 1º e 2º)."
+        ],
+        [
+          "Pegadinha de prova",
+          "TCU não é Judiciário. Tema 445/STF: análise inicial de aposentadoria em até 5 anos da chegada do processo."
+        ]
+      ],
+      "tips": [
+        "CF, art. 71: verifique a competência específica antes de atribuir uma decisão ao TCU.",
+        "Parecer prévio, julgamento de contas e registro de atos são funções diferentes."
+      ],
+      "icons": [
+        "clipboard",
+        "government-act",
+        "calendar-law",
+        "court"
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Controle judicial e seus limites",
+      "central": "O Judiciário controla a juridicidade de atos administrativos, sem assumir livremente as escolhas legítimas reservadas ao gestor.",
+      "cards": [
+        [
+          "Acesso à Justiça",
+          "Lesão ou ameaça a direito pode ser levada ao Judiciário (CF, art. 5º, XXXV)."
+        ],
+        [
+          "O que pode controlar?",
+          "Competência, finalidade, procedimento, motivação exigida, proporcionalidade e respeito à Constituição e às leis."
+        ],
+        [
+          "Mérito administrativo",
+          "Conveniente e oportuna entre opções legais é escolha da Administração, sujeita aos limites jurídicos."
+        ],
+        [
+          "Pegadinha de prova",
+          "O juiz pode anular escolha ilegal ou desproporcional; não troca uma opção legítima apenas por preferir outra política."
+        ]
+      ],
+      "tips": [
+        "Controle judicial examina juridicidade, não conveniência pessoal do juiz.",
+        "Em regra, não é preciso esgotar recursos administrativos antes de ajuizar ação."
+      ],
+      "icons": [
+        "court",
+        "magnifier",
+        "government-act",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "Controle social e transparência",
+      "central": "Cidadãos e sociedade acompanham a gestão, pedem informações e comunicam irregularidades pelos meios previstos em lei.",
+      "cards": [
+        [
+          "Participação",
+          "A sociedade pode acompanhar gastos, apresentar reclamações e participar de instâncias previstas em lei."
+        ],
+        [
+          "Denúncia ao TCU",
+          "Cidadão, partido, associação ou sindicato pode denunciar irregularidade ao TCU, na forma da lei (CF, art. 74, § 2º)."
+        ],
+        [
+          "Contas municipais",
+          "As contas do Município ficam 60 dias por ano à disposição de contribuintes para exame e questionamento (art. 31, § 3º)."
+        ],
+        [
+          "Pegadinha de prova",
+          "Transparência não libera dados pessoais protegidos. Denúncia inicia apuração; não significa condenação automática."
+        ]
+      ],
+      "tips": [
+        "Controle social depende de informação acessível e participação responsável.",
+        "Acesso à informação convive com sigilo e proteção de dados previstos em lei."
+      ],
+      "icons": [
+        "people",
+        "regional-appeal",
+        "calendar-law",
+        "statute-trap"
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "Uma situação concreta reunindo os controles",
+      "central": "Uma falha em serviço público pode ser examinada por vários controles, cada qual com fundamento e providência próprios.",
+      "cards": [
+        [
+          "Gestão do contrato",
+          "Fiscal e gestor conferem a execução, registram falhas e exigem as medidas previstas no contrato."
+        ],
+        [
+          "Controle interno",
+          "Auditoria verifica pagamentos, riscos e resultados e encaminha irregularidades conforme o dever legal."
+        ],
+        [
+          "Controle externo e social",
+          "Câmara e Tribunal de Contas atuam em suas competências; famílias podem pedir dados e denunciar."
+        ],
+        [
+          "Pegadinha de prova",
+          "Ação judicial pode ocorrer sem esperar todos os outros controles. Vias diferentes podem ser simultâneas e independentes."
+        ]
+      ],
+      "tips": [
+        "Se houver recurso federal transferido, o TCU pode fiscalizar a aplicação (CF, art. 71, VI).",
+        "Diferencie fiscalização, decisão administrativa, sanção e julgamento judicial."
+      ],
+      "icons": [
+        "contract",
+        "dashboard",
+        "senate",
+        "court"
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "Como as modalidades se relacionam",
+      "central": "Para resolver casos, identifique quem controla, o que está sendo examinado e qual providência a lei autoriza.",
+      "cards": [
+        [
+          "Administrativo",
+          "A própria Administração revê atos e recursos, dentro da competência e dos limites legais."
+        ],
+        [
+          "Interno e externo",
+          "Sistemas de cada Poder fiscalizam sua gestão; no plano federal, Congresso atua com auxílio do TCU."
+        ],
+        [
+          "Judicial e social",
+          "Judiciário aprecia lesões a direitos; cidadãos fiscalizam por informação, participação e denúncia."
+        ],
+        [
+          "Pegadinha de prova",
+          "Mais de um controle pode atuar sobre o mesmo fato; competência, defesa, motivação e segurança jurídica continuam valendo."
+        ]
+      ],
+      "tips": [
+        "Use três perguntas: quem controla, qual é o objeto e que providência pode adotar?",
+        "Os controles se complementam; um não transforma automaticamente o outro em julgamento."
+      ],
+      "icons": [
+        "council",
+        "federal-entity",
+        "people",
+        "statute-trap"
+      ]
+    }
+  ]
+}

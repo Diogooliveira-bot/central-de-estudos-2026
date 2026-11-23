@@ -1,5 +1,5 @@
 {
-  "build": "20261122-adm-m06-guided-art-v1",
+  "build": "20261122-adm-m05-guided-art-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -264,7 +264,7 @@
     "/ui/cpc-apostila-reading-v1.css?v=20261120leiseca1",
     "/ui/law-inline-v1.js?v=20261120leiseca1",
     "/content/cpc/cpc-reading-laws-v1.js?v=20261107cpc2",
-    "/ui/adm-apostila-reading-v1.js?v=20261122admm06arts1",
+    "/ui/adm-apostila-reading-v1.js?v=20261123admm08arts1",
     "/assets/adm/revisao-guiada/m05/ADM-M05-C01.webp",
     "/assets/adm/revisao-guiada/m05/ADM-M05-C02.webp",
     "/assets/adm/revisao-guiada/m05/ADM-M05-C03.webp",
@@ -333,6 +333,16 @@
     "/assets/adm/revisao-guiada/m06/ADM-M06-C07.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C08.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C09.webp",
-    "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp"
+    "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C01.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C02.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C03.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C04.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C05.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C06.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C07.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C08.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C09.webp",
+    "/assets/adm/revisao-guiada/m08/ADM-M08-C10.webp"
   ]
 }
