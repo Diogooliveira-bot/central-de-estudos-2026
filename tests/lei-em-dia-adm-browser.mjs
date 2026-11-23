@@ -103,6 +103,7 @@ try{
   const module=LAW_MODULE_LIST.find(m=>m.discipline==="adm"&&m.questionIds.length);
   centralOpenModule(module.id,"adm",true);
  });
+ await adminPage.locator(".bc-led-more-actions summary").click();
  await adminPage.locator(".admin-edit-button").first().click();
  await adminPage.locator("#admin-statement").fill("A Administração Pública observará o princípio da legalidade ao atuar.");
  await adminPage.locator("#admin-explanation").fill("Explicação corrigida durante o teste de interface.");
