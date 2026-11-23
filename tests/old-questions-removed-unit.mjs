@@ -110,10 +110,10 @@ test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei
  const index=read('index.html'),boot=read('central-v119.html'),sw=read('sw.js');
  const man=JSON.parse(read('central-offline-files-v66172.json'));
  const vercel=JSON.parse(read('vercel.json'));
- assert.match(index,/ui\/old-questions-removed-v1\.js\?v=20261121-theory-clean-v1/);
+ assert.match(index,/ui\/old-questions-removed-v1\.js\?v=20261123-references-end-v1/);
  assert.match(index,/ui\/old-questions-removed-v1\.css\?v=20261115-responsive-v15/);
  assert.match(man.build,/^20\d{6}-[a-z0-9-]+$/);
- assert(man.files.includes('/ui/old-questions-removed-v1.js?v=20261121-theory-clean-v1'));
+ assert(man.files.includes('/ui/old-questions-removed-v1.js?v=20261123-references-end-v1'));
  assert(boot.includes("var BUILD='"+man.build+"'"));
  assert(sw.includes("var CACHE='central-"+man.build+"'"));
  assert(sw.includes('central-offline-files-v66172.json?v='+man.build));
@@ -121,4 +121,67 @@ test('bootstrap e cache ativam a retirada das antigas sem tocar nas rotas da Lei
   assert(!(vercel.redirects||[]).some(x=>x.source===route),'rota preservada: '+route);
  assert.match(read('ui/cf-native-study-v2.js'),/function openDecorando\(n\)\{const topic=/);
  assert.match(read('ui/cpp-native-study-v1.js'),/\+leiEmDia\(n\)\+linksSlot\(n\)\+/);
+});
+
+
+test('referências são deslocadas ao final sem editar ou perder nenhum trecho',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<h2>1. Introdução</h2><p id="teoria">Teoria intacta.</p>'
+  +'<h2 id="refs">12. REFERÊNCIAS E FONTES DE CONSULTA</h2>'
+  +'<p id="fonte1">[1] Constituição Federal, art. 5º.</p><p id="fonte2">[2] STF, jurisprudência.</p>'
+  +'<h2 id="sintese">13. Síntese final</h2><p id="resumo">Síntese intacta.</p>'
+  +'<footer id="fim">Finalizar leitura</footer>';
+ const before={ref:article.querySelector('#refs'),fonte1:article.querySelector('#fonte1'),fonte2:article.querySelector('#fonte2')};
+ d.body.appendChild(article);await delay(180);
+ const ids=[...article.children].map(el=>el.id).filter(Boolean);
+ assert.deepEqual(ids,['teoria','sintese','resumo','refs','fonte1','fonte2','fim']);
+ assert.strictEqual(article.querySelector('#refs'),before.ref);
+ assert.strictEqual(article.querySelector('#fonte1'),before.fonte1);
+ assert.strictEqual(article.querySelector('#fonte2'),before.fonte2);
+ assert.match(article.textContent,/Teoria intacta|Síntese intacta|Constituição Federal|jurisprudência/);
+ dom.window.BCQuestionsRemovedUI.sweep();
+ assert.deepEqual([...article.children].map(el=>el.id).filter(Boolean),ids,'nova varredura não deve deslocar novamente');
+ dom.window.close();
+});
+
+test('fontes do capítulo de Português também vão ao fim, sem mexer nos exemplos',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('div');article.className='pt-doc';
+ article.innerHTML='<h2>Concordância</h2><p>Exemplo didático mantido.</p><h3 id="bibliografia">Bibliografia</h3>'
+ +'<p id="obra">Obra de consulta.</p><h3 id="revisao">Revisão teórica</h3><p id="explicacao">Explicação preservada.</p>';
+ d.body.append(article);await delay(180);
+ assert.deepEqual([...article.children].map(e=>e.id).filter(Boolean),['revisao','explicacao','bibliografia','obra']);
+ assert.match(article.textContent,/Exemplo didático mantido|Explicação preservada|Obra de consulta/);
+ dom.window.close();
+});
+
+test('pegadinha e não confundir são teoria; teste de compreensão e resposta do quiz não são',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<p class="cf-native-callout question" id="pegadinha"><strong>Pegadinha.</strong> Atenção ao prazo.</p>'
+ +'<p class="cf-native-callout question" id="erro"><strong>Erro comum.</strong> Explicação necessária.</p>'
+ +'<p class="cf-native-callout answer" id="distinguir"><strong>Não confundir.</strong> Direitos distintos.</p>'
+ +'<p class="cf-native-callout question" id="teste"><strong>Teste de compreensão.</strong> Pergunta interna.</p>'
+ +'<p class="cf-native-callout answer" id="gabarito"><strong>Resposta comentada.</strong> Questão antiga.</p>';
+ d.body.append(article);await delay(180);
+ assert.ok(article.querySelector('#pegadinha'));
+ assert.ok(article.querySelector('#erro'));
+ assert.ok(article.querySelector('#distinguir'));
+ assert.equal(article.querySelector('#teste'),null);
+ assert.equal(article.querySelector('#gabarito'),null);
+ dom.window.close();
+});
+
+test('bloco de questão em parágrafos sai até o gabarito, sem eliminar teoria posterior',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<p>Regra teórica anterior.</p><p>Questão 7 — DIFÍCIL</p>'
+ +'<p>Enunciado do exercício.</p><p>A) alternativa um</p><p>B) alternativa dois</p>'
+ +'<p>Gabarito: B</p><p>Explicação: alternativa correta.</p>'
+ +'<h2>Próxima parte</h2><p>Teoria posterior intocada.</p>';
+ d.body.append(article);await delay(180);
+ assert.doesNotMatch(article.textContent,/Questão 7|Enunciado do exercício|alternativa um|Gabarito: B|alternativa correta/);
+ assert.match(article.textContent,/Regra teórica anterior|Teoria posterior intocada/);
+ dom.window.close();
 });
