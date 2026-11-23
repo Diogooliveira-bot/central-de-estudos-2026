@@ -184,3 +184,40 @@ Dois módulos analisados: 9 capítulos de teoria e 7 de revisão, total 16. M01 
 
 ### Verificações técnicas e limites
 A fonte judicial foi consultada diretamente no STF e o texto legal compilado no Planalto. Não há checkout local disponível nesta sessão; os testes de código não foram executados. Checks da branch precisam ser consultados no commit após workflows, não se presume sucesso por ausência de resultado. Leitor, progresso, autenticação e segurança em runtime seguem pendentes.
+
+
+## Legislação Extravagante — M03–M04 (22/11/2026)
+
+Leitura integral dos arquivos de Conteúdo Completo e Revisão Guiada; títulos, capítulos e contagem efetiva obtidos dos arquivos da branch. Avaliação qualitativa: cobertura, explicação para iniciantes, exemplos, distinções, exceções, sínteses e utilidade de revisão. Comparação pelo padrão pedagógico consolidado nos módulos jurídicos da Central: exposição progressiva, aplicação/exemplos, quadros para contrastes relevantes, pontos de atenção e revisão mais curta organizada por recuperação e memorização. Não alterei conteúdo dos módulos neste lote.
+
+### M03 — Crimes de preconceito — Lei 7.716/1989
+
+**Capítulos examinados:** Conteúdo Completo (4): “Finalidade e âmbito de proteção” (423 palavras); “Condutas discriminatórias previstas em lei” (506); “Injúria racial e Lei 14.532/2023” (508); “Atuação institucional e pontos de atenção” (419). Revisão Guiada (3): “Lei vigente” (123); “Tipos diferentes” (127); “Pontos de atenção” (177).
+
+**Cobertura e qualidade:** a teoria parte da finalidade e dos motivos protegidos, organiza os tipos específicos por situações, aprofunda a distinção entre injúria racial (art. 2º-A) e art. 20, trata das alterações de 2023, agravantes e consequências procedimentais e fecha com atuação institucional sem antecipação de juízo de culpa. Há exemplos contextualizados, quadro comparativo e sínteses. A revisão é própria: transforma a lei em sequência de identificação, contraste de tipos e lembretes de prova, em vez de reproduzir a aula.
+
+**Fontes oficiais verificadas nesta execução:** Lei 7.716/1989 compilada no Planalto (arts. 1º, 2º-A, 3º–14, 20 e 20-A–D); Lei 14.532/2023 no Planalto (incluindo redação do art. 140, §3º, do CP); Constituição, art. 5º, XLII; STF, HC 154.248. Confirmei a redação do art. 2º-A (motivos, pena de 2 a 5 anos e multa, aumento de metade no concurso de duas ou mais pessoas), a regra do art. 20-C como diretriz interpretativa e a distinção entre as hipóteses dos arts. 20-A e 20-B. Não encontrei referência normativa de 2025/2026 neste módulo que exigisse atualização.
+
+**Deficiências/correções:** não identifiquei deficiência comprovada. Nenhuma alteração de conteúdo necessária.
+
+**Parecer pedagógico: APROVADO sem alteração.** Fontes: https://www.planalto.gov.br/ccivil_03/leis/l7716.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14532.htm ; https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm ; https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=475646
+
+### M04 — Estatuto da Criança e do Adolescente — Lei 8.069/1990
+
+**Capítulos examinados:** Conteúdo Completo (4): “Proteção integral e sujeitos de direitos” (446 palavras); “Direitos fundamentais e prioridade” (493); “Medidas de proteção e ato infracional” (504); “Rede de proteção e atuação municipal” (588). Revisão Guiada (3): “Conceitos e idades” (108); “Direitos e medidas” (122); “Rede e armadilhas” (163).
+
+**Cobertura e qualidade:** a teoria constrói proteção integral, faixas etárias e prioridade absoluta; aplica direitos fundamentais e atualizações legislativas; separa medidas protetivas de medidas socioeducativas e diferencia criança/adolescente; explica rede, competência do Conselho Tutelar e Conselho dos Direitos, e cautelas de atuação. Traz exemplos, quadros de comparação, exceções/limites de competência e sínteses. A revisão seleciona idades, medidas, órgãos, vigência e condutas institucionais, com formato próprio e utilizável para memorização.
+
+**Verificação jurídica oficial:** ECA compilado no Planalto; Constituição, art. 227; Lei 12.594/2012 (SINASE); Lei 15.413, de 21/05/2026 (art. 11-A do ECA, saúde mental, vigência na publicação); Lei 15.487, de 06/08/2026 (alterações no ECA sobre crimes de violência sexual, inclusive definições de conteúdo digital/gerado por IA no art. 241-E); Lei 15.512, de 22/09/2026 (nova redação do art. 4º inclui natureza entre os direitos com prioridade absoluta); Lei 15.426, de 03/06/2026 (deveres funcionais dos Conselhos dos Direitos, não do Conselho Tutelar); e Lei 15.450, de 30/06/2026. Esta última foi publicada em 01/07/2026 e prevê vacância de 180 dias: seu art. 14, §6º, ainda não está vigente em 22/11/2026. A distinção entre publicação e vigência está correta no material. Fontes consultadas diretamente: Planalto e legislação federal do Senado para confirmação complementar.
+
+**Deficiências/correções:** não encontrei erro jurídico ou factual comprovado nem lacuna pedagógica que justificasse mudança. Os tópicos de legislação recente são apresentados como atualizações posteriores ao edital de 2023, sem reescrever o edital histórico. O tratamento da atuação municipal não confunde proteção imediata com atribuições investigativas ou decisórias.
+
+**Parecer pedagógico: APROVADO sem alteração.** Fontes: https://www.planalto.gov.br/ccivil_03/leis/l8069.htm ; https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm ; https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12594.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15413.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15487.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15512.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15426.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15450.htm
+
+### Resultado do lote e validação
+
+M03–M04: 14 capítulos examinados (8 de teoria, 6 de revisão), ambos aprovados sem alteração. Pareceres registrados neste commit do relatório; não houve commit artificial de conteúdo.
+
+**Testes técnicos:** análise estática de leitura confirmou os objetos de cada modalidade, títulos, capítulos e recursos no GitHub. Nenhum script automatizado ou navegação autenticada foi executado: este workspace permanece sem checkout e esta rodada não teve evidência de execução de Actions. Leitor, progresso, controle de planos, APIs, segurança e responsividade continuam **PENDENTES** até execução real dos testes. Não foram criadas nem liberadas questões; a situação do bloqueio das 40 questões não foi alterada.
+
+**Próximo módulo pendente:** Legislação Extravagante M05.
