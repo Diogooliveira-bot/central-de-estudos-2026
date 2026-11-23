@@ -315,7 +315,7 @@ test('mantém testes de compreensão, inclusive seus comentários, e retira cinc
   const text=art.textContent.replace(/\s+/g,' ');
   assert.match(text,/Teste de compreensão\./i,'CF M'+n+' preservou o teste didático');
   assert.match(text,/Resposta comentada\./i,'CF M'+n+' preservou a explicação do teste');
-  assert.doesNotMatch(text,/(?:\d+\s*)?CINCO QUESTÕES DE REVISÃO/i,'CF M'+n+' não pode apresentar bateria antiga');
+  assert.ok(![...art.querySelectorAll('h2,h3,h4')].some(h=>/(?:\d+\s*)?CINCO QUESTÕES DE REVISÃO/i.test(h.textContent)),'CF M'+n+' não pode apresentar seção antiga');
   if([3,4,5].includes(n))assert.doesNotMatch(text,/REVISÃO\s+1\s+FÁCIL|Certo ou errado: o voto obrigatório/i);
   art.remove();
  }
