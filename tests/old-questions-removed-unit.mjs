@@ -213,3 +213,18 @@ test('baterias certo/errado em texto são removidas; quadros da teoria permanece
  assert.match(article.textContent,/Definição importante|Próximo assunto|Explicação íntegra/);
  dom.window.close();
 });
+
+
+test('CF remove revisão ativa que contém perguntas numeradas sem apagar pegadinhas e artigos',async()=>{
+ const dom=fixture(),d=dom.window.document;
+ const article=d.createElement('article');article.className='bc-native-article';
+ article.innerHTML='<h2>PEGADINHAS DE PROVA</h2><p>Regra jurídica preservada.</p>'
+ +'<h2>REVISÃO ATIVA</h2>'
+ +'<h2>1. Quais são os fundamentos da ordem econômica?</h2>'
+ +'<h2>2. Como atua a fiscalização estatal?</h2>'
+ +'<h2>3. Qual é a regra constitucional da atividade econômica?</h2>';
+ d.body.append(article);await delay(180);
+ assert.doesNotMatch(article.textContent,/REVISÃO ATIVA|Quais são os fundamentos|Como atua a fiscalização|Qual é a regra constitucional/);
+ assert.match(article.textContent,/PEGADINHAS DE PROVA|Regra jurídica preservada/);
+ dom.window.close();
+});
