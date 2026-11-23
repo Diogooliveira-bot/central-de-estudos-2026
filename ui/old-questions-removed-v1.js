@@ -46,7 +46,7 @@
  function kill(el){if(el?.isConnected&&!dentroDaNova(el))el.remove()}
  // Questões embutidas na teoria (completa e revisão): o banco externo tem isolamento próprio.
  const theoryRoots='.bc-native-article,.pt-doc,.cf-native-reader article,.cv-reader-article,.adm-native-article,.cpp-native-article,.bc-rlm-article,.bc-info-reader-article,.bc-info-reader-content,.gmf-reader-prose,.pt-native-reader article';
- const practiceTitle=/^(?:\d{1,2}[.):-]?\s*){0,2}(?:questoes(?:\s+(?:internas?(?:\s+de\s+fixacao)?|de\s+(?:fixacao|revisao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|(?:cinco|5)\s+questoes?\s+de\s+revisao\b.*|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao)\b.*|teste\s+rapido\b.*|teste\s+final\s+autoral\b.*|julgue\s+certo\s+ou\s+errado\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
+ const practiceTitle=/^(?:\d{1,2}[.):-]?\s*){0,2}(?:questoes(?:\s+(?:internas?(?:\s+de\s+fixacao)?|de\s+(?:fixacao|revisao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|(?:cinco|5)\s+questoes?\s+de\s+revisao\b.*|revisao\s+\d{1,2}\s+(?:facil|media|dificil)\b.*|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao)\b.*|teste\s+rapido\b.*|teste\s+final\s+autoral\b.*|julgue\s+certo\s+ou\s+errado\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
  const standaloneQuestion=/^(?:questao|pergunta|item)\s*(?:n[ºo.]?\s*)?\d{1,3}\s*[:.)–—-]/i;
  const answerOrAlternative=/^(?:[a-e]\s*[).:-]|gabarito(?:\s+(?:oficial|comentado))?\s*[:–-]|resposta(?:\s+(?:correta|comentada))?\s*[:–-]|comentario(?:\s+da\s+questao)?\s*[:–-])/i;
 
