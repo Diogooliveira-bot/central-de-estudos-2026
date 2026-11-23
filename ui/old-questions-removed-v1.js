@@ -47,7 +47,7 @@
  // Questões embutidas na teoria (completa e revisão): o banco externo tem isolamento próprio.
  const theoryRoots='.bc-native-article,.pt-doc,.cf-native-reader article,.cv-reader-article,.adm-native-article,.cpp-native-article,.bc-rlm-article,.bc-info-reader-article,.bc-info-reader-content,.gmf-reader-prose,.pt-native-reader article';
  const practiceTitle=/^(?:(?:\d{1,2})[.):-]?\s*)?(?:questoes(?:\s+(?:internas?|de\s+(?:fixacao|revisao|compreensao|prova|concursos?)|comentadas?|autorais?|para\s+(?:praticar|resolver)))?(?:\s*[-–—:(]\s*.*)?|questao\s+\d+\b.*|exercicios?\s+(?:de\s+)?(?:fixacao|revisao|compreensao)\b.*|testes?\s+de\s+compreensao\b.*|perguntas?\s+de\s+revisao\b.*|bateria\s+de\s+questoes\b.*)$/i;
- const standaloneQuestion=/^(?:questao|pergunta|item)\s*(?:n[ºo.]?\s*)?\d{1,3}\s*[:.)–-]/i;
+ const standaloneQuestion=/^(?:questao|pergunta|item)\s*(?:n[ºo.]?\s*)?\d{1,3}\s*[:.)–—-]/i;
  const answerOrAlternative=/^(?:[a-e]\s*[).:-]|gabarito(?:\s+(?:oficial|comentado))?\s*[:–-]|resposta(?:\s+(?:correta|comentada))?\s*[:–-]|comentario(?:\s+da\s+questao)?\s*[:–-])/i;
 
  // Referências são conteúdo editorial: deslocar os mesmos nós, na mesma ordem,
