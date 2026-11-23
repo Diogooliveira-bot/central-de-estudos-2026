@@ -225,7 +225,7 @@ M03–M04: 14 capítulos examinados (8 de teoria, 6 de revisão), ambos aprovado
 
 ### M05 — Crimes ambientais — Lei 9.605/1998
 
-**Capítulos examinados:** Conteúdo Completo (4): “Proteção ambiental e responsabilidade” (448 palavras); “Crimes contra fauna e flora” (633); “Poluição, ordenamento e patrimônio” (510); “Sanções, fiscalização e prova” (505). Revisão Guiada (3): “Estrutura da lei” (119); “Responsabilidades” (114); “Fiscalização e pegadinhas” (173).
+**Capítulos examinados:** Conteúdo Completo (4): “Proteção ambiental e responsabilidade” (450 palavras); “Crimes contra fauna e flora” (609); “Poluição, ordenamento e patrimônio” (444); “Sanções, fiscalização e prova” (483). Revisão Guiada (3): “Estrutura da lei” (102); “Responsabilidades” (116); “Fiscalização e pegadinhas” (167).
 
 **Cobertura e qualidade:** explica as três esferas de responsabilidade e responsabilidade da pessoa jurídica, organiza tipos por fauna/flora/poluição/ordenamento, diferencia autorização/licença e requisitos de cada tipo, trata sanções e registro/fiscalização. Inclui aplicação por exemplo, tabelas, sínteses e pontos de prova. A revisão é autônoma e comparativa, prioriza tipos e atualizações legislativas.
 
