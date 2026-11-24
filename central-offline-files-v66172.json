@@ -1,5 +1,5 @@
 {
-  "build": "20261124-concursos-homolog-v7",
+  "build": "20261124-concursos-homolog-v8",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -335,7 +335,7 @@
     "/assets/adm/revisao-guiada/m06/ADM-M06-C09.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp",
     "/ui/contest-admin-form.js?v=20261124r1",
-    "/ui/concursos-catalog-v1.js?v=20261124r1",
+    "/ui/concursos-catalog-v1.js?v=20261124r2",
     "/ui/concursos-catalog-v1.css?v=20261123concursos2"
   ]
 }
