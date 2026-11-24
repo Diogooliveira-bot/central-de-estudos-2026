@@ -14,6 +14,14 @@ function getCatalog() {
   return context.window.GmfCourseCatalog;
 }
 
+test('cartões GMF abrem o catálogo próprio antes da navegação geral', () => {
+  assert.match(script, /data-study-open-subject/);
+  assert.match(script, /document\.addEventListener\('click',[\s\S]*?event\.stopImmediatePropagation\(\)[\s\S]*?openCourse\(id\)[\s\S]*?,\s*true\)/);
+  assert.match(script, /global\.GmfDisciplines = Object\.freeze\([\s\S]*?openCourse,closeCourse\)/);
+  assert.match(script, /content\.innerHTML = renderMaster\(course\)/);
+  assert.match(script, /gmf-course-browser-back/);
+});
+
 test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e revisão', () => {
   const catalog = getCatalog();
   assert.equal(catalog.subjects.length, 4);

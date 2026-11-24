@@ -69,6 +69,70 @@
       '<div class="gmf-modules">' + cards + '</div></div>';
   }
 
+  // Catálogo GMF próprio: as disciplinas GMF não possuem cartões legados em #subjects.
+  // Abrimos a estrutura existente sem enviar o aluno ao foco de uma disciplina ausente.
+  let courseOverlay = null;
+  let focusBeforeCourse = null;
+  function closeCourse() {
+    if (!courseOverlay) return;
+    const overlay = courseOverlay;
+    courseOverlay = null;
+    overlay.remove();
+    document.body.classList.remove('gmf-course-browser-open');
+    document.removeEventListener('keydown', onCourseKey);
+    if (focusBeforeCourse?.isConnected) focusBeforeCourse.focus();
+    focusBeforeCourse = null;
+  }
+  function onCourseKey(event) {
+    if (event.key === 'Escape') { event.preventDefault(); closeCourse(); }
+  }
+  function openCourse(id) {
+    const course = catalog.subjects.find(subject => subject.id === id);
+    if (!course) return false;
+    closeCourse();
+    focusBeforeCourse = document.activeElement;
+    const overlay = document.createElement('div');
+    overlay.className = 'gmf-course-browser-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Módulos de ' + course.name);
+    const box = document.createElement('section');
+    box.className = 'gmf-course-browser-box';
+    const header = document.createElement('header');
+    header.className = 'gmf-course-browser-header';
+    const back = document.createElement('button');
+    back.type = 'button'; back.className = 'gmf-course-browser-back';
+    back.textContent = '← Voltar às disciplinas';
+    back.addEventListener('click', closeCourse);
+    const title = document.createElement('h1');
+    title.textContent = course.name;
+    header.append(back, title);
+    const content = document.createElement('div');
+    content.className = 'gmf-course-browser-content';
+    content.innerHTML = renderMaster(course);
+    box.append(header, content);
+    overlay.appendChild(box);
+    overlay.addEventListener('click', event => { if (event.target === overlay) closeCourse(); });
+    document.body.appendChild(overlay);
+    document.body.classList.add('gmf-course-browser-open');
+    document.addEventListener('keydown', onCourseKey);
+    courseOverlay = overlay;
+    back.focus();
+    return true;
+  }
+
+  // Executa antes da navegação geral: as matérias GMF usam este catálogo próprio.
+  document.addEventListener('click', event => {
+    const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+    const trigger = target?.closest('[data-study-open-subject]');
+    if (!trigger) return;
+    const id = trigger.dataset.studyOpenSubject || trigger.dataset.id;
+    if (!ids.has(id)) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    openCourse(id);
+  }, true);
+
   // O leitor carrega sob demanda para não interferir nas telas das demais disciplinas.
   let readerLoading=null;
   function loadGmfReader(){
@@ -146,6 +210,11 @@
     '.disc-card[data-id="fortaleza"],.subject[data-id="fortaleza"]{--discipline-accent:#438a80;--discipline-accent-soft:rgba(67,138,128,.10)}',
     '.disc-card[data-id="legesp"],.subject[data-id="legesp"]{--discipline-accent:#506a92;--discipline-accent-soft:rgba(80,106,146,.10)}',
     '.disc-card[data-id="dh"],.subject[data-id="dh"]{--discipline-accent:#6476a3;--discipline-accent-soft:rgba(100,118,163,.10)}',
+    'body.gmf-course-browser-open{overflow:hidden}.gmf-course-browser-overlay{position:fixed;inset:0;z-index:2147482800;background:rgba(16,31,44,.65);padding:16px;display:grid;place-items:center}',
+    '.gmf-course-browser-box{background:var(--panel,#fff);color:var(--text,#223344);height:min(94vh,900px);width:min(980px,100%);border-radius:14px;overflow:auto;box-shadow:0 18px 48px rgba(0,0,0,.24)}',
+    '.gmf-course-browser-header{position:sticky;top:0;z-index:1;background:var(--panel,#fff);display:flex;align-items:center;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line,#dfe5ed)}.gmf-course-browser-header h1{font-size:18px;line-height:1.35;margin:0}',
+    '.gmf-course-browser-back{flex:0 0 auto;background:var(--soft,#f6f8fa);color:var(--text,#243244);border:1px solid var(--line,#dbe2ea);border-radius:8px;padding:10px 12px;cursor:pointer;font:600 12px system-ui}.gmf-course-browser-back:focus-visible{outline:2px solid #426f93;outline-offset:2px}.gmf-course-browser-content{padding:16px}',
+    '@media(max-width:600px){.gmf-course-browser-overlay{padding:0}.gmf-course-browser-box{height:100dvh;width:100%;border-radius:0}.gmf-course-browser-header{align-items:flex-start;flex-direction:column;gap:9px;padding:12px}.gmf-course-browser-content{padding:12px}}',
     '.gmf-course{font:inherit;color:var(--text,#283647);max-width:100%;overflow-wrap:anywhere}',
     '.gmf-course-intro{padding:18px;border:1px solid var(--line,#dce3ea);border-radius:12px;background:var(--panel,#fff);margin-bottom:12px}',
     '.gmf-course-intro>b{font-size:17px}.gmf-course-intro p{font-size:13px;line-height:1.65;margin:9px 0}',
@@ -165,7 +234,7 @@
   ].join('');
   document.head.appendChild(style);
 
-  global.GmfDisciplines = Object.freeze({installed:true,subjectIds:Array.from(ids),moduleCount:catalog.subjects.reduce((sum,course)=>sum+course.modules.length,0),renderMaster:(id)=>{const course=catalog.subjects.find(s=>s.id===id);return course?renderMaster(course):''}});
+  global.GmfDisciplines = Object.freeze({installed:true,subjectIds:Array.from(ids),moduleCount:catalog.subjects.reduce((sum,course)=>sum+course.modules.length,0),renderMaster:(id)=>{const course=catalog.subjects.find(s=>s.id===id);return course?renderMaster(course):''},openCourse,closeCourse});
   global.GmfStudyObjective?.sync?.();
   try { global.renderAll?.(); global.renderDisciplineGrid?.(); } catch (error) {
     console.error('[GMF] Não foi possível atualizar a lista de disciplinas',error);
