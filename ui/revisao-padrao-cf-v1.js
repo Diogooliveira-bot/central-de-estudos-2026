@@ -151,11 +151,83 @@
       overlay.dataset.bcLei = n ? 'ok' : 'sem-citacoes';
     } catch (e) { overlay.dataset.bcLei = 'indisponivel'; }
   }
+
+  // Somente fontes do próprio material de revisão: jamais consultar a teoria completa.
+  function reviewChecklistSource(overlay) {
+    if (!isReview(overlay)) return null;
+    const article = overlay.querySelector('.bc-native-article');
+    if (!article?.querySelectorAll) return null;
+    const label = overlay.querySelector('.bc-native-reader-title small,.bc-native-reader-head small')?.textContent || '';
+    const info = identify(label);
+    const cpc = article.querySelector('.cpc-didactic-review[data-cpc-review]');
+    let disc, n, headings;
+    if (cpc && article.querySelector('[data-cpc-apostila="summary"]')) {
+      disc = 'cpc'; n = Number(cpc.dataset.cpcReview);
+      headings = [...cpc.querySelectorAll('.cpc-study-step > summary > strong')];
+    } else if (info?.disc === 'adm' || info?.disc === 'cpp') {
+      disc = info.disc; n = info.n;
+      const source = article.querySelector(disc === 'adm' ? '.adm-author-reading' : '.bc-apostila-teoria');
+      if (!source) return null;
+      headings = [...source.querySelectorAll('h2,h3')].filter(h => /^\s*\d{1,2}(?:[.)]|\s|—|–)/.test(h.textContent));
+    } else return null;
+    const max = disc === 'cpp' ? 22 : 20;
+    if (!Number.isInteger(n) || n < 1 || n > max) return null;
+    const items = [...new Set(headings.map(h => norm(h.textContent)
+      .replace(/^\d{1,2}(?:[.)]|\s|—|–)+\s*/, '')
+      .replace(/[.?!]+$/, '').trim()).filter(Boolean))];
+    return items.length ? { article, disc, n, items } : null;
+  }
+  function attachChecklist(overlay) {
+    const data = reviewChecklistSource(overlay);
+    if (!data) return false;
+    const { article, disc, n, items } = data;
+    const signature = JSON.stringify(items);
+    const previous = article.querySelector('[data-bc-review-comprehension]');
+    if (previous?.dataset.signature === signature && previous === article.lastElementChild) return true;
+    const doc = article.ownerDocument;
+    const key = 'bc:' + disc + ':m' + String(n).padStart(2, '0') + ':revisao:compreensao:v1';
+    let state = Object.create(null);
+    try {
+      const saved = JSON.parse(global.localStorage.getItem(key) || '{}');
+      if (saved && typeof saved === 'object' && !Array.isArray(saved)) Object.assign(state, saved);
+    } catch (_) {}
+    // Remover apenas checagens antigas explicitamente identificadas como checklist de compreensão.
+    // Os controles de questões e progresso por capítulo não são checklists de compreensão.
+    article.querySelectorAll('[data-bc-review-comprehension],.bc-apostila-checklist,.bc-m01-checklist,.cf-native-checklist').forEach(el => el.remove());
+    const details = doc.createElement('details');
+    details.className = 'bc-apostila-checklist bc-revision-comprehension';
+    details.dataset.bcReviewComprehension = disc + ':' + n;
+    details.dataset.signature = signature;
+    const summary = doc.createElement('summary');
+    summary.textContent = 'Minha checagem de compreensão';
+    const section = doc.createElement('section');
+    section.className = 'bc-m01-checklist';
+    section.setAttribute('aria-label', 'Checklist de compreensão');
+    const heading = doc.createElement('h2'); heading.textContent = 'Checklist de compreensão';
+    const intro = doc.createElement('p'); intro.textContent = 'Marque apenas os assuntos que você já consegue explicar com suas palavras.';
+    section.append(heading, intro);
+    for (const topic of items) {
+      const row = doc.createElement('label'), input = doc.createElement('input'), span = doc.createElement('span');
+      input.type = 'checkbox'; input.checked = state[topic] === true;
+      span.textContent = 'Consigo explicar, com minhas palavras: ' + topic + '.';
+      input.addEventListener('change', () => {
+        state[topic] = input.checked;
+        try { global.localStorage.setItem(key, JSON.stringify(state)); } catch (_) {}
+      });
+      row.append(input, span); section.append(row);
+    }
+    const note = doc.createElement('p'); note.className = 'bc-m01-local-note';
+    note.textContent = 'Checklist salvo neste navegador, sem alterar o progresso oficial do módulo.';
+    section.append(note); details.append(summary, section); article.append(details);
+    return true;
+  }
+
   function mark(root) {
     const list = root.matches?.(READERS) ? [root] : [...(root.querySelectorAll?.(READERS) || [])];
     list.forEach(el => {
       const on = isReview(el);
       if (on !== el.classList.contains(CLASS)) el.classList.toggle(CLASS, on);
+      if (on) attachChecklist(el);
       if (on && !el.dataset.bcLei) {
         // O leitor do Administrativo monta o texto de forma assíncrona: tenta até o artigo existir.
         let tries = 0;
@@ -170,10 +242,12 @@
     new MutationObserver(records => {
       for (const r of records) {
         r.addedNodes.forEach(n => { if (n.nodeType === 1) mark(n); });
+        const reader = r.target.closest?.(READERS);
+        if (reader && reader.querySelector('.bc-native-article')) attachChecklist(reader);
         if (r.type === 'characterData' || r.type === 'attributes') { const o = r.target.parentElement?.closest?.(READERS); if (o) mark(o); }
       }
     }).observe(document.body, { childList: true, subtree: true });
   }
-  global.BCRevisaoPadraoCF = { mark, citedItems, articleCitations };
+  global.BCRevisaoPadraoCF = { mark, citedItems, articleCitations, reviewChecklistSource, attachChecklist };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })(window);
