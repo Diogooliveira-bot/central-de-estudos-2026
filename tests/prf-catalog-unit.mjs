@@ -18,11 +18,11 @@ test('PRF 2021 usa fonte oficial e mantém os 14 blocos do programa', () => {
   assert.equal(new Set(prf.subjects.map((subject) => subject.id)).size, 14);
 });
 
-test('PRF não declara cobertura antes de auditoria por capítulo', () => {
+test('PRF registra somente conferência parcial de seis seções e não declara disciplina completa', () => {
   const prf = CONCURSOS_2026_SEED.find((item) => item.id === prfId);
   assert.ok(prf.subjects.every((subject) => subject.coverage === 'missing'));
   assert.ok(prf.subjects.every((subject) => subject.moduleIds.length === 0));
-  assert.equal(coverage(prf).percent, 0);
+  assert.equal(coverage(prf).percent, 3);
   assert.deepEqual(
     prf.subjects.filter((subject) => subject.centralId).map((subject) => subject.centralId).sort(),
     ['adm','cf','cpp','info','penal','pt','rlm']

@@ -1,5 +1,5 @@
 {
-  "build": "20261123-concursos-theory-v3",
+  "build": "20261124-concursos-chapters-v4",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -301,7 +301,7 @@
     "/ui/questoes-bank-v1.js?v=20261121gmfobj2",
     "/ui/questoes-area-v1.js?v=20261121gmfobj2",
     "/ui/questoes-modulo-card-v1.js?v=20261113q7",
-    "/central-module-catalog.js?v=20261115responsive1",
+    "/central-module-catalog.js?v=20261124concursos4",
     "/ui/module-review-v1.js?v=20261117review2",
     "/ui/module-review-v1.css?v=20261117review2",
     "/ui/editor-premium-v1.js?v=20261119cfeditlaw1",
@@ -334,8 +334,8 @@
     "/assets/adm/revisao-guiada/m06/ADM-M06-C08.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C09.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp",
-    "/ui/contest-admin-form.js?v=20261123concursos2",
-    "/ui/concursos-catalog-v1.js?v=20261123concursos2",
+    "/ui/contest-admin-form.js?v=20261124concursos4",
+    "/ui/concursos-catalog-v1.js?v=20261124concursos4",
     "/ui/concursos-catalog-v1.css?v=20261123concursos2"
   ]
 }
