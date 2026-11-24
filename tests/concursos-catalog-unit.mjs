@@ -117,3 +117,27 @@ test('normalização rejeita edição sem fonte oficial e preserva campos permit
   assert.equal(item.currentStage,'Provas realizadas');
 });
 
+
+test('catálogo público não interpreta HTML/URLs maliciosos dos dados de edital',async()=>{
+  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://preview.example.test/central-v119.html',runScripts:'outside-only'});
+  const w=dom.window;
+  const attack='<img src=x onerror=alert(1)>';
+  w.BASE_COMPLETA_USER={id:'ficticio',role:'aluno'};
+  w.fetch=async()=>({ok:true,json:async()=>({canManage:false,items:[{
+    id:'teste-seguro',name:attack,organ:attack,state:'CE',status:'publicado',active:true,
+    cargos:[{name:attack,education:attack}],subjects:[{name:attack,coverage:'missing',topics:[attack]}],
+    sources:[{title:attack,type:'oficial',url:'javascript:alert(1)'}],
+    coverage:{percent:'0; background:url(javascript:alert(1))'},pending:[attack]
+  }]})});
+  w.eval(readFileSync(new URL('../ui/concursos-catalog-v1.js',import.meta.url),'utf8'));
+  await w.CentralContestCatalog.open();
+  const overlay=w.document.querySelector('.contest-catalog-overlay');
+  assert.match(overlay.textContent,/onerror=alert/);
+  assert.equal(overlay.querySelector('img'),null);
+  assert.equal(overlay.querySelector('.contest-coverage i span').style.width,'0%');
+  overlay.querySelector('[data-contest-open="teste-seguro"]').click();
+  assert.equal(overlay.querySelector('img'),null);
+  assert.match(overlay.querySelector('.contest-detail').textContent,/onerror=alert/);
+  assert.equal(overlay.querySelector('.contest-detail .contest-source[href="#"]')!==null,true);
+  dom.window.close();
+});
