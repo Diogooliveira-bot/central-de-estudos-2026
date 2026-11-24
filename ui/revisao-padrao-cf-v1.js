@@ -545,6 +545,148 @@
     ]
   ]
 };
+  REVIEW_CHECK_ITEMS.cpc = [
+  [
+    "Distingo direito ao processo justo e resultado favorável no julgamento.",
+    "Sei explicar iniciativa da parte, impulso oficial e soluções consensuais.",
+    "Reconheço contraditório e vedação à decisão surpresa.",
+    "Sei identificar as situações de contraditório diferido.",
+    "Sei explicar a aplicação da lei processual no tempo."
+  ],
+  [
+    "Sei explicar o direito de ação sem confundi-lo com o resultado do processo.",
+    "Distingo legitimidade e julgamento do mérito.",
+    "Distingo jurisdição, processo e procedimento.",
+    "Distingo extinção sem mérito e improcedência.",
+    "Sei explicar a cooperação jurídica internacional estudada."
+  ],
+  [
+    "Sei explicar a finalidade das regras de competência.",
+    "Distingo competência absoluta e relativa.",
+    "Reconheço os limites do foro de eleição.",
+    "Sei identificar conexão e reunião de processos.",
+    "Sei explicar a finalidade do conflito de competência."
+  ],
+  [
+    "Distingo capacidade de ser parte e representação processual.",
+    "Sei identificar a regularização de defeitos de representação.",
+    "Reconheço deveres processuais e litigância de má-fé.",
+    "Sei explicar gratuidade, despesas e honorários.",
+    "Reconheço os limites dos poderes do advogado."
+  ],
+  [
+    "Sei identificar as hipóteses de litisconsórcio.",
+    "Distingo litisconsórcio necessário e unitário.",
+    "Sei explicar a assistência de terceiro.",
+    "Distingo denunciação da lide e chamamento ao processo.",
+    "Distingo desconsideração da personalidade jurídica e amicus curiae."
+  ],
+  [
+    "Sei explicar os poderes e a imparcialidade do juiz.",
+    "Distingo as funções do perito e do juiz.",
+    "Reconheço a atuação do Ministério Público no processo.",
+    "Distingo Advocacia Pública e Defensoria Pública.",
+    "Sei identificar a função dos sujeitos processuais em um caso."
+  ],
+  [
+    "Sei explicar a finalidade e a forma dos atos processuais.",
+    "Reconheço os limites dos negócios processuais e do calendário.",
+    "Distingo sentença, decisão interlocutória e despacho.",
+    "Sei identificar o termo inicial e a contagem dos prazos.",
+    "Distingo indisponibilidade do sistema judicial e problema particular de conexão."
+  ],
+  [
+    "Distingo citação e intimação.",
+    "Reconheço os meios de comunicação processual estudados.",
+    "Sei explicar os efeitos da citação válida.",
+    "Reconheço quando o comparecimento espontâneo supre a citação.",
+    "Sei analisar nulidades e prejuízo processual."
+  ],
+  [
+    "Sei explicar a finalidade e a provisoriedade da tutela provisória.",
+    "Distingo tutela cautelar e antecipada.",
+    "Sei identificar as formas do pedido e a estabilização da tutela.",
+    "Distingo tutela de urgência e da evidência.",
+    "Consigo escolher a tutela adequada em um caso concreto."
+  ],
+  [
+    "Sei identificar a formação da demanda e os requisitos da petição inicial.",
+    "Distingo pedido certo e determinado.",
+    "Distingo emenda, indeferimento e julgamento de mérito.",
+    "Reconheço as regras da audiência de conciliação.",
+    "Distingo suspensão e extinção do processo."
+  ],
+  [
+    "Distingo defesa processual e defesa de mérito.",
+    "Reconheço os efeitos e limites da revelia.",
+    "Distingo contestação e reconvenção.",
+    "Sei identificar quando cabe julgamento antecipado parcial.",
+    "Sei explicar a finalidade do saneamento."
+  ],
+  [
+    "Sei explicar a finalidade da prova processual.",
+    "Reconheço a distribuição e a redistribuição do ônus da prova.",
+    "Sei identificar os meios de prova adequados e sua comunhão.",
+    "Reconheço as hipóteses de produção antecipada da prova.",
+    "Sei explicar valoração da prova e fundamentação judicial."
+  ],
+  [
+    "Distingo decisão com e sem resolução do mérito.",
+    "Sei identificar os requisitos e limites da fundamentação.",
+    "Reconheço a finalidade da remessa necessária.",
+    "Sei explicar os limites da coisa julgada.",
+    "Distingo liquidação e rediscussão do mérito."
+  ],
+  [
+    "Distingo cumprimento de sentença e execução de título extrajudicial.",
+    "Reconheço o procedimento de pagamento voluntário estudado.",
+    "Sei explicar impugnação ao cumprimento de sentença.",
+    "Distingo cumprimento definitivo e provisório.",
+    "Sei identificar as medidas adequadas a diferentes obrigações."
+  ],
+  [
+    "Sei identificar o recurso cabível a partir do pronunciamento judicial.",
+    "Reconheço requisitos de admissibilidade recursal.",
+    "Sei explicar a finalidade dos embargos de declaração.",
+    "Distingo recurso especial e extraordinário.",
+    "Sei identificar a aplicação adequada dos precedentes."
+  ],
+  [
+    "Sei identificar os requisitos de um título executivo.",
+    "Sei explicar a finalidade da execução e seus limites.",
+    "Reconheço os limites da responsabilidade patrimonial.",
+    "Distingo execução para entrega de coisa e para pagamento.",
+    "Reconheço os regimes especiais de execução estudados."
+  ],
+  [
+    "Sei explicar o início da execução por quantia.",
+    "Distingo penhora e expropriação.",
+    "Reconheço as regras de impenhorabilidade estudadas.",
+    "Sei explicar embargos à execução e seus efeitos.",
+    "Reconheço suspensão e prescrição intercorrente."
+  ],
+  [
+    "Sei identificar o procedimento especial adequado ao problema.",
+    "Sei explicar a finalidade da consignação em pagamento.",
+    "Reconheço o cabimento dos embargos de terceiro.",
+    "Distingo ação monitória e execução.",
+    "Sei explicar a finalidade da restauração de autos."
+  ],
+  [
+    "Distingo direitos difusos, coletivos e individuais homogêneos.",
+    "Reconheço os legitimados das ações coletivas estudadas.",
+    "Distingo mandado de segurança e mandado de injunção.",
+    "Sei explicar o cabimento do habeas data.",
+    "Distingo ação popular e ações de controle de constitucionalidade."
+  ],
+  [
+    "Distingo recursos e outros procedimentos nos tribunais.",
+    "Distingo IAC e IRDR.",
+    "Sei explicar a finalidade do conflito de competência e da arguição constitucional estudada.",
+    "Reconheço a finalidade e os limites da ação rescisória.",
+    "Sei explicar as hipóteses de reclamação estudadas."
+  ]
+];
   // Somente fontes do próprio material de revisão: jamais consultar a teoria completa.
   function reviewChecklistSource(overlay) {
     if (!isReview(overlay)) return null;
