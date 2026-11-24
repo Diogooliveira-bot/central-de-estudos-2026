@@ -27,8 +27,8 @@ test('cartões GMF abrem o catálogo próprio antes da navegação geral', () =>
 
 
 test('leitor GMF atualiza a contagem de seções junto ao percentual', () => {
-  assert.match(reader, /<span data-done>\'+done\+<\/span>/);
-  assert.match(reader, /querySelector\('\[data-done\]'\)/);
+  assert.ok(reader.includes("<span data-done>'+done+'</span>"));
+  assert.ok(reader.includes("querySelector('[data-done]')"));
 });
 
 test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e revisão', () => {
