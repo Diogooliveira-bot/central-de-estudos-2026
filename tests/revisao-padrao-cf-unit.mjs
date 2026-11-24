@@ -106,3 +106,87 @@ test('o carregador busca o arquivo do módulo certo e não depende de arquivos P
   assert.ok(js.includes("'/lei-revisao/m'"));
   assert.ok(!/penal-visual-law|cpp-visual-law|apostila-complete|AdmApostilaReading/.test(js));
 });
+
+
+test('checklists jurídicos: 62 revisões reais têm checagem final, sem importar conteúdo completo', async () => {
+  const { JSDOM } = await import('jsdom');
+  const { gunzipSync } = await import('node:zlib');
+  const dom = new JSDOM('<!doctype html><body></body>', {url:'https://example.org',runScripts:'outside-only'});
+  const w = dom.window;
+  w.eval(read('ui/revisao-padrao-cf-v1.js'));
+  const api = w.BCRevisaoPadraoCF;
+  const mod = (disc,n,html,mode='RESUMIDO') => {
+    const el = w.document.createElement('div');
+    el.className='bc-native-reader-overlay';
+    el.innerHTML='<div class="bc-native-reader-title"><small>DIREITO '+disc+' · MÓDULO '+n+' · '+mode+'</small></div><article class="bc-native-article">'+html+'</article>';
+    return el;
+  };
+  let covered=0;
+  function verify(el,count,disc,n) {
+    const article=el.querySelector('article');
+    const previous=article.innerHTML;
+    assert.ok(api.attachChecklist(el),disc+' M'+n);
+    const box=article.lastElementChild;
+    assert.equal(box.dataset.bcReviewComprehension,disc+':'+n);
+    assert.equal(box.querySelectorAll('input[type=checkbox]').length,count,disc+' M'+n);
+    assert.ok([...box.querySelectorAll('label span')].every(x=>/^(Sei|Distingo|Reconheço|Identifico|Consigo|Conheço|Relaciono)/.test(x.textContent)),disc+' M'+n);
+    assert.ok(api.attachChecklist(el));
+    assert.equal(article.querySelectorAll('[data-bc-review-comprehension]').length,1);
+    const input=box.querySelector('input');input.checked=true;input.dispatchEvent(new w.Event('change',{bubbles:true}));
+    const other=mod('ADMINISTRATIVO',99,'','COMPLETO');
+    assert.equal(api.attachChecklist(other),false);
+    box.remove();
+    assert.equal(article.innerHTML,previous);
+    assert.ok(api.attachChecklist(el));
+    assert.equal(article.lastElementChild.querySelector('input').checked,true);
+    covered++;
+  }
+  for(let n=1;n<=20;n++){
+    const p=String(n).padStart(2,'0');
+    const box={window:{}};
+    vm.runInNewContext(read('content/adm/autor-20261110/adm-m'+p+'-submitted-review.js'),box);
+    const html=gunzipSync(Buffer.from(box.window.ADM_SUBMITTED_REVIEW[n],'base64')).toString('utf8');
+    const el=mod('ADMINISTRATIVO',n,'<section class="adm-author-reading">'+html+'</section>');
+    const count=[...el.querySelectorAll('.adm-author-reading h2')].filter(h=>/^\s*\d{1,2}(?:[.)]|\s|—|–)/.test(h.textContent)).length;
+    assert.ok(count>=6);
+    verify(el,count,'adm',n);
+  }
+  const cpp={window:{}};
+  for(const range of ['01-05','06-10','11-15','16-20','21-22'])vm.runInNewContext(read('content/cpp/leituras-20261111-'+range+'.js'),cpp);
+  for(let n=1;n<=22;n++){
+    const html=cpp.window.BASE_CPP_APOSTILAS_20261111['cpp-m'+String(n).padStart(2,'0')];
+    verify(mod('PROCESSUAL PENAL',n,html),5,'cpp',n);
+  }
+  const cpc={window:{}};
+  for(const range of ['m01-m04','m05-m08','m09-m14','m15-m20'])vm.runInNewContext(read('content/cpc/cpc-review-didactic-'+range+'.js'),cpc);
+  for(let n=1;n<=20;n++){
+    const data=cpc.window.CPC_DIDACTIC_REVIEW[n];
+    const steps=data.story?.steps?.length?data.story.steps:data.sections;
+    const el=mod('PROCESSUAL CIVIL',n,'<div data-cpc-apostila="summary"><section class="cpc-didactic-review" data-cpc-review="'+n+'"></section><details class="cpc-original-reference"><h2>ASSUNTO NÃO ENSINADO NA REVISÃO</h2></details></div>');
+    for(const [title] of steps){
+      const step=w.document.createElement('details');step.className='cpc-study-step';
+      const summary=w.document.createElement('summary'), strong=w.document.createElement('strong');
+      strong.textContent=title;summary.append(strong);step.append(summary);el.querySelector('.cpc-didactic-review').append(step);
+    }
+    verify(el,steps.length,'cpc',n);
+    assert.ok(!el.querySelector('[data-bc-review-comprehension]').textContent.includes('ASSUNTO NÃO ENSINADO'));
+  }
+  const full=mod('ADMINISTRATIVO',1,'<section class="adm-author-reading"><h2>01 Conteúdo completo</h2></section>','COMPLETO');
+  const before=full.innerHTML;assert.equal(api.attachChecklist(full),false);assert.equal(full.innerHTML,before);
+  const other=mod('INFORMÁTICA',1,'<section class="bc-apostila-teoria"><h2>01 Tema</h2></section>');
+  assert.equal(api.attachChecklist(other),false);
+  assert.equal(covered,62);
+  dom.window.close();
+});
+test('os 47 módulos guiados de CF, Civil e Penal mantêm itens ligados a seus tópicos',()=>{
+  for(const [disc,prefix,max] of [['cf','CF',15],['civil','CIV',15],['penal','PEN',17]]){
+    const box={window:{}};
+    for(let n=1;n<=max;n++){
+      vm.runInNewContext(read('content/'+disc+'/m'+String(n).padStart(2,'0')+'-teoria-guiada-data.js'),box);
+      const data=box.window['BC_'+prefix+'_GUIDED_MODULES'][n];
+      assert.ok(data.topics.length);
+      for(const topic of data.topics)assert.ok(typeof topic[7]==='string'&&topic[7].trim(),disc+' M'+n+' '+topic[0]);
+    }
+    assert.match(read('content/'+disc+'/'+disc+'-teoria-guiada-reader-v1.js'),/Minha checagem de compreensão/);
+  }
+});
