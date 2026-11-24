@@ -20,7 +20,7 @@ O PDF é lido no navegador com o pdf.js já presente no repositório. O texto fi
 
 - CI anterior no PR: 536 testes; 528 passaram, 8 falharam. Todas as oito falhas decorriam da divergência M05/M06 entre `central-v119.html`, `sw.js` e o manifesto offline. Após alinhar o bootstrap/cache, restaram duas falhas no endereço do manifesto; corrigidas em seguida.
 - `npm test`: após integrar a `main` atual, 559 testes, **558 aprovados, 0 falhas, 1 ignorado** na execução de 23/11/2026. A suíte inclui a validação de referências, cobertura conservadora, formulário visual e compatibilidade dos objetivos antigos. Conferir também a CI do PR.
-- `npm run security:static`: 2567 arquivos versionados examinados, nenhum segredo de alto risco identificado.
+- `npm run security:static`: após integrar a `main`, 2576 arquivos versionados examinados, nenhum segredo de alto risco identificado.
 - `node scripts/build-shared-module-catalog.mjs --check`, `node scripts/build-module-catalog.mjs --check`, `node --check` dos scripts alterados e `git diff --check`: passaram.
 - Extração do pdf.js exercitada com PDF fictício gerado localmente, sem informações de alunos; as linhas foram lidas corretamente.
 - Teste de browser com Chromium local **não executado**: o processo abortou neste ambiente (`ptrace: Operation not permitted`). O teste JSDOM cobre o fluxo visual de sugestão/aprovação, mas não substitui a navegação real em celular, tablet e computador.
@@ -36,7 +36,7 @@ O Edital nº 1/2021 é uma referência histórica. Os 78 assuntos são uma subdi
 2. Auditar e aprovar os vínculos da PRF com registro de alcance; produzir e revisar complementações reais. Integrar questões pertinentes e implementar a correção certo/errado no motor de questões.
 3. Configurar banco Neon exclusivo de homologação e variáveis da Preview; executar cadastro, edição, importação, permissões Gratuito/Premium, progresso simultâneo e isolamento entre contas fictícias em navegação autenticada.
 4. Testar a aplicação em celular, tablet e computador, com rede e offline; medir carregamento e conferir compatibilidade visual dos concursos antigos.
-5. Reavaliar os checks do PR e disponibilizar link de prévia se a Vercel permitir. O limite diário de builds havia bloqueado a prévia anterior; não foi feita publicação manual.
+5. Reavaliar os checks do PR e disponibilizar link de prévia se a Vercel permitir. Os dois status da Vercel no commit integrado ainda falharam por limite de builds; não foi feita publicação manual.
 
 ## Como cadastrar outro concurso
 
