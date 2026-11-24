@@ -130,7 +130,7 @@ function open(n,topicIndex){
     '<button type="button" data-bc-guided-mode="review" aria-pressed="false">Revisão rápida</button>'+
    '</div><button type="button" class="bc-penal-questions" data-bc-penal-quiz aria-label="Resolver '+qn+' questões internas do módulo">'+qn+' questões</button></nav>'+
   '<main class="bc-m01-scroll" tabindex="0"><div class="bc-m01-paper">'+pilot+
-  d.topics.map((topic,i)=>card(topic,i,n)).join('')+checklist(n,d.topics)+'</div></main></div>';
+  d.topics.map((topic,i)=>card(topic,i,n)).join('')+ '<details class="bc-apostila-checklist"><summary>Minha checagem de compreensão</summary>'+checklist(n,d.topics)+'</details></div></main></div>';
  overlay=o;document.body.appendChild(o);document.body.style.overflow='hidden';
  o.querySelector('[data-bc-guided-close]').addEventListener('click',close);
  o.querySelector('[data-bc-penal-quiz]').addEventListener('click',()=>{close();global.BcPenalGuidedBridge?.openQuestions(n);});
@@ -198,7 +198,7 @@ function open(n,topicIndex){
       '.bc-m01-card p.bc-m01-why{margin-top:10px;}',
       '.bc-m01-pilotnote{margin:0 0 18px;padding:11px 14px;background:#fff8e3;border:1px solid #efdca0;border-left:4px solid #d5a62e;border-radius:10px;font-size:0.84375rem;line-height:1.6;color:#4d3a10;}',
       '.bc-m01-reader[data-view="review"] .bc-m01-foundation,.bc-m01-reader[data-view="review"] .bc-m01-example,.bc-m01-reader[data-view="review"] .bc-m01-deeper{display:none;}',
-      '.bc-m01-checklist{border-top:1px solid #d7e1eb;padding:22px 0;}',
+      '.bc-apostila-checklist{border-top:1px solid #d7e1eb;margin-top:24px;padding:16px 0;}.bc-apostila-checklist>summary{cursor:pointer;font-weight:700;}.bc-m01-checklist{padding:22px 0;}',
       '.bc-m01-checklist h2{margin:0 0 8px;font-size:1.375rem;color:#1d3657;}',
       '.bc-m01-checklist>p{font-size:0.875rem;color:#5b6d82;line-height:1.5;}',
       '.bc-m01-checklist label{display:flex;align-items:flex-start;gap:12px;margin:7px 0;padding:12px 14px;background:#fff;border:1px solid #dce3eb;border-radius:10px;font-size:0.875rem;line-height:1.4;cursor:pointer;}',
