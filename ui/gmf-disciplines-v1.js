@@ -125,9 +125,9 @@
   document.addEventListener('click', event => {
     const target = event.target instanceof Element ? event.target : event.target?.parentElement;
     const trigger = target?.closest('[data-study-open-subject]');
-    if (!trigger) return;
-    const id = trigger.dataset.studyOpenSubject || trigger.dataset.id;
-    if (!ids.has(id)) return;
+    const subjectHead = target?.closest('.subject[data-id] > .subject-head');
+    const id = trigger?.dataset.studyOpenSubject || trigger?.dataset.id || subjectHead?.closest('.subject[data-id]')?.dataset.id;
+    if (!id || !ids.has(id)) return;
     event.preventDefault();
     event.stopImmediatePropagation();
     openCourse(id);

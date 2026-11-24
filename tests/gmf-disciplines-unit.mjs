@@ -16,6 +16,8 @@ function getCatalog() {
 
 test('cartões GMF abrem o catálogo próprio antes da navegação geral', () => {
   assert.match(script, /data-study-open-subject/);
+  assert.match(script, /target\?\.closest\('\.subject\[data-id\] > \.subject-head'\)/);
+  assert.match(script, /subjectHead\?\.closest\('\.subject\[data-id\]'\)\?\.dataset\.id/);
   assert.match(script, /document\.addEventListener\('click',[\s\S]*?event\.stopImmediatePropagation\(\)[\s\S]*?openCourse\(id\)[\s\S]*?,\s*true\)/);
   assert.match(script, /global\.GmfDisciplines = Object\.freeze\([\s\S]*?openCourse,closeCourse\}\)/);
   assert.match(script, /content\.innerHTML = renderMaster\(course\)/);
