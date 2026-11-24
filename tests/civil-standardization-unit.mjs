@@ -20,7 +20,9 @@ test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros of
   const host = window.document.querySelector('.subject-body');
   window.CivilNative.renderInto(host);
   window.eval(read('ui/external-question-filters-v1.js'));
-  window.document.dispatchEvent(new window.Event('DOMContentLoaded'));
+  if (window.document.readyState === 'loading') {
+    await new Promise((resolve) => window.document.addEventListener('DOMContentLoaded', resolve, { once: true }));
+  }
 
   const modules = [...host.querySelectorAll('[data-civil-native-module]')];
   assert.equal(modules.length, 15);

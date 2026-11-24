@@ -357,17 +357,23 @@ test('Processual Civil M05, M06 e M08: leitor real não mostra testes antigos ne
  assert.deepEqual(issues,[],'Exercícios de certo/errado não podem sobrar no leitor');
  await delay(140);dom.window.close();
 });
-test('GMF Fortaleza M01: remove somente o parágrafo de fixação, sem tocar nas explicações',async()=>{
+test('GMF Fortaleza M01: remove parágrafo de fixação sintético e preserva a teoria aprovada',async()=>{
  const dom=fixture(),w=dom.window,d=w.document;
  w.eval(read('content/gmf/m01-full-v1.js'));
  const chapters=w.GMF_M01_FULL.fortaleza.chapters;
  assert.equal(chapters.length,4);
  const art=d.createElement('div');art.className='gmf-reader-prose';art.innerHTML=chapters[3].html;
  d.body.append(art);
+ const theory=art.textContent;
+ assert.match(theory,/Fortaleza|município|litoral|revisão/i,'a explicação real existe');
+ assert.doesNotMatch(theory,/Fixação:\s*\(1\)/,'o material didático atualizado não contém o exercício antigo');
+ const example=d.createElement('p');
+ example.textContent='Fixação: (1) Qual a diferença entre município e região metropolitana? (2) Explique o conceito de divisa municipal.';
+ art.append(example);
  assert.match(art.textContent,/Fixação:\s*\(1\)/);
  w.BCQuestionsRemovedUI.sweep();
  assert.doesNotMatch(art.textContent,/Fixação:\s*\(1\)/);
- assert.match(art.textContent,/Fortaleza|município|litoral|revisão/i);
+ assert.equal(art.textContent,theory,'a limpeza não pode modificar as explicações publicadas');
  art.remove();await delay(140);dom.window.close();
 });
 test('CF M01 e M06: referências vão depois do checklist mantendo todos os links',async()=>{
