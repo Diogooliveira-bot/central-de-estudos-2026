@@ -82,7 +82,11 @@ async function adminFlow(){
     await page.locator('[data-review-link="0.0.0.approved"]').click();
     assert.match(await page.locator('.contest-form-topic').first().innerText(),/Parcial/);
     assert.match(await page.locator('.contest-form-topic').nth(1).innerText(),/Sem cobertura/);
+    const createResponse=page.waitForResponse(r=>r.url().includes('/api/concursos')&&r.request().method()==='POST',{timeout:30000});
     await page.locator('[data-contest-save="create"]').click();
+    const created=await createResponse;
+    log('admin-cadastro-resposta',{status:created.status(),body:(await created.text()).slice(0,260)});
+    assert.equal(created.status(),201);
     await page.locator('.contest-detail h2').getByText('Concurso fictício de homologação').waitFor({timeout:30000});
     assert.match(await page.locator('.contest-detail').innerText(),/Em preparação/);
     const response=await page.evaluate(async id=>{let r=await fetch('/api/concursos?admin=1',{credentials:'same-origin'});let b=await r.json();return {status:r.status,item:b.items.find(x=>x.id===id)}},contestId);
@@ -140,6 +144,8 @@ async function studentFlow(role,viewport){
 async function premiumProgressAndOffline(){
   const {context,page,errors}=await login('premium',{width:1366,height:900});
   try {
+    await catalog(page);
+    await page.locator('[data-contest-close]').click();
     async function choose(id){
       await page.evaluate(()=>window.CentralStudyObjectives.open());
       await page.locator('[data-study-exams]').click();
@@ -150,13 +156,12 @@ async function premiumProgressAndOffline(){
     await page.evaluate(()=>window.centralHardOpen('disciplines'));
     await page.locator('#trt8VerticalizedEntry').click();
     await page.locator('#trt8VerticalizedDialog .exam-subject summary').first().click();
-    const marker=page.locator('#trt8VerticalizedDialog input[data-exam-marker="studied"]').first();
+    const marker=page.locator('#trt8VerticalizedDialog input[data-exam-marker="studied"]:not(:checked)').first();
     const topicId=await marker.getAttribute('data-exam-topic');
     await marker.locator('..').click();
     await page.waitForTimeout(5000);
     const syncStatus=await page.locator('#trt8VerticalizedDialog [data-exam-sync-status]').innerText();
     const trt=await page.evaluate(async()=>{const r=await fetch('/api/objective?resource=exam-progress&examId=trt8-2026-aj-area-judiciaria');return {status:r.status,body:await r.json()};});
-    log('progresso-diagnostico',{syncStatus,online:await page.evaluate(()=>navigator.onLine),remote:trt.body.progress?.[topicId]||null});
     assert.match(syncStatus,/sincronizado na sua conta/);
     assert.equal(trt.status,200);
     assert.equal(trt.body.progress[topicId].studied.value,true);
@@ -177,20 +182,41 @@ async function premiumProgressAndOffline(){
     log('premium-progresso-por-edital', {topicId,trtStatus:trt.status,tjpbStatus:tjp.status});
 
     await page.evaluate(async()=>{const sw=await navigator.serviceWorker.ready;sw.active.postMessage({type:'PREPARE_OFFLINE'});});
-    await page.waitForFunction(async()=>{const keys=await caches.keys();for(const key of keys){const cache=await caches.open(key);const reqs=await cache.keys();if(reqs.some(r=>r.url.includes('/central-offline-ready.json')))return true;}return false;},null,{timeout:90000});
+    const cacheName=await page.evaluate(async()=>{const text=await (await fetch('/sw.js',{cache:'no-store'})).text();return text.match(/var CACHE='([^']+)'/)?.[1]||'';});
+    assert.match(cacheName,/^central-20261124-concursos-/);
+    let prepared=null;
+    const deadline=Date.now()+180000;
+    while(Date.now()<deadline){
+      prepared=await page.evaluate(async name=>{const cache=await caches.open(name);const boot=await cache.match('/central-v119.html');const ready=(await cache.keys()).find(r=>r.url.includes('/central-offline-ready.json'));return {boot:!!boot,ready:!!ready};},cacheName);
+      if(prepared.boot&&prepared.ready)break;
+      await page.waitForTimeout(2500);
+    }
+    assert.ok(prepared?.boot&&prepared?.ready,`Pacote offline incompleto: ${JSON.stringify(prepared)}`);
+    const offlineReady=await page.evaluate(async name=>{const cache=await caches.open(name);const ready=(await cache.keys()).find(r=>r.url.includes('/central-offline-ready.json'));return (await (await cache.match(ready)).json());},cacheName);
+    assert.equal(offlineReady.failed.length,0);
     await context.setOffline(true);
-    await page.goto(new URL('/central-v119.html',preview),{waitUntil:'domcontentloaded',timeout:30000});
+    const offlineMe=await page.evaluate(async()=>{try{const r=await fetch('/api/auth?action=me');return {status:r.status,body:await r.text()};}catch(e){return {error:String(e)}}});
+    assert.equal(offlineMe.status,200);
+    assert.equal(JSON.parse(offlineMe.body).offline,true);
+    const offlineResponse=await page.goto(new URL('/central-v119.html',preview).href,{waitUntil:'domcontentloaded',timeout:30000});
+    assert.equal(offlineResponse.status(),200);
     await page.locator('[data-student-primary-nav="edital"]').waitFor({timeout:30000});
-    assert.match(await page.locator('body').innerText(),/Central de Estudos/);
-    log('premium-offline', {shell:true});
+    assert.match(await page.locator('body').innerText(),/BASE COMPLETA/);
+    await page.locator('[data-student-primary-nav="edital"]').click();
+    await page.locator('.contest-catalog-head h1').waitFor({timeout:15000});
+    assert.match(await page.locator('.contest-catalog-overlay').innerText(),/Catálogo salvo neste aparelho/);
+    assert.ok(await page.locator('[data-contest-open="trt8-2026"]').count()>0);
+    log('premium-offline', {shell:true,catalog:true,files:offlineReady.saved});
     await context.setOffline(false);
     assert.deepEqual(errors,[]);
   } finally { await context.close(); }
 }
 try {
-  await adminFlow();
-  await studentFlow('free',{width:390,height:844});
-  await studentFlow('premium',{width:820,height:1180});
+  if(process.env.PR398_ONLY_OFFLINE !== 'true') {
+    await adminFlow();
+    await studentFlow('free',{width:390,height:844});
+    await studentFlow('premium',{width:820,height:1180});
+  }
   await premiumProgressAndOffline();
 }
 finally { await browser.close(); }
