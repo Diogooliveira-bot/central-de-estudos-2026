@@ -4,7 +4,8 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 
 const preview = new URL(process.env.PR398_PREVIEW_URL || 'https://invalid.invalid');
-assert.match(preview.hostname, /^central-de-estudos-[a-z0-9]+-estudotd\.vercel\.app$/);
+const isolatedLocal=preview.origin==='http://127.0.0.1:8765'&&process.env.PR398_LOCAL_ISOLATED==='true';
+assert.ok(isolatedLocal||/^central-de-estudos-[a-z0-9]+-estudotd\.vercel\.app$/.test(preview.hostname));
 const suffix = String(process.env.PR398_TEST_SUFFIX || '');
 assert.match(suffix, /^[a-z0-9]{8,20}$/);
 const credentials = Object.fromEntries(['admin', 'free', 'premium'].map(role => {
@@ -82,6 +83,7 @@ async function adminFlow(){
     await page.locator('[data-review-link="0.0.0.approved"]').click();
     assert.match(await page.locator('.contest-form-topic').first().innerText(),/Parcial/);
     assert.match(await page.locator('.contest-form-topic').nth(1).innerText(),/Sem cobertura/);
+    log('admin-rascunho',{expected:contestId,dom:await page.locator('[data-field="id"]').inputValue(),draft:await page.evaluate(()=>window.CentralContestAdminForm.value().id)});
     const createResponse=page.waitForResponse(r=>r.url().includes('/api/concursos')&&r.request().method()==='POST',{timeout:30000});
     await page.locator('[data-contest-save="create"]').click();
     const created=await createResponse;
@@ -89,11 +91,12 @@ async function adminFlow(){
     assert.equal(created.status(),201);
     await page.locator('.contest-detail h2').getByText('Concurso fictício de homologação').waitFor({timeout:30000});
     assert.match(await page.locator('.contest-detail').innerText(),/Em preparação/);
-    const response=await page.evaluate(async id=>{let r=await fetch('/api/concursos?admin=1',{credentials:'same-origin'});let b=await r.json();return {status:r.status,item:b.items.find(x=>x.id===id)}},contestId);
+    const response=await page.evaluate(async id=>{let r=await fetch('/api/concursos?admin=1',{credentials:'same-origin'});let b=await r.json();return {status:r.status,item:b.items.find(x=>x.id===id),prf:b.items.find(x=>x.id==='prf-2021-policial-rodoviario-federal')}},contestId);
     assert.equal(response.status,200);
     assert.equal(response.item.subjects[0].syllabus.length,2);
     assert.equal(response.item.subjects[0].syllabus[0].links[0].chapterId,'info-09-c01');
     assert.equal(response.item.subjects[0].syllabus[0].links[0].status,'approved');
+    assert.ok(response.prf.subjects.flatMap(s=>s.syllabus||[]).flatMap(t=>t.links||[]).some(l=>l.chapterId==='info-09-c01'&&l.status==='approved'),'O mesmo capítulo é referenciado pela PRF e pelo concurso fictício');
     assert.ok(response.item.coverage.percent<100);
     await page.locator(`[data-contest-edit="${contestId}"]`).click();
     await page.locator('[data-field="summary"]').fill('Conferido no navegador isolado.');

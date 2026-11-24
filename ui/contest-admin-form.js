@@ -72,8 +72,13 @@
     } catch (error) { status.textContent='Não foi possível extrair o texto. Use um PDF com camada de texto ou transcreva os assuntos. '+String(error.message||''); }
   }
   global.CentralContestAdminForm={
-    async open(overlay,item,isNew){host=overlay;creating=isNew;draft=JSON.parse(JSON.stringify(item));draft.subjects ||= [];draft.cargos ||= [];draft.sources ||= [];render();host.querySelector('[data-field="id"]').readOnly=!isNew;
-      if(!library)try{const response=await fetch('/api/concursos?library=1',{credentials:'same-origin',cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);library=(await response.json()).modules;if(host===overlay&&!host.hidden)render();}catch(error){message('Não foi possível carregar o inventário de capítulos: '+String(error.message||error));}
+    async open(overlay,item,isNew){host=overlay;creating=isNew;draft=JSON.parse(JSON.stringify(item));draft.subjects ||= [];draft.cargos ||= [];draft.sources ||= [];
+      host.innerHTML='<main class="contest-catalog-shell"><div class="contest-empty" data-contest-form-loading>Carregando biblioteca de capítulos…</div></main>';
+      let loadError='';
+      if(!library)try{const response=await fetch('/api/concursos?library=1',{credentials:'same-origin',cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);library=(await response.json()).modules;}catch(error){loadError='Não foi possível carregar o inventário de capítulos: '+String(error.message||error);}
+      if(host!==overlay||host.hidden||!host.querySelector('[data-contest-form-loading]'))return;
+      render();host.querySelector('[data-field="id"]').readOnly=!isNew;
+      if(loadError)message(loadError);
     },
     value(){return draft;},
   };

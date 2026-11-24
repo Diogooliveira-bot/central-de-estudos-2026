@@ -26,6 +26,14 @@ test('catálogo público previamente aberto continua legível offline sem libera
   assert.equal(overlay.querySelectorAll('[data-contest-new]').length,0);
   overlay.querySelector('[data-contest-open="teste-publico"]').click();
   assert.equal(overlay.querySelectorAll('[data-contest-follow]').length,0);
+  w.CentralContestCatalog.close();
+  w.BASE_COMPLETA_USER={id:'admin-ficticio',role:'admin'};
+  w.CentralContestCatalog=null;
+  w.eval(script);
+  await w.CentralContestCatalog.open();
+  const adminOverlay=w.document.querySelectorAll('.contest-catalog-overlay').item(2);
+  assert.match(adminOverlay.textContent,/Catálogo indisponível sem conexão/);
+  assert.equal(adminOverlay.querySelectorAll('[data-contest-new]').length,0);
   dom.window.close();
 });
 

@@ -5,15 +5,16 @@ import { JSDOM } from 'jsdom';
 import { SHARED_MODULES } from '../lib/shared-module-catalog.js';
 
 const code=fs.readFileSync(new URL('../ui/contest-admin-form.js',import.meta.url),'utf8');
-test('formulário visual mantém sugestões pendentes até aprovação documentada', () => {
+test('formulário visual mantém sugestões pendentes até aprovação documentada', async () => {
   const dom=new JSDOM('<!doctype html><body><div id="overlay"></div></body>',{url:'https://preview.example.test',runScripts:'outside-only'});
   const w=dom.window;
+  w.fetch=async()=>({ok:true,json:async()=>({modules:SHARED_MODULES})});
   w.CentralModuleCatalog={cf:[{number:2,title:'Direitos e garantias fundamentais'}]};
   w.CentralStudyObjectiveCatalog={subjects:{cf:{name:'Direito Constitucional'}}};
   w.eval(code);
   const overlay=w.document.getElementById('overlay');
   const data={id:'teste-2026',name:'Teste',organ:'Órgão',state:'CE',sphere:'Estadual',year:2026,status:'publicado',active:false,sources:[{title:'Edital',url:'https://example.org/edital'}],cargos:[],subjects:[{id:'cf-edital',name:'Constitucional',centralId:'cf',coverage:'missing',topics:[],weight:1,syllabus:[{id:'direitos',title:'Direitos fundamentais',links:[],supplement:null}]}]};
-  w.CentralContestAdminForm.open(overlay,data,false);
+  await w.CentralContestAdminForm.open(overlay,data,false);
   assert.equal(overlay.querySelector('#contestAdminJson'),null);
   assert.ok(overlay.querySelector('[data-pdf]'));
   overlay.querySelector('[data-suggest-topic="0.0"]').click();
@@ -44,6 +45,24 @@ test('inventário administrativo permite escolher capítulo realmente existente'
   assert.ok([...select.options].some((item)=>item.value==='info-09-c01' && item.textContent.includes('intranet')));
   select.value='info-09-c01';select.dispatchEvent(new w.Event('change',{bubbles:true}));
   assert.equal(w.CentralContestAdminForm.value().subjects[0].syllabus[0].links[0].chapterId,'info-09-c01');
+  dom.window.close();
+});
+
+test('inventário lento não apaga o identificador digitado no formulário',async()=>{
+  const dom=new JSDOM('<!doctype html><body><div id="overlay"></div></body>',{url:'https://preview.example.test',runScripts:'outside-only'});
+  const w=dom.window;
+  let release;
+  w.fetch=()=>new Promise(resolve=>{release=resolve;});
+  w.eval(code);
+  const overlay=w.document.getElementById('overlay');
+  const pending=w.CentralContestAdminForm.open(overlay,{id:'novo-concurso-2026',sources:[],cargos:[],subjects:[]},true);
+  assert.ok(overlay.querySelector('[data-contest-form-loading]'));
+  assert.equal(overlay.querySelector('[data-field="id"]'),null);
+  release({ok:true,json:async()=>({modules:SHARED_MODULES})});
+  await pending;
+  const id=overlay.querySelector('[data-field="id"]');
+  id.value='concurso-ficticio-2026';id.dispatchEvent(new w.Event('input',{bubbles:true}));
+  assert.equal(w.CentralContestAdminForm.value().id,'concurso-ficticio-2026');
   dom.window.close();
 });
 
