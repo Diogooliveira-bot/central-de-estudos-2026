@@ -40,6 +40,6 @@ test('cadastro administrativo aceita concurso histórico sem afrouxar requisitos
 test('prévia sem banco isolado falha antes da criação de tabelas ou seed', () => {
   const source = readFileSync(new URL('../lib/concursos-handler.js', import.meta.url), 'utf8');
   const guard = source.indexOf("CONTESTS_PREVIEW_DB_ISOLATED !== 'true'");
-  const ensure = source.indexOf('await ensureTables(session.sql)');
+  const ensure = source.indexOf('await readyTables(session.sql)');
   assert.ok(guard >= 0 && ensure > guard);
 });
