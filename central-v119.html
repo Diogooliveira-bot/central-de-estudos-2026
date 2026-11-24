@@ -118,7 +118,7 @@
  // o resultado é descartado e o aluno vai para o login como antes.
  var shellRequest=fetch('/index.html?central_source='+BUILD,{cache:'no-cache'}).then(function(response){if(!response.ok)throw new Error('Falha HTTP '+response.status);return response.text()});
  shellRequest.catch(function(){});
- var localStateModule=import('/sync-local-state.js?v=20261115tablet2');
+ var localStateModule=import('/sync-local-state.js?v=20261123concursos-sync2');
  localStateModule.catch(function(){});
  // A Central é escrita com document.write; assim o navegador não antecipa os
  // scripts e baixava um por vez (uma ida e volta de rede para cada). Os avisos de
