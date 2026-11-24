@@ -9,7 +9,7 @@
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   // Never inject arbitrary API data into an inline style or a clickable URL.
   const percent = (value) => { const n=Number(value); return Number.isFinite(n)?Math.max(0,Math.min(100,n)):0; };
-  const httpsUrl = (value) => { try { const url=new URL(String(value)); return url.protocol==='https:'?esc(url.href):'#'; } catch (_) { return '#'; } };
+  const httpsUrl = (value) => { try { const url=new URL(String(value)); return url.protocol==='https:'?url.href:'#'; } catch (_) { return '#'; } };
   const date = (value) => value ? new Intl.DateTimeFormat('pt-BR',{timeZone:'UTC'}).format(new Date(value+'T12:00:00Z')) : 'Não informado';
   const userRole = () => global.BASE_COMPLETA_USER?.role || global.__BASE_COMPLETA_USER_ROLE__ || '';
   function cachedPublicCatalog() {
