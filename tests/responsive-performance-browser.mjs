@@ -30,19 +30,19 @@ const browser=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePa
 const cpu=async cdp=>{const {metrics}=await cdp.send('Performance.getMetrics');return Object.fromEntries(metrics.filter(m=>['ScriptDuration','LayoutDuration','RecalcStyleDuration','TaskDuration'].includes(m.name)).map(m=>[m.name,m.value*1000]));};
 const delta=(a,b)=>Object.fromEntries(Object.keys(b).map(k=>[k,b[k]-(a[k]||0)]));
 const results={environment:{root,network:'local gzip; Chromium CDP throttling; mocked account/API; SW blocked'},runs:[],catalog:{},visual:[],failures:[]};
-const subjects=['cf','adm','civil','penal','cpc','cpp','pt','rlm','info'];
+const subjects=process.env.BC_PERF_SUBJECTS?process.env.BC_PERF_SUBJECTS.split(','):['cf','adm','civil','penal','cpc','cpp','pt','rlm','info'];
 const ready=p=>p.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',null,{timeout:120000});
 const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-const readingReady=p=>p.waitForFunction(()=>[...document.querySelectorAll('.bc-native-article,.cf-native-content,.bc-info-reader-content,.bc-m01-paper,.pt-native-reader .bc-native-reader')].some(e=>e.getBoundingClientRect().height>0 && e.textContent.length>200),null,{timeout:30000});
+const readingReady=p=>p.waitForFunction(()=>[...document.querySelectorAll('.bc-native-article,.cf-native-content,.bc-info-reader-content,.bc-m01-paper')].some(e=>e.getBoundingClientRect().height>0 && e.textContent.length>200),null,{timeout:30000});
 const closeReader=p=>p.locator('.bc-native-reader-close:visible,[data-bc-guided-close]:visible,[data-bc-info-close]:visible').first().click({timeout:5000});
 const timings=p=>p.evaluate(()=>({measures:performance.getEntriesByType('measure').filter(e=>e.name.startsWith('bc:')).map(e=>({name:e.name,ms:e.duration})),requests:performance.getEntriesByType('resource').length,transferBytes:performance.getEntriesByType('resource').reduce((sum,e)=>sum+e.transferSize,0)}));
 const measure=p=>p.evaluate(()=>{const selectors=['#homeView .home-grid','#studentMoreButton .nav-text','.subject-name','.bc-focus-module-copy strong','#centralSidebar .nav-text','.bc-ui-scale-options button','.bc-native-article','.bc-m01-paper','.bcqa-title b'];return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,rootFont:getComputedStyle(document.documentElement).fontSize,viewport:document.querySelector('meta[name="viewport"]')?.content,elements:selectors.map(selector=>{const e=[...document.querySelectorAll(selector)].find(e=>e.getBoundingClientRect().width);if(!e)return {selector};const r=e.getBoundingClientRect();return {selector,font:getComputedStyle(e).fontSize,width:r.width,height:r.height};})};});
 try{
- for(const slow of (process.env.BC_VISUAL_ONLY?[]:[false,true])){
+ for(const slow of (process.env.BC_VISUAL_ONLY?[]:process.env.BC_PERF_SMOKE?[false]:[false,true])){
   const context=await browser.newContext({viewport:{width:1366,height:768},serviceWorkers:'block'}),page=await context.newPage();
   const errors=[];page.on('pageerror',e=>errors.push(e.message));const cdp=await context.newCDPSession(page);await cdp.send('Performance.enable');await page.addInitScript(()=>performance.setResourceTimingBufferSize(2000));
   if(slow){await cdp.send('Network.enable');await cdp.send('Network.emulateNetworkConditions',{offline:false,downloadThroughput:1600000/8,uploadThroughput:750000/8,latency:150});await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});}
-  for(const access of ['cold','warm']){
+  for(const access of (process.env.BC_PERF_SMOKE?['cold']:['cold','warm'])){
    let start=performance.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);await settle(page);
    const run={slow,access,bootMs:performance.now()-start,subjects:[],errors,bootTiming:await timings(page),bootCpuMs:await cpu(cdp)};results.runs.push(run);
    for(const id of subjects){
@@ -56,17 +56,55 @@ try{
      start=performance.now();await page.locator('#bcFocusModules .bc-focus-module-card').nth(id==='rlm'?1:0).click({timeout:15000});
      await page.waitForFunction(()=>window.BaseCompletaFocusNavigation.state.stage==='reading',null,{timeout:30000});
      const section=page.locator('#subjects > .subject[data-id="'+id+'"]');
-     const button=section.locator('button:visible').filter({hasText:id==='pt'?/Estudar teoria/:/Revisar conteúdo/}).first();
-     await button.waitFor({timeout:15000});await button.click();
-     await readingReady(page);await settle(page);
-     const readingMs=performance.now()-start;
-     await closeReader(page);
-     let fullReadingMs=null;if(id!=='pt'){const fullStart=performance.now();await section.locator('button:visible').filter({hasText:/Estudar conteúdo/}).first().click();await readingReady(page);await settle(page);fullReadingMs=performance.now()-fullStart;await closeReader(page);}
+     let readingMs,fullReadingMs;
+     if(id==='pt'){
+      // Português atual: Curso Integrado de 24 módulos, leitor em modal.
+      // A aba .ptn-tab pertencia ao currículo legado de 17 módulos.
+      const current=section.locator('.cf-module.bc-focus-current-module[data-pt-current]').first();
+      await current.waitFor({state:'visible',timeout:15000});
+      const moduleId=await current.getAttribute('data-pt-current');
+      const study=current.locator('.pt-cf-button-open[data-pt-cf-open="review"]').first();
+      await study.waitFor({state:'visible',timeout:15000});
+      await study.click();
+      await page.locator('.pt-native-reader .bc-native-article').waitFor({state:'visible',timeout:30000});
+      await readingReady(page);await settle(page);readingMs=performance.now()-start;
+      await closeReader(page);
+      const fullStart=performance.now();
+      await page.evaluate(moduleId=>window.CentralPortugueseReader.open(moduleId,'complete'),moduleId);
+      await page.locator('.pt-native-reader .bc-native-article').waitFor({state:'visible',timeout:30000});
+      await readingReady(page);await settle(page);fullReadingMs=performance.now()-fullStart;
+      await closeReader(page);
+     }else{
+      const button=section.locator('button:visible').filter({hasText:/Revisar conteúdo/}).first();
+      await button.waitFor({timeout:15000});await button.click();
+      await readingReady(page);await settle(page);
+      readingMs=performance.now()-start;
+      await closeReader(page);
+      const fullStart=performance.now();
+      await section.locator('button:visible').filter({hasText:/Estudar conteúdo/}).first().click();
+      await readingReady(page);await settle(page);fullReadingMs=performance.now()-fullStart;
+      await closeReader(page);
+     }
      const timing=await timings(page);timing.cpuMs=delta(subjectCpu,await cpu(cdp));await page.evaluate(()=>{window.openHome();window.BaseCompletaFocusNavigation.backToSubjects();});
      start=performance.now();await page.evaluate(id=>window.BaseCompletaFocusNavigation.chooseSubject(id),id);await page.locator('#bcFocusModules .bc-focus-module-card').first().waitFor({state:'visible',timeout:30000});await settle(page);
      const reopenMs=performance.now()-start;
      run.subjects.push({id,modulesMs,readingMs,fullReadingMs,reopenMs,timing,count:results.catalog[id].length});console.log(JSON.stringify({slow,access,id,modulesMs,readingMs,fullReadingMs,reopenMs}));
-    }catch(e){results.failures.push({slow,access,id,error:e.message.slice(0,280)});run.subjects.push({id,modulesMs,error:e.message.slice(0,280)});console.log(JSON.stringify(run.subjects.at(-1)));await page.screenshot({path:out+'/'+(slow?'slow':'normal')+'-'+access+'-'+id+'-failure.png'});await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);}
+    }catch(e){
+     if(id==='pt'){
+      const diag=await page.evaluate(()=>{
+       const pt=document.querySelector('#subjects > .subject[data-id="pt"]');
+       const mods=[...(pt?.querySelectorAll('.cf-module[data-ptn-module]')||[])].slice(0,3);
+       return {stage:window.BaseCompletaFocusNavigation?.state?.stage,moduleKey:window.BaseCompletaFocusNavigation?.state?.moduleKey,
+        subjectClass:pt?.className,ptModules:mods.map(el=>({id:el.dataset.ptnModule,classes:el.className,headText:el.querySelector('.cf-module-head')?.textContent?.slice(0,100),html:el.querySelector('[data-ptn-host]')?.innerHTML?.slice(0,300)})),
+        tabs:pt?.querySelectorAll('.ptn-tab').length,ready:window.CentralDisciplineLoader?.isReady?.('pt'),rendered:!!window.renderPortugueseMaster,
+        errors:pt?.querySelector('.ptn-loading')?.textContent?.slice(0,200),focusHasModule:document.getElementById('homeView')?.classList.contains('bc-focus-has-module'),
+        subjectHTML:pt?.innerHTML?.slice(0,700),counts:Object.fromEntries(['.ptn-master','.cf-module','.topic-item','.pt-module-card','.module','.cf-modules','.ptn-loading','.subject-body'].map(sel=>[sel,pt?.querySelectorAll(sel)?.length||0])),moduleTitle:document.getElementById('bcFocusModuleLabel')?.textContent,
+        currentModule:pt?.querySelector('.bc-focus-current-module')?.outerHTML?.slice(0,1200),
+        selectedButtons:[...(pt?.querySelector('.bc-focus-current-module')?.querySelectorAll('button')||[])].slice(0,30).map(el=>({text:el.textContent?.trim()?.slice(0,100),cls:el.className,on:el.getAttribute('onclick')}))};
+      });
+      console.log('PT_FOCUS_DIAGNOSTIC '+JSON.stringify(diag));
+     }
+     results.failures.push({slow,access,id,error:e.message.slice(0,280)});run.subjects.push({id,modulesMs,error:e.message.slice(0,280)});console.log(JSON.stringify(run.subjects.at(-1)));await page.screenshot({path:out+'/'+(slow?'slow':'normal')+'-'+access+'-'+id+'-failure.png'});await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});await ready(page);}
     await writeFile(out+'/results.json',JSON.stringify(results,null,2));
    }
   }

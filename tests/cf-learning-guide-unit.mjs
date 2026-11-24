@@ -49,6 +49,6 @@ test('layout de CF usa o bloco único de orientação e preserva o fluxo existen
   const manifest = readFileSync('central-offline-files-v66172.json', 'utf8');
   assert.ok(ui.includes("BCOrientation.html('cf:'"), 'CF usa a orientação curta compartilhada');
   assert.ok(!ui.includes('cf-learning-panel') || !ui.includes('learningGuide(w)+'), 'painéis antigos não são mais renderizados');
-  assert.ok(manifest.includes('ui/cf-native-study-v2.js?v=20261115responsive1'), 'Manifesto offline deve usar a versão atual');
+  assert.ok(manifest.includes('ui/cf-native-study-v2.js?v=20261123-theory-clean-v2'), 'Manifesto offline deve usar a versão atual');
   for (const key of ['toggleLegacyReading', 'openReader', 'openQuiz']) assert.ok(ui.includes(key), 'Fluxo existente preservado: ' + key);
 });
