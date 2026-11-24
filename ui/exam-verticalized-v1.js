@@ -106,6 +106,7 @@
   function render() {
     const host = document.getElementById(dialogId);
     if (!host || host.hidden) return;
+    const syncMessage = host.querySelector('[data-exam-sync-status]')?.textContent || '';
     const opened = new Set(Array.from(host.querySelectorAll('.exam-subject[open]'), node => node.dataset.examSubject));
     const subjectMarkup = visibleSubjects().map(subject => {
       const percent = progressFor(subject);
@@ -113,6 +114,7 @@
     }).join('');
     const headerLabel = DATA.cargoCode === '01' && DATA.examId?.startsWith('trt8') ? 'EDITAL 01/2026 + RETIFICAÇÃO · TRT-8' : 'EDITAL 01/2026 · TJPB';
     host.innerHTML = '<section class="exam-verticalized-panel" role="dialog" aria-modal="true" aria-labelledby="examVerticalizedTitle"><header class="exam-screen-header"><button type="button" data-exam-close aria-label="Fechar edital">← Voltar</button><span>'+esc(headerLabel)+'</span><h1 id="examVerticalizedTitle">Edital Verticalizado</h1><p>Analista Judiciário · Área Judiciária</p></header><section class="exam-overview"><div><span>Progresso do edital</span><b>'+overall()+'%</b></div><i><em style="width:'+overall()+'%"></em></i><small>Avanço pessoal nas marcações de estudo, revisão e questões.</small></section><p class="exam-source">'+esc(DATA.source)+'</p>'+ (visibleSubjects().length !== DATA.subjects.length ? '<p class="exam-source">Visualização parcial: somente disciplinas mantidas na Central. Consulte o edital oficial para o programa integral.</p>' : '') +'<p class="exam-sync-status" data-exam-sync-status></p><div class="exam-subject-list">'+subjectMarkup+'</div></section>';
+    host.querySelector('[data-exam-sync-status]').textContent = syncMessage;
     host.hidden = false;
     host.querySelector('[data-exam-close]').addEventListener('click', close);
     host.querySelectorAll('[data-exam-topic]').forEach(input => input.addEventListener('change', () => {

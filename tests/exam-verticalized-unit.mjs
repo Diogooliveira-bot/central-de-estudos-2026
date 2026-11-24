@@ -65,6 +65,15 @@ test('tela abre no objetivo TJPB, oferece três marcações e calcula avanço se
  dom.window.close();
 });
 
+test('mensagem de sincronização sobrevive à renderização após marcar o checklist',()=>{
+ const {dom,w}=setup();
+ w.CentralExamVerticalized.open();
+ const marker=w.document.querySelector('#examVerticalizedDialog [data-exam-marker="studied"]');
+ marker.click();
+ assert.match(w.document.querySelector('#examVerticalizedDialog [data-exam-sync-status]').textContent,/apenas neste navegador/);
+ dom.window.close();
+});
+
 test('progresso permanece no aparelho e fica isolado por identidade do aluno',()=>{
  const storage=makeStorage(); const a=setup({user:'student-A',storage}); a.w.CentralExamVerticalized.open();
  const item=catalog.subjects.flatMap(s=>s.items).find(i=>!i.organizational);
