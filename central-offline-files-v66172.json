@@ -1,5 +1,5 @@
 {
-  "build": "20261122-adm-m06-guided-art-v1",
+  "build": "20261123-concursos-compartilhados-v2",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -230,7 +230,7 @@
     "/ui/tablet-scale-v1.js?v=20261117tablet1",
     "/ui/orientation-defaults-v1.js?v=20261113orient2",
     "/ui/orientation-v1.js?v=20261115responsive1",
-    "/ui/study-objectives-v1.js?v=20261123-prf-catalog-v1",
+    "/ui/study-objectives-v1.js?v=20261123-concursos2",
     "/ui/study-objectives-v1.css?v=20261119r1",
     "/content/tjpb-2026-verticalized.js?v=20261020exam1",
     "/content/trt8-2026-verticalized.js?v=20261021multiexam2",
@@ -333,6 +333,9 @@
     "/assets/adm/revisao-guiada/m06/ADM-M06-C07.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C08.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C09.webp",
-    "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp"
+    "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp",
+    "/ui/contest-admin-form.js?v=20261123concursos2",
+    "/ui/concursos-catalog-v1.js?v=20261123concursos2",
+    "/ui/concursos-catalog-v1.css?v=20261123concursos2"
   ]
 }

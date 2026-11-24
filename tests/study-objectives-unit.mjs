@@ -16,9 +16,26 @@ const ids = ['pt','cf','adm','civil','cpc','penal','cpp','trab','ptra','rlm'];
 test('objetivo usa persistência de preferência própria e não entra no snapshot de progresso', () => {
   assert.equal(isSyncKey('central-v6:study-objective:v1'), false);
   assert.equal(isSyncKey('central-v6:study-objective:pending:v1'), false);
+  assert.equal(isSyncKey('central-v6:selected-contests:v1'), false);
   assert.equal(isSyncKey('central-v6:free-study-subjects:v1'), false);
   assert.equal(isSyncKey('central-v6:ui-scale:v1'), false, 'tamanho da tela é do aparelho, não do progresso');
   assert.equal(isSyncKey('central-v6:done:cf-m01'), true);
+});
+
+test('alternar entre dois editais preserva histórico compartilhado e seleção simultânea', async () => {
+  const storage=makeStorage({'central-v6:done:cf-m01':'1'});
+  const {dom}=setup(storage), w=dom.window;
+  await settle(w);
+  const first='exam-tjpb-2026-analista-judiciaria', second='exam-trt8-2026-analista-judiciaria';
+  assert.equal(w.CentralStudyObjectives.setActive(first),true);
+  assert.equal(w.CentralStudyObjectives.setActive(second),true);
+  assert.deepEqual(Array.from(w.CentralStudyObjectives.selectedContestIds()),[first,second]);
+  assert.equal(w.CentralStudyObjectives.getActive(),second);
+  assert.equal(storage.getItem('central-v6:done:cf-m01'),'1');
+  await w.CentralStudyObjectives.toggleContest(first);
+  assert.deepEqual(Array.from(w.CentralStudyObjectives.selectedContestIds()),[second]);
+  assert.equal(storage.getItem('central-v6:done:cf-m01'),'1');
+  dom.window.close();
 });
 
 function makeStorage(seed = {}) {
@@ -118,7 +135,7 @@ test('boas-vindas: três caminhos diretos, carreira e editais em telas separadas
   dom.window.close();
 });
 
-test('editais antigos permanecem carregáveis, mas seleção mostra apenas três atalhos', async () => {
+test('editais antigos permanecem carregáveis e novos concursos aparecem na seleção', async () => {
   const legacyId='exam-catalog-receita-federal-autorizado-2026-cargo-1';
   const {dom}=setup(makeStorage({'central-v6:study-objective:v1':legacyId})),w=dom.window;
   w.__BASE_COMPLETA_PREVIEW_GUEST__=false;
@@ -133,9 +150,10 @@ test('editais antigos permanecem carregáveis, mas seleção mostra apenas três
   assert.deepEqual(options.map(x=>x.dataset.studyExam),[
     'exam-catalog-gmf-fortaleza-monitoramento-cargo-1',
     'exam-tjpa-em-preparacao','exam-tjal-em-preparacao',
+    'exam-catalog-receita-federal-autorizado-2026-cargo-1',
   ]);
-  assert.doesNotMatch(w.document.querySelector('#studyObjectiveDialog').textContent,/Receita Federal/);
-  options.at(-1).click();
+  assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Receita Federal/);
+  options[2].click();
   await settle(w);
   assert.equal(w.CentralStudyObjectives.getActive(),'exam-tjal-em-preparacao');
   assert.ok(w.CentralStudyObjectives.catalog.goals[legacyId],'o objetivo antigo foi preservado');
@@ -182,7 +200,7 @@ test('objetivo escolhido sem conexão entra na fila e sincroniza quando a conex�
   Object.defineProperty(window.navigator, 'onLine', { value:true, configurable:true });
   window.dispatchEvent(new window.Event('online'));
   await settle(window); await settle(window);
-  assert.deepEqual(saved, { objectiveId:'career-area-policial' });
+  assert.deepEqual(saved, { objectiveId:'career-area-policial', selectedContestIds:[] });
   assert.equal(storage.getItem('central-v6:study-objective:pending:v1'), null);
   dom.window.close();
 });
@@ -207,7 +225,7 @@ test('seleção do Estudo livre sincroniza entre aparelhos na conta do aluno', a
   await settle(w1);
   chooseFree(w1,['pt','civil','rlm']);
   await settle(w1);
-  assert.deepEqual(writes.at(-1), { objectiveId:'free-study', freeSubjectIds:['pt','civil','rlm'] });
+  assert.deepEqual(writes.at(-1), { objectiveId:'free-study', selectedContestIds:[], freeSubjectIds:['pt','civil','rlm'] });
   assert.equal(remote.objectiveId,'free-study');
   assert.equal(w1.document.querySelector('#studyObjectiveTopbar'),null);
   original.dom.window.close();
@@ -242,7 +260,7 @@ test('escolha livre desconectada é enviada na volta da internet, sem limpar pro
   Object.defineProperty(w.navigator,'onLine',{value:true,configurable:true});
   w.dispatchEvent(new w.Event('online'));
   await settle(w);await settle(w);
-  assert.deepEqual(submissions.at(-1),{objectiveId:'free-study',freeSubjectIds:['adm','cpp']});
+  assert.deepEqual(submissions.at(-1),{objectiveId:'free-study',selectedContestIds:[],freeSubjectIds:['adm','cpp']});
   assert.equal(storage.getItem('central-v6:study-objective:pending:v1'),null);
   assert.equal(storage.getItem('central-v6:done:cf-m01'),'1');
   dom.window.close();

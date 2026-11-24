@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { JSDOM } from 'jsdom';
+
+const code=fs.readFileSync(new URL('../ui/contest-admin-form.js',import.meta.url),'utf8');
+test('formulário visual mantém sugestões pendentes até aprovação documentada', () => {
+  const dom=new JSDOM('<!doctype html><body><div id="overlay"></div></body>',{url:'https://preview.example.test',runScripts:'outside-only'});
+  const w=dom.window;
+  w.CentralModuleCatalog={cf:[{number:2,title:'Direitos e garantias fundamentais'}]};
+  w.CentralStudyObjectiveCatalog={subjects:{cf:{name:'Direito Constitucional'}}};
+  w.eval(code);
+  const overlay=w.document.getElementById('overlay');
+  const data={id:'teste-2026',name:'Teste',organ:'Órgão',state:'CE',sphere:'Estadual',year:2026,status:'publicado',active:false,sources:[{title:'Edital',url:'https://example.org/edital'}],cargos:[],subjects:[{id:'cf-edital',name:'Constitucional',centralId:'cf',coverage:'missing',topics:[],weight:1,syllabus:[{id:'direitos',title:'Direitos fundamentais',links:[],supplement:null}]}]};
+  w.CentralContestAdminForm.open(overlay,data,false);
+  assert.equal(overlay.querySelector('#contestAdminJson'),null);
+  assert.ok(overlay.querySelector('[data-pdf]'));
+  overlay.querySelector('[data-suggest-topic="0.0"]').click();
+  const draft=w.CentralContestAdminForm.value();
+  assert.equal(draft.subjects[0].syllabus[0].links[0].moduleId,'cf-02');
+  assert.equal(draft.subjects[0].syllabus[0].links[0].status,'suggested');
+  overlay.querySelector('[data-review-link="0.0.0.approved"]').click();
+  assert.equal(draft.subjects[0].syllabus[0].links[0].status,'suggested');
+  const evidence=overlay.querySelector('[data-field="subjects.0.syllabus.0.links.0.evidence"]');
+  evidence.value='Conferi os subitens e o capítulo em 22/11/2026.';
+  evidence.dispatchEvent(new w.Event('input',{bubbles:true}));
+  overlay.querySelector('[data-review-link="0.0.0.approved"]').click();
+  assert.equal(draft.subjects[0].syllabus[0].links[0].status,'approved');
+  assert.equal(data.subjects[0].syllabus[0].links.length,0,'o original não foi alterado antes de salvar');
+  dom.window.close();
+});
