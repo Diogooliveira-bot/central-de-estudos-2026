@@ -15,6 +15,15 @@ function execFile(name) {
 }
 const ids=['atual','fortaleza','legesp','dh'];
 
+test('catálogo GMF estrutural pode ser servido sem expor materiais de estudo', () => {
+  assert.equal(protectedAsset('/content/gmf/course-catalog-v1.js'), null);
+  assert.deepEqual(protectedAsset('/content/gmf/atual/m02-full-v1.js'),
+    {kind:'file',feature:'theory.complete'});
+  assert.deepEqual(protectedAsset('/content/gmf/atual/m02-review-v1.js'),
+    {kind:'file',feature:'theory.summary'});
+  assert.match(read('scripts/build-vercel-output.mjs'), /protectedAsset/);
+});
+
 test('M01: revisão autenticada e teoria premium nunca compõem arquivos públicos', () => {
   assert.deepEqual(protectedAsset('/content/gmf/m01-review-v1.js'),
     {kind:'file',feature:'theory.summary'});
