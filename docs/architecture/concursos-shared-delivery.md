@@ -19,7 +19,7 @@ O PDF é lido no navegador com o pdf.js já presente no repositório. O texto fi
 ## Testes efetivamente executados
 
 - CI anterior no PR: 536 testes; 528 passaram, 8 falharam. Todas as oito falhas decorriam da divergência M05/M06 entre `central-v119.html`, `sw.js` e o manifesto offline. Após alinhar o bootstrap/cache, restaram duas falhas no endereço do manifesto; corrigidas em seguida.
-- `npm test`: 543 testes, **542 aprovados, 0 falhas, 1 ignorado** na execução de 23/11/2026. A suíte inclui a validação de referências, cobertura conservadora, formulário visual e compatibilidade dos objetivos antigos. Repetir após o commit final e conferir a CI do PR.
+- `npm test`: após integrar a `main` atual, 559 testes, **558 aprovados, 0 falhas, 1 ignorado** na execução de 23/11/2026. A suíte inclui a validação de referências, cobertura conservadora, formulário visual e compatibilidade dos objetivos antigos. Conferir também a CI do PR.
 - `npm run security:static`: 2567 arquivos versionados examinados, nenhum segredo de alto risco identificado.
 - `node scripts/build-shared-module-catalog.mjs --check`, `node scripts/build-module-catalog.mjs --check`, `node --check` dos scripts alterados e `git diff --check`: passaram.
 - Extração do pdf.js exercitada com PDF fictício gerado localmente, sem informações de alunos; as linhas foram lidas corretamente.

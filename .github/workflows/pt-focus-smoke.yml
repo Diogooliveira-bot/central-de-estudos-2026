@@ -1,0 +1,36 @@
+name: Português — smoke da leitura nativa
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/responsive-performance-browser.mjs'
+      - 'ui/disciplinas-foco-v1.js'
+      - 'portugues-native-v1.js'
+      - '.github/workflows/pt-focus-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pt-focus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Validar a leitura de Português na navegação real
+        env:
+          BC_PERF_ONLY: '1'
+          BC_PERF_SMOKE: '1'
+          BC_PERF_SUBJECTS: 'pt'
+          BC_TEST_OUT: audits/pt-focus-smoke
+        run: node tests/responsive-performance-browser.mjs
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: pt-focus-smoke
+          path: audits/pt-focus-smoke/
