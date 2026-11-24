@@ -78,7 +78,7 @@
    const resources=(record.resources||[]).filter(x=>/^https:\/\//.test(x.url)).map(x=>'<a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title)+'</a>').join(' · ');
    const previous=index>0?modules[index-1]:null,next=index<modules.length-1?modules[index+1]:null;
    state.root.innerHTML='<div class="gmf-reader-box"><header class="gmf-reader-top"><button type="button" data-close>← Voltar</button><div><small>BASE COMPLETA · '+esc(course.name)+' · '+module.toUpperCase()+'</small><h1>'+esc(title)+'</h1></div><button type="button" data-mode="'+other+'">'+otherLabel+'</button></header>'+
-    '<div class="gmf-reader-progress"><b>'+(mode==='review'?'Revisão Guiada':'Conteúdo Completo')+'</b><small>Progresso desta leitura: <span data-pct>'+pct+'</span>% · '+done+'/'+chapters.length+' seções</small><div role="progressbar" aria-label="Progresso de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'"><span style="width:'+pct+'%"></span></div></div>'+
+    '<div class="gmf-reader-progress"><b>'+(mode==='review'?'Revisão Guiada':'Conteúdo Completo')+'</b><small>Progresso desta leitura: <span data-pct>'+pct+'</span>% · <span data-done>'+done+'</span>/'+chapters.length+' seções</small><div role="progressbar" aria-label="Progresso de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'"><span style="width:'+pct+'%"></span></div></div>'+
     '<div class="gmf-reader-module-nav"><button type="button" data-module="'+(previous?.id||'')+'" '+(!previous?'disabled':'')+'>← '+(previous?esc(previous.title):'Início do curso')+'</button><button type="button" data-module="'+(next?.id||'')+'" '+(!next?'disabled':'')+'>'+(next?esc(next.title):'Fim do curso')+' →</button></div>'+
     '<div class="gmf-reader-grid"><nav aria-label="Sumário"><b>SUMÁRIO</b>'+nav+'</nav><main><p class="gmf-reader-lead">'+(mode==='review'?'Revise os pontos principais e tente recuperar as ideias antes de consultar suas anotações.':'Estude os capítulos em sequência. O indicador registra seções lidas, não conclui o módulo automaticamente.')+'</p>'+sections+(resources?'<div class="gmf-reader-sources"><b>Fontes verificáveis · consulta em 22/11/2026</b><p>'+resources+'</p></div>':'')+'<aside class="gmf-reader-questions"><b>Questões do módulo</b><p>Em preparação — questões disponíveis em breve.</p></aside></main></div></div>';
    state.root.querySelector('[data-close]')?.addEventListener('click',close);
@@ -90,6 +90,7 @@
      b.setAttribute('aria-pressed',String(v));b.textContent=v?'✓ Seção lida · desfazer':'Marcar seção como lida';
      const current=chapters.filter((_,n)=>saved(key(subject,module,mode,n))).length,percent=chapters.length?Math.round(current*100/chapters.length):0;
      const out=state.root.querySelector('[data-pct]');if(out)out.textContent=String(percent);
+     const doneOut=state.root.querySelector('[data-done]');if(doneOut)doneOut.textContent=String(current);
      const bar=state.root.querySelector('[role=progressbar]');if(bar){bar.setAttribute('aria-valuenow',String(percent));bar.querySelector('span').style.width=percent+'%'}
    }));
  }

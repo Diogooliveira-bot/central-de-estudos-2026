@@ -6,6 +6,7 @@ import vm from 'node:vm';
 const read = path => readFileSync(new URL('../' + path, import.meta.url), 'utf8');
 const source = read('content/gmf/course-catalog-v1.js');
 const script = read('ui/gmf-disciplines-v1.js');
+const reader = read('ui/gmf-course-reader-v2.js');
 const index = read('index.html');
 
 function getCatalog() {
@@ -22,6 +23,12 @@ test('cartões GMF abrem o catálogo próprio antes da navegação geral', () =>
   assert.match(script, /global\.GmfDisciplines = Object\.freeze\([\s\S]*?openCourse,closeCourse\}\)/);
   assert.match(script, /content\.innerHTML = renderMaster\(course\)/);
   assert.match(script, /gmf-course-browser-back/);
+});
+
+
+test('leitor GMF atualiza a contagem de seções junto ao percentual', () => {
+  assert.match(reader, /<span data-done>\'+done\+<\/span>/);
+  assert.match(reader, /querySelector\('\[data-done\]'\)/);
 });
 
 test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e revisão', () => {
