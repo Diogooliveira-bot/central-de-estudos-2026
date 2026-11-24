@@ -37,13 +37,16 @@ import handlePremiumExpiryReminders from '../lib/premium-expiry-reminders.js';
 import handleStudyCommunication from '../lib/study-communication.js';
 import handleVadeAudit from '../lib/vade-audit.js';
 
-const PREVIEW_DEMO_BRANCH = 'feature/contato-relatorio-aluno-20261109';
+const PREVIEW_DEMO_BRANCHES = new Set([
+  'feature/contato-relatorio-aluno-20261109',
+  'codex/gmf-complete-curriculum-2026-11',
+]);
 const PREVIEW_DEMO_ID = 'bc-preview-demo-20261109';
 const PREVIEW_DEMO_EMAIL = 'aluno-demo@basecompleta.invalid';
 
 function previewDemoEnabled() {
   return process.env.VERCEL_ENV === 'preview' &&
-    process.env.VERCEL_GIT_COMMIT_REF === PREVIEW_DEMO_BRANCH &&
+    PREVIEW_DEMO_BRANCHES.has(process.env.VERCEL_GIT_COMMIT_REF) &&
     process.env.BC_PREVIEW_NEON_GUARD === 'YES' &&
     process.env.BC_PREVIEW_DEMO_ENABLED === 'YES';
 }
