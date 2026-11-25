@@ -32,27 +32,27 @@ test('leitor GMF atualiza a contagem de seções junto ao percentual', () => {
   assert.ok(reader.includes("querySelector('[data-done]')"));
 });
 
-test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e revisão', () => {
+test('disciplinas do GMF: as quatro originais íntegras e toda disciplina publicada com teoria e revisão de qualidade', () => {
   const catalog = getCatalog();
-  assert.equal(catalog.subjects.length, 4);
-  assert.deepEqual(Array.from(catalog.subjects, item => item.id), ['atual', 'fortaleza', 'legesp', 'dh']);
-  assert.deepEqual(Array.from(catalog.subjects, item => item.modules.length), [6, 9, 11, 4]);
-  assert.equal(catalog.subjects.reduce((sum, item) => sum + item.modules.length, 0), 30);
+  const original = {atual:6, fortaleza:9, legesp:11, dh:4};
+  for (const [id, count] of Object.entries(original)) {
+    const course = catalog.subjects.find(item => item.id === id);
+    assert.ok(course, id + ' deve existir');
+    assert.equal(course.modules.length, count, id);
+    assert.deepEqual(Array.from(catalog.availableModules[id]), Array.from(course.modules, m => m.id), id + ' publicado por inteiro');
+  }
+  assert.ok(catalog.subjects.length >= 4);
+  assert.equal(new Set(catalog.subjects.map(item => item.id)).size, catalog.subjects.length);
   assert.equal(catalog.theoryComplete, true);
   assert.equal(catalog.newNoticePublished, false);
-  assert.deepEqual(JSON.parse(JSON.stringify(catalog.availableModules)), {
-    atual:['m01','m02','m03','m04','m05','m06'],
-    fortaleza:['m01','m02','m03','m04','m05','m06','m07','m08','m09'],
-    legesp:['m01','m02','m03','m04','m05','m06','m07','m08','m09','m10','m11'],
-    dh:['m01','m02','m03','m04']
-  });
   for (const course of catalog.subjects) {
     assert.ok(course.reference.includes('2023'));
     assert.equal(new Set(course.modules.map(m => m.id)).size, course.modules.length);
     for (const module of course.modules) {
       assert.ok(module.title.length > 5);
       assert.ok(module.focus.length >= 2);
-      assert.ok(catalog.availableModules[course.id].includes(module.id), course.id + '/' + module.id);
+      // Só módulos publicados precisam ter conteúdo pronto; os "em preparação" (disciplina nova) são validados pelo comando nova-disciplina.
+      if (!catalog.availableModules[course.id].includes(module.id)) continue;
       if (module.id !== 'm01') {
         for (const mode of ['full','review']) {
           const path = 'content/gmf/' + course.id + '/' + module.id + '-' + mode + '-v1.js';

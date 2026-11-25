@@ -163,13 +163,19 @@
     }
   }
 
+  // Cor de destaque de cada disciplina: campo "accent" do catálogo (#rrggbb) ou uma cor da paleta, em ordem.
+  const ACCENTS = ['#356a9e', '#438a80', '#506a92', '#6476a3', '#7a6aa8', '#a0714f', '#4f7f9c', '#5d8f5a'];
+  function accentRule(course, index) {
+    const color = /^#[0-9a-f]{6}$/i.test(String(course.accent || '')) ? course.accent : ACCENTS[index % ACCENTS.length];
+    const r = parseInt(color.slice(1, 3), 16), g = parseInt(color.slice(3, 5), 16), b = parseInt(color.slice(5, 7), 16);
+    const id = String(course.id).replace(/[^a-z]/g, '');
+    return '.disc-card[data-id="' + id + '"],.subject[data-id="' + id + '"]{--discipline-accent:' + color + ';--discipline-accent-soft:rgba(' + r + ',' + g + ',' + b + ',.10)}';
+  }
+
   const style = document.createElement('style');
   style.id = 'gmf-disciplines-v1-style';
   style.textContent = [
-    '.disc-card[data-id="atual"],.subject[data-id="atual"]{--discipline-accent:#356a9e;--discipline-accent-soft:rgba(53,106,158,.10)}',
-    '.disc-card[data-id="fortaleza"],.subject[data-id="fortaleza"]{--discipline-accent:#438a80;--discipline-accent-soft:rgba(67,138,128,.10)}',
-    '.disc-card[data-id="legesp"],.subject[data-id="legesp"]{--discipline-accent:#506a92;--discipline-accent-soft:rgba(80,106,146,.10)}',
-    '.disc-card[data-id="dh"],.subject[data-id="dh"]{--discipline-accent:#6476a3;--discipline-accent-soft:rgba(100,118,163,.10)}',
+    ...catalog.subjects.map((course, index) => accentRule(course, index)),
     'html.bc-ui-v1 #subjects .gmf-std-module .gmf-edital-note{margin:14px 2px 2px;font-size:.8125rem;line-height:1.6;color:var(--muted,#6c7584)}',
     'html.bc-ui-v1 #subjects .gmf-std-module .gmf-edital-note a{font-weight:650;color:var(--discipline-accent,#356a9e)}',
     '.gmf-questions-soon .bcmc-primary[disabled]{opacity:.6;cursor:not-allowed}'

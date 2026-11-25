@@ -148,6 +148,16 @@ if (BASE) {
   else ok.push('Nenhuma chave/senha em arquivos públicos');
 }
 
+/* 8) Disciplinas extras (GMF e futuras): tudo derivado do catálogo; acusa esquecimentos e conteúdo publicado sem qualidade. */
+{
+  try {
+    const { conferir } = await import('./disciplinas-extras.mjs');
+    const problemas = await conferir();
+    if (problemas.length) erro('Disciplinas extras com problema', problemas.slice(0, 20).join('\n  '), 'Veja docs/NOVA_DISCIPLINA.md e rode: npm run nova-disciplina -- conferir');
+    else ok.push('Disciplinas extras (GMF) coerentes: proteção, questões bloqueadas e conteúdo publicado');
+  } catch (e) { atencao('Não foi possível conferir as disciplinas extras', String(e.message || e).slice(0, 200), 'Rode: npm run nova-disciplina -- conferir'); }
+}
+
 /* ---- relatório ---- */
 const linha = '─'.repeat(60);
 console.log(`\nVerificação da Central — ${new Date().toLocaleString('pt-BR')}\n${linha}`);

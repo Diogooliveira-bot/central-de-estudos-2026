@@ -10,10 +10,13 @@
  const KEY='central-v6:study-objective-v1:'+USER_ID;
  const DEFAULT='general';
  const GMF='gmf-fortaleza';
- const EXTRA=new Set(['atual','fortaleza','legesp','dh']);
- const GMF_IDS=new Set(['pt','rlm','info','cf','adm','penal','cpp','atual','fortaleza','legesp','dh']);
+ // As disciplinas exclusivas do GMF vêm do catálogo (content/gmf/course-catalog-v1.js): para criar outra, basta incluí-la lá.
+ const CATALOG_SUBJECTS=Array.isArray(global.GmfCourseCatalog?.subjects)?global.GmfCourseCatalog.subjects.filter(s=>/^[a-z]{2,12}$/.test(String(s?.id||''))):[];
+ const EXTRA=new Set(CATALOG_SUBJECTS.length?CATALOG_SUBJECTS.map(s=>s.id):['atual','fortaleza','legesp','dh']);
+ const GMF_IDS=new Set(['pt','rlm','info','cf','adm','penal','cpp',...EXTRA]);
  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
  const LABELS={pt:'Português',rlm:'Raciocínio Lógico-Matemático',info:'Informática',cf:'Direito Constitucional',adm:'Direito Administrativo',penal:'Direito Penal',cpp:'Direito Processual Penal',atual:'Atualidades',fortaleza:'Conhecimentos sobre Fortaleza',legesp:'Legislação Extravagante',dh:'Direitos Humanos'};
+ for(const subject of CATALOG_SUBJECTS){if(subject.name)LABELS[subject.id]=String(subject.name)}
  function renderGmfGrid(){
    const grid=global.document.getElementById('gmfGoalGrid');
    if(!grid)return;
@@ -126,9 +129,7 @@
  style.id='gmf-study-objective-css';
  style.textContent=[
    /* A ocultação por CSS também protege contra cartões estáticos anteriores à renderização dinâmica. */
-   'html:not([data-gmf-study-goal="gmf-fortaleza"]) .subject[data-id="atual"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .subject[data-id="fortaleza"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .subject[data-id="legesp"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .subject[data-id="dh"]{display:none!important}',
-   'html:not([data-gmf-study-goal="gmf-fortaleza"]) .disc-card[data-id="atual"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .disc-card[data-id="fortaleza"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .disc-card[data-id="legesp"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .disc-card[data-id="dh"]{display:none!important}',
-   'html:not([data-gmf-study-goal="gmf-fortaleza"]) .bcqa-card[data-disc="atual"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .bcqa-card[data-disc="fortaleza"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .bcqa-card[data-disc="legesp"],html:not([data-gmf-study-goal="gmf-fortaleza"]) .bcqa-card[data-disc="dh"]{display:none!important}',
+   ...['.subject[data-id="%s"]','.disc-card[data-id="%s"]','.bcqa-card[data-disc="%s"]'].map(template=>Array.from(EXTRA,id=>'html:not([data-gmf-study-goal="gmf-fortaleza"]) '+template.replace('%s',id)).join(',')+'{display:none!important}'),
    'html[data-gmf-study-goal="gmf-fortaleza"] #disciplineGrid{display:none!important}',
    'html:not([data-gmf-study-goal="gmf-fortaleza"]) #gmfGoalGrid{display:none!important}',
    'html[data-gmf-study-goal="gmf-fortaleza"] .subject[data-id="civil"],html[data-gmf-study-goal="gmf-fortaleza"] .subject[data-id="cpc"],html[data-gmf-study-goal="gmf-fortaleza"] .disc-card[data-id="civil"],html[data-gmf-study-goal="gmf-fortaleza"] .disc-card[data-id="cpc"],html[data-gmf-study-goal="gmf-fortaleza"] .bcqa-card[data-disc="civil"],html[data-gmf-study-goal="gmf-fortaleza"] .bcqa-card[data-disc="cpc"]{display:none!important}',
