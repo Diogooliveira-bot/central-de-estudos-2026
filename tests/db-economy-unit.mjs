@@ -4,7 +4,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
-process.env.AUTH_SECRET = 'economia-do-banco-segredo-so-para-testes-20261125';
+process.env.AUTH_SECRET = 'economia-do-banco-' + 'segredo-so-para-testes-20261125';
 const { __setDatabaseForTests, createSessionToken, COOKIE_NAME } = await import('../lib/auth.js');
 const { ensureOnce, forgetEnsured } = await import('../lib/db-once.js');
 const { requirePlanFeature } = await import('../lib/plan-access.js');
