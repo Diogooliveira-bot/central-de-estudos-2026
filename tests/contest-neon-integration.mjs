@@ -1,0 +1,75 @@
+// Run explicitly with PR398_TEST_DATABASE_URL pointing only to the empty PR #398 test database.
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import { neon } from '@neondatabase/serverless';
+import handleContest from '../lib/concursos-handler.js';
+import handleObjective from '../api/objective.js';
+import { createSessionToken, hashPassword } from '../lib/auth.js';
+import { EXAM_TOPIC_IDS } from '../lib/exam-progress-topic-ids.js';
+
+const url=new URL(process.env.PR398_TEST_DATABASE_URL||'postgresql://invalid/invalid');
+assert.equal(url.hostname,'ep-withered-shadow-b80dbzj9-pooler.c-14.us-east-1.aws.neon.tech','Somente a branch de homologação PR398');
+assert.equal(url.pathname,'/pr398_concursos_ficticios','Somente o banco novo e vazio PR398');
+process.env.DATABASE_URL=url.href;
+process.env.VERCEL_ENV='preview';
+process.env.BC_PREVIEW_NEON_GUARD='YES';
+process.env.BC_PREVIEW_NEON_EXPECTED_HOST=url.hostname;
+process.env.CONTESTS_PREVIEW_DB_ISOLATED='true';
+process.env.EXAM_PROGRESS_PREVIEW_DB_ISOLATED='true';
+process.env.AUTH_SECRET=crypto.randomBytes(48).toString('hex');
+const sql=neon(url.href);
+await sql`CREATE TABLE IF NOT EXISTS central_users (user_id TEXT PRIMARY KEY,name TEXT NOT NULL,email TEXT NOT NULL UNIQUE,role TEXT NOT NULL CHECK(role IN ('admin','editor','aluno')),password_hash TEXT NOT NULL,active BOOLEAN NOT NULL DEFAULT TRUE,failed_attempts INTEGER NOT NULL DEFAULT 0,locked_until TIMESTAMPTZ,last_login TIMESTAMPTZ,session_version INTEGER NOT NULL DEFAULT 1,created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW())`;
+await sql`CREATE TABLE IF NOT EXISTS central_plans (plan_code TEXT PRIMARY KEY,display_name TEXT NOT NULL,active BOOLEAN NOT NULL DEFAULT TRUE,created_at TIMESTAMPTZ NOT NULL DEFAULT NOW())`;
+await sql`CREATE TABLE IF NOT EXISTS central_plan_entitlements (plan_code TEXT NOT NULL REFERENCES central_plans(plan_code),feature_code TEXT NOT NULL,enabled BOOLEAN NOT NULL,daily_limit INTEGER,updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),PRIMARY KEY(plan_code,feature_code))`;
+await sql`CREATE TABLE IF NOT EXISTS central_user_subscriptions (subscription_id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES central_users(user_id),plan_code TEXT NOT NULL REFERENCES central_plans(plan_code),status TEXT NOT NULL,starts_at TIMESTAMPTZ NOT NULL,ends_at TIMESTAMPTZ,cancelled_at TIMESTAMPTZ,grant_source TEXT NOT NULL,provider_subscription_id TEXT,granted_by TEXT,created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW())`;
+await sql`INSERT INTO central_plans(plan_code,display_name) VALUES('free','Gratuito'),('premium','Premium') ON CONFLICT DO NOTHING`;
+await sql`INSERT INTO central_plan_entitlements(plan_code,feature_code,enabled) VALUES('free','edital.sync',FALSE),('premium','edital.sync',TRUE) ON CONFLICT DO NOTHING`;
+const suffix=Date.now().toString(36);
+const users=[];
+for(const role of ['admin','free','premium']){
+  const id=`pr398-${role}-${suffix}`,actualRole=role==='admin'?'admin':'aluno';
+  const rows=await sql`INSERT INTO central_users(user_id,name,email,role,password_hash) VALUES(${id},${`Teste fictício ${role}`},${`${id}@basecompleta.invalid`},${actualRole},${hashPassword(crypto.randomBytes(24).toString('hex'))}) RETURNING user_id,name,email,role,session_version`;
+  users.push(rows[0]);
+  if(role!=='admin')await sql`INSERT INTO central_user_subscriptions(subscription_id,user_id,plan_code,status,starts_at,ends_at,grant_source) VALUES(${`sub-${id}`},${id},${role},'active',NOW()-INTERVAL '1 day',NOW()+INTERVAL '30 days','manual')`;
+}
+const [admin,free,premium]=users;
+console.log('Neon PR398: contas fictícias e planos preparados.');
+async function call(handler,method,user,query={},body=null){
+  const req={method,query,body,headers:{host:'preview.example.test',origin:'https://preview.example.test',cookie:user?`bc_session=${createSessionToken(user)}`:''}};
+  const res={statusCode:200,headers:{},setHeader(k,v){this.headers[k]=v;},end(raw){this.body=JSON.parse(raw);}};
+  await handler(req,res);
+  return {status:res.statusCode,body:res.body};
+}
+const library=await call(handleContest,'GET',admin,{library:'1'});
+assert.equal(library.status,200);
+assert.equal(library.body.modules.pt.length,24);
+assert.equal(library.body.modules.info[8].chapters[0].id,'info-09-c01');
+assert.equal((await call(handleContest,'GET',free,{library:'1'})).status,403);
+const seed=await call(handleContest,'GET',admin,{admin:'1'});
+console.log('Neon PR398: catálogo carregado; status '+seed.status+'.');
+assert.equal(seed.status,200);
+assert.equal(seed.body.items.find((item)=>item.id==='prf-2021-policial-rodoviario-federal').coverage.percent,3);
+const data={id:`pr398-catalog-${suffix}`,name:'Concurso fictício PR398',organ:'Órgão fictício',state:'CE',sphere:'Estadual',year:2026,status:'previsto',active:false,sources:[{title:'Edital fictício',url:'https://example.org/edital.pdf'}],cargos:[{name:'Cargo fictício'}],subjects:[{id:'info',name:'Informática',centralId:'info',syllabus:[{id:'internet',title:'Internet e intranet',links:[{subjectId:'info',moduleId:'info-09',chapterId:'info-09-c01',scope:'partial',status:'approved',evidence:'Seção existente conferida no teste fictício.'}]}]}]};
+assert.equal((await call(handleContest,'POST',free,{}, {action:'create',data})).status,403);
+assert.equal((await call(handleContest,'POST',admin,{}, {action:'create',data:{...data,subjects:[{...data.subjects[0],syllabus:[{...data.subjects[0].syllabus[0],links:[{...data.subjects[0].syllabus[0].links[0],chapterId:'info-09-c999'}]}]}]}})).status,400);
+const created=await call(handleContest,'POST',admin,{}, {action:'create',data});
+assert.equal(created.status,201);
+assert.equal(created.body.item.revision,1);
+assert.equal((await call(handleContest,'PUT',admin,{}, {action:'update',revision:0,data})).status,409);
+const updated=await call(handleContest,'PUT',admin,{}, {action:'update',revision:1,data:{...data,summary:'Conferido em homologação'}});
+console.log('Neon PR398: cadastro e edição executados; status '+updated.status+'.');
+assert.equal(updated.status,200);
+assert.equal(updated.body.item.revision,2);
+const twoIds=['exam-tjpb-2026-analista-judiciaria','exam-trt8-2026-analista-judiciaria'];
+assert.equal((await call(handleObjective,'PUT',free,{}, {objectiveId:'free-study',selectedContestIds:twoIds,freeSubjectIds:['info']})).status,200);
+assert.deepEqual((await call(handleObjective,'GET',free)).body.selectedContestIds,twoIds);
+assert.deepEqual((await call(handleObjective,'GET',premium)).body.selectedContestIds,[]);
+console.log('Neon PR398: preferências isoladas entre contas.');
+assert.equal((await call(handleObjective,'PUT',free,{}, {objectiveId:'free-study',selectedContestIds:[twoIds[0],twoIds[0]]})).status,400);
+const [tjp,trt]=Object.keys(EXAM_TOPIC_IDS);
+assert.equal((await call(handleObjective,'GET',free,{resource:'exam-progress',examId:tjp})).status,403);
+const item=EXAM_TOPIC_IDS[tjp][0];
+assert.equal((await call(handleObjective,'PUT',premium,{resource:'exam-progress',examId:tjp},{changes:[{topicId:item,marker:'studied',value:true,at:new Date().toISOString()}]})).status,200);
+assert.equal((await call(handleObjective,'GET',premium,{resource:'exam-progress',examId:tjp})).body.progress[item].studied.value,true);
+assert.deepEqual((await call(handleObjective,'GET',premium,{resource:'exam-progress',examId:trt})).body.progress,{});
+console.log('Neon PR398: inventário, cadastro/edição, conflito, permissões, seleção e progresso por edital/conta aprovados em banco fictício.');

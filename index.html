@@ -11,7 +11,7 @@
 </style>
 <script>window.BC_STUDENT_TEC_DISABLED=true;</script>
 <link rel="stylesheet" href="/ui/old-questions-removed-v1.css?v=20261115-responsive-v15">
-<script src="/ui/old-questions-removed-v1.js?v=20261115-responsive-v15"></script>
+<script src="/ui/old-questions-removed-v1.js?v=20261123-theory-clean-v2"></script>
 <script src="/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1"></script>
 <script>if(location.pathname==='/index.html'&&!new URLSearchParams(location.search).has('central_source'))location.replace('/central-v119.html'+location.search+location.hash)</script>
 <script id="central-content-storage-fix-v6650">
@@ -1230,8 +1230,13 @@ window.centralBackupImport=function(inp){
 <script src="/central-structural-v66119/cpc-questions-000-init.js?v=66119s2"></script>
 <script src="/content/cpc/cpc-fixation-questions-v1.js?v=20261010auditfix1"></script>
 <script src="/content/cpc/cpc-fixation-questions-m01-m06-v1.js?v=20261031fix1"></script>
+<<<<<<< HEAD
 <script src="/central-structural-v66119/runtime.js?v=20261118r1"></script>
-<script src="/portugues-site.js?v=20261122ptm17v1"></script>
+<script src="/portugues-site.js?v=20261125ptm18v1"></script>
+=======
+<script src="/central-structural-v66119/runtime.js?v=20261121gmfobj2"></script>
+<script src="/portugues-site.js?v=20261122ptm09v1"></script>
+>>>>>>> origin/main
 <script src="/ui/portuguese-activities-v1.js?v=20261118r1"></script>
 <script src="/ui/portuguese-reader.js?v=20261121r2"></script>
 <script src="/ui/apostilas-pdf-v1.js?v=20261118r1"></script>
@@ -1517,10 +1522,10 @@ window.mpToggleCard=function(btn){
  }catch(e){}
 };
 var IC={pt:'📖',cf:'🏛️',adm:'💼',civil:'👥',cpc:'⚖️',penal:'🔎',cpp:'🔍',rlm:'💡'};
-var ORDEM=['pt','cf','adm','civil','cpc','penal','cpp','rlm'];
+var ORDEM=['pt','cf','adm','civil','cpc','penal','cpp','rlm','info','atual','fortaleza','legesp','dh'];
 function renderMap(hostId){
  var host=document.getElementById(hostId);if(!host)return;
- var list=(typeof SUBJECTS!=='undefined'?SUBJECTS:[]).slice().sort(function(a,b){return ORDEM.indexOf(a.id)-ORDEM.indexOf(b.id)});
+ var list=(typeof SUBJECTS!=='undefined'?SUBJECTS:[]).filter(function(s){return window.GmfStudyObjective?.allowsSubject(s.id)!==false}).sort(function(a,b){return ORDEM.indexOf(a.id)-ORDEM.indexOf(b.id)});
  if(!list.length){host.innerHTML='';return}
  var totalBlocos=0,feitos=0;
  var cards=list.map(function(s,ci){
@@ -2066,7 +2071,7 @@ window.moduleFrameRetry=function(){
 <script src="/content/cf/m01-lei-seca-patch.js?v=20261118m01lawpatch1"></script>
 <script src="/content/cf/cf-teoria-guiada-reader-v1.js?v=20261120m14artes1"></script>
 <script src="/ui/cf-apostila-reading-v1.js?v=20261119cfpremiumlaw2"></script>
-<script src="/ui/cf-native-study-v2.js?v=20261115responsive1"></script>
+<script src="/ui/cf-native-study-v2.js?v=20261123-theory-clean-v2"></script>
 <!-- /DIREITO CONSTITUCIONAL — NOVO PADRÃO -->
 <!-- CF G07 COMPLETO — AUDITORIA FINAL V2 20261004 — BUILD CONSOLIDADO RETRY 20261004-2028 -->
 
@@ -2088,5 +2093,12 @@ window.moduleFrameRetry=function(){
 <script src="/ui/rlm-native-v1.js?v=20261113orient1"></script>
 <script src="/ui/rlm-exam-v1.js?v=20261109etapas3"></script>
 <!-- /RLM NATIVA TJCE 2026 -->
+<!-- GMF — objetivo facultativo (edital de referência 2023) -->
+<script src="/ui/gmf-study-objective-v1.js?v=20261122goal-freeze1"></script>
+<script src="/content/gmf/course-catalog-v1.js?v=20261122pedagogy1"></script>
+<script src="/ui/gmf-disciplines-v1.js?v=20261124gmfroute2"></script>
+<script src="/ui/gmf-reader-v1.js?v=20261121gmfM01"></script>
+<!-- Leitor GMF carregado sob demanda ao abrir um módulo -->
+<!-- /GMF -->
 </body></html>
 

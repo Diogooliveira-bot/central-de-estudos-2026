@@ -4,6 +4,7 @@ const OBJECTIVE_PREF_KEYS=[
   'central-v6:study-objective:v1',
   'central-v6:study-objective:pending:v1',
   'central-v6:free-study-subjects:v1',
+  'central-v6:selected-contests:v1',
 ];
 // O objetivo e as matérias livres têm sincronização própria em /api/objective.
 // Cópias de preferências permanecem separadas por usuário neste dispositivo.
@@ -27,6 +28,7 @@ export function isSyncKey(key){
   return !!key && key!==OWNER_KEY && key!=='__central_folder_probe__' &&
     key!=='__central_storage_probe__' && !/^central-v6:pt(?::|-)/.test(key) &&
     !/^central-v6:study-objective(?::|-)/.test(key) &&
+    !/^central-v6:selected-contests(?::|-)/.test(key) &&
     !/^central-v6:free-study-subjects(?::|-)/.test(key) &&
     !/^central-v6:ui-scale(?::|-)/.test(key) && // tamanho da tela é preferência deste aparelho
     !/^dominio_portugues/i.test(key);

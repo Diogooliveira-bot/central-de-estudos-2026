@@ -7,6 +7,10 @@ function validObjectiveId(value) {
   const id = String(value || '');
   return id === 'free-study' || (id.length <= 120 && /^(career|exam)-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id));
 }
+export function validSelectedContestIds(ids) {
+  return Array.isArray(ids) && ids.length <= 10 && new Set(ids).size === ids.length &&
+    ids.every((id) => typeof id === 'string' && id.startsWith('exam-') && validObjectiveId(id));
+}
 
 const FREE_STUDY_SUBJECT_IDS = new Set(['pt','cf','adm','civil','cpc','penal','cpp','rlm','info']);
 
@@ -38,6 +42,7 @@ function ensureTable(sql) {
       await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS free_subject_ids JSONB`;
       await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS requested_exam TEXT`;
       await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS requested_exam_at TIMESTAMPTZ`;
+      await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS selected_contest_ids JSONB NOT NULL DEFAULT '[]'::jsonb`;
     })().catch((error) => {
       preferencesReadyPromise = null;
       throw error;
@@ -185,6 +190,9 @@ export default async function handler(req, res) {
   // Reutiliza esta função para manter o projeto dentro do limite de 12 funções do plano Hobby.
   if (req.query?.resource === 'concursos') return handleConcursos(req, res);
   if (req.query?.resource === 'exam-progress') return handleExamProgress(req, res);
+  if (process.env.VERCEL_ENV === 'preview' && process.env.CONTESTS_PREVIEW_DB_ISOLATED !== 'true') {
+    return send(res,503,{error:'Preferências indisponíveis nesta prévia até configurar banco isolado de homologação'});
+  }
   if (req.method !== 'GET' && !sameOriginRequest(req)) return send(res, 403, { error:'Origem da requisição não permitida' });
   if (req.method !== 'GET' && req.method !== 'PUT') {
     res.setHeader('Allow', 'GET, PUT');
@@ -202,13 +210,14 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
       const rows = await sql`
-        SELECT study_objective_id, free_subject_ids, updated_at
+        SELECT study_objective_id, free_subject_ids, selected_contest_ids, updated_at
         FROM central_user_preferences WHERE user_id=${session.user.id} LIMIT 1
       `;
       const row = rows[0];
       return send(res, 200, {
         objectiveId:row?.study_objective_id || null,
         freeSubjectIds:validFreeSubjectIds(row?.free_subject_ids) ? row.free_subject_ids : null,
+        selectedContestIds:validSelectedContestIds(row?.selected_contest_ids) ? row.selected_contest_ids : [],
         updatedAt:row?.updated_at || null,
       });
     }
@@ -221,21 +230,26 @@ export default async function handler(req, res) {
     if (hasFreeSelection && (objectiveId !== 'free-study' || !validFreeSubjectIds(freeSubjectIds))) {
       return send(res, 400, { error:'Selecione de 1 a 9 disciplinas válidas, sem repetições, para o Estudo livre' });
     }
+    const hasContestSelection = Object.prototype.hasOwnProperty.call(body || {}, 'selectedContestIds');
+    if (hasContestSelection && !validSelectedContestIds(body.selectedContestIds)) return send(res,400,{error:'Selecione até dez editais válidos, sem repetição'});
     // Sem seleção enviada: preservar o que o aluno já escolheu quando alternar de carreira.
     const freeSubjectJson = hasFreeSelection ? JSON.stringify(freeSubjectIds) : null;
+    const contestIdsJson = hasContestSelection ? JSON.stringify(body.selectedContestIds) : null;
     const rows = await sql`
-      INSERT INTO central_user_preferences (user_id, study_objective_id, free_subject_ids, updated_at)
-      VALUES (${session.user.id}, ${objectiveId}, ${freeSubjectJson}::jsonb, NOW())
+      INSERT INTO central_user_preferences (user_id, study_objective_id, free_subject_ids, selected_contest_ids, updated_at)
+      VALUES (${session.user.id}, ${objectiveId}, ${freeSubjectJson}::jsonb, COALESCE(${contestIdsJson}::jsonb,'[]'::jsonb), NOW())
       ON CONFLICT (user_id) DO UPDATE SET
         study_objective_id=EXCLUDED.study_objective_id,
         free_subject_ids=CASE WHEN ${hasFreeSelection} THEN EXCLUDED.free_subject_ids ELSE central_user_preferences.free_subject_ids END,
+        selected_contest_ids=CASE WHEN ${hasContestSelection} THEN EXCLUDED.selected_contest_ids ELSE central_user_preferences.selected_contest_ids END,
         updated_at=NOW()
-      RETURNING study_objective_id, free_subject_ids, updated_at
+      RETURNING study_objective_id, free_subject_ids, selected_contest_ids, updated_at
     `;
     const row = rows[0];
     return send(res, 200, {
       ok:true, objectiveId:row.study_objective_id,
       freeSubjectIds:validFreeSubjectIds(row.free_subject_ids) ? row.free_subject_ids : null,
+      selectedContestIds:validSelectedContestIds(row.selected_contest_ids) ? row.selected_contest_ids : [],
       updatedAt:row.updated_at,
     });
   } catch (error) {

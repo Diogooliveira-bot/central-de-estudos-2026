@@ -81,7 +81,13 @@ try{
     return result.messageId;
   },
  });
- const recoveryMessage=await (await fetch('http://127.0.0.1:8025/view/latest.txt')).text();
+ let recoveryMessage='';
+ for(let i=0;i<20;i++){
+   const r=await fetch('http://127.0.0.1:8025/view/latest.txt');
+   if(r.ok)recoveryMessage=await r.text();
+   if(recoveryMessage.includes(resetLink))break;
+   await new Promise(resolve=>setTimeout(resolve,150));
+ }
  assert.ok(recoveryMessage.includes(resetLink),'Email de recuperacao nao chegou ao Mailpit');
  console.log('PASS: SMTP Mailpit recebeu email de recuperacao de senha em endereco ficticio');
 

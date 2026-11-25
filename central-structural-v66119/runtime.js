@@ -343,6 +343,7 @@ function key(uid,kind){return `central-v6:${kind}:${uid}`}
 function goalDone(uid){return localStorage.getItem(key(uid,'done'))==='1'}
 function setDone(uid,v){localStorage.setItem(key(uid,'done'),v?'1':'0')}
 function subjStats(s){
+ if(window.GmfDisciplines?.subjectIds?.includes(s.id))return {total:s.topics?.length||0,done:0,pct:0,unit:'módulos'};
  if(s.id==='rlm'&&window.RlmNative)return window.RlmNative.stats();
  const lightweight=window.CentralDisciplineLoader?.stats(s);if(lightweight)return lightweight;
  if(s.id==='pt'&&typeof window.ptNativeStats==='function')return window.ptNativeStats();
@@ -436,7 +437,7 @@ function renderSubjects(){
   return `<section class="subject ${!ready?'central-subject-pending':''} ${open?'open':''}" data-id="${s.id}">
    <button class="subject-head" onclick="toggleSubject('${s.id}')"><span class="subject-name">${esc(s.name)}</span><span class="subject-count">${st.done}/${st.total} ${unit}</span><span class="subject-pct ${st.pct===100?'done':''}">${st.pct}%</span><span class="chev">⌄</span></button>
    <div class="subject-body"><div class="subject-bar"><span style="width:${st.pct}%"></span></div>
-    ${!ready ? CentralDisciplineLoader.placeholder(s) : !open ? '' : s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : s.id==='rlm' ? (window.RlmNative?.renderMaster() || '<div class="bc-rlm-warn">Leitor de RLM carregando. Atualize a página se persistir.</div>') : `
+    ${!ready ? CentralDisciplineLoader.placeholder(s) : !open ? '' : s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : s.id==='rlm' ? (window.RlmNative?.renderMaster() || '<div class="bc-rlm-warn">Leitor de RLM carregando. Atualize a página se persistir.</div>') : window.GmfDisciplines?.renderMaster?.(s.id) || `
       <div class="topic-header"><div></div><div>Tópico real</div><div>Origem</div><div>Tipo</div><div></div></div>
       ${s.topics.map(t=>renderTopic(s,t)).join('')}
     `}

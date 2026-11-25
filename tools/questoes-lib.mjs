@@ -5,9 +5,9 @@ import vm from 'node:vm';
 export const DISCIPLINAS = {
   adm: 'Direito Administrativo', cpc: 'Direito Processual Civil', pt: 'Português', penal: 'Direito Penal',
   cpp: 'Direito Processual Penal', cf: 'Direito Constitucional', civil: 'Direito Civil', rlm: 'Raciocínio Lógico-Matemático',
-  info: 'Noções de Informática'
+  info: 'Noções de Informática', atual: 'Atualidades', fortaleza: 'Conhecimentos sobre Fortaleza', legesp: 'Legislação Extravagante', dh: 'Direitos Humanos'
 };
-export const MODULOS = { adm: 20, cpc: 20, pt: 24, penal: 17, cpp: 22, cf: 15, civil: 15, rlm: 15, info: 13 };
+export const MODULOS = { adm: 20, cpc: 20, pt: 24, penal: 17, cpp: 22, cf: 15, civil: 15, rlm: 15, info: 13, atual: 6, fortaleza: 9, legesp: 11, dh: 4 };
 export const ORIGENS = ['autoral-ia', 'banca'];
 const LETRAS = 'ABCDE';
 const SEM_LEI = new Set(['pt', 'rlm']); // não citam lei: regras de lei/artigo não se aplicam
