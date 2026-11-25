@@ -89,11 +89,27 @@ test('a grade e a área inicial respeitam a seleção em vez de ocultar só visu
  assert.match(index,/gmf-study-objective-v1\.js/);
  assert.ok(index.indexOf('gmf-study-objective-v1.js')<index.indexOf('/ui/gmf-disciplines-v1.js'));
 });
-test('o banco de questões e o catálogo de concursos também seguem o objetivo',()=>{
+test('o banco de questões e o catálogo de concursos também seguem o objetivo',async()=>{
  assert.match(read('ui/questoes-area-v1.js'),/g\.GmfStudyObjective\?\.allowsSubject\(d\)!==false/);
- const catalog=read('ui/concursos-catalog-v1.js');
- assert.match(catalog,/data-contest-objective="gmf-fortaleza"/);
- assert.match(catalog,/global\.GmfStudyObjective\?\.choose/);
+ const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://central.local/',runScripts:'outside-only'});
+ const w=dom.window;
+ const chosen=[];
+ w.BASE_COMPLETA_USER={role:'aluno'};
+ w.GmfStudyObjective={choose:(id,options)=>chosen.push({id,options})};
+ w.fetch=async()=>({ok:true,json:async()=>({canManage:false,items:[{
+  id:'gmf-fortaleza-monitoramento',name:'Guarda Municipal de Fortaleza',
+  organ:'Fortaleza',state:'CE',status:'previsto',active:true,cargos:[],subjects:[],sources:[],coverage:{percent:0}
+ }]})});
+ w.eval(read('ui/concursos-catalog-v1.js'));
+ await w.CentralContestCatalog.open();
+ w.document.querySelector('[data-contest-open="gmf-fortaleza-monitoramento"]').click();
+ const button=w.document.querySelector('[data-contest-objective="gmf-fortaleza"]');
+ assert.ok(button,'o botão GMF deve existir no catálogo real');
+ button.click();
+ assert.equal(chosen.length,1);
+ assert.equal(chosen[0].id,'gmf-fortaleza');
+ assert.equal(chosen[0].options.navigate,true);
+ dom.window.close();
 });
 
 test('teste real da grade GMF: a grade antiga continua intacta e GMF tem seus 11 cartões', async()=>{

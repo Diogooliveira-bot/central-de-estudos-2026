@@ -2,17 +2,42 @@
   'use strict';
   if (global.CentralContestCatalog) return;
   let payload = null, overlay = null, selected = null, adminMode = false;
+  let offlineCopy = false;
+  const PUBLIC_CACHE_KEY = 'central-v6:contest-public-offline-v1';
+  const PUBLIC_CACHE_TTL = 72 * 60 * 60 * 1000;
   const filters = {q:'',state:'',status:'',cargo:''};
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  // Never inject arbitrary API data into an inline style or a clickable URL.
+  const percent = (value) => { const n=Number(value); return Number.isFinite(n)?Math.max(0,Math.min(100,n)):0; };
+  const httpsUrl = (value) => { try { const url=new URL(String(value)); return url.protocol==='https:'?url.href:'#'; } catch (_) { return '#'; } };
   const date = (value) => value ? new Intl.DateTimeFormat('pt-BR',{timeZone:'UTC'}).format(new Date(value+'T12:00:00Z')) : 'Não informado';
   const userRole = () => global.BASE_COMPLETA_USER?.role || global.__BASE_COMPLETA_USER_ROLE__ || '';
+  function cachedPublicCatalog() {
+    if(userRole()==='admin')return null;
+    try {
+      const saved=JSON.parse(localStorage.getItem(PUBLIC_CACHE_KEY)||'null');
+      if(!saved || !Number.isFinite(saved.at) || Date.now()-saved.at>PUBLIC_CACHE_TTL || saved.at>Date.now() || !Array.isArray(saved.items))return null;
+      return {items:saved.items,canManage:false};
+    } catch (_) { return null; }
+  }
+  function rememberPublicCatalog(body) {
+    if(body.canManage || !Array.isArray(body.items))return;
+    try { localStorage.setItem(PUBLIC_CACHE_KEY,JSON.stringify({at:Date.now(),items:body.items})); } catch (_) { /* sem espaço disponível */ }
+  }
+  const offlineNotice = () => offlineCopy ? '<p class="contest-notice">Catálogo salvo neste aparelho. Conecte-se para atualizar os editais e alterar sua seleção.</p>' : '';
   function toast(message) { const node=document.createElement('div');node.className='contest-toast';node.textContent=message;document.body.appendChild(node);setTimeout(()=>node.remove(),3200); }
   async function load(force=false) {
     if (payload && !force) return payload;
-    const response = await fetch('/api/concursos'+(userRole()==='admin'?'?admin=1':''),{cache:'no-store',credentials:'same-origin'});
-    const body = await response.json().catch(()=>({}));
-    if (!response.ok) throw new Error(body.error || 'Não foi possível carregar os concursos.');
-    payload = body; return body;
+    try {
+      const response = await fetch('/api/concursos'+(userRole()==='admin'?'?admin=1':''),{cache:'no-store',credentials:'same-origin'});
+      const body = await response.json().catch(()=>({}));
+      if (!response.ok) throw new Error(body.error || 'Não foi possível carregar os concursos.');
+      payload = body; offlineCopy=false; rememberPublicCatalog(body); return body;
+    } catch (error) {
+      const cached=cachedPublicCatalog();
+      if(!cached)throw new Error('Catálogo indisponível sem conexão. Abra os concursos online para preparar o acesso offline.');
+      payload=cached; offlineCopy=true; return cached;
+    }
   }
   function ensureOverlay() {
     if (overlay) return overlay;
@@ -27,30 +52,199 @@
       return (!q||text.includes(q))&&(!filters.state||item.state===filters.state)&&(!filters.status||item.status===filters.status)&&(!filters.cargo||(item.cargos||[]).some(c=>c.name.toLowerCase().includes(filters.cargo.toLowerCase())));
     });
   }
-  function badges(item) { return `<div class="contest-badges"><span class="contest-badge ${item.status==='publicado'?'published':'expected'}">${item.status==='publicado'?'Edital publicado':'Previsto / autorizado'}</span><span class="contest-badge ${item.state==='CE'?'ce':''}">${esc(item.state)}</span>${item.featured?'<span class="contest-badge ce">Prioridade</span>':''}${item.active===false?'<span class="contest-badge">Inativo</span>':''}</div>`; }
-  function card(item) { return `<article class="contest-card ${item.featured?'featured':''}">${badges(item)}<h2>${esc(item.name)}</h2><div class="organ">${esc(item.organ)}</div>${item.currentStage?`<p class="contest-stage"><b>Etapa atual:</b> ${esc(item.currentStage)}</p>`:''}<dl><dt>Edital</dt><dd>${esc(item.noticeNumber||'Ainda não publicado')}</dd><dt>Cargos</dt><dd>${item.cargos?.length||0} grupos cadastrados</dd><dt>Vagas</dt><dd>${item.vacancies==null?'Não confirmadas':esc(item.vacancies)}</dd><dt>Verificado</dt><dd>${date(item.lastVerified)}</dd></dl><div class="contest-coverage"><div><span>Cobertura da Central</span><b>${item.coverage?.percent||0}%</b></div><i><span style="width:${item.coverage?.percent||0}%"></span></i></div><button type="button" class="contest-open" data-contest-open="${esc(item.id)}">Ver concurso</button></article>`; }
+  // Data from contests and imported PDF is always inserted through DOM text nodes.
+  // The only remaining innerHTML assignments build constant, trusted markup.
+  function node(tag, className='', content=null) {
+    const out=document.createElement(tag);
+    if(className)out.className=className;
+    if(content!==null&&content!==undefined)out.textContent=String(content);
+    return out;
+  }
+  function control(label, className, attribute, value='') {
+    const button=node('button',className,label);
+    button.type='button';
+    if(attribute)button.setAttribute(attribute,value);
+    return button;
+  }
+  function notice() {
+    return node('p','contest-notice','Catálogo salvo neste aparelho. Conecte-se para atualizar os editais e alterar sua seleção.');
+  }
+  function badgeBar(item) {
+    const div=node('div','contest-badges');
+    div.append(node('span','contest-badge '+(item.status==='publicado'?'published':'expected'),item.status==='publicado'?'Edital publicado':'Previsto / autorizado'));
+    div.append(node('span','contest-badge '+(item.state==='CE'?'ce':''),item.state));
+    if(item.featured)div.append(node('span','contest-badge ce','Prioridade'));
+    if(item.active===false)div.append(node('span','contest-badge','Inativo'));
+    return div;
+  }
+  function detailPair(container,label,value) {
+    container.append(node('dt','',label),node('dd','',value));
+  }
+  function card(item) {
+    const article=node('article','contest-card'+(item.featured?' featured':''));
+    article.append(badgeBar(item),node('h2','',item.name),node('div','organ',item.organ));
+    if(item.currentStage) {
+      const stage=node('p','contest-stage');
+      stage.append(node('b','','Etapa atual:'),document.createTextNode(' '+item.currentStage));
+      article.append(stage);
+    }
+    const dl=node('dl');
+    detailPair(dl,'Edital',item.noticeNumber||'Ainda não publicado');
+    detailPair(dl,'Cargos',String(item.cargos?.length||0)+' grupos cadastrados');
+    detailPair(dl,'Vagas',item.vacancies==null?'Não confirmadas':item.vacancies);
+    detailPair(dl,'Verificado',date(item.lastVerified));
+    article.append(dl);
+    const cover=node('div','contest-coverage'), headline=node('div');
+    headline.append(node('span','','Cobertura da Central'),node('b','',percent(item.coverage?.percent)+'%'));
+    const bar=node('i');const fill=node('span');fill.style.width=percent(item.coverage?.percent)+'%';bar.append(fill);
+    cover.append(headline,bar);article.append(cover);
+    article.append(control('Ver concurso','contest-open','data-contest-open',item.id));
+    return article;
+  }
   function home() {
     selected=null;adminMode=false;
-    const items=filtered();const states=[...new Set((payload.items||[]).map(i=>i.state))].sort();
-    overlay.innerHTML=`<main class="contest-catalog-shell"><header class="contest-catalog-head"><div><span class="contest-catalog-kicker">BASE COMPLETA · 2026</span><h1>Editais e Concursos</h1><p>Catálogo seletivo com fontes oficiais, situação conferida e correspondência real com o conteúdo da Central.</p></div><button type="button" class="contest-close" data-contest-close>Fechar</button></header>${payload.canManage?'<div class="contest-admin-bar"><button type="button" class="contest-admin-button" data-contest-new>Novo concurso</button><button type="button" class="contest-admin-button" data-contest-history>Histórico e pendências</button></div>':''}<section class="contest-controls" aria-label="Filtros"><input data-contest-filter="q" value="${esc(filters.q)}" placeholder="Pesquisar nome, órgão ou cargo" aria-label="Pesquisar concursos"><select data-contest-filter="state"><option value="">Todos os locais</option>${states.map(s=>`<option ${filters.state===s?'selected':''}>${esc(s)}</option>`).join('')}</select><select data-contest-filter="status"><option value="">Todas as situações</option><option value="publicado" ${filters.status==='publicado'?'selected':''}>Edital publicado</option><option value="previsto" ${filters.status==='previsto'?'selected':''}>Previsto / autorizado</option></select><input data-contest-filter="cargo" value="${esc(filters.cargo)}" placeholder="Filtrar por cargo" aria-label="Filtrar por cargo"></section><div class="contest-summary"><span>${items.length} concursos exibidos</span><span>${items.filter(i=>i.status==='publicado').length} com edital publicado</span><span>${items.filter(i=>i.state==='CE').length} do Ceará</span></div><section class="contest-grid">${items.length?items.map(card).join(''):'<div class="contest-empty">Nenhum concurso corresponde aos filtros.</div>'}</section></main>`;
+    const items=filtered(),states=[...new Set((payload.items||[]).map(i=>String(i.state||'')))].sort();
+    overlay.innerHTML='<main class="contest-catalog-shell"><header class="contest-catalog-head"><div><span class="contest-catalog-kicker">BASE COMPLETA · 2026</span><h1>Editais e Concursos</h1><p>Catálogo seletivo com fontes oficiais, situação conferida e correspondência real com o conteúdo da Central.</p></div><button type="button" class="contest-close" data-contest-close>Fechar</button></header><section class="contest-controls" aria-label="Filtros"></section><div class="contest-summary"></div><section class="contest-grid"></section></main>';
+    const header=overlay.querySelector('.contest-catalog-head');
+    if(offlineCopy)header.after(notice());
+    if(payload.canManage) {
+      const bar=node('div','contest-admin-bar');
+      bar.append(control('Novo concurso','contest-admin-button','data-contest-new'),control('Histórico e pendências','contest-admin-button','data-contest-history'));
+      header.after(bar);
+    }
+    const filtersArea=overlay.querySelector('.contest-controls');
+    const q=node('input');q.dataset.contestFilter='q';q.value=filters.q;q.placeholder='Pesquisar nome, órgão ou cargo';q.setAttribute('aria-label','Pesquisar concursos');
+    const state=node('select');state.dataset.contestFilter='state';
+    const all=node('option','','Todos os locais');all.value='';state.append(all);
+    for(const value of states){const opt=node('option','',value);opt.value=value;opt.selected=filters.state===value;state.append(opt);}
+    const status=node('select');status.dataset.contestFilter='status';
+    for(const [value,title] of [['','Todas as situações'],['publicado','Edital publicado'],['previsto','Previsto / autorizado']]) {
+      const opt=node('option','',title);opt.value=value;opt.selected=filters.status===value;status.append(opt);
+    }
+    const cargo=node('input');cargo.dataset.contestFilter='cargo';cargo.value=filters.cargo;cargo.placeholder='Filtrar por cargo';cargo.setAttribute('aria-label','Filtrar por cargo');
+    filtersArea.append(q,state,status,cargo);
+    const summary=overlay.querySelector('.contest-summary');
+    summary.append(node('span','',items.length+' concursos exibidos'),
+      node('span','',items.filter(i=>i.status==='publicado').length+' com edital publicado'),
+      node('span','',items.filter(i=>i.state==='CE').length+' do Ceará'));
+    const grid=overlay.querySelector('.contest-grid');
+    if(items.length)grid.append(...items.map(card));else grid.append(node('div','contest-empty','Nenhum concurso corresponde aos filtros.'));
   }
-  function subject(item) { const status={complete:'Cobertura forte',partial:'Cobertura parcial',missing:'Sem cobertura'}[item.coverage]||'Sem cobertura';return `<article class="contest-subject"><header><h3>${esc(item.name)}</h3><span class="contest-subject-status ${esc(item.coverage)}">${status}</span></header>${item.topics?.length?`<ul>${item.topics.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:''}${item.centralId?`<button type="button" class="contest-study-link" data-contest-study="${esc(item.centralId)}" data-contest-module="${esc(item.moduleIds?.[0]||'')}">Abrir na Central</button>`:''}</article>`; }
+  function topicItem(topic) {
+    const li=node('li','',topic.title);
+    const status=topic.links?.some(l=>l.status==='approved')?'vínculo conferido; confira pendências':
+      topic.links?.some(l=>l.status==='suggested')?'sugestão pendente':'Em preparação';
+    const supplement=topic.supplement?.title?
+      ' · complementação '+(topic.supplement.status==='approved'?'conferida':'pendente'):'';
+    li.append(document.createTextNode(' '),node('small','','· '+status+supplement));
+    return li;
+  }
+  function subject(item) {
+    const article=node('article','contest-subject'),head=node('header');
+    const label={complete:'Cobertura forte',partial:'Cobertura parcial',missing:'Em preparação'}[item.coverage]||'Em preparação';
+    head.append(node('h3','',item.name),node('span','contest-subject-status '+(['complete','partial','missing'].includes(item.coverage)?item.coverage:'missing'),label));
+    article.append(head);
+    const topics=item.syllabus?.length?item.syllabus.map(topicItem):(item.topics||[]).map(t=>node('li','',t));
+    if(topics.length){const ul=node('ul');ul.append(...topics);article.append(ul);}
+    if(item.centralId&&item.coverage!=='missing') {
+      const link=control('Abrir na Central','contest-study-link','data-contest-study',item.centralId);
+      link.dataset.contestModule=item.moduleIds?.[0]||'';
+      article.append(link);
+    }
+    return article;
+  }
+  function sectionTitle(parent,text){parent.append(node('h3','contest-section-title',text));}
+  function metaPair(parent,label,value,className='') {
+    const box=node('div',className);
+    box.append(node('small','',label),node('b','',value));
+    parent.append(box);
+  }
+  function officialLink(source) {
+    const a=node('a','contest-source');a.href=httpsUrl(source.url);a.target='_blank';a.rel='noopener noreferrer';
+    const text=node('span');text.append(document.createTextNode(String(source.title||'')),node('br'),node('small','',source.type));
+    a.append(text,node('b','','abrir ↗'));
+    return a;
+  }
   function detail(item) {
     selected=item;adminMode=false;
-    const pending=(item.pending||[]).map(p=>`<li>${esc(p)}</li>`).join('');
-    overlay.innerHTML=`<main class="contest-catalog-shell"><button type="button" class="contest-detail-back" data-contest-back>← Voltar ao catálogo</button><article class="contest-detail"><div class="contest-detail-title"><div><h2>${esc(item.name)}</h2><p class="lead">${esc(item.summary)}</p></div>${badges(item)}</div>${payload.canManage?`<div class="contest-admin-bar"><button class="contest-admin-button" data-contest-edit="${esc(item.id)}">Editar cadastro</button><button class="contest-admin-button" data-contest-toggle="${esc(item.id)}">${item.active===false?'Ativar':'Desativar'} concurso</button></div>`:''}${item.status==='previsto'?'<p class="contest-notice"><b>Atenção:</b> não existe edital de abertura de 2026 confirmado neste cadastro. Dados antigos não são apresentados como atuais.</p>':''}${item.id==='gmf-fortaleza-monitoramento'?'<div class="contest-admin-bar"><button class="contest-admin-button" type="button" data-contest-objective="gmf-fortaleza">Selecionar GMF como objetivo de estudos</button></div>':''}<section class="contest-meta">${item.currentStage?`<div class="contest-meta-stage"><small>Etapa atual · atualizada em ${date(item.currentStageDate)}</small><b>${esc(item.currentStage)}</b></div>`:''}<div><small>Edital</small><b>${esc(item.noticeNumber||'Não publicado')}</b></div><div><small>Banca</small><b>${esc(item.board||'Não definida')}</b></div><div><small>Vagas</small><b>${item.vacancies==null?'Não confirmadas':esc(item.vacancies)}</b></div><div><small>Última verificação</small><b>${date(item.lastVerified)}</b></div><div><small>Inscrições</small><b>${item.registrationStart?date(item.registrationStart)+' a '+date(item.registrationEnd):'Não informadas'}</b></div><div><small>Prova</small><b>${date(item.examDate)}</b></div><div><small>Remuneração</small><b>${esc(item.salary||'Não confirmada')}</b></div><div><small>Cobertura</small><b>${item.coverage?.percent||0}%</b></div></section><p class="lead"><small>${esc(item.coverage?.method||'')}</small></p><h3 class="contest-section-title">Cargos e escolaridade</h3><div class="contest-sources">${(item.cargos||[]).map(c=>`<div class="contest-source"><span>${esc(c.name)}<br><small>${esc(c.education||'Escolaridade não informada')}</small></span><b>${c.vacancies==null?'—':esc(c.vacancies)+' vagas'}</b></div>`).join('')||'<p>Sem cargos cadastrados.</p>'}</div><h3 class="contest-section-title">Disciplinas e cobertura</h3><section class="contest-subjects">${(item.subjects||[]).map(subject).join('')}</section>${pending?`<h3 class="contest-section-title">Informações pendentes</h3><ul class="lead">${pending}</ul>`:''}<h3 class="contest-section-title">Fontes oficiais</h3><div class="contest-sources">${(item.sources||[]).map(s=>`<a class="contest-source" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(s.title)}<br><small>${esc(s.type)}</small></span><b>abrir ↗</b></a>`).join('')}</div></article></main>`;
+    overlay.innerHTML='<main class="contest-catalog-shell"><button type="button" class="contest-detail-back" data-contest-back>← Voltar ao catálogo</button><article class="contest-detail"></article></main>';
+    const article=overlay.querySelector('.contest-detail');
+    const title=node('div','contest-detail-title'),titleInfo=node('div');
+    titleInfo.append(node('h2','',item.name),node('p','lead',item.summary));
+    title.append(titleInfo,badgeBar(item));
+    article.append(title);
+    if(offlineCopy)article.append(notice());
+    if(!offlineCopy&&item.active!==false&&item.status==='publicado') {
+      const bar=node('div','contest-admin-bar');
+      bar.append(control('Adicionar/remover dos meus editais','contest-admin-button','data-contest-follow',item.id),
+        node('small','','O histórico dos capítulos é compartilhado; os checklists de cada edital continuam separados.'));
+      article.append(bar);
+    }
+    if(payload.canManage) {
+      const bar=node('div','contest-admin-bar');
+      const edit=control('Editar cadastro','contest-admin-button','data-contest-edit',item.id);
+      const toggle=control(item.active===false?'Ativar':'Desativar'+' concurso','contest-admin-button','data-contest-toggle',item.id);
+      if(item.active===false)toggle.textContent='Ativar concurso';
+      bar.append(edit,toggle);article.append(bar);
+    }
+    if(item.status==='previsto')article.append(node('p','contest-notice','Atenção: não existe edital de abertura de 2026 confirmado neste cadastro. Dados antigos não são apresentados como atuais.'));
+    if(item.id==='gmf-fortaleza-monitoramento'){
+      const bar=node('div','contest-admin-bar');bar.append(control('Selecionar GMF como objetivo de estudos','contest-admin-button','data-contest-objective','gmf-fortaleza'));article.append(bar);
+    }
+    const meta=node('section','contest-meta');
+    if(item.currentStage)metaPair(meta,'Etapa atual · atualizada em '+date(item.currentStageDate),item.currentStage,'contest-meta-stage');
+    metaPair(meta,'Edital',item.noticeNumber||'Não publicado');
+    metaPair(meta,'Banca',item.board||'Não definida');
+    metaPair(meta,'Vagas',item.vacancies==null?'Não confirmadas':item.vacancies);
+    metaPair(meta,'Última verificação',date(item.lastVerified));
+    metaPair(meta,'Inscrições',item.registrationStart?date(item.registrationStart)+' a '+date(item.registrationEnd):'Não informadas');
+    metaPair(meta,'Prova',date(item.examDate));
+    metaPair(meta,'Remuneração',item.salary||'Não confirmada');
+    metaPair(meta,'Cobertura',percent(item.coverage?.percent)+'%');
+    article.append(meta);
+    const methodology=node('p','lead');methodology.append(node('small','',item.coverage?.method||''));article.append(methodology);
+    sectionTitle(article,'Cargos e escolaridade');
+    const cargos=node('div','contest-sources');
+    for(const c of item.cargos||[]) {
+      const panel=node('div','contest-source'),text=node('span');
+      text.append(document.createTextNode(String(c.name||'')),node('br'),node('small','',c.education||'Escolaridade não informada'));
+      panel.append(text,node('b','',c.vacancies==null?'—':String(c.vacancies)+' vagas'));cargos.append(panel);
+    }
+    if(!cargos.childNodes.length)cargos.append(node('p','','Sem cargos cadastrados.'));
+    article.append(cargos);
+    sectionTitle(article,'Disciplinas e cobertura');
+    const subjects=node('section','contest-subjects');subjects.append(...(item.subjects||[]).map(subject));article.append(subjects);
+    if(item.pending?.length) {
+      sectionTitle(article,'Informações pendentes');const ul=node('ul','lead');
+      ul.append(...item.pending.map(p=>node('li','',p)));article.append(ul);
+    }
+    sectionTitle(article,'Fontes oficiais');
+    const sources=node('div','contest-sources');sources.append(...(item.sources||[]).map(officialLink));article.append(sources);
   }
   function editor(item, isNew=false) {
     adminMode=true;selected=item;
-    overlay.innerHTML=`<main class="contest-catalog-shell"><button type="button" class="contest-detail-back" data-contest-back>← Cancelar</button><section class="contest-admin-panel"><h1>${isNew?'Novo concurso':'Editar concurso'}</h1><p>Editor administrativo completo. Mantenha apenas dados confirmados por fontes oficiais; a revisão é controlada para evitar sobrescrever alterações de outro administrador.</p><textarea id="contestAdminJson" spellcheck="false">${esc(JSON.stringify(item,null,2))}</textarea><div class="contest-admin-actions"><button type="button" class="contest-close" data-contest-back>Cancelar</button><button type="button" class="contest-admin-save" data-contest-save="${isNew?'create':'update'}">Salvar cadastro</button></div></section></main>`;
+    global.CentralContestAdminForm.open(overlay,item,isNew);
   }
   function history() {
     adminMode=true;selected=null;
-    const rejected=(payload.researchRejections||[]).map(r=>`<div><span><b>${esc(r.name)}</b><br>${esc(r.reason)}</span><a href="${esc(r.url)}" target="_blank" rel="noopener">fonte oficial</a></div>`).join('');
-    overlay.innerHTML=`<main class="contest-catalog-shell"><button type="button" class="contest-detail-back" data-contest-back>← Voltar</button><section class="contest-admin-panel"><h1>Histórico e controle</h1><h3>Alterações recentes</h3><div class="contest-admin-history">${(payload.events||[]).map(e=>`<div><span>${esc(e.contestId)} · ${esc(e.action)} · versão ${e.revision}</span><b>${esc(e.by)}</b><time>${new Date(e.at).toLocaleString('pt-BR')}</time></div>`).join('')||'<p>Sem eventos.</p>'}</div><h3>Pesquisados e não cadastrados como edital de 2026</h3><div class="contest-admin-history">${rejected}</div></section></main>`;
+    overlay.innerHTML='<main class="contest-catalog-shell"><button type="button" class="contest-detail-back" data-contest-back>← Voltar</button><section class="contest-admin-panel"><h1>Histórico e controle</h1><h3>Alterações recentes</h3><div class="contest-admin-history" data-history-events></div><h3>Pesquisados e não cadastrados como edital de 2026</h3><div class="contest-admin-history" data-history-rejections></div></section></main>';
+    const events=overlay.querySelector('[data-history-events]');
+    for(const entry of payload.events||[]) {
+      const div=node('div');
+      div.append(node('span','',entry.contestId+' · '+entry.action+' · versão '+entry.revision),node('b','',entry.by),node('time','',new Date(entry.at).toLocaleString('pt-BR')));
+      events.append(div);
+    }
+    if(!events.childNodes.length)events.append(node('p','','Sem eventos.'));
+    const rejected=overlay.querySelector('[data-history-rejections]');
+    for(const entry of payload.researchRejections||[]) {
+      const div=node('div'),span=node('span');
+      span.append(node('b','',entry.name),node('br'),document.createTextNode(String(entry.reason||'')));
+      const a=node('a','','fonte oficial');a.href=httpsUrl(entry.url);a.target='_blank';a.rel='noopener noreferrer';
+      div.append(span,a);rejected.append(div);
+    }
   }
   async function save(action) {
-    let data;try{data=JSON.parse(document.getElementById('contestAdminJson').value);}catch(_){return toast('O JSON possui erro de formatação.');}
+    const data=global.CentralContestAdminForm.value();
     const response=await fetch('/api/concursos',{method:action==='create'?'POST':'PUT',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,data,revision:selected?.revision})});
     const body=await response.json().catch(()=>({}));if(!response.ok)return toast(body.error||'Não foi possível salvar.');
     await load(true);const updated=payload.items.find(i=>i.id===data.id);toast('Cadastro salvo com histórico.');updated?detail(updated):home();
@@ -69,9 +263,10 @@
     const toggleId=event.target.closest('[data-contest-toggle]')?.dataset.contestToggle;if(toggleId)return toggle(payload.items.find(i=>i.id===toggleId));
     const saveAction=event.target.closest('[data-contest-save]')?.dataset.contestSave;if(saveAction)return save(saveAction);
     const goal=event.target.closest('[data-contest-objective]');if(goal){close();global.GmfStudyObjective?.choose(goal.dataset.contestObjective,{navigate:true});return;}
+    const follow=event.target.closest('[data-contest-follow]');if(follow){global.CentralStudyObjectives?.toggleCatalogContest?.(follow.dataset.contestFollow).then((ok)=>toast(ok?'Seleção de editais atualizada.':'Não foi possível alterar a seleção.'));return;}
     const study=event.target.closest('[data-contest-study]');if(study){close();global.CentralStudyNavigation?.openContext?.({subject:study.dataset.contestStudy,module:study.dataset.contestModule||undefined});}
   }
-  async function open() { ensureOverlay();overlay.hidden=false;document.documentElement.style.overflow='hidden';overlay.innerHTML='<main class="contest-catalog-shell"><div class="contest-empty">Carregando catálogo oficial…</div></main>';try{await load();home();}catch(error){overlay.innerHTML=`<main class="contest-catalog-shell"><button class="contest-close" data-contest-close>Fechar</button><div class="contest-empty">${esc(error.message)}</div></main>`;}return true; }
+  async function open() { ensureOverlay();overlay.hidden=false;document.documentElement.style.overflow='hidden';overlay.innerHTML='<main class="contest-catalog-shell"><div class="contest-empty">Carregando catálogo oficial…</div></main>';try{await load();home();}catch(error){overlay.innerHTML='<main class="contest-catalog-shell"><button class="contest-close" data-contest-close>Fechar</button><div class="contest-empty"></div></main>';overlay.querySelector('.contest-empty').textContent=error.message;}return true; }
   function close(){if(overlay)overlay.hidden=true;document.documentElement.style.overflow='';}
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&overlay&&!overlay.hidden)close();});
   global.CentralContestCatalog={open,close,reload:()=>load(true)};

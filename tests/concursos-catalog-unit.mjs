@@ -3,6 +3,39 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { CONCURSOS_2026_SEED, RESEARCH_REJECTIONS } from '../lib/concursos-seed.js';
 import { coverage, normalizeContest } from '../lib/concursos-handler.js';
+import { JSDOM } from 'jsdom';
+
+test('catálogo público previamente aberto continua legível offline sem liberar administração',async()=>{
+  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://preview.example.test/central-v119.html',runScripts:'outside-only'});
+  const w=dom.window;
+  const script=readFileSync(new URL('../ui/concursos-catalog-v1.js',import.meta.url),'utf8');
+  w.BASE_COMPLETA_USER={id:'aluno-ficticio',role:'aluno'};
+  w.fetch=async()=>({ok:true,json:async()=>({canManage:false,items:[{id:'teste-publico',name:'Concurso fictício',organ:'Órgão fictício',state:'CE',status:'publicado',active:true,cargos:[],subjects:[],sources:[],coverage:{percent:0}}]})});
+  w.eval(script);
+  await w.CentralContestCatalog.open();
+  assert.equal(w.document.querySelectorAll('[data-contest-open="teste-publico"]').length,1);
+  assert.equal(w.document.querySelectorAll('[data-contest-new]').length,0);
+  w.CentralContestCatalog.close();
+  w.CentralContestCatalog=null;
+  w.fetch=async()=>{throw Error('offline')};
+  w.eval(script);
+  await w.CentralContestCatalog.open();
+  const overlay=w.document.querySelectorAll('.contest-catalog-overlay').item(1);
+  assert.match(overlay.textContent,/Catálogo salvo neste aparelho/);
+  assert.equal(overlay.querySelectorAll('[data-contest-open="teste-publico"]').length,1);
+  assert.equal(overlay.querySelectorAll('[data-contest-new]').length,0);
+  overlay.querySelector('[data-contest-open="teste-publico"]').click();
+  assert.equal(overlay.querySelectorAll('[data-contest-follow]').length,0);
+  w.CentralContestCatalog.close();
+  w.BASE_COMPLETA_USER={id:'admin-ficticio',role:'admin'};
+  w.CentralContestCatalog=null;
+  w.eval(script);
+  await w.CentralContestCatalog.open();
+  const adminOverlay=w.document.querySelectorAll('.contest-catalog-overlay').item(2);
+  assert.match(adminOverlay.textContent,/Catálogo indisponível sem conexão/);
+  assert.equal(adminOverlay.querySelectorAll('[data-contest-new]').length,0);
+  dom.window.close();
+});
 
 test('pesquisa inicial possui 15 a 20 candidatos e catálogo não duplica ids', () => {
   const researched = CONCURSOS_2026_SEED.length + RESEARCH_REJECTIONS.length;
@@ -84,3 +117,27 @@ test('normalização rejeita edição sem fonte oficial e preserva campos permit
   assert.equal(item.currentStage,'Provas realizadas');
 });
 
+
+test('catálogo público não interpreta HTML/URLs maliciosos dos dados de edital',async()=>{
+  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://preview.example.test/central-v119.html',runScripts:'outside-only'});
+  const w=dom.window;
+  const attack='<img src=x onerror=alert(1)>';
+  w.BASE_COMPLETA_USER={id:'ficticio',role:'aluno'};
+  w.fetch=async()=>({ok:true,json:async()=>({canManage:false,items:[{
+    id:'teste-seguro',name:attack,organ:attack,state:'CE',status:'publicado',active:true,
+    cargos:[{name:attack,education:attack}],subjects:[{name:attack,coverage:'missing',topics:[attack]}],
+    sources:[{title:attack,type:'oficial',url:'javascript:alert(1)'}],
+    coverage:{percent:'0; background:url(javascript:alert(1))'},pending:[attack]
+  }]})});
+  w.eval(readFileSync(new URL('../ui/concursos-catalog-v1.js',import.meta.url),'utf8'));
+  await w.CentralContestCatalog.open();
+  const overlay=w.document.querySelector('.contest-catalog-overlay');
+  assert.match(overlay.textContent,/onerror=alert/);
+  assert.equal(overlay.querySelector('img'),null);
+  assert.equal(overlay.querySelector('.contest-coverage i span').style.width,'0%');
+  overlay.querySelector('[data-contest-open="teste-seguro"]').click();
+  assert.equal(overlay.querySelector('img'),null);
+  assert.match(overlay.querySelector('.contest-detail').textContent,/onerror=alert/);
+  assert.equal(overlay.querySelector('.contest-detail .contest-source[href="#"]')!==null,true);
+  dom.window.close();
+});

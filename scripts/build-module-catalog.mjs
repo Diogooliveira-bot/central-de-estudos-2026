@@ -13,6 +13,10 @@ for(const kind of ['cf','cpc'])for(const f of fs.readdirSync(path.join(root,'con
  vm.runInContext(src,ctx,{filename:f});
 }
 for(const kind of ['adm','civil','cpp'])run(`content/${kind}/${kind}-native-index.js`);
+// Metadados dos cursos já carregados pela Central; a teoria continua nos arquivos originais.
+vm.runInContext(read('portugues-site.js'),vm.createContext({window:ctx.window,document:{getElementById:()=>null}}),{filename:'portugues-site.js'});
+run('content/rlm-tjce-2026/estrutura.js');
+for(const f of fs.readdirSync(path.join(root,'content/informatica')).filter(f=>/^m\d+\.js$/.test(f)).sort())run(`content/informatica/${f}`);
 const w=ctx.window;
 const projection=m=>({number:m.number, title:m.title});
 const catalog={
@@ -21,6 +25,9 @@ const catalog={
  adm:Object.values(w.ADM_NATIVE_INDEX.modules).map(projection),
  civil:w.CIVIL_NATIVE_INDEX.modules.map(projection),
  cpp:w.CPP_NATIVE_INDEX.modules.map(projection),
+ pt:w.CentralPortugueseCourse.modules.map(m=>({number:m.num,title:m.title})),
+ rlm:w.RLM_TJCE_STRUCTURE.modulos.map(m=>({number:Number(m.id.slice(1)),title:m.titulo})),
+ info:Object.values(w.BC_INFO_CONTENT).map(m=>({number:Number(m.id.slice(1)),title:m.title})),
 };
 // Use the current published remap, not the legacy Penal order.
 const penal=read('ui/penal-m01-m17-runtime-remap.js').match(/const meta=(\{[\s\S]*?\n  \});/);

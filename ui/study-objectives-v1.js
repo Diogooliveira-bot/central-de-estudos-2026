@@ -9,6 +9,7 @@
 
   const KEY = 'central-v6:study-objective:v1';
   const PENDING_KEY = 'central-v6:study-objective:pending:v1';
+  const CONTESTS_KEY = 'central-v6:selected-contests:v1';
   const FREE_SUBJECTS_KEY = 'central-v6:free-study-subjects:v1';
   function savedFreeSubjectIds() {
     try {
@@ -25,6 +26,8 @@
   let loading = false;
   let returnFocus = null;
   let contestItems = null;
+  let selectedContestIds = [];
+  try { const ids=JSON.parse(localStorage.getItem(CONTESTS_KEY)||'[]'); if(Array.isArray(ids)) selectedContestIds=ids.filter((id)=>typeof id==='string'&&/^exam-[a-z0-9-]+$/.test(id)).slice(0,10); } catch (_) { /* sem seleção local */ }
   let currentStep = 'areas';
 
   function examOptions() {
@@ -53,7 +56,7 @@
           id:option.id, type:'exam', group:'Por edital', title:option.name + ' — ' + option.cargo,
           shortLabel:option.name, description:option.status === 'publicado' ? 'Edital publicado; confira o programa por cargo na fonte oficial.' : 'Concurso previsto/autorizado; programa do novo edital ainda não publicado.',
           subjectIds:[...new Set(subjects.map((item) => item.centralId))],
-          examSubjects:option.status === 'publicado' ? (contest?.subjects || []).map((item) => ({id:item.id,title:item.name,subjectId:catalog.subjects[item.centralId] ? item.centralId : null,status:item.centralId ? (item.coverage === 'complete' ? 'available' : 'partial') : 'preparation',note:item.centralId ? 'Cobertura inicial; confira os assuntos exigidos para o cargo no edital.' : 'Sem cobertura cadastrada.'})) : [],
+          examSubjects:option.status === 'publicado' ? (contest?.subjects || []).map((item) => ({id:item.id,title:item.name,subjectId:catalog.subjects[item.centralId] ? item.centralId : null,status:item.centralId ? (item.coverage === 'complete' ? 'available' : item.coverage === 'partial' ? 'partial' : 'preparation') : 'preparation',note:item.centralId ? 'Cobertura inicial; confira os assuntos exigidos para o cargo no edital.' : 'Sem cobertura cadastrada.'})) : [],
         };
       }
       if (currentStep === 'exams' && document.getElementById('studyObjectiveDialog')) renderChooser('exams');
@@ -92,6 +95,7 @@
         method:'PUT', cache:'no-store', headers:{ 'Content-Type':'application/json' },
         body:JSON.stringify({
           objectiveId:id,
+          selectedContestIds,
           ...(id === 'free-study' && savedFreeSubjectIds() ? { freeSubjectIds:savedFreeSubjectIds() } : {}),
         }),
       });
@@ -112,7 +116,10 @@
   }
   async function selectObjective(id) {
     if (!catalog.goals[id]) return false;
+    if (id.startsWith('exam-') && selectedContestIds.length >= 10 && !selectedContestIds.includes(id)) { setSyncMessage('Limite de dez editais selecionados.'); return false; }
     activeId = id;
+    if (id.startsWith('exam-') && !selectedContestIds.includes(id)) selectedContestIds=[...selectedContestIds,id].slice(0,10);
+    localStorage.setItem(CONTESTS_KEY,JSON.stringify(selectedContestIds));
     localStorage.setItem(KEY, id);
     dispatchChange();
     applyObjective();
@@ -122,11 +129,35 @@
   }
   function setActive(id) {
     if (!catalog.goals[id]) return false;
+    if (id.startsWith('exam-') && selectedContestIds.length >= 10 && !selectedContestIds.includes(id)) return false;
     activeId = id;
+    if (id.startsWith('exam-') && !selectedContestIds.includes(id)) selectedContestIds=[...selectedContestIds,id].slice(0,10);
+    localStorage.setItem(CONTESTS_KEY,JSON.stringify(selectedContestIds));
     localStorage.setItem(KEY, id);
     dispatchChange();
     applyObjective();
     return true;
+  }
+  async function toggleContest(id) {
+    if (!catalog.goals[id] || !id.startsWith('exam-')) return false;
+    if (selectedContestIds.includes(id)) selectedContestIds=selectedContestIds.filter((value)=>value!==id);
+    else if (selectedContestIds.length < 10) selectedContestIds=[...selectedContestIds,id];
+    else { setSyncMessage('Limite de dez editais selecionados.'); return false; }
+    localStorage.setItem(CONTESTS_KEY,JSON.stringify(selectedContestIds));
+    if (activeId === id && !selectedContestIds.includes(id)) {
+      activeId=selectedContestIds[0]||'free-study';
+      localStorage.setItem(KEY,activeId);
+      applyObjective();
+    }
+    dispatchChange();
+    if (activeId) await persistRemote(activeId);
+    return true;
+  }
+  async function toggleCatalogContest(contestId,cargoIndex=0) {
+    await loadContestGoals();
+    const entry=examOptions().find((option)=>option.contest?.id===contestId && option.id.endsWith('-cargo-'+(cargoIndex+1))) ||
+      examOptions().find((option)=>option.contest?.id===contestId);
+    return entry ? toggleContest(entry.id) : false;
   }
   function objectiveCard(subject, examEntry) {
     const preparation = examEntry.status === 'preparation';
@@ -314,7 +345,9 @@
       options = '<div class="study-exam-list">' + shortcuts.map((item) =>
         '<button type="button" class="study-role-card" data-study-exam="' + escape(item.id) + '"><span><strong>' +
         escape(item.title) + '</strong><small>' + escape(item.description) + '</small></span><b aria-hidden="true">›</b></button>'
-      ).join('') + '</div>';
+      ).join('') + (step === 'exams' && contestItems ? examOptions().filter((item)=>!catalog.examShortcuts.some((shortcut)=>shortcut.id===item.id)).map((item)=>
+        '<button type="button" class="study-role-card" data-study-exam="'+escape(item.id)+'"><span><strong>'+escape(item.name)+' — '+escape(item.cargo)+'</strong><small>'+escape(item.label)+' · '+(selectedContestIds.includes(item.id)?'Já selecionado':'Adicionar e estudar')+'</small></span><b aria-hidden="true">›</b></button>'
+      ).join('') : '') + '</div>';
       backStep = step === 'area-exams' ? 'careers' : 'areas';
     }
     modal.innerHTML = '<section class="study-objective-dialog study-welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="studyObjectiveTitle">' +
@@ -340,7 +373,7 @@
     modal.querySelectorAll('[data-study-role]').forEach((button) => button.addEventListener('click', () => renderChooser('review', button.dataset.studyRole)));
     modal.querySelector('[data-study-free]')?.addEventListener('click', () => renderChooser('free'));
     modal.querySelector('[data-study-careers]')?.addEventListener('click', () => renderChooser('careers'));
-    modal.querySelector('[data-study-exams]')?.addEventListener('click', () => renderChooser('exams'));
+    modal.querySelector('[data-study-exams]')?.addEventListener('click', () => { renderChooser('exams'); loadContestGoals(); });
     modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => input.addEventListener('change', () => { const e = modal.querySelector('.study-form-error'); if (e) e.hidden = true; }));
     modal.querySelector('[data-study-free-all]')?.addEventListener('click', () => modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => { input.checked = true; }));
     modal.querySelector('[data-study-free-none]')?.addEventListener('click', () => modal.querySelectorAll('input[name="studyFreeSubject"]').forEach((input) => { input.checked = false; }));
@@ -435,6 +468,10 @@
           result.freeSubjectIds.every((id) => !!catalog.subjects[id]) &&
           new Set(result.freeSubjectIds).size === result.freeSubjectIds.length;
         const pending = localStorage.getItem(PENDING_KEY) === '1';
+        if (!pending && Array.isArray(result.selectedContestIds)) {
+          selectedContestIds=result.selectedContestIds.filter((id)=>typeof id==='string'&&/^exam-[a-z0-9-]+$/.test(id)).slice(0,10);
+          localStorage.setItem(CONTESTS_KEY,JSON.stringify(selectedContestIds));
+        }
         // Uma seleção pendente deste aparelho tem prioridade até sua sincronização.
         if (!pending && validRemoteSubjects) {
           localStorage.setItem(FREE_SUBJECTS_KEY, JSON.stringify(result.freeSubjectIds));
@@ -468,7 +505,7 @@
   document.addEventListener('base-completa-auth-ready', () => { if (!loaded) load(); });
 
   global.CentralStudyObjectives = {
-    catalog, open, setActive, getActive:() => activeId,
+    catalog, open, setActive, toggleContest, toggleCatalogContest, selectedContestIds:()=>selectedContestIds.slice(), getActive:() => activeId,
     hasActiveObjective:() => !!activeId,
     activeSubjectIds, questionDisciplineKeys:activeQuestionKeys,
     load, get loaded() { return loaded; },
