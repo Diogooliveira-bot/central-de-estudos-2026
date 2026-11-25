@@ -201,7 +201,7 @@ test('Integração lista os 30 módulos e carrega teoria pela API privada', () =
   assert.match(client,/availableModules/);
   assert.ok(!client.includes('data-gmf-action="questions"'));
   assert.ok(!client.includes('BCQuestoesArea?.openModule'));
-  assert.match(client,/Questões do módulo — Em preparação/);
+  assert.match(client,/Questões do módulo<\/h3>[\s\S]*?Em preparação[\s\S]*?disabled>Em preparação/);
   assert.ok(reader.includes('/api/private-content?asset='));
   assert.match(reader,/CentralPlanAccess/);
   assert.match(reader,/localStorage/);

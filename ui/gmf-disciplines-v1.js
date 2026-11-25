@@ -39,99 +39,59 @@
     };
   }
 
+  // Mesma estrutura de módulo das outras disciplinas (cf-module > cabeçalho + corpo): a Central mostra a grade
+  // "Escolha um módulo" e a página do módulo com "Como estudar", "Versão de revisão" e "Teoria completa".
   function renderMaster(course) {
-    const cards = course.modules.map((module, index) => {
+    const courseId = escapeAttr(course.id);
+    const referenceLink = '<p class="gmf-edital-note">' + safe(course.reference) + '. Estrutura baseada no último edital oficial; ' +
+      'o próximo edital ainda não foi publicado e os assuntos e a legislação deverão ser conferidos quando sair. ' +
+      '<a href="' + escapeAttr(catalog.referenceUrl) + '" target="_blank" rel="noopener noreferrer">Consultar edital oficial de 2023 ↗</a></p>';
+    return course.modules.map((module, index) => {
       const number = String(index + 1).padStart(2, '0');
-      const points = module.focus.map(item => '<li>' + safe(item) + '</li>').join('');
-      const attention = module.attention
-        ? '<p class="gmf-attention"><b>Ponto de atenção:</b> ' + safe(module.attention) + '</p>' : '';
-      const published = module.id === 'm01' || (catalog.availableModules?.[course.id] || []).includes(module.id);
-      const label = published ? 'Conteúdo completo e revisão disponíveis' : 'Roteiro de assuntos · conteúdo em preparação';
-      const courseId = escapeAttr(course.id);
       const moduleId = escapeAttr(module.id);
-      const buttons = published
-        ? '<div class="gmf-module-actions"><button type="button" data-gmf-action="review" data-gmf-course="' + courseId + '" data-gmf-module="' + moduleId + '">Abrir revisão guiada</button>' +
-          '<button type="button" data-gmf-action="complete" data-gmf-course="' + courseId + '" data-gmf-module="' + moduleId + '">Estudar teoria completa</button></div>'
-        : '';
-
-      return '<details class="gmf-module"><summary><span class="gmf-module-number">M' + number +
-        '</span><span class="gmf-module-heading"><b>' + safe(module.title) +
-        '</b><small>' + label + '</small></span><span class="gmf-chevron" aria-hidden="true">⌄</span></summary>' +
-        '<div class="gmf-module-body"><h4>O que estudar neste módulo</h4><ul>' + points + '</ul>' +
-        attention + buttons + '<p class="gmf-unreleased">'+(published?'Questões do módulo — Em preparação. Os exercícios preliminares não estão disponíveis nesta etapa. A leitura isolada não equivale à conclusão do módulo.':'Questões do módulo — Em preparação. Teoria completa e revisão guiada ainda não disponibilizadas. Este roteiro não conta como módulo concluído.')+'</p></div></details>';
+      const bodyId = 'gmf-body-' + courseId + '-' + moduleId;
+      const published = module.id === 'm01' || (catalog.availableModules?.[course.id] || []).includes(module.id);
+      const attention = module.attention
+        ? '<p><strong>Atenção:</strong> ' + safe(module.attention) + '</p>' : '';
+      const orient = '<section class="cf-native-oriented"><section class="bc-orient" aria-label="Como estudar este módulo">' +
+        '<div class="bc-orient-head"><b>Como estudar este módulo</b></div><div class="bc-orient-body">' +
+        '<p><strong>Foco:</strong> ' + safe(module.focus.map(item => String(item).replace(/[.\s]+$/, '')).join('; ')) + '.</p>' + attention +
+        '<p><strong>Como estudar:</strong> comece pela versão de revisão e aprofunde na teoria completa.</p></div></section></section>';
+      const action = (kind) => ' data-gmf-action="' + kind + '" data-gmf-course="' + courseId + '" data-gmf-module="' + moduleId + '"';
+      const cards = published
+        ? '<section class="cf-native-cards">' +
+          '<article class="cf-study-card cf-study-review"><span class="cf-study-icon" aria-hidden="true">⚡</span><b>Versão de revisão</b>' +
+          '<small>Aprenda com explicações, exemplos e aprofundamento. Alterne para revisão rápida quando precisar.</small>' +
+          '<span class="cf-study-tags" aria-hidden="true"><span>▤ Guia didático</span><span>Leitura + revisão</span></span>' +
+          '<div class="cf-study-actions"><button type="button" class="cf-study-open"' + action('review') + '>Revisar conteúdo</button></div></article>' +
+          '<article class="cf-study-card cf-study-primary"><span class="cf-study-icon" aria-hidden="true">📚</span><b>Teoria completa</b>' +
+          '<small>Apostila integral no site, para estudar o conteúdo em profundidade.</small>' +
+          '<span class="cf-study-tags" aria-hidden="true"><span>▤ Apostila</span><span>Conteúdo completo</span></span>' +
+          '<div class="cf-study-actions"><button type="button" class="cf-study-open"' + action('complete') + '>Estudar conteúdo</button></div></article>' +
+          '<article class="bcmc-card bcmc-questions gmf-questions-soon"><div class="bcmc-icon" aria-hidden="true">✍️</div>' +
+          '<div class="bcmc-copy"><h3>Questões do módulo</h3><p>Os exercícios preliminares ainda não estão disponíveis nesta etapa. A leitura isolada não equivale à conclusão do módulo.</p>' +
+          '<div class="bcmc-tags"><span>Em preparação</span></div></div>' +
+          '<div class="bcmc-actions"><button type="button" class="bcmc-primary" disabled>Em preparação</button></div></article></section>'
+        : '<section class="cf-native-cards"><article class="cf-study-card"><span class="cf-study-icon" aria-hidden="true">🕒</span><b>Conteúdo em preparação</b>' +
+          '<small>Roteiro de assuntos do edital. A teoria e a revisão deste módulo serão publicadas em breve.</small></article></section>';
+      return '<div class="cf-module bc-accordion ds-module gmf-std-module" data-std-module="1" data-module="gmf-' + courseId + '-' + moduleId +
+        '" data-gmf-course="' + courseId + '" data-gmf-module="' + moduleId + '">' +
+        '<button type="button" class="cf-module-head bc-accordion-header ds-module-head" aria-expanded="false" aria-controls="' + bodyId + '">' +
+        '<span class="cf-module-no">MÓDULO ' + number + '</span><span class="cf-module-title">' + safe(module.title) +
+        '</span><span class="chev" aria-hidden="true">⌄</span></button>' +
+        '<div class="cf-module-body ds-module-body" id="' + bodyId + '">' + orient + cards + referenceLink + '</div></div>';
     }).join('');
-
-    return '<div class="gmf-course"><div class="gmf-course-intro"><b>' + safe(course.name) +
-      '</b><p>' + safe(course.reference) + '</p><p>Estrutura inicial de ' + course.modules.length +
-      ' módulos, baseada no último edital oficial. O próximo edital ainda não foi publicado; os assuntos e a legislação deverão ser conferidos quando sair.</p>' +
-      '<a href="' + escapeAttr(catalog.referenceUrl) +
-      '" target="_blank" rel="noopener noreferrer">Consultar edital oficial de 2023</a></div>' +
-      '<div class="gmf-modules">' + cards + '</div></div>';
   }
 
-  // Catálogo GMF próprio: as disciplinas GMF não possuem cartões legados em #subjects.
-  // Abrimos a estrutura existente sem enviar o aluno ao foco de uma disciplina ausente.
-  let courseOverlay = null;
-  let focusBeforeCourse = null;
-  function closeCourse() {
-    if (!courseOverlay) return;
-    const overlay = courseOverlay;
-    courseOverlay = null;
-    overlay.remove();
-    document.body.classList.remove('gmf-course-browser-open');
-    document.removeEventListener('keydown', onCourseKey);
-    if (focusBeforeCourse?.isConnected) focusBeforeCourse.focus();
-    focusBeforeCourse = null;
-  }
-  function onCourseKey(event) {
-    if (event.key === 'Escape') { event.preventDefault(); closeCourse(); }
-  }
-  function openCourse(id) {
-    const course = catalog.subjects.find(subject => subject.id === id);
-    if (!course) return false;
-    closeCourse();
-    focusBeforeCourse = document.activeElement;
-    const overlay = document.createElement('div');
-    overlay.className = 'gmf-course-browser-overlay';
-    overlay.setAttribute('role', 'dialog');
-    overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', 'Módulos de ' + course.name);
-    const box = document.createElement('section');
-    box.className = 'gmf-course-browser-box';
-    const header = document.createElement('header');
-    header.className = 'gmf-course-browser-header';
-    const back = document.createElement('button');
-    back.type = 'button'; back.className = 'gmf-course-browser-back';
-    back.textContent = '← Voltar às disciplinas';
-    back.addEventListener('click', closeCourse);
-    const title = document.createElement('h1');
-    title.textContent = course.name;
-    header.append(back, title);
-    const content = document.createElement('div');
-    content.className = 'gmf-course-browser-content';
-    content.innerHTML = renderMaster(course);
-    box.append(header, content);
-    overlay.appendChild(box);
-    overlay.addEventListener('click', event => { if (event.target === overlay) closeCourse(); });
-    document.body.appendChild(overlay);
-    document.body.classList.add('gmf-course-browser-open');
-    document.addEventListener('keydown', onCourseKey);
-    courseOverlay = overlay;
-    back.focus();
-    return true;
-  }
-
-  // Executa antes da navegação geral: as matérias GMF usam este catálogo próprio.
+  // Abrir/fechar o módulo (as outras disciplinas fazem o mesmo com os seus próprios controles).
   document.addEventListener('click', event => {
-    const target = event.target instanceof Element ? event.target : event.target?.parentElement;
-    const trigger = target?.closest('[data-study-open-subject]');
-    const subjectHead = target?.closest('.subject[data-id] > .subject-head');
-    const id = trigger?.dataset.studyOpenSubject || trigger?.dataset.id || subjectHead?.closest('.subject[data-id]')?.dataset.id;
-    if (!id || !ids.has(id)) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    openCourse(id);
-  }, true);
+    const head = event.target instanceof Element ? event.target.closest('.gmf-std-module > .cf-module-head') : null;
+    if (!head) return;
+    const box = head.parentElement;
+    const open = !box.classList.contains('open');
+    box.classList.toggle('open', open);
+    head.setAttribute('aria-expanded', String(open));
+  });
 
   // O leitor carrega sob demanda para não interferir nas telas das demais disciplinas.
   let readerLoading=null;
@@ -150,7 +110,7 @@
 
   // Event delegation: evita manipulação de JavaScript em atributos onclick.
   document.addEventListener('click',event=>{
-    const button=event.target.closest?.('.gmf-module-actions button[data-gmf-action][data-gmf-course][data-gmf-module]');
+    const button=event.target.closest?.('button[data-gmf-action][data-gmf-course][data-gmf-module]');
     if(!button)return;
     event.preventDefault();
     const id=button.dataset.gmfCourse;
@@ -210,31 +170,13 @@
     '.disc-card[data-id="fortaleza"],.subject[data-id="fortaleza"]{--discipline-accent:#438a80;--discipline-accent-soft:rgba(67,138,128,.10)}',
     '.disc-card[data-id="legesp"],.subject[data-id="legesp"]{--discipline-accent:#506a92;--discipline-accent-soft:rgba(80,106,146,.10)}',
     '.disc-card[data-id="dh"],.subject[data-id="dh"]{--discipline-accent:#6476a3;--discipline-accent-soft:rgba(100,118,163,.10)}',
-    'body.gmf-course-browser-open{overflow:hidden}.gmf-course-browser-overlay{position:fixed;inset:0;z-index:2147482800;background:rgba(16,31,44,.65);padding:16px;display:grid;place-items:center}',
-    '.gmf-course-browser-box{background:var(--panel,#fff);color:var(--text,#223344);height:min(94vh,900px);width:min(980px,100%);border-radius:14px;overflow:auto;box-shadow:0 18px 48px rgba(0,0,0,.24)}',
-    '.gmf-course-browser-header{position:sticky;top:0;z-index:1;background:var(--panel,#fff);display:flex;align-items:center;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line,#dfe5ed)}.gmf-course-browser-header h1{font-size:18px;line-height:1.35;margin:0}',
-    '.gmf-course-browser-back{flex:0 0 auto;background:var(--soft,#f6f8fa);color:var(--text,#243244);border:1px solid var(--line,#dbe2ea);border-radius:8px;padding:10px 12px;cursor:pointer;font:600 12px system-ui}.gmf-course-browser-back:focus-visible{outline:2px solid #426f93;outline-offset:2px}.gmf-course-browser-content{padding:16px}',
-    '@media(max-width:600px){.gmf-course-browser-overlay{padding:0}.gmf-course-browser-box{height:100dvh;width:100%;border-radius:0}.gmf-course-browser-header{align-items:flex-start;flex-direction:column;gap:9px;padding:12px}.gmf-course-browser-content{padding:12px}}',
-    '.gmf-course{font:inherit;color:var(--text,#283647);max-width:100%;overflow-wrap:anywhere}',
-    '.gmf-course-intro{padding:18px;border:1px solid var(--line,#dce3ea);border-radius:12px;background:var(--panel,#fff);margin-bottom:12px}',
-    '.gmf-course-intro>b{font-size:17px}.gmf-course-intro p{font-size:13px;line-height:1.65;margin:9px 0}',
-    '.gmf-course-intro a{font-size:13px;font-weight:650;color:var(--discipline-accent,#356a9e)}',
-    '.gmf-modules{display:grid;gap:10px}.gmf-module{border:1px solid var(--line,#dce3ea);border-radius:12px;background:var(--panel,#fff);overflow:hidden}',
-    '.gmf-module summary{cursor:pointer;display:flex;align-items:center;gap:12px;padding:15px;list-style:none}',
-    '.gmf-module summary::-webkit-details-marker{display:none}.gmf-module summary:focus-visible{outline:2px solid var(--discipline-accent,#356a9e);outline-offset:-2px}',
-    '.gmf-module-number{display:grid;place-items:center;flex:0 0 42px;min-height:36px;border-radius:7px;background:var(--discipline-accent-soft,#edf3f7);color:var(--discipline-accent,#356a9e);font-size:12px;font-weight:750}',
-    '.gmf-module-heading{display:grid;gap:4px;min-width:0;flex:1}.gmf-module-heading b{font-size:14px;line-height:1.4}.gmf-module-heading small{font-size:12px;color:var(--muted,#6c7584)}',
-    '.gmf-chevron{font-size:18px;color:var(--muted,#6c7584)}.gmf-module[open] .gmf-chevron{transform:rotate(180deg)}',
-    '.gmf-module-body{border-top:1px solid var(--line,#dce3ea);padding:14px 18px 17px;font-size:13px;line-height:1.65}',
-    '.gmf-module-body h4{font-size:13px;margin:0 0 7px}.gmf-module-body ul{padding-left:20px;margin:0 0 12px}',
-    '.gmf-module-body li{margin:5px 0}.gmf-attention{margin:10px 0;padding:10px;border-left:3px solid var(--discipline-accent,#356a9e);background:var(--soft,#f8fafc)}',
-    '.gmf-unreleased{font-size:12px;color:var(--muted,#6c7584);border-top:1px solid var(--line,#dce3ea);padding-top:12px;margin:15px 0 0}',
-    '.gmf-module-actions{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.gmf-module-actions button{font:600 13px system-ui;border:1px solid var(--line,#dce3ea);background:var(--soft,#f8fafc);color:var(--text,#263445);border-radius:8px;padding:11px 13px;cursor:pointer}.gmf-module-actions button:first-child{background:var(--discipline-accent,#356a9e);color:white;border-color:transparent}.gmf-module-actions button:focus-visible{outline:2px solid currentColor;outline-offset:2px}',
-    '@media(max-width:600px){.gmf-module summary{padding:12px;gap:9px}.gmf-module-number{flex-basis:37px}.gmf-course-intro{padding:14px}.gmf-module-body{padding:13px}}'
+    'html.bc-ui-v1 #subjects .gmf-std-module .gmf-edital-note{margin:14px 2px 2px;font-size:.8125rem;line-height:1.6;color:var(--muted,#6c7584)}',
+    'html.bc-ui-v1 #subjects .gmf-std-module .gmf-edital-note a{font-weight:650;color:var(--discipline-accent,#356a9e)}',
+    '.gmf-questions-soon .bcmc-primary[disabled]{opacity:.6;cursor:not-allowed}'
   ].join('');
   document.head.appendChild(style);
 
-  global.GmfDisciplines = Object.freeze({installed:true,subjectIds:Array.from(ids),moduleCount:catalog.subjects.reduce((sum,course)=>sum+course.modules.length,0),renderMaster:(id)=>{const course=catalog.subjects.find(s=>s.id===id);return course?renderMaster(course):''},openCourse,closeCourse});
+  global.GmfDisciplines = Object.freeze({installed:true,subjectIds:Array.from(ids),moduleCount:catalog.subjects.reduce((sum,course)=>sum+course.modules.length,0),renderMaster:(id)=>{const course=catalog.subjects.find(s=>s.id===id);return course?renderMaster(course):''}});
   global.GmfStudyObjective?.sync?.();
   try { global.renderAll?.(); global.renderDisciplineGrid?.(); } catch (error) {
     console.error('[GMF] Não foi possível atualizar a lista de disciplinas',error);

@@ -51,6 +51,7 @@
     "nova-versao": "node scripts/nova-versao.mjs",
     "test:questoes-visual": "node tests/questoes-visual-browser.mjs",
     "test:menu-tablet": "node tests/tablet-menu-browser.mjs",
+    "test:gmf-padrao": "node tests/gmf-standard-browser.mjs",
     "test:gmf": "node --test tests/gmf-disciplines-unit.mjs tests/gmf-m01-content-security-unit.mjs tests/gmf-study-objective-unit.mjs"
   },
   "devDependencies": {

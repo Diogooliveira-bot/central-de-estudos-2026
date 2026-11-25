@@ -15,16 +15,17 @@ function getCatalog() {
   return context.window.GmfCourseCatalog;
 }
 
-test('cartões GMF abrem o catálogo próprio antes da navegação geral', () => {
-  assert.match(script, /data-study-open-subject/);
-  assert.match(script, /target\?\.closest\('\.subject\[data-id\] > \.subject-head'\)/);
-  assert.match(script, /subjectHead\?\.closest\('\.subject\[data-id\]'\)\?\.dataset\.id/);
-  assert.match(script, /document\.addEventListener\('click',[\s\S]*?event\.stopImmediatePropagation\(\)[\s\S]*?openCourse\(id\)[\s\S]*?,\s*true\)/);
-  assert.match(script, /global\.GmfDisciplines = Object\.freeze\([\s\S]*?openCourse,closeCourse\}\)/);
-  assert.match(script, /content\.innerHTML = renderMaster\(course\)/);
-  assert.match(script, /gmf-course-browser-back/);
+test('GMF usa a navegação padrão da Central (sem janela flutuante) e a estrutura de módulo das demais disciplinas', () => {
+  assert.doesNotMatch(script, /gmf-course-browser|openCourse|closeCourse|stopImmediatePropagation/);
+  assert.match(script, /class="cf-module bc-accordion ds-module gmf-std-module" data-std-module="1"/);
+  assert.match(script, /cf-module-head bc-accordion-header ds-module-head/);
+  assert.match(script, /cf-module-no">MÓDULO /);
+  assert.match(script, /cf-study-card cf-study-review/);
+  assert.match(script, /cf-study-card cf-study-primary/);
+  assert.match(script, /global\.GmfDisciplines = Object\.freeze\(\{installed:true,[\s\S]*?renderMaster:\(id\)=>/);
+  assert.ok(read('ui/module-page-standard-v1.css').includes('.cf-module[data-std-module] .cf-study-card'));
+  assert.ok(index.includes('/ui/module-page-standard-v1.css?v='));
 });
-
 
 test('leitor GMF atualiza a contagem de seções junto ao percentual', () => {
   assert.ok(reader.includes("<span data-done>'+done+'</span>"));
@@ -112,7 +113,9 @@ test('integração registrada após runtime e não altera cadastro de módulos a
   assert.ok(index.indexOf('/content/gmf/course-catalog-v1.js') < index.indexOf('/ui/gmf-disciplines-v1.js'));
   assert.doesNotThrow(() => new vm.Script(script));
   assert.doesNotMatch(script, /onclick=\"return GmfReader\.open/);
-  assert.match(script, /data-gmf-action=\"review\"/);
+  assert.match(script, /data-gmf-action=\"' \+ kind/);
+  assert.match(script, /action\('review'\)/);
+  assert.match(script, /action\('complete'\)/);
   assert.match(script, /ids\.has\(id\)/);
 });
 
