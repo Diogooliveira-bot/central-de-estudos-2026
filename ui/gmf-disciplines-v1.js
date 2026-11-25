@@ -100,7 +100,7 @@
     if(readerLoading)return readerLoading;
     readerLoading=new Promise((resolve,reject)=>{
       const script=document.createElement('script');
-      script.src='/ui/gmf-course-reader-v2.js?v=20261124gmfProgress1';
+      script.src='/ui/gmf-course-reader-v2.js?v=20261125r1';
       script.onload=()=>global.GmfCourseReaderV2?resolve(global.GmfCourseReaderV2):reject(new Error('Leitor GMF indisponível.'));
       script.onerror=()=>reject(new Error('Não foi possível carregar o leitor GMF.'));
       document.head.appendChild(script);
