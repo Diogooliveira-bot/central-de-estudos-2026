@@ -9,3 +9,5 @@ Base: edital 01/2023, Anexo I, pp. 46–47. Roteiro resumido em 92 assuntos, nã
 - Navegação via seleção de módulos existente (resolve IDs reais e, em Português, o número exibido; não abre um módulo aleatório).
 - Corrigido conflito de nomes na mesclagem do progresso remoto e limitado o envio a mudanças locais mais novas que o estado remoto; preservação do estado pendente durante escrita concorrente.
 - O material relacionado continua marcado como em auditoria. Sem publicação ou alterações no banco de produção.
+
+- Compatibilidade CPP: IDs canônicos `cpp-mNN` são resolvidos pelo atributo nativo numérico. Atualizadas versões do bootstrap, manifesto e service worker para evitar mistura de arquivos antigos. Testes de regressão adicionados para navegação exata, ausência de destino e checklist. O roteiro ainda exige validação real no navegador e auditoria de cobertura.

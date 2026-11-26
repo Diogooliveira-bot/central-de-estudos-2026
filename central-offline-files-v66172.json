@@ -1,5 +1,5 @@
 {
-  "build": "20261124-concursos-homolog-v8",
+  "build": "20261126-gmf-verticalizado-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -102,7 +102,7 @@
     "/ui/apostilas-pdf-v1.js?v=20261118r1",
     "/base-completa-home-v3.css?v=20261001v5",
     "/base-completa-home-v3.js?v=20261106nav1",
-    "/ui/study-navigation.js?v=20261023-remove-labor-disciplines-v1",
+    "/ui/study-navigation.js?v=20261126gmf3",
     "/ui/m10-header-fix.js?v=20261003m10p1",
     "/ui/m11-header-fix.js?v=20261003m11p1",
     "/ui/m12-header-fix.js?v=20261003m12p1",
@@ -235,7 +235,7 @@
     "/ui/study-objectives-v1.css?v=20261119r1",
     "/content/tjpb-2026-verticalized.js?v=20261020exam1",
     "/content/trt8-2026-verticalized.js?v=20261021multiexam2",
-    "/ui/exam-verticalized-v1.js?v=20261124r1",
+    "/ui/exam-verticalized-v1.js?v=20261126gmf3",
     "/ui/exam-verticalized-v1.css?v=20261115responsive1",
     "/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1",
     "/ui/home-minimal-a-v1.css?v=20261115responsive1",
@@ -258,7 +258,7 @@
     "/ui/agenda-pdf-leo-v1.js?v=20261115leo1",
     "/ui/module-quick-actions-v1.js?v=20261105fasec3",
     "/ui/progress-first-use-v1.js?v=20261105fasec1",
-    "/ui/disciplinas-foco-v1.js?v=20261115responsive1",
+    "/ui/disciplinas-foco-v1.js?v=20261126gmf3",
     "/ui/penal-visual-preview.css?v=20261115responsive1",
     "/ui/penal-visual-preview.js?v=20261106penal4",
     "/ui/cpc-apostila-reading-v1.js?v=20261120leiseca1",
@@ -336,7 +336,7 @@
     "/assets/adm/revisao-guiada/m06/ADM-M06-C09.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp",
     "/ui/contest-admin-form.js?v=20261124r1",
-    "/ui/concursos-catalog-v1.js?v=20261124r2",
+    "/ui/concursos-catalog-v1.js?v=20261126gmf3",
     "/ui/concursos-catalog-v1.css?v=20261123concursos2"
   ]
 }

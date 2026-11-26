@@ -55,6 +55,7 @@
     syncing = true;
     try {
       const response = await fetch(examQuery, {cache:'no-store'});
+      if (response.status===403){setSyncStatus('Marcações salvas neste aparelho. A sincronização depende do plano de acesso.');return false;}
       if (!response.ok) throw new Error('Não foi possível carregar o progresso do edital.');
       const remote = await response.json();
       const local = parseSaved();
@@ -136,7 +137,7 @@
     let host=document.getElementById(dialogId);
     if (!host) { host=document.createElement('div'); host.id=dialogId; host.className='exam-verticalized-backdrop'; document.body.appendChild(host); }
     host.hidden=false; document.documentElement.classList.add('exam-verticalized-open');
-    if (!loaded) { state=parseSaved(); render(); if (!isGuest()) syncNow(); else {loaded=true; render();} }
+    if (!loaded) { state=parseSaved(); render(); if (isGuest()) {loaded=true;setSyncStatus('Prévia: progresso local.');} else if(navigator.onLine) syncNow(); else setSyncStatus('Marcações salvas neste aparelho. Sem conexão.'); }
     else render();
     return true;
   }
@@ -151,7 +152,7 @@
     close();
     if(DATA.singleCheck && typeof global.BaseCompletaFocusNavigation?.openByModuleId === 'function') {
       const opened = await global.BaseCompletaFocusNavigation.openByModuleId(disciplineId,moduleId);
-      if(!opened){open();setSyncStatus('Não foi possível localizar este módulo. Tente novamente ou consulte a disciplina.');}
+      if(!opened){open();const status=document.getElementById(dialogId)?.querySelector('[data-exam-sync-status]');if(status)status.textContent='Não foi possível localizar este módulo. Tente novamente ou consulte a disciplina.';}
       return opened;
     }
     navigation.openContext({ subject:disciplineId, module:moduleId });
