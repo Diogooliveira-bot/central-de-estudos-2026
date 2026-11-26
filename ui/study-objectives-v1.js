@@ -314,13 +314,13 @@
       '<span class="study-area-icon" aria-hidden="true">' + escape(area.icon) + '</span>' +
       '<span class="study-area-copy"><strong>' + escape(area.title) + '</strong><small>' + escape(area.description) + '</small></span>' +
       '<span class="study-area-chevron" aria-hidden="true">›</span></button>';
-    const focusCard = (area) => card(area).replace('data-study-area=', 'data-study-focus-area=');
+    const focusCard = (area) => card(area).replace('data-study-area=', 'data-study-focus-area=').replace(/<small>.*?<\/small>/, '');
     const roleCard = (item) =>
       '<button type="button" class="study-role-card" data-study-role="' + escape(item.id) + '">' +
       '<span><strong>' + escape(item.title) + '</strong><small>Ver matérias sugeridas</small></span><b aria-hidden="true">›</b></button>';
 
-    let title = initial ? 'Bem-vindo à Base Completa!' : 'Como você quer estudar?';
-    let intro = 'Qual é o seu objetivo de estudo? Escolha sua área para encontrar concursos e começar. Você pode mudar depois.';
+    let title = 'Qual carreira você deseja seguir?';
+    let intro = 'Selecione sua área de interesse.';
     let badge = initial ? 'SEU PRIMEIRO ACESSO' : 'ALTERAR OBJETIVO';
     let options = '';
     let backStep = '';
@@ -328,10 +328,7 @@
     if (step === 'areas') {
       options =
         '<div class="study-area-grid">' + focusAreas.map(focusCard).join('') + '</div>' +
-        '<div class="study-start-alternatives"><div class="study-start-choices">' +
-        '<button type="button" class="study-start-choice" data-study-free><strong>Estudo livre</strong><small>Ainda não decidiu? Escolha suas disciplinas.</small><b aria-hidden="true">›</b></button>' +
-        '<button type="button" class="study-start-choice" data-study-careers><strong>Outras áreas</strong><small>Veja as demais opções de estudo.</small><b aria-hidden="true">›</b></button>' +
-        '<button type="button" class="study-start-choice" data-study-exams><strong>Todos os editais</strong><small>Já sabe o concurso? Consulte o catálogo.</small><b aria-hidden="true">›</b></button></div></div>';
+        (initial ? '' : '<div class="study-start-alternatives"><button type="button" class="study-back-button" data-study-free>Estudo livre</button> <button type="button" class="study-back-button" data-study-careers>Outras áreas</button> <button type="button" class="study-back-button" data-study-exams>Todos os editais</button></div>');
     } else if (step === 'focus-exams') {
       const area = focusAreas.find(item=>item.id===value);
       if (!area) return renderChooser('areas');
@@ -406,11 +403,11 @@
     }
     modal.innerHTML = '<section class="study-objective-dialog study-welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="studyObjectiveTitle">' +
       '<header class="study-welcome-brand"><img src="/assets/base-completa-symbol.webp" alt="" width="40" height="40"><div><b>BASE COMPLETA</b><small>CENTRAL DE ESTUDOS</small></div></header>' +
-      '<div class="study-welcome-intro"><div><span>' + badge + '</span><h1 id="studyObjectiveTitle">' + escape(title) +
-      '</h1><p>' + escape(intro) + '</p></div><img src="/assets/mascote/mascote-boas-vindas.webp" alt="" aria-hidden="true" loading="lazy"></div>' +
+      '<div class="study-welcome-intro"><div>' + (step === 'areas' ? '' : '<span>' + badge + '</span>') + '<h1 id="studyObjectiveTitle">' + escape(title) +
+      '</h1><p>' + escape(intro) + '</p></div>' + (step === 'areas' ? '' : '<img src="/assets/mascote/mascote-boas-vindas.webp" alt="" aria-hidden="true" loading="lazy">') + '</div>' +
       options +
       '<p class="study-objective-sync" data-study-objective-sync role="status">' +
-      (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true ? 'Prévia: escolha guardada somente neste navegador.' : '') +
+      (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true && step !== 'areas' ? 'Prévia: escolha guardada somente neste navegador.' : '') +
       '</p><footer class="study-welcome-actions">' +
       (backStep ? '<button type="button" class="study-back-button" data-study-back>‹ Voltar</button>' : '<span></span>') +
       (!initial ? '<button type="button" class="study-keep-button" data-study-close>Manter minha escolha atual</button>' : '') +
