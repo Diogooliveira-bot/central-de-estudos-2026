@@ -254,3 +254,8 @@ html.study-objective-open,html.study-objective-open body{overflow:hidden}
 html.bc-ui-v1 #appRoot #homeView #subjects>.subject[data-study-trail="1"]{box-shadow:inset 5px 0 0 #0b8c93!important}
 html.bc-ui-v1 #appRoot #homeView #subjects>.subject[data-study-trail="1"] .subject-name{color:#0b5d66}
 html.bc-ui-v1 #appRoot #homeView #subjects>.subject[data-study-trail="1"]>.subject-head{box-shadow:inset 6px 0 0 #0b8c93!important}
+
+/* Primeiro acesso: pesquisa com o mesmo padrão visual do seletor. */
+.study-focus-search{display:block;width:100%;box-sizing:border-box;margin:6px 0 12px;padding:11px 12px;border:1px solid #dce8ee;border-radius:10px;background:#fff;color:#17354c;font:inherit}
+.study-focus-search:focus-visible{outline:2px solid #1b9eab;outline-offset:2px}
+.study-objective-dialog [data-study-focus-result][hidden],.study-objective-dialog [data-study-focus-empty][hidden]{display:none!important}
