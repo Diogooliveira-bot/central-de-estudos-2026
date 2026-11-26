@@ -40,7 +40,7 @@
   function matchesFocusArea(area, option) {
     const identity = normalized([option.name,option.cargo,option.contest?.organ,option.contest?.id,option.id].join(' '));
     if (area.id === 'tribunais') return /\btribunal\b(?! de contas)|\b(?:tj|trt|tre|trf|tst|tse|stj|stm|stf)\b|\b(?:tj|trt|tre|trf)[a-z0-9]+\b|judiciari/.test(identity);
-    if (area.id === 'guardas') return /guard[as]?[- ]+(?:civil[- ]+)?municip|\bgmf\b/.test(identity);
+    if (area.id === 'guardas') return /guardas?[- ]+(?:civil[- ]+)?municip|\bgmf\b/.test(identity);
     if (area.id === 'transito') return /\b(?:agente|fiscal|analista) (?:de )?(?:transito|mobilidade)|\b(?:detran|cetran|amc)\b/.test(identity);
     return /polici[aa] rodoviari[ao] federal|policial-rodoviario-federal|\bprf\b/.test(identity);
   }
@@ -425,7 +425,7 @@
     modal.querySelector('[data-study-focus-search]')?.addEventListener('input',event=>{
       const query = normalized(event.currentTarget.value.trim());
       const results = [...modal.querySelectorAll('[data-study-focus-result]')];
-      for(const button of results) button.hidden = !normalized(button.textContent).includes(query);
+      for(const button of results) button.hidden = !normalized(button.querySelector('strong')?.textContent).includes(query);
       const empty = modal.querySelector('[data-study-focus-empty]');
       if(empty) empty.hidden = results.some(button=>!button.hidden);
     });
