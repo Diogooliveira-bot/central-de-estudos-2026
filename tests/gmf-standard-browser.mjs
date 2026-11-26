@@ -120,6 +120,27 @@ try {
     await page.waitForFunction(() => /MÓDULO 02/.test(document.querySelector('#gmf-native-reader .bc-native-reader-title small')?.textContent || ''), { timeout: 10000 });
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#gmf-native-reader').count(), 0, `${nome}: Esc fecha o leitor`);
+    // Edital verticalizado: roteiro real da GMF, check manual e atalho exato.
+    await page.evaluate(()=>window.CentralGMFVerticalized.open());
+    const edital=page.locator('#gmfVerticalizedDialog');
+    await edital.waitFor({state:'visible'});
+    assert.equal(await edital.locator('[data-exam-topic]').count(),92);
+    await edital.locator('[data-exam-subject="gmf-fortaleza"] summary').click();
+    const check=edital.locator('[data-exam-topic="gmf23-fortaleza-01"]');
+    await check.check();
+    assert.equal(await check.isChecked(),true);
+    assert.equal(await page.evaluate(()=>window.CentralGMFVerticalized.overall()),1.1);
+    await edital.locator('[data-exam-close]').click();
+    await page.evaluate(()=>window.CentralGMFVerticalized.open());
+    if(!(await check.isVisible()))await edital.locator('[data-exam-subject="gmf-fortaleza"] summary').click();
+    assert.equal(await check.isChecked(),true);
+    await check.uncheck();
+    assert.equal(await page.evaluate(()=>window.CentralGMFVerticalized.overall()),0);
+    await shot(page,`gmf-${nome}-4-edital`);
+    await edital.locator('[data-exam-module="gmf-fortaleza-m02"]').first().click();
+    await page.waitForFunction(()=>window.BaseCompletaFocusNavigation?.state.stage==='reading'&&window.BaseCompletaFocusNavigation?.state.subject==='fortaleza'&&window.BaseCompletaFocusNavigation?.state.moduleTitle==='Hidrografia',{timeout:15000});
+    assert.equal(await edital.isVisible(),false);
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
     assert.deepEqual(erros, [], `${nome}: sem erros de JavaScript`);
     await ctx.close();
   }

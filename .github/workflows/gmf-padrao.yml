@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'ui/gmf-*.js'
+      - 'ui/exam-verticalized-v1.js'
+      - 'tests/gmf-verticalized-unit.mjs'
       - 'ui/module-page-standard-v1.css'
       - 'ui/study-objectives-v1.js'
       - 'ui/disciplinas-foco-v1.js'
