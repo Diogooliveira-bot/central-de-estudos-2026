@@ -189,7 +189,7 @@
     }
     if(item.status==='previsto')article.append(node('p','contest-notice','Atenção: não existe edital de abertura de 2026 confirmado neste cadastro. Dados antigos não são apresentados como atuais.'));
     if(item.id==='gmf-fortaleza-monitoramento'){
-      const bar=node('div','contest-admin-bar');bar.append(control('Selecionar GMF como objetivo de estudos','contest-admin-button','data-contest-objective','gmf-fortaleza'));article.append(bar);
+      const bar=node('div','contest-admin-bar');bar.append(control('Selecionar GMF como objetivo de estudos','contest-admin-button','data-contest-objective','gmf-fortaleza'),control('Abrir edital verticalizado · GMF','contest-admin-button','data-contest-gmf-verticalized','gmf-fortaleza'));article.append(bar);
     }
     const meta=node('section','contest-meta');
     if(item.currentStage)metaPair(meta,'Etapa atual · atualizada em '+date(item.currentStageDate),item.currentStage,'contest-meta-stage');
@@ -262,6 +262,7 @@
     if(event.target.closest('[data-contest-new]'))return editor(blank(),true);if(event.target.closest('[data-contest-history]'))return history();
     const toggleId=event.target.closest('[data-contest-toggle]')?.dataset.contestToggle;if(toggleId)return toggle(payload.items.find(i=>i.id===toggleId));
     const saveAction=event.target.closest('[data-contest-save]')?.dataset.contestSave;if(saveAction)return save(saveAction);
+    if(event.target.closest('[data-contest-gmf-verticalized]')){close();global.CentralStudyObjectives?.setActive?.('exam-catalog-gmf-fortaleza-monitoramento-cargo-1');global.GmfStudyObjective?.choose('gmf-fortaleza',{navigate:true});global.CentralGMFVerticalized?.open();return;}
     const goal=event.target.closest('[data-contest-objective]');if(goal){close();global.GmfStudyObjective?.choose(goal.dataset.contestObjective,{navigate:true});return;}
     const follow=event.target.closest('[data-contest-follow]');if(follow){global.CentralStudyObjectives?.toggleCatalogContest?.(follow.dataset.contestFollow).then((ok)=>toast(ok?'Seleção de editais atualizada.':'Não foi possível alterar a seleção.'));return;}
     const study=event.target.closest('[data-contest-study]');if(study){close();global.CentralStudyNavigation?.openContext?.({subject:study.dataset.contestStudy,module:study.dataset.contestModule||undefined});}
