@@ -19,7 +19,7 @@
     if (match) return {subject: 'penal', n: Number(match[1] || 1), legacy: true};
     match = id.match(/^cpc(?:M(\d+))?NativeReaderOverlay$/);
     if (match) return {subject: 'cpc', n: Number(match[1] || 1), legacy: true};
-    match = id.match(/^(adm|civil|cpp|cf)-native-reader$/);
+    match = id.match(/^(adm|civil|cpp|cf|gmf)-native-reader$/);
     if (match) return {subject: match[1], legacy: false};
     return null;
   }
