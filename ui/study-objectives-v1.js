@@ -332,19 +332,16 @@
     } else if (step === 'focus-exams') {
       const area = focusAreas.find(item=>item.id===value);
       if (!area) return renderChooser('areas');
-      title = area.title;
-      intro = 'Escolha um concurso e cargo, ou comece uma trilha inicial sem edital.';
-      badge = 'SEU OBJETIVO';
+      title = 'Escolha seu concurso';
+      intro = '';
+      badge = '';
       const entries = focusExamOptions(area);
-      options = '<div class="study-review"><p><strong>Concursos e editais</strong></p>' +
-        '<label>Pesquisar concurso ou cargo<input type="search" data-study-focus-search class="study-focus-search" placeholder="Ex.: órgão, município ou cargo"></label>' +
-        '<div class="study-exam-list">' + entries.map(item=>
-          '<button type="button" class="study-role-card" data-study-exam="'+escape(item.id)+'" data-study-focus-result><span><strong>'+escape(item.name)+'</strong><small>'+escape(item.label)+(selectedContestIds.includes(item.id)?' · Já selecionado':'')+'</small></span><b aria-hidden="true">›</b></button>'
-        ).join('') + '</div><p data-study-focus-empty'+(entries.length?' hidden':'')+'>Nenhum edital encontrado nesta área. Você pode começar pela trilha inicial abaixo.</p>' +
-        '<p><strong>Começar sem edital</strong></p><p class="study-disclaimer">Trilha inicial com matérias disponíveis, sem garantia de cobertura integral de um edital.</p><div class="study-role-grid">' +
-        area.careers.map(id=>catalog.goals[id]).filter(Boolean).map(item=>
-          '<button type="button" class="study-role-card" data-study-confirm="'+escape(item.id)+'"><span><strong>'+escape(item.title)+'</strong><small>Começar trilha inicial</small></span><b aria-hidden="true">›</b></button>'
-        ).join('') + '</div></div>';
+      options = '<div class="study-exam-list">' +
+        (entries.length > 5 ? '<input aria-label="Pesquisar concurso" type="search" data-study-focus-search class="study-focus-search" placeholder="Pesquisar concurso">' : '') +
+        entries.map(item => '<button type="button" class="study-role-card" data-study-exam="'+escape(item.id)+'" data-study-focus-result><span><strong>'+escape(item.name)+'</strong><small>'+escape(item.label.replace('Referência: edital de 2023. Não confundir com novo edital publicado.','Edital de referência: 2023').replace('Referência de 2021 — concurso encerrado','Edital de 2021 — encerrado'))+'</small></span><b aria-hidden="true">›</b></button>').join('') +
+        '<p data-study-focus-empty'+(entries.length?' hidden':'')+'>Nenhum concurso encontrado.</p></div>' +
+        (area.careers.length === 1 ? '<button type="button" class="study-role-card" data-study-confirm="'+escape(area.careers[0])+'"><span><strong>Estudar sem edital</strong></span><b aria-hidden="true">›</b></button>' :
+        '<details class="study-review"><summary>Estudar sem edital</summary><div class="study-role-grid">'+area.careers.map(id=>catalog.goals[id]).filter(Boolean).map(item=>'<button type="button" class="study-role-card" data-study-confirm="'+escape(item.id)+'"><span><strong>'+escape(item.title)+'</strong></span><b aria-hidden="true">›</b></button>').join('')+'</div></details>');
       backStep = 'areas';
     } else if (step === 'careers') {
       title = 'Escolha sua área';
@@ -403,11 +400,11 @@
     }
     modal.innerHTML = '<section class="study-objective-dialog study-welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="studyObjectiveTitle">' +
       '<header class="study-welcome-brand"><img src="/assets/base-completa-symbol.webp" alt="" width="40" height="40"><div><b>BASE COMPLETA</b><small>CENTRAL DE ESTUDOS</small></div></header>' +
-      '<div class="study-welcome-intro"><div>' + (step === 'areas' ? '' : '<span>' + badge + '</span>') + '<h1 id="studyObjectiveTitle">' + escape(title) +
-      '</h1><p>' + escape(intro) + '</p></div>' + (step === 'areas' ? '' : '<img src="/assets/mascote/mascote-boas-vindas.webp" alt="" aria-hidden="true" loading="lazy">') + '</div>' +
+      '<div class="study-welcome-intro"><div>' + (['areas','focus-exams'].includes(step) ? '' : '<span>' + badge + '</span>') + '<h1 id="studyObjectiveTitle">' + escape(title) +
+      '</h1>' + (intro ? '<p>' + escape(intro) + '</p>' : '') + '</div>' + (['areas','focus-exams'].includes(step) ? '' : '<img src="/assets/mascote/mascote-boas-vindas.webp" alt="" aria-hidden="true" loading="lazy">') + '</div>' +
       options +
       '<p class="study-objective-sync" data-study-objective-sync role="status">' +
-      (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true && step !== 'areas' ? 'Prévia: escolha guardada somente neste navegador.' : '') +
+      (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true && !['areas','focus-exams'].includes(step) ? 'Prévia: escolha guardada somente neste navegador.' : '') +
       '</p><footer class="study-welcome-actions">' +
       (backStep ? '<button type="button" class="study-back-button" data-study-back>‹ Voltar</button>' : '<span></span>') +
       (!initial ? '<button type="button" class="study-keep-button" data-study-close>Manter minha escolha atual</button>' : '') +
