@@ -12,12 +12,15 @@
  const save=(k,v)=>{try{global.localStorage.setItem(k,v?'1':'0')}catch(_){}};
  const dataByPath=new Map(), pending=new Map();
  const state={root:null,subject:'',module:'',mode:'review',active:null};
+ // O M01 das quatro primeiras disciplinas vive num pacote único antigo; as demais usam um arquivo por módulo (como M02+).
+ const LEGACY_M01=new Set(['atual','fortaleza','legesp','dh']);
+ const usesBundle=(subject,module)=>module==='m01'&&LEGACY_M01.has(subject);
  function assetPath(subject,module,mode){
-   if(module==='m01')return mode==='review'?'/content/gmf/m01-review-v1.js':'/content/gmf/m01-full-v1.js';
+   if(usesBundle(subject,module))return mode==='review'?'/content/gmf/m01-review-v1.js':'/content/gmf/m01-full-v1.js';
    return '/content/gmf/'+subject+'/'+module+'-'+(mode==='review'?'review':'full')+'-v1.js';
  }
  function recordFor(subject,module,mode,path){
-   if(module==='m01'){
+   if(usesBundle(subject,module)){
      const all=mode==='review'?global.GMF_M01_REVIEW:global.GMF_M01_FULL;
      return all?.[subject]||null;
    }

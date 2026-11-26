@@ -3,6 +3,7 @@ import { requirePlanFeature } from '../lib/plan-access.js';
 import { handleContentImage } from '../lib/content-image-handler.js';
 import { contentEditorReadFeature } from '../lib/content-editor-access.js';
 import {ensureReviewTables,normalizeReviewKey,keyFromLabel} from '../lib/module-review.js';
+import { ensureOnce } from '../lib/db-once.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -10,7 +11,7 @@ function send(res,status,body){
   res.setHeader('Cache-Control','no-store');
   res.end(JSON.stringify(body));
 }
-async function ensureTable(sql){
+async function ensureTable_ddl(sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS central_content_overrides (
       content_id TEXT PRIMARY KEY,
@@ -256,3 +257,5 @@ export default async function handler(req,res){
     return send(res,500,{error:'Falha interna no editor de conteúdo'});
   }
 }
+
+const ensureTable = (sql) => ensureOnce(sql, 'content-editor.js:ensureTable', () => ensureTable_ddl(sql));

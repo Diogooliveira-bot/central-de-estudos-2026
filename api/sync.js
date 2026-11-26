@@ -1,5 +1,6 @@
 import { readJsonBody, sameOriginRequest } from '../lib/auth.js';
 import { requirePlanFeature } from '../lib/plan-access.js';
+import { ensureOnce } from '../lib/db-once.js';
 
 function send(res, status, body) {
   res.statusCode = status;
@@ -18,7 +19,7 @@ function sanitizePayload(payload) {
   return Object.fromEntries(Object.entries(payload).filter(([key]) => !isPortugueseDataKey(key)));
 }
 
-async function ensureTable(sql) {
+async function ensureTable_ddl(sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS central_user_sync_state (
       user_id TEXT PRIMARY KEY REFERENCES central_users(user_id) ON DELETE CASCADE,
@@ -57,13 +58,18 @@ export default async function handler(req, res) {
     await ensureTable(sql);
 
     if (req.method === 'GET') {
+      // ?since=<revisão que o aparelho já tem>: se nada mudou, o banco nem lê nem envia os dados (até 4 MB) — só a revisão.
+      const sinceRaw = Number(req.query?.since);
+      const since = Number.isSafeInteger(sinceRaw) && sinceRaw > 0 ? sinceRaw : null;
       const rows = await sql`
-        SELECT revision,updated_at,device_id,content_hash,payload,payload_bytes
+        SELECT revision,updated_at,device_id,content_hash,payload_bytes,
+               CASE WHEN ${since}::bigint IS NOT NULL AND revision=${since}::bigint THEN NULL ELSE payload END AS payload
         FROM central_user_sync_state
         WHERE user_id=${userId}
         LIMIT 1
       `;
-      return send(res, 200, { ...rowToState(rows[0]), userId });
+      const unchanged = since !== null && rows[0] && Number(rows[0].revision) === since;
+      return send(res, 200, { ...rowToState(rows[0], !unchanged), ...(unchanged ? { unchanged: true } : {}), userId });
     }
 
     if (req.method === 'POST') {
@@ -121,3 +127,5 @@ export default async function handler(req, res) {
     return send(res, 500, { error: 'Falha interna na sincronização do usuário' });
   }
 }
+
+const ensureTable = (sql) => ensureOnce(sql, 'sync.js:ensureTable', () => ensureTable_ddl(sql));

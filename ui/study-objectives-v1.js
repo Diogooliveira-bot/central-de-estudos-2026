@@ -238,7 +238,9 @@
     sections.forEach((section) => {
       section.hidden = false;
       section.classList.remove('study-objective-hidden');
-      if (activeId) section.dataset.studyTrail = trail.has(section.dataset.id) ? '1' : '0';
+      // As disciplinas exclusivas do GMF fazem parte da trilha quando esse concurso está escolhido.
+      const gmfTrail = global.GmfStudyObjective?.current?.() === 'gmf-fortaleza' && global.GmfStudyObjective.allowsSubject?.(section.dataset.id);
+      if (activeId) section.dataset.studyTrail = (trail.has(section.dataset.id) || gmfTrail) ? '1' : '0';
       else delete section.dataset.studyTrail;
     });
   }
@@ -249,6 +251,11 @@
     observer.observe(host, { childList:true });
     host.__studyObjectiveObserver = observer;
     host.addEventListener('central:study-objective-changed', applyObjective);
+    // A troca de concurso (GMF) é anunciada no documento: remarca a trilha sem esperar outra ação.
+    if (!document.__studyObjectiveTrailListener) {
+      document.__studyObjectiveTrailListener = true;
+      document.addEventListener('central:study-objective-changed', () => markTrail(host.querySelectorAll(':scope > .subject[data-id]')));
+    }
     const grid = document.getElementById('disciplineGrid');
     if (grid && !grid.__studyObjectiveGridObserver) {
       const gridObserver = new MutationObserver(() => renderDisciplineCards());

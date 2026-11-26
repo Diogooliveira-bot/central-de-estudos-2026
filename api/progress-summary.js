@@ -1,5 +1,6 @@
 import { readJsonBody, sameOriginRequest } from '../lib/auth.js';
 import { requirePlanFeature } from '../lib/plan-access.js';
+import { ensureOnce } from '../lib/db-once.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -32,7 +33,7 @@ function cleanSummary(input){
     modules,
   };
 }
-async function ensureTable(sql){
+async function ensureTable_ddl(sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS central_user_progress_summary (
       user_id TEXT PRIMARY KEY REFERENCES central_users(user_id) ON DELETE CASCADE,
@@ -97,3 +98,5 @@ export default async function handler(req,res){
     return send(res,500,{error:'Falha ao salvar resumo de progresso'});
   }
 }
+
+const ensureTable = (sql) => ensureOnce(sql, 'progress-summary.js:ensureTable', () => ensureTable_ddl(sql));

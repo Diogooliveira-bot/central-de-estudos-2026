@@ -3,7 +3,7 @@
 if(window.__centralUserSyncV1)return;window.__centralUserSyncV1=true;
 
 var DB_NAME='central-sync-device-v2',STORE='kv',localState=null,localReady=false;
-var busy=false,lastCheckHash='',timers=[];
+var busy=false,lastCheckHash='',timers=[],lastOkAt=0;
 var CRONO_KEY='CENTRAL_CRONOGRAMA_6M_V2',AGENDA_PREFIX='central-v6:agenda:';
 var user=window.BASE_COMPLETA_USER||null;
 var previewGuest=window.__BASE_COMPLETA_PREVIEW_GUEST__===true;
@@ -20,7 +20,7 @@ function isSyncKey(k){return !!localState&&localState.isSyncKey(k)}
 function sanitizePayload(payload){var out={};if(!payload||typeof payload!=='object'||Array.isArray(payload))return out;Object.keys(payload).forEach(function(k){if(isSyncKey(k))out[k]=payload[k]});return out}
 function collect(){return localState?localState.collectSyncStorage():{}}
 function hashObject(obj){var s=JSON.stringify(obj),h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16)+'-'+s.length}
-function status(msg,type){var el=document.getElementById('centralSyncStatus');if(el){el.textContent=msg;el.className='central-backup-status'+(type?' '+type:'')}try{window.dispatchEvent(new CustomEvent('central:sync-status',{detail:{message:String(msg||''),type:type||''}}))}catch(_){}}
+function status(msg,type){if(type==='ok')lastOkAt=Date.now();var el=document.getElementById('centralSyncStatus');if(el){el.textContent=msg;el.className='central-backup-status'+(type?' '+type:'')}try{window.dispatchEvent(new CustomEvent('central:sync-status',{detail:{message:String(msg||''),type:type||''}}))}catch(_){}}
 async function saveMeta(){await Promise.all([kvSet('device',meta.device),kvSet('revision',meta.revision),kvSet('hash',meta.hash),kvSet('local-snapshot',collect())])}
 async function request(path,opt){opt=opt||{};var r=await fetch(path,opt),txt=await r.text(),j={};try{j=txt?JSON.parse(txt):{}}catch(_){j={error:txt||('HTTP '+r.status)}}if(r.status===401){location.replace('/login.html?next='+encodeURIComponent(location.pathname+location.search));throw new Error('Sessão expirada')}if(!r.ok){var e=new Error(j.error||('HTTP '+r.status));e.status=r.status;e.body=j;throw e}return j}
 function jsonObject(v){try{var x=JSON.parse(String(v||''));return x&&typeof x==='object'&&!Array.isArray(x)?x:null}catch(_){return null}}
@@ -62,7 +62,7 @@ async function sync(reason){
  if(previewGuest||!userId||!localReady||busy||!navigator.onLine)return;
  busy=true;status('Sincronizando sua conta...','warn');
  try{
-  var local=collect(),localHash=hashObject(local),cloud=await request('/api/sync');
+  var local=collect(),localHash=hashObject(local),cloud=await request('/api/sync'+(meta.revision>0?'?since='+encodeURIComponent(meta.revision):''));
   if(!cloud.exists){
    var first=await push(local,localHash,0);
    meta.revision=first.revision;meta.hash=localHash;lastCheckHash=localHash;await saveMeta();
@@ -137,12 +137,13 @@ async function init(){
  if(badge)badge.textContent='v'+version;
  status(navigator.onLine?'Sincronização da conta ativa.':'Sem internet. Seus dados continuam separados neste aparelho.',navigator.onLine?'ok':'warn');
  sync('startup');
- timers.push(setInterval(observe,15000));
- timers.push(setInterval(function(){sync('poll')},120000));
+ // Economia do banco: nada de consulta com a aba escondida; a cada 5 min só se estiver visível (ao voltar à aba, sincroniza).
+ timers.push(setInterval(function(){if(document.visibilityState==='visible')observe()},15000));
+ timers.push(setInterval(function(){if(document.visibilityState==='visible')sync('poll')},300000));
 }
 
 window.addEventListener('online',function(){if(previewGuest)return;status('Internet restaurada; sincronizando...','warn');sync('online')});
 window.addEventListener('offline',function(){if(previewGuest)return;status('Sem internet. Alterações ficam salvas somente na sua conta neste aparelho até reconectar.','warn')});
-document.addEventListener('visibilitychange',function(){if(previewGuest)return;if(document.visibilityState==='visible')sync('visible')});
+document.addEventListener('visibilitychange',function(){if(previewGuest)return;if(document.visibilityState==='visible'&&Date.now()-lastOkAt>60000)sync('visible')});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

@@ -127,7 +127,7 @@ test('Direitos Humanos M02-M04: teoria completa, revisão própria e acesso prot
 test('40 exercícios preliminares preservados, mas bloqueados pela API da GMF', () => {
   assert.equal(GMF_QUESTIONS_ENABLED,false);
   const handler=read('lib/questoes-handler.js');
-  assert.equal((handler.match(/GMF_DISCIPLINES\.has\(mod\.disc\) && !GMF_QUESTIONS_ENABLED/g)||[]).length,2);
+  assert.equal((handler.match(/gmfDisciplineIds\(root\)\.has\(mod\.disc\) && !GMF_QUESTIONS_ENABLED/g)||[]).length,2);
 });
 
 test('API recusa chamadas diretas de leitura e resposta para as quatro disciplinas GMF', async () => {
@@ -201,7 +201,7 @@ test('Integração lista os 30 módulos e carrega teoria pela API privada', () =
   assert.match(client,/availableModules/);
   assert.ok(!client.includes('data-gmf-action="questions"'));
   assert.ok(!client.includes('BCQuestoesArea?.openModule'));
-  assert.match(client,/Questões do módulo — Em preparação/);
+  assert.match(client,/Questões do módulo<\/h3>[\s\S]*?Em preparação[\s\S]*?disabled>Em preparação/);
   assert.ok(reader.includes('/api/private-content?asset='));
   assert.match(reader,/CentralPlanAccess/);
   assert.match(reader,/localStorage/);

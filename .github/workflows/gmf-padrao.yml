@@ -1,0 +1,26 @@
+name: GMF no padrao visual
+on:
+  pull_request:
+    paths:
+      - 'ui/gmf-*.js'
+      - 'ui/module-page-standard-v1.css'
+      - 'ui/study-objectives-v1.js'
+      - 'ui/disciplinas-foco-v1.js'
+      - 'content/gmf/course-catalog-v1.js'
+      - 'tests/gmf-standard-browser.mjs'
+      - '.github/workflows/gmf-padrao.yml'
+  workflow_dispatch:
+jobs:
+  gmf-padrao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install chromium
+      # Conta e API fictícias; nenhum dado de aluno.
+      - run: node tests/gmf-standard-browser.mjs

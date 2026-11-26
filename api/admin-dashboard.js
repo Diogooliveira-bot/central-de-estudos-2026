@@ -3,6 +3,7 @@ import {runPremiumEmailAutomation,premiumAutomationEnabled} from '../lib/email-p
 import {captureStudyEmailSnapshots,studySnapshotsEnabled} from '../lib/email-study-snapshots.js';
 import {runWeeklyEmailAutomation,weeklyEmailEnabled} from '../lib/email-weekly-automation.js';
 import {ensureEmailAuditTable} from '../lib/email-audit.js';
+import { ensureOnce } from '../lib/db-once.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -11,7 +12,7 @@ function send(res,status,body){
   res.end(JSON.stringify(body));
 }
 
-async function ensureTables(sql){
+async function ensureTables_ddl(sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS central_user_sync_state (
       user_id TEXT PRIMARY KEY REFERENCES central_users(user_id) ON DELETE CASCADE,
@@ -142,3 +143,5 @@ export default async function handler(req,res){
     return send(res,500,{error:'Falha ao carregar o painel administrativo'});
   }
 }
+
+const ensureTables = (sql) => ensureOnce(sql, 'admin-dashboard.js:ensureTables', () => ensureTables_ddl(sql));

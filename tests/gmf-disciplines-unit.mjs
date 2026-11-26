@@ -15,43 +15,44 @@ function getCatalog() {
   return context.window.GmfCourseCatalog;
 }
 
-test('cartões GMF abrem o catálogo próprio antes da navegação geral', () => {
-  assert.match(script, /data-study-open-subject/);
-  assert.match(script, /target\?\.closest\('\.subject\[data-id\] > \.subject-head'\)/);
-  assert.match(script, /subjectHead\?\.closest\('\.subject\[data-id\]'\)\?\.dataset\.id/);
-  assert.match(script, /document\.addEventListener\('click',[\s\S]*?event\.stopImmediatePropagation\(\)[\s\S]*?openCourse\(id\)[\s\S]*?,\s*true\)/);
-  assert.match(script, /global\.GmfDisciplines = Object\.freeze\([\s\S]*?openCourse,closeCourse\}\)/);
-  assert.match(script, /content\.innerHTML = renderMaster\(course\)/);
-  assert.match(script, /gmf-course-browser-back/);
+test('GMF usa a navegação padrão da Central (sem janela flutuante) e a estrutura de módulo das demais disciplinas', () => {
+  assert.doesNotMatch(script, /gmf-course-browser|openCourse|closeCourse|stopImmediatePropagation/);
+  assert.match(script, /class="cf-module bc-accordion ds-module gmf-std-module" data-std-module="1"/);
+  assert.match(script, /cf-module-head bc-accordion-header ds-module-head/);
+  assert.match(script, /cf-module-no">MÓDULO /);
+  assert.match(script, /cf-study-card cf-study-review/);
+  assert.match(script, /cf-study-card cf-study-primary/);
+  assert.match(script, /global\.GmfDisciplines = Object\.freeze\(\{installed:true,[\s\S]*?renderMaster:\(id\)=>/);
+  assert.ok(read('ui/module-page-standard-v1.css').includes('.cf-module[data-std-module] .cf-study-card'));
+  assert.ok(index.includes('/ui/module-page-standard-v1.css?v='));
 });
-
 
 test('leitor GMF atualiza a contagem de seções junto ao percentual', () => {
   assert.ok(reader.includes("<span data-done>'+done+'</span>"));
   assert.ok(reader.includes("querySelector('[data-done]')"));
 });
 
-test('quatro disciplinas, 30 módulos e disponibilidade íntegra de teoria e revisão', () => {
+test('disciplinas do GMF: as quatro originais íntegras e toda disciplina publicada com teoria e revisão de qualidade', () => {
   const catalog = getCatalog();
-  assert.equal(catalog.subjects.length, 4);
-  assert.deepEqual(Array.from(catalog.subjects, item => item.id), ['atual', 'fortaleza', 'legesp', 'dh']);
-  assert.deepEqual(Array.from(catalog.subjects, item => item.modules.length), [6, 9, 11, 4]);
-  assert.equal(catalog.subjects.reduce((sum, item) => sum + item.modules.length, 0), 30);
+  const original = {atual:6, fortaleza:9, legesp:11, dh:4};
+  for (const [id, count] of Object.entries(original)) {
+    const course = catalog.subjects.find(item => item.id === id);
+    assert.ok(course, id + ' deve existir');
+    assert.equal(course.modules.length, count, id);
+    assert.deepEqual(Array.from(catalog.availableModules[id]), Array.from(course.modules, m => m.id), id + ' publicado por inteiro');
+  }
+  assert.ok(catalog.subjects.length >= 4);
+  assert.equal(new Set(catalog.subjects.map(item => item.id)).size, catalog.subjects.length);
   assert.equal(catalog.theoryComplete, true);
   assert.equal(catalog.newNoticePublished, false);
-  assert.deepEqual(JSON.parse(JSON.stringify(catalog.availableModules)), {
-    atual:['m01','m02','m03','m04','m05','m06'],
-    fortaleza:['m01','m02','m03','m04','m05','m06','m07','m08','m09'],
-    legesp:['m01','m02','m03','m04','m05','m06','m07','m08','m09','m10','m11'],
-    dh:['m01','m02','m03','m04']
-  });
   for (const course of catalog.subjects) {
     assert.ok(course.reference.includes('2023'));
     assert.equal(new Set(course.modules.map(m => m.id)).size, course.modules.length);
     for (const module of course.modules) {
       assert.ok(module.title.length > 5);
       assert.ok(module.focus.length >= 2);
-      assert.ok(catalog.availableModules[course.id].includes(module.id), course.id + '/' + module.id);
+      // Só módulos publicados precisam ter conteúdo pronto; os "em preparação" (disciplina nova) são validados pelo comando nova-disciplina.
+      if (!catalog.availableModules[course.id].includes(module.id)) continue;
       if (module.id !== 'm01') {
         for (const mode of ['full','review']) {
           const path = 'content/gmf/' + course.id + '/' + module.id + '-' + mode + '-v1.js';
@@ -112,7 +113,9 @@ test('integração registrada após runtime e não altera cadastro de módulos a
   assert.ok(index.indexOf('/content/gmf/course-catalog-v1.js') < index.indexOf('/ui/gmf-disciplines-v1.js'));
   assert.doesNotThrow(() => new vm.Script(script));
   assert.doesNotMatch(script, /onclick=\"return GmfReader\.open/);
-  assert.match(script, /data-gmf-action=\"review\"/);
+  assert.match(script, /data-gmf-action=\"' \+ kind/);
+  assert.match(script, /action\('review'\)/);
+  assert.match(script, /action\('complete'\)/);
   assert.match(script, /ids\.has\(id\)/);
 });
 
