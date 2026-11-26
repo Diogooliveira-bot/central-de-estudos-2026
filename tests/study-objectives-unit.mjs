@@ -71,9 +71,10 @@ function setup(storage = makeStorage()) {
 }
 
 const settle = (window) => new Promise((resolve) => window.setTimeout(resolve, 25));
-function openArea(w,id){if(w.document.querySelector('[data-study-careers]'))w.document.querySelector('[data-study-careers]').click();w.document.querySelector('[data-study-area="'+id+'"]').click()}
+function showLegacy(w){if(!w.document.querySelector('[data-study-careers]')){w.CentralStudyObjectives.setActive('career-guarda-municipal');w.CentralStudyObjectives.open();}}
+function openArea(w,id){showLegacy(w);if(w.document.querySelector('[data-study-careers]'))w.document.querySelector('[data-study-careers]').click();w.document.querySelector('[data-study-area="'+id+'"]').click()}
 function chooseRole(w,id){w.document.querySelector('[data-study-role="'+id+'"]').click();w.document.querySelector('[data-study-confirm="'+id+'"]').click()}
-function chooseFree(w,ids){w.document.querySelector('[data-study-free]').click();for(const id of ids)w.document.querySelector('input[name="studyFreeSubject"][value="'+id+'"]').checked=true;w.document.querySelector('[data-study-save-free]').click()}
+function chooseFree(w,ids){showLegacy(w);w.document.querySelector('[data-study-free]').click();for(const id of ids)w.document.querySelector('input[name="studyFreeSubject"][value="'+id+'"]').checked=true;w.document.querySelector('[data-study-save-free]').click()}
 
 test('catálogo TJPB possui dez blocos oficiais e sem links fictícios para preparação', () => {
   const { dom } = setup();
@@ -89,15 +90,14 @@ test('boas-vindas: três caminhos diretos, carreira e editais em telas separadas
   const storage=makeStorage({'central-v6:done:cf-m01':'1'});
   const {dom}=setup(storage),w=dom.window;
   await settle(w);
-  assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Bem-vindo à Base Completa/);
-  assert.equal(w.document.querySelectorAll('.study-start-choice').length,3);
-  const free=w.document.querySelector('[data-study-free]');
-  assert.ok(free);
-  assert.ok(free.compareDocumentPosition(w.document.querySelector('[data-study-careers]')) & 4,'Estudo livre vem primeiro');
-  assert.equal(w.document.querySelectorAll('[data-study-area],[data-study-exam]').length,0,'detalhes ficam no caminho escolhido');
+  assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Qual carreira você deseja seguir/);
+  assert.equal(w.document.querySelectorAll('[data-study-focus-area]').length,4);
+  assert.equal(w.document.querySelector('[data-study-free]'),null);
+  assert.equal(w.document.querySelectorAll('[data-study-area],[data-study-exam]').length,0);
+  showLegacy(w);
+  assert.ok(w.document.querySelector('[data-study-free]'));
   w.document.querySelector('[data-study-exams]').click();
-  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,3,'somente GMF, TJPA e TJAL ficam à vista');
-  assert.equal(w.document.querySelector('[data-study-exam-request]'),null,'sem pedido ou listagem extra na seleção simplificada');
+  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,3);
   w.document.querySelector('[data-study-back]').click();
   w.document.querySelector('[data-study-careers]').click();
   assert.equal(w.document.querySelectorAll('[data-study-area]').length,7);
@@ -163,6 +163,7 @@ test('editais antigos permanecem carregáveis e novos concursos aparecem na sele
 test('estudo livre guarda escolha local e exige pelo menos uma disciplina',async()=>{
  const storage=makeStorage();const first=setup(storage);await settle(first.dom.window);
  const w=first.dom.window;
+ showLegacy(w);
  w.document.querySelector('[data-study-free]').click();
  w.document.querySelector('[data-study-save-free]').click();
  assert.match(w.document.querySelector('.study-form-error').textContent,/pelo menos uma/);
@@ -350,13 +351,11 @@ test('primeiro acesso destaca quatro áreas e mantém estudo livre e objetivos l
  const cards=[...w.document.querySelectorAll('[data-study-focus-area]')];
  assert.deepEqual(cards.map(button=>button.dataset.studyFocusArea),['tribunais','guardas','transito','prf']);
  cards[0].click();
- assert.match(w.document.querySelector('#studyObjectiveTitle').textContent,/Tribunais/);
+ assert.match(w.document.querySelector('#studyObjectiveTitle').textContent,/Escolha seu concurso/);
  assert.ok(w.document.querySelector('[data-study-exam="exam-tjpa-em-preparacao"]'));
  assert.equal(w.document.querySelector('[data-study-exam="exam-catalog-gmf-fortaleza-monitoramento-cargo-1"]'),null);
- const search=w.document.querySelector('[data-study-focus-search]');
- search.value='PARÁ'; search.dispatchEvent(new w.Event('input'));
- assert.equal(w.document.querySelector('[data-study-exam="exam-tjpa-em-preparacao"]').hidden,false);
- assert.equal(w.document.querySelector('[data-study-exam="exam-tjal-em-preparacao"]').hidden,true);
+ assert.equal(w.document.querySelector('[data-study-focus-search]'),null,'lista curta dispensa pesquisa');
+ assert.equal(w.document.querySelector('.study-welcome-intro img'),null);
  w.document.querySelector('[data-study-back]').click();
  w.document.querySelector('[data-study-focus-area="prf"]').click();
  assert.ok(w.document.querySelector('[data-study-confirm="career-policial-rodoviario-federal"]'));
