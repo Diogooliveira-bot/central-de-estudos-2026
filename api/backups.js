@@ -1,5 +1,6 @@
 import { readJsonBody, sameOriginRequest } from '../lib/auth.js';
 import { requirePlanFeature } from '../lib/plan-access.js';
+import { ensureOnce } from '../lib/db-once.js';
 
 function send(res, status, body) {
   res.statusCode = status;
@@ -23,7 +24,7 @@ function sanitizeBackup(backup) {
   return clean;
 }
 
-async function ensureTable(sql) {
+async function ensureTable_ddl(sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS central_user_backups (
       id BIGSERIAL PRIMARY KEY,
@@ -60,7 +61,7 @@ export default async function handler(req, res) {
         FROM central_user_backups
         WHERE user_id=${userId}
         ORDER BY created_at DESC
-        LIMIT 30
+        LIMIT 10
       `;
       return send(res, 200, {
         backups: rows.map((r) => ({
@@ -87,13 +88,14 @@ export default async function handler(req, res) {
         VALUES(${userId},${version},${note},${raw}::jsonb,${bytes})
         RETURNING id,created_at
       `;
+      // Economia de espaço no banco: cada aluno guarda só as 10 cópias mais recentes (antes 30, de até 4 MB cada).
       await sql`
         DELETE FROM central_user_backups
         WHERE user_id=${userId} AND id IN (
           SELECT id FROM central_user_backups
           WHERE user_id=${userId}
           ORDER BY created_at DESC
-          OFFSET 30
+          OFFSET 10
         )
       `;
       return send(res, 201, { id: Number(rows[0].id), createdAt: rows[0].created_at, bytes });
@@ -115,3 +117,5 @@ export default async function handler(req, res) {
     return send(res, 500, { error: 'Falha interna no backup do usuário' });
   }
 }
+
+const ensureTable = (sql) => ensureOnce(sql, 'backups.js:ensureTable', () => ensureTable_ddl(sql));

@@ -85,7 +85,9 @@ async function novaPagina(width = 1200, usuario = crypto.randomUUID()) {
   if (await page.locator('.bcqa-q').count() !== 1) failures.push('modo Foco deve mostrar uma questão');
   await page.locator('[data-modo="rolagem"]').click();
   // refazer só os erros libera a 1ª
-  await page.locator('[data-erros]').click();
+  // "Refazer só os erros" fica no menu "⋯ Mais ações" (tela nova das questões): abrir antes de clicar.
+  if (await page.locator('.bcqa-menu:not([open]) > summary').count()) await page.locator('.bcqa-menu > summary').first().click();
+  await page.locator('[data-erros]').first().click();
   if (await page.locator('.bcqa-q').nth(0).locator('[data-op]:not([disabled])').count() !== 5) failures.push('refazer erros não liberou a questão');
   // progresso salvo e Esc fecha
   await page.keyboard.press('Escape');                       // volta à lista de módulos

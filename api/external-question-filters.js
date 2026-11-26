@@ -1,4 +1,5 @@
 import { requireSession, readJsonBody, sameOriginRequest } from '../lib/auth.js';
+import { ensureOnce } from '../lib/db-once.js';
 
 const IS_PREVIEW = process.env.VERCEL_ENV !== 'production';
 const TABLE = IS_PREVIEW ? 'external_question_filter_overrides_preview' : 'external_question_filter_overrides';
@@ -11,7 +12,7 @@ function send(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
-async function ensureTable(sql) {
+async function ensureTable_ddl(sql) {
   if (IS_PREVIEW) {
     await sql`CREATE TABLE IF NOT EXISTS external_question_filter_overrides_preview (
       stable_key TEXT PRIMARY KEY,
@@ -130,3 +131,5 @@ export default async function handler(req, res) {
     return send(res, 500, { error: 'Não foi possível acessar as configurações dos filtros' });
   }
 }
+
+const ensureTable = (sql) => ensureOnce(sql, 'external-question-filters.js:ensureTable', () => ensureTable_ddl(sql));

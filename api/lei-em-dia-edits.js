@@ -1,4 +1,5 @@
 import {database, requireSession, sameOriginRequest, readJsonBody} from '../lib/auth.js';
+import { ensureOnce } from '../lib/db-once.js';
 
 const IS_PREVIEW=process.env.VERCEL_ENV!=='production';
 function send(res,status,body){
@@ -8,7 +9,7 @@ function send(res,status,body){
  res.setHeader('X-Content-Type-Options','nosniff');
  res.end(JSON.stringify(body));
 }
-async function ensure(sql){
+async function ensure_ddl(sql) {
  await sql`CREATE TABLE IF NOT EXISTS lei_em_dia_edits (
   question_id TEXT PRIMARY KEY, data JSONB NOT NULL, revision INTEGER NOT NULL DEFAULT 1,
   editor_id TEXT NOT NULL, updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
@@ -108,3 +109,4 @@ export default async function handler(req,res){
  }
 }
 
+const ensure = (sql) => ensureOnce(sql, 'lei-em-dia-edits.js:ensure', () => ensure_ddl(sql));

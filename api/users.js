@@ -9,6 +9,7 @@ import {
   validatePassword,
   sameOriginRequest,
 } from '../lib/auth.js';
+import { ensureOnce } from '../lib/db-once.js';
 
 function send(res, status, body) {
   res.statusCode = status;
@@ -24,7 +25,7 @@ function validEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-async function ensureAdminAuditTable(sql) {
+async function ensureAdminAuditTable_ddl(sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS central_admin_security_audit (
       audit_id BIGSERIAL PRIMARY KEY,
@@ -230,3 +231,5 @@ export default async function handler(req, res) {
     return send(res, 500, { error: 'Falha interna ao gerenciar usuários' });
   }
 }
+
+const ensureAdminAuditTable = (sql) => ensureOnce(sql, 'users.js:ensureAdminAuditTable', () => ensureAdminAuditTable_ddl(sql));
