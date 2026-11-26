@@ -342,3 +342,45 @@ test('API: estudo livre aceita Informática e pedidos de edital são validados e
   assert.match(admin, /id="pedidosEdital"/);
   assert.match(admin, /resource=exam-requests/);
 });
+
+test('primeiro acesso destaca quatro áreas e mantém estudo livre e objetivos legados', async()=>{
+ const storage=makeStorage({'central-v6:done:cf-m01':'1'});
+ const {dom}=setup(storage), w=dom.window;
+ await settle(w);
+ const cards=[...w.document.querySelectorAll('[data-study-focus-area]')];
+ assert.deepEqual(cards.map(button=>button.dataset.studyFocusArea),['tribunais','guardas','transito','prf']);
+ cards[0].click();
+ assert.match(w.document.querySelector('#studyObjectiveTitle').textContent,/Tribunais/);
+ assert.ok(w.document.querySelector('[data-study-exam="exam-tjpa-em-preparacao"]'));
+ assert.equal(w.document.querySelector('[data-study-exam="exam-catalog-gmf-fortaleza-monitoramento-cargo-1"]'),null);
+ const search=w.document.querySelector('[data-study-focus-search]');
+ search.value='PARÁ'; search.dispatchEvent(new w.Event('input'));
+ assert.equal(w.document.querySelector('[data-study-exam="exam-tjpa-em-preparacao"]').hidden,false);
+ assert.equal(w.document.querySelector('[data-study-exam="exam-tjal-em-preparacao"]').hidden,true);
+ w.document.querySelector('[data-study-back]').click();
+ w.document.querySelector('[data-study-focus-area="prf"]').click();
+ assert.ok(w.document.querySelector('[data-study-confirm="career-policial-rodoviario-federal"]'));
+ w.document.querySelector('[data-study-confirm="career-policial-rodoviario-federal"]').click();
+ await settle(w);
+ assert.equal(w.CentralStudyObjectives.getActive(),'career-policial-rodoviario-federal');
+ assert.equal(storage.getItem('central-v6:done:cf-m01'),'1');
+ assert.equal(w.document.querySelector('#studyObjectiveDialog'),null);
+ dom.window.close();
+});
+
+test('área de trânsito recebe novos editais ativos do catálogo e não mistura guardas',async()=>{
+ const {dom}=setup(),w=dom.window;
+ await settle(w);
+ w.__BASE_COMPLETA_PREVIEW_GUEST__=false;
+ w.fetch=async()=>({ok:true,json:async()=>({items:[
+  {id:'agente-transito-exemplo',name:'Município Exemplo',organ:'Prefeitura',active:true,status:'publicado',cargos:[{name:'Agente de Trânsito'}],subjects:[]},
+  {id:'guarda-exemplo',name:'Guarda Municipal Exemplo',active:true,status:'publicado',cargos:[{name:'Guarda Municipal'}],subjects:[]},
+  {id:'agente-transito-inativo',name:'Concurso Inativo',active:false,status:'publicado',cargos:[{name:'Agente de Trânsito'}],subjects:[]},
+ ]})});
+ w.document.querySelector('[data-study-focus-area="transito"]').click();
+ await settle(w);
+ assert.ok(w.document.querySelector('[data-study-exam="exam-catalog-agente-transito-exemplo-cargo-1"]'));
+ assert.equal(w.document.querySelector('[data-study-exam="exam-catalog-guarda-exemplo-cargo-1"]'),null);
+ assert.equal(w.document.querySelector('[data-study-exam="exam-catalog-agente-transito-inativo-cargo-1"]'),null);
+ dom.window.close();
+});

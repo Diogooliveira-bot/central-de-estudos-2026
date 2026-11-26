@@ -29,6 +29,33 @@
   let selectedContestIds = [];
   try { const ids=JSON.parse(localStorage.getItem(CONTESTS_KEY)||'[]'); if(Array.isArray(ids)) selectedContestIds=ids.filter((id)=>typeof id==='string'&&/^exam-[a-z0-9-]+$/.test(id)).slice(0,10); } catch (_) { /* sem seleção local */ }
   let currentStep = 'areas';
+  let currentValue = '';
+  const focusAreas = [
+    {id:'tribunais', title:'Tribunais', icon:'⚖', description:'TJ, TRT, TRE e TRF', legacyArea:'judiciaria', careers:['career-tribunais-tecnico','career-tribunais-analista','career-oficial-justica']},
+    {id:'guardas', title:'Guardas Municipais', icon:'⬡', description:'Concursos de diferentes municípios', legacyArea:'guarda', careers:['career-guarda-municipal']},
+    {id:'transito', title:'Agentes de Trânsito', icon:'◇', description:'Fiscalização e mobilidade urbana', legacyArea:'transito', careers:['career-agente-transito']},
+    {id:'prf', title:'PRF', icon:'♜', description:'Polícia Rodoviária Federal', legacyArea:'prf', careers:['career-policial-rodoviario-federal']},
+  ];
+  const normalized = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  function matchesFocusArea(area, option) {
+    const identity = normalized([option.name,option.cargo,option.contest?.organ,option.contest?.id,option.id].join(' '));
+    if (area.id === 'tribunais') return /\btribunal\b(?! de contas)|\b(?:tj|trt|tre|trf|tst|tse|stj|stm|stf)\b|\b(?:tj|trt|tre|trf)[a-z0-9]+\b|judiciari/.test(identity);
+    if (area.id === 'guardas') return /guardas?[- ]+(?:civil[- ]+)?municip|\bgmf\b/.test(identity);
+    if (area.id === 'transito') return /\b(?:agente|fiscal|analista) (?:de )?(?:transito|mobilidade)|\b(?:detran|cetran|amc)\b/.test(identity);
+    return /polici[aa] rodoviari[ao] federal|policial-rodoviario-federal|\bprf\b/.test(identity);
+  }
+  function focusExamOptions(area) {
+    const entries = new Map(catalog.examShortcuts.filter(item=>item.area===area.legacyArea).map(item=>[item.id,{id:item.id,name:item.title,label:item.description}]));
+    for (const item of examOptions()) {
+      if (!matchesFocusArea(area,item)) continue;
+      if (entries.has(item.id)) continue;
+      const label = item.contest?.id === 'prf-2021-policial-rodoviario-federal'
+        ? 'Referência de 2021 — concurso encerrado'
+        : item.label || (item.id.includes('em-preparacao') ? 'Em preparação' : 'Consulte o edital de referência');
+      entries.set(item.id,{id:item.id,name:item.contest ? item.name+' — '+item.cargo : item.name,label});
+    }
+    return [...entries.values()];
+  }
 
   function examOptions() {
     if (!contestItems) return Object.values(catalog.goals).filter((item) => item.type === 'exam').map((goal) => ({id:goal.id,name:goal.title,status:'publicado',cargo:goal.title,description:goal.description}));
@@ -59,7 +86,7 @@
           examSubjects:option.status === 'publicado' ? (contest?.subjects || []).map((item) => ({id:item.id,title:item.name,subjectId:catalog.subjects[item.centralId] ? item.centralId : null,status:item.centralId ? (item.coverage === 'complete' ? 'available' : item.coverage === 'partial' ? 'partial' : 'preparation') : 'preparation',note:item.centralId ? 'Cobertura inicial; confira os assuntos exigidos para o cargo no edital.' : 'Sem cobertura cadastrada.'})) : [],
         };
       }
-      if (currentStep === 'exams' && document.getElementById('studyObjectiveDialog')) renderChooser('exams');
+      if (document.getElementById('studyObjectiveDialog') && ['exams','focus-exams'].includes(currentStep)) renderChooser(currentStep,currentValue);
     } catch (_) { /* edital indisponível: os dois objetivos já existentes continuam acessíveis */ }
   }
 
@@ -271,6 +298,7 @@
   }
   function renderChooser(step = 'areas', value = '') {
     currentStep = step;
+    currentValue = value;
     let modal = document.getElementById('studyObjectiveDialog');
     if (!modal) {
       modal = document.createElement('div');
@@ -286,22 +314,35 @@
       '<span class="study-area-icon" aria-hidden="true">' + escape(area.icon) + '</span>' +
       '<span class="study-area-copy"><strong>' + escape(area.title) + '</strong><small>' + escape(area.description) + '</small></span>' +
       '<span class="study-area-chevron" aria-hidden="true">›</span></button>';
+    const focusCard = (area) => card(area).replace('data-study-area=', 'data-study-focus-area=').replace(/<small>.*?<\/small>/, '');
     const roleCard = (item) =>
       '<button type="button" class="study-role-card" data-study-role="' + escape(item.id) + '">' +
       '<span><strong>' + escape(item.title) + '</strong><small>Ver matérias sugeridas</small></span><b aria-hidden="true">›</b></button>';
 
-    let title = initial ? 'Bem-vindo à Base Completa!' : 'Como você quer estudar?';
-    let intro = 'Você já tem acesso a todas as disciplinas. Escolha como organizar seus estudos agora, e mude quando quiser.';
+    let title = 'Qual carreira você deseja seguir?';
+    let intro = 'Selecione sua área de interesse.';
     let badge = initial ? 'SEU PRIMEIRO ACESSO' : 'ALTERAR OBJETIVO';
     let options = '';
     let backStep = '';
     let backValue = '';
     if (step === 'areas') {
       options =
-        '<div class="study-start-choices">' +
-        '<button type="button" class="study-start-choice" data-study-free><strong>Estudo livre</strong><small>Escolha suas disciplinas e comece agora.</small><b aria-hidden="true">›</b></button>' +
-        '<button type="button" class="study-start-choice" data-study-careers><strong>Por área</strong><small>Escolha uma das sete áreas, sem selecionar cargo.</small><b aria-hidden="true">›</b></button>' +
-        '<button type="button" class="study-start-choice" data-study-exams><strong>Por edital</strong><small>GMF, TJPA ou TJAL.</small><b aria-hidden="true">›</b></button></div>';
+        '<div class="study-area-grid">' + focusAreas.map(focusCard).join('') + '</div>' +
+        (initial ? '' : '<div class="study-start-alternatives"><button type="button" class="study-back-button" data-study-free>Estudo livre</button> <button type="button" class="study-back-button" data-study-careers>Outras áreas</button> <button type="button" class="study-back-button" data-study-exams>Todos os editais</button></div>');
+    } else if (step === 'focus-exams') {
+      const area = focusAreas.find(item=>item.id===value);
+      if (!area) return renderChooser('areas');
+      title = 'Escolha seu concurso';
+      intro = '';
+      badge = '';
+      const entries = focusExamOptions(area);
+      options = '<div class="study-exam-list">' +
+        (entries.length > 5 ? '<input aria-label="Pesquisar concurso" type="search" data-study-focus-search class="study-focus-search" placeholder="Pesquisar concurso">' : '') +
+        entries.map(item => '<button type="button" class="study-role-card" data-study-exam="'+escape(item.id)+'" data-study-focus-result><span><strong>'+escape(item.name)+'</strong><small>'+escape(item.label.replace('Referência: edital de 2023. Não confundir com novo edital publicado.','Edital de referência: 2023').replace('Referência de 2021 — concurso encerrado','Edital de 2021 — encerrado'))+'</small></span><b aria-hidden="true">›</b></button>').join('') +
+        '<p data-study-focus-empty'+(entries.length?' hidden':'')+'>Nenhum concurso encontrado.</p></div>' +
+        (area.careers.length === 1 ? '<button type="button" class="study-role-card" data-study-confirm="'+escape(area.careers[0])+'"><span><strong>Estudar sem edital</strong></span><b aria-hidden="true">›</b></button>' :
+        '<details class="study-review"><summary>Estudar sem edital</summary><div class="study-role-grid">'+area.careers.map(id=>catalog.goals[id]).filter(Boolean).map(item=>'<button type="button" class="study-role-card" data-study-confirm="'+escape(item.id)+'"><span><strong>'+escape(item.title)+'</strong></span><b aria-hidden="true">›</b></button>').join('')+'</div></details>');
+      backStep = 'areas';
     } else if (step === 'careers') {
       title = 'Escolha sua área';
       intro = 'Selecione uma área para organizar seus estudos. Você pode mudar depois.';
@@ -347,7 +388,7 @@
       const shortcuts = catalog.examShortcuts.filter((item) => step === 'exams' || item.area === area?.id);
       if (step === 'area-exams' && !area) return renderChooser('careers');
       title = step === 'area-exams' ? 'Escolha o edital' : 'Escolha seu edital';
-      intro = step === 'area-exams' ? area.title + ' — escolha uma das opções disponíveis.' : 'Por enquanto, somente estes três editais estão disponíveis.';
+      intro = step === 'area-exams' ? area.title + ' — escolha uma das opções disponíveis.' : 'Consulte os concursos cadastrados na Base Completa.';
       badge = 'POR EDITAL';
       options = '<div class="study-exam-list">' + shortcuts.map((item) =>
         '<button type="button" class="study-role-card" data-study-exam="' + escape(item.id) + '"><span><strong>' +
@@ -359,11 +400,11 @@
     }
     modal.innerHTML = '<section class="study-objective-dialog study-welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="studyObjectiveTitle">' +
       '<header class="study-welcome-brand"><img src="/assets/base-completa-symbol.webp" alt="" width="40" height="40"><div><b>BASE COMPLETA</b><small>CENTRAL DE ESTUDOS</small></div></header>' +
-      '<div class="study-welcome-intro"><div><span>' + badge + '</span><h1 id="studyObjectiveTitle">' + escape(title) +
-      '</h1><p>' + escape(intro) + '</p></div><img src="/assets/mascote/mascote-boas-vindas.webp" alt="" aria-hidden="true" loading="lazy"></div>' +
+      '<div class="study-welcome-intro"><div>' + (['areas','focus-exams'].includes(step) ? '' : '<span>' + badge + '</span>') + '<h1 id="studyObjectiveTitle">' + escape(title) +
+      '</h1>' + (intro ? '<p>' + escape(intro) + '</p>' : '') + '</div>' + (['areas','focus-exams'].includes(step) ? '' : '<img src="/assets/mascote/mascote-boas-vindas.webp" alt="" aria-hidden="true" loading="lazy">') + '</div>' +
       options +
       '<p class="study-objective-sync" data-study-objective-sync role="status">' +
-      (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true ? 'Prévia: escolha guardada somente neste navegador.' : '') +
+      (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true && !['areas','focus-exams'].includes(step) ? 'Prévia: escolha guardada somente neste navegador.' : '') +
       '</p><footer class="study-welcome-actions">' +
       (backStep ? '<button type="button" class="study-back-button" data-study-back>‹ Voltar</button>' : '<span></span>') +
       (!initial ? '<button type="button" class="study-keep-button" data-study-close>Manter minha escolha atual</button>' : '') +
@@ -371,6 +412,17 @@
     modal.hidden = false;
     modal.querySelector('[data-study-back]')?.addEventListener('click', () => renderChooser(backStep, backValue));
     modal.querySelector('[data-study-close]')?.addEventListener('click', () => close(true));
+    modal.querySelectorAll('[data-study-focus-area]').forEach(button=>button.addEventListener('click',()=>{
+      renderChooser('focus-exams',button.dataset.studyFocusArea);
+      loadContestGoals();
+    }));
+    modal.querySelector('[data-study-focus-search]')?.addEventListener('input',event=>{
+      const query = normalized(event.currentTarget.value.trim());
+      const results = [...modal.querySelectorAll('[data-study-focus-result]')];
+      for(const button of results) button.hidden = !normalized(button.querySelector('strong')?.textContent).includes(query);
+      const empty = modal.querySelector('[data-study-focus-empty]');
+      if(empty) empty.hidden = results.some(button=>!button.hidden);
+    });
     modal.querySelectorAll('[data-study-area]').forEach((button) => button.addEventListener('click', () => {
       const area = catalog.areas.find((item) => item.id === button.dataset.studyArea);
       if (!area) return;
