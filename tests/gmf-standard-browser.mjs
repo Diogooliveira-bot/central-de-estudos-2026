@@ -76,10 +76,50 @@ try {
     assert.doesNotMatch(pagina.foco, /\.;/, `${nome}: texto de foco sem pontuação duplicada`);
     await shot(page, `gmf-${nome}-2-modulo`);
 
-    // os botões abrem o leitor do GMF
+    // o botão abre o MESMO leitor das demais disciplinas (fábrica compartilhada + padrão único do leitor)
     await page.locator('.gmf-std-module.open button[data-gmf-action="review"]').click();
-    await page.waitForSelector('.gmf-reader-overlay .gmf-reader-chapter', { timeout: 10000 });
+    await page.waitForSelector('#gmf-native-reader .bc-native-article h2', { timeout: 15000 });
+    await page.waitForFunction(() => document.getElementById('gmf-native-reader')?.classList.contains('bc-std-reader'), { timeout: 5000 });
+    const leitor = await page.evaluate(() => {
+      const o = document.getElementById('gmf-native-reader'); const tools = o.querySelector('.bc-native-reader-tools');
+      return {
+        classes: o.className, fixo: getComputedStyle(o).position, titulo: o.querySelector('.bc-native-reader-title b').textContent,
+        sub: o.querySelector('.bc-native-reader-title small').textContent,
+        busca: !!tools.querySelector('input[type="search"]'), justificar: !!tools.querySelector('.bc-std-justify'),
+        capitulos: !!tools.querySelector('.bc-reading-chapters-toggle'), concluir: !!tools.querySelector('[data-finish-reading], .bc-std-finish'),
+        h1: o.querySelector('.bc-native-article h1')?.textContent, capas: o.querySelectorAll('.bc-native-article h2').length,
+        antigo: !!document.querySelector('.gmf-reader-overlay'), overflow: document.documentElement.scrollWidth > innerWidth,
+      };
+    });
+    assert.equal(leitor.fixo, 'fixed', `${nome}: leitor em tela cheia`);
+    assert.match(leitor.classes, /bc-native-reader-overlay/, `${nome}: estrutura padrão do leitor`);
+    assert.match(leitor.classes, /bc-rev-cf/, `${nome}: visual padrão da revisão`);
+    assert.equal(leitor.titulo, 'Localização e limites', `${nome}: título do módulo no topo`);
+    assert.match(leitor.sub, /CONHECIMENTOS SOBRE FORTALEZA · MÓDULO 01 · VERSÃO DE REVISÃO/, `${nome}: linha de apoio no padrão`);
+    assert.equal(leitor.h1, 'Localização e limites', `${nome}: título do módulo na abertura`);
+    for (const k of ['busca', 'justificar', 'capitulos', 'concluir']) assert.equal(leitor[k], true, `${nome}: ferramenta ${k} da barra padrão`);
+    assert.ok(leitor.capas >= 3, `${nome}: capítulos com título padrão`);
+    assert.equal(leitor.antigo, false, `${nome}: sem o leitor antigo`);
+    assert.equal(leitor.overflow, false, `${nome}: leitor sem rolagem lateral`);
     await shot(page, `gmf-${nome}-3-leitor`);
+
+    // progresso: marcar uma seção atualiza "% lido" e a contagem; o progresso salvo usa a mesma chave de antes
+    await page.locator('#gmf-native-reader [data-mark="0"]').click();
+    const lido = await page.evaluate(() => ({ pct: document.querySelector('#gmf-native-reader .bc-native-reader-meta').textContent, feitas: document.querySelector('#gmf-native-reader [data-done]').textContent, pressed: document.querySelector('#gmf-native-reader [data-mark="0"]').getAttribute('aria-pressed'), chave: Array.from({ length: window.localStorage.length }, (_, i) => window.localStorage.key(i)).filter((k) => /^central-v6:gmf:.*:fortaleza:m01:review:read:0$/.test(k) && window.localStorage.getItem(k) === '1').length }));
+    assert.match(lido.pct, /^33% lido/, `${nome}: % lido após marcar 1 de 3`);
+    assert.equal(lido.feitas, '1'); assert.equal(lido.pressed, 'true'); assert.equal(lido.chave, 1, `${nome}: progresso salvo na mesma chave de antes`);
+    // no celular as ferramentas ficam atrás do botão "Aa" (igual aos outros leitores)
+    if (!(await page.locator('#gmf-native-reader [data-finish-reading]').isVisible())) await page.locator('#gmf-native-reader .student-reader-options-toggle').click();
+    await page.locator('#gmf-native-reader [data-finish-reading]').click();
+    assert.match(await page.locator('#gmf-native-reader .bc-native-reader-meta').textContent(), /^100% lido/, `${nome}: "Concluir leitura" marca tudo`);
+
+    // trocar para a teoria completa e para o próximo módulo, dentro do mesmo leitor
+    await page.locator('#gmf-native-reader [data-mode="complete"]').click();
+    await page.waitForFunction(() => /TEORIA COMPLETA/.test(document.querySelector('#gmf-native-reader .bc-native-reader-title small')?.textContent || ''), { timeout: 10000 });
+    await page.locator('#gmf-native-reader .gmf-native-modules button:not([disabled])').last().click();
+    await page.waitForFunction(() => /MÓDULO 02/.test(document.querySelector('#gmf-native-reader .bc-native-reader-title small')?.textContent || ''), { timeout: 10000 });
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#gmf-native-reader').count(), 0, `${nome}: Esc fecha o leitor`);
     assert.deepEqual(erros, [], `${nome}: sem erros de JavaScript`);
     await ctx.close();
   }

@@ -51,72 +51,83 @@
    pending.set(path,task);
    return task;
  }
+ // O leitor usa a MESMA estrutura das demais disciplinas (CentralNativeReadingSession): tela cheia, barra de ferramentas,
+ // sumário, títulos com barra lateral, Papel/Noturno/Justificado e a "capa" de apostila teórica.
  function close(){
    if(!state.root)return;
    state.root.remove();state.root=null;
-   global.document.body.classList.remove('gmf-reader-open');
-   global.document.removeEventListener('keydown',onKey);
-   if(state.active?.isConnected)state.active.focus();
+   global.document.documentElement.classList.remove('gmf-native-reader-open');
+   if(state.active?.isConnected)state.active.focus({preventScroll:true});
    state.active=null;
  }
- function onKey(e){if(e.key==='Escape'){e.preventDefault();close()}}
- function shell(){
-   const root=global.document.createElement('div');
-   root.className='gmf-reader-overlay';root.setAttribute('role','dialog');root.setAttribute('aria-modal','true');root.setAttribute('aria-label','Leitor de estudos GMF');
-   root.addEventListener('click',e=>{if(e.target===root)close()});
-   global.document.body.appendChild(root);global.document.body.classList.add('gmf-reader-open');
-   global.document.addEventListener('keydown',onKey);state.root=root;return root;
- }
- function render(record){
+ const readCount=(subject,module,mode,total)=>{let n=0;for(let i=0;i<total;i++)if(saved(key(subject,module,mode,i)))n++;return n};
+ function paint(record){
    if(!state.root)return;
+   const {subject,module,mode}=state,chapters=record.chapters||[];
+   const done=readCount(subject,module,mode,chapters.length),pct=chapters.length?Math.round(done*100/chapters.length):0;
+   global.CentralNativeReadingSession.percent(state.root,pct);
+   const out=state.root.querySelector('[data-done]');if(out)out.textContent=String(done);
+   const track=state.root.querySelector('[data-gmf-bar]');if(track)track.style.width=pct+'%';
+   state.root.querySelectorAll('[data-mark]').forEach(b=>{const v=saved(key(subject,module,mode,Number(b.dataset.mark)));b.setAttribute('aria-pressed',String(v));b.textContent=v?'✓ Seção lida · desfazer':'Marcar seção como lida'});
+ }
+ function articleHtml(record){
    const {subject,module,mode}=state;
    const course=subjects.get(subject),modules=course.modules,index=modules.findIndex(m=>m.id===module);
-   const title=record.title||modules[index]?.title||'Módulo';
+   const title=modules[index]?.title||record.title||'Módulo';
    const chapters=record.chapters||[];
-   const done=chapters.filter((_,i)=>saved(key(subject,module,mode,i))).length;
-   const pct=chapters.length?Math.round(done*100/chapters.length):0;
-   const nav=chapters.map((c,i)=>'<button type="button" data-jump="'+i+'"><span>'+String(i+1).padStart(2,'0')+'</span>'+esc(c.title)+'</button>').join('');
-   const sections=chapters.map((c,i)=>'<section class="gmf-reader-chapter" id="gmf-v2-chapter-'+i+'"><small>CAPÍTULO '+String(i+1).padStart(2,'0')+' DE '+String(chapters.length).padStart(2,'0')+'</small><h2>'+esc(c.title)+'</h2><div class="gmf-reader-prose">'+c.html+'</div><div class="gmf-reader-footer"><button type="button" data-mark="'+i+'" aria-pressed="'+saved(key(subject,module,mode,i))+'">'+(saved(key(subject,module,mode,i))?'✓ Seção lida · desfazer':'Marcar seção como lida')+'</button></div></section>').join('');
-   const other=mode==='review'?'complete':'review',otherLabel=mode==='review'?'Abrir Conteúdo Completo':'Abrir Revisão Guiada';
+   const done=readCount(subject,module,mode,chapters.length),pct=chapters.length?Math.round(done*100/chapters.length):0;
+   const review=mode==='review';
+   const sections=chapters.map((c,i)=>'<h2 id="gmf-native-chapter-'+i+'">'+String(i+1).padStart(2,'0')+' '+esc(c.title)+'</h2>'+c.html+'<div class="gmf-native-mark-row"><button type="button" data-mark="'+i+'" aria-pressed="false">Marcar seção como lida</button></div>').join('');
    const resources=(record.resources||[]).filter(x=>/^https:\/\//.test(x.url)).map(x=>'<a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title)+'</a>').join(' · ');
    const previous=index>0?modules[index-1]:null,next=index<modules.length-1?modules[index+1]:null;
-   state.root.innerHTML='<div class="gmf-reader-box"><header class="gmf-reader-top"><button type="button" data-close>← Voltar</button><div><small>BASE COMPLETA · '+esc(course.name)+' · '+module.toUpperCase()+'</small><h1>'+esc(title)+'</h1></div><button type="button" data-mode="'+other+'">'+otherLabel+'</button></header>'+
-    '<div class="gmf-reader-progress"><b>'+(mode==='review'?'Revisão Guiada':'Conteúdo Completo')+'</b><small>Progresso desta leitura: <span data-pct>'+pct+'</span>% · <span data-done>'+done+'</span>/'+chapters.length+' seções</small><div role="progressbar" aria-label="Progresso de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'"><span style="width:'+pct+'%"></span></div></div>'+
-    '<div class="gmf-reader-module-nav"><button type="button" data-module="'+(previous?.id||'')+'" '+(!previous?'disabled':'')+'>← '+(previous?esc(previous.title):'Início do curso')+'</button><button type="button" data-module="'+(next?.id||'')+'" '+(!next?'disabled':'')+'>'+(next?esc(next.title):'Fim do curso')+' →</button></div>'+
-    '<div class="gmf-reader-grid"><nav aria-label="Sumário"><b>SUMÁRIO</b>'+nav+'</nav><main><p class="gmf-reader-lead">'+(mode==='review'?'Revise os pontos principais e tente recuperar as ideias antes de consultar suas anotações.':'Estude os capítulos em sequência. O indicador registra seções lidas, não conclui o módulo automaticamente.')+'</p>'+sections+(resources?'<div class="gmf-reader-sources"><b>Fontes verificáveis · consulta em 22/11/2026</b><p>'+resources+'</p></div>':'')+'<aside class="gmf-reader-questions"><b>Questões do módulo</b><p>Em preparação — questões disponíveis em breve.</p></aside></main></div></div>';
-   state.root.querySelector('[data-close]')?.addEventListener('click',close);
-   state.root.querySelector('[data-mode]')?.addEventListener('click',e=>open(subject,module,e.currentTarget.dataset.mode));
-   state.root.querySelectorAll('[data-module]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.module)open(subject,b.dataset.module,mode)}));
-   state.root.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>global.document.getElementById('gmf-v2-chapter-'+b.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'start'})));
-   state.root.querySelectorAll('[data-mark]').forEach(b=>b.addEventListener('click',()=>{
-     const i=Number(b.dataset.mark),v=!saved(key(subject,module,mode,i));save(key(subject,module,mode,i),v);
-     b.setAttribute('aria-pressed',String(v));b.textContent=v?'✓ Seção lida · desfazer':'Marcar seção como lida';
-     const current=chapters.filter((_,n)=>saved(key(subject,module,mode,n))).length,percent=chapters.length?Math.round(current*100/chapters.length):0;
-     const out=state.root.querySelector('[data-pct]');if(out)out.textContent=String(percent);
-     const doneOut=state.root.querySelector('[data-done]');if(doneOut)doneOut.textContent=String(current);
-     const bar=state.root.querySelector('[role=progressbar]');if(bar){bar.setAttribute('aria-valuenow',String(percent));bar.querySelector('span').style.width=percent+'%'}
+   const other=review?'complete':'review';
+   return '<h1>'+esc(title)+'</h1>'+
+     '<p class="lead">'+(review?'Revise os pontos principais e tente recuperar as ideias antes de consultar suas anotações.':'Estude os capítulos em sequência. O indicador registra seções lidas, não conclui o módulo automaticamente.')+'</p>'+
+     '<div class="gmf-native-progress" role="group" aria-label="Progresso desta leitura"><span>Progresso desta leitura: <span data-done>'+done+'</span>/'+chapters.length+' seções lidas</span><div class="gmf-native-track" aria-hidden="true"><span data-gmf-bar style="width:'+pct+'%"></span></div></div>'+
+     '<div class="gmf-native-actions"><button type="button" data-mode="'+other+'">'+(review?'Abrir Conteúdo Completo':'Abrir Revisão Guiada')+'</button></div>'+
+     sections+
+     (resources?'<div class="gmf-reader-sources"><b>Fontes verificáveis · consulta em 22/11/2026</b><p>'+resources+'</p></div>':'')+
+     '<aside class="gmf-reader-questions"><b>Questões do módulo</b><p>Em preparação — questões disponíveis em breve.</p></aside>'+
+     '<nav class="gmf-native-modules" aria-label="Outros módulos"><button type="button" data-module="'+(previous?.id||'')+'" '+(!previous?'disabled':'')+'>← '+(previous?esc(previous.title):'Início do curso')+'</button><button type="button" data-module="'+(next?.id||'')+'" '+(!next?'disabled':'')+'>'+(next?esc(next.title):'Fim do curso')+' →</button></nav>';
+ }
+ function render(record){
+   const {subject,module,mode}=state,reader=global.CentralNativeReadingSession,chapters=record.chapters||[];
+   const toc=()=>'<div class="bc-native-toc-label">Capítulos</div>'+chapters.map((c,i)=>'<button type="button" data-jump="'+i+'"><span>'+String(i+1).padStart(2,'0')+'</span> '+esc(c.title)+'</button>').join('');
+   reader.show(state.root,articleHtml(record),toc,0,()=>{});
+   const root=state.root;
+   root.querySelector('[data-mode]')?.addEventListener('click',e=>open(subject,module,e.currentTarget.dataset.mode));
+   root.querySelectorAll('[data-module]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.module)open(subject,b.dataset.module,mode)}));
+   root.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>global.document.getElementById('gmf-native-chapter-'+b.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'start'})));
+   root.querySelectorAll('[data-mark]').forEach(b=>b.addEventListener('click',()=>{
+     const i=Number(b.dataset.mark);save(key(subject,module,mode,i),!saved(key(subject,module,mode,i)));paint(record);
    }));
+   paint(record);
  }
  async function open(subject,module,mode='review'){
    subject=String(subject||'').toLowerCase();module=String(module||'').toLowerCase();mode=mode==='complete'?'complete':'review';
    const course=subjects.get(subject);if(!course||!course.modules.some(m=>m.id===module))return false;
    if(mode==='complete'){try{await global.CentralPlanAccess?.ready}catch(_){} if(global.CentralPlanAccess?.isFree?.()===true){global.CentralPlanAccess.showLock?.();return false}}
-   if(!state.root){state.active=global.document.activeElement;shell()}
+   const reader=global.CentralNativeReadingSession;
+   if(!reader){global.alert?.('O leitor ainda está carregando. Tente novamente em instantes.');return false}
+   const keepFocus=state.active||global.document.activeElement;
+   close();state.active=keepFocus;
    state.subject=subject;state.module=module;state.mode=mode;
-   state.root.innerHTML='<div class="gmf-reader-box"><p class="gmf-reader-loading" role="status">Carregando conteúdo protegido…</p><button type="button" data-close>← Voltar</button></div>';
-   state.root.querySelector('[data-close]')?.addEventListener('click',close);
-   try{const record=await load(subject,module,mode);if(state.subject!==subject||state.module!==module||state.mode!==mode)return false;render(record)}
-   catch(error){if(state.root&&state.subject===subject&&state.module===module)state.root.innerHTML='<div class="gmf-reader-box"><button type="button" data-close>← Voltar</button><div class="gmf-reader-intro"><h2>Conteúdo indisponível</h2><p>'+esc(error.message)+'</p></div></div>';state.root?.querySelector('[data-close]')?.addEventListener('click',close)}
+   const index=course.modules.findIndex(m=>m.id===module);
+   state.root=reader.create({id:'gmf-native-reader',subject:'gmf',title:course.modules[index].title,
+     eyebrow:course.name.toUpperCase()+' · MÓDULO '+String(index+1).padStart(2,'0')+' · '+(mode==='review'?'VERSÃO DE REVISÃO':'TEORIA COMPLETA'),
+     close,finish:()=>{const rec=dataByPath.get(assetPath(subject,module,mode))||recordFor(subject,module,mode,assetPath(subject,module,mode));const total=rec?.chapters?.length||0;for(let i=0;i<total;i++)save(key(subject,module,mode,i),true);if(rec)paint(rec)}});
+   global.document.documentElement.classList.add('gmf-native-reader-open');
+   try{const record=await load(subject,module,mode);if(state.subject!==subject||state.module!==module||state.mode!==mode||!state.root)return false;render(record)}
+   catch(error){if(state.root&&state.subject===subject&&state.module===module)reader.fail(state.root,()=>open(subject,module,mode));const message=state.root?.querySelector('[role="status"] p');if(message)message.textContent=error.message||'Verifique sua conexão e tente novamente.'}
    return false;
  }
  const style=global.document.createElement('style');style.id='gmf-course-reader-v2-css';style.textContent=[
-  'body.gmf-reader-open{overflow:hidden}.gmf-reader-overlay{position:fixed;inset:0;z-index:2147482901;background:rgba(16,31,44,.65);padding:18px;display:grid;place-items:center}',
-  '.gmf-reader-box{background:var(--panel,#fff);color:var(--text,#223344);height:min(96vh,920px);width:min(1080px,100%);border-radius:14px;overflow:auto;box-shadow:0 18px 48px rgba(0,0,0,.24)}',
-  '.gmf-reader-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:18px 20px;border-bottom:1px solid var(--line,#dfe5ed)}.gmf-reader-top h1{font-size:19px;margin:3px 0;line-height:1.3}.gmf-reader-top small{font-size:11px;color:var(--muted,#738092)}',
-  '.gmf-reader-top button,.gmf-reader-module-nav button,.gmf-reader-footer button{background:var(--soft,#f6f8fa);color:var(--text,#243244);border:1px solid var(--line,#dbe2ea);border-radius:8px;padding:10px 12px;cursor:pointer;font:600 12px system-ui}.gmf-reader-progress{padding:14px 20px;display:grid;gap:7px}.gmf-reader-progress>b{font-size:14px}.gmf-reader-progress small{font-size:12px;color:var(--muted,#738092)}.gmf-reader-progress [role=progressbar]{height:5px;border-radius:4px;overflow:hidden;background:var(--line,#dce2e8)}.gmf-reader-progress [role=progressbar] span{display:block;height:100%;background:#4c8096}',
-  '.gmf-reader-module-nav{display:flex;justify-content:space-between;gap:12px;padding:8px 20px}.gmf-reader-module-nav button:disabled{opacity:.45;cursor:default}.gmf-reader-grid{display:grid;grid-template-columns:235px minmax(0,1fr);border-top:1px solid var(--line,#e2e7ed)}.gmf-reader-grid nav{padding:18px 12px;border-right:1px solid var(--line,#e2e7ed);align-self:start;position:sticky;top:0;display:grid;gap:4px}.gmf-reader-grid nav>b{padding:6px 8px;font-size:11px;letter-spacing:.07em;color:var(--muted,#738092)}.gmf-reader-grid nav button{border:0;background:transparent;text-align:left;color:inherit;display:flex;gap:9px;padding:8px;font:500 12px/1.5 system-ui;cursor:pointer;border-radius:6px}.gmf-reader-grid nav button:hover{background:var(--soft,#f2f6f8)}.gmf-reader-grid nav button span{color:#4c8096;font-weight:800}',
-  '.gmf-reader-grid main{padding:20px 26px 34px;min-width:0}.gmf-reader-lead{font-size:13px;color:var(--muted,#738092);line-height:1.7}.gmf-reader-chapter{padding:14px 0 22px;border-bottom:1px solid var(--line,#e2e7ed);scroll-margin-top:16px}.gmf-reader-chapter>small{font-size:10px;letter-spacing:.06em;color:var(--muted,#738092)}.gmf-reader-chapter h2{font-size:19px;line-height:1.35;margin:8px 0 14px}.gmf-reader-prose{font-size:14px;line-height:1.85}.gmf-reader-prose p{margin:0 0 13px}.gmf-reader-footer{text-align:right;margin-top:15px}.gmf-reader-sources,.gmf-reader-questions{margin-top:20px;padding:14px;background:var(--soft,#f6f8fa);border-radius:10px;font-size:12px;line-height:1.6}.gmf-reader-questions{border-left:3px solid #758394}.gmf-reader-questions p{margin-bottom:0}.gmf-reader-sources a{color:#327190}.gmf-reader-loading{margin:32px;font-size:15px}.gmf-reader-intro{padding:22px}',
-  '@media(max-width:720px){.gmf-reader-overlay{padding:0}.gmf-reader-box{height:100dvh;width:100%;border-radius:0}.gmf-reader-top{grid-template-columns:1fr;gap:8px;padding:14px}.gmf-reader-top button{justify-self:start}.gmf-reader-grid{display:block}.gmf-reader-grid nav{position:static;display:flex;overflow:auto;gap:5px;padding:8px;border-right:0;border-bottom:1px solid var(--line,#e2e7ed)}.gmf-reader-grid nav>b{display:none}.gmf-reader-grid nav button{flex:0 0 auto;white-space:nowrap}.gmf-reader-grid main{padding:12px 16px 24px}.gmf-reader-chapter h2{font-size:17px}.gmf-reader-module-nav{padding:8px 12px}}'
+  'html.gmf-native-reader-open{overflow:hidden}',
+  '.gmf-native-progress{margin:14px 0 4px;font-size:.8125rem;color:var(--muted,#5b6b7d)}.gmf-native-track{height:6px;margin-top:6px;border-radius:4px;overflow:hidden;background:var(--line,#dce2e8)}.gmf-native-track span{display:block;height:100%;background:#16b5d9}',
+  '.gmf-native-actions,.gmf-native-modules{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:16px 0}.gmf-native-actions button,.gmf-native-modules button,.gmf-native-mark-row button{min-height:44px;padding:9px 14px;border:1px solid var(--line,#cfe0ef);border-radius:10px;background:var(--panel,#fff);color:inherit;font:inherit;font-size:.875rem;font-weight:650;cursor:pointer}.gmf-native-modules button:disabled{opacity:.45;cursor:default}',
+  '.gmf-native-mark-row{text-align:right;margin:10px 0 6px}.gmf-native-mark-row button[aria-pressed="true"]{background:#e8f6f1;border-color:#9fd6c2}',
+  '.bc-native-toc [data-jump]{display:flex;gap:8px;width:100%;padding:8px;border:0;border-radius:8px;background:transparent;color:inherit;text-align:left;font:inherit;font-size:.8125rem;cursor:pointer}.bc-native-toc [data-jump]:hover{background:var(--soft,#f2f6f8)}.bc-native-toc [data-jump] span{font-weight:800;color:#0a5fa8}',
+  '.gmf-reader-sources,.gmf-reader-questions{margin-top:20px;padding:14px;background:var(--soft,#f6f8fa);border-radius:10px;font-size:.8125rem;line-height:1.6}.gmf-reader-questions{border-left:3px solid #758394}.gmf-reader-questions p{margin-bottom:0}.gmf-reader-sources a{color:#0a5fa8}'
  ].join('');
  global.document.head.appendChild(style);
  global.GmfCourseReaderV2=Object.freeze({open,close});
