@@ -7,11 +7,15 @@ import {JSDOM} from 'jsdom';
 const read=path=>fs.readFileSync(new URL('../'+path,import.meta.url),'utf8');
 
 test('a biblioteca de trânsito é canônica, compartilhada e não declara módulos incompletos como publicados',()=>{
- const subjects=[],handlers={};
+ const handlers={};
  const document={querySelector:()=>null,addEventListener:(type,fn)=>handlers[type]=fn};
- const win={SUBJECTS:subjects,document,localStorage:{getItem:()=>null,setItem:()=>{}},renderSubjects(){},renderDisciplineGrid(){},renderAll(){}};
- vm.runInNewContext(read('ui/transito-shared-course-v1.js'),{window:win});
+ const win={document,localStorage:{getItem:()=>null,setItem:()=>{}},renderCount:0,renderSubjects(){this.renderCount++},renderDisciplineGrid(){}};
+ const context=vm.createContext({window:win});
+ vm.runInContext('const SUBJECTS=[]',context);
+ vm.runInContext(read('ui/transito-shared-course-v1.js'),context);
+ const subjects=vm.runInContext('SUBJECTS',context);
  assert.equal(subjects.length,1);assert.equal(subjects[0].id,'transito');
+ assert.equal(win.renderCount,1,'após registrar a biblioteca, redesenha a lista inicial da Central');
  assert.equal(win.BaseTransitoCourse.modules.length,17);
  assert.deepEqual(Array.from(win.BaseTransitoCourse.available()),['m01','m02']);
  assert.equal(win.BaseTransitoCourse.modules.filter(m=>m.status==='published').length,2);

@@ -4,7 +4,8 @@
  */
 (function (g) {
   'use strict';
-  if (g.BaseTransitoCourse || !Array.isArray(g.SUBJECTS) || typeof g.renderSubjects !== 'function') return;
+  const subjectList=Array.isArray(g.SUBJECTS)?g.SUBJECTS:(typeof SUBJECTS!=='undefined'&&Array.isArray(SUBJECTS)?SUBJECTS:null);
+  if (g.BaseTransitoCourse || !subjectList || typeof g.renderSubjects !== 'function') return;
 
   const ID = 'transito';
   const MODULES = [
@@ -29,9 +30,9 @@
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const pad=n=>String(n).padStart(2,'0');
   const PREFIX='central-v6:transito:module-open:';
-  const existing=g.SUBJECTS.find(s=>s.id===ID);
+  const existing=subjectList.find(s=>s.id===ID);
   const subject=existing||{id:ID,name:'Legislação de Trânsito',special:'17 módulos • conteúdo compartilhado',topics:MODULES.map(m=>({uid:'transito-'+m.id,title:pad(m.number)+' '+m.title.toUpperCase(),origin:m.status==='published'?'Módulo '+pad(m.number)+' • Conteúdo disponível':'Módulo '+pad(m.number)+' • Em preparação',type:'Curso',tips:['Conteúdo compartilhado da Base Completa; a cobertura depende do edital selecionado.']}))};
-  if(!existing)g.SUBJECTS.push(subject);
+  if(!existing)subjectList.push(subject);
 
   function card(title,description,tag,action,enabled,mode,id){
     const button=enabled?'<button type="button" class="pt-cf-button pt-cf-button-open" data-bc-transito-open="'+mode+'" data-module-id="'+id+'">'+action+'</button>':'<button type="button" class="pt-cf-button bc-info-disabled" disabled aria-disabled="true">Em preparação</button>';
@@ -60,5 +61,5 @@
   function toggle(id){const m=MODULES.find(x=>x.id===id);if(!m)return false;const el=g.document.querySelector('#subjects .bc-info-module[data-module="transito-'+id+'"]');if(!el)return false;const opening=!el.classList.contains('open');el.classList.toggle('open',opening);el.querySelector('[data-bc-transito-toggle]')?.setAttribute('aria-expanded',String(opening));try{g.localStorage.setItem(PREFIX+id,opening?'1':'0')}catch(_){}return false}
   g.document.addEventListener('click',event=>{const toggleButton=event.target.closest('[data-bc-transito-toggle]');if(toggleButton){event.preventDefault();event.stopPropagation();toggle(toggleButton.dataset.bcTransitoToggle);return}const button=event.target.closest('[data-bc-transito-open]');if(!button)return;event.preventDefault();event.stopPropagation();g.BaseTransitoReader?.open(button.dataset.moduleId,button.dataset.bcTransitoOpen)});
   g.BaseTransitoCourse=Object.freeze({modules:MODULES,toggle,available:()=>MODULES.filter(m=>m.status==='published').map(m=>m.id)});
-  try{g.renderAll?.();g.renderDisciplineGrid?.()}catch(_){/* render do app pode estar em inicialização */}
+  try{g.renderSubjects?.();g.renderDisciplineGrid?.()}catch(_){/* render do app pode estar em inicialização */}
 })(window);
