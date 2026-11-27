@@ -23,7 +23,7 @@ function protectedContentPath(path){
     ||path==='/content/civil/civil-visual-apostila-packed.js'
     ||path==='/content/civil/civil-native-content-packed.js'||path==='/content/cpp/cpp-native-content-packed.js'
     ||/^\/content\/cf\/editorial\/m\d{2}-(?:apostila\.txt|didatico\.md|questions\.json)$/i.test(path)
-    ||/^\/content\/rlm-tjce-2026\/(?:aulas-[a-z-]+\.js|complementos-teoria\.js)$/i.test(path)
+    ||/^\/content\/rlm-tjce-2026\/(?:aulas-[a-z-]+\.js|complementos-teoria\.js|aprofundamento\.js)$/i.test(path)
     ||path==='/content/civil/civil-native-images.js'||path==='/content/civil/civil-teoria-guiada-lei-seca.js'
     ||path==='/content/adm/adm-sharing-links.js'
     ||path==='/content/civil/civil-sharing-links.js'
