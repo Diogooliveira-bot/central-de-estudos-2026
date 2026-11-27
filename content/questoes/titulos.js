@@ -185,6 +185,6 @@ window.BC_QUESTOES_TITULOS={
 Object.assign(window.BC_QUESTOES_TITULOS,{
   atual: {'1':'Política e administração pública'},
   fortaleza: {'1':'Localização e limites'},
-  legesp: {'1':'Estatuto Geral das Guardas Municipais — Lei 13.022/2014'},
+  legesp: {'1':'Estatuto Geral das Guardas Municipais — Lei 13.022/2014','2':'Lei de Drogas — Lei 11.343/2006','3':'Crimes de preconceito — Lei 7.716/1989','4':'Estatuto da Criança e do Adolescente — Lei 8.069/1990','5':'Crimes ambientais — Lei 9.605/1998','6':'Código de Trânsito Brasileiro — Lei 9.503/1997','7':'Estatuto do Desarmamento — Lei 10.826/2003','8':'Lei Maria da Penha — Lei 11.340/2006','9':'Lei de Abuso de Autoridade — Lei 13.869/2019','10':'Lei Orgânica do Município de Fortaleza','11':'Estatuto dos Servidores de Fortaleza — Lei Municipal 6.794/1990'},
   dh: {'1':'Conceito de direitos humanos'}
 });

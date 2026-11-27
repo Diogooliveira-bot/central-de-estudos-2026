@@ -4,7 +4,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
     {
       "id": "legesp-m11-autoral-01",
       "origem": "autoral-ia",
-      "q": "Carlos foi nomeado para cargo em comissão de chefia em uma secretaria municipal. Segundo a teoria do Estatuto dos Servidores de Fortaleza, o que se pode afirmar sobre sua situação?",
+      "q": "Carlos foi nomeado para cargo em comissão de chefia em uma secretaria municipal. Segundo o Estatuto dos Servidores de Fortaleza, o que se pode afirmar sobre sua situação?",
       "options": [
         "O ocupante adquire automaticamente a efetividade após o estágio probatório, pois o cargo em comissão é espécie de cargo permanente.",
         "O cargo em comissão destina-se a direção, chefia ou assessoramento e não transforma o ocupante em servidor efetivo.",
@@ -13,7 +13,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O ocupante é contratado temporário por necessidade excepcional e seu vínculo se encerra com o prazo previsto em lei específica."
       ],
       "answer": 1,
-      "explanation": "O art. 1º do Estatuto conceitua cargo como conjunto, criado por lei, de atribuições e responsabilidades permanentes, e a lei prevê cargos efetivos e em comissão, com natureza e forma de ingresso diferentes. O cargo em comissão destina-se a direção, chefia ou assessoramento, conforme a Constituição e a lei, e não transforma o ocupante em servidor efetivo nem elimina requisitos legais. As alternativas erradas atribuem efetividade automática, exigem concurso, confundem comissão com emprego público ou com contratação temporária, que é vínculo excepcional previsto em lei específica.",
+      "explanation": "O art. 1º do Estatuto diz que cargo é o conjunto, criado por lei, de atribuições e responsabilidades permanentes, e a lei prevê cargos efetivos e em comissão, com natureza e forma de ingresso diferentes. O cargo em comissão destina-se a direção, chefia ou assessoramento, conforme a Constituição e a lei, e não transforma o ocupante em servidor efetivo nem elimina requisitos legais. As alternativas erradas atribuem efetividade automática, exigem concurso, confundem comissão com emprego público ou com contratação temporária, que é vínculo excepcional previsto em lei específica.",
       "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), art. 1º"
     },
     {
@@ -34,7 +34,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
     {
       "id": "legesp-m11-autoral-03",
       "origem": "autoral-ia",
-      "q": "Ana tomou posse em cargo efetivo e iniciou o exercício. Um colega afirma que, passado o prazo de validade do concurso, ela já seria estável. Segundo a teoria do Estatuto, qual afirmação está correta?",
+      "q": "Ana tomou posse em cargo efetivo e iniciou o exercício. Um colega afirma que, passado o prazo de validade do concurso, ela já seria estável. Segundo o Estatuto, qual afirmação está correta?",
       "options": [
         "Estágio probatório avalia o desempenho após a investidura, difere da validade do concurso e a estabilidade segue o art. 41 da CF.",
         "O estágio probatório e a validade do concurso são o mesmo prazo, e a estabilidade decorre automaticamente do simples decurso do tempo.",
@@ -43,7 +43,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O estágio probatório ocorre antes da nomeação, durante o concurso, e termina com a convocação do aprovado para a posse."
       ],
       "answer": 0,
-      "explanation": "A teoria distingue os prazos: a validade do concurso (até dois anos, prorrogável uma vez, nos termos do art. 10) determina por quanto tempo o certame pode gerar convocações, enquanto o estágio probatório é o período de avaliação funcional depois da investidura. A estabilidade é garantia constitucional que depende dos requisitos do art. 41 da Constituição, não decorre automaticamente do tempo nem é proteção absoluta contra desligamento. A sequência é concurso, convocação, nomeação, posse, exercício, avaliação probatória e estabilidade, se preenchidos os requisitos. As demais alternativas misturam essas etapas.",
+      "explanation": "Os prazos são distintos: a validade do concurso (o art. 10 diz que vale até dois anos, prorrogável uma vez) determina por quanto tempo o certame pode gerar convocações, enquanto o estágio probatório é o período de avaliação funcional depois da investidura. A estabilidade é garantia constitucional que depende dos requisitos do art. 41 da Constituição, não decorre automaticamente do tempo nem é proteção absoluta contra desligamento. A sequência é concurso, convocação, nomeação, posse, exercício, avaliação probatória e estabilidade, se preenchidos os requisitos. As demais alternativas misturam essas etapas.",
       "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), art. 10; Constituição Federal, art. 41"
     },
     {
@@ -73,13 +73,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Dois dias a cada seis meses, usufruídos livremente em qualquer data, inclusive antes da doação, a critério do servidor."
       ],
       "answer": 2,
-      "explanation": "A LC nº 426/2025 acrescentou a alínea f ao art. 82, I, do Estatuto: afastamento remunerado por dois dias a cada seis meses em razão de doação de sangue, sendo o primeiro dia o da doação e o segundo o subsequente. É hipótese específica, não licença geral para qualquer exame ou doação em qualquer frequência. O art. 80, citado em uma alternativa, trata da contagem em dobro da licença-prêmio e está revogado. As alternativas erradas alteram a quantidade de dias, o intervalo ou a data de fruição, ou ampliam a regra para situações que a lei não prevê.",
+      "explanation": "A LC nº 426/2025 acrescentou a alínea f ao art. 82, I, do Estatuto, que diz: afastamento remunerado por dois dias a cada seis meses em razão de doação de sangue, sendo o primeiro dia o da doação e o segundo o subsequente. É hipótese específica, não licença geral para qualquer exame ou doação em qualquer frequência. O art. 80, citado em uma alternativa, trata da contagem em dobro da licença-prêmio e está revogado. As alternativas erradas alteram a quantidade de dias, o intervalo ou a data de fruição, ou ampliam a regra para situações que a lei não prevê.",
       "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), art. 82, I, f (LC 426/2025)"
     },
     {
       "id": "legesp-m11-autoral-06",
       "origem": "autoral-ia",
-      "q": "Um servidor com licença-prêmio não gozada pretende contar em dobro esse período para fins de aposentadoria, com base em um PDF antigo do Estatuto. Segundo a teoria, qual é a situação do art. 80?",
+      "q": "Um servidor com licença-prêmio não gozada pretende contar em dobro esse período para fins de aposentadoria, com base em um PDF antigo do Estatuto. Segundo o Estatuto, qual é a situação do art. 80?",
       "options": [
         "O art. 80 está vigente e a contagem em dobro vale para aposentadoria e disponibilidade, conforme a redação original de 1990.",
         "O art. 80 foi revogado pela LC nº 426/2025, que o substituiu pelo afastamento de dois dias por doação de sangue.",
@@ -88,13 +88,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O art. 80 foi revogado pela Emenda nº 25/2025 à Lei Orgânica, que extinguiu a licença-prêmio dos servidores municipais."
       ],
       "answer": 3,
-      "explanation": "A licença-prêmio está disciplinada nos arts. 75 e seguintes do Estatuto. O art. 80, que permitia contar em dobro o período não gozado para aposentadoria ou disponibilidade, foi revogado pela LC nº 298/2021. Um PDF antigo pode exibir a redação histórica sem destacar a revogação, por isso se deve estudar a compilação oficial. A LC nº 426/2025 acrescentou a alínea f ao art. 82, I (doação de sangue), e a Emenda nº 25/2025 trata de bens municipais; nenhuma delas extinguiu a licença-prêmio. As demais alternativas afirmam vigência ou atribuem a mudança a norma errada.",
+      "explanation": "A licença-prêmio está disciplinada nos arts. 75 e seguintes do Estatuto. O art. 80, que na redação antiga diz que o período não gozado conta em dobro para aposentadoria ou disponibilidade, foi revogado pela LC nº 298/2021. Um PDF antigo pode exibir a redação histórica sem destacar a revogação, por isso se deve estudar a compilação oficial. A LC nº 426/2025 acrescentou a alínea f ao art. 82, I (doação de sangue), e a Emenda nº 25/2025 trata de bens municipais; nenhuma delas extinguiu a licença-prêmio. As demais alternativas afirmam vigência ou atribuem a mudança a norma errada.",
       "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), arts. 75 e seguintes e art. 80 (revogado pela LC 298/2021)"
     },
     {
       "id": "legesp-m11-autoral-07",
       "origem": "autoral-ia",
-      "q": "Ricardo estuda à noite em curso regular e quer redução de horário no serviço. Segundo a teoria do art. 88 do Estatuto, qual é a regra aplicável?",
+      "q": "Ricardo estuda à noite em curso regular e quer redução de horário no serviço. Segundo o art. 88 do Estatuto, qual é a regra aplicável?",
       "options": [
         "Todo servidor estudante tem direito automático ao afastamento de duas horas diárias, bastando declarar a matrícula no curso regular.",
         "Pode ser autorizado afastamento de até duas horas diárias, a critério da Administração, conforme comprovação e o interesse do serviço.",
@@ -103,7 +103,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A Administração deve conceder o afastamento, cabendo-lhe apenas fixar o horário, sem poder considerar a conveniência do serviço."
       ],
       "answer": 1,
-      "explanation": "O art. 88 do Estatuto prevê que pode ser autorizado afastamento de até duas horas diárias ao servidor que frequente curso regular, a critério da Administração, com organização do horário conforme o interesse do serviço. A formulação poderá ser autorizado exige decisão administrativa e comprovação; não equivale a redução automática para todo estudante. As alternativas erradas transformam a possibilidade em direito automático ou obrigação, elevam o limite para quatro horas ou restringem o benefício ao nível superior, o que o texto da teoria não afirma.",
+      "explanation": "O art. 88 do Estatuto diz que pode ser autorizado afastamento de até duas horas diárias ao servidor que frequente curso regular, a critério da Administração, com organização do horário conforme o interesse do serviço. A formulação poderá ser autorizado exige decisão administrativa e comprovação; não equivale a redução automática para todo estudante. As alternativas erradas transformam a possibilidade em direito automático ou obrigação, elevam o limite para quatro horas ou restringem o benefício ao nível superior, o que o texto do Estatuto não afirma.",
       "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), art. 88"
     },
     {
@@ -118,7 +118,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Descumprir a ordem e alterar os registros do veículo, a fim de evitar que a apuração posterior identifique o superior responsável."
       ],
       "answer": 0,
-      "explanation": "O art. 4º, V, impõe cumprir as ordens superiores, salvo quando manifestamente impraticáveis, abusivas ou ilegais. A ordem de usar veículo público em finalidade particular não se torna lícita por vir de superior: viola a legalidade e a proibição de usar recursos da repartição em atividade particular. O agente deve recusar pelos meios adequados e comunicar a irregularidade. O dever de sigilo não autoriza esconder ilícitos, pois a lei prevê a representação contra ilegalidade e abuso, e alterar registros agravaria a situação. As alternativas erradas defendem obediência cega, privilégio por cargo ou ocultação.",
+      "explanation": "O art. 4º, V, diz que se devem cumprir as ordens superiores, salvo quando manifestamente impraticáveis, abusivas ou ilegais. A ordem de usar veículo público em finalidade particular não se torna lícita por vir de superior: viola a legalidade e a proibição de usar recursos da repartição em atividade particular. O agente deve recusar pelos meios adequados e comunicar a irregularidade. O dever de sigilo não autoriza esconder ilícitos, pois a lei prevê a representação contra ilegalidade e abuso, e alterar registros agravaria a situação. As alternativas erradas defendem obediência cega, privilégio por cargo ou ocultação.",
       "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), art. 4º, V"
     },
     {
@@ -133,13 +133,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A absolvição que nega a existência do fato afasta a responsabilidade civil e a administrativa."
       ],
       "answer": 4,
-      "explanation": "O art. 173 prevê que as sanções civis, penais e administrativas podem acumular-se e são independentes, porque apuram consequências distintas. Mas o art. 174 afasta a responsabilidade civil ou administrativa quando a absolvição criminal nega a existência do fato ou a autoria. É diferente da absolvição por insuficiência de provas ou por outro fundamento, cuja repercussão exige análise jurídica própria. As alternativas erradas negam qualquer repercussão, limitam o efeito a uma esfera, invertem o fundamento da absolvição ou criam presunção de culpa que a teoria não prevê.",
+      "explanation": "O art. 173 prevê que as sanções civis, penais e administrativas podem acumular-se e são independentes, porque apuram consequências distintas. Mas o art. 174 diz que se afasta a responsabilidade civil ou administrativa quando a absolvição criminal nega a existência do fato ou a autoria. É diferente da absolvição por insuficiência de provas ou por outro fundamento, cuja repercussão exige análise jurídica própria. As alternativas erradas negam qualquer repercussão, limitam o efeito a uma esfera, invertem o fundamento da absolvição ou criam presunção de culpa que o Estatuto não prevê.",
       "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), arts. 173 e 174"
     },
     {
       "id": "legesp-m11-autoral-10",
       "origem": "autoral-ia",
-      "q": "Fábio faltou ao serviço por cinco dias seguidos, sem justificativa, e retornou em seguida. A chefia quer abrir processo por abandono de cargo. Segundo a teoria do Estatuto, qual é a análise correta?",
+      "q": "Fábio faltou ao serviço por cinco dias seguidos, sem justificativa, e retornou em seguida. A chefia quer abrir processo por abandono de cargo. Segundo o Estatuto, qual é a análise correta?",
       "options": [
         "O abandono se configura com ausência sem justa causa por mais de 5 dias consecutivos, bastando a prova da falta para a demissão imediata.",
         "O abandono exige ausência deliberada por mais de 60 dias consecutivos, prazo que também define a inassiduidade habitual em 12 meses.",
@@ -148,7 +148,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O abandono exige ausência por mais de 30 dias interpolados em 12 meses, sendo o retorno ao serviço irrelevante para a tipificação."
       ],
       "answer": 2,
-      "explanation": "O art. 180 enumera hipóteses de demissão, entre elas abandono e inassiduidade habitual. O Estatuto define abandono como ausência deliberada, sem justa causa, por mais de 30 dias consecutivos, e inassiduidade habitual como faltas injustificadas em 60 dias interpolados dentro de 12 meses. A apuração deve provar os elementos; simples atraso ou falta isolada não corresponde automaticamente a essas categorias, e processo e prova são indispensáveis. Cinco dias seguidos não alcançam o prazo do abandono. As alternativas erradas alteram os números, misturam os critérios dos dois institutos ou dispensam a prova da deliberação.",
+      "explanation": "O art. 180 diz quais são as hipóteses de demissão, entre elas abandono e inassiduidade habitual. O Estatuto define abandono como ausência deliberada, sem justa causa, por mais de 30 dias consecutivos, e inassiduidade habitual como faltas injustificadas em 60 dias interpolados dentro de 12 meses. A apuração deve provar os elementos; simples atraso ou falta isolada não corresponde automaticamente a essas categorias, e processo e prova são indispensáveis. Cinco dias seguidos não alcançam o prazo do abandono. As alternativas erradas alteram os números, misturam os critérios dos dois institutos ou dispensam a prova da deliberação.",
       "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), arts. 180 a 182"
     }
   ];

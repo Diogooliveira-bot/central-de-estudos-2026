@@ -13,7 +13,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O registro cadastra a arma, a posse permite mantê-la nos locais autorizados e o porte permite trazê-la consigo fora deles."
       ],
       "answer": 4,
-      "explanation": "O Estatuto do Desarmamento separa três ideias: registro (cadastro oficial da arma e de sua vinculação ao titular), posse (guarda da arma nos locais e condições legalmente permitidos e cobertos pelo registro) e porte (autorização para trazer a arma consigo fora desses locais, nas condições e limites especificados). Como regra geral, o art. 6º proíbe o porte em todo o território nacional, salvo as exceções legais. O certificado de registro, portanto, não é autorização geral de porte: é preciso conferir autorização específica, categoria e contexto, sem presumir crime antes da apuração.",
+      "explanation": "O Estatuto do Desarmamento separa três ideias: registro (cadastro oficial da arma e de sua vinculação ao titular), posse (guarda da arma nos locais e condições legalmente permitidos e cobertos pelo registro) e porte (autorização para trazer a arma consigo fora desses locais, nas condições e limites especificados). Como regra geral, o art. 6º diz que é proibido o porte em todo o território nacional, salvo as exceções legais. O certificado de registro, portanto, não é autorização geral de porte: é preciso conferir autorização específica, categoria e contexto, sem presumir crime antes da apuração.",
       "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), arts. 5º e 6º"
     },
     {
@@ -43,7 +43,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O porte é permitido a qualquer categoria profissional, bastando que o cargo envolva atividade de risco."
       ],
       "answer": 3,
-      "explanation": "O art. 6º do Estatuto parte de uma regra geral de proibição do porte de arma de fogo em todo o território nacional, com as exceções previstas na própria lei e em legislação própria (por exemplo, integrantes de certas instituições e categorias, como as Guardas Municipais, nas condições legais). A exceção não dispensa requisitos: é preciso identificar quem é o titular, qual norma permite o porte, se a autorização está válida, qual sua abrangência e se a arma corresponde ao registro. As erradas transformam a exceção em regra, dispensam norma específica ou criam critérios inexistentes, como o simples risco da atividade.",
+      "explanation": "O art. 6º do Estatuto diz que, como regra geral, é proibido o porte de arma de fogo em todo o território nacional, com as exceções previstas na própria lei e em legislação própria (por exemplo, integrantes de certas instituições e categorias, como as Guardas Municipais, nas condições legais). A exceção não dispensa requisitos: é preciso identificar quem é o titular, qual norma permite o porte, se a autorização está válida, qual sua abrangência e se a arma corresponde ao registro. As erradas transformam a exceção em regra, dispensam norma específica ou criam critérios inexistentes, como o simples risco da atividade.",
       "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 6º"
     },
     {
@@ -58,23 +58,23 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Foi declarado que o porte das guardas depende de autorização individual do Poder Judiciário em cada caso concreto."
       ],
       "answer": 0,
-      "explanation": "O STF, nas ADIs 5538 e 5948 e na ADC 38, declarou inconstitucionais as restrições de porte fundadas no número de habitantes do Município, afastando a discriminação demográfica. Isso, contudo, não cria porte sem requisitos: capacitação, controle institucional, autorização, aptidão e regras federais (art. 6º da Lei 10.826/2003, Lei 13.022/2014 e regulamento) continuam relevantes. A alternativa correta limita-se ao que foi decidido; as demais ampliam a decisão (porte irrestrito), a invertem (proibição total) ou criam critérios que ela não estabeleceu.",
+      "explanation": "O STF, nas ADIs 5538 e 5948 e na ADC 38, declarou inconstitucionais as restrições de porte fundadas no número de habitantes do Município, afastando a discriminação demográfica. Isso, contudo, não cria porte sem requisitos: capacitação, controle institucional, autorização, aptidão e regras federais continuam relevantes, pois o art. 6º da Lei 10.826/2003 (Estatuto do Desarmamento) diz que o porte é, em regra, proibido, salvo as exceções legais, e a Lei 13.022/2014 (Estatuto Geral das Guardas Municipais) e o regulamento seguem aplicáveis. A alternativa correta limita-se ao que foi decidido; as demais ampliam a decisão (porte irrestrito), a invertem (proibição total) ou criam critérios que ela não estabeleceu.",
       "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 6º; STF, ADIs 5.538 e 5.948 e ADC 38"
     },
     {
       "id": "legesp-m07-autoral-05",
       "origem": "autoral-ia",
-      "q": "Um morador mantém em casa, devidamente registrado, um revólver de uso permitido, guardado em gaveta destrancada. O filho de 12 anos pega a arma e a leva para a escola. Qual tipo do Estatuto do Desarmamento descreve, em regra, a conduta do proprietário?",
+      "q": "Um guarda municipal de cidade pequena afirma que, após a decisão do STF sobre o critério populacional, ele pode portar arma de fogo sem formação, sem controle institucional e sem observar regras federais. Considerando o Estatuto do Desarmamento, qual alternativa corrige corretamente essa afirmação?",
       "options": [
-        "O art. 12, pois possuir arma em residência sempre é posse irregular, ainda que registrada e mantida conforme a lei.",
-        "O art. 15, pois o tipo se consuma com a mera exposição da arma a menor, mesmo sem disparo ou acionamento de munição.",
-        "O art. 13, que pune deixar de observar as cautelas necessárias para impedir que menor de 18 anos ou pessoa com deficiência mental se apodere de arma de sua posse ou propriedade.",
-        "O art. 17, pois ceder a arma a menor, ainda que por descuido, equivale a comércio ilegal de arma de fogo.",
-        "O art. 18, pois a saída da arma da residência caracteriza tráfico internacional de arma de fogo."
+        "A afirmação está correta, pois a decisão extinguiu todos os requisitos legais e regulamentares de porte para as guardas municipais de todo o país.",
+        "A afirmação está correta, pois o porte das guardas deixou de ser matéria da legislação federal e passou a depender só do prefeito.",
+        "A decisão afastou apenas o limite por número de habitantes; formação, controle institucional e regras federais continuam exigíveis.",
+        "A afirmação está incorreta porque a decisão proibiu o porte funcional de armas de fogo por guardas em qualquer Município.",
+        "A afirmação está incorreta porque a decisão transferiu a autorização de porte de todas as guardas ao Comando do Exército."
       ],
       "answer": 2,
-      "explanation": "O art. 13 da Lei 10.826/2003 pune quem deixa de observar as cautelas necessárias para impedir que menor de 18 anos ou pessoa com deficiência mental se apodere de arma de fogo que esteja sob sua posse ou seja de sua propriedade. O núcleo é a omissão do dever de cuidado do responsável pela arma, e o resultado exigido é o apoderamento pelo menor ou incapaz, o que ocorreu no caso (gaveta destrancada, filho de 12 anos). As demais alternativas erram o tipo: o art. 12 pune posse em desacordo com a lei ou o regulamento, e aqui a arma estava registrada; o art. 15 exige disparo ou acionamento de munição; o art. 17 trata de comércio ilegal e o art. 18 de tráfico internacional, que exigem atividade comercial ou transnacional.",
-      "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 13"
+      "explanation": "Note que a decisão do STF corrige o critério demográfico, mas não significa que todo guarda esteja automaticamente autorizado, sem formação, controle e condições legais. O art. 6º da Lei 10.826/2003 (Estatuto do Desarmamento) diz que o porte é, em regra, proibido, salvo as exceções legais; ele, a Lei 13.022/2014 (Estatuto Geral das Guardas Municipais) e a regulamentação federal (como o Decreto 11.615/2023, a ser lido com a lei e alterações posteriores) continuam aplicáveis, e a instituição deve manter supervisão, registros e medidas de controle. A pegadinha típica é trocar a retirada de uma restrição específica por uma conclusão muito mais ampla, como a eliminação de todos os requisitos.",
+      "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 6º; Lei 13.022/2014 (Estatuto Geral das Guardas Municipais)"
     },
     {
       "id": "legesp-m07-autoral-06",
@@ -88,7 +88,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Ambos respondem pelo art. 16, pois qualquer arma sem registro é considerada de uso restrito pela lei."
       ],
       "answer": 1,
-      "explanation": "O art. 12 do Estatuto tipifica possuir ou manter sob guarda arma de fogo, acessório ou munição, de uso permitido, em desacordo com determinação legal ou regulamentar, no interior de residência ou dependência desta, ou no local de trabalho (desde que o titular ou responsável legal do estabelecimento). Já o art. 14 pune portar, deter, adquirir, transportar etc., sem autorização ou em desacordo com a lei, arma de uso permitido. A diferença está no núcleo: guarda em local permitido versus trazer consigo fora desses limites. O art. 15 trata de disparo, o art. 13 de omissão de cautela e o art. 16 de uso restrito; não é correto chamar tudo de porte ilegal.",
+      "explanation": "O art. 12 do Estatuto diz que é crime possuir ou manter sob guarda arma de fogo, acessório ou munição, de uso permitido, em desacordo com determinação legal ou regulamentar, no interior de residência ou dependência desta, ou no local de trabalho (desde que o titular ou responsável legal do estabelecimento). Já o art. 14 diz que é crime portar, deter, adquirir, transportar etc., sem autorização ou em desacordo com a lei, arma de uso permitido. A diferença está no núcleo: guarda em local permitido versus trazer consigo fora desses limites. O art. 15 trata de disparo, o art. 13 de omissão de cautela e o art. 16 de uso restrito; não é correto chamar tudo de porte ilegal.",
       "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), arts. 12 e 14"
     },
     {
@@ -103,7 +103,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O art. 18, que trata do tráfico internacional de arma de fogo, acessório ou munição."
       ],
       "answer": 3,
-      "explanation": "O art. 15 do Estatuto tipifica disparar arma de fogo ou acionar munição em lugar habitado ou em suas adjacências, em via pública ou em direção a ela, desde que essa conduta não tenha como finalidade a prática de outro crime. O núcleo do tipo depende do local e das circunstâncias. Os demais artigos tratam de outros fatos: art. 12 (posse irregular de uso permitido), art. 13 (omissão de cautela), art. 17 (comércio ilegal) e art. 18 (tráfico internacional). Cada verbo e contexto muda o enquadramento; é preciso verificar a conduta, o local e a arma antes do nome do crime.",
+      "explanation": "O art. 15 do Estatuto diz que é crime disparar arma de fogo ou acionar munição em lugar habitado ou em suas adjacências, em via pública ou em direção a ela, desde que essa conduta não tenha como finalidade a prática de outro crime. O núcleo do tipo depende do local e das circunstâncias. Os demais artigos tratam de outros fatos: art. 12 (posse irregular de uso permitido), art. 13 (omissão de cautela), art. 17 (comércio ilegal) e art. 18 (tráfico internacional). Cada verbo e contexto muda o enquadramento; é preciso verificar a conduta, o local e a arma antes do nome do crime.",
       "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 15"
     },
     {
@@ -118,13 +118,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O art. 16 só se aplica a policiais, pois a posse de arma de uso restrito por particulares não é objeto do Estatuto do Desarmamento."
       ],
       "answer": 0,
-      "explanation": "A classificação da arma (permitido, restrito ou proibido) influencia o enquadramento penal. O art. 12 trata da posse irregular de arma de uso permitido; o art. 14, do porte ilegal de arma de uso permitido; o art. 16, da posse ou porte ilegal de arma de uso restrito e de outras condutas ali enumeradas. Os arts. 17 e 18 tratam, respectivamente, de comércio ilegal e tráfico internacional. Por isso não se pode chamar todo caso de porte ilegal: é preciso identificar arma, classificação vigente, autorização, conduta e lugar, consultando a redação oficial atual.",
+      "explanation": "A classificação da arma (permitido, restrito ou proibido) influencia o enquadramento penal. O art. 12 diz respeito à posse irregular de arma de uso permitido; o art. 14, do porte ilegal de arma de uso permitido; o art. 16, da posse ou porte ilegal de arma de uso restrito e de outras condutas ali enumeradas. Os arts. 17 e 18 tratam, respectivamente, de comércio ilegal e tráfico internacional. Por isso não se pode chamar todo caso de porte ilegal: é preciso identificar arma, classificação vigente, autorização, conduta e lugar, consultando a redação oficial atual.",
       "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), arts. 12, 14 e 16"
     },
     {
       "id": "legesp-m07-autoral-09",
       "origem": "autoral-ia",
-      "q": "A Lei 15.358/2026 incluiu o art. 21-A no Estatuto do Desarmamento. Sobre esse dispositivo, assinale a alternativa correta.",
+      "q": "A Lei 15.358/2026 (Lei de aumento de pena para armas ligadas ao tráfico de drogas) incluiu o art. 21-A no Estatuto do Desarmamento. Sobre esse dispositivo, assinale a alternativa correta.",
       "options": [
         "A pena aumenta em dois terços sempre que arma e droga forem encontradas juntas, mesmo sem qualquer vínculo entre elas e a mercancia.",
         "A pena aumenta pela metade apenas quando a arma for de uso restrito, não se aplicando aos arts. 12 e 14.",
@@ -133,13 +133,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O art. 21-A revogou os tipos penais do Estatuto e os substituiu por infração administrativa quando houver droga."
       ],
       "answer": 2,
-      "explanation": "A Lei 15.358/2026 incluiu o art. 21-A, segundo o qual, nos crimes dos arts. 12, 14 e 16, a pena aumenta em dois terços se o crime for praticado em concurso com crime da Lei de Drogas (Lei 11.343/2006), estiver diretamente ligado ao comércio ilícito de entorpecentes ou se o artefato tiver sido usado para assegurar o sucesso da mercancia. É necessária uma dessas ligações; a mera coincidência de arma e droga, sem o nexo descrito, não basta. O aumento não é de metade, não alcança todos os crimes do Estatuto (só os arts. 12, 14 e 16) e não revogou tipos penais.",
-      "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 21-A (incluído pela Lei 15.358/2026)"
+      "explanation": "A Lei 15.358/2026 (Lei de aumento de pena para armas ligadas ao tráfico de drogas) incluiu o art. 21-A, que diz que, nos crimes dos arts. 12, 14 e 16, a pena aumenta em dois terços se o crime for praticado em concurso com crime da Lei de Drogas (Lei 11.343/2006 (undefined)), estiver diretamente ligado ao comércio ilícito de entorpecentes ou se o artefato tiver sido usado para assegurar o sucesso da mercancia. É necessária uma dessas ligações; a mera coincidência de arma e droga, sem o nexo descrito, não basta. O aumento não é de metade, não alcança todos os crimes do Estatuto (só os arts. 12, 14 e 16) e não revogou tipos penais.",
+      "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 21-A (incluído pela Lei 15.358/2026 (Lei de aumento de pena para armas ligadas ao tráfico de drogas))"
     },
     {
       "id": "legesp-m07-autoral-10",
       "origem": "autoral-ia",
-      "q": "Em estudo sobre o Estatuto do Desarmamento, discute-se a vedação legal de liberdade provisória prevista no art. 21 para certos crimes. Segundo o entendimento do STF na ADI 3.112, qual afirmação está correta?",
+      "q": "Discute-se a vedação legal de liberdade provisória prevista no art. 21 do Estatuto do Desarmamento para certos crimes. Segundo o entendimento do STF na ADI 3.112, qual afirmação está correta?",
       "options": [
         "O art. 21 permanece integralmente válido, sendo a liberdade provisória vedada em todos os crimes do Estatuto sem exceção.",
         "O STF declarou o art. 21 constitucional na ADI 3.112, e por isso a literalidade do dispositivo vale como regra vigente.",
@@ -148,7 +148,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O STF declarou inconstitucional o art. 21 na ADI 3.112, de modo que a antiga vedação de liberdade provisória não deve ser tratada como regra válida atual."
       ],
       "answer": 4,
-      "explanation": "O art. 21 do Estatuto continha restrições de liberdade provisória para certos crimes (arts. 16, 17 e 18). O STF, na ADI 3.112, declarou o dispositivo inconstitucional, razão pela qual não se deve repetir sua literalidade isoladamente como regra vigente: a lei penal deve ser estudada junto do controle de constitucionalidade aplicável. A Lei 15.358/2026 incluiu o art. 21-A, que trata do aumento de pena, e não substituiu o art. 21. A declaração não se limitou a guardas municipais nem foi pela constitucionalidade; a vedação não vale como regra atual.",
+      "explanation": "O art. 21 do Estatuto diz que os crimes dos arts. 16, 17 e 18 são insuscetíveis de liberdade provisória. O STF, na ADI 3.112, declarou o dispositivo inconstitucional, razão pela qual não se deve repetir sua literalidade isoladamente como regra vigente: a lei penal deve ser estudada junto do controle de constitucionalidade aplicável. A Lei 15.358/2026 (Lei de aumento de pena para armas ligadas ao tráfico de drogas) incluiu o art. 21-A, que trata do aumento de pena, e não substituiu o art. 21. A declaração não se limitou a guardas municipais nem foi pela constitucionalidade; a vedação não vale como regra atual.",
       "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 21; STF, ADI 3.112"
     }
   ];

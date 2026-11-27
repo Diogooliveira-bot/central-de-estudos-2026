@@ -13,7 +13,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Limita a aplicação às agressões ocorridas dentro da residência, sendo irrelevante o que ocorre em vias e locais públicos."
       ],
       "answer": 2,
-      "explanation": "O art. 5º da Lei 11.340/2006 define violência doméstica e familiar como ação ou omissão baseada no gênero que cause morte, lesão, sofrimento físico, sexual ou psicológico, ou dano moral ou patrimonial, e inclui, no inciso III, qualquer relação íntima de afeto, na qual o agressor conviva ou tenha convivido com a ofendida, independentemente de coabitação. Por isso, o fim do relacionamento e a ausência de residência comum não excluem a análise. As erradas exigem coabitação como requisito universal, limitam a proteção ao parentesco ou ao ambiente da casa, ou erram no extremo oposto ao dizer que a incidência é automática: a lei exige examinar o contexto, a violência baseada no gênero e o risco.",
+      "explanation": "O art. 5º da Lei 11.340/2006 (Lei Maria da Penha) diz que violência doméstica e familiar é ação ou omissão baseada no gênero que cause morte, lesão, sofrimento físico, sexual ou psicológico, ou dano moral ou patrimonial, e inclui, no inciso III, qualquer relação íntima de afeto, na qual o agressor conviva ou tenha convivido com a ofendida, independentemente de coabitação. Por isso, o fim do relacionamento e a ausência de residência comum não excluem a análise. As erradas exigem coabitação como requisito universal, limitam a proteção ao parentesco ou ao ambiente da casa, ou erram no extremo oposto ao dizer que a incidência é automática: a lei exige examinar o contexto, a violência baseada no gênero e o risco.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 5º, III"
     },
     {
@@ -28,7 +28,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Violência vicária, pois a retenção de documentos atinge necessariamente pessoa ligada à mulher e não ela própria."
       ],
       "answer": 0,
-      "explanation": "O art. 7º, IV, da Lei 11.340/2006 define a violência patrimonial como qualquer conduta que configure retenção, subtração, destruição parcial ou total de objetos, instrumentos de trabalho, documentos pessoais, bens, valores e direitos ou recursos econômicos, incluindo os destinados a satisfazer as necessidades da mulher. Reter documentos e salário se encaixa exatamente nessa descrição. A violência física (inciso I) trata de integridade ou saúde corporal; a moral (inciso V) é calúnia, difamação ou injúria; a sexual (inciso III) envolve a liberdade sexual; e a vicária (inciso VI) exige violência contra pessoa ligada à mulher com vistas a atingi-la. As formas podem coexistir, mas a conduta descrita é patrimonial.",
+      "explanation": "O art. 7º, IV, da Lei 11.340/2006 (Lei Maria da Penha) diz que a violência patrimonial é qualquer conduta que configure retenção, subtração, destruição parcial ou total de objetos, instrumentos de trabalho, documentos pessoais, bens, valores e direitos ou recursos econômicos, incluindo os destinados a satisfazer as necessidades da mulher. Reter documentos e salário se encaixa exatamente nessa descrição. A violência física (inciso I) trata de integridade ou saúde corporal; a moral (inciso V) é calúnia, difamação ou injúria; a sexual (inciso III) envolve a liberdade sexual; e a vicária (inciso VI) exige violência contra pessoa ligada à mulher com vistas a atingi-la. As formas podem coexistir, mas a conduta descrita é patrimonial.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 7º, IV"
     },
     {
@@ -43,13 +43,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Violência vicária: agressão a dependente ou pessoa sob guarda da mulher, com vistas a atingi-la."
       ],
       "answer": 4,
-      "explanation": "A Lei 15.384/2026 acrescentou o inciso VI ao art. 7º da Lei 11.340/2006: violência vicária é qualquer forma de violência praticada contra descendente, ascendente, dependente, enteado, parente, pessoa sob guarda ou responsabilidade direta da mulher, ou pessoa de sua rede de apoio, com vistas a atingi-la. A finalidade de atingir a mulher faz parte da definição, e está presente no caso. As erradas negam que terceiros possam ser alcançados, confundem a ameaça com violência moral (honra) ou patrimonial (bens), ou afastam a lei por se tratar de criança; as normas podem incidir de forma conjunta, e a proteção da mulher não se perde.",
+      "explanation": "O art. 7º, VI, da Lei 11.340/2006 (Lei Maria da Penha), incluído pela Lei 15.384/2026 (Lei da Violência Vicária), diz que violência vicária é qualquer forma de violência praticada contra descendente, ascendente, dependente, enteado, parente, pessoa sob guarda ou responsabilidade direta da mulher, ou pessoa de sua rede de apoio, com vistas a atingi-la. A finalidade de atingir a mulher faz parte da definição, e está presente no caso. As erradas negam que terceiros possam ser alcançados, confundem a ameaça com violência moral (honra) ou patrimonial (bens), ou afastam a lei por se tratar de criança; as normas podem incidir de forma conjunta, e a proteção da mulher não se perde.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 7º, VI (redação da Lei 15.384/2026)"
     },
     {
       "id": "legesp-m08-autoral-04",
       "origem": "autoral-ia",
-      "q": "Em um curso de atualização, um instrutor compara a violência vicária da Lei Maria da Penha com o crime de vicaricídio, criado pela Lei 15.384/2026 no art. 121-B do Código Penal. Qual afirmação está correta?",
+      "q": "Em um curso de atualização, um instrutor compara a violência vicária da Lei Maria da Penha com o crime de vicaricídio, criado pela Lei 15.384/2026 (Lei da Violência Vicária) no art. 121-B do Código Penal. Qual afirmação está correta?",
       "options": [
         "Os dois termos são sinônimos, e qualquer violência vicária, mesmo sem morte, configura vicaricídio.",
         "Vicaricídio é homicídio com fim específico de causar sofrimento, punição ou controle à mulher; a vicária é categoria mais ampla.",
@@ -58,7 +58,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A violência vicária só existe quando há morte, pois a lei exige o resultado para reconhecer a forma de violência."
       ],
       "answer": 1,
-      "explanation": "A Lei 15.384/2026 criou, de um lado, a forma de violência vicária no art. 7º, VI, da Lei 11.340/2006, categoria protetiva ampla, que pode existir sem morte; de outro, o crime de vicaricídio no art. 121-B do Código Penal, que é homicídio de descendente, ascendente, dependente, enteado ou pessoa sob guarda ou responsabilidade direta da mulher, com o fim específico de causar-lhe sofrimento, punição ou controle, no contexto de violência doméstica e familiar, com pena de reclusão de 20 a 40 anos. Só há vicaricídio quando todos os requisitos do tipo estão presentes. As demais alternativas tratam os conceitos como sinônimos, exigem morte para a forma de violência ou reduzem o crime a lesão leve sem finalidade específica.",
+      "explanation": "A Lei 15.384/2026 (Lei da Violência Vicária) criou, de um lado, a forma de violência vicária no art. 7º, VI, da Lei 11.340/2006 (Lei Maria da Penha), categoria protetiva ampla, que pode existir sem morte; de outro, o crime de vicaricídio no art. 121-B do Código Penal, que é homicídio de descendente, ascendente, dependente, enteado ou pessoa sob guarda ou responsabilidade direta da mulher, com o fim específico de causar-lhe sofrimento, punição ou controle, no contexto de violência doméstica e familiar, com pena de reclusão de 20 a 40 anos. Só há vicaricídio quando todos os requisitos do tipo estão presentes. As demais alternativas tratam os conceitos como sinônimos, exigem morte para a forma de violência ou reduzem o crime a lesão leve sem finalidade específica. Como diz o art. 121-B do Código Penal, o tipo exige o fim específico, e não basta a violência vicária.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 7º, VI; Código Penal, art. 121-B (Lei 15.384/2026)"
     },
     {
@@ -73,7 +73,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Podem ser concedidas somente pela autoridade policial, pois o juiz não tem competência para decidir medidas urgentes."
       ],
       "answer": 3,
-      "explanation": "O art. 19 da Lei 11.340/2006 autoriza o juiz a conceder as medidas protetivas de urgência a requerimento do Ministério Público ou a pedido da ofendida, em cognição sumária, e a lei atual deixa claro que elas não dependem da tipificação penal da violência, do ajuizamento de ação, da existência de inquérito ou do registro de boletim de ocorrência. Medida protetiva não é pena: pode ser aplicada antes de qualquer condenação, para interromper a violência e reduzir o risco. As erradas tratam a medida como pena, exigem boletim, inquérito ou ação como condição e atribuem a decisão apenas à polícia; isso não confere com o texto. Ainda assim, é preciso avaliar a situação concreta e o risco.",
+      "explanation": "O art. 19 da Lei 11.340/2006 (Lei Maria da Penha) diz que o juiz pode conceder as medidas protetivas de urgência a requerimento do Ministério Público ou a pedido da ofendida, em cognição sumária, e a lei atual deixa claro que elas não dependem da tipificação penal da violência, do ajuizamento de ação, da existência de inquérito ou do registro de boletim de ocorrência. Medida protetiva não é pena: pode ser aplicada antes de qualquer condenação, para interromper a violência e reduzir o risco. As erradas tratam a medida como pena, exigem boletim, inquérito ou ação como condição e atribuem a decisão apenas à polícia; isso não confere com o texto. Ainda assim, é preciso avaliar a situação concreta e o risco.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 19"
     },
     {
@@ -88,13 +88,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Interrogar a vítima repetidas vezes sobre o relacionamento até obter prova suficiente para a condenação."
       ],
       "answer": 0,
-      "explanation": "A rede de proteção prevista na Lei 11.340/2006 articula segurança pública, Justiça, saúde e assistência social, e cada órgão atua dentro de sua competência. O agente municipal deve perceber o risco, proteger a vida e a integridade, acionar os órgãos competentes, preservar informações e registrar objetivamente o que observou e fez. A aproximação contra ordem judicial não é irrelevante só porque não houve agressão no instante: descumprir decisão que defere medida protetiva é crime autônomo (art. 24-A) e indica risco. Ele não decide a validade da ordem nem altera seus termos, tarefas do Judiciário. Também deve evitar a revitimização, não pressionando reconciliação nem repetindo interrogatórios, e não culpabilizar a vítima ou divulgar seus dados.",
+      "explanation": "A rede de proteção prevista na Lei 11.340/2006 (Lei Maria da Penha) articula segurança pública, Justiça, saúde e assistência social, e cada órgão atua dentro de sua competência. O agente municipal deve perceber o risco, proteger a vida e a integridade, acionar os órgãos competentes, preservar informações e registrar objetivamente o que observou e fez. A aproximação contra ordem judicial não é irrelevante só porque não houve agressão no instante: descumprir decisão que defere medida protetiva é crime autônomo (art. 24-A) e indica risco. Ele não decide a validade da ordem nem altera seus termos, tarefas do Judiciário. Também deve evitar a revitimização, não pressionando reconciliação nem repetindo interrogatórios, e não culpabilizar a vítima ou divulgar seus dados. O art. 12-C diz que o afastamento imediato cabe diante de risco atual ou iminente, mas a decisão e o procedimento pertencem às autoridades competentes.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), arts. 8º, 12-C e 24-A (rede de atendimento, resposta policial e descumprimento de medida protetiva)"
     },
     {
       "id": "legesp-m08-autoral-07",
       "origem": "autoral-ia",
-      "q": "Sobre a monitoração eletrônica do agressor como medida protetiva autônoma, introduzida no art. 22, VIII, da Lei Maria da Penha pela Lei 15.383/2026, assinale a alternativa correta.",
+      "q": "Sobre a monitoração eletrônica do agressor como medida protetiva autônoma, introduzida no art. 22, VIII, da Lei Maria da Penha pela Lei 15.383/2026 (Lei da Monitoração Eletrônica do Agressor), assinale a alternativa correta.",
       "options": [
         "Só pode ser aplicada depois de condenação definitiva do agressor, em substituição à pena privativa de liberdade.",
         "Substitui todas as demais medidas protetivas, que ficam automaticamente revogadas quando o agressor é monitorado.",
@@ -103,7 +103,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Dispensa qualquer procedimento, pois o alerta do dispositivo gera descumprimento automático e prisão imediata."
       ],
       "answer": 2,
-      "explanation": "A Lei 15.383/2026 incluiu a monitoração eletrônica como medida protetiva autônoma no art. 22, VIII, da Lei 11.340/2006, com prioridade em caso de descumprimento anterior ou de risco iminente físico ou psicológico. Os §§ 7º a 9º disciplinam a instalação, a instrução sobre o perímetro e o alerta simultâneo à vítima e à unidade policial, e exigem fundamentação expressa quando a medida prioritária não for aplicada. Ela não é pena nem depende de condenação, não revoga outras medidas, que podem ser combinadas, e o alerta técnico, segundo o Decreto 13.084/2026, não caracteriza por si só descumprimento, exigindo análise contextualizada.",
+      "explanation": "A Lei 15.383/2026 (Lei da Monitoração Eletrônica do Agressor) incluiu a monitoração eletrônica como medida protetiva autônoma no art. 22, VIII, da Lei 11.340/2006 (Lei Maria da Penha), com prioridade em caso de descumprimento anterior ou de risco iminente físico ou psicológico. Os §§ 7º a 9º disciplinam a instalação, a instrução sobre o perímetro e o alerta simultâneo à vítima e à unidade policial, e exigem fundamentação expressa quando a medida prioritária não for aplicada. Ela não é pena nem depende de condenação, não revoga outras medidas, que podem ser combinadas, e o alerta técnico, segundo o Decreto 13.084/2026, não caracteriza por si só descumprimento, exigindo análise contextualizada. Como diz o art. 22, VIII, a monitoração é medida protetiva autônoma, e não pena.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 22, VIII e §§ 7º a 9º (Lei 15.383/2026)"
     },
     {
@@ -118,13 +118,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A adesão é voluntária e informada; recusa ou desistência não afasta outras medidas nem reduz a credibilidade."
       ],
       "answer": 4,
-      "explanation": "Segundo a Lei 11.340/2006 e o Decreto 13.084/2026, o Programa Alerta Mulher Segura combina a monitoração do agressor com uma unidade portátil de rastreamento para a vítima. A adesão à UPR é voluntária, expressa e informada. A recusa ou a desistência não afasta as demais medidas protetivas, não reduz a credibilidade do relato e não transfere à vítima o dever de garantir a própria segurança. A UPR também não substitui a monitoração do agressor, pois ambas são complementares. As erradas tornam a adesão obrigatória, punem a recusa ou invertem a responsabilidade, o que contraria a finalidade protetiva da norma.",
+      "explanation": "Segundo a Lei 11.340/2006 (Lei Maria da Penha) e o Decreto 13.084/2026, o Programa Alerta Mulher Segura combina a monitoração do agressor com uma unidade portátil de rastreamento para a vítima. A adesão à UPR é voluntária, expressa e informada. A recusa ou a desistência não afasta as demais medidas protetivas, não reduz a credibilidade do relato e não transfere à vítima o dever de garantir a própria segurança. A UPR também não substitui a monitoração do agressor, pois ambas são complementares. As erradas tornam a adesão obrigatória, punem a recusa ou invertem a responsabilidade, o que contraria a finalidade protetiva da norma.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 22, VIII (Lei 15.383/2026); Decreto 13.084/2026"
     },
     {
       "id": "legesp-m08-autoral-09",
       "origem": "autoral-ia",
-      "q": "Em crime de ação penal condicionada à representação, ocorrido em contexto de violência doméstica, a vítima nada manifesta sobre retratação antes do recebimento da denúncia. Segundo o art. 16 da Lei Maria da Penha, com a redação da Lei 15.380/2026, qual é a consequência quanto à audiência?",
+      "q": "Em crime de ação penal condicionada à representação, ocorrido em contexto de violência doméstica, a vítima nada manifesta sobre retratação antes do recebimento da denúncia. Segundo o art. 16 da Lei Maria da Penha, com a redação da Lei 15.380/2026 (Lei da Audiência de Retratação), qual é a consequência quanto à audiência?",
       "options": [
         "A audiência é obrigatória em todo processo, para colher a representação da vítima perante o juiz.",
         "Não é automática: só se designa se a vítima manifestar, antes da denúncia, desejo de retratar-se, para confirmá-la.",
@@ -133,13 +133,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A audiência transforma em condicionada à representação todo crime da lei, inclusive os de ação pública incondicionada."
       ],
       "answer": 1,
-      "explanation": "Com a Lei 15.380/2026, o art. 16 da Lei 11.340/2006 passou a prever que, nos crimes de ação penal condicionada à representação, a audiência tem a finalidade de confirmar eventual retratação, e não de colher a representação, e só é designada se a vítima manifestar expressamente, antes do recebimento da denúncia, o desejo de retratar-se. Logo, não é audiência automática, não é obrigatória em todo processo, e a regra não transforma em condicionada a ação que seja pública incondicionada. As erradas tratam a audiência como automática, mudam seu objetivo ou o momento, ou exigem pedido do Ministério Público.",
+      "explanation": "Com a Lei 15.380/2026 (Lei da Audiência de Retratação), o art. 16 da Lei 11.340/2006 (Lei Maria da Penha) diz atualmente que, nos crimes de ação penal condicionada à representação, a audiência tem a finalidade de confirmar eventual retratação, e não de colher a representação, e só é designada se a vítima manifestar expressamente, antes do recebimento da denúncia, o desejo de retratar-se. Logo, não é audiência automática, não é obrigatória em todo processo, e a regra não transforma em condicionada a ação que seja pública incondicionada. As erradas tratam a audiência como automática, mudam seu objetivo ou o momento, ou exigem pedido do Ministério Público.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 16 (redação da Lei 15.380/2026)"
     },
     {
       "id": "legesp-m08-autoral-10",
       "origem": "autoral-ia",
-      "q": "Em município que não é sede de comarca, a polícia constata risco atual e iminente à vida de uma mulher e de seus filhos. Segundo o art. 12-D da Lei Maria da Penha, incluído pela Lei 15.383/2026, qual procedimento está previsto para a monitoração eletrônica do agressor?",
+      "q": "Em município que não é sede de comarca, a polícia constata risco atual e iminente à vida de uma mulher e de seus filhos. Segundo o art. 12-D da Lei Maria da Penha, incluído pela Lei 15.383/2026 (Lei da Monitoração Eletrônica do Agressor), qual procedimento está previsto para a monitoração eletrônica do agressor?",
       "options": [
         "A guarda municipal pode impor a monitoração por conta própria, sem comunicação ao juiz, por se tratar de poder de polícia.",
         "O delegado pode impor a monitoração em caráter definitivo, sem revisão judicial, pois a medida é exclusiva da polícia.",
@@ -148,7 +148,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O delegado deve comunicar o juiz em até 72 horas, e a medida se mantém automaticamente até o fim do processo."
       ],
       "answer": 3,
-      "explanation": "O art. 12-D, introduzido pela Lei 15.383/2026 na Lei 11.340/2006, prevê que, verificado risco atual ou iminente à vida ou à integridade física ou psicológica da mulher ou de seus dependentes, o agressor será submetido imediatamente à monitoração eletrônica por autoridade judicial. Em município que não seja sede de comarca, admite-se a atuação inicial do delegado de polícia, com comunicação ao juiz em até 24 horas; o juiz decide, em igual prazo, sobre manter ou revogar e dá ciência ao Ministério Público. É exceção expressa e delimitada, com controle judicial, e não autoriza a Guarda Municipal a impor medidas nem a polícia a agir sem revisão.",
+      "explanation": "O art. 12-D, introduzido pela Lei 15.383/2026 (Lei da Monitoração Eletrônica do Agressor) na Lei 11.340/2006 (Lei Maria da Penha), diz que, verificado risco atual ou iminente à vida ou à integridade física ou psicológica da mulher ou de seus dependentes, o agressor será submetido imediatamente à monitoração eletrônica por autoridade judicial. Em município que não seja sede de comarca, admite-se a atuação inicial do delegado de polícia, com comunicação ao juiz em até 24 horas; o juiz decide, em igual prazo, sobre manter ou revogar e dá ciência ao Ministério Público. É exceção expressa e delimitada, com controle judicial, e não autoriza a Guarda Municipal a impor medidas nem a polícia a agir sem revisão.",
       "lawRef": "Lei 11.340/2006 (Lei Maria da Penha), art. 12-D (Lei 15.383/2026)"
     }
   ];

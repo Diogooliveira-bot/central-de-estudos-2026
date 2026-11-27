@@ -160,20 +160,23 @@ test('API recusa chamadas diretas de leitura e resposta para as quatro disciplin
   }
 });
 
-test('40 questões inéditas validadas pela rotina oficial e índices consistentes', () => {
+test('questões inéditas GMF (4 pilotos + 10 módulos de Legislação Extravagante) validadas e índices consistentes', () => {
   const index=execFile('content/questoes/index.js');
   const titles=execFile('content/questoes/titulos.js');
   const allIds=new Set();
+  const mods={atual:[1],fortaleza:[1],legesp:[1,2,3,4,5,6,7,8,9,10,11],dh:[1]};
   for(const disc of ids){
-    const qs=execFile('content/questoes/'+disc+'/m01.js').BC_QUESTOES[disc][1];
-    assert.equal(qs.length,10,disc);
-    assert.deepEqual(validarModulo(disc,1,qs),[],disc);
-    for(const item of qs){assert.equal(allIds.has(item.id),false,item.id);allIds.add(item.id)}
-    assert.deepEqual(Array.from(index.BC_QUESTOES_INDICE[disc]),[1],disc);
-    assert.equal(index.BC_QUESTOES_QTD[disc][1],10,disc);
-    assert.ok(titles.BC_QUESTOES_TITULOS[disc][1],disc);
+    for(const n of mods[disc]){
+      const qs=execFile('content/questoes/'+disc+'/m'+String(n).padStart(2,'0')+'.js').BC_QUESTOES[disc][n];
+      assert.equal(qs.length,10,disc+n);
+      assert.deepEqual(validarModulo(disc,n,qs),[],disc+n);
+      for(const item of qs){assert.equal(allIds.has(item.id),false,item.id);allIds.add(item.id)}
+      assert.equal(index.BC_QUESTOES_QTD[disc][n],10,disc+n);
+      assert.ok(titles.BC_QUESTOES_TITULOS[disc][n],disc+n);
+    }
+    assert.deepEqual(Array.from(index.BC_QUESTOES_INDICE[disc]),mods[disc],disc);
   }
-  assert.equal(allIds.size,40);
+  assert.equal(allIds.size,140);
 });
 
 test('API nunca entrega gabarito ou comentário na consulta pública', async () => {

@@ -13,7 +13,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "criança a pessoa até seis anos de idade, e adolescente aquela entre seis e dezoito anos de idade."
       ],
       "answer": 0,
-      "explanation": "O art. 2º do ECA considera criança a pessoa até doze anos de idade incompletos e adolescente aquela entre doze e dezoito anos de idade. Em casos expressos em lei, o Estatuto pode alcançar excepcionalmente pessoas entre dezoito e vinte e um anos, mas isso não é regra geral. A idade altera os instrumentos aplicáveis: à criança aplicam-se medidas de proteção; ao adolescente, em caso de ato infracional, aplica-se o procedimento socioeducativo. As alternativas erradas deslocam os marcos para quatorze, dez, seis anos ou fixam vinte e um anos como limite geral.",
+      "explanation": "O art. 2º do ECA diz que é criança a pessoa até doze anos de idade incompletos e adolescente aquela entre doze e dezoito anos de idade. Em casos expressos em lei, o Estatuto pode alcançar excepcionalmente pessoas entre dezoito e vinte e um anos, mas isso não é regra geral. A idade altera os instrumentos aplicáveis: à criança aplicam-se medidas de proteção; ao adolescente, em caso de ato infracional, aplica-se o procedimento socioeducativo. As alternativas erradas deslocam os marcos para quatorze, dez, seis anos ou fixam vinte e um anos como limite geral.",
       "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 2º"
     },
     {
@@ -28,7 +28,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "destinação privilegiada de recursos públicos, dispensada a precedência de atendimento nos serviços públicos ou de relevância pública."
       ],
       "answer": 2,
-      "explanation": "A prioridade absoluta, prevista no art. 4º do ECA e na Constituição, compreende a primazia de receber proteção e socorro em quaisquer circunstâncias, a precedência de atendimento nos serviços públicos ou de relevância pública, a preferência na formulação e na execução das políticas sociais públicas e a destinação privilegiada de recursos nas áreas relacionadas à infância e à juventude. As erradas reduzem a prioridade a apenas um desses aspectos ou a transformam em deferimento automático de pedidos, o que a lei não autoriza: prioridade orienta decisões e planejamento, sem ignorar critérios legais.",
+      "explanation": "A prioridade absoluta, prevista no art. 4º do ECA e na Constituição, compreende, como diz o texto, a primazia de receber proteção e socorro em quaisquer circunstâncias, a precedência de atendimento nos serviços públicos ou de relevância pública, a preferência na formulação e na execução das políticas sociais públicas e a destinação privilegiada de recursos nas áreas relacionadas à infância e à juventude. As erradas reduzem a prioridade a apenas um desses aspectos ou a transformam em deferimento automático de pedidos, o que a lei não autoriza: prioridade orienta decisões e planejamento, sem ignorar critérios legais.",
       "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 4º, parágrafo único"
     },
     {
@@ -43,7 +43,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Aplicação de medidas de proteção, e não de medida socioeducativa, avaliadas conforme a lei e as circunstâncias do caso."
       ],
       "answer": 4,
-      "explanation": "Ato infracional é a conduta descrita como crime ou contravenção penal (art. 103). Quando praticado por criança, correspondem as medidas de proteção do art. 101 (art. 105), e não as medidas socioeducativas do art. 112, que se destinam ao adolescente após procedimento com garantias. Também não se aplica a pena de adulto. Isso não significa ausência de resposta: a situação requer avaliação de proteção e providências adequadas, por órgão competente. Erram as alternativas que falam em internação, processo penal, medida socioeducativa decidida no local ou nenhuma providência.",
+      "explanation": "O art. 103 diz que ato infracional é a conduta descrita como crime ou contravenção penal. Quando praticado por criança, correspondem as medidas de proteção do art. 101 (art. 105), e não as medidas socioeducativas do art. 112, que se destinam ao adolescente após procedimento com garantias. Também não se aplica a pena de adulto. Isso não significa ausência de resposta: a situação requer avaliação de proteção e providências adequadas, por órgão competente. Erram as alternativas que falam em internação, processo penal, medida socioeducativa decidida no local ou nenhuma providência.",
       "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), arts. 103, 105 e 101"
     },
     {
@@ -58,7 +58,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Cassação do direito à convivência comunitária, como forma de responsabilização educativa permanente."
       ],
       "answer": 1,
-      "explanation": "O art. 112 prevê como medidas socioeducativas: advertência; obrigação de reparar o dano; prestação de serviços à comunidade; liberdade assistida; inserção em regime de semiliberdade; internação em estabelecimento educacional; e qualquer das medidas de proteção previstas no art. 101, I a VI. Logo, a semiliberdade está no rol. As demais alternativas apresentam sanções do direito penal comum (prisão preventiva comum, multa convertida em detenção) ou providências que não existem como medida ao adolescente (suspensão do poder familiar como sanção a ele, cassação da convivência comunitária). A finalidade é educativa, e não de pena criminal adulta.",
+      "explanation": "O art. 112 diz que são medidas socioeducativas: advertência; obrigação de reparar o dano; prestação de serviços à comunidade; liberdade assistida; inserção em regime de semiliberdade; internação em estabelecimento educacional; e qualquer das medidas de proteção previstas no art. 101, I a VI. Logo, a semiliberdade está no rol. As demais alternativas apresentam sanções do direito penal comum (prisão preventiva comum, multa convertida em detenção) ou providências que não existem como medida ao adolescente (suspensão do poder familiar como sanção a ele, cassação da convivência comunitária). A finalidade é educativa, e não de pena criminal adulta.",
       "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 112"
     },
     {
@@ -73,7 +73,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "órgão policial auxiliar da Guarda Municipal, com poder de investigação criminal e de condução coercitiva de adolescentes e adultos."
       ],
       "answer": 3,
-      "explanation": "O art. 131 define o Conselho Tutelar como órgão permanente e autônomo, não jurisdicional, encarregado pela sociedade de zelar pelo cumprimento dos direitos da criança e do adolescente. Por não ser jurisdicional, não julga nem profere sentença; por ser permanente, não é instituído a cada gestão; e não é órgão policial. A alternativa que descreve órgão deliberativo de política pública e de controle social refere-se ao Conselho dos Direitos da Criança e do Adolescente, instância distinta, cuja natureza não deve ser confundida com a do Conselho Tutelar.",
+      "explanation": "O art. 131 diz que o Conselho Tutelar é órgão permanente e autônomo, não jurisdicional, encarregado pela sociedade de zelar pelo cumprimento dos direitos da criança e do adolescente. Por não ser jurisdicional, não julga nem profere sentença; por ser permanente, não é instituído a cada gestão; e não é órgão policial. A alternativa que descreve órgão deliberativo de política pública e de controle social refere-se ao Conselho dos Direitos da Criança e do Adolescente, instância distinta, cuja natureza não deve ser confundida com a do Conselho Tutelar.",
       "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 131"
     },
     {
@@ -88,13 +88,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O Tutelar atua somente se acionado pelo juiz, e o Conselho dos Direitos, somente se acionado pela Guarda Municipal."
       ],
       "answer": 0,
-      "explanation": "O Conselho Tutelar é órgão permanente, autônomo e não jurisdicional (art. 131), que zela pelo cumprimento dos direitos da criança e do adolescente, atende casos concretos e aplica as medidas de sua competência. O Conselho dos Direitos é órgão deliberativo de política pública e de controle social; não atende caso a caso. Não são o mesmo órgão, nenhum deles é jurisdicional e nenhum depende de provocação exclusiva do juiz ou da Guarda.",
+      "explanation": "O Conselho Tutelar é órgão permanente, autônomo e não jurisdicional (o art. 131 diz isso), que zela pelo cumprimento dos direitos da criança e do adolescente, atende casos concretos e aplica as medidas de sua competência. O Conselho dos Direitos é órgão deliberativo de política pública e de controle social; não atende caso a caso. Não são o mesmo órgão, nenhum deles é jurisdicional e nenhum depende de provocação exclusiva do juiz ou da Guarda.",
       "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 131"
     },
     {
       "id": "legesp-m04-autoral-07",
       "origem": "autoral-ia",
-      "q": "A Lei 15.413/2026 acrescentou o art. 11-A ao ECA. Esse dispositivo assegura:",
+      "q": "A Lei 15.413/2026 (Lei da saúde mental infantojuvenil no ECA) acrescentou o art. 11-A ao ECA. Esse dispositivo assegura:",
       "options": [
         "aos agentes de segurança pública a atribuição de diagnosticar transtornos mentais de crianças em atendimentos de rua e abordagens.",
         "somente atendimento particular, custeado pelos pais, sem participação do SUS no cuidado da saúde mental infantojuvenil em nenhum nível.",
@@ -103,13 +103,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "a internação psiquiátrica compulsória de adolescentes, determinada diretamente pelo Conselho Tutelar sem avaliação de saúde ou controle judicial."
       ],
       "answer": 2,
-      "explanation": "O art. 11-A, acrescentado ao ECA pela Lei 15.413/2026, assegura a crianças e adolescentes o acesso a programas de saúde mental no SUS, com prevenção e tratamento de agravos, atendimento psicossocial básico e especializado, urgência, emergência e atendimento hospitalar, nos termos do dispositivo. A norma explicita um direito, mas não autoriza diagnóstico por agentes de segurança, que não substituem os profissionais de saúde. Também não restringe o cuidado à dependência química, não o limita ao atendimento particular nem cria internação compulsória por decisão do Conselho Tutelar.",
-      "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 11-A (incluído pela Lei 15.413/2026)"
+      "explanation": "O art. 11-A, acrescentado ao ECA pela Lei 15.413/2026 (Lei da saúde mental infantojuvenil no ECA), diz que se assegura a crianças e adolescentes o acesso a programas de saúde mental no SUS, com prevenção e tratamento de agravos, atendimento psicossocial básico e especializado, urgência, emergência e atendimento hospitalar, nos termos do dispositivo. A norma explicita um direito, mas não autoriza diagnóstico por agentes de segurança, que não substituem os profissionais de saúde. Também não restringe o cuidado à dependência química, não o limita ao atendimento particular nem cria internação compulsória por decisão do Conselho Tutelar.",
+      "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 11-A (incluído pela Lei 15.413/2026 (Lei da saúde mental infantojuvenil no ECA))"
     },
     {
       "id": "legesp-m04-autoral-08",
       "origem": "autoral-ia",
-      "q": "A Lei 15.512/2026 reforçou o art. 4º do ECA. Qual direito passou a constar expressamente entre os que a família, a sociedade e o poder público devem assegurar com absoluta prioridade?",
+      "q": "A Lei 15.512/2026 (Lei do direito à natureza no ECA) reforçou o art. 4º do ECA. Qual direito passou a constar expressamente entre os que a família, a sociedade e o poder público devem assegurar com absoluta prioridade?",
       "options": [
         "O direito ao transporte coletivo gratuito em qualquer Município do País, independentemente da idade.",
         "O direito à renda mínima mensal, paga diretamente ao adolescente, sem intermediação da família.",
@@ -118,8 +118,8 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O direito à natureza e à convivência com espaços naturais, ao lado dos demais direitos do art. 4º."
       ],
       "answer": 4,
-      "explanation": "A Lei 15.512/2026 reforçou, no art. 4º do ECA, a efetivação prioritária do direito à natureza e à convivência com espaços naturais, que passou a constar da lista de direitos (vida, saúde, alimentação, educação, esporte, lazer, profissionalização, cultura, dignidade, respeito, liberdade, natureza e convivência familiar e comunitária) assegurados com absoluta prioridade. Isso conecta a proteção infantojuvenil ao planejamento urbano, a espaços públicos seguros e a políticas integradas. Os demais direitos citados (transporte gratuito, renda mínima, moradia titulada e voto aos doze anos) não constam do art. 4º.",
-      "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 4º (redação da Lei 15.512/2026)"
+      "explanation": "A Lei 15.512/2026 (Lei do direito à natureza no ECA) reforçou o art. 4º do ECA, que agora diz expressamente que se deve efetivar com prioridade o direito à natureza e à convivência com espaços naturais, que passou a constar da lista de direitos (vida, saúde, alimentação, educação, esporte, lazer, profissionalização, cultura, dignidade, respeito, liberdade, natureza e convivência familiar e comunitária) assegurados com absoluta prioridade. Isso conecta a proteção infantojuvenil ao planejamento urbano, a espaços públicos seguros e a políticas integradas. Os demais direitos citados (transporte gratuito, renda mínima, moradia titulada e voto aos doze anos) não constam do art. 4º.",
+      "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 4º (redação da Lei 15.512/2026 (Lei do direito à natureza no ECA))"
     },
     {
       "id": "legesp-m04-autoral-09",
@@ -133,7 +133,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "apenas mediante decisão judicial prévia, sendo vedada qualquer providência por outros órgãos de proteção, inclusive o Conselho Tutelar."
       ],
       "answer": 3,
-      "explanation": "O art. 98 prevê as medidas de proteção quando os direitos reconhecidos no ECA forem ameaçados ou violados por ação ou omissão da sociedade ou do Estado, por falta, omissão ou abuso dos pais ou responsável, ou em razão da própria conduta da criança ou do adolescente. A finalidade é fazer cessar o risco e garantir direitos; a medida não é punição. As alternativas erradas restringem as hipóteses a uma só origem do risco, ligam a medida de proteção à punição por ato infracional ou a condicionam sempre a decisão judicial prévia, o que o texto não prevê.",
+      "explanation": "O art. 98 diz que cabem medidas de proteção quando os direitos reconhecidos no ECA forem ameaçados ou violados por ação ou omissão da sociedade ou do Estado, por falta, omissão ou abuso dos pais ou responsável, ou em razão da própria conduta da criança ou do adolescente. A finalidade é fazer cessar o risco e garantir direitos; a medida não é punição. As alternativas erradas restringem as hipóteses a uma só origem do risco, ligam a medida de proteção à punição por ato infracional ou a condicionam sempre a decisão judicial prévia, o que o texto não prevê.",
       "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 98, incisos I a III"
     },
     {
@@ -148,7 +148,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "pena criminal de adulto, aplicada ao adolescente com redução de um terço em razão da idade, após condenação em processo penal comum."
       ],
       "answer": 1,
-      "explanation": "A internação, medida socioeducativa do art. 112, é privativa de liberdade e, conforme o art. 121, caput, está sujeita aos princípios de brevidade, excepcionalidade e respeito à condição peculiar de pessoa em desenvolvimento. Não é consequência automática da gravidade percebida por um agente: depende de hipóteses legais, de procedimento com garantias e de decisão da autoridade competente. Embora não comporte prazo determinado, deve ser reavaliada a cada seis meses, no máximo, e não excede três anos (art. 121, §§ 2º e 3º), de modo que não há duração ilimitada. Também não é medida de proteção, nem pena criminal de adulto reduzida. A execução das medidas é organizada pelo SINASE (Lei 12.594/2012).",
+      "explanation": "A internação, medida socioeducativa do art. 112, é privativa de liberdade e, conforme o art. 121, que diz que ela está sujeita aos princípios de brevidade, excepcionalidade e respeito à condição peculiar de pessoa em desenvolvimento. Não é consequência automática da gravidade percebida por um agente: depende de hipóteses legais, de procedimento com garantias e de decisão da autoridade competente. Embora não comporte prazo determinado, deve ser reavaliada a cada seis meses, no máximo, e não excede três anos (art. 121, §§ 2º e 3º), de modo que não há duração ilimitada. Também não é medida de proteção, nem pena criminal de adulto reduzida. A execução das medidas é organizada pelo SINASE (Lei 12.594/2012 (Lei do Sinase)).",
       "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), arts. 112 e 121"
     }
   ];

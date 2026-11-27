@@ -13,7 +13,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A Polícia Rodoviária Federal, que edita a regulamentação técnica aplicável a todas as vias terrestres do país."
       ],
       "answer": 1,
-      "explanation": "O CTB (arts. 7º e 12) inclui o CONTRAN entre os órgãos do Sistema Nacional de Trânsito e o define como órgão máximo normativo e consultivo. Suas resoluções detalham padrões técnicos autorizados pela lei, mas não podem substituí-la nem contrariá-la. A SENATRAN tem atribuições executivas e de coordenação nacionais, a JARI julga recursos administrativos, os DETRANs atuam em habilitação, registro e fiscalização estaduais e a PRF tem competências próprias de fiscalização; nenhum desses é o órgão normativo máximo.",
+      "explanation": "O CTB (arts. 7º e 12) diz que o CONTRAN está entre os órgãos do Sistema Nacional de Trânsito e é o órgão máximo normativo e consultivo. Suas resoluções detalham padrões técnicos autorizados pela lei, mas não podem substituí-la nem contrariá-la. A SENATRAN tem atribuições executivas e de coordenação nacionais, a JARI julga recursos administrativos, os DETRANs atuam em habilitação, registro e fiscalização estaduais e a PRF tem competências próprias de fiscalização; nenhum desses é o órgão normativo máximo.",
       "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), arts. 7º e 12"
     },
     {
@@ -28,7 +28,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "É necessário que o Estado delegue a competência por lei estadual, a qual substitui a integração ao sistema."
       ],
       "answer": 3,
-      "explanation": "O art. 24, § 2º, do CTB dispõe que, para exercer as competências de trânsito, o Município deve integrar-se ao Sistema Nacional de Trânsito, por órgão ou entidade executiva de trânsito ou diretamente por meio da prefeitura. A integração viabiliza planejamento e fiscalização municipais. Decreto isolado, autorização verbal ou delegação estadual não substituem essa integração, e o porte de arma da guarda é questão alheia à competência de trânsito. Convênios do art. 25 podem delegar atividades, mas dependem de forma e objeto legais.",
+      "explanation": "O art. 24, § 2º, do CTB diz que, para exercer as competências de trânsito, o Município deve integrar-se ao Sistema Nacional de Trânsito, por órgão ou entidade executiva de trânsito ou diretamente por meio da prefeitura. A integração viabiliza planejamento e fiscalização municipais. Decreto isolado, autorização verbal ou delegação estadual não substituem essa integração, e o porte de arma da guarda é questão alheia à competência de trânsito. Convênios do art. 25 podem delegar atividades, mas dependem de forma e objeto legais.",
       "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), art. 24, § 2º"
     },
     {
@@ -43,7 +43,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A delegação vale desde que comunicada ao CONTRAN após a autuação, que a convalida retroativamente em todos os casos."
       ],
       "answer": 0,
-      "explanation": "O art. 25 do CTB permite que os órgãos e entidades executivos do sistema celebrem convênios delegando entre si atividades previstas no Código, para maior eficiência e segurança para os usuários. Mas a delegação exige instrumento válido, com objeto e limites legais definidos: um acordo informal não cria competência. A identificação do agente no auto é requisito do registro, não fonte de atribuição. O CTB não proíbe convênios, e não há convalidação automática e retroativa pelo CONTRAN. Antes de concluir que um ato é válido, confira órgão, circunscrição, atribuição e convênio.",
+      "explanation": "O art. 25 do CTB diz que os órgãos e entidades executivos do sistema podem celebrar convênios delegando entre si atividades previstas no Código, para maior eficiência e segurança para os usuários. Mas a delegação exige instrumento válido, com objeto e limites legais definidos: um acordo informal não cria competência. A identificação do agente no auto é requisito do registro, não fonte de atribuição. O CTB não proíbe convênios, e não há convalidação automática e retroativa pelo CONTRAN. Antes de concluir que um ato é válido, confira órgão, circunscrição, atribuição e convênio.",
       "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), art. 25"
     },
     {
@@ -58,7 +58,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Os maiores protegem os menores, os motorizados os não motorizados e, juntos, todos protegem os pedestres."
       ],
       "answer": 4,
-      "explanation": "O art. 29, § 2º, do CTB estabelece a ordem de responsabilidade pela segurança: respeitadas as normas de circulação e conduta, os veículos de maior porte são responsáveis pela segurança dos menores, os motorizados pela dos não motorizados e, juntos, todos pela incolumidade dos pedestres. A regra orienta o comportamento e a interpretação, mas não dispensa a observância da sinalização e dos deveres específicos. As alternativas erradas invertem a ordem ou transferem toda a segurança ao usuário vulnerável, o que contraria o dever de cuidado reforçado.",
+      "explanation": "O art. 29, § 2º, do CTB diz qual é a ordem de responsabilidade pela segurança: respeitadas as normas de circulação e conduta, os veículos de maior porte são responsáveis pela segurança dos menores, os motorizados pela dos não motorizados e, juntos, todos pela incolumidade dos pedestres. A regra orienta o comportamento e a interpretação, mas não dispensa a observância da sinalização e dos deveres específicos. As alternativas erradas invertem a ordem ou transferem toda a segurança ao usuário vulnerável, o que contraria o dever de cuidado reforçado.",
       "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), art. 29, § 2º"
     },
     {
@@ -73,7 +73,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A medida administrativa só pode ser aplicada por decisão da JARI, após o julgamento do recurso interposto pelo condutor."
       ],
       "answer": 2,
-      "explanation": "No CTB, infração é a inobservância de preceito do Código; autuação é o registro formal da constatação; penalidade é a consequência imposta após análise e procedimento (art. 256: advertência por escrito, multa, suspensão do direito de dirigir, cassação da CNH ou da Permissão para Dirigir e reciclagem); medida administrativa é providência imediata prevista em lei (retenção, remoção, recolhimento de documento, transbordo etc.), que não é pena em sentido técnico. A lei pode prever ambas para o mesmo fato, e uma não substitui automaticamente a outra. A JARI julga recursos, não aplica medidas administrativas.",
+      "explanation": "No CTB, infração é a inobservância de preceito do Código; autuação é o registro formal da constatação; penalidade é a consequência imposta após análise e procedimento (o art. 256 diz que as penalidades são advertência por escrito, multa, suspensão do direito de dirigir, cassação da CNH ou da Permissão para Dirigir e reciclagem); medida administrativa é providência imediata prevista em lei (retenção, remoção, recolhimento de documento, transbordo etc.), que não é pena em sentido técnico. A lei pode prever ambas para o mesmo fato, e uma não substitui automaticamente a outra. A JARI julga recursos, não aplica medidas administrativas.",
       "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), arts. 256 e 269"
     },
     {
@@ -88,8 +88,8 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Penalidade aplicada sem notificação, com defesa permitida apenas se o proprietário pagar a multa integralmente."
       ],
       "answer": 2,
-      "explanation": "O processo administrativo de trânsito envolve autuação, exame de consistência do auto, notificação e oportunidade de defesa. A defesa da autuação é apresentada antes da decisão; imposta a penalidade pela autoridade competente, cabe recurso à JARI (arts. 16 e 17) e, quando cabível, à instância seguinte, nos termos do CTB. O agente que constata a infração não decide a penalidade, e a JARI julga recursos, não impõe a penalidade originária. A notificação e a garantia de defesa são requisitos de validade; prazos e autoridades devem ser conferidos no texto vigente.",
-      "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), arts. 16 e 17 e arts. 280 a 290 (Do Processo Administrativo)"
+      "explanation": "O processo administrativo de trânsito envolve autuação, exame de consistência do auto, notificação e oportunidade de defesa. A defesa da autuação é apresentada antes da decisão; imposta a penalidade pela autoridade competente, cabe recurso à JARI (o art. 16 diz que a JARI tem a finalidade de julgar os recursos interpostos) e, quando cabível, à instância seguinte, nos termos do CTB. O agente que constata a infração não decide a penalidade, e a JARI julga recursos, não impõe a penalidade originária. A notificação e a garantia de defesa são requisitos de validade; prazos e autoridades devem ser conferidos no texto vigente.",
+      "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), arts. 16 e 17 e Capítulo XVIII (Do Processo Administrativo)"
     },
     {
       "id": "legesp-m06-autoral-07",
@@ -103,13 +103,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A infração do art. 165 e o crime do art. 306 são a mesma coisa, de modo que a punição administrativa impede a esfera penal."
       ],
       "answer": 0,
-      "explanation": "O art. 306 do CTB tipifica conduzir veículo automotor com capacidade psicomotora alterada em razão da influência de álcool ou de outra substância psicoativa, a ser comprovada pelos meios legalmente admitidos. O art. 165 prevê a infração administrativa de dirigir sob influência de álcool. Infração e crime podem decorrer do mesmo episódio, mas são categorias distintas. A recusa ao teste tem consequências administrativas, porém não prova automaticamente a alteração psicomotora exigida pelo tipo penal: é preciso a prova admitida em lei, respeitadas as garantias do investigado. A recusa ao teste, por sua vez, configura infração administrativa autônoma (art. 165-A), sem converter-se em prova do crime.",
-      "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), arts. 165, 165-A e 306"
+      "explanation": "O art. 306 do CTB diz que é crime conduzir veículo automotor com capacidade psicomotora alterada em razão da influência de álcool ou de outra substância psicoativa, a ser comprovada pelos meios legalmente admitidos. O art. 165 prevê a infração administrativa de dirigir sob influência de álcool. Infração e crime podem decorrer do mesmo episódio, mas são categorias distintas. A recusa ao teste tem consequências administrativas, porém não prova automaticamente a alteração psicomotora exigida pelo tipo penal: é preciso a prova admitida em lei, respeitadas as garantias do investigado.",
+      "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), arts. 165 e 306"
     },
     {
       "id": "legesp-m06-autoral-08",
       "origem": "autoral-ia",
-      "q": "Uma guarda municipal integrada ao sistema de trânsito pretende fiscalizar, em estacionamento de um shopping center (edificação privada de uso coletivo), todo tipo de infração do CTB. Com base no art. 24, VI e § 3º, do CTB, na redação da Lei 14.599/2023, assinale a alternativa correta.",
+      "q": "Uma guarda municipal integrada ao sistema de trânsito pretende fiscalizar, em estacionamento de um shopping center (edificação privada de uso coletivo), todo tipo de infração do CTB. Com base no art. 24, VI e § 3º, do CTB, na redação da Lei 14.599/2023 (Lei de atualização do Código de Trânsito), assinale a alternativa correta.",
       "options": [
         "A fiscalização municipal é ampla e alcança qualquer infração do Código em ambientes privados de uso coletivo.",
         "A fiscalização é vedada por completo, pois o Município não pode atuar em nenhuma edificação privada.",
@@ -118,13 +118,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A fiscalização depende de ordem da Polícia Militar, a quem cabe autuar em qualquer estacionamento privado."
       ],
       "answer": 3,
-      "explanation": "A Lei 14.599/2023 alterou o art. 24 do CTB para explicitar que, nas edificações públicas e privadas de uso coletivo, a atuação do órgão municipal com base no inciso VI se limita às infrações de uso de vagas reservadas em estacionamentos (§ 3º). Não se deve generalizar a fiscalização municipal para qualquer ambiente privado. A competência não é nula nem ampla: o texto delimita a hipótese, e não a condiciona a ordem da Polícia Militar nem a restringe a infrações de velocidade.",
-      "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), art. 24, VI e § 3º (redação da Lei 14.599/2023)"
+      "explanation": "A Lei 14.599/2023 (Lei de atualização do Código de Trânsito) alterou o art. 24 do CTB, que agora diz que, nas edificações públicas e privadas de uso coletivo, a atuação do órgão municipal com base no inciso VI se limita às infrações de uso de vagas reservadas em estacionamentos (§ 3º). Não se deve generalizar a fiscalização municipal para qualquer ambiente privado. A competência não é nula nem ampla: o texto delimita a hipótese, e não a condiciona a ordem da Polícia Militar nem a restringe a infrações de velocidade.",
+      "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), art. 24, VI e § 3º (redação da Lei 14.599/2023 (Lei de atualização do Código de Trânsito))"
     },
     {
       "id": "legesp-m06-autoral-09",
       "origem": "autoral-ia",
-      "q": "Um guarda municipal, em via do Município, é questionado sobre sua atribuição de trânsito. De acordo com a Lei 13.022/2014 e o CTB, em que condições ele pode exercer essa competência?",
+      "q": "Um guarda municipal, em via do Município, é questionado sobre sua atribuição de trânsito. De acordo com a Lei 13.022/2014 (Estatuto Geral das Guardas Municipais) e o CTB, em que condições ele pode exercer essa competência?",
       "options": [
         "Em qualquer via do país, pois a Lei 13.022/2014 confere a todo guarda poder de polícia de trânsito de caráter nacional, independentemente de convênio.",
         "Somente em rodovias federais, mediante autorização da Polícia Rodoviária Federal e sem necessidade de convênio.",
@@ -133,7 +133,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Quando a competência lhe for conferida nas vias municipais, nos termos do CTB, ou concorrente por convênio com órgão de trânsito."
       ],
       "answer": 4,
-      "explanation": "O art. 5º, VI, da Lei 13.022/2014 inclui entre as competências específicas das guardas municipais exercer as competências de trânsito que lhes forem conferidas, nas vias e logradouros municipais, nos termos da Lei 9.503/1997 (CTB), ou de forma concorrente, mediante convênio celebrado com órgão de trânsito estadual ou municipal. Não há competência automática de todo guarda em qualquer via ou situação: exigem-se base legal, integração do Município ao sistema, atribuição formal, capacitação e, se for o caso, convênio. As alternativas erradas ampliam território, dispensam formalidade ou restringem a eventos.",
+      "explanation": "O art. 5º, VI, da Lei 13.022/2014 (Estatuto Geral das Guardas Municipais) diz que está entre as competências específicas das guardas municipais exercer as competências de trânsito que lhes forem conferidas, nas vias e logradouros municipais, nos termos da Lei 9.503/1997 (CTB), ou de forma concorrente, mediante convênio celebrado com órgão de trânsito estadual ou municipal. Não há competência automática de todo guarda em qualquer via ou situação: exigem-se base legal, integração do Município ao sistema, atribuição formal, capacitação e, se for o caso, convênio. As alternativas erradas ampliam território, dispensam formalidade ou restringem a eventos.",
       "lawRef": "Lei 13.022/2014 (Estatuto Geral das Guardas Municipais), art. 5º, VI; Lei 9.503/1997 (Código de Trânsito Brasileiro)"
     },
     {
@@ -148,7 +148,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O art. 307, que trata de violar a suspensão ou a proibição de se obter permissão ou habilitação."
       ],
       "answer": 1,
-      "explanation": "O art. 305 do CTB tipifica afastar-se o condutor do veículo do local do acidente para fugir à responsabilidade penal ou civil que lhe possa ser atribuída. Em paralelo, o art. 304 trata da omissão de socorro à vítima, sendo possível analisar também esse tipo no mesmo episódio (e, se for o caso, os arts. 302 e 303). Os demais artigos citados tratam de condutas diferentes: dirigir sem habilitação com perigo (309), corrida não autorizada (308), entrega de veículo a pessoa inabilitada (310) e violação de suspensão ou proibição (307).",
+      "explanation": "O art. 305 do CTB diz que é crime afastar-se o condutor do veículo do local do acidente para fugir à responsabilidade penal ou civil que lhe possa ser atribuída. Em paralelo, o art. 304 trata da omissão de socorro à vítima, sendo possível analisar também esse tipo no mesmo episódio (e, se for o caso, os arts. 302 e 303). Os demais artigos citados tratam de condutas diferentes: dirigir sem habilitação com perigo (309), corrida não autorizada (308), entrega de veículo a pessoa inabilitada (310) e violação de suspensão ou proibição (307).",
       "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), arts. 304 e 305"
     }
   ];
