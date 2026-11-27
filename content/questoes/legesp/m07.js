@@ -124,7 +124,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
     {
       "id": "legesp-m07-autoral-09",
       "origem": "autoral-ia",
-      "q": "A Lei 15.358/2026 (Lei de aumento de pena para armas ligadas ao tráfico de drogas) incluiu o art. 21-A no Estatuto do Desarmamento. Sobre esse dispositivo, assinale a alternativa correta.",
+      "q": "A Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado) incluiu o art. 21-A no Estatuto do Desarmamento. Sobre esse dispositivo, assinale a alternativa correta.",
       "options": [
         "A pena aumenta em dois terços sempre que arma e droga forem encontradas juntas, mesmo sem qualquer vínculo entre elas e a mercancia.",
         "A pena aumenta pela metade apenas quando a arma for de uso restrito, não se aplicando aos arts. 12 e 14.",
@@ -133,8 +133,8 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O art. 21-A revogou os tipos penais do Estatuto e os substituiu por infração administrativa quando houver droga."
       ],
       "answer": 2,
-      "explanation": "A Lei 15.358/2026 (Lei de aumento de pena para armas ligadas ao tráfico de drogas) incluiu o art. 21-A, que diz que, nos crimes dos arts. 12, 14 e 16, a pena aumenta em dois terços se o crime for praticado em concurso com crime da Lei de Drogas (Lei 11.343/2006 (undefined)), estiver diretamente ligado ao comércio ilícito de entorpecentes ou se o artefato tiver sido usado para assegurar o sucesso da mercancia. É necessária uma dessas ligações; a mera coincidência de arma e droga, sem o nexo descrito, não basta. O aumento não é de metade, não alcança todos os crimes do Estatuto (só os arts. 12, 14 e 16) e não revogou tipos penais.",
-      "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 21-A (incluído pela Lei 15.358/2026 (Lei de aumento de pena para armas ligadas ao tráfico de drogas))"
+      "explanation": "A Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado) incluiu o art. 21-A, que diz que, nos crimes dos arts. 12, 14 e 16, a pena aumenta em dois terços se o crime for praticado em concurso com crime da Lei de Drogas (Lei 11.343/2006 (undefined)), estiver diretamente ligado ao comércio ilícito de entorpecentes ou se o artefato tiver sido usado para assegurar o sucesso da mercancia. É necessária uma dessas ligações; a mera coincidência de arma e droga, sem o nexo descrito, não basta. O aumento não é de metade, não alcança todos os crimes do Estatuto (só os arts. 12, 14 e 16) e não revogou tipos penais.",
+      "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 21-A (incluído pela Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado))"
     },
     {
       "id": "legesp-m07-autoral-10",
@@ -148,7 +148,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O STF declarou inconstitucional o art. 21 na ADI 3.112, de modo que a antiga vedação de liberdade provisória não deve ser tratada como regra válida atual."
       ],
       "answer": 4,
-      "explanation": "O art. 21 do Estatuto diz que os crimes dos arts. 16, 17 e 18 são insuscetíveis de liberdade provisória. O STF, na ADI 3.112, declarou o dispositivo inconstitucional, razão pela qual não se deve repetir sua literalidade isoladamente como regra vigente: a lei penal deve ser estudada junto do controle de constitucionalidade aplicável. A Lei 15.358/2026 (Lei de aumento de pena para armas ligadas ao tráfico de drogas) incluiu o art. 21-A, que trata do aumento de pena, e não substituiu o art. 21. A declaração não se limitou a guardas municipais nem foi pela constitucionalidade; a vedação não vale como regra atual.",
+      "explanation": "O art. 21 do Estatuto diz que os crimes dos arts. 16, 17 e 18 são insuscetíveis de liberdade provisória. O STF, na ADI 3.112, declarou o dispositivo inconstitucional, razão pela qual não se deve repetir sua literalidade isoladamente como regra vigente: a lei penal deve ser estudada junto do controle de constitucionalidade aplicável. A Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado) incluiu o art. 21-A, que trata do aumento de pena, e não substituiu o art. 21. A declaração não se limitou a guardas municipais nem foi pela constitucionalidade; a vedação não vale como regra atual.",
       "lawRef": "Lei 10.826/2003 (Estatuto do Desarmamento), art. 21; STF, ADI 3.112"
     }
   ];

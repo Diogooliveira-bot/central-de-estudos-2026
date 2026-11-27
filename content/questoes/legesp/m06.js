@@ -109,7 +109,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
     {
       "id": "legesp-m06-autoral-08",
       "origem": "autoral-ia",
-      "q": "Uma guarda municipal integrada ao sistema de trânsito pretende fiscalizar, em estacionamento de um shopping center (edificação privada de uso coletivo), todo tipo de infração do CTB. Com base no art. 24, VI e § 3º, do CTB, na redação da Lei 14.599/2023 (Lei de atualização do Código de Trânsito), assinale a alternativa correta.",
+      "q": "Uma guarda municipal integrada ao sistema de trânsito pretende fiscalizar, em estacionamento de um shopping center (edificação privada de uso coletivo), todo tipo de infração do CTB. Com base no art. 24, VI e § 3º, do CTB, na redação da Lei 14.599/2023 (Lei que alterou o Código de Trânsito Brasileiro), assinale a alternativa correta.",
       "options": [
         "A fiscalização municipal é ampla e alcança qualquer infração do Código em ambientes privados de uso coletivo.",
         "A fiscalização é vedada por completo, pois o Município não pode atuar em nenhuma edificação privada.",
@@ -118,8 +118,8 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "A fiscalização depende de ordem da Polícia Militar, a quem cabe autuar em qualquer estacionamento privado."
       ],
       "answer": 3,
-      "explanation": "A Lei 14.599/2023 (Lei de atualização do Código de Trânsito) alterou o art. 24 do CTB, que agora diz que, nas edificações públicas e privadas de uso coletivo, a atuação do órgão municipal com base no inciso VI se limita às infrações de uso de vagas reservadas em estacionamentos (§ 3º). Não se deve generalizar a fiscalização municipal para qualquer ambiente privado. A competência não é nula nem ampla: o texto delimita a hipótese, e não a condiciona a ordem da Polícia Militar nem a restringe a infrações de velocidade.",
-      "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), art. 24, VI e § 3º (redação da Lei 14.599/2023 (Lei de atualização do Código de Trânsito))"
+      "explanation": "A Lei 14.599/2023 (Lei que alterou o Código de Trânsito Brasileiro) alterou o art. 24 do CTB, que agora diz que, nas edificações públicas e privadas de uso coletivo, a atuação do órgão municipal com base no inciso VI se limita às infrações de uso de vagas reservadas em estacionamentos (§ 3º). Não se deve generalizar a fiscalização municipal para qualquer ambiente privado. A competência não é nula nem ampla: o texto delimita a hipótese, e não a condiciona a ordem da Polícia Militar nem a restringe a infrações de velocidade.",
+      "lawRef": "Lei 9.503/1997 (Código de Trânsito Brasileiro), art. 24, VI e § 3º (redação da Lei 14.599/2023 (Lei que alterou o Código de Trânsito Brasileiro))"
     },
     {
       "id": "legesp-m06-autoral-09",

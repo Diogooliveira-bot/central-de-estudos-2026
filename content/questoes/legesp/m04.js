@@ -94,7 +94,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
     {
       "id": "legesp-m04-autoral-07",
       "origem": "autoral-ia",
-      "q": "A Lei 15.413/2026 (Lei da saúde mental infantojuvenil no ECA) acrescentou o art. 11-A ao ECA. Esse dispositivo assegura:",
+      "q": "A Lei 15.413/2026 (Lei da saúde mental de crianças e adolescentes no SUS) acrescentou o art. 11-A ao ECA. Esse dispositivo assegura:",
       "options": [
         "aos agentes de segurança pública a atribuição de diagnosticar transtornos mentais de crianças em atendimentos de rua e abordagens.",
         "somente atendimento particular, custeado pelos pais, sem participação do SUS no cuidado da saúde mental infantojuvenil em nenhum nível.",
@@ -103,13 +103,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "a internação psiquiátrica compulsória de adolescentes, determinada diretamente pelo Conselho Tutelar sem avaliação de saúde ou controle judicial."
       ],
       "answer": 2,
-      "explanation": "O art. 11-A, acrescentado ao ECA pela Lei 15.413/2026 (Lei da saúde mental infantojuvenil no ECA), diz que se assegura a crianças e adolescentes o acesso a programas de saúde mental no SUS, com prevenção e tratamento de agravos, atendimento psicossocial básico e especializado, urgência, emergência e atendimento hospitalar, nos termos do dispositivo. A norma explicita um direito, mas não autoriza diagnóstico por agentes de segurança, que não substituem os profissionais de saúde. Também não restringe o cuidado à dependência química, não o limita ao atendimento particular nem cria internação compulsória por decisão do Conselho Tutelar.",
-      "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 11-A (incluído pela Lei 15.413/2026 (Lei da saúde mental infantojuvenil no ECA))"
+      "explanation": "O art. 11-A, acrescentado ao ECA pela Lei 15.413/2026 (Lei da saúde mental de crianças e adolescentes no SUS), diz que se assegura a crianças e adolescentes o acesso a programas de saúde mental no SUS, com prevenção e tratamento de agravos, atendimento psicossocial básico e especializado, urgência, emergência e atendimento hospitalar, nos termos do dispositivo. A norma explicita um direito, mas não autoriza diagnóstico por agentes de segurança, que não substituem os profissionais de saúde. Também não restringe o cuidado à dependência química, não o limita ao atendimento particular nem cria internação compulsória por decisão do Conselho Tutelar.",
+      "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 11-A (incluído pela Lei 15.413/2026 (Lei da saúde mental de crianças e adolescentes no SUS))"
     },
     {
       "id": "legesp-m04-autoral-08",
       "origem": "autoral-ia",
-      "q": "A Lei 15.512/2026 (Lei do direito à natureza no ECA) reforçou o art. 4º do ECA. Qual direito passou a constar expressamente entre os que a família, a sociedade e o poder público devem assegurar com absoluta prioridade?",
+      "q": "A Lei 15.512/2026 (Lei do direito da criança e do adolescente à natureza) reforçou o art. 4º do ECA. Qual direito passou a constar expressamente entre os que a família, a sociedade e o poder público devem assegurar com absoluta prioridade?",
       "options": [
         "O direito ao transporte coletivo gratuito em qualquer Município do País, independentemente da idade.",
         "O direito à renda mínima mensal, paga diretamente ao adolescente, sem intermediação da família.",
@@ -118,8 +118,8 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "O direito à natureza e à convivência com espaços naturais, ao lado dos demais direitos do art. 4º."
       ],
       "answer": 4,
-      "explanation": "A Lei 15.512/2026 (Lei do direito à natureza no ECA) reforçou o art. 4º do ECA, que agora diz expressamente que se deve efetivar com prioridade o direito à natureza e à convivência com espaços naturais, que passou a constar da lista de direitos (vida, saúde, alimentação, educação, esporte, lazer, profissionalização, cultura, dignidade, respeito, liberdade, natureza e convivência familiar e comunitária) assegurados com absoluta prioridade. Isso conecta a proteção infantojuvenil ao planejamento urbano, a espaços públicos seguros e a políticas integradas. Os demais direitos citados (transporte gratuito, renda mínima, moradia titulada e voto aos doze anos) não constam do art. 4º.",
-      "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 4º (redação da Lei 15.512/2026 (Lei do direito à natureza no ECA))"
+      "explanation": "A Lei 15.512/2026 (Lei do direito da criança e do adolescente à natureza) reforçou o art. 4º do ECA, que agora diz expressamente que se deve efetivar com prioridade o direito à natureza e à convivência com espaços naturais, que passou a constar da lista de direitos (vida, saúde, alimentação, educação, esporte, lazer, profissionalização, cultura, dignidade, respeito, liberdade, natureza e convivência familiar e comunitária) assegurados com absoluta prioridade. Isso conecta a proteção infantojuvenil ao planejamento urbano, a espaços públicos seguros e a políticas integradas. Os demais direitos citados (transporte gratuito, renda mínima, moradia titulada e voto aos doze anos) não constam do art. 4º.",
+      "lawRef": "Lei 8.069/1990 (Estatuto da Criança e do Adolescente), art. 4º (redação da Lei 15.512/2026 (Lei do direito da criança e do adolescente à natureza))"
     },
     {
       "id": "legesp-m04-autoral-09",

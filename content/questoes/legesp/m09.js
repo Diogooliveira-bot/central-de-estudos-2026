@@ -139,7 +139,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
     {
       "id": "legesp-m09-autoral-10",
       "origem": "autoral-ia",
-      "q": "A Lei 15.516/2026 (Lei do Protocolo Intersetorial de Atendimento) instituiu protocolo de atendimento integrado a vítimas de violência. Segundo seu art. 6º, o descumprimento que resulte em revitimização ou prejuízo à investigação ou à proteção poderá configurar violência institucional (art. 15-A da Lei 13.869/2019). Qual a leitura correta?",
+      "q": "A Lei 15.516/2026 (Lei do Protocolo Intersetorial de Atendimento e Resposta Integrada em Situações de Violência) instituiu protocolo de atendimento integrado a vítimas de violência. Segundo seu art. 6º, o descumprimento que resulte em revitimização ou prejuízo à investigação ou à proteção poderá configurar violência institucional (art. 15-A da Lei 13.869/2019). Qual a leitura correta?",
       "options": [
         "Qualquer descumprimento do protocolo é crime automático, dispensada a análise de dolo e finalidade específica.",
         "O protocolo revogou o art. 1º, § 1º, de modo que a finalidade específica deixou de ser exigida nos crimes da lei.",
@@ -148,7 +148,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "Não há crime automático: seguem exigidos os elementos do tipo e a finalidade específica do art. 1º, § 1º."
       ],
       "answer": 4,
-      "explanation": "A Lei 15.516/2026 (Lei do Protocolo Intersetorial de Atendimento) criou o Protocolo Intersetorial de Atendimento e Resposta Integrada para situações de estupro e outras formas de violência física contra mulheres, crianças, adolescentes e pessoas vulneráveis; quando o primeiro atendimento é feito por profissional de segurança pública, há encaminhamento imediato à unidade de saúde e registro da ocorrência. O art. 6º diz que o descumprimento que resulte em revitimização ou prejuízo poderá configurar violência institucional (art. 15-A da Lei 13.869/2019), mas isso não cria crime automático: seguem necessários a conduta típica, a ausência de estrita necessidade e a finalidade do art. 1º, § 1º. A guarda faz o primeiro atendimento e o encaminhamento, sem competência investigativa ou clínica.",
-      "lawRef": "Lei 13.869/2019 (Lei de Abuso de Autoridade), art. 15-A; Lei 15.516/2026 (Lei do Protocolo Intersetorial de Atendimento), art. 6º"
+      "explanation": "A Lei 15.516/2026 (Lei do Protocolo Intersetorial de Atendimento e Resposta Integrada em Situações de Violência) criou o Protocolo Intersetorial de Atendimento e Resposta Integrada para situações de estupro e outras formas de violência física contra mulheres, crianças, adolescentes e pessoas vulneráveis; quando o primeiro atendimento é feito por profissional de segurança pública, há encaminhamento imediato à unidade de saúde e registro da ocorrência. O art. 6º diz que o descumprimento que resulte em revitimização ou prejuízo poderá configurar violência institucional (art. 15-A da Lei 13.869/2019), mas isso não cria crime automático: seguem necessários a conduta típica, a ausência de estrita necessidade e a finalidade do art. 1º, § 1º. A guarda faz o primeiro atendimento e o encaminhamento, sem competência investigativa ou clínica.",
+      "lawRef": "Lei 13.869/2019 (Lei de Abuso de Autoridade), art. 15-A; Lei 15.516/2026 (Lei do Protocolo Intersetorial de Atendimento e Resposta Integrada em Situações de Violência), art. 6º"
     }
   ];

@@ -109,7 +109,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
     {
       "id": "legesp-m02-autoral-08",
       "origem": "autoral-ia",
-      "q": "A Lei 15.358/2026 (Lei que incluiu o art. 40-A na Lei de Drogas) incluiu o art. 40-A na Lei de Drogas. Sobre o caput desse dispositivo, é correto afirmar que:",
+      "q": "A Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado) incluiu o art. 40-A na Lei de Drogas. Sobre o caput desse dispositivo, é correto afirmar que:",
       "options": [
         "as penas dos arts. 28 a 33 são aplicadas em dobro para qualquer pessoa presa em território dominado por facção criminosa.",
         "a pena é duplicada sempre que o crime ocorrer em determinado bairro, bastando a localização geográfica do fato.",
@@ -118,13 +118,13 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
         "as penas dos arts. 33 a 37 são aplicadas em dobro se o crime for praticado por integrante de organização criminosa ultraviolenta, grupo paramilitar ou milícia privada."
       ],
       "answer": 4,
-      "explanation": "O caput do art. 40-A, incluído pela Lei 15.358/2026 (Lei que incluiu o art. 40-A na Lei de Drogas), diz que as penas dos arts. 33 a 37 da Lei 11.343/2006 (Lei de Drogas) sejam aplicadas em dobro quando o crime for praticado por integrante de organização criminosa ultraviolenta, grupo paramilitar ou milícia privada, no contexto de atuação ou para a consecução das condutas descritas no art. 2º da própria Lei 15.358. São necessários o vínculo e o contexto; a simples ocorrência do crime em um território não basta, e o usuário do art. 28 não é alcançado. Convém acompanhar as ações no STF contra a lei, sem confundir o questionamento judicial com alteração do texto.",
-      "lawRef": "Lei 11.343/2006 (Lei de Drogas), art. 40-A, caput (incluído pela Lei 15.358/2026 (Lei que incluiu o art. 40-A na Lei de Drogas))"
+      "explanation": "O caput do art. 40-A, incluído pela Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado), diz que as penas dos arts. 33 a 37 da Lei 11.343/2006 (Lei de Drogas) sejam aplicadas em dobro quando o crime for praticado por integrante de organização criminosa ultraviolenta, grupo paramilitar ou milícia privada, no contexto de atuação ou para a consecução das condutas descritas no art. 2º da própria Lei 15.358. São necessários o vínculo e o contexto; a simples ocorrência do crime em um território não basta, e o usuário do art. 28 não é alcançado. Convém acompanhar as ações no STF contra a lei, sem confundir o questionamento judicial com alteração do texto.",
+      "lawRef": "Lei 11.343/2006 (Lei de Drogas), art. 40-A, caput (incluído pela Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado))"
     },
     {
       "id": "legesp-m02-autoral-09",
       "origem": "autoral-ia",
-      "q": "Segundo o parágrafo único do art. 40-A da Lei de Drogas (incluído pela Lei 15.358/2026 (Lei que incluiu o art. 40-A na Lei de Drogas)), se o crime é praticado com emprego de arma de fogo:",
+      "q": "Segundo o parágrafo único do art. 40-A da Lei de Drogas (incluído pela Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado)), se o crime é praticado com emprego de arma de fogo:",
       "options": [
         "aplica-se o concurso formal do art. 70 do Código Penal, com pena única exasperada, absorvido o crime relativo à arma.",
         "aplica-se o concurso material do art. 69 do Código Penal, independentemente de o uso da arma estar ligado ao comércio da droga.",
@@ -134,7 +134,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       ],
       "answer": 1,
       "explanation": "O parágrafo único do art. 40-A diz que há concurso material, nos termos do art. 69 do Código Penal (soma das penas), se o crime é praticado com emprego de arma de fogo, independentemente de o uso estar diretamente ligado ao comércio de drogas ou de a arma assegurar a mercancia. É regra distinta da duplicação de penas do caput: são comandos diferentes e não se confundem. Erram as alternativas que falam em concurso formal, em nova dobra automática, em exigência de a arma ser essencial à mercancia (a lei dispensa essa ligação) ou em absorção da arma pelo tráfico.",
-      "lawRef": "Lei 11.343/2006 (Lei de Drogas), art. 40-A, parágrafo único (incluído pela Lei 15.358/2026 (Lei que incluiu o art. 40-A na Lei de Drogas))"
+      "lawRef": "Lei 11.343/2006 (Lei de Drogas), art. 40-A, parágrafo único (incluído pela Lei 15.358/2026 (Marco Legal do Combate ao Crime Organizado))"
     },
     {
       "id": "legesp-m02-autoral-10",
