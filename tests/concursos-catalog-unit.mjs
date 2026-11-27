@@ -141,3 +141,23 @@ test('catálogo público não interpreta HTML/URLs maliciosos dos dados de edita
   assert.equal(overlay.querySelector('.contest-detail .contest-source[href="#"]')!==null,true);
   dom.window.close();
 });
+
+
+test('Itaitinga oferece trilha histórica, sem inventar edital, cobertura ou vagas',()=>{
+  const item=CONCURSOS_2026_SEED.find(c=>c.id==='itaitinga-agente-transito-monitoramento');
+  assert.ok(item.active);
+  assert.equal(item.status,'previsto');
+  for(const field of ['noticeNumber','noticeDate','board','vacancies','salary','registrationStart','registrationEnd','examDate']) assert.equal(item[field],null);
+  assert.match(item.summary,/001\/2015/);
+  assert.equal(item.subjects.length,4);
+  assert.equal(item.subjects.flatMap(s=>s.syllabus).length,62);
+  assert.equal(coverage(normalizeContest(item)).percent,0);
+  assert.ok(item.subjects.flatMap(s=>s.syllabus).flatMap(t=>t.links).every(l=>l.status==='suggested'));
+  const dom=new JSDOM('',{runScripts:'outside-only'});
+  dom.window.eval(readFileSync(new URL('../ui/study-objectives-catalog-v1.js',import.meta.url),'utf8'));
+  const shortcut=dom.window.CentralStudyObjectiveCatalog.examShortcuts.find(s=>s.id==='exam-catalog-itaitinga-agente-transito-monitoramento-cargo-1');
+  assert.equal(shortcut.area,'transito');
+  assert.deepEqual(Array.from(shortcut.subjectIds),['pt','rlm']);
+  assert.equal(shortcut.examSubjects.filter(s=>s.status==='preparation').length,2);
+  dom.window.close();
+});
