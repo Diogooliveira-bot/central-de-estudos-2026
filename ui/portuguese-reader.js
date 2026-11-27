@@ -120,6 +120,26 @@ function visualStyle(){
  const link=document.createElement('link');link.id='pt-visual-style';link.rel='stylesheet';
  link.href='/ui/portuguese-visual-v1.css?v=20261108pt2';document.head.appendChild(link);
 }
+function removeOrphanedAssessmentSections(article){
+ const doc=article.querySelector('.pt-doc');
+ if(!doc)return;
+ const normalized=node=>node.textContent.replace(/\s+/g,' ').trim();
+ const isOrphaned=title=>/^(?:\d+(?:\.\d+)?\.\s*)?(?:mini teste de dom[ií]nio|respostas? do teste(?: de dom[ií]nio| final)?|gabarito\b)/i.test(title);
+ [...doc.children].filter(node=>node.matches('h2')&&isOrphaned(normalized(node))).forEach(heading=>{
+  if(!heading.isConnected)return;
+  const nodes=[...doc.children];
+  let start=nodes.indexOf(heading);
+  const end=nodes.findIndex((node,index)=>{
+   if(index<=start||!node.matches('h2'))return false;
+   const title=normalized(node);
+   if(isOrphaned(title)||/^(?:quest[aã]o\s*)?\d+$/i.test(title))return false;
+   return node.matches('.pt-doc-h1')||/^\d+\.\s*(?:Você precisa lembrar|Confusões|Se você errou|Teste de domínio|Fechamento)/i.test(title);
+  });
+  if(start<0||end<0)return;
+  if(start>0&&nodes[start-1].matches('hr'))start--;
+  nodes.slice(start,end).forEach(node=>node.remove());
+ });
+}
 async function open(id,mode='complete'){
  const module=item(id);if(!module)return;
  const practiceMode=PRACTICE_MODES[mode]||null;
@@ -138,6 +158,7 @@ async function open(id,mode='complete'){
  const shell=overlay.querySelector('.bc-native-reader');overlay.querySelector('.pt-native-loading').remove();
  shell.insertAdjacentHTML('beforeend','<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar no conteúdo"><button type="button" data-pt-font="-1" aria-label="Diminuir fonte">A−</button><button type="button" data-pt-font="1" aria-label="Aumentar fonte">A+</button><button type="button" class="primary" data-pt-top>Ir ao topo</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc" aria-label="Índice do material"><div class="bc-native-toc-label">Índice do módulo</div></nav><main class="bc-native-scroll"><div class="bc-native-article"></div></main></div>');
  const article=overlay.querySelector('.bc-native-article');article.appendChild(template.content);
+ removeOrphanedAssessmentSections(article);
  const exerciseRecords=global.BCQuestionsRemoved?[]:(global.BasePortugueseActivities?.enhance(article,{moduleId:id})||[]);
  if(practiceMode&&!global.BCQuestionsRemoved)focusedPractice(article,exerciseRecords,mode,id);
  else{

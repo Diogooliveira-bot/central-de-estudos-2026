@@ -159,6 +159,7 @@
     };
   }
   const examShortcuts = [
+    {id:'exam-catalog-prf-2021-policial-rodoviario-federal-cargo-1',area:'policial',title:'Polícia Rodoviária Federal (PRF)',description:'Referência: edital de 2021. Não representa novo concurso.',subjectIds:['pt','rlm','info','adm','cf','penal','cpp'],examSubjects:[{"id":"prf21-v-pt","title":"Língua Portuguesa","subjectId":"pt","status":"available","note":"Material relacionado; consulte os assuntos no edital verticalizado."},{"id":"prf21-v-rlm","title":"Raciocínio Lógico-Matemático","subjectId":"rlm","status":"available","note":"Material relacionado; consulte os assuntos no edital verticalizado."},{"id":"prf21-v-info","title":"Informática","subjectId":"info","status":"available","note":"Material relacionado; consulte os assuntos no edital verticalizado."},{"id":"prf21-v-fis","title":"Física","subjectId":null,"status":"preparation","note":"Confira possíveis vínculos parciais e lacunas no edital verticalizado."},{"id":"prf21-v-etica","title":"Ética e Cidadania","subjectId":null,"status":"preparation","note":"Confira possíveis vínculos parciais e lacunas no edital verticalizado."},{"id":"prf21-v-geo","title":"Geopolítica Brasileira","subjectId":null,"status":"preparation","note":"Confira possíveis vínculos parciais e lacunas no edital verticalizado."},{"id":"prf21-v-lingua","title":"Língua Estrangeira (Inglês OU Espanhol)","subjectId":null,"status":"preparation","note":"Confira possíveis vínculos parciais e lacunas no edital verticalizado."},{"id":"prf21-v-transito","title":"Legislação de Trânsito","subjectId":null,"status":"preparation","note":"Confira possíveis vínculos parciais e lacunas no edital verticalizado."},{"id":"prf21-v-adm","title":"Direito Administrativo","subjectId":"adm","status":"available","note":"Material relacionado; consulte os assuntos no edital verticalizado."},{"id":"prf21-v-cf","title":"Direito Constitucional","subjectId":"cf","status":"available","note":"Material relacionado; consulte os assuntos no edital verticalizado."},{"id":"prf21-v-penal","title":"Direito Penal","subjectId":"penal","status":"available","note":"Material relacionado; consulte os assuntos no edital verticalizado."},{"id":"prf21-v-cpp","title":"Direito Processual Penal","subjectId":"cpp","status":"available","note":"Material relacionado; consulte os assuntos no edital verticalizado."},{"id":"prf21-v-especial","title":"Legislação Especial","subjectId":null,"status":"preparation","note":"Confira possíveis vínculos parciais e lacunas no edital verticalizado."},{"id":"prf21-v-dh","title":"Direitos Humanos","subjectId":null,"status":"preparation","note":"Confira possíveis vínculos parciais e lacunas no edital verticalizado."}]},
     {id:'exam-catalog-gmf-fortaleza-monitoramento-cargo-1',area:'guarda',
       title:'Guarda Municipal de Fortaleza (GMF)',
       description:'Referência: edital de 2023. Não confundir com novo edital publicado.',
@@ -175,7 +176,7 @@
     goals[exam.id] = {
       id:exam.id,type:'exam',group:'Por edital',area:exam.area,
       title:exam.title,shortLabel:exam.title,description:exam.description,
-      subjectIds:exam.subjectIds.slice(),examSubjects:[],
+      subjectIds:exam.subjectIds.slice(),examSubjects:exam.examSubjects || [],
     };
   }
   global.CentralStudyObjectiveCatalog = Object.freeze({
