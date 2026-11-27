@@ -1,5 +1,5 @@
 {
-  "build": "20261126-gmf-verticalizado-v1",
+  "build": "20261127-prf-verticalizado-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -224,18 +224,18 @@
     "/ui/external-question-filters-v1.js?v=20261119adminonly1",
     "/ui/cpc-approved-layout-v1.css?v=20261115responsive1",
     "/ui/approved-cpc-layout-v1.js?v=20261113orient1",
-    "/ui/study-objectives-catalog-v1.js?v=20261122seteareas1",
+    "/ui/study-objectives-catalog-v1.js?v=20261127prf1",
     "/ui/tablet-scale-v1.css?v=20261115responsive1",
     "/ui/auto-scale-v1.css?v=20261115responsive1",
     "/ui/tablet-legibility-v1.css?v=20261121r2",
     "/ui/tablet-scale-v1.js?v=20261117tablet1",
     "/ui/orientation-defaults-v1.js?v=20261113orient2",
     "/ui/orientation-v1.js?v=20261115responsive1",
-    "/ui/study-objectives-v1.js?v=20261125r1",
+    "/ui/study-objectives-v1.js?v=20261127prf1",
     "/ui/study-objectives-v1.css?v=20261119r1",
     "/content/tjpb-2026-verticalized.js?v=20261020exam1",
     "/content/trt8-2026-verticalized.js?v=20261021multiexam2",
-    "/ui/exam-verticalized-v1.js?v=20261126gmf3",
+    "/ui/exam-verticalized-v1.js?v=20261127prf1",
     "/ui/exam-verticalized-v1.css?v=20261115responsive1",
     "/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1",
     "/ui/home-minimal-a-v1.css?v=20261115responsive1",
@@ -336,7 +336,7 @@
     "/assets/adm/revisao-guiada/m06/ADM-M06-C09.webp",
     "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp",
     "/ui/contest-admin-form.js?v=20261124r1",
-    "/ui/concursos-catalog-v1.js?v=20261126gmf3",
+    "/ui/concursos-catalog-v1.js?v=20261127prf1",
     "/ui/concursos-catalog-v1.css?v=20261123concursos2"
   ]
 }

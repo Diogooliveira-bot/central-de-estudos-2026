@@ -96,7 +96,7 @@ test('boas-vindas: três caminhos diretos, carreira e editais em telas separadas
   assert.ok(free.compareDocumentPosition(w.document.querySelector('[data-study-careers]')) & 4,'Estudo livre vem primeiro');
   assert.equal(w.document.querySelectorAll('[data-study-area],[data-study-exam]').length,0,'detalhes ficam no caminho escolhido');
   w.document.querySelector('[data-study-exams]').click();
-  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,3,'somente GMF, TJPA e TJAL ficam à vista');
+  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,4,'GMF, PRF, TJPA e TJAL ficam à vista');
   assert.equal(w.document.querySelector('[data-study-exam-request]'),null,'sem pedido ou listagem extra na seleção simplificada');
   w.document.querySelector('[data-study-back]').click();
   w.document.querySelector('[data-study-careers]').click();
