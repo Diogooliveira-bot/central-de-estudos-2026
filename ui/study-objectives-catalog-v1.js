@@ -140,7 +140,7 @@
     {id:'saude',title:'Saúde',icon:'✚',description:'Área da saúde',objectiveId:'career-area-saude'},
     {id:'bancaria',title:'Bancário',icon:'▣',description:'Área bancária',objectiveId:'career-area-bancario'},
     {id:'judiciaria',title:'Tribunal',icon:'⚖',description:'TJPA e TJAL',examIds:['exam-tjpa-em-preparacao','exam-tjal-em-preparacao']},
-    {id:'transito',title:'Agente de Trânsito',icon:'◇',description:'Área de trânsito',objectiveId:'career-area-transito'},
+    {id:'transito',title:'Agente de Trânsito',icon:'◇',description:'Itaitinga — pré-edital',objectiveId:'career-area-transito',examIds:['exam-catalog-itaitinga-agente-transito-monitoramento-cargo-1']},
   ];
   const areaSubjectIds = {
     policial:['pt','rlm','cf','adm','penal','cpp','info'],
