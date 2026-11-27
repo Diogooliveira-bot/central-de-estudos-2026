@@ -120,6 +120,22 @@ function visualStyle(){
  const link=document.createElement('link');link.id='pt-visual-style';link.rel='stylesheet';
  link.href='/ui/portuguese-visual-v1.css?v=20261108pt2';document.head.appendChild(link);
 }
+function removeM07OrphanedSections(article,id){
+ if(id!=='m07')return;
+ const doc=article.querySelector('.pt-doc[data-module="m07"]');
+ if(!doc)return;
+ const normalized=node=>node.textContent.replace(/\s+/g,' ').trim();
+ const removeRange=(first,last)=>{
+  const nodes=[...doc.children];
+  let start=nodes.findIndex(node=>node.matches('h2')&&normalized(node)===first);
+  const end=nodes.findIndex((node,index)=>index>start&&node.matches('h2')&&normalized(node)===last);
+  if(start<0||end<0)return;
+  if(start>0&&nodes[start-1].matches('hr'))start--;
+  nodes.slice(start,end).forEach(node=>node.remove());
+ };
+ removeRange('Mini teste de domínio','Teste de saída do M07');
+ removeRange('Gabarito comentado','CAMADA 3 — DOMINAR PARA PROVA');
+}
 async function open(id,mode='complete'){
  const module=item(id);if(!module)return;
  const practiceMode=PRACTICE_MODES[mode]||null;
@@ -138,6 +154,7 @@ async function open(id,mode='complete'){
  const shell=overlay.querySelector('.bc-native-reader');overlay.querySelector('.pt-native-loading').remove();
  shell.insertAdjacentHTML('beforeend','<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar no conteúdo"><button type="button" data-pt-font="-1" aria-label="Diminuir fonte">A−</button><button type="button" data-pt-font="1" aria-label="Aumentar fonte">A+</button><button type="button" class="primary" data-pt-top>Ir ao topo</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc" aria-label="Índice do material"><div class="bc-native-toc-label">Índice do módulo</div></nav><main class="bc-native-scroll"><div class="bc-native-article"></div></main></div>');
  const article=overlay.querySelector('.bc-native-article');article.appendChild(template.content);
+ removeM07OrphanedSections(article,id);
  const exerciseRecords=global.BCQuestionsRemoved?[]:(global.BasePortugueseActivities?.enhance(article,{moduleId:id})||[]);
  if(practiceMode&&!global.BCQuestionsRemoved)focusedPractice(article,exerciseRecords,mode,id);
  else{
