@@ -38,6 +38,11 @@ test('M01 entrega conteúdo completo, revisão, checklist e 10 questões por tri
   assert.equal(q.options.length,5);assert.ok(q.answer>=0&&q.answer<5);assert.ok(q.explanation.length>30);
   assert.ok(q.options.every((o,i)=>q.options.indexOf(o)===i),'alternativas duplicadas');
  }
+ for(const set of [m.questions.summary,m.questions.complete]){
+  const counts=Array.from({length:5},(_,i)=>set.filter(q=>q.answer===i).length);
+  assert.ok(Math.max(...counts)<=3,'gabarito sem concentração artificial');
+  assert.ok(set.every((q,i)=>i<2||q.answer!==set[i-1].answer||q.answer!==set[i-2].answer),'gabarito sem sequência longa previsível');
+ }
 });
 
 test('M02 cobre composição e funções do SNT com material completo e questões fundamentadas',()=>{
@@ -50,6 +55,11 @@ test('M02 cobre composição e funções do SNT com material completo e questõe
  for(const q of [...m.questions.summary,...m.questions.complete]){
   assert.equal(q.options.length,5);assert.ok(q.answer>=0&&q.answer<5);assert.ok(q.explanation.length>30);
   assert.equal(new Set(q.options).size,5,'alternativas distintas');
+ }
+ for(const set of [m.questions.summary,m.questions.complete]){
+  const counts=Array.from({length:5},(_,i)=>set.filter(q=>q.answer===i).length);
+  assert.ok(Math.max(...counts)<=3,'gabarito sem concentração artificial');
+  assert.ok(set.every((q,i)=>i<2||q.answer!==set[i-1].answer||q.answer!==set[i-2].answer),'gabarito sem sequência longa previsível');
  }
  assert.ok(m.resources.some(r=>r.url.includes('planalto.gov.br/ccivil_03/leis/l9503compilado.htm')));
 });

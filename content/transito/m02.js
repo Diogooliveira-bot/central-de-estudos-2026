@@ -1,53 +1,318 @@
 /* Base Completa — Legislação de Trânsito M02. Conferência normativa: 27/11/2026. */
 (function(g){'use strict';g.BC_TRANSITO_CONTENT=g.BC_TRANSITO_CONTENT||{};g.BC_TRANSITO_CONTENT.m02={
-  "id":"m02",
-  "title":"Sistema Nacional de Trânsito",
-  "edition":"2026-11-27",
-  "status":"revisado",
-  "full":[
-    {"title":"1. Para que existe o Sistema Nacional de Trânsito","html":"<p>O <strong>Sistema Nacional de Trânsito (SNT)</strong> reúne órgãos e entidades da União, dos estados, do Distrito Federal e dos municípios para planejar, normatizar, executar e fiscalizar ações de trânsito. A palavra sistema destaca que as instituições têm tarefas próprias, mas precisam atuar de forma coordenada.</p><p>O art. 5º do CTB apresenta o SNT como o conjunto de órgãos e entidades responsáveis por atividades como planejamento, administração, normatização, pesquisa, registro e licenciamento de veículos, formação e habilitação de condutores, educação, engenharia, operação do sistema viário, policiamento, fiscalização, julgamento de infrações e recursos. A lista indica o alcance amplo do sistema; não significa que cada órgão realize todas essas tarefas.</p><p>O art. 6º estabelece objetivos como segurança, fluidez, conforto, defesa ambiental e educação para o trânsito. Em sua atuação, os órgãos devem observar as diretrizes da política nacional e trabalhar para reduzir riscos e proteger a vida.</p><p><strong>Exemplo:</strong> uma campanha de travessia segura, a organização de um cruzamento e o processamento de um recurso são atividades diferentes. Elas podem envolver entidades diferentes, mas integram o mesmo sistema quando seguem as regras e as competências legais.</p>"},
-    {"title":"2. Quem integra o SNT","html":"<p>O art. 7º relaciona os componentes do SNT. Entre eles estão: o Conselho Nacional de Trânsito (CONTRAN); os Conselhos Estaduais de Trânsito (CETRAN) e o Conselho de Trânsito do Distrito Federal (CONTRANDIFE); órgãos e entidades executivos de trânsito e rodoviários da União, dos estados, do Distrito Federal e dos municípios; a Polícia Rodoviária Federal; as Polícias Militares dos estados e do Distrito Federal; e as Juntas Administrativas de Recursos de Infrações (JARI).</p><p>Essa composição aproxima funções distintas: há conselhos que coordenam e normatizam, órgãos executivos que realizam serviços e ações administrativas, entidades rodoviárias que cuidam de suas vias, forças policiais com atribuições próprias e juntas que julgam recursos. Os nomes ajudam, mas a competência concreta deve ser conferida na lei.</p><p>A JARI integra o sistema e atua no julgamento de recursos contra penalidades, conforme o CTB. Ela não é o órgão que lavra o auto de infração apenas por ser parte do SNT. Da mesma forma, integrar o SNT não significa que todos os componentes tenham poder geral para praticar qualquer ato de trânsito.</p><p><strong>Exemplo:</strong> ao receber uma defesa ou um recurso, o agente orienta a pessoa sobre o canal competente. Não antecipa o resultado nem substitui a decisão da autoridade ou da JARI.</p>"},
-    {"title":"3. CONTRAN, CETRAN e CONTRANDIFE","html":"<p>O <strong>CONTRAN</strong> é o órgão máximo normativo e consultivo do SNT e o coordenador do sistema. O CTB lhe atribui competências nacionais, inclusive estabelecer normas regulamentares dentro dos limites legais, aprovar diretrizes e resolver questões de aplicação da legislação nos casos previstos.</p><p>Nos estados, o <strong>CETRAN</strong> exerce as atribuições definidas no CTB. No Distrito Federal, funções correspondentes são exercidas pelo <strong>CONTRANDIFE</strong>. Entre suas atividades estão cumprir e fazer cumprir a legislação e as normas de trânsito dentro de sua esfera, responder consultas e julgar recursos nas hipóteses legais.</p><p>Resoluções do CONTRAN complementam a execução do CTB. Elas não podem contrariar a lei. Para estudar uma resolução, confira o texto vigente, eventuais alterações e revogações no sistema oficial de legislação; uma lista antiga pode conter norma já substituída.</p><p><strong>Exemplo:</strong> se um procedimento de fiscalização depende de regulamentação nacional, o servidor consulta o ato vigente do CONTRAN e a lei que o autoriza, em vez de basear a atuação em um resumo sem data.</p>"},
-    {"title":"4. Órgãos executivos e órgãos rodoviários","html":"<p>Os órgãos e entidades executivos de trânsito e os órgãos executivos rodoviários atuam em níveis federal, estadual, distrital e municipal, cada qual nos limites de sua competência e circunscrição. Em linhas gerais, órgãos executivos de trânsito exercem funções administrativas de trânsito, enquanto órgãos rodoviários se ocupam das atribuições legais relacionadas às rodovias e vias sob sua administração.</p><p>O CTB distribui atribuições por artigo e por esfera. Alguns serviços, como registro, licenciamento e habilitação, têm disciplina própria e não se confundem com a fiscalização municipal cotidiana. Outros atos dependem da via, do órgão responsável e da integração formal do município ao SNT. O detalhamento das competências será estudado em módulo próprio.</p><p><strong>Circunscrição</strong> é a área de atuação administrativa vinculada ao órgão competente. Antes de uma operação, é necessário saber quem administra a via, qual órgão tem atribuição legal para aquela ação e se existem acordos ou delegações válidos.</p><p><strong>Exemplo:</strong> a equipe municipal planeja uma intervenção em via municipal. Se a ocorrência envolve trecho sob administração de outro ente, a equipe confirma a competência e aciona a entidade responsável, sem presumir que a placa do veículo ou a localização urbana resolva a questão.</p>"},
-    {"title":"5. Policiamento, fiscalização e julgamento de recursos","html":"<p>A Polícia Rodoviária Federal, as Polícias Militares e os demais componentes do SNT têm atribuições definidas no CTB e em normas aplicáveis. A participação de uma força policial não elimina a competência dos órgãos executivos nem transforma todas as ações em atividade policial. Fiscalizar, autuar, aplicar penalidade e julgar recurso são etapas e funções que precisam ser diferenciadas.</p><p>A autoridade de trânsito e seus agentes atuam conforme a competência do órgão. O agente pode observar, orientar, fiscalizar e registrar a ocorrência dentro dos limites legais. A aplicação da penalidade é ato da autoridade competente, e o julgamento de recursos cabe às instâncias previstas no CTB, incluindo a JARI nos casos correspondentes.</p><p>O <strong>auto de infração</strong> é o registro formal de uma ocorrência que pode dar início ao processo administrativo. Ele não é, por si só, a penalidade já aplicada nem a decisão final sobre um recurso. Os módulos de infrações e processo administrativo detalham essas diferenças.</p><p><strong>Exemplo:</strong> ao constatar uma conduta aparentemente irregular, o agente registra os dados exigidos e mantém uma descrição objetiva. A etapa seguinte segue o procedimento legal, com oportunidade de defesa e análise pela autoridade competente.</p>"},
-    {"title":"6. Integração municipal e leitura de prova","html":"<p>Municípios podem integrar-se ao SNT por estrutura própria ou por formas de organização admitidas pelo CTB, observados os requisitos legais. A integração envolve responsabilidades administrativas, órgão executivo, autoridade de trânsito, agentes e organização dos serviços correspondentes. Não basta o município criar uma equipe ou usar a expressão “agente de trânsito” para que qualquer atribuição do CTB esteja automaticamente autorizada.</p><p>O art. 24 trata das competências dos órgãos executivos municipais, dentro de sua circunscrição e das condições legais. A redação e os parágrafos foram alterados ao longo do tempo. Por isso, é essencial consultar o texto compilado vigente e não repetir uma versão histórica como se fosse atual.</p><p>Em questões, separe três perguntas: <strong>quem integra o sistema?</strong> (composição do art. 7º); <strong>quem define normas nacionais?</strong> (papel do CONTRAN); e <strong>quem executa a atividade neste local?</strong> (competência, circunscrição e eventual delegação). Essa sequência reduz confusões entre estrutura e atribuição.</p><p><strong>Exemplo aplicado:</strong> antes de organizar uma fiscalização, a coordenação identifica a via, confere o órgão com circunscrição, verifica o ato que define a operação e confirma a atribuição dos servidores designados.</p>"}
+  "id": "m02",
+  "title": "Sistema Nacional de Trânsito",
+  "edition": "2026-11-27",
+  "status": "revisado",
+  "full": [
+    {
+      "title": "1. Para que existe o Sistema Nacional de Trânsito",
+      "html": "<p>O <strong>Sistema Nacional de Trânsito (SNT)</strong> reúne órgãos e entidades da União, dos estados, do Distrito Federal e dos municípios para planejar, normatizar, executar e fiscalizar ações de trânsito. A palavra sistema destaca que as instituições têm tarefas próprias, mas precisam atuar de forma coordenada.</p><p>O art. 5º do CTB apresenta o SNT como o conjunto de órgãos e entidades responsáveis por atividades como planejamento, administração, normatização, pesquisa, registro e licenciamento de veículos, formação e habilitação de condutores, educação, engenharia, operação do sistema viário, policiamento, fiscalização, julgamento de infrações e recursos. A lista indica o alcance amplo do sistema; não significa que cada órgão realize todas essas tarefas.</p><p>O art. 6º estabelece objetivos como segurança, fluidez, conforto, defesa ambiental e educação para o trânsito. Em sua atuação, os órgãos devem observar as diretrizes da política nacional e trabalhar para reduzir riscos e proteger a vida.</p><p><strong>Exemplo:</strong> uma campanha de travessia segura, a organização de um cruzamento e o processamento de um recurso são atividades diferentes. Elas podem envolver entidades diferentes, mas integram o mesmo sistema quando seguem as regras e as competências legais.</p>"
+    },
+    {
+      "title": "2. Quem integra o SNT",
+      "html": "<p>O art. 7º relaciona os componentes do SNT. Entre eles estão: o Conselho Nacional de Trânsito (CONTRAN); os Conselhos Estaduais de Trânsito (CETRAN) e o Conselho de Trânsito do Distrito Federal (CONTRANDIFE); órgãos e entidades executivos de trânsito e rodoviários da União, dos estados, do Distrito Federal e dos municípios; a Polícia Rodoviária Federal; as Polícias Militares dos estados e do Distrito Federal; e as Juntas Administrativas de Recursos de Infrações (JARI).</p><p>Essa composição aproxima funções distintas: há conselhos que coordenam e normatizam, órgãos executivos que realizam serviços e ações administrativas, entidades rodoviárias que cuidam de suas vias, forças policiais com atribuições próprias e juntas que julgam recursos. Os nomes ajudam, mas a competência concreta deve ser conferida na lei.</p><p>A JARI integra o sistema e atua no julgamento de recursos contra penalidades, conforme o CTB. Ela não é o órgão que lavra o auto de infração apenas por ser parte do SNT. Da mesma forma, integrar o SNT não significa que todos os componentes tenham poder geral para praticar qualquer ato de trânsito.</p><p><strong>Exemplo:</strong> ao receber uma defesa ou um recurso, o agente orienta a pessoa sobre o canal competente. Não antecipa o resultado nem substitui a decisão da autoridade ou da JARI.</p>"
+    },
+    {
+      "title": "3. CONTRAN, CETRAN e CONTRANDIFE",
+      "html": "<p>O <strong>CONTRAN</strong> é o órgão máximo normativo e consultivo do SNT e o coordenador do sistema. O CTB lhe atribui competências nacionais, inclusive estabelecer normas regulamentares dentro dos limites legais, aprovar diretrizes e resolver questões de aplicação da legislação nos casos previstos.</p><p>Nos estados, o <strong>CETRAN</strong> exerce as atribuições definidas no CTB. No Distrito Federal, funções correspondentes são exercidas pelo <strong>CONTRANDIFE</strong>. Entre suas atividades estão cumprir e fazer cumprir a legislação e as normas de trânsito dentro de sua esfera, responder consultas e julgar recursos nas hipóteses legais.</p><p>Resoluções do CONTRAN complementam a execução do CTB. Elas não podem contrariar a lei. Para estudar uma resolução, confira o texto vigente, eventuais alterações e revogações no sistema oficial de legislação; uma lista antiga pode conter norma já substituída.</p><p><strong>Exemplo:</strong> se um procedimento de fiscalização depende de regulamentação nacional, o servidor consulta o ato vigente do CONTRAN e a lei que o autoriza, em vez de basear a atuação em um resumo sem data.</p>"
+    },
+    {
+      "title": "4. Órgãos executivos e órgãos rodoviários",
+      "html": "<p>Os órgãos e entidades executivos de trânsito e os órgãos executivos rodoviários atuam em níveis federal, estadual, distrital e municipal, cada qual nos limites de sua competência e circunscrição. Em linhas gerais, órgãos executivos de trânsito exercem funções administrativas de trânsito, enquanto órgãos rodoviários se ocupam das atribuições legais relacionadas às rodovias e vias sob sua administração.</p><p>O CTB distribui atribuições por artigo e por esfera. Alguns serviços, como registro, licenciamento e habilitação, têm disciplina própria e não se confundem com a fiscalização municipal cotidiana. Outros atos dependem da via, do órgão responsável e da integração formal do município ao SNT. O detalhamento das competências será estudado em módulo próprio.</p><p><strong>Circunscrição</strong> é a área de atuação administrativa vinculada ao órgão competente. Antes de uma operação, é necessário saber quem administra a via, qual órgão tem atribuição legal para aquela ação e se existem acordos ou delegações válidos.</p><p><strong>Exemplo:</strong> a equipe municipal planeja uma intervenção em via municipal. Se a ocorrência envolve trecho sob administração de outro ente, a equipe confirma a competência e aciona a entidade responsável, sem presumir que a placa do veículo ou a localização urbana resolva a questão.</p>"
+    },
+    {
+      "title": "5. Policiamento, fiscalização e julgamento de recursos",
+      "html": "<p>A Polícia Rodoviária Federal, as Polícias Militares e os demais componentes do SNT têm atribuições definidas no CTB e em normas aplicáveis. A participação de uma força policial não elimina a competência dos órgãos executivos nem transforma todas as ações em atividade policial. Fiscalizar, autuar, aplicar penalidade e julgar recurso são etapas e funções que precisam ser diferenciadas.</p><p>A autoridade de trânsito e seus agentes atuam conforme a competência do órgão. O agente pode observar, orientar, fiscalizar e registrar a ocorrência dentro dos limites legais. A aplicação da penalidade é ato da autoridade competente, e o julgamento de recursos cabe às instâncias previstas no CTB, incluindo a JARI nos casos correspondentes.</p><p>O <strong>auto de infração</strong> é o registro formal de uma ocorrência que pode dar início ao processo administrativo. Ele não é, por si só, a penalidade já aplicada nem a decisão final sobre um recurso. Os módulos de infrações e processo administrativo detalham essas diferenças.</p><p><strong>Exemplo:</strong> ao constatar uma conduta aparentemente irregular, o agente registra os dados exigidos e mantém uma descrição objetiva. A etapa seguinte segue o procedimento legal, com oportunidade de defesa e análise pela autoridade competente.</p>"
+    },
+    {
+      "title": "6. Integração municipal e leitura de prova",
+      "html": "<p>Municípios podem integrar-se ao SNT por estrutura própria ou por formas de organização admitidas pelo CTB, observados os requisitos legais. A integração envolve responsabilidades administrativas, órgão executivo, autoridade de trânsito, agentes e organização dos serviços correspondentes. Não basta o município criar uma equipe ou usar a expressão “agente de trânsito” para que qualquer atribuição do CTB esteja automaticamente autorizada.</p><p>O art. 24 trata das competências dos órgãos executivos municipais, dentro de sua circunscrição e das condições legais. A redação e os parágrafos foram alterados ao longo do tempo. Por isso, é essencial consultar o texto compilado vigente e não repetir uma versão histórica como se fosse atual.</p><p>Em questões, separe três perguntas: <strong>quem integra o sistema?</strong> (composição do art. 7º); <strong>quem define normas nacionais?</strong> (papel do CONTRAN); e <strong>quem executa a atividade neste local?</strong> (competência, circunscrição e eventual delegação). Essa sequência reduz confusões entre estrutura e atribuição.</p><p><strong>Exemplo aplicado:</strong> antes de organizar uma fiscalização, a coordenação identifica a via, confere o órgão com circunscrição, verifica o ato que define a operação e confirma a atribuição dos servidores designados.</p>"
+    }
   ],
-  "review":[
-    {"title":"1. O sistema é uma rede de órgãos","html":"<p>Imagine que o trânsito seja uma grande tarefa compartilhada no país. Um órgão cria normas, outro administra uma via, outro registra veículos, outro fiscaliza e uma junta analisa certos recursos. Para essas tarefas não virarem decisões soltas, o CTB reúne instituições no <strong>Sistema Nacional de Trânsito</strong>.</p><p>O SNT é esse conjunto organizado de órgãos e entidades da União, dos estados, do Distrito Federal e dos municípios. Ele trabalha com planejamento, normas, educação, engenharia, operação, fiscalização e outras funções. Cada instituição tem atribuições próprias: participar do sistema não dá a todas as mesmas competências.</p><p>O sistema busca segurança e fluidez, além de conforto, proteção ambiental e educação. Pense primeiro na finalidade: organizar deslocamentos e reduzir riscos para todas as pessoas que usam as vias.</p><p><strong>Exemplo simples:</strong> para melhorar uma travessia, pode ser preciso estudar o local, ajustar a sinalização, orientar usuários e fiscalizar. São ações diferentes que precisam conversar entre si.</p>"},
-    {"title":"2. Os principais participantes","html":"<p>O art. 7º do CTB apresenta quem faz parte do SNT. Entre os nomes mais cobrados estão o <strong>CONTRAN</strong>, os <strong>CETRAN</strong> dos estados, o <strong>CONTRANDIFE</strong> do Distrito Federal, os órgãos executivos e rodoviários de cada esfera, a Polícia Rodoviária Federal, as Polícias Militares e as <strong>JARI</strong>.</p><p>O CONTRAN atua no nível nacional como órgão máximo normativo e consultivo e coordena o sistema. Os CETRAN e o CONTRANDIFE atuam na esfera estadual e distrital conforme a lei. Órgãos executivos realizam serviços e ações administrativas. JARI julga recursos nas situações que o CTB prevê.</p><p>Não precisa decorar a lista sem entender. Associe cada nome a uma função geral e depois confira a competência exata na lei. Integrar o SNT não significa poder fazer tudo.</p><p><strong>Exemplo:</strong> receber um recurso não autoriza o agente que registrou a ocorrência a decidir sozinho se a penalidade será mantida. O recurso segue para a instância competente.</p>"},
-    {"title":"3. Como distinguir as funções","html":"<p>Use esta ordem para resolver uma dúvida: primeiro identifique <strong>qual instituição</strong> está envolvida; depois confira <strong>qual tarefa</strong> a lei atribui a ela; por fim veja <strong>onde</strong> essa tarefa pode ser realizada. O local e a circunscrição importam.</p><p>O CONTRAN edita normas regulamentares dentro da lei. Órgãos executivos cuidam de atividades administrativas e de trânsito nos limites de sua esfera. Órgãos rodoviários têm atribuições relativas às vias sob sua administração. Agentes atuam em nome do órgão, dentro dos poderes recebidos. A JARI julga recursos previstos no CTB.</p><p>Autuar, aplicar uma penalidade e julgar um recurso são atos diferentes. O agente pode registrar uma ocorrência; a autoridade competente conduz a aplicação da penalidade; a instância recursal analisa a contestação conforme o procedimento legal.</p><p><strong>Dica:</strong> quando uma alternativa disser que “todo integrante do SNT pode praticar qualquer ato”, desconfie: a lei distribui funções.</p>"},
-    {"title":"4. O papel do município","html":"<p>O município pode atuar no trânsito quando está organizado e integrado ao SNT conforme a legislação. A atuação municipal ocorre dentro das competências previstas e da circunscrição correspondente. A existência de uma equipe, por si só, não amplia os poderes definidos em lei.</p><p>Antes de uma ação, a equipe precisa conferir a via, o órgão responsável, a atribuição legal e eventual acordo de cooperação ou delegação. A cooperação permite organizar atividades, mas deve respeitar o que foi formalmente previsto.</p><p>Para memorizar: <strong>SNT é a rede</strong>; cada órgão é um participante; competência é a tarefa que a lei atribuiu; circunscrição é o limite territorial da atuação. A resposta correta depende de combinar esses quatro elementos.</p><p><strong>Exemplo:</strong> uma operação municipal começa com a identificação do trecho e da atribuição do órgão. Se o trecho ou a tarefa for de outra esfera, a solução é articular com o órgão competente.</p>"}
+  "review": [
+    {
+      "title": "1. O sistema é uma rede de órgãos",
+      "html": "<p>Imagine que o trânsito seja uma grande tarefa compartilhada no país. Um órgão cria normas, outro administra uma via, outro registra veículos, outro fiscaliza e uma junta analisa certos recursos. Para essas tarefas não virarem decisões soltas, o CTB reúne instituições no <strong>Sistema Nacional de Trânsito</strong>.</p><p>O SNT é esse conjunto organizado de órgãos e entidades da União, dos estados, do Distrito Federal e dos municípios. Ele trabalha com planejamento, normas, educação, engenharia, operação, fiscalização e outras funções. Cada instituição tem atribuições próprias: participar do sistema não dá a todas as mesmas competências.</p><p>O sistema busca segurança e fluidez, além de conforto, proteção ambiental e educação. Pense primeiro na finalidade: organizar deslocamentos e reduzir riscos para todas as pessoas que usam as vias.</p><p><strong>Exemplo simples:</strong> para melhorar uma travessia, pode ser preciso estudar o local, ajustar a sinalização, orientar usuários e fiscalizar. São ações diferentes que precisam conversar entre si.</p>"
+    },
+    {
+      "title": "2. Os principais participantes",
+      "html": "<p>O art. 7º do CTB apresenta quem faz parte do SNT. Entre os nomes mais cobrados estão o <strong>CONTRAN</strong>, os <strong>CETRAN</strong> dos estados, o <strong>CONTRANDIFE</strong> do Distrito Federal, os órgãos executivos e rodoviários de cada esfera, a Polícia Rodoviária Federal, as Polícias Militares e as <strong>JARI</strong>.</p><p>O CONTRAN atua no nível nacional como órgão máximo normativo e consultivo e coordena o sistema. Os CETRAN e o CONTRANDIFE atuam na esfera estadual e distrital conforme a lei. Órgãos executivos realizam serviços e ações administrativas. JARI julga recursos nas situações que o CTB prevê.</p><p>Não precisa decorar a lista sem entender. Associe cada nome a uma função geral e depois confira a competência exata na lei. Integrar o SNT não significa poder fazer tudo.</p><p><strong>Exemplo:</strong> receber um recurso não autoriza o agente que registrou a ocorrência a decidir sozinho se a penalidade será mantida. O recurso segue para a instância competente.</p>"
+    },
+    {
+      "title": "3. Como distinguir as funções",
+      "html": "<p>Use esta ordem para resolver uma dúvida: primeiro identifique <strong>qual instituição</strong> está envolvida; depois confira <strong>qual tarefa</strong> a lei atribui a ela; por fim veja <strong>onde</strong> essa tarefa pode ser realizada. O local e a circunscrição importam.</p><p>O CONTRAN edita normas regulamentares dentro da lei. Órgãos executivos cuidam de atividades administrativas e de trânsito nos limites de sua esfera. Órgãos rodoviários têm atribuições relativas às vias sob sua administração. Agentes atuam em nome do órgão, dentro dos poderes recebidos. A JARI julga recursos previstos no CTB.</p><p>Autuar, aplicar uma penalidade e julgar um recurso são atos diferentes. O agente pode registrar uma ocorrência; a autoridade competente conduz a aplicação da penalidade; a instância recursal analisa a contestação conforme o procedimento legal.</p><p><strong>Dica:</strong> quando uma alternativa disser que “todo integrante do SNT pode praticar qualquer ato”, desconfie: a lei distribui funções.</p>"
+    },
+    {
+      "title": "4. O papel do município",
+      "html": "<p>O município pode atuar no trânsito quando está organizado e integrado ao SNT conforme a legislação. A atuação municipal ocorre dentro das competências previstas e da circunscrição correspondente. A existência de uma equipe, por si só, não amplia os poderes definidos em lei.</p><p>Antes de uma ação, a equipe precisa conferir a via, o órgão responsável, a atribuição legal e eventual acordo de cooperação ou delegação. A cooperação permite organizar atividades, mas deve respeitar o que foi formalmente previsto.</p><p>Para memorizar: <strong>SNT é a rede</strong>; cada órgão é um participante; competência é a tarefa que a lei atribuiu; circunscrição é o limite territorial da atuação. A resposta correta depende de combinar esses quatro elementos.</p><p><strong>Exemplo:</strong> uma operação municipal começa com a identificação do trecho e da atribuição do órgão. Se o trecho ou a tarefa for de outra esfera, a solução é articular com o órgão competente.</p>"
+    }
   ],
-  "checklist":["Explique com suas palavras o que é o SNT e por que os órgãos precisam atuar de forma coordenada.","Reconheça os principais componentes do SNT listados no art. 7º do CTB.","Diferencie, em linhas gerais, CONTRAN, órgão executivo e JARI.","Explique por que integrar o SNT não dá a todos os órgãos as mesmas atribuições.","Antes de uma atuação municipal, diga o que precisa ser conferido sobre competência e circunscrição."],
-  "questions":{
-    "summary":[
-      {"q":"O Sistema Nacional de Trânsito pode ser entendido como","options":["a estrutura formada apenas por órgãos federais de fiscalização.","um conjunto coordenado de órgãos e entidades com funções de trânsito em diferentes esferas.","uma instância recursal única para todas as multas do país.","uma associação voluntária de municípios sem previsão legal.","o conjunto de empresas responsáveis pela fabricação de veículos."],"answer":1,"explanation":"O SNT reúne órgãos e entidades da União, estados, Distrito Federal e municípios para exercer funções diversas de forma coordenada."},
-      {"q":"Entre os objetivos do SNT previstos no CTB está","options":["organizar exclusivamente o transporte coletivo municipal.","substituir os órgãos locais por uma autoridade federal única.","promover segurança, fluidez, conforto, defesa ambiental e educação para o trânsito.","concentrar o julgamento de todos os recursos no CONTRAN.","regular somente o licenciamento de veículos automotores."],"answer":2,"explanation":"O art. 6º do CTB prevê objetivos amplos, entre eles segurança, fluidez, conforto, defesa ambiental e educação para o trânsito."},
-      {"q":"Qual alternativa apresenta participante que integra o SNT conforme o art. 7º do CTB?","options":["Junta Administrativa de Recursos de Infrações.","Conselho Municipal de Saúde.","Ministério Público Federal, como órgão recursal de trânsito.","Secretaria de Fazenda de cada município, automaticamente.","Conselho Nacional de Justiça, como autoridade normativa de circulação."],"answer":0,"explanation":"As JARI integram o SNT e julgam recursos nas hipóteses previstas no CTB."},
-      {"q":"Em relação ao CONTRAN, a revisão apresenta corretamente que ele","options":["julga toda defesa prévia apresentada por condutor.","administra diretamente todas as vias urbanas do país.","atua como órgão máximo normativo e consultivo e coordena o sistema.","substitui os CETRAN e o CONTRANDIFE nos estados e no DF.","é uma força policial subordinada à Polícia Rodoviária Federal."],"answer":2,"explanation":"O CTB define o CONTRAN como órgão máximo normativo e consultivo do SNT e coordenador do sistema."},
-      {"q":"A integração de uma instituição ao SNT significa que","options":["ela pode exercer qualquer atribuição de trânsito em qualquer local.","ela passa a ter as mesmas funções dos demais participantes.","ela deixa de observar limites territoriais definidos em lei.","ela participa do sistema, mas continua sujeita às competências que a legislação lhe atribui.","ela pode aplicar penalidade e julgar recurso no mesmo ato, sem procedimento."],"answer":3,"explanation":"A participação no SNT não elimina a distribuição legal de atribuições nem os limites de circunscrição."},
-      {"q":"Na sequência básica apresentada na revisão, antes de uma ação municipal deve-se","options":["identificar a via, conferir a atribuição e respeitar o limite de atuação do órgão.","presumir que toda via localizada dentro do município está sob qualquer competência municipal.","consultar somente o nome do cargo e dispensar a análise legal.","solicitar autorização individual do CONTRAN para cada abordagem.","encaminhar todo caso diretamente à JARI, mesmo sem recurso."],"answer":0,"explanation":"A revisão orienta conferir local, competência e circunscrição antes de atuar."},
-      {"q":"A JARI tem relação com","options":["a elaboração de todas as normas nacionais de circulação.","o julgamento de recursos nas situações previstas no CTB.","o registro inicial de todos os veículos do país.","a administração de rodovias federais.","a habilitação de todos os condutores."],"answer":1,"explanation":"As JARI integram o SNT e julgam recursos conforme as hipóteses legais."},
-      {"q":"Quando uma dúvida envolve uma resolução de trânsito, a conduta de estudo recomendada é","options":["usar qualquer resumo antigo, pois resoluções não são alteradas.","preferir uma postagem sem data à norma publicada.","confirmar o texto vigente e conferir alterações ou revogações em fonte oficial.","aplicar a regra municipal mesmo que contrarie a lei federal.","considerar a resolução superior ao CTB."],"answer":2,"explanation":"A norma regulamentar deve ser lida em sua versão vigente e dentro dos limites do CTB."},
-      {"q":"A palavra “sistema”, no SNT, destaca principalmente","options":["a identidade de funções de todos os órgãos.","a substituição da lei por decisões administrativas locais.","a coordenação entre instituições com tarefas próprias.","a centralização de todas as vias na União.","a exclusão dos municípios das ações de trânsito."],"answer":2,"explanation":"O SNT coordena órgãos com competências diferentes para objetivos comuns."},
-      {"q":"Um agente que registrou uma ocorrência recebe um recurso do cidadão. De acordo com a revisão, ele deve","options":["decidir sozinho e definitivamente o recurso.","cancelar automaticamente a ocorrência por ter sido contestada.","orientar sobre o canal competente sem antecipar a decisão recursal.","encaminhar o caso ao CONTRAN em qualquer hipótese.","pedir que o cidadão procure a Polícia Militar para julgamento."],"answer":2,"explanation":"O agente não substitui a autoridade ou a instância recursal; deve orientar sobre o procedimento competente."}
+  "checklist": [
+    "Explique com suas palavras o que é o SNT e por que os órgãos precisam atuar de forma coordenada.",
+    "Reconheça os principais componentes do SNT listados no art. 7º do CTB.",
+    "Diferencie, em linhas gerais, CONTRAN, órgão executivo e JARI.",
+    "Explique por que integrar o SNT não dá a todos os órgãos as mesmas atribuições.",
+    "Antes de uma atuação municipal, diga o que precisa ser conferido sobre competência e circunscrição."
+  ],
+  "questions": {
+    "summary": [
+      {
+        "q": "O Sistema Nacional de Trânsito pode ser entendido como",
+        "options": [
+          "a estrutura formada apenas por órgãos federais de fiscalização.",
+          "uma instância recursal única para todas as multas do país.",
+          "uma associação voluntária de municípios sem previsão legal.",
+          "um conjunto coordenado de órgãos e entidades com funções de trânsito em diferentes esferas.",
+          "o conjunto de empresas responsáveis pela fabricação de veículos."
+        ],
+        "answer": 3,
+        "explanation": "O SNT reúne órgãos e entidades da União, estados, Distrito Federal e municípios para exercer funções diversas de forma coordenada."
+      },
+      {
+        "q": "Entre os objetivos do SNT previstos no CTB está",
+        "options": [
+          "promover segurança, fluidez, conforto, defesa ambiental e educação para o trânsito.",
+          "organizar exclusivamente o transporte coletivo municipal.",
+          "substituir os órgãos locais por uma autoridade federal única.",
+          "concentrar o julgamento de todos os recursos no CONTRAN.",
+          "regular somente o licenciamento de veículos automotores."
+        ],
+        "answer": 0,
+        "explanation": "O art. 6º do CTB prevê objetivos amplos, entre eles segurança, fluidez, conforto, defesa ambiental e educação para o trânsito."
+      },
+      {
+        "q": "Qual alternativa apresenta participante que integra o SNT conforme o art. 7º do CTB?",
+        "options": [
+          "Conselho Municipal de Saúde.",
+          "Ministério Público Federal, como órgão recursal de trânsito.",
+          "Secretaria de Fazenda de cada município, automaticamente.",
+          "Conselho Nacional de Justiça, como autoridade normativa de circulação.",
+          "Junta Administrativa de Recursos de Infrações."
+        ],
+        "answer": 4,
+        "explanation": "As JARI integram o SNT e julgam recursos nas hipóteses previstas no CTB."
+      },
+      {
+        "q": "Em relação ao CONTRAN, a revisão apresenta corretamente que ele",
+        "options": [
+          "julga toda defesa prévia apresentada por condutor.",
+          "atua como órgão máximo normativo e consultivo e coordena o sistema.",
+          "administra diretamente todas as vias urbanas do país.",
+          "substitui os CETRAN e o CONTRANDIFE nos estados e no DF.",
+          "é uma força policial subordinada à Polícia Rodoviária Federal."
+        ],
+        "answer": 1,
+        "explanation": "O CTB define o CONTRAN como órgão máximo normativo e consultivo do SNT e coordenador do sistema."
+      },
+      {
+        "q": "A integração de uma instituição ao SNT significa que",
+        "options": [
+          "ela pode exercer qualquer atribuição de trânsito em qualquer local.",
+          "ela passa a ter as mesmas funções dos demais participantes.",
+          "ela participa do sistema, mas continua sujeita às competências que a legislação lhe atribui.",
+          "ela deixa de observar limites territoriais definidos em lei.",
+          "ela pode aplicar penalidade e julgar recurso no mesmo ato, sem procedimento."
+        ],
+        "answer": 2,
+        "explanation": "A participação no SNT não elimina a distribuição legal de atribuições nem os limites de circunscrição."
+      },
+      {
+        "q": "Na sequência básica apresentada na revisão, antes de uma ação municipal deve-se",
+        "options": [
+          "presumir que toda via localizada dentro do município está sob qualquer competência municipal.",
+          "consultar somente o nome do cargo e dispensar a análise legal.",
+          "solicitar autorização individual do CONTRAN para cada abordagem.",
+          "identificar a via, conferir a atribuição e respeitar o limite de atuação do órgão.",
+          "encaminhar todo caso diretamente à JARI, mesmo sem recurso."
+        ],
+        "answer": 3,
+        "explanation": "A revisão orienta conferir local, competência e circunscrição antes de atuar."
+      },
+      {
+        "q": "A JARI tem relação com",
+        "options": [
+          "a elaboração de todas as normas nacionais de circulação.",
+          "o julgamento de recursos nas situações previstas no CTB.",
+          "o registro inicial de todos os veículos do país.",
+          "a administração de rodovias federais.",
+          "a habilitação de todos os condutores."
+        ],
+        "answer": 1,
+        "explanation": "As JARI integram o SNT e julgam recursos conforme as hipóteses legais."
+      },
+      {
+        "q": "Quando uma dúvida envolve uma resolução de trânsito, a conduta de estudo recomendada é",
+        "options": [
+          "usar qualquer resumo antigo, pois resoluções não são alteradas.",
+          "preferir uma postagem sem data à norma publicada.",
+          "aplicar a regra municipal mesmo que contrarie a lei federal.",
+          "considerar a resolução superior ao CTB.",
+          "confirmar o texto vigente e conferir alterações ou revogações em fonte oficial."
+        ],
+        "answer": 4,
+        "explanation": "A norma regulamentar deve ser lida em sua versão vigente e dentro dos limites do CTB."
+      },
+      {
+        "q": "A palavra “sistema”, no SNT, destaca principalmente",
+        "options": [
+          "a coordenação entre instituições com tarefas próprias.",
+          "a identidade de funções de todos os órgãos.",
+          "a substituição da lei por decisões administrativas locais.",
+          "a centralização de todas as vias na União.",
+          "a exclusão dos municípios das ações de trânsito."
+        ],
+        "answer": 0,
+        "explanation": "O SNT coordena órgãos com competências diferentes para objetivos comuns."
+      },
+      {
+        "q": "Um agente que registrou uma ocorrência recebe um recurso do cidadão. De acordo com a revisão, ele deve",
+        "options": [
+          "decidir sozinho e definitivamente o recurso.",
+          "cancelar automaticamente a ocorrência por ter sido contestada.",
+          "orientar sobre o canal competente sem antecipar a decisão recursal.",
+          "encaminhar o caso ao CONTRAN em qualquer hipótese.",
+          "pedir que o cidadão procure a Polícia Militar para julgamento."
+        ],
+        "answer": 2,
+        "explanation": "O agente não substitui a autoridade ou a instância recursal; deve orientar sobre o procedimento competente."
+      }
     ],
-    "complete":[
-      {"q":"O CTB descreve o SNT como uma estrutura responsável por atividades que incluem","options":["somente policiamento ostensivo e investigação criminal.","planejamento, normatização, educação, operação, fiscalização e julgamento de recursos, distribuídos entre instituições.","apenas produção de placas e registro de veículos.","somente a concessão de habilitação e a arrecadação de multas.","a administração exclusiva das vias da União."],"answer":1,"explanation":"Os arts. 5º e 6º descrevem funções amplas do SNT e objetivos nacionais; elas não se concentram num único órgão."},
-      {"q":"Sobre os componentes do art. 7º do CTB, assinale a afirmação correta.","options":["A JARI integra o SNT; a lei também inclui conselhos, órgãos executivos e rodoviários e forças policiais indicadas.","Somente o CONTRAN e a PRF integram o SNT.","Os órgãos municipais não podem integrar o sistema.","As JARI integram o sistema apenas quando o estado autoriza cada julgamento individual.","A lista legal inclui apenas entidades administrativas, sem órgãos policiais."],"answer":0,"explanation":"O art. 7º enumera vários participantes, incluindo JARI, conselhos, órgãos executivos e rodoviários e forças policiais."},
-      {"q":"Qual distinção entre CONTRAN e JARI está de acordo com o CTB?","options":["Ambos exercem exclusivamente policiamento rodoviário.","A JARI edita as normas nacionais e o CONTRAN julga cada recurso individual.","O CONTRAN tem função normativa e coordenadora nacional; a JARI julga recursos nas hipóteses legais.","O CONTRAN administra o licenciamento municipal e a JARI emite habilitações.","Não existe distinção: os dois são nomes para o mesmo órgão."],"answer":2,"explanation":"O CONTRAN tem funções normativas, consultivas e coordenadoras; as JARI são instâncias de julgamento de recursos previstas no CTB."},
-      {"q":"Um agente atua em nome do órgão executivo. Qual conclusão é juridicamente adequada?","options":["O agente pode executar qualquer atribuição reservada ao CONTRAN.","A atribuição do agente depende da competência do órgão, de sua designação e dos limites legais aplicáveis.","A designação permite atuação em todo o território nacional, independentemente da via.","O agente pode julgar o recurso contra o próprio auto sem procedimento.","A existência do SNT torna dispensável conhecer a circunscrição."],"answer":1,"explanation":"A atuação deve estar vinculada à competência do órgão, à designação do agente e aos limites legais e territoriais."},
-      {"q":"A diferença geral apresentada entre órgãos executivos de trânsito e rodoviários é que","options":["os primeiros atuam em atividades administrativas de trânsito; os segundos têm atribuições legais relacionadas às vias sob sua administração.","os órgãos executivos julgam recursos e os rodoviários editam o CTB.","os órgãos rodoviários existem somente na esfera municipal.","os órgãos executivos são forças policiais e os rodoviários são conselhos recursais.","não há nenhuma diferença funcional prevista na lei."],"answer":0,"explanation":"O material distingue funções administrativas de trânsito e atribuições relacionadas às vias administradas, sem dispensar a consulta dos artigos específicos."},
-      {"q":"Ao estudar a competência para uma fiscalização, qual conjunto de elementos deve ser verificado?","options":["Somente o endereço da sede do órgão.","A via, a competência legal, a circunscrição e eventual delegação válida.","Apenas a vontade do agente responsável pela equipe.","Somente se o condutor possui habilitação.","A cor e o modelo do veículo fiscalizado."],"answer":1,"explanation":"A ação precisa ser vinculada à via, à competência prevista, à circunscrição e aos instrumentos legais de cooperação ou delegação, quando existentes."},
-      {"q":"O registro feito pelo agente e a aplicação de penalidade","options":["são necessariamente o mesmo ato e sempre feitos pela JARI.","são etapas distintas: o auto registra a ocorrência e a penalidade depende de atuação da autoridade competente.","são atos sem relação com processo administrativo.","são decisões que não admitem defesa ou recurso.","dependem sempre de julgamento prévio do CONTRAN."],"answer":1,"explanation":"O auto de infração registra uma ocorrência e pode iniciar procedimento; não é, por si só, a penalidade final."},
-      {"q":"Sobre a atuação municipal no SNT, é correto afirmar que","options":["o município pode atribuir qualquer poder à sua equipe por decreto local.","a integração e a atuação devem observar a organização e os requisitos previstos em lei.","a localização urbana de uma via é suficiente para resolver qualquer conflito de competência.","os municípios não podem participar de ações de trânsito.","a equipe municipal pode substituir os órgãos estaduais e federais em todas as funções."],"answer":1,"explanation":"A atuação municipal depende dos requisitos legais de organização e integração e deve respeitar a distribuição de competências."},
-      {"q":"A regulamentação do CONTRAN","options":["pode afastar o texto do CTB sempre que conveniente.","tem que ser lida dentro dos limites legais e com conferência de sua vigência.","é imutável desde a publicação inicial.","substitui todas as leis municipais e estaduais em qualquer matéria.","serve apenas como recomendação sem relação com a execução da lei."],"answer":1,"explanation":"Resoluções regulamentam a execução do CTB nos limites autorizados e podem ser alteradas ou revogadas."},
-      {"q":"Para avaliar uma alternativa que atribui poderes a um órgão, a sequência mais segura é","options":["decorar o nome e presumir a competência.","identificar o participante, consultar sua atribuição legal e verificar o local da atuação.","presumir que todos os integrantes do SNT compartilham a mesma competência.","considerar apenas o costume administrativo local.","usar a regra mais antiga, ainda que exista texto compilado posterior."],"answer":1,"explanation":"A resposta depende da identificação do órgão, da competência prevista e dos limites territoriais e normativos vigentes."}
+    "complete": [
+      {
+        "q": "O CTB descreve o SNT como uma estrutura responsável por atividades que incluem",
+        "options": [
+          "somente policiamento ostensivo e investigação criminal.",
+          "apenas produção de placas e registro de veículos.",
+          "planejamento, normatização, educação, operação, fiscalização e julgamento de recursos, distribuídos entre instituições.",
+          "somente a concessão de habilitação e a arrecadação de multas.",
+          "a administração exclusiva das vias da União."
+        ],
+        "answer": 2,
+        "explanation": "Os arts. 5º e 6º descrevem funções amplas do SNT e objetivos nacionais; elas não se concentram num único órgão."
+      },
+      {
+        "q": "Sobre os componentes do art. 7º do CTB, assinale a afirmação correta.",
+        "options": [
+          "Somente o CONTRAN e a PRF integram o SNT.",
+          "Os órgãos municipais não podem integrar o sistema.",
+          "As JARI integram o sistema apenas quando o estado autoriza cada julgamento individual.",
+          "A lista legal inclui apenas entidades administrativas, sem órgãos policiais.",
+          "A JARI integra o SNT; a lei também inclui conselhos, órgãos executivos e rodoviários e forças policiais indicadas."
+        ],
+        "answer": 4,
+        "explanation": "O art. 7º enumera vários participantes, incluindo JARI, conselhos, órgãos executivos e rodoviários e forças policiais."
+      },
+      {
+        "q": "Qual distinção entre CONTRAN e JARI está de acordo com o CTB?",
+        "options": [
+          "Ambos exercem exclusivamente policiamento rodoviário.",
+          "O CONTRAN tem função normativa e coordenadora nacional; a JARI julga recursos nas hipóteses legais.",
+          "A JARI edita as normas nacionais e o CONTRAN julga cada recurso individual.",
+          "O CONTRAN administra o licenciamento municipal e a JARI emite habilitações.",
+          "Não existe distinção: os dois são nomes para o mesmo órgão."
+        ],
+        "answer": 1,
+        "explanation": "O CONTRAN tem funções normativas, consultivas e coordenadoras; as JARI são instâncias de julgamento de recursos previstas no CTB."
+      },
+      {
+        "q": "Um agente atua em nome do órgão executivo. Qual conclusão é juridicamente adequada?",
+        "options": [
+          "A atribuição do agente depende da competência do órgão, de sua designação e dos limites legais aplicáveis.",
+          "O agente pode executar qualquer atribuição reservada ao CONTRAN.",
+          "A designação permite atuação em todo o território nacional, independentemente da via.",
+          "O agente pode julgar o recurso contra o próprio auto sem procedimento.",
+          "A existência do SNT torna dispensável conhecer a circunscrição."
+        ],
+        "answer": 0,
+        "explanation": "A atuação deve estar vinculada à competência do órgão, à designação do agente e aos limites legais e territoriais."
+      },
+      {
+        "q": "A diferença geral apresentada entre órgãos executivos de trânsito e rodoviários é que",
+        "options": [
+          "os órgãos executivos julgam recursos e os rodoviários editam o CTB.",
+          "os órgãos rodoviários existem somente na esfera municipal.",
+          "os órgãos executivos são forças policiais e os rodoviários são conselhos recursais.",
+          "os primeiros atuam em atividades administrativas de trânsito; os segundos têm atribuições legais relacionadas às vias sob sua administração.",
+          "não há nenhuma diferença funcional prevista na lei."
+        ],
+        "answer": 3,
+        "explanation": "O material distingue funções administrativas de trânsito e atribuições relacionadas às vias administradas, sem dispensar a consulta dos artigos específicos."
+      },
+      {
+        "q": "Ao estudar a competência para uma fiscalização, qual conjunto de elementos deve ser verificado?",
+        "options": [
+          "Somente o endereço da sede do órgão.",
+          "A via, a competência legal, a circunscrição e eventual delegação válida.",
+          "Apenas a vontade do agente responsável pela equipe.",
+          "Somente se o condutor possui habilitação.",
+          "A cor e o modelo do veículo fiscalizado."
+        ],
+        "answer": 1,
+        "explanation": "A ação precisa ser vinculada à via, à competência prevista, à circunscrição e aos instrumentos legais de cooperação ou delegação, quando existentes."
+      },
+      {
+        "q": "O registro feito pelo agente e a aplicação de penalidade",
+        "options": [
+          "são necessariamente o mesmo ato e sempre feitos pela JARI.",
+          "são atos sem relação com processo administrativo.",
+          "são etapas distintas: o auto registra a ocorrência e a penalidade depende de atuação da autoridade competente.",
+          "são decisões que não admitem defesa ou recurso.",
+          "dependem sempre de julgamento prévio do CONTRAN."
+        ],
+        "answer": 2,
+        "explanation": "O auto de infração registra uma ocorrência e pode iniciar procedimento; não é, por si só, a penalidade final."
+      },
+      {
+        "q": "Sobre a atuação municipal no SNT, é correto afirmar que",
+        "options": [
+          "o município pode atribuir qualquer poder à sua equipe por decreto local.",
+          "a localização urbana de uma via é suficiente para resolver qualquer conflito de competência.",
+          "os municípios não podem participar de ações de trânsito.",
+          "a equipe municipal pode substituir os órgãos estaduais e federais em todas as funções.",
+          "a integração e a atuação devem observar a organização e os requisitos previstos em lei."
+        ],
+        "answer": 4,
+        "explanation": "A atuação municipal depende dos requisitos legais de organização e integração e deve respeitar a distribuição de competências."
+      },
+      {
+        "q": "A regulamentação do CONTRAN",
+        "options": [
+          "tem que ser lida dentro dos limites legais e com conferência de sua vigência.",
+          "pode afastar o texto do CTB sempre que conveniente.",
+          "é imutável desde a publicação inicial.",
+          "substitui todas as leis municipais e estaduais em qualquer matéria.",
+          "serve apenas como recomendação sem relação com a execução da lei."
+        ],
+        "answer": 0,
+        "explanation": "Resoluções regulamentam a execução do CTB nos limites autorizados e podem ser alteradas ou revogadas."
+      },
+      {
+        "q": "Para avaliar uma alternativa que atribui poderes a um órgão, a sequência mais segura é",
+        "options": [
+          "decorar o nome e presumir a competência.",
+          "presumir que todos os integrantes do SNT compartilham a mesma competência.",
+          "considerar apenas o costume administrativo local.",
+          "identificar o participante, consultar sua atribuição legal e verificar o local da atuação.",
+          "usar a regra mais antiga, ainda que exista texto compilado posterior."
+        ],
+        "answer": 3,
+        "explanation": "A resposta depende da identificação do órgão, da competência prevista e dos limites territoriais e normativos vigentes."
+      }
     ]
   },
-  "resources":[
-    {"title":"Lei nº 9.503/1997 — Código de Trânsito Brasileiro, texto compilado (Planalto)","url":"https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"},
-    {"title":"SENATRAN — legislação e acesso ao SISLEGIS","url":"https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/legislacao-denatran"},
-    {"title":"Lei nº 15.428/2026 — alteração do CTB","url":"https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15428.htm"}
+  "resources": [
+    {
+      "title": "Lei nº 9.503/1997 — Código de Trânsito Brasileiro, texto compilado (Planalto)",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+      "title": "SENATRAN — legislação e acesso ao SISLEGIS",
+      "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/legislacao-denatran"
+    },
+    {
+      "title": "Lei nº 15.428/2026 — alteração do CTB",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15428.htm"
+    }
   ]
 };})(window);
