@@ -1,7 +1,7 @@
 /* Leitor compartilhado da disciplina de Legislação de Trânsito. */
 (function(g){
  'use strict';if(g.BaseTransitoReader)return;
- const available=new Set(['m01','m02']),$=s=>g.document.querySelector(s);
+ const available=new Set(['m01','m02','m03']),$=s=>g.document.querySelector(s);
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const key=(id,mode,i)=>'central-v6:transito:read:'+id+':'+mode+':'+i;
  const answerKey=(id,mode,i)=>'central-v6:transito:answer:'+id+':'+mode+':'+i;
@@ -10,7 +10,7 @@
  function lesson(id){return g.BC_TRANSITO_CONTENT?.[id]||null}
  function load(id){
   if(lesson(id))return Promise.resolve(lesson(id));if(state.loading[id])return state.loading[id];if(!available.has(id))return Promise.reject(new Error('Este módulo ainda está em preparação.'));
-  state.loading[id]=new Promise((resolve,reject)=>{const script=g.document.createElement('script');script.src='/content/transito/'+id+'.js?v=20261127m01a';script.async=true;script.onload=()=>lesson(id)?resolve(lesson(id)):reject(new Error('O material do módulo não foi encontrado.'));script.onerror=()=>reject(new Error('Não foi possível carregar o conteúdo. Confira a conexão e tente novamente.'));g.document.head.appendChild(script)}).catch(err=>{delete state.loading[id];throw err});return state.loading[id];
+  state.loading[id]=new Promise((resolve,reject)=>{const script=g.document.createElement('script');script.src='/content/transito/'+id+'.js?v=20261127m03a';script.async=true;script.onload=()=>lesson(id)?resolve(lesson(id)):reject(new Error('O material do módulo não foi encontrado.'));script.onerror=()=>reject(new Error('Não foi possível carregar o conteúdo. Confira a conexão e tente novamente.'));g.document.head.appendChild(script)}).catch(err=>{delete state.loading[id];throw err});return state.loading[id];
  }
  function chapters(data,mode){return mode==='review'?data.review:data.full}
  function close(){if(state.overlay){state.overlay.remove();state.overlay=null}g.document.body.classList.remove('bc-info-reader-open');g.document.removeEventListener('keydown',onKey);state.id='';state.mode='';if(state.focus?.isConnected)state.focus.focus();state.focus=null}
