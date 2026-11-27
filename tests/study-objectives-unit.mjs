@@ -150,6 +150,7 @@ test('editais antigos permanecem carregáveis e novos concursos aparecem na sele
   const options=[...w.document.querySelectorAll('[data-study-exam]')];
   assert.deepEqual(options.map(x=>x.dataset.studyExam),[
     'exam-catalog-prf-2021-policial-rodoviario-federal-cargo-1',
+    'exam-catalog-itaitinga-agente-transito-monitoramento-cargo-1',
     'exam-catalog-gmf-fortaleza-monitoramento-cargo-1',
     'exam-tjpa-em-preparacao','exam-tjal-em-preparacao',
     'exam-catalog-receita-federal-autorizado-2026-cargo-1',
