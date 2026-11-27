@@ -144,7 +144,7 @@ test('ligação na Central: scripts e estilos no bootstrap; banco atrás do logi
   }
   const arquivos = fs.readdirSync(path.join(root, 'content/questoes')).filter(d => fs.statSync(path.join(root, 'content/questoes', d)).isDirectory())
     .flatMap(d => fs.readdirSync(path.join(root, 'content/questoes', d)).map(f => `/content/questoes/${d}/${f}`));
-  assert.equal(arquivos.length, 175); // 161 módulos originais + 4 pilotos GMF + 10 módulos de Legislação Extravagante
+  assert.equal(arquivos.length, 191); // 161 módulos originais + 30 módulos GMF (Atualidades 6, Fortaleza 9, Direitos Humanos 4, Legislação Extravagante 11)
   // Índice e títulos (sem gabarito) valem para todo aluno logado. Os arquivos de módulo trazem o GABARITO:
   // o Gratuito não os baixa (enunciados e correção saem de /api/questoes, que aplica o limite diário).
   for (const a of ['/content/questoes/index.js', '/content/questoes/titulos.js']) assert.equal(protectedAsset(a)?.feature, 'theory.summary', a);

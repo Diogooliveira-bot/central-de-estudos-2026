@@ -160,29 +160,33 @@ test('API recusa chamadas diretas de leitura e resposta para as quatro disciplin
   }
 });
 
-test('questões inéditas GMF (4 pilotos + 10 módulos de Legislação Extravagante) validadas e índices consistentes', () => {
+test('questões inéditas GMF (Atualidades, Fortaleza, Direitos Humanos e Legislação Extravagante) validadas e índices consistentes', () => {
   const index=execFile('content/questoes/index.js');
   const titles=execFile('content/questoes/titulos.js');
   const allIds=new Set();
-  const mods={atual:[1],fortaleza:[1],legesp:[1,2,3,4,5,6,7,8,9,10,11],dh:[1]};
+  const mods={atual:6,fortaleza:9,legesp:11,dh:4};
+  let total=0;
   for(const disc of ids){
-    for(const n of mods[disc]){
+    for(let n=1;n<=mods[disc];n++){
       const qs=execFile('content/questoes/'+disc+'/m'+String(n).padStart(2,'0')+'.js').BC_QUESTOES[disc][n];
-      assert.equal(qs.length,10,disc+n);
+      const qtd=disc==='legesp'?10:20; // Legislação Extravagante: 10 por módulo; demais: 20 por módulo
+      assert.equal(qs.length,qtd,disc+n);
       assert.deepEqual(validarModulo(disc,n,qs),[],disc+n);
       for(const item of qs){assert.equal(allIds.has(item.id),false,item.id);allIds.add(item.id)}
-      assert.equal(index.BC_QUESTOES_QTD[disc][n],10,disc+n);
+      assert.equal(index.BC_QUESTOES_QTD[disc][n],qtd,disc+n);
       assert.ok(titles.BC_QUESTOES_TITULOS[disc][n],disc+n);
+      total+=qs.length;
     }
-    assert.deepEqual(Array.from(index.BC_QUESTOES_INDICE[disc]),mods[disc],disc);
+    assert.deepEqual(Array.from(index.BC_QUESTOES_INDICE[disc]),Array.from({length:mods[disc]},(_,i)=>i+1),disc);
   }
-  assert.equal(allIds.size,140);
+  assert.equal(allIds.size,total);
+  assert.equal(total,490);
 });
 
 test('API nunca entrega gabarito ou comentário na consulta pública', async () => {
   for(const disc of ids){
     const q=await loadModule(disc,1,new URL('../',import.meta.url).pathname.replace(/\/$/,''));
-    assert.equal(q.length,10,disc);
+    assert.equal(q.length,disc==='legesp'?10:20,disc);
     const publicView=projectStatement(q[0]);
     assert.equal(Object.hasOwn(publicView,'answer'),false);
     assert.equal(Object.hasOwn(publicView,'explanation'),false);
