@@ -61,7 +61,7 @@
  var bootScreen=document.getElementById('central-boot-screen').outerHTML;
  entryUrl.searchParams.delete('direct');
  entryUrl.searchParams.delete('central_source');
- var scripts=['ui/study-objectives-catalog-v1.js?v=20261127prf1','ui/tablet-scale-v1.js?v=20261117tablet1','ui/orientation-defaults-v1.js?v=20261113orient2','ui/orientation-v1.js?v=20261115responsive1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261118r1','content/questoes/titulos.js?v=20261121gmfobj2','ui/external-question-filters-v1.js?v=20261119adminonly1','ui/contest-admin-form.js?v=20261124r1','ui/concursos-catalog-v1.js?v=20261127prf1'];
+ var scripts=['ui/study-objectives-catalog-v1.js?v=20261127itaitinga2','ui/tablet-scale-v1.js?v=20261117tablet1','ui/orientation-defaults-v1.js?v=20261113orient2','ui/orientation-v1.js?v=20261115responsive1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261118r1','content/questoes/titulos.js?v=20261121gmfobj2','ui/external-question-filters-v1.js?v=20261119adminonly1','ui/contest-admin-form.js?v=20261124r1','ui/concursos-catalog-v1.js?v=20261127prf1'];
  function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
  // Remove tags de script externo (sem corpo) cujo src casa com o padrão, varrendo a marcação por posição
  // (sem encadear regex de "limpeza", que pode deixar "<script" para trás). Só mexe no HTML da própria Central.
