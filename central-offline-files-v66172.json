@@ -1,5 +1,5 @@
 {
-  "build": "20261127-prf-verticalizado-v1",
+  "build": "20261127-transito-m01a",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -337,6 +337,10 @@
     "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp",
     "/ui/contest-admin-form.js?v=20261124r1",
     "/ui/concursos-catalog-v1.js?v=20261127prf1",
-    "/ui/concursos-catalog-v1.css?v=20261123concursos2"
+    "/ui/concursos-catalog-v1.css?v=20261123concursos2",
+    "/ui/transito-shared-course-v1.css?v=20261127m01a",
+    "/ui/transito-shared-course-v1.js?v=20261127m01a",
+    "/ui/transito-course-reader-v1.js?v=20261127m01a",
+    "/content/transito/m01.js?v=20261127m01a"
   ]
 }

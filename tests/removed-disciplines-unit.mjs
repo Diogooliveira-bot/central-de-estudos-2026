@@ -24,7 +24,7 @@ test('catálogo principal e objetivos preservam as disciplinas existentes e regi
   assert.deepEqual(subjects.map(s=>s.id),['cf','adm','civil','cpc','penal','cpp','rlm']);
   assert.deepEqual(subjects.map(s=>s.topics.length),[15,20,15,20,17,16,16]);
   const catalog = evaluate('ui/study-objectives-catalog-v1.js','window.CentralStudyObjectiveCatalog');
-  assert.equal(Object.keys(catalog.subjects).length,9);
+  assert.equal(Object.keys(catalog.subjects).length,10);
   assert.equal(catalog.subjects.info.name,'Informática');
   assert.equal(catalog.subjects.info.status,'theory_published');
   for(const goal of Object.values(catalog.goals)) {

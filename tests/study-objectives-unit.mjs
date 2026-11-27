@@ -126,7 +126,7 @@ test('boas-vindas: três caminhos diretos, carreira e editais em telas separadas
   assert.equal(w.CentralStudyObjectives.getActive(),'free-study');
   assert.deepEqual(Array.from(w.CentralStudyObjectives.activeSubjectIds()),['pt','penal']);
   // Acesso a tudo: a escolha só destaca a trilha; nenhuma disciplina é escondida.
-  assert.equal(w.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length,9);
+  assert.equal(w.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length,10);
   assert.equal(w.document.querySelector('#subjects [data-id="adm"]').hidden,false);
   assert.equal(w.document.querySelector('#subjects [data-id="adm"]').dataset.studyTrail,'0');
   assert.equal(w.document.querySelector('#subjects [data-id="pt"]').dataset.studyTrail,'1');
