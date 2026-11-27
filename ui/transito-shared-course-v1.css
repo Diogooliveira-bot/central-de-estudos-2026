@@ -10,6 +10,10 @@
 .bc-transito-reader .bc-info-reader-resources ul{padding-left:20px}
 .bc-transito-reader .bc-info-reader-resources li{margin:6px 0}
 .bc-transito-reader .bc-info-reader-resources p{margin:12px 0;color:#667b8c}
+.bc-transito-flow{margin:18px 0;padding:16px;border:1px solid #dce5ec;border-radius:12px;background:#fff}
+.bc-transito-flow figcaption{margin:0 0 10px;color:#173a56;font-weight:750;font-size:.9rem}
+.bc-transito-flow svg{display:block;width:100%;height:auto}
+.bc-transito-flow p{margin:8px 0 0;color:#667b8c;font-size:.78rem}
 .bc-transito-quiz-intro{max-width:950px;margin:24px auto 8px;padding:0 clamp(18px,4vw,48px);color:#53687c}
 .bc-transito-quiz-intro>b{font-size:1.2rem;color:#173a56}
 .bc-transito-quiz-intro p{font-size:.87rem;line-height:1.6}
