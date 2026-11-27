@@ -66,13 +66,13 @@ test('correções ortográficas confirmadas de CF e RLM permanecem aplicadas', (
   assert.doesNotMatch(read('content/rlm-tjce-2026/aulas-raciocinio.js'), /\.\.\. \./);
 });
 
-test('RLM preserva M02–M15, teoria, resumo e questões', () => {
+test('RLM preserva M02–M15, teoria e resumo, sem questões dentro da teoria', () => {
   const course = rlmCourse();
   assert.deepEqual(Object.keys(course), Array.from({ length: 14 }, (_, index) => `M${String(index + 2).padStart(2, '0')}`));
   for (const [id, module] of Object.entries(course)) {
-    assert.equal(module.theory.length, 5, `${id} precisa manter cinco capítulos`);
+    assert.ok(module.theory.length >= 5, `${id} precisa manter ao menos cinco capítulos`);
     assert.ok(module.summary.length >= 5, `${id} precisa manter o resumo`);
-    assert.equal(module.questions.length, 10, `${id} precisa manter as dez questões autorais`);
+    assert.ok(!('questions' in module), `${id} não deve ter questões internas (ficam no banco externo)`);
   }
 });
 
@@ -102,5 +102,5 @@ test('carregadores ativos apontam para a revisão e o manifesto offline acompanh
     assert.ok(index.includes(`src="${asset}"`), id);
     assert.equal(manifest.files.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname), id);
   }
-  assert.ok(index.includes('/content/rlm-tjce-2026/aulas-raciocinio.js?v=20261018ort1'));
+  assert.ok(index.includes('/content/rlm-tjce-2026/aulas-raciocinio.js?v=20261127semq1'));
 });
