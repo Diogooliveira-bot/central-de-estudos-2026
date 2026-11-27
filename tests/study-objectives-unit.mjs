@@ -279,8 +279,8 @@ test('API do objetivo valida disciplinas, persiste JSONB e mantém dados ao muda
 });
 
 
-test('as cinco áreas gerais são diretas e as outras duas apresentam somente os editais indicados', async()=>{
-  for(const area of ['policial','educacao','saude','bancaria','transito']){
+test('as quatro áreas gerais são diretas e as outras três apresentam somente os editais indicados', async()=>{
+  for(const area of ['policial','educacao','saude','bancaria']){
     const {dom}=setup(),w=dom.window;await settle(w);
     openArea(w,area);
     assert.equal(w.document.getElementById('studyObjectiveDialog'),null,area+' não abre subtema');
@@ -289,6 +289,7 @@ test('as cinco áreas gerais são diretas e as outras duas apresentam somente os
   }
   for(const [area,expected] of [
     ['guarda',['exam-catalog-gmf-fortaleza-monitoramento-cargo-1']],
+    ['transito',['exam-catalog-itaitinga-agente-transito-monitoramento-cargo-1']],
     ['judiciaria',['exam-tjpa-em-preparacao','exam-tjal-em-preparacao']],
   ]){
     const {dom}=setup(),w=dom.window;await settle(w);
