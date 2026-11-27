@@ -96,7 +96,7 @@ test('boas-vindas: três caminhos diretos, carreira e editais em telas separadas
   assert.ok(free.compareDocumentPosition(w.document.querySelector('[data-study-careers]')) & 4,'Estudo livre vem primeiro');
   assert.equal(w.document.querySelectorAll('[data-study-area],[data-study-exam]').length,0,'detalhes ficam no caminho escolhido');
   w.document.querySelector('[data-study-exams]').click();
-  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,3,'somente GMF, TJPA e TJAL ficam à vista');
+  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,4,'GMF, PRF, TJPA e TJAL ficam à vista');
   assert.equal(w.document.querySelector('[data-study-exam-request]'),null,'sem pedido ou listagem extra na seleção simplificada');
   w.document.querySelector('[data-study-back]').click();
   w.document.querySelector('[data-study-careers]').click();
@@ -148,12 +148,13 @@ test('editais antigos permanecem carregáveis e novos concursos aparecem na sele
   w.document.querySelector('[data-study-exams]').click();
   const options=[...w.document.querySelectorAll('[data-study-exam]')];
   assert.deepEqual(options.map(x=>x.dataset.studyExam),[
+    'exam-catalog-prf-2021-policial-rodoviario-federal-cargo-1',
     'exam-catalog-gmf-fortaleza-monitoramento-cargo-1',
     'exam-tjpa-em-preparacao','exam-tjal-em-preparacao',
     'exam-catalog-receita-federal-autorizado-2026-cargo-1',
   ]);
   assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Receita Federal/);
-  options[2].click();
+  options.find(x=>x.dataset.studyExam==='exam-tjal-em-preparacao').click();
   await settle(w);
   assert.equal(w.CentralStudyObjectives.getActive(),'exam-tjal-em-preparacao');
   assert.ok(w.CentralStudyObjectives.catalog.goals[legacyId],'o objetivo antigo foi preservado');

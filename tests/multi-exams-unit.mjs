@@ -83,7 +83,9 @@ test('carregador e PWA incluem TRT8, não esquecem TJPB e mantêm versão do cac
  assert.match(boot,/content\/tjpb-2026-verticalized\.js/);
  assert.ok(boot.indexOf('content/trt8-2026-verticalized.js')<boot.indexOf("tag('ui/exam-verticalized-v1.js"));
  assert.ok(manifest.files.some(s=>s.includes('/content/trt8-2026-verticalized.js?v=')));
- assert.ok(manifest.files.some(s=>s.includes('/ui/study-navigation.js?v=20261023-remove-labor-disciplines-v1')));
+ const navAsset=manifest.files.find(s=>s.startsWith('/ui/study-navigation.js?v='));
+ assert.ok(navAsset);
+ assert.ok(read('index.html').includes(navAsset.slice(1)));
  assert.ok(boot.includes(`var BUILD='${manifest.build}'`));
  assert.ok(sw.includes(`var CACHE='central-${manifest.build}'`));
 });

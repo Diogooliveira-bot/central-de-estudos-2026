@@ -231,6 +231,31 @@
     if(!alreadyOpen)m.head.click();
     schedule();setTimeout(()=>{schedule();focusScroll()},100);setTimeout(schedule,500);
   }
+  // Resolve only an existing module; do not silently fall back to a different module.
+  async function openByModuleId(subjectId,moduleId){
+    if(typeof moduleId!=='string'||!moduleId||!subjectId)return false;
+    global.openHome?.();
+    chooseSubject(subjectId);
+    if(state.subject!==subjectId||state.stage!=='modules')return false;
+    const ticket=selection;
+    try{
+      if(global.CentralDisciplineLoader?.isReady(subjectId)===false)await global.CentralDisciplineLoader.load(subjectId);
+      if(ticket!==selection)return false;
+      if(current()&&!current().classList.contains('open'))global.toggleSubject?.(subjectId);
+      const expected=moduleId.match(/^pt-(\d{2})$/);
+      const cppExpected=moduleId.match(/^cpp-m(\d{2})$/);
+      for(let attempt=0;attempt<12;attempt++){
+        await new Promise(resolve=>setTimeout(resolve,80));
+        if(ticket!==selection||state.subject!==subjectId||state.stage!=='modules')return false;
+        const modules=moduleNodes(current());
+        const index=modules.findIndex(m=>m.key===moduleId||Array.from(m.box?.attributes||[]).some(a=>a.name.startsWith('data-')&&a.value===moduleId)||
+          (subjectId==='pt'&&expected&&Number(m.count.match(/\d+/)?.[0])===Number(expected[1]))||
+          (subjectId==='cpp'&&cppExpected&&Number(m.box?.getAttribute('data-cpp-native-module'))===Number(cppExpected[1])));
+        if(index>=0){await openModule(index);return state.stage==='reading'&&state.subject===subjectId;}
+      }
+    }catch(error){console.warn('[Edital] Módulo indisponível',error);}
+    return false;
+  }
   function backToModules(){
     state.stage='modules';state.moduleKey='';state.moduleTitle='';state.moduleNumber='';
     const list=$('bcFocusModules');if(list)list.dataset.signature='';
@@ -324,7 +349,7 @@
     },true);
     global.addEventListener('popstate',schedule);
   }
-  global.BaseCompletaFocusNavigation={state,chooseSubject,backToModules,backToSubjects,openModule,resumeLast};
+  global.BaseCompletaFocusNavigation={state,chooseSubject,backToModules,backToSubjects,openModule,openByModuleId,resumeLast};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })(window);

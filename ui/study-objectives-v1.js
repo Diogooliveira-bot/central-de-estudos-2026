@@ -301,7 +301,7 @@
         '<div class="study-start-choices">' +
         '<button type="button" class="study-start-choice" data-study-free><strong>Estudo livre</strong><small>Escolha suas disciplinas e comece agora.</small><b aria-hidden="true">›</b></button>' +
         '<button type="button" class="study-start-choice" data-study-careers><strong>Por área</strong><small>Escolha uma das sete áreas, sem selecionar cargo.</small><b aria-hidden="true">›</b></button>' +
-        '<button type="button" class="study-start-choice" data-study-exams><strong>Por edital</strong><small>GMF, TJPA ou TJAL.</small><b aria-hidden="true">›</b></button></div>';
+        '<button type="button" class="study-start-choice" data-study-exams><strong>Por edital</strong><small>GMF, PRF e tribunais.</small><b aria-hidden="true">›</b></button></div>';
     } else if (step === 'careers') {
       title = 'Escolha sua área';
       intro = 'Selecione uma área para organizar seus estudos. Você pode mudar depois.';
@@ -347,7 +347,7 @@
       const shortcuts = catalog.examShortcuts.filter((item) => step === 'exams' || item.area === area?.id);
       if (step === 'area-exams' && !area) return renderChooser('careers');
       title = step === 'area-exams' ? 'Escolha o edital' : 'Escolha seu edital';
-      intro = step === 'area-exams' ? area.title + ' — escolha uma das opções disponíveis.' : 'Por enquanto, somente estes três editais estão disponíveis.';
+      intro = step === 'area-exams' ? area.title + ' — escolha uma das opções disponíveis.' : 'Escolha um dos editais disponíveis.';
       badge = 'POR EDITAL';
       options = '<div class="study-exam-list">' + shortcuts.map((item) =>
         '<button type="button" class="study-role-card" data-study-exam="' + escape(item.id) + '"><span><strong>' +
@@ -512,7 +512,7 @@
   document.addEventListener('base-completa-auth-ready', () => { if (!loaded) load(); });
 
   global.CentralStudyObjectives = {
-    catalog, open, setActive, toggleContest, toggleCatalogContest, selectedContestIds:()=>selectedContestIds.slice(), getActive:() => activeId,
+    catalog, open, setActive, selectObjective, toggleContest, toggleCatalogContest, selectedContestIds:()=>selectedContestIds.slice(), getActive:() => activeId,
     hasActiveObjective:() => !!activeId,
     activeSubjectIds, questionDisciplineKeys:activeQuestionKeys,
     load, get loaded() { return loaded; },

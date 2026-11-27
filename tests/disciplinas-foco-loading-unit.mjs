@@ -153,3 +153,20 @@ test('ADM no módulo em foco não repete título ou percentual além da barra de
   assert.match(adm,/function updateSubject\(\)/);
   assert.doesNotMatch(css,/\.adm-native-progress-line\s*\{\s*display:none/);
 });
+
+
+test('atalho de edital abre módulo GMF e CPP pelo ID exato e rejeita destino inexistente',async t=>{
+  const c=await setup();t.after(()=>c.win.close());
+  c.win.HTMLElement.prototype.scrollIntoView=function(){};
+  c.state.loading=false;c.state.ready=true;
+  c.win.CentralDisciplineLoader.isReady=()=>true;
+  const root=c.win.document.getElementById('subjects');
+  root.insertAdjacentHTML('beforeend','<section class="subject open" data-id="fortaleza"><button class="subject-head">Fortaleza</button><div class="subject-body"><div class="cf-module" data-module="gmf-fortaleza-m01"><button class="cf-module-head"><span class="cf-module-no">MÓDULO 01</span><span class="cf-module-title">Localização</span></button></div><div class="cf-module" data-module="gmf-fortaleza-m02"><button class="cf-module-head"><span class="cf-module-no">MÓDULO 02</span><span class="cf-module-title">Hidrografia</span></button></div></div></section><section class="subject open" data-id="cpp"><button class="subject-head">CPP</button><div class="subject-body"><article class="topic-item" data-cpp-native-module="3"><button class="open-topic">Inquérito</button></article><article class="topic-item" data-cpp-native-module="12"><button class="open-topic">Provas</button></article></div></section>');
+  const api=c.win.BaseCompletaFocusNavigation;
+  assert.equal(await api.openByModuleId('fortaleza','gmf-fortaleza-m02'),true);
+  assert.equal(api.state.moduleTitle,'Hidrografia');
+  assert.equal(await api.openByModuleId('cpp','cpp-m03'),true);
+  assert.match(api.state.moduleTitle,/Inquérito/);
+  assert.equal(await api.openByModuleId('fortaleza','gmf-fortaleza-m99'),false);
+  assert.equal(api.state.stage,'modules');
+});
