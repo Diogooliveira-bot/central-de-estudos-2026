@@ -29,7 +29,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       ],
       "answer": 3,
       "explanation": "O Estatuto enumera formas de provimento como nomeação, promoção, readaptação, reversão, reintegração, recondução e aproveitamento, cada qual com definição própria. A reintegração é o reingresso após invalidada a demissão, com ressarcimento das vantagens nos termos legais. A recondução é o retorno ao cargo anterior em hipóteses legais, e a nomeação investe inicialmente no cargo; por isso não são sinônimos. As alternativas erradas confundem reintegração com recondução, nomeação, readaptação ou promoção, que descrevem ingresso ou movimentação funcional diversos.",
-      "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), dispositivos sobre as formas de provimento (reintegração e recondução)"
+      "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), arts. 36 e 37"
     },
     {
       "id": "legesp-m11-autoral-03",
@@ -59,7 +59,7 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
       ],
       "answer": 4,
       "explanation": "Pelo Estatuto, vencimento é a retribuição fixada para o exercício do cargo, com valor definido por lei, e remuneração é o vencimento acrescido das vantagens pecuniárias estabelecidas em lei. A vantagem pode ser permanente ou temporária e precisa de fundamento legal; não se cria por analogia só porque outro cargo recebe parcela semelhante. As alternativas erradas atribuem ao vencimento o sentido de remuneração total, usam termos (provento, licença, afastamento) que designam outras figuras ou admitem vantagens sem base legal.",
-      "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), dispositivos sobre vencimento e remuneração"
+      "lawRef": "Lei Municipal 6.794/1990 (Estatuto dos Servidores de Fortaleza), arts. 96 e 97"
     },
     {
       "id": "legesp-m11-autoral-05",
