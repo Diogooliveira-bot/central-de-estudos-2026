@@ -7,11 +7,11 @@ import { fileURLToPath } from 'node:url';
 import { validarTudo, validarModulo, DISCIPLINAS, MODULOS } from '../tools/questoes-lib.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-test('banco de questões: 161 módulos antigos, 4 pilotos GMF e 10 módulos de Legislação Extravagante, 10 questões cada', () => {
+test('banco de questões: 161 módulos antigos e 30 módulos GMF', () => {
   const { erros, indice, total } = validarTudo(root);
   assert.deepEqual(erros, []);
-  for (const d of Object.keys(DISCIPLINAS)) assert.equal(indice[d].length, d === 'legesp' ? 11 : ['atual','fortaleza','dh'].includes(d) ? 1 : MODULOS[d], `${d}: faltam módulos publicados`);
-  assert.equal(total, 1890); // RLM tem 20 questões por módulo (M02–M15) desde a retirada das questões internas
+  for (const d of Object.keys(DISCIPLINAS)) assert.equal(indice[d].length, MODULOS[d], `${d}: faltam módulos publicados`);
+  assert.equal(total, 2240); // RLM tem 20 questões por módulo (M02–M15) desde a retirada das questões internas
 });
 
 test('índice do banco confere com os arquivos (rode "npm run questoes:index" se falhar)', () => {
