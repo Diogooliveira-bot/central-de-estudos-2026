@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 2,
   "explanation": "A média é (2×3 + 4×5 + 6×2)/10 = 38/10 = 3,8. Os desvios absolutos são |2 − 3,8| = 1,8; |4 − 3,8| = 0,2; |6 − 3,8| = 2,2. Ponderando pelas frequências: 1,8×3 + 0,2×5 + 2,2×2 = 5,4 + 1,0 + 4,4 = 10,8. Dividindo por 10 servidores, DM = 1,08. A alternativa 10,80 é a soma dos desvios, sem dividir. A de 1,00 mede os desvios em torno de 4 (mediana e moda), e não em torno da média. A de 1,33 ignora as frequências e calcula com os valores 2, 4 e 6 uma única vez (média 4). A de 0,42 soma os desvios 1,8, 0,2 e 2,2 sem multiplicar pelas frequências, mas divide por 10.",
   "lawRef": "Desvio médio absoluto em torno da média, em tabela de frequências"
+ },
+ {
+  "id": "rlm-m15-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Os tempos de espera, em dias, de quatro processos foram 3, 5, 9 e 12. A amplitude desses tempos, em dias, é:",
+  "options": [
+   "7,25",
+   "12",
+   "9",
+   "3",
+   "15"
+  ],
+  "answer": 2,
+  "explanation": "A amplitude total é a diferença entre o maior e o menor valor: 12 − 3 = 9 dias. Os valores intermediários (5 e 9) não influenciam a amplitude. A alternativa 7,25 é a média aritmética dos dados (29/4), que é medida de posição, e não de dispersão. A de 12 é o maior valor, e a de 3 é o menor valor, sem fazer a diferença entre eles. A de 15 resulta de somar o maior e o menor, em vez de subtrair.",
+  "lawRef": "Amplitude total"
+ },
+ {
+  "id": "rlm-m15-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Os seis servidores de uma seção (a população completa) têm, todos, exatamente 7 anos de serviço. A variância populacional do tempo de serviço é:",
+  "options": [
+   "0",
+   "1",
+   "7",
+   "14",
+   "49"
+  ],
+  "answer": 0,
+  "explanation": "A variância mede o quanto os dados se afastam da média. Aqui a média é 7 e todos os valores são iguais a 7, de modo que todos os desvios são zero e a variância populacional é (0² + 0² + ... )/6 = 0. A alternativa 7 confunde variância com a média. A de 49 é o quadrado da média, e a de 14 é o dobro dela, sem relação com os desvios. A de 1 seria uma dispersão mínima típica de dados que diferem de 1 unidade da média, o que não ocorre. Dispersão zero significa dados todos iguais.",
+  "lawRef": "Variância: dados iguais têm dispersão nula"
+ },
+ {
+  "id": "rlm-m15-autoral-13",
+  "origem": "autoral-ia",
+  "q": "Em Estatística, sobre o desvio padrão de um conjunto de dados, é correto afirmar que ele é:",
+  "options": [
+   "a média aritmética dos valores observados",
+   "o quadrado da variância",
+   "a diferença entre o maior e o menor valor",
+   "a diferença entre a média e a mediana",
+   "a raiz quadrada da variância, expresso na mesma unidade dos dados"
+  ],
+  "answer": 4,
+  "explanation": "O desvio padrão é, por definição, a raiz quadrada positiva da variância. Como a variância é calculada com desvios elevados ao quadrado, sua unidade é a dos dados ao quadrado (min², R$²), e a raiz devolve o resultado à unidade original, o que facilita a interpretação. A média aritmética é uma medida de posição. O quadrado da variância não tem esse papel. A diferença entre o maior e o menor valor é a amplitude. A diferença entre média e mediana não é medida de dispersão padronizada.",
+  "lawRef": "Desvio padrão = raiz quadrada da variância"
+ },
+ {
+  "id": "rlm-m15-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Considere a população formada pelos valores 2, 4 e 6, cuja média é 4. A variância populacional (divisor N) é:",
+  "options": [
+   "2",
+   "8/3",
+   "4",
+   "8",
+   "16"
+  ],
+  "answer": 1,
+  "explanation": "Desvios em relação à média 4: −2, 0 e +2. Quadrados: 4, 0 e 4, somando 8. Como se trata de população, divide-se por N = 3, e a variância é 8/3 ≈ 2,67. A alternativa 4 é a variância amostral (divisor n − 1 = 2), que não se aplica porque o enunciado trata de população. A de 8 é a soma dos quadrados dos desvios, sem dividir. A de 2 é o maior desvio absoluto em relação à média (a média dos desvios absolutos seria 4/3). A de 16 é o quadrado da média.",
+  "lawRef": "Variância populacional"
+ },
+ {
+  "id": "rlm-m15-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Os tempos de uma população de oito atendimentos, em minutos, são 2, 4, 4, 4, 5, 5, 7 e 9. O desvio padrão populacional é:",
+  "options": [
+   "4",
+   "2,14",
+   "32",
+   "2",
+   "5"
+  ],
+  "answer": 3,
+  "explanation": "A média é 40/8 = 5. Os desvios são −3, −1, −1, −1, 0, 0, +2 e +4, e seus quadrados somam 9 + 1 + 1 + 1 + 0 + 0 + 4 + 16 = 32. A variância populacional é 32/8 = 4 e o desvio padrão é a raiz, √4 = 2 minutos. A alternativa 4 é a variância, não o desvio padrão. A de 2,14 é o desvio padrão amostral (√(32/7)), que usa o divisor n − 1 e não se aplica a população. A de 32 é a soma dos quadrados dos desvios, e a de 5 é a média.",
+  "lawRef": "Desvio padrão populacional"
+ },
+ {
+  "id": "rlm-m15-autoral-16",
+  "origem": "autoral-ia",
+  "q": "Para os valores 3, 5 e 7, de média 5, o desvio médio absoluto em relação à média é:",
+  "options": [
+   "8/3",
+   "1",
+   "2",
+   "4",
+   "4/3"
+  ],
+  "answer": 4,
+  "explanation": "O desvio médio absoluto é a média dos módulos dos desvios em relação à média. Desvios: 3 − 5 = −2, 5 − 5 = 0 e 7 − 5 = 2; módulos: 2, 0 e 2, somando 4. Dividindo por 3 valores: 4/3 ≈ 1,33. A alternativa 8/3 é a variância populacional, que usa quadrados dos desvios (4 + 0 + 4 = 8, dividido por 3). A de 4 é a soma dos módulos, sem dividir. A de 2 é o maior desvio absoluto, e a de 1 não corresponde a nenhuma etapa do cálculo.",
+  "lawRef": "Desvio médio absoluto"
+ },
+ {
+  "id": "rlm-m15-autoral-17",
+  "origem": "autoral-ia",
+  "q": "Um abono fixo de R$ 200,00 é concedido a todos os servidores de um órgão. Em relação ao desvio padrão dos salários, após o abono ele:",
+  "options": [
+   "aumenta R$ 200,00",
+   "fica multiplicado por 200",
+   "permanece igual",
+   "diminui R$ 200,00",
+   "torna-se zero"
+  ],
+  "answer": 2,
+  "explanation": "Somar uma constante a todos os dados desloca a média pelo mesmo valor, mas não altera as distâncias entre cada dado e a média: os desvios continuam iguais, assim como a variância e o desvio padrão. Por isso o desvio padrão permanece igual. Ele não aumenta R$ 200,00 (isso valeria para a média), não é multiplicado por 200 (isso só ocorreria se os salários fossem multiplicados, e não somados) e também não diminui. Só se tornaria zero se todos os salários fossem iguais.",
+  "lawRef": "Propriedades: translação não altera a dispersão"
+ },
+ {
+  "id": "rlm-m15-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Uma amostra de três valores é 1, 3 e 5, com média 3. A variância amostral (divisor n − 1) é:",
+  "options": [
+   "4",
+   "8/3",
+   "2",
+   "3",
+   "8"
+  ],
+  "answer": 0,
+  "explanation": "Desvios em relação à média 3: −2, 0 e +2. Quadrados: 4, 0 e 4, somando 8. Como o enunciado pede a variância amostral, o divisor é n − 1 = 2, e a variância é 8/2 = 4. A alternativa 8/3 é a variância populacional (divisor N = 3), que não é a pedida. A de 8 é a soma dos quadrados sem dividir. A de 2 é a divisão de 4 por 2, ou o maior desvio, sem corresponder à fórmula. A de 3 é a própria média.",
+  "lawRef": "Variância amostral (divisor n − 1)"
+ },
+ {
+  "id": "rlm-m15-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Uma população tem variância 9. Se todos os dados forem multiplicados por 2, a nova variância será:",
+  "options": [
+   "18",
+   "36",
+   "9",
+   "6",
+   "81"
+  ],
+  "answer": 1,
+  "explanation": "A variância é medida em unidades ao quadrado, então multiplicar todos os dados por uma constante k multiplica a variância por k². Com k = 2, a nova variância é 9 × 2² = 36. Em termos do desvio padrão, ele passa de 3 para 6 (multiplica por 2), e 6² = 36. A alternativa 18 multiplica a variância por 2, esquecendo o quadrado. A de 6 é o novo desvio padrão, e não a variância. A de 9 supõe que a variância não muda. A de 81 eleva a variância original ao quadrado.",
+  "lawRef": "Variância e mudança de escala: k²"
+ },
+ {
+  "id": "rlm-m15-autoral-20",
+  "origem": "autoral-ia",
+  "q": "A população formada pelos valores 2, 2, 6 e 6 tem média 4. O desvio padrão populacional é:",
+  "options": [
+   "4",
+   "2,31",
+   "16",
+   "2",
+   "8"
+  ],
+  "answer": 3,
+  "explanation": "Os desvios em relação à média 4 são −2, −2, +2 e +2, cujos quadrados somam 4 + 4 + 4 + 4 = 16. A variância populacional é 16/4 = 4, e o desvio padrão é √4 = 2. A alternativa 4 é a variância. A de 2,31 é o desvio padrão amostral (√(16/3)), que usa n − 1 e não se aplica a uma população. A de 16 é a soma dos quadrados, sem dividir. A de 8 é a soma dos módulos dos desvios (2 + 2 + 2 + 2).",
+  "lawRef": "Desvio padrão populacional"
  }
 ];

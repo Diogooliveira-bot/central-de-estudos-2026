@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 2,
   "explanation": "Se Z fosse sincero, sua declaração (\"os três somos mentirosos\") seria verdadeira, mas isso o tornaria mentiroso: contradição; logo Z é mentiroso. Se X fosse sincero, haveria exatamente um mentiroso (o próprio Z), e Y seria sincero, mas Y afirma que há dois mentirosos, o que seria falso: contradição; logo X é mentiroso. Com X e Z mentirosos, a declaração de Y (\"exatamente dois são mentirosos\") é verdadeira se Y for sincero, e Y precisa ser sincero (se fosse mentiroso, os três seriam mentirosos e a declaração de Z seria verdadeira, contradição). Assim X e Z mentem e Y diz a verdade. A verificação dos oito casos possíveis confirma essa solução como a única.",
   "lawRef": "Dedução lógica — sinceros e mentirosos (análise de casos)"
+ },
+ {
+  "id": "rlm-m04-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Considere as premissas: \"Se o prazo é prorrogado, o recurso é aceito\" (P → Q) e \"O prazo foi prorrogado\" (P). Conclui-se validamente que:",
+  "options": [
+   "O prazo não foi prorrogado (¬P).",
+   "O recurso foi aceito (Q).",
+   "O recurso não foi aceito (¬Q).",
+   "O prazo é prorrogado se e somente se o recurso é aceito (P ↔ Q).",
+   "Se o recurso é aceito, o prazo é prorrogado (Q → P)."
+  ],
+  "answer": 1,
+  "explanation": "Trata-se do modus ponens: de P → Q e P, conclui-se Q. Se a condicional vale e o antecedente ocorre, o consequente necessariamente ocorre. Verificação: a única linha em que as duas premissas são verdadeiras é P = V e Q = V, e nela Q é verdadeiro. ¬P contradiz a segunda premissa; ¬Q contradiz o resultado. A bicondicional e a recíproca (Q → P) não decorrem das premissas, pois o recurso poderia ser aceito por outra razão, sem prorrogação.",
+  "lawRef": "Modus ponens"
+ },
+ {
+  "id": "rlm-m04-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Considere as premissas \"Todo analista é servidor\" e \"Todo servidor é concursado\". A conclusão \"Todo analista é concursado\" torna o argumento:",
+  "options": [
+   "Inválido em qualquer circunstância.",
+   "Válido apenas se os conjuntos analistas e concursados forem iguais.",
+   "Inválido, pois faltam premissas sobre indivíduos específicos.",
+   "Válido, pela transitividade da inclusão de conjuntos.",
+   "Inconclusivo, pois depende de haver servidores que não são analistas."
+  ],
+  "answer": 3,
+  "explanation": "Em diagramas: o conjunto dos analistas está dentro do dos servidores, que está dentro do dos concursados; logo analistas ⊆ concursados. É o silogismo da transitividade (Barbara): sempre que as premissas forem verdadeiras, a conclusão será verdadeira, portanto o argumento é válido. Não é necessário que os conjuntos sejam iguais; podem existir servidores que não são analistas e isso não afeta a conclusão. Também não se exigem premissas sobre indivíduos, pois a conclusão é sobre classes inteiras.",
+  "lawRef": "Silogismo categórico: transitividade (todo A é B, todo B é C)"
+ },
+ {
+  "id": "rlm-m04-autoral-13",
+  "origem": "autoral-ia",
+  "q": "A validade de um argumento dedutivo depende:",
+  "options": [
+   "da forma: não é possível ter todas as premissas verdadeiras e a conclusão falsa.",
+   "de a conclusão parecer realista ou aceitável.",
+   "de quem enunciou as premissas e de sua autoridade.",
+   "de as premissas serem fatos historicamente comprovados.",
+   "do número de pessoas ou itens mencionados nas premissas."
+  ],
+  "answer": 0,
+  "explanation": "Validade é uma propriedade da estrutura do raciocínio: um argumento é válido quando, supondo todas as premissas verdadeiras, a conclusão é necessariamente verdadeira (não existe a combinação premissas V e conclusão F). Isso é independente de a conclusão soar plausível, de quem a afirmou ou de as premissas serem verdadeiras de fato: um argumento pode ser válido com premissas falsas, e inválido com premissas e conclusão verdadeiras. Já a solidez exige validade e premissas verdadeiras.",
+  "lawRef": "Conceito de validade de argumento"
+ },
+ {
+  "id": "rlm-m04-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Premissas: \"Se o alarme toca, a sala é evacuada\" e \"A sala não foi evacuada\". A conclusão válida é:",
+  "options": [
+   "O alarme tocou.",
+   "A sala não existe.",
+   "O alarme não tocou.",
+   "O alarme está com defeito.",
+   "A evacuação ocorreu."
+  ],
+  "answer": 2,
+  "explanation": "Modus tollens: de P → Q e ¬Q, conclui-se ¬P. Se o alarme tocar, a sala é evacuada; como não foi evacuada, o alarme não pode ter tocado. Pela contrapositiva, ¬Q → ¬P é equivalente à condicional dada. \"O alarme tocou\" é o oposto do que se deduz; \"a evacuação ocorreu\" contradiz a segunda premissa; \"o alarme está com defeito\" e \"a sala não existe\" são hipóteses externas, que não decorrem logicamente das premissas.",
+  "lawRef": "Modus tollens"
+ },
+ {
+  "id": "rlm-m04-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Considere as premissas \"Se choveu, a rua está molhada\" (P → Q) e \"A rua está molhada\" (Q). Concluir que \"choveu\" (P) é um raciocínio:",
+  "options": [
+   "válido, chamado modus ponens.",
+   "válido, chamado modus tollens.",
+   "válido, chamado contraposição.",
+   "válido, chamado silogismo disjuntivo.",
+   "inválido, conhecido como falácia da afirmação do consequente."
+  ],
+  "answer": 4,
+  "explanation": "Afirmar o consequente não garante o antecedente: a rua pode estar molhada por outro motivo (lavagem, vazamento). Contraexemplo: P = F e Q = V torna P → Q verdadeira e Q verdadeira, mas P falsa, portanto premissas V e conclusão F. O modus ponens afirma o antecedente; o modus tollens nega o consequente; a contraposição transforma P → Q em ¬Q → ¬P; e o silogismo disjuntivo usa uma disjunção. Nenhum deles descreve o raciocínio dado, que é inválido.",
+  "lawRef": "Falácia da afirmação do consequente"
+ },
+ {
+  "id": "rlm-m04-autoral-16",
+  "origem": "autoral-ia",
+  "q": "As premissas \"P ou Q\" (disjunção inclusiva) e \"não P\" levam, validamente, a:",
+  "options": [
+   "P",
+   "¬Q",
+   "P ∧ Q",
+   "Q",
+   "¬P ∧ ¬Q"
+  ],
+  "answer": 3,
+  "explanation": "Silogismo disjuntivo: uma disjunção verdadeira exige pelo menos uma parcela verdadeira; sendo P falsa (segunda premissa), resta Q verdadeira. Pela tabela: a única linha com P ∨ Q verdadeira e ¬P verdadeira é P = F e Q = V. Logo Q é consequência obrigatória. P contradiz a segunda premissa; ¬Q e ¬P ∧ ¬Q tornariam a disjunção falsa; e P ∧ Q exige P verdadeira, o que a segunda premissa não permite.",
+  "lawRef": "Silogismo disjuntivo"
+ },
+ {
+  "id": "rlm-m04-autoral-17",
+  "origem": "autoral-ia",
+  "q": "Se P → Q e Q → R são verdadeiras, qual conclusão necessariamente vale?",
+  "options": [
+   "P → R",
+   "R → P",
+   "Q → P",
+   "P ∧ R",
+   "¬P → ¬R"
+  ],
+  "answer": 0,
+  "explanation": "É o silogismo hipotético: encadeando duas condicionais, P → Q e Q → R, resulta P → R. Raciocínio: se P ocorre, então Q ocorre; e, ocorrendo Q, R ocorre. As demais são falácias ou não decorrem: R → P e Q → P são recíprocas; ¬P → ¬R é a inversa da conclusão (não equivalente a ela); e P ∧ R afirmaria que P e R são verdadeiras de fato, o que as condicionais não garantem, pois P poderia ser falsa.",
+  "lawRef": "Silogismo hipotético"
+ },
+ {
+  "id": "rlm-m04-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Considere: \"Se estudo, reviso\"; \"Se reviso, aprendo\"; \"Não aprendi\". Qual conclusão decorre necessariamente?",
+  "options": [
+   "Estudei e revisei.",
+   "Não estudei, mas revisei.",
+   "Aprendi pelo menos uma vez.",
+   "Nada se conclui das premissas.",
+   "Não revisei e não estudei."
+  ],
+  "answer": 4,
+  "explanation": "Parte-se da premissa certa: \"Não aprendi\" (¬A). Pela contrapositiva da segunda condicional, ¬A → ¬R, logo não revisei. Pela contrapositiva da primeira, ¬R → ¬E, logo não estudei. Então a conclusão é: não revisei e não estudei. \"Estudei e revisei\" contradiz as premissas. \"Não estudei, mas revisei\" contradiz ¬R. \"Aprendi pelo menos uma vez\" contradiz a terceira premissa. E \"nada se conclui\" é falso, pois a cadeia de modus tollens leva à conclusão.",
+  "lawRef": "Modus tollens encadeado e contrapositiva"
+ },
+ {
+  "id": "rlm-m04-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Para mostrar que o argumento \"P → Q; Q; logo P\" é inválido, é preciso um contraexemplo, isto é, uma atribuição que torne as premissas verdadeiras e a conclusão falsa. Qual atribuição serve?",
+  "options": [
+   "P = V e Q = V",
+   "P = F e Q = V",
+   "P = V e Q = F",
+   "P = F e Q = F",
+   "Não existe tal atribuição."
+  ],
+  "answer": 1,
+  "explanation": "Procura-se premissas V e conclusão F. A conclusão P é falsa só se P = F. Com P = F, a premissa P → Q é verdadeira para qualquer Q, e a premissa Q exige Q = V. Logo P = F e Q = V é o contraexemplo: P → Q = V, Q = V, P = F. Em P = V e Q = V a conclusão é verdadeira (não é contraexemplo); em P = V e Q = F a premissa P → Q é falsa; em P = F e Q = F a premissa Q é falsa. Como o contraexemplo existe, o argumento é inválido.",
+  "lawRef": "Validade por contraexemplo"
+ },
+ {
+  "id": "rlm-m04-autoral-20",
+  "origem": "autoral-ia",
+  "q": "Considere as premissas: \"Todo auxiliar é servidor\" e \"Nenhum servidor é terceirizado\". Qual conclusão é obrigatória?",
+  "options": [
+   "Algum auxiliar é terceirizado.",
+   "Todo terceirizado é auxiliar.",
+   "Nenhum auxiliar é terceirizado.",
+   "Nenhum servidor é auxiliar.",
+   "Algum terceirizado é servidor."
+  ],
+  "answer": 2,
+  "explanation": "No diagrama, o conjunto dos auxiliares está dentro do dos servidores, e o dos servidores não tem nenhum ponto em comum com o dos terceirizados; logo auxiliares e terceirizados também não se intersectam: nenhum auxiliar é terceirizado. As demais são falsas ou não decorrem: \"algum auxiliar é terceirizado\" e \"algum terceirizado é servidor\" contradizem a segunda premissa; \"todo terceirizado é auxiliar\" é inversão sem base; \"nenhum servidor é auxiliar\" contraria a primeira premissa, pois os auxiliares são servidores.",
+  "lawRef": "Silogismo categórico com premissa negativa"
  }
 ];

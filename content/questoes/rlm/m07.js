@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 2,
   "explanation": "Monte a cadeia no sentido ascendente a partir de Dora: Dora é subordinada direta de Edu; Edu é subordinado direto de Fábio; Fábio é subordinado direto de Gil. Pela transitividade, são superiores a Dora: Edu (superior direto), Fábio (superior do superior) e Gil (superior de Fábio). São 3 pessoas. O resultado 1 considera apenas o superior direto; 2 esquece Gil; 4 inclui Helena, que é subordinada de Fábio, ou seja, colega de Edu e não superior de Dora (estar no mesmo nível de um superior não gera relação de superioridade); 5 inclui ainda Carlos, que é subordinado a Dora e, portanto, está abaixo dela. A relação de subordinação é assimétrica: o sentido (quem é subordinado de quem) precisa ser respeitado em cada elo.",
   "lawRef": "Relação de ordem — transitividade e direção da subordinação"
+ },
+ {
+  "id": "rlm-m07-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Considere a analogia entre instrumento e grandeza que ele mede: \"régua : comprimento :: balança : ?\". Assinale a opção que mantém a mesma relação.",
+  "options": [
+   "tempo",
+   "massa",
+   "altura",
+   "velocidade",
+   "luminosidade"
+  ],
+  "answer": 1,
+  "explanation": "A relação é instrumento de medida : grandeza que ele mede. A régua mede o comprimento; a balança é usada, no sentido comum, para medir a massa (alternativa B). Tempo é medido por cronômetro, velocidade por velocímetro e luminosidade por luxímetro, instrumentos que não aparecem aqui. Altura também pode ser medida por régua ou trena, mas não é a grandeza própria da balança. Em analogias, enuncie a relação em uma frase antes de olhar as alternativas e confira se ela vale também para o segundo par.",
+  "lawRef": "Analogia — instrumento : grandeza medida"
+ },
+ {
+  "id": "rlm-m07-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Entre as figuras planas listadas abaixo, assinale a única que NÃO é um quadrilátero.",
+  "options": [
+   "Quadrado",
+   "Retângulo",
+   "Losango",
+   "Trapézio",
+   "Triângulo"
+  ],
+  "answer": 4,
+  "explanation": "Quadrilátero é a figura plana de quatro lados. O quadrado, o retângulo, o losango e o trapézio têm quatro lados e, portanto, são quadriláteros. O triângulo tem três lados e é a única figura que não pertence ao conjunto (alternativa E). Neste tipo de questão, defina a propriedade comum (quatro lados) e verifique cada item contra ela; o item que a descumpre é o intruso. Atenção ao comando \"NÃO é\", que inverte a busca.",
+  "lawRef": "Conceito e classificação — propriedade definidora"
+ },
+ {
+  "id": "rlm-m07-autoral-13",
+  "origem": "autoral-ia",
+  "q": "Qual dos números abaixo NÃO é um quadrado perfeito?",
+  "options": [
+   "36",
+   "49",
+   "64",
+   "72",
+   "81"
+  ],
+  "answer": 3,
+  "explanation": "Um quadrado perfeito é o quadrado de um número inteiro. Verificando: 36 = 6², 49 = 7², 64 = 8² e 81 = 9². Já 72 está entre 64 (8²) e 81 (9²), sem ser o quadrado de nenhum inteiro, pois 8² = 64 e 9² = 81 não o alcançam. Logo, 72 é o intruso (alternativa D). Dica prática: localize o número entre dois quadrados consecutivos; se estiver estritamente entre eles, não é quadrado perfeito.",
+  "lawRef": "Conjuntos numéricos — quadrados perfeitos"
+ },
+ {
+  "id": "rlm-m07-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Complete a analogia entre parte e todo: \"capítulo : livro :: cena : ?\".",
+  "options": [
+   "peça teatral",
+   "palavra",
+   "caderno",
+   "cenário",
+   "autor"
+  ],
+  "answer": 0,
+  "explanation": "A relação é unidade que compõe : obra da qual é parte. O capítulo é uma parte do livro; a cena é uma parte da peça teatral (alternativa A). Palavra é componente muito menor de uma cena; caderno e autor não são obras que se dividem em cenas; cenário lembra a palavra \"cena\" por semelhança sonora, mas é o local da ação, não o todo. Em analogias, o erro mais comum é buscar parecença de som ou de tema em vez da mesma relação lógica entre os pares.",
+  "lawRef": "Analogia — parte : todo"
+ },
+ {
+  "id": "rlm-m07-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Em uma pesquisa, as palavras \"maçã\", \"banana\" e \"pera\" foram agrupadas. Qual categoria abaixo abrange os três elementos?",
+  "options": [
+   "Cereais",
+   "Legumes",
+   "Frutas",
+   "Instrumentos",
+   "Tecidos"
+  ],
+  "answer": 2,
+  "explanation": "Para achar a categoria, procure a propriedade que todos os elementos compartilham: maçã, banana e pera são frutos comestíveis de plantas, e a categoria mais específica que os reúne é \"frutas\" (alternativa C). Cereais são grãos (arroz, trigo), legumes são vagens ou hortaliças, instrumentos e tecidos não têm relação com alimentos. A palavra correta deve incluir todos os exemplos; não basta incluir um ou dois deles.",
+  "lawRef": "Classificação — categoria que inclui os elementos"
+ },
+ {
+  "id": "rlm-m07-autoral-16",
+  "origem": "autoral-ia",
+  "q": "Quatro dos números abaixo são múltiplos positivos de 4. Assinale o que rompe esse padrão.",
+  "options": [
+   "8",
+   "12",
+   "20",
+   "32",
+   "38"
+  ],
+  "answer": 4,
+  "explanation": "Um número é múltiplo de 4 quando a divisão por 4 deixa resto zero (ou, por critério, quando o número formado pelos dois últimos algarismos é divisível por 4). 8 = 4×2, 12 = 4×3, 20 = 4×5 e 32 = 4×8 satisfazem o padrão. Já 38 ÷ 4 = 9 com resto 2, pois 4×9 = 36 e 4×10 = 40, e por isso quebra o padrão (alternativa E). Observe que 38 é par, mas ser par não basta: todo múltiplo de 4 é par, mas nem todo par é múltiplo de 4.",
+  "lawRef": "Múltiplos e critérios de divisibilidade"
+ },
+ {
+  "id": "rlm-m07-autoral-17",
+  "origem": "autoral-ia",
+  "q": "Todo número inteiro que é, ao mesmo tempo, par e múltiplo de 3 é necessariamente múltiplo de:",
+  "options": [
+   "2, mas não necessariamente de 3.",
+   "6",
+   "9",
+   "12",
+   "18"
+  ],
+  "answer": 1,
+  "explanation": "Ser par é ser múltiplo de 2; ser múltiplo de 3 é um segundo requisito. Como 2 e 3 não têm divisor comum além de 1 (são primos entre si), um número divisível pelos dois é divisível pelo produto 2 × 3 = 6, e a alternativa B é necessária. A alternativa A contradiz o enunciado (o número é múltiplo de 3). Já 9, 12 e 18 não são obrigatórios: 6 é par e múltiplo de 3 e não é múltiplo de 9, de 12 nem de 18. Um contraexemplo basta para descartar uma conclusão dita necessária.",
+  "lawRef": "Múltiplos — mínimo múltiplo comum e números primos entre si"
+ },
+ {
+  "id": "rlm-m07-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Quatro dos números abaixo pertencem ao conjunto dos números pares positivos. Assinale o único que NÃO pertence a esse conjunto.",
+  "options": [
+   "6",
+   "10",
+   "14",
+   "25",
+   "30"
+  ],
+  "answer": 3,
+  "explanation": "Um número é par quando a divisão por 2 deixa resto zero, isto é, quando termina em 0, 2, 4, 6 ou 8. 6, 10, 14 e 30 são pares. O número 25 termina em 5, deixa resto 1 na divisão por 2 e é ímpar; ele é o intruso (alternativa D). O comando traz a negativa (\"NÃO pertence\"): identifique a propriedade comum dos quatro e procure o elemento que a descumpre, em vez de marcar o primeiro número que pareça diferente.",
+  "lawRef": "Conjuntos numéricos — pares e ímpares"
+ },
+ {
+  "id": "rlm-m07-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Seja C o conjunto dos números inteiros positivos que são múltiplos de 5 e menores que 18. Quantos elementos tem C?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "answer": 0,
+  "explanation": "Liste os múltiplos positivos de 5 e pare antes de chegar a 18: 5, 10, 15 (o próximo, 20, já ultrapassa 17). Logo C = {5, 10, 15}, que tem 3 elementos (alternativa A). Quem inclui o zero obtém 4, mas o enunciado exige inteiros positivos; quem inclui 20 por distração chega a 4 ou 5. Outra forma de contar: o maior múltiplo de 5 menor que 18 é 15 = 5 × 3, logo há 3 múltiplos positivos. Em contagem de conjuntos, atenção às fronteiras (positivo, menor que).",
+  "lawRef": "Conjuntos — definição por propriedade e contagem de elementos"
+ },
+ {
+  "id": "rlm-m07-autoral-20",
+  "origem": "autoral-ia",
+  "q": "Considere dois conjuntos: A, dos objetos quadrados, e B, dos objetos azuis. Sabe-se apenas que o objeto X pertence a A. Qual afirmação é necessariamente verdadeira?",
+  "options": [
+   "X é azul.",
+   "X não é azul.",
+   "X é quadrado.",
+   "X não é quadrado.",
+   "A e B são iguais."
+  ],
+  "answer": 2,
+  "explanation": "Pertencer a A significa, por definição, ser quadrado; portanto \"X é quadrado\" é necessária (alternativa C). O enunciado não dá nenhuma informação sobre a cor de X: ele pode ser azul ou não. Por isso \"X é azul\" (A) e \"X não é azul\" (B) são apenas possíveis, não necessárias. A alternativa D contradiz o dado, e a E é falsa, pois A (formato) e B (cor) são propriedades diferentes. Conclusão necessária é a que vale em todos os casos compatíveis, não a que é só plausível.",
+  "lawRef": "Pertinência a conjuntos — conclusão necessária x possível"
  }
 ];

@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 3,
   "explanation": "Se R é F e a condicional (P ∧ Q) → R é V, o antecedente P ∧ Q precisa ser F (uma condicional com consequente falso só é verdadeira se o antecedente é falso). Uma conjunção falsa admite três combinações de (P, Q): FF, FV e VF. Nenhuma de P, Q isoladamente é necessariamente falsa (primeira e segunda alternativas), pois P pode ser V (com Q = F) e Q pode ser V (com P = F). A disjunção P ∨ Q pode ser verdadeira (FV ou VF), logo ¬(P ∨ Q) não é necessária. A bicondicional P ↔ Q é falsa nas linhas FV e VF, portanto também não é necessária. Já P → ¬Q é falsa apenas quando P e Q são ambos V, linha excluída: é verdadeira nas três combinações possíveis, ou seja, é equivalente a ¬(P ∧ Q).",
   "lawRef": "Condicional com consequente falso — antecedente falso"
+ },
+ {
+  "id": "rlm-m02-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Em um comunicado do tribunal constam as sentenças abaixo. Qual delas é uma proposição lógica, isto é, uma sentença declarativa à qual se pode atribuir o valor verdadeiro ou falso?",
+  "options": [
+   "Protocole a petição até as 17 horas.",
+   "Que horas começa a sessão?",
+   "x + 1 = 4, sem que se saiba quanto vale x.",
+   "O número 8 é par.",
+   "Tomara que o expediente termine cedo."
+  ],
+  "answer": 3,
+  "explanation": "Proposição é toda sentença declarativa que pode ser classificada, sem ambiguidade, como verdadeira ou falsa. \"O número 8 é par\" é declarativa e verdadeira, logo é proposição. As demais não têm valor lógico: \"Protocole a petição\" é uma ordem (imperativa); \"Que horas começa a sessão?\" é uma pergunta; \"Tomara que o expediente termine cedo\" expressa desejo; e \"x + 1 = 4\" é uma sentença aberta, pois, sem fixar x, não se pode dizer se é V ou F.",
+  "lawRef": "Conceito de proposição (sentença declarativa com valor lógico)"
+ },
+ {
+  "id": "rlm-m02-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Sejam P e Q proposições simples. A conjunção P ∧ Q (\"P e Q\") é verdadeira somente quando:",
+  "options": [
+   "P e Q são ambas verdadeiras.",
+   "P é verdadeira, qualquer que seja o valor de Q.",
+   "Q é verdadeira, qualquer que seja o valor de P.",
+   "P e Q são ambas falsas.",
+   "P e Q têm valores lógicos diferentes."
+  ],
+  "answer": 0,
+  "explanation": "A conjunção exige as duas parcelas verdadeiras ao mesmo tempo. Na tabela-verdade de P ∧ Q, as quatro linhas dão: VV → V; VF → F; FV → F; FF → F. Portanto só a linha com P e Q verdadeiras torna a conjunção verdadeira. As alternativas que exigem apenas P ou apenas Q verdadeira descrevem condições insuficientes (parecem a disjunção); \"ambas falsas\" é a única linha em que a disjunção também falha; e \"valores diferentes\" descreve o ou exclusivo, não a conjunção.",
+  "lawRef": "Tabela-verdade da conjunção"
+ },
+ {
+  "id": "rlm-m02-autoral-13",
+  "origem": "autoral-ia",
+  "q": "Para analisar a proposição composta (P ∧ Q) → R, construída com três proposições simples P, Q e R, monta-se a tabela-verdade completa. Quantas linhas ela terá?",
+  "options": [
+   "4",
+   "6",
+   "8",
+   "9",
+   "12"
+  ],
+  "answer": 2,
+  "explanation": "O número de linhas de uma tabela-verdade completa é 2ⁿ, em que n é a quantidade de proposições simples distintas, pois cada uma pode ser V ou F de forma independente. Aqui n = 3 (P, Q e R), então 2³ = 2 × 2 × 2 = 8 linhas. O valor 4 corresponderia a apenas duas proposições (2²); 6 e 12 vêm de somar ou multiplicar de modo errado (3 × 2, 3 × 4); e 9 vem de calcular 3² em vez de 2³, trocando base e expoente.",
+  "lawRef": "Número de linhas da tabela-verdade (2ⁿ)"
+ },
+ {
+  "id": "rlm-m02-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Sejam P: \"o prazo foi cumprido\" e Q: \"o recurso foi admitido\". Sabe-se que P é verdadeira e Q é falsa. O valor lógico da condicional P → Q é:",
+  "options": [
+   "Verdadeiro.",
+   "Indeterminado, pois depende de outras proposições.",
+   "Verdadeiro, pois o antecedente P é verdadeiro.",
+   "Verdadeiro, pois a disjunção Q ∨ P é verdadeira.",
+   "Falso."
+  ],
+  "answer": 4,
+  "explanation": "A condicional P → Q só é falsa em uma situação: antecedente verdadeiro e consequente falso. Com P = V e Q = F, estamos exatamente nessa linha, logo P → Q é falsa (F). Erram quem pensa que antecedente verdadeiro basta para tornar a condicional verdadeira (exige-se também Q verdadeiro), quem acha o valor indeterminado (os dois valores são dados) e quem confunde a condicional com a disjunção Q ∨ P: ela é verdadeira, mas isso não altera o valor de P → Q, que é uma operação diferente.",
+  "lawRef": "Tabela-verdade da condicional (P → Q)"
+ },
+ {
+  "id": "rlm-m02-autoral-15",
+  "origem": "autoral-ia",
+  "q": "A sentença \"Vou ao fórum somente se houver expediente\" é simbolizada, com F: \"vou ao fórum\" e E: \"há expediente\", por:",
+  "options": [
+   "E → F",
+   "F → E",
+   "F ∧ E",
+   "F ↔ E",
+   "¬E → F"
+  ],
+  "answer": 1,
+  "explanation": "A expressão \"A somente se B\" indica que B é condição necessária para A, ou seja, A → B. Ir ao fórum só é possível se houver expediente: F → E. A forma E → F (\"se há expediente, vou\") inverte a condicional e afirmaria que o expediente basta para eu ir, o que a frase não diz. F ∧ E afirma que ambos ocorrem de fato; F ↔ E exigiria também a volta (ir sempre que houver expediente); e ¬E → F diria que sem expediente eu vou, o contrário do pretendido.",
+  "lawRef": "Condicional: \"somente se\" indica condição necessária"
+ },
+ {
+  "id": "rlm-m02-autoral-16",
+  "origem": "autoral-ia",
+  "q": "Qual expressão simboliza a sentença \"Não é verdade que Paulo trabalha e estuda\", com T: \"Paulo trabalha\" e E: \"Paulo estuda\"?",
+  "options": [
+   "¬T ∧ E",
+   "T ∨ E",
+   "¬(T ∧ E)",
+   "T → E",
+   "T ↔ E"
+  ],
+  "answer": 2,
+  "explanation": "A expressão \"Não é verdade que ...\" nega a sentença inteira que vem depois, aqui a conjunção \"Paulo trabalha e estuda\" (T ∧ E). Logo a simbolização é ¬(T ∧ E), que, por De Morgan, equivale a ¬T ∨ ¬E. A opção ¬T ∧ E nega só a primeira parcela e mantém a segunda; T ∨ E nem contém negação; T → E e T ↔ E são condicional e bicondicional, conectivos que não aparecem na frase.",
+  "lawRef": "Simbolização e negação de proposição composta"
+ },
+ {
+  "id": "rlm-m02-autoral-17",
+  "origem": "autoral-ia",
+  "q": "Sabendo que P e Q são ambas falsas, o valor lógico da disjunção inclusiva P ∨ Q é:",
+  "options": [
+   "Falso.",
+   "Verdadeiro.",
+   "Verdadeiro, pois ¬P é verdadeira.",
+   "Verdadeiro, pois ao menos uma das parcelas é falsa.",
+   "Indeterminado, pois depende do contexto."
+  ],
+  "answer": 0,
+  "explanation": "A disjunção inclusiva \"P ou Q\" é verdadeira quando pelo menos uma parcela é verdadeira, e só é falsa quando as duas são falsas. Com P = F e Q = F, temos F ∨ F = F. Dizer que ¬P é verdadeira não ajuda: ¬P é outra proposição e não entra em P ∨ Q. Ter ao menos uma parcela falsa é o critério da conjunção, não da disjunção. E o valor não é indeterminado, pois ambos os valores foram informados.",
+  "lawRef": "Tabela-verdade da disjunção inclusiva"
+ },
+ {
+  "id": "rlm-m02-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Em quais valores de P e Q a fórmula (P → Q) ∧ P é verdadeira?",
+  "options": [
+   "P = V e Q = F",
+   "P = F e Q = V",
+   "P = F e Q = F",
+   "P = V e Q = V",
+   "Em nenhuma atribuição, pois a fórmula é contradição."
+  ],
+  "answer": 3,
+  "explanation": "Uma conjunção só é verdadeira se as duas parcelas o forem. Exigir P verdadeira (segunda parcela) já elimina P = F. Com P = V, a primeira parcela P → Q só é verdadeira se Q = V. Teste: VV → (V→V)=V e P=V, logo V; VF → (V→F)=F, logo F; FV → P=F, logo F; FF → P=F, logo F. A fórmula é verdadeira somente em VV, portanto é contingência (não contradição). Esta fórmula é o núcleo do modus ponens.",
+  "lawRef": "Tabela-verdade de fórmula composta"
+ },
+ {
+  "id": "rlm-m02-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Considere a frase: \"Se Renato não viaja, então Carla trabalha\". O antecedente dessa condicional é:",
+  "options": [
+   "Carla trabalha.",
+   "Renato não viaja.",
+   "Renato viaja.",
+   "Carla não trabalha.",
+   "Carla viaja."
+  ],
+  "answer": 1,
+  "explanation": "Em uma condicional \"se A, então B\", o antecedente é A, a parte introduzida pelo \"se\"; o consequente é B. Aqui o \"se\" introduz \"Renato não viaja\", que é o antecedente (¬R, com R: Renato viaja). \"Carla trabalha\" é o consequente. \"Renato viaja\" é a negação do antecedente e \"Carla não trabalha\" é a negação do consequente, ambas partes da contrapositiva. \"Carla viaja\" nem aparece na frase.",
+  "lawRef": "Partes da condicional: antecedente e consequente"
+ },
+ {
+  "id": "rlm-m02-autoral-20",
+  "origem": "autoral-ia",
+  "q": "Sobre a bicondicional P ↔ Q (\"P se e somente se Q\"), é correto afirmar que ela é:",
+  "options": [
+   "Verdadeira somente quando P é V e Q é F.",
+   "Verdadeira somente quando P é F e Q é V.",
+   "Falsa apenas quando P e Q são ambas falsas.",
+   "Equivalente à disjunção inclusiva P ∨ Q.",
+   "Verdadeira exatamente quando P e Q têm o mesmo valor lógico."
+  ],
+  "answer": 4,
+  "explanation": "A bicondicional equivale a (P → Q) ∧ (Q → P): vale quando a ida e a volta valem. Isso ocorre em VV (V↔V = V) e em FF (F↔F = V), isto é, quando P e Q coincidem; nas linhas VF e FV ela é falsa. Por isso estão erradas as que a restringem a VF ou FV (são exatamente as linhas em que ela é falsa) e a que diz ser falsa em FF. Também não é equivalente a P ∨ Q, que é verdadeira em VF e falsa só em FF.",
+  "lawRef": "Tabela-verdade da bicondicional"
  }
 ];

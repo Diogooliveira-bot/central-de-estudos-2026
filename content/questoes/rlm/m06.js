@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 2,
   "explanation": "Primeiro, a ordem. Por (1), Bruno e Ana formam o bloco \"Bruno-Ana\". Por (2), Carla vem antes de Davi. As ordens possíveis são: Carla-Davi-Bruno-Ana; Carla-Bruno-Ana-Davi; Bruno-Ana-Carla-Davi. Por (4), o último colocado escolheu o TRF; nas duas últimas ordens o último é Davi, que, por (3), só pode ficar com TJ ou TRE: contradição. Logo a ordem é Carla (1º), Davi (2º), Bruno (3º), Ana (4ª), e Ana escolheu o TRF. Agora os tribunais restantes (TJ, TRT, TRE) para Carla, Davi e Bruno. Bruno não escolheu o TRE (6) e Davi só TJ ou TRE (3). Se Davi ficasse com o TJ, o TRE iria para Carla (já que Bruno não pode) e o TRT para Bruno; mas (5) exige TRT antes de TRE, e Bruno (3º) vem depois de Carla (1ª): contradição. Então Davi escolheu o TRE; o TRT, que deve vir antes, é de Carla, e sobra o TJ para Bruno. O 3º colocado é Bruno, que escolheu o TJ.",
   "lawRef": "Associação lógica — tabela de eliminação com três categorias (pessoa, posição, tribunal)"
+ },
+ {
+  "id": "rlm-m06-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Três servidores — Ana, Bia e Caio — receberão crachás de cores diferentes (azul, verde e amarelo), um para cada servidor, sem repetição de cor. Sabe-se que Ana recebeu o crachá azul. Qual das afirmações é necessariamente verdadeira?",
+  "options": [
+   "Bia e Caio não receberam o crachá azul.",
+   "Bia recebeu o crachá azul.",
+   "Caio recebeu o crachá azul.",
+   "Todos os servidores receberam o crachá azul.",
+   "Ninguém recebeu o crachá azul."
+  ],
+  "answer": 0,
+  "explanation": "Como cada cor foi entregue a um único servidor (não há repetição) e o azul já pertence a Ana, ele fica indisponível para os demais: nem Bia nem Caio podem tê-lo. Isso torna a alternativa A necessária. As alternativas B e C afirmam o contrário do que a exclusividade permite; D contradiz a regra de cores diferentes; E contradiz o dado de que Ana usa azul. Note que não é possível dizer qual das duas cores restantes cabe a Bia ou a Caio, mas isso não é perguntado: a pergunta é o que vale em todas as distribuições possíveis.",
+  "lawRef": "Associação lógica — exclusividade (correspondência um a um)"
+ },
+ {
+  "id": "rlm-m06-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Em uma fila de atendimento, o enunciado informa que \"Lia está imediatamente antes de Caio\". Qual das conclusões abaixo decorre dessa informação?",
+  "options": [
+   "Há exatamente uma pessoa entre Lia e Caio.",
+   "Lia ocupa necessariamente o primeiro lugar da fila.",
+   "Caio ocupa necessariamente o último lugar da fila.",
+   "Não há ninguém entre os dois, e Lia vem antes de Caio.",
+   "Lia e Caio podem trocar de lugar sem que a informação deixe de valer."
+  ],
+  "answer": 3,
+  "explanation": "A expressão \"imediatamente antes\" fixa duas coisas: as posições são consecutivas (não há ninguém no meio) e a ordem é Lia, depois Caio. Por isso a alternativa D está correta. A alternativa A confunde com \"uma pessoa entre eles\"; B e C impõem extremidades que o texto não menciona (a dupla pode estar no meio da fila); E é falsa porque, ao trocar, Caio ficaria antes de Lia e a informação deixaria de valer. Ao resolver, trate \"imediatamente antes\" como um bloco de duas casas em ordem fixa.",
+  "lawRef": "Ordenação — \"imediatamente antes\" (posições consecutivas e ordem fixa)"
+ },
+ {
+  "id": "rlm-m06-autoral-13",
+  "origem": "autoral-ia",
+  "q": "Três cargos distintos (chefia, secretaria e arquivo) serão distribuídos entre três servidores — Ana, Bruno e Carla —, um cargo para cada servidor. Quantos cargos Bruno receberá?",
+  "options": [
+   "Nenhum, necessariamente.",
+   "Exatamente um.",
+   "Dois.",
+   "Três.",
+   "Um ou dois, conforme o sorteio."
+  ],
+  "answer": 1,
+  "explanation": "O modelo é de correspondência um a um: três cargos, três servidores, um cargo para cada. Logo cada servidor, inclusive Bruno, recebe exatamente um cargo, o que torna correta a alternativa B. Se Bruno recebesse nenhum cargo, sobraria cargo para outro servidor, que teria dois, contra a regra; se recebesse dois ou três, faltaria cargo para os demais. A alternativa E tenta inventar uma variação que o enunciado exclui. Sempre que o texto diz \"um para cada\", a quantidade por pessoa está fixada em um.",
+  "lawRef": "Associação lógica — correspondência um a um"
+ },
+ {
+  "id": "rlm-m06-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Ana, Bia e Caio ocupam, sem empate, o 1º, o 2º e o 3º lugares em uma classificação. Sabe-se que Caio é o 3º colocado e que Ana foi classificada antes de Bia. Quem é o 2º colocado?",
+  "options": [
+   "Ana",
+   "Caio",
+   "Não é possível determinar.",
+   "Ana ou Caio.",
+   "Bia"
+  ],
+  "answer": 4,
+  "explanation": "Caio ocupa o 3º lugar, restando o 1º e o 2º para Ana e Bia. Como Ana foi classificada antes de Bia, Ana tem o 1º lugar e Bia, o 2º. Só há uma classificação possível, de modo que é possível determinar o 2º colocado: Bia (alternativa E). As alternativas A e D trocam a ordem exigida pelo enunciado; B contradiz o fato de Caio ser o 3º; C erra porque a informação é suficiente. Em ordenação, comece pela posição já dada e preencha o que sobra com a regra de precedência.",
+  "lawRef": "Ordenação — eliminação de casos"
+ },
+ {
+  "id": "rlm-m06-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Davi, Eva e Fábio têm, cada um, uma caneta de cor diferente: vermelha, azul ou preta. Sabe-se que Eva tem a caneta azul e que Davi não tem a vermelha. Qual é a cor da caneta de Davi?",
+  "options": [
+   "Azul",
+   "Vermelha",
+   "Preta",
+   "Azul ou preta.",
+   "Não há distribuição possível."
+  ],
+  "answer": 2,
+  "explanation": "Monte a tabela com pessoas e cores. Eva fica com o azul, e isso elimina o azul para Davi e Fábio. Davi também não tem o vermelho; restando apenas o preto, Davi tem a caneta preta e, por consequência, Fábio fica com a vermelha. A distribuição é única e compatível com todas as condições, o que descarta a alternativa E. A alternativa A contradiz o dado sobre Eva, B contradiz o dado sobre Davi e D inclui a cor azul, já ocupada. Em quadros de associação, cada cor usada elimina as demais casas da mesma linha e coluna.",
+  "lawRef": "Associação lógica — tabela de eliminação"
+ },
+ {
+  "id": "rlm-m06-autoral-16",
+  "origem": "autoral-ia",
+  "q": "Um declarante que sempre mente afirmou: \"O réu foi citado e o prazo foi cumprido.\" Conclui-se, necessariamente, que:",
+  "options": [
+   "o réu não foi citado ou o prazo não foi cumprido (ao menos um dos dois fatos não ocorreu).",
+   "o réu não foi citado e o prazo não foi cumprido.",
+   "o réu não foi citado.",
+   "o prazo não foi cumprido.",
+   "os dois fatos têm valores lógicos diferentes."
+  ],
+  "answer": 0,
+  "explanation": "Quem sempre mente produz afirmações falsas como um todo. A afirmação tem a forma P ∧ Q (conjunção), que só é verdadeira quando as duas parcelas são verdadeiras; portanto, para ser falsa, basta que pelo menos uma seja falsa. Isso é a negação da conjunção (De Morgan): ¬(P ∧ Q) ≡ ¬P ∨ ¬Q. Assim, a única conclusão segura é a alternativa A. A alternativa B exige que as duas sejam falsas, o que é possível, mas não necessário; C e D escolhem uma parcela sem base; E exige que uma seja verdadeira e outra falsa, deixando de fora o caso em que as duas são falsas.",
+  "lawRef": "Negação da conjunção — Leis de De Morgan"
+ },
+ {
+  "id": "rlm-m06-autoral-17",
+  "origem": "autoral-ia",
+  "q": "Em uma fila para sustentação oral, Marcos está antes de Nina e Nina está antes de Olga. Então, necessariamente:",
+  "options": [
+   "Olga está antes de Marcos.",
+   "Nina é a primeira da fila.",
+   "Marcos e Olga estão em posições adjacentes.",
+   "a fila tem exatamente três pessoas.",
+   "Marcos está antes de Olga."
+  ],
+  "answer": 4,
+  "explanation": "A relação \"estar antes de\" é transitiva: se M precede N e N precede O, então M precede O. Isso garante a alternativa E. A alternativa A é o oposto do que a transitividade exige. B é falsa, pois Marcos vem antes de Nina; C não é obrigatória, já que Nina pode estar entre eles ou outras pessoas podem separá-los; D é falsa porque a fila pode ter mais gente (o enunciado só ordena três). Evite acrescentar informações que o texto não dá, como o total de pessoas ou a adjacência.",
+  "lawRef": "Ordenação — transitividade da precedência"
+ },
+ {
+  "id": "rlm-m06-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Quatro servidores — A, B, C e D — ocupam as cadeiras numeradas de 1 a 4 de uma sala de espera, uma por servidor. A ocupa a cadeira 1, C ocupa a cadeira 4 e B ocupa a cadeira de número imediatamente superior à de D. Quem ocupa a cadeira 2?",
+  "options": [
+   "A",
+   "D",
+   "B",
+   "C",
+   "Não é possível determinar."
+  ],
+  "answer": 1,
+  "explanation": "Com A na cadeira 1 e C na cadeira 4, sobram as cadeiras 2 e 3 para B e D. A condição \"B ocupa a cadeira de número imediatamente superior à de D\" significa B = D + 1. Se D ficasse na 3, B teria de ficar na 4, que é de C: impossível. Logo D ocupa a 2 e B ocupa a 3. A solução é única, então a alternativa E é falsa. As alternativas A e C se referem a pessoas que já têm cadeiras fixadas (1 e 4); a B só teria a cadeira 2 se a regra fosse lida ao contrário (D na cadeira imediatamente superior à de B), mas aí D iria para a cadeira 3 e B para a 2, o que inverte o enunciado. Cuidado com essa leitura invertida.",
+  "lawRef": "Ordenação — posições consecutivas com ordem fixa"
+ },
+ {
+  "id": "rlm-m06-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Três caixas de arquivo — A, B e C — contêm, cada uma, exatamente um dos objetos X, Y ou Z, todos diferentes entre si. Sabe-se que A não contém X nem Z, e que B não contém Z. O que há na caixa C?",
+  "options": [
+   "X",
+   "Y",
+   "X ou Z.",
+   "Z",
+   "Não é possível determinar."
+  ],
+  "answer": 3,
+  "explanation": "A caixa A não contém X nem Z, logo contém Y. Sobram X e Z para B e C. Como B não contém Z, B contém X e, por exclusão, C contém Z (alternativa D). A solução é única, o que afasta a alternativa E. A alternativa A (X) é o objeto de B; a B (Y) é o objeto de A, já ocupado; a C (\"X ou Z\") sugeriria duas possibilidades, mas a restrição sobre B elimina uma delas. Em tabelas de eliminação, comece sempre pela linha que tem mais negativas.",
+  "lawRef": "Associação lógica — tabela de eliminação"
+ },
+ {
+  "id": "rlm-m06-autoral-20",
+  "origem": "autoral-ia",
+  "q": "O cronograma de um treinamento prevê três sessões — P, Q e R —, uma por dia, em três dias consecutivos, sem repetição. P não ocorre no primeiro dia, e Q ocorre depois de P. Qual é a ordenação das sessões?",
+  "options": [
+   "P-Q-R",
+   "P-R-Q",
+   "R-P-Q",
+   "Q-P-R",
+   "R-Q-P"
+  ],
+  "answer": 2,
+  "explanation": "Há seis ordenações possíveis; teste cada uma contra as duas regras. P-Q-R e P-R-Q colocam P no primeiro dia: eliminadas. Q-P-R e R-Q-P colocam Q antes de P: eliminadas. Resta R-P-Q, em que P não é o primeiro e Q vem depois de P. Raciocinando pela posição, P não pode ocupar o 1º dia (regra 1) nem o 3º (Q teria de vir depois), então P é o 2º, Q é o 3º e R é o 1º. A ordenação é única, portanto, R-P-Q (alternativa C).",
+  "lawRef": "Ordenação — eliminação de casos"
  }
 ];

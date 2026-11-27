@@ -27,8 +27,8 @@ test('nenhuma imagem de infográfico é publicada como arquivo do projeto',()=>{
   assert.equal(readdirSync(base).some(x=>/infograf/i.test(x)),false,dir);
  }
 });
-test('a conclusão de CF não depende da etapa de mapa e RLM segue das questões ao próximo módulo',()=>{
+test('a conclusão de CF não depende da etapa de mapa e RLM segue da revisão ao próximo módulo',()=>{
  const cf=read('ui/cf-native-study-v2.js'),rlm=read('ui/rlm-native-v1.js');
  assert.match(cf,/Math\.round\(done\/6\*100\)/);
- assert.match(rlm,/const order=g\.BCQuestionsRemoved\?\['theory','recap'\]:\['theory','recap','quiz'\]/);
+ assert.match(rlm,/const order=\['theory','recap'\]/);
 });
