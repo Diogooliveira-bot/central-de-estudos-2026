@@ -141,6 +141,28 @@ try {
     await page.waitForFunction(()=>window.BaseCompletaFocusNavigation?.state.stage==='reading'&&window.BaseCompletaFocusNavigation?.state.subject==='fortaleza'&&window.BaseCompletaFocusNavigation?.state.moduleTitle==='Hidrografia',{timeout:15000});
     assert.equal(await edital.isVisible(),false);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+    // PRF: usa um objetivo histórico independente da GMF e o mesmo checklist.
+    const prfGoal='exam-catalog-prf-2021-policial-rodoviario-federal-cargo-1';
+    assert.equal(await page.evaluate(id=>window.CentralStudyObjectives.setActive(id),prfGoal),true);
+    await page.evaluate(()=>window.CentralPRFVerticalized.open());
+    const prf=page.locator('#prfVerticalizedDialog');
+    await prf.waitFor({state:'visible'});
+    assert.equal(await prf.locator('.exam-subject').count(),14);
+    assert.equal(await prf.locator('[data-exam-topic]').count(),232);
+    await prf.locator('[data-exam-subject="prf21-v-rlm"] summary').click();
+    const prfCheck=prf.locator('[data-exam-topic="prf21-v-rlm-3-1"]');
+    await prfCheck.check();
+    assert.equal(await prfCheck.isChecked(),true);
+    assert.equal(await page.evaluate(()=>window.CentralGMFVerticalized.overall()),0);
+    await prf.locator('[data-exam-close]').click();
+    await page.evaluate(()=>window.CentralPRFVerticalized.open());
+    if(!(await prfCheck.isVisible()))await prf.locator('[data-exam-subject="prf21-v-rlm"] summary').click();
+    assert.equal(await prfCheck.isChecked(),true);
+    await prfCheck.uncheck();
+    await shot(page,`prf-${nome}-edital`);
+    await prf.locator('[data-exam-topic-row="prf21-v-rlm-3-1"] [data-exam-module="M11"]').click();
+    await page.waitForFunction(()=>window.BaseCompletaFocusNavigation?.state.stage==='reading'&&window.BaseCompletaFocusNavigation?.state.subject==='rlm'&&/Razão/i.test(window.BaseCompletaFocusNavigation?.state.moduleTitle||''),{timeout:15000});
+    assert.equal(await prf.isVisible(),false);
     assert.deepEqual(erros, [], `${nome}: sem erros de JavaScript`);
     await ctx.close();
   }

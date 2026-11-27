@@ -53,7 +53,8 @@
     "test:menu-tablet": "node tests/tablet-menu-browser.mjs",
     "test:gmf-padrao": "node tests/gmf-standard-browser.mjs",
     "nova-disciplina": "node scripts/disciplinas-extras.mjs",
-    "test:gmf": "node --test tests/gmf-disciplines-unit.mjs tests/gmf-m01-content-security-unit.mjs tests/gmf-study-objective-unit.mjs tests/gmf-verticalized-unit.mjs"
+    "test:gmf": "node --test tests/gmf-disciplines-unit.mjs tests/gmf-m01-content-security-unit.mjs tests/gmf-study-objective-unit.mjs tests/gmf-verticalized-unit.mjs",
+    "test:prf-verticalized": "node --test tests/prf-catalog-unit.mjs tests/prf-verticalized-unit.mjs tests/multi-exams-unit.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.3.16",
