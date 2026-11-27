@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 3,
   "explanation": "Seja C a capacidade. Havia 3/5 de C; consumir 1/3 do conteúdo deixa 2/3 do conteúdo, isto é, 2/3 × 3/5 = 2/5 de C. Depois de acrescentar 20 L, o tanque tem 4/5 de C. Logo, 20 L correspondem a 4/5 − 2/5 = 2/5 de C, e C = 20 ÷ 2/5 = 50 L. Conferência: 3/5 de 50 = 30 L; consome-se 10 L; restam 20 L; com mais 20 L há 40 L, que é 4/5 de 50. Erros: ignorar o consumo (20 L = 4/5 − 3/5 = 1/5 de C) dá 100; tomar 1/3 da capacidade, e não do conteúdo, dá 37,5; tomar metade do conteúdo dá 40; e supor que 20 L equivalem aos 4/5 dá 25.",
   "lawRef": "Frações do restante — atualizar a base a cada etapa; equação do 1º grau"
+ },
+ {
+  "id": "rlm-m10-autoral-11",
+  "origem": "autoral-ia",
+  "q": "No setor de arquivo, o valor da expressão 8 − 3 × 2 + 12 ÷ 4 é calculado por um servidor. Qual é o resultado correto?",
+  "options": [
+   "13",
+   "5,5",
+   "2",
+   "5",
+   "14"
+  ],
+  "answer": 3,
+  "explanation": "Pela ordem das operações, multiplicações e divisões vêm antes de somas e subtrações: 3 × 2 = 6 e 12 ÷ 4 = 3. Depois, 8 − 6 + 3 = 5. Erros comuns: fazer 8 − 3 primeiro (5 × 2 = 10, mais 3, dá 13); resolver tudo da esquerda para a direita, sem prioridades ((8 − 3) × 2 + 12) ÷ 4 = 5,5; esquecer a divisão e parar em 8 − 6 = 2; ou somar 12 sem dividir por 4, obtendo 8 − 6 + 12 = 14. Só 5 respeita a hierarquia das operações.",
+  "lawRef": "Ordem das operações"
+ },
+ {
+  "id": "rlm-m10-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Um servidor gastou 1/2 do expediente em atendimento ao público e 1/4 do expediente em triagem de documentos. A fração do expediente ocupada pelas duas atividades juntas é:",
+  "options": [
+   "3/4",
+   "2/6",
+   "1/6",
+   "2/4",
+   "1/8"
+  ],
+  "answer": 0,
+  "explanation": "Para somar frações é preciso denominador comum. O MMC de 2 e 4 é 4, então 1/2 = 2/4. Somando: 2/4 + 1/4 = 3/4 do expediente. Erros comuns: somar numeradores e denominadores separadamente (1+1)/(2+4) = 2/6, que não é a regra de soma de frações; multiplicar as frações (1/2 × 1/4 = 1/8); somar só os numeradores mantendo o primeiro denominador (2/4, igual a 1/2, que ignora o 1/4); e 1/6, que não resulta de operação correta com essas frações. A soma correta mantém o denominador comum e soma só os numeradores.",
+  "lawRef": "Soma de frações com denominadores diferentes"
+ },
+ {
+  "id": "rlm-m10-autoral-13",
+  "origem": "autoral-ia",
+  "q": "O menor número inteiro positivo que é divisível ao mesmo tempo por 4 e por 6 é:",
+  "options": [
+   "2",
+   "6",
+   "8",
+   "24",
+   "12"
+  ],
+  "answer": 4,
+  "explanation": "Procura-se o MMC (mínimo múltiplo comum) de 4 e 6. Múltiplos de 4: 4, 8, 12, 16, 20, 24... Múltiplos de 6: 6, 12, 18, 24... O primeiro valor que aparece nas duas listas é 12. Por decomposição: 4 = 2² e 6 = 2 × 3; o MMC usa os fatores comuns e não comuns com o maior expoente, 2² × 3 = 12. Erros: 2 é o MDC (maior divisor comum), não o MMC; 6 não é divisível por 4 e 8 não é divisível por 6; 24 é divisível por ambos, mas é um múltiplo comum maior (é o produto 4 × 6), não o menor.",
+  "lawRef": "MMC de dois números"
+ },
+ {
+  "id": "rlm-m10-autoral-14",
+  "origem": "autoral-ia",
+  "q": "O valor da expressão −3 × (−5) − 2 × (−4) é:",
+  "options": [
+   "7",
+   "23",
+   "−7",
+   "−23",
+   "8"
+  ],
+  "answer": 1,
+  "explanation": "Regra de sinais: sinais iguais dão produto positivo e sinais diferentes dão negativo. −3 × (−5) = +15. Depois, 2 × (−4) = −8, e subtrair −8 equivale a somar 8: 15 − (−8) = 15 + 8 = 23. Erros comuns: tratar a segunda parcela como −8 sem inverter o sinal da subtração (15 − 8 = 7); errar o sinal do primeiro produto (−15 + 8 = −7 ou −15 − 8 = −23); ou calcular somente a segunda parcela, obtendo 8. Só 23 aplica corretamente a regra de sinais nas duas partes.",
+  "lawRef": "Regra de sinais em multiplicação e subtração"
+ },
+ {
+  "id": "rlm-m10-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Em uma estatística do tribunal, a fração 0,375 dos processos foi concluída no mês. Escrita como fração irredutível, essa taxa é:",
+  "options": [
+   "3/4",
+   "3/5",
+   "3/8",
+   "5/8",
+   "7/20"
+  ],
+  "answer": 2,
+  "explanation": "0,375 tem três casas decimais, então vale 375/1000. Dividindo numerador e denominador por 125 (que é o MDC de 375 e 1000), resulta 3/8. Conferência: 3 ÷ 8 = 0,375. Erros comuns: 3/4 vale 0,75; 3/5 vale 0,6; 5/8 vale 0,625 (troca de numerador); 7/20 vale 0,35, valor próximo, mas diferente. Dica: 1/8 = 0,125, então 3/8 = 3 × 0,125 = 0,375.",
+  "lawRef": "Conversão de decimal em fração irredutível"
+ },
+ {
+  "id": "rlm-m10-autoral-16",
+  "origem": "autoral-ia",
+  "q": "Uma tarefa de digitalização usa 2/5 de 100 unidades de papel e, depois, metade do que restou. Quantas unidades ainda sobram?",
+  "options": [
+   "20",
+   "40",
+   "50",
+   "60",
+   "30"
+  ],
+  "answer": 4,
+  "explanation": "Primeiro, 2/5 de 100 = 40 unidades consumidas, sobrando 100 − 40 = 60. Em seguida, consome-se metade do restante: 60 ÷ 2 = 30, e sobram 30 unidades. Erros comuns: tomar metade das 40 consumidas (20); parar no primeiro consumo, que dá 40 consumidas, ou considerar o que sobrou naquela etapa, que dá 60; ou tomar a metade do total original (50), esquecendo que a metade é do restante e não das 100. Resolva sempre em etapas, atualizando a base da fração.",
+  "lawRef": "Fração de quantidade em etapas sucessivas"
+ },
+ {
+  "id": "rlm-m10-autoral-17",
+  "origem": "autoral-ia",
+  "q": "O triplo de um número, diminuído de 7, é igual a 20. Esse número vale:",
+  "options": [
+   "27",
+   "13",
+   "9",
+   "7",
+   "17"
+  ],
+  "answer": 2,
+  "explanation": "Traduzindo para equação: 3x − 7 = 20. Somando 7 aos dois lados: 3x = 27. Dividindo por 3: x = 9. Conferência: 3 × 9 − 7 = 27 − 7 = 20. Erros comuns: esquecer de dividir por 3 e parar em 27; subtrair em vez de somar o 7 (20 − 7 = 13); responder o próprio número 7 do enunciado; ou subtrair o 3 de 20 (17), sem pensar que 3 é multiplicador. A operação inversa deve ser aplicada na ordem contrária.",
+  "lawRef": "Equação do 1º grau — operações inversas"
+ },
+ {
+  "id": "rlm-m10-autoral-18",
+  "origem": "autoral-ia",
+  "q": "O valor da expressão 2 + 3 × (5 − 2)² − 4 é:",
+  "options": [
+   "25",
+   "7",
+   "27",
+   "1",
+   "79"
+  ],
+  "answer": 0,
+  "explanation": "Ordem: parênteses, potência, multiplicação, soma e subtração. (5 − 2) = 3; 3² = 9; 3 × 9 = 27; 2 + 27 − 4 = 25. Erros comuns: esquecer a potência (2 + 3 × 3 − 4 = 7); calcular só 3 × 9 = 27 sem somar 2 nem subtrair 4; elevar ao quadrado só o 2 dentro do parêntese (5 − 2² = 1, que dá 2 + 3 − 4 = 1); ou multiplicar antes da potência, (3 × 3)² = 81, o que dá 79. O expoente vale apenas para o parêntese.",
+  "lawRef": "Ordem das operações com potência e parênteses"
+ },
+ {
+  "id": "rlm-m10-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Dois alarmes do tribunal tocam, respectivamente, a cada 12 e a cada 18 minutos, e tocaram juntos agora. Depois de quantos minutos voltarão a tocar juntos pela primeira vez?",
+  "options": [
+   "6 minutos",
+   "36 minutos",
+   "18 minutos",
+   "24 minutos",
+   "216 minutos"
+  ],
+  "answer": 1,
+  "explanation": "É um problema de MMC. 12 = 2² × 3 e 18 = 2 × 3²; o MMC usa cada fator com o maior expoente: 2² × 3² = 36. Conferência: 36 = 3 × 12 = 2 × 18. Erros comuns: usar o MDC, que é 6; escolher o maior número (18), que não é múltiplo de 12; 24 é múltiplo de 12, mas não de 18; 216 é o produto 12 × 18, que é um múltiplo comum, porém não o menor. Pedir 'quando voltam a coincidir' sempre indica MMC.",
+  "lawRef": "MMC — eventos periódicos"
+ },
+ {
+  "id": "rlm-m10-autoral-20",
+  "origem": "autoral-ia",
+  "q": "Qual é o máximo divisor comum (MDC) entre 84 e 126?",
+  "options": [
+   "6",
+   "14",
+   "21",
+   "42",
+   "252"
+  ],
+  "answer": 3,
+  "explanation": "Decompondo: 84 = 2² × 3 × 7 e 126 = 2 × 3² × 7. O MDC usa apenas os fatores comuns, com o menor expoente: 2 × 3 × 7 = 42. Conferência: 84 ÷ 42 = 2 e 126 ÷ 42 = 3, que não têm mais divisor comum. Erros comuns: parar antes de terminar a decomposição (6, 14 ou 21 dividem os dois números, mas não são o maior) e confundir com o MMC, que é 252 (2² × 3² × 7).",
+  "lawRef": "MDC por decomposição em fatores primos"
  }
 ];

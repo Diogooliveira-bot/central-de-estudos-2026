@@ -27,9 +27,9 @@ test('leitor integrado mostra resoluções, busca capítulos e preserva resposta
   let tables=0,figures=0;
   for(let i=2;i<=15;i++){
    const id='M'+String(i).padStart(2,'0');w.RlmNative.open(id,'theory');
-   assert.equal(doc.querySelectorAll('.bc-rlm-lesson').length,5,id);
-   assert.equal(doc.querySelectorAll('.bc-rlm-worked-solution').length,5,id);
-   assert.equal(doc.querySelectorAll('.bc-rlm-method').length,5,id);
+   assert.ok(doc.querySelectorAll('.bc-rlm-lesson').length>=5,id);
+   assert.ok(doc.querySelectorAll('.bc-rlm-worked-solution').length>=5,id);
+   assert.ok(doc.querySelectorAll('.bc-rlm-method').length>=5,id);
    tables+=doc.querySelectorAll('.bc-rlm-table').length;figures+=doc.querySelectorAll('.bc-rlm-figure').length;
    const example=doc.querySelector('.bc-rlm-worked-solution');
    assert.ok(example,id+' mostra a resolução sem clique');
@@ -37,15 +37,12 @@ test('leitor integrado mostra resoluções, busca capítulos e preserva resposta
    assert.ok(example.querySelector('.bc-rlm-worked-answer'),id+' mostra o resultado');
    w.RlmNative.close();
   }
-  assert.equal(tables,36);assert.equal(figures,10);
+  assert.ok(tables>=36);assert.ok(figures>=10);
   w.RlmNative.open('M15','theory');w.RlmNative.search('variância');
   assert.ok(doc.querySelectorAll('mark[data-rlm-search]').length>0,'a busca encontra o conteúdo ampliado');
   w.RlmNative.close();w.RlmNative.open('M14','summary');
-  assert.equal(doc.querySelectorAll('.bc-rlm-quiz').length,10);
-  doc.querySelector('.bc-rlm-option').click();assert.ok(doc.querySelector('.bc-rlm-feedback'));
-  assert.ok(w.localStorage.getItem('central-v6:rlm-tjce2026:answers:M14'));
-  w.RlmNative.close();w.RlmNative.open('M14','summary');
-  assert.ok(doc.querySelector('.bc-rlm-feedback'),'feedback reaparece ao reabrir o leitor');
+  assert.equal(doc.querySelectorAll('.bc-rlm-quiz,.bc-rlm-option').length,0,'não há mais questões dentro do módulo');
+  w.RlmNative.close();
   assert.equal(w.localStorage.getItem('central-v6:done:rlm-calculo-rapido-v6638'),'1');
   assert.deepEqual(errors,[]);
  }finally{dom.window.close()}

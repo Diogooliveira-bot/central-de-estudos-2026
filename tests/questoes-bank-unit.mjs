@@ -11,7 +11,7 @@ test('banco de questões: 161 módulos antigos e 4 pilotos GMF, 10 questões cad
   const { erros, indice, total } = validarTudo(root);
   assert.deepEqual(erros, []);
   for (const d of Object.keys(DISCIPLINAS)) assert.equal(indice[d].length, ['atual','fortaleza','legesp','dh'].includes(d) ? 1 : MODULOS[d], `${d}: faltam módulos publicados`);
-  assert.equal(total, 1650);
+  assert.equal(total, 1790); // RLM tem 20 questões por módulo (M02–M15) desde a retirada das questões internas
 });
 
 test('índice do banco confere com os arquivos (rode "npm run questoes:index" se falhar)', () => {

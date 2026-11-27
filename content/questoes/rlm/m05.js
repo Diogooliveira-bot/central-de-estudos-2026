@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 1,
   "explanation": "Pertinência (∈) relaciona elemento e conjunto; inclusão (⊆) relaciona conjuntos. Os elementos de A são quatro: 1, 2, {3} e {1, 2}. I é falsa: 3 não é elemento de A (o elemento é o conjunto {3}). II é verdadeira: {3} é elemento de A. III é verdadeira: {1, 2} é subconjunto de A porque 1 e 2 são elementos de A. IV é verdadeira: {1, 2} também é um elemento de A. V é falsa: {3} ⊆ A exigiria 3 ∈ A, o que é falso. VI é verdadeira: o conjunto vazio é subconjunto de qualquer conjunto. Logo, II, III, IV e VI. Quem confunde ∈ com ⊆ tende a só aceitar II e IV; quem esquece do vazio chega a II, III e IV; quem aceita o 3 como elemento erra em I e V.",
   "lawRef": "Noções de conjuntos — pertinência, inclusão e conjunto vazio"
+ },
+ {
+  "id": "rlm-m05-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Em um setor, 12 servidores atuam no atendimento (A) e 10 na triagem (B); 4 atuam nas duas áreas. Quantos servidores atuam em pelo menos uma das duas áreas, isto é, qual é |A ∪ B|?",
+  "options": [
+   "8",
+   "10",
+   "12",
+   "16",
+   "18"
+  ],
+  "answer": 4,
+  "explanation": "Pela fórmula de dois conjuntos, |A ∪ B| = |A| + |B| − |A ∩ B| = 12 + 10 − 4 = 18. Subtrai-se a interseção porque os 4 servidores das duas áreas foram contados duas vezes, uma em cada conjunto. O valor 22 seria a soma simples (sem descontar); 8 é apenas os que atuam só em A (12 − 4); 12 é só |A|; 16 resulta de uma subtração incorreta ou de somar a interseção a um dos conjuntos de forma errada.",
+  "lawRef": "Princípio da inclusão-exclusão (dois conjuntos)"
+ },
+ {
+  "id": "rlm-m05-autoral-12",
+  "origem": "autoral-ia",
+  "q": "A sentença \"Todo A é B\" é representada, em diagramas de conjuntos, por:",
+  "options": [
+   "o conjunto A inteiramente contido no conjunto B.",
+   "o conjunto B inteiramente contido no conjunto A.",
+   "os conjuntos A e B sem elementos em comum.",
+   "os conjuntos A e B sem nenhum elemento.",
+   "um elemento de B que obrigatoriamente não pertence a A."
+  ],
+  "answer": 0,
+  "explanation": "\"Todo A é B\" significa que cada elemento de A também pertence a B, isto é, A ⊆ B: o círculo de A fica dentro do círculo de B (podendo ser iguais). A opção inversa (B dentro de A) representa \"Todo B é A\". Conjuntos sem elementos em comum representam \"Nenhum A é B\". Dizer que existe elemento de B fora de A não é obrigatório: A e B podem ser iguais, e a frase continuaria verdadeira. A quarta alternativa também não descreve uma representação, pois não trata de conjuntos vazios.",
+  "lawRef": "Diagramas de Venn: inclusão (todo A é B)"
+ },
+ {
+  "id": "rlm-m05-autoral-13",
+  "origem": "autoral-ia",
+  "q": "Qual é a negação lógica da proposição \"Nenhum A é B\"?",
+  "options": [
+   "Todo A é B.",
+   "Algum A é B.",
+   "Nenhum B é A.",
+   "Algum A não é B.",
+   "Todo B não é A."
+  ],
+  "answer": 1,
+  "explanation": "\"Nenhum A é B\" afirma que os conjuntos não têm elementos em comum. Para negá-la basta que exista ao menos um elemento comum: \"Algum A é B\". \"Todo A é B\" é mais forte do que a negação. \"Nenhum B é A\" e \"Todo B não é A\" são reescritas equivalentes da própria frase (a relação é simétrica), portanto não a negam. \"Algum A não é B\" pode ser verdadeira junto com a original (quando A e B são disjuntos e A não é vazio), logo também não é a negação.",
+  "lawRef": "Negação de proposição categórica (nenhum / algum)"
+ },
+ {
+  "id": "rlm-m05-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Em um grupo de 30 pessoas, 19 gostam de música, 16 gostam de cinema e 8 gostam de ambos. Quantas gostam de pelo menos uma das duas atividades?",
+  "options": [
+   "11",
+   "16",
+   "19",
+   "27",
+   "35"
+  ],
+  "answer": 3,
+  "explanation": "Aplica-se a inclusão-exclusão: |M ∪ C| = |M| + |C| − |M ∩ C| = 19 + 16 − 8 = 27. Os 8 que gostam das duas foram contados duas vezes na soma e por isso são descontados. Conferindo por regiões: só música = 19 − 8 = 11; só cinema = 16 − 8 = 8; ambos = 8; total = 11 + 8 + 8 = 27 (restam 3 que não gostam de nenhuma). O valor 35 é a soma sem desconto; 11 é só música; 19 e 16 são os totais de cada atividade isoladamente.",
+  "lawRef": "Inclusão-exclusão com dois conjuntos"
+ },
+ {
+  "id": "rlm-m05-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Para que a proposição \"Algum A não é B\" seja verdadeira, é necessário que:",
+  "options": [
+   "todos os elementos de A estejam fora de B.",
+   "A e B sejam conjuntos iguais.",
+   "nenhum elemento de A pertença a B.",
+   "exista pelo menos um elemento de A que não pertença a B.",
+   "exista algum elemento de B que não pertença a A."
+  ],
+  "answer": 3,
+  "explanation": "\"Algum A não é B\" é uma particular negativa: afirma a existência de ao menos um elemento de A fora de B. Não exige que todos estejam fora (isso seria \"nenhum A é B\", que também a tornaria verdadeira, mas não é necessário), nem que A e B sejam iguais (nesse caso a frase seria falsa). A última opção troca os papéis: um elemento de B fora de A não diz nada sobre A. Por isso o requisito necessário e suficiente é existir ao menos um A que não é B.",
+  "lawRef": "Proposição particular negativa em diagramas"
+ },
+ {
+  "id": "rlm-m05-autoral-16",
+  "origem": "autoral-ia",
+  "q": "Sabe-se que \"Todo analista é servidor\" e \"Nenhum servidor é terceirizado\". Qual conclusão é necessariamente verdadeira?",
+  "options": [
+   "Algum analista é terceirizado.",
+   "Todo terceirizado é analista.",
+   "Algum terceirizado é analista.",
+   "Todo servidor é analista.",
+   "Nenhum analista é terceirizado."
+  ],
+  "answer": 4,
+  "explanation": "No diagrama, o conjunto dos analistas está dentro do dos servidores, e este é disjunto do conjunto dos terceirizados. Logo analistas e terceirizados não se intersectam: nenhum analista é terceirizado. \"Algum analista é terceirizado\" e \"algum terceirizado é analista\" contradizem essa disjunção; \"todo terceirizado é analista\" é inversão sem base; e \"todo servidor é analista\" é conversão ilegítima da primeira premissa (podem existir servidores que não são analistas).",
+  "lawRef": "Silogismo com diagramas de Venn"
+ },
+ {
+  "id": "rlm-m05-autoral-17",
+  "origem": "autoral-ia",
+  "q": "Em uma turma de 50 candidatos, 28 estudam o conteúdo A, 21 estudam o conteúdo B e 9 estudam ambos. Quantos candidatos não estudam nenhum dos dois conteúdos?",
+  "options": [
+   "9",
+   "10",
+   "12",
+   "19",
+   "21"
+  ],
+  "answer": 1,
+  "explanation": "Primeiro calcula-se quantos estudam pelo menos um: |A ∪ B| = 28 + 21 − 9 = 40. Os que não estudam nenhum são o complementar da união dentro do total: 50 − 40 = 10. Verificação por regiões: só A = 28 − 9 = 19; só B = 21 − 9 = 12; ambos = 9; soma = 40; fora = 10. Os valores 9, 12, 19 e 21 correspondem a regiões do diagrama (ambos, só B, só A, total de B), que não são o que se pergunta.",
+  "lawRef": "Complementar da união (diagrama de dois conjuntos)"
+ },
+ {
+  "id": "rlm-m05-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Dados |A| = 20, |B| = 17 e |A ∪ B| = 30, quantos elementos pertencem somente a A?",
+  "options": [
+   "13",
+   "17",
+   "20",
+   "30",
+   "37"
+  ],
+  "answer": 0,
+  "explanation": "Primeiro encontra-se a interseção: |A ∪ B| = |A| + |B| − |A ∩ B| ⇒ 30 = 20 + 17 − |A ∩ B| ⇒ |A ∩ B| = 37 − 30 = 7. Os que pertencem somente a A são |A| − |A ∩ B| = 20 − 7 = 13. Verificação: só A = 13, só B = 17 − 7 = 10, ambos = 7, e 13 + 10 + 7 = 30. O valor 7 é a interseção; 17 e 20 são os totais de B e A; e 30 é a união inteira.",
+  "lawRef": "Inclusão-exclusão: elementos somente em um conjunto"
+ },
+ {
+  "id": "rlm-m05-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Sabe-se que \"Todo A é B\" e \"Algum B é C\". Qual afirmação está correta?",
+  "options": [
+   "Necessariamente algum A é C.",
+   "Necessariamente nenhum A é C.",
+   "Não é possível concluir, apenas com essas premissas, que algum A é C.",
+   "Necessariamente todo C é A.",
+   "Necessariamente todo B é A."
+  ],
+  "answer": 2,
+  "explanation": "No diagrama, A está dentro de B, mas a parte de B que se sobrepõe a C pode estar inteiramente fora de A: isso respeita as duas premissas e faz \"algum A é C\" ser falso. Também é possível desenhar a sobreposição incluindo elementos de A, tornando \"algum A é C\" verdadeiro. Como os dois cenários são compatíveis, a conclusão não é obrigatória. \"Nenhum A é C\" também não é obrigatória (pelo segundo cenário); \"todo C é A\" e \"todo B é A\" extrapolam as premissas.",
+  "lawRef": "Silogismo com premissa particular: conclusões não necessárias"
+ },
+ {
+  "id": "rlm-m05-autoral-20",
+  "origem": "autoral-ia",
+  "q": "Dados |A| = 15, |B| = 16 e |C| = 13, com |A ∩ B| = 4, |A ∩ C| = 3, |B ∩ C| = 5 e |A ∩ B ∩ C| = 2, quanto vale |A ∪ B ∪ C|?",
+  "options": [
+   "30",
+   "32",
+   "34",
+   "36",
+   "44"
+  ],
+  "answer": 2,
+  "explanation": "Inclusão-exclusão com três conjuntos: |A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C| = 15 + 16 + 13 − 4 − 3 − 5 + 2. Soma: 44; subtraindo as interseções duas a duas (12): 32; somando a tripla (2): 34. Erros típicos: 44 (soma simples), 32 (esquecer de somar de volta a interseção tripla) e 30 (subtrair a tripla em vez de somar). O valor 36 viria de somar a tripla duas vezes.",
+  "lawRef": "Princípio da inclusão-exclusão (três conjuntos)"
  }
 ];

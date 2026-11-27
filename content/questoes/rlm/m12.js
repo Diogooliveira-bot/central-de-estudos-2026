@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 1,
   "explanation": "Sem promoção, 6 unidades custam 6 × 90 = R$ 540,00. Com \"leve 3, pague 2\", paga-se por 4 unidades: 4 × 90 = R$ 360,00 (desconto de 1/3, isto é, 33,3%). Sobre esse valor incidem 10% de desconto: 360 × 0,90 = R$ 324,00. Desconto total: (540 − 324) ÷ 540 = 216 ÷ 540 = 40%. Pelos fatores: 2/3 × 0,90 = 0,60, ou seja, paga-se 60% do preço. Erros: somar os descontos (33,3% + 10% = 43,3%); considerar só a promoção (33,3%); aplicar os 10% ao desconto da promoção (40% × 0,90 = 36%); e subtrair os percentuais (33,3% − 10% = 23,3%), em vez de compor os fatores.",
   "lawRef": "Descontos sucessivos por fator — não se somam percentuais de bases diferentes"
+ },
+ {
+  "id": "rlm-m12-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Dos 200 processos distribuídos a uma vara em um mês, 25% foram sentenciados. Quantos processos foram sentenciados?",
+  "options": [
+   "25",
+   "40",
+   "50",
+   "75",
+   "100"
+  ],
+  "answer": 2,
+  "explanation": "25% é o mesmo que 25/100 = 1/4. Então 1/4 de 200 = 50 processos. Ou: 0,25 × 200 = 50. Erros comuns: responder o próprio 25 do enunciado; calcular 20% (40), por confundir com uma quinta parte; calcular 75% (75) ou 50% (100). Atalho: 25% é um quarto, então divida por 4.",
+  "lawRef": "Porcentagem de uma quantidade"
+ },
+ {
+  "id": "rlm-m12-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Um material de escritório custava R$ 80,00 e sofreu aumento de 10%. O novo preço é:",
+  "options": [
+   "R$ 88,00",
+   "R$ 90,00",
+   "R$ 8,00",
+   "R$ 72,00",
+   "R$ 880,00"
+  ],
+  "answer": 0,
+  "explanation": "Aumento de 10%: fator 1,10. 80 × 1,10 = 88. Outra forma: 10% de 80 = 8 e 80 + 8 = 88. Erros comuns: somar 10 reais em vez de 10% (90); responder só o valor do aumento (8); aplicar desconto em vez de acréscimo (72); ou errar a casa decimal (880). O acréscimo percentual incide sobre o preço, não é um valor fixo.",
+  "lawRef": "Acréscimo percentual"
+ },
+ {
+  "id": "rlm-m12-autoral-13",
+  "origem": "autoral-ia",
+  "q": "Em uma compra do tribunal, um fornecedor concedeu desconto de 20% sobre o preço de tabela. Para obter o valor a pagar, deve-se multiplicar o preço de tabela por:",
+  "options": [
+   "1,20",
+   "0,20",
+   "0,02",
+   "0,80",
+   "1,80"
+  ],
+  "answer": 3,
+  "explanation": "Pagar com desconto de 20% significa pagar 100% − 20% = 80% do preço, ou seja, fator 0,80. Exemplo: 100 × 0,80 = 80. Erros comuns: usar 1,20, que é o fator de um acréscimo de 20%; usar 0,20, que é o valor do desconto e não o que se paga; 0,02, erro de casa decimal; ou 1,80, que seria acréscimo de 80%. Fator de desconto é 1 − taxa; fator de acréscimo é 1 + taxa.",
+  "lawRef": "Fator de desconto"
+ },
+ {
+  "id": "rlm-m12-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Após um desconto de 25%, um equipamento passou a custar R$ 150,00. O preço antes do desconto era:",
+  "options": [
+   "R$ 187,50",
+   "R$ 200,00",
+   "R$ 175,00",
+   "R$ 112,50",
+   "R$ 600,00"
+  ],
+  "answer": 1,
+  "explanation": "O preço com desconto é 75% do original: 0,75 × P = 150, então P = 150 ÷ 0,75 = 200. Conferência: 25% de 200 = 50 e 200 − 50 = 150. Erros comuns: aumentar 25% sobre 150 (187,50), esquecendo que o desconto incidiu sobre o original e não sobre 150; somar 25 reais (175); aplicar de novo o desconto (150 × 0,75 = 112,50); ou multiplicar por 4 (600). Para achar o original, divide-se pelo fator.",
+  "lawRef": "Percentual sobre o valor original (fator)"
+ },
+ {
+  "id": "rlm-m12-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Um valor de R$ 100,00 recebe acréscimo de 20% e, em seguida, desconto de 20% sobre o novo valor. O resultado é:",
+  "options": [
+   "R$ 100,00",
+   "R$ 104,00",
+   "R$ 120,00",
+   "R$ 80,00",
+   "R$ 96,00"
+  ],
+  "answer": 4,
+  "explanation": "Após +20%: 100 × 1,20 = 120. O desconto de 20% incide sobre 120: 120 × 0,80 = 96. Fator total: 1,20 × 0,80 = 0,96, ou seja, queda de 4%. Erros comuns: achar que +20% e −20% se anulam (100); inverter o sinal da variação líquida (104); ignorar o desconto (120); ou aplicar dois descontos (80). Percentuais sucessivos incidem sobre bases diferentes e não se somam.",
+  "lawRef": "Percentuais sucessivos (fatores multiplicativos)"
+ },
+ {
+  "id": "rlm-m12-autoral-16",
+  "origem": "autoral-ia",
+  "q": "O número de processos de uma vara passou de 80 para 100 entre dois semestres. A variação percentual foi de:",
+  "options": [
+   "20%",
+   "25%",
+   "125%",
+   "80%",
+   "75%"
+  ],
+  "answer": 1,
+  "explanation": "Variação relativa = (valor final − valor inicial) ÷ valor inicial = (100 − 80) ÷ 80 = 20 ÷ 80 = 0,25 = 25%. Erros comuns: dividir a diferença pelo valor final (20 ÷ 100 = 20%); dar o valor final como percentual do inicial (125%); dar o inicial como percentual do final (80%); ou subtrair de 100% (75%). A base da variação é sempre o valor inicial.",
+  "lawRef": "Variação percentual"
+ },
+ {
+  "id": "rlm-m12-autoral-17",
+  "origem": "autoral-ia",
+  "q": "A taxa de congestionamento de um tribunal subiu de 12% para 17%. Quanto ela aumentou, em pontos percentuais?",
+  "options": [
+   "41,7 pontos percentuais",
+   "12 pontos percentuais",
+   "17 pontos percentuais",
+   "5 pontos percentuais",
+   "29 pontos percentuais"
+  ],
+  "answer": 3,
+  "explanation": "Pontos percentuais são a diferença simples entre duas taxas: 17% − 12% = 5 pontos percentuais. O crescimento relativo seria 5 ÷ 12 ≈ 41,7%, mas isso não é o que se pede. Erros comuns: responder o crescimento relativo (41,7); repetir uma das taxas (12 ou 17); ou somar as taxas (29). Ponto percentual compara taxas entre si, subtraindo-as.",
+  "lawRef": "Pontos percentuais x variação percentual"
+ },
+ {
+  "id": "rlm-m12-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Dois aumentos sucessivos de 15% equivalem a um aumento único de:",
+  "options": [
+   "32,25%",
+   "30%",
+   "31%",
+   "30,5%",
+   "35%"
+  ],
+  "answer": 0,
+  "explanation": "Aumentos sucessivos multiplicam fatores: 1,15 × 1,15 = 1,3225, o que representa aumento de 32,25%. Exemplo: 100 sobe para 115 e depois 115 × 1,15 = 132,25. Erros comuns: somar 15% + 15% = 30%, esquecendo que o segundo aumento incide sobre o valor já aumentado; e valores como 31%, 30,5% ou 35%, que não resultam de nenhum cálculo correto. Use sempre o produto dos fatores.",
+  "lawRef": "Aumentos sucessivos"
+ },
+ {
+  "id": "rlm-m12-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Um preço de R$ 240,00 sofre aumento de 25% e, depois, desconto de 20% sobre o valor já aumentado. O preço final é:",
+  "options": [
+   "R$ 300,00",
+   "R$ 192,00",
+   "R$ 252,00",
+   "R$ 228,00",
+   "R$ 240,00"
+  ],
+  "answer": 4,
+  "explanation": "Fator total: 1,25 × 0,80 = 1,00, então o preço volta ao valor inicial. Passo a passo: 240 × 1,25 = 300 e 300 × 0,80 = 240. Erros comuns: ignorar o desconto (300); ignorar o aumento (240 × 0,80 = 192); somar +25 − 20 = +5% (252); ou subtrair os dois percentuais com sinal errado (228, equivalente a −5%). Um aumento de 25% é desfeito por desconto de 20%, porque o desconto incide sobre base maior.",
+  "lawRef": "Percentuais sucessivos (fatores)"
+ },
+ {
+  "id": "rlm-m12-autoral-20",
+  "origem": "autoral-ia",
+  "q": "A participação de um tipo de ação passou de 40% para 50% do total de processos. O acréscimo relativo dessa participação foi de:",
+  "options": [
+   "10%",
+   "20%",
+   "25%",
+   "12,5%",
+   "50%"
+  ],
+  "answer": 2,
+  "explanation": "Variação relativa = (50 − 40) ÷ 40 = 10 ÷ 40 = 0,25 = 25%. A variação absoluta é 10 pontos percentuais, mas o enunciado pede acréscimo relativo. Erros comuns: responder 10% (confunde pontos percentuais com relativo); dividir por 50 (20%); dividir por 80 (12,5%, pois 10 ÷ 80), que usa base errada; ou repetir o 50. A base do acréscimo relativo é o valor inicial, 40%.",
+  "lawRef": "Variação relativa x pontos percentuais"
  }
 ];

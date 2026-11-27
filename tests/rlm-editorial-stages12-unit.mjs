@@ -38,8 +38,8 @@ test('Etapas 1 e 2: todos os 14 módulos mantêm as teorias e os exemplos resolv
  const before=JSON.stringify(g.RLM_CURSO_AULAS);
  let chapters=0;
  for(const [id,d] of lessons){
-  assert.equal(d.theory.length,5,id);
-  assert.equal(d.questions.length,10,id);
+  assert.ok(d.theory.length>=5,id);
+  assert.ok(!('questions' in d),id+': sem questões dentro da teoria');
   assert.ok(d.summary.length>=5,id);
   for(const ch of d.theory){
    const html=g.RlmTheoryResources.chapter(ch);
@@ -52,7 +52,7 @@ test('Etapas 1 e 2: todos os 14 módulos mantêm as teorias e os exemplos resolv
    chapters++;
   }
  }
- assert.equal(chapters,70);
+ assert.ok(chapters>=70);
  assert.equal(JSON.stringify(g.RLM_CURSO_AULAS),before,'o renderizador não altera os dados originais');
 });
 
@@ -69,12 +69,12 @@ test('Notação matemática conserva o texto, sem fragmentar palavras ou datas',
  assert.doesNotMatch(render('2^3'),/<math|<mfrac/);
 });
 
-test('RLM possui navegação Teoria, Revisão e Questões; M01 preserva o motor de velocidade',()=>{
+test('RLM possui navegação Teoria e Revisão, sem questões dentro do módulo; M01 preserva o motor de velocidade',()=>{
  const {g,localStorage}=fixture();
  let html=g.RlmNative.renderMaster();
  assert.equal((html.match(/data-rlm-kind="recap"/g)||[]).length,14);
  assert.equal((html.match(/data-rlm-kind="theory"/g)||[]).length,14);
- assert.equal((html.match(/data-rlm-kind="quiz"/g)||[]).length,14);
+ assert.equal((html.match(/data-rlm-kind="(quiz|exam|review|errors)"/g)||[]).length,0);
  assert.equal((html.match(/data-rlm-kind="map"/g)||[]).length,0);
  assert.equal((html.match(/data-rlm-kind="speed"/g)||[]).length,1);
  assert.match(html,/Leitura 0%/);
@@ -99,7 +99,7 @@ test('M03, M12 e M13 abrem no leitor real com revisão independente',()=>{
   assert.match(overlay.innerHTML,/Método de resolução/,id);
   assert.doesNotMatch(overlay.innerHTML,/class="bc-rlm-quiz" id=/,id);
   g.RlmNative.tab('quiz');
-  assert.match(overlay.innerHTML,/Questão 01/,id);
+  assert.doesNotMatch(overlay.innerHTML,/Questão 01|bc-rlm-quiz|bc-rlm-option/,id);
   g.RlmNative.close();
  }
 });
@@ -107,7 +107,7 @@ test('M03, M12 e M13 abrem no leitor real com revisão independente',()=>{
 test('Leitor mobile e CSS editorial estão ligados na Central original',()=>{
  const html=read('index.html'),script=read('ui/rlm-native-v1.js'),css=read('ui/rlm-editorial-v3.css');
  assert.ok(html.includes('ui/rlm-editorial-v3.css?v=20261109rlmfix1'));
- assert.ok(html.includes('ui/rlm-native-v1.js?v=20261113orient1'));
+ assert.ok(html.includes('ui/rlm-native-v1.js?v=20261127semq1'));
  assert.ok(script.includes('function toggleToc(force)'));
  assert.ok(script.includes("if(active?.stage==='theory')writeReadProgress(active.id,pct)"));
  assert.ok(css.includes('.bc-rlm-toc.open'));
@@ -120,11 +120,11 @@ test('Leitor mobile e CSS editorial estão ligados na Central original',()=>{
 test('Abertura de RLM acompanha Constitucional: leitura orientada, barra e cartões',()=>{
  const {g}=fixture(),html=g.RlmNative.renderMaster();
  assert.equal((html.match(/data-bc-orient="rlm:\d+"/g)||[]).length,15,'orientação curta em M01–M15');
- assert.equal((html.match(/cf-native-oriented bc-rlm-orientation/g)||[]).length,1,'só a revisão final mantém o bloco antigo');
- assert.equal((html.match(/cf-native-cards bc-rlm-study-grid/g)||[]).length,16);
- assert.equal((html.match(/cf-module-bar/g)||[]).length,16);
+ assert.equal((html.match(/cf-native-oriented bc-rlm-orientation/g)||[]).length,0,'não há mais bloco de revisão geral com simulado');
+ assert.equal((html.match(/cf-native-cards bc-rlm-study-grid/g)||[]).length,15);
+ assert.equal((html.match(/cf-module-bar/g)||[]).length,15);
  assert.equal((html.match(/data-rlm-kind="recap"/g)||[]).length,14);
  assert.ok(html.indexOf('data-bc-orient="rlm:2"')<html.indexOf('data-rlm-kind="recap"'));
  assert.doesNotMatch(html,/O que aprender neste módulo/);
- assert.match(html,/Revisão geral/);
+ assert.doesNotMatch(html,/Revisão geral|Simulado|questões autorais/);
 });

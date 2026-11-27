@@ -18,7 +18,7 @@ test('a ampliação cobre os 70 capítulos sem alterar questões ou treino',()=>
  assert.equal(new Set(current.RLM_AMPLIACAO_COBERTURA).size,14);
  for(const [id,m]of Object.entries(original.RLM_CURSO_AULAS)){
   const next=current.RLM_CURSO_AULAS[id];
-  assert.deepEqual(plain(next.questions),plain(m.questions),id);
+  assert.ok(!('questions' in next),id+' sem questões internas');
   assert.equal(next.theory.length,m.theory.length);
   next.theory.forEach((ch,i)=>{
    assert.deepEqual(plain(ch.paragraphs),plain(m.theory[i].paragraphs),`${id} preserva a exposição anterior`);

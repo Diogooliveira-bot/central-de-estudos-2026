@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 3,
   "explanation": "Converta o tempo: 1h30min = 1,5 h. O primeiro veículo percorre 60 × 1,5 = 90 km para o leste; o segundo, 80 × 1,5 = 120 km para o norte. As direções leste e norte são perpendiculares, de modo que as posições finais e o ponto de partida formam um triângulo retângulo de catetos 90 e 120. A distância entre os veículos é a hipotenusa: √(90² + 120²) = √(8100 + 14400) = √22500 = 150 km. Os erros: 90 km e 120 km são a distância percorrida por apenas um dos veículos; 100 km seria a distância entre eles após 1 hora (√(60² + 80²)), esquecendo os 30 minutos restantes; 210 km é a soma dos percursos (90 + 120), o que só valeria se andassem em sentidos opostos pela mesma reta. Perpendicularidade pede Pitágoras, não soma.",
   "lawRef": "Deslocamento no plano — velocidade, tempo e teorema de Pitágoras"
+ },
+ {
+  "id": "rlm-m09-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Um vigilante, voltado para o norte, gira 90° no sentido horário (para a direita). Para qual direção ele passa a olhar?",
+  "options": [
+   "Leste",
+   "Oeste",
+   "Sul",
+   "Norte",
+   "Nordeste"
+  ],
+  "answer": 0,
+  "explanation": "Gire no sentido horário a partir do norte, como nos ponteiros de um relógio: norte → leste → sul → oeste. Um giro de 90° para a direita leva ao leste (alternativa A). Oeste é o resultado de um giro de 90° para a esquerda; sul corresponde a 180°; norte seria um giro de 360° ou nenhum giro; nordeste exigiria um giro de 45°. Imagine uma rosa dos ventos com o norte no topo e a direita sempre no sentido horário.",
+  "lawRef": "Orientação espacial — giros de 90° na rosa dos ventos"
+ },
+ {
+  "id": "rlm-m09-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Uma audiência foi realizada hoje, quarta-feira. A próxima audiência será realizada daqui a sete dias. Em qual dia da semana ela ocorrerá?",
+  "options": [
+   "Segunda-feira",
+   "Terça-feira",
+   "Quarta-feira",
+   "Quinta-feira",
+   "Sexta-feira"
+  ],
+  "answer": 2,
+  "explanation": "A semana tem sete dias; qualquer prazo múltiplo de 7 leva ao mesmo dia da semana. Logo, sete dias após uma quarta-feira é outra quarta-feira (alternativa C). Resto da divisão por 7 igual a zero é igual a nenhum avanço. As alternativas Terça e Quinta resultam de contar seis ou oito dias, por errar a contagem do dia inicial; Segunda e Sexta vêm de contagens ainda mais afastadas (cinco e nove dias). Regra geral: divida o prazo por 7 e avance apenas o resto.",
+  "lawRef": "Calendário — resto da divisão por 7"
+ },
+ {
+  "id": "rlm-m09-autoral-13",
+  "origem": "autoral-ia",
+  "q": "Uma sessão de conciliação começa às 10h20 e dura 40 minutos. A que horas ela termina?",
+  "options": [
+   "10h40",
+   "11h00",
+   "11h10",
+   "11h20",
+   "12h00"
+  ],
+  "answer": 1,
+  "explanation": "Some a duração ao horário de início: 10h20 + 40 min. Os 40 minutos levam de 10h20 a 11h00 (pois faltam 40 minutos para completar uma hora: 60 − 20 = 40). Logo a sessão termina às 11h00 (alternativa B). A alternativa 10h40 soma só 20 minutos; 11h10 e 11h20 somam 50 e 60 minutos; 12h00 é um erro de ordem de grandeza. Ao somar tempos, complete a hora primeiro e depois some o que sobra, lembrando que 1 hora = 60 minutos (não 100).",
+  "lawRef": "Tempo — soma de horas e minutos"
+ },
+ {
+  "id": "rlm-m09-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Um oficial de justiça caminha 6 metros para o leste e, em seguida, 2 metros para o oeste, sempre em linha reta. Qual é o seu deslocamento horizontal final em relação ao ponto de partida?",
+  "options": [
+   "8 m a leste",
+   "4 m a leste",
+   "4 m a oeste",
+   "8 m a oeste",
+   "2 m a leste"
+  ],
+  "answer": 1,
+  "explanation": "Deslocamentos em sentidos opostos se subtraem. Tomando o leste como sentido positivo, 6 m para o leste valem +6 e 2 m para o oeste valem −2, e o saldo é +6 − 2 = +4: o oficial está 4 m a leste do ponto de partida (alternativa B). Somar 6 + 2 = 8 m dá o espaço percorrido, não o deslocamento (alternativa A); 4 m a oeste inverte o sentido; 8 m a oeste soma e inverte; 2 m a leste usa só a parcela menor. Percurso e deslocamento são conceitos diferentes.",
+  "lawRef": "Orientação espacial — deslocamento em linha reta"
+ },
+ {
+  "id": "rlm-m09-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Hoje é segunda-feira. Em que dia da semana cairá a data que ocorre 18 dias depois de hoje?",
+  "options": [
+   "Terça-feira",
+   "Quarta-feira",
+   "Quinta-feira",
+   "Sexta-feira",
+   "Sábado"
+  ],
+  "answer": 3,
+  "explanation": "Divida o prazo por 7 e avance apenas o resto: 18 = 2 × 7 + 4, resto 4. Quatro dias depois de segunda-feira: terça (1), quarta (2), quinta (3), sexta (4). A data cai numa sexta-feira (alternativa D). Terça (resto 1) e quarta (resto 2) usam o quociente ou subtraem semanas a menos; quinta (resto 3) subtrai uma semana a mais ou conta errado; sábado (resto 5) erra a conta do dia de partida. Atenção: o dia inicial não entra na contagem.",
+  "lawRef": "Calendário — resto da divisão por 7"
+ },
+ {
+  "id": "rlm-m09-autoral-16",
+  "origem": "autoral-ia",
+  "q": "Um funcionário, voltado para o sul, gira 90° para a esquerda. Para qual direção ele passa a olhar?",
+  "options": [
+   "Oeste",
+   "Norte",
+   "Sul",
+   "Nordeste",
+   "Leste"
+  ],
+  "answer": 4,
+  "explanation": "Voltado para o sul, a esquerda da pessoa corresponde ao leste (e a direita, ao oeste), porque o corpo está virado para o lado oposto ao do observador no mapa. Um giro de 90° no sentido anti-horário na rosa dos ventos leva do sul ao leste (sul → leste → norte → oeste): alternativa E. O erro típico é pensar \"esquerda = oeste\", que vale apenas para quem olha para o norte. Oeste seria a resposta para um giro à direita; norte, para um giro de 180°.",
+  "lawRef": "Orientação espacial — giro anti-horário a partir do sul"
+ },
+ {
+  "id": "rlm-m09-autoral-17",
+  "origem": "autoral-ia",
+  "q": "Um compromisso começa às 13h35 e dura 1h50. A que horas termina?",
+  "options": [
+   "14h55",
+   "15h05",
+   "15h15",
+   "15h20",
+   "15h25"
+  ],
+  "answer": 4,
+  "explanation": "Some em duas etapas. Primeiro 1 hora: 13h35 + 1h = 14h35. Depois os 50 minutos restantes: 14h35 + 25 min = 15h00 e mais 25 min = 15h25. Total: 15h25 (alternativa E). Ao somar minutos, quando passar de 60 acrescente 1 hora e subtraia 60: 35 + 50 = 85 minutos = 1h25 e 13h + 1h + 1h25 resulta em 15h25. As alternativas 15h15 e 15h20 correspondem a somar 1h40 e 1h45; 15h05 e 14h55 resultam de erros ao passar da hora cheia.",
+  "lawRef": "Tempo — soma de horas e minutos com virada de hora"
+ },
+ {
+  "id": "rlm-m09-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Uma servidora caminha 3 km para o leste e, em seguida, 4 km para o norte. Qual a distância em linha reta entre o ponto de partida e o ponto de chegada?",
+  "options": [
+   "5 km",
+   "6 km",
+   "7 km",
+   "8 km",
+   "12 km"
+  ],
+  "answer": 0,
+  "explanation": "Os dois deslocamentos são perpendiculares e formam os catetos de um triângulo retângulo; a distância em linha reta é a hipotenusa. Pelo teorema de Pitágoras: d² = 3² + 4² = 9 + 16 = 25, logo d = 5 km (alternativa A). A soma 3 + 4 = 7 km (alternativa C) é a distância percorrida, e não a distância em linha reta; 12 km é o produto; 6 e 8 km não correspondem a nenhuma operação coerente com o triângulo 3-4-5.",
+  "lawRef": "Teorema de Pitágoras — distância em linha reta"
+ },
+ {
+  "id": "rlm-m09-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Um plantão de sobreaviso começou às 22h45 e terminou à 1h15 do dia seguinte. Qual foi a duração do plantão?",
+  "options": [
+   "1h30",
+   "2h00",
+   "2h15",
+   "2h30",
+   "3h00"
+  ],
+  "answer": 3,
+  "explanation": "Divida o intervalo na meia-noite. De 22h45 até 24h00 passam 1h15. De 0h00 até 1h15 passam outros 1h15. Total: 1h15 + 1h15 = 2h30 (alternativa D). Subtrair 1h15 − 22h45 diretamente não funciona, pois o horário final é do dia seguinte. As alternativas 2h00 e 2h15 vêm de erros ao contar os minutos de cada metade; 1h30 considera apenas uma metade dobrada de modo errado; 3h00 soma horas demais (22h45 até 1h45, por exemplo). Ao cruzar a meia-noite, use o 24h00 como ponto de parada.",
+  "lawRef": "Tempo — intervalo que atravessa a meia-noite"
+ },
+ {
+  "id": "rlm-m09-autoral-20",
+  "origem": "autoral-ia",
+  "q": "Hoje é terça-feira. Em que dia da semana cairá a data que ocorre 100 dias depois de hoje?",
+  "options": [
+   "Terça-feira",
+   "Quarta-feira",
+   "Quinta-feira",
+   "Sexta-feira",
+   "Sábado"
+  ],
+  "answer": 2,
+  "explanation": "Divida 100 por 7: 100 = 14 × 7 + 2, resto 2. Apenas o resto desloca o dia da semana: dois dias depois de terça-feira, a data cai numa quinta-feira (alternativa C). Terça-feira seria correta se 100 fosse múltiplo de 7; quarta-feira (resto 1), sexta-feira (resto 3) e sábado (resto 4) resultam de errar o resto da divisão. Confira: 14 semanas = 98 dias, a data seria terça, e mais 2 dias levam à quinta.",
+  "lawRef": "Calendário — resto da divisão por 7"
  }
 ];

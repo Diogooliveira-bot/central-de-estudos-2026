@@ -151,5 +151,155 @@ window.BC_QUESTOES=window.BC_QUESTOES||{};
   "answer": 3,
   "explanation": "Pela média: (2×6 + 4×5 + 6x + 8×5)/(16 + x) = 4,8, ou seja, (72 + 6x) = 4,8 × (16 + x) = 76,8 + 4,8x, de onde 1,2x = 4,8 e x = 4. O total é n = 20. Frequências acumuladas: 6, 11, 15 e 20. Com n par, a mediana é a média das posições 10 e 11, que estão no valor 4 (acumulada 11): mediana = 4. A alternativa 2 é a moda (maior frequência, 6). A de 4,8 é a média informada. A de 5 é a média simples dos quatro valores distintos ((2+4+6+8)/4), sem usar as frequências. A de 6 confunde o valor 6 com a posição dele na tabela, mas esse valor só aparece depois da posição 11.",
   "lawRef": "Frequência desconhecida pela média; mediana por acumuladas"
+ },
+ {
+  "id": "rlm-m14-autoral-11",
+  "origem": "autoral-ia",
+  "q": "Um servidor atendeu 4, 6 e 8 pessoas em três dias consecutivos. A média aritmética de atendimentos por dia é:",
+  "options": [
+   "5",
+   "6",
+   "7",
+   "8",
+   "4"
+  ],
+  "answer": 1,
+  "explanation": "A média aritmética é a soma dos valores dividida pela quantidade de observações: (4 + 6 + 8)/3 = 18/3 = 6. Como a média é um valor de equilíbrio, ela deve ficar entre o menor e o maior valor: por isso 4 e 8, que são justamente os extremos, só seriam médias se todos os dados fossem iguais a eles. Os valores 5 e 7 são resultados típicos de somar errado ou dividir pela quantidade errada: 5 seria a média de 4 e 6, e 7 seria a de 6 e 8, ou seja, deixam um dos dados de fora.",
+  "lawRef": "Média aritmética simples"
+ },
+ {
+  "id": "rlm-m14-autoral-12",
+  "origem": "autoral-ia",
+  "q": "Três processos foram julgados em 7, 2 e 5 dias, respectivamente. A mediana desses tempos, em dias, é:",
+  "options": [
+   "2",
+   "4,67",
+   "6",
+   "7",
+   "5"
+  ],
+  "answer": 4,
+  "explanation": "A mediana é o valor central dos dados ordenados. Colocando em ordem crescente, 2, 5, 7, o termo central é 5. Usar a ordem de chegada (7, 2, 5) e apontar o termo do meio sem ordenar leva ao erro de marcar 2. A alternativa 4,67 é a média aritmética (14/3), outra medida de posição. A de 6 é a média apenas de 7 e 5. A de 7 é o maior valor. Lembre que, com número ímpar de observações, a mediana é sempre um dos próprios dados.",
+  "lawRef": "Mediana"
+ },
+ {
+  "id": "rlm-m14-autoral-13",
+  "origem": "autoral-ia",
+  "q": "O número de recursos apresentados em sete processos foi: 2, 5, 3, 5, 4, 5 e 1. A moda desse conjunto é:",
+  "options": [
+   "4",
+   "3,57",
+   "5",
+   "3",
+   "1"
+  ],
+  "answer": 2,
+  "explanation": "A moda é o valor que aparece com maior frequência. O valor 5 aparece três vezes, e os demais aparecem uma vez cada, então a moda é 5. A alternativa 4 é a mediana (ordenados: 1, 2, 3, 4, 5, 5, 5, o termo central é 4). A de 3,57 é a média aritmética (25/7 ≈ 3,57). A de 3 é um valor que aparece uma única vez, e a de 1 é o menor valor. Cada alternativa errada corresponde a outra medida ou a um valor sem destaque na frequência.",
+  "lawRef": "Moda"
+ },
+ {
+  "id": "rlm-m14-autoral-14",
+  "origem": "autoral-ia",
+  "q": "Em um concurso interno, a nota final é a média ponderada de duas provas: a primeira, com peso 2, e a segunda, com peso 1. Um candidato tirou 6 na primeira e 9 na segunda. Sua nota final é:",
+  "options": [
+   "7",
+   "7,5",
+   "8",
+   "6",
+   "9"
+  ],
+  "answer": 0,
+  "explanation": "Na média ponderada, cada nota é multiplicada pelo seu peso, e a soma é dividida pela soma dos pesos: (6 × 2 + 9 × 1)/(2 + 1) = 21/3 = 7. A alternativa 7,5 é a média simples (6 + 9)/2, que ignora os pesos e, por isso, está errada. A de 8 e a de 9 supervalorizam a segunda prova, que tem peso menor. A de 6 é a nota da prova de maior peso, mas a média é puxada para cima pela outra nota, ficando entre 6 e 9, mais perto de 6 por causa do peso 2.",
+  "lawRef": "Média ponderada"
+ },
+ {
+  "id": "rlm-m14-autoral-15",
+  "origem": "autoral-ia",
+  "q": "Os tempos de quatro audiências, em horas, foram, na ordem de realização: 11, 3, 9 e 7. A mediana desses tempos, em horas, é:",
+  "options": [
+   "7",
+   "9",
+   "7,5",
+   "8",
+   "10"
+  ],
+  "answer": 3,
+  "explanation": "Com quantidade par de dados, a mediana é a média dos dois termos centrais da lista ordenada. Ordenando: 3, 7, 9, 11. Os termos centrais são 7 e 9, e a mediana é (7 + 9)/2 = 8. As alternativas 7 e 9 escolhem apenas um dos termos centrais. A de 7,5 é a média aritmética de todos os dados ((3 + 7 + 9 + 11)/4 = 7,5), e não a mediana. A de 10 é a média de 9 e 11, que não são os termos centrais.",
+  "lawRef": "Mediana com número par de observações"
+ },
+ {
+  "id": "rlm-m14-autoral-16",
+  "origem": "autoral-ia",
+  "q": "Cinco servidores de um setor têm média de 8 horas extras no mês. A soma total de horas extras dos cinco é:",
+  "options": [
+   "8",
+   "16",
+   "40",
+   "32",
+   "48"
+  ],
+  "answer": 2,
+  "explanation": "A média é a soma dividida pela quantidade de observações, então a soma é média × quantidade: 8 × 5 = 40 horas. A alternativa 8 é a própria média. A de 16 é 8 × 2 e a de 32 é 8 × 4, que usam a quantidade errada de servidores. A de 48 é 8 × 6, que conta um servidor a mais. Para confirmar, divida a soma encontrada por 5: 40/5 = 8, que é a média dada.",
+  "lawRef": "Média e soma: soma = média × n"
+ },
+ {
+  "id": "rlm-m14-autoral-17",
+  "origem": "autoral-ia",
+  "q": "O número de faltas de cinco servidores em um semestre foi 2, 2, 3, 4 e 4. Qual é a moda desse conjunto?",
+  "options": [
+   "2 e 4 (o conjunto é bimodal)",
+   "2 apenas",
+   "4 apenas",
+   "3 apenas",
+   "Não há moda (o conjunto é amodal)"
+  ],
+  "answer": 0,
+  "explanation": "A moda é o valor de maior frequência. Aqui, 2 aparece duas vezes, 4 aparece duas vezes e 3 aparece uma vez. As duas maiores frequências empatam em 2, então há duas modas, 2 e 4, e o conjunto é bimodal. Dizer que só 2 ou só 4 é a moda ignora o empate. O valor 3 é o de menor frequência. Dizer que não há moda seria correto apenas se todos os valores tivessem a mesma frequência, o que não ocorre, pois o 3 aparece uma só vez.",
+  "lawRef": "Moda: conjuntos bimodais"
+ },
+ {
+  "id": "rlm-m14-autoral-18",
+  "origem": "autoral-ia",
+  "q": "Uma turma de 10 alunos tem média 7 em uma prova, e outra turma, de 30 alunos, tem média 9 na mesma prova. A média conjunta dos 40 alunos é:",
+  "options": [
+   "8",
+   "7,5",
+   "9",
+   "8,25",
+   "8,5"
+  ],
+  "answer": 4,
+  "explanation": "A média conjunta é uma média ponderada pelas quantidades de alunos: (10 × 7 + 30 × 9)/(10 + 30) = (70 + 270)/40 = 340/40 = 8,5. A alternativa 8 é a média simples das duas médias ((7 + 9)/2), que ignora que a segunda turma é três vezes maior. A de 7,5 e a de 8,25 são resultados intermediários sem base na ponderação correta. A de 9 seria a média só se a primeira turma tivesse peso nulo. Como a turma maior tem média maior, o resultado fica mais perto de 9 do que de 7.",
+  "lawRef": "Média ponderada pelo tamanho dos grupos"
+ },
+ {
+  "id": "rlm-m14-autoral-19",
+  "origem": "autoral-ia",
+  "q": "Os dados 1, 2, 3, 4 e x têm média aritmética igual a 4. O valor de x é:",
+  "options": [
+   "20",
+   "10",
+   "4",
+   "6",
+   "2,5"
+  ],
+  "answer": 1,
+  "explanation": "Com cinco dados e média 4, a soma deve ser 5 × 4 = 20. Os quatro dados conhecidos somam 1 + 2 + 3 + 4 = 10, então x = 20 − 10 = 10. Conferindo: (10 + 10)/5 = 4. A alternativa 20 é a soma total, e não o valor de x. A de 4 iguala x à média, o que só valeria se os outros dados fossem todos 4. A de 6 vem de dividir por 4 em vez de 5 (4 × 4 − 10). A de 2,5 é a média dos quatro dados conhecidos (10/4).",
+  "lawRef": "Média aritmética: valor desconhecido a partir da média"
+ },
+ {
+  "id": "rlm-m14-autoral-20",
+  "origem": "autoral-ia",
+  "q": "Em um conjunto de cinco observações, os valores são 1, 2, 2, 8 e 17. A média aritmética, a mediana e a moda são, respectivamente:",
+  "options": [
+   "6, 8 e 2",
+   "2, 6 e 2",
+   "6, 6 e 2",
+   "6, 2 e 2",
+   "5, 2 e 8"
+  ],
+  "answer": 3,
+  "explanation": "Média: (1 + 2 + 2 + 8 + 17)/5 = 30/5 = 6. Mediana: os dados já estão ordenados e o termo central (o 3º de cinco) é 2. Moda: o valor 2 aparece duas vezes e os demais uma vez, logo a moda é 2. Resposta: 6, 2 e 2. O valor extremo 17 puxa a média para cima, mas não afeta a mediana nem a moda. As alternativas com mediana 8 ou 6 erram o termo central, e a que traz 5 como média ou 8 como moda erra a conta ou a frequência.",
+  "lawRef": "Média, mediana e moda"
  }
 ];
