@@ -17,8 +17,8 @@ test('a biblioteca de trânsito é canônica, compartilhada e não declara módu
  assert.equal(subjects.length,1);assert.equal(subjects[0].id,'transito');
  assert.equal(win.renderCount,1,'após registrar a biblioteca, redesenha a lista inicial da Central');
  assert.equal(win.BaseTransitoCourse.modules.length,17);
- assert.deepEqual(Array.from(win.BaseTransitoCourse.available()),['m01','m02','m03','m04','m05','m06','m07','m08','m09','m10','m11','m12','m13']);
- assert.equal(win.BaseTransitoCourse.modules.filter(m=>m.status==='published').length,13);
+ assert.deepEqual(Array.from(win.BaseTransitoCourse.available()),['m01','m02','m03','m04','m05','m06','m07','m08','m09','m10','m11' ,'m12','m13','m14']);
+ assert.equal(win.BaseTransitoCourse.modules.filter(m=>m.status==='published').length,14);
  assert.match(read('ui/study-objectives-catalog-v1.js'),/transito: \{ id:'transito', name:'Legislação de Trânsito'/);
  assert.match(read('ui/study-objectives-catalog-v1.js'),/itaitinga-ctb[^\n]+subjectId":"transito","status":"partial"/);
  assert.match(read('ui/study-objectives-catalog-v1.js'),/prf21-v-transito[^\n]+subjectId":"transito","status":"partial"/);
@@ -290,6 +290,25 @@ test('M13 ensina o processo administrativo, prazos, notificações e recursos co
  assert.ok(m.resources.some(r=>r.url.includes('planalto.gov.br/ccivil_03/leis/l9503compilado.htm')));
  assert.ok(m.resources.some(r=>r.url.includes('Resolucao9182022.pdf')));
 });
+test('M14 ensina crimes de trânsito, elementos dos tipos e atuação do agente',()=>{
+ const win={};vm.runInNewContext(read('content/transito/m14.js'),{window:win});
+ const m=win.BC_TRANSITO_CONTENT.m14;
+ assert.equal(m.status,'revisado');assert.equal(m.full.length,5);assert.equal(m.review.length,5);assert.equal(m.checklist.length,5);
+ assert.equal(m.questions.summary.length,10);assert.equal(m.questions.complete.length,10);
+ const reviewText=m.review.map(c=>c.html).join(' ').toLowerCase();
+ for(const topic of ['art. 302','art. 303','art. 304','art. 305','art. 306','art. 308','art. 309','art. 310','art. 311','art. 312'])assert.ok(reviewText.includes(topic),'revisão deve ensinar '+topic);
+ assert.ok(m.full.every(c=>!c.html.includes('<svg')&&!c.html.includes('<img')),'Conteúdo Completo não recebe imagem didática');
+ assert.equal(m.review.filter(c=>c.html.includes('<svg')).length,1,'diagrama fica apenas na Revisão Guiada');
+ const fullText=m.full.map(c=>c.html).join(' ').toLowerCase();
+ for(const topic of ['art. 291','art. 298','art. 301','art. 312-a','art. 312-b'])assert.ok(fullText.includes(topic),'conteúdo completo deve cobrir '+topic);
+ for(const set of [m.questions.summary,m.questions.complete]){
+  assert.deepEqual(Array.from({length:5},(_,i)=>set.filter(q=>q.answer===i).length),[2,2,2,2,2],'gabarito equilibrado');
+  assert.ok(set.every((q,i)=>i<2||q.answer!==set[i-1].answer||q.answer!==set[i-2].answer),'sem sequência previsível');
+  for(const q of set){assert.equal(q.options.length,5);assert.ok(q.answer>=0&&q.answer<5);assert.ok(q.explanation.length>35);assert.equal(new Set(q.options).size,5)}
+ }
+ assert.ok(m.resources.some(r=>r.url.includes('planalto.gov.br/ccivil_03/leis/l9503compilado.htm')));
+ assert.ok(m.resources.some(r=>r.url.includes('/2017/lei/l13546.htm')));
+});
 test('leitor só revela gabarito depois da tentativa e grava estado local do aluno',async()=>{
  const dom=new JSDOM('<!doctype html><html><body><button id="start">Abrir</button></body></html>',{url:'https://central.test/',runScripts:'outside-only',pretendToBeVisual:true});
  const w=dom.window;let loaded=false;
@@ -397,19 +416,27 @@ test('leitor só revela gabarito depois da tentativa e grava estado local do alu
  w.document.querySelector('[data-close]').click();
  await w.BaseTransitoReader.open('m13','questions-review');
  assert.equal(w.document.querySelectorAll('.bc-transito-question').length,10);
+ w.eval(read('content/transito/m14.js'));
+ await w.BaseTransitoReader.open('m14','review');
+ assert.match(w.document.querySelector('.bc-info-reader-top h1').textContent,/Crimes de trânsito/);
+ assert.equal(w.document.querySelectorAll('.bc-transito-checklist input').length,5);
+ assert.equal(w.document.querySelectorAll('.bc-transito-flow svg').length,1);
+ w.document.querySelector('[data-close]').click();
+ await w.BaseTransitoReader.open('m14','questions-complete');
+ assert.equal(w.document.querySelectorAll('.bc-transito-question').length,10);
  dom.window.close();loaded=true;assert.equal(loaded,true);
 });
 
 test('boot e pacote offline carregam curso e leitura sem alterar a produção',()=>{
  const boot=read('central-v119.html'),manifest=JSON.parse(read('central-offline-files-v66172.json'));
- assert.match(boot,/ui\/transito-shared-course-v1\.js\?v=20261127m13a/);
- assert.match(boot,/ui\/transito-course-reader-v1\.js\?v=20261127m13a/);
+ assert.match(boot,/ui\/transito-shared-course-v1\.js\?v=20261127m14a/);
+ assert.match(boot,/ui\/transito-course-reader-v1\.js\?v=20261127m14a/);
  assert.match(read('ui/transito-shared-course-v1.js'),/Filtro pendente de validação/);
- assert.ok(read('ui/transito-course-reader-v1.js').includes("'/content/transito/'+id+'.js?v=20261127m13a"));
- assert.ok(manifest.files.some(x=>x==='/content/transito/m03.js?v=20261127m13a'));
+ assert.ok(read('ui/transito-course-reader-v1.js').includes("'/content/transito/'+id+'.js?v=20261127m14a"));
+ assert.ok(manifest.files.some(x=>x==='/content/transito/m03.js?v=20261127m14a'));
  assert.match(boot,/ui\/transito-course-reader-v1\.js\?v=/);
  assert.match(boot,/ui\/transito-shared-course-v1\.css\?v=/);
- for(const path of ['/ui/transito-shared-course-v1.js?v=20261127m13a','/ui/transito-course-reader-v1.js?v=20261127m13a','/ui/transito-shared-course-v1.css?v=20261127m13a','/content/transito/m01.js?v=20261127m13a','/content/transito/m02.js?v=20261127m13a','/content/transito/m03.js?v=20261127m13a','/content/transito/m04.js?v=20261127m13a','/content/transito/m05.js?v=20261127m13a','/content/transito/m06.js?v=20261127m13a','/content/transito/m07.js?v=20261127m13a','/content/transito/m08.js?v=20261127m13a','/content/transito/m09.js?v=20261127m13a','/content/transito/m10.js?v=20261127m13a','/content/transito/m11.js?v=20261127m13a','/content/transito/m12.js?v=20261127m13a','/content/transito/m13.js?v=20261127m13a'])assert.ok(manifest.files.includes(path),path+' ausente do cache offline');
- assert.match(boot,/20261127-transito-m13a/);
+ for(const path of ['/ui/transito-shared-course-v1.js?v=20261127m14a','/ui/transito-course-reader-v1.js?v=20261127m14a','/ui/transito-shared-course-v1.css?v=20261127m14a','/content/transito/m01.js?v=20261127m14a','/content/transito/m02.js?v=20261127m14a','/content/transito/m03.js?v=20261127m14a','/content/transito/m04.js?v=20261127m14a','/content/transito/m05.js?v=20261127m14a','/content/transito/m06.js?v=20261127m14a','/content/transito/m07.js?v=20261127m14a','/content/transito/m08.js?v=20261127m14a','/content/transito/m09.js?v=20261127m14a','/content/transito/m10.js?v=20261127m14a','/content/transito/m11.js?v=20261127m14a','/content/transito/m12.js?v=20261127m14a','/content/transito/m13.js?v=20261127m14a','/content/transito/m14.js?v=20261127m14a'])assert.ok(manifest.files.includes(path),path+' ausente do cache offline');
+ assert.match(boot,/20261127-transito-m14a/);
  assert.match(read('index.html'),/Legislação de Trânsito/);
 });
