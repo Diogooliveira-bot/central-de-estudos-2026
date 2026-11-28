@@ -201,7 +201,7 @@ test('catálogo gera IDs estáveis e separados por disciplina para sincronizaç�
 
 test('leitura completa marca somente Estudei, não revisão nem questões',()=>{
  const {dom,w,storage}=setup();
- const target=catalog.subjects.find(s=>s.disciplineId==='cf').items.find(i=>i.moduleIds?.length===1&&i.moduleIds[0]==='w1');
+ const target=catalog.subjects.find(s=>s.disciplineId==='cf').items.find(i=>!i.organizational&&i.moduleIds?.length===1&&i.moduleIds[0]==='w1');
  assert.ok(target);
  storage.setItem('central-v6:cf-native-v2',JSON.stringify({modules:{1:{completeRead:true}}}));
  w.CentralExamVerticalized.open();
