@@ -304,6 +304,7 @@ test('M14 ensina crimes de trânsito, elementos dos tipos e atuação do agente'
  for(const set of [m.questions.summary,m.questions.complete]){
   assert.deepEqual(Array.from({length:5},(_,i)=>set.filter(q=>q.answer===i).length),[2,2,2,2,2],'gabarito equilibrado');
   assert.ok(set.every((q,i)=>i<2||q.answer!==set[i-1].answer||q.answer!==set[i-2].answer),'sem sequência previsível');
+  assert.ok(set.filter(q=>q.options[q.answer].length===Math.max(...q.options.map(o=>o.length))).length<=4,'a resposta correta não é sistematicamente a alternativa mais longa');
   for(const q of set){assert.equal(q.options.length,5);assert.ok(q.answer>=0&&q.answer<5);assert.ok(q.explanation.length>35);assert.equal(new Set(q.options).size,5)}
  }
  assert.ok(m.resources.some(r=>r.url.includes('planalto.gov.br/ccivil_03/leis/l9503compilado.htm')));
