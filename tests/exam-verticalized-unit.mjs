@@ -146,3 +146,44 @@ test('Abrir módulo usa navegação nativa e expande o módulo, não apenas a di
  assert.equal(cppCalled,1,'Navegação invoca expansor nativo de Processo Penal');
  dom.window.close();
 });
+
+test('entrada unificada abre o edital ativo preservando o checklist existente',async()=>{
+ const {dom,w}=setup();
+ assert.equal(await w.CentralUnifiedVertical.open(),true);
+ const panel=w.document.querySelector('#examVerticalizedDialog');
+ assert.equal(panel.hidden,false);
+ assert.ok(panel.querySelector('.exam-unified-actions'));
+ panel.querySelector('[data-exam-marker="studied"]').click();
+ assert.ok(w.CentralExamVerticalized.overall()>0);
+ dom.window.close();
+});
+
+test('estudo livre exibe somente as disciplinas selecionadas e progresso real',async()=>{
+ const {dom,w,storage}=setup();
+ storage.setItem('central-v6:free-study-subjects:v1',JSON.stringify(['cf','pt']));
+ w.CentralStudyObjectives.setActive('free-study');
+ w.BaseCompletaProgressReportSnapshot=()=>({modules:Array.from({length:15},(_,i)=>({subjectId:'cf',pct:i===0?100:0}))});
+ assert.equal(await w.CentralUnifiedVertical.open(),true);
+ const panel=w.document.querySelector('#unifiedVerticalDialog');
+ assert.deepEqual([...panel.querySelectorAll('details')].map(x=>x.dataset.examSubject),['cf','pt']);
+ assert.equal(panel.querySelectorAll('[data-exam-subject="cf"] .exam-topic').length,15);
+ assert.match(panel.querySelector('[data-exam-subject="cf"] .exam-topic').textContent,/Concluído/);
+ assert.equal(panel.querySelectorAll('input[type=checkbox]').length,0,'sem duplicar progresso real');
+ dom.window.close();
+});
+
+test('concurso de catálogo usa assuntos reais, só liga módulos aprovados e mantém marcações separadas',async()=>{
+ const {dom,w,storage}=setup();
+ const id='exam-catalog-exemplo-cargo-1';
+ w.CentralStudyObjectives.catalog.goals[id]={id,type:'exam',title:'Concurso fictício',subjectIds:['cf']};
+ w.CentralStudyObjectives.setActive(id);
+ w.CentralStudyObjectives.activeContest=async()=>({status:'previsto',subjects:[{id:'d1',name:'Disciplina',centralId:'cf',syllabus:[{id:'t1',title:'<img src=x onerror=alert(1)>',links:[{status:'suggested',subjectId:'cf',moduleId:'cf-01'}]},{id:'t2',title:'Assunto dois',links:[{status:'approved',subjectId:'cf',moduleId:'cf-02'}]}]}]});
+ await w.CentralUnifiedVertical.open();
+ const panel=w.document.querySelector('#unifiedVerticalDialog');
+ assert.equal(panel.querySelector('img'),null);
+ assert.equal(panel.querySelectorAll('.exam-module-link').length,1);
+ panel.querySelector('input').click();
+ assert.match(panel.querySelector('.exam-overview').textContent,/50%/);
+ assert.equal(JSON.parse(storage.getItem('central-v6:vertical-catalog:student-1:'+id)).t1,true);
+ dom.window.close();
+});
