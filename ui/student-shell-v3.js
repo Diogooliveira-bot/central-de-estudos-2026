@@ -119,7 +119,7 @@
       rail.setAttribute('aria-label', 'Ferramentas de estudo');
       nav.prepend(rail);
       if (agenda) {renameNavButton(agenda,'Agenda','agenda');rail.appendChild(agenda);}
-      if (progress) { progress.hidden = true; progress.dataset.studentLegacyProgress = '1'; }
+      if (progress) { progress.hidden = true; progress.dataset.studentLegacyProgress = '1'; progress.removeAttribute('data-student-primary-nav'); }
       const actions = [
         ['law','Lei em Dia',() => global.openEmbeddedTool?.('decorando', {})],
         ['vade','Vade Mecum',() => global.openEmbeddedTool?.('vade', {})],
