@@ -143,3 +143,18 @@ test('Agenda e Progresso mostram o botão Voltar à Central e a Agenda rola no c
   assert.doesNotMatch(student, /:is\(#disciplinesView,#agendaView,#performanceView\)>\.central-view-back \{display:none/);
   assert.match(topnav, /@media\(min-width:801px\) \{\s*html\.bc-ui-v1\.bc-topnav #appRoot #agendaView\.central-agenda-visible:not\(\.hidden\) \{[^}]*overflow-y:auto!important/);
 });
+
+
+test('Edital Vertical substitui os dois atalhos e abre somente o painel unificado',async()=>{
+  const {win,enhance}=await setup('aluno');
+  const btn=win.document.querySelector('[data-student-primary-nav="edital"]');
+  assert.equal(btn.getAttribute('aria-label'),'Edital Vertical');
+  assert.equal(win.document.querySelector('[data-student-primary-nav="progress"]'),null);
+  let opened=0,catalog=0;
+  win.CentralUnifiedVertical={open(){opened++;}};
+  win.CentralContestCatalog={open(){catalog++;}};
+  btn.click();enhance();
+  assert.equal(opened,1);assert.equal(catalog,0);
+  assert.equal(win.document.querySelectorAll('[data-student-primary-nav="edital"]').length,1);
+  win.close();
+});
