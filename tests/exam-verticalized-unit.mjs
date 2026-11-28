@@ -182,6 +182,7 @@ test('concurso de catálogo usa assuntos reais, só liga módulos aprovados e ma
  const panel=w.document.querySelector('#unifiedVerticalDialog');
  assert.equal(panel.querySelector('img'),null);
  assert.equal(panel.querySelectorAll('.exam-module-link').length,1);
+ assert.match(panel.querySelector('.exam-module-link').textContent,/^M02 · /,'link único segue o mesmo padrão visual dos múltiplos');
  panel.querySelector('input').click();
  assert.match(panel.querySelector('.exam-overview').textContent,/50%/);
  assert.equal(JSON.parse(storage.getItem('central-v6:vertical-catalog:student-1:'+id))['d1:t1'].value,true);
