@@ -1,5 +1,5 @@
 {
-  "build": "20261127-prf-verticalizado-v1",
+  "build": "20261127-transito-m16a",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -224,7 +224,7 @@
     "/ui/external-question-filters-v1.js?v=20261119adminonly1",
     "/ui/cpc-approved-layout-v1.css?v=20261115responsive1",
     "/ui/approved-cpc-layout-v1.js?v=20261113orient1",
-    "/ui/study-objectives-catalog-v1.js?v=20261127prf1",
+    "/ui/study-objectives-catalog-v1.js?v=20261127itaitinga2",
     "/ui/tablet-scale-v1.css?v=20261115responsive1",
     "/ui/auto-scale-v1.css?v=20261115responsive1",
     "/ui/tablet-legibility-v1.css?v=20261121r2",
@@ -337,6 +337,25 @@
     "/assets/adm/revisao-guiada/m06/ADM-M06-C10.webp",
     "/ui/contest-admin-form.js?v=20261124r1",
     "/ui/concursos-catalog-v1.js?v=20261127prf1",
-    "/ui/concursos-catalog-v1.css?v=20261123concursos2"
+    "/ui/concursos-catalog-v1.css?v=20261123concursos2",
+    "/ui/transito-shared-course-v1.css?v=20261127m16a",
+    "/ui/transito-shared-course-v1.js?v=20261127m16a",
+    "/ui/transito-course-reader-v1.js?v=20261127m16a",
+    "/content/transito/m01.js?v=20261127m16a",
+    "/content/transito/m02.js?v=20261127m16a",
+    "/content/transito/m03.js?v=20261127m16a",
+    "/content/transito/m04.js?v=20261127m16a",
+    "/content/transito/m05.js?v=20261127m16a",
+    "/content/transito/m06.js?v=20261127m16a",
+    "/content/transito/m07.js?v=20261127m16a",
+    "/content/transito/m08.js?v=20261127m16a",
+    "/content/transito/m09.js?v=20261127m16a",
+    "/content/transito/m10.js?v=20261127m16a",
+    "/content/transito/m11.js?v=20261127m16a",
+    "/content/transito/m12.js?v=20261127m16a",
+    "/content/transito/m13.js?v=20261127m16a",
+    "/content/transito/m14.js?v=20261127m16a",
+    "/content/transito/m15.js?v=20261127m16a",
+    "/content/transito/m16.js?v=20261127m16a"
   ]
 }

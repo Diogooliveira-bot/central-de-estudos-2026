@@ -1,0 +1,30 @@
+.bc-transito-modules .bc-info-reading{margin:16px 0;padding:16px 18px;border-left:3px solid #b8cbd8;background:#f7fafc;color:#425569;font-size:.9rem;line-height:1.7}
+.bc-transito-modules .bc-info-reading p{margin:8px 0}
+.bc-transito-outline{margin:12px 0 18px;padding-left:22px;color:#52677a;line-height:1.7}
+.bc-transito-reader-overlay{z-index:2147483401}
+.bc-transito-checklist{margin:28px 0;padding:20px;border:1px solid #dce5ec;border-radius:12px;background:#f8fbfd}
+.bc-transito-checklist h2{font-size:1.2rem;margin:0 0 7px;color:#173a56}
+.bc-transito-checklist p{font-size:.83rem;color:#64748b}
+.bc-transito-checklist label,.bc-transito-question fieldset label{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-top:1px solid #e4ebf0;color:#33485d;line-height:1.6}
+.bc-transito-checklist input,.bc-transito-question input{margin-top:5px;accent-color:#1975aa;flex:0 0 auto}
+.bc-transito-reader .bc-info-reader-resources ul{padding-left:20px}
+.bc-transito-reader .bc-info-reader-resources li{margin:6px 0}
+.bc-transito-reader .bc-info-reader-resources p{margin:12px 0;color:#667b8c}
+.bc-transito-flow{margin:18px 0;padding:16px;border:1px solid #dce5ec;border-radius:12px;background:#fff}
+.bc-transito-flow figcaption{margin:0 0 10px;color:#173a56;font-weight:750;font-size:.9rem}
+.bc-transito-flow svg{display:block;width:100%;height:auto}
+.bc-transito-flow p{margin:8px 0 0;color:#667b8c;font-size:.78rem}
+.bc-transito-quiz-intro{max-width:950px;margin:24px auto 8px;padding:0 clamp(18px,4vw,48px);color:#53687c}
+.bc-transito-quiz-intro>b{font-size:1.2rem;color:#173a56}
+.bc-transito-quiz-intro p{font-size:.87rem;line-height:1.6}
+.bc-transito-quiz-list{max-width:950px;margin:0 auto;padding:12px clamp(18px,4vw,48px) 70px}
+.bc-transito-question{padding:22px 0 28px;border-bottom:1px solid #e4ebf0}
+.bc-transito-question-kicker{font-size:.67rem;letter-spacing:.08em;color:#66869e;font-weight:750}
+.bc-transito-question h2{font-size:1.05rem;line-height:1.55;color:#203b54;margin:9px 0 14px}
+.bc-transito-question fieldset{border:0;padding:0;margin:0 0 14px}
+.bc-transito-question legend{font-size:.8rem;color:#64748b;margin-bottom:6px}
+.bc-transito-question fieldset label{cursor:pointer}
+.bc-transito-question fieldset label:hover{color:#16405f}
+.bc-transito-feedback{min-height:1.5em;margin:12px 0 0;padding:10px 12px;border-radius:7px;background:#f2f7fa;color:#40596d;font-size:.86rem;line-height:1.6}
+.bc-transito-feedback:empty{display:none}
+@media(max-width:640px){.bc-transito-checklist{padding:15px}.bc-transito-quiz-list{padding-left:17px;padding-right:17px}.bc-transito-question h2{font-size:1rem}}

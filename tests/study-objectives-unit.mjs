@@ -96,7 +96,8 @@ test('boas-vindas: três caminhos diretos, carreira e editais em telas separadas
   assert.ok(free.compareDocumentPosition(w.document.querySelector('[data-study-careers]')) & 4,'Estudo livre vem primeiro');
   assert.equal(w.document.querySelectorAll('[data-study-area],[data-study-exam]').length,0,'detalhes ficam no caminho escolhido');
   w.document.querySelector('[data-study-exams]').click();
-  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,4,'GMF, PRF, TJPA e TJAL ficam à vista');
+  assert.equal(w.document.querySelectorAll('[data-study-exam]').length,5,'GMF, PRF, Itaitinga, TJPA e TJAL ficam à vista');
+  assert.ok(w.document.querySelector('[data-study-exam="exam-catalog-itaitinga-agente-transito-monitoramento-cargo-1"]'));
   assert.equal(w.document.querySelector('[data-study-exam-request]'),null,'sem pedido ou listagem extra na seleção simplificada');
   w.document.querySelector('[data-study-back]').click();
   w.document.querySelector('[data-study-careers]').click();
@@ -125,7 +126,7 @@ test('boas-vindas: três caminhos diretos, carreira e editais em telas separadas
   assert.equal(w.CentralStudyObjectives.getActive(),'free-study');
   assert.deepEqual(Array.from(w.CentralStudyObjectives.activeSubjectIds()),['pt','penal']);
   // Acesso a tudo: a escolha só destaca a trilha; nenhuma disciplina é escondida.
-  assert.equal(w.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length,9);
+  assert.equal(w.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length,10);
   assert.equal(w.document.querySelector('#subjects [data-id="adm"]').hidden,false);
   assert.equal(w.document.querySelector('#subjects [data-id="adm"]').dataset.studyTrail,'0');
   assert.equal(w.document.querySelector('#subjects [data-id="pt"]').dataset.studyTrail,'1');
@@ -148,6 +149,7 @@ test('editais antigos permanecem carregáveis e novos concursos aparecem na sele
   w.document.querySelector('[data-study-exams]').click();
   const options=[...w.document.querySelectorAll('[data-study-exam]')];
   assert.deepEqual(options.map(x=>x.dataset.studyExam),[
+    'exam-catalog-itaitinga-agente-transito-monitoramento-cargo-1',
     'exam-catalog-prf-2021-policial-rodoviario-federal-cargo-1',
     'exam-catalog-gmf-fortaleza-monitoramento-cargo-1',
     'exam-tjpa-em-preparacao','exam-tjal-em-preparacao',
@@ -278,8 +280,8 @@ test('API do objetivo valida disciplinas, persiste JSONB e mantém dados ao muda
 });
 
 
-test('as cinco áreas gerais são diretas e as outras duas apresentam somente os editais indicados', async()=>{
-  for(const area of ['policial','educacao','saude','bancaria','transito']){
+test('as quatro áreas gerais são diretas e as outras três apresentam somente os editais indicados', async()=>{
+  for(const area of ['policial','educacao','saude','bancaria']){
     const {dom}=setup(),w=dom.window;await settle(w);
     openArea(w,area);
     assert.equal(w.document.getElementById('studyObjectiveDialog'),null,area+' não abre subtema');
@@ -288,6 +290,7 @@ test('as cinco áreas gerais são diretas e as outras duas apresentam somente os
   }
   for(const [area,expected] of [
     ['guarda',['exam-catalog-gmf-fortaleza-monitoramento-cargo-1']],
+    ['transito',['exam-catalog-itaitinga-agente-transito-monitoramento-cargo-1']],
     ['judiciaria',['exam-tjpa-em-preparacao','exam-tjal-em-preparacao']],
   ]){
     const {dom}=setup(),w=dom.window;await settle(w);

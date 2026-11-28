@@ -12,7 +12,7 @@ export function validSelectedContestIds(ids) {
     ids.every((id) => typeof id === 'string' && id.startsWith('exam-') && validObjectiveId(id));
 }
 
-const FREE_STUDY_SUBJECT_IDS = new Set(['pt','cf','adm','civil','cpc','penal','cpp','rlm','info']);
+const FREE_STUDY_SUBJECT_IDS = new Set(['pt','cf','adm','civil','cpc','penal','cpp','rlm','info','transito']);
 
 function validFreeSubjectIds(value) {
   return Array.isArray(value) && value.length >= 1 && value.length <= FREE_STUDY_SUBJECT_IDS.size &&
