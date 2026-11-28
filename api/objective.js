@@ -55,14 +55,28 @@ const DEFAULT_EXAM_ID = 'tjp-2026-aj-area-judiciaria';
 const EXAM_MARKERS = new Set(['studied','reviewed','questions']);
 const EXAM_TOPIC_SETS = Object.fromEntries(Object.entries(EXAM_TOPIC_IDS).map(([id, topics]) => [id,new Set(topics)]));
 
+// Deterministic IDs for catalog subjects, including legacy topic strings.
+function catalogTopicId(subjectId,title){let n=2166136261;for(const c of String(title)){n=Math.imul(n^c.charCodeAt(0),16777619);}return subjectId+'-'+(n>>>0).toString(36);}
+export function catalogExamTopicIds(data) {
+  const ids=new Set();
+  for(const s of data?.subjects||[]){
+    const topics=s.syllabus?.length?s.syllabus:(s.topics||[]).map(title=>({id:catalogTopicId(s.id,title)}));
+    for(const t of topics)if(typeof s.id==='string'&&typeof t.id==='string')ids.add(s.id+':'+t.id);
+  }
+  return ids;
+}
+
+
 async function handleExamProgress(req, res) {
   // Keep the original TJPB API contract: an omitted examId selects TJPB.
   // Explicit IDs are allowlisted; never use user input as a table identifier.
   const EXAM_ID = req.query?.examId === undefined ? DEFAULT_EXAM_ID : req.query.examId;
-  if (typeof EXAM_ID !== 'string' || !Object.hasOwn(EXAM_TOPIC_SETS,EXAM_ID)) {
+  const dynamic = typeof EXAM_ID==='string' ? EXAM_ID.match(/^exam-catalog-([a-z0-9][a-z0-9-]{2,79})-cargo-([1-9]\d{0,2})$/) : null;
+  const staticExam = typeof EXAM_ID==='string' && Object.hasOwn(EXAM_TOPIC_SETS,EXAM_ID);
+  if (!staticExam && !dynamic) {
     return send(res, 400, { error:'Edital inválido ou não cadastrado' });
   }
-  const topicIds = EXAM_TOPIC_SETS[EXAM_ID];
+  let topicIds = staticExam ? EXAM_TOPIC_SETS[EXAM_ID] : null;
   // Preview deployments inherit shared project variables unless a branch-specific
   // database has been verified. Fail closed before session lookup can touch SQL.
   if (process.env.VERCEL_ENV === 'preview' && process.env.EXAM_PROGRESS_PREVIEW_DB_ISOLATED !== 'true') {
@@ -77,6 +91,12 @@ async function handleExamProgress(req, res) {
   if (!session.ok) return send(res, session.status, { error:session.error });
   try {
     const sql = session.sql;
+    if (!staticExam) {
+      const rows=await sql`SELECT data FROM central_contests WHERE contest_id=${dynamic[1]} AND active=TRUE`;
+      const data=rows[0]?.data;
+      if(!data || Number(dynamic[2])>Math.max(1,data.cargos?.length||0))return send(res,400,{error:'Edital inválido ou não cadastrado'});
+      topicIds=catalogExamTopicIds(data);
+    }
     await sql`
       CREATE TABLE IF NOT EXISTS central_exam_topic_progress (
         user_id TEXT NOT NULL REFERENCES central_users(user_id) ON DELETE CASCADE,
@@ -91,9 +111,10 @@ async function handleExamProgress(req, res) {
     await sql`CREATE INDEX IF NOT EXISTS central_exam_topic_progress_exam_user_idx ON central_exam_topic_progress (exam_id, user_id)`;
     if (req.method === 'GET') {
       const rows = await sql`SELECT topic_id,marker,completed,updated_at FROM central_exam_topic_progress WHERE user_id=${session.user.id} AND exam_id=${EXAM_ID}`;
-      const progress = {};
+      const progress = Object.create(null);
       for (const row of rows) {
-        progress[row.topic_id] ||= {};
+        if(!topicIds.has(row.topic_id) || !EXAM_MARKERS.has(row.marker))continue;
+        progress[row.topic_id] ||= Object.create(null);
         progress[row.topic_id][row.marker] = { value:row.completed === true, at:new Date(row.updated_at).toISOString() };
       }
       return send(res, 200, { examId:EXAM_ID, progress });
@@ -101,7 +122,7 @@ async function handleExamProgress(req, res) {
     const body = await readJsonBody(req);
     if (!body || !Array.isArray(body.changes) || body.changes.length > 1200) return send(res, 400, { error:'Lista de marcações inválida' });
     for (const change of body.changes) {
-      if (!change || !topicIds.has(change.topicId) || !EXAM_MARKERS.has(change.marker) || typeof change.value !== 'boolean') {
+      if (!change || !topicIds.has(change.topicId) || !EXAM_MARKERS.has(change.marker) || (!staticExam && change.marker!=='studied') || typeof change.value !== 'boolean') {
         return send(res, 400, { error:'Marcação de assunto inválida' });
       }
     }
