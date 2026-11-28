@@ -5,6 +5,7 @@
   const OBJECTIVES = global.CentralStudyObjectives;
   const MARKERS = [['studied','Estudei'],['reviewed','Revisei'],['questions','Fiz questões']];
   if (!OBJECTIVES) return;
+  function esc(text) { return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function createExam(DATA,GOAL_ID,dialogId,entryId) {
   if (!DATA) return null;
   const markers = DATA.singleCheck ? [['studied','Concluído']] : MARKERS;
@@ -104,7 +105,6 @@
     const done=groups.reduce((n,subject)=>n+subjectTopics(subject).reduce((sum,item)=>sum+markers.reduce((k,[marker])=>k+(checked(item,subject,marker)?1:0),0),0),0);
     return possible ? Math.round(done * 1000 / possible) / 10 : 0;
   }
-  function esc(text) { return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function topicMarkup(subject,item) {
     if (item.organizational) return '<div class="exam-topic-heading"><span>'+(item.number ? esc(item.number)+' ' : '')+esc(item.text)+'</span></div>';
     const coverage = DATA.singleCheck ? ((item.targets?.length || item.moduleIds?.length) ? '' : 'Em preparação') : item.coverage === 'preparation' ? 'Em preparação' : '';
