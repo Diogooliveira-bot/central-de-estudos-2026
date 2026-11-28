@@ -245,40 +245,87 @@
       });detail.append(list);panel.append(detail);
     }
   }
-  // Catalog checklists do not overwrite native module progress or any legacy exam records.
+  // Catalog checklists have a stable subject/topic key and reuse the existing protected progress API.
   const catalogKey=id=>'central-v6:vertical-catalog:'+String(global.__BASE_COMPLETA_USER_ID__||global.BASE_COMPLETA_USER?.id||'local-student')+':'+id;
-  function readMarks(id){try{return JSON.parse(localStorage.getItem(catalogKey(id))||'{}')||{};}catch(_){return {};}}
+  function readMarks(id){try{const raw=JSON.parse(localStorage.getItem(catalogKey(id))||'{}');return raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};}catch(_){return {};}}
+  function saveMarks(id,marks){try{localStorage.setItem(catalogKey(id),JSON.stringify(marks));}catch(_){}}
   function stableTopicId(subject,title){let n=2166136261;for(const c of String(title)){n=Math.imul(n^c.charCodeAt(0),16777619);}return subject+'-'+(n>>>0).toString(36);}
+  function topicEntries(s){return s.syllabus?.length?s.syllabus:(s.topics||[]).map(title=>({id:stableTopicId(s.id,title),title,links:[]}));}
+  const syncQueue=new Map();
+  let activeCatalog=null;
+  async function syncCatalog(contest,goal,id){
+    if(!contest||global.__BASE_COMPLETA_PREVIEW_GUEST__===true||!navigator.onLine)return;
+    const key=catalogKey(id);
+    const run=async()=>{
+      let message='Marcações salvas neste aparelho.';
+      try{
+        const url='/api/objective?resource=exam-progress&examId='+encodeURIComponent(id);
+        const allowed=new Set(contest.subjects.flatMap(s=>topicEntries(s).map(t=>s.id+':'+t.id)));
+        const response=await fetch(url,{cache:'no-store',credentials:'same-origin'});
+        if(response.status===403){message='Marcações locais. A sincronização depende do plano.';return;}
+        if(!response.ok)throw Error('progress');
+        const remote=(await response.json()).progress||{},local=readMarks(id);
+        for(const topic of allowed){
+          const v=remote[topic]?.studied;
+          if(v&&typeof v.value==='boolean'&&(!local[topic]||Date.parse(v.at)>=Date.parse(local[topic].at)))local[topic]=v;
+        }
+        saveMarks(id,local);
+        const changes=[...allowed].flatMap(topic=>{
+          const l=local[topic],r=remote[topic]?.studied;
+          return l&&typeof l.value==='boolean'&&(!r||Date.parse(l.at)>Date.parse(r.at))?[{topicId:topic,marker:'studied',value:l.value,at:l.at}]:[];
+        });
+        for(let i=0;i<changes.length;i+=1200){
+          const saved=await fetch(url,{method:'PUT',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({changes:changes.slice(i,i+1200)})});
+          if(!saved.ok)throw Error('save');
+        }
+        message='Marcações sincronizadas na sua conta.';
+      }catch(_){message='Marcações salvas neste aparelho; sincronização indisponível.';}
+      finally{if(activeCatalog?.id===id&&catalogKey(id)===key&&genericHost&&!genericHost.hidden)drawContest(contest,goal,id,message);}
+    };
+    const queued=(syncQueue.get(key)||Promise.resolve()).catch(()=>{}).then(run);
+    syncQueue.set(key,queued);try{await queued;}finally{if(syncQueue.get(key)===queued)syncQueue.delete(key);}
+  }
   function catalogGroups(contest,goal,id){
     const marks=readMarks(id);
     const subjects=contest?.subjects||goal.examSubjects||[];
     return subjects.map(s=>{
-      const subjectId=s.centralId||s.subjectId;
-      const topics=s.syllabus?.length?s.syllabus:(s.topics||[]).map(title=>({id:stableTopicId(s.id,title),title,links:[]}));
+      const topics=topicEntries(s);
       return {id:s.id,title:s.name||s.title,rows:topics.map(t=>{
+        const topic=s.id+':'+t.id;
         const approved=(t.links||[]).filter(l=>l.status==='approved'&&l.moduleId&&l.subjectId);
-        return {id:t.id,title:t.title,pct:marks[t.id]===true?100:0,note:approved.length?'Material vinculado':(t.links||[]).length?'Vínculos em auditoria':'Em preparação / sem vínculo conferido',targets:approved.map(l=>({subjectId:l.subjectId,moduleId:l.moduleId})),onToggle(value){const next=readMarks(id);next[t.id]=value;try{localStorage.setItem(catalogKey(id),JSON.stringify(next));}catch(_){}drawContest(contest,goal,id);}};
+        return {id:topic,title:t.title,pct:marks[topic]?.value===true?100:0,note:approved.length?'Material vinculado':(t.links||[]).length?'Vínculos em auditoria':'Em preparação / sem vínculo conferido',targets:approved.map(l=>({subjectId:l.subjectId,moduleId:l.moduleId})),onToggle(value){const next=readMarks(id);next[topic]={value,at:new Date().toISOString()};saveMarks(id,next);drawContest(contest,goal,id);syncCatalog(contest,goal,id);}};
       })};
     });
   }
-  function drawContest(contest,goal,id){
+  function drawContest(contest,goal,id,syncMessage=''){
     const groups=catalogGroups(contest,goal,id);
-    genericRender('Edital Vertical',goal.title,groups,'catalog','Marcações pessoais deste concurso, salvas neste navegador. Cobertura pedagógica é independente do progresso. '+(contest?.status==='publicado'?'Consulte a fonte oficial.':'Programa de referência ou em preparação; não é novo edital confirmado.'));
+    activeCatalog={contest,goal,id};
+    genericRender('Edital Vertical',goal.title,groups,'catalog','Marcações pessoais deste concurso. Cobertura pedagógica é independente do progresso. '+(contest?.status==='publicado'?'Consulte a fonte oficial.':'Programa de referência ou em preparação; não é novo edital confirmado.'));
+    const panel=genericHost.querySelector('.exam-verticalized-panel');
+    const notice=safe('p',syncMessage||(global.__BASE_COMPLETA_PREVIEW_GUEST__?'Prévia: marcações salvas neste navegador.':'Marcações salvas neste aparelho.'),'exam-sync-status');panel.querySelector('.exam-overview').after(notice);
+    const source=(contest?.sources||[]).find(s=>s.type==='edital'||s.type==='edital-oficial'||s.type==='edital-referencia')||contest?.sources?.[0];
+    try{const url=new URL(source?.url);if(url.protocol==='https:'){const p=safe('p',undefined,'exam-source'),link=safe('a',source.title||'Consultar fonte');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';p.append(link);notice.after(p);}}catch(_){}
+    if(!groups.some(g=>g.rows.length))notice.textContent='Programa ainda não disponível; consulte o catálogo ou a fonte oficial.';
   }
   async function openUnified(){
-    genericClose();
-    for(const view of legacyViews())if(view?.open?.()===true)return true;
+    genericClose();activeCatalog=null;
+    // Prefer the exact selected objective, avoiding a stale legacy GMF preference.
+    const selected=OBJECTIVES.getActive();
+    const exact={ 'exam-catalog-gmf-fortaleza-monitoramento-cargo-1':global.CentralGMFVerticalized,'exam-catalog-prf-2021-policial-rodoviario-federal-cargo-1':global.CentralPRFVerticalized,'exam-tjpb-2026-analista-judiciaria':global.CentralExamVerticalized,'exam-trt8-2026-analista-judiciaria':global.CentralTRT8Verticalized }[selected];
+    if(exact?.open?.()===true)return true;
+    if(!selected)for(const view of legacyViews())if(view?.open?.()===true)return true;
     const id=OBJECTIVES.getActive(),goal=OBJECTIVES.catalog.goals[id];
     if(!goal){OBJECTIVES.open();return false;}
     if(goal.type==='exam'){
       const seq=generation;let contest=null;try{contest=await OBJECTIVES.activeContest?.();}catch(_){}
       if(seq!==generation||id!==OBJECTIVES.getActive())return false;
-      drawContest(contest,goal,id);return true;
+      drawContest(contest,goal,id);syncCatalog(contest,goal,id);return true;
     }
     genericRender('Meu programa de estudos',goal.type==='free'?'Estudo livre':goal.title,getModuleRows(OBJECTIVES.activeSubjectIds()),'modules','Progresso real dos módulos, atualizado pelas atividades de estudo. Não é um edital oficial.');
     return true;
   }
-  document.addEventListener('central:study-objective-changed',()=>{if(genericHost&&!genericHost.hidden)genericClose();});
+  document.addEventListener('central:study-objective-changed',()=>{if(genericHost&&!genericHost.hidden)genericClose();activeCatalog=null;});
+  global.addEventListener('online',()=>{if(activeCatalog)syncCatalog(activeCatalog.contest,activeCatalog.goal,activeCatalog.id);});
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&genericHost&&!genericHost.hidden)genericClose();});
   global.CentralUnifiedVertical={open:openUnified,close:genericClose};
   global.CentralExamVerticalized=createExam(global.TJPB2026Verticalized,'exam-tjpb-2026-analista-judiciaria','examVerticalizedDialog','examVerticalizedEntry');
