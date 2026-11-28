@@ -110,7 +110,7 @@
     const coverage = DATA.singleCheck ? ((item.targets?.length || item.moduleIds?.length) ? '' : 'Em preparação') : item.coverage === 'preparation' ? 'Em preparação' : '';
     const checks = markers.map(([marker,label]) => '<label class="exam-check"><input type="checkbox" data-exam-topic="'+esc(item.id)+'" data-exam-marker="'+marker+'"'+(checked(item,subject,marker) ? ' checked' : '')+(marker==='studied'&&allRead(targetsFor(subject,item))?' disabled title="Leitura concluída automaticamente"':'')+'><span>'+label+'</span></label>').join('');
     const targets=orderedTargets(targetsFor(subject,item));
-    const links = targets.map(t => '<button type="button" class="exam-module-link" data-exam-module="'+esc(t.moduleId)+'" data-exam-discipline="'+esc(t.subjectId || '')+'"'+(t.title?' aria-label="'+esc('Abrir módulo: '+t.title)+'" title="'+esc(t.title)+'"':'')+'>'+esc(targets.length>1?targetLabel(t):'Estudar')+'</button>').join('');
+    const links = targets.map(t => '<button type="button" class="exam-module-link" data-exam-module="'+esc(t.moduleId)+'" data-exam-discipline="'+esc(t.subjectId || '')+'"'+(t.title?' aria-label="'+esc('Abrir módulo: '+t.title)+'" title="'+esc(t.title)+'"':'')+'>'+esc(targetLabel(t))+'</button>').join('');
     return '<article class="exam-topic" data-exam-topic-row="'+esc(item.id)+'"><div class="exam-topic-copy"><span class="exam-topic-number">'+esc(item.number || String(item.ordinal || ''))+'</span><span>'+esc(item.text)+'</span>'+(coverage?'<small>'+coverage+'</small>':'')+(links?'<div class="exam-module-links">'+links+'</div>':'')+'</div><div class="exam-checks">'+checks+'</div></article>';
   }
   function render() {
@@ -292,7 +292,7 @@
         if(mode!=='modules' && !(r.targets||[]).length)copy.append(safe('small','Em preparação'));
         const links=safe('div',undefined,'exam-module-links');const targets=orderedTargets(r.targets|| (r.target?[r.target]:[]));
         for(const rawTarget of targets){const target=actualTarget(rawTarget);
-          const button=safe('button',targets.length>1?targetLabel(target):'Estudar','exam-module-link');button.type='button';button.addEventListener('click',async()=>{
+          const button=safe('button',targetLabel(target),'exam-module-link');button.type='button';button.addEventListener('click',async()=>{
             genericClose();
             if(global.BaseCompletaFocusNavigation?.openByModuleId){const ok=await global.BaseCompletaFocusNavigation.openByModuleId(target.subjectId,target.moduleId);if(!ok)global.CentralStudyNavigation?.openContext?.({subject:target.subjectId,module:target.moduleId});}
             else global.CentralStudyNavigation?.openContext?.({subject:target.subjectId,module:target.moduleId});
