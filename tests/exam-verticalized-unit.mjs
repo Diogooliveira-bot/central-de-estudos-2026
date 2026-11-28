@@ -184,6 +184,16 @@ test('concurso de catálogo usa assuntos reais, só liga módulos aprovados e ma
  assert.equal(panel.querySelectorAll('.exam-module-link').length,1);
  panel.querySelector('input').click();
  assert.match(panel.querySelector('.exam-overview').textContent,/50%/);
- assert.equal(JSON.parse(storage.getItem('central-v6:vertical-catalog:student-1:'+id)).t1,true);
+ assert.equal(JSON.parse(storage.getItem('central-v6:vertical-catalog:student-1:'+id))['d1:t1'].value,true);
  dom.window.close();
+});
+
+
+test('catálogo gera IDs estáveis e separados por disciplina para sincronização',async()=>{
+ const {catalogExamTopicIds}=await import('../api/objective.js');
+ const a={subjects:[{id:'a',syllabus:[{id:'x',title:'T'}]},{id:'b',syllabus:[{id:'x',title:'T'}]}]};
+ assert.deepEqual([...catalogExamTopicIds(a)],['a:x','b:x']);
+ const b={subjects:[{id:'a',topics:['Primeiro','Segundo']}]};
+ const c={subjects:[{id:'a',topics:['Segundo','Primeiro']}]};
+ assert.deepEqual([...catalogExamTopicIds(b)].sort(),[...catalogExamTopicIds(c)].sort());
 });
