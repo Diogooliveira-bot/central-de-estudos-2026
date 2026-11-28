@@ -278,8 +278,8 @@ test('M13 ensina o processo administrativo, prazos, notificações e recursos co
  assert.equal(m.questions.summary.length,10);assert.equal(m.questions.complete.length,10);
  const reviewText=m.review.map(c=>c.html).join(' ').toLowerCase();
  for(const topic of ['ait','notificação da autuação','defesa prévia','notificação da penalidade','jari','contraditório','ampla defesa'])assert.ok(reviewText.includes(topic),'revisão deve ensinar o tema: '+topic);
- assert.ok(m.full.every(c=>!/<(?:svg|img)\\b/i.test(c.html)),'Conteúdo Completo não recebe imagem didática');
- assert.equal(m.review.filter(c=>/<svg\\b/i.test(c.html)).length,1,'fluxograma fica apenas na Revisão Guiada');
+ assert.ok(m.full.every(c=>!c.html.includes('<svg')&&!c.html.includes('<img')),'Conteúdo Completo não recebe imagem didática');
+ assert.equal(m.review.filter(c=>c.html.includes('<svg')).length,1,'fluxograma fica apenas na Revisão Guiada');
  const fullText=m.full.map(c=>c.html).join(' ').toLowerCase();
  for(const topic of ['art. 280','art. 281','art. 281-a','180 dias','360 dias','24 meses','resolução contran nº 900/2022'])assert.ok(fullText.includes(topic),'conteúdo completo deve cobrir '+topic);
  for(const set of [m.questions.summary,m.questions.complete]){
