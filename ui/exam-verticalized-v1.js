@@ -229,22 +229,22 @@
   function readComplete(t){
     const id=t.subjectId,n=moduleNumber(t);if(!n)return false;
     const nn=padded(n),data=global.CentralHomeProgressData||{},read100=k=>Number(storageValue(k))>=100;
-    if(id==='cf'){const m=storageJson('central-v6:cf-native-v2').modules?.[n];return m?.completeRead===true;}
+    if(id==='cf'){const m=storageJson('central-v6:cf-native-v2').modules?.[n];return m?.completeRead===true||storageJson('cf_tjce_fcc_guided_v23').weeks?.['w'+n]?.reading===true;}
     if(id==='adm'){const uid=data.admModuleIds?.[n-1]||actualTarget(t).moduleId;return read100('central-v6:adm-native:'+uid+':complete:read');}
     if(id==='cpc'){const prefix=n===8?'central-v6:cpc-m08:':'central-v6:native-reader:cpc:cpc'+n+':chapter:';return completeChapters(data.cpc?.['m'+nn]?.chapters?.complete,prefix+'complete:');}
     if(id==='penal')return completeChapters(data.penal?.['m'+nn]?.chapters?.complete,'central-v6:native-reader:penal:p'+n+':chapter:complete:');
     if(id==='civil'||id==='cpp')return read100('central-v6:'+id+'-native:m'+nn+':complete:read');
     if(id==='pt'){const module=global.CentralPortugueseCourse?.modules?.[n-1];return !!module&&storageValue('central-v6:pt:auto24:done:'+module.id)==='1';}
     if(id==='rlm')return storageValue('central-v6:done:'+(n===1?'rlm-calculo-rapido-v6638':'rlm-tjce2026-m'+nn))==='1'||read100('central-v6:rlm-tjce2026:read:M'+nn);
-    if(id==='info'){const m='m'+nn,chapters=global.BC_INFO_CONTENT?.[m]?.full;const count=chapters?.length||Number(storageValue('central-v6:info:complete-count:'+m));return Number.isInteger(count)&&count>0&&Array.from({length:count},(_,i)=>i).every(i=>storageValue('central-v6:info:read:'+m+':complete:'+i)==='1');}
-    if(['atual','fortaleza','legesp','dh'].includes(id)){const user=String(global.__BASE_COMPLETA_USER_ID__||'guest').trim().slice(0,120),prefix='central-v6:gmf:'+user+':'+id+':m'+nn+':complete:read:',count=Number(storageValue(prefix+'count'));return Number.isInteger(count)&&count>0&&Array.from({length:count},(_,i)=>i).every(i=>storageValue(prefix+i)==='1');}
+    if(id==='info'){const m='m'+nn,chapters=global.BC_INFO_CONTENT?.[m]?.full;const count=chapters?.length||Number(storageValue('central-v6:info:complete-count:'+m))||(n>=1&&n<=13?(n===1?9:7):0);return Number.isInteger(count)&&count>0&&Array.from({length:count},(_,i)=>i).every(i=>storageValue('central-v6:info:read:'+m+':complete:'+i)==='1');}
+    if(['atual','fortaleza','legesp','dh'].includes(id)){const user=String(global.__BASE_COMPLETA_USER_ID__||'guest').trim().slice(0,120),prefix='central-v6:gmf:'+user+':'+id+':m'+nn+':complete:read:',count=Number(storageValue(prefix+'count'))||(n>=1&&n<=({atual:6,fortaleza:9,legesp:11,dh:4}[id])?(id==='legesp'&&n===1?5:4):0);return Number.isInteger(count)&&count>0&&Array.from({length:count},(_,i)=>i).every(i=>storageValue(prefix+i)==='1');}
     return false;
   }
   const allRead=targets=>targets.length>0&&targets.every(readComplete);
   function accuracy(targets){
     const prefixes=new Set(targets.flatMap(t=>{const n=moduleNumber(t);return n?[t.subjectId+'-m'+padded(n)+'-']:[];}));
-    const hist=storageJson('central-v6:questoes:v2').h||{};let answered=0,hits=0;
-    for(const [id,value] of Object.entries(hist)){if(![...prefixes].some(p=>id.startsWith(p))||!['c','e'].includes(value?.u))continue;answered++;if(value.u==='c')hits++;}
+    const hist=storageJson('central-v6:questoes:v2').h||{};const prefixList=[...prefixes];let answered=0,hits=0;
+    for(const [id,value] of Object.entries(hist)){if(!prefixList.some(p=>id.startsWith(p))||!['c','e'].includes(value?.u))continue;answered++;if(value.u==='c')hits++;}
     return {answered,hits,pct:answered?Math.round(hits/answered*100):null};
   }
   function accuracyMarkup(targets){const a=accuracy(targets);return '<span class="exam-accuracy" title="'+esc(a.answered?a.hits+' de '+a.answered+' questões internas (última resposta)':'Nenhuma questão interna respondida')+'">Acertos '+(a.pct===null?'—':a.pct+'%')+'</span>';}
