@@ -264,7 +264,9 @@
         const response=await fetch(url,{cache:'no-store',credentials:'same-origin'});
         if(response.status===403){message='Marcações locais. A sincronização depende do plano.';return;}
         if(!response.ok)throw Error('progress');
-        const remote=(await response.json()).progress||{},local=readMarks(id);
+        const remote=(await response.json()).progress||{};
+        if(catalogKey(id)!==key)return;
+        const local=readMarks(id);
         for(const topic of allowed){
           const v=remote[topic]?.studied;
           if(v&&typeof v.value==='boolean'&&(!local[topic]||Date.parse(v.at)>=Date.parse(local[topic].at)))local[topic]=v;
@@ -275,6 +277,7 @@
           return l&&typeof l.value==='boolean'&&(!r||Date.parse(l.at)>Date.parse(r.at))?[{topicId:topic,marker:'studied',value:l.value,at:l.at}]:[];
         });
         for(let i=0;i<changes.length;i+=1200){
+          if(catalogKey(id)!==key)return;
           const saved=await fetch(url,{method:'PUT',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({changes:changes.slice(i,i+1200)})});
           if(!saved.ok)throw Error('save');
         }
