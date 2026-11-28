@@ -1,5 +1,5 @@
 {
-  "build": "20261128-edital-vertical-unificado-v2",
+  "build": "20261128-edital-vertical-unificado-v3",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -235,7 +235,7 @@
     "/ui/study-objectives-v1.css?v=20261119r1",
     "/content/tjpb-2026-verticalized.js?v=20261020exam1",
     "/content/trt8-2026-verticalized.js?v=20261021multiexam2",
-    "/ui/exam-verticalized-v1.js?v=20261128vertical2",
+    "/ui/exam-verticalized-v1.js?v=20261128vertical3",
     "/ui/exam-verticalized-v1.css?v=20261128vertical2",
     "/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1",
     "/ui/home-minimal-a-v1.css?v=20261115responsive1",
