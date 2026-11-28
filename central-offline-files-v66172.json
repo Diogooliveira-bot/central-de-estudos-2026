@@ -1,5 +1,5 @@
 {
-  "build": "20261127-transito-m08a",
+  "build": "20261127-transito-m09a",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261113orient1",
@@ -338,16 +338,17 @@
     "/ui/contest-admin-form.js?v=20261124r1",
     "/ui/concursos-catalog-v1.js?v=20261127prf1",
     "/ui/concursos-catalog-v1.css?v=20261123concursos2",
-    "/ui/transito-shared-course-v1.css?v=20261127m08a",
-    "/ui/transito-shared-course-v1.js?v=20261127m08a",
-    "/ui/transito-course-reader-v1.js?v=20261127m08a",
-    "/content/transito/m01.js?v=20261127m08a",
-    "/content/transito/m02.js?v=20261127m08a",
-    "/content/transito/m03.js?v=20261127m08a",
-    "/content/transito/m04.js?v=20261127m08a",
-    "/content/transito/m05.js?v=20261127m08a",
-    "/content/transito/m06.js?v=20261127m08a",
-    "/content/transito/m07.js?v=20261127m08a",
-    "/content/transito/m08.js?v=20261127m08a"
+    "/ui/transito-shared-course-v1.css?v=20261127m09a",
+    "/ui/transito-shared-course-v1.js?v=20261127m09a",
+    "/ui/transito-course-reader-v1.js?v=20261127m09a",
+    "/content/transito/m01.js?v=20261127m09a",
+    "/content/transito/m02.js?v=20261127m09a",
+    "/content/transito/m03.js?v=20261127m09a",
+    "/content/transito/m04.js?v=20261127m09a",
+    "/content/transito/m05.js?v=20261127m09a",
+    "/content/transito/m06.js?v=20261127m09a",
+    "/content/transito/m07.js?v=20261127m09a",
+    "/content/transito/m08.js?v=20261127m09a",
+    "/content/transito/m09.js?v=20261127m09a"
   ]
 }
