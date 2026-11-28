@@ -30,7 +30,9 @@ try {
     await page.waitForTimeout(600);
     const m = await page.evaluate(() => [...document.querySelectorAll('#centralSidebar [data-student-primary-nav]')].map((e) => { const r = e.getBoundingClientRect(); return { k: e.dataset.studentPrimaryNav, l: r.left, r: r.right, w: r.width, h: r.height }; }));
     const keys = m.map((x) => x.k);
-    for (const k of ['agenda', 'progress', 'questoes', 'law', 'vade', 'edital', 'more']) assert.ok(keys.includes(k), `${nome}: falta ${k}`);
+    for (const k of ['agenda', 'questoes', 'law', 'vade', 'edital', 'more']) assert.ok(keys.includes(k), `${nome}: falta ${k}`);
+    assert.ok(!keys.includes('progress'), nome+': Progresso não deve duplicar Edital Vertical');
+    assert.equal(await page.locator('[data-student-primary-nav="edital"]').getAttribute('aria-label'),'Edital Vertical');
     for (const x of m) {
       assert.ok(x.l >= 0 && x.r <= viewport.width + 1, `${nome}: ${x.k} fora da tela (${Math.round(x.l)}–${Math.round(x.r)})`);
       assert.ok(x.w >= 60 && x.w < viewport.width / 2, `${nome}: ${x.k} com largura estranha (${Math.round(x.w)})`);

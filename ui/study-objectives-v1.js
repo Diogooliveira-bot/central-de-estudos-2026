@@ -515,6 +515,10 @@
     catalog, open, setActive, selectObjective, toggleContest, toggleCatalogContest, selectedContestIds:()=>selectedContestIds.slice(), getActive:() => activeId,
     hasActiveObjective:() => !!activeId,
     activeSubjectIds, questionDisciplineKeys:activeQuestionKeys,
+    async activeContest() {
+      await loadContestGoals();
+      return examOptions().find(option=>option.id===activeId)?.contest || null;
+    },
     load, get loaded() { return loaded; },
   };
 

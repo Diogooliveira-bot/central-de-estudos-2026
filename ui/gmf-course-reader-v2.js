@@ -64,6 +64,7 @@
  function paint(record){
    if(!state.root)return;
    const {subject,module,mode}=state,chapters=record.chapters||[];
+   if(mode==='complete'&&chapters.length){try{global.localStorage.setItem(key(subject,module,mode,'count'),String(chapters.length));}catch(_){}}
    const done=readCount(subject,module,mode,chapters.length),pct=chapters.length?Math.round(done*100/chapters.length):0;
    global.CentralNativeReadingSession.percent(state.root,pct);
    const out=state.root.querySelector('[data-done]');if(out)out.textContent=String(done);

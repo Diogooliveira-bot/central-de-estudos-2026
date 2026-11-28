@@ -146,3 +146,95 @@ test('Abrir módulo usa navegação nativa e expande o módulo, não apenas a di
  assert.equal(cppCalled,1,'Navegação invoca expansor nativo de Processo Penal');
  dom.window.close();
 });
+
+test('entrada unificada abre o edital ativo preservando o checklist existente',async()=>{
+ const {dom,w}=setup();
+ assert.equal(await w.CentralUnifiedVertical.open(),true);
+ const panel=w.document.querySelector('#examVerticalizedDialog');
+ assert.equal(panel.hidden,false);
+ assert.ok(panel.querySelector('.exam-unified-actions'));
+ panel.querySelector('[data-exam-marker="studied"]').click();
+ assert.ok(w.CentralExamVerticalized.overall()>0);
+ dom.window.close();
+});
+
+test('estudo livre exibe somente as disciplinas selecionadas e progresso real',async()=>{
+ const {dom,w,storage}=setup();
+ storage.setItem('central-v6:free-study-subjects:v1',JSON.stringify(['cf','pt']));
+ w.CentralStudyObjectives.setActive('free-study');
+ w.BaseCompletaProgressReportSnapshot=()=>({modules:Array.from({length:15},(_,i)=>({subjectId:'cf',pct:i===0?100:0}))});
+ assert.equal(await w.CentralUnifiedVertical.open(),true);
+ const panel=w.document.querySelector('#unifiedVerticalDialog');
+ assert.deepEqual([...panel.querySelectorAll('details.exam-subject')].map(x=>x.dataset.examSubject),['cf','pt']);
+ assert.equal(panel.querySelectorAll('[data-exam-subject="cf"] .exam-topic').length,15);
+ assert.match(panel.querySelector('[data-exam-subject="cf"] .exam-topic').textContent,/Concluído/);
+ assert.equal(panel.querySelectorAll('input[type=checkbox]').length,0,'sem duplicar progresso real');
+ dom.window.close();
+});
+
+test('concurso de catálogo usa assuntos reais, só liga módulos aprovados e mantém marcações separadas',async()=>{
+ const {dom,w,storage}=setup();
+ const id='exam-catalog-exemplo-cargo-1';
+ w.CentralStudyObjectives.catalog.goals[id]={id,type:'exam',title:'Concurso fictício',subjectIds:['cf']};
+ w.CentralStudyObjectives.setActive(id);
+ w.CentralStudyObjectives.activeContest=async()=>({status:'previsto',subjects:[{id:'d1',name:'Disciplina',centralId:'cf',syllabus:[{id:'t1',title:'<img src=x onerror=alert(1)>',links:[{status:'suggested',subjectId:'cf',moduleId:'cf-01'}]},{id:'t2',title:'Assunto dois',links:[{status:'approved',subjectId:'cf',moduleId:'cf-02'}]}]}]});
+ await w.CentralUnifiedVertical.open();
+ const panel=w.document.querySelector('#unifiedVerticalDialog');
+ assert.equal(panel.querySelector('img'),null);
+ assert.equal(panel.querySelectorAll('.exam-module-link').length,1);
+ assert.match(panel.querySelector('.exam-module-link').textContent,/^M02 · /,'link único segue o mesmo padrão visual dos múltiplos');
+ panel.querySelector('input').click();
+ assert.match(panel.querySelector('.exam-overview').textContent,/50%/);
+ assert.equal(JSON.parse(storage.getItem('central-v6:vertical-catalog:student-1:'+id))['d1:t1'].value,true);
+ dom.window.close();
+});
+
+
+test('catálogo gera IDs estáveis e separados por disciplina para sincronização',async()=>{
+ const {catalogExamTopicIds}=await import('../api/objective.js');
+ const a={subjects:[{id:'a',syllabus:[{id:'x',title:'T'}]},{id:'b',syllabus:[{id:'x',title:'T'}]}]};
+ assert.deepEqual([...catalogExamTopicIds(a)],['a:x','b:x']);
+ const b={subjects:[{id:'a',topics:['Primeiro','Segundo']}]};
+ const c={subjects:[{id:'a',topics:['Segundo','Primeiro']}]};
+ assert.deepEqual([...catalogExamTopicIds(b)].sort(),[...catalogExamTopicIds(c)].sort());
+});
+
+test('leitura completa marca somente Estudei, não revisão nem questões',()=>{
+ const {dom,w,storage}=setup();
+ const target=catalog.subjects.find(s=>s.disciplineId==='cf').items.find(i=>!i.organizational&&i.moduleIds?.length===1&&i.moduleIds[0]==='w1');
+ assert.ok(target);
+ storage.setItem('central-v6:cf-native-v2',JSON.stringify({modules:{1:{completeRead:true}}}));
+ w.CentralExamVerticalized.open();
+ const row=w.document.querySelector('[data-exam-topic-row="'+target.id+'"]');
+ assert.equal(row.querySelector('[data-exam-marker="studied"]').checked,true);
+ assert.equal(row.querySelector('[data-exam-marker="reviewed"]').checked,false);
+ assert.equal(row.querySelector('[data-exam-marker="questions"]').checked,false);
+ storage.setItem('central-v6:cf-native-v2',JSON.stringify({modules:{1:{completeRead:false}}}));
+ w.CentralExamVerticalized.close();w.CentralExamVerticalized.open();
+ assert.equal(w.document.querySelector('[data-exam-topic-row="'+target.id+'"] [data-exam-marker="studied"]').checked,false);
+ dom.window.close();
+});
+test('acertos são ponderados por questão, sem duplicar módulos nem incluir outros objetivos',()=>{
+ const {dom,w,storage}=setup();
+ storage.setItem('central-v6:questoes:v2',JSON.stringify({h:{'cf-m01-q1':{u:'c'},'cf-m01-q2':{u:'e'},'cf-m02-q1':{u:'c'},'pt-m01-q1':{u:'e'}}}));
+ const result=w.CentralUnifiedVertical.accuracy([{subjectId:'cf',moduleId:'w1'},{subjectId:'cf',moduleId:'cf-01'},{subjectId:'cf',moduleId:'w2'}]);
+ assert.equal(result.answered,3);assert.equal(result.hits,2);assert.equal(result.pct,67);
+ assert.equal(w.CentralUnifiedVertical.accuracy([]).pct,null);
+ dom.window.close();
+});
+test('dois módulos de um assunto ficam ordenados e leitura de apenas um não conclui o assunto',async()=>{
+ const {dom,w,storage}=setup();
+ const id='exam-catalog-exemplo-cargo-1';
+ w.CentralStudyObjectives.catalog.goals[id]={id,type:'exam',title:'Concurso fictício',subjectIds:['cf']};
+ w.CentralStudyObjectives.setActive(id);
+ w.CentralStudyObjectives.activeContest=async()=>({status:'publicado',subjects:[{id:'d',name:'Constitucional',centralId:'cf',syllabus:[{id:'t',title:'Assunto',links:[{status:'approved',subjectId:'cf',moduleId:'cf-02'},{status:'approved',subjectId:'cf',moduleId:'cf-01'}]}]}]});
+ storage.setItem('central-v6:cf-native-v2',JSON.stringify({modules:{1:{completeRead:true}}}));
+ await w.CentralUnifiedVertical.open();
+ const panel=w.document.querySelector('#unifiedVerticalDialog');
+ assert.equal(panel.querySelector('input').checked,false);
+ assert.deepEqual([...panel.querySelectorAll('.exam-module-links button')].map(b=>b.textContent.slice(0,3)),['M01','M02']);
+ storage.setItem('central-v6:cf-native-v2',JSON.stringify({modules:{1:{completeRead:true},2:{completeRead:true}}}));
+ await w.CentralUnifiedVertical.open();
+ assert.equal(panel.querySelector('input').checked,true);
+ dom.window.close();
+});

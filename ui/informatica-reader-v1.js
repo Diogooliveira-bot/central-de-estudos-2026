@@ -33,6 +33,7 @@
  const isRead=(id,mode,i)=>localGet(key(id,mode,i))==="1";
  function fraction(id,data,mode){
    const list=chapters(data,mode),done=list.filter((_,i)=>isRead(id,mode,i)).length;
+   if(mode==="complete"&&list.length)localSet("central-v6:info:complete-count:"+id,String(list.length));
    return {done,total:list.length,pct:list.length?Math.round(done/list.length*100):0};
  }
  function combined(id,data){

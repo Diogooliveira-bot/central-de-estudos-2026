@@ -8,9 +8,39 @@ import { JSDOM } from 'jsdom';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 
-test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros oficiais sem links antigos', async () => {
+test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros oficiais sem links antigos', async (t) => {
   const dom = new JSDOM('<!doctype html><html class="bc-ui-v1"><body><div id="centralSidebar"><div class="nav"><button>Hoje</button><div class="label">Ferramentas</div></div></div><div class="workspace"><section id="homeView" class="view"></section></div><span id="crumb"></span><section id="studentMorePanel"><div class="student-more-grid"></div></section><main id="subjects"><section class="subject" data-id="civil"><div class="subject-body"></div></section></main></body></html>', { url: 'https://central.test/central-v119.html', runScripts: 'outside-only', pretendToBeVisual: true });
   const { window } = dom;
+  // Track browser-owned asynchronous resources so teardown cannot race observers.
+  const observers = new Set();
+  const NativeMutationObserver = window.MutationObserver;
+  window.MutationObserver = class extends NativeMutationObserver {
+    constructor(callback) {
+      super(callback);
+      observers.add(this);
+    }
+  };
+  const frames = new Set();
+  const requestFrame = window.requestAnimationFrame.bind(window);
+  const cancelFrame = window.cancelAnimationFrame.bind(window);
+  window.requestAnimationFrame = (callback) => {
+    const id = requestFrame((time) => {
+      frames.delete(id);
+      callback(time);
+    });
+    frames.add(id);
+    return id;
+  };
+  window.cancelAnimationFrame = (id) => {
+    frames.delete(id);
+    cancelFrame(id);
+  };
+  t.after(async () => {
+    for (const observer of observers) observer.disconnect();
+    for (const id of frames) cancelFrame(id);
+    await Promise.resolve();
+    dom.window.close();
+  });
   // Verifica a hierarquia editorial dos filtros na visualização administrativa.
   window.BASE_COMPLETA_USER = { id: 'admin-civil-test', role: 'admin' };
   window.eval(read('content/qc-sharing-links.js'));
@@ -78,7 +108,4 @@ test('Direito Civil: 15 módulos seguem a ordem aprovada e mostram os filtros of
   const civilOverrides = css.split('/* Direito Civil segue')[1] || '';
   assert(civilOverrides.length > 0);
   assert(!/html\.bc-ui-v1\s+(?!#subjects)/.test(civilOverrides), 'Os novos estilos de Civil devem ficar limitados ao contêiner da disciplina.');
-  window.__civilNativeObserver?.disconnect();
-  await new Promise(resolve=>setTimeout(resolve,70));
-  dom.window.close();
 });

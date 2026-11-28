@@ -61,7 +61,7 @@
     }
     return false;
   }
-  // Barra compacta: seis ferramentas com rolagem, mais menu fixo à direita.
+  // Barra compacta: programa vertical e progresso em uma entrada única.
   // Os atalhos reutilizam as rotas já implementadas; não alteram permissões.
   function quickIcon(kind) {
     const paths = {
@@ -73,14 +73,11 @@
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+paths[kind]+'</svg>';
   }
   function openEdital() {
-    if (global.CentralContestCatalog?.open) return global.CentralContestCatalog.open();
-    // Editais verticalizados existentes: TJPB e TRT-8; dependem do objetivo selecionado.
-    if (global.CentralExamVerticalized?.open?.() === true) return true;
-    if (global.CentralTRT8Verticalized?.open?.() === true) return true;
-    // Objetivos gerais não possuem um edital oficial específico.
-    if (global.CentralStudyObjectives?.open) return global.CentralStudyObjectives.open();
-    global.alert('Não há edital verticalizado associado ao objetivo atual.');
-    return false;
+    if (global.CentralUnifiedVertical?.open) return global.CentralUnifiedVertical.open();
+    for (const view of [global.CentralGMFVerticalized,global.CentralPRFVerticalized,global.CentralExamVerticalized,global.CentralTRT8Verticalized]) {
+      if (view?.open?.() === true) return true;
+    }
+    return global.CentralStudyObjectives?.open?.();
   }
   // Cabeçalho do painel "Mais": quem está logado e o tamanho da letra atual (nada de dados novos; só o que a conta já informa).
   function syncMoreProfile() {
@@ -122,11 +119,11 @@
       rail.setAttribute('aria-label', 'Ferramentas de estudo');
       nav.prepend(rail);
       if (agenda) {renameNavButton(agenda,'Agenda','agenda');rail.appendChild(agenda);}
-      if (progress) {renameNavButton(progress,'Progresso','progress');rail.appendChild(progress);}
+      if (progress) { progress.hidden = true; progress.dataset.studentLegacyProgress = '1'; progress.removeAttribute('data-student-primary-nav'); }
       const actions = [
         ['law','Lei em Dia',() => global.openEmbeddedTool?.('decorando', {})],
         ['vade','Vade Mecum',() => global.openEmbeddedTool?.('vade', {})],
-        ['edital','Edital',openEdital],
+        ['edital','Edital Vertical',openEdital],
       ];
       // Filtros externos são ferramentas de curadoria somente dos administradores.
       if (isAdmin()) actions.push(['filters','Filtros de questões',(button) => global.ExternalQuestionFilters?.openPage(button,{tab:'disciplines'})]);
@@ -273,7 +270,7 @@
     const visible = Array.from(document.querySelectorAll('#centralSidebar [data-student-primary-nav]'));
     visible.forEach((button) => button.removeAttribute('aria-current'));
     const map = [
-      ['agendaView', 'agenda'], ['performanceView', 'progress'], ['leiSecaView', 'law'], ['vadeMecumView', 'vade'], ['questionFiltersView', 'filters'],
+      ['agendaView', 'agenda'], ['performanceView', 'edital'], ['leiSecaView', 'law'], ['vadeMecumView', 'vade'], ['questionFiltersView', 'filters'],
     ];
     for (const [viewId, key] of map) {
       if (!byId(viewId)?.classList.contains('hidden')) document.querySelector(`[data-student-primary-nav="${key}"]`)?.setAttribute('aria-current', 'page');
